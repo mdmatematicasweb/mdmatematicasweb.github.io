@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "actividades/practica-fracciones.html",
+    "href": "actividades/practica-fracciones.html",
+    "title": "Práctica rápida — fracciones",
+    "section": "",
+    "text": "Actividad interactiva construida con Observable JS ({ojs}), corre en el navegador sin backend.\n\na = 1\nb = view(Inputs.range([2, 12], {step: 1, label: \"denominador a\", value: 4}))\nc = 1\nd = view(Inputs.range([2, 12], {step: 1, label: \"denominador b\", value: 6}))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmcd = (x, y) =&gt; y === 0 ? x : mcd(y, x % y)\nmcm = (x, y) =&gt; (x * y) / mcd(x, y)\ncomun = mcm(b, d)\nresultado = (a * (comun / b) + c * (comun / d)) + \"/\" + comun\n\nmd`**${a}/${b} + ${c}/${d} = ${resultado}**`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAjuste los denominadores arriba y vea el resultado actualizarse en vivo."
+  },
+  {
+    "objectID": "actividades/index.html",
+    "href": "actividades/index.html",
+    "title": "Actividades interactivas",
+    "section": "",
+    "text": "Actividades manipulables pa practicar en vivo.\n\nExplorador de fracciones (GeoGebra)\nPráctica rápida (app propia)"
+  },
+  {
     "objectID": "ejercicios/año7/fracciones-guia1.html",
     "href": "ejercicios/año7/fracciones-guia1.html",
     "title": "Guía 1 — Fracciones",
@@ -43,34 +57,6 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "MD Matemáticas",
-    "section": "",
-    "text": "Bienvenido. Aquí encontrará apuntes, ejercicios y actividades interactivas organizados por curso y tema.\n\nApuntes\nEjercicios\nActividades interactivas"
-  },
-  {
-    "objectID": "actividades/practica-fracciones.html",
-    "href": "actividades/practica-fracciones.html",
-    "title": "Práctica rápida — fracciones",
-    "section": "",
-    "text": "Actividad interactiva construida con Observable JS ({ojs}), corre en el navegador sin backend.\n\na = 1\nb = view(Inputs.range([2, 12], {step: 1, label: \"denominador a\", value: 4}))\nc = 1\nd = view(Inputs.range([2, 12], {step: 1, label: \"denominador b\", value: 6}))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmcd = (x, y) =&gt; y === 0 ? x : mcd(y, x % y)\nmcm = (x, y) =&gt; (x * y) / mcd(x, y)\ncomun = mcm(b, d)\nresultado = (a * (comun / b) + c * (comun / d)) + \"/\" + comun\n\nmd`**${a}/${b} + ${c}/${d} = ${resultado}**`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAjuste los denominadores arriba y vea el resultado actualizarse en vivo."
-  },
-  {
-    "objectID": "actividades/index.html",
-    "href": "actividades/index.html",
-    "title": "Actividades interactivas",
-    "section": "",
-    "text": "Actividades manipulables pa practicar en vivo.\n\nExplorador de fracciones (GeoGebra)\nPráctica rápida (app propia)"
-  },
-  {
-    "objectID": "actividades/fracciones-geogebra.html",
-    "href": "actividades/fracciones-geogebra.html",
-    "title": "Explorador de fracciones",
-    "section": "",
-    "text": "Manipule el applet pa visualizar suma de fracciones. Reemplace el id del applet por uno propio creado en geogebra.org."
-  },
-  {
     "objectID": "apuntes/index.html",
     "href": "apuntes/index.html",
     "title": "Apuntes",
@@ -86,5 +72,19 @@
     "title": "Ejercicios",
     "section": "",
     "text": "Guías y hojas de ejercicio por curso y tema.\n\nAño 7"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MD Matemáticas",
+    "section": "",
+    "text": "Bienvenido. Aquí encontrará apuntes, ejercicios y actividades interactivas organizados por curso y tema.\n\nApuntes\nEjercicios\nActividades interactivas"
+  },
+  {
+    "objectID": "actividades/fracciones-geogebra.html",
+    "href": "actividades/fracciones-geogebra.html",
+    "title": "Explorador de fracciones",
+    "section": "",
+    "text": "Manipule el applet pa visualizar suma de fracciones. Reemplace el id del applet por uno propio creado en geogebra.org."
   }
 ]
