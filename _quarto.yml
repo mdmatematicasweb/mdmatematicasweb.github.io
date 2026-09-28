@@ -1,6 +1,12 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - "*.qmd"
+    - "apuntes/**/*.qmd"
+    - "ejercicios/**/*.qmd"
+    - "actividades/**/*.qmd"
+    - "!**/fuentes/**"
 
 website:
   title: "MD Matemáticas"
@@ -20,10 +26,39 @@ website:
       - icon: github
         href: https://github.com/mdmatematicasweb/mdmatematicasweb.github.io
   sidebar:
-    - title: Apuntes
+    - id: apuntes
+      title: "Apuntes"
       contents:
-        - section: "Apuntes"
-          contents: "apuntes/**/*.qmd"
+        - section: "3º ESO"
+          contents:
+            - "apuntes/3-eso/**/*.qmd"
+            - "!apuntes/3-eso/**/fuentes/**"
+        - section: "2º Bachillerato Ciencias"
+          contents:
+            - "apuntes/2-bachillerato-ciencias/**/*.qmd"
+            - "!apuntes/2-bachillerato-ciencias/**/fuentes/**"
+    - id: ejercicios
+      title: "Ejercicios"
+      contents:
+        - section: "3º ESO"
+          contents:
+            - "ejercicios/3-eso/**/*.qmd"
+            - "!ejercicios/3-eso/**/fuentes/**"
+        - section: "2º Bachillerato Ciencias"
+          contents:
+            - "ejercicios/2-bachillerato-ciencias/**/*.qmd"
+            - "!ejercicios/2-bachillerato-ciencias/**/fuentes/**"
+    - id: actividades
+      title: "Actividades"
+      contents:
+        - section: "3º ESO"
+          contents:
+            - "actividades/3-eso/**/*.qmd"
+            - "!actividades/3-eso/**/fuentes/**"
+        - section: "2º Bachillerato Ciencias"
+          contents:
+            - "actividades/2-bachillerato-ciencias/**/*.qmd"
+            - "!actividades/2-bachillerato-ciencias/**/fuentes/**"
   page-footer:
     center: "MD Matemáticas · construido con Quarto"
 
