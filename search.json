@@ -1,7 +1,70 @@
 [
   {
-    "objectID": "actividades/practica-fracciones.html",
-    "href": "actividades/practica-fracciones.html",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MD Matemáticas",
+    "section": "",
+    "text": "Matemáticas, paso a paso\nApuntes, ejercicios y actividades interactivas para 3º ESO y 2º Bachillerato de Ciencias. Todo organizado por tema, para repasar antes de un examen o preparar la Selectividad.\n\n\n\\[x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\] fórmula general — 3º ESO, tema 6\n\n\n\n\n\n\n\n3º ESO\nFracciones, ecuaciones, funciones, geometría del plano y estadística.\n\nApuntes\nEjercicios\nActividades\n\n\n\n2º Bachillerato Ciencias\nMatrices, análisis, geometría del espacio y probabilidad — preparación para la EvAU.\n\nApuntes\nEjercicios\nActividades"
+  },
+  {
+    "objectID": "ejercicios/3-eso/index.html",
+    "href": "ejercicios/3-eso/index.html",
+    "title": "Ejercicios — 3º ESO",
+    "section": "",
+    "text": "Guías de ejercicios por tema, con respuestas colapsables.\n\nFracciones y decimales\nPotencias y raíces\nProblemas aritméticos\nProgresiones\nLenguaje algebraico\nEcuaciones\nSistemas de ecuaciones\nFunciones y gráficas\nFunciones lineales y cuadráticas\nProblemas métricos en el plano\nCuerpos geométricos\nTransformaciones geométricas\nTablas y gráficos estadísticos\nParámetros estadísticos\nAzar y probabilidad"
+  },
+  {
+    "objectID": "ejercicios/2-bachillerato-ciencias/index.html",
+    "href": "ejercicios/2-bachillerato-ciencias/index.html",
+    "title": "Ejercicios — 2º Bachillerato Ciencias",
+    "section": "",
+    "text": "Guías de ejercicios por tema, con respuestas colapsables.\n\nMatrices\nDeterminantes\nSistemas de ecuaciones lineales\nVectores en el espacio\nRectas y planos\nLímites y continuidad\nDerivadas\nAplicaciones de la derivada\nIntegrales\nProbabilidad\nDistribuciones"
+  },
+  {
+    "objectID": "apuntes/3-eso/index.html",
+    "href": "apuntes/3-eso/index.html",
+    "title": "Apuntes — 3º ESO",
+    "section": "",
+    "text": "Temario completo del curso. Los temas en gris están pendientes de redactar.\n\nFracciones y decimales\nPotencias y raíces\nProblemas aritméticos\nProgresiones\nLenguaje algebraico\nEcuaciones\nSistemas de ecuaciones\nFunciones y gráficas\nFunciones lineales y cuadráticas\nProblemas métricos en el plano\nCuerpos geométricos\nTransformaciones geométricas\nTablas y gráficos estadísticos\nParámetros estadísticos\nAzar y probabilidad"
+  },
+  {
+    "objectID": "apuntes/2-bachillerato-ciencias/index.html",
+    "href": "apuntes/2-bachillerato-ciencias/index.html",
+    "title": "Apuntes — 2º Bachillerato Ciencias",
+    "section": "",
+    "text": "Temario completo del curso. Los temas en gris están pendientes de redactar.\n\nMatrices\nDeterminantes\nSistemas de ecuaciones lineales\nVectores en el espacio\nRectas y planos\nLímites y continuidad\nDerivadas\nAplicaciones de la derivada\nIntegrales\nProbabilidad\nDistribuciones"
+  },
+  {
+    "objectID": "actividades/3-eso/index.html",
+    "href": "actividades/3-eso/index.html",
+    "title": "Actividades — 3º ESO",
+    "section": "",
+    "text": "Actividades interactivas por tema."
+  },
+  {
+    "objectID": "actividades/3-eso/index.html#fracciones-y-decimales",
+    "href": "actividades/3-eso/index.html#fracciones-y-decimales",
+    "title": "Actividades — 3º ESO",
+    "section": "1. Fracciones y decimales",
+    "text": "1. Fracciones y decimales\n\nExplorador de fracciones (GeoGebra)\nPráctica rápida (app propia)\n\nResto de temas: pendientes de añadir."
+  },
+  {
+    "objectID": "actividades/3-eso/01-fracciones-decimales/geogebra.html",
+    "href": "actividades/3-eso/01-fracciones-decimales/geogebra.html",
+    "title": "Explorador de fracciones",
+    "section": "",
+    "text": "Manipule el applet pa visualizar suma de fracciones. Reemplace el id del applet por uno propio creado en geogebra.org."
+  },
+  {
+    "objectID": "actividades/2-bachillerato-ciencias/index.html",
+    "href": "actividades/2-bachillerato-ciencias/index.html",
+    "title": "Actividades — 2º Bachillerato Ciencias",
+    "section": "",
+    "text": "Pendiente de añadir actividades interactivas por tema."
+  },
+  {
+    "objectID": "actividades/3-eso/01-fracciones-decimales/practica.html",
+    "href": "actividades/3-eso/01-fracciones-decimales/practica.html",
     "title": "Práctica rápida — fracciones",
     "section": "",
     "text": "Actividad interactiva construida con Observable JS ({ojs}), corre en el navegador sin backend.\n\na = 1\nb = view(Inputs.range([2, 12], {step: 1, label: \"denominador a\", value: 4}))\nc = 1\nd = view(Inputs.range([2, 12], {step: 1, label: \"denominador b\", value: 6}))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmcd = (x, y) =&gt; y === 0 ? x : mcd(y, x % y)\nmcm = (x, y) =&gt; (x * y) / mcd(x, y)\ncomun = mcm(b, d)\nresultado = (a * (comun / b) + c * (comun / d)) + \"/\" + comun\n\nmd`**${a}/${b} + ${c}/${d} = ${resultado}**`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAjuste los denominadores arriba y vea el resultado actualizarse en vivo."
@@ -11,80 +74,48 @@
     "href": "actividades/index.html",
     "title": "Actividades interactivas",
     "section": "",
-    "text": "Actividades manipulables pa practicar en vivo.\n\nExplorador de fracciones (GeoGebra)\nPráctica rápida (app propia)"
+    "text": "Actividades interactivas organizadas por curso.\n\n3º ESO\n2º Bachillerato Ciencias"
   },
   {
-    "objectID": "ejercicios/año7/fracciones-guia1.html",
-    "href": "ejercicios/año7/fracciones-guia1.html",
-    "title": "Guía 1 — Fracciones",
-    "section": "",
-    "text": "Calcule \\(\\frac{2}{3} + \\frac{1}{6}\\)\nCalcule \\(\\frac{5}{8} - \\frac{1}{4}\\)\nSimplifique \\(\\frac{12}{18}\\)\n\n\n\n\n\n\n\nNoteVer respuestas\n\n\n\n\n\n\n\\(\\frac{5}{6}\\)\n\\(\\frac{3}{8}\\)\n\\(\\frac{2}{3}\\)"
-  },
-  {
-    "objectID": "apuntes/año7/fracciones.html",
-    "href": "apuntes/año7/fracciones.html",
+    "objectID": "apuntes/3-eso/01-fracciones-decimales/index.html",
+    "href": "apuntes/3-eso/01-fracciones-decimales/index.html",
     "title": "Fracciones",
     "section": "",
-    "text": "Una fracción \\(\\frac{a}{b}\\) representa \\(a\\) partes de un total dividido en \\(b\\) partes iguales.",
-    "crumbs": [
-      "Apuntes",
-      "Año7",
-      "Fracciones"
-    ]
+    "text": "Una fracción \\(\\frac{a}{b}\\) representa \\(a\\) partes de un total dividido en \\(b\\) partes iguales."
   },
   {
-    "objectID": "apuntes/año7/fracciones.html#concepto",
-    "href": "apuntes/año7/fracciones.html#concepto",
+    "objectID": "apuntes/3-eso/01-fracciones-decimales/index.html#concepto",
+    "href": "apuntes/3-eso/01-fracciones-decimales/index.html#concepto",
     "title": "Fracciones",
     "section": "",
-    "text": "Una fracción \\(\\frac{a}{b}\\) representa \\(a\\) partes de un total dividido en \\(b\\) partes iguales.",
-    "crumbs": [
-      "Apuntes",
-      "Año7",
-      "Fracciones"
-    ]
+    "text": "Una fracción \\(\\frac{a}{b}\\) representa \\(a\\) partes de un total dividido en \\(b\\) partes iguales."
   },
   {
-    "objectID": "apuntes/año7/fracciones.html#ejemplo",
-    "href": "apuntes/año7/fracciones.html#ejemplo",
+    "objectID": "apuntes/3-eso/01-fracciones-decimales/index.html#ejemplo",
+    "href": "apuntes/3-eso/01-fracciones-decimales/index.html#ejemplo",
     "title": "Fracciones",
     "section": "Ejemplo",
-    "text": "Ejemplo\n\\[\\frac{1}{2} + \\frac{1}{4} = \\frac{3}{4}\\]\nReemplace este archivo con contenido real. Sirve de plantilla.",
-    "crumbs": [
-      "Apuntes",
-      "Año7",
-      "Fracciones"
-    ]
+    "text": "Ejemplo\n\\[\\frac{1}{2} + \\frac{1}{4} = \\frac{3}{4}\\]\nReemplace este archivo con contenido real. Sirve de plantilla."
   },
   {
     "objectID": "apuntes/index.html",
     "href": "apuntes/index.html",
     "title": "Apuntes",
     "section": "",
-    "text": "Apuntes organizados por curso.\n\nAño 7\nAño 8",
-    "crumbs": [
-      "Apuntes"
-    ]
+    "text": "Apuntes organizados por curso.\n\n3º ESO\n2º Bachillerato Ciencias"
+  },
+  {
+    "objectID": "ejercicios/3-eso/01-fracciones-decimales/index.html",
+    "href": "ejercicios/3-eso/01-fracciones-decimales/index.html",
+    "title": "Guía 1 — Fracciones",
+    "section": "",
+    "text": "Calcule \\(\\frac{2}{3} + \\frac{1}{6}\\)\nCalcule \\(\\frac{5}{8} - \\frac{1}{4}\\)\nSimplifique \\(\\frac{12}{18}\\)\n\n\n\n\n\n\n\nNoteVer respuestas\n\n\n\n\n\n\n\\(\\frac{5}{6}\\)\n\\(\\frac{3}{8}\\)\n\\(\\frac{2}{3}\\)"
   },
   {
     "objectID": "ejercicios/index.html",
     "href": "ejercicios/index.html",
     "title": "Ejercicios",
     "section": "",
-    "text": "Guías y hojas de ejercicio por curso y tema.\n\nAño 7"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "MD Matemáticas",
-    "section": "",
-    "text": "Bienvenido. Aquí encontrará apuntes, ejercicios y actividades interactivas organizados por curso y tema.\n\nApuntes\nEjercicios\nActividades interactivas"
-  },
-  {
-    "objectID": "actividades/fracciones-geogebra.html",
-    "href": "actividades/fracciones-geogebra.html",
-    "title": "Explorador de fracciones",
-    "section": "",
-    "text": "Manipule el applet pa visualizar suma de fracciones. Reemplace el id del applet por uno propio creado en geogebra.org."
+    "text": "Guías y hojas de ejercicio por curso y tema.\n\n3º ESO\n2º Bachillerato Ciencias"
   }
 ]

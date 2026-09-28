@@ -47,9 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b07cd38ce6330e089b12fa5f667fae66.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-28f66daf4ccd50d51da9477d1bb9915c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-b07cd38ce6330e089b12fa5f667fae66.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2934748eb72fb7319598898a45628078.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-29e500d651d81e4becc5799f991be9a0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2934748eb72fb7319598898a45628078.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,6 +79,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -159,12 +188,38 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Bienvenido. Aquí encontrará apuntes, ejercicios y actividades interactivas organizados por curso y tema.</p>
+<div class="hero">
+<section id="matemáticas-paso-a-paso" class="level1 hero-text">
+<h1>Matemáticas, paso a paso</h1>
+<p>Apuntes, ejercicios y actividades interactivas para 3º ESO y 2º Bachillerato de Ciencias. Todo organizado por tema, para repasar antes de un examen o preparar la Selectividad.</p>
+</section>
+<div class="hero-formula">
+<p><span class="math display">\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</span> <span class="hero-formula-label">fórmula general — 3º ESO, tema 6</span></p>
+</div>
+</div>
+<div class="lattice-divider">
+
+</div>
+<div class="course-grid">
+<section id="º-eso" class="level3 course-card">
+<h3 class="anchored" data-anchor-id="º-eso">3º ESO</h3>
+<p>Fracciones, ecuaciones, funciones, geometría del plano y estadística.</p>
 <ul>
-<li><a href="./apuntes/index.html">Apuntes</a></li>
-<li><a href="./ejercicios/index.html">Ejercicios</a></li>
-<li><a href="./actividades/index.html">Actividades interactivas</a></li>
+<li><a href="./apuntes/3-eso/index.html">Apuntes</a></li>
+<li><a href="./ejercicios/3-eso/index.html">Ejercicios</a></li>
+<li><a href="./actividades/3-eso/index.html">Actividades</a></li>
 </ul>
+</section>
+<section id="º-bachillerato-ciencias" class="level3 course-card bach">
+<h3 class="anchored" data-anchor-id="º-bachillerato-ciencias">2º Bachillerato Ciencias</h3>
+<p>Matrices, análisis, geometría del espacio y probabilidad — preparación para la EvAU.</p>
+<ul>
+<li><a href="./apuntes/2-bachillerato-ciencias/index.html">Apuntes</a></li>
+<li><a href="./ejercicios/2-bachillerato-ciencias/index.html">Ejercicios</a></li>
+<li><a href="./actividades/2-bachillerato-ciencias/index.html">Actividades</a></li>
+</ul>
+</section>
+</div>
 
 
 
