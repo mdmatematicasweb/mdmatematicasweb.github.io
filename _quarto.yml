@@ -1,0 +1,41 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "MD Matemáticas"
+  description: "Apuntes, ejercicios y actividades interactivas de matemáticas"
+  site-url: "https://mdmatematicasweb.github.io"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: apuntes/index.qmd
+        text: Apuntes
+      - href: ejercicios/index.qmd
+        text: Ejercicios
+      - href: actividades/index.qmd
+        text: Actividades
+    right:
+      - icon: github
+        href: https://github.com/mdmatematicasweb/mdmatematicasweb.github.io
+  sidebar:
+    - title: Apuntes
+      contents:
+        - section: "Apuntes"
+          contents: "apuntes/**/*.qmd"
+  page-footer:
+    center: "MD Matemáticas · construido con Quarto"
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+    code-copy: true
+    smooth-scroll: true
+
+execute:
+  freeze: auto
