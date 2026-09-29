@@ -1,13 +1,74 @@
 ---
-title: "Fracciones"
+title: "Fracciones y decimales"
 ---
 
-## Concepto
+## 1. Fracciones: concepto y términos
 
-Una fracción $\frac{a}{b}$ representa $a$ partes de un total dividido en $b$ partes iguales.
+Una fracción $\dfrac{a}{b}$ representa $a$ partes de un total dividido en $b$ partes iguales.
 
-## Ejemplo
+- **Numerador** ($a$): número de partes que tomamos.
+- **Denominador** ($b$): número de partes en que se divide el total. Nunca puede ser 0.
 
-$$\frac{1}{2} + \frac{1}{4} = \frac{3}{4}$$
+Ejemplo: $\dfrac{3}{4}$ significa "3 partes de 4".
 
-Reemplace este archivo con contenido real. Sirve de plantilla.
+## 2. Fracciones equivalentes y simplificación
+
+Dos fracciones son **equivalentes** si representan la misma cantidad, aunque tengan distintos numerador y denominador.
+
+$$\frac{a}{b} = \frac{a \cdot k}{b \cdot k} \qquad (k \neq 0)$$
+
+Ejemplo: $\dfrac{2}{3} = \dfrac{4}{6} = \dfrac{10}{15}$
+
+Para **simplificar** una fracción, dividimos numerador y denominador entre el mismo número (idealmente el máximo común divisor) hasta que no se pueda reducir más. La fracción resultante se llama **irreducible**.
+
+Ejemplo: $\dfrac{12}{18} = \dfrac{12 \div 6}{18 \div 6} = \dfrac{2}{3}$
+
+::: {.callout-note}
+Para comparar u operar fracciones con distinto denominador, primero se **reducen a común denominador** (normalmente el mínimo común múltiplo de los denominadores).
+:::
+
+## 3. Operaciones con fracciones
+
+**Suma y resta** (mismo denominador): se suman/restan los numeradores y se mantiene el denominador.
+
+$$\frac{a}{c} + \frac{b}{c} = \frac{a+b}{c}$$
+
+Si los denominadores son distintos, se reducen a común denominador antes de operar:
+
+$$\frac{1}{2} + \frac{1}{4} = \frac{2}{4} + \frac{1}{4} = \frac{3}{4}$$
+
+**Multiplicación**: numerador por numerador, denominador por denominador.
+
+$$\frac{a}{b} \cdot \frac{c}{d} = \frac{a \cdot c}{b \cdot d}$$
+
+**División**: se multiplica la primera fracción por la segunda invertida.
+
+$$\frac{a}{b} : \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c} = \frac{a \cdot d}{b \cdot c}$$
+
+## 4. Números decimales
+
+Un número decimal tiene una parte entera y una parte decimal separadas por una coma. Según su parte decimal se clasifican en:
+
+- **Exacto**: tiene un número finito de cifras decimales. Ejemplo: $3.25$
+- **Periódico puro**: tras la coma, todas las cifras se repiten indefinidamente (el periodo). Ejemplo: $0.\overline{7} = 0.7777\ldots$
+- **Periódico mixto**: hay cifras que no se repiten seguidas del periodo. Ejemplo: $1.2\overline{3} = 1.23333\ldots$
+
+## 5. De decimal a fracción (fracción generatriz)
+
+**Decimal exacto**: se escribe el número sin la coma dividido entre un 1 seguido de tantos ceros como cifras decimales tenga.
+
+$$3.25 = \frac{325}{100} = \frac{13}{4}$$
+
+**Decimal periódico puro**: numerador = número completo menos la parte entera; denominador = tantos nueves como cifras tenga el periodo.
+
+$$0.\overline{7} = \frac{7}{9} \qquad 2.\overline{36} = \frac{236 - 2}{99} = \frac{234}{99} = \frac{26}{11}$$
+
+::: {.callout-tip}
+## Resumen rápido
+- Fracción equivalente: multiplicar o dividir arriba y abajo por el mismo número.
+- Sumar/restar fracciones: mismo denominador antes de operar.
+- Multiplicar: numeradores entre sí, denominadores entre sí.
+- Dividir: multiplicar por la fracción inversa.
+- Decimal exacto → fracción: cifras sin coma ÷ potencia de 10.
+- Decimal periódico puro → fracción: (número completo − parte entera) ÷ nueves.
+:::

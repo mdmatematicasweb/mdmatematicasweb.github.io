@@ -1,40 +1,173 @@
-/* MD Matemáticas — identidad visual */
+/* MD Matemáticas — identidad visual: neo-brutalist / gaming */
 
 :root {
-  --md-navy: #13293D;
-  --md-teal: #1B998B;
-  --md-amber: #F4A259;
-  --md-paper: #FBFAF7;
+  --md-navy: #262A3D;
+  --md-teal: #5EC4B6;
+  --md-amber: #F4736C;
+  --md-lime: #F5D65B;
+  --md-paper: #FBF2D6;
   --md-ink: #1A1A1A;
-  --md-line: #E4E0D6;
+  --md-black: #000000;
+  --md-shadow: 6px 6px 0 var(--md-black);
+  --md-shadow-sm: 4px 4px 0 var(--md-black);
+  --md-shadow-lg: 10px 10px 0 var(--md-black);
+  --md-border: 3px solid var(--md-black);
 }
 
 body {
   color: var(--md-ink);
+  background-color: var(--md-paper);
+  background-image:
+    linear-gradient(to right, rgba(38, 42, 61, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(38, 42, 61, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-/* Enlaces sin flechas, sin decoración extra */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+}
+
+/* Enlaces: subrayado grueso de color, sin flechas extra */
 a {
   text-decoration-color: var(--md-teal);
-  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 
-/* --- Divisor geométrico (una sola vez, motivo tipo enrejado andaluz) --- */
+/* --- Navbar: barra negra a sangre, marca gigante --- */
+.navbar {
+  position: relative;
+  border-bottom: 4px solid var(--md-black);
+  background: var(--md-navy) !important;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--md-teal) 0, var(--md-teal) 24px,
+    var(--md-amber) 24px, var(--md-amber) 48px,
+    var(--md-lime) 48px, var(--md-lime) 72px
+  );
+}
+
+.navbar-logo {
+  height: 2.4rem !important;
+  width: 2.4rem !important;
+}
+
+.navbar-title,
+.navbar-brand {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--md-lime) !important;
+}
+
+.navbar .nav-link {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  color: var(--md-paper) !important;
+  border: 2px solid transparent;
+  padding: 0.35rem 0.75rem !important;
+  margin: 0 0.15rem;
+  border-radius: 0;
+}
+
+.navbar .nav-link:hover {
+  color: var(--md-ink) !important;
+  background: var(--md-lime);
+  border-color: var(--md-black);
+}
+
+.navbar .nav-link.active {
+  color: var(--md-ink) !important;
+  background: var(--md-teal);
+  border-color: var(--md-black);
+}
+
+.navbar .quarto-navbar-tools .bi {
+  color: var(--md-paper);
+}
+
+/* --- Sidebar de temario: lista tipo checklist --- */
+#quarto-sidebar .sidebar-item-container {
+  font-family: "Inter", sans-serif;
+}
+
+#quarto-sidebar .sidebar-item.active > .sidebar-item-container {
+  border-left: 4px solid var(--md-lime);
+  padding-left: 0.5rem;
+  margin-left: -0.5rem;
+  background: var(--md-navy);
+}
+
+#quarto-sidebar .sidebar-item.active > .sidebar-item-container .sidebar-link {
+  color: var(--md-paper) !important;
+}
+
+#quarto-sidebar .sidebar-section > .sidebar-item-container .sidebar-link {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+}
+
+/* --- Divisor: franja diagonal a sangre --- */
 .lattice-divider {
-  height: 28px;
-  margin: 2.5rem 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28' viewBox='0 0 56 28'%3E%3Cg fill='none' stroke='%231B998B' stroke-width='1' opacity='0.55'%3E%3Cpath d='M0 14 L14 0 L28 14 L14 28 Z'/%3E%3Cpath d='M28 14 L42 0 L56 14 L42 28 Z'/%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-position: center;
+  height: 22px;
+  margin: 3rem 0;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--md-teal) 0,
+    var(--md-teal) 22px,
+    var(--md-amber) 22px,
+    var(--md-amber) 44px,
+    var(--md-lime) 44px,
+    var(--md-lime) 66px
+  );
+  border-top: var(--md-border);
+  border-bottom: var(--md-border);
+  transform: skewY(-1deg);
 }
 
-/* --- Hero de portada --- */
+/* --- Hero de portada: franja a sangre con color --- */
 .hero {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 2.5rem;
-  padding: 2.5rem 0 1.5rem;
+  padding: 3.5rem 0 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--md-teal);
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+  z-index: -1;
 }
 
 .hero-text {
@@ -42,25 +175,37 @@ a {
 }
 
 .hero-text h1 {
-  font-size: 2.4rem;
-  line-height: 1.15;
-  margin-bottom: 0.75rem;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: 3.4rem;
+  line-height: 1.02;
+  margin-bottom: 1rem;
+  color: var(--md-ink);
 }
 
 .hero-text p {
   max-width: 46ch;
-  color: var(--md-navy);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--md-ink);
+  background: var(--md-paper);
+  display: inline-block;
+  padding: 0.6rem 0.9rem;
+  border: 3px solid var(--md-black);
+  box-shadow: var(--md-shadow-sm);
 }
 
 .hero-formula {
   flex: 1 1 260px;
   background: var(--md-navy);
   color: var(--md-paper);
-  border-radius: 4px;
-  padding: 2rem 1.75rem;
+  border: var(--md-border);
+  box-shadow: var(--md-shadow-lg);
+  padding: 2.25rem 1.75rem;
   font-family: "JetBrains Mono", monospace;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   text-align: center;
+  transform: rotate(-2deg);
 }
 
 .hero-formula .katex {
@@ -68,40 +213,78 @@ a {
 }
 
 .hero-formula .hero-formula-label {
-  display: block;
-  margin-top: 0.75rem;
-  font-family: "Inter", sans-serif;
-  font-size: 0.85rem;
-  color: var(--md-amber);
+  display: inline-block;
+  margin-top: 1.1rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--md-black);
+  background: var(--md-lime);
+  border: 2px solid var(--md-black);
+  padding: 0.2rem 0.6rem;
+  transform: rotate(2deg);
 }
 
-/* --- Tarjetas de curso --- */
+/* --- Tarjetas de curso: retícula viva, no cuadrícula muerta --- */
 .course-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.25rem;
-  margin: 1.5rem 0 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2.5rem;
+  margin: 2rem 0 3rem;
 }
 
 .course-card {
-  border: 1px solid var(--md-line);
-  border-left: 4px solid var(--md-teal);
-  padding: 1.25rem 1.5rem;
+  position: relative;
+  border: var(--md-border);
+  box-shadow: var(--md-shadow);
+  padding: 1.75rem 1.75rem 2rem;
   background: var(--md-paper);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transform: rotate(-1.2deg);
 }
 
 .course-card.bach {
-  border-left-color: var(--md-amber);
+  transform: rotate(1.2deg);
+}
+
+.course-card:hover {
+  transform: rotate(0deg) translate(-4px, -4px);
+  box-shadow: var(--md-shadow-lg);
+}
+
+.course-card .course-badge {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--md-black);
+  background: var(--md-lime);
+  border: 2px solid var(--md-black);
+  box-shadow: var(--md-shadow-sm);
+  padding: 0.3rem 0.65rem;
+  transform: rotate(6deg);
+}
+
+.course-card.bach .course-badge {
+  background: var(--md-amber);
+  transform: rotate(-6deg);
 }
 
 .course-card h3 {
+  font-family: "Bricolage Grotesque", sans-serif;
   margin-top: 0;
-  margin-bottom: 0.4rem;
-  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
 }
 
 .course-card p {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.85rem;
   font-size: 0.95rem;
 }
 
@@ -111,8 +294,34 @@ a {
   font-size: 0.9rem;
 }
 
-@media (max-width: 600px) {
+.course-card a {
+  font-weight: 700;
+}
+
+/* --- Pie de página --- */
+.page-footer,
+.footer {
+  background: var(--md-navy);
+  color: var(--md-paper);
+  border-top: 4px solid var(--md-black);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.page-footer a,
+.footer a {
+  color: var(--md-lime);
+}
+
+@media (max-width: 700px) {
   .hero-text h1 {
-    font-size: 1.9rem;
+    font-size: 2.2rem;
+  }
+
+  .course-card,
+  .course-card.bach {
+    transform: none;
   }
 }
