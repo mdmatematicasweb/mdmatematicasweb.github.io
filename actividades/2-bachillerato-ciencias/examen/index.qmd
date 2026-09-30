@@ -1,0 +1,25 @@
+---
+title: "Simulacro de examen EBAU"
+toc: false
+format:
+  html:
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+          <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    css: ../../../assets/gym/gym.css
+---
+
+Simulacro de **Matemáticas II** con el formato de la EBAU de Andalucía. Eliges los *tipos de ejercicio* que ya has visto, se genera un examen nuevo cada vez, tienes cronómetro y se corrige solo. Es un ejercicio de práctica basado en el formato de la prueba, no un examen oficial.
+
+<div id="mdx-app"></div>
+
+<script src="../../../assets/gym/gym.js"></script>
+<script src="../../../assets/gym/matrices.js"></script>
+<script src="../../../assets/gym/determinantes.js"></script>
+<script src="../../../assets/gym/sistemas.js"></script>
+<script src="../../../assets/gym/vectores.js"></script>
+<script src="../../../assets/gym/rectasplanos.js"></script>
+<script src="../../../assets/gym/examen.js"></script>
+<script src="../../../assets/gym/tipos-fase1.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () { MDExam.montar(document.getElementById("mdx-app")); });</script>

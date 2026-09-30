@@ -436,7 +436,7 @@
     generate(p) {
       const [m, n] = p.dim.split(',').map(Number);
       const mn = Math.min(m, n);
-      const w = Math.random();
+      const w = rnd.float();
       const target = w < 0.3 ? mn : w < 0.85 ? mn - 1 : Math.max(1, mn - 2);
       let A;
       const R0 = Number(p.rng), rb = R0 > 6 ? 4 : R0 > 4 ? 3 : 2;

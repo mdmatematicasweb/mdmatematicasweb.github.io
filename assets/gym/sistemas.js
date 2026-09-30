@@ -326,4 +326,5 @@
       };
     },
   });
+  L.sysTex = sysTex; L.augTex = augTex; L.cramerSteps = cramerSteps; L.SYS_LABELS = SYS_LABELS; L.cls = cls;
 })(typeof globalThis !== 'undefined' ? globalThis : this);

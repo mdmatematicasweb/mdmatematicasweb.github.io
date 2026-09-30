@@ -5,19 +5,35 @@
 (function (root) {
   'use strict';
 
-  /* ---------- Aleatorio ---------- */
+  /* ---------- Aleatorio (sustituible por un PRNG con semilla para reproducir exámenes) ---------- */
+  let rand = Math.random;
   const rnd = {
-    int: (a, b) => a + Math.floor(Math.random() * (b - a + 1)),
-    pick: (arr) => arr[Math.floor(Math.random() * arr.length)],
+    float: () => rand(),
+    int: (a, b) => a + Math.floor(rand() * (b - a + 1)),
+    pick: (arr) => arr[Math.floor(rand() * arr.length)],
     shuffle(arr) {
       const a = arr.slice();
       for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+        const j = Math.floor(rand() * (i + 1));
         [a[i], a[j]] = [a[j], a[i]];
       }
       return a;
     },
   };
+  /** Sustituye el generador aleatorio (null = Math.random). Devuelve el anterior. */
+  function setRandom(fn) { const prev = rand; rand = fn || Math.random; return prev; }
+  /** PRNG mulberry32 con semilla de texto. */
+  function seeded(seedStr) {
+    let h = 1779033703 ^ String(seedStr).length;
+    for (let i = 0; i < String(seedStr).length; i++) { h = Math.imul(h ^ String(seedStr).charCodeAt(i), 3432918353); h = (h << 13) | (h >>> 19); }
+    let a = (h ^ (h >>> 16)) >>> 0;
+    return function () {
+      a |= 0; a = (a + 0x6D2B79F5) | 0;
+      let t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
 
   /* ---------- Fracciones exactas ---------- */
   const gcd = (a, b) => {
@@ -144,6 +160,89 @@
   const d$ = (s) => '$$' + s + '$$';
   const i$ = (s) => '$' + s + '$';
 
+  /* ---------- Expresiones numéricas seguras (respuestas «expr») ---------- */
+  const FUN = { sqrt: Math.sqrt, ln: Math.log, exp: Math.exp, sin: Math.sin, cos: Math.cos, tan: Math.tan, atan: Math.atan, abs: Math.abs };
+  const FUN_ALIAS = { sen: 'sin', tg: 'tan', arctg: 'atan', arctan: 'atan', raiz: 'sqrt', log: 'ln' };
+  /** Evalúa "1/2+ln(2)", "sqrt(3)", "pi/4", "2e-1", "3π"... Devuelve número o null. */
+  function parseExpr(input) {
+    if (typeof input !== 'string') return null;
+    let src = input.trim().toLowerCase().replace(/\u2212/g, '-').replace(/\u00d7|\u00b7/g, '*').replace(/\u03c0/g, 'pi')
+      .replace(/\u221a/g, 'sqrt').replace(/\u00b2/g, '^2').replace(/\u00b3/g, '^3').replace(/,/g, '.').replace(/\s+/g, '');
+    if (!src) return null;
+    const tok = [];
+    const re = /(\d+\.?\d*|\.\d+)|([a-z]+)|([-+*\/^()])/y;
+    let m, pos = 0;
+    while (pos < src.length) {
+      re.lastIndex = pos;
+      m = re.exec(src);
+      if (!m) return null;
+      pos = re.lastIndex;
+      if (m[1] !== undefined) tok.push({ t: 'n', v: parseFloat(m[1]) });
+      else if (m[2] !== undefined) {
+        let w = m[2];
+        // separa palabras pegadas como "2pi" (ya van aparte) o "pie" (pi·e) o "ln2"
+        while (w.length) {
+          const cand = ['sqrt', 'arctan', 'arctg', 'raiz', 'sen', 'sin', 'cos', 'tan', 'atan', 'abs', 'exp', 'log', 'ln', 'tg', 'pi', 'e'].find((k) => w.startsWith(k));
+          if (!cand) return null;
+          tok.push({ t: 'i', v: cand });
+          w = w.slice(cand.length);
+        }
+      } else tok.push({ t: 'o', v: m[3] });
+    }
+    let i = 0;
+    const peek = () => tok[i];
+    function expr() {
+      let v = term();
+      while (peek() && peek().t === 'o' && (peek().v === '+' || peek().v === '-')) {
+        const op = tok[i++].v; const r = term(); v = op === '+' ? v + r : v - r;
+      }
+      return v;
+    }
+    function term() {
+      let v = unary();
+      for (;;) {
+        const k = peek();
+        if (!k) break;
+        if (k.t === 'o' && (k.v === '*' || k.v === '/')) { i++; const r = unary(); v = k.v === '*' ? v * r : v / r; }
+        else if (k.t === 'n' || k.t === 'i' || (k.t === 'o' && k.v === '(')) v = v * power();   // multiplicación implícita
+        else break;
+      }
+      return v;
+    }
+    function unary() {
+      const k = peek();
+      if (k && k.t === 'o' && (k.v === '-' || k.v === '+')) { i++; const v = unary(); return k.v === '-' ? -v : v; }
+      return power();
+    }
+    function power() {
+      const b = primary();
+      const k = peek();
+      if (k && k.t === 'o' && k.v === '^') { i++; const e = unary(); return Math.pow(b, e); }
+      return b;
+    }
+    function primary() {
+      const k = tok[i++];
+      if (!k) throw new Error('fin');
+      if (k.t === 'n') return k.v;
+      if (k.t === 'o' && k.v === '(') { const v = expr(); const c = tok[i++]; if (!c || c.v !== ')') throw new Error(')'); return v; }
+      if (k.t === 'i') {
+        if (k.v === 'pi') return Math.PI;
+        if (k.v === 'e') return Math.E;
+        const fn = FUN[FUN_ALIAS[k.v] || k.v];
+        if (!fn) throw new Error('fn');
+        const arg = peek() && peek().t === 'o' && peek().v === '(' ? primary() : power();
+        return fn(arg);
+      }
+      throw new Error('tok');
+    }
+    try {
+      const v = expr();
+      if (i !== tok.length || !Number.isFinite(v)) return null;
+      return v;
+    } catch (e) { return null; }
+  }
+  const exprClose = (a, b) => Math.abs(a - b) <= 5e-4 * Math.max(1, Math.abs(b));
+
   /* ---------- Corrección ---------- */
   const flatten = (A) => [].concat(...A);
 
@@ -194,6 +293,12 @@
       const ok = a.length === b.length && a.every((x) => b.some((y) => feq(x, y)));
       return { status: ok ? 'ok' : 'wrong', cells: [ok] };
     }
+    if (spec.kind === 'expr') {
+      const g = parseExpr(raw[0]);
+      if (g === null) return { status: 'incomplete', cells: [false] };
+      const ok = exprClose(g, spec.value);
+      return { status: ok ? 'ok' : 'wrong', cells: [ok] };
+    }
     if (spec.kind === 'choice') {
       if (raw[0] === '' || raw[0] === undefined) return { status: 'incomplete', cells: [false] };
       const ok = String(raw[0]) === String(spec.value);
@@ -207,6 +312,7 @@
     if (spec.kind === 'matrix') return flatten(spec.value).map(fstr);
     if (spec.kind === 'number') return [fstr(spec.value)];
     if (spec.kind === 'choice') return [String(spec.value)];
+    if (spec.kind === 'expr') return [spec.show || String(Math.round(spec.value * 1e4) / 1e4)];
     return [spec.value.map(fstr).join(', ')];
   }
 
@@ -239,6 +345,81 @@
   }
   function saveStats(key, s) {
     try { localStorage.setItem(key, JSON.stringify(s)); } catch (e) { /* sin almacenamiento */ }
+  }
+
+  /** Constructor de casillas de respuesta independiente del «gym» (lo usa el examen). */
+  function makeAnswerUI(spec, opts) {
+    opts = opts || {};
+    const box = document.createElement('div');
+    box.className = 'gym-answer';
+    const cells = [];          // {get, set, mark(cls), els}
+    const mkInput = (aria, cls) => {
+      const inp = document.createElement('input');
+      inp.type = 'text'; inp.autocomplete = 'off'; inp.spellcheck = false;
+      inp.className = cls; inp.setAttribute('aria-label', aria);
+      inp.addEventListener('input', () => { inp.classList.remove('ok', 'bad'); if (opts.onChange) opts.onChange(); });
+      inp.addEventListener('keydown', (e) => { if (e.key === 'Enter' && opts.onEnter) { e.preventDefault(); opts.onEnter(); } });
+      cells.push({ get: () => inp.value, set: (v) => { inp.value = v; }, mark: (c) => { inp.classList.remove('ok', 'bad'); if (c) inp.classList.add(c); }, dis: (d) => { inp.disabled = d; } });
+      return inp;
+    };
+    const matrixGrid = (value, colLabels, tag) => {
+      const g = document.createElement('div');
+      g.className = 'gym-matrix';
+      g.style.setProperty('--cols', cols(value));
+      if (colLabels) { g.classList.add('has-labels'); colLabels.forEach((t) => { const c = document.createElement('span'); c.className = 'gym-collabel'; typeset(c, i$(t)); g.appendChild(c); }); }
+      value.forEach((r, i) => r.forEach((_, j) => g.appendChild(mkInput((tag || '') + 'fila ' + (i + 1) + ', columna ' + (j + 1), 'gym-cell'))));
+      return g;
+    };
+    const addRow = (label, node) => {
+      const row = document.createElement('div');
+      row.className = 'gym-answer-row';
+      if (label) { const l = document.createElement('span'); l.className = 'gym-label'; typeset(l, i$(label)); row.appendChild(l); }
+      row.appendChild(node);
+      box.appendChild(row);
+    };
+    const partNode = (sp, tag) => {
+      if (sp.kind === 'choice') {
+        const g = document.createElement('div');
+        g.className = 'gym-choices';
+        const name = 'mdx-' + Math.random().toString(36).slice(2, 10);
+        const radios = [];
+        sp.options.forEach((t, i) => {
+          const lab = document.createElement('label');
+          lab.className = 'gym-choice';
+          lab.innerHTML = '<input type="radio"><span></span>';
+          const r = lab.querySelector('input');
+          r.name = name; r.value = String(i);
+          typeset(lab.querySelector('span'), t);
+          r.addEventListener('change', () => { g.querySelectorAll('label').forEach((l) => l.classList.remove('ok', 'bad')); if (opts.onChange) opts.onChange(); });
+          radios.push(r); g.appendChild(lab);
+        });
+        cells.push({
+          get: () => (radios.find((r) => r.checked) || { value: '' }).value,
+          set: (v) => radios.forEach((r) => { r.checked = r.value === String(v); }),
+          mark: (c) => { g.querySelectorAll('label').forEach((l) => l.classList.remove('ok', 'bad')); const r = radios.find((x) => x.checked); if (r && c) r.closest('label').classList.add(c); },
+          dis: (d) => radios.forEach((r) => { r.disabled = d; }),
+        });
+        return g;
+      }
+      if (sp.kind === 'matrix') return matrixGrid(sp.value, sp.colLabels, tag);
+      const wide = sp.kind === 'list' || sp.kind === 'expr';
+      const inp = mkInput(sp.kind === 'list' ? 'valores separados por comas' : 'respuesta', wide ? 'gym-line' : 'gym-cell gym-single');
+      if (sp.kind === 'list') inp.placeholder = 'ej.: -1, 2';
+      if (sp.kind === 'expr') inp.placeholder = 'ej.: 1/2+ln(2)';
+      return inp;
+    };
+    if (spec.kind === 'matrixset' || spec.kind === 'multi') asParts(spec).forEach((pt) => addRow(pt.label, partNode(pt, (pt.label || '') + ': ')));
+    else addRow(spec.label, partNode(spec));
+    return {
+      root: box,
+      raw: () => cells.map((c) => c.get()),
+      fill: (vals) => cells.forEach((c, i) => c.set(vals[i] === undefined ? '' : vals[i])),
+      /** res = resultado de checkAnswer; pinta cada casilla. */
+      mark: (res) => cells.forEach((c, i) => c.mark(res.cells[i] ? 'ok' : (res.status === 'incomplete' && !res.cells[i]) ? 'bad' : 'bad')),
+      clearMarks: () => cells.forEach((c) => c.mark(null)),
+      disable: (d) => cells.forEach((c) => c.dis(d)),
+      count: () => cells.length,
+    };
   }
 
   /** Sustituye cada parámetro "rand" (Aleatorio) por una de sus opciones reales. */
@@ -557,7 +738,7 @@
     rnd, gcd, F, fadd, fsub, fmul, fdiv, fneg, feq, fzero, fstr, ftex, ftexp, parseFrac,
     M, mz, mI, rows, cols, mcopy, mT, madd, msub, mscale, meq, mmul, mpow, minorM, det, cofactors, inverse, rankOf,
     mtex, mtexStr, d$, i$, flatten, checkAnswer, answerStrings,
-    modules, define, mount, mountAll, resolveParams,
+    modules, define, mount, mountAll, resolveParams, setRandom, seeded, parseExpr, makeAnswerUI, typeset,
   };
   root.MDGym = api;
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
