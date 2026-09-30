@@ -1,0 +1,257 @@
+---
+title: "Rectas y planos — relación de ejercicios"
+---
+
+Relación de 25 ejercicios: del 1 al 8 son básicos y del 9 al 25 siguen el estilo de la EBAU de Andalucía (2021 en adelante). Las soluciones están al final.
+
+Se usan estos elementos en varios ejercicios:
+
+- $r$: recta que pasa por $P(1,0,-1)$ con vector director $\vec d=(1,2,2)$.
+- $s$: recta que pasa por $Q(2,2,1)$ con vector director $\vec e=(1,-1,1)$.
+- $\pi$: plano $2x-y+2z-3=0$.
+
+## Ecuaciones
+
+**1.** Halla las ecuaciones vectorial, paramétricas, continua e implícita de la recta que pasa por $A(1,2,3)$ y $B(3,1,0)$.
+
+**2.** Halla las ecuaciones paramétricas y un vector director de la recta $\begin{cases}x+y-z=2\\2x-y+z=1\end{cases}$.
+
+**3.** Halla el plano que pasa por $A(1,0,0)$, $B(0,2,0)$ y $C(0,0,3)$.
+
+**4.** Halla el plano perpendicular a $r$ que pasa por $A(3,0,3)$.
+
+**5.** *(Tipo EBAU)* Halla el plano que contiene a $r$ y es paralelo a la recta $s'$ que pasa por $Q'(0,1,1)$ con vector director $(1,0,0)$.
+
+## Posiciones relativas
+
+**6.** *(Tipo EBAU)* Estudia la posición relativa de $r$ y $s$. Si se cortan, halla el punto de corte y el plano que las contiene.
+
+**7.** *(Tipo EBAU)* Comprueba que $r$ y $s'$ (del ejercicio 5) se cruzan y calcula la distancia entre ellas.
+
+**8.** Calcula la distancia de $r$ a la recta paralela $r_0$ que pasa por el origen con vector director $(1,2,2)$.
+
+**9.** *(Tipo EBAU)* Estudia la posición relativa de $r$ y el plano $\pi_m:\ x+my-z=4$ según $m$. Para $m=0$ halla el punto de corte.
+
+**10.** Calcula el ángulo que forman los planos $x+y+z=1$ y $x-y+2z=3$.
+
+**11.** *(Tipo EBAU)* Estudia según $m$ la posición relativa de los planos
+$$\begin{cases}x+y+z=m+1\\mx+y+z=1\\x+my+z=m\end{cases}$$
+y halla el punto común para $m=0$.
+
+## Distancias, proyecciones y simétricos
+
+**12.** Calcula la distancia del punto $A(3,0,3)$ al plano $\pi$.
+
+**13.** Calcula la distancia del punto $R(4,0,2)$ a la recta $r$.
+
+**14.** *(Tipo EBAU)* Halla la proyección ortogonal y el simétrico de $A(3,0,3)$ respecto del plano $\pi$.
+
+**15.** *(Tipo EBAU)* Halla la proyección ortogonal y el simétrico de $R(4,0,2)$ respecto de la recta $r$.
+
+**16.** *(Tipo EBAU)* Halla la recta que pasa por $R(4,0,2)$ y corta perpendicularmente a $r$.
+
+**17.** *(Tipo EBAU)* Halla los planos paralelos a $\pi$ que están a distancia 2 de él.
+
+**18.** Halla el plano mediador del segmento de extremos $A(1,2,3)$ y $B(3,0,-1)$.
+
+## Ángulos
+
+**19.** Calcula el ángulo que forman la recta $r$ y el plano $\pi$.
+
+**20.** Calcula el ángulo que forman las rectas $r$ y $s$.
+
+**21.** Calcula la distancia entre los planos $2x-y+2z-3=0$ y $4x-2y+4z+6=0$.
+
+## Problemas
+
+**22.** *(Tipo EBAU)* Calcula el volumen del tetraedro que forma el plano $6x+3y+2z=6$ con los tres planos coordenados.
+
+**23.** *(Tipo EBAU)* Halla los puntos de $r$ que están a distancia 3 del plano $\pi$.
+
+**24.** *(Tipo EBAU)* Calcula el área del triángulo cuyos vértices son los puntos de corte del plano $6x+3y+2z=6$ con los ejes de coordenadas.
+
+**25.** *(Tipo EBAU)* Comprueba que la recta $r_1$ que pasa por el origen con dirección $(1,2,0)$ es paralela al plano $\pi$ y calcula la distancia entre ambos.
+
+---
+
+## Soluciones
+
+::: {.callout-note collapse="true"}
+## 1
+$\vec d=\overrightarrow{AB}=(2,-1,-3)$.
+
+- Vectorial: $(x,y,z)=(1,2,3)+\lambda(2,-1,-3)$.
+- Paramétricas: $x=1+2\lambda$, $y=2-\lambda$, $z=3-3\lambda$.
+- Continua: $\dfrac{x-1}{2}=\dfrac{y-2}{-1}=\dfrac{z-3}{-3}$.
+- Implícita: $\begin{cases}x+2y-5=0\\3y-z-3=0\end{cases}$
+:::
+
+::: {.callout-note collapse="true"}
+## 2
+Con $x=1$ (de sumar las dos ecuaciones: $3x=3$) queda $y-z=1$. Tomando $z=\lambda$: $x=1$, $y=1+\lambda$, $z=\lambda$.
+
+Punto $(1,1,0)$ y vector director $(0,1,1)$. Comprobación: $(1,1,-1)\times(2,-1,1)=(0,-3,-3)\parallel(0,1,1)$ ✓.
+:::
+
+::: {.callout-note collapse="true"}
+## 3
+$\overrightarrow{AB}=(-1,2,0)$, $\overrightarrow{AC}=(-1,0,3)$. $\vec n=\overrightarrow{AB}\times\overrightarrow{AC}=(6,3,2)$.
+
+Plano: $6x+3y+2z+D=0$ y con $A$: $6+D=0$. Luego $6x+3y+2z-6=0$, o en forma segmentaria $x+\dfrac y2+\dfrac z3=1$.
+:::
+
+::: {.callout-note collapse="true"}
+## 4
+$\vec n=\vec d=(1,2,2)$: $x+2y+2z+D=0$. Con $A(3,0,3)$: $3+6+D=0$, luego $D=-9$.
+
+Plano: $x+2y+2z-9=0$.
+:::
+
+::: {.callout-note collapse="true"}
+## 5
+El plano contiene a $r$: pasa por $P(1,0,-1)$ y tiene directores $\vec d=(1,2,2)$ y $(1,0,0)$. $\vec n=(1,2,2)\times(1,0,0)=(0,2,-2)\parallel(0,1,-1)$.
+
+$y-z+D=0$ con $P$: $0+1+D=0$, $D=-1$. Plano: $y-z-1=0$.
+:::
+
+::: {.callout-note collapse="true"}
+## 6
+$\overrightarrow{PQ}=(1,2,2)$. Como $\vec d=(1,2,2)$, $\vec e=(1,-1,1)$ no son proporcionales, $\operatorname{rg}(\vec d,\vec e)=2$. Además $\det(\vec d,\vec e,\overrightarrow{PQ})=0$ porque $\overrightarrow{PQ}=\vec d$, luego el rango es 2: **se cortan**.
+
+Punto de corte: $Q(2,2,1)$ (es el punto de $r$ para $t=1$ y de $s$ para $\lambda=0$).
+
+Plano que las contiene: $\vec n=\vec d\times\vec e=(4,1,-3)$; $4x+y-3z+D=0$ con $P$: $4+3+D=0$, $D=-7$. Plano: $4x+y-3z-7=0$.
+:::
+
+::: {.callout-note collapse="true"}
+## 7
+$\overrightarrow{PQ'}=(-1,1,2)$, $\vec d=(1,2,2)$, $\vec e'=(1,0,0)$.
+$$\det(\vec d,\vec e',\overrightarrow{PQ'})=\begin{vmatrix}1&2&2\\1&0&0\\-1&1&2\end{vmatrix}=-2\neq0\Rightarrow\text{se cruzan}$$
+$\vec d\times\vec e'=(0,2,-2)$ con módulo $2\sqrt2$.
+$$d(r,s')=\frac{|-2|}{2\sqrt2}=\frac{\sqrt2}{2}\approx0{,}71$$
+:::
+
+::: {.callout-note collapse="true"}
+## 8
+$\overrightarrow{OP}=(1,0,-1)$, $\overrightarrow{OP}\times\vec d=(1,0,-1)\times(1,2,2)=(2,-3,2)$ con módulo $\sqrt{17}$ y $|\vec d|=3$.
+
+$d=\dfrac{\sqrt{17}}{3}\approx1{,}37$.
+:::
+
+::: {.callout-note collapse="true"}
+## 9
+Un punto de $r$ es $(1+t,\ 2t,\ -1+2t)$. Sustituyendo en $x+my-z=4$:
+$$1+t+2mt+1-2t=4\ \Rightarrow\ (2m-1)t=2$$
+- Si $m\neq\frac12$: una solución, **la recta corta al plano** en $t=\dfrac{2}{2m-1}$.
+- Si $m=\frac12$: $0=2$, sin solución, **la recta es paralela al plano**.
+
+Para $m=0$: $t=-2$ y el punto de corte es $(-1,-4,-5)$.
+:::
+
+::: {.callout-note collapse="true"}
+## 10
+$\vec n_1=(1,1,1)$, $\vec n_2=(1,-1,2)$. $\cos\alpha=\dfrac{|1-1+2|}{\sqrt3\sqrt6}=\dfrac{2}{3\sqrt2}=\dfrac{\sqrt2}{3}$, luego $\alpha\approx61{,}87^\circ$.
+:::
+
+::: {.callout-note collapse="true"}
+## 11
+$|A|=(m-1)^2$.
+
+- $m\neq1$: rangos 3 y 3, **se cortan en un punto**.
+- $m=1$: los planos son $x+y+z=2$, $x+y+z=1$ y $x+y+z=1$. El segundo y el tercero **coinciden** y el primero es **paralelo** a ellos.
+
+Para $m=0$: $\begin{cases}x+y+z=1\\y+z=1\\x+z=0\end{cases}$ da el punto $(0,1,0)$.
+:::
+
+::: {.callout-note collapse="true"}
+## 12
+$d=\dfrac{|2\cdot3-0+2\cdot3-3|}{\sqrt{4+1+4}}=\dfrac{9}{3}=3$.
+:::
+
+::: {.callout-note collapse="true"}
+## 13
+$\overrightarrow{PR}=(3,0,3)$, $\overrightarrow{PR}\times\vec d=(3,0,3)\times(1,2,2)=(-6,-3,6)$ con módulo $9$.
+
+$d=\dfrac{9}{3}=3$.
+:::
+
+::: {.callout-note collapse="true"}
+## 14
+Recta perpendicular a $\pi$ por $A$: $(3+2\lambda,\ -\lambda,\ 3+2\lambda)$. Sustituyendo en $\pi$: $2(3+2\lambda)+\lambda+2(3+2\lambda)-3=9\lambda+9=0$, luego $\lambda=-1$.
+
+Proyección: $H=(1,1,1)$. Simétrico: $A'=2H-A=(-1,2,-1)$.
+:::
+
+::: {.callout-note collapse="true"}
+## 15
+Plano perpendicular a $r$ por $R$: $x+2y+2z+D=0$ con $R$: $4+4+D=0$, $D=-8$. Punto de $r$: $(1+t)+2(2t)+2(-1+2t)-8=9t-9=0$, luego $t=1$.
+
+Proyección: $H=(2,2,1)$. Simétrico: $R'=2H-R=(0,4,0)$.
+:::
+
+::: {.callout-note collapse="true"}
+## 16
+La recta pedida pasa por $R$ y por la proyección $H=(2,2,1)$ de $R$ sobre $r$. Dirección: $\overrightarrow{RH}=(-2,2,-1)$.
+
+$$(x,y,z)=(4,0,2)+\lambda(-2,2,-1)$$
+Comprobación: $(-2,2,-1)\cdot(1,2,2)=-2+4-2=0$ ✓.
+:::
+
+::: {.callout-note collapse="true"}
+## 17
+Los planos paralelos a $\pi$ son $2x-y+2z+D=0$. Su distancia a $\pi$ es $\dfrac{|D+3|}{3}=2$, luego $D+3=\pm6$: $D=3$ o $D=-9$.
+
+Planos: $2x-y+2z+3=0$ y $2x-y+2z-9=0$.
+:::
+
+::: {.callout-note collapse="true"}
+## 18
+$\overrightarrow{AB}=(2,-2,-4)\parallel(1,-1,-2)$ y el punto medio es $M=(2,1,1)$.
+
+$x-y-2z+D=0$ con $M$: $2-1-2+D=0$, $D=1$. Plano: $x-y-2z+1=0$.
+:::
+
+::: {.callout-note collapse="true"}
+## 19
+$\vec d\cdot\vec n=(1,2,2)\cdot(2,-1,2)=4$; $|\vec d|=3$, $|\vec n|=3$. $\sin\alpha=\dfrac{4}{9}$, luego $\alpha\approx26{,}39^\circ$.
+:::
+
+::: {.callout-note collapse="true"}
+## 20
+$\vec d\cdot\vec e=1-2+2=1$; $|\vec d|=3$, $|\vec e|=\sqrt3$. $\cos\alpha=\dfrac{1}{3\sqrt3}=\dfrac{\sqrt3}{9}$, luego $\alpha\approx78{,}90^\circ$.
+:::
+
+::: {.callout-note collapse="true"}
+## 21
+El segundo plano dividido entre 2 es $2x-y+2z+3=0$, paralelo al primero ($D=-3$ frente a $D=3$).
+
+$d=\dfrac{|3-(-3)|}{\sqrt{4+1+4}}=\dfrac63=2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 22
+El plano corta a los ejes en $x=1$, $y=2$, $z=3$. Los vértices son $O(0,0,0)$, $A(1,0,0)$, $B(0,2,0)$ y $C(0,0,3)$.
+$$V=\frac16\begin{vmatrix}1&0&0\\0&2&0\\0&0&3\end{vmatrix}=\frac{6}{6}=1\text{ u}^3$$
+:::
+
+::: {.callout-note collapse="true"}
+## 23
+Un punto de $r$ es $(1+t,2t,-1+2t)$. Su distancia a $\pi$ es
+$$\frac{|2(1+t)-2t+2(-1+2t)-3|}{3}=\frac{|4t-3|}{3}=3\ \Rightarrow\ 4t-3=\pm9$$
+- $t=3$: punto $(4,6,5)$.
+- $t=-\frac32$: punto $\left(-\frac12,-3,-4\right)$.
+:::
+
+::: {.callout-note collapse="true"}
+## 24
+Vértices: $A(1,0,0)$, $B(0,2,0)$, $C(0,0,3)$. $\overrightarrow{AB}=(-1,2,0)$, $\overrightarrow{AC}=(-1,0,3)$, $\overrightarrow{AB}\times\overrightarrow{AC}=(6,3,2)$ con módulo $7$.
+
+Área $=\dfrac72=3{,}5$ u$^2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 25
+$\vec d_1\cdot\vec n=(1,2,0)\cdot(2,-1,2)=2-2=0$, así que la recta es paralela al plano o está contenida en él. El origen no está en $\pi$ ($-3\neq0$), luego es paralela.
+
+$d=\dfrac{|2\cdot0-0+2\cdot0-3|}{3}=1$.
+:::
