@@ -1,0 +1,84 @@
+---
+title: "Distribuciones binomial y normal"
+---
+
+## 1. Distribución binomial
+
+Se usa en experimentos con estas condiciones:
+
+- Se repite $n$ veces la misma prueba.
+- Cada prueba tiene solo dos resultados: **éxito** (probabilidad $p$) o **fracaso** ($q=1-p$).
+- Las pruebas son **independientes** y $p$ es la misma en todas.
+
+$X=$ «número de éxitos en $n$ pruebas» sigue una $B(n,p)$:
+$$P(X=k)=\binom nk\,p^k\,q^{\,n-k}\qquad k=0,1,\dots,n$$
+
+| Parámetro | Fórmula |
+|---|---|
+| Media | $\mu=np$ |
+| Varianza | $\sigma^2=npq$ |
+| Desviación típica | $\sigma=\sqrt{npq}$ |
+
+**Sucesos habituales**:
+
+- $P(X\ge1)=1-P(X=0)=1-q^n$ («al menos uno»).
+- $P(X\le k)=\sum_{i=0}^kP(X=i)$ y $P(X>k)=1-P(X\le k)$.
+
+Ejemplo: $X\sim B(10,0{,}3)$, $P(X=3)=\dbinom{10}{3}0{,}3^3\,0{,}7^7=0{,}2668$.
+
+## 2. Distribución normal
+
+Una variable continua $X$ sigue una **normal** $N(\mu,\sigma)$ si su gráfica es la campana de Gauss, simétrica respecto de $\mu$. La probabilidad es el **área** bajo la curva.
+
+- $P(X=a)=0$ (en una variable continua), y por tanto $<$ y $\le$ dan lo mismo.
+- Es simétrica: $P(X\le\mu)=0{,}5$.
+- Regla 68-95-99,7: $P(\mu-\sigma<X<\mu+\sigma)\approx0{,}68$, con $2\sigma$ es $0{,}95$ y con $3\sigma$ es $0{,}997$.
+
+## 3. Tipificación y uso de la tabla
+
+La **normal estándar** es $Z\sim N(0,1)$. Cualquier $X\sim N(\mu,\sigma)$ se **tipifica**:
+$$Z=\frac{X-\mu}{\sigma}\sim N(0,1)$$
+
+La tabla da $\Phi(z)=P(Z\le z)$ para $z\ge0$. Para otros casos:
+
+| Probabilidad | Cálculo |
+|---|---|
+| $P(Z\le a)$, $a\ge0$ | $\Phi(a)$ (directo de la tabla) |
+| $P(Z>a)$ | $1-\Phi(a)$ |
+| $P(Z\le-a)$ | $1-\Phi(a)$ (por simetría) |
+| $P(a<Z<b)$ | $\Phi(b)-\Phi(a)$ |
+| $P(-a<Z<a)$ | $2\Phi(a)-1$ |
+
+Ejemplo: $X\sim N(100,15)$. $P(X>120)=P\left(Z>\dfrac{120-100}{15}\right)=P(Z>1{,}33)=1-0{,}9082=0{,}0918$.
+
+**Problema inverso** (hallar un valor o un parámetro a partir de una probabilidad): se busca en la tabla el $z$ que da la probabilidad y se despeja.
+
+- Valor $x$ con $P(X\le x)=0{,}9$ para $N(70,8)$: $z=1{,}28$, $x=70+8\cdot1{,}28=80{,}24$.
+- Valores útiles: $P(Z\le1{,}645)=0{,}95$ y $P(Z\le1{,}96)=0{,}975$.
+
+## 4. Aproximación de la binomial por la normal
+
+Si $X\sim B(n,p)$ con $np\ge5$ y $nq\ge5$ (y $n$ grande), se aproxima
+$$X\approx N\big(np,\ \sqrt{npq}\big)$$
+
+Se aplica la **corrección de continuidad** (se pasa de discreta a continua ensanchando cada valor $\pm0{,}5$):
+
+| Discreta | Continua |
+|---|---|
+| $P(X=k)$ | $P(k-0{,}5<X'<k+0{,}5)$ |
+| $P(X\ge k)$ | $P(X'>k-0{,}5)$ |
+| $P(X>k)$ | $P(X'>k+0{,}5)$ |
+| $P(X\le k)$ | $P(X'<k+0{,}5)$ |
+| $P(X<k)$ | $P(X'<k-0{,}5)$ |
+| $P(a\le X\le b)$ | $P(a-0{,}5<X'<b+0{,}5)$ |
+
+Ejemplo: $X\sim B(100,0{,}4)$, $\mu=40$, $\sigma=\sqrt{24}\approx4{,}90$. $P(X\ge45)\approx P(X'>44{,}5)=P\left(Z>\dfrac{44{,}5-40}{4{,}90}\right)=P(Z>0{,}92)=1-0{,}8212=0{,}1788$.
+
+::: {.callout-tip}
+## Resumen rápido
+- Binomial: $P(X=k)=\binom nkp^kq^{n-k}$, $\mu=np$, $\sigma=\sqrt{npq}$.
+- «Al menos uno»: $1-q^n$.
+- Normal: tipifica $Z=\frac{X-\mu}{\sigma}$ y usa la tabla de $\Phi$.
+- $P(Z\le-a)=1-\Phi(a)$; $P(-a<Z<a)=2\Phi(a)-1$.
+- Binomial a normal: $N(np,\sqrt{npq})$ con corrección $\pm0{,}5$.
+:::

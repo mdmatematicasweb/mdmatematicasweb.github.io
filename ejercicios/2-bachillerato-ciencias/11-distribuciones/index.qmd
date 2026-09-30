@@ -1,0 +1,242 @@
+---
+title: "Distribuciones binomial y normal — relación de ejercicios"
+---
+
+Relación de 25 ejercicios: del 1 al 6 y el 9 son básicos y los demás siguen el estilo de la EBAU de Andalucía (2021 en adelante). Las soluciones están al final y usan la tabla de la $N(0,1)$ con dos decimales, como en el examen.
+
+## Distribución binomial
+
+**1.** Sea $X\sim B(10,0{,}3)$. Calcula $P(X=3)$, $P(X\le2)$, $P(X\ge1)$, la media y la desviación típica.
+
+**2.** Se lanza una moneda 6 veces. Calcula la probabilidad de obtener exactamente 4 caras y la de obtener al menos 5.
+
+**3.** Un test tiene 10 preguntas con 4 opciones cada una y se responde al azar. Calcula la probabilidad de acertar exactamente 6 y la de acertar al menos 6.
+
+**4.** Un jugador encesta el 70 % de sus tiros libres. En 5 lanzamientos, calcula la probabilidad de encestar exactamente 3 y la de encestar al menos 4.
+
+**5.** El 2 % de las piezas de una partida es defectuoso. Se toman 20 al azar. Calcula la probabilidad de que ninguna sea defectuosa y la de que haya como mucho una.
+
+**6.** Cada vez que se lanza un dardo, se acierta con probabilidad $0{,}2$. ¿Cuántos dardos hay que lanzar como mínimo para que la probabilidad de acertar al menos una vez sea mayor que $0{,}9$?
+
+**7.** *(Tipo EBAU)* Una variable binomial tiene media 12 y varianza 7,2. Halla $n$ y $p$.
+
+**8.** *(Tipo EBAU)* Sea $X\sim B(8,0{,}5)$. Calcula $P(3\le X\le5)$.
+
+## Distribución normal
+
+**9.** Sea $Z\sim N(0,1)$. Calcula $P(Z\le1{,}25)$, $P(Z>-0{,}5)$ y $P(-1<Z<2)$. Halla $z$ tal que $P(Z\le z)=0{,}975$.
+
+**10.** *(Tipo EBAU)* Sea $X\sim N(100,15)$. Calcula $P(X>120)$ y $P(85<X<115)$.
+
+**11.** *(Tipo EBAU)* Sea $X\sim N(70,8)$. Halla el valor $x$ tal que $P(X\le x)=0{,}9$.
+
+**12.** *(Tipo EBAU)* La estatura de un grupo sigue una $N(170,8)$ (en cm). Calcula la proporción de personas con estatura entre 160 y 180 cm y la estatura mínima del 5 % más alto.
+
+**13.** *(Tipo EBAU)* El peso de unos paquetes sigue una normal de media 500 g y se sabe que el 2,5 % pesa más de 540 g. Halla la desviación típica.
+
+**14.** *(Tipo EBAU)* Una variable $N(\mu,10)$ cumple $P(X<50)=0{,}3$. Halla $\mu$.
+
+**15.** *(Tipo EBAU)* Una normal cumple $P(X<10)=0{,}1587$ y $P(X<20)=0{,}9772$. Halla $\mu$ y $\sigma$.
+
+**16.** *(Tipo EBAU)* Las notas de un examen siguen una $N(6{,}2;\,1{,}8)$. Calcula la proporción de aprobados (nota $\ge5$) y la nota mínima para estar entre el 10 % mejor.
+
+**17.** *(Tipo EBAU)* El tiempo de un trayecto sigue una $N(45,5)$ minutos. Calcula $P(X<40)$, $P(X>50)$ y $P(40<X<50)$.
+
+## Aproximación de la binomial por la normal
+
+**18.** *(Tipo EBAU)* Sea $X\sim B(100;0{,}4)$. Calcula aproximadamente $P(X\ge45)$.
+
+**19.** *(Tipo EBAU)* Sea $X\sim B(200;0{,}5)$. Calcula aproximadamente $P(95\le X\le105)$.
+
+**20.** *(Tipo EBAU)* El 60 % de los clientes está satisfecho. En una muestra de 150, calcula aproximadamente la probabilidad de que estén satisfechos más de 100.
+
+**21.** Sea $X\sim B(20;0{,}5)$. Calcula $P(X=10)$ con la fórmula exacta y con la aproximación normal, y compara.
+
+**22.** *(Tipo EBAU)* Una aerolínea vende 120 billetes para un avión de 100 plazas. Cada pasajero se presenta con probabilidad $0{,}8$, de forma independiente. Calcula la probabilidad de que haya más pasajeros que plazas.
+
+**23.** *(Tipo EBAU)* En una encuesta el 35 % de la población está a favor de una medida. Se consultan 200 personas. Calcula aproximadamente la probabilidad de que entre 60 y 80 (ambos incluidos) estén a favor.
+
+## Problemas
+
+**24.** *(Tipo EBAU)* Una máquina llena paquetes cuyo peso sigue una $N(500,10)$ g. Un paquete se rechaza si pesa menos de 490 g. Calcula la probabilidad de rechazar un paquete y, en una caja de 5 paquetes, la probabilidad de que al menos uno sea rechazado.
+
+**25.** *(Tipo EBAU)* Sea $X\sim B(4,p)$ con $P(X=0)=0{,}0625$. Halla $p$ y calcula $P(X\ge3)$.
+
+---
+
+## Soluciones
+
+::: {.callout-note collapse="true"}
+## 1
+- $P(X=3)=\dbinom{10}{3}0{,}3^3\,0{,}7^7=120\cdot0{,}027\cdot0{,}0823543\approx0{,}2668$.
+- $P(X\le2)=0{,}0282+0{,}1211+0{,}2335\approx0{,}3828$.
+- $P(X\ge1)=1-0{,}7^{10}\approx0{,}9718$.
+- Media: $np=3$. Varianza: $npq=2{,}1$. Desviación típica: $\sqrt{2{,}1}\approx1{,}449$.
+:::
+
+::: {.callout-note collapse="true"}
+## 2
+$X\sim B(6;0{,}5)$. $P(X=4)=\dbinom64\dfrac1{2^6}=\dfrac{15}{64}\approx0{,}2344$.
+
+$P(X\ge5)=P(5)+P(6)=\dfrac{6+1}{64}=\dfrac7{64}\approx0{,}1094$.
+:::
+
+::: {.callout-note collapse="true"}
+## 3
+$X\sim B(10;0{,}25)$. $P(X=6)=\dbinom{10}{6}0{,}25^6\,0{,}75^4\approx0{,}0162$.
+
+$P(X\ge6)=1-P(X\le5)\approx0{,}0197$. Adivinando es muy difícil acertar más de la mitad.
+:::
+
+::: {.callout-note collapse="true"}
+## 4
+$X\sim B(5;0{,}7)$. $P(X=3)=\dbinom53\,0{,}7^3\,0{,}3^2=10\cdot0{,}343\cdot0{,}09\approx0{,}3087$.
+
+$P(X\ge4)=P(4)+P(5)=5\cdot0{,}7^4\cdot0{,}3+0{,}7^5=0{,}3602+0{,}1681=0{,}5282$.
+:::
+
+::: {.callout-note collapse="true"}
+## 5
+$X\sim B(20;0{,}02)$. $P(X=0)=0{,}98^{20}\approx0{,}6676$.
+
+$P(X\le1)=0{,}6676+20\cdot0{,}02\cdot0{,}98^{19}\approx0{,}6676+0{,}2725=0{,}9401$.
+:::
+
+::: {.callout-note collapse="true"}
+## 6
+$P(\text{al menos un acierto})=1-0{,}8^n>0{,}9\Rightarrow0{,}8^n<0{,}1\Rightarrow n>\dfrac{\ln0{,}1}{\ln0{,}8}\approx10{,}3$.
+
+Hay que lanzar como mínimo **11 dardos** ($1-0{,}8^{10}\approx0{,}893<0{,}9$ y $1-0{,}8^{11}\approx0{,}914>0{,}9$).
+:::
+
+::: {.callout-note collapse="true"}
+## 7
+$np=12$ y $npq=7{,}2$. Dividiendo: $q=\dfrac{7{,}2}{12}=0{,}6$, luego $p=0{,}4$ y $n=\dfrac{12}{0{,}4}=30$.
+
+$X\sim B(30;0{,}4)$.
+:::
+
+::: {.callout-note collapse="true"}
+## 8
+$P(3\le X\le5)=\dfrac{\binom83+\binom84+\binom85}{2^8}=\dfrac{56+70+56}{256}=\dfrac{182}{256}\approx0{,}7109$.
+:::
+
+::: {.callout-note collapse="true"}
+## 9
+- $P(Z\le1{,}25)=0{,}8944$.
+- $P(Z>-0{,}5)=P(Z<0{,}5)=0{,}6915$.
+- $P(-1<Z<2)=\Phi(2)-\Phi(-1)=0{,}9772-(1-0{,}8413)=0{,}8185$.
+- $P(Z\le z)=0{,}975\Rightarrow z=1{,}96$.
+:::
+
+::: {.callout-note collapse="true"}
+## 10
+$P(X>120)=P\left(Z>\dfrac{20}{15}\right)=P(Z>1{,}33)=1-0{,}9082=0{,}0918$.
+
+$P(85<X<115)=P(-1<Z<1)=2\Phi(1)-1=2\cdot0{,}8413-1=0{,}6826$.
+:::
+
+::: {.callout-note collapse="true"}
+## 11
+$P(Z\le z)=0{,}9\Rightarrow z=1{,}28$ (tabla: $\Phi(1{,}28)=0{,}8997$). Entonces $x=70+8\cdot1{,}28=80{,}24$.
+:::
+
+::: {.callout-note collapse="true"}
+## 12
+$P(160<X<180)=P(-1{,}25<Z<1{,}25)=2\Phi(1{,}25)-1=2\cdot0{,}8944-1=0{,}7888$: el 78,88 % de las personas.
+
+El 5 % más alto: $P(X>x)=0{,}05\Rightarrow P(Z\le z)=0{,}95\Rightarrow z=1{,}645$, luego $x=170+8\cdot1{,}645=183{,}16$ cm.
+:::
+
+::: {.callout-note collapse="true"}
+## 13
+$P(X>540)=0{,}025\Rightarrow P(Z\le z)=0{,}975\Rightarrow z=1{,}96$. Entonces $\dfrac{540-500}{\sigma}=1{,}96\Rightarrow\sigma=\dfrac{40}{1{,}96}\approx20{,}4$ g.
+:::
+
+::: {.callout-note collapse="true"}
+## 14
+$P(X<50)=0{,}3<0{,}5$, luego $z<0$. Por simetría, $P(Z\le-z_0)=0{,}3\Rightarrow\Phi(z_0)=0{,}7\Rightarrow z_0=0{,}52$, es decir $z=-0{,}52$.
+
+$\dfrac{50-\mu}{10}=-0{,}52\Rightarrow\mu=50+5{,}2=55{,}2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 15
+$P(X<10)=0{,}1587=\Phi(-1)\Rightarrow\dfrac{10-\mu}{\sigma}=-1$ y $P(X<20)=0{,}9772=\Phi(2)\Rightarrow\dfrac{20-\mu}{\sigma}=2$.
+
+Restando las ecuaciones $10-\mu=-\sigma$ y $20-\mu=2\sigma$: $10=3\sigma$, luego $\sigma=\dfrac{10}3\approx3{,}33$ y $\mu=10+\sigma=\dfrac{40}{3}\approx13{,}33$.
+:::
+
+::: {.callout-note collapse="true"}
+## 16
+$P(X\ge5)=P\left(Z\ge\dfrac{5-6{,}2}{1{,}8}\right)=P(Z\ge-0{,}67)=\Phi(0{,}67)=0{,}7486$: aprueba el 74,86 %.
+
+Mejor 10 %: $z=1{,}28$ y $x=6{,}2+1{,}8\cdot1{,}28\approx8{,}50$.
+:::
+
+::: {.callout-note collapse="true"}
+## 17
+- $P(X<40)=P(Z<-1)=1-0{,}8413=0{,}1587$.
+- $P(X>50)=P(Z>1)=1-0{,}8413=0{,}1587$.
+- $P(40<X<50)=2\cdot0{,}8413-1=0{,}6826$.
+:::
+
+::: {.callout-note collapse="true"}
+## 18
+$np=40\ge5$ y $nq=60\ge5$. $X\approx N(40;\sqrt{24})=N(40;4{,}90)$.
+
+$P(X\ge45)\approx P(X'>44{,}5)=P\left(Z>\dfrac{4{,}5}{4{,}90}\right)=P(Z>0{,}92)=1-0{,}8212=0{,}1788$.
+:::
+
+::: {.callout-note collapse="true"}
+## 19
+$X\approx N(100;\sqrt{50})=N(100;7{,}07)$.
+
+$P(95\le X\le105)\approx P(94{,}5<X'<105{,}5)=P\left(-0{,}78<Z<0{,}78\right)=2\cdot0{,}7823-1=0{,}5646$.
+:::
+
+::: {.callout-note collapse="true"}
+## 20
+$X\approx N(90;\sqrt{36})=N(90;6)$.
+
+$P(X>100)=P(X\ge101)\approx P(X'>100{,}5)=P\left(Z>\dfrac{10{,}5}{6}\right)=P(Z>1{,}75)=1-0{,}9599=0{,}0401$.
+:::
+
+::: {.callout-note collapse="true"}
+## 21
+Exacta: $P(X=10)=\dbinom{20}{10}\dfrac1{2^{20}}\approx0{,}1762$.
+
+Aproximación: $X\approx N(10;\sqrt5)=N(10;2{,}24)$ y $P(9{,}5<X'<10{,}5)=P(-0{,}22<Z<0{,}22)=2\cdot0{,}5871-1=0{,}1742$.
+
+La diferencia es de solo $0{,}002$: la aproximación es buena.
+:::
+
+::: {.callout-note collapse="true"}
+## 22
+$X\sim B(120;0{,}8)\approx N(96;\sqrt{19{,}2})=N(96;4{,}38)$.
+
+$P(X>100)=P(X\ge101)\approx P(X'>100{,}5)=P\left(Z>\dfrac{4{,}5}{4{,}38}\right)=P(Z>1{,}03)=1-0{,}8485=0{,}1515$.
+
+Hay una probabilidad del 15 % de que sobren pasajeros.
+:::
+
+::: {.callout-note collapse="true"}
+## 23
+$X\sim B(200;0{,}35)\approx N(70;\sqrt{45{,}5})=N(70;6{,}75)$.
+
+$P(60\le X\le80)\approx P(59{,}5<X'<80{,}5)=P\left(-1{,}56<Z<1{,}56\right)=2\cdot0{,}9406-1=0{,}8812$.
+:::
+
+::: {.callout-note collapse="true"}
+## 24
+$P(X<490)=P\left(Z<\dfrac{490-500}{10}\right)=P(Z<-1)=0{,}1587$.
+
+Con 5 paquetes (independientes): $P(\text{al menos uno rechazado})=1-(1-0{,}1587)^5=1-0{,}8413^5\approx1-0{,}4215=0{,}5785$.
+:::
+
+::: {.callout-note collapse="true"}
+## 25
+$P(X=0)=(1-p)^4=0{,}0625=\left(\dfrac12\right)^4\Rightarrow1-p=\dfrac12\Rightarrow p=0{,}5$.
+
+$P(X\ge3)=P(3)+P(4)=\dbinom43\dfrac1{16}+\dfrac1{16}=\dfrac{5}{16}=0{,}3125$.
+:::
