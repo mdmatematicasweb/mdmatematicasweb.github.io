@@ -1,0 +1,131 @@
+---
+title: "Matrices"
+---
+
+## 1. Concepto y tipos
+
+Una **matriz** de dimensión $m \times n$ es una tabla de números con $m$ filas y $n$ columnas. El elemento $a_{ij}$ está en la fila $i$ y la columna $j$.
+
+$$A=\begin{pmatrix} a_{11} & a_{12} & a_{13}\\ a_{21} & a_{22} & a_{23}\end{pmatrix}\in\mathcal{M}_{2\times 3}$$
+
+| Tipo | Condición |
+|---|---|
+| Cuadrada | $m=n$ |
+| Fila / columna | $m=1$ / $n=1$ |
+| Diagonal | cuadrada con $a_{ij}=0$ si $i\neq j$ |
+| Identidad $I$ | diagonal con unos en la diagonal |
+| Triangular | ceros por encima (o por debajo) de la diagonal |
+| Simétrica | $A=A^t$ |
+| Antisimétrica | $A=-A^t$ |
+| Nula $O$ | todos los elementos son 0 |
+
+## 2. Operaciones
+
+**Suma y resta**: solo entre matrices de la misma dimensión, elemento a elemento.
+
+**Producto por un número**: se multiplica cada elemento por el número.
+
+**Producto de matrices**: $A_{m\times n}\cdot B_{n\times p}=C_{m\times p}$. El elemento $c_{ij}$ es la fila $i$ de $A$ por la columna $j$ de $B$:
+
+$$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\dots+a_{in}b_{nj}$$
+
+Ejemplo:
+$$\begin{pmatrix}1&2\\3&4\end{pmatrix}\begin{pmatrix}0&1\\-1&2\end{pmatrix}=\begin{pmatrix}1\cdot0+2\cdot(-1) & 1\cdot1+2\cdot2\\ 3\cdot0+4\cdot(-1) & 3\cdot1+4\cdot2\end{pmatrix}=\begin{pmatrix}-2&5\\-4&11\end{pmatrix}$$
+
+::: {.callout-warning}
+## Cuidado con el producto
+- Solo se puede multiplicar si **columnas de $A$ = filas de $B$**.
+- **No es conmutativo**: en general $AB\neq BA$.
+- $AB=O$ **no** implica $A=O$ ni $B=O$.
+- $(A+B)^2=A^2+AB+BA+B^2$, que no es $A^2+2AB+B^2$ salvo que $AB=BA$.
+:::
+
+**Propiedades útiles**: $A(B+C)=AB+AC$, $(AB)C=A(BC)$, $AI=IA=A$.
+
+## 3. Traspuesta
+
+La **traspuesta** $A^t$ se obtiene cambiando filas por columnas. Propiedades:
+
+$$(A+B)^t=A^t+B^t \qquad (kA)^t=kA^t \qquad (AB)^t=B^tA^t \qquad (A^t)^t=A$$
+
+## 4. Potencias de una matriz
+
+$A^n=A\cdot A\cdots A$ ($n$ veces), solo para matrices cuadradas. En los exámenes se pide calcular $A^n$ así:
+
+1. Calcula $A^2,\ A^3,\ A^4$.
+2. Detecta el patrón.
+3. Escribe $A^n$ y, si se pide, demuéstralo por inducción.
+
+Ejemplo: $A=\begin{pmatrix}1&1\\0&1\end{pmatrix}$ da $A^2=\begin{pmatrix}1&2\\0&1\end{pmatrix}$, $A^3=\begin{pmatrix}1&3\\0&1\end{pmatrix}$, luego $A^n=\begin{pmatrix}1&n\\0&1\end{pmatrix}$.
+
+Casos típicos:
+
+- Si $A^2=A$ (**idempotente**), entonces $A^n=A$ para todo $n\ge1$.
+- Si $A^k=O$ para algún $k$ (**nilpotente**), las potencias siguientes son $O$.
+- Si $A^2=I$, las potencias alternan: $A^n=A$ si $n$ es impar, $A^n=I$ si $n$ es par.
+
+## 5. Matriz inversa
+
+Una matriz cuadrada $A$ es **invertible** si existe $A^{-1}$ con $AA^{-1}=A^{-1}A=I$.
+
+- La inversa, si existe, es **única**.
+- $(AB)^{-1}=B^{-1}A^{-1}$ (se invierte el orden).
+- $(A^t)^{-1}=(A^{-1})^t$.
+
+**Cálculo por Gauss-Jordan**: se escribe $(A\,|\,I)$ y se hacen operaciones entre filas hasta obtener $(I\,|\,A^{-1})$. Si en algún paso aparece una fila de ceros en la parte izquierda, $A$ no es invertible.
+
+Operaciones permitidas: intercambiar dos filas, multiplicar una fila por un número distinto de 0, sumar a una fila un múltiplo de otra.
+
+Ejemplo con $A=\begin{pmatrix}2&1\\5&3\end{pmatrix}$:
+
+$$\left(\begin{array}{cc|cc}2&1&1&0\\5&3&0&1\end{array}\right)\xrightarrow{2F_2-5F_1}\left(\begin{array}{cc|cc}2&1&1&0\\0&1&-5&2\end{array}\right)\xrightarrow{F_1-F_2}\left(\begin{array}{cc|cc}2&0&6&-2\\0&1&-5&2\end{array}\right)\xrightarrow{F_1/2}\left(\begin{array}{cc|cc}1&0&3&-1\\0&1&-5&2\end{array}\right)$$
+
+Luego $A^{-1}=\begin{pmatrix}3&-1\\-5&2\end{pmatrix}$.
+
+::: {.callout-note}
+Para una matriz $2\times2$ hay atajo: si $\det A=ad-bc\neq0$, entonces $\begin{pmatrix}a&b\\c&d\end{pmatrix}^{-1}=\dfrac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}$. El método con determinantes para cualquier tamaño está en el tema 2.
+:::
+
+## 6. Ecuaciones matriciales
+
+Se despeja la matriz incógnita $X$ como en una ecuación normal, pero **cuidando el orden** del producto y **sin dividir** (se multiplica por la inversa).
+
+| Ecuación | Solución |
+|---|---|
+| $AX=B$ | $X=A^{-1}B$ (inversa **a la izquierda**) |
+| $XA=B$ | $X=BA^{-1}$ (inversa **a la derecha**) |
+| $AX+B=C$ | $X=A^{-1}(C-B)$ |
+| $AX+X=B$ | $(A+I)X=B$, luego $X=(A+I)^{-1}B$ |
+| $AXB=C$ | $X=A^{-1}CB^{-1}$ |
+
+::: {.callout-important}
+Al sacar factor común, la identidad aparece explícita: $AX+X=(A+I)X$, no $(A+1)X$.
+:::
+
+Ejemplo: $AX=B$ con $A=\begin{pmatrix}1&2\\0&1\end{pmatrix}$, $B=\begin{pmatrix}3&1\\2&5\end{pmatrix}$. Como $A^{-1}=\begin{pmatrix}1&-2\\0&1\end{pmatrix}$:
+
+$$X=A^{-1}B=\begin{pmatrix}1&-2\\0&1\end{pmatrix}\begin{pmatrix}3&1\\2&5\end{pmatrix}=\begin{pmatrix}-1&-9\\2&5\end{pmatrix}$$
+
+**Sistemas de ecuaciones matriciales**: $\begin{cases}2X+Y=A\\X-Y=B\end{cases}$ se resuelve por reducción igual que uno normal: sumando, $3X=A+B$.
+
+## 7. Rango de una matriz
+
+El **rango** es el número máximo de filas (o columnas) linealmente independientes. Se calcula por Gauss: se escalona la matriz y se cuenta el número de filas no nulas.
+
+Ejemplo:
+$$\begin{pmatrix}1&2&3\\2&4&6\\1&1&1\end{pmatrix}\xrightarrow[F_3-F_1]{F_2-2F_1}\begin{pmatrix}1&2&3\\0&0&0\\0&-1&-2\end{pmatrix}$$
+Hay dos filas no nulas, luego el rango es 2.
+
+- $\operatorname{rg}A\le\min(m,n)$.
+- Una matriz cuadrada $n\times n$ es invertible si y solo si $\operatorname{rg}A=n$.
+- Con parámetro: escalona dejando el parámetro y estudia para qué valores se anula algún pivote.
+
+::: {.callout-tip}
+## Resumen rápido
+- $AB$ existe si columnas de $A$ = filas de $B$, y $AB\neq BA$ en general.
+- $(AB)^t=B^tA^t$ y $(AB)^{-1}=B^{-1}A^{-1}$.
+- Potencias: calcula $A^2,A^3,\dots$, detecta el patrón.
+- Inversa: Gauss-Jordan $(A|I)\to(I|A^{-1})$.
+- $AX=B\Rightarrow X=A^{-1}B$; $XA=B\Rightarrow X=BA^{-1}$.
+- Rango: número de filas no nulas tras escalonar.
+:::

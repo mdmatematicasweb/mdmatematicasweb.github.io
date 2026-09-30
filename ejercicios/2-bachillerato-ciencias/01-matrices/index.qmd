@@ -1,0 +1,261 @@
+---
+title: "Matrices — relación de ejercicios"
+---
+
+Relación de 25 ejercicios: del 1 al 9 son básicos, del 10 al 24 siguen el estilo de los exámenes de EBAU de Andalucía (2021 en adelante) y el último es un problema de contexto. Las soluciones están al final.
+
+## Operaciones y propiedades
+
+**1.** Sean $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$ y $B=\begin{pmatrix}0&1\\-1&2\end{pmatrix}$. Calcula $A+B$, $A-2B$, $AB$, $BA$ y $A^t$.
+
+**2.** Sean $C=\begin{pmatrix}1&0&2\\-1&3&1\end{pmatrix}$ y $D=\begin{pmatrix}2&1\\0&-1\\1&4\end{pmatrix}$. Calcula $CD$ y $DC$. ¿Coinciden?
+
+**3.** Sean $A$ de dimensión $2\times3$, $B$ de $3\times1$ y $C$ de $1\times2$. Indica cuáles de estos productos se pueden hacer y su dimensión: $AB$, $BA$, $BC$, $CA$, $ABC$.
+
+**4.** Para $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$ calcula $A^2-3A+2I$.
+
+**5.** Sean $A=\begin{pmatrix}1&2\\0&1\end{pmatrix}$ y $B=\begin{pmatrix}1&0\\1&1\end{pmatrix}$. Calcula $(A+B)^2$ y $A^2+2AB+B^2$. ¿Por qué no coinciden?
+
+**6.** Descompón $C=\begin{pmatrix}1&2\\3&4\end{pmatrix}$ como suma de una matriz simétrica y otra antisimétrica. (*Pista: $S=\frac{C+C^t}{2}$.*)
+
+## Potencias
+
+**7.** Sea $P=\begin{pmatrix}1&1&0\\0&1&1\\0&0&1\end{pmatrix}$. Calcula $P^2$, $P^3$ y $P^4$, deduce la expresión de $P^n$ y úsala para hallar $P^{10}$.
+
+**8.** Comprueba que $E=\begin{pmatrix}2&-2\\1&-1\end{pmatrix}$ cumple $E^2=E$. Calcula $E^{2025}$.
+
+**9.** Sea $N=\begin{pmatrix}0&1&2\\0&0&3\\0&0&0\end{pmatrix}$. Calcula $N^2$ y $N^3$. ¿Cuánto vale $N^{10}$?
+
+**10.** *(Tipo EBAU)* Sea $A=\begin{pmatrix}1&m\\0&1\end{pmatrix}$ con $m\in\mathbb{R}$.
+
+a) Calcula $A^2$ y $A^3$ y deduce $A^n$.
+
+b) Halla $m$ para que $A^{10}=\begin{pmatrix}1&50\\0&1\end{pmatrix}$.
+
+## Matriz inversa
+
+**11.** Calcula por Gauss-Jordan la inversa de $A=\begin{pmatrix}3&1\\5&2\end{pmatrix}$.
+
+**12.** Calcula por Gauss-Jordan la inversa de $N=\begin{pmatrix}1&2&0\\0&1&3\\1&0&1\end{pmatrix}$.
+
+**13.** Calcula por Gauss-Jordan la inversa de $M=\begin{pmatrix}2&0&1\\1&1&0\\0&1&1\end{pmatrix}$.
+
+**14.** Sea $F=\begin{pmatrix}1&1\\1&0\end{pmatrix}$.
+
+a) Comprueba que $F^2=F+I$.
+
+b) Deduce que $F$ es invertible y calcula $F^{-1}$ a partir de esa igualdad.
+
+c) Calcula $F^5$.
+
+**15.** *(Tipo EBAU)* Sea $A=\begin{pmatrix}0&2\\1&1\end{pmatrix}$.
+
+a) Comprueba que $A^2-A-2I=O$.
+
+b) Usando el apartado anterior, calcula $A^{-1}$ sin hacer Gauss.
+
+**16.** *(Tipo EBAU)* Sean $A=\begin{pmatrix}2&1\\1&1\end{pmatrix}$ y $B=\begin{pmatrix}1&2\\0&1\end{pmatrix}$. Calcula $(AB)^{-1}$ de dos maneras: invirtiendo $AB$ directamente y usando $B^{-1}A^{-1}$.
+
+## Rango
+
+**17.** Calcula el rango de $Q=\begin{pmatrix}1&2&3\\2&4&6\\1&1&1\end{pmatrix}$.
+
+**18.** *(Tipo EBAU)* Estudia el rango de $R=\begin{pmatrix}1&2&a\\2&4&6\\1&1&1\end{pmatrix}$ según los valores de $a$.
+
+**19.** Calcula el rango de $K=\begin{pmatrix}1&2&1\\2&1&0\\3&3&1\\0&3&2\end{pmatrix}$.
+
+## Ecuaciones matriciales
+
+**20.** *(Tipo EBAU)* Sean $A=\begin{pmatrix}2&1\\1&1\end{pmatrix}$ y $B=\begin{pmatrix}3&0\\1&4\end{pmatrix}$. Resuelve $AX+2I=B$.
+
+**21.** *(Tipo EBAU)* Con las mismas $A$ y $B$ del ejercicio anterior, resuelve $XA-X=B$.
+
+**22.** *(Tipo EBAU)* Sean $A=\begin{pmatrix}1&0&1\\0&1&1\\1&1&0\end{pmatrix}$ y $B=\begin{pmatrix}1&2&3\\0&1&1\end{pmatrix}$. Resuelve $XA=B$.
+
+**23.** Halla las matrices $X$ e $Y$ que cumplen
+$$\begin{cases}2X+Y=\begin{pmatrix}4&2\\1&0\end{pmatrix}\\[2mm]X-Y=\begin{pmatrix}2&1\\2&3\end{pmatrix}\end{cases}$$
+
+**24.** *(Tipo EBAU)* Halla todas las matrices $X$ de dimensión $2\times2$ que conmutan con $C=\begin{pmatrix}1&2\\0&1\end{pmatrix}$, es decir, con $CX=XC$.
+
+## Problema
+
+**25.** Un taller fabrica mesas y sillas. La matriz $P=\begin{pmatrix}2&1\\1&3\end{pmatrix}$ da las horas necesarias por unidad: la primera fila es carpintería y la segunda es pintura; la primera columna es mesa y la segunda es silla. Se fabrican 10 mesas y 20 sillas.
+
+a) Calcula las horas totales de carpintería y de pintura.
+
+b) La hora de carpintería cuesta 4 € y la de pintura 2 €. Calcula el coste total con un producto de matrices.
+
+---
+
+## Soluciones
+
+::: {.callout-note collapse="true"}
+## 1
+$A+B=\begin{pmatrix}1&3\\2&6\end{pmatrix}$, $A-2B=\begin{pmatrix}1&0\\5&0\end{pmatrix}$, $AB=\begin{pmatrix}-2&5\\-4&11\end{pmatrix}$, $BA=\begin{pmatrix}3&4\\5&6\end{pmatrix}$, $A^t=\begin{pmatrix}1&3\\2&4\end{pmatrix}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 2
+$CD=\begin{pmatrix}4&9\\-1&0\end{pmatrix}$ (de dimensión $2\times2$) y $DC=\begin{pmatrix}1&3&5\\1&-3&-1\\-3&12&6\end{pmatrix}$ (de dimensión $3\times3$). No coinciden ni en dimensión.
+:::
+
+::: {.callout-note collapse="true"}
+## 3
+- $AB$: $(2\times3)(3\times1)$ sí, dimensión $2\times1$.
+- $BA$: $(3\times1)(2\times3)$ no, porque $1\neq2$.
+- $BC$: $(3\times1)(1\times2)$ sí, dimensión $3\times2$.
+- $CA$: $(1\times2)(2\times3)$ sí, dimensión $1\times3$.
+- $ABC$: $(2\times1)(1\times2)$ sí, dimensión $2\times2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 4
+$A^2=\begin{pmatrix}7&10\\15&22\end{pmatrix}$, luego
+$$A^2-3A+2I=\begin{pmatrix}7&10\\15&22\end{pmatrix}-\begin{pmatrix}3&6\\9&12\end{pmatrix}+\begin{pmatrix}2&0\\0&2\end{pmatrix}=\begin{pmatrix}6&4\\6&12\end{pmatrix}$$
+:::
+
+::: {.callout-note collapse="true"}
+## 5
+$A+B=\begin{pmatrix}2&2\\1&2\end{pmatrix}$, así que $(A+B)^2=\begin{pmatrix}6&8\\4&6\end{pmatrix}$.
+
+$A^2=\begin{pmatrix}1&4\\0&1\end{pmatrix}$, $B^2=\begin{pmatrix}1&0\\2&1\end{pmatrix}$, $AB=\begin{pmatrix}3&2\\1&1\end{pmatrix}$, por lo que $A^2+2AB+B^2=\begin{pmatrix}8&8\\4&4\end{pmatrix}$.
+
+No coinciden porque $BA=\begin{pmatrix}1&2\\1&3\end{pmatrix}\neq AB$. El desarrollo correcto es $(A+B)^2=A^2+AB+BA+B^2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 6
+$S=\dfrac{C+C^t}{2}=\begin{pmatrix}1&5/2\\5/2&4\end{pmatrix}$ (simétrica) y $T=\dfrac{C-C^t}{2}=\begin{pmatrix}0&-1/2\\1/2&0\end{pmatrix}$ (antisimétrica). Se cumple $C=S+T$.
+:::
+
+::: {.callout-note collapse="true"}
+## 7
+$P^2=\begin{pmatrix}1&2&1\\0&1&2\\0&0&1\end{pmatrix}$, $P^3=\begin{pmatrix}1&3&3\\0&1&3\\0&0&1\end{pmatrix}$, $P^4=\begin{pmatrix}1&4&6\\0&1&4\\0&0&1\end{pmatrix}$.
+
+Patrón:
+$$P^n=\begin{pmatrix}1&n&\frac{n(n-1)}{2}\\0&1&n\\0&0&1\end{pmatrix}$$
+Para $n=10$: $P^{10}=\begin{pmatrix}1&10&45\\0&1&10\\0&0&1\end{pmatrix}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 8
+$E^2=\begin{pmatrix}4-2&-4+2\\2-1&-2+1\end{pmatrix}=\begin{pmatrix}2&-2\\1&-1\end{pmatrix}=E$. Es idempotente, así que $E^n=E$ para todo $n\ge1$ y $E^{2025}=E=\begin{pmatrix}2&-2\\1&-1\end{pmatrix}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 9
+$N^2=\begin{pmatrix}0&0&3\\0&0&0\\0&0&0\end{pmatrix}$ y $N^3=O$. Por tanto $N^{10}=N^3N^7=O$.
+:::
+
+::: {.callout-note collapse="true"}
+## 10
+a) $A^2=\begin{pmatrix}1&2m\\0&1\end{pmatrix}$, $A^3=\begin{pmatrix}1&3m\\0&1\end{pmatrix}$. Se deduce $A^n=\begin{pmatrix}1&nm\\0&1\end{pmatrix}$.
+
+Inducción: si $A^n=\begin{pmatrix}1&nm\\0&1\end{pmatrix}$, entonces $A^{n+1}=A^nA=\begin{pmatrix}1&nm+m\\0&1\end{pmatrix}=\begin{pmatrix}1&(n+1)m\\0&1\end{pmatrix}$.
+
+b) $10m=50$, luego $m=5$.
+:::
+
+::: {.callout-note collapse="true"}
+## 11
+$$\left(\begin{array}{cc|cc}3&1&1&0\\5&2&0&1\end{array}\right)\xrightarrow{3F_2-5F_1}\left(\begin{array}{cc|cc}3&1&1&0\\0&1&-5&3\end{array}\right)\xrightarrow{F_1-F_2}\left(\begin{array}{cc|cc}3&0&6&-3\\0&1&-5&3\end{array}\right)\xrightarrow{F_1/3}\left(\begin{array}{cc|cc}1&0&2&-1\\0&1&-5&3\end{array}\right)$$
+$A^{-1}=\begin{pmatrix}2&-1\\-5&3\end{pmatrix}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 12
+$$N^{-1}=\frac{1}{7}\begin{pmatrix}1&-2&6\\3&1&-3\\-1&2&1\end{pmatrix}$$
+Comprobación de la primera fila de $NN^{-1}$: $(1,2,0)\cdot\frac17(1,3,-1)^t=\frac{1+6}{7}=1$ y $(1,2,0)\cdot\frac17(-2,1,2)^t=\frac{-2+2}{7}=0$.
+:::
+
+::: {.callout-note collapse="true"}
+## 13
+$$M^{-1}=\frac{1}{3}\begin{pmatrix}1&1&-1\\-1&2&1\\1&-2&2\end{pmatrix}$$
+:::
+
+::: {.callout-note collapse="true"}
+## 14
+a) $F^2=\begin{pmatrix}2&1\\1&1\end{pmatrix}=\begin{pmatrix}1&1\\1&0\end{pmatrix}+\begin{pmatrix}1&0\\0&1\end{pmatrix}=F+I$.
+
+b) $F^2-F=I\Rightarrow F(F-I)=I$, luego $F^{-1}=F-I=\begin{pmatrix}0&1\\1&-1\end{pmatrix}$.
+
+c) $F^3=\begin{pmatrix}3&2\\2&1\end{pmatrix}$, $F^4=\begin{pmatrix}5&3\\3&2\end{pmatrix}$, $F^5=\begin{pmatrix}8&5\\5&3\end{pmatrix}$ (números de Fibonacci).
+:::
+
+::: {.callout-note collapse="true"}
+## 15
+a) $A^2=\begin{pmatrix}2&2\\1&3\end{pmatrix}$, y $A^2-A-2I=\begin{pmatrix}2&2\\1&3\end{pmatrix}-\begin{pmatrix}0&2\\1&1\end{pmatrix}-\begin{pmatrix}2&0\\0&2\end{pmatrix}=O$.
+
+b) $A^2-A=2I\Rightarrow A(A-I)=2I\Rightarrow A^{-1}=\dfrac{A-I}{2}=\begin{pmatrix}-1/2&1\\1/2&0\end{pmatrix}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 16
+$AB=\begin{pmatrix}2&5\\1&3\end{pmatrix}$ con $\det=1$, así que $(AB)^{-1}=\begin{pmatrix}3&-5\\-1&2\end{pmatrix}$.
+
+Por otro lado $A^{-1}=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}$ y $B^{-1}=\begin{pmatrix}1&-2\\0&1\end{pmatrix}$, y
+$$B^{-1}A^{-1}=\begin{pmatrix}1&-2\\0&1\end{pmatrix}\begin{pmatrix}1&-1\\-1&2\end{pmatrix}=\begin{pmatrix}3&-5\\-1&2\end{pmatrix}$$
+Coinciden. Nótese que el orden se invierte: $A^{-1}B^{-1}$ daría otro resultado.
+:::
+
+::: {.callout-note collapse="true"}
+## 17
+$F_2-2F_1$ da la fila $(0,0,0)$ y $F_3-F_1$ da $(0,-1,-2)$. Quedan dos filas no nulas: $\operatorname{rg}Q=2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 18
+Escalonamos: $F_2-2F_1=(0,0,6-2a)$ y $F_3-F_1=(0,-1,1-a)$. Intercambiando filas queda
+$$\begin{pmatrix}1&2&a\\0&-1&1-a\\0&0&6-2a\end{pmatrix}$$
+- Si $a\neq3$: tres pivotes, $\operatorname{rg}R=3$.
+- Si $a=3$: la última fila se anula, $\operatorname{rg}R=2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 19
+$F_2-2F_1=(0,-3,-2)$, $F_3-3F_1=(0,-3,-2)$, $F_4=(0,3,2)$. Las tres últimas filas son proporcionales, así que solo queda una de ellas junto con $F_1$: $\operatorname{rg}K=2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 20
+$AX=B-2I=\begin{pmatrix}1&0\\1&2\end{pmatrix}$. Como $A^{-1}=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}$:
+$$X=A^{-1}(B-2I)=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}\begin{pmatrix}1&0\\1&2\end{pmatrix}=\begin{pmatrix}0&-2\\1&4\end{pmatrix}$$
+:::
+
+::: {.callout-note collapse="true"}
+## 21
+$X(A-I)=B$, con $A-I=\begin{pmatrix}1&1\\1&0\end{pmatrix}$ e inversa $(A-I)^{-1}=\begin{pmatrix}0&1\\1&-1\end{pmatrix}$. Entonces
+$$X=B(A-I)^{-1}=\begin{pmatrix}3&0\\1&4\end{pmatrix}\begin{pmatrix}0&1\\1&-1\end{pmatrix}=\begin{pmatrix}0&3\\4&-3\end{pmatrix}$$
+La inversa va **a la derecha**.
+:::
+
+::: {.callout-note collapse="true"}
+## 22
+$A^{-1}=\dfrac12\begin{pmatrix}1&-1&1\\-1&1&1\\1&1&-1\end{pmatrix}$ y $X=BA^{-1}$:
+$$X=\frac12\begin{pmatrix}1&2&3\\0&1&1\end{pmatrix}\begin{pmatrix}1&-1&1\\-1&1&1\\1&1&-1\end{pmatrix}=\frac12\begin{pmatrix}2&4&0\\0&2&0\end{pmatrix}=\begin{pmatrix}1&2&0\\0&1&0\end{pmatrix}$$
+:::
+
+::: {.callout-note collapse="true"}
+## 23
+Sumando las dos ecuaciones: $3X=\begin{pmatrix}6&3\\3&3\end{pmatrix}$, luego $X=\begin{pmatrix}2&1\\1&1\end{pmatrix}$.
+
+De la segunda: $Y=X-\begin{pmatrix}2&1\\2&3\end{pmatrix}=\begin{pmatrix}0&0\\-1&-2\end{pmatrix}$.
+
+Comprobación de la primera: $2X+Y=\begin{pmatrix}4&2\\2&2\end{pmatrix}+\begin{pmatrix}0&0\\-1&-2\end{pmatrix}=\begin{pmatrix}4&2\\1&0\end{pmatrix}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 24
+Sea $X=\begin{pmatrix}x&y\\z&w\end{pmatrix}$. Entonces $CX=\begin{pmatrix}x+2z&y+2w\\z&w\end{pmatrix}$ y $XC=\begin{pmatrix}x&2x+y\\z&2z+w\end{pmatrix}$.
+
+Igualando: $x+2z=x\Rightarrow z=0$ y $y+2w=2x+y\Rightarrow w=x$. Las otras dos ecuaciones se cumplen solas.
+
+$$X=\begin{pmatrix}x&y\\0&x\end{pmatrix}\qquad x,y\in\mathbb{R}$$
+:::
+
+::: {.callout-note collapse="true"}
+## 25
+a) $P\begin{pmatrix}10\\20\end{pmatrix}=\begin{pmatrix}2\cdot10+1\cdot20\\1\cdot10+3\cdot20\end{pmatrix}=\begin{pmatrix}40\\70\end{pmatrix}$: 40 horas de carpintería y 70 de pintura.
+
+b) $\begin{pmatrix}4&2\end{pmatrix}\begin{pmatrix}40\\70\end{pmatrix}=160+140=300$ €.
+:::
