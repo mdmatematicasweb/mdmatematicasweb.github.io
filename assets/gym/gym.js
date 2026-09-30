@@ -148,9 +148,23 @@
   const flatten = (A) => [].concat(...A);
 
   /** spec: {kind:'matrix'|'number'|'list', value}. raw: textos de las casillas. */
-  const partsFlat = (spec) => [].concat(...spec.parts.map((p) => flatten(p.value)));
+  // Respuesta compuesta: spec.parts = [{kind:'matrix'|'list'|'number', label, value, colLabels?}, ...]
+  const asParts = (spec) => spec.parts.map((p) => (p.kind ? p : Object.assign({ kind: 'matrix' }, p)));
+  const cellCount = (part) => (part.kind === 'matrix' ? part.value.length * part.value[0].length : 1);
   function checkAnswer(spec, raw) {
-    if (spec.kind === 'matrixset') return checkAnswer({ kind: 'matrix', value: [partsFlat(spec)] }, raw);
+    if (spec.kind === 'matrixset' || spec.kind === 'multi') {
+      let off = 0, status = 'ok';
+      const cells = [];
+      asParts(spec).forEach((part) => {
+        const k = cellCount(part);
+        const r = checkAnswer(part, raw.slice(off, off + k));
+        off += k;
+        cells.push(...r.cells);
+        if (r.status === 'incomplete') status = 'incomplete';
+        else if (r.status === 'wrong' && status !== 'incomplete') status = 'wrong';
+      });
+      return { status, cells };
+    }
     if (spec.kind === 'matrix') {
       const exp = flatten(spec.value);
       const got = raw.map(parseFrac);
@@ -189,7 +203,7 @@
   }
   /** Textos que dan la respuesta correcta (para "Ver solución" y tests). */
   function answerStrings(spec) {
-    if (spec.kind === 'matrixset') return partsFlat(spec).map(fstr);
+    if (spec.kind === 'matrixset' || spec.kind === 'multi') return [].concat(...asParts(spec).map(answerStrings));
     if (spec.kind === 'matrix') return flatten(spec.value).map(fstr);
     if (spec.kind === 'number') return [fstr(spec.value)];
     if (spec.kind === 'choice') return [String(spec.value)];
@@ -338,30 +352,30 @@
         row.appendChild(node);
         box.appendChild(row);
       };
-      if (spec.kind === 'matrixset') {
-        spec.parts.forEach((pt) => addRow(pt.label, matrixGrid(pt.value, null, pt.label + ': ')));
-      } else if (spec.kind === 'choice') {
-        const g = document.createElement('div');
-        g.className = 'gym-choices';
-        const name = 'gym-' + mod.id + '-' + Math.random().toString(36).slice(2, 8);
-        spec.options.forEach((t, i) => {
-          const lab = document.createElement('label');
-          lab.className = 'gym-choice';
-          lab.innerHTML = '<input type="radio"><span></span>';
-          const r = lab.querySelector('input');
-          r.name = name; r.value = String(i);
-          typeset(lab.querySelector('span'), t);
-          r.addEventListener('change', () => g.querySelectorAll('label').forEach((l) => l.classList.remove('ok', 'bad')));
-          g.appendChild(lab);
-        });
-        addRow(spec.label, g);
-      } else if (spec.kind === 'matrix') {
-        addRow(spec.label, matrixGrid(spec.value, spec.colLabels));
-      } else {
-        const inp = mk(spec.kind === 'list' ? 'valores separados por comas' : 'respuesta', spec.kind === 'list' ? 'gym-line' : 'gym-cell gym-single');
-        if (spec.kind === 'list') inp.placeholder = 'ej.: -1, 2';
-        addRow(spec.label, inp);
-      }
+      const partNode = (sp, tag) => {
+        if (sp.kind === 'choice') {
+          const g = document.createElement('div');
+          g.className = 'gym-choices';
+          const name = 'gym-' + mod.id + '-' + Math.random().toString(36).slice(2, 8);
+          sp.options.forEach((t, i) => {
+            const lab = document.createElement('label');
+            lab.className = 'gym-choice';
+            lab.innerHTML = '<input type="radio"><span></span>';
+            const r = lab.querySelector('input');
+            r.name = name; r.value = String(i);
+            typeset(lab.querySelector('span'), t);
+            r.addEventListener('change', () => g.querySelectorAll('label').forEach((l) => l.classList.remove('ok', 'bad')));
+            g.appendChild(lab);
+          });
+          return g;
+        }
+        if (sp.kind === 'matrix') return matrixGrid(sp.value, sp.colLabels, tag);
+        const inp = mk(sp.kind === 'list' ? 'valores separados por comas' : 'respuesta', sp.kind === 'list' ? 'gym-line' : 'gym-cell gym-single');
+        if (sp.kind === 'list') inp.placeholder = 'ej.: -1, 2';
+        return inp;
+      };
+      if (spec.kind === 'matrixset' || spec.kind === 'multi') asParts(spec).forEach((pt) => addRow(pt.label, partNode(pt, (pt.label || '') + ': ')));
+      else addRow(spec.label, partNode(spec));
     }
 
     /* --- Ayuda en dos fases: sólo teoría, no rompe ni suma racha --- */
@@ -444,7 +458,7 @@
       });
       if (res.status === 'incomplete') { setFeedback(isChoice ? 'Elige una opción.' : 'Rellena todas las casillas con enteros, fracciones (a/b) o decimales.', 'warn'); return; }
       if (res.status === 'wrong') {
-        const m = st.ch.answer.kind === 'matrixset' ? null : findMistake(st.ch.answer, raw);
+        const m = (st.ch.answer.kind === 'matrixset' || st.ch.answer.kind === 'multi') ? null : findMistake(st.ch.answer, raw);
         let msg = isChoice ? 'Esa opción no es la correcta.' : 'Hay casillas mal. Revisa las marcadas en rojo.';
         if (st.ch.answer.kind === 'list') {
           const exp = st.ch.answer.value;

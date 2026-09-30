@@ -202,4 +202,41 @@
       throw new Error('no se pudo generar la ecuación con determinantes');
     },
   });
+
+  /* ===================== Fila que es una suma ===================== */
+  const L3 = [['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']];
+  const vm3 = (rows) => '\\begin{vmatrix}' + rows.map((r) => r.join('&')).join('\\\\') + '\\end{vmatrix}';
+  const cfx = (k, x, first) => (k === 1 ? (first ? '' : '+') : k === -1 ? '-' : (k > 0 && !first ? '+' : '') + k) + x;
+
+  G.define({
+    id: 'filasuma',
+    title: 'Fila que es una suma',
+    help: [
+      'El determinante es <b>lineal en cada fila</b>: si una fila es suma de dos, el determinante se separa en dos determinantes (con las demás filas iguales); y si una fila está multiplicada por un número, ese número sale fuera: $|\\ldots\\ \\alpha F+\\beta F^{\\prime}\\ \\ldots|=\\alpha|\\ldots F\\ldots|+\\beta|\\ldots F^{\\prime}\\ldots|$.',
+      'Ejemplo: si ' + d$('\\begin{vmatrix}a&b&c\\\\d&e&f\\\\g&h&i\\end{vmatrix}=2\\quad\\text{y}\\quad\\begin{vmatrix}a^{\\prime}&b^{\\prime}&c^{\\prime}\\\\d&e&f\\\\g&h&i\\end{vmatrix}=5') + 'entonces ' + d$('\\begin{vmatrix}a+a^{\\prime}&b+b^{\\prime}&c+c^{\\prime}\\\\d&e&f\\\\g&h&i\\end{vmatrix}=2+5=7') + 'Cuidado: el determinante <b>no</b> es lineal en toda la matriz, sólo fila a fila.',
+    ],
+    params: [{ key: 'fila', label: 'Fila que varía', options: [['1', '1.ª'], ['2', '2.ª'], ['3', '3.ª']] }],
+    generate(p) {
+      const r = Number(p.fila) - 1;
+      const al = rnd.pick([1, 1, 2, 3, -1]), be = rnd.pick([1, 2, -1, -2, 3]);
+      const P = rnd.pick([-4, -3, -2, -1, 1, 2, 3, 4, 5]), Q = rnd.pick([-4, -3, -2, -1, 1, 2, 3, 4, 5]);
+      const rowA = L3[r], rowB = rowA.map((x) => x + '^{\\prime}');
+      const mat = (row) => L3.map((x, i) => (i === r ? row : x));
+      const comb = rowA.map((x, j) => cfx(al, x, true) + cfx(be, rowB[j], false));
+      const ans = al * P + be * Q;
+      const mistakes = [];
+      if (al !== 1 || be !== 1) mistakes.push({ value: F(P + Q), msg: 'cada determinante se multiplica por el número que acompaña a su fila: $\\alpha|\\ldots|+\\beta|\\ldots|$.' });
+      if (P * Q !== ans) mistakes.push({ value: F(al * be * P * Q), msg: 'el determinante de una fila suma es la <b>suma</b> de determinantes, no el producto.' });
+      return {
+        prompt: 'Sabiendo que ' + d$(vm3(mat(rowA)) + '=' + P + '\\qquad\\text{y}\\qquad ' + vm3(mat(rowB)) + '=' + Q) + 'calcula ' + d$(vm3(mat(comb))),
+        answer: { kind: 'number', label: '\\text{valor}=', value: F(ans) },
+        steps: [
+          'Sólo cambia la fila ' + (r + 1) + ' y es combinación de las filas de los dos determinantes dados. Por linealidad en esa fila: ' + d$(vm3(mat(comb)) + '=' + (al === 1 ? '' : al) + vm3(mat(rowA)) + (be < 0 ? '' : '+') + (be === 1 ? '' : be) + vm3(mat(rowB))),
+          'Sustituimos los valores: ' + d$('=' + al + '\\cdot(' + P + ')' + (be < 0 ? '' : '+') + '(' + be + ')\\cdot(' + Q + ')=' + ans),
+        ],
+        mistakes,
+        data: { P, Q, al, be },
+      };
+    },
+  });
 })(typeof globalThis !== 'undefined' ? globalThis : this);

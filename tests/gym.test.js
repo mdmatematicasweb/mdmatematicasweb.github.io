@@ -284,16 +284,36 @@ verify.proyecciones = (ch) => {
   if (d.tipo === 'precta') { const w = d.P.map((x, i) => x - r[i]); assert(near(dotN(w, d.v), 0)); const q = r.map((x, i) => x - d.Q[i]); assert(near(Math.hypot(q[1] * d.v[2] - q[2] * d.v[1], q[2] * d.v[0] - q[0] * d.v[2], q[0] * d.v[1] - q[1] * d.v[0]), 0)); }
   if (d.tipo === 'srecta') { const mid = d.P.map((x, i) => (x + r[i]) / 2); const w = d.P.map((x, i) => r[i] - x); assert(near(dotN(w, d.v), 0)); const q = mid.map((x, i) => x - d.Q[i]); assert(near(Math.hypot(q[1] * d.v[2] - q[2] * d.v[1], q[2] * d.v[0] - q[0] * d.v[2], q[0] * d.v[1] - q[1] * d.v[0]), 0)); }
 };
+verify.filasuma = (ch) => {
+  const { P, Q, al, be } = ch.data;
+  assert.strictEqual(ch.answer.value.n, al * P + be * Q);
+  // comprobación numérica: matrices con esas propiedades
+  const R1 = [2, 1, 3], R2 = [1, -1, 2], rest = [[0, 1, 1], [1, 2, 0]];
+  const d1 = detNum([R1, ...rest]), d2 = detNum([R2, ...rest]);
+  assert(near(detNum([R1.map((x, j) => al * x + be * R2[j]), ...rest]), al * d1 + be * d2));
+};
 verify.rangoparam = (ch) => {
   const d = ch.data;
   const at = (m) => d.T.map((r) => r.map((e) => e.a * m + e.b));
-  if (d.roots) {
-    d.roots.forEach(({ r }, i) => { assert.strictEqual(rankNum(at(r)), d.ranks[i]); assert.strictEqual(ch.answer.value[0][i].n, d.ranks[i]); });
-    for (let m = -9; m <= 9; m++) if (!d.roots.some((x) => x.r === m)) assert.strictEqual(rankNum(at(m)), 3, 'rango genérico m=' + m);
-    assert.strictEqual(ch.answer.value[0][d.roots.length].n, 3);
-  } else if (d.m0 !== undefined) {
-    for (let m = -9; m <= 9; m++) assert.strictEqual(rankNum(at(m)), m === d.m0 ? 1 : 2, 'suma m=' + m);
-  } else assert.strictEqual(rankNum(toNum(d.expr)), ch.answer.value.n);
+  const parts = ch.answer.parts;
+  assert.strictEqual(ch.answer.kind, 'multi');
+  // valores críticos: exactamente los enteros de [-9,9] que anulan el determinante
+  for (let m = -9; m <= 9; m++) {
+    const z = near(detNum(at(m)), 0);
+    assert.strictEqual(z, parts[0].value.some((r) => r.n === m), 'crítico m=' + m);
+    if (!z) assert.strictEqual(rankNum(at(m)), d.n, 'rango genérico m=' + m);
+  }
+  const rs = parts[0].value.map((r) => r.n);
+  assert.deepStrictEqual(rs, rs.slice().sort((x, y) => x - y), 'críticos en orden creciente');
+  rs.forEach((r, i) => { assert.strictEqual(rankNum(at(r)), parts[1].value[0][i].n); assert(rankNum(at(r)) >= 1 && rankNum(at(r)) < d.n); });
+  assert.strictEqual(parts[1].value[0][rs.length].n, d.n);
+  if (/^g[123]$/.test(d.tipo)) {
+    assert.strictEqual(rs.length, Number(d.tipo[1]), 'nº de puntos críticos');
+    assert.strictEqual(d.T.length, 3);
+    // grado 3: el determinante a m grande crece como m^3
+    assert(Math.abs(detNum(at(1000))) > 1e8);
+    if (d.rest.length === 3) assert(d.rest[1] ** 2 - 4 * d.rest[0] * d.rest[2] < 0);
+  }
 };
 verify.sistemaxy = (ch) => {
   const { X, Y, A, B, coef: [a1, b1, a2, b2] } = ch.data;

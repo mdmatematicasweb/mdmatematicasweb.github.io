@@ -376,15 +376,15 @@
         d$('A^{-1}=\\begin{pmatrix}3&-1\\\\-5&2\\end{pmatrix}') + 'Comprobación: $A\\cdot A^{-1}=I$.',
     ],
     params: [
-      { key: 'n', label: 'Tamaño', options: [['2', '2×2'], ['3', '3×3'], ['4', '4×4']] },
+      { key: 'n', label: 'Tamaño', options: [['2', '2×2'], ['3', '3×3']] },
       { key: 'frac', label: 'Resultado', options: [['no', 'Entero (|A|=±1)'], ['si', 'Con fracciones']] },
       { key: 'met', label: 'Método', options: [['adj', 'Adjuntos'], ['gj', 'Gauss-Jordan']] },
     ],
     generate(p) {
       const n = Number(p.n);
-      const gj = p.met === 'gj' || n === 4;      // 4×4 sólo por Gauss-Jordan
+      const gj = p.met === 'gj';
       let A;
-      if (p.frac === 'no' || n === 4) A = unimodular(n);
+      if (p.frac === 'no') A = unimodular(n);
       else {
         for (;;) {
           A = randMat(n, n, -4, 4);
@@ -429,7 +429,8 @@
         d$('\\begin{pmatrix}1&2\\\\2&4\\end{pmatrix}\\xrightarrow{F_2\\to F_2-2F_1}\\begin{pmatrix}1&2\\\\0&0\\end{pmatrix}') + 'Una fila no nula: rango 1.',
     ],
     params: [
-      { key: 'dim', label: 'Dimensión', options: [['3,3', '3×3'], ['3,4', '3×4'], ['4,3', '4×3'], ['4,4', '4×4']] },
+      { key: 'dim', label: 'Tamaño', options: [['2,2', '2×2'], ['2,3', '2×3'], ['3,3', '3×3'], ['3,4', '3×4'], ['4,4', '4×4'], ['5,3', '5×3']] },
+      { key: 'rng', label: 'Rango de valores', options: [['4', '−4 a 4'], ['6', '−6 a 6'], ['9', '−9 a 9']] },
       { key: 'met', label: 'Método', options: [['gauss', 'Gauss'], ['menores', 'Menores']] },
     ],
     generate(p) {
@@ -438,8 +439,9 @@
       const w = Math.random();
       const target = w < 0.3 ? mn : w < 0.85 ? mn - 1 : Math.max(1, mn - 2);
       let A;
+      const R0 = Number(p.rng), rb = R0 > 6 ? 4 : R0 > 4 ? 3 : 2;
       for (;;) {
-        const base = randMat(target, n, -3, 3);
+        const base = randMat(target, n, -rb, rb);
         if (rankOf(base) !== target) continue;
         const R = base.map((r) => r.slice());
         while (R.length < m) {
@@ -451,7 +453,7 @@
           R.push(row);
         }
         A = rnd.shuffle(R);
-        if (rankOf(A) === target && Math.max(...A.map((r) => Math.max(...r.map((x) => Math.abs(x.n))))) <= 8) break;
+        if (rankOf(A) === target && Math.max(...A.map((r) => Math.max(...r.map((x) => Math.abs(x.n))))) <= R0) break;
       }
       const g = gaussSteps(A);
       let steps;
@@ -676,7 +678,7 @@
   });
 
   /* ===================== 9. Rango con parámetro ===================== */
-  /** Matriz 3×3 con parámetro m y determinante con raíces enteras. */
+  /** Matriz 3×3 con parámetro m y determinante con raíces enteras (1–3 raíces). */
   function genParam3() {
     for (let tries = 0; tries < 20000; tries++) {
       const T = Array.from({ length: 3 }, () => Array.from({ length: 3 }, () => ({ a: 0, b: rnd.int(-3, 3) })));
@@ -693,107 +695,159 @@
   const evalT = (T, m) => M(T.map((r) => r.map((e) => e.a * m + e.b)));
   const paramTex = (T) => mtexStr(T.map((r) => r.map(entTex)));
 
-  /** Un menor 2×2 no nulo de A (o null) y su texto. */
-  function minor2(A) {
-    for (let i = 0; i < 3; i++) for (let j = i + 1; j < 3; j++) for (let k = 0; k < 3; k++) for (let l = k + 1; l < 3; l++) {
-      const sub = [[A[i][k], A[i][l]], [A[j][k], A[j][l]]];
+  /** Raíces enteras (con multiplicidad) de un polinomio de coeficientes enteros [c0..cn] y el resto sin raíz entera. */
+  function intRoots(cf) {
+    let c = cf.slice();
+    while (c.length > 1 && c[c.length - 1] === 0) c.pop();
+    const roots = [];
+    for (let r = -9; r <= 9; r++) {
+      let k = 0;
+      while (c.length > 1) {
+        if (c.reduceRight((acc, x) => acc * r + x, 0) !== 0) break;
+        const q = new Array(c.length - 1);
+        q[c.length - 2] = c[c.length - 1];
+        for (let i = c.length - 3; i >= 0; i--) q[i] = c[i + 1] + r * q[i + 1];
+        c = q; k++;
+      }
+      if (k) roots.push({ r, k });
+    }
+    return { roots, rest: c };
+  }
+  const rootsTex = (roots) => roots.map(({ r, k }) => (r === 0 ? 'm' : '(m' + (r < 0 ? '+' + (-r) : '-' + r) + ')') + (k > 1 ? '^{' + k + '}' : '')).join('');
+
+  /** Matriz 3×3 con m en la diagonal: |A| de grado 3 con exactamente k valores críticos enteros (k=1: triple, o una raíz y un factor sin raíces reales). */
+  function genDeg3(k) {
+    for (let tries = 0; tries < 400000; tries++) {
+      const T = Array.from({ length: 3 }, () => Array.from({ length: 3 }, () => ({ a: 0, b: rnd.int(-3, 3) })));
+      [0, 1, 2].forEach((i) => { T[i][i] = { a: rnd.pick([1, 1, -1]), b: rnd.int(-3, 3) }; });
+      if (rnd.int(0, 2) === 0) { const s = rnd.pick([1, 2, 3, 5, 6, 7]); T[Math.floor(s / 3)][s % 3] = { a: 1, b: rnd.int(-3, 3) }; }
+      const cs = polyFromDet(T);
+      if (cs.some((x) => x.d !== 1) || cs[3].n === 0) continue;
+      const { roots, rest } = intRoots(cs.map((x) => x.n));
+      let ok = false;
+      if (k === 3) ok = roots.length === 3 && roots.every((q) => q.k === 1) && rest.length === 1;
+      if (k === 2) ok = roots.length === 2 && rest.length === 1;
+      if (k === 1) ok = roots.length === 1 && ((roots[0].k === 3 && rest.length === 1) || (roots[0].k === 1 && rest.length === 3 && rest[1] * rest[1] - 4 * rest[0] * rest[2] < 0));
+      if (!ok || Math.abs(cs[3].n) > 2) continue;
+      return { T, cs, roots, rest };
+    }
+    throw new Error('no se pudo generar la matriz de grado 3');
+  }
+
+  /** Un menor de orden k no nulo de A (o null). */
+  function minorK(A, k) {
+    const n = A.length, m = A[0].length;
+    const comb = (len, size) => {
+      const out = [];
+      (function rec(st, cur) { if (cur.length === size) { out.push(cur.slice()); return; } for (let i = st; i < len; i++) { cur.push(i); rec(i + 1, cur); cur.pop(); } })(0, []);
+      return out;
+    };
+    for (const ri of comb(n, k)) for (const cj of comb(m, k)) {
+      const sub = ri.map((i) => cj.map((j) => A[i][j]));
       const d = det(sub);
-      if (d.n !== 0) return { sub, d };
+      if (d.n !== 0) return { sub, d, ri, cj };
     }
     return null;
   }
 
+  /** Mismo contenido que minorK pero para la matriz escalar. */
+  function rankCases(T, cs, roots, rest) {
+    const n = T.length;
+    const rs = roots.map(({ r }) => r);
+    const ranks = rs.map((r) => rankOf(evalT(T, r)));
+    const fac = rootsTex(roots);
+    const lead = rest.length === 1 ? (rest[0] === 1 ? '' : rest[0] === -1 ? '-' : String(rest[0])) : '';
+    const factored = rest.length === 1 ? lead + fac : fac + '\\left(' + polyTex(rest.map((x) => F(x))) + '\\right)';
+    const steps = ['El determinante depende de ' + i$('m') + ': ' + d$('|A|=\\begin{vmatrix}' + T.map((r) => r.map(entTex).join('&')).join('\\\\') + '\\end{vmatrix}=' + polyTex(cs) + '=' + factored)];
+    if (rest.length === 3) steps.push('El factor ' + i$(polyTex(rest.map((x) => F(x)))) + ' no tiene raíces reales (discriminante ' + i$('\\Delta=' + (rest[1] * rest[1] - 4 * rest[0] * rest[2]) + '<0') + ').');
+    steps.push('Igualamos a cero para hallar los valores críticos: ' + i$(rs.map((r) => 'm=' + r).join(',\\ ')) + '.');
+    steps.push('Si ' + i$('m') + ' no toma esos valores, ' + i$('|A|\\neq0') + ' y ' + i$('\\operatorname{rg}(A)=' + n) + '.');
+    rs.forEach((r, i) => {
+      const Ar = evalT(T, r);
+      let txt = 'Si ' + i$('m=' + r) + ': ' + d$('A=' + mtex(Ar));
+      if (ranks[i] === n - 1) {
+        const mn = minorK(Ar, n - 1);
+        txt += 'Como ' + i$('|A|=0') + ', ' + i$('\\operatorname{rg}(A)<' + n) + '. Un menor de orden ' + (n - 1) + ' no nulo: ' + i$(mtex(mn.sub, 'vmatrix') + '=' + ftex(mn.d) + '\\neq0') + ', luego el rango es <b>' + ranks[i] + '</b>.';
+      } else {
+        const mn = minorK(Ar, ranks[i]);
+        txt += 'Todos los menores de orden ' + (ranks[i] + 1) + ' son nulos y hay un menor de orden ' + ranks[i] + ' no nulo' + (mn ? ' (' + i$(mtex(mn.sub, 'vmatrix') + '=' + ftex(mn.d)) + ')' : '') + ': el rango es <b>' + ranks[i] + '</b>.';
+      }
+      steps.push(txt);
+    });
+    return { rs, ranks, steps };
+  }
+
+  const RANK_TIPOS = [['mat', 'Matriz con parámetro'], ['g1', 'Matriz, grado 3 — 1 punto crítico'], ['g2', 'Matriz, grado 3 — 2 puntos críticos'], ['g3', 'Matriz, grado 3 — 3 puntos críticos'], ['prod', 'Producto A·B(m)']];
+
   G.define({
     id: 'rangoparam',
-    title: 'Rango con parámetro y propiedades',
+    title: 'Rango con parámetro',
     help: [
-      'Rango según $m$: calcula $|A|$ (si es $\\neq0$ el rango es 3), halla los $m$ que lo anulan y estudia cada uno por separado: rango 2 si hay algún menor $2\\times2$ no nulo; rango 1 si todas las filas son proporcionales. Propiedades: $\\operatorname{rg}(A^t)=\\operatorname{rg}(A)$, $\\operatorname{rg}(kA)=\\operatorname{rg}(A)$ si $k\\neq0$, $\\operatorname{rg}(AB)=\\operatorname{rg}(A)$ si $B$ es invertible.',
-      'Ejemplo: $|A|=(m-1)(m+2)$. Si $m\\neq1,-2$: rango 3. Si $m=1$: se sustituye y se busca un menor de orden 2 distinto de 0: si existe, rango 2. Si una fila es suma de otras, $|A|=0$ para todo $m$ y el rango baja a 2 como mucho. Si $A$ es invertible, $\\operatorname{rg}(A^{-1})=n$.',
+      'El determinante depende de $m$: iguala a cero para hallar los valores críticos, y usa un menor no nulo para el resto de casos. Si $|A|\\neq0$, el rango es el orden de la matriz; en cada valor crítico el rango baja, y se decide buscando un menor no nulo del orden inmediatamente inferior.',
+      'Método: 1) calcula $|A(m)|$ y factoriza; 2) para cada raíz $m_0$, sustituye y mira si hay un menor de orden $n-1$ distinto de 0 (entonces rango $n-1$; si no, sigue bajando); 3) para los demás valores de $m$, el rango es $n$. Ejemplo: $|A|=m(m-2)$; si $m=2$ y $A(2)$ tiene un menor $2\\times2$ no nulo, rango 2; si $m\\neq0,2$, rango 3. En un producto $A\\cdot B(m)$ hay que hacer primero el producto para tener la matriz con $m$.',
     ],
-    params: [
-      { key: 'tipo', label: 'Tipo', options: [['gen', 'Según m (determinante)'], ['suma', 'Fila que es suma'], ['prop', 'Propiedades: producto, traspuesta, inversa, k·A']] },
-    ],
+    params: [{ key: 'tipo', label: 'Tipo', options: RANK_TIPOS }],
     generate(p) {
-      if (p.tipo === 'gen') {
-        const { T, cs, f } = genParam3();
-        const ranks = f.roots.map(({ r }) => rankOf(evalT(T, r)));
-        const steps = ['Determinante: ' + d$('|A|=\\begin{vmatrix}' + T.map((r) => r.map(entTex).join('&')).join('\\\\') + '\\end{vmatrix}=' + polyTex(cs) + '=' + factorTex(f)),
-          'Si ' + i$('m\\notin\\{' + f.roots.map(({ r }) => r).join(',') + '\\}') + ', ' + i$('|A|\\neq0') + ' y ' + i$('\\operatorname{rg}(A)=3') + '.'];
-        f.roots.forEach(({ r }, i) => {
-          const Ar = evalT(T, r);
-          const mn = minor2(Ar);
-          steps.push('Si ' + i$('m=' + r) + ': ' + d$('A=' + mtex(Ar)) + (ranks[i] === 2 && mn
-            ? 'Como ' + i$('|A|=0') + ' y hay un menor de orden 2 no nulo, ' + i$('\\begin{vmatrix}' + mn.sub.map((row) => row.map(ftex).join('&')).join('\\\\') + '\\end{vmatrix}=' + ftex(mn.d) + '\\neq0') + ', el rango es <b>2</b>.'
-            : 'Todos los menores de orden 2 son nulos (las filas son proporcionales) y hay elementos no nulos: el rango es <b>' + ranks[i] + '</b>.'));
-        });
-        return {
-          prompt: 'Halla el rango de ' + d$('A=' + paramTex(T)) + 'según los valores de ' + i$('m') + '.',
-          answer: { kind: 'matrix', value: row(ranks.concat([3]).map((x) => F(x))), colLabels: f.roots.map(({ r }) => '\\operatorname{rg}\\ (m=' + r + ')').concat(['\\operatorname{rg}\\ (\\text{otro }m)']) },
-          steps,
-          data: { T, roots: f.roots, ranks },
-        };
-      }
-      if (p.tipo === 'suma') {
-        for (;;) {
-          const r1 = Array.from({ length: 3 }, () => rnd.int(-3, 3));
-          if (r1.filter((x) => x !== 0).length < 2) continue;
-          const j = rnd.pick([0, 1, 2].filter((x) => r1[x] !== 0));
-          const lam = rnd.pick([-2, 2, 3, 1]);
-          const m0 = lam * r1[j];
-          const T = [
-            r1.map((x) => ({ a: 0, b: x })),
-            r1.map((x, k) => (k === j ? { a: 1, b: 0 } : { a: 0, b: lam * x })),
-            r1.map((x, k) => (k === j ? { a: 1, b: x } : { a: 0, b: (1 + lam) * x })),
-          ];
-          return {
-            prompt: 'Halla el rango de ' + d$('A=' + paramTex(T)) + 'según los valores de ' + i$('m') + '.',
-            answer: { kind: 'matrix', value: row([F(1), F(2)]), colLabels: ['\\operatorname{rg}\\ (m=' + m0 + ')', '\\operatorname{rg}\\ (\\text{otro }m)'] },
-            steps: [
-              'Observa que ' + i$('F_3=F_1+F_2') + ': por tanto ' + i$('|A|=0') + ' para todo ' + i$('m') + ' y ' + i$('\\operatorname{rg}(A)\\le2') + '.',
-              'El rango es 1 sólo si ' + i$('F_2') + ' es proporcional a ' + i$('F_1') + '. Con las componentes que no dependen de ' + i$('m') + ', ' + i$('F_2=' + lam + '\\,F_1') + '.',
-              'Entonces ' + i$('m=' + lam + '\\cdot(' + r1[j] + ')=' + m0) + ': en ese caso ' + i$('F_2') + ' y ' + i$('F_3') + ' son múltiplos de ' + i$('F_1') + ' y el rango es <b>1</b>.',
-              'Para cualquier otro ' + i$('m') + ' las filas ' + i$('F_1') + ' y ' + i$('F_2') + ' no son proporcionales, así que el rango es <b>2</b>.',
-            ],
-            data: { T, m0, r1, lam },
-          };
+      let T, cs, roots, rest, prompt;
+      if (p.tipo === 'mat') {
+        const g = genParam3();
+        T = g.T; cs = g.cs; roots = g.f.roots; rest = [g.f.lead];
+        prompt = 'Halla el rango de ' + d$('A=' + paramTex(T)) + 'según los valores de ' + i$('m') + '.';
+      } else if (p.tipo === 'prod') {
+        let prodTex = null;
+        for (let tries = 0; tries < 40000 && !prodTex; tries++) {
+          const small = rnd.int(0, 1);
+          if (small) {                       // A 2×3 · B(m) 3×2  →  2×2
+            const A = randMat(2, 3, -2, 2);
+            const Bt = Array.from({ length: 3 }, () => Array.from({ length: 2 }, () => ({ a: 0, b: rnd.int(-2, 2) })));
+            rnd.shuffle([0, 1, 2, 3, 4, 5]).slice(0, rnd.pick([1, 2])).forEach((sl) => { Bt[Math.floor(sl / 2)][sl % 2] = { a: rnd.pick([1, 1, -1, 2]), b: rnd.int(-2, 2) }; });
+            const C = A.map((row) => [0, 1].map((j) => ({ a: row.reduce((t, x, k) => t + x.n * Bt[k][j].a, 0), b: row.reduce((t, x, k) => t + x.n * Bt[k][j].b, 0) })));
+            const c = polyFromDet(C);
+            if (c.some((x) => x.d !== 1) || (c[0].n === 0 && c[1].n === 0 && c[2].n === 0)) continue;
+            const ir = intRoots(c.map((x) => x.n));
+            if (!ir.roots.length || ir.rest.length !== 1 || Math.abs(ir.rest[0]) > 6) continue;
+            const Cs = C.map((r) => r.map((e) => e.a)).flat();
+            if (!Cs.some((x) => x !== 0)) continue;
+            if (ir.roots.some(({ r }) => rankOf(evalT(C, r)) === 0)) continue;
+            T = C; cs = c; roots = ir.roots; rest = ir.rest;
+            prodTex = d$('A=' + mtex(A) + '\\qquad B(m)=' + paramTex(Bt)) + 'Halla el rango de ' + i$('A\\cdot B(m)') + ' según los valores de ' + i$('m') + '.';
+            T.prodSteps = 'Hacemos primero el producto: ' + d$('A\\cdot B(m)=' + paramTex(C));
+          } else {                           // A 3×3 (|A|=±1) · B(m) 3×3
+            const A = unimodular(3, 3);
+            const g = genParam3();
+            const C = A.map((row) => [0, 1, 2].map((j) => ({ a: row.reduce((t, x, k) => t + x.n * g.T[k][j].a, 0), b: row.reduce((t, x, k) => t + x.n * g.T[k][j].b, 0) })));
+            const c = polyFromDet(C);
+            if (c.some((x) => x.d !== 1)) continue;
+            const ir = intRoots(c.map((x) => x.n));
+            if (!ir.roots.length || ir.rest.length !== 1 || ir.roots.some(({ r }) => rankOf(evalT(C, r)) === 0)) continue;
+            T = C; cs = c; roots = ir.roots; rest = ir.rest;
+            prodTex = d$('A=' + mtex(A) + '\\qquad B(m)=' + paramTex(g.T)) + 'Halla el rango de ' + i$('A\\cdot B(m)') + ' según los valores de ' + i$('m') + '.';
+            T.prodSteps = 'Hacemos primero el producto: ' + d$('A\\cdot B(m)=' + paramTex(C));
+          }
         }
+        if (!prodTex) throw new Error('no se pudo generar el producto con parámetro');
+        prompt = prodTex;
+      } else {
+        const g = genDeg3(Number(p.tipo.slice(1)));
+        T = g.T; cs = g.cs; roots = g.roots; rest = g.rest;
+        prompt = 'Halla el rango de ' + d$('A=' + paramTex(T)) + 'según los valores de ' + i$('m') + '.';
       }
-      // propiedades
-      const r = rnd.pick([2, 3]);
-      let A;
-      for (;;) {
-        if (r === 3) { A = randMat(3, 3, -3, 3); if (rankOf(A) !== 3) continue; }
-        else {
-          const base = randMat(2, 3, -3, 3);
-          if (rankOf(base) !== 2) continue;
-          const c1 = rnd.pick([-2, -1, 1, 2]), c2 = rnd.pick([-2, -1, 0, 1, 2]);
-          const third = base[0].map((x, j) => G.fadd(G.fmul(F(c1), x), G.fmul(F(c2), base[1][j])));
-          A = rnd.shuffle([base[0], base[1], third]);
-          if (rankOf(A) !== 2) continue;
-        }
-        break;
-      }
-      const B = unimodular(3, 4);
-      const k = rnd.pick([2, 3, -2, -1]);
-      const opts = [
-        { tex: 'A^{t}', M: mT(A), why: 'la traspuesta tiene el mismo rango: ' + i$('\\operatorname{rg}(A^t)=\\operatorname{rg}(A)') },
-        { tex: k + 'A', M: G.mscale(A, F(k)), why: 'multiplicar por ' + i$('k=' + k + '\\neq0') + ' no cambia el rango: ' + i$('\\operatorname{rg}(kA)=\\operatorname{rg}(A)') },
-        { tex: 'A\\cdot B', M: mmul(A, B), why: i$('B') + ' es invertible (' + i$('|B|=' + det(B).n) + '), y multiplicar por una matriz invertible no cambia el rango: ' + i$('\\operatorname{rg}(AB)=\\operatorname{rg}(A)') },
-        { tex: 'B\\cdot A', M: mmul(B, A), why: i$('B') + ' es invertible (' + i$('|B|=' + det(B).n) + '), y multiplicar por una matriz invertible no cambia el rango: ' + i$('\\operatorname{rg}(BA)=\\operatorname{rg}(A)') },
-        { tex: 'A^{t}B', M: mmul(mT(A), B), why: 'la traspuesta conserva el rango y ' + i$('B') + ' es invertible (' + i$('|B|=' + det(B).n) + '): ' + i$('\\operatorname{rg}(A^tB)=\\operatorname{rg}(A)') },
-      ];
-      if (r === 3) opts.push({ tex: 'A^{-1}', M: inverse(A), why: i$('A') + ' es invertible (rango 3), luego ' + i$('A^{-1}') + ' también lo es: rango 3' });
-      const o = rnd.pick(opts);
-      const g = gaussSteps(A);
+      const rc = rankCases(T, cs, roots, rest);
+      const n = T.length;
+      const steps = (T.prodSteps ? [T.prodSteps] : []).concat(rc.steps);
+      const k = rc.rs.length;
       return {
-        prompt: 'Sabiendo que ' + d$('A=' + mtex(A) + '\\qquad B=' + mtex(B)) + 'calcula ' + i$('\\operatorname{rg}(' + o.tex + ')') + ' <b>sin hacer el producto</b>.',
-        answer: { kind: 'number', label: '\\operatorname{rg}(' + o.tex + ')=', value: F(rankOf(o.M)) },
-        steps: [
-          'Rango de ' + i$('A') + ' por Gauss: ' + (g.steps.length ? d$('A\\sim' + mtex(M(g.steps[g.steps.length - 1].M))) : '') + i$('\\operatorname{rg}(A)=' + g.rank) + '.',
-          'Propiedad: ' + o.why + '.',
-          'Por tanto ' + d$('\\operatorname{rg}(' + o.tex + ')=' + rankOf(o.M)),
-        ],
-        data: { A, B, expr: o.M },
+        prompt: prompt + ' Escribe primero los valores críticos de menor a mayor y después el rango en cada caso, en ese mismo orden, y para el resto de valores de ' + i$('m') + '.',
+        answer: {
+          kind: 'multi',
+          parts: [
+            { kind: 'list', label: 'm=', value: rc.rs.map((r) => F(r)) },
+            { kind: 'matrix', label: '\\operatorname{rg}(A)=', value: row(rc.ranks.concat([n]).map((x) => F(x))),
+              colLabels: rc.rs.map((_, i) => '\\text{' + (i + 1) + '.º crítico}').concat(['\\text{resto de }m']) },
+          ],
+        },
+        steps,
+        data: { tipo: p.tipo, T, n, roots, rest, ranks: rc.ranks, k },
       };
     },
   });
@@ -900,5 +954,5 @@
   }
 
   // Utilidades compartidas con los demás temas de álgebra lineal.
-  G.lib = { randMat, unimodular, invSteps, gjInvSteps, gaussSteps, detSteps, entTex, polyFromDet, polyTex, factorPoly, factorTex, genParam3, randParamT, rankByMinors };
+  G.lib = { randMat, unimodular, invSteps, gjInvSteps, gaussSteps, detSteps, entTex, polyFromDet, polyTex, factorPoly, factorTex, genParam3, randParamT, rankByMinors, intRoots };
 })(typeof globalThis !== 'undefined' ? globalThis : this);
