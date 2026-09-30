@@ -49,7 +49,10 @@
   G.define({
     id: 'vectorial',
     title: 'Productos de vectores',
-    tip: '$\\vec u\\cdot\\vec v=u_1v_1+u_2v_2+u_3v_3$ · $\\vec u\\times\\vec v$ = determinante con $\\vec i,\\vec j,\\vec k$ · $[\\vec u,\\vec v,\\vec w]=\\det$ de las tres filas.',
+    help: [
+      '$\\vec u\\cdot\\vec v=u_1v_1+u_2v_2+u_3v_3$ (da un número) · $\\vec u\\times\\vec v$ = determinante con $\\vec i,\\vec j,\\vec k$ (da un vector perpendicular a ambos) · $[\\vec u,\\vec v,\\vec w]=\\vec u\\cdot(\\vec v\\times\\vec w)$ = determinante de las tres filas.',
+      'Ejemplo con $\\vec u=(1,2,0)$ y $\\vec v=(0,1,3)$: $\\vec u\\cdot\\vec v=0+2+0=2$. ' + d$('\\vec u\\times\\vec v=\\begin{vmatrix}\\vec i&\\vec j&\\vec k\\\\1&2&0\\\\0&1&3\\end{vmatrix}=(6-0)\\vec i-(3-0)\\vec j+(1-0)\\vec k=(6,-3,1)') + 'Comprobación: $\\vec u\\cdot(\\vec u\\times\\vec v)=6-6+0=0$. Ojo: $\\vec v\\times\\vec u=-(\\vec u\\times\\vec v)$.',
+    ],
     params: [{ key: 'op', label: 'Producto', options: [['esc', 'Escalar'], ['vec', 'Vectorial'], ['mix', 'Mixto']] }],
     generate(p) {
       const u = vnz(-4, 4), v = vnz(-4, 4), w = vnz(-4, 4);
@@ -91,7 +94,10 @@
   G.define({
     id: 'angulo',
     title: 'Ángulo entre dos vectores',
-    tip: '$\\cos\\alpha=\\dfrac{\\vec u\\cdot\\vec v}{|\\vec u|\\,|\\vec v|}$. Aquí los módulos salen enteros.',
+    help: [
+      '$\\cos\\alpha=\\dfrac{\\vec u\\cdot\\vec v}{|\\vec u|\\,|\\vec v|}$, con $|\\vec u|=\\sqrt{u_1^2+u_2^2+u_3^2}$. Si $\\vec u\\cdot\\vec v=0$ son perpendiculares.',
+      'Ejemplo: $\\vec u=(1,2,2)$, $\\vec v=(2,3,6)$. Producto escalar: $2+6+12=20$. Módulos: $|\\vec u|=\\sqrt9=3$, $|\\vec v|=\\sqrt{49}=7$. Entonces ' + d$('\\cos\\alpha=\\frac{20}{3\\cdot7}=\\frac{20}{21}'),
+    ],
     params: [],
     generate() {
       const u = pythVec(), v = pythVec();
@@ -115,7 +121,10 @@
   G.define({
     id: 'areas',
     title: 'Áreas y volúmenes',
-    tip: 'Área del paralelogramo $=|\\vec u\\times\\vec v|$ · triángulo: la mitad · volumen del paralelepípedo $=|[\\vec u,\\vec v,\\vec w]|$ · tetraedro: la sexta parte.',
+    help: [
+      'Área del paralelogramo $=|\\vec u\\times\\vec v|$ · del triángulo: la mitad · volumen del paralelepípedo $=|[\\vec u,\\vec v,\\vec w]|$ · del tetraedro: la sexta parte. Con puntos, los vectores salen de un vértice: $\\vec{AB},\\vec{AC},\\vec{AD}$.',
+      'Ejemplo: $\\vec u=(2,0,0)$, $\\vec v=(0,3,0)$, $\\vec w=(0,0,4)$. $\\vec u\\times\\vec v=(0,0,6)$, así que el paralelogramo tiene área $6$ y el triángulo $3$. $[\\vec u,\\vec v,\\vec w]=24$: el paralelepípedo tiene volumen $24$ y el tetraedro $24/6=4$.',
+    ],
     params: [{ key: 'fig', label: 'Figura', options: [['par', 'Paralelogramo'], ['tri', 'Triángulo'], ['pipe', 'Paralelepípedo'], ['tetra', 'Tetraedro']] }],
     generate(p) {
       if (p.fig === 'par' || p.fig === 'tri') {
@@ -174,7 +183,10 @@
   G.define({
     id: 'puntos',
     title: 'Puntos: punto medio, simétrico y vértices',
-    tip: 'Punto medio: $\\frac{A+B}{2}$ · simétrico de $A$ respecto de $B$: $2B-A$ · paralelogramo $ABCD$: $D=A+\\vec{BC}=A+C-B$.',
+    help: [
+      'Punto medio: $M=\\frac{A+B}{2}$ · simétrico de $A$ respecto de $B$: $A^{\\prime}=2B-A$ · paralelogramo $ABCD$: $\\vec{AD}=\\vec{BC}$, luego $D=A+C-B$ · baricentro: $G=\\frac{A+B+C}{3}$.',
+      'Ejemplo con $A(1,2,3)$ y $B(3,0,1)$: punto medio $\\left(\\frac{1+3}{2},\\frac{2+0}{2},\\frac{3+1}{2}\\right)=(2,1,2)$. Simétrico de $A$ respecto de $B$: $2(3,0,1)-(1,2,3)=(5,-2,-1)$.',
+    ],
     params: [{ key: 'op', label: 'Calcular', options: [['med', 'Punto medio'], ['sim', 'Simétrico'], ['par', 'Cuarto vértice'], ['bar', 'Baricentro']] }],
     generate(p) {
       const A = vrand(-6, 6), B = vrand(-6, 6), C = vrand(-6, 6);
@@ -208,7 +220,10 @@
   G.define({
     id: 'vparam',
     title: 'Vectores con parámetro',
-    tip: 'Perpendiculares: $\\vec u\\cdot\\vec v=0$ · paralelos: componentes proporcionales · coplanarios: $[\\vec u,\\vec v,\\vec w]=0$.',
+    help: [
+      'Perpendiculares: $\\vec u\\cdot\\vec v=0$ · paralelos: componentes proporcionales · coplanarios: $[\\vec u,\\vec v,\\vec w]=0$. Se plantea la condición y se despeja $m$.',
+      'Ejemplos. Perpendiculares: $\\vec u=(m,2,1)$, $\\vec v=(1,3,-2)$: $m+6-2=0\\Rightarrow m=-4$. Paralelos: $(m,2,4)\\parallel(1,1,2)$: $\\frac m1=\\frac21=\\frac42=2\\Rightarrow m=2$. Coplanarios: se iguala a 0 el determinante de los tres vectores y se resuelve la ecuación en $m$.',
+    ],
     params: [{ key: 'tipo', label: 'Condición', options: [['perp', 'Perpendiculares'], ['par', 'Paralelos'], ['cop', 'Coplanarios']] }],
     generate(p) {
       if (p.tipo === 'perp') {

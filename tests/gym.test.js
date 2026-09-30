@@ -65,13 +65,11 @@ const verify = {
 };
 
 verify.propiedades = (ch) => {
-  const { n, d, e, k, build } = ch.data;
-  const U = G.lib.unimodular(n > 3 ? 3 : n, 9);
-  // A con det = d y B con det = e, de orden n (bloques con unimodulares para que no sean triviales)
-  const mk = (x) => { const Z = G.mz(n, n); for (let i = 0; i < n; i++) Z[i][i] = G.F(i === 0 ? x : 1); const P = G.lib.unimodular(n, 9); return G.mmul(G.mmul(P, Z), G.inverse(P)); };
+  const { n, d, e, build } = ch.data;
+  const mk = (x) => { const Z = G.mz(n, n); for (let i = 0; i < n; i++) Z[i][i] = i === 0 ? x : G.F(1); const P = G.lib.unimodular(n, 9); return G.mmul(G.mmul(P, Z), G.inverse(P)); };
   const A = mk(d), B = mk(e);
-  assert.strictEqual(G.det(A).n, d);
-  assert(G.feq(G.det(build(A, B, k)), ch.answer.value), 'propiedad incorrecta');
+  assert(G.feq(G.det(A), d) && G.feq(G.det(B), e));
+  assert(G.feq(G.det(build(A, B)), ch.answer.value), 'propiedad incorrecta');
 };
 verify.filas = (ch) => {
   const { T, k } = ch.data;
@@ -211,6 +209,24 @@ verify.simetrico = (ch) => {
   assert(near(Math.abs(dotN(dv, n)), Math.hypot(...dv) * Math.hypot(...n)));
 };
 
+verify.rangoparam = (ch) => {
+  const d = ch.data;
+  const at = (m) => d.T.map((r) => r.map((e) => e.a * m + e.b));
+  if (d.roots) {
+    d.roots.forEach(({ r }, i) => { assert.strictEqual(rankNum(at(r)), d.ranks[i]); assert.strictEqual(ch.answer.value[0][i].n, d.ranks[i]); });
+    for (let m = -9; m <= 9; m++) if (!d.roots.some((x) => x.r === m)) assert.strictEqual(rankNum(at(m)), 3, 'rango genérico m=' + m);
+    assert.strictEqual(ch.answer.value[0][d.roots.length].n, 3);
+  } else if (d.m0 !== undefined) {
+    for (let m = -9; m <= 9; m++) assert.strictEqual(rankNum(at(m)), m === d.m0 ? 1 : 2, 'suma m=' + m);
+  } else assert.strictEqual(rankNum(toNum(d.expr)), ch.answer.value.n);
+};
+verify.sistemaxy = (ch) => {
+  const { X, Y, A, B, coef: [a1, b1, a2, b2] } = ch.data;
+  const lin = (a, b) => G.madd(G.mscale(X, G.F(a)), G.mscale(Y, G.F(b)));
+  assert(meq(lin(a1, b1), A) && meq(lin(a2, b2), B));
+  assert(meq(ch.answer.parts[0].value, X) && meq(ch.answer.parts[1].value, Y));
+};
+
 let total = 0;
 for (const id of Object.keys(G.modules)) {
   const mod = G.modules[id];
@@ -228,11 +244,26 @@ for (const id of Object.keys(G.modules)) {
         const bad = answerStrings(ch.answer); bad[0] = String(Number(eval(bad[0].includes('/') ? bad[0] : bad[0])) + 1);
         assert.strictEqual(checkAnswer(ch.answer, bad).status, 'wrong', ctx + ': respuesta alterada aceptada');
       }
+      const help = mod.help;
+      assert(Array.isArray(help) && help.length === 2, id + ': la ayuda debe tener 2 fases');
+      help.forEach((h) => assert((h.match(/\$/g) || []).length % 2 === 0, id + ': $ desparejados en la ayuda'));
+      (ch.mistakes || []).forEach((m) => {
+        assert(m.msg && (m.msg.match(/\$/g) || []).length % 2 === 0, ctx + ': mensaje de error típico inválido');
+        const strs = answerStrings(Object.assign({}, ch.answer, { value: m.value }));
+        assert.strictEqual(checkAnswer(ch.answer, strs).status, 'wrong', ctx + ': el error típico coincide con la respuesta correcta');
+      });
       verify[id](ch);
       total++;
     }
   }
 }
+// Aleatorio por defecto: 'rand' se resuelve a una opción real de cada parámetro
+Object.values(G.modules).forEach((mod) => {
+  for (let i = 0; i < 20; i++) {
+    const rp = G.resolveParams(mod, Object.fromEntries((mod.params || []).map((p) => [p.key, 'rand'])));
+    (mod.params || []).forEach((p) => assert(p.options.some(([v]) => v === rp[p.key]), mod.id + ': rand no resuelve a opción real'));
+  }
+});
 // parseo
 assert.strictEqual(G.fstr(G.parseFrac('1,5')), '3/2');
 assert.strictEqual(G.fstr(G.parseFrac(' −2 ')), '-2');

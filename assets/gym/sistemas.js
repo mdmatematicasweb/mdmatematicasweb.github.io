@@ -74,10 +74,13 @@
   G.define({
     id: 'clasificar',
     title: 'Clasificar un sistema (Rouché–Fröbenius)',
-    tip: 'Compara $\\operatorname{rg}(A)$, $\\operatorname{rg}(A^*)$ y el número de incógnitas $n=3$: si los rangos difieren, incompatible; si coinciden y valen $n$, determinado; si coinciden y son menores, indeterminado.',
-    params: [{ key: 'tipo', label: 'Tipo', options: [['mix', 'Mezcla'], ['0', 'Sólo SCD'], ['1', 'Sólo SCI'], ['2', 'Sólo SI']] }],
+    help: [
+      'Rouché–Fröbenius con $n$ incógnitas: si $\\operatorname{rg}(A)\\neq\\operatorname{rg}(A^*)$, incompatible; si $\\operatorname{rg}(A)=\\operatorname{rg}(A^*)=n$, compatible determinado; si son iguales y menores que $n$, compatible indeterminado.',
+      'Método: escribe la matriz ampliada $A^*$ (coeficientes | términos independientes), escalónala por Gauss y cuenta filas no nulas en $A$ y en $A^*$. Una fila $(0\\ 0\\ 0\\,|\\,c)$ con $c\\neq0$ significa $0=c$: incompatible. Ejemplo: ' + d$('\\left(\\begin{array}{cc|c}1&1&2\\\\2&2&5\\end{array}\\right)\\xrightarrow{F_2\\to F_2-2F_1}\\left(\\begin{array}{cc|c}1&1&2\\\\0&0&1\\end{array}\\right)') + '$\\operatorname{rg}(A)=1<\\operatorname{rg}(A^*)=2$: incompatible.',
+    ],
+    params: [{ key: 'tipo', label: 'Tipo', options: [['0', 'Compatible determinado'], ['1', 'Compatible indeterminado'], ['2', 'Incompatible']] }],
     generate(p) {
-      const t = p.tipo === 'mix' ? rnd.int(0, 2) : Number(p.tipo);
+      const t = Number(p.tipo);
       const s = t === 0 ? genSCD(3) : genDeficient(t === 2);
       const aug = augOf(s.A, s.b);
       const g = L.gaussSteps(M(aug));
@@ -105,9 +108,12 @@
   G.define({
     id: 'resolver',
     title: 'Resolver un sistema compatible determinado',
-    tip: 'Regla de Cramer: $x_i=\\dfrac{|A_i|}{|A|}$, con $A_i$ = $A$ cambiando la columna $i$ por los términos independientes. O bien Gauss y sustitución hacia arriba.',
+    help: [
+      'Cramer: $x_i=\\dfrac{|A_i|}{|A|}$, donde $A_i$ es $A$ con la columna $i$ cambiada por los términos independientes (vale si $|A|\\neq0$). Gauss: se escalona la matriz ampliada y se despeja de la última ecuación hacia arriba.',
+      'Ejemplo Cramer: ' + d$('\\begin{cases}x+y=3\\\\x-y=1\\end{cases}\\quad |A|=\\begin{vmatrix}1&1\\\\1&-1\\end{vmatrix}=-2,\\ \\ x=\\frac{\\begin{vmatrix}3&1\\\\1&-1\\end{vmatrix}}{-2}=\\frac{-4}{-2}=2,\\ \\ y=\\frac{\\begin{vmatrix}1&3\\\\1&1\\end{vmatrix}}{-2}=\\frac{-2}{-2}=1') + 'Con Gauss: ' + i$('F_2\\to F_2-F_1') + ' da $-2y=-2$, luego $y=1$ y, sustituyendo arriba, $x=2$.',
+    ],
     params: [
-      { key: 'n', label: 'Incógnitas', options: [['2', '2'], ['3', '3']], default: '3' },
+      { key: 'n', label: 'Incógnitas', options: [['2', '2'], ['3', '3']] },
       { key: 'metodo', label: 'Resolución', options: [['cramer', 'Cramer'], ['gauss', 'Gauss']] },
     ],
     generate(p) {
@@ -159,7 +165,10 @@
   G.define({
     id: 'discutir',
     title: 'Discusión de un sistema con parámetro',
-    tip: 'Los valores críticos de $m$ anulan $|A|$. Para cada uno, compara $\\operatorname{rg}(A)$ y $\\operatorname{rg}(A^*)$. Para el resto de valores el sistema es compatible determinado.',
+    help: [
+      'Los valores críticos de $m$ son los que anulan $|A|$. Para cada uno se compara $\\operatorname{rg}(A)$ con $\\operatorname{rg}(A^*)$ (Rouché–Fröbenius). Para cualquier otro valor, $|A|\\neq0$ y el sistema es compatible determinado.',
+      'Método: 1) calcula $|A(m)|$ y resuelve $|A|=0$; 2) sustituye cada valor crítico y calcula los dos rangos: distintos $\\Rightarrow$ incompatible, iguales (y $<3$) $\\Rightarrow$ compatible indeterminado; 3) los demás valores de $m$ dan sistema compatible determinado. Ejemplo: $|A|=m(m-1)\\Rightarrow$ casos críticos $m=0$ y $m=1$.',
+    ],
     params: [],
     generate() {
       for (let tries = 0; tries < 20000; tries++) {

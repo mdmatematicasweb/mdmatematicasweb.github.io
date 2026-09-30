@@ -148,7 +148,9 @@
   const flatten = (A) => [].concat(...A);
 
   /** spec: {kind:'matrix'|'number'|'list', value}. raw: textos de las casillas. */
+  const partsFlat = (spec) => [].concat(...spec.parts.map((p) => flatten(p.value)));
   function checkAnswer(spec, raw) {
+    if (spec.kind === 'matrixset') return checkAnswer({ kind: 'matrix', value: [partsFlat(spec)] }, raw);
     if (spec.kind === 'matrix') {
       const exp = flatten(spec.value);
       const got = raw.map(parseFrac);
@@ -187,6 +189,7 @@
   }
   /** Textos que dan la respuesta correcta (para "Ver solución" y tests). */
   function answerStrings(spec) {
+    if (spec.kind === 'matrixset') return partsFlat(spec).map(fstr);
     if (spec.kind === 'matrix') return flatten(spec.value).map(fstr);
     if (spec.kind === 'number') return [fstr(spec.value)];
     if (spec.kind === 'choice') return [String(spec.value)];
@@ -212,43 +215,55 @@
     try { localStorage.setItem(key, JSON.stringify(s)); } catch (e) { /* sin almacenamiento */ }
   }
 
+  /** Sustituye cada parámetro "rand" (Aleatorio) por una de sus opciones reales. */
+  function resolveParams(mod, params) {
+    const out = {};
+    (mod.params || []).forEach((p) => {
+      let v = params[p.key];
+      if (v === 'rand') v = rnd.pick(p.options)[0];
+      out[p.key] = v;
+    });
+    return out;
+  }
+  const HELP_TITLES = ['Recordatorio', 'Método'];
+
   function mount(el, mod) {
     const key = 'mdgym:' + mod.id;
     const stats = loadStats(key);
-    const st = { ch: null, done: false, used: false };
+    const st = { ch: null, done: false, used: false, helped: false, phase: 0 };
 
     el.classList.add('gym');
     el.innerHTML =
       '<div class="gym-head"><h3 class="gym-title"></h3>' +
       '<div class="gym-stats"><span>Racha <b data-s="streak">0</b></span><span>Resueltos <b data-s="solved">0</b></span><span>Mejor <b data-s="best">0</b></span></div></div>' +
       '<div class="gym-params"></div>' +
-      (mod.tip ? '<p class="gym-tip"></p>' : '') +
       '<div class="gym-prompt"></div>' +
       '<div class="gym-answer"></div>' +
       '<div class="gym-feedback" role="status" aria-live="polite"></div>' +
       '<div class="gym-actions">' +
       '<button type="button" class="gym-btn gym-check">Comprobar</button>' +
+      '<button type="button" class="gym-btn gym-help-btn">Ayuda</button>' +
       '<button type="button" class="gym-btn gym-sol">Ver solución</button>' +
       '<button type="button" class="gym-btn gym-res">Ver resolución</button>' +
       '<button type="button" class="gym-btn gym-new">Nuevo reto</button>' +
       '<button type="button" class="gym-btn gym-next" hidden>Siguiente ▶</button>' +
       '<button type="button" class="gym-btn gym-class-btn">Modo clase</button>' +
       '</div>' +
+      '<div class="gym-help" hidden></div>' +
       '<div class="gym-steps" hidden></div>';
 
     const q = (s) => el.querySelector(s);
     q('.gym-title').textContent = mod.title;
-    if (mod.tip) typeset(q('.gym-tip'), mod.tip);
 
     const params = {};
     (mod.params || []).forEach((p) => {
-      params[p.key] = p.default !== undefined ? p.default : p.options[0][0];
+      params[p.key] = p.noRand ? (p.default !== undefined ? p.default : p.options[0][0]) : 'rand';
       const lab = document.createElement('label');
       lab.className = 'gym-param';
       lab.innerHTML = '<span></span><select></select>';
       lab.firstChild.textContent = p.label;
       const sel = lab.querySelector('select');
-      p.options.forEach(([v, t]) => {
+      (p.noRand ? p.options : [['rand', 'Aleatorio']].concat(p.options)).forEach(([v, t]) => {
         const o = document.createElement('option');
         o.value = v; o.textContent = t;
         if (v === params[p.key]) o.selected = true;
@@ -277,14 +292,6 @@
     function buildAnswer(spec) {
       const box = q('.gym-answer');
       box.innerHTML = '';
-      const row = document.createElement('div');
-      row.className = 'gym-answer-row';
-      if (spec.label) {
-        const l = document.createElement('span');
-        l.className = 'gym-label';
-        typeset(l, i$(spec.label));
-        row.appendChild(l);
-      }
       const mk = (aria, cls) => {
         const inp = document.createElement('input');
         inp.type = 'text'; inp.autocomplete = 'off'; inp.spellcheck = false;
@@ -293,7 +300,35 @@
         inp.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); check(); } });
         return inp;
       };
-      if (spec.kind === 'choice') {
+      const matrixGrid = (value, colLabels, tag) => {
+        const g = document.createElement('div');
+        g.className = 'gym-matrix';
+        g.style.setProperty('--cols', cols(value));
+        if (colLabels) g.classList.add('has-labels');
+        if (colLabels) colLabels.forEach((t) => {
+          const c = document.createElement('span');
+          c.className = 'gym-collabel';
+          typeset(c, i$(t));
+          g.appendChild(c);
+        });
+        value.forEach((r, i) => r.forEach((_, j) => g.appendChild(mk((tag || '') + 'fila ' + (i + 1) + ', columna ' + (j + 1), 'gym-cell'))));
+        return g;
+      };
+      const addRow = (label, node) => {
+        const row = document.createElement('div');
+        row.className = 'gym-answer-row';
+        if (label) {
+          const l = document.createElement('span');
+          l.className = 'gym-label';
+          typeset(l, i$(label));
+          row.appendChild(l);
+        }
+        row.appendChild(node);
+        box.appendChild(row);
+      };
+      if (spec.kind === 'matrixset') {
+        spec.parts.forEach((pt) => addRow(pt.label, matrixGrid(pt.value, null, pt.label + ': ')));
+      } else if (spec.kind === 'choice') {
         const g = document.createElement('div');
         g.className = 'gym-choices';
         const name = 'gym-' + mod.id + '-' + Math.random().toString(36).slice(2, 8);
@@ -307,27 +342,63 @@
           r.addEventListener('change', () => g.querySelectorAll('label').forEach((l) => l.classList.remove('ok', 'bad')));
           g.appendChild(lab);
         });
-        row.appendChild(g);
+        addRow(spec.label, g);
       } else if (spec.kind === 'matrix') {
-        const g = document.createElement('div');
-        g.className = 'gym-matrix';
-        g.style.setProperty('--cols', cols(spec.value));
-        spec.value.forEach((r, i) => r.forEach((_, j) => g.appendChild(mk('fila ' + (i + 1) + ', columna ' + (j + 1), 'gym-cell'))));
-        row.appendChild(g);
+        addRow(spec.label, matrixGrid(spec.value, spec.colLabels));
       } else {
         const inp = mk(spec.kind === 'list' ? 'valores separados por comas' : 'respuesta', spec.kind === 'list' ? 'gym-line' : 'gym-cell gym-single');
         if (spec.kind === 'list') inp.placeholder = 'ej.: -1, 2';
-        row.appendChild(inp);
+        addRow(spec.label, inp);
       }
-      box.appendChild(row);
+    }
+
+    /* --- Ayuda en dos fases: sólo teoría, no rompe ni suma racha --- */
+    const helpList = () => {
+      const h = (st.ch && st.ch.help) || mod.help || (mod.tip ? [mod.tip] : []);
+      return typeof h === 'function' ? h(st.params) : h;
+    };
+    function resetHelp() {
+      st.phase = 0; st.helped = false;
+      q('.gym-help').hidden = true; q('.gym-help').innerHTML = '';
+      const list = helpList();
+      const b = q('.gym-help-btn');
+      b.hidden = !list.length; b.textContent = 'Ayuda';
+    }
+    function helpStep() {
+      const list = helpList();
+      const box = q('.gym-help');
+      if (st.phase >= list.length) {          // tercera pulsación: ocultar (la ayuda ya cuenta como usada)
+        st.phase = 0; box.hidden = true; box.innerHTML = '';
+        q('.gym-help-btn').textContent = 'Ayuda';
+        return;
+      }
+      if (!st.done) st.helped = true;
+      st.phase++;
+      box.innerHTML = '';
+      list.slice(0, st.phase).forEach((h, i) => {
+        const d = document.createElement('div');
+        d.className = 'gym-help-phase';
+        const t = document.createElement('div');
+        t.className = 'gym-help-title';
+        t.textContent = HELP_TITLES[i] || 'Ayuda';
+        const body = document.createElement('div');
+        body.className = 'gym-help-body';
+        typeset(body, h);
+        d.appendChild(t); d.appendChild(body);
+        box.appendChild(d);
+      });
+      box.hidden = false;
+      q('.gym-help-btn').textContent = st.phase < list.length ? 'Más ayuda' : 'Ocultar ayuda';
     }
 
     function newChallenge() {
-      st.ch = mod.generate(Object.assign({}, params));
+      st.params = resolveParams(mod, params);
+      st.ch = mod.generate(Object.assign({}, st.params));
       st.done = false; st.used = false;
       typeset(q('.gym-prompt'), st.ch.prompt);
       buildAnswer(st.ch.answer);
       setFeedback('');
+      resetHelp();
       q('.gym-steps').hidden = true;
       q('.gym-steps').innerHTML = '';
       q('.gym-next').hidden = true;
@@ -338,10 +409,21 @@
 
     function breakStreak() { if (stats.streak) { stats.streak = 0; paintStats(); } }
 
+    /** Busca si la respuesta coincide con un error típico declarado por el reto. */
+    function findMistake(spec, raw) {
+      const list = st.ch.mistakes || [];
+      for (let i = 0; i < list.length; i++) {
+        const m = list[i];
+        if (checkAnswer(Object.assign({}, spec, { value: m.value }), raw).status === 'ok') return m;
+      }
+      return null;
+    }
+
     function check() {
       if (st.done) return;
       const isChoice = st.ch.answer.kind === 'choice';
-      const res = checkAnswer(st.ch.answer, rawValues());
+      const raw = rawValues();
+      const res = checkAnswer(st.ch.answer, raw);
       inputs().forEach((inp, i) => {
         mark(inp, null);
         if (isChoice) { if (inp.checked && res.status !== 'incomplete') mark(inp, res.cells[0] ? 'ok' : 'bad'); return; }
@@ -349,10 +431,16 @@
         else mark(inp, res.cells[i] ? 'ok' : 'bad');
       });
       if (res.status === 'incomplete') { setFeedback(isChoice ? 'Elige una opción.' : 'Rellena todas las casillas con enteros, fracciones (a/b) o decimales.', 'warn'); return; }
-      if (res.status === 'wrong') { setFeedback(isChoice ? 'Esa opción no es la correcta.' : 'Hay casillas mal. Revisa las marcadas en rojo.', 'bad'); breakStreak(); return; }
+      if (res.status === 'wrong') {
+        const m = st.ch.answer.kind === 'matrixset' ? null : findMistake(st.ch.answer, raw);
+        setFeedback(m ? 'Ojo: ' + m.msg : isChoice ? 'Esa opción no es la correcta.' : 'Hay casillas mal. Revisa las marcadas en rojo.', 'bad');
+        breakStreak();
+        return;
+      }
       st.done = true;
-      setFeedback(st.used ? 'Correcto (con ayuda: no suma a la racha).' : '¡Correcto!', 'ok');
-      if (!st.used) {
+      const assisted = st.used || st.helped;
+      setFeedback(assisted ? 'Correcto (con ayuda: no suma a la racha).' : '¡Correcto!', 'ok');
+      if (!assisted) {
         stats.streak++; stats.solved++;
         stats.best = Math.max(stats.best, stats.streak);
         paintStats();
@@ -408,6 +496,7 @@
     }
 
     q('.gym-check').addEventListener('click', check);
+    q('.gym-help-btn').addEventListener('click', helpStep);
     q('.gym-sol').addEventListener('click', showSolution);
     q('.gym-res').addEventListener('click', toggleSteps);
     q('.gym-new').addEventListener('click', newChallenge);
@@ -433,7 +522,7 @@
     rnd, gcd, F, fadd, fsub, fmul, fdiv, fneg, feq, fzero, fstr, ftex, ftexp, parseFrac,
     M, mz, mI, rows, cols, mcopy, mT, madd, msub, mscale, meq, mmul, mpow, minorM, det, cofactors, inverse, rankOf,
     mtex, mtexStr, d$, i$, flatten, checkAnswer, answerStrings,
-    modules, define, mount, mountAll,
+    modules, define, mount, mountAll, resolveParams,
   };
   root.MDGym = api;
   if (typeof module !== 'undefined' && module.exports) module.exports = api;

@@ -7,53 +7,85 @@
   const { rnd, F, fmul, fdiv, ftex, ftexp, mT, mmul, mpow, mscale, inverse, d$, i$ } = G;
 
   /* ===================== Propiedades de los determinantes ===================== */
-  const pw = (x, n) => Math.pow(x, n);
-  const PROPS = [
-    { tex: '|A^{t}|', B: false, build: (A) => mT(A), val: (d) => F(d),
-      prop: () => '|A^{t}|=|A|', calc: (d) => '=' + d },
-    { tex: '|kA|', B: false, k: true, build: (A, B, k) => mscale(A, F(k)), val: (d, e, n, k) => F(pw(k, n) * d),
-      prop: (n, k) => '|' + k + 'A|=' + ftexp(F(k)) + '^{' + n + '}\\,|A|\\quad(\\text{cada una de las }' + n + '\\text{ filas se multiplica por }' + k + ')',
-      calc: (d, e, n, k) => '=' + ftexp(F(k)) + '^{' + n + '}\\cdot' + ftexp(F(d)) + '=' + pw(k, n) * d },
-    { tex: '|A^{-1}|', B: false, build: (A) => inverse(A), val: (d) => F(1, d),
-      prop: () => '|A^{-1}|=\\frac{1}{|A|}\\quad(\\text{pues }|A\\cdot A^{-1}|=|I|=1)',
-      calc: (d) => '=' + ftex(F(1, d)) },
-    { tex: '|A^{2}|', B: false, build: (A) => mmul(A, A), val: (d) => F(d * d),
-      prop: () => '|A^{2}|=|A\\cdot A|=|A|\\cdot|A|', calc: (d) => '=' + ftexp(F(d)) + '^2=' + d * d },
-    { tex: '|A^{3}|', B: false, build: (A) => mpow(A, 3), val: (d) => F(d * d * d),
-      prop: () => '|A^{3}|=|A|^3', calc: (d) => '=' + ftexp(F(d)) + '^3=' + d * d * d },
-    { tex: '|A\\cdot B|', B: true, build: (A, B) => mmul(A, B), val: (d, e) => F(d * e),
-      prop: () => '|A\\cdot B|=|A|\\cdot|B|', calc: (d, e) => '=' + ftexp(F(d)) + '\\cdot' + ftexp(F(e)) + '=' + d * e },
-    { tex: '|A^{t}\\cdot A|', B: false, build: (A) => mmul(mT(A), A), val: (d) => F(d * d),
-      prop: () => '|A^{t}\\cdot A|=|A^{t}|\\cdot|A|=|A|\\cdot|A|', calc: (d) => '=' + ftexp(F(d)) + '^2=' + d * d },
-    { tex: '|A^{-1}\\cdot B|', B: true, build: (A, B) => mmul(inverse(A), B), val: (d, e) => F(e, d),
-      prop: () => '|A^{-1}\\cdot B|=|A^{-1}|\\cdot|B|=\\frac{|B|}{|A|}', calc: (d, e) => '=\\frac{' + e + '}{' + ftexp(F(d)) + '}=' + ftex(F(e, d)) },
-    { tex: '|k\\,A\\cdot B^{t}|', B: true, k: true, build: (A, B, k) => mmul(mscale(A, F(k)), mT(B)), val: (d, e, n, k) => F(pw(k, n) * d * e),
-      prop: (n, k) => '|' + k + 'A\\cdot B^{t}|=' + k + '^{' + n + '}\\,|A|\\cdot|B^{t}|=' + k + '^{' + n + '}\\,|A|\\cdot|B|',
-      calc: (d, e, n, k) => '=' + ftexp(F(k)) + '^{' + n + '}\\cdot' + ftexp(F(d)) + '\\cdot' + ftexp(F(e)) + '=' + pw(k, n) * d * e },
+  const fpow = (x, n) => { let r = F(1); for (let i = 0; i < n; i++) r = fmul(r, x); return r; };
+  // Cada factor: valor de su determinante a partir de |A|=d, |B|=e, y la matriz que representa.
+  const FACTORS = [
+    { base: 'A', tex: 'A', val: (d) => d, mat: (A) => A, why: '' },
+    { base: 'B', tex: 'B', val: (d, e) => e, mat: (A, B) => B, why: '' },
+    { base: 'A', tex: 'A^{t}', val: (d) => d, mat: (A) => mT(A), why: '|A^{t}|=|A|' },
+    { base: 'B', tex: 'B^{t}', val: (d, e) => e, mat: (A, B) => mT(B), why: '|B^{t}|=|B|' },
+    { base: 'A', tex: 'A^{-1}', val: (d) => fdiv(F(1), d), mat: (A) => inverse(A), why: '|A^{-1}|=\\frac{1}{|A|}', inv: true },
+    { base: 'B', tex: 'B^{-1}', val: (d, e) => fdiv(F(1), e), mat: (A, B) => inverse(B), why: '|B^{-1}|=\\frac{1}{|B|}', inv: true },
+    { base: 'A', tex: 'A^{2}', val: (d) => fmul(d, d), mat: (A) => mmul(A, A), why: '|A^{2}|=|A|^2' },
+    { base: 'B', tex: 'B^{2}', val: (d, e) => fmul(e, e), mat: (A, B) => mmul(B, B), why: '|B^{2}|=|B|^2' },
   ];
+  const DVALS = [-4, -3, -2, -1, 1, 2, 3, 4, 5].map((x) => F(x));
+  const FRAC_VALS = [F(1, 2), F(-1, 2), F(1, 3), F(2, 3), F(-2, 3), F(3, 2), F(-3, 2), F(1, 4)];
 
   G.define({
     id: 'propiedades',
     title: 'Propiedades de los determinantes',
-    tip: '$|A^t|=|A|$ · $|AB|=|A||B|$ · $|A^{-1}|=1/|A|$ · $|kA|=k^n|A|$ (si $A$ es de orden $n$). No se puede usar $|A+B|$.',
-    params: [{ key: 'n', label: 'Orden n', options: [['2', '2'], ['3', '3'], ['4', '4']], default: '3' }],
+    help: [
+      '$|A^t|=|A|$ · $|AB|=|A|\\,|B|$ · $|A^{-1}|=\\dfrac{1}{|A|}$ · $|A^m|=|A|^m$ · $|kA|=k^n|A|$ si $A$ es de orden $n$ (cada una de las $n$ filas se multiplica por $k$). <b>Nunca</b> es cierto que $|A+B|=|A|+|B|$.',
+      'Método: separa la expresión en factores, aplica $|XY|=|X||Y|$, sustituye el valor de cada factor y multiplica. Ejemplo (orden 3, $|A|=2$, $|B|=-1$): ' +
+        d$('|2A^{t}B^{-1}|=2^3\\cdot|A|\\cdot\\frac{1}{|B|}=8\\cdot2\\cdot(-1)=-16'),
+    ],
+    params: [
+      { key: 'n', label: 'Orden n', options: [['2', '2'], ['3', '3'], ['4', '4']] },
+      { key: 'nivel', label: 'Dificultad', options: [['1', 'Sencilla'], ['2', 'Media'], ['3', 'Compleja']] },
+      { key: 'frac', label: 'Fracciones', options: [['no', 'No'], ['si', 'Sí']] },
+    ],
     generate(p) {
-      const n = Number(p.n);
-      const d = rnd.pick([-4, -3, -2, -1, 1, 2, 3, 4, 5]);
-      const e = rnd.pick([-3, -2, -1, 1, 2, 3, 4]);
-      const k = rnd.pick([-2, -1, 2, 3]);
-      const pr = rnd.pick(PROPS);
-      const tex = pr.k ? pr.tex.replace(/k/, k) : pr.tex;
-      const ans = pr.val(d, e, n, k);
-      const givens = pr.B ? i$('|A|=' + d) + ' y ' + i$('|B|=' + e) : i$('|A|=' + d);
+      const n = Number(p.n), lvl = Number(p.nivel);
+      const vals = p.frac === 'si' ? FRAC_VALS.concat(DVALS) : DVALS;
+      const d = rnd.pick(vals), e = rnd.pick(vals);
+      const count = lvl === 1 ? rnd.int(1, 2) : lvl === 2 ? rnd.int(2, 3) : rnd.int(3, 4);
+      let chosen;
+      for (;;) {
+        chosen = Array.from({ length: count }, () => rnd.pick(FACTORS));
+        const dup = new Set(chosen.map((f) => f.tex)).size !== chosen.length;
+        const cancels = chosen.some((f) => f.inv && chosen.some((g) => g !== f && g.base === f.base && g.tex === f.base));
+        if (dup || cancels) continue;
+        if (lvl === 3 && !chosen.some((f) => f.inv || f.tex.endsWith('2}'))) continue;
+        break;
+      }
+      const kOpts = p.frac === 'si' ? [2, 3, -1, -2, F(1, 2)] : [2, 3, -1, -2];
+      const useK = lvl === 3 || (lvl === 2 && rnd.int(0, 1)) || (lvl === 1 && count === 1 && rnd.int(0, 1));
+      const k = useK ? rnd.pick(kOpts) : null;
+      const kF = k === null ? F(1) : (typeof k === 'number' ? F(k) : k);
+      const kTex = k === null ? '' : typeof k === 'number' ? (k === -1 ? '-' : String(k)) : ftex(k);
+      const usesB = chosen.some((f) => f.base === 'B');
+      const tex = kTex + chosen.map((f) => f.tex).join('');
+      const fv = chosen.map((f) => f.val(d, e));
+      let prod = F(1);
+      fv.forEach((x) => { prod = fmul(prod, x); });
+      const kn = fpow(kF, n);
+      const ans = fmul(kn, prod);
+      // pasos
+      const steps = [];
+      if (k !== null) steps.push('Sacamos el escalar: cada una de las ' + n + ' filas se multiplica por ' + i$(ftex(kF)) + ', así que ' + d$('|' + tex + '|=' + ftexp(kF) + '^{' + n + '}\\,|' + chosen.map((f) => f.tex).join('') + '|=' + ftex(kn) + '\\,|' + chosen.map((f) => f.tex).join('') + '|'));
+      if (chosen.length > 1) steps.push('El determinante de un producto es el producto de determinantes: ' + d$('|' + chosen.map((f) => f.tex).join('') + '|=' + chosen.map((f) => '|' + f.tex + '|').join('\\cdot')));
+      const lines = chosen.map((f, i) => (f.why ? '|' + f.tex + '|=' + f.why.split('=').slice(1).join('=') + '=' + ftex(fv[i]) : '|' + f.tex + '|=' + ftex(fv[i])));
+      steps.push('Valor de cada factor: ' + d$(lines.join('\\qquad ')));
+      steps.push('Multiplicamos: ' + d$('|' + tex + '|=' + (k !== null ? ftexp(kn) + '\\cdot' : '') + fv.map(ftexp).join('\\cdot') + '=' + ftex(ans)));
+      const mistakes = [];
+      if (k !== null && n > 1 && !G.feq(kn, kF)) {
+        const w = fmul(kF, prod);
+        if (!G.feq(w, ans)) mistakes.push({ value: w, msg: 'el escalar sale elevado al orden: $|kA|=k^n|A|$, porque se multiplican las $n$ filas.' });
+      }
+      if (chosen.some((f) => f.inv)) {
+        let prod2 = F(1);
+        chosen.forEach((f, i) => { prod2 = fmul(prod2, f.inv ? (f.base === 'A' ? d : e) : fv[i]); });
+        const w = fmul(kn, prod2);
+        if (!G.feq(w, ans)) mistakes.push({ value: w, msg: '$|A^{-1}|$ no vale $|A|$: $|A^{-1}|=\\dfrac{1}{|A|}$.' });
+      }
+      const givens = usesB ? i$('|A|=' + ftex(d)) + ' y ' + i$('|B|=' + ftex(e)) : i$('|A|=' + ftex(d));
       return {
-        prompt: 'Sean ' + i$('A') + (pr.B ? ' y ' + i$('B') : '') + ' matrices cuadradas de orden ' + i$(String(n)) + (pr.B ? ' con ' : ' con ') + givens + '. Calcula ' + i$(tex) + '.',
-        answer: { kind: 'number', label: tex + '=', value: ans },
-        steps: [
-          'Propiedad que se aplica: ' + d$(pr.prop(n, k)),
-          'Sustituimos los datos: ' + d$(tex + pr.calc(d, e, n, k)),
-        ],
-        data: { n, d, e, k, build: pr.build },
+        prompt: 'Sean ' + i$('A') + (usesB ? ' y ' + i$('B') : '') + ' matrices cuadradas de orden ' + i$(String(n)) + ' con ' + givens + '. Calcula ' + i$('|' + tex + '|') + '.',
+        answer: { kind: 'number', label: '|' + tex + '|=', value: ans },
+        steps,
+        mistakes,
+        data: { n, d, e, kF, chosen, build: (A, B) => { let R = null; chosen.forEach((f) => { const Mx = f.mat(A, B); R = R ? mmul(R, Mx) : Mx; }); return mscale(R, kF); } },
       };
     },
   });
@@ -77,7 +109,10 @@
   G.define({
     id: 'filas',
     title: 'Operaciones con filas',
-    tip: 'Intercambiar dos filas cambia el signo · multiplicar una fila por $c$ multiplica el determinante por $c$ · sumar a una fila un múltiplo de otra no lo cambia.',
+    help: [
+      'Intercambiar dos filas cambia el signo del determinante · multiplicar una fila por $c$ multiplica el determinante por $c$ · sumar a una fila un múltiplo de otra <b>no</b> lo cambia.',
+      'Ejemplo con $|A|=3$: intercambiar $F_1\\leftrightarrow F_2$ da $-3$; $F_2\\to4F_2$ da $12$; $F_2\\to F_2+5F_1$ sigue valiendo $3$. Si haces varias operaciones seguidas, multiplica los factores de cada una: $3\\cdot(-1)\\cdot4=-12$.',
+    ],
     params: [],
     generate() {
       for (;;) {
@@ -92,15 +127,15 @@
           let j = rnd.int(0, 2); if (j === i) j = (j + 1) % 3;
           if (type === 'swap') {
             [T[i], T[j]] = [T[j], T[i]]; factor *= -1;
-            log.push({ op: 'F_' + (i + 1) + '\\leftrightarrow F_' + (j + 1), why: 'Intercambiar dos filas cambia el signo', f: -1, fl: '\\cdot(-1)' });
+            log.push({ type, op: 'F_' + (i + 1) + '\\leftrightarrow F_' + (j + 1), why: 'Intercambiar dos filas cambia el signo', f: -1, fl: '\\cdot(-1)' });
           } else if (type === 'mul') {
             const c = rnd.pick([2, 3, -1, -2]);
             T[i] = T[i].map((x) => x * c); factor *= c;
-            log.push({ op: 'F_' + (i + 1) + '\\to ' + (c === -1 ? '-' : c) + 'F_' + (i + 1), why: 'Multiplicar una fila por ' + c + ' multiplica el determinante por ' + c, f: c, fl: '\\cdot(' + c + ')' });
+            log.push({ type, c, op: 'F_' + (i + 1) + '\\to ' + (c === -1 ? '-' : c) + 'F_' + (i + 1), why: 'Multiplicar una fila por ' + c + ' multiplica el determinante por ' + c, f: c, fl: '\\cdot(' + c + ')' });
           } else {
             const c = rnd.pick([-2, -1, 1, 2, 3]);
             T[i] = T[i].map((x, t2) => x + c * T[j][t2]);
-            log.push({ op: 'F_' + (i + 1) + '\\to F_' + (i + 1) + (c === 1 ? '+' : c === -1 ? '-' : c < 0 ? c : '+' + c) + 'F_' + (j + 1), why: 'Sumar a una fila un múltiplo de otra no cambia el determinante', f: 1, fl: '' });
+            log.push({ type, c, op: 'F_' + (i + 1) + '\\to F_' + (i + 1) + (c === 1 ? '+' : c === -1 ? '-' : c < 0 ? c : '+' + c) + 'F_' + (j + 1), why: 'Sumar a una fila un múltiplo de otra no cambia el determinante', f: 1, fl: '' });
           }
         }
         const same = T.every((r, i) => r.every((x, j) => x === (i === j ? 1 : 0)));
@@ -108,16 +143,23 @@
         if (Math.abs(detInt3(T)) !== Math.abs(factor)) continue;   // coherencia interna
         const ans = factor * k;
         let run = k, steps = ['Partimos de ' + d$(origTex + '=' + k) + 'El determinante pedido se obtiene con estas operaciones entre filas, aplicadas en orden:'];
-        log.forEach((l, n) => {
+        log.forEach((l) => {
           const prev = run;
           run = run * l.f;
           steps.push(i$(l.op) + ': ' + l.why + '. ' + d$(prev + (l.fl || '\\ (\\text{sin cambio})') + '=' + run));
         });
         steps.push('Por tanto ' + d$(rowsTex(T) + '=' + ans));
+        const mistakes = [];
+        const alt = (fn) => log.reduce((acc, l) => acc * fn(l), k);
+        const noSign = alt((l) => (l.type === 'swap' ? 1 : l.f));
+        if (log.some((l) => l.type === 'swap') && noSign !== ans) mistakes.push({ value: F(noSign), msg: 'intercambiar dos filas <b>cambia el signo</b> del determinante.' });
+        const addMul = alt((l) => (l.type === 'add' ? l.c : l.f));
+        if (log.some((l) => l.type === 'add' && l.c !== 1) && addMul !== ans) mistakes.push({ value: F(addMul), msg: 'sumar a una fila un múltiplo de otra <b>no cambia</b> el determinante (sólo multiplicar una fila lo cambia).' });
         return {
           prompt: 'Sabiendo que ' + d$(origTex + '=' + k) + 'calcula, sin desarrollar, ' + d$(rowsTex(T)),
           answer: { kind: 'number', label: '\\text{valor}=', value: F(ans) },
           steps,
+          mistakes,
           data: { T, k, factor },
         };
       }

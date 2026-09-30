@@ -40,7 +40,10 @@
   G.define({
     id: 'plano',
     title: 'Ecuación del plano',
-    tip: 'Plano $Ax+By+Cz+D=0$ con normal $\\vec n=(A,B,C)$. Cualquier múltiplo de $(A,B,C,D)$ vale.',
+    help: [
+      'Un plano $Ax+By+Cz+D=0$ tiene vector normal $\\vec n=(A,B,C)$. Con dos vectores del plano (p. ej. $\\vec{AB}$ y $\\vec{AC}$), $\\vec n=\\vec u\\times\\vec v$. Luego $D=-\\vec n\\cdot P$ con cualquier punto $P$ del plano.',
+      'Ejemplo: $A(1,0,0)$, $B(0,1,0)$, $C(0,0,1)$. $\\vec{AB}=(-1,1,0)$, $\\vec{AC}=(-1,0,1)$, $\\vec n=\\vec{AB}\\times\\vec{AC}=(1,1,1)$. $D=-(1,1,1)\\cdot(1,0,0)=-1$. Plano: $x+y+z-1=0$. Cualquier múltiplo sirve.',
+    ],
     params: [{ key: 'dato', label: 'Datos', options: [['3p', 'Tres puntos'], ['pn', 'Punto y normal'], ['pd', 'Punto y dos direcciones']] }],
     generate(p) {
       let P, n, prompt, steps, data;
@@ -82,7 +85,10 @@
   G.define({
     id: 'interseccion',
     title: 'Punto de corte de recta y plano',
-    tip: 'Sustituye las paramétricas de la recta en la ecuación del plano y despeja $t$.',
+    help: [
+      'Escribe la recta en paramétricas $x=x_0+at$, $y=y_0+bt$, $z=z_0+ct$, sustituye en la ecuación del plano y despeja $t$. Con ese $t$, vuelve a la recta para obtener el punto.',
+      'Ejemplo: $r:\\ (x,y,z)=(1,0,2)+t(1,1,-1)$ y $\\pi:\\ x+y+z-5=0$. ' + d$('(1+t)+t+(2-t)-5=0\\ \\Rightarrow\\ t-2=0\\ \\Rightarrow\\ t=2\\ \\Rightarrow\\ P=(3,2,0)') + 'Si el coeficiente de $t$ fuese 0, no habría un único punto.',
+    ],
     params: [],
     generate() {
       for (;;) {
@@ -120,7 +126,10 @@
   G.define({
     id: 'posicion',
     title: 'Posición relativa',
-    tip: 'Compara los vectores directores o normales y comprueba si hay un punto común.',
+    help: [
+      'Dos planos: compara los coeficientes $(A,B,C)$; si no son proporcionales, secantes. Dos rectas: compara los directores; si no son proporcionales, mira $[\\vec u,\\vec v,\\vec{PQ}]$ (0: se cortan, distinto de 0: se cruzan). Recta y plano: calcula $\\vec n\\cdot\\vec v$ (distinto de 0: secantes).',
+      'Método. Planos: $(A,B,C)$ proporcionales y $D$ también $\\Rightarrow$ coincidentes; sólo los tres primeros $\\Rightarrow$ paralelos. Rectas con directores proporcionales: si $Q$ está en $r$, coincidentes; si no, paralelas. Recta y plano con $\\vec n\\cdot\\vec v=0$: sustituye un punto de la recta en el plano; si lo cumple, la recta está contenida; si no, es paralela.',
+    ],
     params: [{ key: 'tipo', label: 'Elementos', options: [['rectas', 'Dos rectas'], ['planos', 'Dos planos'], ['rp', 'Recta y plano']] }],
     generate(p) {
       if (p.tipo === 'planos') {
@@ -201,7 +210,10 @@
   G.define({
     id: 'distancias',
     title: 'Distancias',
-    tip: '$d(P,\\pi)=\\dfrac{|Ax_0+By_0+Cz_0+D|}{\\sqrt{A^2+B^2+C^2}}$ · $d(P,r)=\\dfrac{|\\vec{QP}\\times\\vec v|}{|\\vec v|}$. Los denominadores salen enteros.',
+    help: [
+      '$d(P,\\pi)=\\dfrac{|Ax_0+By_0+Cz_0+D|}{\\sqrt{A^2+B^2+C^2}}$ · $d(P,r)=\\dfrac{|\\vec{QP}\\times\\vec v|}{|\\vec v|}$ con $Q$ en la recta y $\\vec v$ su director · planos paralelos: $d=\\dfrac{|D_1-D_2|}{\\sqrt{A^2+B^2+C^2}}$ (con los mismos $A,B,C$).',
+      'Ejemplo: $P(1,2,2)$ y $\\pi:\\ 2x-y+2z+3=0$. ' + d$('d=\\frac{|2\\cdot1-2+2\\cdot2+3|}{\\sqrt{4+1+4}}=\\frac{7}{3}') + 'Los denominadores salen enteros en estos ejercicios.',
+    ],
     params: [{ key: 'tipo', label: 'Distancia', options: [['pp', 'Punto a plano'], ['pr', 'Punto a recta'], ['pl', 'Entre planos paralelos']] }],
     generate(p) {
       if (p.tipo === 'pp') {
@@ -255,7 +267,10 @@
   G.define({
     id: 'simetrico',
     title: 'Simétrico de un punto respecto de un plano',
-    tip: 'Recta perpendicular al plano por $P$ → punto de corte $I$ con el plano → $P^{\\prime}=2I-P$.',
+    help: [
+      'Simétrico $P^{\\prime}$ de $P$ respecto de un plano: 1) recta perpendicular al plano por $P$ (director = normal); 2) punto de corte $I$ con el plano; 3) $I$ es el punto medio de $PP^{\\prime}$, luego $P^{\\prime}=2I-P$.',
+      'Ejemplo: $P(1,1,1)$ y el plano $z=0$. La recta es $(1,1,1+t)$; corta al plano con $1+t=0$, $t=-1$, $I=(1,1,0)$. Entonces $P^{\\prime}=2(1,1,0)-(1,1,1)=(1,1,-1)$.',
+    ],
     params: [],
     generate() {
       for (;;) {

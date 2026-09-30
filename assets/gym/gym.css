@@ -197,3 +197,32 @@ html.gym-lock { overflow: hidden; }
 .gym-choice.ok { background: #b6ead9; }
 .gym-choice.bad { background: #f9b7b1; }
 .gym-class .gym-choice { font-size: 1.5rem; padding: 0.6rem 1.2rem; }
+
+/* --- Ayuda en dos fases --- */
+.gym-help-btn { background: var(--md-lime, #F5D65B); }
+.gym-help {
+  margin-top: 1rem;
+  border: 2px solid #000;
+  border-left-width: 8px;
+  background: #fffbe6;
+  padding: 0.5rem 0.9rem 0.3rem;
+}
+.gym-help-phase + .gym-help-phase { margin-top: 0.6rem; padding-top: 0.5rem; border-top: 2px dashed #000; }
+.gym-help-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2rem;
+}
+.gym-help-body { font-size: 0.95rem; overflow-x: auto; }
+.gym-help-body .katex-display { margin: 0.4rem 0; }
+.gym-class .gym-help-body { font-size: 1.3rem; }
+
+/* Etiqueta sobre cada casilla de una fila de respuestas */
+.gym-collabel { text-align: center; font-size: 0.9rem; align-self: end; }
+.gym-class .gym-collabel { font-size: 1.3rem; }
+
+.gym-matrix.has-labels { grid-template-columns: repeat(var(--cols), minmax(6.5rem, 8.5rem)); }
+.gym-answer-row + .gym-answer-row { margin-top: 0.7rem; }

@@ -9,7 +9,7 @@ format:
     css: ../../../assets/gym/gym.css
 ---
 
-Cada bloque genera ejercicios nuevos al azar y los corrige al instante en el navegador. Ajusta las opciones de cada bloque, escribe la respuesta (enteros, fracciones `a/b` o decimales) y pulsa **Comprobar** (o Intro). **Ver resolución** muestra el procedimiento paso a paso; usar ayuda rompe la racha. **Modo clase** pone el ejercicio a pantalla completa para proyectarlo.
+Cada bloque genera ejercicios nuevos al azar y los corrige al instante en el navegador. Las opciones empiezan en **Aleatorio**; elige una concreta si quieres practicar sólo ese caso. **Ayuda** muestra la teoría en dos pasos (no suma ni quita racha), escribe la respuesta (enteros, fracciones `a/b` o decimales) y pulsa **Comprobar** (o Intro). **Ver resolución** muestra el procedimiento paso a paso; usar ayuda rompe la racha. **Modo clase** pone el ejercicio a pantalla completa para proyectarlo.
 
 ## Producto de matrices
 
@@ -23,6 +23,10 @@ Cada bloque genera ejercicios nuevos al azar y los corrige al instante en el nav
 
 <div data-gym="determinante"></div>
 
+## Propiedades de los determinantes
+
+<div data-gym="propiedades"></div>
+
 ## Matriz inversa
 
 <div data-gym="inversa"></div>
@@ -30,6 +34,10 @@ Cada bloque genera ejercicios nuevos al azar y los corrige al instante en el nav
 ## Rango
 
 <div data-gym="rango"></div>
+
+## Rango con parámetro y propiedades
+
+<div data-gym="rangoparam"></div>
 
 ## Matriz con parámetro
 
@@ -39,6 +47,11 @@ Cada bloque genera ejercicios nuevos al azar y los corrige al instante en el nav
 
 <div data-gym="ecuaciones"></div>
 
+## Sistemas de ecuaciones matriciales
+
+<div data-gym="sistemaxy"></div>
+
 <script src="../../../assets/gym/gym.js"></script>
 <script src="../../../assets/gym/matrices.js"></script>
+<script src="../../../assets/gym/determinantes.js"></script>
 <script>document.addEventListener("DOMContentLoaded", function () { MDGym.mountAll(); });</script>
