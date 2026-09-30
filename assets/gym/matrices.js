@@ -930,7 +930,8 @@
         const B = randMat(n, n, -4, 4);
         A = t === 0 ? madd(B, mT(B)) : t === 1 ? msub(B, mT(B)) : B;
         const sym = meq(A, mT(A)), anti = meq(A, G.mscale(mT(A), F(-1)));
-        if (t === 2 ? !sym && !anti : t === 0 ? sym : anti) break;
+        const nula = A.every((r) => r.every((x) => x.n === 0));
+        if (!nula && (t === 2 ? !sym && !anti : t === 0 ? sym : anti)) break;
       }
       const OPTS = ['Simétrica', 'Antisimétrica', 'Ni simétrica ni antisimétrica'];
       return {
