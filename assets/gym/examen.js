@@ -246,7 +246,7 @@
       st.vista = 'config';
       const cfg = Object.assign({}, cfgPrev, precarga || {});
       const w = el('div', 'mdx-config');
-      w.appendChild(el('p', 'mdx-intro', 'Genera un simulacro de <b>Matemáticas II</b> con el formato de la EBAU de Andalucía. Elige los <b>tipos de ejercicio</b> que ya has estudiado: sólo saldrán esos. Tienes <b>cronómetro</b> y el examen se <b>corrige solo</b>.'));
+      w.appendChild(el('p', 'mdx-intro', 'Marca los <b>tipos de ejercicio</b> que ya has estudiado: sólo saldrán esos.'));
 
       const curso = ls.get(K_CURSO);
       if (curso && curso.codigo) {
