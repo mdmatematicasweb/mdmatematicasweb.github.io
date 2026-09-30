@@ -1,0 +1,103 @@
+---
+title: "Determinantes"
+---
+
+## 1. Determinante de una matriz cuadrada
+
+El **determinante** $|A|$ (o $\det A$) asigna un número a cada matriz cuadrada. Sirve para saber si $A$ tiene inversa, calcularla, hallar el rango y resolver sistemas.
+
+**Orden 2**: producto de la diagonal principal menos producto de la diagonal secundaria.
+
+$$\begin{vmatrix}a&b\\c&d\end{vmatrix}=ad-bc\qquad\text{Ejemplo: }\begin{vmatrix}3&-1\\2&5\end{vmatrix}=15+2=17$$
+
+**Orden 3 — regla de Sarrus**: suma de los tres productos en la dirección de la diagonal principal menos los tres en la dirección de la secundaria.
+
+$$\begin{vmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{vmatrix}=a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}-a_{13}a_{22}a_{31}-a_{11}a_{23}a_{32}-a_{12}a_{21}a_{33}$$
+
+::: {.callout-note}
+Sarrus solo vale para orden 3. Para orden 4 o mayor se usan adjuntos o se hacen ceros.
+:::
+
+## 2. Menores y adjuntos: desarrollo por una fila o columna
+
+- El **menor** $M_{ij}$ es el determinante que queda al quitar la fila $i$ y la columna $j$.
+- El **adjunto** es $A_{ij}=(-1)^{i+j}M_{ij}$. Los signos forman el tablero $\begin{pmatrix}+&-&+\\-&+&-\\+&-&+\end{pmatrix}$.
+
+**Desarrollo por la fila $i$**:
+$$|A|=a_{i1}A_{i1}+a_{i2}A_{i2}+\dots+a_{in}A_{in}$$
+
+Se puede desarrollar por cualquier fila o columna; conviene elegir la que tenga más ceros.
+
+Ejemplo, desarrollando por la primera fila:
+$$\begin{vmatrix}2&0&1\\1&3&-1\\0&4&2\end{vmatrix}=2\begin{vmatrix}3&-1\\4&2\end{vmatrix}-0+1\begin{vmatrix}1&3\\0&4\end{vmatrix}=2\cdot10+4=24$$
+
+## 3. Propiedades
+
+Sean $A,B$ matrices cuadradas de orden $n$ y $k$ un número:
+
+| Propiedad | Fórmula |
+|---|---|
+| Traspuesta | $\lvert A^t\rvert=\lvert A\rvert$ |
+| Producto | $\lvert AB\rvert=\lvert A\rvert\lvert B\rvert$ |
+| Inversa | $\lvert A^{-1}\rvert=\dfrac{1}{\lvert A\rvert}$ |
+| Producto por un número | $\lvert kA\rvert=k^n\lvert A\rvert$ |
+| Potencia | $\lvert A^m\rvert=\lvert A\rvert^m$ |
+
+**Sobre filas (o columnas)**:
+
+1. Si se **intercambian** dos filas, el determinante **cambia de signo**.
+2. Si una fila se **multiplica por $k$**, el determinante queda multiplicado por $k$.
+3. Si a una fila se le **suma un múltiplo de otra**, el determinante **no cambia**.
+4. Si una fila es combinación lineal de otras (en particular, dos filas iguales o proporcionales, o una fila de ceros), $|A|=0$.
+5. El determinante de una matriz triangular (o diagonal) es el producto de su diagonal.
+
+::: {.callout-warning}
+Ojo: $|A+B|\neq|A|+|B|$ en general, y $|kA|\neq k|A|$ (es $k^n|A|$).
+:::
+
+**Truco para calcular**: usa la propiedad 3 para hacer ceros en una columna y desarrolla por ella. En un determinante $4\times4$ conviene dejar un solo elemento no nulo en una columna.
+
+## 4. Matriz inversa con determinantes
+
+$A$ es **invertible** $\iff|A|\neq0$. En ese caso:
+
+$$A^{-1}=\frac{1}{|A|}\,\big(\operatorname{Adj}A\big)^t$$
+
+donde $\operatorname{Adj}A$ es la matriz formada por los adjuntos $A_{ij}$.
+
+**Pasos**: (1) calcula $|A|$ y comprueba que no es 0; (2) calcula la matriz de adjuntos; (3) trasponla; (4) divide entre $|A|$.
+
+Para orden 2: $\begin{pmatrix}a&b\\c&d\end{pmatrix}^{-1}=\dfrac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}$.
+
+Ejemplo: $A=\begin{pmatrix}1&2&3\\0&1&4\\5&6&0\end{pmatrix}$ tiene $|A|=1$. Sus adjuntos dan
+$$\operatorname{Adj}A=\begin{pmatrix}-24&20&-5\\18&-15&4\\5&-4&1\end{pmatrix}\quad\Rightarrow\quad A^{-1}=\begin{pmatrix}-24&18&5\\20&-15&-4\\-5&4&1\end{pmatrix}$$
+
+## 5. Rango por menores
+
+El **rango** de $A$ es el orden del mayor menor no nulo.
+
+Método: 
+
+1. Busca un menor de orden 1 no nulo (un elemento $\neq0$): $\operatorname{rg}\ge1$.
+2. Busca un menor de orden 2 no nulo: $\operatorname{rg}\ge2$.
+3. Orla ese menor con una fila y una columna más; si todos los menores de orden 3 que lo contienen son 0, el rango es 2. Y así sucesivamente.
+
+Con un parámetro $m$: calcula los menores del orden máximo, iguala a 0, y estudia por separado los valores problemáticos de $m$.
+
+Ejemplo: $\begin{pmatrix}1&2&3\\2&4&6\\1&0&1\end{pmatrix}$ tiene $|A|=0$ (la fila 2 es el doble de la 1) y el menor $\begin{vmatrix}1&2\\1&0\end{vmatrix}=-2\neq0$, luego el rango es 2.
+
+## 6. Ecuaciones con determinantes
+
+- Para que una matriz cuadrada con parámetro **no sea invertible**: resuelve $|A|=0$.
+- Para resolver $|A|=0$ con una incógnita $x$: desarrolla, factoriza y busca las raíces.
+- Determinante de Vandermonde:
+$$\begin{vmatrix}1&1&1\\a&b&c\\a^2&b^2&c^2\end{vmatrix}=(b-a)(c-a)(c-b)$$
+
+::: {.callout-tip}
+## Resumen rápido
+- $|A|\neq0\iff A$ invertible $\iff\operatorname{rg}A=n$.
+- $|AB|=|A||B|$, $|A^{-1}|=1/|A|$, $|kA|=k^n|A|$.
+- Intercambiar filas cambia el signo; sumar múltiplos de otra fila no cambia nada.
+- $A^{-1}=\frac{1}{|A|}(\operatorname{Adj}A)^t$.
+- Rango: mayor orden de un menor no nulo.
+:::
