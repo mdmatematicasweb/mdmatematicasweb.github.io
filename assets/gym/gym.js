@@ -153,6 +153,13 @@
       const exp = flatten(spec.value);
       const got = raw.map(parseFrac);
       if (got.some((g) => g === null)) return { status: 'incomplete', cells: got.map((g) => g !== null) };
+      if (spec.proportional) {
+        // vale cualquier múltiplo no nulo del vector esperado (p. ej. ecuación de un plano)
+        const i0 = exp.findIndex((x) => !fzero(x));
+        const k = fdiv(got[i0], exp[i0]);
+        const ok = !fzero(k) && got.every((g, i) => feq(g, fmul(k, exp[i])));
+        return { status: ok ? 'ok' : 'wrong', cells: got.map(() => ok) };
+      }
       const cells = got.map((g, i) => feq(g, exp[i]));
       return { status: cells.every(Boolean) ? 'ok' : 'wrong', cells };
     }
