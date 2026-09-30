@@ -4,6 +4,7 @@ const G = require('../assets/gym/gym.js');
 ['matrices', 'determinantes', 'sistemas', 'vectores', 'rectasplanos'].forEach((f) => require('../assets/gym/' + f + '.js'));
 const X = require('../assets/gym/examen.js');
 require('../assets/gym/tipos-fase1.js');
+require('../assets/gym/tipos-fase2.js');
 
 const N = Number(process.env.EXAM_N || 150);
 const near = (a, b, tol = 1e-6) => Math.abs(a - b) <= tol * Math.max(1, Math.abs(b));
@@ -84,9 +85,44 @@ const verify = {
   },
 };
 
+verify['sistema-plant'] = (ex) => {
+  const { A, b, sol } = ex.data;
+  A.forEach((r, i) => assert.strictEqual(r.reduce((s, x, j) => s + x * sol[j], 0), b[i]));
+  assert(sol.every((x) => Number.isInteger(x) && x > 0));
+  assert(Number.isInteger(ex.data.extra));
+};
+verify['sistema-sci'] = (ex) => {
+  const d = ex.data;
+  if (d.v === 'sci') {
+    const sol = d.sol.map(num);
+    d.A.forEach((r, i) => assert(near(dotN(r, sol), d.b[i]), 'sci: la solución no cumple'));
+    [1, 2, 3].forEach((lam) => { const s2 = [num(d.x[0]) + num(d.x[1]) * lam, num(d.y[0]) + num(d.y[1]) * lam, lam]; d.A.forEach((r, i) => assert(near(dotN(r, s2), d.b[i]), 'familia')); });
+  } else {
+    const at = (m) => d.T.map((r) => r.map((e) => e.a * m + e.b));
+    for (let m = -9; m <= 9; m++) assert.strictEqual(Math.abs(detN(at(m))) < 1e-9, d.roots.includes(m));
+    const sol = d.sol.map(num); at(d.r1).forEach((r) => assert(near(dotN(r, sol), 0)));
+    assert(near(sol[d.k], 1)); assert.strictEqual(rankN(at(d.r1)), 2);
+  }
+};
+verify['matriz-pot-inv'] = (ex) => {
+  const d = ex.data, A = toN(d.A);
+  let P = A.map((r, i) => r.map((_, j) => (i === j ? 1 : 0)));
+  for (let k = 0; k < d.n; k++) P = mulN(P, A);
+  assert(P.every((r, i) => r.every((x, j) => near(x, num(d.An[i][j])))), 'A^n');
+  const prod = mulN(A, toN(d.Ainv)); assert(prod.every((r, i) => r.every((x, j) => near(x, i === j ? 1 : 0))));
+  let Q = A.map((r, i) => r.map((_, j) => (i === j ? 1 : 0))); for (let k = 0; k < d.p; k++) Q = mulN(Q, A);
+  assert(Q.every((r, i) => r.every((x, j) => near(x, i === j ? d.eps : 0))));
+};
+verify['rango-inv-param'] = (ex) => {
+  const d = ex.data, at = (m) => d.T.map((r) => r.map((e) => e.a * m + e.b));
+  for (let m = -9; m <= 9; m++) assert.strictEqual(Math.abs(detN(at(m))) < 1e-9, d.roots.includes(m));
+  d.roots.forEach((r, i) => assert.strictEqual(rankN(at(r)), d.ranks[i]));
+  const prod = mulN(at(d.m0), toN(d.Ai)); assert(prod.every((r, i) => r.every((x, j) => near(x, i === j ? 1 : 0))));
+};
+
 let total = 0;
 const ids = X.CATALOGO.filter((t) => t.listo).map((t) => t.id);
-assert(ids.length === 7, 'fase 1 = 7 tipos, hay ' + ids.length);
+assert(ids.length === 11, 'fases 1-2 = 11 tipos, hay ' + ids.length);
 ids.forEach((id) => {
   for (let i = 0; i < N; i++) {
     const prev = G.setRandom(G.seeded('t' + id + i));

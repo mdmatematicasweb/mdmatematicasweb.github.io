@@ -286,9 +286,9 @@
     ],
     params: [{ key: 'tipo', label: 'Contexto', options: [['precios', 'Precios'], ['edades', 'Edades'], ['monedas', 'Monedas']] }],
     generate(p) {
-      let prompt, A, b, sol, defs, vs = ['x', 'y', 'z'];
+      let prompt, A, b, sol, defs, set = null, vs = ['x', 'y', 'z'];
       if (p.tipo === 'precios') {
-        const set = rnd.pick(SETS);
+        set = rnd.pick(SETS);
         const price = [0, 0, 0].map(() => rnd.int(1, 5));
         for (;;) {
           A = Array.from({ length: 3 }, () => Array.from({ length: 3 }, () => rnd.int(0, 4)));
@@ -322,9 +322,9 @@
         prompt,
         answer: { kind: 'matrix', label: '(x,y,z)=', value: M([sol]) },
         steps,
-        data: { A, b, sol },
+        data: { A, b, sol, tipo: p.tipo, set },
       };
     },
   });
-  L.sysTex = sysTex; L.augTex = augTex; L.cramerSteps = cramerSteps; L.SYS_LABELS = SYS_LABELS; L.cls = cls;
+  L.genDeficient = genDeficient; L.sysTex = sysTex; L.augTex = augTex; L.cramerSteps = cramerSteps; L.SYS_LABELS = SYS_LABELS; L.cls = cls;
 })(typeof globalThis !== 'undefined' ? globalThis : this);
