@@ -458,4 +458,7 @@
       };
     },
   });
+
+  // Utilidades compartidas con los demás temas de álgebra lineal.
+  G.lib = { randMat, unimodular, invSteps, gaussSteps, detSteps, entTex, polyFromDet, polyTex, factorPoly, factorTex };
 })(typeof globalThis !== 'undefined' ? globalThis : this);

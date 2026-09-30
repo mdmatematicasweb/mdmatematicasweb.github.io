@@ -180,3 +180,20 @@ html.gym-lock { overflow: hidden; }
   .gym-label { font-size: 1rem; }
   .gym-matrix { grid-template-columns: repeat(var(--cols), minmax(2.6rem, 1fr)); }
 }
+
+/* --- Respuesta de elección (radio) --- */
+.gym-choices { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.gym-choice {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin: 0; padding: 0.4rem 0.8rem;
+  background: var(--md-paper, #FBF2D6);
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  cursor: pointer;
+  font-weight: 600;
+}
+.gym-choice:hover { background: var(--md-lime, #F5D65B); }
+.gym-choice input { accent-color: #000; }
+.gym-choice.ok { background: #b6ead9; }
+.gym-choice.bad { background: #f9b7b1; }
+.gym-class .gym-choice { font-size: 1.5rem; padding: 0.6rem 1.2rem; }

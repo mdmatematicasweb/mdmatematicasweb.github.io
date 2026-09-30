@@ -171,12 +171,18 @@
       const ok = a.length === b.length && a.every((x) => b.some((y) => feq(x, y)));
       return { status: ok ? 'ok' : 'wrong', cells: [ok] };
     }
+    if (spec.kind === 'choice') {
+      if (raw[0] === '' || raw[0] === undefined) return { status: 'incomplete', cells: [false] };
+      const ok = String(raw[0]) === String(spec.value);
+      return { status: ok ? 'ok' : 'wrong', cells: [ok] };
+    }
     throw new Error('tipo de respuesta desconocido: ' + spec.kind);
   }
   /** Textos que dan la respuesta correcta (para "Ver solución" y tests). */
   function answerStrings(spec) {
     if (spec.kind === 'matrix') return flatten(spec.value).map(fstr);
     if (spec.kind === 'number') return [fstr(spec.value)];
+    if (spec.kind === 'choice') return [String(spec.value)];
     return [spec.value.map(fstr).join(', ')];
   }
 
@@ -251,6 +257,14 @@
       saveStats(key, stats);
     }
     const inputs = () => Array.from(q('.gym-answer').querySelectorAll('input'));
+    const rawValues = () => (st.ch.answer.kind === 'choice'
+      ? [(inputs().find((i) => i.checked) || { value: '' }).value]
+      : inputs().map((i) => i.value));
+    const mark = (inp, cls) => {
+      const t = inp.type === 'radio' ? inp.closest('label') : inp;
+      t.classList.remove('ok', 'bad');
+      if (cls) t.classList.add(cls);
+    };
     const setFeedback = (msg, cls) => { const f = q('.gym-feedback'); f.textContent = msg; f.className = 'gym-feedback ' + (cls || ''); };
 
     function buildAnswer(spec) {
@@ -272,7 +286,22 @@
         inp.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); check(); } });
         return inp;
       };
-      if (spec.kind === 'matrix') {
+      if (spec.kind === 'choice') {
+        const g = document.createElement('div');
+        g.className = 'gym-choices';
+        const name = 'gym-' + mod.id + '-' + Math.random().toString(36).slice(2, 8);
+        spec.options.forEach((t, i) => {
+          const lab = document.createElement('label');
+          lab.className = 'gym-choice';
+          lab.innerHTML = '<input type="radio"><span></span>';
+          const r = lab.querySelector('input');
+          r.name = name; r.value = String(i);
+          typeset(lab.querySelector('span'), t);
+          r.addEventListener('change', () => g.querySelectorAll('label').forEach((l) => l.classList.remove('ok', 'bad')));
+          g.appendChild(lab);
+        });
+        row.appendChild(g);
+      } else if (spec.kind === 'matrix') {
         const g = document.createElement('div');
         g.className = 'gym-matrix';
         g.style.setProperty('--cols', cols(spec.value));
@@ -304,14 +333,16 @@
 
     function check() {
       if (st.done) return;
-      const res = checkAnswer(st.ch.answer, inputs().map((i) => i.value));
+      const isChoice = st.ch.answer.kind === 'choice';
+      const res = checkAnswer(st.ch.answer, rawValues());
       inputs().forEach((inp, i) => {
-        inp.classList.remove('ok', 'bad');
-        if (res.status === 'incomplete') { if (!res.cells[i] || res.cells.length === 1) inp.classList.add('bad'); }
-        else inp.classList.add(res.cells[i] ? 'ok' : 'bad');
+        mark(inp, null);
+        if (isChoice) { if (inp.checked && res.status !== 'incomplete') mark(inp, res.cells[0] ? 'ok' : 'bad'); return; }
+        if (res.status === 'incomplete') { if (!res.cells[i] || res.cells.length === 1) mark(inp, 'bad'); }
+        else mark(inp, res.cells[i] ? 'ok' : 'bad');
       });
-      if (res.status === 'incomplete') { setFeedback('Rellena todas las casillas con enteros, fracciones (a/b) o decimales.', 'warn'); return; }
-      if (res.status === 'wrong') { setFeedback('Hay casillas mal. Revisa las marcadas en rojo.', 'bad'); breakStreak(); return; }
+      if (res.status === 'incomplete') { setFeedback(isChoice ? 'Elige una opción.' : 'Rellena todas las casillas con enteros, fracciones (a/b) o decimales.', 'warn'); return; }
+      if (res.status === 'wrong') { setFeedback(isChoice ? 'Esa opción no es la correcta.' : 'Hay casillas mal. Revisa las marcadas en rojo.', 'bad'); breakStreak(); return; }
       st.done = true;
       setFeedback(st.used ? 'Correcto (con ayuda: no suma a la racha).' : '¡Correcto!', 'ok');
       if (!st.used) {
@@ -329,7 +360,10 @@
     function showSolution() {
       markUsed();
       const vals = answerStrings(st.ch.answer);
-      inputs().forEach((inp, i) => { inp.value = vals[i]; inp.classList.remove('bad'); inp.classList.add('ok'); });
+      inputs().forEach((inp, i) => {
+        if (inp.type === 'radio') { inp.checked = inp.value === vals[0]; mark(inp, inp.checked ? 'ok' : null); }
+        else { inp.value = vals[i]; mark(inp, 'ok'); }
+      });
       st.done = true;
       setFeedback('Solución mostrada. Esta no suma a la racha.', 'warn');
       q('.gym-next').hidden = false;

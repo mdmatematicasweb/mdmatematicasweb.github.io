@@ -2,6 +2,8 @@
 const assert = require('assert');
 const G = require('../assets/gym/gym.js');
 require('../assets/gym/matrices.js');
+require('../assets/gym/determinantes.js');
+require('../assets/gym/sistemas.js');
 
 const N = Number(process.env.GYM_N || 300);
 const { M, mmul, mI, det, rankOf, meq, flatten, checkAnswer, answerStrings } = G;
@@ -58,6 +60,50 @@ const verify = {
     if (eq === 'axb') assert(meq(mmul(mmul(A, X), B), C));
     if (eq === 'axx') assert(meq(G.madd(mmul(A, X), X), B));
   },
+};
+
+verify.propiedades = (ch) => {
+  const { n, d, e, k, build } = ch.data;
+  const U = G.lib.unimodular(n > 3 ? 3 : n, 9);
+  // A con det = d y B con det = e, de orden n (bloques con unimodulares para que no sean triviales)
+  const mk = (x) => { const Z = G.mz(n, n); for (let i = 0; i < n; i++) Z[i][i] = G.F(i === 0 ? x : 1); const P = G.lib.unimodular(n, 9); return G.mmul(G.mmul(P, Z), G.inverse(P)); };
+  const A = mk(d), B = mk(e);
+  assert.strictEqual(G.det(A).n, d);
+  assert(G.feq(G.det(build(A, B, k)), ch.answer.value), 'propiedad incorrecta');
+};
+verify.filas = (ch) => {
+  const { T, k } = ch.data;
+  for (let t = 0; t < 5; t++) {
+    const A0 = G.lib.randMat(3, 3, -4, 4);
+    const d0 = detNum(toNum(A0));
+    const TA = mulNum(T, toNum(A0));
+    assert(near(detNum(TA) * k, detNum(T) * d0 * k));
+    assert(near(detNum(T) * k, ch.answer.value.n));
+  }
+};
+verify.clasificar = (ch) => {
+  const { A, b, t } = ch.data;
+  const rA = rankNum(A), rAm = rankNum(A.map((r, i) => r.concat([b[i]])));
+  assert.strictEqual(t, rA < rAm ? 2 : rA === 3 ? 0 : 1);
+  assert.strictEqual(ch.answer.value, t);
+};
+verify.resolver = (ch) => {
+  const { A, b, sol } = ch.data;
+  A.forEach((r, i) => assert.strictEqual(r.reduce((s, x, j) => s + x * sol[j], 0), b[i]));
+  assert(ch.answer.value[0].every((x, j) => x.n === sol[j] && x.d === 1));
+};
+verify.discutir = (ch) => {
+  const { T, b } = ch.data;
+  const at = (m) => T.map((r) => r.map((e) => e.a * m + e.b));
+  for (let m = -9; m <= 9; m++) {
+    const A = at(m), crit = Math.abs(detNum(A)) < 1e-9;
+    assert.strictEqual(ch.answer.value.some((r) => r.n === m), crit, 'crítico m=' + m);
+    if (crit) {
+      const info = ch.data.infos.find((q) => q.r === m);
+      const rA = rankNum(A), rAm = rankNum(A.map((r, i) => r.concat([b[i]])));
+      assert.strictEqual(info.t, rA < rAm ? 2 : 1);
+    }
+  }
 };
 
 let total = 0;
