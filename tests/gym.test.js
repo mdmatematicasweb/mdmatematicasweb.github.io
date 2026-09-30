@@ -66,10 +66,10 @@ const verify = {
 
 verify.propiedades = (ch) => {
   const { n, d, e, build } = ch.data;
-  const mk = (x) => { const Z = G.mz(n, n); for (let i = 0; i < n; i++) Z[i][i] = i === 0 ? x : G.F(1); const P = G.lib.unimodular(n, 9); return G.mmul(G.mmul(P, Z), G.inverse(P)); };
+  const mk = (x) => { const Z = G.mz(n, n); for (let i = 0; i < n; i++) Z[i][i] = i === 0 ? x : G.F(1); if (n === 4) return Z; const P = G.lib.unimodular(n, 3); return G.mmul(G.mmul(P, Z), G.inverse(P)); };
   const A = mk(d), B = mk(e);
   assert(G.feq(G.det(A), d) && G.feq(G.det(B), e));
-  assert(G.feq(G.det(build(A, B)), ch.answer.value), 'propiedad incorrecta');
+  assert(G.feq(G.det(build(A, B)), ch.answer.value), 'propiedad incorrecta: ' + ch.prompt + ' got ' + G.fstr(G.det(build(A, B))) + ' exp ' + G.fstr(ch.answer.value));
 };
 verify.filas = (ch) => {
   const { T, k } = ch.data;
@@ -193,6 +193,11 @@ verify.distancias = (ch) => {
     const c = [w[1] * d.v[2] - w[2] * d.v[1], w[2] * d.v[0] - w[0] * d.v[2], w[0] * d.v[1] - w[1] * d.v[0]];
     assert(near(a, Math.hypot(...c) / Math.hypot(...d.v)));
   }
+  if (d.tipo === 'rr') {
+    const c = [d.u[1] * d.v[2] - d.u[2] * d.v[1], d.u[2] * d.v[0] - d.u[0] * d.v[2], d.u[0] * d.v[1] - d.u[1] * d.v[0]];
+    const PQ = d.Q.map((x, i) => x - d.P[i]);
+    assert(near(a, Math.abs(dotN(PQ, c)) / Math.hypot(...c)));
+  }
   if (d.tipo === 'pl') { // un punto del plano 1 cae a esa distancia del plano 2
     const n1 = d.c1.slice(0, 3), k = d.c2[0] / n1[0] || d.c2[1] / n1[1] || d.c2[2] / n1[2];
     const P = n1.map((x) => -d.c1[3] * x / dotN(n1, n1));
@@ -209,6 +214,76 @@ verify.simetrico = (ch) => {
   assert(near(Math.abs(dotN(dv, n)), Math.hypot(...dv) * Math.hypot(...n)));
 };
 
+verify.operaciones = (ch) => {
+  const d = ch.data;
+  if (d.a !== undefined && d.B && d.tr === undefined && !d.R) { // combinación lineal
+    const exp = d.A.map((r, i) => r.map((x, j) => d.a * (x.n / x.d) + d.b * (d.B[i][j].n / d.B[i][j].d)));
+    assert(nearM(exp, toNum(ch.answer.value)));
+  } else if (d.tr === 'prod') {
+    const exp = mulNum(toNum(d.A), toNum(d.B)); const tr = exp[0].map((_, j) => exp.map((r) => r[j]));
+    assert(nearM(tr, toNum(ch.answer.value)));
+  } else if (d.tr === 'comb') {
+    const At = toNum(d.A)[0].map((_, j) => toNum(d.A).map((r) => r[j]));
+    assert(nearM(At.map((r, i) => r.map((x, j) => x + d.k * d.B[i][j].n / d.B[i][j].d)), toNum(ch.answer.value)));
+  } else if (d.R) {
+    const A = toNum(d.A), n = A.length, A2 = mulNum(A, A);
+    assert(nearM(A2.map((r, i) => r.map((x, j) => x + d.a * A[i][j] + (i === j ? d.b : 0))), toNum(ch.answer.value)));
+  } else {
+    const A = toNum(d.A), sym = A.every((r, i) => r.every((x, j) => x === A[j][i])), anti = A.every((r, i) => r.every((x, j) => x === -A[j][i]));
+    assert.strictEqual(ch.answer.value, sym ? 0 : anti ? 1 : 2);
+  }
+};
+verify.deteq = (ch) => {
+  const { T, k } = ch.data;
+  for (let m = -12; m <= 12; m++) {
+    const z = near(detNum(T.map((r) => r.map((e) => e.a * m + e.b))), k);
+    assert.strictEqual(z, ch.answer.value.some((r) => r.n === m), 'deteq m=' + m);
+  }
+};
+verify.sci = (ch) => {
+  const { A, b } = ch.data; const sol = vals(ch);
+  A.forEach((r, i) => assert(near(r.reduce((s, x, j) => s + x * sol[j], 0), b[i]), 'la solución no cumple la ecuación ' + i));
+};
+verify.planteamiento = (ch) => {
+  const { A, b, sol } = ch.data;
+  A.forEach((r, i) => assert.strictEqual(r.reduce((s, x, j) => s + x * sol[j], 0), b[i]));
+  assert(sol.every((x) => Number.isInteger(x) && x > 0));
+  assert(ch.answer.value[0].every((x, j) => x.n === sol[j] && x.d === 1));
+};
+verify.voper = (ch) => {
+  const d = ch.data;
+  if (d.tipo === 'comb') [0, 1, 2].forEach((i) => assert.strictEqual(d.r[i], d.a * d.u[i] + d.b * d.v[i] + d.c * d.w[i]));
+  if (d.tipo === 'vab') [0, 1, 2].forEach((i) => assert.strictEqual(d.r[i], d.B[i] - d.A[i]));
+  if (d.tipo === 'mod') assert.strictEqual(d.nu * d.nu, dotN(d.u, d.u));
+  if (d.tipo === 'unit') { const r = vals(ch); assert(near(Math.hypot(...r), 1)); assert(near(Math.abs(dotN(r, d.u)), Math.hypot(...d.u))); }
+};
+verify.base = (ch) => {
+  const d = ch.data;
+  if (d.tipo === 'li') assert.strictEqual(d.dep, Math.abs(mixN(...d.vs)) < 1e-9 ? 1 : 0);
+  else { const c = vals(ch); [0, 1, 2].forEach((i) => assert(near(c[0] * d.u[i] + c[1] * d.v[i] + c[2] * d.t[i], d.w[i]))); assert(Math.abs(mixN(d.u, d.v, d.t)) > 1e-9); }
+};
+verify.recta = (ch) => {
+  const d = ch.data;
+  if (d.tipo === 'dir2p') { const r = vals(ch), w = [d.B[0] - d.A[0], d.B[1] - d.A[1], d.B[2] - d.A[2]]; assert(near(Math.hypot(...[r[1] * w[2] - r[2] * w[1], r[2] * w[0] - r[0] * w[2], r[0] * w[1] - r[1] * w[0]]), 0)); }
+  if (d.tipo === 'dirplanos') { const r = vals(ch); assert(near(dotN(r, d.n1), 0) && near(dotN(r, d.n2), 0)); assert(Math.hypot(...r) > 0); }
+  if (d.tipo === 'punto') { const r = vals(ch); [0, 1, 2].forEach((i) => assert(near(r[i], d.P[i] + d.t0 * d.v[i]))); }
+  if (d.tipo === 'pert') {
+    const w = d.Q.map((x, i) => x - d.P[i]);
+    const par = Math.hypot(w[1] * d.v[2] - w[2] * d.v[1], w[2] * d.v[0] - w[0] * d.v[2], w[0] * d.v[1] - w[1] * d.v[0]) < 1e-9;
+    assert.strictEqual(ch.answer.value, par ? 0 : 1);
+  }
+};
+verify.angulos = (ch) => {
+  const { a, b, val } = ch.data;
+  assert(near(Math.abs(dotN(a, b)) / (Math.hypot(...a) * Math.hypot(...b)), val));
+  assert(near(ch.answer.value.n / ch.answer.value.d, val));
+};
+verify.proyecciones = (ch) => {
+  const d = ch.data, r = vals(ch);
+  if (d.tipo === 'pplano') { assert(near(planeAt(d.pl, r), 0)); const w = d.P.map((x, i) => x - r[i]); assert(near(Math.abs(dotN(w, d.pl)), Math.hypot(...w) * Math.hypot(...d.pl.slice(0, 3)))); }
+  if (d.tipo === 'precta') { const w = d.P.map((x, i) => x - r[i]); assert(near(dotN(w, d.v), 0)); const q = r.map((x, i) => x - d.Q[i]); assert(near(Math.hypot(q[1] * d.v[2] - q[2] * d.v[1], q[2] * d.v[0] - q[0] * d.v[2], q[0] * d.v[1] - q[1] * d.v[0]), 0)); }
+  if (d.tipo === 'srecta') { const mid = d.P.map((x, i) => (x + r[i]) / 2); const w = d.P.map((x, i) => r[i] - x); assert(near(dotN(w, d.v), 0)); const q = mid.map((x, i) => x - d.Q[i]); assert(near(Math.hypot(q[1] * d.v[2] - q[2] * d.v[1], q[2] * d.v[0] - q[0] * d.v[2], q[0] * d.v[1] - q[1] * d.v[0]), 0)); }
+};
 verify.rangoparam = (ch) => {
   const d = ch.data;
   const at = (m) => d.T.map((r) => r.map((e) => e.a * m + e.b));

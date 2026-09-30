@@ -165,4 +165,41 @@
       }
     },
   });
+
+  /* ===================== Ecuaciones con determinantes ===================== */
+  G.define({
+    id: 'deteq',
+    title: 'Ecuaciones con determinantes',
+    help: [
+      'Desarrolla el determinante como polinomio en la incógnita, iguala al valor que te dan y resuelve la ecuación que sale (pasa todo a un miembro y factoriza).',
+      'Ejemplo: $\\begin{vmatrix}x&1\\\\2&x\\end{vmatrix}=3$. Se desarrolla: $x^2-2=3\\Rightarrow x^2=5$. Otro: $x^2-x-2=4\\Rightarrow x^2-x-6=0\\Rightarrow(x-3)(x+2)=0\\Rightarrow x=3$ o $x=-2$. Comprueba siempre sustituyendo.',
+    ],
+    params: [],
+    generate() {
+      const L = G.lib;
+      for (let tries = 0; tries < 40000; tries++) {
+        const T = L.randParamT();
+        const cs = L.polyFromDet(T);
+        if (cs.some((x) => x.d !== 1)) continue;
+        const r0 = rnd.int(-4, 4);
+        const at = (m) => G.det(G.M(T.map((r) => r.map((e) => e.a * m + e.b)))).n;
+        const k = at(r0);
+        if (k === 0 || Math.abs(k) > 40) continue;
+        const c2 = cs.map((x) => x.n); c2[0] -= k;
+        const f = L.factorPoly(c2);
+        if (!f || Math.abs(f.lead) > 6 || f.roots.length > 3) continue;
+        return {
+          prompt: 'Halla los valores de ' + i$('m') + ' para los que ' + d$('\\begin{vmatrix}' + T.map((r) => r.map(L.entTex).join('&')).join('\\\\') + '\\end{vmatrix}=' + k),
+          answer: { kind: 'list', label: 'm=', value: f.roots.map(({ r }) => F(r)) },
+          steps: [
+            'Desarrollamos el determinante: ' + d$('\\begin{vmatrix}' + T.map((r) => r.map(L.entTex).join('&')).join('\\\\') + '\\end{vmatrix}=' + L.polyTex(cs)),
+            'Igualamos a ' + i$(String(k)) + ' y pasamos todo al primer miembro: ' + d$(L.polyTex(cs) + '=' + k + '\\ \\Rightarrow\\ ' + L.polyTex(c2.map((x) => F(x))) + '=0'),
+            'Factorizamos: ' + d$(L.factorTex(f) + '=0\\ \\Rightarrow\\ ' + f.roots.map(({ r }) => 'm=' + r).join('\\ \\text{ o }\\ ')),
+          ],
+          data: { T, k, roots: f.roots },
+        };
+      }
+      throw new Error('no se pudo generar la ecuación con determinantes');
+    },
+  });
 })(typeof globalThis !== 'undefined' ? globalThis : this);

@@ -76,6 +76,7 @@
         prompt: prompt + ' Escribe ' + i$('(A,B,C,D)') + ' de ' + i$('Ax+By+Cz+D=0') + ' (vale cualquier múltiplo).',
         answer: { kind: 'matrix', label: '(A,B,C,D)=', value: row(eq), proportional: true },
         steps,
+        mistakes: eq[3] === 0 ? [] : [{ value: row([eq[0], eq[1], eq[2], -eq[3]]), msg: 'el término independiente es $D=-\\vec n\\cdot P$, con signo <b>menos</b>.' }],
         data: Object.assign(data, { eq }),
       };
     },
@@ -107,6 +108,7 @@
             'Agrupamos: ' + d$('(' + nv + ')t+(' + nq + ')=0\\ \\Rightarrow\\ t=' + ftex(fr(-nq, nv))),
             'Sustituimos ' + i$('t=' + t0) + ' en la recta: ' + d$('P=' + vt(Q) + '+' + par(t0) + vt(v) + '=' + vt(I)),
           ],
+          mistakes: [{ value: row(sub(Q, scal(t0, v))), msg: 'sustituye $t$ con su signo: el punto es $Q+t\\,\\vec v$ con $t=' + t0 + '$.' }],
           data: { Q, v, pl, I },
         };
       }
@@ -211,10 +213,10 @@
     id: 'distancias',
     title: 'Distancias',
     help: [
-      '$d(P,\\pi)=\\dfrac{|Ax_0+By_0+Cz_0+D|}{\\sqrt{A^2+B^2+C^2}}$ · $d(P,r)=\\dfrac{|\\vec{QP}\\times\\vec v|}{|\\vec v|}$ con $Q$ en la recta y $\\vec v$ su director · planos paralelos: $d=\\dfrac{|D_1-D_2|}{\\sqrt{A^2+B^2+C^2}}$ (con los mismos $A,B,C$).',
+      '$d(P,\\pi)=\\dfrac{|Ax_0+By_0+Cz_0+D|}{\\sqrt{A^2+B^2+C^2}}$ · $d(P,r)=\\dfrac{|\\vec{QP}\\times\\vec v|}{|\\vec v|}$ con $Q$ en la recta y $\\vec v$ su director · rectas que se cruzan: $d=\\dfrac{|[\\vec u,\\vec v,\\vec{PQ}]|}{|\\vec u\\times\\vec v|}$ · planos paralelos: $d=\\dfrac{|D_1-D_2|}{\\sqrt{A^2+B^2+C^2}}$ (con los mismos $A,B,C$).',
       'Ejemplo: $P(1,2,2)$ y $\\pi:\\ 2x-y+2z+3=0$. ' + d$('d=\\frac{|2\\cdot1-2+2\\cdot2+3|}{\\sqrt{4+1+4}}=\\frac{7}{3}') + 'Los denominadores salen enteros en estos ejercicios.',
     ],
-    params: [{ key: 'tipo', label: 'Distancia', options: [['pp', 'Punto a plano'], ['pr', 'Punto a recta'], ['pl', 'Entre planos paralelos']] }],
+    params: [{ key: 'tipo', label: 'Distancia', options: [['pp', 'Punto a plano'], ['pr', 'Punto a recta'], ['pl', 'Entre planos paralelos'], ['rr', 'Entre rectas que se cruzan']] }],
     generate(p) {
       if (p.tipo === 'pp') {
         const n = pythVec(), D = rnd.int(-8, 8), P = vrand(-4, 4);
@@ -224,6 +226,7 @@
           prompt: 'Calcula la distancia del punto ' + i$(ptex('P', P)) + ' al plano ' + i$('\\pi:\\ ' + eqTex([n[0], n[1], n[2], D])),
           answer: { kind: 'number', label: 'd=', value: ans },
           steps: ['Aplicamos la fórmula: ' + d$('d(P,\\pi)=\\frac{|' + par(n[0]) + '\\cdot' + par(P[0]) + '+' + par(n[1]) + '\\cdot' + par(P[1]) + '+' + par(n[2]) + '\\cdot' + par(P[2]) + '+' + par(D) + '|}{\\sqrt{' + n.map((x) => par(x) + '^2').join('+') + '}}=\\frac{|' + val + '|}{\\sqrt{' + norm2(n) + '}}=\\frac{' + Math.abs(val) + '}{' + N + '}=' + ftex(ans))],
+          mistakes: [{ value: fr(Math.abs(val)), msg: 'falta dividir entre $\\sqrt{A^2+B^2+C^2}=' + N + '$.' }],
           data: { tipo: 'pp', n, D, P, dist: Math.abs(val) / N },
         };
       }
@@ -239,8 +242,29 @@
           prompt: 'Calcula la distancia entre los planos paralelos ' + d$('\\pi_1:\\ ' + eqTex(c1) + '\\qquad \\pi_2:\\ ' + eqTex(c2)),
           answer: { kind: 'number', label: 'd=', value: ans },
           steps: st,
+          mistakes: [{ value: fr(Math.abs(D1 - D2)), msg: 'falta dividir entre $\\sqrt{A^2+B^2+C^2}=' + N + '$.' }].concat(k === 1 ? [] : [{ value: fr(Math.abs(D1 - k * D2), N), msg: 'antes de aplicar la fórmula, los dos planos deben tener los mismos $A,B,C$: divide la ecuación del segundo plano entre ' + k + '.' }]),
           data: { tipo: 'pl', c1, c2, dist: Math.abs(D1 - D2) / N },
         };
+      }
+      if (p.tipo === 'rr') {
+        for (let tries = 0; tries < 200000; tries++) {
+          const u = vnz(-3, 3), v = vnz(-3, 3), P = vrand(-3, 3), Q = vrand(-3, 3);
+          const c = cross(u, v), nc = isqrt(norm2(c)), PQ = sub(Q, P), mix = dot(PQ, c);
+          if (nc <= 0 || mix === 0) continue;
+          const ans = fr(Math.abs(mix), nc);
+          return {
+            prompt: 'Calcula la distancia entre las rectas que se cruzan ' + d$(lineTex('r', P, u) + '\\qquad ' + lineTex('s', Q, v)),
+            answer: { kind: 'number', label: 'd=', value: ans },
+            steps: [
+              'Vector entre puntos ' + i$('\\vec{PQ}=' + vt(PQ)) + ' y producto vectorial de los directores: ' + d$('\\vec u\\times\\vec v=' + crossTex(u, v) + '=' + vt(c)),
+              'Producto mixto: ' + i$('[\\vec u,\\vec v,\\vec{PQ}]=' + mix) + '. Módulo: ' + i$('|\\vec u\\times\\vec v|=\\sqrt{' + norm2(c) + '}=' + nc),
+              'Distancia: ' + d$('d(r,s)=\\frac{|[\\vec u,\\vec v,\\vec{PQ}]|}{|\\vec u\\times\\vec v|}=\\frac{' + Math.abs(mix) + '}{' + nc + '}=' + ftex(ans)),
+            ],
+            mistakes: [{ value: fr(Math.abs(mix)), msg: 'falta dividir entre $|\\vec u\\times\\vec v|=' + nc + '$.' }],
+            data: { tipo: 'rr', P, u, Q, v, dist: Math.abs(mix) / nc },
+          };
+        }
+        throw new Error('no se pudo generar la distancia entre rectas');
       }
       for (let tries = 0; tries < 100000; tries++) {
         const v = pythVec(), Q = vrand(-3, 3), P = vrand(-4, 4);
@@ -256,6 +280,7 @@
             'Módulos: ' + i$('|\\vec{QP}\\times\\vec v|=\\sqrt{' + norm2(c) + '}=' + nc) + ', ' + i$('|\\vec v|=\\sqrt{' + norm2(v) + '}=' + nv),
             'Distancia: ' + d$('d(P,r)=\\frac{|\\vec{QP}\\times\\vec v|}{|\\vec v|}=\\frac{' + nc + '}{' + nv + '}=' + ftex(ans)),
           ],
+          mistakes: [{ value: fr(nc), msg: 'falta dividir entre $|\\vec v|=' + nv + '$.' }],
           data: { tipo: 'pr', Q, v, P, dist: nc / nv },
         };
       }
@@ -290,7 +315,180 @@
             'Punto de corte (proyección de ' + i$('P') + '): ' + d$('I=' + vt(P) + '+' + par(-s) + vt(n) + '=' + vt(I)),
             i$('I') + ' es el punto medio de ' + i$("PP'") + ': ' + d$("P'=2I-P=2" + vt(I) + '-' + vt(P) + '=' + vt(Ps)),
           ],
+          mistakes: [{ value: row(I), msg: 'eso es el <b>pie de la perpendicular</b> (la proyección). El simétrico está al otro lado del plano: $P^{\\prime}=2I-P$.' }],
           data: { pl, P, I, Ps },
+        };
+      }
+    },
+  });
+
+  /* ===================== 6. Ecuaciones de la recta ===================== */
+  G.define({
+    id: 'recta',
+    title: 'Ecuaciones de la recta',
+    help: [
+      'Una recta queda determinada por un punto $P$ y un vector director $\\vec v$: $(x,y,z)=P+t\\,\\vec v$, o en paramétricas $x=x_0+at,\\ y=y_0+bt,\\ z=z_0+ct$. Por dos puntos $A,B$: $\\vec v=\\vec{AB}=B-A$. Como intersección de dos planos: $\\vec v=\\vec n_1\\times\\vec n_2$ (perpendicular a las dos normales).',
+      'Ejemplo: recta por $A(1,0,2)$ y $B(3,4,1)$: $\\vec{AB}=(2,4,-1)$ y $r:\\ (x,y,z)=(1,0,2)+t(2,4,-1)$. Con $t=2$: $(1+4,\\,0+8,\\,2-2)=(5,8,0)$. Un punto $Q$ está en la recta si existe un mismo $t$ que cumple las tres coordenadas.',
+    ],
+    params: [{ key: 'tipo', label: 'Ejercicio', options: [['dir2p', 'Director por dos puntos'], ['dirplanos', 'Director (dos planos)'], ['punto', 'Punto para un valor de t'], ['pert', '¿Pertenece el punto?']] }],
+    generate(p) {
+      if (p.tipo === 'dir2p') {
+        let A, B;
+        do { A = vrand(-5, 5); B = vrand(-5, 5); } while (isZero(sub(B, A)));
+        const v = sub(B, A);
+        return {
+          prompt: 'Halla un vector director de la recta que pasa por ' + i$(ptex('A', A) + ' y ' + ptex('B', B)) + '. Escribe ' + i$('(a,b,c)') + ' (vale cualquier múltiplo no nulo).',
+          answer: { kind: 'matrix', label: '\\vec v=', value: row(v), proportional: true },
+          steps: ['Un vector director es el que une los dos puntos: ' + d$('\\vec{AB}=B-A=' + vt(B) + '-' + vt(A) + '=' + vt(v)), 'Cualquier múltiplo no nulo de ' + i$('\\vec{AB}') + ' también lo es.'],
+          data: { tipo: 'dir2p', A, B, v },
+        };
+      }
+      if (p.tipo === 'dirplanos') {
+        let n1, n2;
+        do { n1 = vnz(-3, 3); n2 = vnz(-3, 3); } while (isZero(cross(n1, n2)));
+        const v = cross(n1, n2);
+        const D1 = rnd.int(-5, 5), D2 = rnd.int(-5, 5);
+        return {
+          prompt: 'La recta ' + i$('r') + ' es la intersección de los planos ' + d$('\\pi_1:\\ ' + eqTex([n1[0], n1[1], n1[2], D1]) + '\\qquad \\pi_2:\\ ' + eqTex([n2[0], n2[1], n2[2], D2])) + 'Halla un vector director de ' + i$('r') + ' (vale cualquier múltiplo no nulo).',
+          answer: { kind: 'matrix', label: '\\vec v=', value: row(v), proportional: true },
+          steps: ['La recta está en los dos planos, luego su director es perpendicular a las dos normales ' + i$('\\vec n_1=' + vt(n1)) + ' y ' + i$('\\vec n_2=' + vt(n2)) + '.', 'Por tanto ' + d$('\\vec v=\\vec n_1\\times\\vec n_2=' + crossTex(n1, n2) + '=' + vt(v))],
+          mistakes: [],
+          data: { tipo: 'dirplanos', n1, n2, v },
+        };
+      }
+      const P = vrand(-4, 4), v = vnz(-3, 3);
+      if (p.tipo === 'punto') {
+        const t0 = rnd.pick([-3, -2, -1, 2, 3, 4]);
+        const Q = add(P, scal(t0, v));
+        return {
+          prompt: 'Halla el punto de la recta ' + d$('r:' + paramTex(P, v)) + 'que corresponde a ' + i$('t=' + t0) + '.',
+          answer: { kind: 'matrix', label: 'Q=', value: row(Q) },
+          steps: ['Sustituimos ' + i$('t=' + t0) + ' en cada coordenada: ' + d$('Q=(' + [0, 1, 2].map((i) => P[i] + '+' + par(v[i]) + '\\cdot' + par(t0)).join(',\\ ') + ')=' + vt(Q))],
+          mistakes: [{ value: row(sub(P, scal(t0, v))), msg: 'cuidado con el signo de $t$: $Q=P+t\\,\\vec v$ con $t=' + t0 + '$.' }],
+          data: { tipo: 'punto', P, v, t0, Q },
+        };
+      }
+      const yes = rnd.int(0, 1), t0 = rnd.pick([-2, -1, 1, 2, 3]);
+      let Q = add(P, scal(t0, v));
+      if (!yes) {
+        do { Q = add(P, scal(t0, v)); Q[rnd.int(0, 2)] += rnd.pick([-2, -1, 1, 2]); } while (isZero(cross(sub(Q, P), v)));
+      }
+      const k0 = v.findIndex((x) => x !== 0);
+      const tt = fr(Q[k0] - P[k0], v[k0]);
+      const lines = [0, 1, 2].map((i) => i$(Q[i] + '=' + P[i] + (v[i] < 0 ? '' : '+') + v[i] + 't\\ \\Rightarrow\\ t=' + (v[i] === 0 ? (Q[i] === P[i] ? '\\text{(siempre)}' : '\\text{(imposible)}') : ftex(fr(Q[i] - P[i], v[i])))));
+      return {
+        prompt: '¿Pertenece el punto ' + i$(ptex('Q', Q)) + ' a la recta ' + d$('r:' + paramTex(P, v)) + '?',
+        answer: { kind: 'choice', options: ['Sí pertenece', 'No pertenece'], value: yes ? 0 : 1 },
+        steps: ['Igualamos cada coordenada y despejamos ' + i$('t') + ': ' + lines.join(' · '), yes ? 'Sale el mismo ' + i$('t=' + ftex(tt)) + ' en las tres: <b>sí pertenece</b>.' : 'No sale el mismo ' + i$('t') + ' en las tres coordenadas: <b>no pertenece</b>.'],
+        data: { tipo: 'pert', P, v, Q, yes },
+      };
+    },
+  });
+
+  /* ===================== 7. Ángulos ===================== */
+  G.define({
+    id: 'angulos',
+    title: 'Ángulos entre rectas y planos',
+    help: [
+      'Entre dos rectas: $\\cos\\alpha=\\dfrac{|\\vec u\\cdot\\vec v|}{|\\vec u||\\vec v|}$ (directores). Entre dos planos: lo mismo con las normales. Entre recta y plano: $\\operatorname{sen}\\alpha=\\dfrac{|\\vec n\\cdot\\vec v|}{|\\vec n||\\vec v|}$ (seno, porque la normal es perpendicular al plano). El valor absoluto da el ángulo agudo.',
+      'Ejemplo: $r$ con director $(1,2,2)$ y $s$ con director $(2,3,6)$. $\\vec u\\cdot\\vec v=2+6+12=20$, $|\\vec u|=3$, $|\\vec v|=7$: $\\cos\\alpha=\\frac{20}{21}$. Si el producto escalar saliera $-20$, se toma $+20$.',
+    ],
+    params: [{ key: 'tipo', label: 'Entre', options: [['rr', 'Dos rectas'], ['pp', 'Dos planos'], ['rp', 'Recta y plano']] }],
+    generate(p) {
+      const a = pythVec(), b = pythVec();
+      const na = isqrt(norm2(a)), nb = isqrt(norm2(b));
+      const dd = dot(a, b), val = fr(Math.abs(dd), na * nb);
+      const neg = dd < 0 ? [{ value: fr(dd, na * nb), msg: 'el ángulo entre rectas o planos se toma agudo: usa el <b>valor absoluto</b> del producto escalar.' }] : [];
+      if (p.tipo === 'rr') {
+        const P = vrand(-3, 3), Q = vrand(-3, 3);
+        return {
+          prompt: 'Calcula el coseno del ángulo agudo que forman las rectas ' + d$(lineTex('r', P, a) + '\\qquad ' + lineTex('s', Q, b)),
+          answer: { kind: 'number', label: '\\cos\\alpha=', value: val },
+          steps: ['Usamos los vectores directores ' + i$('\\vec u=' + vt(a)) + ' y ' + i$('\\vec v=' + vt(b)) + ': ' + d$('\\vec u\\cdot\\vec v=' + dd + ',\\quad |\\vec u|=' + na + ',\\quad |\\vec v|=' + nb),
+            d$('\\cos\\alpha=\\frac{|' + dd + '|}{' + na + '\\cdot' + nb + '}=' + ftex(val))],
+          mistakes: neg,
+          data: { tipo: 'rr', a, b, val: Math.abs(dd) / (na * nb) },
+        };
+      }
+      if (p.tipo === 'pp') {
+        const D1 = rnd.int(-5, 5), D2 = rnd.int(-5, 5);
+        return {
+          prompt: 'Calcula el coseno del ángulo agudo que forman los planos ' + d$('\\pi_1:\\ ' + eqTex([a[0], a[1], a[2], D1]) + '\\qquad \\pi_2:\\ ' + eqTex([b[0], b[1], b[2], D2])),
+          answer: { kind: 'number', label: '\\cos\\alpha=', value: val },
+          steps: ['El ángulo entre planos es el de sus normales ' + i$('\\vec n_1=' + vt(a)) + ' y ' + i$('\\vec n_2=' + vt(b)) + ': ' + d$('\\vec n_1\\cdot\\vec n_2=' + dd + ',\\quad |\\vec n_1|=' + na + ',\\quad |\\vec n_2|=' + nb),
+            d$('\\cos\\alpha=\\frac{|' + dd + '|}{' + na + '\\cdot' + nb + '}=' + ftex(val))],
+          mistakes: neg,
+          data: { tipo: 'pp', a, b, val: Math.abs(dd) / (na * nb) },
+        };
+      }
+      const P = vrand(-3, 3), D = rnd.int(-5, 5);
+      return {
+        prompt: 'Calcula el <b>seno</b> del ángulo que forman la recta ' + d$(lineTex('r', P, a)) + 'y el plano ' + i$('\\pi:\\ ' + eqTex([b[0], b[1], b[2], D]) ),
+        answer: { kind: 'number', label: '\\operatorname{sen}\\alpha=', value: val },
+        steps: ['Director de la recta ' + i$('\\vec v=' + vt(a)) + ' y normal del plano ' + i$('\\vec n=' + vt(b)) + ': ' + d$('\\vec n\\cdot\\vec v=' + dd + ',\\quad |\\vec n|=' + nb + ',\\quad |\\vec v|=' + na),
+          d$('\\operatorname{sen}\\alpha=\\frac{|\\vec n\\cdot\\vec v|}{|\\vec n||\\vec v|}=\\frac{|' + dd + '|}{' + nb + '\\cdot' + na + '}=' + ftex(val))],
+        mistakes: neg,
+        data: { tipo: 'rp', a, b, val: Math.abs(dd) / (na * nb) },
+      };
+    },
+  });
+
+  /* ===================== 8. Proyecciones y simétricos ===================== */
+  G.define({
+    id: 'proyecciones',
+    title: 'Proyecciones y simétricos',
+    help: [
+      'Proyección de $P$ sobre un plano o una recta: es el punto $I$ de ese plano o recta más cercano a $P$ (el pie de la perpendicular). Sobre un plano: recta por $P$ con director la normal. Sobre una recta: plano por $P$ perpendicular a la recta. Se corta y se obtiene $I$. El simétrico es $P^{\\prime}=2I-P$.',
+      'Ejemplo: proyección de $P(1,2,3)$ sobre la recta $r:\\ (x,y,z)=(0,0,0)+t(0,0,1)$. El plano por $P$ perpendicular a $r$ es $z=3$; corta a $r$ en $t=3$: $I=(0,0,3)$. El simétrico de $P$ respecto de $r$ es $2(0,0,3)-(1,2,3)=(-1,-2,3)$.',
+    ],
+    params: [{ key: 'tipo', label: 'Calcular', options: [['pplano', 'Proyección sobre un plano'], ['precta', 'Proyección sobre una recta'], ['srecta', 'Simétrico respecto de una recta']] }],
+    generate(p) {
+      if (p.tipo === 'pplano') {
+        for (;;) {
+          const n0 = vnz(-3, 3), I0 = vrand(-3, 3), s = rnd.pick([-3, -2, -1, 1, 2, 3]);
+          const pl = planeFrom(n0, I0), n = pl.slice(0, 3), D = pl[3];
+          const P = add(I0, scal(s, n));
+          if (Math.max(...P.map(Math.abs)) > 12) continue;
+          const val = dot(n, P) + D, N2 = norm2(n);
+          return {
+            prompt: 'Halla la proyección ortogonal de ' + i$(ptex('P', P)) + ' sobre el plano ' + i$('\\pi:\\ ' + eqTex(pl)),
+            answer: { kind: 'matrix', label: 'I=', value: row(I0) },
+            steps: ['Recta perpendicular al plano por ' + i$('P') + ' (director = normal ' + i$('\\vec n=' + vt(n)) + '): ' + d$(lineTex('r', P, n)),
+              'La cortamos con el plano: ' + d$(n.map((a, i) => par(a) + '(' + linTex(P[i], n[i], 't') + ')').join('+') + '+(' + D + ')=0\\ \\Rightarrow\\ ' + N2 + 't+(' + val + ')=0\\ \\Rightarrow\\ t=' + ftex(fr(-val, N2))),
+              'Sustituimos: ' + d$('I=' + vt(P) + '+' + par(-s) + vt(n) + '=' + vt(I0))],
+            data: { tipo: 'pplano', pl, P, I: I0 },
+          };
+        }
+      }
+      for (;;) {
+        const v = vnz(-2, 2), Q = vrand(-3, 3), t0 = rnd.pick([-2, -1, 1, 2, 3]);
+        const I = add(Q, scal(t0, v));
+        let w = cross(v, vnz(-2, 2));
+        if (isZero(w)) continue;
+        w = reduceV(w); w = scal(rnd.pick([-1, 1, 2]), w);
+        const P = add(I, w);
+        if (Math.max(...P.map(Math.abs)) > 12) continue;
+        const pl = [v[0], v[1], v[2], -dot(v, P)];
+        const PQ = sub(P, Q), v2 = norm2(v), num = dot(v, PQ);
+        const steps = ['Plano por ' + i$('P') + ' perpendicular a la recta (su normal es el director ' + i$('\\vec v=' + vt(v)) + '): ' + d$('\\pi:\\ ' + eqTex(pl)),
+          'Lo cortamos con la recta ' + i$('r') + ': ' + d$(v.map((a, i) => par(a) + '(' + linTex(Q[i], v[i], 't') + ')').join('+') + '+(' + pl[3] + ')=0\\ \\Rightarrow\\ ' + v2 + 't=' + num + '\\ \\Rightarrow\\ t=' + t0),
+          'Punto de corte (proyección de ' + i$('P') + '): ' + d$('I=' + vt(Q) + '+' + par(t0) + vt(v) + '=' + vt(I))];
+        if (p.tipo === 'precta') {
+          return {
+            prompt: 'Halla la proyección ortogonal de ' + i$(ptex('P', P)) + ' sobre la recta ' + d$(lineTex('r', Q, v)),
+            answer: { kind: 'matrix', label: 'I=', value: row(I) },
+            steps,
+            data: { tipo: 'precta', Q, v, P, I },
+          };
+        }
+        const Ps = sub(I, w);
+        steps.push(i$('I') + ' es el punto medio de ' + i$("PP'") + ': ' + d$("P'=2I-P=2" + vt(I) + '-' + vt(P) + '=' + vt(Ps)));
+        return {
+          prompt: 'Halla el simétrico de ' + i$(ptex('P', P)) + ' respecto de la recta ' + d$(lineTex('r', Q, v)),
+          answer: { kind: 'matrix', label: "P'=", value: row(Ps) },
+          steps,
+          mistakes: [{ value: row(I), msg: 'eso es la <b>proyección</b> de $P$ sobre la recta. El simétrico está al otro lado: $P^{\\prime}=2I-P$.' }],
+          data: { tipo: 'srecta', Q, v, P, I, Ps },
         };
       }
     },

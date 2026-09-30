@@ -76,6 +76,7 @@
             'Coeficientes: ' + d$('=(' + u[1] + '\\cdot' + '(' + v[2] + ')-(' + u[2] + ')(' + v[1] + '))\\vec i-(' + u[0] + '\\cdot(' + v[2] + ')-(' + u[2] + ')(' + v[0] + '))\\vec j+(' + u[0] + '\\cdot(' + v[1] + ')-(' + u[1] + ')(' + v[0] + '))\\vec k=' + vt(c)),
             'El resultado es perpendicular a ' + i$('\\vec u') + ' y a ' + i$('\\vec v') + '. Comprobación: ' + i$('\\vec u\\cdot(\\vec u\\times\\vec v)=' + dot(u, c)),
           ],
+          mistakes: [{ value: row(scal(-1, c)), msg: 'has calculado $\\vec v\\times\\vec u$: el producto vectorial <b>no</b> es conmutativo, $\\vec v\\times\\vec u=-(\\vec u\\times\\vec v)$. Respeta el orden de las filas del determinante.' }],
           data: { op: 'vec', u, v },
         };
       }
@@ -112,6 +113,11 @@
           'Módulos: ' + d$('|\\vec u|=\\sqrt{' + u.map((x) => '(' + x + ')^2').join('+') + '}=\\sqrt{' + norm2(u) + '}=' + nu + '\\qquad |\\vec v|=\\sqrt{' + norm2(v) + '}=' + nv),
           'Sustituimos: ' + d$('\\cos\\alpha=\\frac{' + d + '}{' + nu + '\\cdot ' + nv + '}=' + ftex(c)),
         ],
+        mistakes: [
+          { value: fr(d, nu), msg: 'falta dividir entre el módulo de $\\vec v$: $\\cos\\alpha=\\frac{\\vec u\\cdot\\vec v}{|\\vec u||\\vec v|}$.' },
+          { value: fr(d, nv), msg: 'falta dividir entre el módulo de $\\vec u$: $\\cos\\alpha=\\frac{\\vec u\\cdot\\vec v}{|\\vec u||\\vec v|}$.' },
+          { value: fr(d), msg: 'el producto escalar no es el coseno: hay que dividir entre $|\\vec u||\\vec v|$.' },
+        ].filter((m) => !(m.value.n === c.n && m.value.d === c.d)),
         data: { u, v, nu, nv },
       };
     },
@@ -140,6 +146,7 @@
               prompt: 'Halla el área del paralelogramo determinado por ' + d$(vtex('u', u) + '\\qquad ' + vtex('v', v)),
               answer: { kind: 'number', label: '\\text{Área}=', value: fr(n) },
               steps: [crossTex, modTex, 'El área es el módulo: ' + i$(n + '\\ \\text{u}^2')],
+              mistakes: [{ value: fr(norm2(c)), msg: 'el área es el <b>módulo</b> del producto vectorial (con la raíz), no la suma de cuadrados.' }],
               data: { fig: 'par', u, v, n },
             };
           }
@@ -149,6 +156,7 @@
             answer: { kind: 'number', label: '\\text{Área}=', value: fr(n, 2) },
             steps: ['Vectores de los lados: ' + d$('\\vec{AB}=' + vt(u) + '\\qquad \\vec{AC}=' + vt(v)), crossTex.replace('\\vec u\\times\\vec v', '\\vec{AB}\\times\\vec{AC}'), modTex.replace(/\\vec u\\times\\vec v/, '\\vec{AB}\\times\\vec{AC}'),
               'El triángulo es la mitad del paralelogramo: ' + d$('\\text{Área}=\\frac{' + n + '}{2}=' + ftex(fr(n, 2)))],
+            mistakes: [{ value: fr(n), msg: 'eso es el área del <b>paralelogramo</b>; el triángulo es la mitad.' }],
             data: { fig: 'tri', u, v, n },
           };
         }
@@ -162,6 +170,7 @@
             prompt: 'Halla el volumen del paralelepípedo determinado por ' + d$(vtex('u', u) + '\\quad ' + vtex('v', v) + '\\quad ' + vtex('w', w)),
             answer: { kind: 'number', label: 'V=', value: fr(Math.abs(d)) },
             steps: ['Producto mixto: ' + d$('[\\vec u,\\vec v,\\vec w]=' + G.mtex(M([u, v, w]), 'vmatrix') + '=' + d), 'El volumen es el valor absoluto: ' + i$('V=' + Math.abs(d))],
+            mistakes: d < 0 ? [{ value: fr(d), msg: 'un volumen no puede ser negativo: se toma el valor absoluto del producto mixto.' }] : [],
             data: { fig: 'pipe', u, v, w, d },
           };
         }
@@ -173,6 +182,7 @@
           steps: ['Vectores desde ' + i$('A') + ': ' + d$('\\vec{AB}=' + vt(u) + '\\quad \\vec{AC}=' + vt(v) + '\\quad \\vec{AD}=' + vt(w)),
             'Producto mixto: ' + d$('[\\vec{AB},\\vec{AC},\\vec{AD}]=' + G.mtex(M([u, v, w]), 'vmatrix') + '=' + d),
             'El tetraedro es la sexta parte del paralelepípedo: ' + d$('V=\\frac{|' + d + '|}{6}=' + ftex(fr(Math.abs(d), 6)))],
+          mistakes: [{ value: fr(Math.abs(d)), msg: 'eso es el volumen del <b>paralelepípedo</b>; el tetraedro es la sexta parte.' }, { value: fr(Math.abs(d), 3), msg: 'el tetraedro es la <b>sexta</b> parte del paralelepípedo (la tercera parte es de una pirámide de base igual a la del paralelepípedo, no la del tetraedro de 4 vértices).' }],
           data: { fig: 'tetra', u, v, w, d },
         };
       }
@@ -195,12 +205,14 @@
         const r = A.map((x, i) => fr(x + B[i], 2));
         return { prompt: 'Halla el punto medio del segmento ' + i$(ptex('A', A) + ',\\ ' + ptex('B', B)), answer: { kind: 'matrix', label: 'M=', value: fe(r) },
           steps: ['Promedio de las coordenadas: ' + d$('M=\\left(\\frac{' + A[0] + '+(' + B[0] + ')}{2},\\frac{' + A[1] + '+(' + B[1] + ')}{2},\\frac{' + A[2] + '+(' + B[2] + ')}{2}\\right)=(' + r.map(ftex).join(',') + ')')],
+          mistakes: [{ value: row(A.map((x, i) => fr(x + B[i]))), msg: 'falta dividir entre 2: el punto medio es $\\frac{A+B}{2}$.' }],
           data: { op: 'med', A, B, r } };
       }
       if (p.op === 'sim') {
         const r = A.map((x, i) => fr(2 * B[i] - x));
         return { prompt: 'Halla el simétrico de ' + i$(ptex('A', A)) + ' respecto de ' + i$(ptex('B', B)), answer: { kind: 'matrix', label: "A'=", value: fe(r) },
           steps: ['' + i$('B') + ' es el punto medio de ' + i$("AA'") + ', luego ' + i$("B=\\frac{A+A'}{2}\\Rightarrow A'=2B-A"), d$("A'=2" + vt(B) + '-' + vt(A) + '=' + vt(r.map((x) => x.n)))],
+          mistakes: [{ value: row(A.map((x, i) => fr(x + B[i], 2))), msg: 'eso es el punto medio de $A$ y $B$. El simétrico de $A$ respecto de $B$ es $2B-A$ (está al otro lado de $B$).' }],
           data: { op: 'sim', A, B, r } };
       }
       if (p.op === 'par') {
@@ -237,6 +249,7 @@
             answer: { kind: 'number', label: 'm=', value: m },
             steps: ['Perpendiculares ' + i$('\\iff\\vec u\\cdot\\vec v=0') + ': ' + d$('\\vec u\\cdot\\vec v=' + v[0] + 'm+(' + a + ')(' + v[1] + ')+(' + b + ')(' + v[2] + ')=' + v[0] + 'm' + (s < 0 ? s : '+' + s) + '=0'),
               d$('m=' + ftex(m))],
+            mistakes: s === 0 ? [] : [{ value: fr(s, v[0]), msg: 'cuidado con el signo al despejar: de $' + v[0] + 'm+' + s + '=0$ sale $m=-\\frac{' + s + '}{' + v[0] + '}$.' }],
             data: { tipo: 'perp', a, b, v, m },
           };
         }
@@ -275,4 +288,124 @@
       throw new Error('no se pudo generar el ejercicio de coplanarios');
     },
   });
+
+  /* ===================== 6. Operaciones con vectores (entrada) ===================== */
+  G.define({
+    id: 'voper',
+    title: 'Operaciones con vectores',
+    help: [
+      'Las operaciones se hacen componente a componente: $a\\vec u+b\\vec v=(au_1+bv_1,\\,au_2+bv_2,\\,au_3+bv_3)$. El vector que une $A$ con $B$ es $\\vec{AB}=B-A$ (final menos origen). Módulo: $|\\vec u|=\\sqrt{u_1^2+u_2^2+u_3^2}$. Unitario: $\\vec u/|\\vec u|$.',
+      'Ejemplo: $A(1,2,3)$, $B(4,0,1)$: $\\vec{AB}=(4-1,\\,0-2,\\,1-3)=(3,-2,-2)$, con módulo $\\sqrt{9+4+4}=\\sqrt{17}$. Para $\\vec u=(2,3,6)$: $|\\vec u|=\\sqrt{4+9+36}=7$ y el unitario es $\\left(\\frac27,\\frac37,\\frac67\\right)$.',
+    ],
+    params: [{ key: 'tipo', label: 'Operación', options: [['comb', 'Combinación lineal'], ['vab', 'Vector entre dos puntos'], ['mod', 'Módulo'], ['unit', 'Vector unitario']] }],
+    generate(p) {
+      if (p.tipo === 'comb') {
+        const u = vnz(-4, 4), v = vnz(-4, 4), w = vnz(-4, 4);
+        const [a, b, c] = [0, 0, 0].map(() => rnd.pick([-3, -2, -1, 1, 2, 3]));
+        const r = u.map((x, i) => a * x + b * v[i] + c * w[i]);
+        const cf = (k, n, first) => (k === 1 ? (first ? '' : '+') : k === -1 ? '-' : (k > 0 && !first ? '+' : '') + k) + n;
+        const expr = cf(a, '\\vec u', true) + cf(b, '\\vec v', false) + cf(c, '\\vec w', false);
+        return {
+          prompt: 'Calcula ' + i$(expr) + ' con ' + d$(vtex('u', u) + '\\quad ' + vtex('v', v) + '\\quad ' + vtex('w', w)),
+          answer: { kind: 'matrix', label: expr + '=', value: row(r) },
+          steps: ['Multiplicamos cada vector por su número: ' + d$(a + '\\vec u=' + vt(scal(a, u)) + '\\quad ' + b + '\\vec v=' + vt(scal(b, v)) + '\\quad ' + c + '\\vec w=' + vt(scal(c, w))), 'Sumamos componente a componente: ' + d$(expr + '=' + vt(r))],
+          data: { tipo: 'comb', u, v, w, a, b, c, r },
+        };
+      }
+      if (p.tipo === 'vab') {
+        const A = vrand(-6, 6), B = vrand(-6, 6);
+        const r = sub(B, A);
+        return {
+          prompt: 'Halla el vector ' + i$('\\vec{AB}') + ' siendo ' + i$(ptex('A', A) + ',\\ ' + ptex('B', B)),
+          answer: { kind: 'matrix', label: '\\vec{AB}=', value: row(r) },
+          steps: ['Final menos origen: ' + d$('\\vec{AB}=B-A=' + vt(B) + '-' + vt(A) + '=' + vt(r))],
+          mistakes: [{ value: row(sub(A, B)), msg: 'has calculado $A-B=\\vec{BA}$. El vector $\\vec{AB}$ es <b>final menos origen</b>: $B-A$.' }],
+          data: { tipo: 'vab', A, B, r },
+        };
+      }
+      const u = pythVec(), nu = isqrt(norm2(u));
+      if (p.tipo === 'mod') {
+        return {
+          prompt: 'Calcula el módulo de ' + i$(vtex('u', u)),
+          answer: { kind: 'number', label: '|\\vec u|=', value: fr(nu) },
+          steps: ['Raíz de la suma de los cuadrados: ' + d$('|\\vec u|=\\sqrt{' + u.map((x) => '(' + x + ')^2').join('+') + '}=\\sqrt{' + norm2(u) + '}=' + nu)],
+          mistakes: [{ value: fr(norm2(u)), msg: 'falta la raíz cuadrada: $|\\vec u|=\\sqrt{u_1^2+u_2^2+u_3^2}$.' }],
+          data: { tipo: 'mod', u, nu },
+        };
+      }
+      const r = u.map((x) => fr(x, nu));
+      return {
+        prompt: 'Halla el vector unitario en la dirección y sentido de ' + i$(vtex('u', u)),
+        answer: { kind: 'matrix', label: '\\vec u_0=', value: row(r) },
+        steps: ['Módulo: ' + d$('|\\vec u|=\\sqrt{' + norm2(u) + '}=' + nu), 'Dividimos cada componente entre el módulo: ' + d$('\\vec u_0=\\frac{\\vec u}{|\\vec u|}=\\left(' + r.map(ftex).join(',\\ ') + '\\right)')],
+        data: { tipo: 'unit', u, nu, r },
+      };
+    },
+  });
+
+  /* ===================== 7. Dependencia lineal y bases ===================== */
+  G.define({
+    id: 'base',
+    title: 'Dependencia lineal y bases',
+    help: [
+      'Tres vectores de $\\mathbb R^3$ son linealmente independientes (forman una base) si y sólo si su determinante es $\\neq0$. Si $[\\vec u,\\vec v,\\vec w]=0$, uno es combinación de los otros (coplanarios). Las coordenadas de $\\vec w$ en la base $\\{\\vec u,\\vec v,\\vec t\\}$ son los $(a,b,c)$ con $\\vec w=a\\vec u+b\\vec v+c\\vec t$.',
+      'Ejemplo: $\\vec u=(1,0,0)$, $\\vec v=(0,1,0)$, $\\vec t=(1,1,1)$ y $\\vec w=(3,2,1)$. Se plantea $(3,2,1)=a(1,0,0)+b(0,1,0)+c(1,1,1)$: $a+c=3$, $b+c=2$, $c=1$. Luego $c=1$, $b=1$, $a=2$: coordenadas $(2,1,1)$.',
+    ],
+    params: [{ key: 'tipo', label: 'Ejercicio', options: [['li', '¿Forman base?'], ['coord', 'Coordenadas en una base']] }],
+    generate(p) {
+      if (p.tipo === 'li') {
+        const dep = rnd.int(0, 1);
+        let u, v, w;
+        for (;;) {
+          u = vnz(-3, 3); v = vnz(-3, 3);
+          if (isZero(cross(u, v))) continue;
+          if (dep) { const a = rnd.pick([-2, -1, 1, 2]), b = rnd.pick([-2, -1, 1, 2]); w = add(scal(a, u), scal(b, v)); if (isZero(w) || Math.max(...w.map(Math.abs)) > 8) continue; }
+          else { w = vnz(-3, 3); if (det3(u, v, w) === 0) continue; }
+          break;
+        }
+        const d = det3(u, v, w);
+        const order = rnd.shuffle([0, 1, 2]);
+        const vs = order.map((i) => [u, v, w][i]);
+        return {
+          prompt: 'Estudia si los vectores ' + d$(vtex('u', vs[0]) + '\\quad ' + vtex('v', vs[1]) + '\\quad ' + vtex('w', vs[2])) + 'son linealmente independientes.',
+          answer: { kind: 'choice', options: ['Linealmente independientes (forman una base de $\\mathbb R^3$)', 'Linealmente dependientes'], value: dep },
+          steps: ['Calculamos el determinante: ' + d$('[\\vec u,\\vec v,\\vec w]=' + G.mtex(M(vs), 'vmatrix') + '=' + d),
+            dep ? 'Vale 0: los vectores son <b>linealmente dependientes</b> (son coplanarios, uno es combinación de los otros), no forman base.' : 'Es distinto de 0: son <b>linealmente independientes</b> y forman una base de $\\mathbb R^3$.'],
+          data: { tipo: 'li', vs, dep },
+        };
+      }
+      for (;;) {
+        const u = vnz(-2, 2), v = vnz(-2, 2), t = vnz(-2, 2);
+        const D = det3(u, v, t);
+        if (D === 0 || Math.abs(D) > 12) continue;
+        const co = [0, 0, 0].map(() => rnd.int(-3, 3));
+        if (co.every((x) => x === 0)) continue;
+        const w = add(add(scal(co[0], u), scal(co[1], v)), scal(co[2], t));
+        if (Math.max(...w.map(Math.abs)) > 12) continue;
+        const cols = [u, v, t];
+        const A = [0, 1, 2].map((i) => cols.map((c) => c[i]));
+        const dj = [0, 1, 2].map((j) => G.det(M(A.map((r, i) => r.map((x, c) => (c === j ? w[i] : x))))));
+        return {
+          prompt: 'Comprueba que ' + i$('\\{' + vtex('u', u).replace('\\vec{u}=', '\\vec u=') + ',\\ ' + vtex('v', v).replace('\\vec{v}=', '\\vec v=') + ',\\ ' + vtex('t', t).replace('\\vec{t}=', '\\vec t=') + '\\}') + ' es una base de ' + i$('\\mathbb R^3') + ' y halla las coordenadas de ' + i$(vtex('w', w)) + ' en ella.',
+          answer: { kind: 'matrix', label: '(a,b,c)=', value: row(co) },
+          steps: [
+            'Es base porque el determinante no es 0: ' + d$('[\\vec u,\\vec v,\\vec t]=' + G.mtex(M([u, v, t]), 'vmatrix') + '=' + D),
+            'Planteamos ' + i$('\\vec w=a\\vec u+b\\vec v+c\\vec t') + ', es decir, un sistema con los vectores como columnas: ' + d$('\\begin{cases}' + [0, 1, 2].map((i) => coefLine(A[i], w[i])).join('\\\\') + '\\end{cases}'),
+            'Por Cramer: ' + d$('a=\\frac{' + dj[0].n + '}{' + D + '},\\quad b=\\frac{' + dj[1].n + '}{' + D + '},\\quad c=\\frac{' + dj[2].n + '}{' + D + '}'),
+            'Coordenadas: ' + d$('\\vec w=(' + co.join(',') + ')_B'),
+          ],
+          data: { tipo: 'coord', u, v, t, w, co },
+        };
+      }
+    },
+  });
+  const coefLine = (r, rhs) => {
+    let out = '';
+    ['a', 'b', 'c'].forEach((v, j) => {
+      const k = r[j];
+      if (k === 0) return;
+      out += (k < 0 ? '-' : out ? '+' : '') + (Math.abs(k) === 1 ? '' : Math.abs(k)) + v;
+    });
+    return (out || '0') + '=' + rhs;
+  };
 })(typeof globalThis !== 'undefined' ? globalThis : this);

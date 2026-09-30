@@ -145,6 +145,43 @@
     ];
   }
 
+  /** Rango por menores orlados. Devuelve {rank, steps}. */
+  function rankByMinors(A) {
+    const m = A.length, n = A[0].length, lim = Math.min(m, n);
+    const pick = (idx, sel) => idx.map((i) => sel.map((j) => A[i][j]));
+    const vm = (Sm) => mtex(Sm, 'vmatrix');
+    const steps = [];
+    let I = null, J = null;
+    outer: for (let i = 0; i < m; i++) for (let j = 0; j < n; j++) if (A[i][j].n !== 0) { I = [i]; J = [j]; break outer; }
+    if (!I) return { rank: 0, steps: ['Todos los elementos son 0: rango 0.'] };
+    steps.push('Buscamos un menor de orden 1 no nulo: ' + i$('a_{' + (I[0] + 1) + (J[0] + 1) + '}=' + ftex(A[I[0]][J[0]]) + '\\neq0') + ', luego ' + i$('\\operatorname{rg}(A)\\ge1') + '.');
+    let k = 1;
+    while (k < lim) {
+      const vals = [];
+      let found = null;
+      for (let i2 = 0; i2 < m; i2++) {
+        if (I.includes(i2)) continue;
+        for (let j2 = 0; j2 < n; j2++) {
+          if (J.includes(j2)) continue;
+          const ri = I.concat([i2]).sort((a, b) => a - b), cj = J.concat([j2]).sort((a, b) => a - b);
+          const d = det(pick(ri, cj));
+          vals.push({ ri, cj, d });
+          if (!found && d.n !== 0) found = { ri, cj, d, idx: vals.length - 1 };
+        }
+      }
+      if (found) {
+        steps.push('Orlamos ese menor con una fila y una columna más (menores de orden ' + (k + 1) + '). ' + (found.idx > 0 ? 'Los ' + found.idx + ' primeros valen 0 y ' : '') + 'encontramos uno no nulo: ' + d$(vm(pick(found.ri, found.cj)) + '=' + ftex(found.d) + '\\neq0') + 'Luego ' + i$('\\operatorname{rg}(A)\\ge' + (k + 1)) + '.');
+        I = found.ri; J = found.cj; k++;
+      } else {
+        steps.push('Orlamos con cada fila y columna restante (menores de orden ' + (k + 1) + '): todos valen 0 (' + vals.length + ' menores). Por tanto el rango no supera ' + i$(String(k)) + '.');
+        break;
+      }
+    }
+    if (k === lim) steps.push('Ya no se puede orlar más (orden máximo ' + lim + '). ');
+    steps.push('Conclusión: ' + d$('\\operatorname{rg}(A)=' + k));
+    return { rank: k, steps };
+  }
+
   const dimOpts = (list) => list.map(([v, t]) => [v, t]);
   const RNG_OPTS = [['2', '−2 a 2 (fácil)'], ['3', '−3 a 3'], ['5', '−5 a 5'], ['9', '−9 a 9'], ['12', '−12 a 12']];
 
@@ -387,12 +424,13 @@
     id: 'rango',
     title: 'Rango',
     help: [
-      'El rango es el número de filas (o columnas) linealmente independientes: el mayor orden de un menor distinto de 0. Por Gauss: el número de filas no nulas de la matriz escalonada.',
+      'El rango es el número de filas (o columnas) linealmente independientes: el mayor orden de un menor distinto de 0. Por Gauss: el número de filas no nulas de la matriz escalonada. Por menores: se busca un menor no nulo y se <b>orla</b> (se añade una fila y una columna) hasta que todos los orlados valgan 0.',
       'Método: haz ceros bajo cada pivote con $F_i\\to aF_i-bF_p$ (nunca multipliques una fila sólo por 0). Ejemplo: ' +
         d$('\\begin{pmatrix}1&2\\\\2&4\\end{pmatrix}\\xrightarrow{F_2\\to F_2-2F_1}\\begin{pmatrix}1&2\\\\0&0\\end{pmatrix}') + 'Una fila no nula: rango 1.',
     ],
     params: [
       { key: 'dim', label: 'Dimensión', options: [['3,3', '3×3'], ['3,4', '3×4'], ['4,3', '4×3'], ['4,4', '4×4']] },
+      { key: 'met', label: 'Método', options: [['gauss', 'Gauss'], ['menores', 'Menores']] },
     ],
     generate(p) {
       const [m, n] = p.dim.split(',').map(Number);
@@ -416,11 +454,16 @@
         if (rankOf(A) === target && Math.max(...A.map((r) => Math.max(...r.map((x) => Math.abs(x.n))))) <= 8) break;
       }
       const g = gaussSteps(A);
-      const steps = ['Partimos de ' + d$('A=' + mtex(A))];
-      g.steps.forEach((s, i) => steps.push('Hacemos ceros bajo el pivote de la columna ' + (i + 1) + ': ' + i$(s.ops.join(',\\ ')) + d$('\\sim' + mtex(M(s.M)))));
-      steps.push('La matriz escalonada tiene ' + g.rank + (g.rank === 1 ? ' fila no nula' : ' filas no nulas') + ', luego ' + d$('\\operatorname{rg}(A)=' + g.rank));
+      let steps;
+      if (p.met === 'menores') {
+        steps = ['Partimos de ' + d$('A=' + mtex(A))].concat(rankByMinors(A).steps);
+      } else {
+        steps = ['Partimos de ' + d$('A=' + mtex(A))];
+        g.steps.forEach((s, i) => steps.push('Hacemos ceros bajo el pivote de la columna ' + (i + 1) + ': ' + i$(s.ops.join(',\\ ')) + d$('\\sim' + mtex(M(s.M)))));
+        steps.push('La matriz escalonada tiene ' + g.rank + (g.rank === 1 ? ' fila no nula' : ' filas no nulas') + ', luego ' + d$('\\operatorname{rg}(A)=' + g.rank));
+      }
       return {
-        prompt: 'Halla el rango de ' + d$('A=' + mtex(A)),
+        prompt: 'Halla el rango de ' + d$('A=' + mtex(A)) + (p.met === 'menores' ? 'por el método de los menores.' : 'por Gauss.'),
         answer: { kind: 'number', label: '\\operatorname{rg}(A)=', value: F(g.rank) },
         steps,
         data: { A, rank: target },
@@ -755,6 +798,107 @@
     },
   });
 
+  /* ===================== 10. Operaciones con matrices (nivel de entrada) ===================== */
+  G.define({
+    id: 'operaciones',
+    title: 'Operaciones básicas con matrices',
+    help: [
+      'Suma y resta: elemento a elemento, sólo si tienen la misma dimensión. $kA$: se multiplica cada elemento por $k$. Traspuesta $A^t$: las filas pasan a ser columnas, y $(AB)^t=B^tA^t$. Simétrica: $A=A^t$; antisimétrica: $A=-A^t$ (diagonal de ceros).',
+      'Ejemplo: $p(A)=A^2-3A+2I$ con $A=\\begin{pmatrix}1&2\\\\0&1\\end{pmatrix}$. ' + d$('A^2=\\begin{pmatrix}1&4\\\\0&1\\end{pmatrix},\\quad -3A=\\begin{pmatrix}-3&-6\\\\0&-3\\end{pmatrix},\\quad 2I=\\begin{pmatrix}2&0\\\\0&2\\end{pmatrix}') + 'Sumando: $p(A)=\\begin{pmatrix}0&-2\\\\0&0\\end{pmatrix}$. Nota: $A^2$ es $A\\cdot A$, no el cuadrado de cada elemento.',
+    ],
+    params: [
+      { key: 'tipo', label: 'Tipo', options: [['comb', 'Suma y k·A'], ['tras', 'Traspuesta'], ['poli', 'Polinomio de matriz'], ['clasif', 'Simétrica / antisimétrica']] },
+    ],
+    generate(p) {
+      if (p.tipo === 'comb') {
+        const [r, c] = rnd.pick([[2, 2], [2, 3], [3, 3], [3, 2]]);
+        const A = randMat(r, c, -4, 4), B = randMat(r, c, -4, 4);
+        const a = rnd.pick([1, 2, 3, -1, -2]), b = rnd.pick([-3, -2, -1, 2, 3]);
+        const R = madd(G.mscale(A, F(a)), G.mscale(B, F(b)));
+        const cf = (k, n) => (k === 1 ? n : k === -1 ? '-' + n : k + n);
+        const expr = cf(a, 'A') + (b < 0 ? '' : '+') + cf(b, 'B');
+        return {
+          prompt: 'Calcula ' + i$(expr) + ' con ' + d$('A=' + mtex(A) + '\\qquad B=' + mtex(B)),
+          answer: { kind: 'matrix', label: expr + '=', value: R },
+          steps: ['Multiplicamos cada matriz por su número: ' + d$(a + 'A=' + mtex(G.mscale(A, F(a))) + '\\qquad ' + b + 'B=' + mtex(G.mscale(B, F(b)))),
+            'Sumamos elemento a elemento: ' + d$(expr + '=' + mtex(R))],
+          data: { A, B, a, b },
+        };
+      }
+      if (p.tipo === 'tras') {
+        const n = rnd.pick([2, 3]);
+        const A = randMat(n, n, -3, 3), B = randMat(n, n, -3, 3);
+        if (rnd.int(0, 1)) {
+          const R = mT(mmul(A, B));
+          const wrong = mmul(mT(A), mT(B));
+          const mistakes = meq(wrong, R) ? [] : [{ value: wrong, msg: '$(AB)^t=B^tA^t$ (se invierte el orden), no $A^tB^t$.' }];
+          return {
+            prompt: 'Calcula ' + i$('(A\\cdot B)^{t}') + ' con ' + d$('A=' + mtex(A) + '\\qquad B=' + mtex(B)),
+            answer: { kind: 'matrix', label: '(AB)^{t}=', value: R },
+            steps: ['Primero el producto: ' + d$('A\\cdot B=' + mtex(mmul(A, B))), 'Después se traspone (filas por columnas): ' + d$('(AB)^t=' + mtex(R)),
+              'Comprobación con la propiedad: ' + i$('(AB)^t=B^t A^t') + '.'],
+            mistakes,
+            data: { A, B, tr: 'prod' },
+          };
+        }
+        const k = rnd.pick([2, 3, -1, -2]);
+        const R = madd(mT(A), G.mscale(B, F(k)));
+        return {
+          prompt: 'Calcula ' + i$('A^{t}' + (k < 0 ? '' : '+') + (k === -1 ? '-' : k) + 'B') + ' con ' + d$('A=' + mtex(A) + '\\qquad B=' + mtex(B)),
+          answer: { kind: 'matrix', label: 'A^{t}' + (k < 0 ? '' : '+') + (k === -1 ? '-' : k) + 'B=', value: R },
+          steps: ['Traspuesta de ' + i$('A') + ': ' + d$('A^t=' + mtex(mT(A))), 'Multiplicamos ' + i$('B') + ' por ' + i$(String(k)) + ': ' + d$(k + 'B=' + mtex(G.mscale(B, F(k)))), 'Sumamos: ' + d$(mtex(R))],
+          data: { A, B, tr: 'comb', k },
+        };
+      }
+      if (p.tipo === 'poli') {
+        const n = rnd.pick([2, 2, 3]);
+        const A = randMat(n, n, -2, 2);
+        const a = rnd.pick([-3, -2, -1, 1, 2]), b = rnd.pick([-2, -1, 1, 2, 3]);
+        const A2 = mmul(A, A);
+        const R = madd(madd(A2, G.mscale(A, F(a))), G.mscale(mI(n), F(b)));
+        const E = M(A.map((row) => row.map((x) => x.n * x.n)));
+        const wrong = madd(madd(E, G.mscale(A, F(a))), G.mscale(mI(n), F(b)));
+        const sg = (k) => (k < 0 ? '-' : '+') + (Math.abs(k) === 1 ? '' : Math.abs(k));
+        const expr = 'A^{2}' + sg(a) + 'A' + sg(b) + 'I';
+        return {
+          prompt: 'Calcula ' + i$('p(A)=' + expr) + ' para ' + d$('A=' + mtex(A)),
+          answer: { kind: 'matrix', label: 'p(A)=', value: R },
+          steps: ['Calculamos ' + i$('A^2=A\\cdot A') + ': ' + d$('A^2=' + mtex(A2)), 'Los demás términos: ' + d$(a + 'A=' + mtex(G.mscale(A, F(a))) + '\\qquad ' + b + 'I=' + mtex(G.mscale(mI(n), F(b)))), 'Sumamos: ' + d$('p(A)=' + mtex(R))],
+          mistakes: meq(wrong, R) ? [] : [{ value: wrong, msg: '$A^2$ es $A\\cdot A$ (producto de matrices), no el cuadrado de cada elemento.' }],
+          data: { A, a, b, R },
+        };
+      }
+      // clasificar simétrica / antisimétrica
+      const t = rnd.int(0, 2);
+      const n = 3;
+      let A;
+      for (;;) {
+        const B = randMat(n, n, -4, 4);
+        A = t === 0 ? madd(B, mT(B)) : t === 1 ? msub(B, mT(B)) : B;
+        const sym = meq(A, mT(A)), anti = meq(A, G.mscale(mT(A), F(-1)));
+        if (t === 2 ? !sym && !anti : t === 0 ? sym : anti) break;
+      }
+      const OPTS = ['Simétrica', 'Antisimétrica', 'Ni simétrica ni antisimétrica'];
+      return {
+        prompt: 'Clasifica la matriz ' + d$('A=' + mtex(A)),
+        answer: { kind: 'choice', options: OPTS, value: t },
+        steps: ['Traspuesta: ' + d$('A^t=' + mtex(mT(A))),
+          t === 0 ? 'Es igual a ' + i$('A') + ': ' + i$('A=A^t') + ', luego es <b>simétrica</b>.'
+            : t === 1 ? 'Es igual a ' + i$('-A') + ' (y la diagonal es de ceros): ' + i$('A^t=-A') + ', luego es <b>antisimétrica</b>.'
+              : 'No cumple ' + i$('A^t=A') + ' ni ' + i$('A^t=-A') + ': <b>ni simétrica ni antisimétrica</b>.'],
+        data: { A, t },
+      };
+    },
+  });
+
+  /** Matriz 3×3 con parámetro m (sin exigir raíces enteras). */
+  function randParamT() {
+    const T = Array.from({ length: 3 }, () => Array.from({ length: 3 }, () => ({ a: 0, b: rnd.int(-3, 3) })));
+    const slots = rnd.shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8]).slice(0, rnd.pick([2, 2, 3]));
+    slots.forEach((sl) => { T[Math.floor(sl / 3)][sl % 3] = { a: rnd.pick([1, 1, -1, 2]), b: rnd.int(-3, 3) }; });
+    return T;
+  }
+
   // Utilidades compartidas con los demás temas de álgebra lineal.
-  G.lib = { randMat, unimodular, invSteps, gjInvSteps, gaussSteps, detSteps, entTex, polyFromDet, polyTex, factorPoly, factorTex, genParam3 };
+  G.lib = { randMat, unimodular, invSteps, gjInvSteps, gaussSteps, detSteps, entTex, polyFromDet, polyTex, factorPoly, factorTex, genParam3, randParamT, rankByMinors };
 })(typeof globalThis !== 'undefined' ? globalThis : this);

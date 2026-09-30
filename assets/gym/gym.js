@@ -198,7 +198,19 @@
 
   /* ---------- Interfaz ---------- */
   const modules = {};
-  function define(mod) { modules[mod.id] = mod; }
+  function define(mod) {
+    // Un "error típico" que coincide con la respuesta correcta (caso degenerado) no es un error: se descarta.
+    const gen = mod.generate;
+    mod.generate = (p) => {
+      const ch = gen(p);
+      if (ch.mistakes) {
+        ch.mistakes = ch.mistakes.filter((m) =>
+          checkAnswer(ch.answer, answerStrings(Object.assign({}, ch.answer, { value: m.value }))).status !== 'ok');
+      }
+      return ch;
+    };
+    modules[mod.id] = mod;
+  }
 
   function typeset(el, str) {
     const k = root.katex;
@@ -433,7 +445,16 @@
       if (res.status === 'incomplete') { setFeedback(isChoice ? 'Elige una opción.' : 'Rellena todas las casillas con enteros, fracciones (a/b) o decimales.', 'warn'); return; }
       if (res.status === 'wrong') {
         const m = st.ch.answer.kind === 'matrixset' ? null : findMistake(st.ch.answer, raw);
-        setFeedback(m ? 'Ojo: ' + m.msg : isChoice ? 'Esa opción no es la correcta.' : 'Hay casillas mal. Revisa las marcadas en rojo.', 'bad');
+        let msg = isChoice ? 'Esa opción no es la correcta.' : 'Hay casillas mal. Revisa las marcadas en rojo.';
+        if (st.ch.answer.kind === 'list') {
+          const exp = st.ch.answer.value;
+          const got = String(raw[0]).split(/[;,\s]+/).filter(Boolean).map(parseFrac);
+          const extra = got.some((g) => !exp.some((e) => feq(e, g)));
+          const missing = exp.some((e) => !got.some((g) => feq(e, g)));
+          msg = extra ? 'Alguno de los valores no cumple la condición. Sustitúyelo para comprobarlo.'
+            : missing ? 'Te faltan valores: hay más de una solución.' : msg;
+        }
+        setFeedback(m ? 'Ojo: ' + m.msg : msg, 'bad');
         breakStreak();
         return;
       }
