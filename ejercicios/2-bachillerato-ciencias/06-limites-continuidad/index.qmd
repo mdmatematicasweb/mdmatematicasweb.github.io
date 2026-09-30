@@ -1,0 +1,221 @@
+---
+title: "Límites y continuidad — relación de ejercicios"
+---
+
+Relación de 25 ejercicios: del 1 al 7 son básicos y del 8 al 25 siguen el estilo de la EBAU de Andalucía (2021 en adelante). Las soluciones están al final.
+
+## Cálculo de límites
+
+**1.** Calcula $\displaystyle\lim_{x\to\infty}\frac{3x^2-x}{x^2+5}$.
+
+**2.** Calcula $\displaystyle\lim_{x\to2}\frac{x^2-4}{x-2}$.
+
+**3.** Calcula $\displaystyle\lim_{x\to2}\frac{x^3-8}{x^2-4}$.
+
+**4.** Calcula $\displaystyle\lim_{x\to\infty}\left(\sqrt{x^2+x}-x\right)$.
+
+**5.** Calcula $\displaystyle\lim_{x\to-1}\frac{\sqrt{x+5}-2}{x+1}$.
+
+**6.** Calcula $\displaystyle\lim_{x\to\infty}\left(\frac{x+2}{x-1}\right)^x$.
+
+**7.** Calcula $\displaystyle\lim_{x\to\infty}\left(1+\frac2x\right)^{3x}$.
+
+**8.** *(Tipo EBAU)* Calcula $\displaystyle\lim_{x\to0}\frac{e^x-1-x}{x^2}$.
+
+**9.** *(Tipo EBAU)* Calcula $\displaystyle\lim_{x\to0}\frac{\sin x-x}{x^3}$.
+
+**10.** *(Tipo EBAU)* Calcula $\displaystyle\lim_{x\to0^+}x\ln x$.
+
+**11.** *(Tipo EBAU)* Calcula $\displaystyle\lim_{x\to1}\left(\frac{1}{\ln x}-\frac{1}{x-1}\right)$.
+
+**12.** *(Tipo EBAU)* Calcula $\displaystyle\lim_{x\to0}(\cos x)^{1/x^2}$.
+
+**13.** *(Tipo EBAU)* Calcula $\displaystyle\lim_{x\to0}\frac{e^{2x}-1}{\sin x}$.
+
+**14.** *(Tipo EBAU)* Calcula $\displaystyle\lim_{x\to1}\frac{x^2-1}{\sqrt x-1}$.
+
+## Asíntotas
+
+**15.** *(Tipo EBAU)* Halla las asíntotas de $f(x)=\dfrac{x^2+1}{x-1}$.
+
+**16.** *(Tipo EBAU)* Halla las asíntotas de $f(x)=\dfrac{2x^2}{x^2-4}$ y estudia la posición de la curva respecto a la horizontal.
+
+## Parámetros y continuidad
+
+**17.** *(Tipo EBAU)* Halla $a$ para que $\displaystyle\lim_{x\to\infty}\frac{ax^2+3x-1}{2x^2+x}=3$.
+
+**18.** *(Tipo EBAU)* Halla $a$ para que sea continua en $x=0$ la función $f(x)=\begin{cases}\dfrac{e^{ax}-1}{x}&x\neq0\\[2mm]3&x=0\end{cases}$.
+
+**19.** *(Tipo EBAU)* Halla $a$ para que sea continua en $\mathbb{R}$ la función $f(x)=\begin{cases}x^2+a&x\le1\\3x-1&x>1\end{cases}$.
+
+**20.** *(Tipo EBAU)* Halla $a$ y $b$ para que $f$ sea continua en $x=0$: $f(x)=\begin{cases}2x+a&x<0\\b&x=0\\x^2+1&x>0\end{cases}$.
+
+**21.** Clasifica la discontinuidad en cada caso:
+
+a) $f(x)=\dfrac{x^2-1}{x-1}$ en $x=1$.
+
+b) $g(x)=\dfrac{1}{x-2}$ en $x=2$.
+
+c) $h(x)=\dfrac{|x|}{x}$ en $x=0$.
+
+## Teoremas
+
+**22.** *(Tipo EBAU)* Demuestra que la ecuación $x^3+x-1=0$ tiene al menos una solución en $(0,1)$.
+
+**23.** *(Tipo EBAU)* Demuestra que las gráficas de $y=e^x$ e $y=3-x$ se cortan en algún punto con $x\in(0,1)$.
+
+**24.** *(Tipo EBAU)* Sea $f$ continua en $[0,2]$ con $f(0)=-1$ y $f(2)=3$. ¿Se puede asegurar que $f$ toma el valor 1? ¿Y el valor 5? Razónalo.
+
+**25.** El coste medio por unidad de un producto es $A(x)=\dfrac{5x+100}{x}$ euros cuando se fabrican $x$ unidades. Calcula $\displaystyle\lim_{x\to\infty}A(x)$ y $\displaystyle\lim_{x\to0^+}A(x)$ e interpreta ambos resultados.
+
+---
+
+## Soluciones
+
+::: {.callout-note collapse="true"}
+## 1
+Mismo grado: el límite es el cociente de los coeficientes principales, $\dfrac31=3$.
+:::
+
+::: {.callout-note collapse="true"}
+## 2
+Indeterminación $\frac00$. $\dfrac{x^2-4}{x-2}=x+2\to4$.
+:::
+
+::: {.callout-note collapse="true"}
+## 3
+$\dfrac{x^3-8}{x^2-4}=\dfrac{(x-2)(x^2+2x+4)}{(x-2)(x+2)}=\dfrac{x^2+2x+4}{x+2}\to\dfrac{12}{4}=3$.
+:::
+
+::: {.callout-note collapse="true"}
+## 4
+$\infty-\infty$. Multiplicando por el conjugado:
+$$\frac{x^2+x-x^2}{\sqrt{x^2+x}+x}=\frac{x}{\sqrt{x^2+x}+x}=\frac{1}{\sqrt{1+1/x}+1}\to\frac12$$
+:::
+
+::: {.callout-note collapse="true"}
+## 5
+$\frac00$. Conjugado: $\dfrac{(x+5)-4}{(x+1)(\sqrt{x+5}+2)}=\dfrac{1}{\sqrt{x+5}+2}\to\dfrac14$.
+:::
+
+::: {.callout-note collapse="true"}
+## 6
+Es $1^\infty$: $\displaystyle e^{\lim x\left(\frac{x+2}{x-1}-1\right)}=e^{\lim\frac{3x}{x-1}}=e^3$.
+:::
+
+::: {.callout-note collapse="true"}
+## 7
+$1^\infty$: $\displaystyle e^{\lim3x\cdot\frac2x}=e^6$.
+:::
+
+::: {.callout-note collapse="true"}
+## 8
+$\frac00$. L'Hôpital: $\dfrac{e^x-1}{2x}$ y de nuevo $\frac00$; otra vez: $\dfrac{e^x}{2}\to\dfrac12$.
+:::
+
+::: {.callout-note collapse="true"}
+## 9
+$\frac00$. L'Hôpital: $\dfrac{\cos x-1}{3x^2}\ (\tfrac00)\to\dfrac{-\sin x}{6x}\to-\dfrac16$.
+:::
+
+::: {.callout-note collapse="true"}
+## 10
+$0\cdot(-\infty)$. Se escribe $\dfrac{\ln x}{1/x}$ ($\frac{-\infty}{\infty}$). L'Hôpital: $\dfrac{1/x}{-1/x^2}=-x\to0$.
+:::
+
+::: {.callout-note collapse="true"}
+## 11
+$\infty-\infty$. Se reduce a común denominador: $\dfrac{x-1-\ln x}{(x-1)\ln x}\ (\tfrac00)$.
+
+L'Hôpital: $\dfrac{1-1/x}{\ln x+\frac{x-1}{x}}\ (\tfrac00)$ y otra vez: $\dfrac{1/x^2}{\frac1x+\frac1{x^2}}\to\dfrac{1}{2}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 12
+$1^\infty$: $\displaystyle e^{\lim\frac{\cos x-1}{x^2}}$. Como $\displaystyle\lim\frac{\cos x-1}{x^2}=\lim\frac{-\sin x}{2x}=-\frac12$, el límite es $e^{-1/2}=\dfrac{1}{\sqrt e}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 13
+$\frac00$. L'Hôpital: $\dfrac{2e^{2x}}{\cos x}\to2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 14
+$\dfrac{x^2-1}{\sqrt x-1}=\dfrac{(x-1)(x+1)(\sqrt x+1)}{x-1}=(x+1)(\sqrt x+1)\to2\cdot2=4$.
+:::
+
+::: {.callout-note collapse="true"}
+## 15
+- **Vertical**: $x=1$, porque $\displaystyle\lim_{x\to1^+}f=+\infty$ y $\displaystyle\lim_{x\to1^-}f=-\infty$.
+- **Horizontal**: no hay ($\lim_{x\to\pm\infty}f=\pm\infty$).
+- **Oblicua** $y=mx+n$: $m=\displaystyle\lim\frac{x^2+1}{x(x-1)}=1$ y $n=\displaystyle\lim\left(\frac{x^2+1}{x-1}-x\right)=\lim\frac{x+1}{x-1}=1$.
+
+Oblicua: $y=x+1$.
+:::
+
+::: {.callout-note collapse="true"}
+## 16
+- **Verticales**: $x=2$ y $x=-2$. En $x=2$: $\lim_{x\to2^+}f=+\infty$, $\lim_{x\to2^-}f=-\infty$. En $x=-2$: $\lim_{x\to-2^+}f=-\infty$, $\lim_{x\to-2^-}f=+\infty$.
+- **Horizontal**: $y=2$ en $\pm\infty$.
+- **Posición**: $f(x)-2=\dfrac{8}{x^2-4}>0$ si $|x|>2$, luego la curva está **por encima** de $y=2$ en $\pm\infty$. No hay oblicuas.
+:::
+
+::: {.callout-note collapse="true"}
+## 17
+El límite vale $\dfrac a2$. Igualando: $\dfrac a2=3$, luego $a=6$.
+:::
+
+::: {.callout-note collapse="true"}
+## 18
+$\displaystyle\lim_{x\to0}\frac{e^{ax}-1}{x}=a$ (por L'Hôpital, $\frac{ae^{ax}}{1}\to a$). Para continuidad debe valer $f(0)=3$, luego $a=3$.
+:::
+
+::: {.callout-note collapse="true"}
+## 19
+En $x=1$: $\displaystyle\lim_{x\to1^-}f=1+a$, $\displaystyle\lim_{x\to1^+}f=2$ y $f(1)=1+a$. Continuidad: $1+a=2$, luego $a=1$.
+
+Fuera de $x=1$ las dos ramas son polinomios y son continuas.
+:::
+
+::: {.callout-note collapse="true"}
+## 20
+$\displaystyle\lim_{x\to0^-}f=a$, $\displaystyle\lim_{x\to0^+}f=1$ y $f(0)=b$. Continua si $a=1=b$.
+
+$a=1$ y $b=1$.
+:::
+
+::: {.callout-note collapse="true"}
+## 21
+a) $\displaystyle\lim_{x\to1}\frac{x^2-1}{x-1}=2$ pero $f(1)$ no existe: discontinuidad **evitable**.
+
+b) $\displaystyle\lim_{x\to2^\pm}\frac{1}{x-2}=\pm\infty$: discontinuidad de **salto infinito** (asíntota vertical).
+
+c) $\displaystyle\lim_{x\to0^-}\frac{|x|}{x}=-1$ y $\displaystyle\lim_{x\to0^+}\frac{|x|}{x}=1$: **salto finito** de amplitud 2.
+:::
+
+::: {.callout-note collapse="true"}
+## 22
+$f(x)=x^3+x-1$ es un polinomio, continuo en $[0,1]$. $f(0)=-1<0$ y $f(1)=1>0$. Por el teorema de Bolzano existe $c\in(0,1)$ con $f(c)=0$.
+:::
+
+::: {.callout-note collapse="true"}
+## 23
+Se cortan si $e^x=3-x$. Sea $f(x)=e^x+x-3$, continua en $[0,1]$. $f(0)=1-3=-2<0$ y $f(1)=e-2\approx0{,}72>0$. Por Bolzano existe $c\in(0,1)$ con $f(c)=0$, es decir, $e^c=3-c$.
+:::
+
+::: {.callout-note collapse="true"}
+## 24
+Como $f$ es continua en $[0,2]$ y $1\in(-1,3)$, el teorema de los valores intermedios asegura que existe $c\in(0,2)$ con $f(c)=1$.
+
+El valor 5 **no** está entre $f(0)$ y $f(2)$, así que no se puede asegurar: depende de la función (por ejemplo, una recta no lo alcanza, pero otra función continua sí podría).
+:::
+
+::: {.callout-note collapse="true"}
+## 25
+$A(x)=5+\dfrac{100}{x}$.
+
+$\displaystyle\lim_{x\to\infty}A(x)=5$: al producir muchas unidades, el coste medio tiende a 5 € por unidad (el coste fijo de 100 € se reparte entre muchas).
+
+$\displaystyle\lim_{x\to0^+}A(x)=+\infty$: si se fabrican muy pocas unidades, el coste medio por unidad se dispara.
+:::

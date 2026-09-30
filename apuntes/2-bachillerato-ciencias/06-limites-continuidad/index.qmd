@@ -1,0 +1,101 @@
+---
+title: "Límites y continuidad"
+---
+
+## 1. Límite de una función
+
+$\displaystyle\lim_{x\to a}f(x)=L$ significa que $f(x)$ se acerca a $L$ cuando $x$ se acerca a $a$ (sin tener que valer $a$). Los **límites laterales** son $\displaystyle\lim_{x\to a^-}$ y $\displaystyle\lim_{x\to a^+}$, y el límite existe si ambos coinciden.
+
+Un límite puede ser un número, $+\infty$ o $-\infty$. Con funciones definidas a trozos o con valor absoluto hay que calcular siempre los límites laterales.
+
+## 2. Límites básicos
+
+| Caso | Resultado |
+|---|---|
+| $\dfrac{k}{0^\pm}$ con $k\neq0$ | $\pm\infty$ (estudia el signo) |
+| $\dfrac{k}{\infty}$ | $0$ |
+| $a^x$ con $a>1$, $x\to\infty$ | $\infty$ |
+| $a^x$ con $0<a<1$, $x\to\infty$ | $0$ |
+| $\ln x$, $x\to\infty$ | $\infty$ |
+| $\ln x$, $x\to0^+$ | $-\infty$ |
+
+**Orden de infinitos**: $\ln x\ll x^n\ll a^x\ll x!$ (un exponencial gana a una potencia, y esta a un logaritmo).
+
+**Límites notables**:
+$$\lim_{x\to0}\frac{\sin x}{x}=1\qquad\lim_{x\to0}\frac{e^x-1}{x}=1\qquad\lim_{x\to0}\frac{\ln(1+x)}{x}=1\qquad\lim_{x\to\infty}\left(1+\frac1x\right)^x=e$$
+
+## 3. Indeterminaciones
+
+Las formas $\dfrac{\infty}{\infty}$, $\dfrac00$, $\infty-\infty$, $0\cdot\infty$, $1^\infty$ no dan el resultado directamente. Hay que transformarlas.
+
+**$\dfrac{\infty}{\infty}$ con polinomios**: se comparan grados. Si $\operatorname{gr}P=\operatorname{gr}Q$, el límite es el cociente de los coeficientes principales; si $\operatorname{gr}P>\operatorname{gr}Q$, es $\pm\infty$; si $\operatorname{gr}P<\operatorname{gr}Q$, es $0$.
+
+$$\lim_{x\to\infty}\frac{3x^2-x}{x^2+5}=3$$
+
+**$\dfrac00$ con polinomios**: se factoriza y se simplifica.
+$$\lim_{x\to2}\frac{x^2-4}{x-2}=\lim_{x\to2}(x+2)=4$$
+
+**$\dfrac00$ o $\infty-\infty$ con raíces**: se multiplica y divide por el **conjugado**.
+$$\lim_{x\to\infty}\left(\sqrt{x^2+x}-x\right)=\lim\frac{x^2+x-x^2}{\sqrt{x^2+x}+x}=\lim\frac{x}{\sqrt{x^2+x}+x}=\frac12$$
+
+**$1^\infty$**: se usa
+$$\lim f(x)^{g(x)}=e^{\lim g(x)\,(f(x)-1)}$$
+Ejemplo: $\displaystyle\lim_{x\to\infty}\left(\frac{x+2}{x-1}\right)^x=e^{\lim x\cdot\frac{3}{x-1}}=e^3$.
+
+**$0\cdot\infty$**: se escribe como cociente, $f\cdot g=\dfrac{f}{1/g}$, y se aplica L'Hôpital.
+
+## 4. Regla de L'Hôpital
+
+Si $\displaystyle\lim_{x\to a}\frac{f(x)}{g(x)}$ da $\dfrac00$ o $\dfrac{\infty}{\infty}$ y existe $\displaystyle\lim_{x\to a}\frac{f'(x)}{g'(x)}$, entonces
+$$\lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f'(x)}{g'(x)}$$
+
+Se puede aplicar varias veces. Se deriva **el numerador y el denominador por separado** (no es la derivada del cociente). Las derivadas se estudian en el tema siguiente.
+
+Ejemplo: $\displaystyle\lim_{x\to0}\frac{e^x-1-x}{x^2}=\lim\frac{e^x-1}{2x}=\lim\frac{e^x}{2}=\frac12$.
+
+## 5. Continuidad
+
+$f$ es **continua en $a$** si se cumplen las tres condiciones:
+
+1. Existe $f(a)$.
+2. Existe $\displaystyle\lim_{x\to a}f(x)$.
+3. $\displaystyle\lim_{x\to a}f(x)=f(a)$.
+
+Las funciones elementales (polinomios, exponenciales, logaritmos en su dominio, trigonométricas, raíces) son continuas en su dominio. Las funciones a trozos se estudian en los puntos de unión.
+
+**Tipos de discontinuidad**:
+
+| Tipo | Descripción |
+|---|---|
+| **Evitable** | existe el límite, pero no coincide con $f(a)$ o $f(a)$ no existe |
+| **Salto finito** | los límites laterales existen y son distintos |
+| **Salto infinito (asintótica)** | algún límite lateral es $\pm\infty$ |
+
+Para calcular parámetros que hacen continua una función a trozos se igualan los límites laterales y el valor de la función en el punto de unión.
+
+## 6. Asíntotas
+
+- **Vertical** $x=a$: si $\displaystyle\lim_{x\to a^\pm}f(x)=\pm\infty$ (aparecen en los ceros del denominador).
+- **Horizontal** $y=L$: si $\displaystyle\lim_{x\to\pm\infty}f(x)=L$.
+- **Oblicua** $y=mx+n$: si no hay horizontal y
+$$m=\lim_{x\to\infty}\frac{f(x)}{x}\neq0,\qquad n=\lim_{x\to\infty}\big(f(x)-mx\big)$$
+Con cociente de polinomios, la oblicua aparece cuando el grado del numerador supera en uno al del denominador y se obtiene dividiendo.
+
+## 7. Teoremas de funciones continuas
+
+Sea $f$ continua en $[a,b]$.
+
+- **Bolzano**: si $f(a)$ y $f(b)$ tienen **signos distintos** ($f(a)\cdot f(b)<0$), existe $c\in(a,b)$ con $f(c)=0$.
+- **Valores intermedios (Darboux)**: $f$ toma todos los valores entre $f(a)$ y $f(b)$.
+- **Weierstrass**: $f$ alcanza en $[a,b]$ un máximo y un mínimo absolutos.
+
+Para demostrar con Bolzano que una ecuación tiene solución: define $f(x)=$ (lado izquierdo) $-$ (lado derecho), comprueba que es continua y busca dos puntos con signos distintos.
+
+::: {.callout-tip}
+## Resumen rápido
+- $\frac{\infty}{\infty}$: grados o coeficientes principales; $\frac00$: factorizar, conjugado o L'Hôpital.
+- $1^\infty$: $e^{\lim g\,(f-1)}$.
+- Continua en $a$: $f(a)$ existe, el límite existe y son iguales.
+- Bolzano: signos distintos en los extremos implica raíz en el intervalo.
+- Oblicua: $m=\lim f(x)/x$, $n=\lim(f(x)-mx)$.
+:::
