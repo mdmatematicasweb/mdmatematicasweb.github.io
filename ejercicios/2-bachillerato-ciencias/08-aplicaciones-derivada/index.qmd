@@ -1,0 +1,278 @@
+---
+title: "Aplicaciones de la derivada — relación de ejercicios"
+---
+
+Relación de 25 ejercicios: del 1 al 8 son básicos y del 9 al 25 siguen el estilo de la EBAU de Andalucía (2021 en adelante). Las soluciones están al final.
+
+## Estudio de funciones
+
+**1.** Estudia la monotonía y los extremos relativos de $f(x)=x^3-6x^2+9x+1$ y su punto de inflexión.
+
+**2.** Estudia la monotonía, los extremos y la curvatura de $f(x)=xe^{-x}$.
+
+**3.** Estudia la monotonía, los extremos y la curvatura de $f(x)=x^4-4x^3$. ¿Es $x=0$ un extremo?
+
+**4.** Estudia el dominio, las asíntotas, la monotonía, los extremos y la curvatura de $f(x)=\dfrac{x^2}{x-1}$.
+
+**5.** Estudia los extremos y la curvatura de $f(x)=\dfrac{\ln x}{x}$.
+
+**6.** Estudia las asíntotas, los extremos y los puntos de inflexión de $f(x)=\dfrac{x}{x^2+1}$.
+
+**7.** Halla los puntos de inflexión y los intervalos de curvatura de $f(x)=\ln(x^2+1)$.
+
+**8.** Haz el estudio completo de $f(x)=x^3-3x$ (dominio, simetría, cortes, extremos, inflexión) y dibuja su gráfica.
+
+## Extremos absolutos y parámetros
+
+**9.** *(Tipo EBAU)* Halla los extremos absolutos de $f(x)=x^3-3x$ en el intervalo $[-2,3]$.
+
+**10.** *(Tipo EBAU)* Halla $a$, $b$ y $c$ para que $f(x)=x^3+ax^2+bx+c$ tenga un punto de inflexión en $(1,2)$ con tangente horizontal.
+
+**11.** *(Tipo EBAU)* Discute según $k$ la monotonía y los extremos de $f(x)=x^3+kx$.
+
+## Teoremas
+
+**12.** *(Tipo EBAU)* Aplica el teorema de Rolle a $f(x)=x^3-3x$ en $[0,\sqrt3]$ y halla el punto que asegura el teorema.
+
+**13.** *(Tipo EBAU)* Halla el punto que asegura el teorema del valor medio para: a) $f(x)=x^2$ en $[1,3]$; b) $f(x)=\ln x$ en $[1,e]$.
+
+**14.** *(Tipo EBAU)* Demuestra que la ecuación $x^3+3x-1=0$ tiene exactamente una solución real.
+
+**15.** *(Tipo EBAU)* Demuestra con el teorema del valor medio que $|\sin a-\sin b|\le|a-b|$ para cualesquiera $a,b$.
+
+## Optimización
+
+**16.** De todos los rectángulos de perímetro 40 m, halla el de área máxima.
+
+**17.** *(Tipo EBAU)* Con una lámina cuadrada de 12 cm de lado se hace una caja sin tapa recortando un cuadrado de lado $x$ en cada esquina. Halla $x$ para que el volumen sea máximo y calcula ese volumen.
+
+**18.** *(Tipo EBAU)* Se quiere vallar un terreno rectangular junto a un río (el lado del río no se valla) con 100 m de valla. Halla las dimensiones de área máxima.
+
+**19.** *(Tipo EBAU)* Un bote cilíndrico debe tener un volumen de $16\pi$ cm$^3$. Halla el radio y la altura que hacen mínima la superficie total (con tapas).
+
+**20.** Dos números positivos suman 20. Halla los que hacen máximo el producto del primero por el cuadrado del segundo.
+
+**21.** *(Tipo EBAU)* Halla el rectángulo de área máxima con un lado sobre el eje $X$ y dos vértices en la parábola $y=12-x^2$.
+
+**22.** *(Tipo EBAU)* Halla los puntos de la parábola $y=x^2$ más cercanos al punto $(0,3)$ y la distancia mínima.
+
+**23.** El coste total de fabricar $x$ unidades es $C(x)=x^2+100$. Halla la producción que hace mínimo el coste medio por unidad y cuánto vale.
+
+**24.** *(Tipo EBAU)* Un alambre de 12 m se corta en dos trozos: con uno se forma un cuadrado y con el otro una circunferencia. ¿Cómo hay que cortarlo para que la suma de las áreas sea mínima?
+
+**25.** Un fabricante vende $x$ unidades al precio $p=100-\dfrac x2$ euros y el coste de producción es $C(x)=20x+200$. Halla la producción que maximiza el beneficio y su valor.
+
+---
+
+## Soluciones
+
+::: {.callout-note collapse="true"}
+## 1
+$f'(x)=3x^2-12x+9=3(x-1)(x-3)$. Signo: $+$ en $(-\infty,1)$, $-$ en $(1,3)$, $+$ en $(3,\infty)$.
+
+- Creciente en $(-\infty,1)\cup(3,\infty)$; decreciente en $(1,3)$.
+- **Máximo** en $(1,5)$ y **mínimo** en $(3,1)$.
+- $f''(x)=6x-12=0\Rightarrow x=2$: **inflexión** en $(2,3)$. Convexa para $x>2$, cóncava para $x<2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 2
+$f'(x)=(1-x)e^{-x}$: creciente en $(-\infty,1)$ y decreciente en $(1,\infty)$. **Máximo** en $\left(1,\frac1e\right)$.
+
+$f''(x)=(x-2)e^{-x}$: cóncava en $(-\infty,2)$, convexa en $(2,\infty)$. **Inflexión** en $\left(2,\frac{2}{e^2}\right)$.
+:::
+
+::: {.callout-note collapse="true"}
+## 3
+$f'(x)=4x^2(x-3)$. Se anula en $x=0$ y $x=3$.
+
+- $f'<0$ en $(-\infty,3)$ (salvo en $0$) y $f'>0$ en $(3,\infty)$: decreciente en $(-\infty,3)$ y creciente en $(3,\infty)$.
+- **Mínimo** en $(3,-27)$.
+- En $x=0$, $f'$ **no cambia de signo**: no es un extremo.
+
+$f''(x)=12x(x-2)$: convexa en $(-\infty,0)\cup(2,\infty)$ y cóncava en $(0,2)$. **Inflexiones** en $(0,0)$ (con tangente horizontal) y en $(2,-16)$.
+:::
+
+::: {.callout-note collapse="true"}
+## 4
+- **Dominio**: $\mathbb{R}\setminus\{1\}$.
+- **Asíntotas**: vertical $x=1$ ($\lim_{x\to1^\pm}f=\pm\infty$); oblicua $y=x+1$ (dividiendo: $\frac{x^2}{x-1}=x+1+\frac{1}{x-1}$); no hay horizontal.
+- $f'(x)=\dfrac{x(x-2)}{(x-1)^2}$: creciente en $(-\infty,0)\cup(2,\infty)$ y decreciente en $(0,1)\cup(1,2)$. **Máximo relativo** en $(0,0)$ y **mínimo relativo** en $(2,4)$.
+- $f''(x)=\dfrac{2}{(x-1)^3}$: cóncava si $x<1$ y convexa si $x>1$. No hay inflexión (en $x=1$ no está definida).
+:::
+
+::: {.callout-note collapse="true"}
+## 5
+Dominio: $x>0$. $f'(x)=\dfrac{1-\ln x}{x^2}$: creciente en $(0,e)$ y decreciente en $(e,\infty)$. **Máximo** en $\left(e,\frac1e\right)$.
+
+$f''(x)=\dfrac{2\ln x-3}{x^3}$: cóncava en $(0,e^{3/2})$ y convexa en $(e^{3/2},\infty)$. **Inflexión** en $x=e^{3/2}$, con $f=\frac{3}{2e^{3/2}}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 6
+- **Asíntota horizontal** $y=0$ (en $\pm\infty$). No hay verticales ni oblicuas.
+- $f'(x)=\dfrac{1-x^2}{(x^2+1)^2}$: decreciente en $(-\infty,-1)\cup(1,\infty)$ y creciente en $(-1,1)$. **Mínimo** en $\left(-1,-\frac12\right)$ y **máximo** en $\left(1,\frac12\right)$.
+- $f''(x)=\dfrac{2x(x^2-3)}{(x^2+1)^3}$. Se anula en $x=0$ y $x=\pm\sqrt3$, con cambio de signo en los tres: **tres inflexiones**: $(0,0)$, $\left(\sqrt3,\frac{\sqrt3}{4}\right)$ y $\left(-\sqrt3,-\frac{\sqrt3}{4}\right)$.
+:::
+
+::: {.callout-note collapse="true"}
+## 7
+$f'(x)=\dfrac{2x}{x^2+1}$ y $f''(x)=\dfrac{2(1-x^2)}{(x^2+1)^2}$.
+
+$f''=0\Rightarrow x=\pm1$. Convexa en $(-1,1)$ y cóncava en $(-\infty,-1)\cup(1,\infty)$. **Inflexiones** en $(-1,\ln2)$ y $(1,\ln2)$.
+:::
+
+::: {.callout-note collapse="true"}
+## 8
+- **Dominio**: $\mathbb{R}$. **Simetría**: impar, $f(-x)=-f(x)$.
+- **Cortes**: $f(0)=0$; $x^3-3x=0\Rightarrow x=0,\ \pm\sqrt3$.
+- $f'(x)=3(x-1)(x+1)$: creciente en $(-\infty,-1)\cup(1,\infty)$ y decreciente en $(-1,1)$. **Máximo** en $(-1,2)$, **mínimo** en $(1,-2)$.
+- $f''(x)=6x$: cóncava en $(-\infty,0)$ y convexa en $(0,\infty)$. **Inflexión** en $(0,0)$.
+- No tiene asíntotas.
+
+La gráfica pasa por $(-\sqrt3,0)$, sube hasta $(-1,2)$, baja por $(0,0)$ hasta $(1,-2)$ y vuelve a subir por $(\sqrt3,0)$.
+:::
+
+::: {.callout-note collapse="true"}
+## 9
+Puntos críticos: $x=\pm1$ (ambos en $[-2,3]$). Valores:
+
+| $x$ | $-2$ | $-1$ | $1$ | $3$ |
+|---|---|---|---|---|
+| $f(x)$ | $-2$ | $2$ | $-2$ | $18$ |
+
+**Máximo absoluto**: $18$ en $x=3$. **Mínimo absoluto**: $-2$, que se alcanza en $x=-2$ y en $x=1$.
+:::
+
+::: {.callout-note collapse="true"}
+## 10
+$f''(x)=6x+2a$; $f''(1)=0\Rightarrow a=-3$. Tangente horizontal: $f'(1)=3+2a+b=0\Rightarrow b=3$. Pasa por $(1,2)$: $1+a+b+c=2\Rightarrow c=1$.
+
+$f(x)=x^3-3x^2+3x+1$. Como $f''(x)=6(x-1)$ cambia de signo en $x=1$, es inflexión.
+:::
+
+::: {.callout-note collapse="true"}
+## 11
+$f'(x)=3x^2+k$.
+
+- Si $k\ge0$: $f'\ge0$ y solo se anula (si $k=0$) en $x=0$ sin cambiar de signo. $f$ es **creciente** en todo $\mathbb{R}$ y no tiene extremos.
+- Si $k<0$: $f'=0$ en $x=\pm\sqrt{-k/3}$. **Máximo** en $x=-\sqrt{-k/3}$ y **mínimo** en $x=+\sqrt{-k/3}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 12
+$f$ es un polinomio (continuo y derivable) y $f(0)=0=f(\sqrt3)$. Por Rolle existe $c\in(0,\sqrt3)$ con $f'(c)=0$: $3c^2-3=0\Rightarrow c=1$ (y $1\in(0,\sqrt3)$).
+:::
+
+::: {.callout-note collapse="true"}
+## 13
+a) $f'(c)=2c=\dfrac{9-1}{3-1}=4\Rightarrow c=2\in(1,3)$.
+
+b) $f'(c)=\dfrac1c=\dfrac{1-0}{e-1}\Rightarrow c=e-1\approx1{,}72\in(1,e)$.
+
+En ambos casos $f$ es continua en el intervalo cerrado y derivable en el abierto.
+:::
+
+::: {.callout-note collapse="true"}
+## 14
+**Existencia**: $f(x)=x^3+3x-1$ es continua; $f(0)=-1<0$ y $f(1)=3>0$. Por Bolzano hay una raíz en $(0,1)$.
+
+**Unicidad**: $f'(x)=3x^2+3>0$ para todo $x$, luego $f$ es estrictamente creciente y no puede cortar dos veces al eje $X$. (Con Rolle: dos raíces implicarían $f'(c)=0$ para algún $c$, pero $f'>0$.)
+
+Por tanto hay **exactamente una** solución real.
+:::
+
+::: {.callout-note collapse="true"}
+## 15
+Si $a=b$ es trivial. Si $a\neq b$, $f(x)=\sin x$ es continua y derivable en $[b,a]$ (o $[a,b]$). Existe $c$ entre $a$ y $b$ con
+$$\frac{\sin a-\sin b}{a-b}=\cos c$$
+Como $|\cos c|\le1$: $|\sin a-\sin b|=|\cos c|\,|a-b|\le|a-b|$.
+:::
+
+::: {.callout-note collapse="true"}
+## 16
+Lados $x$ y $20-x$. $A(x)=x(20-x)$, $A'(x)=20-2x=0\Rightarrow x=10$. $A''=-2<0$: máximo.
+
+El rectángulo es un **cuadrado de $10\times10$ m** con área $100$ m$^2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 17
+La caja tiene base $(12-2x)\times(12-2x)$ y altura $x$, con $0<x<6$.
+
+$V(x)=x(12-2x)^2=4x^3-48x^2+144x$, $V'(x)=12x^2-96x+144=12(x-2)(x-6)$. En $(0,6)$ el punto crítico es $x=2$; $V'>0$ antes y $V'<0$ después, luego es máximo.
+
+$x=2$ cm y $V=2\cdot8^2=128$ cm$^3$.
+:::
+
+::: {.callout-note collapse="true"}
+## 18
+Si $x$ es cada lado perpendicular al río, el lado paralelo mide $100-2x$. $A(x)=x(100-2x)$, $A'(x)=100-4x=0\Rightarrow x=25$. $A''=-4<0$: máximo.
+
+Dimensiones: $25$ m $\times$ $50$ m (50 m paralelo al río), área $1250$ m$^2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 19
+$V=\pi r^2h=16\pi\Rightarrow h=\dfrac{16}{r^2}$. Superficie: $S(r)=2\pi r^2+2\pi rh=2\pi r^2+\dfrac{32\pi}{r}$.
+
+$S'(r)=4\pi r-\dfrac{32\pi}{r^2}=0\Rightarrow r^3=8\Rightarrow r=2$. $S''(2)=4\pi+\dfrac{64\pi}{8}>0$: mínimo.
+
+$r=2$ cm, $h=4$ cm y $S=24\pi$ cm$^2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 20
+Sean $x$ e $y=20-x$ con $0<x<20$. $F(x)=x(20-x)^2$, $F'(x)=(20-x)(20-3x)=0\Rightarrow x=\dfrac{20}{3}$ (la otra raíz, $x=20$, es un extremo del dominio con $F=0$).
+
+$F'>0$ antes y $F'<0$ después: máximo.
+
+Números: $\dfrac{20}{3}$ y $\dfrac{40}{3}$. Producto máximo: $\dfrac{20}{3}\cdot\dfrac{1600}{9}=\dfrac{32000}{27}\approx1185{,}2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 21
+Vértices $(\pm x,0)$ y $(\pm x,12-x^2)$ con $0<x<\sqrt{12}$. Base $2x$, altura $12-x^2$. $A(x)=2x(12-x^2)=24x-2x^3$.
+
+$A'(x)=24-6x^2=0\Rightarrow x=2$. $A''(2)=-24<0$: máximo.
+
+Dimensiones: base $4$ y altura $8$, con área $32$ u$^2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 22
+Distancia al cuadrado de $(x,x^2)$ a $(0,3)$: $D(x)=x^2+(x^2-3)^2=x^4-5x^2+9$.
+
+$D'(x)=4x^3-10x=2x(2x^2-5)=0\Rightarrow x=0$ o $x=\pm\sqrt{5/2}$.
+
+$D(0)=9$ y $D\left(\pm\sqrt{5/2}\right)=\dfrac{11}{4}$. El mínimo está en $x=\pm\sqrt{5/2}=\pm\dfrac{\sqrt{10}}{2}$ ($D$ vale $9$ en $x=0$, que es un máximo local).
+
+Puntos: $\left(\pm\dfrac{\sqrt{10}}{2},\ \dfrac52\right)$ y distancia mínima $\sqrt{\dfrac{11}{4}}=\dfrac{\sqrt{11}}{2}\approx1{,}66$.
+:::
+
+::: {.callout-note collapse="true"}
+## 23
+Coste medio: $M(x)=\dfrac{C(x)}{x}=x+\dfrac{100}{x}$ con $x>0$. $M'(x)=1-\dfrac{100}{x^2}=0\Rightarrow x=10$. $M''(10)=\dfrac{200}{1000}>0$: mínimo.
+
+Producción de 10 unidades, con coste medio $M(10)=20$ euros por unidad.
+:::
+
+::: {.callout-note collapse="true"}
+## 24
+Si se usan $x$ metros para el cuadrado, su lado es $\dfrac x4$ y la circunferencia tiene longitud $12-x$, luego radio $r=\dfrac{12-x}{2\pi}$.
+
+$A(x)=\dfrac{x^2}{16}+\pi r^2=\dfrac{x^2}{16}+\dfrac{(12-x)^2}{4\pi}$.
+
+$A'(x)=\dfrac x8-\dfrac{12-x}{2\pi}=0\Rightarrow x=\dfrac{48}{\pi+4}\approx6{,}72$ m. $A''(x)=\dfrac18+\dfrac{1}{2\pi}>0$: mínimo.
+
+Hay que dedicar $\dfrac{48}{\pi+4}\approx6{,}72$ m al cuadrado y $\dfrac{12\pi}{\pi+4}\approx5{,}28$ m a la circunferencia.
+:::
+
+::: {.callout-note collapse="true"}
+## 25
+Ingreso: $I(x)=x\left(100-\tfrac x2\right)=100x-\tfrac{x^2}{2}$. Beneficio: $B(x)=I-C=80x-\tfrac{x^2}{2}-200$.
+
+$B'(x)=80-x=0\Rightarrow x=80$. $B''=-1<0$: máximo.
+
+Producción de 80 unidades y beneficio máximo $B(80)=6400-3200-200=3000$ euros.
+:::
