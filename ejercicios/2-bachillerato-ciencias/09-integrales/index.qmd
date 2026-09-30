@@ -1,0 +1,225 @@
+---
+title: "Integrales — relación de ejercicios"
+---
+
+Relación de 25 ejercicios: del 1 al 6 son básicos y del 7 al 25 siguen el estilo de la EBAU de Andalucía (2021 en adelante). Las soluciones están al final.
+
+## Integrales inmediatas
+
+**1.** Calcula $\displaystyle\int(3x^2-4x+5)\,dx$.
+
+**2.** Calcula $\displaystyle\int\left(\frac1x+e^x+\sqrt x\right)dx$.
+
+**3.** Calcula $\displaystyle\int\sin3x\,dx$.
+
+**4.** Calcula $\displaystyle\int\frac{x}{x^2+1}\,dx$.
+
+**5.** Calcula $\displaystyle\int xe^{x^2}\,dx$.
+
+**6.** Calcula $\displaystyle\int\frac{\cos x}{1+\sin^2x}\,dx$.
+
+## Integración por partes
+
+**7.** *(Tipo EBAU)* Calcula $\displaystyle\int xe^x\,dx$.
+
+**8.** *(Tipo EBAU)* Calcula $\displaystyle\int x\ln x\,dx$.
+
+**9.** *(Tipo EBAU)* Calcula $\displaystyle\int x^2e^x\,dx$.
+
+**10.** *(Tipo EBAU)* Calcula $\displaystyle\int e^x\sin x\,dx$.
+
+**11.** *(Tipo EBAU)* Calcula $\displaystyle\int\ln x\,dx$ y $\displaystyle\int\arctan x\,dx$.
+
+## Racionales y cambio de variable
+
+**12.** *(Tipo EBAU)* Calcula $\displaystyle\int\frac{3x+5}{(x-1)(x+3)}\,dx$.
+
+**13.** *(Tipo EBAU)* Calcula $\displaystyle\int\frac{dx}{x^2-4}$.
+
+**14.** *(Tipo EBAU)* Calcula $\displaystyle\int\frac{dx}{x^2+4x+5}$.
+
+**15.** *(Tipo EBAU)* Calcula $\displaystyle\int\frac{x^2+1}{x-1}\,dx$.
+
+**16.** *(Tipo EBAU)* Calcula, con el cambio $x=t^2$, $\displaystyle\int e^{\sqrt x}\,dx$.
+
+**17.** *(Tipo EBAU)* Calcula $\displaystyle\int\frac{dx}{x\ln x}$ con el cambio $t=\ln x$.
+
+## Integral definida y teorema fundamental
+
+**18.** Calcula $\displaystyle\int_0^1(x^2+1)\,dx$ y $\displaystyle\int_1^e\ln x\,dx$.
+
+**19.** *(Tipo EBAU)* Sea $F(x)=\displaystyle\int_0^xe^{t^2}\,dt$. Calcula $F'(x)$ y $F'(0)$.
+
+**20.** *(Tipo EBAU)* Calcula $\displaystyle\lim_{x\to0}\frac{\displaystyle\int_0^x\sin(t^2)\,dt}{x^3}$.
+
+**21.** *(Tipo EBAU)* Halla la función $f$ con $f''(x)=6x$, $f'(0)=1$ y $f(0)=2$.
+
+## Áreas
+
+**22.** *(Tipo EBAU)* Calcula el área encerrada entre $y=x^2$ e $y=x$.
+
+**23.** *(Tipo EBAU)* Calcula el área encerrada entre $f(x)=x^3-x$ y el eje $X$.
+
+**24.** *(Tipo EBAU)* Calcula el área de la región limitada por la parábola $y=4-x^2$ y el eje $X$.
+
+**25.** *(Tipo EBAU)* Calcula el área de la región limitada por $y=\sin x$, $y=\cos x$, y las rectas $x=0$ y $x=\dfrac\pi4$.
+
+---
+
+## Soluciones
+
+::: {.callout-note collapse="true"}
+## 1
+$\displaystyle\int(3x^2-4x+5)dx=x^3-2x^2+5x+C$.
+:::
+
+::: {.callout-note collapse="true"}
+## 2
+$\displaystyle\int\left(\frac1x+e^x+x^{1/2}\right)dx=\ln|x|+e^x+\frac23x^{3/2}+C$.
+:::
+
+::: {.callout-note collapse="true"}
+## 3
+$\displaystyle\int\sin3x\,dx=-\frac{\cos3x}{3}+C$.
+:::
+
+::: {.callout-note collapse="true"}
+## 4
+Con $u=x^2+1$, $u'=2x$: $\displaystyle\int\frac{x}{x^2+1}dx=\frac12\int\frac{2x}{x^2+1}dx=\frac12\ln(x^2+1)+C$.
+:::
+
+::: {.callout-note collapse="true"}
+## 5
+Con $u=x^2$: $\displaystyle\int xe^{x^2}dx=\frac12\int2xe^{x^2}dx=\frac12e^{x^2}+C$.
+:::
+
+::: {.callout-note collapse="true"}
+## 6
+Con $u=\sin x$, $u'=\cos x$: $\displaystyle\int\frac{u'}{1+u^2}dx=\arctan(\sin x)+C$.
+:::
+
+::: {.callout-note collapse="true"}
+## 7
+$u=x$, $dv=e^xdx$: $\displaystyle\int xe^xdx=xe^x-\int e^xdx=xe^x-e^x+C=(x-1)e^x+C$.
+:::
+
+::: {.callout-note collapse="true"}
+## 8
+$u=\ln x$, $dv=x\,dx$, $du=\frac1xdx$, $v=\frac{x^2}{2}$:
+$$\int x\ln x\,dx=\frac{x^2}{2}\ln x-\int\frac x2dx=\frac{x^2}{2}\ln x-\frac{x^2}{4}+C$$
+:::
+
+::: {.callout-note collapse="true"}
+## 9
+Primera vez: $u=x^2$, $dv=e^xdx$: $\displaystyle\int x^2e^xdx=x^2e^x-2\int xe^xdx$. Por el ejercicio 7:
+$$\int x^2e^xdx=x^2e^x-2(x-1)e^x+C=(x^2-2x+2)e^x+C$$
+:::
+
+::: {.callout-note collapse="true"}
+## 10
+Sea $I=\displaystyle\int e^x\sin x\,dx$. Por partes ($u=\sin x$, $dv=e^xdx$): $I=e^x\sin x-\displaystyle\int e^x\cos x\,dx$.
+
+Otra vez ($u=\cos x$): $\displaystyle\int e^x\cos x\,dx=e^x\cos x+\int e^x\sin x\,dx=e^x\cos x+I$.
+
+Entonces $I=e^x\sin x-e^x\cos x-I$, luego $2I=e^x(\sin x-\cos x)$ y
+$$I=\frac{e^x(\sin x-\cos x)}{2}+C$$
+:::
+
+::: {.callout-note collapse="true"}
+## 11
+$\displaystyle\int\ln x\,dx$: $u=\ln x$, $dv=dx$. $=x\ln x-\int1\,dx=x(\ln x-1)+C$.
+
+$\displaystyle\int\arctan x\,dx$: $u=\arctan x$, $dv=dx$. $=x\arctan x-\int\frac{x}{1+x^2}dx=x\arctan x-\frac12\ln(1+x^2)+C$.
+:::
+
+::: {.callout-note collapse="true"}
+## 12
+$\dfrac{3x+5}{(x-1)(x+3)}=\dfrac{A}{x-1}+\dfrac{B}{x+3}$ da $3x+5=A(x+3)+B(x-1)$. Con $x=1$: $A=2$. Con $x=-3$: $B=1$.
+$$\int\frac{3x+5}{(x-1)(x+3)}dx=2\ln|x-1|+\ln|x+3|+C$$
+:::
+
+::: {.callout-note collapse="true"}
+## 13
+$\dfrac{1}{x^2-4}=\dfrac{1}{(x-2)(x+2)}=\dfrac{A}{x-2}+\dfrac{B}{x+2}$, con $1=A(x+2)+B(x-2)$: $A=\frac14$ y $B=-\frac14$.
+$$\int\frac{dx}{x^2-4}=\frac14\ln|x-2|-\frac14\ln|x+2|+C=\frac14\ln\left|\frac{x-2}{x+2}\right|+C$$
+:::
+
+::: {.callout-note collapse="true"}
+## 14
+El denominador no tiene raíces reales. $x^2+4x+5=(x+2)^2+1$, luego
+$$\int\frac{dx}{(x+2)^2+1}=\arctan(x+2)+C$$
+:::
+
+::: {.callout-note collapse="true"}
+## 15
+El grado del numerador es mayor o igual que el del denominador: se divide. $x^2+1=(x-1)(x+1)+2$, luego $\dfrac{x^2+1}{x-1}=x+1+\dfrac{2}{x-1}$.
+$$\int\frac{x^2+1}{x-1}dx=\frac{x^2}{2}+x+2\ln|x-1|+C$$
+:::
+
+::: {.callout-note collapse="true"}
+## 16
+$x=t^2$, $dx=2t\,dt$, $\sqrt x=t$: $\displaystyle\int e^t\cdot2t\,dt=2\int te^tdt=2(t-1)e^t+C$ (por partes, ejercicio 7).
+
+Deshaciendo el cambio: $2(\sqrt x-1)e^{\sqrt x}+C$.
+:::
+
+::: {.callout-note collapse="true"}
+## 17
+$t=\ln x$, $dt=\dfrac{dx}{x}$: $\displaystyle\int\frac{dt}{t}=\ln|t|+C=\ln|\ln x|+C$.
+:::
+
+::: {.callout-note collapse="true"}
+## 18
+$\displaystyle\int_0^1(x^2+1)dx=\left[\frac{x^3}{3}+x\right]_0^1=\frac13+1=\frac43$.
+
+$\displaystyle\int_1^e\ln x\,dx=\big[x(\ln x-1)\big]_1^e=0-(1\cdot(0-1))=1$.
+:::
+
+::: {.callout-note collapse="true"}
+## 19
+Por el teorema fundamental del cálculo, $F'(x)=e^{x^2}$. Por tanto $F'(0)=e^0=1$.
+:::
+
+::: {.callout-note collapse="true"}
+## 20
+El límite es $\dfrac00$. Por L'Hôpital y el teorema fundamental:
+$$\lim_{x\to0}\frac{\sin(x^2)}{3x^2}=\frac13\lim_{x\to0}\frac{\sin(x^2)}{x^2}=\frac13$$
+:::
+
+::: {.callout-note collapse="true"}
+## 21
+$f'(x)=\displaystyle\int6x\,dx=3x^2+C_1$ y $f'(0)=1\Rightarrow C_1=1$. Luego $f'(x)=3x^2+1$.
+
+$f(x)=x^3+x+C_2$ y $f(0)=2\Rightarrow C_2=2$.
+
+$f(x)=x^3+x+2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 22
+Cortes: $x^2=x\Rightarrow x=0,\ x=1$. En $[0,1]$, $x\ge x^2$.
+$$A=\int_0^1(x-x^2)dx=\left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1=\frac12-\frac13=\frac16\text{ u}^2$$
+:::
+
+::: {.callout-note collapse="true"}
+## 23
+$x^3-x=x(x-1)(x+1)$: cortes en $x=-1,0,1$. Una primitiva es $F(x)=\dfrac{x^4}{4}-\dfrac{x^2}{2}$.
+
+En $[-1,0]$: $\displaystyle\int_{-1}^0(x^3-x)dx=F(0)-F(-1)=0-\left(\frac14-\frac12\right)=\frac14$ (positiva).
+
+En $[0,1]$: $F(1)-F(0)=\frac14-\frac12=-\frac14$ (negativa, se toma el valor absoluto).
+
+Área $=\dfrac14+\dfrac14=\dfrac12$ u$^2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 24
+Cortes con el eje: $4-x^2=0\Rightarrow x=\pm2$. La parábola está por encima del eje en $[-2,2]$.
+$$A=\int_{-2}^2(4-x^2)dx=\left[4x-\frac{x^3}{3}\right]_{-2}^2=\left(8-\frac83\right)-\left(-8+\frac83\right)=\frac{32}{3}\text{ u}^2$$
+:::
+
+::: {.callout-note collapse="true"}
+## 25
+En $[0,\frac\pi4]$ se cumple $\cos x\ge\sin x$ (se cortan en $x=\frac\pi4$).
+$$A=\int_0^{\pi/4}(\cos x-\sin x)dx=\big[\sin x+\cos x\big]_0^{\pi/4}=\sqrt2-1\approx0{,}414\text{ u}^2$$
+:::

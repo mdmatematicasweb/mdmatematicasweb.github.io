@@ -1,0 +1,91 @@
+---
+title: "Integrales"
+---
+
+## 1. Integral indefinida
+
+$F$ es una **primitiva** de $f$ si $F'(x)=f(x)$. La **integral indefinida** es el conjunto de todas las primitivas:
+$$\int f(x)\,dx=F(x)+C$$
+
+Propiedades: $\displaystyle\int(f+g)=\int f+\int g$ y $\displaystyle\int kf=k\int f$.
+
+## 2. Integrales inmediatas
+
+Con $u=u(x)$ y $u'=\dfrac{du}{dx}$ (forma generalizada, que se usa casi siempre):
+
+| Integral | Resultado |
+|---|---|
+| $\displaystyle\int u^n\,u'\,dx$ ($n\neq-1$) | $\dfrac{u^{n+1}}{n+1}+C$ |
+| $\displaystyle\int\dfrac{u'}{u}\,dx$ | $\ln|u|+C$ |
+| $\displaystyle\int e^u\,u'\,dx$ | $e^u+C$ |
+| $\displaystyle\int a^u\,u'\,dx$ | $\dfrac{a^u}{\ln a}+C$ |
+| $\displaystyle\int\cos u\,u'\,dx$ | $\sin u+C$ |
+| $\displaystyle\int\sin u\,u'\,dx$ | $-\cos u+C$ |
+| $\displaystyle\int\dfrac{u'}{\cos^2u}\,dx$ | $\tan u+C$ |
+| $\displaystyle\int\dfrac{u'}{1+u^2}\,dx$ | $\arctan u+C$ |
+| $\displaystyle\int\dfrac{u'}{\sqrt{1-u^2}}\,dx$ | $\arcsin u+C$ |
+
+Ejemplos: $\displaystyle\int\frac{x}{x^2+1}dx=\frac12\ln(x^2+1)+C$; $\displaystyle\int xe^{x^2}dx=\frac12e^{x^2}+C$; $\displaystyle\int\sin3x\,dx=-\frac{\cos3x}{3}+C$.
+
+## 3. Integración por partes
+
+$$\int u\,dv=uv-\int v\,du$$
+
+Se elige $u$ en este orden de prioridad (regla **ALPES**): **A**rco (arctan...), **L**ogaritmo, **P**olinomio, **E**xponencial, **S**eno/coseno. El resto es $dv$.
+
+Ejemplo: $\displaystyle\int xe^x\,dx$ con $u=x$, $dv=e^xdx$, $du=dx$, $v=e^x$:
+$$\int xe^xdx=xe^x-\int e^xdx=(x-1)e^x+C$$
+
+- Para $\int x^ne^x$ se repite $n$ veces.
+- Para $\int\ln x\,dx$ se toma $u=\ln x$, $dv=dx$.
+- Para $\int e^x\sin x\,dx$ se aplica dos veces y **reaparece la integral inicial**, que se despeja: $\int e^x\sin x\,dx=\dfrac{e^x(\sin x-\cos x)}{2}+C$.
+
+## 4. Cambio de variable
+
+Se sustituye $t=g(x)$ y $dt=g'(x)dx$, se integra en $t$ y se deshace el cambio.
+
+Ejemplo: $\displaystyle\int e^{\sqrt x}dx$ con $x=t^2$, $dx=2t\,dt$: $\displaystyle\int2te^tdt=2(t-1)e^t+C=2(\sqrt x-1)e^{\sqrt x}+C$.
+
+## 5. Integrales racionales
+
+Para $\displaystyle\int\frac{P(x)}{Q(x)}dx$:
+
+1. Si $\operatorname{gr}P\ge\operatorname{gr}Q$, **divide**: $\dfrac PQ=C+\dfrac RQ$.
+2. Factoriza $Q$.
+3. Según las raíces de $Q$:
+   - Raíces reales simples: $\dfrac{A}{x-a}+\dfrac{B}{x-b}$, que da logaritmos.
+   - Raíz doble: $\dfrac{A}{x-a}+\dfrac{B}{(x-a)^2}$.
+   - Denominador sin raíces reales: se completa el cuadrado y sale un arcotangente.
+
+Ejemplo: $\displaystyle\int\frac{3x+5}{(x-1)(x+3)}dx$. Se escribe $\dfrac{3x+5}{(x-1)(x+3)}=\dfrac{A}{x-1}+\dfrac{B}{x+3}$, es decir $3x+5=A(x+3)+B(x-1)$. Con $x=1$: $8=4A$, $A=2$; con $x=-3$: $-4=-4B$, $B=1$. Resultado: $2\ln|x-1|+\ln|x+3|+C$.
+
+Para un denominador sin raíces: $\displaystyle\int\frac{dx}{x^2+4x+5}=\int\frac{dx}{(x+2)^2+1}=\arctan(x+2)+C$.
+
+## 6. Integral definida y regla de Barrow
+
+$\displaystyle\int_a^bf(x)\,dx$ es el área con signo entre la gráfica de $f$ y el eje $X$ en $[a,b]$.
+
+**Regla de Barrow**: si $F$ es una primitiva de $f$ (continua),
+$$\int_a^bf(x)\,dx=F(b)-F(a)$$
+
+Propiedades: $\displaystyle\int_a^bf=-\int_b^af$; $\displaystyle\int_a^bf=\int_a^cf+\int_c^bf$; $\displaystyle\int_a^af=0$.
+
+**Teorema fundamental del cálculo**: si $f$ es continua y $F(x)=\displaystyle\int_a^xf(t)\,dt$, entonces $F'(x)=f(x)$. Con un límite superior $g(x)$: $F'(x)=f(g(x))\,g'(x)$.
+
+## 7. Cálculo de áreas
+
+- **Área entre $f$ y el eje $X$** en $[a,b]$: $\displaystyle\int_a^b|f(x)|dx$. Hay que hallar los cortes con el eje y **separar** los trozos donde $f$ cambia de signo.
+- **Área entre dos curvas** ($f\ge g$ en $[a,b]$): $\displaystyle\int_a^b\big(f(x)-g(x)\big)dx$. Los límites de integración son los puntos de corte, resolviendo $f(x)=g(x)$. Si las curvas se cruzan, se separa por intervalos.
+
+::: {.callout-warning}
+Si $f$ cambia de signo, $\int_a^bf$ **no** es el área (las partes negativas restan). Calcula cada trozo por separado y suma los valores absolutos.
+:::
+
+::: {.callout-tip}
+## Resumen rápido
+- Inmediatas: usa la forma $u'$ (logaritmo si $\frac{u'}{u}$, arctan si $\frac{u'}{1+u^2}$).
+- Partes: $\int u\,dv=uv-\int v\,du$, con orden ALPES.
+- Racionales: dividir, factorizar y descomponer en fracciones simples.
+- Barrow: $\int_a^bf=F(b)-F(a)$.
+- Área: separar donde cambie el signo; entre curvas, $\int(f-g)$.
+:::
