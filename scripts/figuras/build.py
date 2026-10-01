@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 AP = ROOT / "apuntes" / "2-bachillerato-ciencias"
 NAVY, MINT, CORAL, YELLOW, INK, PAPER = "#262A3D", "#5EC4B6", "#F4736C", "#F5D65B", "#1A1A1A", "#FBF2D6"
+S3 = math.sqrt(3)
 FONT = "Inter, Helvetica, Arial, sans-serif"
 
 
@@ -274,6 +275,197 @@ def fig_simetrico():
     g.save(AP / "05-rectas-planos" / "fig-simetrico.svg", "Simétrico de un punto: H es la proyección de P y el punto medio entre P y P′")
 
 
+def panels(figs, titles, path, alt, gap=10):
+    """Varias figuras Fig una al lado de otra con título, en un solo SVG."""
+    w = sum(f.w for f in figs) + gap * (len(figs) + 1)
+    h = max(f.h for f in figs) + 40 + gap
+    out, x = [], gap
+    for f, t in zip(figs, titles):
+        out.append(f'<text x="{x + f.w / 2:.1f}" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="{INK}">{escape(t)}</text>')
+        out.append(f'<g transform="translate({x},34)"><rect x="1" y="1" width="{f.w - 2}" height="{f.h - 2}" fill="{PAPER}" stroke="{INK}" stroke-width="2"/>' + "".join(f.el) + "</g>")
+        x += f.w + gap
+    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" font-family="{FONT}" role="img">'
+           f'<title>{alt}</title>'
+           f'<defs><marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{INK}"/></marker></defs>'
+           f'<rect x="1.5" y="1.5" width="{w-3}" height="{h-3}" fill="{PAPER}" stroke="{INK}" stroke-width="3"/>' + "".join(out) + "</svg>\n")
+    path.write_text(svg)
+    print("escrito", path.relative_to(ROOT))
+
+
+def fig_discontinuidades():
+    kw = dict(w=250, h=210, pad=20)
+    a = Fig(-2, 2, -1, 3, **kw)       # evitable
+    a.axes(xt=(), yt=())
+    a.curve(lambda x: x * x + 1 if x != 0 else 0, -1.7, -0.03, color=NAVY); a.curve(lambda x: x * x + 1, 0.03, 1.7, color=NAVY)
+    a.dot(0, 1, PAPER); a.dot(0, 2.2, CORAL)
+    a.text(0, 1, "L", dx=-16, dy=22, bold=True); a.text(0, 2.2, "f(a)", dx=22, dy=5, bold=True)
+    b = Fig(-2, 2, -2, 3, **kw)       # salto
+    b.axes(xt=(), yt=())
+    b.curve(lambda x: 0.5 * x + 0.3, -1.8, -0.02, color=NAVY); b.curve(lambda x: 0.5 * x + 2, 0.02, 1.8, color=NAVY)
+    b.dot(0, 0.3, PAPER); b.dot(0, 2, CORAL)
+    b.text(0, 0.3, "L₁", dx=20, dy=22, bold=True); b.text(0, 2, "L₂", dx=-16, dy=5, bold=True)
+    c = Fig(-2, 2, -3, 3, **kw)       # asintótica
+    c.axes(xt=(), yt=())
+    c.line((0, -3), (0, 3), color=CORAL, width=2, dash="6 5")
+    c.curve(lambda x: 0.5 / x, -1.9, -0.17, color=NAVY); c.curve(lambda x: 0.5 / x, 0.17, 1.9, color=NAVY)
+    c.text(0, 2.0, "x = a", dx=-8, anchor="end", color=CORAL, bold=True)
+    panels([a, b, c], ["Evitable", "Salto finito", "Salto infinito"], AP / "06-limites-continuidad" / "fig-discontinuidades.svg",
+           "Tres tipos de discontinuidad: evitable (el límite L existe pero f(a) es otro valor), salto finito (límites laterales distintos) y salto infinito (asíntota vertical)")
+
+
+def fig_tangente():
+    f = lambda x: 0.35 * x * x + 0.5
+    g = Fig(-0.8, 5.2, -0.4, 8.2, w=540, h=340)
+    g.axes(xt=(), yt=())
+    a, h = 1.4, 2.6
+    m = 0.7 * a
+    g.curve(f, -0.7, 5.1)
+    sec = (f(a + h) - f(a)) / h
+    g.line((-0.6, f(a) + sec * (-0.6 - a)), (5.1, f(a) + sec * (5.1 - a)), color=MINT, width=2.5, dash="0")
+    g.line((-0.6, f(a) + m * (-0.6 - a)), (4.2, f(a) + m * (4.2 - a)), color=CORAL, width=3, dash="0")
+    g.line((a, 0), (a, f(a)), dash="4 4", width=1.2); g.line((a + h, 0), (a + h, f(a + h)), dash="4 4", width=1.2)
+    g.dot(a, f(a)); g.dot(a + h, f(a + h), YELLOW)
+    g.text(a, 0, "a", dy=18, bold=True); g.text(a + h, 0, "a + h", dy=18, bold=True)
+    g.text(-0.6, 7.2, "tangente: pendiente f′(a)", anchor="start", color=CORAL, bold=True, dy=-26)
+    g.text(-0.6, 7.2, "secante: pendiente [f(a+h) − f(a)] / h", anchor="start", color="#2a8f82", bold=True, dy=-4)
+    g.text(0.2, 4.6, "f", color=NAVY, bold=True, size=18)
+    g.save(AP / "07-derivadas" / "fig-tangente.svg", "La secante por (a,f(a)) y (a+h,f(a+h)) se acerca a la tangente cuando h tiende a 0; la derivada es la pendiente de la tangente")
+
+
+def fig_derivabilidad():
+    kw = dict(w=250, h=200, pad=20)
+    a = Fig(-2, 2, -0.5, 2.5, **kw)
+    a.axes(xt=(), yt=())
+    a.curve(lambda x: abs(x), -1.9, 1.9, color=NAVY, width=3)
+    a.dot(0, 0)
+    a.text(-1.0, 1.9, "f′ = −1", color=CORAL, bold=True); a.text(1.0, 1.9, "f′ = +1", color="#2a8f82", bold=True)
+    b = Fig(-2, 2, -1, 3, **kw)
+    b.axes(xt=(), yt=())
+    b.curve(lambda x: x * x, -1.5, 1.5, color=NAVY, width=3)
+    b.line((-1.8, 0), (1.8, 0), color=CORAL, width=2.5, dash="0")
+    b.dot(0, 0)
+    b.text(0, 0, "f′(0) = 0", dy=22, bold=True, color=CORAL)
+    c = Fig(-2, 2, -1.2, 1.7, **kw)
+    c.axes(xt=(), yt=())
+    c.curve(lambda x: math.copysign(abs(x) ** (1 / 3), x), -1.9, 1.9, color=NAVY, width=3)
+    c.line((0, -1.2), (0, 1.7), color=CORAL, width=2, dash="6 5")
+    c.dot(0, 0)
+    c.text(0, 1.45, "tangente vertical", dx=8, anchor="start", color=CORAL, bold=True, size=12)
+    panels([a, b, c], ["Pico: no derivable", "Suave: derivable", "Vertical: no derivable"], AP / "07-derivadas" / "fig-derivabilidad.svg",
+           "Tres puntos: un pico (|x| en 0, derivadas laterales distintas), un punto suave con tangente horizontal (x² en 0) y una tangente vertical (raíz cúbica en 0)")
+
+
+def fig_rolle_vm():
+    kw = dict(w=300, h=230, pad=24)
+    f = lambda x: -(x - 1) * (x - 4) / 2 + 0.5
+    a = Fig(0, 5, -0.5, 4, **kw)
+    a.axes(xt=(), yt=())
+    a.curve(f, 0.3, 4.7, color=NAVY)
+    a.line((1, f(1)), (4, f(4)), color=MINT, width=2.5, dash="0")
+    a.line((1.2, f(2.5)), (3.8, f(2.5)), color=CORAL, width=2.5, dash="0")
+    a.dot(1, f(1), YELLOW); a.dot(4, f(4), YELLOW); a.dot(2.5, f(2.5), CORAL)
+    a.text(1, -0.5, "a", dy=-6, bold=True); a.text(4, -0.5, "b", dy=-6, bold=True); a.text(2.5, -0.5, "c", dy=-6, bold=True)
+    a.text(2.5, f(2.5), "f′(c) = 0", dy=-14, bold=True, color=CORAL)
+    g = lambda x: 0.1 * x ** 3 - 0.5 * x * x + 1.1 * x + 0.5
+    b = Fig(0, 5, -0.5, 5, **kw)
+    b.axes(xt=(), yt=())
+    ga, gb = 0.8, 4.4
+    b.curve(g, 0.3, 4.7, color=NAVY)
+    m = (g(gb) - g(ga)) / (gb - ga)
+    b.line((ga, g(ga)), (gb, g(gb)), color=MINT, width=2.5, dash="0")
+    # c con g'(c) = m  (g'(x) = 0.3x² − x + 1.1)
+    A_, B_, C_ = 0.3, -1.0, 1.1 - m
+    disc = B_ * B_ - 4 * A_ * C_
+    cs = [r for r in ((-B_ - math.sqrt(disc)) / (2 * A_), (-B_ + math.sqrt(disc)) / (2 * A_)) if ga < r < gb]
+    c0 = cs[0]
+    b.line((c0 - 1.1, g(c0) - 1.1 * m), (c0 + 1.1, g(c0) + 1.1 * m), color=CORAL, width=2.5, dash="0")
+    b.dot(ga, g(ga), YELLOW); b.dot(gb, g(gb), YELLOW); b.dot(c0, g(c0), CORAL)
+    b.text(ga, -0.5, "a", dy=-6, bold=True); b.text(gb, -0.5, "b", dy=-6, bold=True); b.text(c0, -0.5, "c", dy=-6, bold=True)
+    b.text(c0, g(c0), "paralela a la cuerda", dy=46, dx=-10, bold=True, color=CORAL, size=12)
+    panels([a, b], ["Rolle: f(a) = f(b)", "Valor medio"], AP / "08-aplicaciones-derivada" / "fig-rolle-vm.svg",
+           "Teorema de Rolle: con f(a)=f(b) hay un punto con tangente horizontal. Teorema del valor medio: hay un punto cuya tangente es paralela a la cuerda")
+
+
+def fig_area_signo():
+    f = lambda x: x ** 3 - 3 * x
+    g = Fig(-2.2, 2.2, -2.6, 2.6, w=540, h=320)
+    g.region(f, lambda x: 0, -S3, 0, color=MINT)
+    g.region(f, lambda x: 0, 0, S3, color=CORAL)
+    g.axes(xt=(), yt=())
+    g.curve(f, -2.1, 2.1)
+    g.text(-S3, 0, "−√3", dx=-22, dy=18, bold=True); g.text(S3, 0, "√3", dx=22, dy=-12, bold=True)
+    g.text(-0.9, 0.9, "+", size=26, bold=True); g.text(0.9, -0.9, "−", size=26, bold=True)
+    g.text(0.2, 2.35, "f(x) = x³ − 3x", anchor="start", bold=True)
+    g.text(-2.1, -2.0, "∫ = área de arriba − área de abajo", anchor="start", bold=True, size=13)
+    g.save(AP / "09-integrales" / "fig-area-signo.svg", "Integral definida como área con signo: la parte sobre el eje X suma y la parte bajo el eje resta; para el área hay que partir en los cortes con el eje")
+
+
+def fig_simetria_normal():
+    phi = lambda z: math.exp(-z * z / 2) / math.sqrt(2 * math.pi)
+    kw = dict(w=290, h=210, pad=20)
+    a = Fig(-3.4, 3.4, -0.05, 0.47, **kw)
+    a.region(phi, lambda z: 0, -3.3, -1, color=CORAL)
+    a.axes(xt=(), yt=())
+    a.curve(phi, -3.4, 3.4)
+    a.line((-1, 0), (-1, phi(1)), dash="0", width=2); a.text(-1, 0, "−z", dy=18, bold=True)
+    a.text(0, 0.36, "P(Z < −z)", bold=True)
+    b = Fig(-3.4, 3.4, -0.05, 0.47, **kw)
+    b.region(phi, lambda z: 0, 1, 3.3, color=CORAL)
+    b.axes(xt=(), yt=())
+    b.curve(phi, -3.4, 3.4)
+    b.line((1, 0), (1, phi(1)), dash="0", width=2); b.text(1, 0, "z", dy=18, bold=True)
+    b.text(0, 0.36, "P(Z > z) = 1 − Φ(z)", bold=True)
+    panels([a, b], ["Área a la izquierda de −z", "Área a la derecha de z"], AP / "11-distribuciones" / "fig-simetria-normal.svg",
+           "Por simetría de la campana, el área a la izquierda de −z es igual que el área a la derecha de z: Φ(−z)=1−Φ(z)")
+
+
+def fig_regla_68():
+    phi = lambda z: math.exp(-z * z / 2) / math.sqrt(2 * math.pi)
+    g = Fig(-3.6, 3.6, -0.07, 0.47, w=560, h=300)
+    g.region(phi, lambda z: 0, -3, 3, color="#BFE8E1")
+    g.region(phi, lambda z: 0, -2, 2, color=MINT)
+    g.region(phi, lambda z: 0, -1, 1, color=YELLOW)
+    g.axes(xt=(), yt=())
+    g.curve(phi, -3.6, 3.6)
+    for k, t in zip((-3, -2, -1, 0, 1, 2, 3), ("μ−3σ", "μ−2σ", "μ−σ", "μ", "μ+σ", "μ+2σ", "μ+3σ")):
+        g.text(k, 0, t, dy=18, size=12, bold=True)
+    g.text(0, 0.21, "≈ 68 %", bold=True, size=15)
+    g.text(1.55, 0.045, "≈ 95 %", bold=True, size=12)
+    g.text(2.65, 0.12, "≈ 99,7 %", bold=True, size=12, anchor="start")
+    g.save(AP / "11-distribuciones" / "fig-regla-68.svg", "Regla 68-95-99,7: probabilidad dentro de uno, dos y tres desviaciones típicas de la media")
+
+
+def _lens(cx1, cx2, r, n=60):
+    d = cx2 - cx1
+    a = math.acos(d / (2 * r))
+    pts = [(cx1 + r * math.cos(t), r * math.sin(t)) for t in [(-a + 2 * a * i / n) for i in range(n + 1)]]
+    pts += [(cx2 - r * math.cos(t), r * math.sin(t)) for t in [(a - 2 * a * i / n) for i in range(n + 1)]]
+    return pts
+
+
+def fig_venn():
+    kw = dict(w=250, h=190, pad=10)
+    cA, cB, r = -0.65, 0.65, 1.1
+
+    def base(fill_circles=None, lens=False, universo=False):
+        g = Fig(-2.4, 2.4, -1.7, 1.7, **kw)
+        if universo:
+            g.el.append(f'<rect x="{g.X(-2.3):.1f}" y="{g.Y(1.6):.1f}" width="{g.X(2.3) - g.X(-2.3):.1f}" height="{g.Y(-1.6) - g.Y(1.6):.1f}" fill="{CORAL}" fill-opacity="0.55" stroke="none"/>')
+        for c, col in ((cA, fill_circles), (cB, fill_circles)):
+            g.el.append(f'<circle cx="{g.X(c):.1f}" cy="{g.Y(0):.1f}" r="{(g.X(r) - g.X(0)):.1f}" fill="{col or PAPER}" stroke="none"/>')
+        if lens:
+            g.el.append(f'<path d="{g.path(_lens(cA, cB, r))} Z" fill="{YELLOW}" stroke="none"/>')
+        for c in (cA, cB):
+            g.el.append(f'<circle cx="{g.X(c):.1f}" cy="{g.Y(0):.1f}" r="{(g.X(r) - g.X(0)):.1f}" fill="none" stroke="{INK}" stroke-width="2.5"/>')
+        g.el.append(f'<rect x="{g.X(-2.3):.1f}" y="{g.Y(1.6):.1f}" width="{g.X(2.3) - g.X(-2.3):.1f}" height="{g.Y(-1.6) - g.Y(1.6):.1f}" fill="none" stroke="{INK}" stroke-width="1.5"/>')
+        g.text(cA - 0.55, 0, "A", bold=True, size=18, dy=6); g.text(cB + 0.55, 0, "B", bold=True, size=18, dy=6)
+        return g
+    panels([base(fill_circles=YELLOW), base(lens=True), base(universo=True)], ["A ∪ B", "A ∩ B", "Ni A ni B: Ā ∩ B̄"],
+           AP / "10-probabilidad" / "fig-venn.svg", "Diagramas de Venn: unión de A y B, intersección de A y B y el complemento de la unión (ni A ni B)")
+
+
 if __name__ == "__main__":
     fig_asintotas(); fig_monotonia(); fig_area(); fig_normal()
     fig_dos_planos(); fig_recta_plano(); fig_dos_rectas(); fig_simetrico()
+    fig_discontinuidades(); fig_tangente(); fig_derivabilidad(); fig_rolle_vm(); fig_area_signo()
+    fig_simetria_normal(); fig_regla_68(); fig_venn()

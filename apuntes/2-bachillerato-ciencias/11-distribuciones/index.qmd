@@ -34,6 +34,8 @@ Una variable continua $X$ sigue una **normal** $N(\mu,\sigma)$ si su gráfica es
 - Es simétrica: $P(X\le\mu)=0{,}5$.
 - Regla 68-95-99,7: $P(\mu-\sigma<X<\mu+\sigma)\approx0{,}68$, con $2\sigma$ es $0{,}95$ y con $3\sigma$ es $0{,}997$.
 
+![Regla 68-95-99,7: probabilidad a menos de una, dos y tres desviaciones típicas de la media.](fig-regla-68.svg){fig-alt="Campana de Gauss dividida en bandas de una, dos y tres desviaciones típicas con las probabilidades 68, 95 y 99,7 por ciento" width="85%" fig-align="center"}
+
 ## 3. Tipificación y uso de la tabla
 
 La **normal estándar** es $Z\sim N(0,1)$. Cualquier $X\sim N(\mu,\sigma)$ se **tipifica**:
@@ -51,6 +53,8 @@ La tabla da $\Phi(z)=P(Z\le z)$ para $z\ge0$. Para otros casos:
 
 ![La tabla da el área a la izquierda de $z$: $\Phi(1)=P(Z\le1)\approx0{,}8413$.](fig-normal.svg){fig-alt="Campana de Gauss normal estándar con el área a la izquierda de z igual a 1 sombreada" width="85%" fig-align="center"}
 
+
+![Simetría de la campana: el área a la izquierda de $-z$ es igual que el área a la derecha de $z$, es decir, $\Phi(-z)=1-\Phi(z)$.](fig-simetria-normal.svg){fig-alt="Dos campanas de Gauss: una con el área a la izquierda de menos z sombreada y otra con el área a la derecha de z sombreada, de igual tamaño" width="90%" fig-align="center"}
 
 Ejemplo: $X\sim N(100,15)$. $P(X>120)=P\left(Z>\dfrac{120-100}{15}\right)=P(Z>1{,}33)=1-0{,}9082=0{,}0918$.
 

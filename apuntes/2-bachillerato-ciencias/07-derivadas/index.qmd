@@ -11,6 +11,8 @@ $$f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}$$
 - **Significado físico**: si $s(t)$ es la posición, $s'(t)$ es la velocidad y $s''(t)$ la aceleración.
 - Si $f$ es **derivable** en $a$, entonces es **continua** en $a$. El recíproco es falso: $f(x)=|x|$ es continua en 0 y no derivable.
 
+![La secante por $(a,f(a))$ y $(a+h,f(a+h))$ se acerca a la tangente cuando $h\to0$: la derivada es la pendiente de la tangente.](fig-tangente.svg){fig-alt="Curva con una secante por dos puntos y la tangente en el primero, con las pendientes indicadas" width="85%" fig-align="center"}
+
 ## 2. Derivadas de funciones elementales
 
 | $f(x)$ | $f'(x)$ |
@@ -74,6 +76,8 @@ Para $f(x)=\begin{cases}g(x)&x\le a\\h(x)&x>a\end{cases}$ en el punto de unión:
 Las derivadas laterales se calculan derivando cada rama y sustituyendo en $a$. Este atajo vale si $f$ es continua en $a$ y cada rama es derivable a su lado; si no, se usa la definición con límites laterales. Para el valor absoluto, se escribe como función a trozos.
 
 Ejemplo: $f(x)=|x-1|$ tiene derivada lateral $-1$ por la izquierda y $+1$ por la derecha en $x=1$: no es derivable ahí.
+
+![Tres casos en $x=0$: un pico (no derivable), un punto suave (derivable) y una tangente vertical (no derivable).](fig-derivabilidad.svg){fig-alt="Tres dibujos: la función valor absoluto con un pico en cero, una parábola con tangente horizontal en cero y una raíz cúbica con tangente vertical en cero" width="100%" fig-align="center"}
 
 ::: {.callout-note}
 Si la función no es continua en $a$, tampoco es derivable en $a$. Empieza siempre por la continuidad.
