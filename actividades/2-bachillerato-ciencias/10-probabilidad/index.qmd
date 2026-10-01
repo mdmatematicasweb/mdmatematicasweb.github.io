@@ -1,0 +1,48 @@
+---
+title: "Probabilidad — ejercicios interactivos"
+format:
+  html:
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+          <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    css: ../../../assets/gym/gym.css
+---
+
+Cada bloque genera ejercicios nuevos al azar y los corrige al instante en el navegador. Las opciones empiezan en **Aleatorio**; elige una concreta si quieres practicar sólo ese caso. **Ayuda** muestra la teoría en dos pasos (no suma ni quita racha). Escribe la respuesta como fracción `a/b` o decimal (en Bayes vale un decimal con 4 cifras) y pulsa **Comprobar** (o Intro). **Ver resolución** muestra el procedimiento; usar ayuda rompe la racha. **Modo clase** pone el ejercicio a pantalla completa.
+
+## Regla de Laplace
+
+<div data-gym="pro-laplace"></div>
+
+## Unión, intersección y De Morgan
+
+<div data-gym="pro-union"></div>
+
+## Probabilidad condicionada
+
+<div data-gym="pro-cond"></div>
+
+## Independencia de sucesos
+
+<div data-gym="pro-indep"></div>
+
+## Tablas de contingencia
+
+<div data-gym="pro-tabla"></div>
+
+## Probabilidad total
+
+<div data-gym="pro-total"></div>
+
+## Teorema de Bayes
+
+<div data-gym="pro-bayes"></div>
+
+## Extracciones con y sin reemplazamiento
+
+<div data-gym="pro-extrac"></div>
+
+<script src="../../../assets/gym/gym.js"></script>
+<script src="../../../assets/gym/probabilidad.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () { MDGym.mountAll(); });</script>

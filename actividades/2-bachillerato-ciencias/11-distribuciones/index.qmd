@@ -1,0 +1,62 @@
+---
+title: "Distribuciones binomial y normal — ejercicios interactivos"
+format:
+  html:
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+          <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    css: ../../../assets/gym/gym.css
+---
+
+Cada bloque genera ejercicios nuevos al azar y los corrige al instante en el navegador. Las opciones empiezan en **Aleatorio**; elige una concreta si quieres practicar sólo ese caso. **Ayuda** muestra la teoría en dos pasos (no suma ni quita racha). Escribe la respuesta como número o fracción; las probabilidades, con 4 decimales; donde se pida una raíz puedes escribir `sqrt(3)` y pulsa **Comprobar** (o Intro). **Ver resolución** muestra el procedimiento; usar ayuda rompe la racha. **Modo clase** pone el ejercicio a pantalla completa.
+
+La tabla de la distribución $N(0,1)$ está disponible para consultarla mientras practicas. Redondea siempre $z$ a centésimas y trabaja con 4 decimales en $\Phi(z)$, igual que en la tabla que se usa en la PAU.
+
+<style>
+.gym-ntab { border-collapse: collapse; font-size: 0.78rem; font-family: "JetBrains Mono", monospace; margin: 0.6rem 0; }
+.gym-ntab th, .gym-ntab td { border: 1px solid currentColor; padding: 0.15rem 0.4rem; text-align: right; }
+.gym-ntab thead th, .gym-ntab tbody th { font-weight: 700; background: rgba(128,128,128,0.18); }
+.gym-ntab-wrap { overflow-x: auto; }
+</style>
+
+<details>
+<summary><b>Tabla N(0,1): $\Phi(z)=P(Z\le z)$ para $z=0{,}00\ldots3{,}09$</b></summary>
+
+<div class="gym-ntab-wrap" id="gym-ntab"></div>
+
+Para $z<0$ usa $\Phi(-z)=1-\Phi(z)$.
+
+</details>
+
+## Distribución binomial
+
+<div data-gym="dis-binom"></div>
+
+## Media y desviación de una binomial
+
+<div data-gym="dis-binompar"></div>
+
+## Tipificación
+
+<div data-gym="dis-tipif"></div>
+
+## Uso de la tabla N(0,1)
+
+<div data-gym="dis-tabla"></div>
+
+## Probabilidades en una normal
+
+<div data-gym="dis-normal"></div>
+
+## Valor desconocido (tabla inversa)
+
+<div data-gym="dis-inversa"></div>
+
+## Aproximación de la binomial por la normal
+
+<div data-gym="dis-aprox"></div>
+
+<script src="../../../assets/gym/gym.js"></script>
+<script src="../../../assets/gym/distribuciones.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () { MDGym.normalTable(document.getElementById("gym-ntab")); MDGym.mountAll(); });</script>
