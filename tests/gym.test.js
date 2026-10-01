@@ -6,6 +6,17 @@ require('../assets/gym/determinantes.js');
 require('../assets/gym/sistemas.js');
 require('../assets/gym/vectores.js');
 require('../assets/gym/rectasplanos.js');
+// Temas 6-11: cada assets/gym/<tema>.js tiene su verificador en tests/verify-gym-<tema>.js (exporta {id: fn(ch, ctx)}).
+const fs = require('fs'), path = require('path');
+const TEMAS_EXTRA = ['limites', 'derivadas', 'aplicaciones', 'integrales', 'probabilidad', 'distribuciones'];
+const extraVerify = {};
+const soloTemas = process.env.GYM_TEMAS ? process.env.GYM_TEMAS.split(',') : null;
+TEMAS_EXTRA.forEach((t) => {
+  const f = path.join(__dirname, '../assets/gym/' + t + '.js');
+  if (!fs.existsSync(f) || (soloTemas && !soloTemas.includes(t))) return;
+  require(f);
+  Object.assign(extraVerify, require('./verify-gym-' + t + '.js'));
+});
 
 const N = Number(process.env.GYM_N || 300);
 const { M, mmul, mI, det, rankOf, meq, flatten, checkAnswer, answerStrings } = G;
@@ -321,6 +332,9 @@ verify.sistemaxy = (ch) => {
   assert(meq(lin(a1, b1), A) && meq(lin(a2, b2), B));
   assert(meq(ch.answer.parts[0].value, X) && meq(ch.answer.parts[1].value, Y));
 };
+
+Object.keys(extraVerify).forEach((id) => { assert(!verify[id], 'id de módulo repetido: ' + id); verify[id] = (ch) => extraVerify[id](ch, { assert, G, near, nearM, toNum, mulNum, rankNum, detNum }); });
+Object.keys(G.modules).forEach((id) => assert(verify[id], id + ': falta verificador'));
 
 let total = 0;
 for (const id of Object.keys(G.modules)) {
