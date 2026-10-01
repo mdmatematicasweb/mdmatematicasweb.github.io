@@ -1,0 +1,44 @@
+---
+title: "Integrales — ejercicios interactivos"
+format:
+  html:
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+          <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    css: ../../../assets/gym/gym.css
+---
+
+Cada bloque genera ejercicios nuevos al azar y los corrige al instante en el navegador. Las opciones empiezan en **Aleatorio**; elige una concreta si quieres practicar sólo ese caso. **Ayuda** muestra la teoría en dos pasos (no suma ni quita racha). Cuando el resultado es un número exacto, escribe enteros, fracciones `a/b` o decimales; cuando contiene $\pi$, $e$ o logaritmos, puedes escribirlo exacto (`pi/4`, `e^2-1`, `ln(3)/2`, `sqrt(3)`) o con 3-4 decimales. Pulsa **Comprobar** (o Intro). **Ver resolución** muestra el procedimiento; usar ayuda rompe la racha. **Modo clase** pone el ejercicio a pantalla completa.
+
+## Primitivas: elige la correcta
+
+<div data-gym="int-indefinidas"></div>
+
+## Integral definida (regla de Barrow)
+
+<div data-gym="int-barrow"></div>
+
+## Cambio de variable
+
+<div data-gym="int-sustitucion"></div>
+
+## Integración por partes
+
+<div data-gym="int-partes"></div>
+
+## Integrales racionales
+
+<div data-gym="int-racionales"></div>
+
+## Primitiva que pasa por un punto
+
+<div data-gym="int-primitiva"></div>
+
+## Áreas con integrales
+
+<div data-gym="int-areas"></div>
+
+<script src="../../../assets/gym/gym.js"></script>
+<script src="../../../assets/gym/integrales.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () { MDGym.mountAll(); });</script>
