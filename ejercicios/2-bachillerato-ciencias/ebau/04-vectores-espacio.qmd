@@ -240,6 +240,20 @@ a) Halla los puntos que dividen el segmento $AB$ en cuatro partes iguales. *(1,5
 b) Determina la ecuación del plano perpendicular al segmento $AB$ que pasa por el punto medio de dicho segmento. *(1 punto)*
 
 *Relacionado también con:* [Rectas y planos](05-rectas-planos.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$\overrightarrow{AB}=(1,2,-4)$.
+
+**a)** Puntos $A+\dfrac k4\overrightarrow{AB}$, $k=1,2,3$:
+
+**$\left(\dfrac54,-\dfrac32,2\right)$, $\left(\dfrac32,-1,1\right)$ y $\left(\dfrac74,-\dfrac12,0\right)$** (el segundo es el punto medio).
+
+**b)** Plano $x+2y-4z+D=0$ por $M\left(\dfrac32,-1,1\right)$: $\dfrac32-2-4+D=0\Rightarrow D=\dfrac92$.
+
+**$2x+4y-8z+9=0$.**
+::::
 :::::
 
 
@@ -254,6 +268,21 @@ Dados los puntos $O(0,0,0)$, $A(2,-1,0)$, $B(3,0,x)$ y $C(-x,1,-1)$, los vectore
 a) Calcula los posibles valores de $x$ sabiendo que el volumen del paralelepípedo es 5 unidades cúbicas. *(1,5 puntos)*
 
 b) Para $x=1$, halla el área de la cara del paralelepípedo que contiene a los vértices $O$, $A$ y $B$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $\begin{vmatrix}2&-1&0\\3&0&x\\-x&1&-1\end{vmatrix}=x^{2}-2x-3$. Volumen $=|x^{2}-2x-3|=5$:
+
+- $x^{2}-2x-8=0\Rightarrow x=4,\ x=-2$.
+- $x^{2}-2x+2=0$ no tiene solución real.
+
+**$x=4$ o $x=-2$.**
+
+**b)** Con $x=1$: $\overrightarrow{OA}\times\overrightarrow{OB}=(2,-1,0)\times(3,0,1)=(-1,-2,3)$.
+
+**Área $=\sqrt{1+4+9}=\sqrt{14}\ \text{u}^2$.**
+::::
 :::::
 
 
@@ -285,6 +314,21 @@ Considera el triángulo cuyos vértices son los puntos $A(0,2,3)$, $B(m,0,1)$ y 
 a) Halla los valores de $m$, sabiendo que el área del triángulo es $\dfrac{\sqrt{18}}{2}$ unidades cuadradas. *(1,5 puntos)*
 
 b) Para $m=0$, calcula el coseno del ángulo en el vértice $A$ de dicho triángulo. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $\overrightarrow{AB}=(m,-2,-2)$, $\overrightarrow{AC}=(2,-1,-1)$.
+$\overrightarrow{AB}\times\overrightarrow{AC}=(0,\,m-4,\,4-m)$, de módulo $\sqrt2\,|m-4|$.
+Área $=\tfrac12\sqrt2|m-4|=\tfrac{\sqrt{18}}{2}\Rightarrow|m-4|=3$.
+
+**$m=1$ o $m=7$.**
+
+**b)** Con $m=0$: $\overrightarrow{AB}=(0,-2,-2)$, $\overrightarrow{AC}=(2,-1,-1)$.
+$$\cos\widehat A=\frac{\overrightarrow{AB}\cdot\overrightarrow{AC}}{|\overrightarrow{AB}||\overrightarrow{AC}|}=\frac{4}{2\sqrt2\cdot\sqrt6}=\frac{1}{\sqrt3}.$$
+
+**$\cos\widehat A=\dfrac{\sqrt3}{3}$.**
+::::
 :::::
 
 

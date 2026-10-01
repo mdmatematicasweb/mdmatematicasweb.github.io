@@ -319,6 +319,16 @@ a) Determina para qué valores de $m$ existe la inversa de la matriz $A$. *(0,5 
 b) Para todo $m\neq -1$, resuelve, si es posible, la ecuación $AX+X=B$. *(2 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $|A|=m^{3}$. **$A$ tiene inversa si $m\ne0$.**
+
+**b)** $AX+X=B\Rightarrow(A+I)X=B$. $|A+I|=m^{3}+1$, que sólo se anula para $m=-1$. Si $m\ne-1$ existe $(A+I)^{-1}$ y $X=(A+I)^{-1}B$:
+
+**$X=\dfrac1{m^{3}+1}\begin{pmatrix}1&-m&m^{2}\\-m&m^{2}&1\\m^{2}&1&-m\end{pmatrix}$.**
+::::
 :::::
 
 
@@ -335,6 +345,18 @@ a) Determina los valores de $m$ para que la matriz $A$ tenga inversa. *(1 punto)
 b) Calcula para $m=1$, si es posible, la matriz $X$ tal que $AX=B^{t}$, donde $B^{t}$ denota la matriz traspuesta de $B$. *(1,5 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $|A|=12m^{2}-12m-1$, que se anula si $m=\dfrac{3\pm2\sqrt3}6$.
+
+**$A$ tiene inversa si $m\ne\dfrac{3\pm2\sqrt3}{6}$.**
+
+**b)** Con $m=1$: $|A|=-1\ne0$. $AX=B^{t}\Rightarrow X=A^{-1}B^{t}$, con $A^{-1}=\begin{pmatrix}-2&5&4\\0&1&1\\-3&7&6\end{pmatrix}$ y $B^{t}=\begin{pmatrix}1&0&2\\-1&2&5\\3&1&4\end{pmatrix}$.
+
+**$X=\begin{pmatrix}5&14&37\\2&3&9\\8&20&53\end{pmatrix}$.**
+::::
 :::::
 
 
@@ -353,6 +375,18 @@ a) Calcula $m$ para que la matriz $A$ tenga inversa. *(1 punto)*
 b) Para $m=0$, resuelve, si es posible, la ecuación matricial $\tfrac12AX+C^{4}=B$. *(1,5 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $|A|=4(m-1)$. **$A$ tiene inversa si $m\ne1$.**
+
+**b)** $C^{2}=I$, luego $C^{4}=I$. La ecuación es $\tfrac12AX=B-I\Rightarrow X=2A^{-1}(B-I)$.
+
+Para $m=0$, $|A|=-4\ne0$ y $A^{-1}=\begin{pmatrix}0&\frac12&-\frac12\\\frac12&0&\frac12\\-\frac12&\frac12&0\end{pmatrix}$.
+
+**$X=\begin{pmatrix}-2&-3&4\\1&6&2\\1&-5&2\end{pmatrix}$.**
+::::
 :::::
 
 
@@ -369,6 +403,20 @@ a) Halla los valores de $m$ para que la matriz $A-mI$ no tenga inversa. *(1 punt
 b) Halla $x$, distinto de cero, para que $A-xI$ sea la inversa de la matriz $\dfrac{1}{x}(A-I)$. *(1,5 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $|A-mI|=-m^{2}(m-3)$ (los valores propios de $A$ son $0,0,3$).
+
+**$A-mI$ no tiene inversa si $m=0$ o $m=3$.**
+
+**b)** Como $A^{2}=3A$: $(A-xI)(A-I)=A^{2}-(1+x)A+xI=(2-x)A+xI$.
+
+Queremos $\dfrac1x\left[(2-x)A+xI\right]=I\iff(2-x)A=0\iff x=2$.
+
+**$x=2$.**
+::::
 :::::
 
 
@@ -383,6 +431,16 @@ Considera la matriz $A=\begin{pmatrix}0&a&-b\\0&0&b\\0&0&0\end{pmatrix}$.
 a) Calcula $A^{10}$. *(0,75 puntos)*
 
 b) Calcula, si es posible, la matriz inversa de $I+A+A^{2}$, donde $I$ denota la matriz identidad de orden 3. *(1,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $A^{2}=\begin{pmatrix}0&0&ab\\0&0&0\\0&0&0\end{pmatrix}$ y $A^{3}=A\cdot A^{2}=0$. Por tanto **$A^{10}=0$** (matriz nula).
+
+**b)** $(I-A)(I+A+A^{2})=I-A^{3}=I$, luego existe la inversa y es $I-A$:
+
+$$(I+A+A^{2})^{-1}=\begin{pmatrix}1&-a&b\\0&1&-b\\0&0&1\end{pmatrix}.$$
+::::
 :::::
 
 
@@ -396,6 +454,20 @@ a) Halla los valores de $\lambda$ para los que la matriz $M$ tiene rango menor q
 b) Para $\lambda=-1$, resuelve el sistema lineal homogéneo cuya matriz de coeficientes es $M$. *(1 punto)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd), [Sistemas de ecuaciones lineales](03-sistemas-ecuaciones-lineales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $M=\begin{pmatrix}\lambda&1&\lambda-1\\1&\lambda-1&1\\\lambda-1&1&\lambda\end{pmatrix}$ y $|M|=-(\lambda-2)^{2}(\lambda+1)$.
+
+$\operatorname{rg}M<3\iff|M|=0\iff$ **$\lambda=2$ o $\lambda=-1$**.
+
+**b)** Para $\lambda=-1$: $M=\begin{pmatrix}-1&1&-2\\1&-2&1\\-2&1&-1\end{pmatrix}$, de rango 2: sistema compatible indeterminado (SCI) con una incógnita libre.
+
+Las dos primeras ecuaciones dan $x=y=z$, y la tercera también se cumple.
+
+**Solución: $(x,y,z)=(t,t,t)$, $t\in\mathbb{R}$.**
+::::
 :::::
 
 
@@ -406,6 +478,18 @@ b) Para $\lambda=-1$, resuelve el sistema lineal homogéneo cuya matriz de coefi
 **Ejercicio 5** · Extraordinaria · Suplente 2023 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Suplente.pdf){target="_blank"}
 
 Dadas las matrices $A=\begin{pmatrix}2&-1&-2\\-2&3&1\\6&1&3\end{pmatrix}$ y $B=\begin{pmatrix}-1&0&-1\\-3&-1&5\end{pmatrix}$, calcula, si es posible, la matriz $X$ que verifica la ecuación $3X-B^{t}=AX$, siendo $B^{t}$ la matriz traspuesta de $B$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$3X-B^{t}=AX\Rightarrow(3I-A)X=B^{t}$. Aquí $3I-A=\begin{pmatrix}1&1&2\\2&0&-1\\-6&-1&0\end{pmatrix}$ y $|3I-A|=1\neq0$, luego es invertible y
+
+$$(3I-A)^{-1}=\begin{pmatrix}-1&-2&-1\\6&12&5\\-2&-5&-2\end{pmatrix}.$$
+
+$$X=(3I-A)^{-1}B^{t}=\begin{pmatrix}-1&-2&-1\\6&12&5\\-2&-5&-2\end{pmatrix}\begin{pmatrix}-1&-3\\0&-1\\-1&5\end{pmatrix}.$$
+
+**$X=\begin{pmatrix}2&0\\-11&-5\\4&1\end{pmatrix}$.**
+::::
 :::::
 
 
@@ -471,6 +555,19 @@ a) Determina los valores de $a$ para los que la matriz $B$ no tiene inversa. *(0
 b) Para $a=1$ calcula $X$ tal que $A\,X\,B=C$, si es posible. *(2 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $|B|=-2a(a-2)$, que se anula en $a=0$ y $a=2$.
+
+**$B$ no tiene inversa si $a=0$ o $a=2$.**
+
+**b)** Para $a=1$, $|B|=2\ne0$ y $A$ es invertible: $X=A^{-1}CB^{-1}$, con
+$A^{-1}=\begin{pmatrix}1&0\\2&1\end{pmatrix}$, $B^{-1}=\begin{pmatrix}-1&1&0\\1&-1&\tfrac12\\1&0&-\tfrac12\end{pmatrix}$.
+
+**$X=\begin{pmatrix}-3&1&1\\-10&5&2\end{pmatrix}$** (se comprueba que $AXB=C$).
+::::
 :::::
 
 
@@ -487,6 +584,18 @@ a) Calcula el rango de la matriz $A$ según los valores de $m$. *(1 punto)*
 b) Para $m=0$ resuelve la ecuación $A\,X=B$, si es posible. *(1,5 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd), [Sistemas de ecuaciones lineales](03-sistemas-ecuaciones-lineales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Desarrollando, $|A|=m^2-1=(m-1)(m+1)$.
+- Si $m\neq\pm1$: $\operatorname{rg}A=3$.
+- Si $m=1$: filas $(1,1,3),(1,1,2),(1,1,3)$, hay un menor no nulo de orden 2 y $|A|=0$: $\operatorname{rg}A=2$.
+- Si $m=-1$: filas $(-1,1,3),(1,-1,2),(1,-1,3)$; el menor $\begin{vmatrix}-1&3\\1&2\end{vmatrix}=-5\ne0$: $\operatorname{rg}A=2$.
+
+**b)** Para $m=0$, $|A|=-1\neq0$, luego $X=A^{-1}B$ existe:
+$$X=A^{-1}B=\begin{pmatrix}5&-4\\8&-4\\-2&2\end{pmatrix}.$$
+::::
 :::::
 
 

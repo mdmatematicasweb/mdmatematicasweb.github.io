@@ -271,6 +271,18 @@ a) Calcula $a$ para que la recta tangente a la gráfica de $f$ en el punto $(a,f
 b) Calcula el área del recinto limitado por la gráfica de $f$, la recta tangente a la misma en el punto $(1,f(1))$ y el eje de ordenadas. *(1,25 puntos)*
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Tangente en $a$: $y-e^a=e^a(x-a)$. Pasa por el origen: $-e^a=-ae^a\Rightarrow a=1$. **$a=1$** (la tangente es $y=ex$).
+
+**b)** Tangente en $x=1$: $y=ex$. En $[0,1]$ se cumple $e^x\ge ex$, y el recinto está entre $x=0$ y $x=1$:
+
+$$A=\int_0^1(e^x-ex)\,dx=\left[e^x-\tfrac{e}{2}x^2\right]_0^1=e-\tfrac e2-1=\tfrac e2-1.$$
+
+**$A=\dfrac e2-1\approx0{,}359\ \text{u}^2$**
+::::
 :::::
 
 

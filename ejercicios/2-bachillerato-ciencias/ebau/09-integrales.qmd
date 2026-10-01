@@ -560,6 +560,18 @@ $$\mathbf{\frac12\ln\frac{\sqrt{1+e^x}-1}{\sqrt{1+e^x}+1}+C}$$
 Considera la función $f:\mathbb{R}\to\mathbb{R}$, definida por $f(x)=x\,|x-1|$. Calcula el área del recinto limitado por la gráfica de dicha función y su recta tangente en el punto de abscisa $x=0$.
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f(x)=x(1-x)$ para $x\le1$ y $f(x)=x(x-1)$ para $x>1$. En $x=0$: $f(0)=0$, $f'(0)=1$, tangente $y=x$.
+
+Cortes con $f$: para $x\le1$, $x-x^{2}=x\Rightarrow x=0$; para $x>1$, $x^{2}-x=x\Rightarrow x=2$. La tangente queda por encima de $f$ en $[0,2]$:
+
+$$A=\int_0^1x^{2}dx+\int_1^2(2x-x^{2})dx=\dfrac13+\dfrac23.$$
+
+**Área $=1\ \text{u}^2$.**
+::::
 :::::
 
 
@@ -570,6 +582,16 @@ Considera la función $f:\mathbb{R}\to\mathbb{R}$, definida por $f(x)=x\,|x-1|$.
 **Ejercicio 3** · Ordinaria · Reserva 2023 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria-Reserva.pdf){target="_blank"}
 
 Calcula $\displaystyle\int_{6}^{12}\dfrac{1}{9-x^{2}}\,dx$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$\dfrac1{9-x^{2}}=\dfrac16\left(\dfrac1{3-x}+\dfrac1{3+x}\right)$, cuya primitiva es $\dfrac16\ln\left|\dfrac{3+x}{3-x}\right|$.
+
+$$\int_6^{12}\dfrac{dx}{9-x^{2}}=\dfrac16\left(\ln\dfrac{15}{9}-\ln\dfrac93\right)=\dfrac16\ln\dfrac{5/3}{3}.$$
+
+**Resultado: $\dfrac16\ln\dfrac59\approx-0{,}098$.**
+::::
 :::::
 
 
@@ -583,6 +605,20 @@ a) Determina el punto de la gráfica de $f$ en el que la recta tangente es $y=4x
 b) Haz un esbozo del recinto limitado por la gráfica de $f$, la recta $y=4x-3$ y el eje de ordenadas. Calcula el área del recinto indicado. *(1,75 puntos)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $f'(x)=2x=4\Rightarrow x=2$, $f(2)=5$ (y la recta da $4\cdot2-3=5$).
+
+**Punto $(2,5)$.**
+
+**b)** La parábola $y=x^{2}+1$ queda por encima de la recta, que es tangente en $x=2$. El recinto está entre $x=0$ (eje de ordenadas) y $x=2$:
+
+$$A=\int_0^2\left[(x^{2}+1)-(4x-3)\right]dx=\int_0^2(x-2)^{2}dx=\left[\dfrac{(x-2)^{3}}3\right]_0^2=\dfrac83.$$
+
+**Área $=\dfrac83\ \text{u}^2$.**
+::::
 :::::
 
 
@@ -593,6 +629,18 @@ b) Haz un esbozo del recinto limitado por la gráfica de $f$, la recta $y=4x-3$ 
 **Ejercicio 3** · Ordinaria · Suplente 2023 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria-Suplente.pdf){target="_blank"}
 
 Determina la función $f:(0,+\infty)\to\mathbb{R}$, sabiendo que es dos veces derivable, su gráfica pasa por el punto $(1,0)$, $f'(e)=e$ y $f''(x)=2\ln(x)+1$, para todo $x>0$ ($\ln$ denota la función logaritmo neperiano).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f'(x)=\int(2\ln x+1)dx=2x\ln x-x+C$. $f'(e)=2e-e+C=e\Rightarrow C=0$.
+
+$f(x)=\int(2x\ln x-x)dx=x^{2}\ln x-\dfrac{x^{2}}2-\dfrac{x^{2}}2+K=x^{2}\ln x-x^{2}+K$.
+
+$f(1)=-1+K=0\Rightarrow K=1$.
+
+**$f(x)=x^{2}\ln x-x^{2}+1$.**
+::::
 :::::
 
 
@@ -604,6 +652,19 @@ Considera las funciones $f,g:\mathbb{R}\to\mathbb{R}$ definidas por $f(x)=|x^{2}
 a) Calcula los puntos de corte de las gráficas de ambas funciones y esboza el recinto que determinan. *(1,25 puntos)*
 
 b) Determina el área del recinto anterior. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Si $|x|\ge1$: $x^{2}-1=x+5\Rightarrow x=-2,\ 3$. Si $|x|<1$: $1-x^{2}=x+5$ no tiene solución real.
+
+**Puntos de corte: $(-2,3)$ y $(3,8)$.** El recinto está limitado por arriba por la recta $y=x+5$ y por abajo por $|x^{2}-1|$ (dos arcos de parábola hacia arriba y un arco invertido entre $-1$ y $1$).
+
+**b)** 
+$$A=\int_{-2}^{-1}(x+5-x^{2}+1)dx+\int_{-1}^{1}(x+5-1+x^{2})dx+\int_{1}^{3}(x+5-x^{2}+1)dx=\dfrac{13}6+\dfrac{26}3+\dfrac{22}3.$$
+
+**Área $=\dfrac{109}6\ \text{u}^2$.**
+::::
 :::::
 
 
@@ -614,6 +675,16 @@ b) Determina el área del recinto anterior. *(1,25 puntos)*
 **Ejercicio 3** · Extraordinaria 2023 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria.pdf){target="_blank"}
 
 Calcula $a$ con $0<a<1$, tal que $\displaystyle\int_{a}^{1}\dfrac{\ln(x)}{x}\,dx+2=0$ ($\ln$ denota la función logaritmo neperiano).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$$\int_a^1\dfrac{\ln x}{x}dx=\left[\dfrac{\ln^{2}x}{2}\right]_a^1=-\dfrac{\ln^{2}a}{2}.$$
+
+$-\dfrac{\ln^{2}a}{2}+2=0\Rightarrow\ln^{2}a=4\Rightarrow\ln a=\pm2$. Con $0<a<1$, $\ln a<0$:
+
+**$a=e^{-2}$.**
+::::
 :::::
 
 
@@ -625,6 +696,22 @@ Considera las funciones $f:\mathbb{R}\to\mathbb{R}$ y $g:\mathbb{R}-\{0\}\to\mat
 a) Esboza las gráficas de las dos funciones y calcula los puntos de corte entre ellas. *(1,25 puntos)*
 
 b) Calcula la suma de las áreas de los recintos limitados por las gráficas de $f$ y $g$. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $f$ es una parábola de vértice $(0,5)$ hacia abajo; $g$ es positiva, par, con asíntota vertical $x=0$ y horizontal $y=0$.
+
+$5-x^{2}=\dfrac4{x^{2}}\Rightarrow x^{4}-5x^{2}+4=0\Rightarrow x^{2}=1,\,4$.
+
+**Puntos de corte: $(\pm1,4)$ y $(\pm2,1)$.**
+
+**b)** Los recintos acotados son los de $1\le|x|\le2$ (entre $-1$ y $1$, $g$ no está acotada). Por simetría:
+
+$$2\int_1^2\left(5-x^{2}-\dfrac4{x^{2}}\right)dx=2\left[5x-\dfrac{x^{3}}3+\dfrac4x\right]_1^2=2\cdot\dfrac23.$$
+
+**Suma de áreas $=\dfrac43\ \text{u}^2$.**
+::::
 :::::
 
 
@@ -641,6 +728,20 @@ a) Comprueba que $f$ es creciente. *(1,25 puntos)*
 b) Calcula el área del recinto limitado por la gráfica de la función $f$, el eje de abscisas y la recta $x=1$. *(1,25 puntos)*
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Como $F$ es primitiva de $f$, $f(x)=F'(x)=2x\,e^{x^{2}}$.
+
+**a)** $f'(x)=(2+4x^{2})e^{x^{2}}>0$ para todo $x$, luego **$f$ es creciente**.
+
+**b)** $f(0)=0$ y $f\ge 0$ en $[0,1]$, así que el recinto está entre $x=0$ y $x=1$:
+
+$$\int_0^1 2x\,e^{x^{2}}dx=\left[e^{x^{2}}\right]_0^1=e-1.$$
+
+**Área $=e-1\approx 1{,}72\ \text{u}^2$.**
+::::
 :::::
 
 
@@ -648,6 +749,18 @@ b) Calcula el área del recinto limitado por la gráfica de la función $f$, el 
 **Ejercicio 4** · Extraordinaria · Reserva 2023 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Reserva.pdf){target="_blank"}
 
 Considera la función $f:[0,+\infty)\to\mathbb{R}$ definida por $f(x)=\cos(\sqrt{x})$. Calcula, si es posible, una primitiva de $f$ cuya gráfica pase por el punto $(0,5)$. Sugerencia: haz el cambio $t=\sqrt{x}$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Con $t=\sqrt{x}$, $x=t^{2}$, $dx=2t\,dt$: $\int\cos\sqrt{x}\,dx=\int 2t\cos t\,dt$.
+
+Por partes: $=2t\operatorname{sen}t+2\cos t+C=2\sqrt{x}\operatorname{sen}\sqrt{x}+2\cos\sqrt{x}+C$.
+
+Condición $F(0)=5$: $2+C=5\Rightarrow C=3$.
+
+**$F(x)=2\sqrt{x}\operatorname{sen}\sqrt{x}+2\cos\sqrt{x}+3$.**
+::::
 :::::
 
 
@@ -658,6 +771,18 @@ Considera la función $f:[0,+\infty)\to\mathbb{R}$ definida por $f(x)=\cos(\sqrt
 **Ejercicio 3** · Extraordinaria · Suplente 2023 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Suplente.pdf){target="_blank"}
 
 Calcula una primitiva de la función $f:[0,+\infty)\to\mathbb{R}$ definida por $f(x)=\operatorname{arctg}(\sqrt{x})$ cuya gráfica pase por el punto $(0,1)$ ($\operatorname{arctg}$ denota la función arco tangente). Sugerencia: efectúa el cambio $x=t^{2}$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Con $x=t^{2}$, $dx=2t\,dt$: $\int\operatorname{arctg}\sqrt{x}\,dx=\int2t\operatorname{arctg}t\,dt$.
+
+Por partes: $=t^{2}\operatorname{arctg}t-\int\dfrac{t^{2}}{1+t^{2}}dt=t^{2}\operatorname{arctg}t-t+\operatorname{arctg}t+C$.
+
+Deshaciendo: $F(x)=(x+1)\operatorname{arctg}\sqrt{x}-\sqrt{x}+C$. Como $F(0)=C=1$:
+
+**$F(x)=(x+1)\operatorname{arctg}\sqrt{x}-\sqrt{x}+1$.**
+::::
 :::::
 
 
@@ -665,6 +790,16 @@ Calcula una primitiva de la función $f:[0,+\infty)\to\mathbb{R}$ definida por $
 **Ejercicio 4** · Extraordinaria · Suplente 2023 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Suplente.pdf){target="_blank"}
 
 Considera la función $f:(-1,+\infty)\to\mathbb{R}$, definida por $f(x)=\ln(x+1)$, donde $\ln$ denota el logaritmo neperiano. Calcula el área del recinto limitado por la gráfica de $f$, el eje de abscisas y la recta $x=e-1$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$\ln(x+1)=0\iff x=0$, y $f\ge0$ en $[0,e-1]$. Una primitiva es $(x+1)\ln(x+1)-x$ (por partes).
+
+$$A=\int_0^{e-1}\ln(x+1)\,dx=\Big[(x+1)\ln(x+1)-x\Big]_0^{e-1}=e-(e-1)-0.$$
+
+**Área $=1\ \text{u}^2$.**
+::::
 :::::
 
 
@@ -743,6 +878,15 @@ Calcula $\displaystyle\int_{0}^{1}x\operatorname{arctg}(x)\,dx$ (donde $\operato
 **Ejercicio 3** · Extraordinaria 2022 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria.pdf){target="_blank"}
 
 Calcula $\displaystyle\int_{3}^{8}\dfrac{1}{\sqrt{1+x}-1}\,dx$. (Sugerencia: efectúa el cambio de variable $t=\sqrt{1+x}-1$.)
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Con $t=\sqrt{1+x}-1$: $x=(t+1)^2-1$, $dx=2(t+1)\,dt$; los límites pasan a $t=1$ ($x=3$) y $t=2$ ($x=8$).
+$$\int_1^2\frac{2(t+1)}{t}\,dt=2\int_1^2\left(1+\frac1t\right)dt=2\big[t+\ln t\big]_1^2=2(1+\ln2).$$
+
+**$2+2\ln2$.**
+::::
 :::::
 
 
@@ -754,6 +898,19 @@ Considera las funciones $f,g:\mathbb{R}\to\mathbb{R}$ definidas por $f(x)=x^{3}+
 a) Calcula los puntos de corte de las gráficas de $f$ y $g$. Esboza sus gráficas. *(1,25 puntos)*
 
 b) Determina el área del recinto limitado por las gráficas de $f$ y $g$ en el primer cuadrante. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $x^3+2=-x^2+2x+2\Rightarrow x^3+x^2-2x=x(x-1)(x+2)=0$.
+
+**Puntos de corte: $(-2,-6)$, $(0,2)$ y $(1,3)$.** $f$ es una cúbica creciente que pasa por $(0,2)$; $g$ es una parábola con vértice en $(1,3)$ abierta hacia abajo; ambas se cortan en los tres puntos.
+
+**b)** En $[0,1]$ se tiene $g\ge f$ (p. ej. en $x=\tfrac12$: $g=\tfrac{11}{4}>f=\tfrac{17}{8}$):
+$$A=\int_0^1(-x^3-x^2+2x)\,dx=-\tfrac14-\tfrac13+1.$$
+
+**$A=\tfrac{5}{12}$ u$^2$.**
+::::
 :::::
 
 
@@ -766,6 +923,17 @@ b) Determina el área del recinto limitado por las gráficas de $f$ y $g$ en el 
 Considera la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=x^{3}-x$. Calcula el área total de los recintos limitados por la gráfica de la función $f$ y la recta normal a dicha gráfica en el punto de abscisa $x=0$.
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+En $x=0$: $f(0)=0$, $f'(0)=-1$, luego la normal tiene pendiente $1$: $y=x$.
+Cortes con $f$: $x^3-x=x\Rightarrow x^3-2x=0\Rightarrow x=0,\ \pm\sqrt2$.
+Por simetría impar del recinto, el área es el doble de la de $[0,\sqrt2]$, donde la recta está por encima:
+$$A=2\int_0^{\sqrt2}(2x-x^3)\,dx=2\left[x^2-\tfrac{x^4}{4}\right]_0^{\sqrt2}=2(2-1).$$
+
+**$A=2$ u$^2$.**
+::::
 :::::
 
 
@@ -773,6 +941,15 @@ Considera la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=x^{3}-x$. C
 **Ejercicio 4** · Extraordinaria · Reserva 2022 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria_Reserva.pdf){target="_blank"}
 
 Calcula $\displaystyle\int_{0}^{3}\dfrac{x}{\sqrt{1+x}}\,dx$. (Sugerencia: efectúa el cambio de variable $t=\sqrt{1+x}$.)
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Con $t=\sqrt{1+x}$: $x=t^2-1$, $dx=2t\,dt$; los límites pasan a $t=1$ y $t=2$.
+$$\int_1^2\frac{t^2-1}{t}\,2t\,dt=2\int_1^2(t^2-1)\,dt=2\left[\tfrac{t^3}{3}-t\right]_1^2=2\left(\tfrac23+\tfrac23\right).$$
+
+**$\dfrac{8}{3}$.**
+::::
 :::::
 
 
@@ -783,6 +960,16 @@ Calcula $\displaystyle\int_{0}^{3}\dfrac{x}{\sqrt{1+x}}\,dx$. (Sugerencia: efect
 **Ejercicio 3** · Extraordinaria · Suplente 2022 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria_Suplente.pdf){target="_blank"}
 
 Calcula $\displaystyle\int\dfrac{2x^{3}+2x^{2}-2x+7}{x^{2}+x-2}\,dx$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Se divide: $\dfrac{2x^3+2x^2-2x+7}{x^2+x-2}=2x+\dfrac{2x+7}{x^2+x-2}$, y como $x^2+x-2=(x-1)(x+2)$,
+$$\frac{2x+7}{(x-1)(x+2)}=\frac{3}{x-1}-\frac{1}{x+2}.$$
+Integrando:
+
+**$x^2+3\ln|x-1|-\ln|x+2|+C$.**
+::::
 :::::
 
 
@@ -790,6 +977,15 @@ Calcula $\displaystyle\int\dfrac{2x^{3}+2x^{2}-2x+7}{x^{2}+x-2}\,dx$.
 **Ejercicio 4** · Extraordinaria · Suplente 2022 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria_Suplente.pdf){target="_blank"}
 
 Considera las funciones $f,g:\mathbb{R}\to\mathbb{R}$ definidas por $f(x)=x^{2}$ y $g(x)=a|x|$, con $a>0$. Determina el valor de $a$ para que el área total de los recintos limitados por las gráficas de ambas funciones sea de 9 unidades cuadradas.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Las gráficas se cortan donde $x^2=a|x|$: $x=0,\ \pm a$. Por simetría el área total es el doble de la de $[0,a]$, donde $g\ge f$:
+$$A=2\int_0^a(ax-x^2)\,dx=2\left[\tfrac{a x^2}{2}-\tfrac{x^3}{3}\right]_0^a=\frac{a^3}{3}=9.$$
+
+**$a=3$.**
+::::
 :::::
 
 
@@ -860,6 +1056,16 @@ Considera la función $f$ definida por $f(x)=\dfrac{x^{2}+1}{x^{2}-1}$ (para $x\
 **Ejercicio 4** · Extraordinaria · Reserva 2021 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Extraordinaria_RESERVA_Modelo2.pdf){target="_blank"}
 
 Calcula $\displaystyle\int_{1}^{3}\left|x^{2}-3x+2\right|dx$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$x^2-3x+2=(x-1)(x-2)$: es $\le0$ en $[1,2]$ y $\ge0$ en $[2,3]$. Con $F(x)=\frac{x^3}{3}-\frac{3x^2}{2}+2x$: $F(1)=\frac56$, $F(2)=\frac23$, $F(3)=\frac32$.
+
+$$\int_1^3|x^2-3x+2|\,dx=-\bigl(F(2)-F(1)\bigr)+\bigl(F(3)-F(2)\bigr)=\tfrac16+\tfrac56.$$
+
+**Resultado: $1$**
+::::
 :::::
 
 
@@ -874,6 +1080,18 @@ Considera la función $f:[0,+\infty)\to\mathbb{R}$ definida por $f(x)=xe^{x}$.
 a) Esboza el recinto limitado por la gráfica de $f$ y las rectas $x=2$, $y=x$. *(1 punto)*
 
 b) Determina el área del recinto anterior. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Para $x\ge0$ se cumple $xe^x\ge x$ (igualdad sólo en $x=0$, pues $xe^x=x\iff x(e^x-1)=0$). El recinto está entre $y=x$ (debajo) y $y=xe^x$ (encima), desde $x=0$ hasta $x=2$. Ambas curvas parten de $(0,0)$; en $x=2$ valen $2$ y $2e^2$.
+
+**b)** Una primitiva de $xe^x$ es $(x-1)e^x$ (por partes):
+
+$$A=\int_0^2(xe^x-x)\,dx=\left[(x-1)e^x-\tfrac{x^2}{2}\right]_0^2=(e^2-2)-(-1).$$
+
+**$A=e^2-1\approx6{,}389\ \text{u}^2$**
+::::
 :::::
 
 

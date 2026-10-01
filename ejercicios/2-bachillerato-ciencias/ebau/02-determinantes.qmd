@@ -193,6 +193,23 @@ Se sabe que $\begin{vmatrix}a&b&c\\p&q&r\\x&y&z\end{vmatrix}=-2$.
 a) Calcula: $\begin{vmatrix}a&c&b\\2x&2z&2y\\-3p&-3r&-3q\end{vmatrix}$ *(1 punto)*
 
 b) Calcula: $\begin{vmatrix}x&a-3p&-2a\\y&b-3q&-2b\\z&c-3r&-2c\end{vmatrix}$ *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Se usa que $|M|=-2$ para la matriz original, y las propiedades de los determinantes.
+
+**a)** Se saca factor $2$ de la fila 2 y $-3$ de la fila 3 (factor $-6$); intercambiar las columnas 2 y 3 cambia el signo; luego intercambiar las filas 2 y 3 cambia otra vez el signo:
+$$-6\cdot(-1)\cdot(-1)\cdot(-2)=12.$$
+
+**Valor: $12$.**
+
+**b)** Por columnas, con $X,P,A$ las columnas $(x,y,z)$, $(p,q,r)$, $(a,b,c)$: el determinante es $|X\;\;A-3P\;\;-2A|$. Se saca $-2$ de la columna 3; a la columna 2 se le resta un múltiplo de la 3 (queda $-3P$ tras eliminar $A$ con la columna 3) y se saca $-3$:
+$$|X\;\;A-3P\;\;-2A|=(-2)(-3)\,|X\;\;P\;\;A|=6\,|X\;\;P\;\;A|.$$
+Intercambiar las columnas 1 y 3 da $|X\;P\;A|=-|A\;P\;X|=2$.
+
+**Valor: $12$.**
+::::
 :::::
 
 
@@ -230,6 +247,18 @@ a) Calcula razonadamente el determinante de $2A^{3}$. *(0,5 puntos)*
 b) Calcula razonadamente los determinantes
 
 $$\begin{vmatrix}2a&-1&3\\2b&1/2&3\\2c&-1/2&3\end{vmatrix}\qquad\text{y}\qquad\begin{vmatrix}a&b&c\\a+4&b-2&c+2\\a+1&b+1&c+1\end{vmatrix}.\quad\textit{(2 puntos)}$$
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sabemos $|A|=5$.
+
+**a)** $|2A^3|=2^3\,|A|^3=8\cdot125=$ **$1000$**.
+
+**b)** Primer determinante: sacamos $2$ de la columna 1, $-\frac12$ de la columna 2 (queda $(2,-1,1)$) y $3$ de la columna 3 (queda $(1,1,1)$): vale $2\cdot\left(-\tfrac12\right)\cdot3\,|A|=-3\cdot5=$ **$-15$**.
+
+Segundo: se traspone (el determinante no cambia) y las columnas son $(a,b,c)$, $(a+4,b-2,c+2)$, $(a+1,b+1,c+1)$. Restando la columna 1 a las otras dos: $(a,b,c)$, $(4,-2,2)$, $(1,1,1)$. La segunda es $2\cdot(2,-1,1)$, luego vale $2\,|A|=$ **$10$**.
+::::
 :::::
 
 
@@ -244,6 +273,18 @@ Considera la matriz $A=\begin{pmatrix}m&m&m\\m&m+1&m\\m&m&m+2\end{pmatrix}$.
 a) ¿Para qué valores de $m$ existe la inversa de la matriz $A$? Razona la respuesta. *(1,5 puntos)*
 
 b) Para $m=1$, halla $\left(\dfrac12A\right)^{-1}$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $|A|=2m$ (restando la primera fila a las otras: $\begin{vmatrix}m&m&m\\0&1&0\\0&0&2\end{vmatrix}=2m$).
+
+**Existe $A^{-1}$ si y sólo si $m\neq0$.**
+
+**b)** Para $m=1$: $\left(\tfrac12A\right)^{-1}=2A^{-1}$, con $A=\begin{pmatrix}1&1&1\\1&2&1\\1&1&3\end{pmatrix}$, $|A|=2$.
+
+$$\left(\tfrac12A\right)^{-1}=\begin{pmatrix}5&-2&-1\\-2&2&0\\-1&0&1\end{pmatrix}$$
+::::
 :::::
 
 

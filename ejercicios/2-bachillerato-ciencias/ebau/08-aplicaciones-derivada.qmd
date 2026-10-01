@@ -428,6 +428,20 @@ a) Estudia y halla los máximos y mínimos absolutos de $f$ (abscisas donde se o
 b) Calcula $\displaystyle\lim_{x\to+\infty}\left(x^{2}f(x)\right)$. *(1 punto)*
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $f(x)=\dfrac1{e^{x}+e^{-x}}$ es positiva y par. $f'(x)=-\dfrac{e^{x}-e^{-x}}{(e^{x}+e^{-x})^{2}}=0\iff e^{x}=e^{-x}\iff x=0$.
+
+$f'>0$ para $x<0$ y $f'<0$ para $x>0$: máximo en $x=0$. Como $f(x)\to0$ en $\pm\infty$ y $f>0$, el $0$ no se alcanza.
+
+**Máximo absoluto en $x=0$, de valor $\dfrac12$; no hay mínimo absoluto.**
+
+**b)** $\displaystyle\lim_{x\to+\infty}\dfrac{x^{2}}{e^{x}+e^{-x}}=0$, pues la exponencial domina a la potencia (L'Hôpital dos veces).
+
+**Límite $=0$.**
+::::
 :::::
 
 
@@ -441,6 +455,18 @@ a) Determina las abscisas de los puntos, si existen, en los que la pendiente de 
 b) Determina la ecuación de la recta tangente y la ecuación de la recta normal a la gráfica de $f$ en el punto de inflexión. *(1 punto)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Pendiente de la secante: $\dfrac{f(2)-f(-2)}{4}=\dfrac{9-1}{4}=2$. $f'(x)=3x^{2}-2=2\Rightarrow x^{2}=\dfrac43$.
+
+**$x=\pm\dfrac{2\sqrt3}3$** (ambos en $[-2,2]$).
+
+**b)** $f''(x)=6x=0\Rightarrow x=0$: punto de inflexión $(0,5)$, con $f'(0)=-2$.
+
+**Tangente: $y=-2x+5$. Normal: $y=\dfrac12x+5$.**
+::::
 :::::
 
 
@@ -451,6 +477,16 @@ b) Determina la ecuación de la recta tangente y la ecuación de la recta normal
 **Ejercicio 1** · Ordinaria · Reserva 2023 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria-Reserva.pdf){target="_blank"}
 
 Determina las longitudes de los lados de un rectángulo de área máxima que está inscrito en una semicircunferencia de 6 cm de radio, teniendo uno de sus lados sobre el diámetro de ella.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $x$ la distancia del centro a un extremo de la base: base $2x$, altura $\sqrt{36-x^{2}}$ (vértice superior en la circunferencia).
+
+$A(x)=2x\sqrt{36-x^{2}}$. $A'(x)=\dfrac{2(36-2x^{2})}{\sqrt{36-x^{2}}}=0\Rightarrow x=3\sqrt2$ (es máximo: $A(0)=A(6)=0$).
+
+**Base $6\sqrt2\approx8{,}49$ cm y altura $3\sqrt2\approx4{,}24$ cm** (área $36\ \text{cm}^2$).
+::::
 :::::
 
 
@@ -461,6 +497,16 @@ Determina las longitudes de los lados de un rectángulo de área máxima que est
 **Ejercicio 1** · Ordinaria · Suplente 2023 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria-Suplente.pdf){target="_blank"}
 
 De entre todos los rectángulos de diagonal 10 cm (cada una), calcula las dimensiones del que tiene mayor área.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Lados $x$ e $y$ con $x^{2}+y^{2}=100$; $A=xy=x\sqrt{100-x^{2}}$.
+
+$A'(x)=\dfrac{100-2x^{2}}{\sqrt{100-x^{2}}}=0\Rightarrow x=5\sqrt2$, y entonces $y=5\sqrt2$ (máximo, pues $A=0$ en los extremos).
+
+**Es un cuadrado de lado $5\sqrt2\approx7{,}07$ cm** (área $50\ \text{cm}^2$).
+::::
 :::::
 
 
@@ -474,6 +520,22 @@ a) Calcula los intervalos de concavidad y de convexidad de $f$, así como los pu
 b) Estudia y calcula las asíntotas de la función. Esboza su gráfica. *(1,5 puntos)*
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f(x)=\dfrac1{x^{2}}$ si $x>0$ y $f(x)=-\dfrac1{x^{2}}$ si $x<0$.
+
+**a)** $f''(x)=\dfrac6{x^{4}}$ si $x>0$; $f''(x)=-\dfrac6{x^{4}}$ si $x<0$.
+
+**Convexa en $(0,+\infty)$, cóncava en $(-\infty,0)$. No hay puntos de inflexión** ($x=0$ no está en el dominio).
+
+**b)** 
+- Vertical: $\displaystyle\lim_{x\to0^+}f=+\infty$, $\displaystyle\lim_{x\to0^-}f=-\infty$: **$x=0$**.
+- Horizontal: $\displaystyle\lim_{x\to\pm\infty}f=0$: **$y=0$** (en ambos lados).
+
+Gráfica: función impar, decreciente en cada rama. Para $x>0$ es la rama de $1/x^{2}$ (primer cuadrante) y para $x<0$ su simétrica respecto al origen (tercer cuadrante), ambas pegadas a los ejes.
+::::
 :::::
 
 
@@ -490,6 +552,25 @@ a) Halla los extremos relativos y absolutos de $f$ (abscisas donde se obtienen y
 b) Determina la ecuación de la recta tangente a la gráfica de $f$ en el punto de abscisa $x=\dfrac{\pi}{2}$. *(0,5 puntos)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $f$ es continua en $x=0$ ($f(0^-)=1=f(0^+)$).
+
+En $[-2,0]$: $f'=5>0$ (creciente). En $(0,2\pi]$: $f'(x)=e^{x}(\cos x-\operatorname{sen}x)=0\iff x=\dfrac\pi4,\ \dfrac{5\pi}4$.
+
+- $f'>0$ en $(0,\pi/4)$, $f'<0$ en $(\pi/4,5\pi/4)$, $f'>0$ en $(5\pi/4,2\pi)$.
+- Máximo relativo en $x=\dfrac\pi4$: $f=\dfrac{\sqrt2}{2}e^{\pi/4}\approx1{,}55$.
+- Mínimo relativo en $x=\dfrac{5\pi}4$: $f=-\dfrac{\sqrt2}{2}e^{5\pi/4}\approx-35{,}89$.
+- En los extremos: $f(-2)=-9$ y $f(2\pi)=e^{2\pi}\approx535{,}49$.
+
+**Máximo absoluto en $x=2\pi$ (valor $e^{2\pi}$); mínimo absoluto en $x=\dfrac{5\pi}4$ (valor $-\dfrac{\sqrt2}{2}e^{5\pi/4}$).**
+
+**b)** $f(\pi/2)=0$ y $f'(\pi/2)=-e^{\pi/2}$.
+
+**Recta tangente: $y=-e^{\pi/2}\left(x-\dfrac\pi2\right)$.**
+::::
 :::::
 
 
@@ -501,6 +582,16 @@ Sea $f:(0,+\infty)\to\mathbb{R}$ la función definida por $f(x)=x\left(\ln(x)\ri
 a) Calcula, si existen, sus extremos relativos (abscisas donde se obtienen y valores que se alcanzan). *(1,25 puntos)*
 
 b) Calcula, si existen, sus extremos absolutos (abscisas donde se obtienen y valores que se alcanzan). *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f'(x)=\ln^{2}x+2\ln x=\ln x\,(\ln x+2)=0\Rightarrow x=1,\ x=e^{-2}$. Además $f''(x)=\dfrac{2(\ln x+1)}{x}$.
+
+**a)** $f''(e^{-2})=-2e^{2}<0$: **máximo relativo en $x=e^{-2}$, valor $4e^{-2}$**. $f''(1)=2>0$: **mínimo relativo en $x=1$, valor $0$**.
+
+**b)** $f(x)\ge0$ y $f(1)=0$: **mínimo absoluto en $x=1$ (valor 0)**. Como $\displaystyle\lim_{x\to+\infty}f(x)=+\infty$, **no hay máximo absoluto**.
+::::
 :::::
 
 
@@ -511,6 +602,18 @@ b) Calcula, si existen, sus extremos absolutos (abscisas donde se obtienen y val
 **Ejercicio 1** · Extraordinaria · Reserva 2023 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Reserva.pdf){target="_blank"}
 
 Halla dos números mayores o iguales que 0, cuya suma sea 1, y el producto de uno de ellos por la raíz cuadrada del otro sea máximo.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean los números $x$ e $y=1-x$ con $x\in[0,1]$. Hay que maximizar $f(x)=x\sqrt{1-x}$.
+
+$f'(x)=\sqrt{1-x}-\dfrac{x}{2\sqrt{1-x}}=\dfrac{2-3x}{2\sqrt{1-x}}=0\Rightarrow x=\dfrac23$.
+
+$f'>0$ a la izquierda y $f'<0$ a la derecha, luego es un máximo (en los extremos $f(0)=f(1)=0$).
+
+**Los números son $\dfrac23$ y $\dfrac13$** (el máximo es $f(2/3)=\dfrac{2\sqrt3}{9}$).
+::::
 :::::
 
 
@@ -521,6 +624,18 @@ Halla dos números mayores o iguales que 0, cuya suma sea 1, y el producto de un
 **Ejercicio 2** · Extraordinaria · Suplente 2023 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Suplente.pdf){target="_blank"}
 
 En una fábrica de pinturas, las latas que se utilizan para envasar la pintura tienen forma cilíndrica y una capacidad de 20 litros. Halla las dimensiones del cilindro, con tapas, para que la chapa empleada en su construcción sea mínima.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Capacidad $20\ \text{L}=20\ \text{dm}^3$: $\pi r^{2}h=20\Rightarrow h=\dfrac{20}{\pi r^{2}}$.
+
+Superficie: $S(r)=2\pi r^{2}+2\pi rh=2\pi r^{2}+\dfrac{40}{r}$.
+
+$S'(r)=4\pi r-\dfrac{40}{r^{2}}=0\Rightarrow r^{3}=\dfrac{10}{\pi}$. Como $S''>0$, es un mínimo.
+
+**$r=\sqrt[3]{10/\pi}\approx1{,}47\ \text{dm}$ y $h=2r\approx2{,}94\ \text{dm}$** (altura igual al diámetro).
+::::
 :::::
 
 
@@ -585,6 +700,16 @@ b) Determina los intervalos de convexidad y de concavidad de $f$ y los puntos de
 **Ejercicio 2** · Extraordinaria 2022 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria.pdf){target="_blank"}
 
 Calcula los vértices y el área del rectángulo de área máxima inscrito en el recinto limitado por la gráfica de la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=-x^{2}+12$ y el eje de abscisas, y que tiene su base sobre dicho eje.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+El recinto es la región bajo $y=12-x^2$ sobre el eje, con raíces $x=\pm\sqrt{12}$. Un rectángulo con base en el eje, simétrico respecto del eje $Y$, tiene vértices $(\pm x,0)$ y $(\pm x,12-x^2)$:
+$$A(x)=2x(12-x^2)=24x-2x^3,\qquad A'(x)=24-6x^2=0\Rightarrow x=2,$$
+y $A''(2)=-24<0$ (máximo).
+
+**Vértices $(-2,0)$, $(2,0)$, $(2,8)$, $(-2,8)$; área máxima $32$ u$^2$.**
+::::
 :::::
 
 
@@ -601,6 +726,21 @@ a) Halla los extremos absolutos de $f$ (abscisas donde se obtienen y valores que
 b) Determina la ecuación de la recta tangente y la ecuación de la recta normal a la gráfica de $f$ en el punto de abscisa $x=\tfrac{3\pi}{2}$. *(0,5 puntos)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f'(x)=e^{x}(\cos x+\operatorname{sen}x)+e^{x}(-\operatorname{sen}x+\cos x)=2e^{x}\cos x$.
+
+**a)** $f'=0$ en $x=\tfrac{\pi}{2}$ y $x=\tfrac{3\pi}{2}$. Se comparan los valores en los puntos críticos y en los extremos:
+$f(0)=1$, $f(\tfrac{\pi}{2})=e^{\pi/2}\approx 4{,}81$, $f(\tfrac{3\pi}{2})=-e^{3\pi/2}\approx-111{,}3$, $f(2\pi)=e^{2\pi}\approx 535{,}5$.
+
+**Máximo absoluto en $x=2\pi$, de valor $e^{2\pi}$; mínimo absoluto en $x=\tfrac{3\pi}{2}$, de valor $-e^{3\pi/2}$.**
+
+**b)** $f(\tfrac{3\pi}{2})=-e^{3\pi/2}$ y $f'(\tfrac{3\pi}{2})=0$ (tangente horizontal).
+
+**Tangente: $y=-e^{3\pi/2}$. Normal: $x=\tfrac{3\pi}{2}$.**
+::::
 :::::
 
 
@@ -673,6 +813,18 @@ Determina los intervalos de concavidad y de convexidad de $f$ y sus puntos de in
 Calcula $a$, $b$, $c$ y $d$ sabiendo que la gráfica de la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=ax^{3}+bx^{2}+cx+d$ tiene un punto de inflexión en $(0,4)$ y su recta normal en el punto $(1,8)$ es paralela al eje de ordenadas.
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Punto de inflexión en $(0,4)$: $f(0)=4\Rightarrow d=4$ y $f''(0)=2b=0\Rightarrow b=0$.
+
+Normal vertical (paralela al eje de ordenadas) en $(1,8)$ significa tangente horizontal: $f'(1)=3a+c=0$. Además $f(1)=a+c+4=8\Rightarrow a+c=4$.
+
+Resolviendo: $a=-2$, $c=6$.
+
+**$a=-2,\; b=0,\; c=6,\; d=4$**, es decir, $f(x)=-2x^3+6x+4$.
+::::
 :::::
 
 
@@ -689,6 +841,20 @@ a) Determina los intervalos de crecimiento y de decrecimiento de $f$. *(1,25 pun
 b) Calcula $\displaystyle\int_{0}^{2}f(x)\,dx$. *(1,25 puntos)*
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f(x)=\begin{cases}x^2-x+1&x<1\\x^2+x-1&x\ge1\end{cases}$, con $f'(x)=2x-1$ si $x<1$ y $f'(x)=2x+1$ si $x>1$.
+
+**a)** Para $x<1$, $f'=0$ en $x=\frac12$ (negativa a su izquierda, positiva a su derecha); para $x>1$, $f'>0$.
+
+**Decrece en $\left(-\infty,\tfrac12\right)$ y crece en $\left(\tfrac12,+\infty\right)$** (mínimo relativo en $x=\frac12$).
+
+**b)** $\displaystyle\int_0^2f=\int_0^1(x^2-x+1)\,dx+\int_1^2(x^2+x-1)\,dx=\frac56+\frac{17}{6}$.
+
+**$\dfrac{11}{3}$**
+::::
 :::::
 
 

@@ -220,6 +220,16 @@ $$\mathbf{a=-9,\quad b=0}$$
 Considera la función $F:\mathbb{R}\to\mathbb{R}$ definida por $F(x)=\displaystyle\int_{0}^{x}\operatorname{sen}\left(t^{2}\right)dt$. Calcula $\displaystyle\lim_{x\to 0}\dfrac{x\,F(x)}{\operatorname{sen}(x^{2})}$.
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Es una indeterminación $\dfrac00$: $F(0)=0$ y $\operatorname{sen}(0)=0$. Como $F'(x)=\operatorname{sen}(x^{2})$, $F(x)\sim\dfrac{x^{3}}3$, y $\operatorname{sen}(x^{2})\sim x^{2}$.
+
+Con L'Hôpital: $\displaystyle\lim\dfrac{F(x)+x\operatorname{sen}(x^{2})}{2x\cos(x^{2})}=\lim\dfrac{x^{3}/3+x^{3}}{2x}=\lim\dfrac{2x^{2}}{3}=0$.
+
+**Límite $=0$.**
+::::
 :::::
 
 
@@ -230,6 +240,16 @@ Considera la función $F:\mathbb{R}\to\mathbb{R}$ definida por $F(x)=\displaysty
 **Ejercicio 2** · Ordinaria · Reserva 2023 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria-Reserva.pdf){target="_blank"}
 
 Sabiendo que $\displaystyle\lim_{x\to 0}\dfrac{\operatorname{sen}(x)-\ln(1+x)}{ax^{2}-x+e^{x}-\cos(2x)}=-\dfrac{1}{7}$, calcula $a$ ($\ln$ denota la función logaritmo neperiano).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Desarrollos en $x=0$: $\operatorname{sen}x-\ln(1+x)=\dfrac{x^{2}}2+\dots$ y $ax^{2}-x+e^{x}-\cos2x=\left(a+\dfrac52\right)x^{2}+\dots$
+
+(Ambos tienden a 0; se puede aplicar L'Hôpital dos veces.) El límite es $\dfrac{1/2}{a+5/2}=-\dfrac17$:
+
+$a+\dfrac52=-\dfrac72\Rightarrow$ **$a=-6$.**
+::::
 :::::
 
 
@@ -246,6 +266,20 @@ a) Calcula $a$ y $b$ para que la gráfica de $f$ pase por el punto $(1,-2)$ y te
 b) En el caso $a=5$ y $b=4$, calcula la ecuación de la recta normal a la gráfica de $f$ que pasa por el punto de abscisa $x=0$. *(1 punto)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Asíntota oblicua: $f(x)=x+b+\dfrac{a+b^{2}}{x-b}$, luego la asíntota es $y=x+b$ y $b=4$.
+
+Pasa por $(1,-2)$: $\dfrac{1+a}{1-4}=-2\Rightarrow 1+a=6$.
+
+**$a=5$, $b=4$.**
+
+**b)** $f(x)=\dfrac{x^{2}+5}{x-4}$, $f'(x)=\dfrac{x^{2}-8x-5}{(x-4)^{2}}$. En $x=0$: $f(0)=-\dfrac54$ y $f'(0)=-\dfrac5{16}$.
+
+La pendiente de la normal es $\dfrac{16}{5}$: **$y=-\dfrac54+\dfrac{16}{5}x$**.
+::::
 :::::
 
 
@@ -262,6 +296,18 @@ a) Determina $a$ sabiendo que la pendiente de la recta tangente a la gráfica de
 b) Para $a=0$, estudia y calcula las asíntotas de $f$. *(1,5 puntos)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $f'(x)=\dfrac{\frac{3x+4}{x+1}-3\left(\ln(x+1)+a\right)}{(3x+4)^{2}}$, luego $f'(0)=\dfrac{4-3a}{16}=1\Rightarrow$ **$a=-4$**.
+
+**b)** $f(x)=\dfrac{\ln(x+1)}{3x+4}$ con dominio $(-1,+\infty)$.
+
+- Vertical: $\displaystyle\lim_{x\to-1^+}f(x)=\dfrac{-\infty}{1}=-\infty$, luego **$x=-1$ es asíntota vertical**.
+- Horizontal: $\displaystyle\lim_{x\to+\infty}\dfrac{\ln(x+1)}{3x+4}=0$ (el logaritmo crece más despacio), luego **$y=0$ es asíntota horizontal** en $+\infty$.
+- Oblicua: no hay (existe la horizontal).
+::::
 :::::
 
 
@@ -291,6 +337,14 @@ b) Estudia y halla las asíntotas de la gráfica de $f$. *(1,5 puntos)*
 **Ejercicio 1** · Extraordinaria 2022 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria.pdf){target="_blank"}
 
 Calcula $a$ sabiendo que $\displaystyle\lim_{x\to+\infty}\dfrac{ax}{(\ln x)^{3}+2x}=1$ (donde $\ln$ denota la función logaritmo neperiano).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Dividiendo por $x$: $\dfrac{a}{\dfrac{(\ln x)^3}{x}+2}\to\dfrac a2$, pues $\dfrac{(\ln x)^3}{x}\to0$. Entonces $\dfrac a2=1$.
+
+**$a=2$.**
+::::
 :::::
 
 
@@ -301,6 +355,16 @@ Calcula $a$ sabiendo que $\displaystyle\lim_{x\to+\infty}\dfrac{ax}{(\ln x)^{3}+
 **Ejercicio 1** · Extraordinaria · Reserva 2022 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria_Reserva.pdf){target="_blank"}
 
 Calcula $a$ y $b$ sabiendo que $\displaystyle\lim_{x\to 0}\dfrac{a\operatorname{sen}(x)+x\ln(x+1)+bx^{2}}{x^{3}+x^{2}}=2$ (donde $\ln$ denota la función logaritmo neperiano).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Para que el límite sea finito en $x=0$ (el denominador es $x^2(1+x)$) el numerador debe ser $O(x^2)$. Con $\operatorname{sen}x=x-\tfrac{x^3}{6}+\dots$ y $x\ln(x+1)=x^2-\tfrac{x^3}{2}+\dots$ el numerador es
+$$a x+(b+1)x^2+O(x^3).$$
+El término en $x$ debe anularse: $a=0$. Entonces el límite es $\dfrac{(b+1)x^2}{x^2}\to b+1=2$.
+
+**$a=0$, $b=1$.**
+::::
 :::::
 
 
@@ -319,6 +383,20 @@ a) Calcula $\lambda$ y $\mu$. *(1,25 puntos)*
 b) Para $\lambda=2$, calcula la ecuación de la recta tangente a la gráfica de $f$ en el punto de abscisa $x=1$. *(1,25 puntos)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Para que sea continua en $0$ el límite debe existir y ser finito. Con $e^{\lambda x}=1+\lambda x+\tfrac{\lambda^2x^2}{2}+\dots$ el numerador es $(\lambda-2)x+\tfrac{\lambda^2-1}{2}x^2+\dots$, y debe ser $O(x^2)$: $\lambda=2$. Entonces
+$$\mu=\lim_{x\to0}\frac{e^{2x}-e^x-x}{x^2}=\frac{4-1}{2}.$$
+
+**$\lambda=2$, $\mu=\tfrac32$.**
+
+**b)** $f(x)=\dfrac{e^{2x}-e^x-x}{x^2}$ para $x\ne0$. $f(1)=e^2-e-1$.
+$$f'(x)=\frac{(2e^{2x}-e^x-1)x^2-2x(e^{2x}-e^x-x)}{x^4}\ \Rightarrow\ f'(1)=(2e^2-e-1)-2(e^2-e-1)=e+1.$$
+
+**Tangente: $y=(e^2-e-1)+(e+1)(x-1)$, es decir, $y=(e+1)x+e^2-2e-2$.**
+::::
 :::::
 
 
@@ -332,6 +410,19 @@ a) Estudia y halla las asíntotas de la gráfica de $f$. *(1,5 puntos)*
 b) Calcula la ecuación de la recta normal a la gráfica de $f$ en el punto de abscisa $x=0$. *(1 punto)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** El numerador en $x=-2$ vale $6\neq0$ y $\lim_{x\to-2^{\pm}}f=\pm\infty$: **asíntota vertical $x=-2$**.
+Como el grado del numerador (4) supera en 1 al del denominador (3), hay oblicua: $m=\lim\dfrac{f(x)}{x}=1$ y
+$$n=\lim_{x\to\pm\infty}\big(f(x)-x\big)=\lim\frac{x^4-3x^2+2-x(x+2)^3}{(x+2)^3}=\lim\frac{-6x^3+\dots}{x^3}=-6.$$
+**Asíntota oblicua $y=x-6$** (en $+\infty$ y en $-\infty$). No hay horizontales.
+
+**b)** $f(0)=\tfrac{2}{8}=\tfrac14$. $f'(x)=\dfrac{(4x^3-6x)(x+2)-3(x^4-3x^2+2)}{(x+2)^4}$, y $f'(0)=\dfrac{-6}{16}=-\tfrac38$. La normal tiene pendiente $\tfrac83$.
+
+**Normal: $y=\tfrac14+\tfrac83x$.**
+::::
 :::::
 
 
@@ -413,6 +504,18 @@ a) Estudia y halla las asíntotas de la gráfica de $f$. *(1,25 puntos)*
 b) Determina los intervalos de crecimiento y de decrecimiento de $f$. *(1,25 puntos)*
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f(x)=\dfrac{x^2-10}{(x+3)(x-1)}$.
+
+**a)** Verticales: $\displaystyle\lim_{x\to-3}f=\pm\infty$ y $\displaystyle\lim_{x\to1}f=\pm\infty$, luego **$x=-3$ y $x=1$** son asíntotas verticales. Horizontal: $\displaystyle\lim_{x\to\pm\infty}f(x)=1$, luego **$y=1$** es asíntota horizontal (en ambos lados) y no hay oblicuas.
+
+**b)** $f'(x)=\dfrac{2(x+2)(x+5)}{(x-1)^2(x+3)^2}$, con signo el de $(x+2)(x+5)$.
+
+**Crece en $(-\infty,-5)$, en $(-2,1)$ y en $(1,+\infty)$; decrece en $(-5,-3)$ y en $(-3,-2)$.** Máximo relativo en $x=-5$ y mínimo relativo en $x=-2$.
+::::
 :::::
 
 
@@ -423,6 +526,16 @@ b) Determina los intervalos de crecimiento y de decrecimiento de $f$. *(1,25 pun
 **Ejercicio 1** · Extraordinaria · Suplente 2021 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Extraordinaria_SUPLENTE_Modelo1.pdf){target="_blank"}
 
 Sabiendo que $\displaystyle\lim_{x\to 0}\left(\dfrac{x+1}{\ln(x+1)}-\dfrac{a}{x}\right)$ es finito, calcula $a$ y el valor del límite ($\ln$ denota la función logaritmo neperiano).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Con $\ln(1+x)=x-\frac{x^2}{2}+\cdots$ se tiene $\dfrac{x+1}{\ln(x+1)}=\dfrac{x+1}{x\left(1-\frac x2+\cdots\right)}=\dfrac1x+\dfrac32+O(x)$.
+
+Entonces $\dfrac{x+1}{\ln(x+1)}-\dfrac ax=\dfrac{1-a}{x}+\dfrac32+O(x)$, que es finito sólo si $a=1$. (Equivalente: con L'Hôpital, el límite $\frac{0}{0}$ exige $a=1$.)
+
+**$a=1$ y el límite vale $\dfrac32$.**
+::::
 :::::
 
 
@@ -436,6 +549,20 @@ a) Halla $a$ y $b$ sabiendo que la gráfica de $f$ pasa por el punto $(2,3)$ y t
 b) Para $a=2$ y $b=3$, calcula las ecuaciones de las rectas tangente y normal a la gráfica de $f$ en el punto de abscisa $x=1$. *(1,25 puntos)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $f(2)=\dfrac{4a+b}{a-2}=3\Rightarrow b=-a-6$. La pendiente de la asíntota oblicua es $\displaystyle\lim_{x\to\infty}\frac{f(x)}{x}=-a=-4\Rightarrow a=4$. Entonces $b=-10$.
+
+**$a=4,\ b=-10$**
+
+**b)** $f(x)=\dfrac{2x^2+3}{2-x}$, $f'(x)=\dfrac{-2x^2+8x+3}{(2-x)^2}$. En $x=1$: $f(1)=5$, $f'(1)=9$.
+
+Tangente: $y-5=9(x-1)$, es decir **$y=9x-4$**.
+
+Normal: $y-5=-\frac19(x-1)$, es decir **$y=-\dfrac{x}{9}+\dfrac{46}{9}$**.
+::::
 :::::
 
 

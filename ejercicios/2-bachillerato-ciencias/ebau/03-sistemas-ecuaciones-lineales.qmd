@@ -350,6 +350,18 @@ $$\mathbf{(x,y,z)=(-1,1,0)}$$
 **Ejercicio 5** · Ordinaria 2023 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria.pdf){target="_blank"}
 
 Una marca de vehículos ha vendido este mes coches de tres colores: blancos, negros y rojos. El 60 % de los coches blancos más el 50 % de los coches negros representan el 30 % de los coches vendidos. El 20 % de los coches blancos junto con el 60 % de los coches negros y el 60 % de los coches rojos representan la mitad de los coches vendidos. Se han vendido 100 coches negros más que blancos. Determina el número de coches vendidos de cada color.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $b$, $n$ y $r$ los coches blancos, negros y rojos, y $T=b+n+r$.
+
+$$\begin{cases}0{,}6b+0{,}5n=0{,}3T\\0{,}2b+0{,}6n+0{,}6r=0{,}5T\\n=b+100\end{cases}$$
+
+Simplificando: $3b+2n-3r=0$ y $-3b+n+r=0$. Con $n=b+100$: $r=\dfrac{5b+200}3$ y $r=2b-100$, de donde $5b+200=6b-300\Rightarrow b=500$.
+
+**Blancos: 500; negros: 600; rojos: 900** (total 2000). Comprobación: $0{,}6\cdot500+0{,}5\cdot600=600=0{,}3\cdot2000$ y $100+360+540=1000=0{,}5\cdot2000$.
+::::
 :::::
 
 
@@ -360,6 +372,18 @@ Una marca de vehículos ha vendido este mes coches de tres colores: blancos, neg
 **Ejercicio 5** · Ordinaria · Reserva 2023 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria-Reserva.pdf){target="_blank"}
 
 Una fábrica dispone de tres líquidos $L_1$, $L_2$ y $L_3$, en los que se encuentran disueltas dos sustancias: sodio y magnesio. Cada litro del líquido $L_1$ contiene 120 mg de sodio y 90 mg de magnesio, cada litro del líquido $L_2$ contiene 100 mg de sodio y 90 mg de magnesio y cada litro del líquido $L_3$ contiene 60 mg de sodio y 180 mg de magnesio. ¿Es posible obtener un litro de un líquido mezclando distintas cantidades de $L_1$, $L_2$ y $L_3$ en el que la cantidad de sodio y de magnesio sea de 100 mg cada una? En caso afirmativo, calcula dichas cantidades.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $x$, $y$, $z$ los litros de $L_1$, $L_2$ y $L_3$ (un litro en total):
+
+$$\begin{cases}x+y+z=1\\120x+100y+60z=100\\90x+90y+180z=100\end{cases}$$
+
+El determinante vale $-1800\ne0$: sistema compatible determinado (SCD). Sí es posible.
+
+**$x=\dfrac29$ L de $L_1$, $y=\dfrac23$ L de $L_2$ y $z=\dfrac19$ L de $L_3$.**
+::::
 :::::
 
 
@@ -376,6 +400,20 @@ a) Discute el sistema $BA=C$, según los valores de $\alpha$. *(1,5 puntos)*
 b) Resuelve el sistema, si es posible, para $\alpha=0$ y para $\alpha=1$. *(1 punto)*
 
 *Relacionado también con:* [Matrices](01-matrices.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $BA=(\alpha x+y+z,\ x+\alpha y+z,\ x+y+\alpha z)=(1,1,1)$. La matriz de coeficientes tiene $|\cdot|=(\alpha-1)^{2}(\alpha+2)$.
+
+- $\alpha\ne1,-2$: $\operatorname{rg}=3$, sistema compatible determinado (SCD).
+- $\alpha=1$: las tres ecuaciones son $x+y+z=1$, rango 1: sistema compatible indeterminado (SCI).
+- $\alpha=-2$: $\operatorname{rg}=2$ y $\operatorname{rg}$ ampliada $=3$ (sumando las ecuaciones sale $0=3$): sistema incompatible (SI).
+
+**b)** 
+- $\alpha=0$ (SCD): $y+z=1$, $x+z=1$, $x+y=1$, **$x=y=z=\dfrac12$**.
+- $\alpha=1$ (SCI): **$(x,y,z)=(\lambda,\mu,1-\lambda-\mu)$**, con $\lambda,\mu\in\mathbb{R}$.
+::::
 :::::
 
 
@@ -386,6 +424,20 @@ b) Resuelve el sistema, si es posible, para $\alpha=0$ y para $\alpha=1$. *(1 pu
 **Ejercicio 6** · Extraordinaria 2023 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria.pdf){target="_blank"}
 
 El dueño de un bar ha comprado refrescos, cerveza y vino por un importe de 500 euros sin incluir impuestos. El gasto en vino es 60 euros menos que los gastos en refrescos y cerveza conjuntamente, sin incluir impuestos. Teniendo en cuenta que los impuestos de los refrescos, la cerveza y el vino son el 6 %, el 12 % y el 30 %, respectivamente, entonces el importe total de la factura incluyendo impuestos ha ascendido a 592,4 euros. Calcula el importe, incluyendo impuestos, invertido en cada una de las bebidas.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $r$, $c$ y $v$ los importes sin impuestos de refrescos, cerveza y vino.
+
+$$\begin{cases}r+c+v=500\\v=r+c-60\\1{,}06r+1{,}12c+1{,}3v=592{,}4\end{cases}$$
+
+Primera y segunda: $v=220$, $r+c=280$. Tercera: $1{,}06r+1{,}12(280-r)=592{,}4-286=306{,}4\Rightarrow-0{,}06r=-7{,}2\Rightarrow r=120$, $c=160$.
+
+Con impuestos: refrescos $127{,}20$, cerveza $179{,}20$, vino $286$.
+
+**Refrescos: $127{,}20$ €; cerveza: $179{,}20$ €; vino: $286$ €.**
+::::
 :::::
 
 
@@ -396,6 +448,18 @@ El dueño de un bar ha comprado refrescos, cerveza y vino por un importe de 500 
 **Ejercicio 6** · Extraordinaria · Suplente 2023 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Suplente.pdf){target="_blank"}
 
 Una plataforma de streaming se especializa en series de tres géneros: animación, ciencia ficción y comedia. Se sabe que el 30 % de las series de animación más el 50 % de las de ciencia ficción coincide con el 20 % de total de series. El 25 % de las series de animación más el 50 % de las de ciencia ficción más el 60 % de las de comedia representan la mitad del total de series. Hay 100 series menos de animación que de ciencia ficción. Halla el número de series de cada género.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $a$, $c$ y $m$ las series de animación, ciencia ficción y comedia, y $T=a+c+m$ el total.
+
+$$\begin{cases}0{,}3a+0{,}5c=0{,}2(a+c+m)\\0{,}25a+0{,}5c+0{,}6m=0{,}5(a+c+m)\\c=a+100\end{cases}\iff\begin{cases}a+3c-2m=0\\-0{,}25a+0{,}1m=0\\c-a=100\end{cases}$$
+
+Simplificando la segunda: $-0{,}25a+0{,}1m=0\Rightarrow m=2{,}5a$. En la primera: $a+3(a+100)-5a=0\Rightarrow a=300$.
+
+**Animación: 300; ciencia ficción: 400; comedia: 750** (total 1450). Comprobación: $0{,}3\cdot300+0{,}5\cdot400=290=0{,}2\cdot1450$.
+::::
 :::::
 
 
@@ -451,6 +515,16 @@ b) Para $m=-2$ encuentra, si es posible, $y_0$ para que la solución del sistema
 **Ejercicio 5** · Extraordinaria · Reserva 2022 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria_Reserva.pdf){target="_blank"}
 
 La suma de los seguidores en una determinada red social de Alberto, Begoña y Carlos es de 13000 personas. Aunque Carlos perdiera una tercera parte de sus seguidores, todavía seguiría teniendo el doble de seguidores que tiene Alberto. Por otro lado, los seguidores de Alberto más la quinta parte de los seguidores de Begoña, son tantos como la mitad de los de Carlos. Calcula cuántos seguidores tiene cada uno.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$A$, $B$, $C$ = seguidores de Alberto, Begoña, Carlos.
+$$\begin{cases}A+B+C=13000\\ \tfrac23C=2A\\ A+\tfrac{B}{5}=\tfrac{C}{2}\end{cases}$$
+De la segunda, $C=3A$. En la tercera: $A+\tfrac B5=\tfrac{3A}{2}\Rightarrow B=\tfrac{5A}{2}$. Primera: $A+\tfrac52A+3A=13000\Rightarrow \tfrac{13}{2}A=13000$.
+
+**Alberto 2000, Begoña 5000 y Carlos 6000 seguidores.**
+::::
 :::::
 
 
@@ -467,6 +541,20 @@ $$\begin{pmatrix}\alpha&1&1\\\alpha&-1&1\\\alpha&0&\alpha\end{pmatrix}\begin{pma
 a) Discute el sistema según los valores de $\alpha$. *(1,25 puntos)*
 
 b) Para $\alpha=1$ resuelve el sistema y da una solución del mismo diferente de la solución trivial, si es posible. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+La matriz de coeficientes es cuadrada; $|M|=-2\alpha(\alpha-1)$.
+
+**a)** Sistema homogéneo (siempre compatible):
+- $\alpha\neq0,1$: $|M|\ne0$, $\operatorname{rg}=3$: compatible determinado (SCD), sólo la solución trivial.
+- $\alpha=0$ o $\alpha=1$: $\operatorname{rg}=2<3$: compatible indeterminado (SCI), con un parámetro.
+
+**b)** Para $\alpha=1$: $x+y+z=0$, $x-y+z=0$, $x+z=0$. Restando las dos primeras, $y=0$, y entonces $x=-z$:
+
+**$(x,y,z)=(-\lambda,0,\lambda)$; una solución no trivial: $(-1,0,1)$.**
+::::
 :::::
 
 
@@ -480,6 +568,19 @@ $$\begin{cases}x-my-2z=m\\x+y+z=2m\\x+2y+mz=3m\end{cases}$$
 a) Discute el sistema según los valores de $m$. *(1,75 puntos)*
 
 b) Para $m=1$ resuelve el sistema, si es posible. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $|A|=m^2-4=(m-2)(m+2)$ (matriz de coeficientes).
+- $m\neq\pm2$: $\operatorname{rg}A=\operatorname{rg}A^*=3$: compatible determinado (SCD).
+- $m=2$: $\operatorname{rg}A=2$ y $\operatorname{rg}A^*=3$: incompatible (SI).
+- $m=-2$: $\operatorname{rg}A=2$ y $\operatorname{rg}A^*=3$: incompatible (SI).
+
+**b)** Con $m=1$ (SCD): $x-y-2z=1$, $x+y+z=2$, $x+2y+z=3$. Restando las dos últimas, $y=1$; entonces $x+z=1$ y $x-2z=2$, de donde $z=-\tfrac13$.
+
+**$(x,y,z)=\left(\tfrac43,\,1,\,-\tfrac13\right)$.**
+::::
 :::::
 
 
@@ -556,6 +657,21 @@ $$\begin{cases}x+my+mz=1\\x+2my+(m+1)z=1\\2x+my+mz=2\end{cases}$$
 a) Discute el sistema según los valores de $m$. *(1,75 puntos)*
 
 b) Resuelve el sistema, si es posible, para $m=1$. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$|A|=\begin{vmatrix}1&m&m\\1&2m&m+1\\2&m&m\end{vmatrix}=-m(m-1)$.
+
+**a)**
+- $m\neq0,\ m\neq1$: $\operatorname{rg}A=\operatorname{rg}A^*=3$, sistema compatible determinado (SCD).
+- $m=0$: $\operatorname{rg}A=\operatorname{rg}A^*=2<3$, sistema compatible indeterminado (SCI).
+- $m=1$: $\operatorname{rg}A=\operatorname{rg}A^*=2<3$, SCI.
+
+**b)** Para $m=1$: $x+y+z=1$, $x+2y+2z=1$, $2x+y+z=2$. Restando las dos primeras: $y+z=0$, y entonces $x=1$.
+
+**$(x,y,z)=(1,-\lambda,\lambda),\ \lambda\in\mathbb{R}$**
+::::
 :::::
 
 
@@ -570,6 +686,18 @@ En una cafetería, tres cafés, una tostada y dos zumos de naranja cuestan 7,50 
 a) Calcula, de forma razonada, el precio total de dos cafés, una tostada y tres zumos de naranja. *(1,5 puntos)*
 
 b) ¿El precio de un zumo de naranja podría ser de 2 €? Razona la respuesta. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $x$, $y$, $z$ los precios (€) de un café, una tostada y un zumo: $3x+y+2z=7{,}5$ y $4x+y+z=7{,}2$.
+
+**a)** Buscamos $2x+y+3z$. Se cumple $(2,1,3)=2(3,1,2)-(4,1,1)$, luego el precio es $2\cdot7{,}5-7{,}2=$ **$7{,}80$ €**.
+
+**b)** Restando: $x-z=-0{,}3$ y $y=8{,}4-5z$. Con $z=2$: $x=1{,}7$ pero $y=-1{,}6<0$, imposible.
+
+**No, un zumo no puede costar 2 €** (la tostada saldría con precio negativo).
+::::
 :::::
 
 
