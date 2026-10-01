@@ -22,6 +22,8 @@ $$\int_6^{12}\dfrac{dx}{9-x^{2}}=\dfrac16\left(\ln\dfrac{15}{9}-\ln\dfrac93\righ
 @@ 4
 **a)** $f'(x)=2x=4\Rightarrow x=2$, $f(2)=5$ (y la recta da $4\cdot2-3=5$).
 
+![Recinto entre f(x)=x²+1, su tangente y=4x−3 en (2,5) y el eje de ordenadas](fig/2023-ord-res-e4.svg){fig-alt="Recinto entre f(x)=x²+1, su tangente y=4x−3 en (2,5) y el eje de ordenadas" width="75%" fig-align="center"}
+
 **Punto $(2,5)$.**
 
 **b)** La parábola $y=x^{2}+1$ queda por encima de la recta, que es tangente en $x=2$. El recinto está entre $x=0$ (eje de ordenadas) y $x=2$:

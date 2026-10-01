@@ -18,6 +18,8 @@ $f(x)=\dfrac1{x^{2}}$ si $x>0$ y $f(x)=-\dfrac1{x^{2}}$ si $x<0$.
 
 Gráfica: función impar, decreciente en cada rama. Para $x>0$ es la rama de $1/x^{2}$ (primer cuadrante) y para $x<0$ su simétrica respecto al origen (tercer cuadrante), ambas pegadas a los ejes.
 
+![Gráfica de f(x)=1/(x|x|): asíntota vertical x=0 y horizontal y=0, positiva a la derecha y negativa a la izquierda](fig/2023-ord-sup-e2.svg){fig-alt="Gráfica de f(x)=1/(x|x|): asíntota vertical x=0 y horizontal y=0, positiva a la derecha y negativa a la izquierda" width="75%" fig-align="center"}
+
 @@ 3
 $f'(x)=\int(2\ln x+1)dx=2x\ln x-x+C$. $f'(e)=2e-e+C=e\Rightarrow C=0$.
 
@@ -29,6 +31,8 @@ $f(1)=-1+K=0\Rightarrow K=1$.
 
 @@ 4
 **a)** Si $|x|\ge1$: $x^{2}-1=x+5\Rightarrow x=-2,\ 3$. Si $|x|<1$: $1-x^{2}=x+5$ no tiene solución real.
+
+![Recinto entre f(x)=|x²−1| y g(x)=x+5, con cortes en (−2,3) y (3,8)](fig/2023-ord-sup-e4.svg){fig-alt="Recinto entre f(x)=|x²−1| y g(x)=x+5, con cortes en (−2,3) y (3,8)" width="75%" fig-align="center"}
 
 **Puntos de corte: $(-2,3)$ y $(3,8)$.** El recinto está limitado por arriba por la recta $y=x+5$ y por abajo por $|x^{2}-1|$ (dos arcos de parábola hacia arriba y un arco invertido entre $-1$ y $1$).
 

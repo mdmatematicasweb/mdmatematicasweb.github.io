@@ -21,6 +21,8 @@ $$\mathbf{a=0,\quad b=-2}$$
 @@ 3
 **a)** $f(x)=x(x-2)(x-4)$. **Cortes con el eje $OX$: $(0,0)$, $(2,0)$, $(4,0)$; con el eje $OY$: $(0,0)$.** Esbozo: cúbica con $f\to-\infty$ a la izquierda y $+\infty$ a la derecha; $f>0$ en $(0,2)$ (máximo local en $x=2-\tfrac{2}{\sqrt3}\approx0{,}85$) y $f<0$ en $(2,4)$ (mínimo local en $x=2+\tfrac{2}{\sqrt3}\approx3{,}15$).
 
+![Gráfica de f(x)=x³−6x²+8x con cortes en x=0, 2 y 4 y sus extremos relativos](fig/2024-ord-res-e3.svg){fig-alt="Gráfica de f(x)=x³−6x²+8x con cortes en x=0, 2 y 4 y sus extremos relativos" width="75%" fig-align="center"}
+
 **b)** Con $F(x)=\dfrac{x^4}{4}-2x^3+4x^2$: $\int_0^2f=F(2)-F(0)=4$ y $\int_2^4f=F(4)-F(2)=0-4=-4$.
 
 $$A=|4|+|-4|=\mathbf{8\ u^2}.$$

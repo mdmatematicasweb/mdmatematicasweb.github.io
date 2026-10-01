@@ -24,6 +24,8 @@ $$\int_0^{\pi/2}\left(\tfrac12-\tfrac32\cos2x\right)dx=\left[\tfrac x2-\tfrac34\
 @@ 4
 **a)** Para $x\ge0$: $x-2=4-x^2\Rightarrow x^2+x-6=0\Rightarrow x=2$. Para $x<0$: $-x-2=4-x^2\Rightarrow x^2-x-6=0\Rightarrow x=-2$.
 
+![Recinto entre f(x)=|x|−2 y g(x)=4−x², con cortes en (−2,0) y (2,0)](fig/2021-ord-sup-e4.svg){fig-alt="Recinto entre f(x)=|x|−2 y g(x)=4−x², con cortes en (−2,0) y (2,0)" width="75%" fig-align="center"}
+
 **Puntos de corte: $(-2,0)$ y $(2,0)$.** El recinto está limitado por arriba por la parábola $g(x)=4-x^2$ (vértice $(0,4)$) y por abajo por la «V» $f(x)=|x|-2$ (vértice $(0,-2)$), entre $x=-2$ y $x=2$.
 
 **b)** Por simetría:

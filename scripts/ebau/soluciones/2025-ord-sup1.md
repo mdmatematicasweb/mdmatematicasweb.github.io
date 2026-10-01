@@ -10,6 +10,8 @@ Normal (pendiente $e$): $y+\dfrac2e=e(x+1)$, es decir **$y=ex+e-\dfrac2e$**.
 @@ 2
 **a)** Es una parábola de vértice $(1,0)$ abierta hacia arriba. La recta horizontal $y=a$ la corta en $x=1\pm\sqrt a$, y el recinto es el segmento parabólico entre ambos puntos, por encima de la parábola y por debajo de la recta.
 
+![Recinto limitado por la parábola f(x)=(x−1)² y la recta y=a (a>0), con los cortes en x=1±√a](fig/2025-ord-sup1-e2.svg){fig-alt="Recinto limitado por la parábola f(x)=(x−1)² y la recta y=a (a>0), con los cortes en x=1±√a" width="75%" fig-align="center"}
+
 **b)** Con $t=x-1$:
 $$A=\int_{-\sqrt a}^{\sqrt a}\big(a-t^2\big)dt=2\left[at-\frac{t^3}{3}\right]_0^{\sqrt a}=\frac43a^{3/2}.$$
 $\dfrac43a^{3/2}=\dfrac43\Rightarrow\mathbf{a=1}$.

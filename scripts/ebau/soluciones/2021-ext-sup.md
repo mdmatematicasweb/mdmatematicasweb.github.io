@@ -30,6 +30,8 @@ $f(x)=\begin{cases}x^2-x+1&x<1\\x^2+x-1&x\ge1\end{cases}$, con $f'(x)=2x-1$ si $
 @@ 4
 **a)** Para $x\ge0$ se cumple $xe^x\ge x$ (igualdad sólo en $x=0$, pues $xe^x=x\iff x(e^x-1)=0$). El recinto está entre $y=x$ (debajo) y $y=xe^x$ (encima), desde $x=0$ hasta $x=2$. Ambas curvas parten de $(0,0)$; en $x=2$ valen $2$ y $2e^2$.
 
+![Recinto limitado por f(x)=x·eˣ, la recta y=x y la recta x=2](fig/2021-ext-sup-e4.svg){fig-alt="Recinto limitado por f(x)=x·eˣ, la recta y=x y la recta x=2" width="75%" fig-align="center"}
+
 **b)** Una primitiva de $xe^x$ es $(x-1)e^x$ (por partes):
 
 $$A=\int_0^2(xe^x-x)\,dx=\left[(x-1)e^x-\tfrac{x^2}{2}\right]_0^2=(e^2-2)-(-1).$$

@@ -152,6 +152,8 @@ b) Calcula $a>0$ para que el área del recinto acotado y limitado por la gráfic
 
 **a)** Es una parábola de vértice $(1,0)$ abierta hacia arriba. La recta horizontal $y=a$ la corta en $x=1\pm\sqrt a$, y el recinto es el segmento parabólico entre ambos puntos, por encima de la parábola y por debajo de la recta.
 
+![Recinto limitado por la parábola f(x)=(x−1)² y la recta y=a (a>0), con los cortes en x=1±√a](fig/2025-ord-sup1-e2.svg){fig-alt="Recinto limitado por la parábola f(x)=(x−1)² y la recta y=a (a>0), con los cortes en x=1±√a" width="75%" fig-align="center"}
+
 **b)** Con $t=x-1$:
 $$A=\int_{-\sqrt a}^{\sqrt a}\big(a-t^2\big)dt=2\left[at-\frac{t^3}{3}\right]_0^{\sqrt a}=\frac43a^{3/2}.$$
 $\dfrac43a^{3/2}=\dfrac43\Rightarrow\mathbf{a=1}$.
@@ -210,6 +212,8 @@ b) Calcula el área del recinto acotado y limitado por las gráficas de $f$ y $g
 ## Solución
 
 **a)** $x^3-x=-x^2+1\Rightarrow x^3+x^2-x-1=(x+1)^2(x-1)=0$. Cortes en $x=-1$ (doble: las gráficas son tangentes) y $x=1$: **puntos $(-1,0)$ y $(1,0)$.**
+
+![Recinto entre f(x)=x³−x y g(x)=1−x², que se cortan en (−1,0) (tangentes) y (1,0)](fig/2025-ord-sup2-e3.svg){fig-alt="Recinto entre f(x)=x³−x y g(x)=1−x², que se cortan en (−1,0) (tangentes) y (1,0)" width="75%" fig-align="center"}
 
 Esbozo: $g$ es una parábola con vértice $(0,1)$ y cortes con $OX$ en $\pm1$; $f$ es una cúbica que pasa por $(-1,0)$, $(0,0)$, $(1,0)$ (máximo local en $x=-1/\sqrt3$). En $(-1,1)$ la parábola queda por encima de la cúbica.
 
@@ -291,6 +295,8 @@ b) Calcula la suma de las áreas de los recintos acotados y limitados por las gr
 
 **a)** Ambas son negativas: $f=-e^x$ es creciente y tiende a $0$ en $-\infty$; $g=-e^{-x}$ es decreciente y tiende a $0$ en $+\infty$. Ambas pasan por $(0,-1)$ (único corte) y están por debajo del eje $OX$; $g$ queda por encima de $f$ para $x>0$ y por debajo para $x<0$.
 
+![Gráficas de f(x)=−eˣ y g(x)=−e⁻ˣ, simétricas respecto del eje Y y con asíntota y=0](fig/2025-ext-sup2-e6.svg){fig-alt="Gráficas de f(x)=−eˣ y g(x)=−e⁻ˣ, simétricas respecto del eje Y y con asíntota y=0" width="75%" fig-align="center"}
+
 **b)** Por simetría respecto del eje $OY$:
 $$A=2\int_0^1\big(-e^{-x}+e^{x}\big)dx=2\big[e^{x}+e^{-x}\big]_0^1=\mathbf{2\left(e+\dfrac1e-2\right)}\approx2{,}17\ u^2.$$
 ::::
@@ -355,6 +361,8 @@ b) Calcula la suma de las áreas de los recintos acotados y limitados por la gr�
 ## Solución
 
 **a)** $f(x)=x(x-2)(x-4)$. **Cortes con el eje $OX$: $(0,0)$, $(2,0)$, $(4,0)$; con el eje $OY$: $(0,0)$.** Esbozo: cúbica con $f\to-\infty$ a la izquierda y $+\infty$ a la derecha; $f>0$ en $(0,2)$ (máximo local en $x=2-\tfrac{2}{\sqrt3}\approx0{,}85$) y $f<0$ en $(2,4)$ (mínimo local en $x=2+\tfrac{2}{\sqrt3}\approx3{,}15$).
+
+![Gráfica de f(x)=x³−6x²+8x con cortes en x=0, 2 y 4 y sus extremos relativos](fig/2024-ord-res-e3.svg){fig-alt="Gráfica de f(x)=x³−6x²+8x con cortes en x=0, 2 y 4 y sus extremos relativos" width="75%" fig-align="center"}
 
 **b)** Con $F(x)=\dfrac{x^4}{4}-2x^3+4x^2$: $\int_0^2f=F(2)-F(0)=4$ y $\int_2^4f=F(4)-F(2)=0-4=-4$.
 
@@ -435,6 +443,8 @@ b) Calcula el área de dicho recinto. *(1,5 puntos)*
 **a)** Si $|x|\ge1$: $7-x^2=x^2-1\Rightarrow x=\pm2$. Si $|x|<1$: $7-x^2=1-x^2$ es imposible.
 
 **Puntos de corte: $(-2,3)$ y $(2,3)$.** Esbozo: parábola invertida de vértice $(0,7)$ por encima de la gráfica de $g$ (una "W" con mínimos $0$ en $x=\pm1$, máximo local $1$ en $x=0$ y ramas hacia arriba), entre $x=-2$ y $x=2$.
+
+![Recinto entre f(x)=−x²+7 y g(x)=|x²−1|, con cortes en (±2,3)](fig/2024-ext-e3.svg){fig-alt="Recinto entre f(x)=−x²+7 y g(x)=|x²−1|, con cortes en (±2,3)" width="75%" fig-align="center"}
 
 **b)** Por simetría y con $f\ge g$ en $[-2,2]$:
 
@@ -613,6 +623,8 @@ b) Haz un esbozo del recinto limitado por la gráfica de $f$, la recta $y=4x-3$ 
 
 **a)** $f'(x)=2x=4\Rightarrow x=2$, $f(2)=5$ (y la recta da $4\cdot2-3=5$).
 
+![Recinto entre f(x)=x²+1, su tangente y=4x−3 en (2,5) y el eje de ordenadas](fig/2023-ord-res-e4.svg){fig-alt="Recinto entre f(x)=x²+1, su tangente y=4x−3 en (2,5) y el eje de ordenadas" width="75%" fig-align="center"}
+
 **Punto $(2,5)$.**
 
 **b)** La parábola $y=x^{2}+1$ queda por encima de la recta, que es tangente en $x=2$. El recinto está entre $x=0$ (eje de ordenadas) y $x=2$:
@@ -660,6 +672,8 @@ b) Determina el área del recinto anterior. *(1,25 puntos)*
 
 **a)** Si $|x|\ge1$: $x^{2}-1=x+5\Rightarrow x=-2,\ 3$. Si $|x|<1$: $1-x^{2}=x+5$ no tiene solución real.
 
+![Recinto entre f(x)=|x²−1| y g(x)=x+5, con cortes en (−2,3) y (3,8)](fig/2023-ord-sup-e4.svg){fig-alt="Recinto entre f(x)=|x²−1| y g(x)=x+5, con cortes en (−2,3) y (3,8)" width="75%" fig-align="center"}
+
 **Puntos de corte: $(-2,3)$ y $(3,8)$.** El recinto está limitado por arriba por la recta $y=x+5$ y por abajo por $|x^{2}-1|$ (dos arcos de parábola hacia arriba y un arco invertido entre $-1$ y $1$).
 
 **b)** 
@@ -703,6 +717,8 @@ b) Calcula la suma de las áreas de los recintos limitados por las gráficas de 
 ## Solución
 
 **a)** $f$ es una parábola de vértice $(0,5)$ hacia abajo; $g$ es positiva, par, con asíntota vertical $x=0$ y horizontal $y=0$.
+
+![Gráficas de f(x)=5−x² y g(x)=4/x², que se cortan en (±1,4) y (±2,1)](fig/2023-ext-e4.svg){fig-alt="Gráficas de f(x)=5−x² y g(x)=4/x², que se cortan en (±1,4) y (±2,1)" width="75%" fig-align="center"}
 
 $5-x^{2}=\dfrac4{x^{2}}\Rightarrow x^{4}-5x^{2}+4=0\Rightarrow x^{2}=1,\,4$.
 
@@ -827,6 +843,8 @@ b) Halla el área del recinto limitado por la gráfica de $f$ y por el eje de ab
 
 **Cortes con el eje: $(-2,0)$ y $(2,0)$.** La gráfica: recta de pendiente 2 desde $(-2,0)$ hasta $(0,4)$ y parábola de vértice $(2,0)$ desde $(0,4)$.
 
+![Gráfica de la función definida a trozos: recta 2x+4 hasta x=0 y parábola (x−2)² desde x=0; cortes en x=−2 y x=2](fig/2022-ord-e3.svg){fig-alt="Gráfica de la función definida a trozos: recta 2x+4 hasta x=0 y parábola (x−2)² desde x=0; cortes en x=−2 y x=2" width="75%" fig-align="center"}
+
 **b)** $A=\displaystyle\int_{-2}^0(2x+4)\,dx+\int_0^2(x-2)^2\,dx=4+\tfrac83$.
 
 **$A=\dfrac{20}{3}$ u$^2$.**
@@ -883,6 +901,8 @@ b) Determina el área del recinto anterior. *(1,25 puntos)*
 ## Solución
 
 **a)** $1-x^2=2x^2\Rightarrow x^2=\tfrac13$.
+
+![Recinto entre f(x)=1−x² y g(x)=2x², con cortes en x=±1/√3](fig/2022-ord-res-e4.svg){fig-alt="Recinto entre f(x)=1−x² y g(x)=2x², con cortes en x=±1/√3" width="75%" fig-align="center"}
 
 **Puntos de corte: $\left(\pm\tfrac{\sqrt3}{3},\tfrac23\right)$.** El recinto está entre la parábola $f$ (hacia abajo, vértice $(0,1)$) y la parábola $g$ (hacia arriba, vértice $(0,0)$): $f\ge g$ para $|x|\le\tfrac{\sqrt3}{3}$.
 
@@ -971,6 +991,8 @@ b) Determina el área del recinto limitado por las gráficas de $f$ y $g$ en el 
 ## Solución
 
 **a)** $x^3+2=-x^2+2x+2\Rightarrow x^3+x^2-2x=x(x-1)(x+2)=0$.
+
+![Gráficas de f(x)=x³+2 y g(x)=−x²+2x+2, que se cortan en (−2,−6), (0,2) y (1,3)](fig/2022-ext-e4.svg){fig-alt="Gráficas de f(x)=x³+2 y g(x)=−x²+2x+2, que se cortan en (−2,−6), (0,2) y (1,3)" width="75%" fig-align="center"}
 
 **Puntos de corte: $(-2,-6)$, $(0,2)$ y $(1,3)$.** $f$ es una cúbica creciente que pasa por $(0,2)$; $g$ es una parábola con vértice en $(1,3)$ abierta hacia abajo; ambas se cortan en los tres puntos.
 
@@ -1140,6 +1162,8 @@ b) Determina el área del recinto anterior. *(1,5 puntos)*
 
 **a)** Para $x\ge0$: $x-2=4-x^2\Rightarrow x^2+x-6=0\Rightarrow x=2$. Para $x<0$: $-x-2=4-x^2\Rightarrow x^2-x-6=0\Rightarrow x=-2$.
 
+![Recinto entre f(x)=|x|−2 y g(x)=4−x², con cortes en (−2,0) y (2,0)](fig/2021-ord-sup-e4.svg){fig-alt="Recinto entre f(x)=|x|−2 y g(x)=4−x², con cortes en (−2,0) y (2,0)" width="75%" fig-align="center"}
+
 **Puntos de corte: $(-2,0)$ y $(2,0)$.** El recinto está limitado por arriba por la parábola $g(x)=4-x^2$ (vértice $(0,4)$) y por abajo por la «V» $f(x)=|x|-2$ (vértice $(0,-2)$), entre $x=-2$ y $x=2$.
 
 **b)** Por simetría:
@@ -1209,6 +1233,8 @@ b) Determina el área del recinto anterior. *(1,5 puntos)*
 ## Solución
 
 **a)** Para $x\ge0$ se cumple $xe^x\ge x$ (igualdad sólo en $x=0$, pues $xe^x=x\iff x(e^x-1)=0$). El recinto está entre $y=x$ (debajo) y $y=xe^x$ (encima), desde $x=0$ hasta $x=2$. Ambas curvas parten de $(0,0)$; en $x=2$ valen $2$ y $2e^2$.
+
+![Recinto limitado por f(x)=x·eˣ, la recta y=x y la recta x=2](fig/2021-ext-sup-e4.svg){fig-alt="Recinto limitado por f(x)=x·eˣ, la recta y=x y la recta x=2" width="75%" fig-align="center"}
 
 **b)** Una primitiva de $xe^x$ es $(x-1)e^x$ (por partes):
 

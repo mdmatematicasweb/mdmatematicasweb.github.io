@@ -37,6 +37,8 @@ $$\mathbf{X}=\frac14\begin{pmatrix}1&-1&1\\1&2&1\end{pmatrix}=\begin{pmatrix}1/4
 @@ 6
 **a)** Ambas son negativas: $f=-e^x$ es creciente y tiende a $0$ en $-\infty$; $g=-e^{-x}$ es decreciente y tiende a $0$ en $+\infty$. Ambas pasan por $(0,-1)$ (único corte) y están por debajo del eje $OX$; $g$ queda por encima de $f$ para $x>0$ y por debajo para $x<0$.
 
+![Gráficas de f(x)=−eˣ y g(x)=−e⁻ˣ, simétricas respecto del eje Y y con asíntota y=0](fig/2025-ext-sup2-e6.svg){fig-alt="Gráficas de f(x)=−eˣ y g(x)=−e⁻ˣ, simétricas respecto del eje Y y con asíntota y=0" width="75%" fig-align="center"}
+
 **b)** Por simetría respecto del eje $OY$:
 $$A=2\int_0^1\big(-e^{-x}+e^{x}\big)dx=2\big[e^{x}+e^{-x}\big]_0^1=\mathbf{2\left(e+\dfrac1e-2\right)}\approx2{,}17\ u^2.$$
 

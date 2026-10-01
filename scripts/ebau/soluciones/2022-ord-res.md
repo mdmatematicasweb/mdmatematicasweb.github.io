@@ -25,6 +25,8 @@ La condición $F(0)=0$ da $\tfrac{-2}{5}+C=0$.
 @@ 4
 **a)** $1-x^2=2x^2\Rightarrow x^2=\tfrac13$.
 
+![Recinto entre f(x)=1−x² y g(x)=2x², con cortes en x=±1/√3](fig/2022-ord-res-e4.svg){fig-alt="Recinto entre f(x)=1−x² y g(x)=2x², con cortes en x=±1/√3" width="75%" fig-align="center"}
+
 **Puntos de corte: $\left(\pm\tfrac{\sqrt3}{3},\tfrac23\right)$.** El recinto está entre la parábola $f$ (hacia abajo, vértice $(0,1)$) y la parábola $g$ (hacia arriba, vértice $(0,0)$): $f\ge g$ para $|x|\le\tfrac{\sqrt3}{3}$.
 
 **b)** $A=\displaystyle\int_{-\sqrt3/3}^{\sqrt3/3}(1-3x^2)\,dx=2\left[x-x^3\right]_0^{\sqrt3/3}=2\left(\tfrac{\sqrt3}{3}-\tfrac{\sqrt3}{9}\right)$.

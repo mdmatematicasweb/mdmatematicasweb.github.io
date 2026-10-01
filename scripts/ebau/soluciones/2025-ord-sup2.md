@@ -12,6 +12,8 @@ $$\int_0^1\frac{2\,dt}{t^2+1}=2\big[\operatorname{arctg}t\big]_0^1=\mathbf{\frac
 @@ 3
 **a)** $x^3-x=-x^2+1\Rightarrow x^3+x^2-x-1=(x+1)^2(x-1)=0$. Cortes en $x=-1$ (doble: las gráficas son tangentes) y $x=1$: **puntos $(-1,0)$ y $(1,0)$.**
 
+![Recinto entre f(x)=x³−x y g(x)=1−x², que se cortan en (−1,0) (tangentes) y (1,0)](fig/2025-ord-sup2-e3.svg){fig-alt="Recinto entre f(x)=x³−x y g(x)=1−x², que se cortan en (−1,0) (tangentes) y (1,0)" width="75%" fig-align="center"}
+
 Esbozo: $g$ es una parábola con vértice $(0,1)$ y cortes con $OX$ en $\pm1$; $f$ es una cúbica que pasa por $(-1,0)$, $(0,0)$, $(1,0)$ (máximo local en $x=-1/\sqrt3$). En $(-1,1)$ la parábola queda por encima de la cúbica.
 
 **b)** $g-f=-(x-1)(x+1)^2\ge0$ en $[-1,1]$:
