@@ -470,12 +470,14 @@
       '<button type="button" class="gym-btn gym-help-btn">Ayuda</button>' +
       '<button type="button" class="gym-btn gym-sol">Ver solución</button>' +
       '<button type="button" class="gym-btn gym-res">Ver resolución</button>' +
+      '<button type="button" class="gym-btn gym-plot-btn" hidden>Ver gráfica</button>' +
       '<button type="button" class="gym-btn gym-new">Nuevo reto</button>' +
       '<button type="button" class="gym-btn gym-next" hidden>Siguiente ▶</button>' +
       '<button type="button" class="gym-btn gym-class-btn">Modo clase</button>' +
       '</div>' +
       '<div class="gym-help" hidden></div>' +
-      '<div class="gym-steps" hidden></div>';
+      '<div class="gym-steps" hidden></div>' +
+      '<div class="gym-plot" hidden></div>';
 
     const q = (s) => el.querySelector(s);
     q('.gym-title').textContent = mod.title;
@@ -628,6 +630,10 @@
       q('.gym-steps').innerHTML = '';
       q('.gym-next').hidden = true;
       q('.gym-check').disabled = false;
+      q('.gym-plot').hidden = true;
+      q('.gym-plot').innerHTML = '';
+      q('.gym-plot-btn').hidden = !(st.ch.plot && root.MDPlot);
+      q('.gym-plot-btn').textContent = 'Ver gráfica';
       const first = inputs()[0];
       if (first && !el.classList.contains('gym-quiet')) first.focus({ preventScroll: true });
     }
@@ -723,6 +729,16 @@
       box.hidden = false;
     }
 
+    // La gráfica cuenta como ayuda: no rompe la racha, pero ese reto no la suma.
+    function togglePlot() {
+      const box = q('.gym-plot');
+      if (!box.hidden) { box.hidden = true; q('.gym-plot-btn').textContent = 'Ver gráfica'; return; }
+      if (!st.done) st.helped = true;
+      box.hidden = false;
+      q('.gym-plot-btn').textContent = 'Ocultar gráfica';
+      if (!box.firstChild) root.MDPlot.draw(box, st.ch.plot);
+    }
+
     function setClass(on) {
       el.classList.toggle('gym-class', on);
       document.documentElement.classList.toggle('gym-lock', on);
@@ -734,6 +750,7 @@
     q('.gym-sol').addEventListener('click', showSolution);
     q('.gym-res').addEventListener('click', toggleSteps);
     q('.gym-new').addEventListener('click', newChallenge);
+    q('.gym-plot-btn').addEventListener('click', togglePlot);
     q('.gym-next').addEventListener('click', newChallenge);
     q('.gym-class-btn').addEventListener('click', () => setClass(!el.classList.contains('gym-class')));
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && el.classList.contains('gym-class')) setClass(false); });

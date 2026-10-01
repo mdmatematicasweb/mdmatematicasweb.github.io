@@ -408,7 +408,7 @@
           steps: ['Usamos los vectores directores ' + i$('\\vec u=' + vt(a)) + ' y ' + i$('\\vec v=' + vt(b)) + ': ' + d$('\\vec u\\cdot\\vec v=' + dd + ',\\quad |\\vec u|=' + na + ',\\quad |\\vec v|=' + nb),
             d$('\\cos\\alpha=\\frac{|' + dd + '|}{' + na + '\\cdot' + nb + '}=' + ftex(val))],
           mistakes: neg,
-          data: { tipo: 'rr', a, b, val: Math.abs(dd) / (na * nb) },
+          data: { tipo: 'rr', a, b, P, Q, val: Math.abs(dd) / (na * nb) },
         };
       }
       if (p.tipo === 'pp') {
@@ -419,7 +419,7 @@
           steps: ['El ángulo entre planos es el de sus normales ' + i$('\\vec n_1=' + vt(a)) + ' y ' + i$('\\vec n_2=' + vt(b)) + ': ' + d$('\\vec n_1\\cdot\\vec n_2=' + dd + ',\\quad |\\vec n_1|=' + na + ',\\quad |\\vec n_2|=' + nb),
             d$('\\cos\\alpha=\\frac{|' + dd + '|}{' + na + '\\cdot' + nb + '}=' + ftex(val))],
           mistakes: neg,
-          data: { tipo: 'pp', a, b, val: Math.abs(dd) / (na * nb) },
+          data: { tipo: 'pp', a, b, D1, D2, val: Math.abs(dd) / (na * nb) },
         };
       }
       const P = vrand(-3, 3), D = rnd.int(-5, 5);
@@ -429,7 +429,7 @@
         steps: ['Director de la recta ' + i$('\\vec v=' + vt(a)) + ' y normal del plano ' + i$('\\vec n=' + vt(b)) + ': ' + d$('\\vec n\\cdot\\vec v=' + dd + ',\\quad |\\vec n|=' + nb + ',\\quad |\\vec v|=' + na),
           d$('\\operatorname{sen}\\alpha=\\frac{|\\vec n\\cdot\\vec v|}{|\\vec n||\\vec v|}=\\frac{|' + dd + '|}{' + nb + '\\cdot' + na + '}=' + ftex(val))],
         mistakes: neg,
-        data: { tipo: 'rp', a, b, val: Math.abs(dd) / (na * nb) },
+        data: { tipo: 'rp', a, b, P, D, val: Math.abs(dd) / (na * nb) },
       };
     },
   });
@@ -493,5 +493,41 @@
         };
       }
     },
+  });
+
+  /* ===================== Gráficas 3D (JSXGraph, ver graficas.js) ===================== */
+  const pt = (p, label) => ({ p: p.map((x) => (typeof x === 'object' ? x.n / x.d : x)), label });
+  const ln = (p, v) => ({ p, v });
+  const caja = (pts) => Math.max(5, Math.ceil(Math.max(...[].concat(...pts).map((x) => Math.abs(typeof x === 'object' ? x.n / x.d : x))) + 1));
+  const PLOTS = {
+    plano: (d) => ({ type: '3d', points: d.pts.map((P, i) => pt(P, d.pts.length === 3 ? 'ABC'[i] : i ? '' : 'P')), planes: [{ eq: d.eq }], r: caja(d.pts) }),
+    interseccion: (d) => ({ type: '3d', planes: [{ eq: d.pl }], lines: [ln(d.Q, d.v)], points: [pt(d.I, 'P')], r: caja([d.I, d.Q]) }),
+    posicion: (d) => (d.tipo === 'planos' ? { type: '3d', planes: [{ eq: d.c1 }, { eq: d.c2 }] }
+      : d.tipo === 'rectas' ? { type: '3d', lines: [ln(d.P, d.u), ln(d.Q, d.v)], points: [pt(d.P, 'P'), pt(d.Q, 'Q')], r: caja([d.P, d.Q]) }
+        : { type: '3d', planes: [{ eq: [d.n[0], d.n[1], d.n[2], d.D] }], lines: [ln(d.P, d.v)], points: [pt(d.P, 'P')], r: caja([d.P]) }),
+    distancias: (d) => {
+      if (d.tipo === 'pp') return { type: '3d', planes: [{ eq: [d.n[0], d.n[1], d.n[2], d.D] }], points: [pt(d.P, 'P')], r: caja([d.P]) };
+      if (d.tipo === 'pl') return { type: '3d', planes: [{ eq: d.c1 }, { eq: d.c2 }] };
+      if (d.tipo === 'rr') return { type: '3d', lines: [ln(d.P, d.u), ln(d.Q, d.v)], points: [pt(d.P, 'P'), pt(d.Q, 'Q')], r: caja([d.P, d.Q]) };
+      return { type: '3d', lines: [ln(d.Q, d.v)], points: [pt(d.P, 'P'), pt(d.Q, 'Q')], r: caja([d.P, d.Q]) };
+    },
+    simetrico: (d) => ({ type: '3d', planes: [{ eq: d.pl }], points: [pt(d.P, 'P'), pt(d.Ps, "P'")], segments: [{ a: pt(d.P).p, b: pt(d.Ps).p }], r: caja([d.P, d.Ps]) }),
+    recta: (d) => (d.tipo === 'dirplanos' ? null
+      : d.tipo === 'dir2p' ? { type: '3d', lines: [ln(d.A, d.v)], points: [pt(d.A, 'A'), pt(d.B, 'B')], r: caja([d.A, d.B]) }
+        : { type: '3d', lines: [ln(d.P, d.v)], points: [pt(d.P, 'P'), pt(d.Q, 'Q')], r: caja([d.P, d.Q]) }),
+    angulos: (d) => (d.tipo === 'rr' ? { type: '3d', lines: [ln(d.P, d.a), ln(d.Q, d.b)] }
+      : d.tipo === 'pp' ? { type: '3d', planes: [{ eq: [d.a[0], d.a[1], d.a[2], d.D1] }, { eq: [d.b[0], d.b[1], d.b[2], d.D2] }] }
+        : { type: '3d', lines: [ln(d.P, d.a)], planes: [{ eq: [d.b[0], d.b[1], d.b[2], d.D] }] }),
+    proyecciones: (d) => {
+      const pts = [pt(d.P, 'P'), pt(d.I, 'I')].concat(d.Ps ? [pt(d.Ps, "P'")] : []);
+      const seg = [{ a: pt(d.P).p, b: pt(d.Ps || d.I).p }];
+      const r = caja([d.P, d.I].concat(d.Ps ? [d.Ps] : []));
+      return d.tipo === 'pplano' ? { type: '3d', planes: [{ eq: d.pl }], points: pts, segments: seg, r }
+        : { type: '3d', lines: [ln(d.Q, d.v)], points: pts, segments: seg, r };
+    },
+  };
+  Object.keys(PLOTS).forEach((id) => {
+    const mod = G.modules[id], gen = mod.generate;
+    mod.generate = (p) => { const ch = gen(p); const pl = PLOTS[id](ch.data); if (pl) ch.plot = pl; return ch; };
   });
 })(typeof globalThis !== 'undefined' ? globalThis : this);
