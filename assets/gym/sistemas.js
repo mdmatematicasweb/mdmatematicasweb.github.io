@@ -12,7 +12,13 @@
   /* ---------- TeX del sistema ---------- */
   function coefTerm(c, v, first) {
     // c: entero o {a,b} con parámetro. Devuelve [op, término]
-    if (typeof c === 'object' && c.a !== 0) return [first ? '' : '+', '(' + L.entTex(c) + ')' + v];
+    if (typeof c === 'object' && c.a !== 0) {
+      if (c.b !== 0) return [first ? '' : '+', '(' + L.entTex(c) + ')' + v];
+      // sin término independiente: «mx», «-2my», sin paréntesis
+      const mag = (Math.abs(c.a) === 1 ? '' : String(Math.abs(c.a))) + 'm' + v;
+      if (first) return ['', (c.a < 0 ? '-' : '') + mag];
+      return [c.a < 0 ? '-' : '+', mag];
+    }
     const k = typeof c === 'object' ? c.b : c;
     if (k === 0) return ['', ''];
     const mag = Math.abs(k) === 1 ? '' : String(Math.abs(k));

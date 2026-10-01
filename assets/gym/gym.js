@@ -285,12 +285,16 @@
       return { status: ok ? 'ok' : 'wrong', cells: [ok] };
     }
     if (spec.kind === 'list') {
-      const toks = String(raw[0]).split(/[;,\s]+/).filter(Boolean);
-      const got = toks.map(parseFrac);
-      if (!got.length || got.some((g) => g === null)) return { status: 'incomplete', cells: [false] };
+      // La coma puede ser separador («-1, 2») o coma decimal («0,5»): se prueban las dos lecturas.
+      // Con «;» la coma es siempre decimal.
+      const s = String(raw[0]);
+      const lecturas = (s.includes(';') ? [/[;\s]+/] : [/[,\s]+/, /\s+/])
+        .map((sep) => s.split(sep).filter(Boolean).map(parseFrac))
+        .filter((got) => got.length && got.every((g) => g !== null));
+      if (!lecturas.length) return { status: 'incomplete', cells: [false] };
       const uniq = (xs) => xs.filter((x, i) => xs.findIndex((y) => feq(x, y)) === i);
-      const a = uniq(got), b = uniq(spec.value);
-      const ok = a.length === b.length && a.every((x) => b.some((y) => feq(x, y)));
+      const b = uniq(spec.value);
+      const ok = lecturas.some((got) => { const a = uniq(got); return a.length === b.length && a.every((x) => b.some((y) => feq(x, y))); });
       return { status: ok ? 'ok' : 'wrong', cells: [ok] };
     }
     if (spec.kind === 'expr') {
@@ -313,7 +317,7 @@
     if (spec.kind === 'number') return [fstr(spec.value)];
     if (spec.kind === 'choice') return [String(spec.value)];
     if (spec.kind === 'expr') return [spec.show || String(Math.round(spec.value * 1e4) / 1e4)];
-    return [spec.value.map(fstr).join(', ')];
+    return [spec.value.map(fstr).join('; ')];
   }
 
   /* ---------- Interfaz ---------- */
@@ -403,9 +407,23 @@
       }
       if (sp.kind === 'matrix') return matrixGrid(sp.value, sp.colLabels, tag);
       const wide = sp.kind === 'list' || sp.kind === 'expr';
-      const inp = mkInput(sp.kind === 'list' ? 'valores separados por comas' : 'respuesta', wide ? 'gym-line' : 'gym-cell gym-single');
-      if (sp.kind === 'list') inp.placeholder = 'ej.: -1, 2';
-      if (sp.kind === 'expr') inp.placeholder = 'ej.: 1/2+ln(2)';
+      const inp = mkInput(sp.kind === 'list' ? 'valores separados por punto y coma' : 'respuesta', wide ? 'gym-line' : 'gym-cell gym-single');
+      if (sp.kind === 'list') inp.placeholder = 'ej.: -1; 2,5';
+      if (sp.kind === 'expr') {
+        inp.placeholder = 'ej.: 1/2+ln(2)';
+        // Muestra cómo se ha leído la expresión («1/2pi» es π/2, no 1/(2π)).
+        const w = document.createElement('span');
+        w.className = 'gym-expr';
+        const prev = document.createElement('span');
+        prev.className = 'gym-expr-preview';
+        prev.setAttribute('aria-live', 'polite');
+        inp.addEventListener('input', () => {
+          const v = parseExpr(inp.value);
+          prev.textContent = !inp.value.trim() ? '' : v === null ? 'no se entiende la expresión' : 'se lee como ≈ ' + String(Math.round(v * 1e4) / 1e4).replace('.', ',');
+        });
+        w.appendChild(inp); w.appendChild(prev);
+        return w;
+      }
       return inp;
     };
     if (spec.kind === 'matrixset' || spec.kind === 'multi') asParts(spec).forEach((pt) => addRow(pt.label, partNode(pt, (pt.label || '') + ': ')));
@@ -551,8 +569,8 @@
           return g;
         }
         if (sp.kind === 'matrix') return matrixGrid(sp.value, sp.colLabels, tag);
-        const inp = mk(sp.kind === 'list' ? 'valores separados por comas' : 'respuesta', sp.kind === 'list' ? 'gym-line' : 'gym-cell gym-single');
-        if (sp.kind === 'list') inp.placeholder = 'ej.: -1, 2';
+        const inp = mk(sp.kind === 'list' ? 'valores separados por punto y coma' : 'respuesta', sp.kind === 'list' ? 'gym-line' : 'gym-cell gym-single');
+        if (sp.kind === 'list') inp.placeholder = 'ej.: -1; 2,5';
         return inp;
       };
       if (spec.kind === 'matrixset' || spec.kind === 'multi') asParts(spec).forEach((pt) => addRow(pt.label, partNode(pt, (pt.label || '') + ': ')));

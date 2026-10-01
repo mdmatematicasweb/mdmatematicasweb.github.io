@@ -365,4 +365,10 @@ assert.strictEqual(G.fstr(G.parseFrac(' −2 ')), '-2');
 assert.strictEqual(G.fstr(G.parseFrac('6/4')), '3/2');
 assert.strictEqual(G.parseFrac('abc'), null);
 assert.strictEqual(G.parseFrac('1/0'), null);
+// listas: la coma vale como separador y como coma decimal
+const L = (v, s) => checkAnswer({ kind: 'list', value: v.map((x) => G.parseFrac(x)) }, [s]).status;
+assert.strictEqual(L(['1/2'], '0,5'), 'ok');
+assert.strictEqual(L(['1', '5'], '1, 5'), 'ok');
+assert.strictEqual(L(['-1', '5/2'], '-1; 2,5'), 'ok');
+assert.strictEqual(L(['1', '2'], '1,3'), 'wrong');
 console.log('OK: ' + total + ' retos verificados en ' + Object.keys(G.modules).length + ' módulos');
