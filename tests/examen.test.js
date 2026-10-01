@@ -5,6 +5,18 @@ const G = require('../assets/gym/gym.js');
 const X = require('../assets/gym/examen.js');
 require('../assets/gym/tipos-fase1.js');
 require('../assets/gym/tipos-fase2.js');
+// Fases posteriores: cada tipos-faseN.js tiene su verificador en tests/verify-faseN.js (exporta {id: fn(ex, ctx)}).
+const fs = require('fs'), path = require('path');
+const extraVerify = {};
+// EXAM_FASES=3,5 limita qué fases extra se cargan (útil mientras se desarrollan varias a la vez).
+const soloFases = process.env.EXAM_FASES ? process.env.EXAM_FASES.split(',').map(Number) : null;
+for (let n = 3; n <= 9; n++) {
+  if (soloFases && !soloFases.includes(n)) continue;
+  const gen = path.join(__dirname, '../assets/gym/tipos-fase' + n + '.js');
+  if (!fs.existsSync(gen)) continue;
+  require(gen);
+  Object.assign(extraVerify, require('./verify-fase' + n + '.js'));
+}
 
 const N = Number(process.env.EXAM_N || 150);
 const near = (a, b, tol = 1e-6) => Math.abs(a - b) <= tol * Math.max(1, Math.abs(b));
@@ -120,9 +132,12 @@ verify['rango-inv-param'] = (ex) => {
   const prod = mulN(at(d.m0), toN(d.Ai)); assert(prod.every((r, i) => r.every((x, j) => near(x, i === j ? 1 : 0))));
 };
 
+const ctx = { assert, G, X, near, num, dotN, crossN, subN, detN, rankN, mulN, toN };
+Object.keys(extraVerify).forEach((id) => { verify[id] = (ex) => extraVerify[id](ex, ctx); });
+
 let total = 0;
 const ids = X.CATALOGO.filter((t) => t.listo).map((t) => t.id);
-assert(ids.length === 11, 'fases 1-2 = 11 tipos, hay ' + ids.length);
+ids.forEach((id) => assert(verify[id], id + ': falta verificador'));
 ids.forEach((id) => {
   for (let i = 0; i < N; i++) {
     const prev = G.setRandom(G.seeded('t' + id + i));

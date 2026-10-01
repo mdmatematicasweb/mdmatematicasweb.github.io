@@ -32,6 +32,7 @@
   const shift = (x0) => (x0 === 0 ? '' : x0 < 0 ? '+' + (-x0) : '-' + x0);
   const par = (k) => (k < 0 ? '(' + k + ')' : String(k));
   const crossTex = (u, v) => '\\begin{vmatrix}\\vec{i}&\\vec{j}&\\vec{k}\\\\' + u.join('&') + '\\\\' + v.join('&') + '\\end{vmatrix}';
+  G.rp = { eqTex, planeFrom, lineTex, paramTex, shift, par, crossTex };
   const normalFrom = (u, v, nameU, nameV) =>
     'Un vector normal al plano es el producto vectorial: ' + d$('\\vec n=' + nameU + '\\times' + nameV + '=' + crossTex(u, v) + '=' + vt(cross(u, v)));
   const reduceV = (v) => { const g = gcdV(v) || 1; return v.map((x) => x / g); };
