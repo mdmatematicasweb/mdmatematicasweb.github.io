@@ -408,4 +408,37 @@
     });
     return (out || '0') + '=' + rhs;
   };
+
+  /* ===================== Gráficas 3D (JSXGraph, ver graficas.js) ===================== */
+  const nn = (q) => (q && typeof q === 'object' && 'n' in q ? q.n / q.d : q);
+  const seg = (a, b, solid) => ({ a, b, solid });
+  function plotDe(id, d) {
+    const O = [0, 0, 0];
+    let pts = [], segments = [];
+    if (id === 'vectorial' || id === 'angulo' || id === 'areas') {
+      const vs = [['u', d.u], ['v', d.v], ['w', d.w]].filter(([, x]) => Array.isArray(x) && x.length === 3);
+      if (vs.length < 2) return null;
+      pts = vs.map(([n, x]) => ({ p: x, label: n }));
+      segments = vs.map(([, x]) => seg(O, x, true));
+      if (vs.length === 2) {            // paralelogramo / triángulo sobre u y v
+        const [u, v] = [vs[0][1], vs[1][1]];
+        if (d.fig !== 'tri') segments.push(seg(u, u.map((x, i) => x + v[i])), seg(v, u.map((x, i) => x + v[i])));
+        else segments.push(seg(u, v));
+      }
+    } else if (id === 'puntos') {
+      const P = [['A', d.A], ['B', d.B], ['C', d.C], [d.op === 'par' ? 'D' : d.op === 'bar' ? 'G' : d.op === 'med' ? 'M' : "A'", d.r && d.r.map(nn)]].filter(([, x]) => Array.isArray(x));
+      pts = P.map(([n, x]) => ({ p: x, label: n }));
+      if (d.op === 'med' || d.op === 'sim') segments = [seg(d.A, d.B, true)];
+      else if (d.op === 'par') segments = [seg(d.A, d.B, true), seg(d.B, d.C, true), seg(d.C, P[3][1], true), seg(P[3][1], d.A, true)];
+      else segments = [seg(d.A, d.B, true), seg(d.B, d.C, true), seg(d.C, d.A, true)];
+    } else return null;
+    const r = Math.ceil(Math.max(2, ...pts.flatMap((q) => q.p.map(Math.abs)))) + 1;
+    return { type: '3d', r, points: pts, segments };
+  }
+  ['vectorial', 'angulo', 'areas', 'puntos'].forEach((id) => {
+    const mod = G.modules[id];
+    if (!mod) return;
+    const gen = mod.generate;
+    mod.generate = (p) => { const ch = gen(p); const pl = plotDe(id, ch.data || {}); if (pl) ch.plot = pl; return ch; };
+  });
 })(typeof globalThis !== 'undefined' ? globalThis : this);

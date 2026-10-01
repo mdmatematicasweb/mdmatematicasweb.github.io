@@ -632,4 +632,29 @@
       };
     },
   });
+
+  /* ===================== Gráficas 2D (JSXGraph, ver graficas.js) ===================== */
+  // Curva con la tangente en x0 (der-tangente) o en cada punto de pendiente dada (tangente paralela).
+  function plotTangente(d) {
+    if (typeof d.f !== 'function') return null;
+    const xs = Number.isFinite(d.x0) ? [d.x0] : Array.isArray(d.sols) ? d.sols.filter(Number.isFinite) : [];
+    if (!xs.length) return null;
+    const h = 1e-6;
+    const points = [], lines = [];
+    xs.forEach((x) => {
+      const y = d.f(x);
+      if (!Number.isFinite(y)) return;
+      const m = (d.f(x + h) - d.f(x - h)) / (2 * h);
+      points.push({ x, y, label: '' });
+      if (Number.isFinite(m)) lines.push({ m, n: y - m * x });
+    });
+    if (!points.length) return null;
+    const a = Math.min(...xs), b = Math.max(...xs), pad = Math.max(2, (b - a) * 0.35);
+    return { type: '2d', x: [a - pad, b + pad], curves: [{ f: d.f, label: 'f' }], points, lines };
+  }
+  const _tg = G.modules['der-tangente'];
+  if (_tg) {
+    const gen = _tg.generate;
+    _tg.generate = (p) => { const ch = gen(p); const pl = plotTangente(ch.data || {}); if (pl) ch.plot = pl; return ch; };
+  }
 })(typeof globalThis !== 'undefined' ? globalThis : this);

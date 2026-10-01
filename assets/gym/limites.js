@@ -624,4 +624,39 @@
       };
     },
   });
+
+  /* ===================== Gráficas 2D (JSXGraph, ver graficas.js) ===================== */
+  const fin = Number.isFinite;
+  function plotDe(id, d) {
+    if (typeof d.f !== 'function') return null;
+    const spec = { type: '2d', x: [-10, 10], curves: [{ f: d.f, label: 'f' }] };
+    const hl = [];
+    if (id === 'lim-infinito') {
+      if (d.sx) spec.x = d.sx > 0 ? [-2, 14] : [-14, 2];
+      if (fin(d.val)) hl.push(d.val);
+    } else if (id === 'lim-punto') {
+      if (!fin(d.a)) return null;
+      spec.x = [d.a - 4, d.a + 4];
+      spec.vlines = [d.a];
+      if (fin(d.val)) hl.push(d.val);
+    } else if (id === 'lim-discont') {
+      if (!fin(d.a)) return null;
+      spec.x = [d.a - 4, d.a + 4];
+      spec.vlines = [d.a];
+    } else if (id === 'lim-asintotas') {
+      if (Array.isArray(d.vs) && d.vs.length) {
+        const vs = d.vs.filter(fin);
+        spec.x = [Math.min(...vs) - 4, Math.max(...vs) + 4];
+        spec.vlines = vs;
+      }
+      [d.val, d.yp, d.ym].forEach((y) => { if (fin(y) && !hl.includes(y)) hl.push(y); });
+      if (fin(d.m) && fin(d.n)) spec.lines = [{ m: d.m, n: d.n, label: 'asíntota' }];
+    } else return null;
+    if (hl.length) spec.hlines = hl;
+    return spec;
+  }
+  Object.keys(G.modules).filter((id) => ['lim-infinito', 'lim-punto', 'lim-discont', 'lim-asintotas'].includes(id)).forEach((id) => {
+    const mod = G.modules[id], gen = mod.generate;
+    mod.generate = (p) => { const ch = gen(p); const pl = plotDe(id, ch.data || {}); if (pl) ch.plot = pl; return ch; };
+  });
 })(typeof globalThis !== 'undefined' ? globalThis : this);
