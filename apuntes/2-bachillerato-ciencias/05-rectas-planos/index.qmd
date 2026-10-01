@@ -45,11 +45,15 @@ Casos habituales:
 | Paralelos | $\frac{A}{A'}=\frac{B}{B'}=\frac{C}{C'}\neq\frac{D}{D'}$ |
 | Coincidentes | $\frac{A}{A'}=\frac{B}{B'}=\frac{C}{C'}=\frac{D}{D'}$ |
 
+![Dos planos: secantes (se cortan en una recta), paralelos o coincidentes.](fig-dos-planos.svg){fig-alt="Tres dibujos: dos planos que se cortan en una recta, dos planos paralelos y un único plano para los coincidentes" width="85%" fig-align="center"}
+
 **Recta y plano**: sustituye las paramétricas de la recta en el plano y obtén una ecuación en $\lambda$.
 
 - Una solución: la recta **corta** al plano en un punto.
 - Ninguna solución: **paralela** ($\vec d\cdot\vec n=0$ y el punto no está en el plano).
 - Todo $\lambda$: la recta está **contenida** en el plano.
+
+![Recta y plano: secante en un punto $P$, paralela o contenida.](fig-recta-plano.svg){fig-alt="Tres dibujos: una recta que atraviesa un plano en un punto P, una recta paralela por encima del plano y una recta dentro del plano" width="85%" fig-align="center"}
 
 **Dos rectas** $r(P,\vec d)$ y $s(Q,\vec e)$: mira el rango de $\{\vec d,\vec e\}$ y el de $\{\vec d,\vec e,\overrightarrow{PQ}\}$.
 
@@ -59,6 +63,8 @@ Casos habituales:
 | Paralelas | 1 | 2 |
 | Se cortan | 2 | 2 |
 | Se cruzan | 2 | 3 |
+
+![Dos rectas: paralelas, coincidentes, se cortan en un punto o se cruzan (no están en un mismo plano).](fig-dos-rectas.svg){fig-alt="Cuatro dibujos: dos rectas paralelas, dos rectas superpuestas, dos rectas que se cortan en un punto P y dos rectas que se cruzan a distinta altura sin cortarse" width="100%" fig-align="center"}
 
 **Tres planos** forman un sistema $3\times3$: se aplica Rouché (tema 3). $\operatorname{rg}A=\operatorname{rg}A^*=3$: se cortan en un punto; rangos $2$ y $2$: en una recta; rangos $2$ y $3$: se cortan dos a dos o dos son paralelos; rangos $1$ y $1$: coincidentes; rangos $1$ y $2$: paralelos (o dos coincidentes y el tercero paralelo).
 

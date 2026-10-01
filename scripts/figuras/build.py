@@ -151,5 +151,111 @@ def fig_normal():
     g.save(AP / "11-distribuciones" / "fig-normal.svg", "Campana de Gauss N(0,1) con el área Φ(1)=P(Z≤1) sombreada")
 
 
+class Fig3:
+    """Varios paneles con una perspectiva caballera sencilla (x hacia el lector, y a la derecha, z arriba)."""
+
+    def __init__(self, n, w=210, h=200, scale=22):
+        self.n, self.pw, self.ph, self.k = n, w, h, scale
+        self.w, self.h = n * w, h + 34
+        self.el = []
+        self.i = 0
+
+    def P(self, p):
+        x, y, z = p
+        X = self.i * self.pw + self.pw / 2 + self.k * (y - 0.5 * x)
+        Y = 30 + self.ph / 2 - self.k * (z - 0.4 * x)
+        return X, Y
+
+    def panel(self, i, title):
+        self.i = i
+        if i:
+            self.el.append(f'<line x1="{i*self.pw}" y1="10" x2="{i*self.pw}" y2="{self.h-10}" stroke="{INK}" stroke-width="1" stroke-dasharray="3 4"/>')
+        self.el.append(f'<text x="{i*self.pw+self.pw/2:.1f}" y="{self.h-14}" text-anchor="middle" font-size="14" font-weight="700" fill="{INK}">{escape(title)}</text>')
+
+    def plane(self, c, u, v, color=MINT, label=None):
+        pts = [[c[k] + a * u[k] + b * v[k] for k in range(3)] for a, b in ((-1, -1), (1, -1), (1, 1), (-1, 1))]
+        d = "M" + " L".join("%.1f,%.1f" % self.P(q) for q in pts) + " Z"
+        self.el.append(f'<path d="{d}" fill="{color}" fill-opacity="0.75" stroke="{INK}" stroke-width="2"/>')
+        if label:
+            X, Y = self.P(pts[2])
+            self.el.append(f'<text x="{X-6:.1f}" y="{Y+16:.1f}" text-anchor="end" font-size="14" font-style="italic" font-weight="700" fill="{INK}">{escape(label)}</text>')
+
+    def seg(self, a, b, color=CORAL, width=3.5, dash=None, label=None, at=1.0):
+        (X1, Y1), (X2, Y2) = self.P(a), self.P(b)
+        dd = f' stroke-dasharray="{dash}"' if dash else ""
+        self.el.append(f'<line x1="{X1:.1f}" y1="{Y1:.1f}" x2="{X2:.1f}" y2="{Y2:.1f}" stroke="{color}" stroke-width="{width}" stroke-linecap="round"{dd}/>')
+        if label:
+            X, Y = X1 + (X2 - X1) * at, Y1 + (Y2 - Y1) * at
+            self.el.append(f'<text x="{X+7:.1f}" y="{Y-5:.1f}" font-size="14" font-style="italic" font-weight="700" fill="{color}">{escape(label)}</text>')
+
+    def dot(self, p, color=YELLOW, label=None):
+        X, Y = self.P(p)
+        self.el.append(f'<circle cx="{X:.1f}" cy="{Y:.1f}" r="5" fill="{color}" stroke="{INK}" stroke-width="2"/>')
+        if label:
+            self.el.append(f'<text x="{X+8:.1f}" y="{Y-7:.1f}" font-size="13" font-weight="700" fill="{INK}">{escape(label)}</text>')
+
+    def save(self, path, title):
+        svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {self.w} {self.h}" width="{self.w}" height="{self.h}" font-family="{FONT}" role="img">'
+               f'<title>{title}</title>'
+               f'<rect x="1.5" y="1.5" width="{self.w-3}" height="{self.h-3}" fill="{PAPER}" stroke="{INK}" stroke-width="3"/>'
+               + "".join(self.el) + "</svg>\n")
+        path.write_text(svg)
+        print("escrito", path.relative_to(ROOT))
+
+
+H = (2.6, 0, 0), (0, 2.6, 0)          # plano horizontal: semiejes
+V = (0, 2.4, 0), (0, 0, 2.2)          # plano vertical (contiene y, z)
+
+
+def fig_dos_planos():
+    g = Fig3(3)
+    g.panel(0, "Secantes")
+    g.plane((0, 0, 0), *H, color=MINT)
+    g.plane((0, 0, 0), (0, 1.6, 0), (0, 0, 2.2), color=YELLOW)
+    g.seg((0, -1.6, 0), (0, 1.6, 0), color=CORAL, label="r", at=1)
+    g.panel(1, "Paralelos")
+    g.plane((0, 0, -1.3), *H, color=MINT, label="π")
+    g.plane((0, 0, 1.3), *H, color=YELLOW, label="π′")
+    g.panel(2, "Coincidentes")
+    g.plane((0, 0, 0), *H, color=MINT, label="π = π′")
+    g.save(AP / "05-rectas-planos" / "fig-dos-planos.svg", "Posiciones relativas de dos planos: secantes (se cortan en una recta), paralelos y coincidentes")
+
+
+def fig_recta_plano():
+    g = Fig3(3)
+    g.panel(0, "Secante")
+    g.plane((0, 0, -0.6), *H)
+    g.seg((0.4, -1.2, -2.4), (-0.2, 0.6, -0.6), color=CORAL, dash="5 5")
+    g.seg((-0.2, 0.6, -0.6), (-0.6, 1.8, 0.6), color=CORAL, label="r")
+    g.dot((-0.2, 0.6, -0.6), label="P")
+    g.panel(1, "Paralela")
+    g.plane((0, 0, -0.8), *H)
+    g.seg((1.2, -2.2, 1.0), (-1.2, 2.2, 1.0), label="r")
+    g.panel(2, "Contenida")
+    g.plane((0, 0, 0), *H)
+    g.seg((1.4, -2.0, 0), (-1.4, 2.0, 0), label="r")
+    g.save(AP / "05-rectas-planos" / "fig-recta-plano.svg", "Posiciones relativas de recta y plano: secante en un punto, paralela y contenida")
+
+
+def fig_dos_rectas():
+    g = Fig3(4, w=190)
+    g.panel(0, "Paralelas")
+    g.seg((0, -2.2, 0.8), (0, 2.2, 0.8), label="r", at=1)
+    g.seg((0, -2.2, -0.8), (0, 2.2, -0.8), color=NAVY, label="s", at=1)
+    g.panel(1, "Coincidentes")
+    g.seg((0, -2.2, 0), (0, 2.2, 0), color=NAVY, width=7)
+    g.seg((0, -2.2, 0), (0, 2.2, 0), width=3, label="r = s", at=0.62)
+    g.panel(2, "Se cortan")
+    g.seg((0, -2.2, -1.6), (0, 2.2, 1.6), label="r", at=1)
+    g.seg((0, -2.2, 1.6), (0, 2.2, -1.6), color=NAVY, label="s", at=1)
+    g.dot((0, 0, 0), label="P")
+    g.panel(3, "Se cruzan")
+    g.plane((0, 0, -1.2), (2.4, 0, 0), (0, 2.2, 0), color=MINT)
+    g.seg((0, -2.0, -1.2), (0, 2.0, -1.2), color=NAVY, label="s", at=1)
+    g.seg((2.2, 0, 1.0), (-2.2, 0, 1.0), label="r", at=1)
+    g.save(AP / "05-rectas-planos" / "fig-dos-rectas.svg", "Posiciones relativas de dos rectas: paralelas, coincidentes, se cortan en un punto y se cruzan (no coplanarias)")
+
+
 if __name__ == "__main__":
     fig_asintotas(); fig_monotonia(); fig_area(); fig_normal()
+    fig_dos_planos(); fig_recta_plano(); fig_dos_rectas()
