@@ -329,7 +329,7 @@
       const ch = gen(p);
       if (ch.mistakes) {
         ch.mistakes = ch.mistakes.filter((m) =>
-          checkAnswer(ch.answer, answerStrings(Object.assign({}, ch.answer, { value: m.value }))).status !== 'ok');
+          checkAnswer(ch.answer, answerStrings(Object.assign({}, ch.answer, { value: m.value, show: undefined }))).status !== 'ok');
       }
       return ch;
     };

@@ -358,7 +358,7 @@ for (const id of Object.keys(G.modules)) {
       help.forEach((h) => assert((h.match(/\$/g) || []).length % 2 === 0, id + ': $ desparejados en la ayuda'));
       (ch.mistakes || []).forEach((m) => {
         assert(m.msg && (m.msg.match(/\$/g) || []).length % 2 === 0, ctx + ': mensaje de error típico inválido');
-        const strs = answerStrings(Object.assign({}, ch.answer, { value: m.value }));
+        const strs = answerStrings(Object.assign({}, ch.answer, { value: m.value, show: undefined }));
         assert.strictEqual(checkAnswer(ch.answer, strs).status, 'wrong', ctx + ': el error típico coincide con la respuesta correcta');
       });
       verify[id](ch);
