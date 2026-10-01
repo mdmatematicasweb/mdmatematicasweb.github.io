@@ -1,4 +1,4 @@
-/* Generadores de ejercicios tipo EBAU — fase 2 (álgebra).
+/* Generadores de ejercicios tipo PAU — fase 2 (álgebra).
  * Tipos: sistema-plant, sistema-sci, matriz-pot-inv, rango-inv-param.
  */
 (function (root) {

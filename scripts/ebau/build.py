@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera las páginas «EBAU Andalucía por temas» a partir de scripts/ebau/data/*.md.
+"""Genera las páginas «PAU Andalucía por temas» a partir de scripts/ebau/data/*.md.
 
 Uso:  python3 scripts/ebau/build.py
 
@@ -123,10 +123,13 @@ def tema_page(t, exams):
     by_year = defaultdict(list)
     for e, x in principales:
         by_year[e["year"]].append((e, x))
-    out = [f'---\ntitle: "EBAU Andalucía — {nombre}"\nlang: es\n---\n']
-    out.append(f"Ejercicios de **Matemáticas II** de la prueba de acceso a la universidad en Andalucía (EBAU/PAU) de **2021 a 2026** cuyo tema principal es *{nombre.lower()}*: "
+    out = [f'---\ntitle: "PAU Andalucía — {nombre}"\nlang: es\n---\n']
+    out.append(f"Ejercicios de **Matemáticas II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *{nombre.lower()}*: "
                f"**{len(principales)} ejercicios** de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. "
-               f"Repasa antes la [teoría](../../../apuntes/2-bachillerato-ciencias/{slug}/index.qmd), los [ejercicios del tema](../{slug}/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ciencias/{slug}/index.qmd).\n")
+               f"Repasa antes la [teoría](../../../apuntes/2-bachillerato-ciencias/{slug}/index.qmd)"
+               + (f", los [ejercicios del tema](../{slug}/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ciencias/{slug}/index.qmd).\n"
+                  if (ROOT / "actividades" / "2-bachillerato-ciencias" / slug / "index.qmd").exists()
+                  else f" y los [ejercicios del tema](../{slug}/index.qmd).\n"))
     if t in (10, 11):
         out.append("> Probabilidad y distribución normal **no entraron en Matemáticas II hasta la convocatoria de 2025**: los anteriores exámenes (2021–2024) no tienen ejercicios de este tema.\n")
     if not principales:
@@ -153,7 +156,7 @@ def tema_page(t, exams):
             s2, n2 = TEMAS[x["tema"]]
             out.append(f"- [{label(e)}, ejercicio {x['n']}]({s2}.qmd#{anchor(e, x)}) (tema principal: {n2})")
         out.append("")
-    out.append("\n---\n\n*Enunciados: Prueba de Acceso y Admisión a la Universidad (EBAU/PAU), Matemáticas II, Andalucía, Ceuta, Melilla y centros en Marruecos (Distrito Único Andaluz). "
+    out.append("\n---\n\n*Enunciados: Prueba de Acceso y Admisión a la Universidad (PEvAU hasta 2024, PAU desde 2025), Matemáticas II, Andalucía, Ceuta, Melilla y centros en Marruecos (Distrito Único Andaluz). "
                "Cada ejercicio enlaza al PDF del examen completo. La clasificación por temas es propia y puede discutirse: los ejercicios mixtos figuran en su tema principal.*\n")
     return "\n".join(out)
 
@@ -165,8 +168,8 @@ def index_page(exams):
             cnt[x["tema"]][e["year"]] += 1
     years = sorted({e["year"] for e in exams}, reverse=True)
     total = sum(len(e["ejercicios"]) for e in exams)
-    out = ['---\ntitle: "EBAU Andalucía 2021–2026 por temas"\nlang: es\n---\n']
-    out.append(f"Relación de los **{total} ejercicios** de Matemáticas II de la EBAU/PAU de Andalucía entre 2021 y 2026, agrupados por el tema de 2º de Bachillerato Ciencias al que pertenecen. "
+    out = ['---\ntitle: "PAU Andalucía 2021–2026 por temas"\nlang: es\n---\n']
+    out.append(f"Relación de los **{total} ejercicios** de Matemáticas II de la PAU (antes PEvAU) de Andalucía entre 2021 y 2026, agrupados por el tema de 2º de Bachillerato Ciencias al que pertenecen. "
                f"Incluye las convocatorias **ordinaria** y **extraordinaria** y todos sus exámenes de **reserva** y **suplentes** ({len(exams)} exámenes). "
                "Cada ejercicio indica de qué examen procede y enlaza al PDF completo.\n")
     out.append("## Ejercicios por tema y año\n")
@@ -183,7 +186,7 @@ def index_page(exams):
     for y in years:
         es = sorted([e for e in exams if e["year"] == y], key=lambda e: CONV_ORDER.index(e["conv"]))
         out.append(f"**{y}** · " + " · ".join(f"[{e['conv']}]({e['url']}){{target=\"_blank\"}}" for e in es) + "\n")
-    out.append("\n---\n\n*Enunciados: Prueba de Acceso y Admisión a la Universidad (EBAU/PAU), Matemáticas II, Andalucía, Ceuta, Melilla y centros en Marruecos (Distrito Único Andaluz). "
+    out.append("\n---\n\n*Enunciados: Prueba de Acceso y Admisión a la Universidad (PEvAU hasta 2024, PAU desde 2025), Matemáticas II, Andalucía, Ceuta, Melilla y centros en Marruecos (Distrito Único Andaluz). "
                "La clasificación por temas es propia. Se ha transcrito cada enunciado a partir del examen oficial; ante cualquier duda, el PDF manda.*\n")
     return "\n".join(out)
 

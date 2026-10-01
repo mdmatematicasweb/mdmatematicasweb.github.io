@@ -1,4 +1,4 @@
-/* Generadores de ejercicios tipo EBAU — fase 1.
+/* Generadores de ejercicios tipo PAU — fase 1.
  * Tipos: sistema-param, ec-matricial, det-prop, rectas-posicion, simetrico, tangente-normal, primitiva.
  * Cada generate() devuelve {enunciado, partes:[{texto, pts, answer, steps}], data}. Los apartados suman 2,5.
  */
