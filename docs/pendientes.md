@@ -1,13 +1,16 @@
 # Pendientes
 
-Actualizado el 2026-10-01 (tarde).
+Actualizado el 2026-10-02.
 
-## En espera (decisión del autor)
+## Archivado (decisión del autor, se retoma cuando lo diga)
 
-1. **Hacer el repositorio privado.** Opciones: GitHub Pro para Pages privadas, o publicar con Cloudflare Pages / Netlify desde un repo privado. Mientras el repo sea público, el código y los generadores se pueden ver.
-2. **Registrar la marca «MD Matemáticas»** y el logo en la OEPM (clase 41, educación).
-3. **Contacto en el aviso legal** (`licencia.qmd`): decidir qué dirección pública usar.
-4. **Publicar**: todo está en commits locales en `main`, sin `git push`.
+- Hacer el repositorio privado (GitHub Pro para Pages privadas, o Cloudflare Pages / Netlify desde un repo privado).
+- Registrar la marca «MD Matemáticas» y el logo en la OEPM (clase 41, educación).
+- Contacto público en el aviso legal (`licencia.qmd`).
+
+## Publicado
+
+`main` subido a `origin` el 2026-10-02 (`93ea8d2`). GitHub Pages despliega desde ahí.
 
 ## Hecho el 2026-10-01 (para revisar)
 
