@@ -256,6 +256,24 @@ def fig_dos_rectas():
     g.save(AP / "05-rectas-planos" / "fig-dos-rectas.svg", "Posiciones relativas de dos rectas: paralelas, coincidentes, se cortan en un punto y se cruzan (no coplanarias)")
 
 
+def fig_simetrico():
+    g = Fig3(2, w=260, h=220)
+    g.panel(0, "Respecto de un plano")
+    g.seg((0, 0.4, -0.2), (0, 0.4, -2.0), color=NAVY, width=2, dash="5 5")
+    g.plane((0, 0, -0.2), *H)
+    g.seg((0, 0.4, 1.6), (0, 0.4, -0.2), color=NAVY, width=2, dash="5 5")
+    g.dot((0, 0.4, 1.6), color=CORAL, label="P")
+    g.dot((0, 0.4, -0.2), label="H")
+    g.dot((0, 0.4, -2.0), color=CORAL, label="P′")
+    g.panel(1, "Respecto de una recta")
+    g.seg((0, -2.6, -1.0), (0, 2.6, 1.0), label="r", at=1)
+    g.seg((0, -0.9, 1.9), (0, 0.9, -1.9), color=NAVY, width=2, dash="5 5")
+    g.dot((0, -0.9, 1.9), color=CORAL, label="P")
+    g.dot((0, 0, 0), label="H")
+    g.dot((0, 0.9, -1.9), color=CORAL, label="P′")
+    g.save(AP / "05-rectas-planos" / "fig-simetrico.svg", "Simétrico de un punto: H es la proyección de P y el punto medio entre P y P′")
+
+
 if __name__ == "__main__":
     fig_asintotas(); fig_monotonia(); fig_area(); fig_normal()
-    fig_dos_planos(); fig_recta_plano(); fig_dos_rectas()
+    fig_dos_planos(); fig_recta_plano(); fig_dos_rectas(); fig_simetrico()
