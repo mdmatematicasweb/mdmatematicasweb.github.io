@@ -686,7 +686,9 @@ $A$ es $2\times3$ y $B$ es $3\times2$.
 
 **$AB$ no tiene inversa si $m=-\dfrac13$.**
 
-**b)** $BA$ es $3\times3$ y $|BA|=0$ siempre, luego $\operatorname{rg}(BA)\le2$. Las filas de $A$ son independientes (rango $2$ para todo $m$) y las columnas de $B$ también (rango $2$ para todo $m$), por lo que $\operatorname{rg}(BA)=2$ (la aplicación asociada a $A$ es sobreyectiva y la de $B$ inyectiva).
+**b)** $BA=\begin{pmatrix}2&m-1&1\\2&2m&2\\m-1&-2m&-1\end{pmatrix}$. Desarrollando, $|BA|=0$ para todo $m$ (es lógico: $BA$ es $3\times3$ pero $\operatorname{rg}(BA)\le\operatorname{rg}(A)\le2$), luego $\operatorname{rg}(BA)\le2$.
+
+El menor de las filas 1.ª y 2.ª y columnas 1.ª y 3.ª vale $\begin{vmatrix}2&1\\2&2\end{vmatrix}=2\neq0$, sin depender de $m$.
 
 **$\operatorname{rg}(BA)=2$ para todo $m\in\mathbb{R}$.**
 ::::
