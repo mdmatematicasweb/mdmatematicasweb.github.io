@@ -153,6 +153,7 @@ def tema_page(t, exams):
                + (f", los [ejercicios del tema](../{slug}/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ciencias/{slug}/index.qmd).\n"
                   if (ROOT / "actividades" / "2-bachillerato-ciencias" / slug / "index.qmd").exists()
                   else f" y los [ejercicios del tema](../{slug}/index.qmd).\n"))
+    out.append("Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.\n")
     if t in (10, 11):
         out.append("> Probabilidad y distribución normal **no entraron en Matemáticas II hasta la convocatoria de 2025**: los anteriores exámenes (2021–2024) no tienen ejercicios de este tema.\n")
     if not principales:
@@ -196,7 +197,7 @@ def index_page(exams):
     out = ['---\ntitle: "PAU Andalucía 2021–2026 por temas"\nlang: es\n---\n']
     out.append(f"Relación de los **{total} ejercicios** de Matemáticas II de la PAU (antes PEvAU) de Andalucía entre 2021 y 2026, agrupados por el tema de 2º de Bachillerato Ciencias al que pertenecen. "
                f"Incluye las convocatorias **ordinaria** y **extraordinaria** y todos sus exámenes de **reserva** y **suplentes** ({len(exams)} exámenes). "
-               "Cada ejercicio indica de qué examen procede y enlaza al PDF completo.\n")
+               "Cada ejercicio indica de qué examen procede, enlaza al PDF completo y tiene debajo una **resolución breve** plegada (pulsa «Solución» después de intentarlo).\n")
     out.append("## Ejercicios por tema y año\n")
     out.append("| Tema | " + " | ".join(str(y) for y in years) + " | Total |")
     out.append("|---|" + "---:|" * (len(years) + 1))
