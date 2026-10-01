@@ -4,6 +4,8 @@
 Uso:  python3 scripts/ebau/build.py
 
 Cada fichero de data/ es un examen (front matter + ejercicios separados por líneas «@@ n | bloque | pts | tema | también»).
+Las soluciones van aparte, en soluciones/<slug>.md (mismo nombre que el examen): bloques «@@ n» seguidos del texto
+de la solución en Markdown. Se muestran plegadas debajo de cada enunciado.
 Las páginas se escriben en ejercicios/2-bachillerato-ciencias/ebau/. No edites esas páginas a mano: edita data/ y vuelve a ejecutar.
 """
 import re
@@ -13,6 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = Path(__file__).resolve().parent / "data"
+SOLS = Path(__file__).resolve().parent / "soluciones"
 OUT = ROOT / "ejercicios" / "2-bachillerato-ciencias" / "ebau"
 URLS = {u.rsplit("/", 1)[1]: u for u in (Path(__file__).resolve().parent / "urls.txt").read_text().split()}
 
@@ -67,6 +70,17 @@ def load_exams():
         if meta["file"] not in URLS:
             sys.exit(f"{f.name}: archivo {meta['file']} no está en urls.txt")
         exam["url"] = URLS[meta["file"]]
+        exam["sol_extra"] = []
+        fsol = SOLS / f.name
+        if fsol.exists():
+            by_n = {x["n"]: x for x in exs}
+            for blk in re.split(r"^@@ ", fsol.read_text(), flags=re.M)[1:]:
+                head, _, body = blk.partition("\n")
+                n = head.strip()
+                if n in by_n:
+                    by_n[n]["sol"] = body.strip()
+                else:
+                    exam["sol_extra"].append(n)
         exams.append(exam)
     return exams
 
@@ -97,6 +111,15 @@ def validate(exams):
                 errs.append(f"{who}: los apartados suman {sum(parts)} y el ejercicio vale {x['pts']}")
             if not x["tex"]:
                 errs.append(f"{who}: sin enunciado")
+            if x.get("sol") is not None:
+                if not x["sol"]:
+                    errs.append(f"{who}: solución vacía")
+                if re.sub(r"\$\$", "", x["sol"]).count("$") % 2:
+                    errs.append(f"{who}: $ desparejados en la solución")
+                if re.search(r"^:::", x["sol"], re.M):
+                    errs.append(f"{who}: la solución no puede abrir bloques «:::»")
+        for n in e["sol_extra"]:
+            errs.append(f"{tag}: solución para el ejercicio {n}, que no existe")
     return errs
 
 
@@ -143,11 +166,13 @@ def tema_page(t, exams):
                 last = e["conv"]
             otros = ", ".join(f"[{TEMAS[o][1]}]({TEMAS[o][0]}.qmd)" for o in x["tambien"])
             extra = f"\n\n*Relacionado también con:* {otros}." if otros else ""
+            sol = (f"\n\n:::: {{.callout-tip collapse=\"true\" appearance=\"simple\"}}\n## Solución\n\n{x['sol']}\n::::"
+                   if x.get("sol") else "")
             out.append(
-                f"\n::: {{.ebau-ej #{anchor(e, x)}}}\n"
+                f"\n::::: {{.ebau-ej #{anchor(e, x)}}}\n"
                 f"**Ejercicio {x['n']}** · {e['conv']} {y} · {BLOQUE[x['bloque']]} · *({x['pts']} puntos)* · [PDF del examen]({e['url']}){{target=\"_blank\"}}\n\n"
-                f"{x['tex']}{extra}\n"
-                f":::\n"
+                f"{x['tex']}{extra}{sol}\n"
+                f":::::\n"
             )
     if relacionados:
         out.append("\n## También trabajan este tema\n")
@@ -202,7 +227,8 @@ def main():
     for t, (slug, _) in TEMAS.items():
         (OUT / f"{slug}.qmd").write_text(tema_page(t, exams))
     n = sum(len(e["ejercicios"]) for e in exams)
-    print(f"OK: {len(exams)} exámenes, {n} ejercicios -> {OUT.relative_to(ROOT)}")
+    ns = sum(1 for e in exams for x in e["ejercicios"] if x.get("sol"))
+    print(f"OK: {len(exams)} exámenes, {n} ejercicios ({ns} con solución) -> {OUT.relative_to(ROOT)}")
     for t, (slug, nombre) in TEMAS.items():
         c = sum(1 for e in exams for x in e["ejercicios"] if x["tema"] == t)
         print(f"  {t:>2} {nombre}: {c}")
