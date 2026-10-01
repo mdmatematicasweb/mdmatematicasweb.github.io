@@ -831,6 +831,21 @@ Considera la recta $r\equiv x-2=\dfrac{y}{-1}=\dfrac{z-1}{2}$, así como la rect
 a) Calcula $a$ para que las rectas $r$ y $s$ se corten. *(1,5 puntos)*
 
 b) Calcula $a$ para que las rectas $r$ y $s$ sean perpendiculares. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$r$: $(2+t,\,-t,\,1+2t)$, $\vec d_r=(1,-1,2)$. $s$: $(1+\lambda(1+a),\ 2-\lambda a,\ 3+3a\lambda)$.
+
+**a)** Se cortan si $\vec d_r$, $\vec d_s$ y $\overrightarrow{P_rP}=(-1,2,2)$ son coplanarios y las rectas no son paralelas:
+$$\begin{vmatrix}1&-1&2\\1+a&-a&3a\\-1&2&2\end{vmatrix}=6-a=0.$$
+
+**$a=6$** (punto de corte $(-6,8,-15)$, con $t=-8$).
+
+**b)** $\vec d_r\cdot\vec d_s=1+a+a+6a=1+8a=0$.
+
+**$a=-\tfrac18$.**
+::::
 :::::
 
 
@@ -845,6 +860,20 @@ Considera las rectas $r\equiv\begin{cases}x=0\\z=0\end{cases}$ y $s\equiv\begin{
 a) Determina la ecuación del plano que contiene a $r$ y es paralelo a $s$. *(1,5 puntos)*
 
 b) Determina la ecuación del plano que contiene a $r$ y es perpendicular a $s$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$r$ es el eje $Y$: punto $O(0,0,0)$, dirección $(0,1,0)$. $s$: $x=1$, $y=0$, es decir, dirección $(0,0,1)$ y punto $(1,0,0)$.
+
+**a)** El plano contiene la dirección $(0,1,0)$ y es paralelo a $(0,0,1)$: normal $(0,1,0)\times(0,0,1)=(1,0,0)$.
+
+**Plano $x=0$.**
+
+**b)** El plano es perpendicular a $s$ si su normal es la dirección de $s$, $(0,0,1)$; y contiene a $r$ (pasa por $O$).
+
+**Plano $z=0$.**
+::::
 :::::
 
 
@@ -856,6 +885,18 @@ Considera los planos $\pi_1\equiv x+y+2=0$ y $\pi_2\equiv x-z-1=0$, así como la
 a) Calcula los puntos de la recta $r$ que equidistan de los planos $\pi_1$ y $\pi_2$. *(1,5 puntos)*
 
 b) Halla el ángulo que forman los planos $\pi_1$ y $\pi_2$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $r$: $(t,\,1,\,1-2t)$. Distancias: $d(P,\pi_1)=\dfrac{|t+3|}{\sqrt2}$, $d(P,\pi_2)=\dfrac{|3t-2|}{\sqrt2}$ (en $\pi_2$: $t-(1-2t)-1=3t-2$). Igualando, $t+3=\pm(3t-2)$: $t=\tfrac52$ o $t=-\tfrac14$.
+
+**Puntos: $\left(\tfrac52,1,-4\right)$ y $\left(-\tfrac14,1,\tfrac32\right)$.**
+
+**b)** $\cos\varphi=\dfrac{|\vec n_1\cdot\vec n_2|}{|\vec n_1||\vec n_2|}=\dfrac{|(1,1,0)\cdot(1,0,-1)|}{\sqrt2\sqrt2}=\dfrac12$.
+
+**$\varphi=60^\circ$ ($\pi/3$ rad).**
+::::
 :::::
 
 
@@ -870,6 +911,20 @@ Considera el plano $\pi\equiv x+y+z=0$ y la recta $r\equiv\begin{cases}x=\lambda
 a) Determina la ecuación del plano perpendicular a $\pi$ que contiene a $r$. *(1,25 puntos)*
 
 b) Calcula la distancia entre $r$ y $\pi$. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$r$: punto $(0,1,0)$, dirección $\vec d=(1,-1,0)$. Normal de $\pi$: $\vec n=(1,1,1)$.
+
+**a)** Normal del plano buscado: $\vec d\times\vec n=(-1,-1,2)\parallel(1,1,-2)$. Pasa por $(0,1,0)$:
+
+**$x+y-2z-1=0$.**
+
+**b)** $\vec d\cdot\vec n=0$ (paralela) y $(0,1,0)\notin\pi$, así que $d(r,\pi)=d\big((0,1,0),\pi\big)=\dfrac{|0+1+0|}{\sqrt3}$.
+
+**$d=\dfrac{\sqrt3}{3}$.**
+::::
 :::::
 
 
@@ -881,6 +936,21 @@ Sean los planos $\pi_1\equiv 2x+y+z-3=0$, $\pi_2\equiv x+2y-z+5=0$ y la recta $r
 a) Halla los puntos de $r$ que equidistan de $\pi_1$ y $\pi_2$. *(2 puntos)*
 
 b) Halla el seno del ángulo que forma el plano $\pi_1$ con la recta $r$. *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$r$: $(1+t,\,2t,\,-1+5t)$, con $\vec d=(1,2,5)$.
+$d_1=\dfrac{|2(1+t)+2t-1+5t-3|}{\sqrt6}=\dfrac{|9t-2|}{\sqrt6}$, $d_2=\dfrac{|(1+t)+4t-(-1+5t)+5|}{\sqrt6}=\dfrac{7}{\sqrt6}$.
+
+**a)** $|9t-2|=7\Rightarrow t=1$ o $t=-\tfrac59$.
+
+**Puntos: $(2,2,4)$ y $\left(\tfrac49,-\tfrac{10}9,-\tfrac{34}9\right)$.**
+
+**b)** $\operatorname{sen}\alpha=\dfrac{|\vec n_1\cdot\vec d|}{|\vec n_1||\vec d|}=\dfrac{|(2,1,1)\cdot(1,2,5)|}{\sqrt6\sqrt{30}}=\dfrac{9}{6\sqrt5}$.
+
+**$\operatorname{sen}\alpha=\dfrac{3\sqrt5}{10}$.**
+::::
 :::::
 
 
@@ -1036,6 +1106,18 @@ $$r\equiv\begin{cases}2x-3y+z-2=0\\-3x+2y+2z+1=0\end{cases}\qquad\text{y}\qquad 
 a) Calcula el plano perpendicular a la recta $s$ que pasa por el punto $P(1,0,-5)$. *(1,5 puntos)*
 
 b) Calcula el seno del ángulo que forma la recta $r$ con el plano $\pi\equiv -2x+y+2z=0$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** El vector director de $s$, $(-2,1,2)$, es normal al plano: $-2x+y+2z+k=0$ y pasa por $P(1,0,-5)$: $-2-10+k=0\Rightarrow k=12$.
+
+**$-2x+y+2z+12=0$** (equivalentemente $2x-y-2z-12=0$).
+
+**b)** Dirección de $r$: $(2,-3,1)\times(-3,2,2)=(-8,-7,-5)$, de módulo $\sqrt{138}$. Normal de $\pi$: $(-2,1,2)$, de módulo $3$. Producto escalar: $16-7-10=-1$.
+
+$$\operatorname{sen}\alpha=\frac{|\vec u\cdot\vec n|}{|\vec u||\vec n|}=\mathbf{\frac{1}{3\sqrt{138}}}=\frac{\sqrt{138}}{414}\approx0{,}028$$
+::::
 :::::
 
 
@@ -1043,6 +1125,18 @@ b) Calcula el seno del ángulo que forma la recta $r$ con el plano $\pi\equiv -2
 **Ejercicio 8** · Ordinaria 2021 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/07/2oBachCC_EBAU_Andalucia_2021-Ordinaria.pdf){target="_blank"}
 
 La recta $r\equiv\dfrac{x+3}{2}=\dfrac{y+4}{2}=\dfrac{z-3}{3}$ y la recta $s$, que pasa por los puntos $P(1,0,2)$ y $Q(a,1,0)$, se cortan en un punto. Calcula el valor de $a$ y el punto de corte.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$r$: punto $(-3,-4,3)$, dirección $(2,2,3)$. $s$: $\overrightarrow{PQ}=(a-1,1,-2)$, punto $P(1,0,2)$.
+
+Para que se corten (coplanarias), $\begin{vmatrix}2&2&3\\a-1&1&-2\\4&4&-1\end{vmatrix}=0$, con $\overrightarrow{R P}=(4,4,-1)$ (de $R(-3,-4,3)$ a $P$). Resolviendo, **$a=2$**, con dirección $(1,1,-2)$ para $s$.
+
+Punto de corte: $r$: $(-3+2u,\,-4+2u,\,3+3u)$ y $s$: $(1+v,\,v,\,2-2v)$. Igualando: $u=1$, $v=-2$.
+
+**$a=2$ y punto de corte $(-1,-2,6)$.**
+::::
 :::::
 
 
@@ -1057,6 +1151,20 @@ Considera las rectas
 $$r\equiv\dfrac{x}{1}=\dfrac{y+2}{2}=\dfrac{z-1}{1}\qquad\text{y}\qquad s\equiv\begin{cases}x-y+z=2\\3x-y-z=-4\end{cases}$$
 
 Sabiendo que dos de los lados de un cuadrado están en las rectas $r$ y $s$, calcula su área.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Dirección de $r$: $\vec u=(1,2,1)$. Dirección de $s$: $(1,-1,1)\times(3,-1,-1)=(2,4,2)\parallel\vec u$: las rectas son paralelas.
+
+Un punto de $r$: $R(0,-2,1)$. Un punto de $s$ (tomando $x=0$): $S(0,1,3)$, que no está en $r$.
+
+El lado del cuadrado es la distancia entre ambas rectas:
+
+$$d=\frac{|\overrightarrow{RS}\times\vec u|}{|\vec u|}=\frac{|(0,3,2)\times(1,2,1)|}{\sqrt6}=\frac{|(-1,2,-3)|}{\sqrt6}=\sqrt{\frac{14}{6}}.$$
+
+**Área $=d^2=\dfrac73\ \text{u}^2$**
+::::
 :::::
 
 
@@ -1070,6 +1178,21 @@ $$r\equiv\begin{cases}x=1+\lambda\\y=1+\lambda\\z=2+m\lambda\end{cases}\qquad\te
 a) Estudia la posición relativa de $r$ y $s$ según los valores de $m$. *(1,5 puntos)*
 
 b) Para $m=1$, calcula el coseno del ángulo que forman las rectas $r$ y $s$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$r$: punto $R(1,1,2)$, dirección $(1,1,m)$. $s$: de $x+z=2$ y $x-y+2z=3$ resulta $y=z-1$; con $z=\mu$: $(2-\mu,\,\mu-1,\,\mu)$, punto $S(2,-1,0)$, dirección $(-1,1,1)$.
+
+**a)** Las direcciones nunca son proporcionales. $\overrightarrow{RS}=(1,-2,-2)$ y $\begin{vmatrix}1&1&m\\-1&1&1\\1&-2&-2\end{vmatrix}=m-1$.
+
+- $m\neq1$: **se cruzan**.
+- $m=1$: **se cortan** en un punto.
+
+**b)** Con $m=1$: $\vec u=(1,1,1)$ y $\vec v=(-1,1,1)$:
+
+$$\cos\alpha=\frac{|\vec u\cdot\vec v|}{|\vec u||\vec v|}=\frac{1}{\sqrt3\sqrt3}=\mathbf{\frac13}.$$
+::::
 :::::
 
 
@@ -1086,6 +1209,18 @@ $$r\equiv\begin{cases}x=2+3\lambda\\y=-1+2\lambda\\z=3+\lambda\end{cases}\qquad\
 a) Halla el plano que contiene a $r$ y es paralelo a $s$. *(1,5 puntos)*
 
 b) Deduce razonadamente que ningún plano perpendicular a $s$ contiene a $r$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$r$: punto $R(2,-1,3)$, dirección $\vec u=(3,2,1)$. $s$: de $y=2x-2$ y $z=3-x$, con $x=\mu$: punto $(0,-2,3)$, dirección $\vec v=(1,2,-1)$.
+
+**a)** Normal del plano: $\vec u\times\vec v=(-4,4,4)\parallel(1,-1,-1)$. Plano $x-y-z+k=0$ por $R$: $2+1-3+k=0\Rightarrow k=0$.
+
+**$x-y-z=0$**
+
+**b)** Un plano perpendicular a $s$ tiene normal $\vec v$ y contendría a $r$ sólo si $\vec u\cdot\vec v=0$. Pero $\vec u\cdot\vec v=3+4-1=6\neq0$, luego $r$ no es paralela a ningún plano de normal $\vec v$, y por tanto ninguno la contiene.
+::::
 :::::
 
 
@@ -1100,6 +1235,16 @@ La recta perpendicular desde el punto $A(1,1,0)$ a un cierto plano $\pi$ corta a
 a) Calcula la ecuación del plano $\pi$. *(1,5 puntos)*
 
 b) Halla la distancia del punto $A$ a su simétrico respecto a $\pi$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $\overrightarrow{AB}=\left(0,-\tfrac12,\tfrac12\right)$ es normal a $\pi$; tomamos $(0,-1,1)$. El plano es $-y+z+k=0$ y pasa por $B$: $-\tfrac12+\tfrac12+k=0\Rightarrow k=0$.
+
+**$\pi\equiv y-z=0$**
+
+**b)** El simétrico $A'$ cumple $B$ punto medio de $AA'$, luego $d(A,A')=2\,|AB|=2\sqrt{\tfrac14+\tfrac14}=$ **$\sqrt2$ u**
+::::
 :::::
 
 
@@ -1113,6 +1258,20 @@ $$r\equiv\begin{cases}x=3+\lambda\\y=1\\z=-3-\lambda\end{cases}\qquad\text{y}\qq
 a) Estudia la posición relativa de $r$ y $s$. *(1,25 puntos)*
 
 b) Halla la recta que corta perpendicularmente a $r$ y a $s$. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$r$: punto $(3,1,-3)$, dirección $(1,0,-1)$. $s$: $x=\mu,\ y=1-\mu,\ z=0$: punto $(0,1,0)$, dirección $(1,-1,0)$.
+
+**a)** El punto $(0,1,0)$ de $s$ está también en $r$ (con $\lambda=-3$) y las direcciones no son proporcionales.
+
+**Las rectas se cortan en el punto $(0,1,0)$.**
+
+**b)** Dirección perpendicular a ambas: $(1,0,-1)\times(1,-1,0)=(-1,-1,-1)\parallel(1,1,1)$. La recta pasa por el punto de corte:
+
+**$\dfrac{x}{1}=\dfrac{y-1}{1}=\dfrac{z}{1}$**
+::::
 :::::
 
 

@@ -649,6 +649,16 @@ $S'(r)=4\pi r-\dfrac{40}{r^{2}}=0\Rightarrow r^{3}=\dfrac{10}{\pi}$. Como $S''>0
 **Ejercicio 2** · Ordinaria 2022 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria.pdf){target="_blank"}
 
 De entre todos los rectángulos con lados paralelos a los ejes de coordenadas, determina las dimensiones de aquel de área máxima que puede inscribirse en la región limitada por las gráficas de las funciones $f,g:\mathbb{R}\to\mathbb{R}$, definidas por $f(x)=4-\dfrac{x^{2}}{3}$ y $g(x)=\dfrac{x^{2}}{6}-2$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Las gráficas se cortan en $4-\tfrac{x^2}3=\tfrac{x^2}6-2\Rightarrow x^2=12$. El rectángulo, por simetría, con vértices en $x=\pm x$ sobre $g$ (abajo) y sobre $f$ (arriba) tiene base $2x$ y altura $f(x)-g(x)=6-\tfrac{x^2}{2}$:
+$$A(x)=2x\left(6-\tfrac{x^2}2\right)=12x-x^3,\qquad A'=12-3x^2=0\Rightarrow x=2\ (<\sqrt{12}),$$
+$A''(2)<0$ (máximo).
+
+**Base $4$ y altura $4$ (cuadrado de lado 4, área 16 u$^2$).**
+::::
 :::::
 
 
@@ -667,6 +677,20 @@ a) Determina $a$ y $b$ sabiendo que $f$ tiene un extremo relativo en el punto de
 b) Para $a=2$ y $b=-1$, estudia la derivabilidad de $f$. *(1 punto)*
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd), [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Continuidad en $x=0$: $f(0)=\dfrac{1}{-1}=-1$ y $\lim_{x\to0^+}f=b$, luego $b=-1$ (en $x=0$ la rama derecha da $b$).
+Además $f'(x)=\dfrac{-ax+a-2b}{(x+1)^3}$ para $x>0$, y $f'(2)=0\Rightarrow -2a+a-2b=0\Rightarrow a=-2b=2$.
+
+**$a=2$, $b=-1$.**
+
+**b)** Para $x<0$: $f'(x)=\dfrac{x^2-2x-1}{(x-1)^2}$, $f'(0^-)=-1$. Para $x>0$: $f'(x)=\dfrac{-2x+4}{(x+1)^3}$, $f'(0^+)=4$.
+Las derivadas laterales en $0$ no coinciden.
+
+**$f$ es derivable en $\mathbb{R}\setminus\{0\}$ y no lo es en $x=0$.**
+::::
 :::::
 
 
@@ -676,6 +700,16 @@ b) Para $a=2$ y $b=-1$, estudia la derivabilidad de $f$. *(1 punto)*
 Se quiere cercar un trozo de terreno como el de la figura, de modo que el área del recinto central rectangular sea de $\dfrac{200}{\pi}$ metros cuadrados. Sabiendo que el coste de la cerca que se puede poner en los tramos rectos es de 10 euros por metro lineal, y en los tramos circulares de 20 euros por metro lineal, calcula las dimensiones $a$ y $b$ del terreno para las que se minimiza el coste del cercado.
 
 *(La figura muestra un rectángulo de lados $a$ (horizontal) y $b$ (vertical) con un semicírculo de diámetro $b$ añadido en cada uno de los lados verticales.)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Con $ab=\dfrac{200}{\pi}$, $a=\dfrac{200}{\pi b}$. Tramos rectos: dos lados de longitud $a$ (10 €/m); tramos circulares: dos semicírculos de diámetro $b$, longitud total $\pi b$ (20 €/m):
+$$C(b)=20a+20\pi b=\frac{4000}{\pi b}+20\pi b.$$
+$C'(b)=-\dfrac{4000}{\pi b^2}+20\pi=0\Rightarrow b^2=\dfrac{200}{\pi^2}$, y $C''>0$ (mínimo).
+
+**$b=\dfrac{10\sqrt2}{\pi}\approx4{,}5$ m y $a=10\sqrt2\approx14{,}1$ m.**
+::::
 :::::
 
 
@@ -690,6 +724,20 @@ Considera la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=\ln(x^{2}+1
 a) Determina los intervalos de crecimiento y de decrecimiento de $f$. *(1 punto)*
 
 b) Determina los intervalos de convexidad y de concavidad de $f$ y los puntos de inflexión de su gráfica. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f'(x)=\dfrac{2x}{x^2+1}$, $f''(x)=\dfrac{2(1-x^2)}{(x^2+1)^2}$.
+
+**a)** $f'<0$ si $x<0$ y $f'>0$ si $x>0$.
+
+**Decreciente en $(-\infty,0)$; creciente en $(0,+\infty)$.**
+
+**b)** $f''>0$ si $|x|<1$ y $f''<0$ si $|x|>1$.
+
+**Convexa en $(-1,1)$; cóncava en $(-\infty,-1)\cup(1,+\infty)$; puntos de inflexión en $(-1,\ln2)$ y $(1,\ln2)$.**
+::::
 :::::
 
 
@@ -760,6 +808,20 @@ a) Determina los intervalos de crecimiento y de decrecimiento de $f$. *(1 punto)
 b) Esboza la gráfica de $f$ y calcula el área del recinto limitado por dicha gráfica y el eje de abscisas. *(1,5 puntos)*
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $f'(x)=12x^2-4x^3=4x^2(3-x)$: positiva si $x<3$ ($x\neq0$) y negativa si $x>3$.
+
+**Crece en $(-\infty,3)$ y decrece en $(3,+\infty)$**; máximo relativo en $x=3$, con $f(3)=27$ (en $x=0$ hay punto de inflexión de tangente horizontal).
+
+**b)** $f(x)=x^3(4-x)$ corta al eje en $x=0$ (con tangente horizontal) y $x=4$; es $\ge0$ en $[0,4]$. La gráfica sube con un punto de inflexión en $(0,0)$, tiene el máximo en $(3,27)$ y baja pasando por $(4,0)$; otro punto de inflexión en $x=2$.
+
+$$A=\int_0^4(4x^3-x^4)\,dx=\left[x^4-\frac{x^5}{5}\right]_0^4=256-\frac{1024}{5}.$$
+
+**$A=\dfrac{256}{5}\ \text{u}^2$**
+::::
 :::::
 
 
@@ -776,6 +838,20 @@ a) Determina los intervalos de crecimiento y de decrecimiento de $f$, así como 
 b) Calcula el área de la región limitada por la gráfica de la función $f$ y las rectas $y=0$, $x=1$, $x=e$. *(1,5 puntos)*
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $f'(x)=\dfrac{2\ln x}{x}$: negativa si $0<x<1$, positiva si $x>1$.
+
+**Decrece en $(0,1)$ y crece en $(1,+\infty)$; mínimo relativo en $x=1$ con valor $f(1)=0$.**
+
+**b)** $f\ge0$. Por partes (dos veces), una primitiva es $x\ln^2x-2x\ln x+2x$:
+
+$$A=\bigl[x\ln^2x-2x\ln x+2x\bigr]_1^e=(e-2e+2e)-2=e-2.$$
+
+**$A=e-2\approx0{,}718\ \text{u}^2$**
+::::
 :::::
 
 
@@ -788,6 +864,16 @@ b) Calcula el área de la región limitada por la gráfica de la función $f$ y 
 Halla $a>0$ y $b>0$ sabiendo que la gráfica de la función $f:\mathbb{R}\to\mathbb{R}$ dada por $f(x)=\dfrac{bx^{2}}{1+ax^{4}}$ tiene en el punto $(1,2)$ un punto crítico.
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Condiciones: $f(1)=\dfrac{b}{1+a}=2\Rightarrow b=2+2a$ y $f'(1)=0$.
+
+$f'(x)=\dfrac{2bx(1+ax^4)-4abx^5}{(1+ax^4)^2}=\dfrac{2bx(1-ax^4)}{(1+ax^4)^2}$, y $f'(1)=0\Rightarrow 1-a=0\Rightarrow a=1$ (pues $b>0$). Entonces $b=4$.
+
+**$a=1,\ b=4$**
+::::
 :::::
 
 
@@ -801,6 +887,18 @@ $$f(x)=1+\int_{0}^{x}t\,e^{t}\,dt.$$
 Determina los intervalos de concavidad y de convexidad de $f$ y sus puntos de inflexión (abscisas donde se obtienen y valores que se alcanzan).
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f'(x)=xe^x$ (teorema fundamental del cálculo), luego $f''(x)=(x+1)e^x$.
+
+$f''<0$ si $x<-1$ y $f''>0$ si $x>-1$.
+
+**Cóncava en $(-\infty,-1)$, convexa en $(-1,+\infty)$; punto de inflexión en $x=-1$.**
+
+Valor: $f(-1)=1+\bigl[(t-1)e^t\bigr]_0^{-1}=1+(-2e^{-1}+1)=$ **$2-\dfrac2e$**.
+::::
 :::::
 
 

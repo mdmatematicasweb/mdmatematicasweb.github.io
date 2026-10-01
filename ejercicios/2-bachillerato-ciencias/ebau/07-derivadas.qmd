@@ -223,6 +223,18 @@ a) Calcula $a$ y $b$. *(1,25 puntos)*
 b) Para $a=-1$ y $b=4$, estudia si existe la derivada de $f$ en $x=2$. En caso afirmativo, calcula la ecuación de la recta tangente a la gráfica de $f$ en dicho punto. *(1,25 puntos)*
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Continuidad en $x=0$: $\sqrt{b}=2\Rightarrow b=4$. En $x=2$: $\sqrt{2a+4}=-\dfrac{2}{2\sqrt2}+\dfrac{3}{\sqrt2}=\sqrt2\Rightarrow 2a+4=2$.
+
+**$a=-1$, $b=4$.**
+
+**b)** Con esos valores $f(x)=\sqrt{4-x}$ en $(0,2]$: $f'(2^-)=\dfrac{-1}{2\sqrt{4-2}}=-\dfrac{1}{2\sqrt2}$, y $f'(2^+)=-\dfrac{1}{2\sqrt2}$. Coinciden, luego existe $f'(2)=-\dfrac{1}{2\sqrt2}$, con $f(2)=\sqrt2$.
+
+**Sí existe; tangente: $y=\sqrt2-\dfrac{1}{2\sqrt2}(x-2)$.**
+::::
 :::::
 
 
@@ -246,6 +258,20 @@ a) Determina $a$ y $b$. *(1,5 puntos)*
 b) Halla las ecuaciones de las rectas tangente y normal a la gráfica de $f$ en el punto de abscisa $x=2$. *(1 punto)*
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Continuidad en $0$: $\displaystyle\lim_{x\to0^-}\frac{ax+b}{x-1}=-b$ y $\ln1=0$, luego $b=0$.
+
+Derivabilidad en $0$: para $x<0$, $f'(x)=\dfrac{-a-b}{(x-1)^2}$, con $f'(0^-)=-a$; para $x>0$, $f'(x)=\dfrac1{1+x}$, con $f'(0^+)=1$. Así $-a=1$.
+
+**$a=-1,\ b=0$**
+
+**b)** En $x=2$: $f(2)=\ln3$, $f'(2)=\frac13$.
+
+Tangente: **$y=\ln3+\dfrac13(x-2)$**. Normal: **$y=\ln3-3(x-2)$**.
+::::
 :::::
 
 
@@ -255,6 +281,19 @@ b) Halla las ecuaciones de las rectas tangente y normal a la gráfica de $f$ en 
 Halla $a$, $b$ y $c$ sabiendo que la función $f:\mathbb{R}\to\mathbb{R}$ dada por $f(x)=a+b\operatorname{sen}(x)+c\operatorname{sen}(2x)$ tiene un punto crítico en el punto de abscisa $x=\pi$ y la recta $y=-\dfrac12x+3$ es normal a la gráfica de $f$ en el punto de abscisa $x=0$.
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f'(x)=b\cos x+2c\cos2x$.
+
+- Punto crítico en $x=\pi$: $f'(\pi)=-b+2c=0$.
+- La normal $y=-\frac12x+3$ tiene pendiente $-\frac12$, luego la tangente tiene pendiente $2$: $f'(0)=b+2c=2$. Además la normal pasa por $(0,3)$, luego $f(0)=a=3$.
+
+De las dos primeras: $b=1$, $c=\frac12$.
+
+**$a=3,\ b=1,\ c=\dfrac12$**
+::::
 :::::
 
 

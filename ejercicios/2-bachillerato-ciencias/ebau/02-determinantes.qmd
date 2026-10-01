@@ -231,6 +231,18 @@ b) Calcula razonadamente los determinantes
 $$\begin{vmatrix}6c&2b&2a\\3f&e&d\\9&2&1\end{vmatrix}\qquad\text{y}\qquad\begin{vmatrix}2a-2b&c&b\\2d-2e&f&e\\-2&3&2\end{vmatrix}.\quad\textit{(2 puntos)}$$
 
 *Relacionado también con:* [Matrices](01-matrices.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$|A|=2$.
+
+**a)** $\left|\tfrac13A^{-1}A^t\right|=\left(\tfrac13\right)^3\cdot\dfrac1{|A|}\cdot|A^t|=\dfrac1{27}\cdot\dfrac12\cdot2=$ **$\dfrac1{27}$**.
+
+**b)** Primer determinante: se intercambian las columnas 1 y 3 (cambia el signo), se saca factor $2$ de la fila 1 y $3$ de la columna 3: vale $-(2\cdot3)\,|A|=$ **$-12$**.
+
+Segundo: la columna 1 es $2\bigl[(a,d,1)-(b,e,2)\bigr]$; sumándole la columna 3 $(b,e,2)$ resulta $2\,\bigl|(a,d,1),(c,f,3),(b,e,2)\bigr|$, que equivale a $A^t$ con dos columnas intercambiadas. Vale $2\cdot(-|A|)=$ **$-4$**.
+::::
 :::::
 
 

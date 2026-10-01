@@ -300,6 +300,19 @@ Se consideran los vectores $\vec{u}=(-1,2,3)$ y $\vec{v}=(2,0,-1)$, así como el
 a) Calcula $a$ y $b$ para que el vector $\vec{w}=(1,a,b)$ sea ortogonal a $\vec{u}$ y $\vec{v}$. *(0,75 puntos)*
 
 b) Determina los cuatro vértices de un paralelogramo cuyos lados tienen las direcciones de los vectores $\vec{u}$ y $\vec{v}$, y que tiene al vector $\overrightarrow{OA}$ como una de sus diagonales, siendo $O$ el origen de coordenadas. *(1,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $\vec w\cdot\vec u=-1+2a+3b=0$ y $\vec w\cdot\vec v=2-b=0$.
+
+**$b=2$, $a=-\tfrac52$.**
+
+**b)** Los lados son $\alpha\vec u$ y $\beta\vec v$ desde $O$, y la diagonal $\overrightarrow{OA}=\alpha\vec u+\beta\vec v$: $(-\alpha+2\beta,\,2\alpha,\,3\alpha-\beta)=(-4,4,7)\Rightarrow\alpha=2,\ \beta=-1$.
+Los vértices son $O$, $A$, $O+2\vec u$ y $O-\vec v$:
+
+**$O(0,0,0)$, $B(-2,4,6)$, $A(-4,4,7)$ y $C(-2,0,1)$.**
+::::
 :::::
 
 
@@ -348,6 +361,20 @@ a) Halla el área del triángulo de vértices $A$, $B$ y $C$. *(1,25 puntos)*
 b) Halla el plano que equidista de $A$ y $B$. *(1,25 puntos)*
 
 *Relacionado también con:* [Rectas y planos](05-rectas-planos.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$\overrightarrow{AB}=(-3,2,-6)$, $\overrightarrow{AC}=(-11,-1,-3)$.
+
+**a)** $\overrightarrow{AB}\times\overrightarrow{AC}=(-12,57,25)$, de módulo $\sqrt{144+3249+625}=\sqrt{4018}=7\sqrt{82}$.
+
+**Área $=\dfrac{7\sqrt{82}}{2}\approx31{,}7\ \text{u}^2$**
+
+**b)** Es el plano mediador: normal $\overrightarrow{AB}\parallel(3,-2,6)$, pasa por el punto medio $M\left(-\tfrac12,3,0\right)$: $3x-2y+6z+k=0$ con $-\tfrac32-6+k=0\Rightarrow k=\tfrac{15}2$.
+
+**$6x-4y+12z+15=0$**
+::::
 :::::
 
 

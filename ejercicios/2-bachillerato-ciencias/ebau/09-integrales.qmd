@@ -817,6 +817,18 @@ Sea $f$ la función definida por $f(x)=\begin{cases}2x+4 & \text{si } x<0\\(x-2)
 a) Calcula los puntos de corte de la gráfica de $f$ con el eje de abscisas y esboza la gráfica de la función. *(1 punto)*
 
 b) Halla el área del recinto limitado por la gráfica de $f$ y por el eje de abscisas. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $2x+4=0\Rightarrow x=-2$; $(x-2)^2=0\Rightarrow x=2$ (raíz doble, tangente al eje).
+
+**Cortes con el eje: $(-2,0)$ y $(2,0)$.** La gráfica: recta de pendiente 2 desde $(-2,0)$ hasta $(0,4)$ y parábola de vértice $(2,0)$ desde $(0,4)$.
+
+**b)** $A=\displaystyle\int_{-2}^0(2x+4)\,dx+\int_0^2(x-2)^2\,dx=4+\tfrac83$.
+
+**$A=\dfrac{20}{3}$ u$^2$.**
+::::
 :::::
 
 
@@ -824,6 +836,16 @@ b) Halla el área del recinto limitado por la gráfica de $f$ y por el eje de ab
 **Ejercicio 4** · Ordinaria 2022 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria.pdf){target="_blank"}
 
 Considera la función $f$ definida por $f(x)=\dfrac{x^{3}}{x^{2}-2x+1}$ para $x\neq 1$. Halla una primitiva de $f$ que pase por el punto $(2,6)$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Se divide: $\dfrac{x^3}{(x-1)^2}=x+2+\dfrac{3x-2}{(x-1)^2}=x+2+\dfrac3{x-1}+\dfrac1{(x-1)^2}$. Las primitivas son
+$$F(x)=\frac{x^2}2+2x+3\ln|x-1|-\frac1{x-1}+C.$$
+$F(2)=2+4+0-1+C=6\Rightarrow C=1$.
+
+**$F(x)=\dfrac{x^2}{2}+2x+3\ln|x-1|-\dfrac{1}{x-1}+1$.**
+::::
 :::::
 
 
@@ -834,6 +856,15 @@ Considera la función $f$ definida por $f(x)=\dfrac{x^{3}}{x^{2}-2x+1}$ para $x\
 **Ejercicio 3** · Ordinaria · Reserva 2022 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria_Reserva.pdf){target="_blank"}
 
 Considera la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=e^{x}\operatorname{sen}(2x)$. Halla la primitiva de $f$ cuya gráfica pase por el punto $(0,0)$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Integrando por partes dos veces, $\displaystyle\int e^x\operatorname{sen}(2x)\,dx=\frac{e^x(\operatorname{sen}2x-2\cos2x)}{5}+C$.
+La condición $F(0)=0$ da $\tfrac{-2}{5}+C=0$.
+
+**$F(x)=\dfrac{e^x\left(\operatorname{sen}(2x)-2\cos(2x)\right)}{5}+\dfrac25$.**
+::::
 :::::
 
 
@@ -845,6 +876,18 @@ Considera las funciones $f,g:\mathbb{R}\to\mathbb{R}$ definidas por $f(x)=1-x^{2
 a) Calcula los puntos de corte de las gráficas de $f$ y $g$. Esboza el recinto que delimitan. *(1,25 puntos)*
 
 b) Determina el área del recinto anterior. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $1-x^2=2x^2\Rightarrow x^2=\tfrac13$.
+
+**Puntos de corte: $\left(\pm\tfrac{\sqrt3}{3},\tfrac23\right)$.** El recinto está entre la parábola $f$ (hacia abajo, vértice $(0,1)$) y la parábola $g$ (hacia arriba, vértice $(0,0)$): $f\ge g$ para $|x|\le\tfrac{\sqrt3}{3}$.
+
+**b)** $A=\displaystyle\int_{-\sqrt3/3}^{\sqrt3/3}(1-3x^2)\,dx=2\left[x-x^3\right]_0^{\sqrt3/3}=2\left(\tfrac{\sqrt3}{3}-\tfrac{\sqrt3}{9}\right)$.
+
+**$A=\dfrac{4\sqrt3}{9}$ u$^2$.**
+::::
 :::::
 
 
@@ -861,6 +904,20 @@ a) Determina los intervalos de crecimiento y de decrecimiento de $F$. *(1 punto)
 b) Halla la ecuación de la recta tangente a la gráfica de $F$ en el punto de abscisa $x=\pi$. *(1,5 puntos)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd), [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Por el teorema fundamental del cálculo, $F'(x)=2x\cos x$ en $[0,2\pi]$.
+
+**a)** En $(0,2\pi)$ el signo de $F'$ es el de $\cos x$: positivo en $\left(0,\tfrac\pi2\right)$ y $\left(\tfrac{3\pi}{2},2\pi\right)$; negativo en $\left(\tfrac\pi2,\tfrac{3\pi}2\right)$.
+
+**$F$ crece en $\left(0,\tfrac\pi2\right)\cup\left(\tfrac{3\pi}2,2\pi\right)$ y decrece en $\left(\tfrac\pi2,\tfrac{3\pi}2\right)$.**
+
+**b)** $F(\pi)=\left[2t\operatorname{sen}t+2\cos t\right]_0^\pi=-2-2=-4$ (por partes) y $F'(\pi)=-2\pi$.
+
+**Tangente: $y=-4-2\pi(x-\pi)$, es decir, $y=-2\pi x+2\pi^2-4$.**
+::::
 :::::
 
 
@@ -868,6 +925,15 @@ b) Halla la ecuación de la recta tangente a la gráfica de $F$ en el punto de a
 **Ejercicio 4** · Ordinaria · Suplente 2022 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria_Suplente.pdf){target="_blank"}
 
 Calcula $\displaystyle\int_{0}^{1}x\operatorname{arctg}(x)\,dx$ (donde $\operatorname{arctg}$ denota la función arcotangente).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Por partes, $u=\operatorname{arctg}x$, $dv=x\,dx$:
+$$\int_0^1x\operatorname{arctg}x\,dx=\left[\tfrac{x^2}{2}\operatorname{arctg}x\right]_0^1-\frac12\int_0^1\frac{x^2}{1+x^2}\,dx=\frac\pi8-\frac12\big[x-\operatorname{arctg}x\big]_0^1.$$
+
+**$\dfrac\pi4-\dfrac12$.**
+::::
 :::::
 
 
@@ -1005,6 +1071,16 @@ $$F(x)=\int_{0}^{x}\left(2t+\sqrt{t}\right)dt.$$
 Halla la ecuación de la recta tangente a la gráfica de $F$ en el punto de abscisa $x=1$.
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Por el teorema fundamental del cálculo $F'(x)=2x+\sqrt x$.
+
+$F(1)=\displaystyle\int_0^1(2t+\sqrt t)\,dt=\left[t^2+\tfrac23t^{3/2}\right]_0^1=\tfrac53$, y $F'(1)=3$.
+
+**$y=\dfrac53+3(x-1)$**, es decir, $y=3x-\dfrac43$.
+::::
 :::::
 
 
@@ -1015,6 +1091,16 @@ Halla la ecuación de la recta tangente a la gráfica de $F$ en el punto de absc
 **Ejercicio 4** · Ordinaria · Reserva 2021 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Ordinaria_RESERVA_Modelo4.pdf){target="_blank"}
 
 Calcula $\displaystyle\int_{0}^{2}\dfrac{1}{1+\sqrt{e^{x}}}\,dx$. (Sugerencia: efectúa el cambio de variable $t=\sqrt{e^{x}}$.)
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Con $t=\sqrt{e^x}=e^{x/2}$: $x=2\ln t$, $dx=\dfrac{2}{t}\,dt$; límites $x=0\to t=1$, $x=2\to t=e$.
+
+$$I=\int_1^e\frac{2}{t(1+t)}\,dt=2\int_1^e\left(\frac1t-\frac1{1+t}\right)dt=2\left[\ln\frac{t}{1+t}\right]_1^e=2\left(\ln\frac{e}{1+e}+\ln2\right).$$
+
+**$I=2-2\ln(1+e)+2\ln2\approx0{,}760$**
+::::
 :::::
 
 
@@ -1025,6 +1111,16 @@ Calcula $\displaystyle\int_{0}^{2}\dfrac{1}{1+\sqrt{e^{x}}}\,dx$. (Sugerencia: e
 **Ejercicio 3** · Ordinaria · Suplente 2021 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Ordinaria_SUPLENTE_Modelo6.pdf){target="_blank"}
 
 Calcula $\displaystyle\int_{0}^{\pi/2}\left(2\operatorname{sen}^{2}(x)-\cos^{2}(x)\right)dx$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$2\operatorname{sen}^2x-\cos^2x=(1-\cos2x)-\dfrac{1+\cos2x}{2}=\dfrac12-\dfrac32\cos2x$.
+
+$$\int_0^{\pi/2}\left(\tfrac12-\tfrac32\cos2x\right)dx=\left[\tfrac x2-\tfrac34\operatorname{sen}2x\right]_0^{\pi/2}=\frac\pi4.$$
+
+**$\dfrac\pi4$**
+::::
 :::::
 
 
@@ -1036,6 +1132,20 @@ Considera las funciones $f,g:\mathbb{R}\to\mathbb{R}$ definidas por $f(x)=|x|-2$
 a) Halla los puntos de corte de las gráficas de ambas funciones y esboza el recinto que delimitan. *(1 punto)*
 
 b) Determina el área del recinto anterior. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Para $x\ge0$: $x-2=4-x^2\Rightarrow x^2+x-6=0\Rightarrow x=2$. Para $x<0$: $-x-2=4-x^2\Rightarrow x^2-x-6=0\Rightarrow x=-2$.
+
+**Puntos de corte: $(-2,0)$ y $(2,0)$.** El recinto está limitado por arriba por la parábola $g(x)=4-x^2$ (vértice $(0,4)$) y por abajo por la «V» $f(x)=|x|-2$ (vértice $(0,-2)$), entre $x=-2$ y $x=2$.
+
+**b)** Por simetría:
+
+$$A=2\int_0^2\bigl[(4-x^2)-(x-2)\bigr]dx=2\int_0^2(6-x-x^2)\,dx=2\left[6x-\tfrac{x^2}{2}-\tfrac{x^3}{3}\right]_0^2=2\cdot\tfrac{22}{3}.$$
+
+**$A=\dfrac{44}{3}\ \text{u}^2$**
+::::
 :::::
 
 
@@ -1046,6 +1156,18 @@ b) Determina el área del recinto anterior. *(1,5 puntos)*
 **Ejercicio 4** · Extraordinaria 2021 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/07/2oBachCC_EBAU_Andalucia_2021-Extraordinaria.pdf){target="_blank"}
 
 Considera la función $f$ definida por $f(x)=\dfrac{x^{2}+1}{x^{2}-1}$ (para $x\neq -1$, $x\neq 1$). Halla una primitiva de $f$ cuya gráfica pase por el punto $(2,4)$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f(x)=\dfrac{x^2+1}{x^2-1}=1+\dfrac{2}{x^2-1}=1-\dfrac1{x+1}+\dfrac1{x-1}$.
+
+$$F(x)=x+\ln|x-1|-\ln|x+1|+C=x+\ln\left|\frac{x-1}{x+1}\right|+C.$$
+
+$F(2)=2+\ln\frac13+C=4\Rightarrow C=2+\ln3$.
+
+**$F(x)=x+\ln\left|\dfrac{x-1}{x+1}\right|+2+\ln3$**
+::::
 :::::
 
 

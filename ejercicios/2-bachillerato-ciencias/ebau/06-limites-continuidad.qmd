@@ -327,6 +327,19 @@ $$f(x)=\begin{cases}\dfrac{1}{x} & \text{si } x<-1\\[2mm]ax+b & \text{si } -1\le
 a) Calcula $a$ y $b$. *(1 punto)*
 
 b) Estudia y halla las asíntotas de la gráfica de $f$. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En $x=-1$: $\dfrac1{-1}=-a+b\Rightarrow -a+b=-1$. En $x=1$: $a+b=\dfrac{1}{2}$.
+
+**$a=\tfrac34$, $b=-\tfrac14$.**
+
+**b)** Con esos valores, $f$ es una función continua definida a trozos.
+- Verticales: ninguna. $x=0$ no es problema (la rama $1/x$ sólo vale para $x<-1$) y $x=-1$ no pertenece a la rama $\tfrac{x^2}{x+1}$ ($x\ge1$).
+- En $-\infty$: $\lim\dfrac1x=0$, **asíntota horizontal $y=0$**.
+- En $+\infty$: $\dfrac{x^2}{x+1}$ tiene pendiente $m=1$ y $n=\lim\left(\dfrac{x^2}{x+1}-x\right)=-1$: **asíntota oblicua $y=x-1$**.
+::::
 :::::
 
 
@@ -436,6 +449,16 @@ $$n=\lim_{x\to\pm\infty}\big(f(x)-x\big)=\lim\frac{x^4-3x^2+2-x(x+2)^3}{(x+2)^3}
 **Ejercicio 1** · Ordinaria 2021 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/07/2oBachCC_EBAU_Andalucia_2021-Ordinaria.pdf){target="_blank"}
 
 Se sabe que la gráfica de la función $f$ definida por $f(x)=\dfrac{ax^2+bx+2}{x-1}$ (para $x\neq 1$) tiene una asíntota oblicua que pasa por el punto $(1,1)$ y tiene pendiente $2$. Calcula $a$ y $b$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Asíntota oblicua $y=mx+n$ con $m=\displaystyle\lim\frac{f(x)}{x}=a$ y $n=\displaystyle\lim\bigl(f(x)-ax\bigr)=a+b$.
+
+Pendiente $2\Rightarrow a=2$. Pasa por $(1,1)$: $1=2\cdot1+(2+b)\Rightarrow b=-3$.
+
+**$a=2,\ b=-3$** (asíntota $y=2x-1$).
+::::
 :::::
 
 
@@ -451,6 +474,18 @@ a) Calcula $a$. *(1,5 puntos)*
 b) Halla la ecuación de la recta tangente a la gráfica de $f$ en el punto de abscisa $x=-1$. *(1 punto)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Continuidad en $x=0$: $f(0)=-6$. Por la derecha, hace falta que $\operatorname{sen}x-ax$ se anule en $0$ al ritmo de $x^3$, es decir $a=1$ (si $a\neq1$ el límite sería infinito). Con $a=1$: $\operatorname{sen}x-x=-\frac{x^3}{6}+\cdots$, y $36\cdot\left(-\frac16\right)=-6$ ✓.
+
+**$a=1$**
+
+**b)** Para $x<0$: $f(x)=(3x-6)e^x$, $f'(x)=(3x-3)e^x$. En $x=-1$: $f(-1)=-9e^{-1}$, $f'(-1)=-6e^{-1}$.
+
+**$y=-\dfrac{9}{e}-\dfrac{6}{e}(x+1)$**, es decir, $y=-\dfrac{6x+15}{e}$.
+::::
 :::::
 
 
@@ -465,6 +500,16 @@ Sea la función continua $f:\mathbb{R}\to\mathbb{R}$ definida por
 $$f(x)=\begin{cases}\dfrac{\ln(e^{x}+x^{3})}{x} & \text{si } x<0\\[2mm]4x^{2}+a & \text{si } 0\le x<1\\[2mm]b+\operatorname{sen}(\pi x) & \text{si } 1\le x\end{cases}$$
 
 ($\ln$ denota la función logaritmo neperiano). Determina $a$ y $b$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Continuidad en $x=0$: $\displaystyle\lim_{x\to0^-}\frac{\ln(e^x+x^3)}{x}$. Como $\ln(e^x+x^3)=x+O(x^3)$, este límite vale $1$ (o por L'Hôpital: $\dfrac{e^x+3x^2}{e^x+x^3}\to1$). Por la derecha, $f(0)=a$. Así **$a=1$**.
+
+Continuidad en $x=1$: $4\cdot1^2+a=5$ y $b+\operatorname{sen}\pi=b$, luego **$b=5$**.
+
+**$a=1,\ b=5$**
+::::
 :::::
 
 
@@ -478,6 +523,18 @@ a) Estudia y halla las asíntotas de la gráfica de $f$. *(1,25 puntos)*
 b) Determina los intervalos de crecimiento y de decrecimiento de $f$. *(1,25 puntos)*
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f(x)=\dfrac{e^{2x}-1}{e^{2x}+1}$.
+
+**a)** $\displaystyle\lim_{x\to+\infty}f=1$ y $\displaystyle\lim_{x\to-\infty}f=\frac{-1}{1}=-1$. **Asíntotas horizontales: $y=1$ (en $+\infty$) e $y=-1$ (en $-\infty$)**; no hay verticales (el denominador no se anula) ni oblicuas.
+
+**b)** $f'(x)=\dfrac{2e^{2x}(e^{2x}+1)-2e^{2x}(e^{2x}-1)}{(e^{2x}+1)^2}=\dfrac{4e^{2x}}{(e^{2x}+1)^2}>0$.
+
+**$f$ es estrictamente creciente en todo $\mathbb{R}$.**
+::::
 :::::
 
 
@@ -488,6 +545,16 @@ b) Determina los intervalos de crecimiento y de decrecimiento de $f$. *(1,25 pun
 **Ejercicio 1** · Extraordinaria 2021 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2022/07/2oBachCC_EBAU_Andalucia_2021-Extraordinaria.pdf){target="_blank"}
 
 Calcula $a$ y $b$ sabiendo que $\displaystyle\lim_{x\to 0}\dfrac{a\,(1-\cos(x))+b\,\operatorname{sen}(x)-2\,(e^{x}-1)}{x^{2}}=7$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Desarrollos: $1-\cos x=\frac{x^2}{2}+\cdots$, $\operatorname{sen}x=x-\cdots$, $e^x-1=x+\frac{x^2}{2}+\cdots$. El numerador es $(b-2)x+\left(\frac a2-1\right)x^2+\cdots$.
+
+Para que el límite sea finito (en $\frac00$) hace falta $b=2$; entonces el límite es $\frac a2-1=7\Rightarrow a=16$.
+
+**$a=16,\ b=2$**
+::::
 :::::
 
 

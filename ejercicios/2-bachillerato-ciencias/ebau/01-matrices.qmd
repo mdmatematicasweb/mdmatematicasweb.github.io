@@ -509,6 +509,18 @@ a) ¿Para qué valores de $m$ tiene inversa la matriz $A$? *(1 punto)*
 b) Para $m=4$ resuelve, si es posible, la ecuación matricial $A\,X=12\,I$, donde $I$ es la matriz identidad de orden 3. *(1,5 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $|A|=m(m-1)^2$ (para $m\ge0$). Se anula en $m=0$ y $m=1$.
+
+**$A$ tiene inversa si $m>0$ y $m\neq1$.**
+
+**b)** Para $m=4$, $|A|=36\neq0$ y $X=12A^{-1}$:
+
+**$X=\begin{pmatrix}5&-2&-2\\-2&4&0\\-2&0&4\end{pmatrix}$** (se comprueba $AX=12I$).
+::::
 :::::
 
 
@@ -523,6 +535,17 @@ Considera la matriz $A=\begin{pmatrix}1&2&1\\1&1&1\\1&-1&-1\end{pmatrix}$.
 a) Calcula $A^{-1}$. *(1 punto)*
 
 b) Calcula la matriz $X$ de orden tres que verifica $A\,X+(A-X)^{2}=X^{2}+I$, siendo $I$ la matriz identidad de orden tres. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $|A|=2\neq0$.
+$$A^{-1}=\begin{pmatrix}0&\tfrac12&\tfrac12\\1&-1&0\\-1&\tfrac32&-\tfrac12\end{pmatrix}.$$
+
+**b)** Se desarrolla $(A-X)^2=A^2-AX-XA+X^2$. La ecuación queda $A^2-XA=I$, es decir $XA=A^2-I$ y
+
+**$X=A-A^{-1}=\begin{pmatrix}1&\tfrac32&\tfrac12\\0&2&1\\2&-\tfrac52&-\tfrac12\end{pmatrix}$.**
+::::
 :::::
 
 
@@ -539,6 +562,18 @@ a) Determina para qué valores de $a$ se cumple que $A^{-1}=\tfrac14A$. *(1,25 p
 b) Para $a=1$ calcula, si es posible, la matriz $X$ tal que $A\,X=B^{t}$, donde $B^{t}$ denota la matriz traspuesta de $B$. *(1,25 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $A^{-1}=\tfrac14A\iff A^2=4I$. Con $A^2=\begin{pmatrix}a^2+3a&3-3a\\a-a^2&3a+1\end{pmatrix}$, la entrada $(1,2)$ exige $a=1$, y entonces $A^2=4I$ se cumple.
+
+**$a=1$.**
+
+**b)** Para $a=1$, $|A|=-4\neq0$, así que $X=A^{-1}B^t=\tfrac14A\,B^t$:
+
+**$X=\begin{pmatrix}-1&\tfrac94&\tfrac54\\0&\tfrac74&\tfrac34\end{pmatrix}$.**
+::::
 :::::
 
 
@@ -615,6 +650,19 @@ a) Estudia, según los valores de $\lambda$, el rango de la matriz $A-\lambda I$
 b) Resuelve el sistema $(A-I)\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}0\\0\\0\end{pmatrix}$ y halla, si existe, una solución en la que $x=2$. *(0,75 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd), [Sistemas de ecuaciones lineales](03-sistemas-ecuaciones-lineales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $|A-\lambda I|=-(\lambda-1)(\lambda-3)(\lambda-4)$.
+
+- $\lambda\neq1,3,4$: $\operatorname{rg}(A-\lambda I)=3$.
+- $\lambda=1,\ 3$ o $4$: $\operatorname{rg}(A-\lambda I)=2$ (el determinante es nulo y hay un menor de orden 2 no nulo).
+
+**b)** $A-I=\begin{pmatrix}1&0&2\\-1&1&1\\0&1&3\end{pmatrix}$, de rango $2$. De $x+2z=0$ y $-x+y+z=0$ (la tercera es combinación): $x=-2z$, $y=-3z$.
+
+**Soluciones: $(x,y,z)=(-2\lambda,-3\lambda,\lambda)$.** Con $x=2$: $\lambda=-1$, **solución $(2,3,-1)$**.
+::::
 :::::
 
 
@@ -628,6 +676,20 @@ a) Calcula $m$ para que $AB$ no tenga inversa. *(1 punto)*
 b) Estudia el rango de la matriz $BA$ según los valores de $m$. *(1,5 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$A$ es $2\times3$ y $B$ es $3\times2$.
+
+**a)** $AB=\begin{pmatrix}1&-1\\1+m&2m\end{pmatrix}$ y $|AB|=2m+(1+m)=3m+1$.
+
+**$AB$ no tiene inversa si $m=-\dfrac13$.**
+
+**b)** $BA$ es $3\times3$ y $|BA|=0$ siempre, luego $\operatorname{rg}(BA)\le2$. Las filas de $A$ son independientes (rango $2$ para todo $m$) y las columnas de $B$ también (rango $2$ para todo $m$), por lo que $\operatorname{rg}(BA)=2$ (la aplicación asociada a $A$ es sobreyectiva y la de $B$ inyectiva).
+
+**$\operatorname{rg}(BA)=2$ para todo $m\in\mathbb{R}$.**
+::::
 :::::
 
 
@@ -646,6 +708,18 @@ b) Dadas las matrices
 $$B=\begin{pmatrix}1&-1\\3&0\\-4&5\end{pmatrix}\qquad\text{y}\qquad C=\begin{pmatrix}2&0\\-3&2\\1&-1\end{pmatrix},$$
 
 calcula la matriz $X$ que verifica $A^{4}X+B=AC$. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Se obtiene $A^2=\begin{pmatrix}-1&0&1\\1&4&4\\-1&-3&-3\end{pmatrix}$ y $A^3=A^2A=-I$.
+
+Como $A\cdot A^2=-I$, resulta $A^{-1}=-A^2$, es decir, **$A^2=-A^{-1}$**.
+
+**b)** De $A^3=-I$: $A^4=-A$. La ecuación es $-AX+B=AC$, luego $X=-A^{-1}(AC-B)=-C+A^{-1}B=-C-A^2B$:
+
+$$X=\begin{pmatrix}3&-6\\6&-21\\-3&15\end{pmatrix}$$
+::::
 :::::
 
 
