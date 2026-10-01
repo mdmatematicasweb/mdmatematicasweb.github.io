@@ -28,6 +28,8 @@ Los vectores $\vec u,\vec v,\vec w$ son **linealmente dependientes** si alguno e
 
 Para hallar las coordenadas $(a,b,c)$ se resuelve el sistema $a\vec u+b\vec v+c\vec w=\vec t$.
 
+![Suma y resta de vectores (regla del paralelogramo) y proyección de $\vec u$ sobre $\vec v$ para el producto escalar.](fig-vectores-2d.svg){fig-alt="Dos dibujos: la suma y la resta de dos vectores en un paralelogramo, y un vector proyectado sobre otro con el ángulo entre ellos" width="95%" fig-align="center"}
+
 ## 3. Producto escalar
 
 $$\vec u\cdot\vec v=u_1v_1+u_2v_2+u_3v_3=|\vec u|\,|\vec v|\cos\alpha$$
@@ -65,6 +67,8 @@ Ejemplo: $(1,2,3)\times(2,-1,1)=(2+3,\ 6-1,\ -1-4)=(5,5,-5)$.
 ## 5. Producto mixto
 
 $$[\vec u,\vec v,\vec w]=\vec u\cdot(\vec v\times\vec w)=\left|\begin{matrix}u_1&u_2&u_3\\v_1&v_2&v_3\\w_1&w_2&w_3\end{matrix}\right|$$
+
+![El producto vectorial $\vec u\times\vec v$ es perpendicular a ambos y su módulo es el área del paralelogramo; el valor absoluto del producto mixto es el volumen del paralelepípedo.](fig-vectorial-mixto.svg){fig-alt="Dos dibujos en perspectiva: un paralelogramo con el vector perpendicular u por v, y un paralelepípedo con sus tres aristas u, v y w" width="95%" fig-align="center"}
 
 - Volumen del paralelepípedo: $V=|[\vec u,\vec v,\vec w]|$.
 - Volumen del tetraedro $ABCD$: $V=\dfrac16\left|[\overrightarrow{AB},\overrightarrow{AC},\overrightarrow{AD}]\right|$.

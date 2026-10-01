@@ -464,8 +464,92 @@ def fig_venn():
            AP / "10-probabilidad" / "fig-venn.svg", "Diagramas de Venn: unión de A y B, intersección de A y B y el complemento de la unión (ni A ni B)")
 
 
+def arrow(g, p, q, color=NAVY, width=3, label=None, dx=0, dy=0):
+    """Flecha de p a q en coordenadas de la figura (punta rellena)."""
+    x1, y1, x2, y2 = g.X(p[0]), g.Y(p[1]), g.X(q[0]), g.Y(q[1])
+    ang = math.atan2(y2 - y1, x2 - x1)
+    hx, hy = x2 - 10 * math.cos(ang), y2 - 10 * math.sin(ang)
+    g.el.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{hx:.1f}" y2="{hy:.1f}" stroke="{color}" stroke-width="{width}" stroke-linecap="round"/>')
+    g.el.append(f'<path d="M{x2:.1f},{y2:.1f} L{x2 - 13 * math.cos(ang - 0.4):.1f},{y2 - 13 * math.sin(ang - 0.4):.1f} L{x2 - 13 * math.cos(ang + 0.4):.1f},{y2 - 13 * math.sin(ang + 0.4):.1f} Z" fill="{color}"/>')
+    if label:
+        g.el.append(f'<text x="{(x1 + x2) / 2 + dx:.1f}" y="{(y1 + y2) / 2 + dy:.1f}" text-anchor="middle" font-size="15" font-style="italic" font-weight="700" fill="{color}">{escape(label)}</text>')
+
+
+def fig_sistemas_2d():
+    kw = dict(w=250, h=210, pad=18)
+    a = Fig(-3, 3, -3, 3, **kw)
+    a.axes()
+    a.curve(lambda x: 0.5 * x + 0.5, -3, 3, color=NAVY, width=3); a.curve(lambda x: -x + 2, -3, 3, color=CORAL, width=3)
+    a.dot(1, 1, YELLOW)
+    b = Fig(-3, 3, -3, 3, **kw)
+    b.axes()
+    b.curve(lambda x: 0.5 * x + 1.2, -3, 3, color=NAVY, width=3); b.curve(lambda x: 0.5 * x - 0.8, -3, 3, color=CORAL, width=3)
+    c = Fig(-3, 3, -3, 3, **kw)
+    c.axes()
+    c.curve(lambda x: 0.5 * x + 0.5, -3, 3, color=CORAL, width=7); c.curve(lambda x: 0.5 * x + 0.5, -3, 3, color=NAVY, width=2.5)
+    panels([a, b, c], ["Compatible determinado", "Incompatible", "Compatible indeterminado"], AP / "03-sistemas-ecuaciones-lineales" / "fig-sistemas-2d.svg",
+           "Un sistema de dos ecuaciones con dos incógnitas: dos rectas que se cortan en un punto (solución única), dos rectas paralelas (sin solución) y dos rectas iguales (infinitas soluciones)")
+
+
+def fig_det_area():
+    u, v = (3, 1), (1, 2.2)
+    g = Fig(-0.8, 5, -0.8, 4, w=520, h=320)
+    g.el.append(f'<path d="{g.path([(0, 0), u, (u[0] + v[0], u[1] + v[1]), v])} Z" fill="{YELLOW}" stroke="{INK}" stroke-width="2"/>')
+    g.axes()
+    arrow(g, (0, 0), u, NAVY, 3.5, "u", dy=18); arrow(g, (0, 0), v, CORAL, 3.5, "v", dx=-12)
+    g.text(2.0, 1.55, "|det(u, v)| = área", bold=True, size=15)
+    g.text(2.0, 1.55, "del paralelogramo", bold=True, size=14, dy=18)
+    g.save(AP / "02-determinantes" / "fig-det-area.svg", "El valor absoluto del determinante de dos vectores es el área del paralelogramo que forman")
+
+
+def fig_vectores_2d():
+    kw = dict(w=270, h=230, pad=18)
+    a = Fig(-0.8, 5.2, -2.2, 3.6, **kw)
+    u, v = (3, 0.7), (1, 2.4)
+    a.el.append(f'<path d="{a.path([(0, 0), u, (4, 3.1), v])} Z" fill="{YELLOW}" fill-opacity="0.45" stroke="none"/>')
+    a.line(u, (4, 3.1), dash="5 4", width=1.5); a.line(v, (4, 3.1), dash="5 4", width=1.5)
+    arrow(a, (0, 0), u, NAVY, 3, "u", dy=18); arrow(a, (0, 0), v, CORAL, 3, "v", dx=-12)
+    arrow(a, (0, 0), (4, 3.1), "#2a8f82", 3.5)
+    a.text(4, 3.1, "u + v", dx=-6, dy=-12, color="#2a8f82", bold=True, size=15)
+    arrow(a, v, u, "#7A5BA6", 2.5)
+    a.text(3.2, 0.2, "u − v", color="#7A5BA6", bold=True, size=15, dy=26)
+    b = Fig(-0.8, 5.2, -1, 3.8, **kw)
+    w = (4.2, 0); t = (2.6, 2.2)
+    k = (t[0] * w[0]) / (w[0] ** 2)
+    b.line(t, (t[0], 0), dash="5 4", width=1.5)
+    arrow(b, (0, 0), w, NAVY, 3, "v", dx=70, dy=20)
+    arrow(b, (0, 0), t, CORAL, 3, "u", dx=-14, dy=-6)
+    arrow(b, (0, 0), (t[0], 0), "#2a8f82", 5)
+    b.text(1.3, 0, "proy", dy=22, bold=True, color="#2a8f82", size=13)
+    b.text(0.75, 0.2, "α", bold=True, size=16)
+    b.text(3.2, 2.9, "u · v = |u||v| cos α", anchor="start", bold=True, size=13, dx=-80)
+    panels([a, b], ["Suma y resta", "Producto escalar y proyección"], AP / "04-vectores-espacio" / "fig-vectores-2d.svg",
+           "Suma de vectores por la regla del paralelogramo, resta, y producto escalar como producto de módulos por el coseno del ángulo, con la proyección de u sobre v")
+
+
+def fig_vectorial_mixto():
+    g = Fig3(2, w=290, h=240, scale=40)
+    g.panel(0, "Producto vectorial: área y perpendicular")
+    u, v = (2.0, 0, 0), (0, 2.2, 0)
+    g.plane((1.0, 1.1, 0), (1.0, 0, 0), (0, 1.1, 0), color=MINT)
+    g.seg((0, 0, 0), u, color=NAVY, width=3.5, label="u", at=1.18); g.seg((0, 0, 0), v, color=CORAL, width=3.5, label="v")
+    g.seg((0, 0, 0), (0, 0, 2.2), color="#7A5BA6", width=3.5, label="u × v")
+    g.dot((0, 0, 0))
+    g.panel(1, "Producto mixto: volumen")
+    u, v, w = (1.8, 0, 0), (0, 2.0, 0), (0, 0.4, 1.8)
+    add = lambda *ps: tuple(sum(q[i] for q in ps) for i in range(3))
+    O = (0, 0, 0)
+    for a_, b_ in [(u, add(u, v)), (v, add(u, v)), (u, add(u, w)), (w, add(u, w)), (v, add(v, w)), (w, add(v, w)),
+                   (add(u, v), add(u, v, w)), (add(u, w), add(u, v, w)), (add(v, w), add(u, v, w))]:
+        g.seg(a_, b_, color=NAVY, width=2.2)
+    g.seg(O, u, color=NAVY, width=3.5, label="u", at=1.18); g.seg(O, v, color=CORAL, width=3.5, label="v"); g.seg(O, w, color="#2a8f82", width=3.5, label="w")
+    g.dot(O)
+    g.save(AP / "04-vectores-espacio" / "fig-vectorial-mixto.svg", "El producto vectorial u×v es perpendicular a u y v y su módulo es el área del paralelogramo; el valor absoluto del producto mixto es el volumen del paralelepípedo")
+
+
 if __name__ == "__main__":
     fig_asintotas(); fig_monotonia(); fig_area(); fig_normal()
     fig_dos_planos(); fig_recta_plano(); fig_dos_rectas(); fig_simetrico()
     fig_discontinuidades(); fig_tangente(); fig_derivabilidad(); fig_rolle_vm(); fig_area_signo()
     fig_simetria_normal(); fig_regla_68(); fig_venn()
+    fig_sistemas_2d(); fig_det_area(); fig_vectores_2d(); fig_vectorial_mixto()
