@@ -21,3 +21,11 @@ Push a `main` dispara `.github/workflows/publish.yml`, que renderiza con Quarto 
 ## Identidad visual
 
 Colores, tipografía definidos en `_brand.yml`. Editar ese archivo pa cambiar paleta/tipografía en todo el sitio de una vez.
+
+## Figuras de los apuntes
+
+Las figuras SVG de los apuntes (`apuntes/**/fig-*.svg`) se generan con `python3 scripts/figuras/build.py`. No se editan a mano.
+
+## Licencia
+
+Contenidos didácticos: CC BY-NC-ND 4.0. Código, diseño, logotipo y nombre: todos los derechos reservados. Detalle en `LICENSE` y en la página `licencia.qmd`.

@@ -19,7 +19,7 @@ Un límite puede ser un número, $+\infty$ o $-\infty$. Con funciones definidas 
 | $\ln x$, $x\to\infty$ | $\infty$ |
 | $\ln x$, $x\to0^+$ | $-\infty$ |
 
-**Orden de infinitos**: $\ln x\ll x^n\ll a^x\ll x!$ (un exponencial gana a una potencia, y esta a un logaritmo).
+**Orden de infinitos** (con $n>0$ y $a>1$): $\ln x\ll x^n\ll a^x\ll x^x$ (una exponencial gana a una potencia, y esta a un logaritmo).
 
 **Límites notables**:
 $$\lim_{x\to0}\frac{\sin x}{x}=1\qquad\lim_{x\to0}\frac{e^x-1}{x}=1\qquad\lim_{x\to0}\frac{\ln(1+x)}{x}=1\qquad\lim_{x\to\infty}\left(1+\frac1x\right)^x=e$$
@@ -80,6 +80,9 @@ Para calcular parámetros que hacen continua una función a trozos se igualan lo
 - **Oblicua** $y=mx+n$: si no hay horizontal y
 $$m=\lim_{x\to\infty}\frac{f(x)}{x}\neq0,\qquad n=\lim_{x\to\infty}\big(f(x)-mx\big)$$
 Con cociente de polinomios, la oblicua aparece cuando el grado del numerador supera en uno al del denominador y se obtiene dividiendo.
+
+![$f(x)=\frac{x^2}{x-1}$: asíntota vertical $x=1$ y oblicua $y=x+1$.](fig-asintotas.svg){fig-alt="Gráfica de x al cuadrado entre x menos 1 con la asíntota vertical x igual a 1 y la oblicua y igual a x más 1" width="85%" fig-align="center"}
+
 
 ## 7. Teoremas de funciones continuas
 

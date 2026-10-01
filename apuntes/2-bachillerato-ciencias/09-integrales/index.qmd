@@ -77,6 +77,9 @@ Propiedades: $\displaystyle\int_a^bf=-\int_b^af$; $\displaystyle\int_a^bf=\int_a
 - **Área entre $f$ y el eje $X$** en $[a,b]$: $\displaystyle\int_a^b|f(x)|dx$. Hay que hallar los cortes con el eje y **separar** los trozos donde $f$ cambia de signo.
 - **Área entre dos curvas** ($f\ge g$ en $[a,b]$): $\displaystyle\int_a^b\big(f(x)-g(x)\big)dx$. Los límites de integración son los puntos de corte, resolviendo $f(x)=g(x)$. Si las curvas se cruzan, se separa por intervalos.
 
+![Área entre $f(x)=4-x^2$ y $g(x)=x+2$: se cortan en $x=-2$ y $x=1$, y $A=\int_{-2}^{1}\big((4-x^2)-(x+2)\big)dx=\frac92$.](fig-area.svg){fig-alt="Región sombreada entre la parábola 4 menos x al cuadrado y la recta x más 2, entre x igual a menos 2 y x igual a 1" width="85%" fig-align="center"}
+
+
 ::: {.callout-warning}
 Si $f$ cambia de signo, $\int_a^bf$ **no** es el área (las partes negativas restan). Calcula cada trozo por separado y suma los valores absolutos.
 :::
