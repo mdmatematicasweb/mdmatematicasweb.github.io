@@ -225,7 +225,8 @@
         if (Math.abs(m) < 1e-9) continue;
         const y0 = T.f(x0), n = y0 - m * x0;
         const mn = -1 / m, nn = y0 - mn * x0;
-        const r4 = (v) => (Math.round(v * 1e4) / 1e4);
+        const r4 = (v) => String(Math.round(v * 1e4) / 1e4).replace('.', '{,}');
+        const recta = (a, b) => r4(a) + 'x' + (b < 0 ? '-' : '+') + r4(Math.abs(b));
         const inputs = (mv, nv) => ({ kind: 'multi', parts: [{ kind: 'expr', label: 'm=', value: mv }, { kind: 'expr', label: 'n=', value: nv }] });
         const expl = '<small>(escribe cada valor exacto, p. ej. <code>2*e-1</code>, o con 3 decimales)</small>';
         return {
@@ -233,9 +234,9 @@
           partes: [
             part('Halla la ecuación de la recta tangente a la gráfica de ' + i$('f') + ' en el punto de abscisa ' + i$('x=' + x0tex) + ', escrita como ' + i$('y=mx+n') + '. ' + expl, 1.25, inputs(m, n),
               ['Derivada: ' + i$('f^{\\prime}(x)=' + T.dtex), 'Pendiente y ordenada del punto: ' + i$('m=f^{\\prime}(' + x0tex + ')\\approx ' + r4(m)) + ', ' + i$('f(' + x0tex + ')\\approx ' + r4(y0)),
-                'Recta tangente: ' + d$('y-f(x_0)=f^{\\prime}(x_0)(x-x_0)\\ \\Rightarrow\\ y\\approx ' + r4(m) + 'x+' + r4(n))]),
+                'Recta tangente: ' + d$('y-f(x_0)=f^{\\prime}(x_0)(x-x_0)\\ \\Rightarrow\\ y\\approx ' + recta(m, n))]),
             part('Halla la ecuación de la recta normal en ese mismo punto, escrita como ' + i$('y=mx+n') + '.', 1.25, inputs(mn, nn),
-              ['La normal es perpendicular a la tangente: ' + i$('m_n=-\\dfrac{1}{f^{\\prime}(x_0)}\\approx ' + r4(mn)), d$('y\\approx ' + r4(mn) + 'x+' + r4(nn))]),
+              ['La normal es perpendicular a la tangente: ' + i$('m_n=-\\dfrac{1}{f^{\\prime}(x_0)}\\approx ' + r4(mn)), d$('y\\approx ' + recta(mn, nn))]),
           ],
           data: { tex: T.tex, f: T.f, df: T.df, x0, m, n, mn, nn },
         };

@@ -249,7 +249,7 @@
             answer: { kind: 'number', label: 'm=', value: m },
             steps: ['Perpendiculares ' + i$('\\iff\\vec u\\cdot\\vec v=0') + ': ' + d$('\\vec u\\cdot\\vec v=' + v[0] + 'm+(' + a + ')(' + v[1] + ')+(' + b + ')(' + v[2] + ')=' + v[0] + 'm' + (s < 0 ? s : '+' + s) + '=0'),
               d$('m=' + ftex(m))],
-            mistakes: s === 0 ? [] : [{ value: fr(s, v[0]), msg: 'cuidado con el signo al despejar: de $' + v[0] + 'm+' + s + '=0$ sale $m=-\\frac{' + s + '}{' + v[0] + '}$.' }],
+            mistakes: s === 0 ? [] : [{ value: fr(s, v[0]), msg: 'cuidado con el signo al despejar: de $' + v[0] + 'm+' + s + '=0$ sale $m=' + ftex(fr(-s, v[0])) + '$, no $' + ftex(fr(s, v[0])) + '$.' }],
             data: { tipo: 'perp', a, b, v, m },
           };
         }

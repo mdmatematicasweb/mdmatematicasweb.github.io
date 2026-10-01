@@ -72,7 +72,8 @@
       const nn = n;
       const eq = planeFrom(nn, P);
       steps.push('Plano que pasa por ' + i$(ptex('P', P)) + ' con normal ' + i$('\\vec n=' + vt(nn)) + ': ' + d$(nn.map((a, i) => par(a) + '(' + ['x', 'y', 'z'][i] + shift(P[i]) + ')').join('+') + '=0'));
-      steps.push('Desarrollamos: ' + d$(nn[0] + 'x+' + par(nn[1]) + 'y+' + par(nn[2]) + 'z+(' + (-dot(nn, P)) + ')=0') + 'Simplificando: ' + d$(eqTex(eq)));
+      const des = [nn[0], nn[1], nn[2], -dot(nn, P)];
+      steps.push('Desarrollamos: ' + d$(eqTex(des)) + (des.every((x, i) => x === eq[i]) ? '' : 'Simplificando: ' + d$(eqTex(eq))));
       return {
         prompt: prompt + ' Escribe ' + i$('(A,B,C,D)') + ' de ' + i$('Ax+By+Cz+D=0') + ' (vale cualquier múltiplo).',
         answer: { kind: 'matrix', label: '(A,B,C,D)=', value: row(eq), proportional: true },

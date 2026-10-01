@@ -369,7 +369,7 @@
           'Pendiente: ' + d$("f'(x)=" + T.dtex + '\\ \\Longrightarrow\\ m=' + fd(x0tex) + '=' + mtex),
           'Punto de tangencia: ' + d$('f(' + x0tex + ')=' + T.fx.tex),
           'Ordenada en el origen: ' + d$('n=f(' + x0tex + ')-m\\,x_0=' + T.fx.tex + '-' + par2(mtex) + '\\cdot ' + par2(x0tex) + '=' + ntex),
-          'La tangente es ' + i$('y=' + (mtex === '1' ? '' : mtex === '-1' ? '-' : mtex) + 'x' + (ntex === '0' ? '' : (ntex[0] === '-' ? '' : '+') + ntex)) + '.',
+          'La tangente es ' + i$('y=' + (mtex === '0' ? ntex : (mtex === '1' ? '' : mtex === '-1' ? '-' : mtex) + 'x' + (ntex === '0' ? '' : (ntex[0] === '-' ? '' : '+') + ntex))) + '.',
         ],
         data: { f: T.f, x0: T.x0, tipo: p.tipo },
       };

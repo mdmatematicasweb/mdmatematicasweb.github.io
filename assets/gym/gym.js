@@ -336,11 +336,17 @@
     modules[mod.id] = mod;
   }
 
+  /** Retoques de escritura en las fórmulas generadas: «a+-b» → «a-b», «1x» → «x». */
+  function tidyTex(t) {
+    return t.replace(/\+\s*-/g, '-')
+      .replace(/(^|[=+\-(\s{\[&|])1([xyztmh])(?![a-zA-Z])/g, '$1$2');
+  }
+
   function typeset(el, str) {
     const k = root.katex;
     if (!k || !k.renderToString) { el.textContent = str; return; }
     el.innerHTML = str.replace(/\$\$([\s\S]+?)\$\$|\$([^$]+?)\$/g, (_, dsp, inl) =>
-      k.renderToString(dsp !== undefined ? dsp : inl, { displayMode: dsp !== undefined, throwOnError: false }));
+      k.renderToString(tidyTex(dsp !== undefined ? dsp : inl), { displayMode: dsp !== undefined, throwOnError: false }));
   }
 
   function loadStats(key) {
@@ -773,7 +779,7 @@
     rnd, gcd, F, fadd, fsub, fmul, fdiv, fneg, feq, fzero, fstr, ftex, ftexp, parseFrac,
     M, mz, mI, rows, cols, mcopy, mT, madd, msub, mscale, meq, mmul, mpow, minorM, det, cofactors, inverse, rankOf,
     mtex, mtexStr, d$, i$, flatten, checkAnswer, answerStrings,
-    modules, define, mount, mountAll, resolveParams, setRandom, seeded, parseExpr, makeAnswerUI, typeset,
+    modules, define, mount, mountAll, resolveParams, setRandom, seeded, parseExpr, makeAnswerUI, typeset, tidyTex,
   };
   root.MDGym = api;
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
