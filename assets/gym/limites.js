@@ -176,8 +176,8 @@
       const a = r(-4, 4);
       let pr, qq, rr;
       do { pr = r(-4, 4); } while (pr === a);
-      do { qq = r(-4, 4); } while (qq === a);
       const tres = rnd.float() < 0.4;
+      do { qq = r(-4, 4); } while (qq === a || (!tres && qq === pr));
       do { rr = r(-4, 4); } while (rr === a);
       const Nf = tres ? pmul(pmul([1, -a], [1, -pr]), [1, -rr]) : pmul([1, -a], [1, -pr]);
       const Df = pmul([1, -a], [1, -qq]);
@@ -423,7 +423,7 @@
           steps: [
             'Continuidad en $x=' + x1 + '$: ' + d$(cf(x1) + 'a+b=' + V1),
             'Continuidad en $x=' + x2 + '$: ' + d$(cf(x2) + 'a+b=' + V2),
-            'Restando: ' + i$(cf(x2 - x1) + 'a=' + (V2 - V1)) + ', luego $a=' + a + '$ y $b=' + V1 + '-' + pa(x1 * a) + '=' + b + '$.',
+            'Restando: ' + i$(cf(x2 - x1) + 'a=' + (V2 - V1)) + (x2 - x1 === 1 ? ', es decir, ' : ', luego ') + '$a=' + a + '$ y $b=' + V1 + '-' + pa(x1 * a) + '=' + b + '$.',
           ],
           data: { mk, xs: [x1, x2], sol: [a, b], tipo: 'dos' },
         };

@@ -86,7 +86,7 @@
         steps.push(d$('=' + S.map((i) => c4(pmf(n, pp, i))).join('+') + '=' + c4(ans)));
       } else {
         const rest = Array.from({ length: n + 1 }, (_, i) => i).filter((i) => !S.includes(i));
-        steps.push('Es más corto usar el contrario: ' + d$(ask + '=1-P(X\\le' + (S[0] - 1) + ')=1-(' + rest.map((i) => c4(pmf(n, pp, i))).join('+') + ')=' + c4(ans)));
+        steps.push('Es más corto usar el contrario: ' + d$(ask + '=1-P(X' + (p.tipo === 'le' ? '\\ge' + (k + 1) : '\\le' + (S[0] - 1)) + ')=1-(' + rest.map((i) => c4(pmf(n, pp, i))).join('+') + ')=' + c4(ans)));
       }
       if (p.tipo === 'le') mist = [{ value: S.slice(0, -1).reduce((s, i) => s + pmf(n, pp, i), 0), msg: '$P(X\\le k)$ incluye el término $k$: suma desde $0$ hasta $' + k + '$ ambos incluidos.' }];
       if (p.tipo === 'ge') mist = [{ value: S.slice(1).reduce((s, i) => s + pmf(n, pp, i), 0), msg: '«al menos ' + k + '» incluye el ' + k + ': eso es $P(X>' + k + ')$.' }];

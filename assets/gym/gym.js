@@ -339,7 +339,12 @@
   /** Retoques de escritura en las fórmulas generadas: «a+-b» → «a-b», «1x» → «x». */
   function tidyTex(t) {
     return t.replace(/\+\s*-/g, '-')
-      .replace(/(^|[=+\-(\s{\[&|])1([xyztmh])(?![a-zA-Z])/g, '$1$2');
+      .replace(/\\d?frac\{(-?[^{}+\-]*)\}\{1\}/g, '$1')
+      .replace(/\^\{1\}(?![\d])/g, '')
+      .replace(/\(\((-?\d+)\)\)/g, '($1)')
+      .replace(/(^|[=+\-(\s{\[&|])1([xyztmh])(?![a-zA-Z])/g, '$1$2')
+      .replace(/(^|[=+(\s{\[&|])-1(?=\\left\(|\\dfrac)/g, '$1-')
+      .replace(/(^|[=+\-(\s{\[&|])1(?=e(?![a-zA-Z0-9^])|\\left\(|\\cos|\\sin|\\operatorname|\\ln|e\^|\|x\|)/g, '$1');
   }
 
   function typeset(el, str) {

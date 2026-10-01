@@ -35,6 +35,12 @@
   const fsum = (...qs) => qs.reduce((s, q) => fadd(s, q), F(0));
   const ex = (f) => (f.d === 1 ? String(f.n) : f.n + '/' + f.d);
   /** Parte de una respuesta multi: F → number; {v,show} → expr. */
+  /** Polinomio en h con potencias crecientes desde h^e0: asc([2, 1], 1) = «2h+h^2». Omite ceros y coeficientes 1. */
+  const asc = (cs, e0) => cs.map((c, i) => [c, e0 + i]).filter(([c]) => c !== 0).map(([c, e], i) => {
+    const hh = e === 0 ? '' : e === 1 ? 'h' : 'h^' + e;
+    const num = Math.abs(c) === 1 && hh ? '' : String(Math.abs(c));
+    return (c < 0 ? '-' : i ? '+' : '') + num + hh;
+  }).join('') || '0';
   const part = (label, q) => (isF(q) ? { kind: 'number', label, value: q } : { kind: 'expr', label, value: q.v, show: q.show });
   const qtex = (q) => (isF(q) ? ftex(q) : q.tex);
   const cases = (rows) => '\\begin{cases}' + rows.map((r0) => r0[0] + '&' + r0[1]).join('\\\\') + '\\end{cases}';
@@ -461,7 +467,7 @@
         const val = F(2 * pp * a + q);
         T = {
           ftex: polyTex([pp, q, c]), f: (x) => pp * x * x + q * x + c, a, val,
-          q: frac('f(' + a + '+h)-f(' + a + ')', 'h') + '=' + frac(pp + '\\left(' + (2 * a) + 'h+h^2\\right)' + (q ? sg(q) + Math.abs(q) + 'h' : ''), 'h') + '=' + pp + '(' + (2 * a) + '+h)' + tail(q),
+          q: frac('f(' + a + '+h)-f(' + a + ')', 'h') + '=' + frac(pp + '\\left(' + asc([2 * a, 1], 1) + '\\right)' + (q ? sg(q) + Math.abs(q) + 'h' : ''), 'h') + '=' + pp + '\\left(' + asc([2 * a, 1], 0) + '\\right)' + tail(q),
           lim: pp + '\\cdot ' + pa(2 * a) + tail(q) + '=' + val.n,
           mist: [{ value: F(pp * a * a + q * a + c), msg: 'has calculado $f(a)$; la derivada es el límite del cociente incremental.' }],
         };
@@ -470,7 +476,7 @@
         const val = F(3 * pp * a * a + q);
         T = {
           ftex: polyTex([pp, 0, q, 0]), f: (x) => pp * x * x * x + q * x, a, val,
-          q: frac('f(' + a + '+h)-f(' + a + ')', 'h') + '=' + frac(pp + '\\left(' + (3 * a * a) + 'h+' + (3 * a) + 'h^2+h^3\\right)' + (q ? sg(q) + Math.abs(q) + 'h' : ''), 'h') + '=' + pp + '\\left(' + (3 * a * a) + '+' + pa(3 * a) + 'h+h^2\\right)' + tail(q),
+          q: frac('f(' + a + '+h)-f(' + a + ')', 'h') + '=' + frac(pp + '\\left(' + asc([3 * a * a, 3 * a, 1], 1) + '\\right)' + (q ? sg(q) + Math.abs(q) + 'h' : ''), 'h') + '=' + pp + '\\left(' + asc([3 * a * a, 3 * a, 1], 0) + '\\right)' + tail(q),
           lim: pp + '\\cdot ' + (3 * a * a) + tail(q) + '=' + val.n,
           mist: [{ value: F(3 * pp * a * a), msg: 'no olvides el término $' + polyTex([q, 0]) + '$: su cociente incremental vale $' + q + '$.' }],
         };

@@ -49,7 +49,11 @@
   const ansE = (label, v, show) => ({ kind: 'expr', label, value: v, show });
   const val = (q) => q.n / q.d;
   /** Paréntesis alrededor de una suma/resta dentro de una integral: \int (…) dx. */
-  const wrapSum = (t) => (/[+-]/.test(t.replace(/\{[^{}]*\}/g, '').replace(/\([^()]*\)/g, '').replace(/^-/, '')) ? '(' + t + ')' : t);
+  const wrapSum = (t) => {
+    let u = t, w;
+    do { w = u; u = u.replace(/\{[^{}]*\}/g, '').replace(/\([^()]*\)/g, ''); } while (u !== w);
+    return /[+-]/.test(u.replace(/^-/, '')) ? '(' + t + ')' : t;
+  };
   /** Limpia restos de «k = 1» en los textos: 1x, \frac{a}{1}, e^{1}, \pi/1... */
   const tidy = (t) => (typeof t !== 'string' ? t : t
     .replace(/\\(?:d?)frac\{((?:[^{}]|\{[^{}]*\})*)\}\{1(?:\^2)?\}/g, '$1')
@@ -72,7 +76,12 @@
   const cterm = (q, t, first) => (q.n < 0 ? '-' : first ? '' : '+') + (Math.abs(q.n) === 1 && q.d === 1 ? '' : ftex(F(Math.abs(q.n), q.d))) + t;
   const kk = (k) => (k === 1 ? '' : String(k)) + 'x';
   const co = (a) => (a === 1 ? '' : String(a));
-  const lnT = (n, d) => (d === 1 ? '\\ln ' + n : '\\ln\\frac{' + n + '}{' + d + '}');
+  const lnT = (n, d) => {
+    let a = n, b = d;
+    while (b) [a, b] = [b, a % b];
+    n /= a; d /= a;
+    return d === 1 ? '\\ln ' + n : '\\ln\\frac{' + n + '}{' + d + '}';
+  };
 
   /* ===================== 1. Integrales indefinidas (elegir la primitiva) ===================== */
   function tmplPol() {
@@ -252,7 +261,7 @@
       const P = pint(c), Fb = pevF(P, b), Fa = pevF(P, a), v = fsub(Fb, Fa);
       return {
         ftex: pt(c), f: (x) => pevN(c, x), a, b, aT: String(a), bT: String(b), ans: ansN('I=', v), val: val(v),
-        steps: ['Primitiva: ' + d$('F(x)=' + ptq(P)), 'Regla de Barrow: ' + d$('F(' + b + ')-F(' + par(a) + ')=' + ftex(Fb) + '-' + (Fa.n < 0 ? '(' + ftex(Fa) + ')' : ftex(Fa)) + '=' + ftex(v))],
+        steps: ['Primitiva: ' + d$('F(x)=' + ptq(P)), 'Regla de Barrow: ' + d$('F(' + b + ')-F(' + a + ')=' + ftex(Fb) + '-' + (Fa.n < 0 ? '(' + ftex(Fa) + ')' : ftex(Fa)) + '=' + ftex(v))],
         mistakes: [{ value: fadd(Fb, Fa), msg: 'Barrow es $F(b)-F(a)$: hay que <b>restar</b>, no sumar.' }, { value: fsub(Fa, Fb), msg: 'el orden es $F(b)-F(a)$ (extremo superior menos inferior); te ha salido el signo contrario.' }],
       };
     }
@@ -335,7 +344,7 @@
         () => { const A = rnd.int(1, 4), b = rnd.int(1, 2); const v = A * (Math.exp(b * b) - 1) / 2; return { ftex: cf(A, 'x') + 'e^{x^2}', f: (x) => A * x * Math.exp(x * x), a: 0, b, aT: '0', bT: String(b), ans: ansE('I=', v, A + '*(e^' + b * b + '-1)/2'), val: v, steps: ['Cambio ' + i$('t=x^2') + ', ' + i$('dt=2x\\,dx') + ', así que ' + i$('x\\,dx=\\frac{dt}{2}') + '. Límites: ' + i$('x=0\\to t=0') + ', ' + i$('x=' + b + '\\to t=' + b * b) + '.', d$('\\int_0^{' + b * b + '}\\frac{' + A + '}{2}e^t\\,dt=\\frac{' + A + '}{2}\\left(e^{' + b * b + '}-1\\right)')], mistakes: [{ value: A * (Math.exp(b * b) - 1), msg: 'al hacer $t=x^2$, $dt=2x\\,dx$: el $x\\,dx$ del integrando es $\\frac{dt}{2}$, falta el factor $\\frac12$.' }] }; },
         () => { const k = rnd.int(1, 3), b = rnd.int(1, 3); const v = Math.log((b * b + k) / k); return { ftex: '\\dfrac{2x}{x^2+' + k + '}', f: (x) => 2 * x / (x * x + k), a: 0, b, aT: '0', bT: String(b), ans: ansE('I=', v, 'ln(' + (b * b + k) + '/' + k + ')'), val: v, steps: ['El numerador es la derivada del denominador: ' + i$('\\int\\frac{u\'}{u}dx=\\ln|u|') + ' con ' + i$('u=x^2+' + k) + '.', d$('\\Big[\\ln(x^2+' + k + ')\\Big]_0^{' + b + '}=\\ln ' + (b * b + k) + '-\\ln ' + k + '=' + lnT(b * b + k, k))], mistakes: [{ value: Math.log(b * b + k), msg: 'falta restar el valor en el extremo inferior: $F(b)-F(a)$ con $F(0)=\\ln ' + k + '$.' }] }; },
         () => { const A = rnd.int(1, 4), k = rnd.int(1, 3); const v = A * Math.log((k + 1) / k); return { ftex: '\\dfrac{' + A + '\\cos x}{' + k + '+\\sin x}', f: (x) => A * Math.cos(x) / (k + Math.sin(x)), a: 0, b: pi / 2, aT: '0', bT: '\\frac{\\pi}{2}', ans: ansE('I=', v, A + '*ln(' + (k + 1) + '/' + k + ')'), val: v, steps: ['Cambio ' + i$('t=' + k + '+\\sin x') + ', ' + i$('dt=\\cos x\\,dx') + '. Límites: ' + i$('t=' + k) + ' y ' + i$('t=' + (k + 1)) + '.', d$('\\int_{' + k + '}^{' + (k + 1) + '}\\frac{' + A + '}{t}dt=' + A + '\\ln ' + (k + 1) + '-' + A + '\\ln ' + k + '=' + A + lnT(k + 1, k))], mistakes: [{ value: A * Math.log(k + 1), msg: 'falta $F(a)$: en $x=0$ la primitiva vale $' + A + '\\ln ' + k + '$, y hay que restarlo.' }] }; },
-        () => { const A = rnd.int(1, 3), n = rnd.int(2, 4); const v = F(A, n + 1); return { ftex: A + '\\sin x\\cos^{' + n + '}x', f: (x) => A * Math.sin(x) * Math.cos(x) ** n, a: 0, b: pi / 2, aT: '0', bT: '\\frac{\\pi}{2}', ans: ansN('I=', v), val: val(v), steps: ['Cambio ' + i$('t=\\cos x') + ', ' + i$('dt=-\\sin x\\,dx') + '. Límites: ' + i$('t=1') + ' (en ' + i$('x=0') + ') y ' + i$('t=0') + ' (en ' + i$('x=\\frac\\pi2') + ').', d$('\\int_1^0(-' + A + ')t^{' + n + '}dt=\\int_0^1' + A + 't^{' + n + '}dt=\\frac{' + A + '}{' + (n + 1) + '}=' + ftex(v))], mistakes: [{ value: F(-A, n + 1), msg: 'cuidado con el signo y los límites: $dt=-\\sin x\\,dx$ cambia el signo, y al invertir los límites ($1\\to0$) vuelve a cambiar.' }] }; },
+        () => { const A = rnd.int(1, 3), n = rnd.int(2, 4); const v = F(A, n + 1); return { ftex: A + '\\sin x\\cos^{' + n + '}x', f: (x) => A * Math.sin(x) * Math.cos(x) ** n, a: 0, b: pi / 2, aT: '0', bT: '\\frac{\\pi}{2}', ans: ansN('I=', v), val: val(v), steps: ['Cambio ' + i$('t=\\cos x') + ', ' + i$('dt=-\\sin x\\,dx') + '. Límites: ' + i$('t=1') + ' (en ' + i$('x=0') + ') y ' + i$('t=0') + ' (en ' + i$('x=\\frac\\pi2') + ').', d$('\\int_1^0' + (A === 1 ? '-' : '(-' + A + ')') + 't^{' + n + '}dt=\\int_0^{1}' + (A === 1 ? '' : A) + 't^{' + n + '}dt=\\frac{' + A + '}{' + (n + 1) + '}=' + ftex(v))], mistakes: [{ value: F(-A, n + 1), msg: 'cuidado con el signo y los límites: $dt=-\\sin x\\,dx$ cambia el signo, y al invertir los límites ($1\\to0$) vuelve a cambiar.' }] }; },
         () => { const A = rnd.int(1, 3), k = rnd.int(1, 3); const v = A * (pi / 8); return { ftex: '\\dfrac{' + A + 'x}{1+x^4}', f: (x) => A * x / (1 + x ** 4), a: 0, b: 1, aT: '0', bT: '1', ans: ansE('I=', v, A + '*pi/8'), val: v, steps: ['Cambio ' + i$('t=x^2') + ', ' + i$('dt=2x\\,dx') + '. Límites: ' + i$('0') + ' y ' + i$('1') + '.', d$('\\int_0^1\\frac{' + A + '}{2}\\cdot\\frac{dt}{1+t^2}=\\frac{' + A + '}{2}\\Big[\\arctan t\\Big]_0^1=\\frac{' + A + '}{2}\\cdot\\frac{\\pi}{4}=\\frac{' + A + '\\pi}{8}')], mistakes: [{ value: A * pi / 4, msg: 'falta el factor $\\frac12$: $x\\,dx=\\frac{dt}{2}$.' }], k }; },
       ])();
     }
@@ -374,7 +383,7 @@
         ftex: 'e^{\\sqrt{x}}', f: (x) => Math.exp(Math.sqrt(x)), a: 0, b: m * m, aT: '0', bT: String(m * m), ans: ansE('I=', v, 2 * (m - 1) + '*e^' + m + '+2'), val: v,
         steps: [
           'Cambio ' + i$('t=\\sqrt x') + ': ' + i$('x=t^2') + ', ' + i$('dx=2t\\,dt') + '. Límites: ' + i$('t=0') + ' y ' + i$('t=' + m) + '.',
-          'Queda ' + i$('\\int_0^{' + m + '}2te^t\\,dt') + ', que se hace por partes: ' + d$('\\Big[2(t-1)e^t\\Big]_0^{' + m + '}=2(' + m + '-1)e^{' + m + '}-2(-1)=' + 2 * (m - 1) + 'e^{' + m + '}+2'),
+          'Queda ' + i$('\\int_0^{' + m + '}2te^t\\,dt') + ', que se hace por partes: ' + d$('\\Big[2(t-1)e^t\\Big]_0^{' + m + '}=2(' + m + '-1)e^{' + m + '}-2(-1)=' + (m === 1 ? '2' : 2 * (m - 1) + 'e^{' + m + '}+2')),
         ],
         mistakes: [{ value: 2 * (m - 1) * Math.exp(m), msg: 'falta restar $F(0)$: la primitiva $2(t-1)e^t$ vale $-2$ en $t=0$.' }].filter(() => m > 1),
       };
@@ -428,12 +437,18 @@
         const k = rnd.pick([1, 2, 3, -1]);
         v = ((k - 1) * Math.exp(k) + 1) / (k * k); sh = '((' + (k - 1) + ')*e^(' + k + ')+1)/' + k * k;
         ftex = 'x\\,e^{' + (k === 1 ? '' : k === -1 ? '-' : k) + 'x}'; f = (x) => x * Math.exp(k * x); a = 0; b = 1; aT = '0'; bT = '1';
+        const ek = 'e^{' + k + 'x}', vT = k === 1 ? 'e^{x}' : k === -1 ? '-e^{-x}' : '\\dfrac{' + ek + '}{' + k + '}';
+        const t1 = k === 1 ? 'e' : k === -1 ? '-e^{-1}' : '\\frac{e^{' + k + '}}{' + k + '}';
+        const t2 = k * k === 1 ? '-\\left(e^{' + k + '}-1\\right)' : '-\\frac{e^{' + k + '}-1}{' + k * k + '}';
+        const kcoef = k === 1 ? '-' : k === -1 ? '+' : '-\\frac{1}{' + k + '}';
+        const bracket = k === 1 ? 'x\\,e^{x}' : k === -1 ? '-x\\,e^{-x}' : '\\frac{x\\,' + ek + '}{' + k + '}';
+        const valT = k === 1 ? '1' : k === -1 ? '1-2e^{-1}' : '\\dfrac{' + (k - 1 === 1 ? '' : k - 1) + 'e^{' + k + '}+1}{' + k * k + '}';
         steps = [
-          'Tomamos ' + i$('u=x') + ', ' + i$('dv=e^{' + k + 'x}dx') + ': ' + i$('du=dx') + ', ' + i$('v=\\dfrac{e^{' + k + 'x}}{' + par(k) + '}') + '.',
-          d$('\\Big[\\frac{x\\,e^{' + k + 'x}}{' + par(k) + '}\\Big]_0^1-\\frac{1}{' + par(k) + '}\\int_0^1e^{' + k + 'x}dx=\\frac{e^{' + k + '}}{' + par(k) + '}-\\frac{e^{' + k + '}-1}{' + par(k * k) + '}'),
-          'Valor: ' + i$('\\dfrac{(' + (k - 1) + ')e^{' + k + '}+1}{' + k * k + '}\\approx ' + String(Math.round(v * 1e4) / 1e4).replace('.', '{,}')) + '.',
+          'Tomamos ' + i$('u=x') + ', ' + i$('dv=' + ek + 'dx') + ': ' + i$('du=dx') + ', ' + i$('v=' + vT) + '.',
+          d$('\\Big[' + bracket + '\\Big]_0^1' + kcoef + '\\int_0^1' + ek + 'dx=' + t1 + t2),
+          'Valor: ' + i$(valT + (k === 1 ? '' : '\\approx ' + String(Math.round(v * 1e4) / 1e4).replace('.', '{,}'))) + '.',
         ];
-        mistakes = [{ value: Math.exp(k) - (Math.exp(k) - 1) / k, msg: 'al integrar $e^{' + k + 'x}$ se obtiene $\\frac{e^{' + k + 'x}}{' + k + '}$: el $v$ también lleva el factor $\\frac1{' + k + '}$.' }];
+        mistakes = [{ value: Math.exp(k) - (Math.exp(k) - 1) / k, msg: 'al integrar $e^{' + k + 'x}$ se obtiene $' + vT + '$: el $v$ también lleva el factor ' + (k === 1 ? '(aquí vale $1$)' : '$' + (k === -1 ? '-1' : '\\frac1{' + k + '}') + '$') + '.' }];
       } else if (p.tipo === 'xtrig') {
         const k = rnd.int(1, 3), isSin = rnd.pick([true, false]);
         if (isSin) {

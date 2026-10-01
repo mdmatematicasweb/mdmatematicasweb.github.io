@@ -18,9 +18,10 @@ Actualizado el 2026-10-01 (tarde).
 - **Figuras de geometría** en los apuntes del tema 5 (posiciones relativas y simétrico).
 - **Gráficas en más módulos**: 2D en Límites (infinito, en un punto, discontinuidades, asíntotas) y en la tangente de Derivadas; 3D en Vectores (producto, ángulo, áreas, puntos). Falta revisarlas a ojo en el navegador.
 - **Callouts con estilo de marca** (borde negro, sombra dura, cabecera de color por tipo) en `styles.css`. Falta verlos en el navegador.
+- **Revisión didáctica** de los generadores 6–11: paso erróneo «1−P(X≤−1)» en la binomial, «F((−2))», `v=e^{-x}/(-1)` y el signo perdido en por partes, `ln(4/2)`, coeficientes «1», dos soluciones con «está», pares degenerados N=D en límites. `tidyTex` (gym.js) quita ahora `\frac{x}{1}`, `^{1}`, `((n))` y coeficientes 1 delante de `e`, `\cos`, `\left(`.
 - **Formas exactas en «Ver solución»** de las respuestas `expr` de integrales (derivadas y límites ya las tenían).
 - **PDF**: los callouts ya no muestran «?» (iconos desactivados en Typst).
 
 ## Siguiente
 
-6. **Revisión didáctica** de los textos de los generadores nuevos (ya se corrigieron los fallos tipográficos más comunes).
+Nada pendiente de la lista anterior. Ideas sueltas: revisar a ojo en el navegador las gráficas nuevas y los callouts; repasar con el mismo criterio los textos de los temas 1–5 (p. ej. fracciones `\frac{x}{1}`).

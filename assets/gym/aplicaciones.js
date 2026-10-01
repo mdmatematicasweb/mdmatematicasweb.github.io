@@ -89,10 +89,10 @@
     // exp: f = k (x^2 - c) e^x ;  f' = k (x-p)(x-q) e^x  con p+q=-2
     const [p, q, c] = rnd.pick([[1, -3, 3], [2, -4, 8], [0, -2, 0], [3, -5, 15]]);
     return {
-      ftex: sg(k) + '(x^2' + (c ? '-' + c : '') + ')e^{x}', fptex: sg(k) + '(x^2+2x' + (c ? '-' + c : '') + ')e^{x}',
+      ftex: sg(k) + (c ? '(x^2-' + c + ')' : 'x^2') + 'e^{x}', fptex: sg(k) + '(x^2+2x' + (c ? '-' + c : '') + ')e^{x}',
       fpfac: sg(k) + lin(p) + lin(q) + 'e^{x}', crit: [q, p], dom: '',
       f: (x) => k * (x * x - c) * Math.exp(x), fpp: (x) => k * (x * x + 4 * x + 2 - c) * Math.exp(x),
-      fpptex: sg(k) + '(x^2+4x+' + (2 - c >= 0 ? '' : '(') + (2 - c) + (2 - c >= 0 ? '' : ')') + ')e^{x}',
+      fpptex: sg(k) + '(x^2+4x' + (2 - c > 0 ? '+' + (2 - c) : 2 - c < 0 ? String(2 - c) : '') + ')e^{x}',
     };
   }
 
@@ -168,7 +168,7 @@
         var crit = [a, b];
       } else if (p.fun === 'log') {
         const a = rnd.int(2, 5);
-        ftxt = sg(k) + '(x-' + a + '\\ln x)'; fptxt = sg(k) + '\\left(1-\\dfrac{' + a + '}{x}\\right)'; fac = sg(k) + '\\dfrac{x-' + a + '}{x}';
+        ftxt = k > 0 ? 'x-' + a + '\\ln x' : '-(x-' + a + '\\ln x)'; fptxt = k > 0 ? '1-\\dfrac{' + a + '}{x}' : '-\\left(1-\\dfrac{' + a + '}{x}\\right)'; fac = sg(k) + '\\dfrac{x-' + a + '}{x}';
         dom = ' en su dominio ' + i$('(0,+\\infty)');
         f = (x) => k * (x - a * Math.log(x));
         ask = rnd.pick(['crece', 'decrece']);
@@ -334,7 +334,7 @@
           prompt: 'Halla los extremos absolutos de ' + i$('f(x)=' + ftxt) + ' en el intervalo ' + i$('[' + lo + ',' + hi + ']') + '. ' + (p.ask === 'valor' ? 'Escribe el valor máximo y el valor mínimo que alcanza.' : 'Escribe las abscisas donde se alcanzan.'),
           answer,
           steps: [
-            'Puntos críticos: ' + d$('f\'(x)=' + fptxt + '=0\\ \\Rightarrow\\ x=' + crit.join(',\\ x=')) + 'En ' + i$('[' + lo + ',' + hi + ']') + (inside.length ? ' está ' + inside.map((r) => i$('x=' + r)).join(' y ') + '.' : ' no hay ninguno (sólo cuentan los extremos).'),
+            'Puntos críticos: ' + d$('f\'(x)=' + fptxt + '=0\\ \\Rightarrow\\ x=' + crit.join(',\\ x=')) + 'En ' + i$('[' + lo + ',' + hi + ']') + (inside.length ? (inside.length > 1 ? ' están ' : ' está ') + inside.map((r) => i$('x=' + r)).join(' y ') + '.' : ' no hay ninguno (sólo cuentan los extremos).'),
             'Valores en los extremos y en los críticos interiores: ' + rows.join(', ') + '.',
             'El mayor valor es ' + i$(ftex(vs[imx[0]])) + ' (en ' + i$('x=' + cand[imx[0]]) + ') y el menor es ' + i$(ftex(vs[imn[0]])) + ' (en ' + i$('x=' + cand[imn[0]]) + ').',
           ],
