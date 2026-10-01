@@ -9,5 +9,7 @@ format:
     template-partials:
       - "../typst/page.typ"
     toc: false
+    # Los iconos de los callouts usan Font Awesome, que Typst no tiene: salían como «?».
+    callout-icon: false
     font-paths:
       - "../fonts"
