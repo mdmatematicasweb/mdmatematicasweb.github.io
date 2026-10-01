@@ -41,6 +41,10 @@
   const tipos = {};
   CATALOGO.forEach((t) => { tipos[t.id] = t; });
 
+  // Gráficas que se muestran en el resultado (nunca durante el examen): grafica(id, data => spec de MDPlot).
+  const GRAFICAS = {};
+  function grafica(id, fn) { GRAFICAS[id] = fn; }
+
   function implementar(def) {
     const t = tipos[def.id];
     if (!t) throw new Error('tipo desconocido: ' + def.id);
@@ -506,6 +510,14 @@
           card.appendChild(el('div', 'mdx-ej-h', '<span class="mdx-ej-t">EJERCICIO ' + e.num + '</span> <span class="mdx-tipo">' + e.tipoNombre + '</span> ' +
             (r.evaluado ? '<span class="mdx-ptsr">' + fmtPts(r.puntos) + ' / 2,5</span>' : '<span class="mdx-ptsr">no elegido</span>')));
           const en = el('div', 'mdx-enun'); typ(en, e.enunciado); card.appendChild(en);
+          let spec = null;
+          try { spec = root.MDPlot && GRAFICAS[e.tipoId] ? GRAFICAS[e.tipoId](e.data) : null; } catch (err) { spec = null; }
+          if (spec) {
+            const gb = el('button', 'gym-btn mdx-res-btn', 'Ver gráfica'); gb.type = 'button';
+            const gbox = el('div', 'gym-plot'); gbox.hidden = true;
+            gb.onclick = () => { gbox.hidden = !gbox.hidden; if (!gbox.hidden && !gbox.firstChild) root.MDPlot.draw(gbox, spec); };
+            card.appendChild(gb); card.appendChild(gbox);
+          }
           e.partes.forEach((p, pi) => {
             const pr = r.partes[pi];
             const pb = el('div', 'mdx-parte ' + (r.evaluado ? (pr.ok ? 'okp' : 'badp') : ''));
@@ -543,7 +555,7 @@
   }
 
   root.MDExam = {
-    CATALOGO, AREAS, FORMATOS, tipos, implementar, armarExamen, corregir, evaluados, parseCodigo, codigoDe, nuevaSemilla, textoSolucion, cellsOf, montar, PTS_EJ,
+    CATALOGO, AREAS, FORMATOS, tipos, implementar, grafica, GRAFICAS, armarExamen, corregir, evaluados, parseCodigo, codigoDe, nuevaSemilla, textoSolucion, cellsOf, montar, PTS_EJ,
   };
   if (typeof module !== 'undefined' && module.exports) module.exports = root.MDExam;
 })(typeof globalThis !== 'undefined' ? globalThis : this);

@@ -3,7 +3,7 @@
  *   2D: {type:'2d', x:[xmin,xmax], y:[ymin,ymax]?, curves:[{f, label}], points:[{x, y, label}],
  *        lines:[{m, n, label}], vlines:[x], hlines:[y], fill:[{f, g, a, b}]}
  *   3D: {type:'3d', r: semilado de la caja, points:[{p:[x,y,z], label}], lines:[{p, v, label}],
- *        planes:[{eq:[a,b,c,d], label}], segments:[{a:[x,y,z], b:[x,y,z]}]}
+ *        planes:[{eq:[a,b,c,d], label}], segments:[{a:[x,y,z], b:[x,y,z], solid?}]}
  * Las funciones f, g son funciones JS de una variable.
  */
 (function (root) {
@@ -117,7 +117,7 @@
     });
     (spec.segments || []).forEach((s) => {
       const a = view.create('point3d', s.a, { visible: false }), b = view.create('point3d', s.b, { visible: false });
-      view.create('line3d', [a, b], { strokeColor: '#000', strokeWidth: 2, dash: 2, highlight: false });
+      view.create('line3d', [a, b], { strokeColor: '#000', strokeWidth: 2, dash: s.solid ? 0 : 2, highlight: false });
     });
     (spec.points || []).forEach((p) => {
       view.create('point3d', p.p, { name: p.label || '', size: 5, fillColor: '#F4736C', strokeColor: '#000', fixed: true, label: { fontSize: 13 } });
