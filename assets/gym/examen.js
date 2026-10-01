@@ -1,4 +1,4 @@
-/* Simulacro de examen tipo EBAU (Matemáticas II, Andalucía): generación por tipos de ejercicio,
+/* Simulacro de examen tipo PAU (Matemáticas II, Andalucía): generación por tipos de ejercicio,
  * cronómetro y corrección automática. Requiere gym.js. Los generadores (tipos-*.js) se registran con MDExam.implementar().
  */
 (function (root) {
@@ -52,7 +52,7 @@
   const OPT1 = 'Resuelve sólo uno de los siguientes ejercicios:';
   const FORMATOS = {
     2026: {
-      nombre: 'EBAU 2026 · 2 obligatorios + 2 bloques optativos',
+      nombre: 'PAU 2026 · 2 obligatorios + 2 bloques optativos',
       grupos: [
         { titulo: 'PARTE OBLIGATORIA', consigna: 'Resuelve los dos ejercicios siguientes:', n: 2, elegir: 2 },
         { titulo: 'BLOQUE CON OPTATIVIDAD 1', consigna: OPT1, n: 2, elegir: 1 },
@@ -63,7 +63,7 @@
         'Se deben resolver los dos ejercicios obligatorios y solamente un ejercicio de cada uno de los dos bloques con optatividad.'],
     },
     2025: {
-      nombre: 'EBAU 2025 · 1 obligatorio + 3 bloques optativos',
+      nombre: 'PAU 2025 · 1 obligatorio + 3 bloques optativos',
       grupos: [
         { titulo: 'BLOQUE OBLIGATORIO', consigna: 'Resuelve el siguiente ejercicio:', n: 1, elegir: 1 },
         { titulo: 'BLOQUE CON OPTATIVIDAD 1', consigna: OPT1, n: 2, elegir: 1 },
@@ -75,7 +75,7 @@
         'Deberá resolver el ejercicio obligatorio y solamente un ejercicio de cada uno de los tres bloques con optatividad.'],
     },
     2024: {
-      nombre: 'EBAU 2024 · 4 bloques de 2 ejercicios',
+      nombre: 'PEvAU 2024 · 4 bloques de 2 ejercicios',
       grupos: ['A', 'B', 'C', 'D'].map((l) => ({ titulo: 'BLOQUE ' + l, consigna: OPT1, n: 2, elegir: 1 })),
       num: null,
       instr: ['Este examen consta de 8 ejercicios distribuidos en 4 bloques de 2 ejercicios cada uno.',
@@ -381,7 +381,7 @@
       container.appendChild(bar);
 
       const hoja = el('div', 'mdx-hoja');
-      hoja.appendChild(el('div', 'mdx-cab', '<div class="mdx-cab-t">SIMULACRO DE PRUEBA DE ACCESO A LA UNIVERSIDAD</div><div>Formato EBAU · Andalucía</div><div class="mdx-cab-m">MATEMÁTICAS II</div>'));
+      hoja.appendChild(el('div', 'mdx-cab', '<div class="mdx-cab-t">SIMULACRO DE PRUEBA DE ACCESO A LA UNIVERSIDAD</div><div>Formato PAU · Andalucía</div><div class="mdx-cab-m">MATEMÁTICAS II</div>'));
       const ins = el('div', 'mdx-instr'); ins.appendChild(el('b', '', 'Instrucciones:'));
       const ul = el('ul');
       ['Duración: ' + exam.cfg.duracion + ' minutos.'].concat(exam.instr, [
@@ -445,7 +445,7 @@
       e.partes.forEach((p, pi) => {
         const pb = el('div', 'mdx-parte');
         const tx = el('div', 'mdx-parte-t');
-        typ(tx, '<b>' + String.fromCharCode(97 + pi) + ')</b> <span class="mdx-pts">[' + fmtPts(p.pts) + ' puntos]</span> ' + p.texto);
+        typ(tx, '<b>' + String.fromCharCode(97 + pi) + ')</b> <span class="mdx-pts">[' + fmtPts(p.pts) + (p.pts === 1 ? ' punto' : ' puntos') + ']</span> ' + p.texto);
         pb.appendChild(tx);
         const ui = G.makeAnswerUI(p.answer, { onChange: () => { recoger(); guardar(); } });
         const prev = (st.resp[e.num] || [])[pi];
@@ -479,6 +479,17 @@
       nota.innerHTML = '<div class="mdx-nota-n">' + String(res.sobre10).replace('.', ',') + '<small>/10</small></div><div>' + fmtPts(res.nota) + ' de ' + fmtPts(res.max) + ' puntos · tiempo empleado: ' + mmss(usado) + (auto ? ' · <b>se acabó el tiempo</b>' : '') + '</div><div class="mdx-cod-r">Código <code>' + exam.codigo + '</code> (con él, otra persona obtiene el mismo examen)</div>';
       w.appendChild(nota);
 
+      // La corrección automática solo mira resultados; en la PAU se puntúa también el procedimiento.
+      const rub = el('details', 'mdx-rubrica');
+      rub.innerHTML = '<summary>Autoevaluación del procedimiento (la nota de arriba solo mira los resultados)</summary>' +
+        '<p>En la PAU el tribunal puntúa el razonamiento. Un resultado correcto sin justificar puede valer poco, y un error de cuentas con buen planteamiento suele perder solo parte del apartado. Repasa tu hoja:</p><ul>' +
+        ['Escribo qué voy a calcular y por qué, no solo las cuentas.',
+          'Compruebo las hipótesis antes de usar un resultado (determinante no nulo, continuidad, derivabilidad…).',
+          'Nombro el teorema o la propiedad que uso (Rouché, Bolzano, Barrow…).',
+          'Termino con una conclusión en palabras: tipo de sistema, posición relativa, máximo o mínimo…',
+          'Doy la respuesta final destacada, con unidades si las hay.'].map((t) => '<li><label><input type="checkbox"> ' + t + '</label></li>').join('') + '</ul>';
+      w.appendChild(rub);
+
       const acc = el('div', 'mdx-acc');
       const nuevo = el('button', 'gym-btn gym-check', 'Nuevo examen'); nuevo.type = 'button';
       nuevo.onclick = () => { try { history.replaceState(null, '', location.pathname); } catch (e) { /* ... */ } vistaConfig(); };
@@ -498,7 +509,7 @@
           e.partes.forEach((p, pi) => {
             const pr = r.partes[pi];
             const pb = el('div', 'mdx-parte ' + (r.evaluado ? (pr.ok ? 'okp' : 'badp') : ''));
-            typ(pb.appendChild(el('div', 'mdx-parte-t')), '<b>' + String.fromCharCode(97 + pi) + ')</b> <span class="mdx-pts">[' + fmtPts(p.pts) + ' puntos]</span> ' + p.texto);
+            typ(pb.appendChild(el('div', 'mdx-parte-t')), '<b>' + String.fromCharCode(97 + pi) + ')</b> <span class="mdx-pts">[' + fmtPts(p.pts) + (p.pts === 1 ? ' punto' : ' puntos') + ']</span> ' + p.texto);
             const ui = G.makeAnswerUI(p.answer, {});
             ui.fill(pr.raw); ui.disable(true);
             if (r.evaluado) ui.mark(pr.res);
