@@ -584,4 +584,29 @@
       };
     },
   });
+
+  /* ===================== Gráficas 2D (JSXGraph, ver graficas.js) ===================== */
+  // Marca los puntos notables del reto (críticos, extremos, inflexiones, c de los teoremas).
+  function plotDe(d) {
+    if (typeof d.f !== 'function') return null;
+    const xs = [];
+    const add = (v) => { if (Array.isArray(v)) v.forEach(add); else if (typeof v === 'number' && Number.isFinite(v)) xs.push(v); else if (v && typeof v === 'object' && 'n' in v) xs.push(v.n / v.d); };
+    ['crit', 'ext', 'infl', 'xmax', 'xmin', 'c', 'xo'].forEach((k) => add(d[k]));
+    (d.pts || []).forEach((p) => add(Array.isArray(p) ? p[0] : p));
+    const lo = Number.isFinite(d.lo) ? d.lo : null, hi = Number.isFinite(d.hi) ? d.hi : null;
+    const all = xs.concat(lo !== null ? [lo] : [], hi !== null ? [hi] : []);
+    if (!all.length) all.push(-2, 2);
+    let a = Math.min(...all), b = Math.max(...all);
+    const pad = Math.max(1, (b - a) * 0.35);
+    a -= pad; b += pad;
+    if (d.fun === 'log' || d.lowerLimit === 0) a = Math.max(a, 0.02);
+    const points = xs.filter((x, i) => xs.indexOf(x) === i && Number.isFinite(d.f(x))).map((x) => ({ x, y: d.f(x), label: '' }));
+    const spec = { type: '2d', x: [a, b], curves: [{ f: d.f, label: 'f' }], points };
+    if (lo !== null && hi !== null) spec.vlines = [lo, hi];
+    return spec;
+  }
+  Object.keys(G.modules).filter((id) => id.startsWith('apl-')).forEach((id) => {
+    const mod = G.modules[id], gen = mod.generate;
+    mod.generate = (p) => { const ch = gen(p); const pl = plotDe(ch.data || {}); if (pl) ch.plot = pl; return ch; };
+  });
 })(typeof globalThis !== 'undefined' ? globalThis : this);

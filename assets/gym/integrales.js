@@ -760,4 +760,20 @@
       };
     },
   });
+
+  /* ===================== Gráficas 2D (JSXGraph, ver graficas.js) ===================== */
+  // Sombrea la región entre la gráfica y el eje X en [a, b] (en las áreas entre curvas, la de f−g).
+  function plotDe(d) {
+    const f = typeof d.f === 'function' ? d.f : typeof d.h === 'function' ? d.h : null;
+    if (!f || !Number.isFinite(d.a) || !Number.isFinite(d.b)) return null;
+    const w = Math.max(1, (d.b - d.a) * 0.3);
+    let x0 = d.a - w, x1 = d.b + w;
+    if (!Number.isFinite(f(x0))) x0 = d.a;
+    if (!Number.isFinite(f(x1))) x1 = d.b;
+    return { type: '2d', x: [x0, x1], curves: [{ f, label: d.h && d.tipo !== 'eje' && d.tipo !== 'trig' ? 'f − g' : 'f' }], fill: [{ f, a: d.a, b: d.b }], vlines: [d.a, d.b] };
+  }
+  Object.keys(G.modules).filter((id) => id.startsWith('int-')).forEach((id) => {
+    const mod = G.modules[id], gen = mod.generate;
+    mod.generate = (p) => { const ch = gen(p); const pl = plotDe(ch.data || {}); if (pl) ch.plot = pl; return ch; };
+  });
 })(typeof globalThis !== 'undefined' ? globalThis : this);

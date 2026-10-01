@@ -42,7 +42,7 @@
     (spec.hlines || []).forEach((y) => ys.push(y));
     if (!ys.length) return [-5, 5];
     ys.sort((p, q) => p - q);
-    let lo = ys[Math.floor(ys.length * 0.03)], hi = ys[Math.ceil(ys.length * 0.97) - 1];
+    let lo = ys[Math.floor(ys.length * 0.1)], hi = ys[Math.ceil(ys.length * 0.9) - 1];
     (spec.points || []).forEach((p) => { lo = Math.min(lo, p.y); hi = Math.max(hi, p.y); });
     lo = Math.min(lo, 0); hi = Math.max(hi, 0);
     const pad = Math.max((hi - lo) * 0.12, 0.5);
