@@ -1,0 +1,2216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>PAU Andalucía — Rectas y planos – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-c03d2d665be348d2f4fb6e6313d5071b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-28c4b676bd4c1c9121cc5c5925a59653.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-c03d2d665be348d2f4fb6e6313d5071b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">2026</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-suplente-1-2026" id="toc-ordinaria-suplente-1-2026" class="nav-link" data-scroll-target="#ordinaria-suplente-1-2026">Ordinaria · Suplente 1 2026</a></li>
+  <li><a href="#ordinaria-suplente-2-2026" id="toc-ordinaria-suplente-2-2026" class="nav-link" data-scroll-target="#ordinaria-suplente-2-2026">Ordinaria · Suplente 2 2026</a></li>
+  <li><a href="#extraordinaria-2026" id="toc-extraordinaria-2026" class="nav-link" data-scroll-target="#extraordinaria-2026">Extraordinaria 2026</a></li>
+  <li><a href="#extraordinaria-suplente-1-2026" id="toc-extraordinaria-suplente-1-2026" class="nav-link" data-scroll-target="#extraordinaria-suplente-1-2026">Extraordinaria · Suplente 1 2026</a></li>
+  <li><a href="#extraordinaria-suplente-2-2026" id="toc-extraordinaria-suplente-2-2026" class="nav-link" data-scroll-target="#extraordinaria-suplente-2-2026">Extraordinaria · Suplente 2 2026</a></li>
+  </ul></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">2025</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2025" id="toc-ordinaria-2025" class="nav-link" data-scroll-target="#ordinaria-2025">Ordinaria 2025</a></li>
+  <li><a href="#ordinaria-suplente-1-2025" id="toc-ordinaria-suplente-1-2025" class="nav-link" data-scroll-target="#ordinaria-suplente-1-2025">Ordinaria · Suplente 1 2025</a></li>
+  <li><a href="#ordinaria-suplente-2-2025" id="toc-ordinaria-suplente-2-2025" class="nav-link" data-scroll-target="#ordinaria-suplente-2-2025">Ordinaria · Suplente 2 2025</a></li>
+  <li><a href="#extraordinaria-2025" id="toc-extraordinaria-2025" class="nav-link" data-scroll-target="#extraordinaria-2025">Extraordinaria 2025</a></li>
+  <li><a href="#extraordinaria-suplente-1-2025" id="toc-extraordinaria-suplente-1-2025" class="nav-link" data-scroll-target="#extraordinaria-suplente-1-2025">Extraordinaria · Suplente 1 2025</a></li>
+  <li><a href="#extraordinaria-suplente-2-2025" id="toc-extraordinaria-suplente-2-2025" class="nav-link" data-scroll-target="#extraordinaria-suplente-2-2025">Extraordinaria · Suplente 2 2025</a></li>
+  </ul></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">2024</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2024" id="toc-ordinaria-2024" class="nav-link" data-scroll-target="#ordinaria-2024">Ordinaria 2024</a></li>
+  <li><a href="#ordinaria-reserva-2024" id="toc-ordinaria-reserva-2024" class="nav-link" data-scroll-target="#ordinaria-reserva-2024">Ordinaria · Reserva 2024</a></li>
+  <li><a href="#ordinaria-suplente-2024" id="toc-ordinaria-suplente-2024" class="nav-link" data-scroll-target="#ordinaria-suplente-2024">Ordinaria · Suplente 2024</a></li>
+  <li><a href="#extraordinaria-2024" id="toc-extraordinaria-2024" class="nav-link" data-scroll-target="#extraordinaria-2024">Extraordinaria 2024</a></li>
+  <li><a href="#extraordinaria-reserva-2024" id="toc-extraordinaria-reserva-2024" class="nav-link" data-scroll-target="#extraordinaria-reserva-2024">Extraordinaria · Reserva 2024</a></li>
+  <li><a href="#extraordinaria-suplente-2024" id="toc-extraordinaria-suplente-2024" class="nav-link" data-scroll-target="#extraordinaria-suplente-2024">Extraordinaria · Suplente 2024</a></li>
+  </ul></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">2023</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2023" id="toc-ordinaria-2023" class="nav-link" data-scroll-target="#ordinaria-2023">Ordinaria 2023</a></li>
+  <li><a href="#ordinaria-reserva-2023" id="toc-ordinaria-reserva-2023" class="nav-link" data-scroll-target="#ordinaria-reserva-2023">Ordinaria · Reserva 2023</a></li>
+  <li><a href="#ordinaria-suplente-2023" id="toc-ordinaria-suplente-2023" class="nav-link" data-scroll-target="#ordinaria-suplente-2023">Ordinaria · Suplente 2023</a></li>
+  <li><a href="#extraordinaria-2023" id="toc-extraordinaria-2023" class="nav-link" data-scroll-target="#extraordinaria-2023">Extraordinaria 2023</a></li>
+  <li><a href="#extraordinaria-reserva-2023" id="toc-extraordinaria-reserva-2023" class="nav-link" data-scroll-target="#extraordinaria-reserva-2023">Extraordinaria · Reserva 2023</a></li>
+  <li><a href="#extraordinaria-suplente-2023" id="toc-extraordinaria-suplente-2023" class="nav-link" data-scroll-target="#extraordinaria-suplente-2023">Extraordinaria · Suplente 2023</a></li>
+  </ul></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">2022</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2022" id="toc-ordinaria-2022" class="nav-link" data-scroll-target="#ordinaria-2022">Ordinaria 2022</a></li>
+  <li><a href="#ordinaria-reserva-2022" id="toc-ordinaria-reserva-2022" class="nav-link" data-scroll-target="#ordinaria-reserva-2022">Ordinaria · Reserva 2022</a></li>
+  <li><a href="#ordinaria-suplente-2022" id="toc-ordinaria-suplente-2022" class="nav-link" data-scroll-target="#ordinaria-suplente-2022">Ordinaria · Suplente 2022</a></li>
+  <li><a href="#extraordinaria-2022" id="toc-extraordinaria-2022" class="nav-link" data-scroll-target="#extraordinaria-2022">Extraordinaria 2022</a></li>
+  <li><a href="#extraordinaria-reserva-2022" id="toc-extraordinaria-reserva-2022" class="nav-link" data-scroll-target="#extraordinaria-reserva-2022">Extraordinaria · Reserva 2022</a></li>
+  <li><a href="#extraordinaria-suplente-2022" id="toc-extraordinaria-suplente-2022" class="nav-link" data-scroll-target="#extraordinaria-suplente-2022">Extraordinaria · Suplente 2022</a></li>
+  </ul></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">2021</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2021" id="toc-ordinaria-2021" class="nav-link" data-scroll-target="#ordinaria-2021">Ordinaria 2021</a></li>
+  <li><a href="#ordinaria-reserva-2021" id="toc-ordinaria-reserva-2021" class="nav-link" data-scroll-target="#ordinaria-reserva-2021">Ordinaria · Reserva 2021</a></li>
+  <li><a href="#ordinaria-suplente-2021" id="toc-ordinaria-suplente-2021" class="nav-link" data-scroll-target="#ordinaria-suplente-2021">Ordinaria · Suplente 2021</a></li>
+  <li><a href="#extraordinaria-2021" id="toc-extraordinaria-2021" class="nav-link" data-scroll-target="#extraordinaria-2021">Extraordinaria 2021</a></li>
+  <li><a href="#extraordinaria-reserva-2021" id="toc-extraordinaria-reserva-2021" class="nav-link" data-scroll-target="#extraordinaria-reserva-2021">Extraordinaria · Reserva 2021</a></li>
+  <li><a href="#extraordinaria-suplente-2021" id="toc-extraordinaria-suplente-2021" class="nav-link" data-scroll-target="#extraordinaria-suplente-2021">Extraordinaria · Suplente 2021</a></li>
+  </ul></li>
+  <li><a href="#también-trabajan-este-tema" id="toc-también-trabajan-este-tema" class="nav-link" data-scroll-target="#también-trabajan-este-tema">También trabajan este tema</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PAU Andalucía — Rectas y planos</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Ejercicios de <strong>Matemáticas II</strong> de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de <strong>2021 a 2026</strong> cuyo tema principal es <em>rectas y planos</em>: <strong>52 ejercicios</strong> de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. Repasa antes la <a href="../../../apuntes/2-bachillerato-ciencias/05-rectas-planos/index.html">teoría</a>, los <a href="../../../ejercicios/2-bachillerato-ciencias/05-rectas-planos/index.html">ejercicios del tema</a> y las <a href="../../../actividades/2-bachillerato-ciencias/05-rectas-planos/index.html">actividades interactivas</a>.</p>
+<p>Debajo de cada ejercicio hay una <strong>resolución breve</strong> plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.</p>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">2026</h2>
+<section id="ordinaria-suplente-1-2026" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-1-2026">Ordinaria · Suplente 1 2026</h3>
+<div id="ebau-2026-ord-sup1-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Suplente 1 2026 · Parte obligatoria · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/06/2oBachCC_EBAU_Andalucia_2026-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera los puntos <span class="math inline">\(P(4,-2,3)\)</span> y <span class="math inline">\(Q(6,2,1)\)</span>.</p>
+<ol type="a">
+<li><p>Halla la ecuación del plano respecto del cual los puntos <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> son simétricos. <em>(1 punto)</em></p></li>
+<li><p>Determina el ángulo formado por el plano <span class="math inline">\(2x+y+z-5=0\)</span> y la recta que une <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> El plano es el mediador de <span class="math inline">\(PQ\)</span>: normal <span class="math inline">\(\overrightarrow{PQ}=(2,4,-2)\parallel(1,2,-1)\)</span> y pasa por el punto medio <span class="math inline">\(M(5,0,2)\)</span>: <span class="math inline">\(x+2y-z+D=0\)</span>, con <span class="math inline">\(5-2+D=0\Rightarrow D=-3\)</span>.</p>
+<p><strong>Plano: <span class="math inline">\(x+2y-z-3=0\)</span>.</strong></p>
+<p><strong>b)</strong> Dirección de la recta: <span class="math inline">\((1,2,-1)\)</span>; normal del plano: <span class="math inline">\((2,1,1)\)</span>. <span class="math inline">\(\operatorname{sen}\alpha=\dfrac{|2+2-1|}{\sqrt6\sqrt6}=\dfrac12\)</span>.</p>
+<p><strong><span class="math inline">\(\alpha=30^\circ\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2-2026" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2-2026">Ordinaria · Suplente 2 2026</h3>
+<div id="ebau-2026-ord-sup2-3-1" class="ebau-ej">
+<p><strong>Ejercicio 3.1</strong> · Ordinaria · Suplente 2 2026 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/06/2oBachCC_EBAU_Andalucia_2026-Ordinaria_Suplente2.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera el plano <span class="math inline">\(\pi\equiv 4x+5y-20z+20=0\)</span>.</p>
+<ol type="a">
+<li><p>Halla el área del triángulo cuyos vértices están determinados por la intersección de <span class="math inline">\(\pi\)</span> con los ejes coordenados. <em>(1,25 puntos)</em></p></li>
+<li><p>Halla los planos paralelos a <span class="math inline">\(\pi\)</span> que distan 2 unidades del punto <span class="math inline">\(P(2,2,1)\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/04-vectores-espacio.html">Vectores en el espacio</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Cortes con los ejes: <span class="math inline">\(x=-5\)</span>, <span class="math inline">\(y=-4\)</span>, <span class="math inline">\(z=1\)</span>, es decir <span class="math inline">\((-5,0,0)\)</span>, <span class="math inline">\((0,-4,0)\)</span>, <span class="math inline">\((0,0,1)\)</span>. Con <span class="math inline">\(a=5\)</span>, <span class="math inline">\(b=4\)</span>, <span class="math inline">\(c=1\)</span> el área es <span class="math inline">\(\tfrac12\sqrt{(ab)^2+(bc)^2+(ac)^2}=\tfrac12\sqrt{400+16+25}\)</span> (equivale a <span class="math inline">\(\tfrac12|\overrightarrow{AB}\times\overrightarrow{AC}|\)</span>).</p>
+<p><strong>Área <span class="math inline">\(=\dfrac{21}{2}=10{,}5\ \text{u}^2\)</span>.</strong></p>
+<p><strong>b)</strong> Planos <span class="math inline">\(4x+5y-20z+k=0\)</span>, con <span class="math inline">\(|\vec n|=\sqrt{441}=21\)</span>: <span class="math inline">\(\dfrac{|8+10-20+k|}{21}=2\Rightarrow|k-2|=42\)</span>.</p>
+<p><strong><span class="math inline">\(4x+5y-20z+44=0\)</span> y <span class="math inline">\(4x+5y-20z-40=0\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2026-ord-sup2-3-2" class="ebau-ej">
+<p><strong>Ejercicio 3.2</strong> · Ordinaria · Suplente 2 2026 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/06/2oBachCC_EBAU_Andalucia_2026-Ordinaria_Suplente2.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera los planos <span class="math inline">\(\pi_1\equiv 2x-y-z=7\)</span>, <span class="math inline">\(\pi_2\equiv x-2y+z=3\)</span> y el punto <span class="math inline">\(P(1,1,0)\)</span>.</p>
+<ol type="a">
+<li><p>Determina la ecuación de la recta que pasa por el punto <span class="math inline">\(P\)</span> y es paralela a ambos planos. <em>(1,25 puntos)</em></p></li>
+<li><p>Halla la ecuación del plano que pasa por el punto <span class="math inline">\(P\)</span> y es perpendicular a <span class="math inline">\(\pi_1\)</span> y a <span class="math inline">\(\pi_2\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Normales: <span class="math inline">\(\vec n_1=(2,-1,-1)\)</span>, <span class="math inline">\(\vec n_2=(1,-2,1)\)</span>. <span class="math inline">\(\vec n_1\times\vec n_2=(-3,-3,-3)\parallel(1,1,1)\)</span>.</p>
+<p><strong>a)</strong> Una recta paralela a ambos planos tiene dirección perpendicular a las dos normales, es decir <span class="math inline">\((1,1,1)\)</span>.</p>
+<p><strong>Recta: <span class="math inline">\(x-1=y-1=z\)</span>.</strong></p>
+<p><strong>b)</strong> Un plano perpendicular a <span class="math inline">\(\pi_1\)</span> y a <span class="math inline">\(\pi_2\)</span> tiene como normal la dirección <span class="math inline">\((1,1,1)\)</span> (su normal es perpendicular a ambas normales); pasa por <span class="math inline">\(P(1,1,0)\)</span>.</p>
+<p><strong>Plano: <span class="math inline">\(x+y+z-2=0\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2026" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2026">Extraordinaria 2026</h3>
+<div id="ebau-2026-ext-4-1" class="ebau-ej">
+<p><strong>Ejercicio 4.1</strong> · Extraordinaria 2026 · Bloque optativo 2 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/09/2oBachCC_EBAU_Andalucia_2026-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la recta <span class="math inline">\(r\equiv\begin{cases}x=-2\lambda\\y=-1+2\lambda\\z=3+2\lambda\end{cases}\)</span> y el plano <span class="math inline">\(\pi\equiv x-2y+z-3=0\)</span>.</p>
+<ol type="a">
+<li><p>Determina la ecuación de la recta que corta perpendicularmente a <span class="math inline">\(r\)</span> y que está contenida en <span class="math inline">\(\pi\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Halla el punto simétrico de <span class="math inline">\(P(1,1,1)\)</span> respecto de <span class="math inline">\(\pi\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: punto <span class="math inline">\((0,-1,3)\)</span>, dirección <span class="math inline">\(\vec d=(-1,1,1)\)</span>. Normal de <span class="math inline">\(\pi\)</span>: <span class="math inline">\(\vec n=(1,-2,1)\)</span>.</p>
+<p><strong>a)</strong> <span class="math inline">\(r\)</span> corta a <span class="math inline">\(\pi\)</span> (<span class="math inline">\(\vec d\cdot\vec n=-2\ne0\)</span>): sustituyendo, <span class="math inline">\(-2\lambda-2(-1+2\lambda)+3+2\lambda-3=0\Rightarrow\lambda=\tfrac12\)</span>, punto <span class="math inline">\(M(-1,0,4)\)</span>. La recta pedida pasa por <span class="math inline">\(M\)</span>, está en <span class="math inline">\(\pi\)</span> y es perpendicular a <span class="math inline">\(r\)</span>, luego su dirección es <span class="math inline">\(\vec d\times\vec n=(3,2,1)\)</span>.</p>
+<p><strong>Recta: <span class="math inline">\(\dfrac{x+1}{3}=\dfrac{y}{2}=\dfrac{z-4}{1}\)</span>.</strong></p>
+<p><strong>b)</strong> Recta por <span class="math inline">\(P\)</span> perpendicular a <span class="math inline">\(\pi\)</span>: <span class="math inline">\((1+t,\,1-2t,\,1+t)\)</span>. En <span class="math inline">\(\pi\)</span>: <span class="math inline">\((1+t)-2(1-2t)+(1+t)-3=6t-3=0\Rightarrow t=\tfrac12\)</span>, pie <span class="math inline">\((\tfrac32,0,\tfrac32)\)</span>. El simétrico es <span class="math inline">\(P'=2\cdot\text{pie}-P\)</span>.</p>
+<p><strong><span class="math inline">\(P'(2,-1,2)\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-1-2026" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-1-2026">Extraordinaria · Suplente 1 2026</h3>
+<div id="ebau-2026-ext-sup1-3-2" class="ebau-ej">
+<p><strong>Ejercicio 3.2</strong> · Extraordinaria · Suplente 1 2026 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/09/2oBachCC_EBAU_Andalucia_2026-Extraordinaria_Suplente1.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera el plano <span class="math inline">\(\pi\equiv 2x-y+2z-3=0\)</span> y la recta <span class="math inline">\(r\equiv\dfrac{x-1}{2}=\dfrac{y}{1}=\dfrac{z-2}{m-2}\)</span>.</p>
+<ol type="a">
+<li><p>Halla la posición relativa de <span class="math inline">\(\pi\)</span> y <span class="math inline">\(r\)</span> según los valores de <span class="math inline">\(m\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(m=1\)</span>, determina la ecuación del plano que contiene a <span class="math inline">\(r\)</span> y corta perpendicularmente a <span class="math inline">\(\pi\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Dirección de <span class="math inline">\(r\)</span>: <span class="math inline">\(\vec d=(2,1,m-2)\)</span>; normal de <span class="math inline">\(\pi\)</span>: <span class="math inline">\(\vec n=(2,-1,2)\)</span>. Entonces <span class="math inline">\(\vec d\cdot\vec n=4-1+2(m-2)=2m-1\)</span>.</p>
+<p><strong>a)</strong> - Si <span class="math inline">\(m\neq\tfrac12\)</span>: <span class="math inline">\(\vec d\cdot\vec n\neq0\)</span>, <strong>la recta corta al plano</strong> en un punto. - Si <span class="math inline">\(m=\tfrac12\)</span>: <span class="math inline">\(r\parallel\pi\)</span>. El punto <span class="math inline">\((1,0,2)\)</span> de <span class="math inline">\(r\)</span> da <span class="math inline">\(2-0+4-3=3\neq0\)</span>, no está en <span class="math inline">\(\pi\)</span>: <strong>recta paralela al plano (sin puntos comunes)</strong>.</p>
+<p><strong>b)</strong> Para <span class="math inline">\(m=1\)</span>: <span class="math inline">\(\vec d=(2,1,-1)\)</span>. El plano contiene a <span class="math inline">\(r\)</span> y es perpendicular a <span class="math inline">\(\pi\)</span>, luego su normal es <span class="math inline">\(\vec d\times\vec n=(1,-6,-4)\)</span> y pasa por <span class="math inline">\((1,0,2)\)</span>: <span class="math inline">\((x-1)-6y-4(z-2)=0\)</span>.</p>
+<p><strong>Plano: <span class="math inline">\(x-6y-4z+7=0\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2-2026" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2-2026">Extraordinaria · Suplente 2 2026</h3>
+<div id="ebau-2026-ext-sup2-4-1" class="ebau-ej">
+<p><strong>Ejercicio 4.1</strong> · Extraordinaria · Suplente 2 2026 · Bloque optativo 2 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/09/2oBachCC_EBAU_Andalucia_2026-Extraordinaria_Suplente2.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera los puntos <span class="math inline">\(A(1,0,2)\)</span>, <span class="math inline">\(B(-1,1,0)\)</span>, <span class="math inline">\(C(0,-1,1)\)</span> y <span class="math inline">\(D(1,1,1)\)</span>.</p>
+<ol type="a">
+<li><p>Calcula la longitud de la altura del tetraedro de vértices <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, <span class="math inline">\(D\)</span> trazada desde el vértice <span class="math inline">\(D\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Determina el ángulo que forma la recta que pasa por <span class="math inline">\(A\)</span> y <span class="math inline">\(D\)</span> con el plano que contiene a los puntos <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/04-vectores-espacio.html">Vectores en el espacio</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\overrightarrow{AB}=(-2,1,-2)\)</span>, <span class="math inline">\(\overrightarrow{AC}=(-1,-1,-1)\)</span>, <span class="math inline">\(\overrightarrow{AD}=(0,1,-1)\)</span>.</p>
+<p><strong>a)</strong> <span class="math inline">\(\overrightarrow{AB}\times\overrightarrow{AC}=(-3,0,3)\)</span>, de módulo <span class="math inline">\(3\sqrt2\)</span>. La altura desde <span class="math inline">\(D\)</span> es la distancia de <span class="math inline">\(D\)</span> al plano <span class="math inline">\(ABC\)</span>: <span class="math inline">\(h=\dfrac{|\overrightarrow{AD}\cdot(\overrightarrow{AB}\times\overrightarrow{AC})|}{|\overrightarrow{AB}\times\overrightarrow{AC}|}=\dfrac{3}{3\sqrt2}\)</span>.</p>
+<p><strong><span class="math inline">\(h=\dfrac{\sqrt2}{2}\)</span> u.</strong></p>
+<p><strong>b)</strong> Normal del plano: <span class="math inline">\((1,0,-1)\)</span>; dirección de la recta <span class="math inline">\(AD\)</span>: <span class="math inline">\((0,1,-1)\)</span>. <span class="math inline">\(\operatorname{sen}\alpha=\dfrac{|(1,0,-1)\cdot(0,1,-1)|}{\sqrt2\cdot\sqrt2}=\dfrac12\)</span>.</p>
+<p><strong><span class="math inline">\(\alpha=30^\circ\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1">2025</h2>
+<section id="ordinaria-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2025">Ordinaria 2025</h3>
+<div id="ebau-2025-ord-5" class="ebau-ej">
+<p><strong>Ejercicio 5</strong> · Ordinaria 2025 · Bloque optativo 2 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/06/2oBachCC_EBAU_Andalucia_2025-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera el punto <span class="math inline">\(P(1,1,1)\)</span> y la recta <span class="math inline">\(r\equiv\dfrac{x-1}{1}=\dfrac{y-2}{2}=\dfrac{z-3}{2}\)</span>.</p>
+<ol type="a">
+<li><p>Halla el plano que pasa por el punto <span class="math inline">\(P\)</span> y contiene a la recta <span class="math inline">\(r\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Halla la recta que pasa por el punto <span class="math inline">\(P\)</span> y corta perpendicularmente a la recta <span class="math inline">\(r\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span> pasa por <span class="math inline">\(Q(1,2,3)\)</span> con <span class="math inline">\(\vec d=(1,2,2)\)</span>; <span class="math inline">\(\overrightarrow{PQ}=(0,1,2)\)</span>.</p>
+<p><strong>a)</strong> Normal: <span class="math inline">\(\overrightarrow{PQ}\times\vec d=(-2,2,-1)\)</span>. Plano por <span class="math inline">\(P\)</span>: <span class="math inline">\(2x-2y+z+D=0\)</span> con <span class="math inline">\(2-2+1+D=0\)</span>. <strong><span class="math inline">\(2x-2y+z-1=0\)</span>.</strong></p>
+<p><strong>b)</strong> Punto de <span class="math inline">\(r\)</span>: <span class="math inline">\(R(1+\lambda,2+2\lambda,3+2\lambda)\)</span>. <span class="math inline">\(\overrightarrow{PR}\cdot\vec d=0\)</span>: <span class="math inline">\((\lambda,\,1+2\lambda,\,2+2\lambda)\cdot(1,2,2)=9\lambda+6=0\Rightarrow\lambda=-\dfrac23\)</span>, <span class="math inline">\(R\left(\dfrac13,\dfrac23,\dfrac53\right)\)</span>.</p>
+<p>Dirección <span class="math inline">\(\overrightarrow{PR}=\left(-\dfrac23,-\dfrac13,\dfrac23\right)\parallel(2,1,-2)\)</span>. <strong><span class="math inline">\(\dfrac{x-1}{2}=\dfrac{y-1}{1}=\dfrac{z-1}{-2}\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-1-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-1-2025">Ordinaria · Suplente 1 2025</h3>
+<div id="ebau-2025-ord-sup1-5" class="ebau-ej">
+<p><strong>Ejercicio 5</strong> · Ordinaria · Suplente 1 2025 · Bloque optativo 2 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/06/2oBachCC_EBAU_Andalucia_2025-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera el plano <span class="math inline">\(\pi\equiv 2x+y+2z+5=0\)</span>.</p>
+<ol type="a">
+<li><p>Calcula el punto simétrico de <span class="math inline">\(P(1,0,1)\)</span> respecto de <span class="math inline">\(\pi\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Calcula los planos paralelos a <span class="math inline">\(\pi\)</span> y que disten 2 unidades de <span class="math inline">\(\pi\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Recta perpendicular a <span class="math inline">\(\pi\)</span> por <span class="math inline">\(P\)</span>: <span class="math inline">\((1+2t,\,t,\,1+2t)\)</span>. Corta a <span class="math inline">\(\pi\)</span>: <span class="math inline">\(2(1+2t)+t+2(1+2t)+5=9t+9=0\Rightarrow t=-1\)</span>, punto medio <span class="math inline">\(M(-1,-1,-1)\)</span>.</p>
+<p><span class="math inline">\(P'=2M-P=\)</span> <strong><span class="math inline">\((-3,-2,-3)\)</span>.</strong></p>
+<p><strong>b)</strong> Planos <span class="math inline">\(2x+y+2z+D=0\)</span> con <span class="math inline">\(\dfrac{|D-5|}{\sqrt{4+1+4}}=2\Rightarrow|D-5|=6\)</span>. <strong><span class="math inline">\(2x+y+2z+11=0\)</span> y <span class="math inline">\(2x+y+2z-1=0\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2-2025">Ordinaria · Suplente 2 2025</h3>
+<div id="ebau-2025-ord-sup2-6" class="ebau-ej">
+<p><strong>Ejercicio 6</strong> · Ordinaria · Suplente 2 2025 · Bloque optativo 3 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Ordinaria_Suplente2-1.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera el plano <span class="math inline">\(\pi\equiv x+y+z+1=0\)</span> y los puntos <span class="math inline">\(A(1,2,0)\)</span> y <span class="math inline">\(B(3,1,0)\)</span>.</p>
+<ol type="a">
+<li><p>Calcula el punto simétrico del punto <span class="math inline">\(A\)</span> con respecto al plano <span class="math inline">\(\pi\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Halla el plano que contiene a los puntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> y es perpendicular al plano <span class="math inline">\(\pi\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> La recta perpendicular a <span class="math inline">\(\pi\)</span> por <span class="math inline">\(A\)</span> es <span class="math inline">\((1+t,\,2+t,\,t)\)</span>. Corta a <span class="math inline">\(\pi\)</span>: <span class="math inline">\(3+3t+1=0\Rightarrow t=-\dfrac43\)</span>, punto medio <span class="math inline">\(M\left(-\dfrac13,\dfrac23,-\dfrac43\right)\)</span>.</p>
+<p><span class="math inline">\(A'=2M-A=\)</span> <strong><span class="math inline">\(\left(-\dfrac53,-\dfrac23,-\dfrac83\right)\)</span>.</strong></p>
+<p><strong>b)</strong> El plano contiene a <span class="math inline">\(\overrightarrow{AB}=(2,-1,0)\)</span> y a la normal de <span class="math inline">\(\pi\)</span>, <span class="math inline">\((1,1,1)\)</span>. Su normal es <span class="math inline">\(\overrightarrow{AB}\times(1,1,1)=(-1,-2,3)\)</span> y pasa por <span class="math inline">\(A\)</span>: <strong><span class="math inline">\(x+2y-3z-5=0\)</span>.</strong> (Comprobación: <span class="math inline">\(B\)</span>: <span class="math inline">\(3+2-5=0\)</span>.)</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2025" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2025">Extraordinaria 2025</h3>
+<div id="ebau-2025-ext-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Extraordinaria 2025 · Bloque optativo 2 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la recta <span class="math inline">\(r\equiv\begin{cases}x-y+z=3\\x+2y-z=4\end{cases}\)</span> y el plano <span class="math inline">\(\pi\equiv mx-y-2z=5\)</span>.</p>
+<ol type="a">
+<li><p>Halla <span class="math inline">\(m\)</span> para que <span class="math inline">\(r\)</span> y <span class="math inline">\(\pi\)</span> sean paralelos. <em>(1,5 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(m=-8\)</span>, calcula la distancia de la recta <span class="math inline">\(r\)</span> al plano <span class="math inline">\(\pi\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Vector director de <span class="math inline">\(r\)</span>: <span class="math inline">\(\vec d=(1,-1,1)\times(1,2,-1)=(-1,2,3)\)</span>. Es paralela al plano si <span class="math inline">\(\vec d\cdot(m,-1,-2)=0\)</span>: <span class="math inline">\(-m-2-6=0\Rightarrow m=-8\)</span>. Además, un punto de <span class="math inline">\(r\)</span>, <span class="math inline">\((10/3,1/3,0)\)</span>, no está en <span class="math inline">\(\pi\)</span> (<span class="math inline">\(-27\neq5\)</span>), luego no está contenida. <strong><span class="math inline">\(m=-8\)</span>.</strong></p>
+<p><strong>b)</strong> La distancia de <span class="math inline">\(r\)</span> a <span class="math inline">\(\pi\)</span> es la de cualquier punto de <span class="math inline">\(r\)</span>, por ejemplo <span class="math inline">\(P(10/3,1/3,0)\)</span>, a <span class="math inline">\(\pi\equiv-8x-y-2z-5=0\)</span>: <span class="math display">\[d=\frac{\left|-\frac{80}{3}-\frac13-5\right|}{\sqrt{64+1+4}}=\frac{32}{\sqrt{69}}=\mathbf{\frac{32\sqrt{69}}{69}}\approx3{,}85.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2025-ext-5" class="ebau-ej">
+<p><strong>Ejercicio 5</strong> · Extraordinaria 2025 · Bloque optativo 2 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Sean las rectas <span class="math inline">\(r\equiv\dfrac{x+1}{4}=\dfrac{y+2}{3}=\dfrac{z-2}{-1}\)</span> y <span class="math inline">\(s\equiv\begin{cases}x=1-\lambda\\y=2+\lambda\\z=-3-2\lambda\end{cases}\)</span></p>
+<ol type="a">
+<li><p>Estudia la posición relativa de las rectas <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Halla la ecuación de un plano que contiene a <span class="math inline">\(r\)</span> y a una recta perpendicular a las rectas <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: <span class="math inline">\(A(-1,-2,2)\)</span>, <span class="math inline">\(\vec u=(4,3,-1)\)</span>. <span class="math inline">\(s\)</span>: <span class="math inline">\(B(1,2,-3)\)</span>, <span class="math inline">\(\vec v=(-1,1,-2)\)</span>. <span class="math inline">\(\overrightarrow{AB}=(2,4,-5)\)</span>.</p>
+<p><strong>a)</strong> <span class="math inline">\(\vec u\)</span> y <span class="math inline">\(\vec v\)</span> no son proporcionales y <span class="math display">\[\left|\begin{matrix}4&amp;3&amp;-1\\-1&amp;1&amp;-2\\2&amp;4&amp;-5\end{matrix}\right|=-9\neq0.\]</span> <strong>Las rectas se cruzan.</strong></p>
+<p><strong>b)</strong> La dirección perpendicular a ambas es <span class="math inline">\(\vec w=\vec u\times\vec v=(-5,9,7)\)</span>. El plano contiene a <span class="math inline">\(r\)</span> y tiene dirección <span class="math inline">\(\vec w\)</span>, luego su normal es <span class="math inline">\(\vec u\times\vec w=(30,-23,51)\)</span> y pasa por <span class="math inline">\(A\)</span>: <span class="math inline">\(30(x+1)-23(y+2)+51(z-2)=0\)</span>, es decir <strong><span class="math inline">\(30x-23y+51z-118=0\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-1-2025" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-1-2025">Extraordinaria · Suplente 1 2025</h3>
+<div id="ebau-2025-ext-sup1-6" class="ebau-ej">
+<p><strong>Ejercicio 6</strong> · Extraordinaria · Suplente 1 2025 · Bloque optativo 3 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la recta <span class="math inline">\(r\equiv\begin{cases}x+y+z=0\\y-z=0\end{cases}\)</span> y el punto <span class="math inline">\(P(2,1,0)\)</span>.</p>
+<ol type="a">
+<li><p>Halla la distancia del punto <span class="math inline">\(P\)</span> a la recta <span class="math inline">\(r\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Calcula la ecuación del plano que contiene a la recta <span class="math inline">\(r\)</span> y al punto <span class="math inline">\(P\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span> en paramétricas: de <span class="math inline">\(y=z\)</span> y <span class="math inline">\(x=-2y\)</span>, pasa por <span class="math inline">\(O(0,0,0)\)</span> con <span class="math inline">\(\vec d=(-2,1,1)\)</span>.</p>
+<p><strong>a)</strong> <span class="math inline">\(\overrightarrow{OP}=(2,1,0)\)</span>, <span class="math inline">\(\overrightarrow{OP}\times\vec d=(1,-2,4)\)</span>. <span class="math display">\[d(P,r)=\frac{|\overrightarrow{OP}\times\vec d|}{|\vec d|}=\frac{\sqrt{21}}{\sqrt6}=\mathbf{\frac{\sqrt{14}}{2}}\approx1{,}87.\]</span></p>
+<p><strong>b)</strong> El plano pasa por <span class="math inline">\(O\)</span> y tiene normal <span class="math inline">\(\overrightarrow{OP}\times\vec d=(1,-2,4)\)</span>: <strong><span class="math inline">\(x-2y+4z=0\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2-2025" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2-2025">Extraordinaria · Suplente 2 2025</h3>
+<div id="ebau-2025-ext-sup2-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Extraordinaria · Suplente 2 2025 · Parte obligatoria · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria_Suplente2.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las rectas <span class="math inline">\(r\equiv\dfrac{x}{1}=\dfrac{y-2}{-1}=\dfrac{z-k}{2}\)</span> y <span class="math inline">\(s\equiv\dfrac{x+2}{-1}=\dfrac{y+3}{2}=\dfrac{z-1}{1}\)</span>.</p>
+<ol type="a">
+<li><p>Determina <span class="math inline">\(k\)</span> sabiendo que ambas se cortan en un punto. <em>(1,5 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(k=0\)</span>, halla la ecuación general del plano que contiene a <span class="math inline">\(r\)</span> y es paralelo a <span class="math inline">\(s\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: punto <span class="math inline">\(A(0,2,k)\)</span>, <span class="math inline">\(\vec u=(1,-1,2)\)</span>. <span class="math inline">\(s\)</span>: punto <span class="math inline">\(B(-2,-3,1)\)</span>, <span class="math inline">\(\vec v=(-1,2,1)\)</span>. Los vectores directores no son proporcionales.</p>
+<p><strong>a)</strong> Se cortan si son coplanarias: <span class="math inline">\(\overrightarrow{AB}=(-2,-5,1-k)\)</span> y <span class="math display">\[\left|\begin{matrix}1&amp;-1&amp;2\\-1&amp;2&amp;1\\-2&amp;-5&amp;1-k\end{matrix}\right|=26-k=0\;\Rightarrow\;\mathbf{k=26}.\]</span></p>
+<p><strong>b)</strong> Con <span class="math inline">\(k=0\)</span>, la normal es <span class="math inline">\(\vec u\times\vec v=(-5,-3,1)\)</span>, es decir <span class="math inline">\(5x+3y-z+D=0\)</span>. Pasa por <span class="math inline">\((0,2,0)\)</span>: <span class="math inline">\(6+D=0\)</span>. <strong>Plano: <span class="math inline">\(5x+3y-z-6=0\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2">2024</h2>
+<section id="ordinaria-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2024">Ordinaria 2024</h3>
+<div id="ebau-2024-ord-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Ordinaria 2024 · Bloque D · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<ol type="a">
+<li><p>Halla el punto simétrico de <span class="math inline">\(P(2,2,1)\)</span> respecto de la recta <span class="math inline">\(r\equiv\begin{cases}x-2y+z=2\\y-z=1\end{cases}\)</span> <em>(1,25 puntos)</em></p></li>
+<li><p>Halla el punto simétrico de <span class="math inline">\(Q(1,-1,-3)\)</span> respecto del plano <span class="math inline">\(\pi\equiv x-2y+z+6=0\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Parametrizando <span class="math inline">\(r\)</span> (<span class="math inline">\(z=t\)</span>): <span class="math inline">\(r\equiv(4+t,\,1+t,\,t)\)</span>, dirección <span class="math inline">\((1,1,1)\)</span>. El pie de la perpendicular desde <span class="math inline">\(P\)</span> cumple <span class="math inline">\((2+t,-1+t,t-1)\cdot(1,1,1)=3t=0\Rightarrow t=0\)</span>, <span class="math inline">\(H(4,1,0)\)</span>. El simétrico es <span class="math inline">\(P'=2H-P\)</span>:</p>
+<p><span class="math display">\[\mathbf{P'=(6,0,-1)}\]</span></p>
+<p><strong>b)</strong> Normal <span class="math inline">\(\vec n=(1,-2,1)\)</span>, <span class="math inline">\(|\vec n|^2=6\)</span>, y <span class="math inline">\(\pi(Q)=1+2-3+6=6\)</span>. Pie de la perpendicular: <span class="math inline">\(H=Q-\dfrac66\vec n=(0,1,-4)\)</span>. Simétrico <span class="math inline">\(Q'=2H-Q\)</span>:</p>
+<p><span class="math display">\[\mathbf{Q'=(-1,3,-5)}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2024-ord-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Ordinaria 2024 · Bloque D · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las rectas <span class="math inline">\(r\equiv\begin{cases}y=0\\2x-z=0\end{cases}\)</span> y <span class="math inline">\(s\equiv\begin{cases}x+y+7=0\\z=0\end{cases}\)</span></p>
+<ol type="a">
+<li><p>Estudia la posición relativa de <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Calcula la ecuación del plano paralelo a <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span> que equidista de ambas rectas. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: punto <span class="math inline">\(A(0,0,0)\)</span>, dirección <span class="math inline">\(\vec d_r=(1,0,2)\)</span>. <span class="math inline">\(s\)</span> (<span class="math inline">\(z=0\)</span>, <span class="math inline">\(y=-7-x\)</span>): punto <span class="math inline">\(B(0,-7,0)\)</span>, dirección <span class="math inline">\(\vec d_s=(1,-1,0)\)</span>.</p>
+<p><strong>a)</strong> <span class="math inline">\(\vec d_r\)</span> y <span class="math inline">\(\vec d_s\)</span> no son proporcionales, y <span class="math inline">\(\big[\overrightarrow{AB},\vec d_r,\vec d_s\big]=(0,-7,0)\cdot(2,2,-1)=-14\neq0\)</span> (con <span class="math inline">\(\vec d_r\times\vec d_s=(2,2,-1)\)</span>). <strong>Las rectas se cruzan.</strong></p>
+<p><strong>b)</strong> El plano tiene normal <span class="math inline">\((2,2,-1)\)</span>: <span class="math inline">\(2x+2y-z+D=0\)</span>. <span class="math inline">\(r\)</span> está en el plano <span class="math inline">\(2x+2y-z=0\)</span> y <span class="math inline">\(s\)</span> en <span class="math inline">\(2x+2y-z=-14\)</span>. El plano equidistante está en medio:</p>
+<p><span class="math display">\[\mathbf{2x+2y-z+7=0}\]</span></p>
+<p>(distancia <span class="math inline">\(7/3\)</span> a cada una).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-2024">Ordinaria · Reserva 2024</h3>
+<div id="ebau-2024-ord-res-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Ordinaria · Reserva 2024 · Bloque D · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Ordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la recta <span class="math inline">\(r\equiv\dfrac{x+1}{2}=\dfrac{y-2}{2}=3-z\)</span> y el punto <span class="math inline">\(P(0,2,-4)\)</span>.</p>
+<ol type="a">
+<li><p>Calcula el punto de <span class="math inline">\(r\)</span> a menor distancia de <span class="math inline">\(P\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Halla los puntos de <span class="math inline">\(r\)</span> cuya distancia a <span class="math inline">\(P\)</span> sea igual a <span class="math inline">\(\sqrt{50}\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: punto <span class="math inline">\((-1,2,3)\)</span>, dirección <span class="math inline">\((2,2,-1)\)</span>; un punto genérico es <span class="math inline">\(R(-1+2t,\,2+2t,\,3-t)\)</span> y <span class="math inline">\(\overrightarrow{PR}=(2t-1,\,2t,\,7-t)\)</span>.</p>
+<p><strong>a)</strong> El punto más cercano cumple <span class="math inline">\(\overrightarrow{PR}\cdot(2,2,-1)=0\)</span>: <span class="math inline">\(9t-9=0\Rightarrow t=1\)</span>.</p>
+<p><span class="math display">\[\mathbf{R=(1,4,2)}\quad(\text{distancia }\sqrt{41}).\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(|\overrightarrow{PR}|^2=9t^2-18t+50=50\Rightarrow 9t(t-2)=0\Rightarrow t=0,\ t=2\)</span>.</p>
+<p><span class="math display">\[\mathbf{(-1,2,3)\ \text{ y }\ (3,6,1)}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2024-ord-res-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Ordinaria · Reserva 2024 · Bloque D · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Ordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Sea <span class="math inline">\(\pi_1\)</span> el plano determinado por los puntos <span class="math inline">\(A(1,0,0)\)</span>, <span class="math inline">\(B(1,1,-3)\)</span> y <span class="math inline">\(C(0,1,1)\)</span>, y sea <span class="math inline">\(\pi_2\equiv x-y+z-1=0\)</span>. Determina la ecuación de la recta paralela a ambos planos que pasa por el origen.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\overrightarrow{AB}=(0,1,-3)\)</span>, <span class="math inline">\(\overrightarrow{AC}=(-1,1,1)\)</span>. Normal de <span class="math inline">\(\pi_1\)</span>: <span class="math inline">\(\overrightarrow{AB}\times\overrightarrow{AC}=(4,3,1)\)</span>. Normal de <span class="math inline">\(\pi_2\)</span>: <span class="math inline">\((1,-1,1)\)</span>.</p>
+<p>Una recta paralela a ambos planos tiene dirección perpendicular a las dos normales: <span class="math inline">\((4,3,1)\times(1,-1,1)=(4,-3,-7)\)</span>.</p>
+<p><span class="math display">\[\mathbf{(x,y,z)=\lambda(4,-3,-7)}\ \ \text{es decir}\ \ \frac x4=\frac y{-3}=\frac z{-7}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2024">Ordinaria · Suplente 2024</h3>
+<div id="ebau-2024-ord-sup-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Ordinaria · Suplente 2024 · Bloque D · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera los puntos <span class="math inline">\(P(1,0,1)\)</span> y <span class="math inline">\(Q(3,-2,1)\)</span>.</p>
+<ol type="a">
+<li><p>Calcula el plano perpendicular al segmento <span class="math inline">\(PQ\)</span> que pasa por su punto medio. <em>(1 punto)</em></p></li>
+<li><p>Calcula el plano paralelo a la recta <span class="math inline">\(r\equiv 1-x=\dfrac{y-2}{3}=z+1\)</span> que pasa por <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\overrightarrow{PQ}=(2,-2,0)\)</span>.</p>
+<p><strong>a)</strong> Punto medio <span class="math inline">\(M(2,-1,1)\)</span>; normal <span class="math inline">\((1,-1,0)\)</span>: <span class="math inline">\(x-y+D=0\)</span>, con <span class="math inline">\(M\)</span>: <span class="math inline">\(D=-3\)</span>.</p>
+<p><span class="math display">\[\mathbf{x-y-3=0}\]</span></p>
+<p><strong>b)</strong> Dirección de <span class="math inline">\(r\)</span>: <span class="math inline">\((-1,3,1)\)</span>. Normal del plano: <span class="math inline">\(\overrightarrow{PQ}\times(-1,3,1)\parallel(-1,-1,2)\)</span>. Plano por <span class="math inline">\(P\)</span>: <span class="math inline">\(-(x-1)-y+2(z-1)=0\)</span>.</p>
+<p><span class="math display">\[\mathbf{x+y-2z+1=0}\]</span></p>
+<p>(contiene a <span class="math inline">\(Q\)</span>: <span class="math inline">\(3-2-2+1=0\)</span>).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2024" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2024">Extraordinaria 2024</h3>
+<div id="ebau-2024-ext-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Extraordinaria 2024 · Bloque D · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2024/10/2oBachCC_EBAU_Andalucia_2024-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera el plano <span class="math inline">\(\pi\equiv x-2y+z-2=0\)</span> y la recta <span class="math inline">\(r\equiv\begin{cases}x=1+2\lambda\\y=\lambda\\z=1\end{cases}\quad\lambda\in\mathbb{R}.\)</span></p>
+<ol type="a">
+<li><p>Estudia la posición relativa de <span class="math inline">\(\pi\)</span> y <span class="math inline">\(r\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Calcula la ecuación de la recta contenida en <span class="math inline">\(\pi\)</span> que pasa por el punto <span class="math inline">\(P(2,-1,-2)\)</span> y es perpendicular a <span class="math inline">\(r\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\pi\)</span>: normal <span class="math inline">\(\vec n=(1,-2,1)\)</span>. <span class="math inline">\(r\)</span>: punto <span class="math inline">\(A(1,0,1)\)</span>, dirección <span class="math inline">\(\vec d=(2,1,0)\)</span>.</p>
+<p><strong>a)</strong> <span class="math inline">\(\vec n\cdot\vec d=2-2=0\)</span> y <span class="math inline">\(A\in\pi\)</span> (<span class="math inline">\(1-0+1-2=0\)</span>). <strong>La recta <span class="math inline">\(r\)</span> está contenida en el plano <span class="math inline">\(\pi\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(P\in\pi\)</span> (<span class="math inline">\(2+2-2-2=0\)</span>). La recta debe estar en <span class="math inline">\(\pi\)</span> (dirección perpendicular a <span class="math inline">\(\vec n\)</span>) y ser perpendicular a <span class="math inline">\(r\)</span> (perpendicular a <span class="math inline">\(\vec d\)</span>): <span class="math inline">\(\vec n\times\vec d=(-1,2,5)\)</span>.</p>
+<p><span class="math display">\[\mathbf{(x,y,z)=(2,-1,-2)+\mu(-1,2,5)}\ \ \text{es decir}\ \ \frac{x-2}{-1}=\frac{y+1}{2}=\frac{z+2}{5}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-reserva-2024" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-reserva-2024">Extraordinaria · Reserva 2024</h3>
+<div id="ebau-2024-ext-res-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Extraordinaria · Reserva 2024 · Bloque D · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Extraordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las rectas <span class="math inline">\(r\equiv x=y+a=\dfrac{z+1}{2}\)</span> y <span class="math inline">\(s\equiv\begin{cases}x-2y=3a\\x+z=2\end{cases}\)</span></p>
+<ol type="a">
+<li><p>Calcula <span class="math inline">\(a\)</span> para que las rectas se corten. <em>(1,25 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(a=-1\)</span>, halla la recta que corta perpendicularmente a <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: punto <span class="math inline">\((0,-a,-1)\)</span>, dirección <span class="math inline">\(\vec d_r=(1,1,2)\)</span>. <span class="math inline">\(s\)</span>: con <span class="math inline">\(y=\mu\)</span>, <span class="math inline">\((x,y,z)=(3a+2\mu,\ \mu,\ 2-3a-2\mu)\)</span>: punto <span class="math inline">\((3a,0,2-3a)\)</span>, dirección <span class="math inline">\(\vec d_s=(2,1,-2)\)</span>.</p>
+<p><strong>a)</strong> No son paralelas. Se cortan si son coplanarias: <span class="math inline">\(\big[\overrightarrow{P_rP_s},\vec d_r,\vec d_s\big]=0\)</span> con <span class="math inline">\(\overrightarrow{P_rP_s}=(3a,a,3-3a)\)</span> y <span class="math inline">\(\vec d_r\times\vec d_s=(-4,6,-1)\)</span>:</p>
+<p><span class="math display">\[-12a+6a-3+3a=-3a-3=0\ \Rightarrow\ \mathbf{a=-1}.\]</span></p>
+<p><strong>b)</strong> Con <span class="math inline">\(a=-1\)</span> se cortan en un punto: igualando <span class="math inline">\(r\,(t,\,1+t,\,-1+2t)\)</span> y <span class="math inline">\(s\,(-3+2\mu,\,\mu,\,5-2\mu)\)</span> se obtiene <span class="math inline">\(t=1\)</span>, <span class="math inline">\(\mu=2\)</span>, punto <span class="math inline">\((1,2,1)\)</span>. La recta que corta perpendicularmente a ambas pasa por ese punto con dirección <span class="math inline">\(\vec d_r\times\vec d_s=(-4,6,-1)\)</span>:</p>
+<p><span class="math display">\[\mathbf{(x,y,z)=(1,2,1)+\lambda(-4,6,-1)}\ \ \text{es decir}\ \ \frac{x-1}{-4}=\frac{y-2}{6}=\frac{z-1}{-1}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2024" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2024">Extraordinaria · Suplente 2024</h3>
+<div id="ebau-2024-ext-sup-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Extraordinaria · Suplente 2024 · Bloque D · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Extraordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera el plano <span class="math inline">\(\pi\equiv x-y=0\)</span> y la recta <span class="math inline">\(r\equiv\dfrac{x-1}{2}=\dfrac{y}{3}=z-2\)</span>.</p>
+<ol type="a">
+<li><p>Calcula, si es posible, el plano perpendicular a <span class="math inline">\(\pi\)</span> que contiene a <span class="math inline">\(r\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Calcula, si es posible, la recta perpendicular a <span class="math inline">\(r\)</span>, contenida en <span class="math inline">\(\pi\)</span> y que pasa por el origen. <em>(1,25 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\pi\)</span> tiene normal <span class="math inline">\(\vec n_\pi=(1,-1,0)\)</span>; <span class="math inline">\(r\)</span> pasa por <span class="math inline">\((1,0,2)\)</span> con dirección <span class="math inline">\(\vec d=(2,3,1)\)</span>.</p>
+<p><strong>a)</strong> El plano buscado contiene a <span class="math inline">\(\vec d\)</span> y a <span class="math inline">\(\vec n_\pi\)</span> (para ser perpendicular a <span class="math inline">\(\pi\)</span>). Es posible porque <span class="math inline">\(\vec d\)</span> y <span class="math inline">\(\vec n_\pi\)</span> no son paralelos. Normal: <span class="math inline">\(\vec d\times\vec n_\pi\parallel(-1,-1,5)\)</span>, es decir <span class="math inline">\((1,1,-5)\)</span>:</p>
+<p><span class="math display">\[x+y-5z+D=0,\ \text{por }(1,0,2):\ D=9\ \Rightarrow\ \mathbf{x+y-5z+9=0}.\]</span></p>
+<p><strong>b)</strong> El origen está en <span class="math inline">\(\pi\)</span>. La dirección debe ser perpendicular a <span class="math inline">\(\vec d\)</span> (por ser perpendicular a <span class="math inline">\(r\)</span>) y a <span class="math inline">\(\vec n_\pi\)</span> (por estar contenida en <span class="math inline">\(\pi\)</span>): <span class="math inline">\(\vec n_\pi\times\vec d=(-1,-1,5)\)</span>.</p>
+<p><span class="math display">\[\mathbf{(x,y,z)=\lambda(1,1,-5)}\ \ \text{es decir}\ \ x=y=-\frac z5.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-3">2023</h2>
+<section id="ordinaria-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2023">Ordinaria 2023</h3>
+<div id="ebau-2023-ord-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Ordinaria 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>El plano perpendicular al segmento de extremos <span class="math inline">\(P(0,3,8)\)</span> y <span class="math inline">\(Q(2,1,6)\)</span> que pasa por su punto medio corta a los ejes coordenados en los puntos <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span>. Halla el área del triángulo cuyos vértices son los puntos <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span>.</p>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/04-vectores-espacio.html">Vectores en el espacio</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Normal: <span class="math inline">\(\overrightarrow{PQ}=(2,-2,-2)\parallel(1,-1,-1)\)</span>. Punto medio <span class="math inline">\(M(1,2,7)\)</span>.</p>
+<p>Plano: <span class="math inline">\(x-y-z=1-2-7=-8\)</span>, es decir <span class="math inline">\(x-y-z+8=0\)</span>.</p>
+<p>Cortes con los ejes: <span class="math inline">\(A(-8,0,0)\)</span>, <span class="math inline">\(B(0,8,0)\)</span>, <span class="math inline">\(C(0,0,8)\)</span>. Los tres lados miden <span class="math inline">\(8\sqrt2\)</span> (triángulo equilátero).</p>
+<p><span class="math display">\[\text{Área}=\dfrac12|\overrightarrow{AB}\times\overrightarrow{AC}|=\dfrac{\sqrt3}4(8\sqrt2)^{2}.\]</span></p>
+<p><strong>Área <span class="math inline">\(=32\sqrt3\approx55{,}43\ \text{u}^2\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2023-ord-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Ordinaria 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera el punto <span class="math inline">\(A(-1,1,3)\)</span> y la recta <span class="math inline">\(r\)</span> determinada por los puntos <span class="math inline">\(B(2,1,1)\)</span> y <span class="math inline">\(C(0,1,-1)\)</span>.</p>
+<ol type="a">
+<li><p>Halla la distancia del punto <span class="math inline">\(A\)</span> a la recta <span class="math inline">\(r\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Calcula el área del triángulo cuyos vértices son <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/04-vectores-espacio.html">Vectores en el espacio</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\overrightarrow{BC}=(-2,0,-2)\)</span>, <span class="math inline">\(\overrightarrow{BA}=(-3,0,2)\)</span>, <span class="math inline">\(\overrightarrow{BA}\times\overrightarrow{BC}=(0,-10,0)\)</span>.</p>
+<p><strong>a)</strong> <span class="math inline">\(d(A,r)=\dfrac{|\overrightarrow{BA}\times\overrightarrow{BC}|}{|\overrightarrow{BC}|}=\dfrac{10}{2\sqrt2}\)</span>.</p>
+<p><strong><span class="math inline">\(d=\dfrac{5\sqrt2}2\approx3{,}54\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(\text{Área}=\dfrac12|\overrightarrow{BA}\times\overrightarrow{BC}|=\dfrac{10}2\)</span>.</p>
+<p><strong>Área <span class="math inline">\(=5\ \text{u}^2\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-2023">Ordinaria · Reserva 2023</h3>
+<div id="ebau-2023-ord-res-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Ordinaria · Reserva 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria-Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera el plano <span class="math inline">\(\pi\equiv x+y+z=0\)</span> y la recta <span class="math inline">\(r\equiv x-1=\dfrac{y}{2}=\dfrac{z+1}{2}\)</span>. Halla la ecuación de un plano <span class="math inline">\(\pi'\)</span>, paralelo a <span class="math inline">\(\pi\)</span>, tal que si <span class="math inline">\(Q\)</span> y <span class="math inline">\(Q'\)</span> son respectivamente los puntos de corte de la recta <span class="math inline">\(r\)</span> con los planos <span class="math inline">\(\pi\)</span> y <span class="math inline">\(\pi'\)</span>, entonces la distancia entre <span class="math inline">\(Q\)</span> y <span class="math inline">\(Q'\)</span> sea de 2 unidades.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Recta <span class="math inline">\(r\)</span>: <span class="math inline">\((x,y,z)=(1,0,-1)+t(1,2,2)\)</span>. Corte con <span class="math inline">\(\pi\)</span>: <span class="math inline">\((1+t)+2t+(-1+2t)=5t=0\Rightarrow t=0\)</span>, <span class="math inline">\(Q=(1,0,-1)\)</span>.</p>
+<p><span class="math inline">\(Q'=Q+s(1,2,2)\)</span> con <span class="math inline">\(|QQ'|=3|s|=2\Rightarrow s=\pm\dfrac23\)</span>. Plano <span class="math inline">\(\pi'\equiv x+y+z=k\)</span> con <span class="math inline">\(k=5s=\pm\dfrac{10}3\)</span>.</p>
+<p><strong><span class="math inline">\(\pi'\equiv x+y+z=\dfrac{10}3\)</span> (o también <span class="math inline">\(x+y+z=-\dfrac{10}3\)</span>).</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2023">Ordinaria · Suplente 2023</h3>
+<div id="ebau-2023-ord-sup-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Ordinaria · Suplente 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria-Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Determina el punto simétrico de <span class="math inline">\(A(2,-4,-3)\)</span> con respecto al plano que contiene a los puntos <span class="math inline">\(B(1,1,2)\)</span>, <span class="math inline">\(C\left(0,\tfrac13,1\right)\)</span> y <span class="math inline">\(D(-3,0,3)\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Plano por <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, <span class="math inline">\(D\)</span>: <span class="math inline">\(\overrightarrow{BC}=\left(-1,-\tfrac23,-1\right)\)</span>, <span class="math inline">\(\overrightarrow{BD}=(-4,-1,1)\)</span>, normal <span class="math inline">\(\propto(1,-3,1)\)</span> y <span class="math inline">\(x-3y+z=0\)</span> (pasa por <span class="math inline">\(B\)</span>: <span class="math inline">\(1-3+2=0\)</span>).</p>
+<p>Recta por <span class="math inline">\(A\)</span> perpendicular: <span class="math inline">\((2+t,\,-4-3t,\,-3+t)\)</span>. Corte: <span class="math inline">\(11+11t=0\Rightarrow t=-1\)</span>, pie <span class="math inline">\(M=(1,-1,-4)\)</span>.</p>
+<p>Simétrico <span class="math inline">\(A'=2M-A\)</span>: <strong><span class="math inline">\(A'=(0,2,-5)\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2023" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2023">Extraordinaria 2023</h3>
+<div id="ebau-2023-ext-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Extraordinaria 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera los planos <span class="math inline">\(\pi_1\equiv x-y+z=0\)</span> y <span class="math inline">\(\pi_2\equiv x+y=2\)</span>.</p>
+<ol type="a">
+<li><p>Calcula la distancia entre la recta intersección de <span class="math inline">\(\pi_1\)</span> y <span class="math inline">\(\pi_2\)</span> y el punto <span class="math inline">\(P(2,6,-2)\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Halla el ángulo que forman <span class="math inline">\(\pi_1\)</span> y <span class="math inline">\(\pi_2\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Dirección de la recta: <span class="math inline">\((1,-1,1)\times(1,1,0)=(-1,1,2)\)</span>; punto <span class="math inline">\(A(0,2,2)\)</span> (cumple <span class="math inline">\(x+y=2\)</span>, <span class="math inline">\(x-y+z=0\)</span>).</p>
+<p><strong>a)</strong> <span class="math inline">\(\overrightarrow{AP}=(2,4,-4)\)</span>, <span class="math inline">\(\overrightarrow{AP}\times\vec d=(12,0,6)\)</span>.</p>
+<p><span class="math display">\[d=\dfrac{|(12,0,6)|}{|(-1,1,2)|}=\dfrac{\sqrt{180}}{\sqrt6}=\sqrt{30}.\]</span></p>
+<p><strong>Distancia <span class="math inline">\(=\sqrt{30}\approx5{,}48\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(\cos\alpha=\dfrac{|(1,-1,1)\cdot(1,1,0)|}{\sqrt3\sqrt2}=0\)</span>.</p>
+<p><strong>Los planos son perpendiculares: <span class="math inline">\(90^\circ\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2023-ext-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Extraordinaria 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Calcula el volumen del tetraedro que limita el plano determinado por los puntos <span class="math inline">\(A(0,2,-2)\)</span>, <span class="math inline">\(B(3,2,1)\)</span> y <span class="math inline">\(C(2,3,2)\)</span> con los planos cartesianos.</p>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/04-vectores-espacio.html">Vectores en el espacio</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\overrightarrow{AB}=(3,0,3)\)</span>, <span class="math inline">\(\overrightarrow{AC}=(2,1,4)\)</span>, <span class="math inline">\(\vec n=\overrightarrow{AB}\times\overrightarrow{AC}=(-3,-6,3)\parallel(1,2,-1)\)</span>.</p>
+<p>Plano: <span class="math inline">\(x+2y-z=d\)</span>; con <span class="math inline">\(A\)</span>: <span class="math inline">\(d=4+2=6\)</span>, es decir <span class="math inline">\(x+2y-z=6\)</span>. Cortes con los ejes: <span class="math inline">\((6,0,0)\)</span>, <span class="math inline">\((0,3,0)\)</span>, <span class="math inline">\((0,0,-6)\)</span>.</p>
+<p>El tetraedro tiene tres aristas perpendiculares de longitudes <span class="math inline">\(6\)</span>, <span class="math inline">\(3\)</span> y <span class="math inline">\(6\)</span>:</p>
+<p><span class="math display">\[V=\dfrac16\cdot6\cdot3\cdot6=18.\]</span></p>
+<p><strong>Volumen <span class="math inline">\(=18\ \text{u}^3\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-reserva-2023" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-reserva-2023">Extraordinaria · Reserva 2023</h3>
+<div id="ebau-2023-ext-res-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Extraordinaria · Reserva 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera el plano <span class="math inline">\(\pi\)</span>, determinado por los puntos <span class="math inline">\(A(-1,0,0)\)</span>, <span class="math inline">\(B(0,1,1)\)</span> y <span class="math inline">\(C(2,1,0)\)</span>, y la recta</p>
+<p><span class="math display">\[r\equiv\begin{cases}x-2z-3=0\\y-z-2=0\end{cases}\]</span></p>
+<p>Halla los puntos de <span class="math inline">\(r\)</span> cuya distancia a <span class="math inline">\(\pi\)</span> es <span class="math inline">\(\sqrt{14}\)</span> unidades.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Plano: <span class="math inline">\(\overrightarrow{AB}=(1,1,1)\)</span>, <span class="math inline">\(\overrightarrow{AC}=(3,1,0)\)</span>, <span class="math inline">\(\vec n=\overrightarrow{AB}\times\overrightarrow{AC}=(-1,4,-2)\)</span>, luego <span class="math inline">\(\pi\equiv x-4y+2z+1=0\)</span>.</p>
+<p>Recta: <span class="math inline">\(x=3+2z\)</span>, <span class="math inline">\(y=2+z\)</span>; dirección <span class="math inline">\((2,1,1)\)</span>. Como <span class="math inline">\((2,1,1)\cdot(1,-4,2)=0\)</span>, <span class="math inline">\(r\)</span> es paralela a <span class="math inline">\(\pi\)</span>.</p>
+<p>Distancia (constante) de cualquier punto de <span class="math inline">\(r\)</span>, p.&nbsp;ej. <span class="math inline">\((3,2,0)\)</span>: <span class="math inline">\(\dfrac{|3-8+0+1|}{\sqrt{21}}=\dfrac{4}{\sqrt{21}}\ne\sqrt{14}\)</span>.</p>
+<p><strong>No existe ningún punto de <span class="math inline">\(r\)</span> a distancia <span class="math inline">\(\sqrt{14}\)</span> de <span class="math inline">\(\pi\)</span>.</strong></p>
+<p><em>Nota: el enunciado coincide con el examen oficial. Con estos datos la recta es paralela al plano y está a distancia <span class="math inline">\(4/\sqrt{21}\)</span>, así que no hay solución; probablemente es una errata del examen.</em></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2023-ext-res-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Extraordinaria · Reserva 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera el paralelogramo cuyos vértices consecutivos son los puntos <span class="math inline">\(P(-1,2,3)\)</span>, <span class="math inline">\(Q(-2,1,0)\)</span>, <span class="math inline">\(R(0,5,1)\)</span> y <span class="math inline">\(S\)</span>.</p>
+<ol type="a">
+<li><p>Halla las coordenadas del punto <span class="math inline">\(S\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Calcula la ecuación de la recta que pasa por el origen de coordenadas y es perpendicular al plano que contiene a los puntos <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span> y <span class="math inline">\(R\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/04-vectores-espacio.html">Vectores en el espacio</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> En un paralelogramo <span class="math inline">\(PQRS\)</span> se cumple <span class="math inline">\(\overrightarrow{PS}=\overrightarrow{QR}=(2,4,1)\)</span>.</p>
+<p><span class="math inline">\(S=P+\overrightarrow{QR}=(-1,2,3)+(2,4,1)\)</span>: <strong><span class="math inline">\(S=(1,6,4)\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(\overrightarrow{PQ}=(-1,-1,-3)\)</span>, <span class="math inline">\(\overrightarrow{PR}=(1,3,-2)\)</span>, <span class="math inline">\(\vec n=\overrightarrow{PQ}\times\overrightarrow{PR}=(11,-5,-2)\)</span>.</p>
+<p>La recta por el origen con esa dirección es <strong><span class="math inline">\(\dfrac{x}{11}=\dfrac{y}{-5}=\dfrac{z}{-2}\)</span></strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2023" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2023">Extraordinaria · Suplente 2023</h3>
+<div id="ebau-2023-ext-sup-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Extraordinaria · Suplente 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Determina los puntos de la recta <span class="math inline">\(r\equiv\begin{cases}x-y+z=0\\x+3y-1=0\end{cases}\)</span> que son equidistantes de los planos cartesianos <span class="math inline">\(OYZ\)</span> y <span class="math inline">\(OXZ\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>De <span class="math inline">\(x-y+z=0\)</span> y <span class="math inline">\(x+3y=1\)</span>: <span class="math inline">\(x=1-3y\)</span>, <span class="math inline">\(z=y-x=4y-1\)</span>. Puntos <span class="math inline">\((1-3y,\,y,\,4y-1)\)</span>.</p>
+<p>Distancia a <span class="math inline">\(OYZ\)</span> (<span class="math inline">\(x=0\)</span>): <span class="math inline">\(|x|\)</span>. Distancia a <span class="math inline">\(OXZ\)</span> (<span class="math inline">\(y=0\)</span>): <span class="math inline">\(|y|\)</span>. Igualando: <span class="math inline">\(|1-3y|=|y|\)</span>.</p>
+<ul>
+<li><span class="math inline">\(1-3y=y\Rightarrow y=\tfrac14\)</span>.</li>
+<li><span class="math inline">\(1-3y=-y\Rightarrow y=\tfrac12\)</span>.</li>
+</ul>
+<p><strong>Puntos: <span class="math inline">\(\left(\tfrac14,\tfrac14,0\right)\)</span> y <span class="math inline">\(\left(-\tfrac12,\tfrac12,1\right)\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2023-ext-sup-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Extraordinaria · Suplente 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la recta <span class="math inline">\(r\equiv\begin{cases}x-y+z=1\\3x-2z=-2\end{cases}\)</span></p>
+<ol type="a">
+<li><p>Determina la ecuación del plano paralelo a <span class="math inline">\(r\)</span> que contiene a la recta <span class="math inline">\(-x+1=y=\dfrac{z-3}{2}\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Calcula la distancia entre la recta <span class="math inline">\(r\)</span> y el plano <span class="math inline">\(2x+5y+3z=41\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Dirección de <span class="math inline">\(r\)</span>: <span class="math inline">\((1,-1,1)\times(3,0,-2)=(2,5,3)\)</span>. La otra recta tiene dirección <span class="math inline">\((-1,1,2)\)</span> y pasa por <span class="math inline">\((1,0,3)\)</span>.</p>
+<p>Normal del plano: <span class="math inline">\((2,5,3)\times(-1,1,2)=(7,-7,7)\parallel(1,-1,1)\)</span>. Plano: <span class="math inline">\(x-y+z=d\)</span> con <span class="math inline">\((1,0,3)\)</span>: <span class="math inline">\(d=4\)</span>.</p>
+<p><strong><span class="math inline">\(x-y+z=4\)</span>.</strong></p>
+<p><strong>b)</strong> El vector normal del plano <span class="math inline">\(2x+5y+3z=41\)</span> es <span class="math inline">\((2,5,3)\)</span>, que coincide con la dirección de <span class="math inline">\(r\)</span>: la recta es perpendicular al plano y lo corta, así que <strong>la distancia es <span class="math inline">\(0\)</span></strong>.</p>
+<p><em>Nota: el enunciado coincide con el examen oficial. Con estos datos <span class="math inline">\(r\)</span> es perpendicular al plano (no paralela) y lo corta, así que la distancia es nula; probablemente es una errata del examen.</em></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-4" class="level2">
+<h2 class="anchored" data-anchor-id="section-4">2022</h2>
+<section id="ordinaria-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2022">Ordinaria 2022</h3>
+<div id="ebau-2022-ord-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Ordinaria 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la recta <span class="math inline">\(r\equiv x-2=\dfrac{y}{-1}=\dfrac{z-1}{2}\)</span>, así como la recta <span class="math inline">\(s\)</span> determinada por el punto <span class="math inline">\(P(1,2,3)\)</span> y el vector director <span class="math inline">\(\vec{v}=(1+a,-a,3a)\)</span>.</p>
+<ol type="a">
+<li><p>Calcula <span class="math inline">\(a\)</span> para que las rectas <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span> se corten. <em>(1,5 puntos)</em></p></li>
+<li><p>Calcula <span class="math inline">\(a\)</span> para que las rectas <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span> sean perpendiculares. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: <span class="math inline">\((2+t,\,-t,\,1+2t)\)</span>, <span class="math inline">\(\vec d_r=(1,-1,2)\)</span>. <span class="math inline">\(s\)</span>: <span class="math inline">\((1+\lambda(1+a),\ 2-\lambda a,\ 3+3a\lambda)\)</span>.</p>
+<p><strong>a)</strong> Se cortan si <span class="math inline">\(\vec d_r\)</span>, <span class="math inline">\(\vec d_s\)</span> y <span class="math inline">\(\overrightarrow{P_rP}=(-1,2,2)\)</span> son coplanarios y las rectas no son paralelas: <span class="math display">\[\begin{vmatrix}1&amp;-1&amp;2\\1+a&amp;-a&amp;3a\\-1&amp;2&amp;2\end{vmatrix}=6-a=0.\]</span></p>
+<p><strong><span class="math inline">\(a=6\)</span></strong> (punto de corte <span class="math inline">\((-6,8,-15)\)</span>, con <span class="math inline">\(t=-8\)</span>).</p>
+<p><strong>b)</strong> <span class="math inline">\(\vec d_r\cdot\vec d_s=1+a+a+6a=1+8a=0\)</span>.</p>
+<p><strong><span class="math inline">\(a=-\tfrac18\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-2022">Ordinaria · Reserva 2022</h3>
+<div id="ebau-2022-ord-res-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Ordinaria · Reserva 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las rectas <span class="math inline">\(r\equiv\begin{cases}x=0\\z=0\end{cases}\)</span> y <span class="math inline">\(s\equiv\begin{cases}x+y=1\\x-y=1\end{cases}\)</span></p>
+<ol type="a">
+<li><p>Determina la ecuación del plano que contiene a <span class="math inline">\(r\)</span> y es paralelo a <span class="math inline">\(s\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Determina la ecuación del plano que contiene a <span class="math inline">\(r\)</span> y es perpendicular a <span class="math inline">\(s\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span> es el eje <span class="math inline">\(Y\)</span>: punto <span class="math inline">\(O(0,0,0)\)</span>, dirección <span class="math inline">\((0,1,0)\)</span>. <span class="math inline">\(s\)</span>: <span class="math inline">\(x=1\)</span>, <span class="math inline">\(y=0\)</span>, es decir, dirección <span class="math inline">\((0,0,1)\)</span> y punto <span class="math inline">\((1,0,0)\)</span>.</p>
+<p><strong>a)</strong> El plano contiene la dirección <span class="math inline">\((0,1,0)\)</span> y es paralelo a <span class="math inline">\((0,0,1)\)</span>: normal <span class="math inline">\((0,1,0)\times(0,0,1)=(1,0,0)\)</span>.</p>
+<p><strong>Plano <span class="math inline">\(x=0\)</span>.</strong></p>
+<p><strong>b)</strong> El plano es perpendicular a <span class="math inline">\(s\)</span> si su normal es la dirección de <span class="math inline">\(s\)</span>, <span class="math inline">\((0,0,1)\)</span>; y contiene a <span class="math inline">\(r\)</span> (pasa por <span class="math inline">\(O\)</span>).</p>
+<p><strong>Plano <span class="math inline">\(z=0\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2022-ord-res-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Ordinaria · Reserva 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera los planos <span class="math inline">\(\pi_1\equiv x+y+2=0\)</span> y <span class="math inline">\(\pi_2\equiv x-z-1=0\)</span>, así como la recta <span class="math inline">\(r\equiv\begin{cases}2x+z=1\\y=1\end{cases}\)</span></p>
+<ol type="a">
+<li><p>Calcula los puntos de la recta <span class="math inline">\(r\)</span> que equidistan de los planos <span class="math inline">\(\pi_1\)</span> y <span class="math inline">\(\pi_2\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Halla el ángulo que forman los planos <span class="math inline">\(\pi_1\)</span> y <span class="math inline">\(\pi_2\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(r\)</span>: <span class="math inline">\((t,\,1,\,1-2t)\)</span>. Distancias: <span class="math inline">\(d(P,\pi_1)=\dfrac{|t+3|}{\sqrt2}\)</span>, <span class="math inline">\(d(P,\pi_2)=\dfrac{|3t-2|}{\sqrt2}\)</span> (en <span class="math inline">\(\pi_2\)</span>: <span class="math inline">\(t-(1-2t)-1=3t-2\)</span>). Igualando, <span class="math inline">\(t+3=\pm(3t-2)\)</span>: <span class="math inline">\(t=\tfrac52\)</span> o <span class="math inline">\(t=-\tfrac14\)</span>.</p>
+<p><strong>Puntos: <span class="math inline">\(\left(\tfrac52,1,-4\right)\)</span> y <span class="math inline">\(\left(-\tfrac14,1,\tfrac32\right)\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(\cos\varphi=\dfrac{|\vec n_1\cdot\vec n_2|}{|\vec n_1||\vec n_2|}=\dfrac{|(1,1,0)\cdot(1,0,-1)|}{\sqrt2\sqrt2}=\dfrac12\)</span>.</p>
+<p><strong><span class="math inline">\(\varphi=60^\circ\)</span> (<span class="math inline">\(\pi/3\)</span> rad).</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2022">Ordinaria · Suplente 2022</h3>
+<div id="ebau-2022-ord-sup-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Ordinaria · Suplente 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera el plano <span class="math inline">\(\pi\equiv x+y+z=0\)</span> y la recta <span class="math inline">\(r\equiv\begin{cases}x=\lambda\\y=1-\lambda\\z=0\end{cases}\)</span></p>
+<ol type="a">
+<li><p>Determina la ecuación del plano perpendicular a <span class="math inline">\(\pi\)</span> que contiene a <span class="math inline">\(r\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Calcula la distancia entre <span class="math inline">\(r\)</span> y <span class="math inline">\(\pi\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: punto <span class="math inline">\((0,1,0)\)</span>, dirección <span class="math inline">\(\vec d=(1,-1,0)\)</span>. Normal de <span class="math inline">\(\pi\)</span>: <span class="math inline">\(\vec n=(1,1,1)\)</span>.</p>
+<p><strong>a)</strong> Normal del plano buscado: <span class="math inline">\(\vec d\times\vec n=(-1,-1,2)\parallel(1,1,-2)\)</span>. Pasa por <span class="math inline">\((0,1,0)\)</span>:</p>
+<p><strong><span class="math inline">\(x+y-2z-1=0\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(\vec d\cdot\vec n=0\)</span> (paralela) y <span class="math inline">\((0,1,0)\notin\pi\)</span>, así que <span class="math inline">\(d(r,\pi)=d\big((0,1,0),\pi\big)=\dfrac{|0+1+0|}{\sqrt3}\)</span>.</p>
+<p><strong><span class="math inline">\(d=\dfrac{\sqrt3}{3}\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2022-ord-sup-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Ordinaria · Suplente 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Sean los planos <span class="math inline">\(\pi_1\equiv 2x+y+z-3=0\)</span>, <span class="math inline">\(\pi_2\equiv x+2y-z+5=0\)</span> y la recta <span class="math inline">\(r\equiv x-1=\dfrac{y}{2}=\dfrac{z+1}{5}\)</span>.</p>
+<ol type="a">
+<li><p>Halla los puntos de <span class="math inline">\(r\)</span> que equidistan de <span class="math inline">\(\pi_1\)</span> y <span class="math inline">\(\pi_2\)</span>. <em>(2 puntos)</em></p></li>
+<li><p>Halla el seno del ángulo que forma el plano <span class="math inline">\(\pi_1\)</span> con la recta <span class="math inline">\(r\)</span>. <em>(0,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: <span class="math inline">\((1+t,\,2t,\,-1+5t)\)</span>, con <span class="math inline">\(\vec d=(1,2,5)\)</span>. <span class="math inline">\(d_1=\dfrac{|2(1+t)+2t-1+5t-3|}{\sqrt6}=\dfrac{|9t-2|}{\sqrt6}\)</span>, <span class="math inline">\(d_2=\dfrac{|(1+t)+4t-(-1+5t)+5|}{\sqrt6}=\dfrac{7}{\sqrt6}\)</span>.</p>
+<p><strong>a)</strong> <span class="math inline">\(|9t-2|=7\Rightarrow t=1\)</span> o <span class="math inline">\(t=-\tfrac59\)</span>.</p>
+<p><strong>Puntos: <span class="math inline">\((2,2,4)\)</span> y <span class="math inline">\(\left(\tfrac49,-\tfrac{10}9,-\tfrac{34}9\right)\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(\operatorname{sen}\alpha=\dfrac{|\vec n_1\cdot\vec d|}{|\vec n_1||\vec d|}=\dfrac{|(2,1,1)\cdot(1,2,5)|}{\sqrt6\sqrt{30}}=\dfrac{9}{6\sqrt5}\)</span>.</p>
+<p><strong><span class="math inline">\(\operatorname{sen}\alpha=\dfrac{3\sqrt5}{10}\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2022" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2022">Extraordinaria 2022</h3>
+<div id="ebau-2022-ext-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Extraordinaria 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las rectas <span class="math inline">\(r\equiv x+1=y-a=-z\)</span> y <span class="math inline">\(s\equiv\begin{cases}x=5+2\lambda\\y=-3\\z=2-\lambda\end{cases}\)</span></p>
+<ol type="a">
+<li><p>Calcula <span class="math inline">\(a\)</span> para que <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span> se corten. Determina dicho punto de corte. <em>(1,5 puntos)</em></p></li>
+<li><p>Halla la ecuación del plano que pasa por <span class="math inline">\(P(8,-7,2)\)</span> y que contiene a la recta <span class="math inline">\(s\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: punto <span class="math inline">\((-1,a,0)\)</span>, dirección <span class="math inline">\((1,1,-1)\)</span>; <span class="math inline">\(s\)</span>: punto <span class="math inline">\((5,-3,2)\)</span>, dirección <span class="math inline">\((2,0,-1)\)</span>.</p>
+<p><strong>a)</strong> Igualando <span class="math inline">\((-1+t,\ a+t,\ -t)=(5+2\lambda,\ -3,\ 2-\lambda)\)</span>: de la 3ª, <span class="math inline">\(\lambda=t+2\)</span>; en la 1ª, <span class="math inline">\(-1+t=5+2(t+2)\Rightarrow t=-10\)</span>, <span class="math inline">\(\lambda=-8\)</span>; de la 2ª, <span class="math inline">\(a+t=-3\Rightarrow a=7\)</span>.</p>
+<p><strong><span class="math inline">\(a=7\)</span>; punto de corte <span class="math inline">\((-11,-3,10)\)</span>.</strong></p>
+<p><strong>b)</strong> Vectores del plano: <span class="math inline">\((2,0,-1)\)</span> y <span class="math inline">\(\overrightarrow{P_sP}=(3,-4,0)\)</span>. Normal: <span class="math inline">\((2,0,-1)\times(3,-4,0)=(-4,-3,-8)\)</span>.</p>
+<p><strong><span class="math inline">\(4x+3y+8z-27=0\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2022-ext-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Extraordinaria 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Sean el plano <span class="math inline">\(\pi\equiv x+y-z=2\)</span> y la recta <span class="math inline">\(r\equiv x=\dfrac{y}{3}=z-1\)</span>.</p>
+<ol type="a">
+<li><p>Calcula, si existe, el punto de intersección de <span class="math inline">\(\pi\)</span> y <span class="math inline">\(r\)</span>. <em>(0,75 puntos)</em></p></li>
+<li><p>Dado el punto <span class="math inline">\(Q(2,6,3)\)</span>, halla su simétrico respecto del plano <span class="math inline">\(\pi\)</span>. <em>(1,75 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(r:(t,\,3t,\,1+t)\)</span>. Sustituyendo en <span class="math inline">\(\pi\)</span>: <span class="math inline">\(t+3t-1-t=2\Rightarrow t=1\)</span>.</p>
+<p><strong>Punto de intersección: <span class="math inline">\((1,3,2)\)</span>.</strong></p>
+<p><strong>b)</strong> Normal de <span class="math inline">\(\pi\)</span>: <span class="math inline">\(\vec n=(1,1,-1)\)</span>. Para <span class="math inline">\(Q(2,6,3)\)</span>: <span class="math inline">\(2+6-3-2=3\)</span>, y <span class="math inline">\(|\vec n|^2=3\)</span>. El simétrico es <span class="math display">\[Q'=Q-2\,\frac{3}{3}\,\vec n=(2,6,3)-2(1,1,-1).\]</span></p>
+<p><strong><span class="math inline">\(Q'(0,4,5)\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-reserva-2022" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-reserva-2022">Extraordinaria · Reserva 2022</h3>
+<div id="ebau-2022-ext-res-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Extraordinaria · Reserva 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera el punto <span class="math inline">\(P(2,0,-4)\)</span> y el plano <span class="math inline">\(\pi\equiv\begin{cases}x=9\alpha+3\beta\\y=-1+2\alpha\\z=3+4\alpha+\beta\end{cases}\)</span></p>
+<ol type="a">
+<li><p>Halla el punto simétrico del punto <span class="math inline">\(P\)</span> respecto del plano <span class="math inline">\(\pi\)</span>. <em>(1,75 puntos)</em></p></li>
+<li><p>Calcula la distancia del punto <span class="math inline">\(P\)</span> al plano <span class="math inline">\(\pi\)</span>. <em>(0,75 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vectores directores del plano: <span class="math inline">\((9,2,4)\)</span> y <span class="math inline">\((3,0,1)\)</span>; normal <span class="math inline">\(\vec n=(9,2,4)\times(3,0,1)=(2,3,-6)\)</span>, <span class="math inline">\(|\vec n|=7\)</span>. Pasa por <span class="math inline">\((0,-1,3)\)</span>: <span class="math display">\[\pi:\ 2x+3y-6z+21=0.\]</span></p>
+<p><strong>a)</strong> Recta por <span class="math inline">\(P\)</span> perpendicular a <span class="math inline">\(\pi\)</span>: <span class="math inline">\((2+2t,\,3t,\,-4-6t)\)</span>. Al sustituir en <span class="math inline">\(\pi\)</span>: <span class="math inline">\(4+4t+9t+24+36t+21=0\Rightarrow 49t=-49\Rightarrow t=-1\)</span>, luego el pie de la perpendicular es <span class="math inline">\(M(0,-3,2)\)</span>. El simétrico es <span class="math inline">\(P'=2M-P\)</span>:</p>
+<p><strong><span class="math inline">\(P'(-2,-6,8)\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(d(P,\pi)=\dfrac{|4+0+24+21|}{7}=\dfrac{49}{7}\)</span>.</p>
+<p><strong><span class="math inline">\(d=7\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2022" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2022">Extraordinaria · Suplente 2022</h3>
+<div id="ebau-2022-ext-sup-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Extraordinaria · Suplente 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Sea el plano <span class="math inline">\(\pi\equiv 2x+y-2z-2=0\)</span>.</p>
+<ol type="a">
+<li><p>Halla las ecuaciones de los planos paralelos a <span class="math inline">\(\pi\)</span> que distan 2 unidades de dicho plano. <em>(1,5 puntos)</em></p></li>
+<li><p>Calcula el volumen del tetraedro cuyos vértices son el origen de coordenadas y los puntos de corte del plano <span class="math inline">\(\pi\)</span> con los ejes coordenados. <em>(1 punto)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/04-vectores-espacio.html">Vectores en el espacio</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Planos paralelos: <span class="math inline">\(2x+y-2z+k=0\)</span>. La distancia al plano <span class="math inline">\(\pi\)</span> (<span class="math inline">\(k=-2\)</span>) es <span class="math inline">\(\dfrac{|k+2|}{\sqrt{4+1+4}}=\dfrac{|k+2|}{3}=2\)</span>, luego <span class="math inline">\(k+2=\pm6\)</span>.</p>
+<p><strong><span class="math inline">\(2x+y-2z+4=0\)</span> y <span class="math inline">\(2x+y-2z-8=0\)</span>.</strong></p>
+<p><strong>b)</strong> Cortes de <span class="math inline">\(\pi\)</span> con los ejes: <span class="math inline">\(A(1,0,0)\)</span>, <span class="math inline">\(B(0,2,0)\)</span>, <span class="math inline">\(C(0,0,-1)\)</span>. Con el origen <span class="math inline">\(O\)</span>: <span class="math display">\[V=\tfrac16\left|[\overrightarrow{OA},\overrightarrow{OB},\overrightarrow{OC}]\right|=\tfrac16\,|1\cdot2\cdot(-1)|.\]</span></p>
+<p><strong><span class="math inline">\(V=\tfrac13\)</span> u<span class="math inline">\(^3\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2022-ext-sup-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Extraordinaria · Suplente 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las rectas <span class="math inline">\(r\equiv x=1-y=z\)</span> y <span class="math inline">\(s\equiv\begin{cases}x+y-3z=4\\3x-y+z=-2\end{cases}\)</span></p>
+<ol type="a">
+<li><p>Estudia la posición relativa de <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Calcula la ecuación del plano que contiene a <span class="math inline">\(s\)</span> y es paralelo a <span class="math inline">\(r\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: punto <span class="math inline">\((0,1,0)\)</span>, dirección <span class="math inline">\(\vec d_r=(1,-1,1)\)</span>. Para <span class="math inline">\(s\)</span>, sumando las ecuaciones <span class="math inline">\(4x-2z=2\)</span>, luego <span class="math inline">\(z=2x-1\)</span>, <span class="math inline">\(y=1+5x\)</span>: punto <span class="math inline">\((0,1,-1)\)</span>, dirección <span class="math inline">\(\vec d_s=(1,5,2)\)</span>.</p>
+<p><strong>a)</strong> Las direcciones no son proporcionales. Con <span class="math inline">\(\vec w=(0,0,-1)\)</span> (entre los puntos), <span class="math display">\[\begin{vmatrix}1&amp;-1&amp;1\\1&amp;5&amp;2\\0&amp;0&amp;-1\end{vmatrix}=-6\neq0.\]</span></p>
+<p><strong>Las rectas se cruzan.</strong></p>
+<p><strong>b)</strong> Normal <span class="math inline">\(=\vec d_s\times\vec d_r=(1,5,2)\times(1,-1,1)=(7,1,-6)\)</span>; pasa por <span class="math inline">\((0,1,-1)\)</span>: <span class="math inline">\(7x+(y-1)-6(z+1)=0\)</span>.</p>
+<p><strong><span class="math inline">\(7x+y-6z-7=0\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-5" class="level2">
+<h2 class="anchored" data-anchor-id="section-5">2021</h2>
+<section id="ordinaria-2021" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2021">Ordinaria 2021</h3>
+<div id="ebau-2021-ord-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Ordinaria 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/07/2oBachCC_EBAU_Andalucia_2021-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las rectas</p>
+<p><span class="math display">\[r\equiv\begin{cases}2x-3y+z-2=0\\-3x+2y+2z+1=0\end{cases}\qquad\text{y}\qquad s\equiv\begin{cases}x=3-2\lambda\\y=-1+\lambda\\z=-2+2\lambda\end{cases}\]</span></p>
+<ol type="a">
+<li><p>Calcula el plano perpendicular a la recta <span class="math inline">\(s\)</span> que pasa por el punto <span class="math inline">\(P(1,0,-5)\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Calcula el seno del ángulo que forma la recta <span class="math inline">\(r\)</span> con el plano <span class="math inline">\(\pi\equiv -2x+y+2z=0\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> El vector director de <span class="math inline">\(s\)</span>, <span class="math inline">\((-2,1,2)\)</span>, es normal al plano: <span class="math inline">\(-2x+y+2z+k=0\)</span> y pasa por <span class="math inline">\(P(1,0,-5)\)</span>: <span class="math inline">\(-2-10+k=0\Rightarrow k=12\)</span>.</p>
+<p><strong><span class="math inline">\(-2x+y+2z+12=0\)</span></strong> (equivalentemente <span class="math inline">\(2x-y-2z-12=0\)</span>).</p>
+<p><strong>b)</strong> Dirección de <span class="math inline">\(r\)</span>: <span class="math inline">\((2,-3,1)\times(-3,2,2)=(-8,-7,-5)\)</span>, de módulo <span class="math inline">\(\sqrt{138}\)</span>. Normal de <span class="math inline">\(\pi\)</span>: <span class="math inline">\((-2,1,2)\)</span>, de módulo <span class="math inline">\(3\)</span>. Producto escalar: <span class="math inline">\(16-7-10=-1\)</span>.</p>
+<p><span class="math display">\[\operatorname{sen}\alpha=\frac{|\vec u\cdot\vec n|}{|\vec u||\vec n|}=\mathbf{\frac{1}{3\sqrt{138}}}=\frac{\sqrt{138}}{414}\approx0{,}028\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2021-ord-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Ordinaria 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/07/2oBachCC_EBAU_Andalucia_2021-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>La recta <span class="math inline">\(r\equiv\dfrac{x+3}{2}=\dfrac{y+4}{2}=\dfrac{z-3}{3}\)</span> y la recta <span class="math inline">\(s\)</span>, que pasa por los puntos <span class="math inline">\(P(1,0,2)\)</span> y <span class="math inline">\(Q(a,1,0)\)</span>, se cortan en un punto. Calcula el valor de <span class="math inline">\(a\)</span> y el punto de corte.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: punto <span class="math inline">\((-3,-4,3)\)</span>, dirección <span class="math inline">\((2,2,3)\)</span>. <span class="math inline">\(s\)</span>: <span class="math inline">\(\overrightarrow{PQ}=(a-1,1,-2)\)</span>, punto <span class="math inline">\(P(1,0,2)\)</span>.</p>
+<p>Para que se corten (coplanarias), <span class="math inline">\(\begin{vmatrix}2&amp;2&amp;3\\a-1&amp;1&amp;-2\\4&amp;4&amp;-1\end{vmatrix}=0\)</span>, con <span class="math inline">\(\overrightarrow{R P}=(4,4,-1)\)</span> (de <span class="math inline">\(R(-3,-4,3)\)</span> a <span class="math inline">\(P\)</span>). Resolviendo, <strong><span class="math inline">\(a=2\)</span></strong>, con dirección <span class="math inline">\((1,1,-2)\)</span> para <span class="math inline">\(s\)</span>.</p>
+<p>Punto de corte: <span class="math inline">\(r\)</span>: <span class="math inline">\((-3+2u,\,-4+2u,\,3+3u)\)</span> y <span class="math inline">\(s\)</span>: <span class="math inline">\((1+v,\,v,\,2-2v)\)</span>. Igualando: <span class="math inline">\(u=1\)</span>, <span class="math inline">\(v=-2\)</span>.</p>
+<p><strong><span class="math inline">\(a=2\)</span> y punto de corte <span class="math inline">\((-1,-2,6)\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-2021" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-2021">Ordinaria · Reserva 2021</h3>
+<div id="ebau-2021-ord-res-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Ordinaria · Reserva 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Ordinaria_RESERVA_Modelo4.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las rectas</p>
+<p><span class="math display">\[r\equiv\dfrac{x}{1}=\dfrac{y+2}{2}=\dfrac{z-1}{1}\qquad\text{y}\qquad s\equiv\begin{cases}x-y+z=2\\3x-y-z=-4\end{cases}\]</span></p>
+<p>Sabiendo que dos de los lados de un cuadrado están en las rectas <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span>, calcula su área.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Dirección de <span class="math inline">\(r\)</span>: <span class="math inline">\(\vec u=(1,2,1)\)</span>. Dirección de <span class="math inline">\(s\)</span>: <span class="math inline">\((1,-1,1)\times(3,-1,-1)=(2,4,2)\parallel\vec u\)</span>: las rectas son paralelas.</p>
+<p>Un punto de <span class="math inline">\(r\)</span>: <span class="math inline">\(R(0,-2,1)\)</span>. Un punto de <span class="math inline">\(s\)</span> (tomando <span class="math inline">\(x=0\)</span>): <span class="math inline">\(S(0,1,3)\)</span>, que no está en <span class="math inline">\(r\)</span>.</p>
+<p>El lado del cuadrado es la distancia entre ambas rectas:</p>
+<p><span class="math display">\[d=\frac{|\overrightarrow{RS}\times\vec u|}{|\vec u|}=\frac{|(0,3,2)\times(1,2,1)|}{\sqrt6}=\frac{|(-1,2,-3)|}{\sqrt6}=\sqrt{\frac{14}{6}}.\]</span></p>
+<p><strong>Área <span class="math inline">\(=d^2=\dfrac73\ \text{u}^2\)</span></strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2021-ord-res-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Ordinaria · Reserva 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Ordinaria_RESERVA_Modelo4.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las rectas</p>
+<p><span class="math display">\[r\equiv\begin{cases}x=1+\lambda\\y=1+\lambda\\z=2+m\lambda\end{cases}\qquad\text{y}\qquad s\equiv\begin{cases}x-y+2z=3\\x+z=2\end{cases}\]</span></p>
+<ol type="a">
+<li><p>Estudia la posición relativa de <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span> según los valores de <span class="math inline">\(m\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(m=1\)</span>, calcula el coseno del ángulo que forman las rectas <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: punto <span class="math inline">\(R(1,1,2)\)</span>, dirección <span class="math inline">\((1,1,m)\)</span>. <span class="math inline">\(s\)</span>: de <span class="math inline">\(x+z=2\)</span> y <span class="math inline">\(x-y+2z=3\)</span> resulta <span class="math inline">\(y=z-1\)</span>; con <span class="math inline">\(z=\mu\)</span>: <span class="math inline">\((2-\mu,\,\mu-1,\,\mu)\)</span>, punto <span class="math inline">\(S(2,-1,0)\)</span>, dirección <span class="math inline">\((-1,1,1)\)</span>.</p>
+<p><strong>a)</strong> Las direcciones nunca son proporcionales. <span class="math inline">\(\overrightarrow{RS}=(1,-2,-2)\)</span> y <span class="math inline">\(\begin{vmatrix}1&amp;1&amp;m\\-1&amp;1&amp;1\\1&amp;-2&amp;-2\end{vmatrix}=m-1\)</span>.</p>
+<ul>
+<li><span class="math inline">\(m\neq1\)</span>: <strong>se cruzan</strong>.</li>
+<li><span class="math inline">\(m=1\)</span>: <strong>se cortan</strong> en un punto.</li>
+</ul>
+<p><strong>b)</strong> Con <span class="math inline">\(m=1\)</span>: <span class="math inline">\(\vec u=(1,1,1)\)</span> y <span class="math inline">\(\vec v=(-1,1,1)\)</span>:</p>
+<p><span class="math display">\[\cos\alpha=\frac{|\vec u\cdot\vec v|}{|\vec u||\vec v|}=\frac{1}{\sqrt3\sqrt3}=\mathbf{\frac13}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2021" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2021">Ordinaria · Suplente 2021</h3>
+<div id="ebau-2021-ord-sup-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Ordinaria · Suplente 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Ordinaria_SUPLENTE_Modelo6.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las rectas</p>
+<p><span class="math display">\[r\equiv\begin{cases}x=2+3\lambda\\y=-1+2\lambda\\z=3+\lambda\end{cases}\qquad\text{y}\qquad s\equiv\begin{cases}2x-y-2=0\\y+2z-4=0\end{cases}\]</span></p>
+<ol type="a">
+<li><p>Halla el plano que contiene a <span class="math inline">\(r\)</span> y es paralelo a <span class="math inline">\(s\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Deduce razonadamente que ningún plano perpendicular a <span class="math inline">\(s\)</span> contiene a <span class="math inline">\(r\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-46" class="callout-46-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: punto <span class="math inline">\(R(2,-1,3)\)</span>, dirección <span class="math inline">\(\vec u=(3,2,1)\)</span>. <span class="math inline">\(s\)</span>: de <span class="math inline">\(y=2x-2\)</span> y <span class="math inline">\(z=3-x\)</span>, con <span class="math inline">\(x=\mu\)</span>: punto <span class="math inline">\((0,-2,3)\)</span>, dirección <span class="math inline">\(\vec v=(1,2,-1)\)</span>.</p>
+<p><strong>a)</strong> Normal del plano: <span class="math inline">\(\vec u\times\vec v=(-4,4,4)\parallel(1,-1,-1)\)</span>. Plano <span class="math inline">\(x-y-z+k=0\)</span> por <span class="math inline">\(R\)</span>: <span class="math inline">\(2+1-3+k=0\Rightarrow k=0\)</span>.</p>
+<p><strong><span class="math inline">\(x-y-z=0\)</span></strong></p>
+<p><strong>b)</strong> Un plano perpendicular a <span class="math inline">\(s\)</span> tiene normal <span class="math inline">\(\vec v\)</span> y contendría a <span class="math inline">\(r\)</span> sólo si <span class="math inline">\(\vec u\cdot\vec v=0\)</span>. Pero <span class="math inline">\(\vec u\cdot\vec v=3+4-1=6\neq0\)</span>, luego <span class="math inline">\(r\)</span> no es paralela a ningún plano de normal <span class="math inline">\(\vec v\)</span>, y por tanto ninguno la contiene.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2021" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2021">Extraordinaria 2021</h3>
+<div id="ebau-2021-ext-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Extraordinaria 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/07/2oBachCC_EBAU_Andalucia_2021-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>La recta perpendicular desde el punto <span class="math inline">\(A(1,1,0)\)</span> a un cierto plano <span class="math inline">\(\pi\)</span> corta a éste en el punto <span class="math inline">\(B\left(1,\dfrac12,\dfrac12\right)\)</span>.</p>
+<ol type="a">
+<li><p>Calcula la ecuación del plano <span class="math inline">\(\pi\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Halla la distancia del punto <span class="math inline">\(A\)</span> a su simétrico respecto a <span class="math inline">\(\pi\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(\overrightarrow{AB}=\left(0,-\tfrac12,\tfrac12\right)\)</span> es normal a <span class="math inline">\(\pi\)</span>; tomamos <span class="math inline">\((0,-1,1)\)</span>. El plano es <span class="math inline">\(-y+z+k=0\)</span> y pasa por <span class="math inline">\(B\)</span>: <span class="math inline">\(-\tfrac12+\tfrac12+k=0\Rightarrow k=0\)</span>.</p>
+<p><strong><span class="math inline">\(\pi\equiv y-z=0\)</span></strong></p>
+<p><strong>b)</strong> El simétrico <span class="math inline">\(A'\)</span> cumple <span class="math inline">\(B\)</span> punto medio de <span class="math inline">\(AA'\)</span>, luego <span class="math inline">\(d(A,A')=2\,|AB|=2\sqrt{\tfrac14+\tfrac14}=\)</span> <strong><span class="math inline">\(\sqrt2\)</span> u</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2021-ext-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Extraordinaria 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/07/2oBachCC_EBAU_Andalucia_2021-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las rectas</p>
+<p><span class="math display">\[r\equiv\begin{cases}x=3+\lambda\\y=1\\z=-3-\lambda\end{cases}\qquad\text{y}\qquad s\equiv\begin{cases}x+y=1\\z=0\end{cases}\]</span></p>
+<ol type="a">
+<li><p>Estudia la posición relativa de <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Halla la recta que corta perpendicularmente a <span class="math inline">\(r\)</span> y a <span class="math inline">\(s\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-48" class="callout-48-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: punto <span class="math inline">\((3,1,-3)\)</span>, dirección <span class="math inline">\((1,0,-1)\)</span>. <span class="math inline">\(s\)</span>: <span class="math inline">\(x=\mu,\ y=1-\mu,\ z=0\)</span>: punto <span class="math inline">\((0,1,0)\)</span>, dirección <span class="math inline">\((1,-1,0)\)</span>.</p>
+<p><strong>a)</strong> El punto <span class="math inline">\((0,1,0)\)</span> de <span class="math inline">\(s\)</span> está también en <span class="math inline">\(r\)</span> (con <span class="math inline">\(\lambda=-3\)</span>) y las direcciones no son proporcionales.</p>
+<p><strong>Las rectas se cortan en el punto <span class="math inline">\((0,1,0)\)</span>.</strong></p>
+<p><strong>b)</strong> Dirección perpendicular a ambas: <span class="math inline">\((1,0,-1)\times(1,-1,0)=(-1,-1,-1)\parallel(1,1,1)\)</span>. La recta pasa por el punto de corte:</p>
+<p><strong><span class="math inline">\(\dfrac{x}{1}=\dfrac{y-1}{1}=\dfrac{z}{1}\)</span></strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-reserva-2021" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-reserva-2021">Extraordinaria · Reserva 2021</h3>
+<div id="ebau-2021-ext-res-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Extraordinaria · Reserva 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Extraordinaria_RESERVA_Modelo2.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera el punto <span class="math inline">\(P(1,2,6)\)</span> y el plano <span class="math inline">\(\pi\equiv 2x-y+z=0\)</span>.</p>
+<ol type="a">
+<li><p>Halla las ecuaciones de los planos paralelos a <span class="math inline">\(\pi\)</span> cuya distancia a éste sea <span class="math inline">\(\sqrt{6}\)</span> unidades. <em>(1,25 puntos)</em></p></li>
+<li><p>Halla el simétrico del punto <span class="math inline">\(P\)</span> respecto al plano <span class="math inline">\(\pi\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-49" class="callout-49-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vector normal <span class="math inline">\(\vec n=(2,-1,1)\)</span>, <span class="math inline">\(|\vec n|=\sqrt6\)</span>.</p>
+<p><strong>a)</strong> Planos paralelos: <span class="math inline">\(2x-y+z+k=0\)</span>, con <span class="math inline">\(d=\dfrac{|k|}{\sqrt6}=\sqrt6\Rightarrow k=\pm6\)</span>.</p>
+<p><strong><span class="math inline">\(2x-y+z+6=0\)</span> y <span class="math inline">\(2x-y+z-6=0\)</span></strong></p>
+<p><strong>b)</strong> Recta por <span class="math inline">\(P\)</span> perpendicular a <span class="math inline">\(\pi\)</span>: <span class="math inline">\((1+2t,\,2-t,\,6+t)\)</span>. Al cortar con <span class="math inline">\(\pi\)</span>: <span class="math inline">\(2(1+2t)-(2-t)+(6+t)=6t+6=0\Rightarrow t=-1\)</span>, punto <span class="math inline">\(M(-1,3,5)\)</span>. El simétrico es <span class="math inline">\(P'=2M-P\)</span>:</p>
+<p><strong><span class="math inline">\(P'=(-3,4,4)\)</span></strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2021-ext-res-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Extraordinaria · Reserva 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Extraordinaria_RESERVA_Modelo2.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera los puntos <span class="math inline">\(B(-1,0,-1)\)</span>, <span class="math inline">\(C(0,1,-3)\)</span> y la recta <span class="math inline">\(r\equiv\begin{cases}x=-\lambda\\y=1+2\lambda\\z=-1+\lambda\end{cases}\)</span></p>
+<ol type="a">
+<li><p>Calcula un punto que esté en <span class="math inline">\(r\)</span> y equidiste de <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Siendo <span class="math inline">\(D(1,-1,-2)\)</span>, calcula el área del triángulo con vértices en los puntos <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span> y <span class="math inline">\(D\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/04-vectores-espacio.html">Vectores en el espacio</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-50" class="callout-50-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: punto genérico <span class="math inline">\(R(-\lambda,\,1+2\lambda,\,-1+\lambda)\)</span>.</p>
+<p><strong>a)</strong> <span class="math inline">\(|RB|^2=6\lambda^2+2\lambda+2\)</span> y <span class="math inline">\(|RC|^2=6\lambda^2+4\lambda+4\)</span>. Igualando: <span class="math inline">\(2\lambda+2=4\lambda+4\Rightarrow\lambda=-1\)</span>.</p>
+<p><strong>Punto <span class="math inline">\((1,-1,-2)\)</span></strong> (para <span class="math inline">\(\lambda=-1\)</span>).</p>
+<p><strong>b)</strong> <span class="math inline">\(\overrightarrow{BC}=(1,1,-2)\)</span>, <span class="math inline">\(\overrightarrow{BD}=(2,-1,-1)\)</span>, <span class="math inline">\(\overrightarrow{BC}\times\overrightarrow{BD}=(-3,-3,-3)\)</span>, de módulo <span class="math inline">\(3\sqrt3\)</span>.</p>
+<p><strong>Área <span class="math inline">\(=\dfrac{3\sqrt3}{2}\ \text{u}^2\)</span></strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2021" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2021">Extraordinaria · Suplente 2021</h3>
+<div id="ebau-2021-ext-sup-7" class="ebau-ej">
+<p><strong>Ejercicio 7</strong> · Extraordinaria · Suplente 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Extraordinaria_SUPLENTE_Modelo1.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera el punto <span class="math inline">\(P(1,0,1)\)</span> y el plano <span class="math inline">\(\pi\equiv x-y+z+1=0\)</span>.</p>
+<ol type="a">
+<li><p>Halla el simétrico del punto <span class="math inline">\(P\)</span> respecto al plano <span class="math inline">\(\pi\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Halla la distancia del punto <span class="math inline">\(P\)</span> al plano <span class="math inline">\(\pi\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-51" class="callout-51-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vector normal <span class="math inline">\(\vec n=(1,-1,1)\)</span>.</p>
+<p><strong>a)</strong> Recta por <span class="math inline">\(P\)</span> perpendicular a <span class="math inline">\(\pi\)</span>: <span class="math inline">\((1+t,\,-t,\,1+t)\)</span>. Al cortar con <span class="math inline">\(\pi\)</span>: <span class="math inline">\((1+t)+t+(1+t)+1=3t+3=0\Rightarrow t=-1\)</span>, punto medio <span class="math inline">\(M(0,1,0)\)</span>. El simétrico es <span class="math inline">\(2M-P\)</span>:</p>
+<p><strong><span class="math inline">\(P'=(-1,2,-1)\)</span></strong></p>
+<p><strong>b)</strong> <span class="math inline">\(d(P,\pi)=\dfrac{|1-0+1+1|}{\sqrt3}=\)</span> <strong><span class="math inline">\(\sqrt3\)</span> u</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2021-ext-sup-8" class="ebau-ej">
+<p><strong>Ejercicio 8</strong> · Extraordinaria · Suplente 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Extraordinaria_SUPLENTE_Modelo1.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las rectas</p>
+<p><span class="math display">\[r\equiv\dfrac{x-2}{-2}=y-1=\dfrac{z}{-2}\qquad\text{y}\qquad s\equiv\begin{cases}x+2y=3\\2y+z=2\end{cases}\]</span></p>
+<ol type="a">
+<li><p>Estudia la posición relativa de <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Calcula, si es posible, el plano que contiene a <span class="math inline">\(r\)</span> y a <span class="math inline">\(s\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-52" class="callout-52-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r\)</span>: punto <span class="math inline">\((2,1,0)\)</span>, dirección <span class="math inline">\(\vec u=(-2,1,-2)\)</span>. <span class="math inline">\(s\)</span>: de <span class="math inline">\(x+2y=3\)</span>, <span class="math inline">\(2y+z=2\)</span> con <span class="math inline">\(y=\mu\)</span>: <span class="math inline">\((3-2\mu,\,\mu,\,2-2\mu)\)</span>, punto <span class="math inline">\((3,0,2)\)</span>, dirección <span class="math inline">\(\vec v=(-2,1,-2)\)</span>.</p>
+<p><strong>a)</strong> <span class="math inline">\(\vec u=\vec v\)</span>: son paralelas. El vector <span class="math inline">\((3,0,2)-(2,1,0)=(1,-1,2)\)</span> no es proporcional a <span class="math inline">\(\vec u\)</span>, luego el punto de <span class="math inline">\(s\)</span> no está en <span class="math inline">\(r\)</span>.</p>
+<p><strong>Las rectas son paralelas y distintas.</strong></p>
+<p><strong>b)</strong> Sí existe: el plano contiene a <span class="math inline">\(r\)</span> y tiene normal <span class="math inline">\(\vec u\times(1,-1,2)=(0,2,1)\)</span>, pasando por <span class="math inline">\((2,1,0)\)</span>:</p>
+<p><strong><span class="math inline">\(2y+z-2=0\)</span></strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="también-trabajan-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="también-trabajan-este-tema">También trabajan este tema</h2>
+<p>Ejercicios cuyo tema principal es otro pero en los que aparece este tema:</p>
+<ul>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/04-vectores-espacio.html#ebau-2025-ord-4">2025 Ordinaria, ejercicio 4</a> (tema principal: Vectores en el espacio)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/04-vectores-espacio.html#ebau-2024-ext-8">2024 Extraordinaria, ejercicio 8</a> (tema principal: Vectores en el espacio)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/04-vectores-espacio.html#ebau-2023-ord-res-7">2023 Ordinaria · Reserva, ejercicio 7</a> (tema principal: Vectores en el espacio)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/04-vectores-espacio.html#ebau-2021-ord-sup-8">2021 Ordinaria · Suplente, ejercicio 8</a> (tema principal: Vectores en el espacio)</li>
+</ul>
+<hr>
+<p><em>Enunciados: Prueba de Acceso y Admisión a la Universidad (PEvAU hasta 2024, PAU desde 2025), Matemáticas II, Andalucía, Ceuta, Melilla y centros en Marruecos (Distrito Único Andaluz). Cada ejercicio enlaza al PDF del examen completo. La clasificación por temas es propia y puede discutirse: los ejercicios mixtos figuran en su tema principal.</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

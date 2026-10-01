@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Matrices — relación de ejercicios – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-c03d2d665be348d2f4fb6e6313d5071b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-28c4b676bd4c1c9121cc5c5925a59653.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-c03d2d665be348d2f4fb6e6313d5071b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#operaciones-y-propiedades" id="toc-operaciones-y-propiedades" class="nav-link active" data-scroll-target="#operaciones-y-propiedades">Operaciones y propiedades</a></li>
+  <li><a href="#potencias" id="toc-potencias" class="nav-link" data-scroll-target="#potencias">Potencias</a></li>
+  <li><a href="#matriz-inversa" id="toc-matriz-inversa" class="nav-link" data-scroll-target="#matriz-inversa">Matriz inversa</a></li>
+  <li><a href="#rango" id="toc-rango" class="nav-link" data-scroll-target="#rango">Rango</a></li>
+  <li><a href="#ecuaciones-matriciales" id="toc-ecuaciones-matriciales" class="nav-link" data-scroll-target="#ecuaciones-matriciales">Ecuaciones matriciales</a></li>
+  <li><a href="#problema" id="toc-problema" class="nav-link" data-scroll-target="#problema">Problema</a></li>
+  <li><a href="#soluciones" id="toc-soluciones" class="nav-link" data-scroll-target="#soluciones">Soluciones</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Matrices — relación de ejercicios</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Relación de 25 ejercicios: del 1 al 9 son básicos, del 10 al 24 siguen el estilo de los exámenes de PAU de Andalucía (2021 en adelante) y el último es un problema de contexto. Las soluciones están al final.</p>
+<section id="operaciones-y-propiedades" class="level2">
+<h2 class="anchored" data-anchor-id="operaciones-y-propiedades">Operaciones y propiedades</h2>
+<p><strong>1.</strong> Sean <span class="math inline">\(A=\begin{pmatrix}1&amp;2\\3&amp;4\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}0&amp;1\\-1&amp;2\end{pmatrix}\)</span>. Calcula <span class="math inline">\(A+B\)</span>, <span class="math inline">\(A-2B\)</span>, <span class="math inline">\(AB\)</span>, <span class="math inline">\(BA\)</span> y <span class="math inline">\(A^t\)</span>.</p>
+<p><strong>2.</strong> Sean <span class="math inline">\(C=\begin{pmatrix}1&amp;0&amp;2\\-1&amp;3&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(D=\begin{pmatrix}2&amp;1\\0&amp;-1\\1&amp;4\end{pmatrix}\)</span>. Calcula <span class="math inline">\(CD\)</span> y <span class="math inline">\(DC\)</span>. ¿Coinciden?</p>
+<p><strong>3.</strong> Sean <span class="math inline">\(A\)</span> de dimensión <span class="math inline">\(2\times3\)</span>, <span class="math inline">\(B\)</span> de <span class="math inline">\(3\times1\)</span> y <span class="math inline">\(C\)</span> de <span class="math inline">\(1\times2\)</span>. Indica cuáles de estos productos se pueden hacer y su dimensión: <span class="math inline">\(AB\)</span>, <span class="math inline">\(BA\)</span>, <span class="math inline">\(BC\)</span>, <span class="math inline">\(CA\)</span>, <span class="math inline">\(ABC\)</span>.</p>
+<p><strong>4.</strong> Para <span class="math inline">\(A=\begin{pmatrix}1&amp;2\\3&amp;4\end{pmatrix}\)</span> calcula <span class="math inline">\(A^2-3A+2I\)</span>.</p>
+<p><strong>5.</strong> Sean <span class="math inline">\(A=\begin{pmatrix}1&amp;2\\0&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}1&amp;0\\1&amp;1\end{pmatrix}\)</span>. Calcula <span class="math inline">\((A+B)^2\)</span> y <span class="math inline">\(A^2+2AB+B^2\)</span>. ¿Por qué no coinciden?</p>
+<p><strong>6.</strong> Descompón <span class="math inline">\(C=\begin{pmatrix}1&amp;2\\3&amp;4\end{pmatrix}\)</span> como suma de una matriz simétrica y otra antisimétrica. (<em>Pista: <span class="math inline">\(S=\frac{C+C^t}{2}\)</span>.</em>)</p>
+</section>
+<section id="potencias" class="level2">
+<h2 class="anchored" data-anchor-id="potencias">Potencias</h2>
+<p><strong>7.</strong> Sea <span class="math inline">\(P=\begin{pmatrix}1&amp;1&amp;0\\0&amp;1&amp;1\\0&amp;0&amp;1\end{pmatrix}\)</span>. Calcula <span class="math inline">\(P^2\)</span>, <span class="math inline">\(P^3\)</span> y <span class="math inline">\(P^4\)</span>, deduce la expresión de <span class="math inline">\(P^n\)</span> y úsala para hallar <span class="math inline">\(P^{10}\)</span>.</p>
+<p><strong>8.</strong> Comprueba que <span class="math inline">\(E=\begin{pmatrix}2&amp;-2\\1&amp;-1\end{pmatrix}\)</span> cumple <span class="math inline">\(E^2=E\)</span>. Calcula <span class="math inline">\(E^{2025}\)</span>.</p>
+<p><strong>9.</strong> Sea <span class="math inline">\(N=\begin{pmatrix}0&amp;1&amp;2\\0&amp;0&amp;3\\0&amp;0&amp;0\end{pmatrix}\)</span>. Calcula <span class="math inline">\(N^2\)</span> y <span class="math inline">\(N^3\)</span>. ¿Cuánto vale <span class="math inline">\(N^{10}\)</span>?</p>
+<p><strong>10.</strong> <em>(Tipo PAU)</em> Sea <span class="math inline">\(A=\begin{pmatrix}1&amp;m\\0&amp;1\end{pmatrix}\)</span> con <span class="math inline">\(m\in\mathbb{R}\)</span>.</p>
+<ol type="a">
+<li><p>Calcula <span class="math inline">\(A^2\)</span> y <span class="math inline">\(A^3\)</span> y deduce <span class="math inline">\(A^n\)</span>.</p></li>
+<li><p>Halla <span class="math inline">\(m\)</span> para que <span class="math inline">\(A^{10}=\begin{pmatrix}1&amp;50\\0&amp;1\end{pmatrix}\)</span>.</p></li>
+</ol>
+</section>
+<section id="matriz-inversa" class="level2">
+<h2 class="anchored" data-anchor-id="matriz-inversa">Matriz inversa</h2>
+<p><strong>11.</strong> Calcula por Gauss-Jordan la inversa de <span class="math inline">\(A=\begin{pmatrix}3&amp;1\\5&amp;2\end{pmatrix}\)</span>.</p>
+<p><strong>12.</strong> Calcula por Gauss-Jordan la inversa de <span class="math inline">\(N=\begin{pmatrix}1&amp;2&amp;0\\0&amp;1&amp;3\\1&amp;0&amp;1\end{pmatrix}\)</span>.</p>
+<p><strong>13.</strong> Calcula por Gauss-Jordan la inversa de <span class="math inline">\(M=\begin{pmatrix}2&amp;0&amp;1\\1&amp;1&amp;0\\0&amp;1&amp;1\end{pmatrix}\)</span>.</p>
+<p><strong>14.</strong> Sea <span class="math inline">\(F=\begin{pmatrix}1&amp;1\\1&amp;0\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Comprueba que <span class="math inline">\(F^2=F+I\)</span>.</p></li>
+<li><p>Deduce que <span class="math inline">\(F\)</span> es invertible y calcula <span class="math inline">\(F^{-1}\)</span> a partir de esa igualdad.</p></li>
+<li><p>Calcula <span class="math inline">\(F^5\)</span>.</p></li>
+</ol>
+<p><strong>15.</strong> <em>(Tipo PAU)</em> Sea <span class="math inline">\(A=\begin{pmatrix}0&amp;2\\1&amp;1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Comprueba que <span class="math inline">\(A^2-A-2I=O\)</span>.</p></li>
+<li><p>Usando el apartado anterior, calcula <span class="math inline">\(A^{-1}\)</span> sin hacer Gauss.</p></li>
+</ol>
+<p><strong>16.</strong> <em>(Tipo PAU)</em> Sean <span class="math inline">\(A=\begin{pmatrix}2&amp;1\\1&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}1&amp;2\\0&amp;1\end{pmatrix}\)</span>. Calcula <span class="math inline">\((AB)^{-1}\)</span> de dos maneras: invirtiendo <span class="math inline">\(AB\)</span> directamente y usando <span class="math inline">\(B^{-1}A^{-1}\)</span>.</p>
+</section>
+<section id="rango" class="level2">
+<h2 class="anchored" data-anchor-id="rango">Rango</h2>
+<p><strong>17.</strong> Calcula el rango de <span class="math inline">\(Q=\begin{pmatrix}1&amp;2&amp;3\\2&amp;4&amp;6\\1&amp;1&amp;1\end{pmatrix}\)</span>.</p>
+<p><strong>18.</strong> <em>(Tipo PAU)</em> Estudia el rango de <span class="math inline">\(R=\begin{pmatrix}1&amp;2&amp;a\\2&amp;4&amp;6\\1&amp;1&amp;1\end{pmatrix}\)</span> según los valores de <span class="math inline">\(a\)</span>.</p>
+<p><strong>19.</strong> Calcula el rango de <span class="math inline">\(K=\begin{pmatrix}1&amp;2&amp;1\\2&amp;1&amp;0\\3&amp;3&amp;1\\0&amp;3&amp;2\end{pmatrix}\)</span>.</p>
+</section>
+<section id="ecuaciones-matriciales" class="level2">
+<h2 class="anchored" data-anchor-id="ecuaciones-matriciales">Ecuaciones matriciales</h2>
+<p><strong>20.</strong> <em>(Tipo PAU)</em> Sean <span class="math inline">\(A=\begin{pmatrix}2&amp;1\\1&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}3&amp;0\\1&amp;4\end{pmatrix}\)</span>. Resuelve <span class="math inline">\(AX+2I=B\)</span>.</p>
+<p><strong>21.</strong> <em>(Tipo PAU)</em> Con las mismas <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> del ejercicio anterior, resuelve <span class="math inline">\(XA-X=B\)</span>.</p>
+<p><strong>22.</strong> <em>(Tipo PAU)</em> Sean <span class="math inline">\(A=\begin{pmatrix}1&amp;0&amp;1\\0&amp;1&amp;1\\1&amp;1&amp;0\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}1&amp;2&amp;3\\0&amp;1&amp;1\end{pmatrix}\)</span>. Resuelve <span class="math inline">\(XA=B\)</span>.</p>
+<p><strong>23.</strong> Halla las matrices <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> que cumplen <span class="math display">\[\begin{cases}2X+Y=\begin{pmatrix}4&amp;2\\1&amp;0\end{pmatrix}\\[2mm]X-Y=\begin{pmatrix}2&amp;1\\2&amp;3\end{pmatrix}\end{cases}\]</span></p>
+<p><strong>24.</strong> <em>(Tipo PAU)</em> Halla todas las matrices <span class="math inline">\(X\)</span> de dimensión <span class="math inline">\(2\times2\)</span> que conmutan con <span class="math inline">\(C=\begin{pmatrix}1&amp;2\\0&amp;1\end{pmatrix}\)</span>, es decir, con <span class="math inline">\(CX=XC\)</span>.</p>
+</section>
+<section id="problema" class="level2">
+<h2 class="anchored" data-anchor-id="problema">Problema</h2>
+<p><strong>25.</strong> Un taller fabrica mesas y sillas. La matriz <span class="math inline">\(P=\begin{pmatrix}2&amp;1\\1&amp;3\end{pmatrix}\)</span> da las horas necesarias por unidad: la primera fila es carpintería y la segunda es pintura; la primera columna es mesa y la segunda es silla. Se fabrican 10 mesas y 20 sillas.</p>
+<ol type="a">
+<li><p>Calcula las horas totales de carpintería y de pintura.</p></li>
+<li><p>La hora de carpintería cuesta 4 € y la de pintura 2 €. Calcula el coste total con un producto de matrices.</p></li>
+</ol>
+<hr>
+</section>
+<section id="soluciones" class="level2">
+<h2 class="anchored" data-anchor-id="soluciones">Soluciones</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(A+B=\begin{pmatrix}1&amp;3\\2&amp;6\end{pmatrix}\)</span>, <span class="math inline">\(A-2B=\begin{pmatrix}1&amp;0\\5&amp;0\end{pmatrix}\)</span>, <span class="math inline">\(AB=\begin{pmatrix}-2&amp;5\\-4&amp;11\end{pmatrix}\)</span>, <span class="math inline">\(BA=\begin{pmatrix}3&amp;4\\5&amp;6\end{pmatrix}\)</span>, <span class="math inline">\(A^t=\begin{pmatrix}1&amp;3\\2&amp;4\end{pmatrix}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(CD=\begin{pmatrix}4&amp;9\\-1&amp;0\end{pmatrix}\)</span> (de dimensión <span class="math inline">\(2\times2\)</span>) y <span class="math inline">\(DC=\begin{pmatrix}1&amp;3&amp;5\\1&amp;-3&amp;-1\\-3&amp;12&amp;6\end{pmatrix}\)</span> (de dimensión <span class="math inline">\(3\times3\)</span>). No coinciden ni en dimensión.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="math inline">\(AB\)</span>: <span class="math inline">\((2\times3)(3\times1)\)</span> sí, dimensión <span class="math inline">\(2\times1\)</span>.</li>
+<li><span class="math inline">\(BA\)</span>: <span class="math inline">\((3\times1)(2\times3)\)</span> no, porque <span class="math inline">\(1\neq2\)</span>.</li>
+<li><span class="math inline">\(BC\)</span>: <span class="math inline">\((3\times1)(1\times2)\)</span> sí, dimensión <span class="math inline">\(3\times2\)</span>.</li>
+<li><span class="math inline">\(CA\)</span>: <span class="math inline">\((1\times2)(2\times3)\)</span> sí, dimensión <span class="math inline">\(1\times3\)</span>.</li>
+<li><span class="math inline">\(ABC\)</span>: <span class="math inline">\((2\times1)(1\times2)\)</span> sí, dimensión <span class="math inline">\(2\times2\)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(A^2=\begin{pmatrix}7&amp;10\\15&amp;22\end{pmatrix}\)</span>, luego <span class="math display">\[A^2-3A+2I=\begin{pmatrix}7&amp;10\\15&amp;22\end{pmatrix}-\begin{pmatrix}3&amp;6\\9&amp;12\end{pmatrix}+\begin{pmatrix}2&amp;0\\0&amp;2\end{pmatrix}=\begin{pmatrix}6&amp;4\\6&amp;12\end{pmatrix}\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(A+B=\begin{pmatrix}2&amp;2\\1&amp;2\end{pmatrix}\)</span>, así que <span class="math inline">\((A+B)^2=\begin{pmatrix}6&amp;8\\4&amp;6\end{pmatrix}\)</span>.</p>
+<p><span class="math inline">\(A^2=\begin{pmatrix}1&amp;4\\0&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(B^2=\begin{pmatrix}1&amp;0\\2&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(AB=\begin{pmatrix}3&amp;2\\1&amp;1\end{pmatrix}\)</span>, por lo que <span class="math inline">\(A^2+2AB+B^2=\begin{pmatrix}8&amp;8\\4&amp;4\end{pmatrix}\)</span>.</p>
+<p>No coinciden porque <span class="math inline">\(BA=\begin{pmatrix}1&amp;2\\1&amp;3\end{pmatrix}\neq AB\)</span>. El desarrollo correcto es <span class="math inline">\((A+B)^2=A^2+AB+BA+B^2\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(S=\dfrac{C+C^t}{2}=\begin{pmatrix}1&amp;5/2\\5/2&amp;4\end{pmatrix}\)</span> (simétrica) y <span class="math inline">\(T=\dfrac{C-C^t}{2}=\begin{pmatrix}0&amp;-1/2\\1/2&amp;0\end{pmatrix}\)</span> (antisimétrica). Se cumple <span class="math inline">\(C=S+T\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>7
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(P^2=\begin{pmatrix}1&amp;2&amp;1\\0&amp;1&amp;2\\0&amp;0&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(P^3=\begin{pmatrix}1&amp;3&amp;3\\0&amp;1&amp;3\\0&amp;0&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(P^4=\begin{pmatrix}1&amp;4&amp;6\\0&amp;1&amp;4\\0&amp;0&amp;1\end{pmatrix}\)</span>.</p>
+<p>Patrón: <span class="math display">\[P^n=\begin{pmatrix}1&amp;n&amp;\frac{n(n-1)}{2}\\0&amp;1&amp;n\\0&amp;0&amp;1\end{pmatrix}\]</span> Para <span class="math inline">\(n=10\)</span>: <span class="math inline">\(P^{10}=\begin{pmatrix}1&amp;10&amp;45\\0&amp;1&amp;10\\0&amp;0&amp;1\end{pmatrix}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>8
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(E^2=\begin{pmatrix}4-2&amp;-4+2\\2-1&amp;-2+1\end{pmatrix}=\begin{pmatrix}2&amp;-2\\1&amp;-1\end{pmatrix}=E\)</span>. Es idempotente, así que <span class="math inline">\(E^n=E\)</span> para todo <span class="math inline">\(n\ge1\)</span> y <span class="math inline">\(E^{2025}=E=\begin{pmatrix}2&amp;-2\\1&amp;-1\end{pmatrix}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>9
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(N^2=\begin{pmatrix}0&amp;0&amp;3\\0&amp;0&amp;0\\0&amp;0&amp;0\end{pmatrix}\)</span> y <span class="math inline">\(N^3=O\)</span>. Por tanto <span class="math inline">\(N^{10}=N^3N^7=O\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>10
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><span class="math inline">\(A^2=\begin{pmatrix}1&amp;2m\\0&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(A^3=\begin{pmatrix}1&amp;3m\\0&amp;1\end{pmatrix}\)</span>. Se deduce <span class="math inline">\(A^n=\begin{pmatrix}1&amp;nm\\0&amp;1\end{pmatrix}\)</span>.</li>
+</ol>
+<p>Inducción: si <span class="math inline">\(A^n=\begin{pmatrix}1&amp;nm\\0&amp;1\end{pmatrix}\)</span>, entonces <span class="math inline">\(A^{n+1}=A^nA=\begin{pmatrix}1&amp;nm+m\\0&amp;1\end{pmatrix}=\begin{pmatrix}1&amp;(n+1)m\\0&amp;1\end{pmatrix}\)</span>.</p>
+<ol start="2" type="a">
+<li><span class="math inline">\(10m=50\)</span>, luego <span class="math inline">\(m=5\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>11
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\left(\begin{array}{cc|cc}3&amp;1&amp;1&amp;0\\5&amp;2&amp;0&amp;1\end{array}\right)\xrightarrow{3F_2-5F_1}\left(\begin{array}{cc|cc}3&amp;1&amp;1&amp;0\\0&amp;1&amp;-5&amp;3\end{array}\right)\xrightarrow{F_1-F_2}\left(\begin{array}{cc|cc}3&amp;0&amp;6&amp;-3\\0&amp;1&amp;-5&amp;3\end{array}\right)\xrightarrow{F_1/3}\left(\begin{array}{cc|cc}1&amp;0&amp;2&amp;-1\\0&amp;1&amp;-5&amp;3\end{array}\right)\]</span> <span class="math inline">\(A^{-1}=\begin{pmatrix}2&amp;-1\\-5&amp;3\end{pmatrix}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>12
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[N^{-1}=\frac{1}{7}\begin{pmatrix}1&amp;-2&amp;6\\3&amp;1&amp;-3\\-1&amp;2&amp;1\end{pmatrix}\]</span> Comprobación de la primera fila de <span class="math inline">\(NN^{-1}\)</span>: <span class="math inline">\((1,2,0)\cdot\frac17(1,3,-1)^t=\frac{1+6}{7}=1\)</span> y <span class="math inline">\((1,2,0)\cdot\frac17(-2,1,2)^t=\frac{-2+2}{7}=0\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>13
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[M^{-1}=\frac{1}{3}\begin{pmatrix}1&amp;1&amp;-1\\-1&amp;2&amp;1\\1&amp;-2&amp;2\end{pmatrix}\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>14
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(F^2=\begin{pmatrix}2&amp;1\\1&amp;1\end{pmatrix}=\begin{pmatrix}1&amp;1\\1&amp;0\end{pmatrix}+\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}=F+I\)</span>.</p></li>
+<li><p><span class="math inline">\(F^2-F=I\Rightarrow F(F-I)=I\)</span>, luego <span class="math inline">\(F^{-1}=F-I=\begin{pmatrix}0&amp;1\\1&amp;-1\end{pmatrix}\)</span>.</p></li>
+<li><p><span class="math inline">\(F^3=\begin{pmatrix}3&amp;2\\2&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(F^4=\begin{pmatrix}5&amp;3\\3&amp;2\end{pmatrix}\)</span>, <span class="math inline">\(F^5=\begin{pmatrix}8&amp;5\\5&amp;3\end{pmatrix}\)</span> (números de Fibonacci).</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>15
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(A^2=\begin{pmatrix}2&amp;2\\1&amp;3\end{pmatrix}\)</span>, y <span class="math inline">\(A^2-A-2I=\begin{pmatrix}2&amp;2\\1&amp;3\end{pmatrix}-\begin{pmatrix}0&amp;2\\1&amp;1\end{pmatrix}-\begin{pmatrix}2&amp;0\\0&amp;2\end{pmatrix}=O\)</span>.</p></li>
+<li><p><span class="math inline">\(A^2-A=2I\Rightarrow A(A-I)=2I\Rightarrow A^{-1}=\dfrac{A-I}{2}=\begin{pmatrix}-1/2&amp;1\\1/2&amp;0\end{pmatrix}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>16
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(AB=\begin{pmatrix}2&amp;5\\1&amp;3\end{pmatrix}\)</span> con <span class="math inline">\(\det=1\)</span>, así que <span class="math inline">\((AB)^{-1}=\begin{pmatrix}3&amp;-5\\-1&amp;2\end{pmatrix}\)</span>.</p>
+<p>Por otro lado <span class="math inline">\(A^{-1}=\begin{pmatrix}1&amp;-1\\-1&amp;2\end{pmatrix}\)</span> y <span class="math inline">\(B^{-1}=\begin{pmatrix}1&amp;-2\\0&amp;1\end{pmatrix}\)</span>, y <span class="math display">\[B^{-1}A^{-1}=\begin{pmatrix}1&amp;-2\\0&amp;1\end{pmatrix}\begin{pmatrix}1&amp;-1\\-1&amp;2\end{pmatrix}=\begin{pmatrix}3&amp;-5\\-1&amp;2\end{pmatrix}\]</span> Coinciden. Nótese que el orden se invierte: <span class="math inline">\(A^{-1}B^{-1}\)</span> daría otro resultado.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>17
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(F_2-2F_1\)</span> da la fila <span class="math inline">\((0,0,0)\)</span> y <span class="math inline">\(F_3-F_1\)</span> da <span class="math inline">\((0,-1,-2)\)</span>. Quedan dos filas no nulas: <span class="math inline">\(\operatorname{rg}Q=2\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>18
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Escalonamos: <span class="math inline">\(F_2-2F_1=(0,0,6-2a)\)</span> y <span class="math inline">\(F_3-F_1=(0,-1,1-a)\)</span>. Intercambiando filas queda <span class="math display">\[\begin{pmatrix}1&amp;2&amp;a\\0&amp;-1&amp;1-a\\0&amp;0&amp;6-2a\end{pmatrix}\]</span> - Si <span class="math inline">\(a\neq3\)</span>: tres pivotes, <span class="math inline">\(\operatorname{rg}R=3\)</span>. - Si <span class="math inline">\(a=3\)</span>: la última fila se anula, <span class="math inline">\(\operatorname{rg}R=2\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>19
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(F_2-2F_1=(0,-3,-2)\)</span>, <span class="math inline">\(F_3-3F_1=(0,-3,-2)\)</span>, <span class="math inline">\(F_4=(0,3,2)\)</span>. Las tres últimas filas son proporcionales, así que solo queda una de ellas junto con <span class="math inline">\(F_1\)</span>: <span class="math inline">\(\operatorname{rg}K=2\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>20
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(AX=B-2I=\begin{pmatrix}1&amp;0\\1&amp;2\end{pmatrix}\)</span>. Como <span class="math inline">\(A^{-1}=\begin{pmatrix}1&amp;-1\\-1&amp;2\end{pmatrix}\)</span>: <span class="math display">\[X=A^{-1}(B-2I)=\begin{pmatrix}1&amp;-1\\-1&amp;2\end{pmatrix}\begin{pmatrix}1&amp;0\\1&amp;2\end{pmatrix}=\begin{pmatrix}0&amp;-2\\1&amp;4\end{pmatrix}\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>21
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(X(A-I)=B\)</span>, con <span class="math inline">\(A-I=\begin{pmatrix}1&amp;1\\1&amp;0\end{pmatrix}\)</span> e inversa <span class="math inline">\((A-I)^{-1}=\begin{pmatrix}0&amp;1\\1&amp;-1\end{pmatrix}\)</span>. Entonces <span class="math display">\[X=B(A-I)^{-1}=\begin{pmatrix}3&amp;0\\1&amp;4\end{pmatrix}\begin{pmatrix}0&amp;1\\1&amp;-1\end{pmatrix}=\begin{pmatrix}0&amp;3\\4&amp;-3\end{pmatrix}\]</span> La inversa va <strong>a la derecha</strong>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>22
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(A^{-1}=\dfrac12\begin{pmatrix}1&amp;-1&amp;1\\-1&amp;1&amp;1\\1&amp;1&amp;-1\end{pmatrix}\)</span> y <span class="math inline">\(X=BA^{-1}\)</span>: <span class="math display">\[X=\frac12\begin{pmatrix}1&amp;2&amp;3\\0&amp;1&amp;1\end{pmatrix}\begin{pmatrix}1&amp;-1&amp;1\\-1&amp;1&amp;1\\1&amp;1&amp;-1\end{pmatrix}=\frac12\begin{pmatrix}2&amp;4&amp;0\\0&amp;2&amp;0\end{pmatrix}=\begin{pmatrix}1&amp;2&amp;0\\0&amp;1&amp;0\end{pmatrix}\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>23
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sumando las dos ecuaciones: <span class="math inline">\(3X=\begin{pmatrix}6&amp;3\\3&amp;3\end{pmatrix}\)</span>, luego <span class="math inline">\(X=\begin{pmatrix}2&amp;1\\1&amp;1\end{pmatrix}\)</span>.</p>
+<p>De la segunda: <span class="math inline">\(Y=X-\begin{pmatrix}2&amp;1\\2&amp;3\end{pmatrix}=\begin{pmatrix}0&amp;0\\-1&amp;-2\end{pmatrix}\)</span>.</p>
+<p>Comprobación de la primera: <span class="math inline">\(2X+Y=\begin{pmatrix}4&amp;2\\2&amp;2\end{pmatrix}+\begin{pmatrix}0&amp;0\\-1&amp;-2\end{pmatrix}=\begin{pmatrix}4&amp;2\\1&amp;0\end{pmatrix}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>24
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sea <span class="math inline">\(X=\begin{pmatrix}x&amp;y\\z&amp;w\end{pmatrix}\)</span>. Entonces <span class="math inline">\(CX=\begin{pmatrix}x+2z&amp;y+2w\\z&amp;w\end{pmatrix}\)</span> y <span class="math inline">\(XC=\begin{pmatrix}x&amp;2x+y\\z&amp;2z+w\end{pmatrix}\)</span>.</p>
+<p>Igualando: <span class="math inline">\(x+2z=x\Rightarrow z=0\)</span> y <span class="math inline">\(y+2w=2x+y\Rightarrow w=x\)</span>. Las otras dos ecuaciones se cumplen solas.</p>
+<p><span class="math display">\[X=\begin{pmatrix}x&amp;y\\0&amp;x\end{pmatrix}\qquad x,y\in\mathbb{R}\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>25
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P\begin{pmatrix}10\\20\end{pmatrix}=\begin{pmatrix}2\cdot10+1\cdot20\\1\cdot10+3\cdot20\end{pmatrix}=\begin{pmatrix}40\\70\end{pmatrix}\)</span>: 40 horas de carpintería y 70 de pintura.</p></li>
+<li><p><span class="math inline">\(\begin{pmatrix}4&amp;2\end{pmatrix}\begin{pmatrix}40\\70\end{pmatrix}=160+140=300\)</span> €.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

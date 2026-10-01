@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.18">
@@ -65,17 +65,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
@@ -128,8 +128,8 @@ window.Quarto = {
     <span class="navbar-title">MD Matemáticas</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -149,13 +149,6 @@ window.Quarto = {
   <li class="nav-item">
     <a class="nav-link" href="./actividades/index.html"> 
 <span class="menu-text">Actividades</span></a>
-  </li>  
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/mdmatematicasweb/mdmatematicasweb.github.io"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -196,33 +189,21 @@ window.Quarto = {
 <div class="hero">
 <section id="matemáticas-paso-a-paso" class="level1 hero-text">
 <h1>Matemáticas, paso a paso</h1>
-<p>Apuntes, ejercicios y actividades interactivas para 3º ESO y 2º Bachillerato de Ciencias. Todo organizado por tema, para repasar antes de un examen o preparar la Selectividad.</p>
+<p>Apuntes, ejercicios y actividades interactivas de 2º Bachillerato de Ciencias. Todo organizado por tema, para repasar antes de un examen o preparar la Selectividad.</p>
 </section>
 <div class="hero-formula">
-<p><span class="math display">\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</span> <span class="hero-formula-label">fórmula general — 3º ESO, tema 6</span></p>
+<p><span class="math display">\[\int_a^b f(x)\,dx = F(b) - F(a)\]</span> <span class="hero-formula-label">regla de Barrow</span></p>
 </div>
 </div>
 <div class="lattice-divider">
 
 </div>
 <div class="course-grid">
-<div class="course-card">
-<p><span class="course-badge">ESO</span></p>
-<section id="º-eso" class="level3">
-<h3 class="anchored" data-anchor-id="º-eso">3º ESO</h3>
-<p>Fracciones, ecuaciones, funciones, geometría del plano y estadística.</p>
-<ul>
-<li><a href="./apuntes/3-eso/index.html">Apuntes</a></li>
-<li><a href="./ejercicios/3-eso/index.html">Ejercicios</a></li>
-<li><a href="./actividades/3-eso/index.html">Actividades</a></li>
-</ul>
-</section>
-</div>
 <div class="course-card bach">
-<p><span class="course-badge">EVAU</span></p>
+<p><span class="course-badge">PAU</span></p>
 <section id="º-bachillerato-ciencias" class="level3">
 <h3 class="anchored" data-anchor-id="º-bachillerato-ciencias">2º Bachillerato Ciencias</h3>
-<p>Matrices, análisis, geometría del espacio y probabilidad — preparación para la EvAU.</p>
+<p>Matrices, análisis, geometría del espacio y probabilidad — preparación para la PAU (Selectividad).</p>
 <ul>
 <li><a href="./apuntes/2-bachillerato-ciencias/index.html">Apuntes</a></li>
 <li><a href="./ejercicios/2-bachillerato-ciencias/index.html">Ejercicios</a></li>
@@ -260,12 +241,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Copiado");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Copiado");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -642,7 +623,7 @@ window.Quarto = {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>MD Matemáticas · construido con Quarto</p>
+<p>© 2026 MD Matemáticas · contenidos <a href="./licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

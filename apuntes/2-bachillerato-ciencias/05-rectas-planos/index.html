@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Rectas y planos en el espacio – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-c03d2d665be348d2f4fb6e6313d5071b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-28c4b676bd4c1c9121cc5c5925a59653.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-c03d2d665be348d2f4fb6e6313d5071b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#ecuaciones-de-la-recta" id="toc-ecuaciones-de-la-recta" class="nav-link active" data-scroll-target="#ecuaciones-de-la-recta">1. Ecuaciones de la recta</a></li>
+  <li><a href="#ecuaciones-del-plano" id="toc-ecuaciones-del-plano" class="nav-link" data-scroll-target="#ecuaciones-del-plano">2. Ecuaciones del plano</a></li>
+  <li><a href="#posiciones-relativas" id="toc-posiciones-relativas" class="nav-link" data-scroll-target="#posiciones-relativas">3. Posiciones relativas</a></li>
+  <li><a href="#ángulos" id="toc-ángulos" class="nav-link" data-scroll-target="#ángulos">4. Ángulos</a></li>
+  <li><a href="#distancias" id="toc-distancias" class="nav-link" data-scroll-target="#distancias">5. Distancias</a></li>
+  <li><a href="#proyecciones-y-simétricos" id="toc-proyecciones-y-simétricos" class="nav-link" data-scroll-target="#proyecciones-y-simétricos">6. Proyecciones y simétricos</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Rectas y planos en el espacio</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="ecuaciones-de-la-recta" class="level2">
+<h2 class="anchored" data-anchor-id="ecuaciones-de-la-recta">1. Ecuaciones de la recta</h2>
+<p>Una recta <span class="math inline">\(r\)</span> queda determinada por un punto <span class="math inline">\(P(p_1,p_2,p_3)\)</span> y un <strong>vector director</strong> <span class="math inline">\(\vec d=(d_1,d_2,d_3)\)</span>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Forma</th>
+<th>Ecuación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Vectorial</td>
+<td><span class="math inline">\((x,y,z)=(p_1,p_2,p_3)+\lambda(d_1,d_2,d_3)\)</span></td>
+</tr>
+<tr class="even">
+<td>Paramétricas</td>
+<td><span class="math inline">\(x=p_1+\lambda d_1,\quad y=p_2+\lambda d_2,\quad z=p_3+\lambda d_3\)</span></td>
+</tr>
+<tr class="odd">
+<td>Continua</td>
+<td><span class="math inline">\(\dfrac{x-p_1}{d_1}=\dfrac{y-p_2}{d_2}=\dfrac{z-p_3}{d_3}\)</span></td>
+</tr>
+<tr class="even">
+<td>Implícita</td>
+<td>dos planos: <span class="math inline">\(\begin{cases}Ax+By+Cz+D=0\\A'x+B'y+C'z+D'=0\end{cases}\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Por dos puntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>: <span class="math inline">\(P=A\)</span> y <span class="math inline">\(\vec d=\overrightarrow{AB}\)</span>.</li>
+<li>De la forma implícita se pasa a la paramétrica resolviendo el sistema con una incógnita como parámetro. El vector director también es el producto vectorial de las normales de los dos planos.</li>
+</ul>
+</section>
+<section id="ecuaciones-del-plano" class="level2">
+<h2 class="anchored" data-anchor-id="ecuaciones-del-plano">2. Ecuaciones del plano</h2>
+<p>Un plano <span class="math inline">\(\pi\)</span> queda determinado por un punto <span class="math inline">\(P\)</span> y dos vectores directores <span class="math inline">\(\vec u,\vec v\)</span> no paralelos, o por un punto y un <strong>vector normal</strong> <span class="math inline">\(\vec n=(A,B,C)\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Forma</th>
+<th>Ecuación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Vectorial</td>
+<td><span class="math inline">\((x,y,z)=P+\lambda\vec u+\mu\vec v\)</span></td>
+</tr>
+<tr class="even">
+<td>General (implícita)</td>
+<td><span class="math inline">\(Ax+By+Cz+D=0\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cómo pasar a la general</strong>: <span class="math inline">\(\vec n=\vec u\times\vec v\)</span> y <span class="math inline">\(D=-\vec n\cdot P\)</span>. Equivalentemente: <span class="math display">\[\left|\begin{matrix}x-p_1&amp;y-p_2&amp;z-p_3\\u_1&amp;u_2&amp;u_3\\v_1&amp;v_2&amp;v_3\end{matrix}\right|=0\]</span></p>
+<p>Casos habituales:</p>
+<ul>
+<li>Por tres puntos <span class="math inline">\(A,B,C\)</span>: <span class="math inline">\(\vec u=\overrightarrow{AB}\)</span>, <span class="math inline">\(\vec v=\overrightarrow{AC}\)</span>.</li>
+<li>Por un punto y una recta: <span class="math inline">\(\vec u=\vec d\)</span>, <span class="math inline">\(\vec v=\overrightarrow{PQ}\)</span> con <span class="math inline">\(Q\)</span> de la recta.</li>
+<li>Perpendicular a una recta: <span class="math inline">\(\vec n=\vec d\)</span>.</li>
+<li>Plano mediador de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>: <span class="math inline">\(\vec n=\overrightarrow{AB}\)</span> y pasa por el punto medio.</li>
+</ul>
+</section>
+<section id="posiciones-relativas" class="level2">
+<h2 class="anchored" data-anchor-id="posiciones-relativas">3. Posiciones relativas</h2>
+<p><strong>Dos planos</strong> <span class="math inline">\(\pi:\ \vec n\cdot X+D=0\)</span>, <span class="math inline">\(\pi':\ \vec n'\cdot X+D'=0\)</span>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Situación</th>
+<th>Condición</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Se cortan en una recta</td>
+<td><span class="math inline">\(\vec n\)</span> y <span class="math inline">\(\vec n'\)</span> no proporcionales</td>
+</tr>
+<tr class="even">
+<td>Paralelos</td>
+<td><span class="math inline">\(\frac{A}{A'}=\frac{B}{B'}=\frac{C}{C'}\neq\frac{D}{D'}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Coincidentes</td>
+<td><span class="math inline">\(\frac{A}{A'}=\frac{B}{B'}=\frac{C}{C'}=\frac{D}{D'}\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig-dos-planos.svg" class="img-fluid figure-img" style="width:85.0%" alt="Tres dibujos: dos planos que se cortan en una recta, dos planos paralelos y un único plano para los coincidentes"></p>
+<figcaption>Dos planos: secantes (se cortan en una recta), paralelos o coincidentes.</figcaption>
+</figure>
+</div>
+<p><strong>Recta y plano</strong>: sustituye las paramétricas de la recta en el plano y obtén una ecuación en <span class="math inline">\(\lambda\)</span>.</p>
+<ul>
+<li>Una solución: la recta <strong>corta</strong> al plano en un punto.</li>
+<li>Ninguna solución: <strong>paralela</strong> (<span class="math inline">\(\vec d\cdot\vec n=0\)</span> y el punto no está en el plano).</li>
+<li>Todo <span class="math inline">\(\lambda\)</span>: la recta está <strong>contenida</strong> en el plano.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig-recta-plano.svg" class="img-fluid figure-img" style="width:85.0%" alt="Tres dibujos: una recta que atraviesa un plano en un punto P, una recta paralela por encima del plano y una recta dentro del plano"></p>
+<figcaption>Recta y plano: secante en un punto <span class="math inline">\(P\)</span>, paralela o contenida.</figcaption>
+</figure>
+</div>
+<p><strong>Dos rectas</strong> <span class="math inline">\(r(P,\vec d)\)</span> y <span class="math inline">\(s(Q,\vec e)\)</span>: mira el rango de <span class="math inline">\(\{\vec d,\vec e\}\)</span> y el de <span class="math inline">\(\{\vec d,\vec e,\overrightarrow{PQ}\}\)</span>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Situación</th>
+<th><span class="math inline">\(\operatorname{rg}(\vec d,\vec e)\)</span></th>
+<th><span class="math inline">\(\operatorname{rg}(\vec d,\vec e,\overrightarrow{PQ})\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Coincidentes</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Paralelas</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>Se cortan</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Se cruzan</td>
+<td>2</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig-dos-rectas.svg" class="img-fluid figure-img" style="width:100.0%" alt="Cuatro dibujos: dos rectas paralelas, dos rectas superpuestas, dos rectas que se cortan en un punto P y dos rectas que se cruzan a distinta altura sin cortarse"></p>
+<figcaption>Dos rectas: paralelas, coincidentes, se cortan en un punto o se cruzan (no están en un mismo plano).</figcaption>
+</figure>
+</div>
+<p><strong>Tres planos</strong> forman un sistema <span class="math inline">\(3\times3\)</span>: se aplica Rouché (tema 3). <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=3\)</span>: se cortan en un punto; rangos <span class="math inline">\(2\)</span> y <span class="math inline">\(2\)</span>: en una recta; rangos <span class="math inline">\(2\)</span> y <span class="math inline">\(3\)</span>: se cortan dos a dos o dos son paralelos; rangos <span class="math inline">\(1\)</span> y <span class="math inline">\(1\)</span>: coincidentes; rangos <span class="math inline">\(1\)</span> y <span class="math inline">\(2\)</span>: paralelos (o dos coincidentes y el tercero paralelo).</p>
+</section>
+<section id="ángulos" class="level2">
+<h2 class="anchored" data-anchor-id="ángulos">4. Ángulos</h2>
+<ul>
+<li><strong>Entre dos rectas</strong>: <span class="math inline">\(\cos\alpha=\dfrac{|\vec d\cdot\vec e|}{|\vec d|\,|\vec e|}\)</span>.</li>
+<li><strong>Entre dos planos</strong>: <span class="math inline">\(\cos\alpha=\dfrac{|\vec n\cdot\vec n'|}{|\vec n|\,|\vec n'|}\)</span>.</li>
+<li><strong>Entre recta y plano</strong>: <span class="math inline">\(\sin\alpha=\dfrac{|\vec d\cdot\vec n|}{|\vec d|\,|\vec n|}\)</span> (seno, no coseno).</li>
+</ul>
+</section>
+<section id="distancias" class="level2">
+<h2 class="anchored" data-anchor-id="distancias">5. Distancias</h2>
+<ul>
+<li><strong>Punto <span class="math inline">\(P_0(x_0,y_0,z_0)\)</span> a un plano</strong> <span class="math inline">\(Ax+By+Cz+D=0\)</span>: <span class="math inline">\(\ d=\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}\)</span></li>
+<li><strong>Punto <span class="math inline">\(P_0\)</span> a una recta</strong> <span class="math inline">\(r(P,\vec d)\)</span>: <span class="math inline">\(\ d=\dfrac{|\overrightarrow{PP_0}\times\vec d|}{|\vec d|}\)</span></li>
+<li><strong>Entre dos planos paralelos</strong>: distancia de un punto de uno al otro.</li>
+<li><strong>Recta paralela a un plano</strong>: distancia de un punto de la recta al plano.</li>
+<li><strong>Entre dos rectas paralelas</strong>: distancia de un punto de una a la otra.</li>
+<li><strong>Entre dos rectas que se cruzan</strong> <span class="math inline">\(r(P,\vec d)\)</span>, <span class="math inline">\(s(Q,\vec e)\)</span>: <span class="math inline">\(\ d=\dfrac{|[\overrightarrow{PQ},\vec d,\vec e]|}{|\vec d\times\vec e|}\)</span></li>
+</ul>
+</section>
+<section id="proyecciones-y-simétricos" class="level2">
+<h2 class="anchored" data-anchor-id="proyecciones-y-simétricos">6. Proyecciones y simétricos</h2>
+<p><strong>Proyección ortogonal de un punto <span class="math inline">\(P_0\)</span> sobre un plano <span class="math inline">\(\pi\)</span></strong>: traza la recta perpendicular por <span class="math inline">\(P_0\)</span> (dirección <span class="math inline">\(\vec n\)</span>) y corta con <span class="math inline">\(\pi\)</span>. <strong>Simétrico</strong> <span class="math inline">\(P_0'=2H-P_0\)</span>, con <span class="math inline">\(H\)</span> la proyección.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig-simetrico.svg" class="img-fluid figure-img" style="width:80.0%" alt="Dos dibujos: un punto P, su proyección H sobre un plano y su simétrico P' al otro lado; y lo mismo respecto de una recta"></p>
+<figcaption><span class="math inline">\(H\)</span> es la proyección de <span class="math inline">\(P\)</span> y el punto medio del segmento <span class="math inline">\(PP'\)</span>: <span class="math inline">\(P'=2H-P\)</span>.</figcaption>
+</figure>
+</div>
+<p><strong>Proyección de <span class="math inline">\(P_0\)</span> sobre una recta <span class="math inline">\(r\)</span></strong>: traza el plano perpendicular a <span class="math inline">\(r\)</span> por <span class="math inline">\(P_0\)</span> (normal <span class="math inline">\(\vec d\)</span>) y corta con <span class="math inline">\(r\)</span>. El simétrico se obtiene igual: <span class="math inline">\(P_0'=2H-P_0\)</span>.</p>
+<p><strong>Recta que pasa por <span class="math inline">\(P_0\)</span> y corta perpendicularmente a <span class="math inline">\(r\)</span></strong>: tiene dirección <span class="math inline">\(\overrightarrow{P_0H}\)</span>, con <span class="math inline">\(H\)</span> la proyección de <span class="math inline">\(P_0\)</span> sobre <span class="math inline">\(r\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Resumen rápido
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Recta: punto + vector director. Plano: punto + normal, <span class="math inline">\(\vec n=\vec u\times\vec v\)</span>.</li>
+<li>Recta–plano: sustituir en el plano y mirar el número de soluciones.</li>
+<li>Rectas: comparar los rangos de <span class="math inline">\(\{\vec d,\vec e\}\)</span> y <span class="math inline">\(\{\vec d,\vec e,\overrightarrow{PQ}\}\)</span>.</li>
+<li>Ángulo recta–plano: usa el <strong>seno</strong>.</li>
+<li>Distancia a un plano: <span class="math inline">\(\frac{|Ax_0+By_0+Cz_0+D|}{|\vec n|}\)</span>.</li>
+<li>Simétrico: <span class="math inline">\(2H-P_0\)</span> con <span class="math inline">\(H\)</span> la proyección.</li>
+</ul>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

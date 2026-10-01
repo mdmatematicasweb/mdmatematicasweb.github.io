@@ -325,3 +325,47 @@ a {
     transform: none;
   }
 }
+
+/* --- EBAU Andalucía: tarjetas de ejercicio --- */
+.ebau-ej {
+  background: #fff;
+  border: var(--md-border, 3px solid #000);
+  border-left-width: 10px;
+  box-shadow: 4px 4px 0 #000;
+  padding: 0.7rem 1rem 0.4rem;
+  margin: 1.1rem 0;
+  overflow-x: auto;
+}
+.ebau-ej > p:first-child {
+  font-size: 0.85rem;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 2px dashed #000;
+}
+.ebau-ej table { margin: 0.5rem 0; }
+
+/* Callouts (Solución, Advertencia, Nota…): borde negro duro y sombra, sin esquinas redondeadas */
+div.callout {
+  border: var(--md-border) !important;
+  border-radius: 0 !important;
+  box-shadow: var(--md-shadow-sm);
+  background-color: #fff;
+  margin: 1.4rem 0;
+}
+div.callout .callout-header,
+div.callout .callout-title-container {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  color: var(--md-black);
+}
+div.callout.callout-style-default > .callout-header { border-bottom: var(--md-border); }
+div.callout.callout-style-default .callout-body-container { background-color: #fff; }
+div.callout.callout-tip.callout-style-default > .callout-header { background-color: var(--md-teal); }
+div.callout.callout-note.callout-style-default > .callout-header { background-color: var(--md-lime); }
+div.callout.callout-warning.callout-style-default > .callout-header { background-color: var(--md-amber); }
+div.callout.callout-important.callout-style-default > .callout-header { background-color: var(--md-amber); }
+div.callout.callout-style-simple { border-left-width: 10px !important; }
+div.callout.callout-tip { border-left-color: var(--md-teal) !important; }
+div.callout.callout-note { border-left-color: var(--md-lime) !important; }
+div.callout.callout-warning,
+div.callout.callout-important { border-left-color: var(--md-amber) !important; }

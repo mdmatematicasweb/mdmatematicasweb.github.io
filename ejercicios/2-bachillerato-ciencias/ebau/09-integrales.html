@@ -1,0 +1,2197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>PAU Andalucía — Integrales – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-c03d2d665be348d2f4fb6e6313d5071b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-28c4b676bd4c1c9121cc5c5925a59653.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-c03d2d665be348d2f4fb6e6313d5071b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">2026</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2026" id="toc-ordinaria-2026" class="nav-link" data-scroll-target="#ordinaria-2026">Ordinaria 2026</a></li>
+  <li><a href="#ordinaria-suplente-1-2026" id="toc-ordinaria-suplente-1-2026" class="nav-link" data-scroll-target="#ordinaria-suplente-1-2026">Ordinaria · Suplente 1 2026</a></li>
+  <li><a href="#extraordinaria-2026" id="toc-extraordinaria-2026" class="nav-link" data-scroll-target="#extraordinaria-2026">Extraordinaria 2026</a></li>
+  <li><a href="#extraordinaria-suplente-2-2026" id="toc-extraordinaria-suplente-2-2026" class="nav-link" data-scroll-target="#extraordinaria-suplente-2-2026">Extraordinaria · Suplente 2 2026</a></li>
+  </ul></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">2025</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2025" id="toc-ordinaria-2025" class="nav-link" data-scroll-target="#ordinaria-2025">Ordinaria 2025</a></li>
+  <li><a href="#ordinaria-suplente-1-2025" id="toc-ordinaria-suplente-1-2025" class="nav-link" data-scroll-target="#ordinaria-suplente-1-2025">Ordinaria · Suplente 1 2025</a></li>
+  <li><a href="#ordinaria-suplente-2-2025" id="toc-ordinaria-suplente-2-2025" class="nav-link" data-scroll-target="#ordinaria-suplente-2-2025">Ordinaria · Suplente 2 2025</a></li>
+  <li><a href="#extraordinaria-2025" id="toc-extraordinaria-2025" class="nav-link" data-scroll-target="#extraordinaria-2025">Extraordinaria 2025</a></li>
+  <li><a href="#extraordinaria-suplente-1-2025" id="toc-extraordinaria-suplente-1-2025" class="nav-link" data-scroll-target="#extraordinaria-suplente-1-2025">Extraordinaria · Suplente 1 2025</a></li>
+  <li><a href="#extraordinaria-suplente-2-2025" id="toc-extraordinaria-suplente-2-2025" class="nav-link" data-scroll-target="#extraordinaria-suplente-2-2025">Extraordinaria · Suplente 2 2025</a></li>
+  </ul></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">2024</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2024" id="toc-ordinaria-2024" class="nav-link" data-scroll-target="#ordinaria-2024">Ordinaria 2024</a></li>
+  <li><a href="#ordinaria-reserva-2024" id="toc-ordinaria-reserva-2024" class="nav-link" data-scroll-target="#ordinaria-reserva-2024">Ordinaria · Reserva 2024</a></li>
+  <li><a href="#ordinaria-suplente-2024" id="toc-ordinaria-suplente-2024" class="nav-link" data-scroll-target="#ordinaria-suplente-2024">Ordinaria · Suplente 2024</a></li>
+  <li><a href="#extraordinaria-2024" id="toc-extraordinaria-2024" class="nav-link" data-scroll-target="#extraordinaria-2024">Extraordinaria 2024</a></li>
+  <li><a href="#extraordinaria-reserva-2024" id="toc-extraordinaria-reserva-2024" class="nav-link" data-scroll-target="#extraordinaria-reserva-2024">Extraordinaria · Reserva 2024</a></li>
+  <li><a href="#extraordinaria-suplente-2024" id="toc-extraordinaria-suplente-2024" class="nav-link" data-scroll-target="#extraordinaria-suplente-2024">Extraordinaria · Suplente 2024</a></li>
+  </ul></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">2023</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2023" id="toc-ordinaria-2023" class="nav-link" data-scroll-target="#ordinaria-2023">Ordinaria 2023</a></li>
+  <li><a href="#ordinaria-reserva-2023" id="toc-ordinaria-reserva-2023" class="nav-link" data-scroll-target="#ordinaria-reserva-2023">Ordinaria · Reserva 2023</a></li>
+  <li><a href="#ordinaria-suplente-2023" id="toc-ordinaria-suplente-2023" class="nav-link" data-scroll-target="#ordinaria-suplente-2023">Ordinaria · Suplente 2023</a></li>
+  <li><a href="#extraordinaria-2023" id="toc-extraordinaria-2023" class="nav-link" data-scroll-target="#extraordinaria-2023">Extraordinaria 2023</a></li>
+  <li><a href="#extraordinaria-reserva-2023" id="toc-extraordinaria-reserva-2023" class="nav-link" data-scroll-target="#extraordinaria-reserva-2023">Extraordinaria · Reserva 2023</a></li>
+  <li><a href="#extraordinaria-suplente-2023" id="toc-extraordinaria-suplente-2023" class="nav-link" data-scroll-target="#extraordinaria-suplente-2023">Extraordinaria · Suplente 2023</a></li>
+  </ul></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">2022</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2022" id="toc-ordinaria-2022" class="nav-link" data-scroll-target="#ordinaria-2022">Ordinaria 2022</a></li>
+  <li><a href="#ordinaria-reserva-2022" id="toc-ordinaria-reserva-2022" class="nav-link" data-scroll-target="#ordinaria-reserva-2022">Ordinaria · Reserva 2022</a></li>
+  <li><a href="#ordinaria-suplente-2022" id="toc-ordinaria-suplente-2022" class="nav-link" data-scroll-target="#ordinaria-suplente-2022">Ordinaria · Suplente 2022</a></li>
+  <li><a href="#extraordinaria-2022" id="toc-extraordinaria-2022" class="nav-link" data-scroll-target="#extraordinaria-2022">Extraordinaria 2022</a></li>
+  <li><a href="#extraordinaria-reserva-2022" id="toc-extraordinaria-reserva-2022" class="nav-link" data-scroll-target="#extraordinaria-reserva-2022">Extraordinaria · Reserva 2022</a></li>
+  <li><a href="#extraordinaria-suplente-2022" id="toc-extraordinaria-suplente-2022" class="nav-link" data-scroll-target="#extraordinaria-suplente-2022">Extraordinaria · Suplente 2022</a></li>
+  </ul></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">2021</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2021" id="toc-ordinaria-2021" class="nav-link" data-scroll-target="#ordinaria-2021">Ordinaria 2021</a></li>
+  <li><a href="#ordinaria-reserva-2021" id="toc-ordinaria-reserva-2021" class="nav-link" data-scroll-target="#ordinaria-reserva-2021">Ordinaria · Reserva 2021</a></li>
+  <li><a href="#ordinaria-suplente-2021" id="toc-ordinaria-suplente-2021" class="nav-link" data-scroll-target="#ordinaria-suplente-2021">Ordinaria · Suplente 2021</a></li>
+  <li><a href="#extraordinaria-2021" id="toc-extraordinaria-2021" class="nav-link" data-scroll-target="#extraordinaria-2021">Extraordinaria 2021</a></li>
+  <li><a href="#extraordinaria-reserva-2021" id="toc-extraordinaria-reserva-2021" class="nav-link" data-scroll-target="#extraordinaria-reserva-2021">Extraordinaria · Reserva 2021</a></li>
+  <li><a href="#extraordinaria-suplente-2021" id="toc-extraordinaria-suplente-2021" class="nav-link" data-scroll-target="#extraordinaria-suplente-2021">Extraordinaria · Suplente 2021</a></li>
+  </ul></li>
+  <li><a href="#también-trabajan-este-tema" id="toc-también-trabajan-este-tema" class="nav-link" data-scroll-target="#también-trabajan-este-tema">También trabajan este tema</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PAU Andalucía — Integrales</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Ejercicios de <strong>Matemáticas II</strong> de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de <strong>2021 a 2026</strong> cuyo tema principal es <em>integrales</em>: <strong>55 ejercicios</strong> de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. Repasa antes la <a href="../../../apuntes/2-bachillerato-ciencias/09-integrales/index.html">teoría</a>, los <a href="../../../ejercicios/2-bachillerato-ciencias/09-integrales/index.html">ejercicios del tema</a> y las <a href="../../../actividades/2-bachillerato-ciencias/09-integrales/index.html">actividades interactivas</a>.</p>
+<p>Debajo de cada ejercicio hay una <strong>resolución breve</strong> plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.</p>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">2026</h2>
+<section id="ordinaria-2026" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2026">Ordinaria 2026</h3>
+<div id="ebau-2026-ord-4-1" class="ebau-ej">
+<p><strong>Ejercicio 4.1</strong> · Ordinaria 2026 · Bloque optativo 2 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/06/2oBachCC_EBAU_Andalucia_2026-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Dada la función <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> definida por <span class="math inline">\(f(x)=\dfrac{8e^{x}-4e^{2x}}{1+e^{x}}\)</span>, halla la primitiva de <span class="math inline">\(f\)</span> cuya gráfica tiene por tangente a la recta <span class="math inline">\(y=2x+12\ln(2)\)</span> en el punto de abscisa <span class="math inline">\(x=0\)</span>. (Sugerencia: puedes hacer el cambio <span class="math inline">\(e^{x}=t\)</span>).</p>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/07-derivadas.html">Derivadas</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Con <span class="math inline">\(t=e^x\)</span>, <span class="math inline">\(dx=\dfrac{dt}{t}\)</span>: <span class="math inline">\(\displaystyle\int\dfrac{8e^x-4e^{2x}}{1+e^x}dx=\int\dfrac{8-4t}{1+t}dt=\int\left(-4+\dfrac{12}{1+t}\right)dt=-4t+12\ln(1+t)+C\)</span>.</p>
+<p>Primitivas: <span class="math inline">\(F(x)=-4e^x+12\ln(1+e^x)+C\)</span>. La tangente <span class="math inline">\(y=2x+12\ln2\)</span> en <span class="math inline">\(x=0\)</span> exige <span class="math inline">\(F(0)=12\ln2\)</span> (y <span class="math inline">\(F'(0)=f(0)=2\)</span>, que coincide con la pendiente). <span class="math inline">\(F(0)=-4+12\ln2+C=12\ln2\Rightarrow C=4\)</span>.</p>
+<p><strong><span class="math inline">\(F(x)=-4e^x+12\ln(1+e^x)+4\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-1-2026" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-1-2026">Ordinaria · Suplente 1 2026</h3>
+<div id="ebau-2026-ord-sup1-3-2" class="ebau-ej">
+<p><strong>Ejercicio 3.2</strong> · Ordinaria · Suplente 1 2026 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/06/2oBachCC_EBAU_Andalucia_2026-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(f:[-2,2]\to\mathbb{R}\)</span> definida por <span class="math inline">\(f(x)=\dfrac{x}{|x|+1}\)</span>.</p>
+<ol type="a">
+<li><p>Calcula <span class="math inline">\(\displaystyle\int_{0}^{2}f(x)\,dx\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Estudia la simetría de la función <span class="math inline">\(f\)</span> y deduce de ella el valor de <span class="math inline">\(\displaystyle\int_{-2}^{2}f(x)\,dx\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> En <span class="math inline">\([0,2]\)</span>, <span class="math inline">\(f(x)=\dfrac{x}{x+1}=1-\dfrac{1}{x+1}\)</span>: <span class="math inline">\(\displaystyle\int_0^2f=\big[x-\ln(x+1)\big]_0^2\)</span>.</p>
+<p><strong><span class="math inline">\(2-\ln3\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(f(-x)=\dfrac{-x}{|x|+1}=-f(x)\)</span>: <span class="math inline">\(f\)</span> es <strong>impar</strong> (simétrica respecto al origen). Por tanto <span class="math inline">\(\displaystyle\int_{-2}^2f(x)\,dx=\mathbf{0}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2026" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2026">Extraordinaria 2026</h3>
+<div id="ebau-2026-ext-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Extraordinaria 2026 · Parte obligatoria · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/09/2oBachCC_EBAU_Andalucia_2026-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>La velocidad de crecimiento de la población de peces en un lago al cabo del tiempo, <span class="math inline">\(t\)</span> en años, viene dada por <span class="math inline">\(P'(t)=20\,t\,e^{-t/10}\)</span>, siendo <span class="math inline">\(P(t)\)</span> la población de peces. Sabiendo que la población inicial es de 1000 peces, calcula cuántos tendrá el lago transcurridos 10 años.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(P(t)=1000+\displaystyle\int_0^t20s\,e^{-s/10}ds\)</span>. Por partes: <span class="math inline">\(\displaystyle\int s\,e^{-s/10}ds=-10s\,e^{-s/10}-100\,e^{-s/10}\)</span>.</p>
+<p><span class="math inline">\(\displaystyle\int_0^{10}20s\,e^{-s/10}ds=20\Big[-10s\,e^{-s/10}-100e^{-s/10}\Big]_0^{10}=20\big(100-200e^{-1}\big)=2000-\dfrac{4000}{e}\)</span>.</p>
+<p><span class="math inline">\(P(10)=3000-\dfrac{4000}{e}\approx1528{,}5\)</span>.</p>
+<p><strong>Al cabo de 10 años habrá unos 1528 peces.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2-2026" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2-2026">Extraordinaria · Suplente 2 2026</h3>
+<div id="ebau-2026-ext-sup2-3-2" class="ebau-ej">
+<p><strong>Ejercicio 3.2</strong> · Extraordinaria · Suplente 2 2026 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/09/2oBachCC_EBAU_Andalucia_2026-Extraordinaria_Suplente2.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(f:[-\pi,\pi]\to\mathbb{R}\)</span> definida por <span class="math inline">\(f(x)=x^{2}\cos(x)\)</span>.</p>
+<ol type="a">
+<li><p>Calcula <span class="math inline">\(\displaystyle\int_{0}^{\pi}f(x)\,dx\)</span>. <em>(2 puntos)</em></p></li>
+<li><p>Estudia la simetría de la función <span class="math inline">\(f\)</span> y deduce de ella la relación que existe entre <span class="math inline">\(\displaystyle\int_{0}^{\pi}f(x)\,dx\)</span> y <span class="math inline">\(\displaystyle\int_{-\pi}^{\pi}f(x)\,dx\)</span>. <em>(0,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Por partes (dos veces): <span class="math inline">\(\displaystyle\int x^2\cos x\,dx=x^2\operatorname{sen}x+2x\cos x-2\operatorname{sen}x\)</span>.</p>
+<p><span class="math inline">\(\displaystyle\int_0^\pi x^2\cos x\,dx=\big[x^2\operatorname{sen}x+2x\cos x-2\operatorname{sen}x\big]_0^\pi=-2\pi\)</span>.</p>
+<p><strong>Resultado: <span class="math inline">\(-2\pi\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(f(-x)=(-x)^2\cos(-x)=f(x)\)</span>: <span class="math inline">\(f\)</span> es <strong>par</strong> (simétrica respecto al eje <span class="math inline">\(OY\)</span>). Por tanto <span class="math display">\[\int_{-\pi}^{\pi}f=2\int_0^\pi f=-4\pi.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1">2025</h2>
+<section id="ordinaria-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2025">Ordinaria 2025</h3>
+<div id="ebau-2025-ord-6" class="ebau-ej">
+<p><strong>Ejercicio 6</strong> · Ordinaria 2025 · Bloque optativo 3 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/06/2oBachCC_EBAU_Andalucia_2025-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Halla la función <span class="math inline">\(f:(0,+\infty)\to\mathbb{R}\)</span> que pasa por los puntos <span class="math inline">\((2,e-2-2\ln(2))\)</span> y <span class="math inline">\((1,0)\)</span>, y verifica que <span class="math inline">\(f''(x)=e^{x-1}-\dfrac{1}{x}\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Integrando <span class="math inline">\(f''(x)=e^{x-1}-\dfrac1x\)</span>: <span class="math display">\[f'(x)=e^{x-1}-\ln x+C_1,\qquad f(x)=e^{x-1}-x\ln x+x+C_1x+C_2.\]</span></p>
+<ul>
+<li><span class="math inline">\(f(1)=0\)</span>: <span class="math inline">\(1+1+C_1+C_2=0\Rightarrow C_1+C_2=-2\)</span>.</li>
+<li><span class="math inline">\(f(2)=e-2-2\ln2\)</span>: <span class="math inline">\(e-2\ln2+2+2C_1+C_2=e-2-2\ln2\Rightarrow2C_1+C_2=-4\)</span>.</li>
+</ul>
+<p>Restando: <span class="math inline">\(C_1=-2\)</span> y <span class="math inline">\(C_2=0\)</span>.</p>
+<p><strong><span class="math inline">\(f(x)=e^{x-1}-x\ln x-x\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-1-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-1-2025">Ordinaria · Suplente 1 2025</h3>
+<div id="ebau-2025-ord-sup1-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Suplente 1 2025 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/06/2oBachCC_EBAU_Andalucia_2025-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Sea la función <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> definida por <span class="math inline">\(f(x)=(x-1)^{2}\)</span>.</p>
+<ol type="a">
+<li><p>Esboza el recinto acotado y limitado por la gráfica de <span class="math inline">\(f\)</span> y la recta <span class="math inline">\(y=a\)</span> con <span class="math inline">\(a&gt;0\)</span>. <em>(0,75 puntos)</em></p></li>
+<li><p>Calcula <span class="math inline">\(a&gt;0\)</span> para que el área del recinto acotado y limitado por la gráfica de <span class="math inline">\(f\)</span> y la recta <span class="math inline">\(y=a\)</span> sea <span class="math inline">\(\dfrac43\)</span> unidades cuadradas. <em>(1,75 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Es una parábola de vértice <span class="math inline">\((1,0)\)</span> abierta hacia arriba. La recta horizontal <span class="math inline">\(y=a\)</span> la corta en <span class="math inline">\(x=1\pm\sqrt a\)</span>, y el recinto es el segmento parabólico entre ambos puntos, por encima de la parábola y por debajo de la recta.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2025-ord-sup1-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Recinto limitado por la parábola f(x)=(x−1)² y la recta y=a (a>0), con los cortes en x=1±√a"></p>
+<figcaption>Recinto limitado por la parábola f(x)=(x−1)² y la recta y=a (a&gt;0), con los cortes en x=1±√a</figcaption>
+</figure>
+</div>
+<p><strong>b)</strong> Con <span class="math inline">\(t=x-1\)</span>: <span class="math display">\[A=\int_{-\sqrt a}^{\sqrt a}\big(a-t^2\big)dt=2\left[at-\frac{t^3}{3}\right]_0^{\sqrt a}=\frac43a^{3/2}.\]</span> <span class="math inline">\(\dfrac43a^{3/2}=\dfrac43\Rightarrow\mathbf{a=1}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2025-ord-sup1-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria · Suplente 1 2025 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/06/2oBachCC_EBAU_Andalucia_2025-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función</p>
+<p><span class="math display">\[f(x)=\begin{cases}x\operatorname{sen}(2x) &amp; \text{si } x\le 0\\\cos(\pi x)-1 &amp; \text{si } x&gt;0\end{cases}\]</span></p>
+<p>Calcula <span class="math inline">\(\displaystyle\int_{-\pi/4}^{1}f(x)\,dx\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Tramo <span class="math inline">\(x\le0\)</span> (por partes): <span class="math inline">\(\displaystyle\int_{-\pi/4}^{0}x\operatorname{sen}(2x)dx=\Big[-\dfrac{x\cos2x}{2}+\dfrac{\operatorname{sen}2x}{4}\Big]_{-\pi/4}^{0}=0-\Big(0-\dfrac14\Big)=\dfrac14\)</span>.</p>
+<p>Tramo <span class="math inline">\(x&gt;0\)</span>: <span class="math inline">\(\displaystyle\int_0^1(\cos\pi x-1)dx=\Big[\dfrac{\operatorname{sen}\pi x}{\pi}-x\Big]_0^1=-1\)</span>.</p>
+<p><span class="math display">\[\int_{-\pi/4}^1f=\frac14-1=\mathbf{-\frac34}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2-2025">Ordinaria · Suplente 2 2025</h3>
+<div id="ebau-2025-ord-sup2-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Suplente 2 2025 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Ordinaria_Suplente2-1.pdf" target="_blank">PDF del examen</a></p>
+<p>Calcula <span class="math inline">\(\displaystyle\int_{\sqrt{3}}^{2}\dfrac{4x}{x^{4}-6x^{2}+10}\,dx\)</span>. (Sugerencia: efectúa el cambio de variable <span class="math inline">\(t=x^{2}-3\)</span>).</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Con <span class="math inline">\(t=x^2-3\)</span>, <span class="math inline">\(dt=2x\,dx\)</span>, <span class="math inline">\(4x\,dx=2\,dt\)</span>. Además <span class="math inline">\(x^4-6x^2+10=(x^2-3)^2+1=t^2+1\)</span>. Límites: <span class="math inline">\(x=\sqrt3\to t=0\)</span>, <span class="math inline">\(x=2\to t=1\)</span>. <span class="math display">\[\int_0^1\frac{2\,dt}{t^2+1}=2\big[\operatorname{arctg}t\big]_0^1=\mathbf{\frac\pi2}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2025-ord-sup2-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria · Suplente 2 2025 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Ordinaria_Suplente2-1.pdf" target="_blank">PDF del examen</a></p>
+<p>Sean las funciones <span class="math inline">\(f,g:\mathbb{R}\to\mathbb{R}\)</span> definidas por <span class="math inline">\(f(x)=x^{3}-x\)</span> y <span class="math inline">\(g(x)=-x^{2}+1\)</span>.</p>
+<ol type="a">
+<li><p>Halla los puntos de corte (abscisas donde se obtienen y valores que se alcanzan) de las gráficas de <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span>. Realiza un esbozo del recinto acotado y limitado por dichas gráficas. <em>(1 punto)</em></p></li>
+<li><p>Calcula el área del recinto acotado y limitado por las gráficas de <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(x^3-x=-x^2+1\Rightarrow x^3+x^2-x-1=(x+1)^2(x-1)=0\)</span>. Cortes en <span class="math inline">\(x=-1\)</span> (doble: las gráficas son tangentes) y <span class="math inline">\(x=1\)</span>: <strong>puntos <span class="math inline">\((-1,0)\)</span> y <span class="math inline">\((1,0)\)</span>.</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2025-ord-sup2-e3.svg" class="img-fluid figure-img" style="width:75.0%" alt="Recinto entre f(x)=x³−x y g(x)=1−x², que se cortan en (−1,0) (tangentes) y (1,0)"></p>
+<figcaption>Recinto entre f(x)=x³−x y g(x)=1−x², que se cortan en (−1,0) (tangentes) y (1,0)</figcaption>
+</figure>
+</div>
+<p>Esbozo: <span class="math inline">\(g\)</span> es una parábola con vértice <span class="math inline">\((0,1)\)</span> y cortes con <span class="math inline">\(OX\)</span> en <span class="math inline">\(\pm1\)</span>; <span class="math inline">\(f\)</span> es una cúbica que pasa por <span class="math inline">\((-1,0)\)</span>, <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((1,0)\)</span> (máximo local en <span class="math inline">\(x=-1/\sqrt3\)</span>). En <span class="math inline">\((-1,1)\)</span> la parábola queda por encima de la cúbica.</p>
+<p><strong>b)</strong> <span class="math inline">\(g-f=-(x-1)(x+1)^2\ge0\)</span> en <span class="math inline">\([-1,1]\)</span>: <span class="math display">\[A=\int_{-1}^{1}(-x^3-x^2+x+1)\,dx=2\int_0^1(-x^2+1)\,dx=2\cdot\frac23=\mathbf{\frac43}\ u^2.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2025" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2025">Extraordinaria 2025</h3>
+<div id="ebau-2025-ext-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Extraordinaria 2025 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> definida por <span class="math inline">\(f(x)=\dfrac{1}{x^{2}+2x+2}\)</span>. Calcula una primitiva de <span class="math inline">\(f\)</span> cuya gráfica pase por el punto <span class="math inline">\(\left(0,\dfrac{\pi}{4}\right)\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Completando cuadrados: <span class="math inline">\(x^2+2x+2=(x+1)^2+1\)</span>, luego <span class="math display">\[F(x)=\int\frac{dx}{(x+1)^2+1}=\operatorname{arctg}(x+1)+C.\]</span> <span class="math inline">\(F(0)=\operatorname{arctg}1+C=\dfrac\pi4+C=\dfrac\pi4\Rightarrow C=0\)</span>.</p>
+<p><strong><span class="math inline">\(F(x)=\operatorname{arctg}(x+1)\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2025-ext-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Extraordinaria 2025 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Calcula el valor de <span class="math inline">\(k\)</span> para que <span class="math inline">\(\displaystyle\int_{1}^{3}e^{x-k}(x-2)\,dx=2\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Por partes con <span class="math inline">\(u=x-2\)</span>, <span class="math inline">\(dv=e^{x}dx\)</span>: <span class="math display">\[\int e^{x-k}(x-2)\,dx=e^{-k}\big[(x-2)e^{x}-e^{x}\big]=e^{-k}(x-3)e^{x}.\]</span> <span class="math display">\[\int_1^3=e^{-k}\big[0-(-2e)\big]=2e^{1-k}=2\;\Rightarrow\;e^{1-k}=1\;\Rightarrow\;\mathbf{k=1}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-1-2025" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-1-2025">Extraordinaria · Suplente 1 2025</h3>
+<div id="ebau-2025-ext-sup1-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Extraordinaria · Suplente 1 2025 · Parte obligatoria · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Sea <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> la función definida por <span class="math inline">\(f(x)=\dfrac{x^{3}+1}{x^{2}+1}\)</span>. Calcula una primitiva de <span class="math inline">\(f\)</span> cuya gráfica pase por el punto <span class="math inline">\((0,5)\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Dividiendo: <span class="math inline">\(\dfrac{x^3+1}{x^2+1}=x-\dfrac{x-1}{x^2+1}=x-\dfrac{x}{x^2+1}+\dfrac{1}{x^2+1}\)</span>.</p>
+<p><span class="math display">\[F(x)=\int f=\frac{x^2}{2}-\frac12\ln(x^2+1)+\operatorname{arctg}x+C.\]</span></p>
+<p><span class="math inline">\(F(0)=C=5\)</span>. <strong><span class="math inline">\(F(x)=\dfrac{x^2}{2}-\dfrac12\ln(x^2+1)+\operatorname{arctg}x+5\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2-2025" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2-2025">Extraordinaria · Suplente 2 2025</h3>
+<div id="ebau-2025-ext-sup2-6" class="ebau-ej">
+<p><strong>Ejercicio 6</strong> · Extraordinaria · Suplente 2 2025 · Bloque optativo 3 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria_Suplente2.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las funciones <span class="math inline">\(f,g:\mathbb{R}\to\mathbb{R}\)</span> definidas por <span class="math inline">\(f(x)=-e^{x}\)</span> y <span class="math inline">\(g(x)=-e^{-x}\)</span>.</p>
+<ol type="a">
+<li><p>Esboza las gráficas de dichas funciones. <em>(1 punto)</em></p></li>
+<li><p>Calcula la suma de las áreas de los recintos acotados y limitados por las gráficas de dichas funciones y las rectas <span class="math inline">\(x=-1\)</span> y <span class="math inline">\(x=1\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Ambas son negativas: <span class="math inline">\(f=-e^x\)</span> es creciente y tiende a <span class="math inline">\(0\)</span> en <span class="math inline">\(-\infty\)</span>; <span class="math inline">\(g=-e^{-x}\)</span> es decreciente y tiende a <span class="math inline">\(0\)</span> en <span class="math inline">\(+\infty\)</span>. Ambas pasan por <span class="math inline">\((0,-1)\)</span> (único corte) y están por debajo del eje <span class="math inline">\(OX\)</span>; <span class="math inline">\(g\)</span> queda por encima de <span class="math inline">\(f\)</span> para <span class="math inline">\(x&gt;0\)</span> y por debajo para <span class="math inline">\(x&lt;0\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2025-ext-sup2-e6.svg" class="img-fluid figure-img" style="width:75.0%" alt="Gráficas de f(x)=−eˣ y g(x)=−e⁻ˣ, simétricas respecto del eje Y y con asíntota y=0"></p>
+<figcaption>Gráficas de f(x)=−eˣ y g(x)=−e⁻ˣ, simétricas respecto del eje Y y con asíntota y=0</figcaption>
+</figure>
+</div>
+<p><strong>b)</strong> Por simetría respecto del eje <span class="math inline">\(OY\)</span>: <span class="math display">\[A=2\int_0^1\big(-e^{-x}+e^{x}\big)dx=2\big[e^{x}+e^{-x}\big]_0^1=\mathbf{2\left(e+\dfrac1e-2\right)}\approx2{,}17\ u^2.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2">2024</h2>
+<section id="ordinaria-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2024">Ordinaria 2024</h3>
+<div id="ebau-2024-ord-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria 2024 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(f\)</span> definida por <span class="math inline">\(f(x)=\dfrac{x^{3}+2}{x^{2}-1}\)</span>, para <span class="math inline">\(x\neq -1\)</span>, <span class="math inline">\(x\neq 1\)</span>. Calcula una primitiva de <span class="math inline">\(f\)</span> cuya gráfica pase por el punto <span class="math inline">\((0,1)\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\dfrac{x^3+2}{x^2-1}=x+\dfrac{x+2}{(x-1)(x+1)}=x+\dfrac{3/2}{x-1}-\dfrac{1/2}{x+1}\)</span>.</p>
+<p><span class="math inline">\(F(x)=\dfrac{x^2}2+\dfrac32\ln|x-1|-\dfrac12\ln|x+1|+C\)</span>. En el intervalo <span class="math inline">\((-1,1)\)</span>, que contiene a <span class="math inline">\(x=0\)</span>: <span class="math inline">\(F(0)=C=1\)</span>.</p>
+<p><span class="math display">\[\mathbf{F(x)=\frac{x^2}2+\frac32\ln|x-1|-\frac12\ln|x+1|+1}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2024-ord-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria 2024 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Halla la función <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> tal que <span class="math inline">\(f''(x)=x\cos(x)\)</span> y cuya gráfica pasa por los puntos <span class="math inline">\(\left(0,\dfrac{\pi}{2}\right)\)</span> y <span class="math inline">\((\pi,2\pi)\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Por partes: <span class="math inline">\(f'(x)=\int x\cos x\,dx=x\operatorname{sen}x+\cos x+C_1\)</span>, y</p>
+<p><span class="math display">\[f(x)=\int(x\operatorname{sen}x+\cos x)\,dx+C_1x=-x\cos x+2\operatorname{sen}x+C_1x+C_2.\]</span></p>
+<p><span class="math inline">\(f(0)=C_2=\dfrac\pi2\)</span>. <span class="math inline">\(f(\pi)=\pi+C_1\pi+\dfrac\pi2=2\pi\Rightarrow C_1=\dfrac12\)</span>.</p>
+<p><span class="math display">\[\mathbf{f(x)=-x\cos x+2\operatorname{sen}x+\frac x2+\frac\pi2}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-2024">Ordinaria · Reserva 2024</h3>
+<div id="ebau-2024-ord-res-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria · Reserva 2024 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Ordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> definida por <span class="math inline">\(f(x)=x^{3}-6x^{2}+8x\)</span>.</p>
+<ol type="a">
+<li><p>Calcula los puntos de corte de la gráfica de <span class="math inline">\(f\)</span> con los ejes de coordenadas y esboza dicha gráfica. <em>(1 punto)</em></p></li>
+<li><p>Calcula la suma de las áreas de los recintos acotados y limitados por la gráfica de <span class="math inline">\(f\)</span> y el eje de abscisas. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(f(x)=x(x-2)(x-4)\)</span>. <strong>Cortes con el eje <span class="math inline">\(OX\)</span>: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((2,0)\)</span>, <span class="math inline">\((4,0)\)</span>; con el eje <span class="math inline">\(OY\)</span>: <span class="math inline">\((0,0)\)</span>.</strong> Esbozo: cúbica con <span class="math inline">\(f\to-\infty\)</span> a la izquierda y <span class="math inline">\(+\infty\)</span> a la derecha; <span class="math inline">\(f&gt;0\)</span> en <span class="math inline">\((0,2)\)</span> (máximo local en <span class="math inline">\(x=2-\tfrac{2}{\sqrt3}\approx0{,}85\)</span>) y <span class="math inline">\(f&lt;0\)</span> en <span class="math inline">\((2,4)\)</span> (mínimo local en <span class="math inline">\(x=2+\tfrac{2}{\sqrt3}\approx3{,}15\)</span>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2024-ord-res-e3.svg" class="img-fluid figure-img" style="width:75.0%" alt="Gráfica de f(x)=x³−6x²+8x con cortes en x=0, 2 y 4 y sus extremos relativos"></p>
+<figcaption>Gráfica de f(x)=x³−6x²+8x con cortes en x=0, 2 y 4 y sus extremos relativos</figcaption>
+</figure>
+</div>
+<p><strong>b)</strong> Con <span class="math inline">\(F(x)=\dfrac{x^4}{4}-2x^3+4x^2\)</span>: <span class="math inline">\(\int_0^2f=F(2)-F(0)=4\)</span> y <span class="math inline">\(\int_2^4f=F(4)-F(2)=0-4=-4\)</span>.</p>
+<p><span class="math display">\[A=|4|+|-4|=\mathbf{8\ u^2}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2024-ord-res-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria · Reserva 2024 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Ordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Calcula <span class="math inline">\(\displaystyle\int\dfrac{e^{3x}-1}{e^{x}-3}\,dx\)</span>. (Sugerencia: efectúa el cambio de variable <span class="math inline">\(t=e^{x}\)</span>.)</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Con <span class="math inline">\(t=e^x\)</span>, <span class="math inline">\(dx=\dfrac{dt}{t}\)</span>:</p>
+<p><span class="math display">\[\int\frac{t^3-1}{t(t-3)}\,dt=\int\left(t+3+\frac{9t-1}{t(t-3)}\right)dt,\qquad\frac{9t-1}{t(t-3)}=\frac{1/3}{t}+\frac{26/3}{t-3}.\]</span></p>
+<p><span class="math display">\[\mathbf{\int\frac{e^{3x}-1}{e^x-3}\,dx=\frac{e^{2x}}2+3e^x+\frac x3+\frac{26}3\ln|e^x-3|+C}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2024">Ordinaria · Suplente 2024</h3>
+<div id="ebau-2024-ord-sup-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria · Suplente 2024 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Halla la función <span class="math inline">\(f:(2,+\infty)\to\mathbb{R}\)</span> que pasa por el punto <span class="math inline">\((3,-4\ln 5)\)</span> y verifica <span class="math inline">\(f'(x)=\dfrac{3x^{2}+4x+12}{x^{2}-4}\)</span>, donde <span class="math inline">\(\ln\)</span> denota la función logaritmo neperiano.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\frac{3x^2+4x+12}{x^2-4}=3+\frac{4x+24}{(x-2)(x+2)}=3+\frac{8}{x-2}-\frac{4}{x+2}.\]</span></p>
+<p><span class="math inline">\(f(x)=3x+8\ln(x-2)-4\ln(x+2)+C\)</span>. Condición <span class="math inline">\(f(3)=-4\ln5\)</span>: <span class="math inline">\(9+0-4\ln5+C=-4\ln5\Rightarrow C=-9\)</span>.</p>
+<p><span class="math display">\[\mathbf{f(x)=3x-9+8\ln(x-2)-4\ln(x+2)}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2024-ord-sup-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria · Suplente 2024 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Sea <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> la función definida por <span class="math inline">\(f(x)=(x^{2}-3x+5)e^{x}\)</span>. Halla una primitiva de <span class="math inline">\(f\)</span> cuya gráfica pase por el punto <span class="math inline">\((0,5)\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Por partes (o ajustando <span class="math inline">\(F=(x^2+px+q)e^x\)</span>): <span class="math inline">\(F'=\big(x^2+(p+2)x+(p+q)\big)e^x\)</span>, que debe ser <span class="math inline">\((x^2-3x+5)e^x\)</span>: <span class="math inline">\(p=-5\)</span>, <span class="math inline">\(q=10\)</span>.</p>
+<p><span class="math inline">\(F(x)=(x^2-5x+10)e^x+C\)</span> y <span class="math inline">\(F(0)=10+C=5\Rightarrow C=-5\)</span>.</p>
+<p><span class="math display">\[\mathbf{F(x)=(x^2-5x+10)e^x-5}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2024" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2024">Extraordinaria 2024</h3>
+<div id="ebau-2024-ext-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Extraordinaria 2024 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2024/10/2oBachCC_EBAU_Andalucia_2024-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Sean <span class="math inline">\(f,g:\mathbb{R}\to\mathbb{R}\)</span> las funciones definidas por <span class="math inline">\(f(x)=-x^{2}+7\)</span> y <span class="math inline">\(g(x)=|x^{2}-1|\)</span>.</p>
+<ol type="a">
+<li><p>Halla los puntos de intersección de las gráficas de <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span>. Realiza un esbozo del recinto acotado y limitado por dichas gráficas. <em>(1 punto)</em></p></li>
+<li><p>Calcula el área de dicho recinto. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Si <span class="math inline">\(|x|\ge1\)</span>: <span class="math inline">\(7-x^2=x^2-1\Rightarrow x=\pm2\)</span>. Si <span class="math inline">\(|x|&lt;1\)</span>: <span class="math inline">\(7-x^2=1-x^2\)</span> es imposible.</p>
+<p><strong>Puntos de corte: <span class="math inline">\((-2,3)\)</span> y <span class="math inline">\((2,3)\)</span>.</strong> Esbozo: parábola invertida de vértice <span class="math inline">\((0,7)\)</span> por encima de la gráfica de <span class="math inline">\(g\)</span> (una “W” con mínimos <span class="math inline">\(0\)</span> en <span class="math inline">\(x=\pm1\)</span>, máximo local <span class="math inline">\(1\)</span> en <span class="math inline">\(x=0\)</span> y ramas hacia arriba), entre <span class="math inline">\(x=-2\)</span> y <span class="math inline">\(x=2\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2024-ext-e3.svg" class="img-fluid figure-img" style="width:75.0%" alt="Recinto entre f(x)=−x²+7 y g(x)=|x²−1|, con cortes en (±2,3)"></p>
+<figcaption>Recinto entre f(x)=−x²+7 y g(x)=|x²−1|, con cortes en (±2,3)</figcaption>
+</figure>
+</div>
+<p><strong>b)</strong> Por simetría y con <span class="math inline">\(f\ge g\)</span> en <span class="math inline">\([-2,2]\)</span>:</p>
+<p><span class="math display">\[A=2\left[\int_0^2(7-x^2)\,dx-\int_0^1(1-x^2)\,dx-\int_1^2(x^2-1)\,dx\right]=2\left[\frac{34}{3}-\frac23-\frac43\right]=\mathbf{\frac{56}{3}\ u^2}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2024-ext-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Extraordinaria 2024 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2024/10/2oBachCC_EBAU_Andalucia_2024-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Halla <span class="math inline">\(\displaystyle\int_{0}^{\pi/2}e^{x}\cos(x)\,dx\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Por partes dos veces (o la fórmula de <span class="math inline">\(\int e^x\cos x\)</span>): <span class="math inline">\(\int e^x\cos x\,dx=\dfrac{e^x(\operatorname{sen}x+\cos x)}{2}\)</span>.</p>
+<p><span class="math display">\[\int_0^{\pi/2}e^x\cos x\,dx=\frac{e^{\pi/2}(1+0)-(0+1)}{2}=\mathbf{\frac{e^{\pi/2}-1}{2}}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-reserva-2024" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-reserva-2024">Extraordinaria · Reserva 2024</h3>
+<div id="ebau-2024-ext-res-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Extraordinaria · Reserva 2024 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Extraordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función</p>
+<p><span class="math display">\[f(x)=\begin{cases}1-e^{x} &amp; \text{si } x\le 0\\ x\cos(x) &amp; \text{si } x&gt;0\end{cases}\]</span></p>
+<p>Calcula <span class="math inline">\(\displaystyle\int_{-\pi}^{\pi}f(x)\,dx\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Se parte en el <span class="math inline">\(0\)</span>:</p>
+<p><span class="math display">\[\int_{-\pi}^{0}(1-e^x)\,dx=\Big[x-e^x\Big]_{-\pi}^{0}=-1-(-\pi-e^{-\pi})=\pi-1+e^{-\pi}.\]</span></p>
+<p><span class="math inline">\(\int_0^{\pi}x\cos x\,dx\)</span> por partes (<span class="math inline">\(u=x\)</span>, <span class="math inline">\(dv=\cos x\,dx\)</span>): <span class="math inline">\(\big[x\operatorname{sen}x+\cos x\big]_0^{\pi}=-1-1=-2\)</span>.</p>
+<p><span class="math display">\[\int_{-\pi}^{\pi}f(x)\,dx=\mathbf{\pi-3+e^{-\pi}}\approx 0{,}185.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2024-ext-res-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Extraordinaria · Reserva 2024 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Extraordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Calcula una primitiva de la función <span class="math inline">\(f:(1,+\infty)\to\mathbb{R}\)</span> definida por <span class="math inline">\(f(x)=(x-1)^{2}\ln\dfrac{\sqrt{x-1}}{2}\)</span> cuya gráfica pase por el punto <span class="math inline">\(\left(5,-\dfrac72\right)\)</span>, donde <span class="math inline">\(\ln\)</span> denota la función logaritmo neperiano. (Sugerencia: efectúa el cambio de variable <span class="math inline">\(x-1=t^{2}\)</span>).</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Con <span class="math inline">\(x-1=t^2\)</span>, <span class="math inline">\(dx=2t\,dt\)</span>, <span class="math inline">\(\ln\dfrac{\sqrt{x-1}}{2}=\ln\dfrac t2\)</span>:</p>
+<p><span class="math display">\[\int (x-1)^2\ln\frac{\sqrt{x-1}}2\,dx=2\int t^5\ln\frac t2\,dt=\frac{t^6}{3}\ln\frac t2-\int\frac{t^5}{3}\,dt=\frac{t^6}{3}\ln\frac t2-\frac{t^6}{18}+C.\]</span></p>
+<p>Deshaciendo el cambio: <span class="math inline">\(F(x)=\dfrac{(x-1)^3}{3}\ln\dfrac{\sqrt{x-1}}2-\dfrac{(x-1)^3}{18}+C\)</span>.</p>
+<p><span class="math inline">\(F(5)=\frac{64}{3}\ln1-\frac{64}{18}+C=-\frac{32}{9}+C=-\frac72\Rightarrow C=\frac1{18}\)</span>.</p>
+<p><span class="math display">\[\mathbf{F(x)=\frac{(x-1)^3}{3}\ln\frac{\sqrt{x-1}}2-\frac{(x-1)^3}{18}+\frac1{18}}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2024" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2024">Extraordinaria · Suplente 2024</h3>
+<div id="ebau-2024-ext-sup-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Extraordinaria · Suplente 2024 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Extraordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> definida por</p>
+<p><span class="math display">\[f(x)=\int_{0}^{x}\cos(t)\operatorname{sen}^{2}(t)\,dt.\]</span></p>
+<p>Determina las ecuaciones de la recta tangente y de la recta normal a la gráfica de <span class="math inline">\(f\)</span> en el punto de abscisa <span class="math inline">\(x=\dfrac{\pi}{4}\)</span>.</p>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/07-derivadas.html">Derivadas</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(f'(x)=\cos x\operatorname{sen}^2x\)</span> (teorema fundamental del cálculo) y <span class="math inline">\(f(x)=\dfrac{\operatorname{sen}^3x}{3}\)</span>.</p>
+<p>En <span class="math inline">\(x=\pi/4\)</span>: <span class="math inline">\(f\!\left(\frac\pi4\right)=\dfrac{(\sqrt2/2)^3}{3}=\dfrac{\sqrt2}{12}\)</span> y <span class="math inline">\(f'\!\left(\frac\pi4\right)=\dfrac{\sqrt2}2\cdot\dfrac12=\dfrac{\sqrt2}{4}\)</span>.</p>
+<p><strong>Tangente:</strong> <span class="math inline">\(y=\dfrac{\sqrt2}{12}+\dfrac{\sqrt2}{4}\left(x-\dfrac\pi4\right)\)</span>.</p>
+<p><strong>Normal:</strong> <span class="math inline">\(y=\dfrac{\sqrt2}{12}-2\sqrt2\left(x-\dfrac\pi4\right)\)</span> (pendiente <span class="math inline">\(-1/f'=-4/\sqrt2=-2\sqrt2\)</span>).</p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2024-ext-sup-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Extraordinaria · Suplente 2024 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Extraordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Calcula <span class="math inline">\(\displaystyle\int\dfrac{dx}{\sqrt{4+4e^{x}}}\)</span>. (Sugerencia: efectúa el cambio de variable <span class="math inline">\(t=\sqrt{1+e^{x}}\)</span>).</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Con <span class="math inline">\(t=\sqrt{1+e^x}\)</span>: <span class="math inline">\(e^x=t^2-1\)</span>, <span class="math inline">\(dx=\dfrac{2t}{t^2-1}\,dt\)</span> y <span class="math inline">\(\sqrt{4+4e^x}=2t\)</span>.</p>
+<p><span class="math display">\[\int\frac{dx}{\sqrt{4+4e^x}}=\int\frac{1}{2t}\cdot\frac{2t}{t^2-1}\,dt=\int\frac{dt}{t^2-1}=\frac12\ln\left|\frac{t-1}{t+1}\right|+C.\]</span></p>
+<p><span class="math display">\[\mathbf{\frac12\ln\frac{\sqrt{1+e^x}-1}{\sqrt{1+e^x}+1}+C}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-3">2023</h2>
+<section id="ordinaria-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2023">Ordinaria 2023</h3>
+<div id="ebau-2023-ord-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span>, definida por <span class="math inline">\(f(x)=x\,|x-1|\)</span>. Calcula el área del recinto limitado por la gráfica de dicha función y su recta tangente en el punto de abscisa <span class="math inline">\(x=0\)</span>.</p>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/07-derivadas.html">Derivadas</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(f(x)=x(1-x)\)</span> para <span class="math inline">\(x\le1\)</span> y <span class="math inline">\(f(x)=x(x-1)\)</span> para <span class="math inline">\(x&gt;1\)</span>. En <span class="math inline">\(x=0\)</span>: <span class="math inline">\(f(0)=0\)</span>, <span class="math inline">\(f'(0)=1\)</span>, tangente <span class="math inline">\(y=x\)</span>.</p>
+<p>Cortes con <span class="math inline">\(f\)</span>: para <span class="math inline">\(x\le1\)</span>, <span class="math inline">\(x-x^{2}=x\Rightarrow x=0\)</span>; para <span class="math inline">\(x&gt;1\)</span>, <span class="math inline">\(x^{2}-x=x\Rightarrow x=2\)</span>. La tangente queda por encima de <span class="math inline">\(f\)</span> en <span class="math inline">\([0,2]\)</span>:</p>
+<p><span class="math display">\[A=\int_0^1x^{2}dx+\int_1^2(2x-x^{2})dx=\dfrac13+\dfrac23.\]</span></p>
+<p><strong>Área <span class="math inline">\(=1\ \text{u}^2\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-2023">Ordinaria · Reserva 2023</h3>
+<div id="ebau-2023-ord-res-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria · Reserva 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria-Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Calcula <span class="math inline">\(\displaystyle\int_{6}^{12}\dfrac{1}{9-x^{2}}\,dx\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\dfrac1{9-x^{2}}=\dfrac16\left(\dfrac1{3-x}+\dfrac1{3+x}\right)\)</span>, cuya primitiva es <span class="math inline">\(\dfrac16\ln\left|\dfrac{3+x}{3-x}\right|\)</span>.</p>
+<p><span class="math display">\[\int_6^{12}\dfrac{dx}{9-x^{2}}=\dfrac16\left(\ln\dfrac{15}{9}-\ln\dfrac93\right)=\dfrac16\ln\dfrac{5/3}{3}.\]</span></p>
+<p><strong>Resultado: <span class="math inline">\(\dfrac16\ln\dfrac59\approx-0{,}098\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2023-ord-res-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria · Reserva 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria-Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> definida por <span class="math inline">\(f(x)=x^{2}+1\)</span>.</p>
+<ol type="a">
+<li><p>Determina el punto de la gráfica de <span class="math inline">\(f\)</span> en el que la recta tangente es <span class="math inline">\(y=4x-3\)</span>. <em>(0,75 puntos)</em></p></li>
+<li><p>Haz un esbozo del recinto limitado por la gráfica de <span class="math inline">\(f\)</span>, la recta <span class="math inline">\(y=4x-3\)</span> y el eje de ordenadas. Calcula el área del recinto indicado. <em>(1,75 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/07-derivadas.html">Derivadas</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(f'(x)=2x=4\Rightarrow x=2\)</span>, <span class="math inline">\(f(2)=5\)</span> (y la recta da <span class="math inline">\(4\cdot2-3=5\)</span>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2023-ord-res-e4.svg" class="img-fluid figure-img" style="width:75.0%" alt="Recinto entre f(x)=x²+1, su tangente y=4x−3 en (2,5) y el eje de ordenadas"></p>
+<figcaption>Recinto entre f(x)=x²+1, su tangente y=4x−3 en (2,5) y el eje de ordenadas</figcaption>
+</figure>
+</div>
+<p><strong>Punto <span class="math inline">\((2,5)\)</span>.</strong></p>
+<p><strong>b)</strong> La parábola <span class="math inline">\(y=x^{2}+1\)</span> queda por encima de la recta, que es tangente en <span class="math inline">\(x=2\)</span>. El recinto está entre <span class="math inline">\(x=0\)</span> (eje de ordenadas) y <span class="math inline">\(x=2\)</span>:</p>
+<p><span class="math display">\[A=\int_0^2\left[(x^{2}+1)-(4x-3)\right]dx=\int_0^2(x-2)^{2}dx=\left[\dfrac{(x-2)^{3}}3\right]_0^2=\dfrac83.\]</span></p>
+<p><strong>Área <span class="math inline">\(=\dfrac83\ \text{u}^2\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2023">Ordinaria · Suplente 2023</h3>
+<div id="ebau-2023-ord-sup-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria · Suplente 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria-Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Determina la función <span class="math inline">\(f:(0,+\infty)\to\mathbb{R}\)</span>, sabiendo que es dos veces derivable, su gráfica pasa por el punto <span class="math inline">\((1,0)\)</span>, <span class="math inline">\(f'(e)=e\)</span> y <span class="math inline">\(f''(x)=2\ln(x)+1\)</span>, para todo <span class="math inline">\(x&gt;0\)</span> (<span class="math inline">\(\ln\)</span> denota la función logaritmo neperiano).</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(f'(x)=\int(2\ln x+1)dx=2x\ln x-x+C\)</span>. <span class="math inline">\(f'(e)=2e-e+C=e\Rightarrow C=0\)</span>.</p>
+<p><span class="math inline">\(f(x)=\int(2x\ln x-x)dx=x^{2}\ln x-\dfrac{x^{2}}2-\dfrac{x^{2}}2+K=x^{2}\ln x-x^{2}+K\)</span>.</p>
+<p><span class="math inline">\(f(1)=-1+K=0\Rightarrow K=1\)</span>.</p>
+<p><strong><span class="math inline">\(f(x)=x^{2}\ln x-x^{2}+1\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2023-ord-sup-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria · Suplente 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria-Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las funciones <span class="math inline">\(f,g:\mathbb{R}\to\mathbb{R}\)</span> definidas por <span class="math inline">\(f(x)=|x^{2}-1|\)</span> y <span class="math inline">\(g(x)=x+5\)</span>.</p>
+<ol type="a">
+<li><p>Calcula los puntos de corte de las gráficas de ambas funciones y esboza el recinto que determinan. <em>(1,25 puntos)</em></p></li>
+<li><p>Determina el área del recinto anterior. <em>(1,25 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Si <span class="math inline">\(|x|\ge1\)</span>: <span class="math inline">\(x^{2}-1=x+5\Rightarrow x=-2,\ 3\)</span>. Si <span class="math inline">\(|x|&lt;1\)</span>: <span class="math inline">\(1-x^{2}=x+5\)</span> no tiene solución real.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2023-ord-sup-e4.svg" class="img-fluid figure-img" style="width:75.0%" alt="Recinto entre f(x)=|x²−1| y g(x)=x+5, con cortes en (−2,3) y (3,8)"></p>
+<figcaption>Recinto entre f(x)=|x²−1| y g(x)=x+5, con cortes en (−2,3) y (3,8)</figcaption>
+</figure>
+</div>
+<p><strong>Puntos de corte: <span class="math inline">\((-2,3)\)</span> y <span class="math inline">\((3,8)\)</span>.</strong> El recinto está limitado por arriba por la recta <span class="math inline">\(y=x+5\)</span> y por abajo por <span class="math inline">\(|x^{2}-1|\)</span> (dos arcos de parábola hacia arriba y un arco invertido entre <span class="math inline">\(-1\)</span> y <span class="math inline">\(1\)</span>).</p>
+<p><strong>b)</strong> <span class="math display">\[A=\int_{-2}^{-1}(x+5-x^{2}+1)dx+\int_{-1}^{1}(x+5-1+x^{2})dx+\int_{1}^{3}(x+5-x^{2}+1)dx=\dfrac{13}6+\dfrac{26}3+\dfrac{22}3.\]</span></p>
+<p><strong>Área <span class="math inline">\(=\dfrac{109}6\ \text{u}^2\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2023" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2023">Extraordinaria 2023</h3>
+<div id="ebau-2023-ext-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Extraordinaria 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Calcula <span class="math inline">\(a\)</span> con <span class="math inline">\(0&lt;a&lt;1\)</span>, tal que <span class="math inline">\(\displaystyle\int_{a}^{1}\dfrac{\ln(x)}{x}\,dx+2=0\)</span> (<span class="math inline">\(\ln\)</span> denota la función logaritmo neperiano).</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\int_a^1\dfrac{\ln x}{x}dx=\left[\dfrac{\ln^{2}x}{2}\right]_a^1=-\dfrac{\ln^{2}a}{2}.\]</span></p>
+<p><span class="math inline">\(-\dfrac{\ln^{2}a}{2}+2=0\Rightarrow\ln^{2}a=4\Rightarrow\ln a=\pm2\)</span>. Con <span class="math inline">\(0&lt;a&lt;1\)</span>, <span class="math inline">\(\ln a&lt;0\)</span>:</p>
+<p><strong><span class="math inline">\(a=e^{-2}\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2023-ext-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Extraordinaria 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las funciones <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> y <span class="math inline">\(g:\mathbb{R}-\{0\}\to\mathbb{R}\)</span> definidas por <span class="math inline">\(f(x)=5-x^{2}\)</span> y <span class="math inline">\(g(x)=\dfrac{4}{x^{2}}\)</span>.</p>
+<ol type="a">
+<li><p>Esboza las gráficas de las dos funciones y calcula los puntos de corte entre ellas. <em>(1,25 puntos)</em></p></li>
+<li><p>Calcula la suma de las áreas de los recintos limitados por las gráficas de <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(f\)</span> es una parábola de vértice <span class="math inline">\((0,5)\)</span> hacia abajo; <span class="math inline">\(g\)</span> es positiva, par, con asíntota vertical <span class="math inline">\(x=0\)</span> y horizontal <span class="math inline">\(y=0\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2023-ext-e4.svg" class="img-fluid figure-img" style="width:75.0%" alt="Gráficas de f(x)=5−x² y g(x)=4/x², que se cortan en (±1,4) y (±2,1)"></p>
+<figcaption>Gráficas de f(x)=5−x² y g(x)=4/x², que se cortan en (±1,4) y (±2,1)</figcaption>
+</figure>
+</div>
+<p><span class="math inline">\(5-x^{2}=\dfrac4{x^{2}}\Rightarrow x^{4}-5x^{2}+4=0\Rightarrow x^{2}=1,\,4\)</span>.</p>
+<p><strong>Puntos de corte: <span class="math inline">\((\pm1,4)\)</span> y <span class="math inline">\((\pm2,1)\)</span>.</strong></p>
+<p><strong>b)</strong> Los recintos acotados son los de <span class="math inline">\(1\le|x|\le2\)</span> (entre <span class="math inline">\(-1\)</span> y <span class="math inline">\(1\)</span>, <span class="math inline">\(g\)</span> no está acotada). Por simetría:</p>
+<p><span class="math display">\[2\int_1^2\left(5-x^{2}-\dfrac4{x^{2}}\right)dx=2\left[5x-\dfrac{x^{3}}3+\dfrac4x\right]_1^2=2\cdot\dfrac23.\]</span></p>
+<p><strong>Suma de áreas <span class="math inline">\(=\dfrac43\ \text{u}^2\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-reserva-2023" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-reserva-2023">Extraordinaria · Reserva 2023</h3>
+<div id="ebau-2023-ext-res-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Extraordinaria · Reserva 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Sabiendo que <span class="math inline">\(F:\mathbb{R}\to\mathbb{R}\)</span> definida por <span class="math inline">\(F(x)=e^{x^{2}}\)</span> es una primitiva de <span class="math inline">\(f\)</span>.</p>
+<ol type="a">
+<li><p>Comprueba que <span class="math inline">\(f\)</span> es creciente. <em>(1,25 puntos)</em></p></li>
+<li><p>Calcula el área del recinto limitado por la gráfica de la función <span class="math inline">\(f\)</span>, el eje de abscisas y la recta <span class="math inline">\(x=1\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/08-aplicaciones-derivada.html">Aplicaciones de la derivada</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Como <span class="math inline">\(F\)</span> es primitiva de <span class="math inline">\(f\)</span>, <span class="math inline">\(f(x)=F'(x)=2x\,e^{x^{2}}\)</span>.</p>
+<p><strong>a)</strong> <span class="math inline">\(f'(x)=(2+4x^{2})e^{x^{2}}&gt;0\)</span> para todo <span class="math inline">\(x\)</span>, luego <strong><span class="math inline">\(f\)</span> es creciente</strong>.</p>
+<p><strong>b)</strong> <span class="math inline">\(f(0)=0\)</span> y <span class="math inline">\(f\ge 0\)</span> en <span class="math inline">\([0,1]\)</span>, así que el recinto está entre <span class="math inline">\(x=0\)</span> y <span class="math inline">\(x=1\)</span>:</p>
+<p><span class="math display">\[\int_0^1 2x\,e^{x^{2}}dx=\left[e^{x^{2}}\right]_0^1=e-1.\]</span></p>
+<p><strong>Área <span class="math inline">\(=e-1\approx 1{,}72\ \text{u}^2\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2023-ext-res-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Extraordinaria · Reserva 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(f:[0,+\infty)\to\mathbb{R}\)</span> definida por <span class="math inline">\(f(x)=\cos(\sqrt{x})\)</span>. Calcula, si es posible, una primitiva de <span class="math inline">\(f\)</span> cuya gráfica pase por el punto <span class="math inline">\((0,5)\)</span>. Sugerencia: haz el cambio <span class="math inline">\(t=\sqrt{x}\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Con <span class="math inline">\(t=\sqrt{x}\)</span>, <span class="math inline">\(x=t^{2}\)</span>, <span class="math inline">\(dx=2t\,dt\)</span>: <span class="math inline">\(\int\cos\sqrt{x}\,dx=\int 2t\cos t\,dt\)</span>.</p>
+<p>Por partes: <span class="math inline">\(=2t\operatorname{sen}t+2\cos t+C=2\sqrt{x}\operatorname{sen}\sqrt{x}+2\cos\sqrt{x}+C\)</span>.</p>
+<p>Condición <span class="math inline">\(F(0)=5\)</span>: <span class="math inline">\(2+C=5\Rightarrow C=3\)</span>.</p>
+<p><strong><span class="math inline">\(F(x)=2\sqrt{x}\operatorname{sen}\sqrt{x}+2\cos\sqrt{x}+3\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2023" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2023">Extraordinaria · Suplente 2023</h3>
+<div id="ebau-2023-ext-sup-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Extraordinaria · Suplente 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Calcula una primitiva de la función <span class="math inline">\(f:[0,+\infty)\to\mathbb{R}\)</span> definida por <span class="math inline">\(f(x)=\operatorname{arctg}(\sqrt{x})\)</span> cuya gráfica pase por el punto <span class="math inline">\((0,1)\)</span> (<span class="math inline">\(\operatorname{arctg}\)</span> denota la función arco tangente). Sugerencia: efectúa el cambio <span class="math inline">\(x=t^{2}\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Con <span class="math inline">\(x=t^{2}\)</span>, <span class="math inline">\(dx=2t\,dt\)</span>: <span class="math inline">\(\int\operatorname{arctg}\sqrt{x}\,dx=\int2t\operatorname{arctg}t\,dt\)</span>.</p>
+<p>Por partes: <span class="math inline">\(=t^{2}\operatorname{arctg}t-\int\dfrac{t^{2}}{1+t^{2}}dt=t^{2}\operatorname{arctg}t-t+\operatorname{arctg}t+C\)</span>.</p>
+<p>Deshaciendo: <span class="math inline">\(F(x)=(x+1)\operatorname{arctg}\sqrt{x}-\sqrt{x}+C\)</span>. Como <span class="math inline">\(F(0)=C=1\)</span>:</p>
+<p><strong><span class="math inline">\(F(x)=(x+1)\operatorname{arctg}\sqrt{x}-\sqrt{x}+1\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2023-ext-sup-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Extraordinaria · Suplente 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(f:(-1,+\infty)\to\mathbb{R}\)</span>, definida por <span class="math inline">\(f(x)=\ln(x+1)\)</span>, donde <span class="math inline">\(\ln\)</span> denota el logaritmo neperiano. Calcula el área del recinto limitado por la gráfica de <span class="math inline">\(f\)</span>, el eje de abscisas y la recta <span class="math inline">\(x=e-1\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\ln(x+1)=0\iff x=0\)</span>, y <span class="math inline">\(f\ge0\)</span> en <span class="math inline">\([0,e-1]\)</span>. Una primitiva es <span class="math inline">\((x+1)\ln(x+1)-x\)</span> (por partes).</p>
+<p><span class="math display">\[A=\int_0^{e-1}\ln(x+1)\,dx=\Big[(x+1)\ln(x+1)-x\Big]_0^{e-1}=e-(e-1)-0.\]</span></p>
+<p><strong>Área <span class="math inline">\(=1\ \text{u}^2\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-4" class="level2">
+<h2 class="anchored" data-anchor-id="section-4">2022</h2>
+<section id="ordinaria-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2022">Ordinaria 2022</h3>
+<div id="ebau-2022-ord-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Sea <span class="math inline">\(f\)</span> la función definida por <span class="math inline">\(f(x)=\begin{cases}2x+4 &amp; \text{si } x&lt;0\\(x-2)^{2} &amp; \text{si } x\ge 0\end{cases}\)</span></p>
+<ol type="a">
+<li><p>Calcula los puntos de corte de la gráfica de <span class="math inline">\(f\)</span> con el eje de abscisas y esboza la gráfica de la función. <em>(1 punto)</em></p></li>
+<li><p>Halla el área del recinto limitado por la gráfica de <span class="math inline">\(f\)</span> y por el eje de abscisas. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(2x+4=0\Rightarrow x=-2\)</span>; <span class="math inline">\((x-2)^2=0\Rightarrow x=2\)</span> (raíz doble, tangente al eje).</p>
+<p><strong>Cortes con el eje: <span class="math inline">\((-2,0)\)</span> y <span class="math inline">\((2,0)\)</span>.</strong> La gráfica: recta de pendiente 2 desde <span class="math inline">\((-2,0)\)</span> hasta <span class="math inline">\((0,4)\)</span> y parábola de vértice <span class="math inline">\((2,0)\)</span> desde <span class="math inline">\((0,4)\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2022-ord-e3.svg" class="img-fluid figure-img" style="width:75.0%" alt="Gráfica de la función definida a trozos: recta 2x+4 hasta x=0 y parábola (x−2)² desde x=0; cortes en x=−2 y x=2"></p>
+<figcaption>Gráfica de la función definida a trozos: recta 2x+4 hasta x=0 y parábola (x−2)² desde x=0; cortes en x=−2 y x=2</figcaption>
+</figure>
+</div>
+<p><strong>b)</strong> <span class="math inline">\(A=\displaystyle\int_{-2}^0(2x+4)\,dx+\int_0^2(x-2)^2\,dx=4+\tfrac83\)</span>.</p>
+<p><strong><span class="math inline">\(A=\dfrac{20}{3}\)</span> u<span class="math inline">\(^2\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2022-ord-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(f\)</span> definida por <span class="math inline">\(f(x)=\dfrac{x^{3}}{x^{2}-2x+1}\)</span> para <span class="math inline">\(x\neq 1\)</span>. Halla una primitiva de <span class="math inline">\(f\)</span> que pase por el punto <span class="math inline">\((2,6)\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Se divide: <span class="math inline">\(\dfrac{x^3}{(x-1)^2}=x+2+\dfrac{3x-2}{(x-1)^2}=x+2+\dfrac3{x-1}+\dfrac1{(x-1)^2}\)</span>. Las primitivas son <span class="math display">\[F(x)=\frac{x^2}2+2x+3\ln|x-1|-\frac1{x-1}+C.\]</span> <span class="math inline">\(F(2)=2+4+0-1+C=6\Rightarrow C=1\)</span>.</p>
+<p><strong><span class="math inline">\(F(x)=\dfrac{x^2}{2}+2x+3\ln|x-1|-\dfrac{1}{x-1}+1\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-2022">Ordinaria · Reserva 2022</h3>
+<div id="ebau-2022-ord-res-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria · Reserva 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> definida por <span class="math inline">\(f(x)=e^{x}\operatorname{sen}(2x)\)</span>. Halla la primitiva de <span class="math inline">\(f\)</span> cuya gráfica pase por el punto <span class="math inline">\((0,0)\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Integrando por partes dos veces, <span class="math inline">\(\displaystyle\int e^x\operatorname{sen}(2x)\,dx=\frac{e^x(\operatorname{sen}2x-2\cos2x)}{5}+C\)</span>. La condición <span class="math inline">\(F(0)=0\)</span> da <span class="math inline">\(\tfrac{-2}{5}+C=0\)</span>.</p>
+<p><strong><span class="math inline">\(F(x)=\dfrac{e^x\left(\operatorname{sen}(2x)-2\cos(2x)\right)}{5}+\dfrac25\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2022-ord-res-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria · Reserva 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las funciones <span class="math inline">\(f,g:\mathbb{R}\to\mathbb{R}\)</span> definidas por <span class="math inline">\(f(x)=1-x^{2}\)</span> y <span class="math inline">\(g(x)=2x^{2}\)</span>.</p>
+<ol type="a">
+<li><p>Calcula los puntos de corte de las gráficas de <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span>. Esboza el recinto que delimitan. <em>(1,25 puntos)</em></p></li>
+<li><p>Determina el área del recinto anterior. <em>(1,25 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(1-x^2=2x^2\Rightarrow x^2=\tfrac13\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2022-ord-res-e4.svg" class="img-fluid figure-img" style="width:75.0%" alt="Recinto entre f(x)=1−x² y g(x)=2x², con cortes en x=±1/√3"></p>
+<figcaption>Recinto entre f(x)=1−x² y g(x)=2x², con cortes en x=±1/√3</figcaption>
+</figure>
+</div>
+<p><strong>Puntos de corte: <span class="math inline">\(\left(\pm\tfrac{\sqrt3}{3},\tfrac23\right)\)</span>.</strong> El recinto está entre la parábola <span class="math inline">\(f\)</span> (hacia abajo, vértice <span class="math inline">\((0,1)\)</span>) y la parábola <span class="math inline">\(g\)</span> (hacia arriba, vértice <span class="math inline">\((0,0)\)</span>): <span class="math inline">\(f\ge g\)</span> para <span class="math inline">\(|x|\le\tfrac{\sqrt3}{3}\)</span>.</p>
+<p><strong>b)</strong> <span class="math inline">\(A=\displaystyle\int_{-\sqrt3/3}^{\sqrt3/3}(1-3x^2)\,dx=2\left[x-x^3\right]_0^{\sqrt3/3}=2\left(\tfrac{\sqrt3}{3}-\tfrac{\sqrt3}{9}\right)\)</span>.</p>
+<p><strong><span class="math inline">\(A=\dfrac{4\sqrt3}{9}\)</span> u<span class="math inline">\(^2\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2022">Ordinaria · Suplente 2022</h3>
+<div id="ebau-2022-ord-sup-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria · Suplente 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(F:[0,2\pi]\to\mathbb{R}\)</span> definida por <span class="math inline">\(F(x)=\displaystyle\int_{0}^{x}2t\cos(t)\,dt\)</span>.</p>
+<ol type="a">
+<li><p>Determina los intervalos de crecimiento y de decrecimiento de <span class="math inline">\(F\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Halla la ecuación de la recta tangente a la gráfica de <span class="math inline">\(F\)</span> en el punto de abscisa <span class="math inline">\(x=\pi\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/07-derivadas.html">Derivadas</a>, <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/08-aplicaciones-derivada.html">Aplicaciones de la derivada</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Por el teorema fundamental del cálculo, <span class="math inline">\(F'(x)=2x\cos x\)</span> en <span class="math inline">\([0,2\pi]\)</span>.</p>
+<p><strong>a)</strong> En <span class="math inline">\((0,2\pi)\)</span> el signo de <span class="math inline">\(F'\)</span> es el de <span class="math inline">\(\cos x\)</span>: positivo en <span class="math inline">\(\left(0,\tfrac\pi2\right)\)</span> y <span class="math inline">\(\left(\tfrac{3\pi}{2},2\pi\right)\)</span>; negativo en <span class="math inline">\(\left(\tfrac\pi2,\tfrac{3\pi}2\right)\)</span>.</p>
+<p><strong><span class="math inline">\(F\)</span> crece en <span class="math inline">\(\left(0,\tfrac\pi2\right)\cup\left(\tfrac{3\pi}2,2\pi\right)\)</span> y decrece en <span class="math inline">\(\left(\tfrac\pi2,\tfrac{3\pi}2\right)\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(F(\pi)=\left[2t\operatorname{sen}t+2\cos t\right]_0^\pi=-2-2=-4\)</span> (por partes) y <span class="math inline">\(F'(\pi)=-2\pi\)</span>.</p>
+<p><strong>Tangente: <span class="math inline">\(y=-4-2\pi(x-\pi)\)</span>, es decir, <span class="math inline">\(y=-2\pi x+2\pi^2-4\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2022-ord-sup-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria · Suplente 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Calcula <span class="math inline">\(\displaystyle\int_{0}^{1}x\operatorname{arctg}(x)\,dx\)</span> (donde <span class="math inline">\(\operatorname{arctg}\)</span> denota la función arcotangente).</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Por partes, <span class="math inline">\(u=\operatorname{arctg}x\)</span>, <span class="math inline">\(dv=x\,dx\)</span>: <span class="math display">\[\int_0^1x\operatorname{arctg}x\,dx=\left[\tfrac{x^2}{2}\operatorname{arctg}x\right]_0^1-\frac12\int_0^1\frac{x^2}{1+x^2}\,dx=\frac\pi8-\frac12\big[x-\operatorname{arctg}x\big]_0^1.\]</span></p>
+<p><strong><span class="math inline">\(\dfrac\pi4-\dfrac12\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2022" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2022">Extraordinaria 2022</h3>
+<div id="ebau-2022-ext-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Extraordinaria 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Calcula <span class="math inline">\(\displaystyle\int_{3}^{8}\dfrac{1}{\sqrt{1+x}-1}\,dx\)</span>. (Sugerencia: efectúa el cambio de variable <span class="math inline">\(t=\sqrt{1+x}-1\)</span>.)</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Con <span class="math inline">\(t=\sqrt{1+x}-1\)</span>: <span class="math inline">\(x=(t+1)^2-1\)</span>, <span class="math inline">\(dx=2(t+1)\,dt\)</span>; los límites pasan a <span class="math inline">\(t=1\)</span> (<span class="math inline">\(x=3\)</span>) y <span class="math inline">\(t=2\)</span> (<span class="math inline">\(x=8\)</span>). <span class="math display">\[\int_1^2\frac{2(t+1)}{t}\,dt=2\int_1^2\left(1+\frac1t\right)dt=2\big[t+\ln t\big]_1^2=2(1+\ln2).\]</span></p>
+<p><strong><span class="math inline">\(2+2\ln2\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2022-ext-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Extraordinaria 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las funciones <span class="math inline">\(f,g:\mathbb{R}\to\mathbb{R}\)</span> definidas por <span class="math inline">\(f(x)=x^{3}+2\)</span> y <span class="math inline">\(g(x)=-x^{2}+2x+2\)</span>.</p>
+<ol type="a">
+<li><p>Calcula los puntos de corte de las gráficas de <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span>. Esboza sus gráficas. <em>(1,25 puntos)</em></p></li>
+<li><p>Determina el área del recinto limitado por las gráficas de <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> en el primer cuadrante. <em>(1,25 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(x^3+2=-x^2+2x+2\Rightarrow x^3+x^2-2x=x(x-1)(x+2)=0\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2022-ext-e4.svg" class="img-fluid figure-img" style="width:75.0%" alt="Gráficas de f(x)=x³+2 y g(x)=−x²+2x+2, que se cortan en (−2,−6), (0,2) y (1,3)"></p>
+<figcaption>Gráficas de f(x)=x³+2 y g(x)=−x²+2x+2, que se cortan en (−2,−6), (0,2) y (1,3)</figcaption>
+</figure>
+</div>
+<p><strong>Puntos de corte: <span class="math inline">\((-2,-6)\)</span>, <span class="math inline">\((0,2)\)</span> y <span class="math inline">\((1,3)\)</span>.</strong> <span class="math inline">\(f\)</span> es una cúbica creciente que pasa por <span class="math inline">\((0,2)\)</span>; <span class="math inline">\(g\)</span> es una parábola con vértice en <span class="math inline">\((1,3)\)</span> abierta hacia abajo; ambas se cortan en los tres puntos.</p>
+<p><strong>b)</strong> En <span class="math inline">\([0,1]\)</span> se tiene <span class="math inline">\(g\ge f\)</span> (p.&nbsp;ej. en <span class="math inline">\(x=\tfrac12\)</span>: <span class="math inline">\(g=\tfrac{11}{4}&gt;f=\tfrac{17}{8}\)</span>): <span class="math display">\[A=\int_0^1(-x^3-x^2+2x)\,dx=-\tfrac14-\tfrac13+1.\]</span></p>
+<p><strong><span class="math inline">\(A=\tfrac{5}{12}\)</span> u<span class="math inline">\(^2\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-reserva-2022" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-reserva-2022">Extraordinaria · Reserva 2022</h3>
+<div id="ebau-2022-ext-res-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Extraordinaria · Reserva 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> definida por <span class="math inline">\(f(x)=x^{3}-x\)</span>. Calcula el área total de los recintos limitados por la gráfica de la función <span class="math inline">\(f\)</span> y la recta normal a dicha gráfica en el punto de abscisa <span class="math inline">\(x=0\)</span>.</p>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/07-derivadas.html">Derivadas</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>En <span class="math inline">\(x=0\)</span>: <span class="math inline">\(f(0)=0\)</span>, <span class="math inline">\(f'(0)=-1\)</span>, luego la normal tiene pendiente <span class="math inline">\(1\)</span>: <span class="math inline">\(y=x\)</span>. Cortes con <span class="math inline">\(f\)</span>: <span class="math inline">\(x^3-x=x\Rightarrow x^3-2x=0\Rightarrow x=0,\ \pm\sqrt2\)</span>. Por simetría impar del recinto, el área es el doble de la de <span class="math inline">\([0,\sqrt2]\)</span>, donde la recta está por encima: <span class="math display">\[A=2\int_0^{\sqrt2}(2x-x^3)\,dx=2\left[x^2-\tfrac{x^4}{4}\right]_0^{\sqrt2}=2(2-1).\]</span></p>
+<p><strong><span class="math inline">\(A=2\)</span> u<span class="math inline">\(^2\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2022-ext-res-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Extraordinaria · Reserva 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Calcula <span class="math inline">\(\displaystyle\int_{0}^{3}\dfrac{x}{\sqrt{1+x}}\,dx\)</span>. (Sugerencia: efectúa el cambio de variable <span class="math inline">\(t=\sqrt{1+x}\)</span>.)</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-46" class="callout-46-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Con <span class="math inline">\(t=\sqrt{1+x}\)</span>: <span class="math inline">\(x=t^2-1\)</span>, <span class="math inline">\(dx=2t\,dt\)</span>; los límites pasan a <span class="math inline">\(t=1\)</span> y <span class="math inline">\(t=2\)</span>. <span class="math display">\[\int_1^2\frac{t^2-1}{t}\,2t\,dt=2\int_1^2(t^2-1)\,dt=2\left[\tfrac{t^3}{3}-t\right]_1^2=2\left(\tfrac23+\tfrac23\right).\]</span></p>
+<p><strong><span class="math inline">\(\dfrac{8}{3}\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2022" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2022">Extraordinaria · Suplente 2022</h3>
+<div id="ebau-2022-ext-sup-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Extraordinaria · Suplente 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Calcula <span class="math inline">\(\displaystyle\int\dfrac{2x^{3}+2x^{2}-2x+7}{x^{2}+x-2}\,dx\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Se divide: <span class="math inline">\(\dfrac{2x^3+2x^2-2x+7}{x^2+x-2}=2x+\dfrac{2x+7}{x^2+x-2}\)</span>, y como <span class="math inline">\(x^2+x-2=(x-1)(x+2)\)</span>, <span class="math display">\[\frac{2x+7}{(x-1)(x+2)}=\frac{3}{x-1}-\frac{1}{x+2}.\]</span> Integrando:</p>
+<p><strong><span class="math inline">\(x^2+3\ln|x-1|-\ln|x+2|+C\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2022-ext-sup-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Extraordinaria · Suplente 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las funciones <span class="math inline">\(f,g:\mathbb{R}\to\mathbb{R}\)</span> definidas por <span class="math inline">\(f(x)=x^{2}\)</span> y <span class="math inline">\(g(x)=a|x|\)</span>, con <span class="math inline">\(a&gt;0\)</span>. Determina el valor de <span class="math inline">\(a\)</span> para que el área total de los recintos limitados por las gráficas de ambas funciones sea de 9 unidades cuadradas.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-48" class="callout-48-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Las gráficas se cortan donde <span class="math inline">\(x^2=a|x|\)</span>: <span class="math inline">\(x=0,\ \pm a\)</span>. Por simetría el área total es el doble de la de <span class="math inline">\([0,a]\)</span>, donde <span class="math inline">\(g\ge f\)</span>: <span class="math display">\[A=2\int_0^a(ax-x^2)\,dx=2\left[\tfrac{a x^2}{2}-\tfrac{x^3}{3}\right]_0^a=\frac{a^3}{3}=9.\]</span></p>
+<p><strong><span class="math inline">\(a=3\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-5" class="level2">
+<h2 class="anchored" data-anchor-id="section-5">2021</h2>
+<section id="ordinaria-2021" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2021">Ordinaria 2021</h3>
+<div id="ebau-2021-ord-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/07/2oBachCC_EBAU_Andalucia_2021-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(F:[0,+\infty)\to\mathbb{R}\)</span> definida por</p>
+<p><span class="math display">\[F(x)=\int_{0}^{x}\left(2t+\sqrt{t}\right)dt.\]</span></p>
+<p>Halla la ecuación de la recta tangente a la gráfica de <span class="math inline">\(F\)</span> en el punto de abscisa <span class="math inline">\(x=1\)</span>.</p>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/07-derivadas.html">Derivadas</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-49" class="callout-49-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Por el teorema fundamental del cálculo <span class="math inline">\(F'(x)=2x+\sqrt x\)</span>.</p>
+<p><span class="math inline">\(F(1)=\displaystyle\int_0^1(2t+\sqrt t)\,dt=\left[t^2+\tfrac23t^{3/2}\right]_0^1=\tfrac53\)</span>, y <span class="math inline">\(F'(1)=3\)</span>.</p>
+<p><strong><span class="math inline">\(y=\dfrac53+3(x-1)\)</span></strong>, es decir, <span class="math inline">\(y=3x-\dfrac43\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-2021" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-2021">Ordinaria · Reserva 2021</h3>
+<div id="ebau-2021-ord-res-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria · Reserva 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Ordinaria_RESERVA_Modelo4.pdf" target="_blank">PDF del examen</a></p>
+<p>Calcula <span class="math inline">\(\displaystyle\int_{0}^{2}\dfrac{1}{1+\sqrt{e^{x}}}\,dx\)</span>. (Sugerencia: efectúa el cambio de variable <span class="math inline">\(t=\sqrt{e^{x}}\)</span>.)</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-50" class="callout-50-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Con <span class="math inline">\(t=\sqrt{e^x}=e^{x/2}\)</span>: <span class="math inline">\(x=2\ln t\)</span>, <span class="math inline">\(dx=\dfrac{2}{t}\,dt\)</span>; límites <span class="math inline">\(x=0\to t=1\)</span>, <span class="math inline">\(x=2\to t=e\)</span>.</p>
+<p><span class="math display">\[I=\int_1^e\frac{2}{t(1+t)}\,dt=2\int_1^e\left(\frac1t-\frac1{1+t}\right)dt=2\left[\ln\frac{t}{1+t}\right]_1^e=2\left(\ln\frac{e}{1+e}+\ln2\right).\]</span></p>
+<p><strong><span class="math inline">\(I=2-2\ln(1+e)+2\ln2\approx0{,}760\)</span></strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2021" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2021">Ordinaria · Suplente 2021</h3>
+<div id="ebau-2021-ord-sup-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria · Suplente 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Ordinaria_SUPLENTE_Modelo6.pdf" target="_blank">PDF del examen</a></p>
+<p>Calcula <span class="math inline">\(\displaystyle\int_{0}^{\pi/2}\left(2\operatorname{sen}^{2}(x)-\cos^{2}(x)\right)dx\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-51" class="callout-51-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(2\operatorname{sen}^2x-\cos^2x=(1-\cos2x)-\dfrac{1+\cos2x}{2}=\dfrac12-\dfrac32\cos2x\)</span>.</p>
+<p><span class="math display">\[\int_0^{\pi/2}\left(\tfrac12-\tfrac32\cos2x\right)dx=\left[\tfrac x2-\tfrac34\operatorname{sen}2x\right]_0^{\pi/2}=\frac\pi4.\]</span></p>
+<p><strong><span class="math inline">\(\dfrac\pi4\)</span></strong></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2021-ord-sup-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria · Suplente 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Ordinaria_SUPLENTE_Modelo6.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las funciones <span class="math inline">\(f,g:\mathbb{R}\to\mathbb{R}\)</span> definidas por <span class="math inline">\(f(x)=|x|-2\)</span> y por <span class="math inline">\(g(x)=4-x^{2}\)</span>.</p>
+<ol type="a">
+<li><p>Halla los puntos de corte de las gráficas de ambas funciones y esboza el recinto que delimitan. <em>(1 punto)</em></p></li>
+<li><p>Determina el área del recinto anterior. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-52" class="callout-52-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Para <span class="math inline">\(x\ge0\)</span>: <span class="math inline">\(x-2=4-x^2\Rightarrow x^2+x-6=0\Rightarrow x=2\)</span>. Para <span class="math inline">\(x&lt;0\)</span>: <span class="math inline">\(-x-2=4-x^2\Rightarrow x^2-x-6=0\Rightarrow x=-2\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2021-ord-sup-e4.svg" class="img-fluid figure-img" style="width:75.0%" alt="Recinto entre f(x)=|x|−2 y g(x)=4−x², con cortes en (−2,0) y (2,0)"></p>
+<figcaption>Recinto entre f(x)=|x|−2 y g(x)=4−x², con cortes en (−2,0) y (2,0)</figcaption>
+</figure>
+</div>
+<p><strong>Puntos de corte: <span class="math inline">\((-2,0)\)</span> y <span class="math inline">\((2,0)\)</span>.</strong> El recinto está limitado por arriba por la parábola <span class="math inline">\(g(x)=4-x^2\)</span> (vértice <span class="math inline">\((0,4)\)</span>) y por abajo por la «V» <span class="math inline">\(f(x)=|x|-2\)</span> (vértice <span class="math inline">\((0,-2)\)</span>), entre <span class="math inline">\(x=-2\)</span> y <span class="math inline">\(x=2\)</span>.</p>
+<p><strong>b)</strong> Por simetría:</p>
+<p><span class="math display">\[A=2\int_0^2\bigl[(4-x^2)-(x-2)\bigr]dx=2\int_0^2(6-x-x^2)\,dx=2\left[6x-\tfrac{x^2}{2}-\tfrac{x^3}{3}\right]_0^2=2\cdot\tfrac{22}{3}.\]</span></p>
+<p><strong><span class="math inline">\(A=\dfrac{44}{3}\ \text{u}^2\)</span></strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2021" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2021">Extraordinaria 2021</h3>
+<div id="ebau-2021-ext-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Extraordinaria 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/07/2oBachCC_EBAU_Andalucia_2021-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(f\)</span> definida por <span class="math inline">\(f(x)=\dfrac{x^{2}+1}{x^{2}-1}\)</span> (para <span class="math inline">\(x\neq -1\)</span>, <span class="math inline">\(x\neq 1\)</span>). Halla una primitiva de <span class="math inline">\(f\)</span> cuya gráfica pase por el punto <span class="math inline">\((2,4)\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-53" class="callout-53-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(f(x)=\dfrac{x^2+1}{x^2-1}=1+\dfrac{2}{x^2-1}=1-\dfrac1{x+1}+\dfrac1{x-1}\)</span>.</p>
+<p><span class="math display">\[F(x)=x+\ln|x-1|-\ln|x+1|+C=x+\ln\left|\frac{x-1}{x+1}\right|+C.\]</span></p>
+<p><span class="math inline">\(F(2)=2+\ln\frac13+C=4\Rightarrow C=2+\ln3\)</span>.</p>
+<p><strong><span class="math inline">\(F(x)=x+\ln\left|\dfrac{x-1}{x+1}\right|+2+\ln3\)</span></strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-reserva-2021" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-reserva-2021">Extraordinaria · Reserva 2021</h3>
+<div id="ebau-2021-ext-res-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Extraordinaria · Reserva 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Extraordinaria_RESERVA_Modelo2.pdf" target="_blank">PDF del examen</a></p>
+<p>Calcula <span class="math inline">\(\displaystyle\int_{1}^{3}\left|x^{2}-3x+2\right|dx\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-54-contents" aria-controls="callout-54" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-54" class="callout-54-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(x^2-3x+2=(x-1)(x-2)\)</span>: es <span class="math inline">\(\le0\)</span> en <span class="math inline">\([1,2]\)</span> y <span class="math inline">\(\ge0\)</span> en <span class="math inline">\([2,3]\)</span>. Con <span class="math inline">\(F(x)=\frac{x^3}{3}-\frac{3x^2}{2}+2x\)</span>: <span class="math inline">\(F(1)=\frac56\)</span>, <span class="math inline">\(F(2)=\frac23\)</span>, <span class="math inline">\(F(3)=\frac32\)</span>.</p>
+<p><span class="math display">\[\int_1^3|x^2-3x+2|\,dx=-\bigl(F(2)-F(1)\bigr)+\bigl(F(3)-F(2)\bigr)=\tfrac16+\tfrac56.\]</span></p>
+<p><strong>Resultado: <span class="math inline">\(1\)</span></strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2021" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2021">Extraordinaria · Suplente 2021</h3>
+<div id="ebau-2021-ext-sup-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Extraordinaria · Suplente 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Extraordinaria_SUPLENTE_Modelo1.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la función <span class="math inline">\(f:[0,+\infty)\to\mathbb{R}\)</span> definida por <span class="math inline">\(f(x)=xe^{x}\)</span>.</p>
+<ol type="a">
+<li><p>Esboza el recinto limitado por la gráfica de <span class="math inline">\(f\)</span> y las rectas <span class="math inline">\(x=2\)</span>, <span class="math inline">\(y=x\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Determina el área del recinto anterior. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-55-contents" aria-controls="callout-55" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-55" class="callout-55-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Para <span class="math inline">\(x\ge0\)</span> se cumple <span class="math inline">\(xe^x\ge x\)</span> (igualdad sólo en <span class="math inline">\(x=0\)</span>, pues <span class="math inline">\(xe^x=x\iff x(e^x-1)=0\)</span>). El recinto está entre <span class="math inline">\(y=x\)</span> (debajo) y <span class="math inline">\(y=xe^x\)</span> (encima), desde <span class="math inline">\(x=0\)</span> hasta <span class="math inline">\(x=2\)</span>. Ambas curvas parten de <span class="math inline">\((0,0)\)</span>; en <span class="math inline">\(x=2\)</span> valen <span class="math inline">\(2\)</span> y <span class="math inline">\(2e^2\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2021-ext-sup-e4.svg" class="img-fluid figure-img" style="width:75.0%" alt="Recinto limitado por f(x)=x·eˣ, la recta y=x y la recta x=2"></p>
+<figcaption>Recinto limitado por f(x)=x·eˣ, la recta y=x y la recta x=2</figcaption>
+</figure>
+</div>
+<p><strong>b)</strong> Una primitiva de <span class="math inline">\(xe^x\)</span> es <span class="math inline">\((x-1)e^x\)</span> (por partes):</p>
+<p><span class="math display">\[A=\int_0^2(xe^x-x)\,dx=\left[(x-1)e^x-\tfrac{x^2}{2}\right]_0^2=(e^2-2)-(-1).\]</span></p>
+<p><strong><span class="math inline">\(A=e^2-1\approx6{,}389\ \text{u}^2\)</span></strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="también-trabajan-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="también-trabajan-este-tema">También trabajan este tema</h2>
+<p>Ejercicios cuyo tema principal es otro pero en los que aparece este tema:</p>
+<ul>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/08-aplicaciones-derivada.html#ebau-2026-ord-sup2-1">2026 Ordinaria · Suplente 2, ejercicio 1</a> (tema principal: Aplicaciones de la derivada)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/08-aplicaciones-derivada.html#ebau-2026-ext-sup1-2">2026 Extraordinaria · Suplente 1, ejercicio 2</a> (tema principal: Aplicaciones de la derivada)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/06-limites-continuidad.html#ebau-2023-ord-4">2023 Ordinaria, ejercicio 4</a> (tema principal: Límites y continuidad)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/08-aplicaciones-derivada.html#ebau-2021-ord-3">2021 Ordinaria, ejercicio 3</a> (tema principal: Aplicaciones de la derivada)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/08-aplicaciones-derivada.html#ebau-2021-ord-res-3">2021 Ordinaria · Reserva, ejercicio 3</a> (tema principal: Aplicaciones de la derivada)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/08-aplicaciones-derivada.html#ebau-2021-ext-3">2021 Extraordinaria, ejercicio 3</a> (tema principal: Aplicaciones de la derivada)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/07-derivadas.html#ebau-2021-ext-res-3">2021 Extraordinaria · Reserva, ejercicio 3</a> (tema principal: Derivadas)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/08-aplicaciones-derivada.html#ebau-2021-ext-sup-3">2021 Extraordinaria · Suplente, ejercicio 3</a> (tema principal: Aplicaciones de la derivada)</li>
+</ul>
+<hr>
+<p><em>Enunciados: Prueba de Acceso y Admisión a la Universidad (PEvAU hasta 2024, PAU desde 2025), Matemáticas II, Andalucía, Ceuta, Melilla y centros en Marruecos (Distrito Único Andaluz). Cada ejercicio enlaza al PDF del examen completo. La clasificación por temas es propia y puede discutirse: los ejercicios mixtos figuran en su tema principal.</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

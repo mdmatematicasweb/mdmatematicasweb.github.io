@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Rectas y planos — relación de ejercicios – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-c03d2d665be348d2f4fb6e6313d5071b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-28c4b676bd4c1c9121cc5c5925a59653.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-c03d2d665be348d2f4fb6e6313d5071b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#ecuaciones" id="toc-ecuaciones" class="nav-link active" data-scroll-target="#ecuaciones">Ecuaciones</a></li>
+  <li><a href="#posiciones-relativas" id="toc-posiciones-relativas" class="nav-link" data-scroll-target="#posiciones-relativas">Posiciones relativas</a></li>
+  <li><a href="#distancias-proyecciones-y-simétricos" id="toc-distancias-proyecciones-y-simétricos" class="nav-link" data-scroll-target="#distancias-proyecciones-y-simétricos">Distancias, proyecciones y simétricos</a></li>
+  <li><a href="#ángulos" id="toc-ángulos" class="nav-link" data-scroll-target="#ángulos">Ángulos</a></li>
+  <li><a href="#problemas" id="toc-problemas" class="nav-link" data-scroll-target="#problemas">Problemas</a></li>
+  <li><a href="#soluciones" id="toc-soluciones" class="nav-link" data-scroll-target="#soluciones">Soluciones</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Rectas y planos — relación de ejercicios</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Relación de 25 ejercicios: del 1 al 8 son básicos y del 9 al 25 siguen el estilo de la PAU de Andalucía (2021 en adelante). Las soluciones están al final.</p>
+<p>Se usan estos elementos en varios ejercicios:</p>
+<ul>
+<li><span class="math inline">\(r\)</span>: recta que pasa por <span class="math inline">\(P(1,0,-1)\)</span> con vector director <span class="math inline">\(\vec d=(1,2,2)\)</span>.</li>
+<li><span class="math inline">\(s\)</span>: recta que pasa por <span class="math inline">\(Q(2,2,1)\)</span> con vector director <span class="math inline">\(\vec e=(1,-1,1)\)</span>.</li>
+<li><span class="math inline">\(\pi\)</span>: plano <span class="math inline">\(2x-y+2z-3=0\)</span>.</li>
+</ul>
+<section id="ecuaciones" class="level2">
+<h2 class="anchored" data-anchor-id="ecuaciones">Ecuaciones</h2>
+<p><strong>1.</strong> Halla las ecuaciones vectorial, paramétricas, continua e implícita de la recta que pasa por <span class="math inline">\(A(1,2,3)\)</span> y <span class="math inline">\(B(3,1,0)\)</span>.</p>
+<p><strong>2.</strong> Halla las ecuaciones paramétricas y un vector director de la recta <span class="math inline">\(\begin{cases}x+y-z=2\\2x-y+z=1\end{cases}\)</span>.</p>
+<p><strong>3.</strong> Halla el plano que pasa por <span class="math inline">\(A(1,0,0)\)</span>, <span class="math inline">\(B(0,2,0)\)</span> y <span class="math inline">\(C(0,0,3)\)</span>.</p>
+<p><strong>4.</strong> Halla el plano perpendicular a <span class="math inline">\(r\)</span> que pasa por <span class="math inline">\(A(3,0,3)\)</span>.</p>
+<p><strong>5.</strong> <em>(Tipo PAU)</em> Halla el plano que contiene a <span class="math inline">\(r\)</span> y es paralelo a la recta <span class="math inline">\(s'\)</span> que pasa por <span class="math inline">\(Q'(0,1,1)\)</span> con vector director <span class="math inline">\((1,0,0)\)</span>.</p>
+</section>
+<section id="posiciones-relativas" class="level2">
+<h2 class="anchored" data-anchor-id="posiciones-relativas">Posiciones relativas</h2>
+<p><strong>6.</strong> <em>(Tipo PAU)</em> Estudia la posición relativa de <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span>. Si se cortan, halla el punto de corte y el plano que las contiene.</p>
+<p><strong>7.</strong> <em>(Tipo PAU)</em> Comprueba que <span class="math inline">\(r\)</span> y <span class="math inline">\(s'\)</span> (del ejercicio 5) se cruzan y calcula la distancia entre ellas.</p>
+<p><strong>8.</strong> Calcula la distancia de <span class="math inline">\(r\)</span> a la recta paralela <span class="math inline">\(r_0\)</span> que pasa por el origen con vector director <span class="math inline">\((1,2,2)\)</span>.</p>
+<p><strong>9.</strong> <em>(Tipo PAU)</em> Estudia la posición relativa de <span class="math inline">\(r\)</span> y el plano <span class="math inline">\(\pi_m:\ x+my-z=4\)</span> según <span class="math inline">\(m\)</span>. Para <span class="math inline">\(m=0\)</span> halla el punto de corte.</p>
+<p><strong>10.</strong> Calcula el ángulo que forman los planos <span class="math inline">\(x+y+z=1\)</span> y <span class="math inline">\(x-y+2z=3\)</span>.</p>
+<p><strong>11.</strong> <em>(Tipo PAU)</em> Estudia según <span class="math inline">\(m\)</span> la posición relativa de los planos <span class="math display">\[\begin{cases}x+y+z=m+1\\mx+y+z=1\\x+my+z=m\end{cases}\]</span> y halla el punto común para <span class="math inline">\(m=0\)</span>.</p>
+</section>
+<section id="distancias-proyecciones-y-simétricos" class="level2">
+<h2 class="anchored" data-anchor-id="distancias-proyecciones-y-simétricos">Distancias, proyecciones y simétricos</h2>
+<p><strong>12.</strong> Calcula la distancia del punto <span class="math inline">\(A(3,0,3)\)</span> al plano <span class="math inline">\(\pi\)</span>.</p>
+<p><strong>13.</strong> Calcula la distancia del punto <span class="math inline">\(R(4,0,2)\)</span> a la recta <span class="math inline">\(r\)</span>.</p>
+<p><strong>14.</strong> <em>(Tipo PAU)</em> Halla la proyección ortogonal y el simétrico de <span class="math inline">\(A(3,0,3)\)</span> respecto del plano <span class="math inline">\(\pi\)</span>.</p>
+<p><strong>15.</strong> <em>(Tipo PAU)</em> Halla la proyección ortogonal y el simétrico de <span class="math inline">\(R(4,0,2)\)</span> respecto de la recta <span class="math inline">\(r\)</span>.</p>
+<p><strong>16.</strong> <em>(Tipo PAU)</em> Halla la recta que pasa por <span class="math inline">\(R(4,0,2)\)</span> y corta perpendicularmente a <span class="math inline">\(r\)</span>.</p>
+<p><strong>17.</strong> <em>(Tipo PAU)</em> Halla los planos paralelos a <span class="math inline">\(\pi\)</span> que están a distancia 2 de él.</p>
+<p><strong>18.</strong> Halla el plano mediador del segmento de extremos <span class="math inline">\(A(1,2,3)\)</span> y <span class="math inline">\(B(3,0,-1)\)</span>.</p>
+</section>
+<section id="ángulos" class="level2">
+<h2 class="anchored" data-anchor-id="ángulos">Ángulos</h2>
+<p><strong>19.</strong> Calcula el ángulo que forman la recta <span class="math inline">\(r\)</span> y el plano <span class="math inline">\(\pi\)</span>.</p>
+<p><strong>20.</strong> Calcula el ángulo que forman las rectas <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span>.</p>
+<p><strong>21.</strong> Calcula la distancia entre los planos <span class="math inline">\(2x-y+2z-3=0\)</span> y <span class="math inline">\(4x-2y+4z+6=0\)</span>.</p>
+</section>
+<section id="problemas" class="level2">
+<h2 class="anchored" data-anchor-id="problemas">Problemas</h2>
+<p><strong>22.</strong> <em>(Tipo PAU)</em> Calcula el volumen del tetraedro que forma el plano <span class="math inline">\(6x+3y+2z=6\)</span> con los tres planos coordenados.</p>
+<p><strong>23.</strong> <em>(Tipo PAU)</em> Halla los puntos de <span class="math inline">\(r\)</span> que están a distancia 3 del plano <span class="math inline">\(\pi\)</span>.</p>
+<p><strong>24.</strong> <em>(Tipo PAU)</em> Calcula el área del triángulo cuyos vértices son los puntos de corte del plano <span class="math inline">\(6x+3y+2z=6\)</span> con los ejes de coordenadas.</p>
+<p><strong>25.</strong> <em>(Tipo PAU)</em> Comprueba que la recta <span class="math inline">\(r_1\)</span> que pasa por el origen con dirección <span class="math inline">\((1,2,0)\)</span> es paralela al plano <span class="math inline">\(\pi\)</span> y calcula la distancia entre ambos.</p>
+<hr>
+</section>
+<section id="soluciones" class="level2">
+<h2 class="anchored" data-anchor-id="soluciones">Soluciones</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\vec d=\overrightarrow{AB}=(2,-1,-3)\)</span>.</p>
+<ul>
+<li>Vectorial: <span class="math inline">\((x,y,z)=(1,2,3)+\lambda(2,-1,-3)\)</span>.</li>
+<li>Paramétricas: <span class="math inline">\(x=1+2\lambda\)</span>, <span class="math inline">\(y=2-\lambda\)</span>, <span class="math inline">\(z=3-3\lambda\)</span>.</li>
+<li>Continua: <span class="math inline">\(\dfrac{x-1}{2}=\dfrac{y-2}{-1}=\dfrac{z-3}{-3}\)</span>.</li>
+<li>Implícita: <span class="math inline">\(\begin{cases}x+2y-5=0\\3y-z-3=0\end{cases}\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Con <span class="math inline">\(x=1\)</span> (de sumar las dos ecuaciones: <span class="math inline">\(3x=3\)</span>) queda <span class="math inline">\(y-z=1\)</span>. Tomando <span class="math inline">\(z=\lambda\)</span>: <span class="math inline">\(x=1\)</span>, <span class="math inline">\(y=1+\lambda\)</span>, <span class="math inline">\(z=\lambda\)</span>.</p>
+<p>Punto <span class="math inline">\((1,1,0)\)</span> y vector director <span class="math inline">\((0,1,1)\)</span>. Comprobación: <span class="math inline">\((1,1,-1)\times(2,-1,1)=(0,-3,-3)\parallel(0,1,1)\)</span> ✓.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\overrightarrow{AB}=(-1,2,0)\)</span>, <span class="math inline">\(\overrightarrow{AC}=(-1,0,3)\)</span>. <span class="math inline">\(\vec n=\overrightarrow{AB}\times\overrightarrow{AC}=(6,3,2)\)</span>.</p>
+<p>Plano: <span class="math inline">\(6x+3y+2z+D=0\)</span> y con <span class="math inline">\(A\)</span>: <span class="math inline">\(6+D=0\)</span>. Luego <span class="math inline">\(6x+3y+2z-6=0\)</span>, o en forma segmentaria <span class="math inline">\(x+\dfrac y2+\dfrac z3=1\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\vec n=\vec d=(1,2,2)\)</span>: <span class="math inline">\(x+2y+2z+D=0\)</span>. Con <span class="math inline">\(A(3,0,3)\)</span>: <span class="math inline">\(3+6+D=0\)</span>, luego <span class="math inline">\(D=-9\)</span>.</p>
+<p>Plano: <span class="math inline">\(x+2y+2z-9=0\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>El plano contiene a <span class="math inline">\(r\)</span>: pasa por <span class="math inline">\(P(1,0,-1)\)</span> y tiene directores <span class="math inline">\(\vec d=(1,2,2)\)</span> y <span class="math inline">\((1,0,0)\)</span>. <span class="math inline">\(\vec n=(1,2,2)\times(1,0,0)=(0,2,-2)\parallel(0,1,-1)\)</span>.</p>
+<p><span class="math inline">\(y-z+D=0\)</span> con <span class="math inline">\(P\)</span>: <span class="math inline">\(0+1+D=0\)</span>, <span class="math inline">\(D=-1\)</span>. Plano: <span class="math inline">\(y-z-1=0\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\overrightarrow{PQ}=(1,2,2)\)</span>. Como <span class="math inline">\(\vec d=(1,2,2)\)</span>, <span class="math inline">\(\vec e=(1,-1,1)\)</span> no son proporcionales, <span class="math inline">\(\operatorname{rg}(\vec d,\vec e)=2\)</span>. Además <span class="math inline">\(\det(\vec d,\vec e,\overrightarrow{PQ})=0\)</span> porque <span class="math inline">\(\overrightarrow{PQ}=\vec d\)</span>, luego el rango es 2: <strong>se cortan</strong>.</p>
+<p>Punto de corte: <span class="math inline">\(Q(2,2,1)\)</span> (es el punto de <span class="math inline">\(r\)</span> para <span class="math inline">\(t=1\)</span> y de <span class="math inline">\(s\)</span> para <span class="math inline">\(\lambda=0\)</span>).</p>
+<p>Plano que las contiene: <span class="math inline">\(\vec n=\vec d\times\vec e=(4,1,-3)\)</span>; <span class="math inline">\(4x+y-3z+D=0\)</span> con <span class="math inline">\(P\)</span>: <span class="math inline">\(4+3+D=0\)</span>, <span class="math inline">\(D=-7\)</span>. Plano: <span class="math inline">\(4x+y-3z-7=0\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>7
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\overrightarrow{PQ'}=(-1,1,2)\)</span>, <span class="math inline">\(\vec d=(1,2,2)\)</span>, <span class="math inline">\(\vec e'=(1,0,0)\)</span>. <span class="math display">\[\det(\vec d,\vec e',\overrightarrow{PQ'})=\begin{vmatrix}1&amp;2&amp;2\\1&amp;0&amp;0\\-1&amp;1&amp;2\end{vmatrix}=-2\neq0\Rightarrow\text{se cruzan}\]</span> <span class="math inline">\(\vec d\times\vec e'=(0,2,-2)\)</span> con módulo <span class="math inline">\(2\sqrt2\)</span>. <span class="math display">\[d(r,s')=\frac{|-2|}{2\sqrt2}=\frac{\sqrt2}{2}\approx0{,}71\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>8
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\overrightarrow{OP}=(1,0,-1)\)</span>, <span class="math inline">\(\overrightarrow{OP}\times\vec d=(1,0,-1)\times(1,2,2)=(2,-3,2)\)</span> con módulo <span class="math inline">\(\sqrt{17}\)</span> y <span class="math inline">\(|\vec d|=3\)</span>.</p>
+<p><span class="math inline">\(d=\dfrac{\sqrt{17}}{3}\approx1{,}37\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>9
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Un punto de <span class="math inline">\(r\)</span> es <span class="math inline">\((1+t,\ 2t,\ -1+2t)\)</span>. Sustituyendo en <span class="math inline">\(x+my-z=4\)</span>: <span class="math display">\[1+t+2mt+1-2t=4\ \Rightarrow\ (2m-1)t=2\]</span> - Si <span class="math inline">\(m\neq\frac12\)</span>: una solución, <strong>la recta corta al plano</strong> en <span class="math inline">\(t=\dfrac{2}{2m-1}\)</span>. - Si <span class="math inline">\(m=\frac12\)</span>: <span class="math inline">\(0=2\)</span>, sin solución, <strong>la recta es paralela al plano</strong>.</p>
+<p>Para <span class="math inline">\(m=0\)</span>: <span class="math inline">\(t=-2\)</span> y el punto de corte es <span class="math inline">\((-1,-4,-5)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>10
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\vec n_1=(1,1,1)\)</span>, <span class="math inline">\(\vec n_2=(1,-1,2)\)</span>. <span class="math inline">\(\cos\alpha=\dfrac{|1-1+2|}{\sqrt3\sqrt6}=\dfrac{2}{3\sqrt2}=\dfrac{\sqrt2}{3}\)</span>, luego <span class="math inline">\(\alpha\approx61{,}87^\circ\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>11
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(|A|=(m-1)^2\)</span>.</p>
+<ul>
+<li><span class="math inline">\(m\neq1\)</span>: rangos 3 y 3, <strong>se cortan en un punto</strong>.</li>
+<li><span class="math inline">\(m=1\)</span>: los planos son <span class="math inline">\(x+y+z=2\)</span>, <span class="math inline">\(x+y+z=1\)</span> y <span class="math inline">\(x+y+z=1\)</span>. El segundo y el tercero <strong>coinciden</strong> y el primero es <strong>paralelo</strong> a ellos.</li>
+</ul>
+<p>Para <span class="math inline">\(m=0\)</span>: <span class="math inline">\(\begin{cases}x+y+z=1\\y+z=1\\x+z=0\end{cases}\)</span> da el punto <span class="math inline">\((0,1,0)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>12
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(d=\dfrac{|2\cdot3-0+2\cdot3-3|}{\sqrt{4+1+4}}=\dfrac{9}{3}=3\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>13
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\overrightarrow{PR}=(3,0,3)\)</span>, <span class="math inline">\(\overrightarrow{PR}\times\vec d=(3,0,3)\times(1,2,2)=(-6,-3,6)\)</span> con módulo <span class="math inline">\(9\)</span>.</p>
+<p><span class="math inline">\(d=\dfrac{9}{3}=3\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>14
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Recta perpendicular a <span class="math inline">\(\pi\)</span> por <span class="math inline">\(A\)</span>: <span class="math inline">\((3+2\lambda,\ -\lambda,\ 3+2\lambda)\)</span>. Sustituyendo en <span class="math inline">\(\pi\)</span>: <span class="math inline">\(2(3+2\lambda)+\lambda+2(3+2\lambda)-3=9\lambda+9=0\)</span>, luego <span class="math inline">\(\lambda=-1\)</span>.</p>
+<p>Proyección: <span class="math inline">\(H=(1,1,1)\)</span>. Simétrico: <span class="math inline">\(A'=2H-A=(-1,2,-1)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>15
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Plano perpendicular a <span class="math inline">\(r\)</span> por <span class="math inline">\(R\)</span>: <span class="math inline">\(x+2y+2z+D=0\)</span> con <span class="math inline">\(R\)</span>: <span class="math inline">\(4+4+D=0\)</span>, <span class="math inline">\(D=-8\)</span>. Punto de <span class="math inline">\(r\)</span>: <span class="math inline">\((1+t)+2(2t)+2(-1+2t)-8=9t-9=0\)</span>, luego <span class="math inline">\(t=1\)</span>.</p>
+<p>Proyección: <span class="math inline">\(H=(2,2,1)\)</span>. Simétrico: <span class="math inline">\(R'=2H-R=(0,4,0)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>16
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>La recta pedida pasa por <span class="math inline">\(R\)</span> y por la proyección <span class="math inline">\(H=(2,2,1)\)</span> de <span class="math inline">\(R\)</span> sobre <span class="math inline">\(r\)</span>. Dirección: <span class="math inline">\(\overrightarrow{RH}=(-2,2,-1)\)</span>.</p>
+<p><span class="math display">\[(x,y,z)=(4,0,2)+\lambda(-2,2,-1)\]</span> Comprobación: <span class="math inline">\((-2,2,-1)\cdot(1,2,2)=-2+4-2=0\)</span> ✓.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>17
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Los planos paralelos a <span class="math inline">\(\pi\)</span> son <span class="math inline">\(2x-y+2z+D=0\)</span>. Su distancia a <span class="math inline">\(\pi\)</span> es <span class="math inline">\(\dfrac{|D+3|}{3}=2\)</span>, luego <span class="math inline">\(D+3=\pm6\)</span>: <span class="math inline">\(D=3\)</span> o <span class="math inline">\(D=-9\)</span>.</p>
+<p>Planos: <span class="math inline">\(2x-y+2z+3=0\)</span> y <span class="math inline">\(2x-y+2z-9=0\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>18
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\overrightarrow{AB}=(2,-2,-4)\parallel(1,-1,-2)\)</span> y el punto medio es <span class="math inline">\(M=(2,1,1)\)</span>.</p>
+<p><span class="math inline">\(x-y-2z+D=0\)</span> con <span class="math inline">\(M\)</span>: <span class="math inline">\(2-1-2+D=0\)</span>, <span class="math inline">\(D=1\)</span>. Plano: <span class="math inline">\(x-y-2z+1=0\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>19
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\vec d\cdot\vec n=(1,2,2)\cdot(2,-1,2)=4\)</span>; <span class="math inline">\(|\vec d|=3\)</span>, <span class="math inline">\(|\vec n|=3\)</span>. <span class="math inline">\(\sin\alpha=\dfrac{4}{9}\)</span>, luego <span class="math inline">\(\alpha\approx26{,}39^\circ\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>20
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\vec d\cdot\vec e=1-2+2=1\)</span>; <span class="math inline">\(|\vec d|=3\)</span>, <span class="math inline">\(|\vec e|=\sqrt3\)</span>. <span class="math inline">\(\cos\alpha=\dfrac{1}{3\sqrt3}=\dfrac{\sqrt3}{9}\)</span>, luego <span class="math inline">\(\alpha\approx78{,}90^\circ\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>21
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>El segundo plano dividido entre 2 es <span class="math inline">\(2x-y+2z+3=0\)</span>, paralelo al primero (<span class="math inline">\(D=-3\)</span> frente a <span class="math inline">\(D=3\)</span>).</p>
+<p><span class="math inline">\(d=\dfrac{|3-(-3)|}{\sqrt{4+1+4}}=\dfrac63=2\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>22
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>El plano corta a los ejes en <span class="math inline">\(x=1\)</span>, <span class="math inline">\(y=2\)</span>, <span class="math inline">\(z=3\)</span>. Los vértices son <span class="math inline">\(O(0,0,0)\)</span>, <span class="math inline">\(A(1,0,0)\)</span>, <span class="math inline">\(B(0,2,0)\)</span> y <span class="math inline">\(C(0,0,3)\)</span>. <span class="math display">\[V=\frac16\begin{vmatrix}1&amp;0&amp;0\\0&amp;2&amp;0\\0&amp;0&amp;3\end{vmatrix}=\frac{6}{6}=1\text{ u}^3\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>23
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Un punto de <span class="math inline">\(r\)</span> es <span class="math inline">\((1+t,2t,-1+2t)\)</span>. Su distancia a <span class="math inline">\(\pi\)</span> es <span class="math display">\[\frac{|2(1+t)-2t+2(-1+2t)-3|}{3}=\frac{|4t-3|}{3}=3\ \Rightarrow\ 4t-3=\pm9\]</span> - <span class="math inline">\(t=3\)</span>: punto <span class="math inline">\((4,6,5)\)</span>. - <span class="math inline">\(t=-\frac32\)</span>: punto <span class="math inline">\(\left(-\frac12,-3,-4\right)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>24
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vértices: <span class="math inline">\(A(1,0,0)\)</span>, <span class="math inline">\(B(0,2,0)\)</span>, <span class="math inline">\(C(0,0,3)\)</span>. <span class="math inline">\(\overrightarrow{AB}=(-1,2,0)\)</span>, <span class="math inline">\(\overrightarrow{AC}=(-1,0,3)\)</span>, <span class="math inline">\(\overrightarrow{AB}\times\overrightarrow{AC}=(6,3,2)\)</span> con módulo <span class="math inline">\(7\)</span>.</p>
+<p>Área <span class="math inline">\(=\dfrac72=3{,}5\)</span> u<span class="math inline">\(^2\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>25
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\vec d_1\cdot\vec n=(1,2,0)\cdot(2,-1,2)=2-2=0\)</span>, así que la recta es paralela al plano o está contenida en él. El origen no está en <span class="math inline">\(\pi\)</span> (<span class="math inline">\(-3\neq0\)</span>), luego es paralela.</p>
+<p><span class="math inline">\(d=\dfrac{|2\cdot0-0+2\cdot0-3|}{3}=1\)</span>.</p>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

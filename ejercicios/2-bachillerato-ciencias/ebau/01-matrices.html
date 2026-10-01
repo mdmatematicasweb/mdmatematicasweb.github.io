@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>PAU Andalucía — Matrices – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-c03d2d665be348d2f4fb6e6313d5071b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-28c4b676bd4c1c9121cc5c5925a59653.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-c03d2d665be348d2f4fb6e6313d5071b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">2026</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-suplente-1-2026" id="toc-ordinaria-suplente-1-2026" class="nav-link" data-scroll-target="#ordinaria-suplente-1-2026">Ordinaria · Suplente 1 2026</a></li>
+  <li><a href="#extraordinaria-2026" id="toc-extraordinaria-2026" class="nav-link" data-scroll-target="#extraordinaria-2026">Extraordinaria 2026</a></li>
+  </ul></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">2025</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-suplente-2-2025" id="toc-ordinaria-suplente-2-2025" class="nav-link" data-scroll-target="#ordinaria-suplente-2-2025">Ordinaria · Suplente 2 2025</a></li>
+  <li><a href="#extraordinaria-suplente-1-2025" id="toc-extraordinaria-suplente-1-2025" class="nav-link" data-scroll-target="#extraordinaria-suplente-1-2025">Extraordinaria · Suplente 1 2025</a></li>
+  <li><a href="#extraordinaria-suplente-2-2025" id="toc-extraordinaria-suplente-2-2025" class="nav-link" data-scroll-target="#extraordinaria-suplente-2-2025">Extraordinaria · Suplente 2 2025</a></li>
+  </ul></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">2024</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2024" id="toc-ordinaria-2024" class="nav-link" data-scroll-target="#ordinaria-2024">Ordinaria 2024</a></li>
+  <li><a href="#ordinaria-reserva-2024" id="toc-ordinaria-reserva-2024" class="nav-link" data-scroll-target="#ordinaria-reserva-2024">Ordinaria · Reserva 2024</a></li>
+  <li><a href="#ordinaria-suplente-2024" id="toc-ordinaria-suplente-2024" class="nav-link" data-scroll-target="#ordinaria-suplente-2024">Ordinaria · Suplente 2024</a></li>
+  <li><a href="#extraordinaria-2024" id="toc-extraordinaria-2024" class="nav-link" data-scroll-target="#extraordinaria-2024">Extraordinaria 2024</a></li>
+  <li><a href="#extraordinaria-suplente-2024" id="toc-extraordinaria-suplente-2024" class="nav-link" data-scroll-target="#extraordinaria-suplente-2024">Extraordinaria · Suplente 2024</a></li>
+  </ul></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">2023</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2023" id="toc-ordinaria-2023" class="nav-link" data-scroll-target="#ordinaria-2023">Ordinaria 2023</a></li>
+  <li><a href="#ordinaria-reserva-2023" id="toc-ordinaria-reserva-2023" class="nav-link" data-scroll-target="#ordinaria-reserva-2023">Ordinaria · Reserva 2023</a></li>
+  <li><a href="#ordinaria-suplente-2023" id="toc-ordinaria-suplente-2023" class="nav-link" data-scroll-target="#ordinaria-suplente-2023">Ordinaria · Suplente 2023</a></li>
+  <li><a href="#extraordinaria-2023" id="toc-extraordinaria-2023" class="nav-link" data-scroll-target="#extraordinaria-2023">Extraordinaria 2023</a></li>
+  <li><a href="#extraordinaria-reserva-2023" id="toc-extraordinaria-reserva-2023" class="nav-link" data-scroll-target="#extraordinaria-reserva-2023">Extraordinaria · Reserva 2023</a></li>
+  <li><a href="#extraordinaria-suplente-2023" id="toc-extraordinaria-suplente-2023" class="nav-link" data-scroll-target="#extraordinaria-suplente-2023">Extraordinaria · Suplente 2023</a></li>
+  </ul></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">2022</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2022" id="toc-ordinaria-2022" class="nav-link" data-scroll-target="#ordinaria-2022">Ordinaria 2022</a></li>
+  <li><a href="#ordinaria-reserva-2022" id="toc-ordinaria-reserva-2022" class="nav-link" data-scroll-target="#ordinaria-reserva-2022">Ordinaria · Reserva 2022</a></li>
+  <li><a href="#ordinaria-suplente-2022" id="toc-ordinaria-suplente-2022" class="nav-link" data-scroll-target="#ordinaria-suplente-2022">Ordinaria · Suplente 2022</a></li>
+  <li><a href="#extraordinaria-2022" id="toc-extraordinaria-2022" class="nav-link" data-scroll-target="#extraordinaria-2022">Extraordinaria 2022</a></li>
+  <li><a href="#extraordinaria-reserva-2022" id="toc-extraordinaria-reserva-2022" class="nav-link" data-scroll-target="#extraordinaria-reserva-2022">Extraordinaria · Reserva 2022</a></li>
+  </ul></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">2021</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-suplente-2021" id="toc-ordinaria-suplente-2021" class="nav-link" data-scroll-target="#ordinaria-suplente-2021">Ordinaria · Suplente 2021</a></li>
+  <li><a href="#extraordinaria-2021" id="toc-extraordinaria-2021" class="nav-link" data-scroll-target="#extraordinaria-2021">Extraordinaria 2021</a></li>
+  </ul></li>
+  <li><a href="#también-trabajan-este-tema" id="toc-también-trabajan-este-tema" class="nav-link" data-scroll-target="#también-trabajan-este-tema">También trabajan este tema</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PAU Andalucía — Matrices</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Ejercicios de <strong>Matemáticas II</strong> de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de <strong>2021 a 2026</strong> cuyo tema principal es <em>matrices</em>: <strong>26 ejercicios</strong> de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. Repasa antes la <a href="../../../apuntes/2-bachillerato-ciencias/01-matrices/index.html">teoría</a>, los <a href="../../../ejercicios/2-bachillerato-ciencias/01-matrices/index.html">ejercicios del tema</a> y las <a href="../../../actividades/2-bachillerato-ciencias/01-matrices/index.html">actividades interactivas</a>.</p>
+<p>Debajo de cada ejercicio hay una <strong>resolución breve</strong> plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.</p>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">2026</h2>
+<section id="ordinaria-suplente-1-2026" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-1-2026">Ordinaria · Suplente 1 2026</h3>
+<div id="ebau-2026-ord-sup1-4-1" class="ebau-ej">
+<p><strong>Ejercicio 4.1</strong> · Ordinaria · Suplente 1 2026 · Bloque optativo 2 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/06/2oBachCC_EBAU_Andalucia_2026-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Dadas las matrices <span class="math inline">\(A=\begin{pmatrix}1&amp;0&amp;1\\-1&amp;2&amp;0\\0&amp;1&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(B=\begin{pmatrix}-1\\2\\3\end{pmatrix}\)</span> y <span class="math inline">\(C=\begin{pmatrix}1&amp;4&amp;2\end{pmatrix}\)</span>, calcula la matriz <span class="math inline">\(X\)</span> que satisface <span class="math inline">\(X-2C=B^{t}+XA\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(X-2C=B^t+XA\Rightarrow X(I-A)=B^t+2C\Rightarrow X=(B^t+2C)(I-A)^{-1}\)</span> (con <span class="math inline">\(I-A\)</span> invertible, <span class="math inline">\(|I-A|=1\ne0\)</span>).</p>
+<p><span class="math inline">\(B^t+2C=(1,\ 10,\ 7)\)</span> y <span class="math inline">\(I-A=\begin{pmatrix}0&amp;0&amp;-1\\1&amp;-1&amp;0\\0&amp;-1&amp;0\end{pmatrix}\)</span>.</p>
+<p><strong><span class="math inline">\(X=\begin{pmatrix}-7&amp;1&amp;-11\end{pmatrix}\)</span>.</strong> (Comprobado: <span class="math inline">\(X-2C-B^t-XA=0\)</span>.)</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2026" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2026">Extraordinaria 2026</h3>
+<div id="ebau-2026-ext-3-2" class="ebau-ej">
+<p><strong>Ejercicio 3.2</strong> · Extraordinaria 2026 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/09/2oBachCC_EBAU_Andalucia_2026-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las matrices <span class="math inline">\(A=\begin{pmatrix}2&amp;2\\3&amp;4\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}3&amp;1\\2&amp;2\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Halla razonadamente el determinante de una matriz <span class="math inline">\(X\)</span> que verifica <span class="math inline">\(A^{3}XB^{t}=5B^{2}A^{-1}\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Determina, si existe, una matriz <span class="math inline">\(Y\)</span> que verifica <span class="math inline">\(A^{3}YB^{-1}=A^{2}\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(|A|=2\)</span>, <span class="math inline">\(|B|=4\)</span>.</p>
+<p><strong>a)</strong> Tomando determinantes en <span class="math inline">\(A^3XB^t=5B^2A^{-1}\)</span> (matrices <span class="math inline">\(2\times2\)</span>, luego <span class="math inline">\(|5M|=25|M|\)</span>): <span class="math inline">\(|A|^3|X||B|=25\,|B|^2\,|A|^{-1}\Rightarrow 8\cdot4\,|X|=25\cdot16\cdot\tfrac12=200\)</span>.</p>
+<p><strong><span class="math inline">\(|X|=\dfrac{25}{4}\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(A^3YB^{-1}=A^2\Rightarrow Y=A^{-3}A^2B=A^{-1}B\)</span> (existe, pues <span class="math inline">\(|A|\neq0\)</span>). Con <span class="math inline">\(A^{-1}=\begin{pmatrix}2&amp;-1\\-3/2&amp;1\end{pmatrix}\)</span>:</p>
+<p><strong><span class="math inline">\(Y=A^{-1}B=\begin{pmatrix}4&amp;0\\-5/2&amp;1/2\end{pmatrix}\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1">2025</h2>
+<section id="ordinaria-suplente-2-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2-2025">Ordinaria · Suplente 2 2025</h3>
+<div id="ebau-2025-ord-sup2-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria · Suplente 2 2025 · Bloque optativo 2 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Ordinaria_Suplente2-1.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la matriz <span class="math inline">\(A=\begin{pmatrix}0&amp;3&amp;4\\1&amp;-4&amp;-5\\-1&amp;3&amp;4\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Comprueba que <span class="math inline">\(A^{3}+I=O\)</span>, siendo <span class="math inline">\(I\)</span> la matriz identidad y <span class="math inline">\(O\)</span> la matriz nula. Calcula <span class="math inline">\(A^{-1}\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Calcula <span class="math inline">\(A^{2025}\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(A^2=\begin{pmatrix}-1&amp;0&amp;1\\1&amp;4&amp;4\\-1&amp;-3&amp;-3\end{pmatrix}\)</span> y <span class="math inline">\(A^3=A\cdot A^2=\begin{pmatrix}-1&amp;0&amp;0\\0&amp;-1&amp;0\\0&amp;0&amp;-1\end{pmatrix}=-I\)</span>, luego <strong><span class="math inline">\(A^3+I=O\)</span></strong>.</p>
+<p>De <span class="math inline">\(A\cdot A^2=-I\)</span> sale <span class="math inline">\(A(-A^2)=I\)</span>: <span class="math display">\[\mathbf{A^{-1}}=-A^2=\begin{pmatrix}1&amp;0&amp;-1\\-1&amp;-4&amp;-4\\1&amp;3&amp;3\end{pmatrix}.\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(2025=3\cdot675\)</span>, así que <span class="math inline">\(A^{2025}=(A^3)^{675}=(-I)^{675}=\mathbf{-I}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-1-2025" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-1-2025">Extraordinaria · Suplente 1 2025</h3>
+<div id="ebau-2025-ext-sup1-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Extraordinaria · Suplente 1 2025 · Bloque optativo 2 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la matriz <span class="math inline">\(A=\begin{pmatrix}0&amp;-1\\1&amp;0\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Calcula <span class="math inline">\(A^{4}\)</span> y <span class="math inline">\(A^{31}\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Halla razonadamente el determinante de la matriz <span class="math inline">\(4A^{25}(A^{t})^{4}\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(A^2=\begin{pmatrix}-1&amp;0\\0&amp;-1\end{pmatrix}=-I\)</span>, así que <span class="math inline">\(A^4=I\)</span> y <span class="math inline">\(A^{31}=(A^4)^7A^3=A^3=-A\)</span>.</p>
+<p><span class="math display">\[\textbf{A}^{4}=I,\qquad \textbf{A}^{31}=\begin{pmatrix}0&amp;1\\-1&amp;0\end{pmatrix}.\]</span></p>
+<p><strong>b)</strong> Para matrices <span class="math inline">\(2\times2\)</span>, <span class="math inline">\(|4M|=4^2|M|\)</span>. Con <span class="math inline">\(|A|=1\)</span> y <span class="math inline">\(|A^t|=|A|\)</span>: <span class="math inline">\(|4A^{25}(A^t)^4|=16\,|A|^{25}|A|^4=\mathbf{16}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2025-ext-sup1-5" class="ebau-ej">
+<p><strong>Ejercicio 5</strong> · Extraordinaria · Suplente 1 2025 · Bloque optativo 2 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Sean las matrices <span class="math inline">\(A=\begin{pmatrix}2&amp;2\\3&amp;4\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}3&amp;1\\2&amp;2\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Halla razonadamente el determinante de una matriz <span class="math inline">\(X\)</span> que verifica <span class="math inline">\(X^{3}AX^{2}=B^{2}\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Determina, si existe, una matriz <span class="math inline">\(Y\)</span> que verifique <span class="math inline">\(A^{3}YB^{-1}=A^{2}\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Tomando determinantes: <span class="math inline">\(|X|^3\,|A|\,|X|^2=|B|^2\)</span>, con <span class="math inline">\(|A|=8-6=2\)</span> y <span class="math inline">\(|B|=6-2=4\)</span>. Entonces <span class="math inline">\(2|X|^5=16\)</span>, <span class="math inline">\(|X|^5=8\)</span> y <strong><span class="math inline">\(|X|=\sqrt[5]{8}=2^{3/5}\)</span></strong>.</p>
+<p><strong>b)</strong> <span class="math inline">\(|A|=2\neq0\)</span> y <span class="math inline">\(|B|=4\neq0\)</span>, así que existe. Multiplicando por <span class="math inline">\(A^{-3}\)</span> por la izquierda y por <span class="math inline">\(B\)</span> por la derecha: <span class="math inline">\(Y=A^{-3}A^{2}B=A^{-1}B\)</span>.</p>
+<p><span class="math inline">\(A^{-1}=\begin{pmatrix}2&amp;-1\\-3/2&amp;1\end{pmatrix}\)</span>, luego <span class="math inline">\(\mathbf{Y}=\begin{pmatrix}4&amp;0\\-5/2&amp;1/2\end{pmatrix}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2-2025" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2-2025">Extraordinaria · Suplente 2 2025</h3>
+<div id="ebau-2025-ext-sup2-5" class="ebau-ej">
+<p><strong>Ejercicio 5</strong> · Extraordinaria · Suplente 2 2025 · Bloque optativo 2 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria_Suplente2.pdf" target="_blank">PDF del examen</a></p>
+<p>Sean las matrices <span class="math inline">\(A=\begin{pmatrix}a&amp;3\\b&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}1&amp;1\\-1&amp;2\\1&amp;1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Determina <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para que <span class="math inline">\(A^{2}=4I\)</span>, donde <span class="math inline">\(I\)</span> es la matriz identidad de orden 2. <em>(1,5 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(a=-1\)</span> y <span class="math inline">\(b=1\)</span>, calcula, si es posible, la matriz <span class="math inline">\(X\)</span> que cumple <span class="math inline">\(A^{2}X=B^{t}\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(A^2=\begin{pmatrix}a^2+3b&amp;3a+3\\ab+b&amp;3b+1\end{pmatrix}=\begin{pmatrix}4&amp;0\\0&amp;4\end{pmatrix}\)</span>. De <span class="math inline">\(3b+1=4\)</span> sale <span class="math inline">\(b=1\)</span>; de <span class="math inline">\(3a+3=0\)</span> sale <span class="math inline">\(a=-1\)</span>, y se cumple <span class="math inline">\(a^2+3b=4\)</span> y <span class="math inline">\(ab+b=0\)</span>. <strong><span class="math inline">\(a=-1\)</span>, <span class="math inline">\(b=1\)</span>.</strong></p>
+<p><strong>b)</strong> Con esos valores <span class="math inline">\(A^2=4I\)</span>, que es invertible, así que <span class="math inline">\(X=(A^2)^{-1}B^t=\tfrac14B^t\)</span> existe: <span class="math display">\[\mathbf{X}=\frac14\begin{pmatrix}1&amp;-1&amp;1\\1&amp;2&amp;1\end{pmatrix}=\begin{pmatrix}1/4&amp;-1/4&amp;1/4\\1/4&amp;1/2&amp;1/4\end{pmatrix}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2">2024</h2>
+<section id="ordinaria-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2024">Ordinaria 2024</h3>
+<div id="ebau-2024-ord-5" class="ebau-ej">
+<p><strong>Ejercicio 5</strong> · Ordinaria 2024 · Bloque C · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la matriz <span class="math inline">\(A=\begin{pmatrix}1&amp;1/8&amp;1/8\\0&amp;1&amp;0\\0&amp;0&amp;1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Calcula <span class="math inline">\(A^{2024}\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Halla la matriz <span class="math inline">\(X\)</span>, si es posible, que verifica <span class="math inline">\(A^{2}XA+I=O\)</span>, donde <span class="math inline">\(I\)</span> y <span class="math inline">\(O\)</span> son la matriz identidad y la matriz nula de orden 3, respectivamente. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(A=I+N\)</span>, con <span class="math inline">\(N=\begin{pmatrix}0&amp;1/8&amp;1/8\\0&amp;0&amp;0\\0&amp;0&amp;0\end{pmatrix}\)</span> y <span class="math inline">\(N^2=O\)</span>. Por el binomio, <span class="math inline">\(A^n=I+nN\)</span>:</p>
+<p><span class="math display">\[\mathbf{A^{2024}=\begin{pmatrix}1&amp;253&amp;253\\0&amp;1&amp;0\\0&amp;0&amp;1\end{pmatrix}}\qquad(2024/8=253).\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(A^2XA=-I\Rightarrow X=-A^{-2}A^{-1}=-A^{-3}\)</span> (existe porque <span class="math inline">\(|A|=1\)</span>). Como <span class="math inline">\(A^{-1}=I-N\)</span>, <span class="math inline">\(A^{-3}=I-3N\)</span>:</p>
+<p><span class="math display">\[\mathbf{X=-I+3N=\begin{pmatrix}-1&amp;3/8&amp;3/8\\0&amp;-1&amp;0\\0&amp;0&amp;-1\end{pmatrix}}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-2024">Ordinaria · Reserva 2024</h3>
+<div id="ebau-2024-ord-res-6" class="ebau-ej">
+<p><strong>Ejercicio 6</strong> · Ordinaria · Reserva 2024 · Bloque C · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Ordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la matriz <span class="math inline">\(A=\begin{pmatrix}1&amp;0&amp;1\\2&amp;0&amp;a\\5&amp;3a-1&amp;0\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Calcula el rango de <span class="math inline">\(A\)</span> según los valores de <span class="math inline">\(a\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Si <span class="math inline">\(B=\begin{pmatrix}1\\2\\4\end{pmatrix}\)</span>, <span class="math inline">\(X=\begin{pmatrix}x\\y\\z\end{pmatrix}\)</span> y <span class="math inline">\(a=2\)</span> resuelve, si es posible, el sistema <span class="math inline">\(AX=B\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>, <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/03-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=-(3a-1)(a-2)\)</span> (desarrollando por la 2.ª columna).</p>
+<ul>
+<li>Si <span class="math inline">\(a\ne\frac13\)</span> y <span class="math inline">\(a\neq2\)</span>: <span class="math inline">\(\operatorname{rg}(A)=3\)</span>.</li>
+<li>Si <span class="math inline">\(a=\frac13\)</span> o <span class="math inline">\(a=2\)</span>: <span class="math inline">\(\operatorname{rg}(A)=2\)</span> (hay un menor <span class="math inline">\(2\times2\)</span> no nulo, p.&nbsp;ej. <span class="math inline">\(\begin{vmatrix}1&amp;1\\2&amp;a\end{vmatrix}\)</span> con <span class="math inline">\(a=\frac13\)</span>, o <span class="math inline">\(\begin{vmatrix}1&amp;0\\5&amp;5\end{vmatrix}=5\)</span> con <span class="math inline">\(a=2\)</span>).</li>
+</ul>
+<p><strong>b)</strong> Con <span class="math inline">\(a=2\)</span>: <span class="math inline">\(\begin{cases}x+z=1\\2x+2z=2\\5x+5y=4\end{cases}\)</span>. La segunda es la primera multiplicada por 2 (SCI, un parámetro): <span class="math inline">\(z=1-x\)</span>, <span class="math inline">\(y=\frac45-x\)</span>.</p>
+<p><span class="math display">\[\mathbf{(x,y,z)=\left(\lambda,\ \tfrac45-\lambda,\ 1-\lambda\right),\ \lambda\in\mathbb{R}}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2024">Ordinaria · Suplente 2024</h3>
+<div id="ebau-2024-ord-sup-5" class="ebau-ej">
+<p><strong>Ejercicio 5</strong> · Ordinaria · Suplente 2024 · Bloque C · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las matrices <span class="math inline">\(A=\begin{pmatrix}1&amp;0&amp;1\\m&amp;1&amp;0\\1&amp;-1&amp;2\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}-4&amp;8&amp;0\\0&amp;4&amp;4\\4&amp;12&amp;20\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Determina los valores de <span class="math inline">\(m\)</span> para los que la matriz <span class="math inline">\(A^{2}\)</span> tiene inversa. <em>(0,75 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(m=0\)</span> calcula, si es posible, la matriz <span class="math inline">\(X\)</span> que verifica <span class="math inline">\(A^{2}X=\dfrac12(A+B)\)</span>. <em>(1,75 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=1-m\)</span> y <span class="math inline">\(|A^2|=|A|^2=(1-m)^2\)</span>. <strong><span class="math inline">\(A^2\)</span> tiene inversa si y sólo si <span class="math inline">\(m\neq1\)</span>.</strong></p>
+<p><strong>b)</strong> Con <span class="math inline">\(m=0\)</span>, <span class="math inline">\(|A|=1\ne0\)</span>, luego <span class="math inline">\(A^2\)</span> es invertible y <span class="math inline">\(X=\tfrac12(A^2)^{-1}(A+B)\)</span>:</p>
+<p><span class="math display">\[\mathbf{X=\begin{pmatrix}-15&amp;-\tfrac{13}2&amp;-\tfrac{77}2\\[1mm]0&amp;\tfrac52&amp;2\\[1mm]\tfrac{19}2&amp;\tfrac{13}2&amp;\tfrac{53}2\end{pmatrix}}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2024" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2024">Extraordinaria 2024</h3>
+<div id="ebau-2024-ext-5" class="ebau-ej">
+<p><strong>Ejercicio 5</strong> · Extraordinaria 2024 · Bloque C · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2024/10/2oBachCC_EBAU_Andalucia_2024-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la matriz <span class="math inline">\(A=\begin{pmatrix}-1&amp;0\\0&amp;1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Halla todas las matrices <span class="math inline">\(X\)</span> que cumplan <span class="math inline">\(XA=-AX^{t}\)</span> y <span class="math inline">\(X^{2}=I\)</span>, donde <span class="math inline">\(I\)</span> es la matriz identidad de orden 2. <em>(1,25 puntos)</em></p></li>
+<li><p>Halla todas las matrices <span class="math inline">\(Y\)</span> que cumplan <span class="math inline">\(YA=AY\)</span>, la suma de los elementos de su diagonal principal es cero y tienen determinante <span class="math inline">\(-1\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sea <span class="math inline">\(X=\begin{pmatrix}p&amp;q\\r&amp;s\end{pmatrix}\)</span>.</p>
+<p><strong>a)</strong> <span class="math inline">\(XA=\begin{pmatrix}-p&amp;q\\-r&amp;s\end{pmatrix}\)</span> y <span class="math inline">\(-AX^t=\begin{pmatrix}p&amp;r\\-q&amp;-s\end{pmatrix}\)</span>. Igualando: <span class="math inline">\(p=0\)</span>, <span class="math inline">\(s=0\)</span>, <span class="math inline">\(q=r\)</span>. Entonces <span class="math inline">\(X=\begin{pmatrix}0&amp;q\\q&amp;0\end{pmatrix}\)</span> y <span class="math inline">\(X^2=q^2I=I\Rightarrow q=\pm1\)</span>:</p>
+<p><span class="math display">\[\mathbf{X=\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}\ \text{ o }\ X=\begin{pmatrix}0&amp;-1\\-1&amp;0\end{pmatrix}}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(YA=\begin{pmatrix}-p&amp;q\\-r&amp;s\end{pmatrix}\)</span> y <span class="math inline">\(AY=\begin{pmatrix}-p&amp;-q\\r&amp;s\end{pmatrix}\)</span>: <span class="math inline">\(q=r=0\)</span>. Diagonal con <span class="math inline">\(p+s=0\)</span> y <span class="math inline">\(|Y|=ps=-1\)</span>, o sea <span class="math inline">\(p^2=1\)</span>:</p>
+<p><span class="math display">\[\mathbf{Y=\begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix}\ \text{ o }\ Y=\begin{pmatrix}-1&amp;0\\0&amp;1\end{pmatrix}}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2024" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2024">Extraordinaria · Suplente 2024</h3>
+<div id="ebau-2024-ext-sup-6" class="ebau-ej">
+<p><strong>Ejercicio 6</strong> · Extraordinaria · Suplente 2024 · Bloque C · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Extraordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las matrices <span class="math inline">\(A=\begin{pmatrix}1&amp;3\\-2&amp;5\end{pmatrix}\)</span>, <span class="math inline">\(M=\begin{pmatrix}0&amp;1\\1&amp;1\end{pmatrix}\)</span> e <span class="math inline">\(I\)</span> la matriz identidad de orden 2.</p>
+<ol type="a">
+<li><p>Sabiendo que <span class="math inline">\(A\)</span> verifica la identidad <span class="math inline">\((A+aI)^{2}=bI\)</span>, halla <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Resuelve la ecuación <span class="math inline">\(MX+M^{2}=I\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(A^2=\begin{pmatrix}-5&amp;18\\-12&amp;19\end{pmatrix}\)</span> y <span class="math inline">\((A+aI)^2=A^2+2aA+a^2I\)</span>.</p>
+<p>Elemento <span class="math inline">\((1,2)\)</span>: <span class="math inline">\(18+6a=0\Rightarrow a=-3\)</span>. Con <span class="math inline">\(a=-3\)</span> la diagonal es <span class="math inline">\(-5-6+9=-2\)</span> y <span class="math inline">\(19-30+9=-2\)</span>, y los elementos fuera de la diagonal son <span class="math inline">\(0\)</span>.</p>
+<p><span class="math display">\[\mathbf{a=-3,\quad b=-2}\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(MX=I-M^2\Rightarrow X=M^{-1}(I-M^2)\)</span>. Con <span class="math inline">\(M^{-1}=\begin{pmatrix}-1&amp;1\\1&amp;0\end{pmatrix}\)</span> y <span class="math inline">\(I-M^2=\begin{pmatrix}0&amp;-1\\-1&amp;-1\end{pmatrix}\)</span>:</p>
+<p><span class="math display">\[\mathbf{X=\begin{pmatrix}-1&amp;0\\0&amp;-1\end{pmatrix}=-I}\]</span></p>
+<p>(comprobación: <span class="math inline">\(-M+M^2=I\)</span>).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-3">2023</h2>
+<section id="ordinaria-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2023">Ordinaria 2023</h3>
+<div id="ebau-2023-ord-6" class="ebau-ej">
+<p><strong>Ejercicio 6</strong> · Ordinaria 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las matrices <span class="math inline">\(A=\begin{pmatrix}0&amp;0&amp;m\\m&amp;0&amp;0\\0&amp;m&amp;0\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}1&amp;0&amp;0\\0&amp;0&amp;1\\0&amp;1&amp;0\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Determina para qué valores de <span class="math inline">\(m\)</span> existe la inversa de la matriz <span class="math inline">\(A\)</span>. <em>(0,5 puntos)</em></p></li>
+<li><p>Para todo <span class="math inline">\(m\neq -1\)</span>, resuelve, si es posible, la ecuación <span class="math inline">\(AX+X=B\)</span>. <em>(2 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=m^{3}\)</span>. <strong><span class="math inline">\(A\)</span> tiene inversa si <span class="math inline">\(m\ne0\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(AX+X=B\Rightarrow(A+I)X=B\)</span>. <span class="math inline">\(|A+I|=m^{3}+1\)</span>, que sólo se anula para <span class="math inline">\(m=-1\)</span>. Si <span class="math inline">\(m\ne-1\)</span> existe <span class="math inline">\((A+I)^{-1}\)</span> y <span class="math inline">\(X=(A+I)^{-1}B\)</span>:</p>
+<p><strong><span class="math inline">\(X=\dfrac1{m^{3}+1}\begin{pmatrix}1&amp;-m&amp;m^{2}\\-m&amp;m^{2}&amp;1\\m^{2}&amp;1&amp;-m\end{pmatrix}\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-2023">Ordinaria · Reserva 2023</h3>
+<div id="ebau-2023-ord-res-6" class="ebau-ej">
+<p><strong>Ejercicio 6</strong> · Ordinaria · Reserva 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria-Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las matrices <span class="math inline">\(A=\begin{pmatrix}1&amp;2m&amp;-1\\3&amp;0&amp;-2\\-3m&amp;1&amp;2\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}1&amp;-1&amp;3\\0&amp;2&amp;1\\2&amp;5&amp;4\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Determina los valores de <span class="math inline">\(m\)</span> para que la matriz <span class="math inline">\(A\)</span> tenga inversa. <em>(1 punto)</em></p></li>
+<li><p>Calcula para <span class="math inline">\(m=1\)</span>, si es posible, la matriz <span class="math inline">\(X\)</span> tal que <span class="math inline">\(AX=B^{t}\)</span>, donde <span class="math inline">\(B^{t}\)</span> denota la matriz traspuesta de <span class="math inline">\(B\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=12m^{2}-12m-1\)</span>, que se anula si <span class="math inline">\(m=\dfrac{3\pm2\sqrt3}6\)</span>.</p>
+<p><strong><span class="math inline">\(A\)</span> tiene inversa si <span class="math inline">\(m\ne\dfrac{3\pm2\sqrt3}{6}\)</span>.</strong></p>
+<p><strong>b)</strong> Con <span class="math inline">\(m=1\)</span>: <span class="math inline">\(|A|=-1\ne0\)</span>. <span class="math inline">\(AX=B^{t}\Rightarrow X=A^{-1}B^{t}\)</span>, con <span class="math inline">\(A^{-1}=\begin{pmatrix}-2&amp;5&amp;4\\0&amp;1&amp;1\\-3&amp;7&amp;6\end{pmatrix}\)</span> y <span class="math inline">\(B^{t}=\begin{pmatrix}1&amp;0&amp;2\\-1&amp;2&amp;5\\3&amp;1&amp;4\end{pmatrix}\)</span>.</p>
+<p><strong><span class="math inline">\(X=\begin{pmatrix}5&amp;14&amp;37\\2&amp;3&amp;9\\8&amp;20&amp;53\end{pmatrix}\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2023">Ordinaria · Suplente 2023</h3>
+<div id="ebau-2023-ord-sup-5" class="ebau-ej">
+<p><strong>Ejercicio 5</strong> · Ordinaria · Suplente 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria-Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Sean las matrices</p>
+<p><span class="math display">\[A=\begin{pmatrix}m+1&amp;1&amp;m-1\\1&amp;1&amp;1\\m-1&amp;1&amp;m+1\end{pmatrix},\qquad B=\begin{pmatrix}0&amp;4&amp;2\\0&amp;0&amp;4\\2&amp;2&amp;1\end{pmatrix}\qquad\text{y}\qquad C=\begin{pmatrix}0&amp;0&amp;1\\0&amp;1&amp;0\\1&amp;0&amp;0\end{pmatrix}.\]</span></p>
+<ol type="a">
+<li><p>Calcula <span class="math inline">\(m\)</span> para que la matriz <span class="math inline">\(A\)</span> tenga inversa. <em>(1 punto)</em></p></li>
+<li><p>Para <span class="math inline">\(m=0\)</span>, resuelve, si es posible, la ecuación matricial <span class="math inline">\(\tfrac12AX+C^{4}=B\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=4(m-1)\)</span>. <strong><span class="math inline">\(A\)</span> tiene inversa si <span class="math inline">\(m\ne1\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(C^{2}=I\)</span>, luego <span class="math inline">\(C^{4}=I\)</span>. La ecuación es <span class="math inline">\(\tfrac12AX=B-I\Rightarrow X=2A^{-1}(B-I)\)</span>.</p>
+<p>Para <span class="math inline">\(m=0\)</span>, <span class="math inline">\(|A|=-4\ne0\)</span> y <span class="math inline">\(A^{-1}=\begin{pmatrix}0&amp;\frac12&amp;-\frac12\\\frac12&amp;0&amp;\frac12\\-\frac12&amp;\frac12&amp;0\end{pmatrix}\)</span>.</p>
+<p><strong><span class="math inline">\(X=\begin{pmatrix}-2&amp;-3&amp;4\\1&amp;6&amp;2\\1&amp;-5&amp;2\end{pmatrix}\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2023" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2023">Extraordinaria 2023</h3>
+<div id="ebau-2023-ext-5" class="ebau-ej">
+<p><strong>Ejercicio 5</strong> · Extraordinaria 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Sea la matriz <span class="math inline">\(A=\begin{pmatrix}1&amp;1&amp;1\\1&amp;1&amp;1\\1&amp;1&amp;1\end{pmatrix}\)</span> e <span class="math inline">\(I\)</span> la matriz identidad de orden 3.</p>
+<ol type="a">
+<li><p>Halla los valores de <span class="math inline">\(m\)</span> para que la matriz <span class="math inline">\(A-mI\)</span> no tenga inversa. <em>(1 punto)</em></p></li>
+<li><p>Halla <span class="math inline">\(x\)</span>, distinto de cero, para que <span class="math inline">\(A-xI\)</span> sea la inversa de la matriz <span class="math inline">\(\dfrac{1}{x}(A-I)\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A-mI|=-m^{2}(m-3)\)</span> (los valores propios de <span class="math inline">\(A\)</span> son <span class="math inline">\(0,0,3\)</span>).</p>
+<p><strong><span class="math inline">\(A-mI\)</span> no tiene inversa si <span class="math inline">\(m=0\)</span> o <span class="math inline">\(m=3\)</span>.</strong></p>
+<p><strong>b)</strong> Como <span class="math inline">\(A^{2}=3A\)</span>: <span class="math inline">\((A-xI)(A-I)=A^{2}-(1+x)A+xI=(2-x)A+xI\)</span>.</p>
+<p>Queremos <span class="math inline">\(\dfrac1x\left[(2-x)A+xI\right]=I\iff(2-x)A=0\iff x=2\)</span>.</p>
+<p><strong><span class="math inline">\(x=2\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-reserva-2023" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-reserva-2023">Extraordinaria · Reserva 2023</h3>
+<div id="ebau-2023-ext-res-5" class="ebau-ej">
+<p><strong>Ejercicio 5</strong> · Extraordinaria · Reserva 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la matriz <span class="math inline">\(A=\begin{pmatrix}0&amp;a&amp;-b\\0&amp;0&amp;b\\0&amp;0&amp;0\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Calcula <span class="math inline">\(A^{10}\)</span>. <em>(0,75 puntos)</em></p></li>
+<li><p>Calcula, si es posible, la matriz inversa de <span class="math inline">\(I+A+A^{2}\)</span>, donde <span class="math inline">\(I\)</span> denota la matriz identidad de orden 3. <em>(1,75 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(A^{2}=\begin{pmatrix}0&amp;0&amp;ab\\0&amp;0&amp;0\\0&amp;0&amp;0\end{pmatrix}\)</span> y <span class="math inline">\(A^{3}=A\cdot A^{2}=0\)</span>. Por tanto <strong><span class="math inline">\(A^{10}=0\)</span></strong> (matriz nula).</p>
+<p><strong>b)</strong> <span class="math inline">\((I-A)(I+A+A^{2})=I-A^{3}=I\)</span>, luego existe la inversa y es <span class="math inline">\(I-A\)</span>:</p>
+<p><span class="math display">\[(I+A+A^{2})^{-1}=\begin{pmatrix}1&amp;-a&amp;b\\0&amp;1&amp;-b\\0&amp;0&amp;1\end{pmatrix}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2023-ext-res-6" class="ebau-ej">
+<p><strong>Ejercicio 6</strong> · Extraordinaria · Reserva 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Dadas las matrices <span class="math inline">\(A=\begin{pmatrix}1&amp;1&amp;0\\1&amp;0&amp;1\\0&amp;1&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}0&amp;0&amp;1\\0&amp;1&amp;0\\1&amp;0&amp;0\end{pmatrix}\)</span>, se define la matriz <span class="math inline">\(M=A+(\lambda-1)B\)</span>.</p>
+<ol type="a">
+<li><p>Halla los valores de <span class="math inline">\(\lambda\)</span> para los que la matriz <span class="math inline">\(M\)</span> tiene rango menor que 3. <em>(1,5 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(\lambda=-1\)</span>, resuelve el sistema lineal homogéneo cuya matriz de coeficientes es <span class="math inline">\(M\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>, <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/03-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(M=\begin{pmatrix}\lambda&amp;1&amp;\lambda-1\\1&amp;\lambda-1&amp;1\\\lambda-1&amp;1&amp;\lambda\end{pmatrix}\)</span> y <span class="math inline">\(|M|=-(\lambda-2)^{2}(\lambda+1)\)</span>.</p>
+<p><span class="math inline">\(\operatorname{rg}M&lt;3\iff|M|=0\iff\)</span> <strong><span class="math inline">\(\lambda=2\)</span> o <span class="math inline">\(\lambda=-1\)</span></strong>.</p>
+<p><strong>b)</strong> Para <span class="math inline">\(\lambda=-1\)</span>: <span class="math inline">\(M=\begin{pmatrix}-1&amp;1&amp;-2\\1&amp;-2&amp;1\\-2&amp;1&amp;-1\end{pmatrix}\)</span>, de rango 2: sistema compatible indeterminado (SCI) con una incógnita libre.</p>
+<p>Las dos primeras ecuaciones dan <span class="math inline">\(x=y=z\)</span>, y la tercera también se cumple.</p>
+<p><strong>Solución: <span class="math inline">\((x,y,z)=(t,t,t)\)</span>, <span class="math inline">\(t\in\mathbb{R}\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2023" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2023">Extraordinaria · Suplente 2023</h3>
+<div id="ebau-2023-ext-sup-5" class="ebau-ej">
+<p><strong>Ejercicio 5</strong> · Extraordinaria · Suplente 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Dadas las matrices <span class="math inline">\(A=\begin{pmatrix}2&amp;-1&amp;-2\\-2&amp;3&amp;1\\6&amp;1&amp;3\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}-1&amp;0&amp;-1\\-3&amp;-1&amp;5\end{pmatrix}\)</span>, calcula, si es posible, la matriz <span class="math inline">\(X\)</span> que verifica la ecuación <span class="math inline">\(3X-B^{t}=AX\)</span>, siendo <span class="math inline">\(B^{t}\)</span> la matriz traspuesta de <span class="math inline">\(B\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(3X-B^{t}=AX\Rightarrow(3I-A)X=B^{t}\)</span>. Aquí <span class="math inline">\(3I-A=\begin{pmatrix}1&amp;1&amp;2\\2&amp;0&amp;-1\\-6&amp;-1&amp;0\end{pmatrix}\)</span> y <span class="math inline">\(|3I-A|=1\neq0\)</span>, luego es invertible y</p>
+<p><span class="math display">\[(3I-A)^{-1}=\begin{pmatrix}-1&amp;-2&amp;-1\\6&amp;12&amp;5\\-2&amp;-5&amp;-2\end{pmatrix}.\]</span></p>
+<p><span class="math display">\[X=(3I-A)^{-1}B^{t}=\begin{pmatrix}-1&amp;-2&amp;-1\\6&amp;12&amp;5\\-2&amp;-5&amp;-2\end{pmatrix}\begin{pmatrix}-1&amp;-3\\0&amp;-1\\-1&amp;5\end{pmatrix}.\]</span></p>
+<p><strong><span class="math inline">\(X=\begin{pmatrix}2&amp;0\\-11&amp;-5\\4&amp;1\end{pmatrix}\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-4" class="level2">
+<h2 class="anchored" data-anchor-id="section-4">2022</h2>
+<section id="ordinaria-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2022">Ordinaria 2022</h3>
+<div id="ebau-2022-ord-6" class="ebau-ej">
+<p><strong>Ejercicio 6</strong> · Ordinaria 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la matriz <span class="math inline">\(A=\begin{pmatrix}m&amp;\sqrt{m}&amp;\sqrt{m}\\\sqrt{m}&amp;m&amp;1\\\sqrt{m}&amp;1&amp;m\end{pmatrix}\)</span>, donde <span class="math inline">\(m\ge 0\)</span>.</p>
+<ol type="a">
+<li><p>¿Para qué valores de <span class="math inline">\(m\)</span> tiene inversa la matriz <span class="math inline">\(A\)</span>? <em>(1 punto)</em></p></li>
+<li><p>Para <span class="math inline">\(m=4\)</span> resuelve, si es posible, la ecuación matricial <span class="math inline">\(A\,X=12\,I\)</span>, donde <span class="math inline">\(I\)</span> es la matriz identidad de orden 3. <em>(1,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=m(m-1)^2\)</span> (para <span class="math inline">\(m\ge0\)</span>). Se anula en <span class="math inline">\(m=0\)</span> y <span class="math inline">\(m=1\)</span>.</p>
+<p><strong><span class="math inline">\(A\)</span> tiene inversa si <span class="math inline">\(m&gt;0\)</span> y <span class="math inline">\(m\neq1\)</span>.</strong></p>
+<p><strong>b)</strong> Para <span class="math inline">\(m=4\)</span>, <span class="math inline">\(|A|=36\neq0\)</span> y <span class="math inline">\(X=12A^{-1}\)</span>:</p>
+<p><strong><span class="math inline">\(X=\begin{pmatrix}5&amp;-2&amp;-2\\-2&amp;4&amp;0\\-2&amp;0&amp;4\end{pmatrix}\)</span></strong> (se comprueba <span class="math inline">\(AX=12I\)</span>).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-2022">Ordinaria · Reserva 2022</h3>
+<div id="ebau-2022-ord-res-5" class="ebau-ej">
+<p><strong>Ejercicio 5</strong> · Ordinaria · Reserva 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la matriz <span class="math inline">\(A=\begin{pmatrix}1&amp;2&amp;1\\1&amp;1&amp;1\\1&amp;-1&amp;-1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Calcula <span class="math inline">\(A^{-1}\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Calcula la matriz <span class="math inline">\(X\)</span> de orden tres que verifica <span class="math inline">\(A\,X+(A-X)^{2}=X^{2}+I\)</span>, siendo <span class="math inline">\(I\)</span> la matriz identidad de orden tres. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=2\neq0\)</span>. <span class="math display">\[A^{-1}=\begin{pmatrix}0&amp;\tfrac12&amp;\tfrac12\\1&amp;-1&amp;0\\-1&amp;\tfrac32&amp;-\tfrac12\end{pmatrix}.\]</span></p>
+<p><strong>b)</strong> Se desarrolla <span class="math inline">\((A-X)^2=A^2-AX-XA+X^2\)</span>. La ecuación queda <span class="math inline">\(A^2-XA=I\)</span>, es decir <span class="math inline">\(XA=A^2-I\)</span> y</p>
+<p><strong><span class="math inline">\(X=A-A^{-1}=\begin{pmatrix}1&amp;\tfrac32&amp;\tfrac12\\0&amp;2&amp;1\\2&amp;-\tfrac52&amp;-\tfrac12\end{pmatrix}\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2022">Ordinaria · Suplente 2022</h3>
+<div id="ebau-2022-ord-sup-6" class="ebau-ej">
+<p><strong>Ejercicio 6</strong> · Ordinaria · Suplente 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p>Dado <span class="math inline">\(a\neq 0\)</span>, considera las matrices <span class="math inline">\(A=\begin{pmatrix}-a&amp;3\\a&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}1&amp;-1\\3&amp;4\\1&amp;2\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Determina para qué valores de <span class="math inline">\(a\)</span> se cumple que <span class="math inline">\(A^{-1}=\tfrac14A\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(a=1\)</span> calcula, si es posible, la matriz <span class="math inline">\(X\)</span> tal que <span class="math inline">\(A\,X=B^{t}\)</span>, donde <span class="math inline">\(B^{t}\)</span> denota la matriz traspuesta de <span class="math inline">\(B\)</span>. <em>(1,25 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(A^{-1}=\tfrac14A\iff A^2=4I\)</span>. Con <span class="math inline">\(A^2=\begin{pmatrix}a^2+3a&amp;3-3a\\a-a^2&amp;3a+1\end{pmatrix}\)</span>, la entrada <span class="math inline">\((1,2)\)</span> exige <span class="math inline">\(a=1\)</span>, y entonces <span class="math inline">\(A^2=4I\)</span> se cumple.</p>
+<p><strong><span class="math inline">\(a=1\)</span>.</strong></p>
+<p><strong>b)</strong> Para <span class="math inline">\(a=1\)</span>, <span class="math inline">\(|A|=-4\neq0\)</span>, así que <span class="math inline">\(X=A^{-1}B^t=\tfrac14A\,B^t\)</span>:</p>
+<p><strong><span class="math inline">\(X=\begin{pmatrix}-1&amp;\tfrac94&amp;\tfrac54\\0&amp;\tfrac74&amp;\tfrac34\end{pmatrix}\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2022" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2022">Extraordinaria 2022</h3>
+<div id="ebau-2022-ext-5" class="ebau-ej">
+<p><strong>Ejercicio 5</strong> · Extraordinaria 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las matrices <span class="math inline">\(A=\begin{pmatrix}1&amp;0\\-2&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(B=\begin{pmatrix}1&amp;1&amp;a\\2&amp;a&amp;1\\2&amp;2&amp;0\end{pmatrix}\)</span> y <span class="math inline">\(C=\begin{pmatrix}1&amp;0&amp;-2\\2&amp;-1&amp;-1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Determina los valores de <span class="math inline">\(a\)</span> para los que la matriz <span class="math inline">\(B\)</span> no tiene inversa. <em>(0,5 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(a=1\)</span> calcula <span class="math inline">\(X\)</span> tal que <span class="math inline">\(A\,X\,B=C\)</span>, si es posible. <em>(2 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|B|=-2a(a-2)\)</span>, que se anula en <span class="math inline">\(a=0\)</span> y <span class="math inline">\(a=2\)</span>.</p>
+<p><strong><span class="math inline">\(B\)</span> no tiene inversa si <span class="math inline">\(a=0\)</span> o <span class="math inline">\(a=2\)</span>.</strong></p>
+<p><strong>b)</strong> Para <span class="math inline">\(a=1\)</span>, <span class="math inline">\(|B|=2\ne0\)</span> y <span class="math inline">\(A\)</span> es invertible: <span class="math inline">\(X=A^{-1}CB^{-1}\)</span>, con <span class="math inline">\(A^{-1}=\begin{pmatrix}1&amp;0\\2&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(B^{-1}=\begin{pmatrix}-1&amp;1&amp;0\\1&amp;-1&amp;\tfrac12\\1&amp;0&amp;-\tfrac12\end{pmatrix}\)</span>.</p>
+<p><strong><span class="math inline">\(X=\begin{pmatrix}-3&amp;1&amp;1\\-10&amp;5&amp;2\end{pmatrix}\)</span></strong> (se comprueba que <span class="math inline">\(AXB=C\)</span>).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-reserva-2022" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-reserva-2022">Extraordinaria · Reserva 2022</h3>
+<div id="ebau-2022-ext-res-6" class="ebau-ej">
+<p><strong>Ejercicio 6</strong> · Extraordinaria · Reserva 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las matrices <span class="math inline">\(A=\begin{pmatrix}m&amp;1&amp;3\\1&amp;m&amp;2\\1&amp;m&amp;3\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}2&amp;2\\1&amp;0\\-1&amp;2\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Calcula el rango de la matriz <span class="math inline">\(A\)</span> según los valores de <span class="math inline">\(m\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Para <span class="math inline">\(m=0\)</span> resuelve la ecuación <span class="math inline">\(A\,X=B\)</span>, si es posible. <em>(1,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>, <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/03-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Desarrollando, <span class="math inline">\(|A|=m^2-1=(m-1)(m+1)\)</span>. - Si <span class="math inline">\(m\neq\pm1\)</span>: <span class="math inline">\(\operatorname{rg}A=3\)</span>. - Si <span class="math inline">\(m=1\)</span>: filas <span class="math inline">\((1,1,3),(1,1,2),(1,1,3)\)</span>, hay un menor no nulo de orden 2 y <span class="math inline">\(|A|=0\)</span>: <span class="math inline">\(\operatorname{rg}A=2\)</span>. - Si <span class="math inline">\(m=-1\)</span>: filas <span class="math inline">\((-1,1,3),(1,-1,2),(1,-1,3)\)</span>; el menor <span class="math inline">\(\begin{vmatrix}-1&amp;3\\1&amp;2\end{vmatrix}=-5\ne0\)</span>: <span class="math inline">\(\operatorname{rg}A=2\)</span>.</p>
+<p><strong>b)</strong> Para <span class="math inline">\(m=0\)</span>, <span class="math inline">\(|A|=-1\neq0\)</span>, luego <span class="math inline">\(X=A^{-1}B\)</span> existe: <span class="math display">\[X=A^{-1}B=\begin{pmatrix}5&amp;-4\\8&amp;-4\\-2&amp;2\end{pmatrix}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-5" class="level2">
+<h2 class="anchored" data-anchor-id="section-5">2021</h2>
+<section id="ordinaria-suplente-2021" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2021">Ordinaria · Suplente 2021</h3>
+<div id="ebau-2021-ord-sup-5" class="ebau-ej">
+<p><strong>Ejercicio 5</strong> · Ordinaria · Suplente 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Ordinaria_SUPLENTE_Modelo6.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la matriz <span class="math inline">\(A=\begin{pmatrix}2&amp;0&amp;2\\-1&amp;2&amp;1\\0&amp;1&amp;4\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Estudia, según los valores de <span class="math inline">\(\lambda\)</span>, el rango de la matriz <span class="math inline">\(A-\lambda I\)</span>, siendo <span class="math inline">\(I\)</span> la matriz identidad de orden tres. <em>(1,75 puntos)</em></p></li>
+<li><p>Resuelve el sistema <span class="math inline">\((A-I)\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}0\\0\\0\end{pmatrix}\)</span> y halla, si existe, una solución en la que <span class="math inline">\(x=2\)</span>. <em>(0,75 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>, <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/03-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A-\lambda I|=-(\lambda-1)(\lambda-3)(\lambda-4)\)</span>.</p>
+<ul>
+<li><span class="math inline">\(\lambda\neq1,3,4\)</span>: <span class="math inline">\(\operatorname{rg}(A-\lambda I)=3\)</span>.</li>
+<li><span class="math inline">\(\lambda=1,\ 3\)</span> o <span class="math inline">\(4\)</span>: <span class="math inline">\(\operatorname{rg}(A-\lambda I)=2\)</span> (el determinante es nulo y hay un menor de orden 2 no nulo).</li>
+</ul>
+<p><strong>b)</strong> <span class="math inline">\(A-I=\begin{pmatrix}1&amp;0&amp;2\\-1&amp;1&amp;1\\0&amp;1&amp;3\end{pmatrix}\)</span>, de rango <span class="math inline">\(2\)</span>. De <span class="math inline">\(x+2z=0\)</span> y <span class="math inline">\(-x+y+z=0\)</span> (la tercera es combinación): <span class="math inline">\(x=-2z\)</span>, <span class="math inline">\(y=-3z\)</span>.</p>
+<p><strong>Soluciones: <span class="math inline">\((x,y,z)=(-2\lambda,-3\lambda,\lambda)\)</span>.</strong> Con <span class="math inline">\(x=2\)</span>: <span class="math inline">\(\lambda=-1\)</span>, <strong>solución <span class="math inline">\((2,3,-1)\)</span></strong>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2021-ord-sup-6" class="ebau-ej">
+<p><strong>Ejercicio 6</strong> · Ordinaria · Suplente 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Ordinaria_SUPLENTE_Modelo6.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera las matrices <span class="math inline">\(A=\begin{pmatrix}1&amp;-1&amp;0\\1&amp;m&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}1&amp;1\\0&amp;2\\m&amp;-1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Calcula <span class="math inline">\(m\)</span> para que <span class="math inline">\(AB\)</span> no tenga inversa. <em>(1 punto)</em></p></li>
+<li><p>Estudia el rango de la matriz <span class="math inline">\(BA\)</span> según los valores de <span class="math inline">\(m\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(A\)</span> es <span class="math inline">\(2\times3\)</span> y <span class="math inline">\(B\)</span> es <span class="math inline">\(3\times2\)</span>.</p>
+<p><strong>a)</strong> <span class="math inline">\(AB=\begin{pmatrix}1&amp;-1\\1+m&amp;2m\end{pmatrix}\)</span> y <span class="math inline">\(|AB|=2m+(1+m)=3m+1\)</span>.</p>
+<p><strong><span class="math inline">\(AB\)</span> no tiene inversa si <span class="math inline">\(m=-\dfrac13\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(BA=\begin{pmatrix}2&amp;m-1&amp;1\\2&amp;2m&amp;2\\m-1&amp;-2m&amp;-1\end{pmatrix}\)</span>. Desarrollando, <span class="math inline">\(|BA|=0\)</span> para todo <span class="math inline">\(m\)</span> (es lógico: <span class="math inline">\(BA\)</span> es <span class="math inline">\(3\times3\)</span> pero <span class="math inline">\(\operatorname{rg}(BA)\le\operatorname{rg}(A)\le2\)</span>), luego <span class="math inline">\(\operatorname{rg}(BA)\le2\)</span>.</p>
+<p>El menor de las filas 1.ª y 2.ª y columnas 1.ª y 3.ª vale <span class="math inline">\(\begin{vmatrix}2&amp;1\\2&amp;2\end{vmatrix}=2\neq0\)</span>, sin depender de <span class="math inline">\(m\)</span>.</p>
+<p><strong><span class="math inline">\(\operatorname{rg}(BA)=2\)</span> para todo <span class="math inline">\(m\in\mathbb{R}\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2021" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2021">Extraordinaria 2021</h3>
+<div id="ebau-2021-ext-5" class="ebau-ej">
+<p><strong>Ejercicio 5</strong> · Extraordinaria 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/07/2oBachCC_EBAU_Andalucia_2021-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p>Considera la matriz <span class="math inline">\(A=\begin{pmatrix}0&amp;3&amp;4\\1&amp;-4&amp;-5\\-1&amp;3&amp;4\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Comprueba que <span class="math inline">\(A^{2}=-A^{-1}\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Dadas las matrices</p></li>
+</ol>
+<p><span class="math display">\[B=\begin{pmatrix}1&amp;-1\\3&amp;0\\-4&amp;5\end{pmatrix}\qquad\text{y}\qquad C=\begin{pmatrix}2&amp;0\\-3&amp;2\\1&amp;-1\end{pmatrix},\]</span></p>
+<p>calcula la matriz <span class="math inline">\(X\)</span> que verifica <span class="math inline">\(A^{4}X+B=AC\)</span>. <em>(1,25 puntos)</em></p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Se obtiene <span class="math inline">\(A^2=\begin{pmatrix}-1&amp;0&amp;1\\1&amp;4&amp;4\\-1&amp;-3&amp;-3\end{pmatrix}\)</span> y <span class="math inline">\(A^3=A^2A=-I\)</span>.</p>
+<p>Como <span class="math inline">\(A\cdot A^2=-I\)</span>, resulta <span class="math inline">\(A^{-1}=-A^2\)</span>, es decir, <strong><span class="math inline">\(A^2=-A^{-1}\)</span></strong>.</p>
+<p><strong>b)</strong> De <span class="math inline">\(A^3=-I\)</span>: <span class="math inline">\(A^4=-A\)</span>. La ecuación es <span class="math inline">\(-AX+B=AC\)</span>, luego <span class="math inline">\(X=-A^{-1}(AC-B)=-C+A^{-1}B=-C-A^2B\)</span>:</p>
+<p><span class="math display">\[X=\begin{pmatrix}3&amp;-6\\6&amp;-21\\-3&amp;15\end{pmatrix}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="también-trabajan-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="también-trabajan-este-tema">También trabajan este tema</h2>
+<p>Ejercicios cuyo tema principal es otro pero en los que aparece este tema:</p>
+<ul>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/03-sistemas-ecuaciones-lineales.html#ebau-2026-ext-sup2-2">2026 Extraordinaria · Suplente 2, ejercicio 2</a> (tema principal: Sistemas de ecuaciones lineales)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html#ebau-2025-ord-sup1-6">2025 Ordinaria · Suplente 1, ejercicio 6</a> (tema principal: Determinantes)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html#ebau-2024-ord-res-5">2024 Ordinaria · Reserva, ejercicio 5</a> (tema principal: Determinantes)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html#ebau-2024-ext-res-5">2024 Extraordinaria · Reserva, ejercicio 5</a> (tema principal: Determinantes)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/03-sistemas-ecuaciones-lineales.html#ebau-2024-ext-res-6">2024 Extraordinaria · Reserva, ejercicio 6</a> (tema principal: Sistemas de ecuaciones lineales)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/03-sistemas-ecuaciones-lineales.html#ebau-2023-ord-sup-6">2023 Ordinaria · Suplente, ejercicio 6</a> (tema principal: Sistemas de ecuaciones lineales)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html#ebau-2021-ord-res-6">2021 Ordinaria · Reserva, ejercicio 6</a> (tema principal: Determinantes)</li>
+</ul>
+<hr>
+<p><em>Enunciados: Prueba de Acceso y Admisión a la Universidad (PEvAU hasta 2024, PAU desde 2025), Matemáticas II, Andalucía, Ceuta, Melilla y centros en Marruecos (Distrito Único Andaluz). Cada ejercicio enlaza al PDF del examen completo. La clasificación por temas es propia y puede discutirse: los ejercicios mixtos figuran en su tema principal.</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

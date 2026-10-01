@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Límites y continuidad – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-c03d2d665be348d2f4fb6e6313d5071b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-28c4b676bd4c1c9121cc5c5925a59653.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-c03d2d665be348d2f4fb6e6313d5071b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#límite-de-una-función" id="toc-límite-de-una-función" class="nav-link active" data-scroll-target="#límite-de-una-función">1. Límite de una función</a></li>
+  <li><a href="#límites-básicos" id="toc-límites-básicos" class="nav-link" data-scroll-target="#límites-básicos">2. Límites básicos</a></li>
+  <li><a href="#indeterminaciones" id="toc-indeterminaciones" class="nav-link" data-scroll-target="#indeterminaciones">3. Indeterminaciones</a></li>
+  <li><a href="#regla-de-lhôpital" id="toc-regla-de-lhôpital" class="nav-link" data-scroll-target="#regla-de-lhôpital">4. Regla de L’Hôpital</a></li>
+  <li><a href="#continuidad" id="toc-continuidad" class="nav-link" data-scroll-target="#continuidad">5. Continuidad</a></li>
+  <li><a href="#asíntotas" id="toc-asíntotas" class="nav-link" data-scroll-target="#asíntotas">6. Asíntotas</a></li>
+  <li><a href="#teoremas-de-funciones-continuas" id="toc-teoremas-de-funciones-continuas" class="nav-link" data-scroll-target="#teoremas-de-funciones-continuas">7. Teoremas de funciones continuas</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Límites y continuidad</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="límite-de-una-función" class="level2">
+<h2 class="anchored" data-anchor-id="límite-de-una-función">1. Límite de una función</h2>
+<p><span class="math inline">\(\displaystyle\lim_{x\to a}f(x)=L\)</span> significa que <span class="math inline">\(f(x)\)</span> se acerca a <span class="math inline">\(L\)</span> cuando <span class="math inline">\(x\)</span> se acerca a <span class="math inline">\(a\)</span> (sin tener que valer <span class="math inline">\(a\)</span>). Los <strong>límites laterales</strong> son <span class="math inline">\(\displaystyle\lim_{x\to a^-}\)</span> y <span class="math inline">\(\displaystyle\lim_{x\to a^+}\)</span>, y el límite existe si ambos coinciden.</p>
+<p>Un límite puede ser un número, <span class="math inline">\(+\infty\)</span> o <span class="math inline">\(-\infty\)</span>. Con funciones definidas a trozos o con valor absoluto hay que calcular siempre los límites laterales.</p>
+</section>
+<section id="límites-básicos" class="level2">
+<h2 class="anchored" data-anchor-id="límites-básicos">2. Límites básicos</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Caso</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\dfrac{k}{0^\pm}\)</span> con <span class="math inline">\(k\neq0\)</span></td>
+<td><span class="math inline">\(\pm\infty\)</span> (estudia el signo)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\dfrac{k}{\infty}\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(a^x\)</span> con <span class="math inline">\(a&gt;1\)</span>, <span class="math inline">\(x\to\infty\)</span></td>
+<td><span class="math inline">\(\infty\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(a^x\)</span> con <span class="math inline">\(0&lt;a&lt;1\)</span>, <span class="math inline">\(x\to\infty\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\ln x\)</span>, <span class="math inline">\(x\to\infty\)</span></td>
+<td><span class="math inline">\(\infty\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\ln x\)</span>, <span class="math inline">\(x\to0^+\)</span></td>
+<td><span class="math inline">\(-\infty\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Orden de infinitos</strong> (con <span class="math inline">\(n&gt;0\)</span> y <span class="math inline">\(a&gt;1\)</span>): <span class="math inline">\(\ln x\ll x^n\ll a^x\ll x^x\)</span> (una exponencial gana a una potencia, y esta a un logaritmo).</p>
+<p><strong>Límites notables</strong>: <span class="math display">\[\lim_{x\to0}\frac{\sin x}{x}=1\qquad\lim_{x\to0}\frac{e^x-1}{x}=1\qquad\lim_{x\to0}\frac{\ln(1+x)}{x}=1\qquad\lim_{x\to\infty}\left(1+\frac1x\right)^x=e\]</span></p>
+</section>
+<section id="indeterminaciones" class="level2">
+<h2 class="anchored" data-anchor-id="indeterminaciones">3. Indeterminaciones</h2>
+<p>Las formas <span class="math inline">\(\dfrac{\infty}{\infty}\)</span>, <span class="math inline">\(\dfrac00\)</span>, <span class="math inline">\(\infty-\infty\)</span>, <span class="math inline">\(0\cdot\infty\)</span>, <span class="math inline">\(1^\infty\)</span> no dan el resultado directamente. Hay que transformarlas.</p>
+<p><strong><span class="math inline">\(\dfrac{\infty}{\infty}\)</span> con polinomios</strong>: se comparan grados. Si <span class="math inline">\(\operatorname{gr}P=\operatorname{gr}Q\)</span>, el límite es el cociente de los coeficientes principales; si <span class="math inline">\(\operatorname{gr}P&gt;\operatorname{gr}Q\)</span>, es <span class="math inline">\(\pm\infty\)</span>; si <span class="math inline">\(\operatorname{gr}P&lt;\operatorname{gr}Q\)</span>, es <span class="math inline">\(0\)</span>.</p>
+<p><span class="math display">\[\lim_{x\to\infty}\frac{3x^2-x}{x^2+5}=3\]</span></p>
+<p><strong><span class="math inline">\(\dfrac00\)</span> con polinomios</strong>: se factoriza y se simplifica. <span class="math display">\[\lim_{x\to2}\frac{x^2-4}{x-2}=\lim_{x\to2}(x+2)=4\]</span></p>
+<p><strong><span class="math inline">\(\dfrac00\)</span> o <span class="math inline">\(\infty-\infty\)</span> con raíces</strong>: se multiplica y divide por el <strong>conjugado</strong>. <span class="math display">\[\lim_{x\to\infty}\left(\sqrt{x^2+x}-x\right)=\lim\frac{x^2+x-x^2}{\sqrt{x^2+x}+x}=\lim\frac{x}{\sqrt{x^2+x}+x}=\frac12\]</span></p>
+<p><strong><span class="math inline">\(1^\infty\)</span></strong>: se usa <span class="math display">\[\lim f(x)^{g(x)}=e^{\lim g(x)\,(f(x)-1)}\]</span> Ejemplo: <span class="math inline">\(\displaystyle\lim_{x\to\infty}\left(\frac{x+2}{x-1}\right)^x=e^{\lim x\cdot\frac{3}{x-1}}=e^3\)</span>.</p>
+<p><strong><span class="math inline">\(0\cdot\infty\)</span></strong>: se escribe como cociente, <span class="math inline">\(f\cdot g=\dfrac{f}{1/g}\)</span>, y se aplica L’Hôpital.</p>
+</section>
+<section id="regla-de-lhôpital" class="level2">
+<h2 class="anchored" data-anchor-id="regla-de-lhôpital">4. Regla de L’Hôpital</h2>
+<p>Si <span class="math inline">\(\displaystyle\lim_{x\to a}\frac{f(x)}{g(x)}\)</span> da <span class="math inline">\(\dfrac00\)</span> o <span class="math inline">\(\dfrac{\infty}{\infty}\)</span> y existe <span class="math inline">\(\displaystyle\lim_{x\to a}\frac{f'(x)}{g'(x)}\)</span>, entonces <span class="math display">\[\lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f'(x)}{g'(x)}\]</span></p>
+<p>Se puede aplicar varias veces. Se deriva <strong>el numerador y el denominador por separado</strong> (no es la derivada del cociente). Las derivadas se estudian en el tema siguiente.</p>
+<p>Ejemplo: <span class="math inline">\(\displaystyle\lim_{x\to0}\frac{e^x-1-x}{x^2}=\lim\frac{e^x-1}{2x}=\lim\frac{e^x}{2}=\frac12\)</span>.</p>
+</section>
+<section id="continuidad" class="level2">
+<h2 class="anchored" data-anchor-id="continuidad">5. Continuidad</h2>
+<p><span class="math inline">\(f\)</span> es <strong>continua en <span class="math inline">\(a\)</span></strong> si se cumplen las tres condiciones:</p>
+<ol type="1">
+<li>Existe <span class="math inline">\(f(a)\)</span>.</li>
+<li>Existe <span class="math inline">\(\displaystyle\lim_{x\to a}f(x)\)</span>.</li>
+<li><span class="math inline">\(\displaystyle\lim_{x\to a}f(x)=f(a)\)</span>.</li>
+</ol>
+<p>Las funciones elementales (polinomios, exponenciales, logaritmos en su dominio, trigonométricas, raíces) son continuas en su dominio. Las funciones a trozos se estudian en los puntos de unión.</p>
+<p><strong>Tipos de discontinuidad</strong>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Evitable</strong></td>
+<td>existe el límite, pero no coincide con <span class="math inline">\(f(a)\)</span> o <span class="math inline">\(f(a)\)</span> no existe</td>
+</tr>
+<tr class="even">
+<td><strong>Salto finito</strong></td>
+<td>los límites laterales existen y son distintos</td>
+</tr>
+<tr class="odd">
+<td><strong>Salto infinito (asintótica)</strong></td>
+<td>algún límite lateral es <span class="math inline">\(\pm\infty\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig-discontinuidades.svg" class="img-fluid figure-img" style="width:100.0%" alt="Tres dibujos: discontinuidad evitable con un hueco y un punto aparte, salto finito con dos límites laterales distintos y salto infinito con asíntota vertical"></p>
+<figcaption>Los tres tipos de discontinuidad: evitable, de salto finito y de salto infinito.</figcaption>
+</figure>
+</div>
+<p>Para calcular parámetros que hacen continua una función a trozos se igualan los límites laterales y el valor de la función en el punto de unión.</p>
+</section>
+<section id="asíntotas" class="level2">
+<h2 class="anchored" data-anchor-id="asíntotas">6. Asíntotas</h2>
+<ul>
+<li><strong>Vertical</strong> <span class="math inline">\(x=a\)</span>: si <span class="math inline">\(\displaystyle\lim_{x\to a^\pm}f(x)=\pm\infty\)</span> (aparecen en los ceros del denominador).</li>
+<li><strong>Horizontal</strong> <span class="math inline">\(y=L\)</span>: si <span class="math inline">\(\displaystyle\lim_{x\to\pm\infty}f(x)=L\)</span>.</li>
+<li><strong>Oblicua</strong> <span class="math inline">\(y=mx+n\)</span>: si no hay horizontal y <span class="math display">\[m=\lim_{x\to\infty}\frac{f(x)}{x}\neq0,\qquad n=\lim_{x\to\infty}\big(f(x)-mx\big)\]</span> Con cociente de polinomios, la oblicua aparece cuando el grado del numerador supera en uno al del denominador y se obtiene dividiendo.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig-asintotas.svg" class="img-fluid figure-img" style="width:85.0%" alt="Gráfica de x al cuadrado entre x menos 1 con la asíntota vertical x igual a 1 y la oblicua y igual a x más 1"></p>
+<figcaption><span class="math inline">\(f(x)=\frac{x^2}{x-1}\)</span>: asíntota vertical <span class="math inline">\(x=1\)</span> y oblicua <span class="math inline">\(y=x+1\)</span>.</figcaption>
+</figure>
+</div>
+</section>
+<section id="teoremas-de-funciones-continuas" class="level2">
+<h2 class="anchored" data-anchor-id="teoremas-de-funciones-continuas">7. Teoremas de funciones continuas</h2>
+<p>Sea <span class="math inline">\(f\)</span> continua en <span class="math inline">\([a,b]\)</span>.</p>
+<ul>
+<li><strong>Bolzano</strong>: si <span class="math inline">\(f(a)\)</span> y <span class="math inline">\(f(b)\)</span> tienen <strong>signos distintos</strong> (<span class="math inline">\(f(a)\cdot f(b)&lt;0\)</span>), existe <span class="math inline">\(c\in(a,b)\)</span> con <span class="math inline">\(f(c)=0\)</span>.</li>
+<li><strong>Valores intermedios (Darboux)</strong>: <span class="math inline">\(f\)</span> toma todos los valores entre <span class="math inline">\(f(a)\)</span> y <span class="math inline">\(f(b)\)</span>.</li>
+<li><strong>Weierstrass</strong>: <span class="math inline">\(f\)</span> alcanza en <span class="math inline">\([a,b]\)</span> un máximo y un mínimo absolutos.</li>
+</ul>
+<p>Para demostrar con Bolzano que una ecuación tiene solución: define <span class="math inline">\(f(x)=\)</span> (lado izquierdo) <span class="math inline">\(-\)</span> (lado derecho), comprueba que es continua y busca dos puntos con signos distintos.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Resumen rápido
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="math inline">\(\frac{\infty}{\infty}\)</span>: grados o coeficientes principales; <span class="math inline">\(\frac00\)</span>: factorizar, conjugado o L’Hôpital.</li>
+<li><span class="math inline">\(1^\infty\)</span>: <span class="math inline">\(e^{\lim g\,(f-1)}\)</span>.</li>
+<li>Continua en <span class="math inline">\(a\)</span>: <span class="math inline">\(f(a)\)</span> existe, el límite existe y son iguales.</li>
+<li>Bolzano: signos distintos en los extremos implica raíz en el intervalo.</li>
+<li>Oblicua: <span class="math inline">\(m=\lim f(x)/x\)</span>, <span class="math inline">\(n=\lim(f(x)-mx)\)</span>.</li>
+</ul>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
