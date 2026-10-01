@@ -18,6 +18,17 @@ Ejercicios de **Matemáticas II** de la prueba de acceso a la universidad en And
 Dada la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=\dfrac{8e^{x}-4e^{2x}}{1+e^{x}}$, halla la primitiva de $f$ cuya gráfica tiene por tangente a la recta $y=2x+12\ln(2)$ en el punto de abscisa $x=0$. (Sugerencia: puedes hacer el cambio $e^{x}=t$).
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Con $t=e^x$, $dx=\dfrac{dt}{t}$:
+$\displaystyle\int\dfrac{8e^x-4e^{2x}}{1+e^x}dx=\int\dfrac{8-4t}{1+t}dt=\int\left(-4+\dfrac{12}{1+t}\right)dt=-4t+12\ln(1+t)+C$.
+
+Primitivas: $F(x)=-4e^x+12\ln(1+e^x)+C$. La tangente $y=2x+12\ln2$ en $x=0$ exige $F(0)=12\ln2$ (y $F'(0)=f(0)=2$, que coincide con la pendiente). $F(0)=-4+12\ln2+C=12\ln2\Rightarrow C=4$.
+
+**$F(x)=-4e^x+12\ln(1+e^x)+4$.**
+::::
 :::::
 
 
@@ -32,6 +43,17 @@ Considera la función $f:[-2,2]\to\mathbb{R}$ definida por $f(x)=\dfrac{x}{|x|+1
 a) Calcula $\displaystyle\int_{0}^{2}f(x)\,dx$. *(1,5 puntos)*
 
 b) Estudia la simetría de la función $f$ y deduce de ella el valor de $\displaystyle\int_{-2}^{2}f(x)\,dx$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En $[0,2]$, $f(x)=\dfrac{x}{x+1}=1-\dfrac{1}{x+1}$:
+$\displaystyle\int_0^2f=\big[x-\ln(x+1)\big]_0^2$.
+
+**$2-\ln3$.**
+
+**b)** $f(-x)=\dfrac{-x}{|x|+1}=-f(x)$: $f$ es **impar** (simétrica respecto al origen). Por tanto $\displaystyle\int_{-2}^2f(x)\,dx=\mathbf{0}$.
+::::
 :::::
 
 
@@ -42,6 +64,18 @@ b) Estudia la simetría de la función $f$ y deduce de ella el valor de $\displa
 **Ejercicio 1** · Extraordinaria 2026 · Parte obligatoria · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2026/09/2oBachCC_EBAU_Andalucia_2026-Extraordinaria.pdf){target="_blank"}
 
 La velocidad de crecimiento de la población de peces en un lago al cabo del tiempo, $t$ en años, viene dada por $P'(t)=20\,t\,e^{-t/10}$, siendo $P(t)$ la población de peces. Sabiendo que la población inicial es de 1000 peces, calcula cuántos tendrá el lago transcurridos 10 años.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$P(t)=1000+\displaystyle\int_0^t20s\,e^{-s/10}ds$. Por partes: $\displaystyle\int s\,e^{-s/10}ds=-10s\,e^{-s/10}-100\,e^{-s/10}$.
+
+$\displaystyle\int_0^{10}20s\,e^{-s/10}ds=20\Big[-10s\,e^{-s/10}-100e^{-s/10}\Big]_0^{10}=20\big(100-200e^{-1}\big)=2000-\dfrac{4000}{e}$.
+
+$P(10)=3000-\dfrac{4000}{e}\approx1528{,}5$.
+
+**Al cabo de 10 años habrá unos 1528 peces.**
+::::
 :::::
 
 
@@ -56,6 +90,19 @@ Considera la función $f:[-\pi,\pi]\to\mathbb{R}$ definida por $f(x)=x^{2}\cos(x
 a) Calcula $\displaystyle\int_{0}^{\pi}f(x)\,dx$. *(2 puntos)*
 
 b) Estudia la simetría de la función $f$ y deduce de ella la relación que existe entre $\displaystyle\int_{0}^{\pi}f(x)\,dx$ y $\displaystyle\int_{-\pi}^{\pi}f(x)\,dx$. *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Por partes (dos veces): $\displaystyle\int x^2\cos x\,dx=x^2\operatorname{sen}x+2x\cos x-2\operatorname{sen}x$.
+
+$\displaystyle\int_0^\pi x^2\cos x\,dx=\big[x^2\operatorname{sen}x+2x\cos x-2\operatorname{sen}x\big]_0^\pi=-2\pi$.
+
+**Resultado: $-2\pi$.**
+
+**b)** $f(-x)=(-x)^2\cos(-x)=f(x)$: $f$ es **par** (simétrica respecto al eje $OY$). Por tanto
+$$\int_{-\pi}^{\pi}f=2\int_0^\pi f=-4\pi.$$
+::::
 :::::
 
 
@@ -69,6 +116,20 @@ b) Estudia la simetría de la función $f$ y deduce de ella la relación que exi
 **Ejercicio 6** · Ordinaria 2025 · Bloque optativo 3 · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/06/2oBachCC_EBAU_Andalucia_2025-Ordinaria.pdf){target="_blank"}
 
 Halla la función $f:(0,+\infty)\to\mathbb{R}$ que pasa por los puntos $(2,e-2-2\ln(2))$ y $(1,0)$, y verifica que $f''(x)=e^{x-1}-\dfrac{1}{x}$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Integrando $f''(x)=e^{x-1}-\dfrac1x$:
+$$f'(x)=e^{x-1}-\ln x+C_1,\qquad f(x)=e^{x-1}-x\ln x+x+C_1x+C_2.$$
+
+- $f(1)=0$: $1+1+C_1+C_2=0\Rightarrow C_1+C_2=-2$.
+- $f(2)=e-2-2\ln2$: $e-2\ln2+2+2C_1+C_2=e-2-2\ln2\Rightarrow2C_1+C_2=-4$.
+
+Restando: $C_1=-2$ y $C_2=0$.
+
+**$f(x)=e^{x-1}-x\ln x-x$.**
+::::
 :::::
 
 
@@ -83,6 +144,16 @@ Sea la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=(x-1)^{2}$.
 a) Esboza el recinto acotado y limitado por la gráfica de $f$ y la recta $y=a$ con $a>0$. *(0,75 puntos)*
 
 b) Calcula $a>0$ para que el área del recinto acotado y limitado por la gráfica de $f$ y la recta $y=a$ sea $\dfrac43$ unidades cuadradas. *(1,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Es una parábola de vértice $(1,0)$ abierta hacia arriba. La recta horizontal $y=a$ la corta en $x=1\pm\sqrt a$, y el recinto es el segmento parabólico entre ambos puntos, por encima de la parábola y por debajo de la recta.
+
+**b)** Con $t=x-1$:
+$$A=\int_{-\sqrt a}^{\sqrt a}\big(a-t^2\big)dt=2\left[at-\frac{t^3}{3}\right]_0^{\sqrt a}=\frac43a^{3/2}.$$
+$\dfrac43a^{3/2}=\dfrac43\Rightarrow\mathbf{a=1}$.
+::::
 :::::
 
 
@@ -94,6 +165,16 @@ Considera la función
 $$f(x)=\begin{cases}x\operatorname{sen}(2x) & \text{si } x\le 0\\\cos(\pi x)-1 & \text{si } x>0\end{cases}$$
 
 Calcula $\displaystyle\int_{-\pi/4}^{1}f(x)\,dx$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Tramo $x\le0$ (por partes): $\displaystyle\int_{-\pi/4}^{0}x\operatorname{sen}(2x)dx=\Big[-\dfrac{x\cos2x}{2}+\dfrac{\operatorname{sen}2x}{4}\Big]_{-\pi/4}^{0}=0-\Big(0-\dfrac14\Big)=\dfrac14$.
+
+Tramo $x>0$: $\displaystyle\int_0^1(\cos\pi x-1)dx=\Big[\dfrac{\operatorname{sen}\pi x}{\pi}-x\Big]_0^1=-1$.
+
+$$\int_{-\pi/4}^1f=\frac14-1=\mathbf{-\frac34}.$$
+::::
 :::::
 
 
@@ -104,6 +185,13 @@ Calcula $\displaystyle\int_{-\pi/4}^{1}f(x)\,dx$.
 **Ejercicio 2** · Ordinaria · Suplente 2 2025 · Bloque optativo 1 · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Ordinaria_Suplente2-1.pdf){target="_blank"}
 
 Calcula $\displaystyle\int_{\sqrt{3}}^{2}\dfrac{4x}{x^{4}-6x^{2}+10}\,dx$. (Sugerencia: efectúa el cambio de variable $t=x^{2}-3$).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Con $t=x^2-3$, $dt=2x\,dx$, $4x\,dx=2\,dt$. Además $x^4-6x^2+10=(x^2-3)^2+1=t^2+1$. Límites: $x=\sqrt3\to t=0$, $x=2\to t=1$.
+$$\int_0^1\frac{2\,dt}{t^2+1}=2\big[\operatorname{arctg}t\big]_0^1=\mathbf{\frac\pi2}.$$
+::::
 :::::
 
 
@@ -115,6 +203,17 @@ Sean las funciones $f,g:\mathbb{R}\to\mathbb{R}$ definidas por $f(x)=x^{3}-x$ y 
 a) Halla los puntos de corte (abscisas donde se obtienen y valores que se alcanzan) de las gráficas de $f$ y $g$. Realiza un esbozo del recinto acotado y limitado por dichas gráficas. *(1 punto)*
 
 b) Calcula el área del recinto acotado y limitado por las gráficas de $f$ y $g$. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $x^3-x=-x^2+1\Rightarrow x^3+x^2-x-1=(x+1)^2(x-1)=0$. Cortes en $x=-1$ (doble: las gráficas son tangentes) y $x=1$: **puntos $(-1,0)$ y $(1,0)$.**
+
+Esbozo: $g$ es una parábola con vértice $(0,1)$ y cortes con $OX$ en $\pm1$; $f$ es una cúbica que pasa por $(-1,0)$, $(0,0)$, $(1,0)$ (máximo local en $x=-1/\sqrt3$). En $(-1,1)$ la parábola queda por encima de la cúbica.
+
+**b)** $g-f=-(x-1)(x+1)^2\ge0$ en $[-1,1]$:
+$$A=\int_{-1}^{1}(-x^3-x^2+x+1)\,dx=2\int_0^1(-x^2+1)\,dx=2\cdot\frac23=\mathbf{\frac43}\ u^2.$$
+::::
 :::::
 
 
@@ -125,6 +224,16 @@ b) Calcula el área del recinto acotado y limitado por las gráficas de $f$ y $g
 **Ejercicio 2** · Extraordinaria 2025 · Bloque optativo 1 · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria.pdf){target="_blank"}
 
 Considera la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=\dfrac{1}{x^{2}+2x+2}$. Calcula una primitiva de $f$ cuya gráfica pase por el punto $\left(0,\dfrac{\pi}{4}\right)$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Completando cuadrados: $x^2+2x+2=(x+1)^2+1$, luego
+$$F(x)=\int\frac{dx}{(x+1)^2+1}=\operatorname{arctg}(x+1)+C.$$
+$F(0)=\operatorname{arctg}1+C=\dfrac\pi4+C=\dfrac\pi4\Rightarrow C=0$.
+
+**$F(x)=\operatorname{arctg}(x+1)$.**
+::::
 :::::
 
 
@@ -132,6 +241,14 @@ Considera la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=\dfrac{1}{x
 **Ejercicio 3** · Extraordinaria 2025 · Bloque optativo 1 · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria.pdf){target="_blank"}
 
 Calcula el valor de $k$ para que $\displaystyle\int_{1}^{3}e^{x-k}(x-2)\,dx=2$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Por partes con $u=x-2$, $dv=e^{x}dx$:
+$$\int e^{x-k}(x-2)\,dx=e^{-k}\big[(x-2)e^{x}-e^{x}\big]=e^{-k}(x-3)e^{x}.$$
+$$\int_1^3=e^{-k}\big[0-(-2e)\big]=2e^{1-k}=2\;\Rightarrow\;e^{1-k}=1\;\Rightarrow\;\mathbf{k=1}.$$
+::::
 :::::
 
 
@@ -142,6 +259,16 @@ Calcula el valor de $k$ para que $\displaystyle\int_{1}^{3}e^{x-k}(x-2)\,dx=2$.
 **Ejercicio 1** · Extraordinaria · Suplente 1 2025 · Parte obligatoria · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria_Suplente.pdf){target="_blank"}
 
 Sea $f:\mathbb{R}\to\mathbb{R}$ la función definida por $f(x)=\dfrac{x^{3}+1}{x^{2}+1}$. Calcula una primitiva de $f$ cuya gráfica pase por el punto $(0,5)$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Dividiendo: $\dfrac{x^3+1}{x^2+1}=x-\dfrac{x-1}{x^2+1}=x-\dfrac{x}{x^2+1}+\dfrac{1}{x^2+1}$.
+
+$$F(x)=\int f=\frac{x^2}{2}-\frac12\ln(x^2+1)+\operatorname{arctg}x+C.$$
+
+$F(0)=C=5$. **$F(x)=\dfrac{x^2}{2}-\dfrac12\ln(x^2+1)+\operatorname{arctg}x+5$.**
+::::
 :::::
 
 
@@ -156,6 +283,15 @@ Considera las funciones $f,g:\mathbb{R}\to\mathbb{R}$ definidas por $f(x)=-e^{x}
 a) Esboza las gráficas de dichas funciones. *(1 punto)*
 
 b) Calcula la suma de las áreas de los recintos acotados y limitados por las gráficas de dichas funciones y las rectas $x=-1$ y $x=1$. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Ambas son negativas: $f=-e^x$ es creciente y tiende a $0$ en $-\infty$; $g=-e^{-x}$ es decreciente y tiende a $0$ en $+\infty$. Ambas pasan por $(0,-1)$ (único corte) y están por debajo del eje $OX$; $g$ queda por encima de $f$ para $x>0$ y por debajo para $x<0$.
+
+**b)** Por simetría respecto del eje $OY$:
+$$A=2\int_0^1\big(-e^{-x}+e^{x}\big)dx=2\big[e^{x}+e^{-x}\big]_0^1=\mathbf{2\left(e+\dfrac1e-2\right)}\approx2{,}17\ u^2.$$
+::::
 :::::
 
 
@@ -169,6 +305,16 @@ b) Calcula la suma de las áreas de los recintos acotados y limitados por las gr
 **Ejercicio 3** · Ordinaria 2024 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria.pdf){target="_blank"}
 
 Considera la función $f$ definida por $f(x)=\dfrac{x^{3}+2}{x^{2}-1}$, para $x\neq -1$, $x\neq 1$. Calcula una primitiva de $f$ cuya gráfica pase por el punto $(0,1)$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$\dfrac{x^3+2}{x^2-1}=x+\dfrac{x+2}{(x-1)(x+1)}=x+\dfrac{3/2}{x-1}-\dfrac{1/2}{x+1}$.
+
+$F(x)=\dfrac{x^2}2+\dfrac32\ln|x-1|-\dfrac12\ln|x+1|+C$. En el intervalo $(-1,1)$, que contiene a $x=0$: $F(0)=C=1$.
+
+$$\mathbf{F(x)=\frac{x^2}2+\frac32\ln|x-1|-\frac12\ln|x+1|+1}$$
+::::
 :::::
 
 
@@ -176,6 +322,18 @@ Considera la función $f$ definida por $f(x)=\dfrac{x^{3}+2}{x^{2}-1}$, para $x\
 **Ejercicio 4** · Ordinaria 2024 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria.pdf){target="_blank"}
 
 Halla la función $f:\mathbb{R}\to\mathbb{R}$ tal que $f''(x)=x\cos(x)$ y cuya gráfica pasa por los puntos $\left(0,\dfrac{\pi}{2}\right)$ y $(\pi,2\pi)$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Por partes: $f'(x)=\int x\cos x\,dx=x\operatorname{sen}x+\cos x+C_1$, y
+
+$$f(x)=\int(x\operatorname{sen}x+\cos x)\,dx+C_1x=-x\cos x+2\operatorname{sen}x+C_1x+C_2.$$
+
+$f(0)=C_2=\dfrac\pi2$. $f(\pi)=\pi+C_1\pi+\dfrac\pi2=2\pi\Rightarrow C_1=\dfrac12$.
+
+$$\mathbf{f(x)=-x\cos x+2\operatorname{sen}x+\frac x2+\frac\pi2}$$
+::::
 :::::
 
 
@@ -190,6 +348,16 @@ Considera la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=x^{3}-6x^{2
 a) Calcula los puntos de corte de la gráfica de $f$ con los ejes de coordenadas y esboza dicha gráfica. *(1 punto)*
 
 b) Calcula la suma de las áreas de los recintos acotados y limitados por la gráfica de $f$ y el eje de abscisas. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $f(x)=x(x-2)(x-4)$. **Cortes con el eje $OX$: $(0,0)$, $(2,0)$, $(4,0)$; con el eje $OY$: $(0,0)$.** Esbozo: cúbica con $f\to-\infty$ a la izquierda y $+\infty$ a la derecha; $f>0$ en $(0,2)$ (máximo local en $x=2-\tfrac{2}{\sqrt3}\approx0{,}85$) y $f<0$ en $(2,4)$ (mínimo local en $x=2+\tfrac{2}{\sqrt3}\approx3{,}15$).
+
+**b)** Con $F(x)=\dfrac{x^4}{4}-2x^3+4x^2$: $\int_0^2f=F(2)-F(0)=4$ y $\int_2^4f=F(4)-F(2)=0-4=-4$.
+
+$$A=|4|+|-4|=\mathbf{8\ u^2}.$$
+::::
 :::::
 
 
@@ -197,6 +365,16 @@ b) Calcula la suma de las áreas de los recintos acotados y limitados por la gr�
 **Ejercicio 4** · Ordinaria · Reserva 2024 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Ordinaria_Reserva.pdf){target="_blank"}
 
 Calcula $\displaystyle\int\dfrac{e^{3x}-1}{e^{x}-3}\,dx$. (Sugerencia: efectúa el cambio de variable $t=e^{x}$.)
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Con $t=e^x$, $dx=\dfrac{dt}{t}$:
+
+$$\int\frac{t^3-1}{t(t-3)}\,dt=\int\left(t+3+\frac{9t-1}{t(t-3)}\right)dt,\qquad\frac{9t-1}{t(t-3)}=\frac{1/3}{t}+\frac{26/3}{t-3}.$$
+
+$$\mathbf{\int\frac{e^{3x}-1}{e^x-3}\,dx=\frac{e^{2x}}2+3e^x+\frac x3+\frac{26}3\ln|e^x-3|+C}$$
+::::
 :::::
 
 
@@ -207,6 +385,16 @@ Calcula $\displaystyle\int\dfrac{e^{3x}-1}{e^{x}-3}\,dx$. (Sugerencia: efectúa 
 **Ejercicio 3** · Ordinaria · Suplente 2024 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria_Suplente.pdf){target="_blank"}
 
 Halla la función $f:(2,+\infty)\to\mathbb{R}$ que pasa por el punto $(3,-4\ln 5)$ y verifica $f'(x)=\dfrac{3x^{2}+4x+12}{x^{2}-4}$, donde $\ln$ denota la función logaritmo neperiano.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$$\frac{3x^2+4x+12}{x^2-4}=3+\frac{4x+24}{(x-2)(x+2)}=3+\frac{8}{x-2}-\frac{4}{x+2}.$$
+
+$f(x)=3x+8\ln(x-2)-4\ln(x+2)+C$. Condición $f(3)=-4\ln5$: $9+0-4\ln5+C=-4\ln5\Rightarrow C=-9$.
+
+$$\mathbf{f(x)=3x-9+8\ln(x-2)-4\ln(x+2)}$$
+::::
 :::::
 
 
@@ -214,6 +402,16 @@ Halla la función $f:(2,+\infty)\to\mathbb{R}$ que pasa por el punto $(3,-4\ln 5
 **Ejercicio 4** · Ordinaria · Suplente 2024 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria_Suplente.pdf){target="_blank"}
 
 Sea $f:\mathbb{R}\to\mathbb{R}$ la función definida por $f(x)=(x^{2}-3x+5)e^{x}$. Halla una primitiva de $f$ cuya gráfica pase por el punto $(0,5)$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Por partes (o ajustando $F=(x^2+px+q)e^x$): $F'=\big(x^2+(p+2)x+(p+q)\big)e^x$, que debe ser $(x^2-3x+5)e^x$: $p=-5$, $q=10$.
+
+$F(x)=(x^2-5x+10)e^x+C$ y $F(0)=10+C=5\Rightarrow C=-5$.
+
+$$\mathbf{F(x)=(x^2-5x+10)e^x-5}$$
+::::
 :::::
 
 
@@ -228,6 +426,18 @@ Sean $f,g:\mathbb{R}\to\mathbb{R}$ las funciones definidas por $f(x)=-x^{2}+7$ y
 a) Halla los puntos de intersección de las gráficas de $f$ y $g$. Realiza un esbozo del recinto acotado y limitado por dichas gráficas. *(1 punto)*
 
 b) Calcula el área de dicho recinto. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Si $|x|\ge1$: $7-x^2=x^2-1\Rightarrow x=\pm2$. Si $|x|<1$: $7-x^2=1-x^2$ es imposible.
+
+**Puntos de corte: $(-2,3)$ y $(2,3)$.** Esbozo: parábola invertida de vértice $(0,7)$ por encima de la gráfica de $g$ (una "W" con mínimos $0$ en $x=\pm1$, máximo local $1$ en $x=0$ y ramas hacia arriba), entre $x=-2$ y $x=2$.
+
+**b)** Por simetría y con $f\ge g$ en $[-2,2]$:
+
+$$A=2\left[\int_0^2(7-x^2)\,dx-\int_0^1(1-x^2)\,dx-\int_1^2(x^2-1)\,dx\right]=2\left[\frac{34}{3}-\frac23-\frac43\right]=\mathbf{\frac{56}{3}\ u^2}.$$
+::::
 :::::
 
 
@@ -235,6 +445,14 @@ b) Calcula el área de dicho recinto. *(1,5 puntos)*
 **Ejercicio 4** · Extraordinaria 2024 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2024/10/2oBachCC_EBAU_Andalucia_2024-Extraordinaria.pdf){target="_blank"}
 
 Halla $\displaystyle\int_{0}^{\pi/2}e^{x}\cos(x)\,dx$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Por partes dos veces (o la fórmula de $\int e^x\cos x$): $\int e^x\cos x\,dx=\dfrac{e^x(\operatorname{sen}x+\cos x)}{2}$.
+
+$$\int_0^{\pi/2}e^x\cos x\,dx=\frac{e^{\pi/2}(1+0)-(0+1)}{2}=\mathbf{\frac{e^{\pi/2}-1}{2}}.$$
+::::
 :::::
 
 
@@ -249,6 +467,18 @@ Considera la función
 $$f(x)=\begin{cases}1-e^{x} & \text{si } x\le 0\\ x\cos(x) & \text{si } x>0\end{cases}$$
 
 Calcula $\displaystyle\int_{-\pi}^{\pi}f(x)\,dx$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Se parte en el $0$:
+
+$$\int_{-\pi}^{0}(1-e^x)\,dx=\Big[x-e^x\Big]_{-\pi}^{0}=-1-(-\pi-e^{-\pi})=\pi-1+e^{-\pi}.$$
+
+$\int_0^{\pi}x\cos x\,dx$ por partes ($u=x$, $dv=\cos x\,dx$): $\big[x\operatorname{sen}x+\cos x\big]_0^{\pi}=-1-1=-2$.
+
+$$\int_{-\pi}^{\pi}f(x)\,dx=\mathbf{\pi-3+e^{-\pi}}\approx 0{,}185.$$
+::::
 :::::
 
 
@@ -256,6 +486,20 @@ Calcula $\displaystyle\int_{-\pi}^{\pi}f(x)\,dx$.
 **Ejercicio 4** · Extraordinaria · Reserva 2024 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Extraordinaria_Reserva.pdf){target="_blank"}
 
 Calcula una primitiva de la función $f:(1,+\infty)\to\mathbb{R}$ definida por $f(x)=(x-1)^{2}\ln\dfrac{\sqrt{x-1}}{2}$ cuya gráfica pase por el punto $\left(5,-\dfrac72\right)$, donde $\ln$ denota la función logaritmo neperiano. (Sugerencia: efectúa el cambio de variable $x-1=t^{2}$).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Con $x-1=t^2$, $dx=2t\,dt$, $\ln\dfrac{\sqrt{x-1}}{2}=\ln\dfrac t2$:
+
+$$\int (x-1)^2\ln\frac{\sqrt{x-1}}2\,dx=2\int t^5\ln\frac t2\,dt=\frac{t^6}{3}\ln\frac t2-\int\frac{t^5}{3}\,dt=\frac{t^6}{3}\ln\frac t2-\frac{t^6}{18}+C.$$
+
+Deshaciendo el cambio: $F(x)=\dfrac{(x-1)^3}{3}\ln\dfrac{\sqrt{x-1}}2-\dfrac{(x-1)^3}{18}+C$.
+
+$F(5)=\frac{64}{3}\ln1-\frac{64}{18}+C=-\frac{32}{9}+C=-\frac72\Rightarrow C=\frac1{18}$.
+
+$$\mathbf{F(x)=\frac{(x-1)^3}{3}\ln\frac{\sqrt{x-1}}2-\frac{(x-1)^3}{18}+\frac1{18}}$$
+::::
 :::::
 
 
@@ -272,6 +516,18 @@ $$f(x)=\int_{0}^{x}\cos(t)\operatorname{sen}^{2}(t)\,dt.$$
 Determina las ecuaciones de la recta tangente y de la recta normal a la gráfica de $f$ en el punto de abscisa $x=\dfrac{\pi}{4}$.
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f'(x)=\cos x\operatorname{sen}^2x$ (teorema fundamental del cálculo) y $f(x)=\dfrac{\operatorname{sen}^3x}{3}$.
+
+En $x=\pi/4$: $f\!\left(\frac\pi4\right)=\dfrac{(\sqrt2/2)^3}{3}=\dfrac{\sqrt2}{12}$ y $f'\!\left(\frac\pi4\right)=\dfrac{\sqrt2}2\cdot\dfrac12=\dfrac{\sqrt2}{4}$.
+
+**Tangente:** $y=\dfrac{\sqrt2}{12}+\dfrac{\sqrt2}{4}\left(x-\dfrac\pi4\right)$.
+
+**Normal:** $y=\dfrac{\sqrt2}{12}-2\sqrt2\left(x-\dfrac\pi4\right)$ (pendiente $-1/f'=-4/\sqrt2=-2\sqrt2$).
+::::
 :::::
 
 
@@ -279,6 +535,16 @@ Determina las ecuaciones de la recta tangente y de la recta normal a la gráfica
 **Ejercicio 4** · Extraordinaria · Suplente 2024 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Extraordinaria_Suplente.pdf){target="_blank"}
 
 Calcula $\displaystyle\int\dfrac{dx}{\sqrt{4+4e^{x}}}$. (Sugerencia: efectúa el cambio de variable $t=\sqrt{1+e^{x}}$).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Con $t=\sqrt{1+e^x}$: $e^x=t^2-1$, $dx=\dfrac{2t}{t^2-1}\,dt$ y $\sqrt{4+4e^x}=2t$.
+
+$$\int\frac{dx}{\sqrt{4+4e^x}}=\int\frac{1}{2t}\cdot\frac{2t}{t^2-1}\,dt=\int\frac{dt}{t^2-1}=\frac12\ln\left|\frac{t-1}{t+1}\right|+C.$$
+
+$$\mathbf{\frac12\ln\frac{\sqrt{1+e^x}-1}{\sqrt{1+e^x}+1}+C}$$
+::::
 :::::
 
 

@@ -20,6 +20,20 @@ Considera los puntos $A(1,2,0)$, $B(2,m,1)$, $C(3,4,2)$ y $D(1,-1,m)$.
 a) Halla los valores de $m$ para los cuales los puntos anteriores son coplanarios. *(1 punto)*
 
 b) Para $m=1$, calcula el área del triángulo de vértices $A$, $B$, $C$ y el volumen del tetraedro de vértices $A$, $B$, $C$, $D$. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$\overrightarrow{AB}=(1,m-2,1)$, $\overrightarrow{AC}=(2,2,2)$, $\overrightarrow{AD}=(0,-3,m)$.
+
+**a)** Coplanarios si $\det(\overrightarrow{AB},\overrightarrow{AC},\overrightarrow{AD})=-2m(m-3)=0$.
+
+**$m=0$ o $m=3$.**
+
+**b)** Con $m=1$: $\overrightarrow{AB}=(1,-1,1)$, $\overrightarrow{AB}\times\overrightarrow{AC}=(-4,0,4)$, de módulo $4\sqrt2$. El determinante de los tres vectores vale $-2m(m-3)=4$.
+
+**Área $=\dfrac{4\sqrt2}{2}=2\sqrt2\ \text{u}^2$; volumen $=\dfrac{|4|}{6}=\dfrac23\ \text{u}^3$.**
+::::
 :::::
 
 
@@ -34,6 +48,18 @@ Considera los vectores $\vec{u}=(2,0,1)$ y $\vec{v}=(1,m,2)$.
 a) Calcula $m$ para que el área del triángulo que definen $\vec{u}$ y $\vec{v}$ sea $\dfrac{\sqrt{29}}{2}$. *(1,25 puntos)*
 
 b) Para $m=0$, halla los vectores que sean perpendiculares a $\vec{u}$ y $\vec{v}$, y tengan módulo $\sqrt{20}$. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$\vec u\times\vec v=(-m,-3,2m)$, con $|\vec u\times\vec v|=\sqrt{5m^2+9}$.
+
+**a)** Área $=\tfrac12\sqrt{5m^2+9}=\tfrac{\sqrt{29}}{2}\Rightarrow 5m^2=20$. **$m=2$ o $m=-2$.**
+
+**b)** Para $m=0$: $\vec u\times\vec v=(0,-3,0)$, así que los vectores buscados son de la forma $(0,k,0)$ con $|k|=\sqrt{20}$.
+
+**$(0,2\sqrt5,0)$ y $(0,-2\sqrt5,0)$.**
+::::
 :::::
 
 
@@ -53,6 +79,17 @@ a) Halla los valores de $m$ para que el tetraedro determinado por los puntos $O$
 b) Para $m=0$, calcula la distancia del punto $O$ al plano que pasa por los puntos $A$, $B$ y $C$. *(1,25 puntos)*
 
 *Relacionado también con:* [Rectas y planos](05-rectas-planos.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $\overrightarrow{OA}=(0,2,-2)$, $\overrightarrow{OB}=(1,2,m)$, $\overrightarrow{OC}=(2,3,2)$:
+$$\left|\begin{matrix}0&2&-2\\1&2&m\\2&3&2\end{matrix}\right|=4m-2.$$
+$V=\dfrac{|4m-2|}{6}=3\Rightarrow4m-2=\pm18$. **$m=5$ o $m=-4$.**
+
+**b)** Con $m=0$: $B(1,2,0)$, $\overrightarrow{AB}=(1,0,2)$, $\overrightarrow{AC}=(2,1,4)$, normal $\overrightarrow{AB}\times\overrightarrow{AC}=(-2,0,1)$. Plano por $A$: $-2x+z+2=0$, es decir $2x-z-2=0$ (comprobado con $B$ y $C$).
+$$d(O,\pi)=\frac{|-2|}{\sqrt{4+1}}=\mathbf{\frac{2}{\sqrt5}}=\frac{2\sqrt5}{5}\approx0{,}89.$$
+::::
 :::::
 
 
@@ -67,6 +104,17 @@ Sean los puntos $A(3,-1,1)$, $B(1,3,-3)$ y $C(-2,-2,1)$.
 a) Calcula el área del triángulo de vértices $A$, $B$ y $C$. *(1 punto)*
 
 b) Halla los puntos $D$ pertenecientes al eje $OZ$ para que el tetraedro de vértices $A$, $B$, $C$ y $D$ tenga un volumen de 20 unidades cúbicas. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $\overrightarrow{AB}=(-2,4,-4)$, $\overrightarrow{AC}=(-5,-1,0)$, $\overrightarrow{AB}\times\overrightarrow{AC}=(-4,20,22)$.
+$$\text{Área}=\tfrac12\sqrt{16+400+484}=\tfrac12\sqrt{900}=\mathbf{15}\ u^2.$$
+
+**b)** $D(0,0,z)$, $\overrightarrow{AD}=(-3,1,z-1)$. El producto mixto es $(\overrightarrow{AB}\times\overrightarrow{AC})\cdot\overrightarrow{AD}=12+20+22(z-1)=22z+10$.
+
+$V=\dfrac{|22z+10|}{6}=20\Rightarrow22z+10=\pm120$. **$D(0,0,5)$ y $D\left(0,0,-\dfrac{65}{11}\right)$.**
+::::
 :::::
 
 
@@ -84,6 +132,18 @@ Considera los puntos $A(1,1,2)$, $B(1,0,1)$ y $C(1,-1,2)$.
 a) Determina el área del triángulo de vértices $A$, $B$ y $C$. *(1,25 puntos)*
 
 b) Calcula $D$ para que los puntos $A$, $B$, $C$ y $D$ sean los vértices consecutivos de un paralelogramo. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$\overrightarrow{BA}=(0,1,1)$, $\overrightarrow{BC}=(0,-1,1)$, $\overrightarrow{BA}\times\overrightarrow{BC}=(2,0,0)$.
+
+**a)** Área $=\tfrac12\cdot2=\mathbf{1\ u^2}$.
+
+**b)** Para que $ABCD$ sea paralelogramo (vértices consecutivos): $\overrightarrow{BA}=\overrightarrow{CD}$, es decir $D=A+C-B=(1,1,2)+(1,-1,2)-(1,0,1)$:
+
+$$\mathbf{D=(1,0,3)}$$
+::::
 :::::
 
 
@@ -96,6 +156,17 @@ b) Calcula $D$ para que los puntos $A$, $B$, $C$ y $D$ sean los vértices consec
 Considera los puntos $A(4,0,0)$ y $B(0,2,0)$. Calcula los puntos del plano $OXZ$ que forman un triángulo equilátero con $A$ y $B$.
 
 *Relacionado también con:* [Rectas y planos](05-rectas-planos.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Un punto del plano $OXZ$ ($y=0$) es $P(x,0,z)$. $|AB|^2=16+4=20$.
+
+- $|PA|=|PB|$: $(x-4)^2+z^2=x^2+4+z^2\Rightarrow-8x+16=4\Rightarrow x=\tfrac32$.
+- $|PA|^2=20$: $\left(\tfrac52\right)^2+z^2=20\Rightarrow z^2=\tfrac{55}{4}$.
+
+$$\mathbf{P=\left(\tfrac32,0,\tfrac{\sqrt{55}}2\right)\ \text{ y }\ P'=\left(\tfrac32,0,-\tfrac{\sqrt{55}}2\right)}$$
+::::
 :::::
 
 
@@ -110,6 +181,18 @@ Considera los vectores $\vec{u}=(1,a,2)$ y $\vec{v}=(-2,1,a)$.
 a) Calcula $a$ para que ambos vectores formen un ángulo de $\pi/3$ radianes. *(1 punto)*
 
 b) Calcula $a$ para que el vector $(\vec{u}\times\vec{v})-\vec{v}$ sea ortogonal a $\vec{u}$. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$\vec u\cdot\vec v=-2+a+2a=3a-2$ y $|\vec u|=|\vec v|=\sqrt{5+a^2}$.
+
+**a)** $\cos\dfrac\pi3=\dfrac{3a-2}{5+a^2}=\dfrac12\Rightarrow a^2-6a+9=0\Rightarrow\mathbf{a=3}$ (comprobación: $7/14=1/2$).
+
+**b)** $\vec u\times\vec v$ es ortogonal a $\vec u$, luego $\big((\vec u\times\vec v)-\vec v\big)\cdot\vec u=0-\vec v\cdot\vec u=0\Rightarrow 3a-2=0$:
+
+$$\mathbf{a=\tfrac23}.$$
+::::
 :::::
 
 
@@ -124,6 +207,20 @@ Considera los puntos $O(0,0,0)$, $A(a,-1,2)$ y $B(a,1,0)$.
 a) Determina $a$ para que el triángulo $OAB$ tenga área 3 unidades cuadradas. *(1,5 puntos)*
 
 b) Calcula $a$ para que $O$, $A$ y $B$ sean coplanarios con el punto $C(1,1,0)$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$\overrightarrow{OA}=(a,-1,2)$, $\overrightarrow{OB}=(a,1,0)$, $\overrightarrow{OA}\times\overrightarrow{OB}=(-2,2a,2a)$.
+
+**a)** Área $=\dfrac12\sqrt{4+8a^2}=3\Rightarrow 4+8a^2=36\Rightarrow a^2=4$:
+
+$$\mathbf{a=2\ \text{ o }\ a=-2}.$$
+
+**b)** Coplanarios: $\begin{vmatrix}a&-1&2\\a&1&0\\1&1&0\end{vmatrix}=2(a-1)=0$:
+
+$$\mathbf{a=1}.$$
+::::
 :::::
 
 

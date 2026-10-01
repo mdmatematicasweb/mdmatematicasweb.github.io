@@ -22,6 +22,21 @@ $$\begin{cases}3x-y=a^{2}\\(1-a)y+2z=0\\4y+(3-a)z=a-5\end{cases}$$
 a) Discútelo según los valores de $a$. *(1,75 puntos)*
 
 b) Para $a=0$ resuelve el sistema, si es posible. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Matriz de coeficientes: $|M|=\begin{vmatrix}3&-1&0\\0&1-a&2\\0&4&3-a\end{vmatrix}=3(a^2-4a-5)=3(a-5)(a+1)$.
+
+**a)**
+- Si $a\neq5$ y $a\neq-1$: rangos $3=3$, **sistema compatible determinado (SCD)**.
+- Si $a=5$: $\operatorname{rg}(M)=2$; las ecuaciones 2.ª y 3.ª son $-4y+2z=0$ y $4y-2z=0$ (proporcionales) y el término independiente de la 3.ª es $a-5=0$, así que $\operatorname{rg}(A^*)=2$: **sistema compatible indeterminado (SCI)**.
+- Si $a=-1$: $\operatorname{rg}(M)=2$ y $\operatorname{rg}(A^*)=3$ (la 2.ª pide $y+z=0$ y la 3.ª $y+z=-\tfrac32$): **sistema incompatible (SI)**.
+
+**b)** Para $a=0$ (SCD): $3x-y=0$, $y+2z=0$, $4y+3z=-5$. De la 2.ª, $y=-2z$; en la 3.ª, $-5z=-5$.
+
+**$x=-\dfrac23$, $y=-2$, $z=1$.**
+::::
 :::::
 
 
@@ -36,6 +51,20 @@ Una empresa produce tres tipos de productos, $A$, $B$ y $C$. Si el precio del pr
 a) ¿Cuánto valdrán 3 productos de tipo $A$ más 8 productos de tipo $C$? *(1,25 puntos)*
 
 b) Determina el precio, sin descuento, de cada tipo de producto, sabiendo además que el precio del producto de tipo $C$ es el doble que el de tipo $A$. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Precios $a,b,c$ de $A$, $B$, $C$. Datos: $0{,}9a+0{,}8b+0{,}8c=66$ (es decir, $9a+8b+8c=660$) y $3a+4b=140$ (es decir, $6a+8b=280$).
+
+**a)** Restando: $3a+8c=660-280$.
+
+**3 de $A$ más 8 de $C$ valen 380 €.**
+
+**b)** Con $c=2a$: $9a+8b+16a=660\Rightarrow25a+8b=660$. Junto con $6a+8b=280$: $19a=380\Rightarrow a=20$; $b=\dfrac{140-60}{4}=20$; $c=40$.
+
+**$A=20$ €, $B=20$ €, $C=40$ €.**
+::::
 :::::
 
 
@@ -46,6 +75,18 @@ b) Determina el precio, sin descuento, de cada tipo de producto, sabiendo ademá
 **Ejercicio 3.1** · Extraordinaria 2026 · Bloque optativo 1 · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2026/09/2oBachCC_EBAU_Andalucia_2026-Extraordinaria.pdf){target="_blank"}
 
 Una familia va al mercado semanalmente y compra tres tipos de alimentos: verdura, carne y pescado. El año pasado, en el que gastó 115 € semanales, observó que pagaba el doble en el puesto del pescado que en el de la verdura. En 2026 se ha notado un incremento de precios pues ahora gasta 19 € más que el año pasado por la misma compra, comprobando que la verdura ha subido un 12 %, la carne un 15 % y el pescado un 20 %. Calcula el precio que la familia paga semanalmente en 2026, por cada tipo de alimento.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Año pasado: $v+c+p=115$ y $p=2v$. En 2026: $1{,}12v+1{,}15c+1{,}2p=115+19=134$.
+
+De $3v+c=115$: $c=115-3v$. Sustituyendo: $1{,}12v+1{,}15(115-3v)+2{,}4v=134\Rightarrow0{,}07v=1{,}75\Rightarrow v=25$. Luego $c=40$, $p=50$.
+
+En 2026: verdura $25\cdot1{,}12$, carne $40\cdot1{,}15$, pescado $50\cdot1{,}2$.
+
+**Verdura 28 €, carne 46 €, pescado 60 € (total 134 €).**
+::::
 :::::
 
 
@@ -62,6 +103,16 @@ $$\begin{cases}x+y+z=1\\7x+3y+3z=15\\x-y-z=5\end{cases}$$
 a) Clasifícalo y resuélvelo, si es posible. *(1,5 puntos)*
 
 b) ¿Existe alguna solución del sistema que verifique $y+z+2=0$? Razona la respuesta. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Sumando la 1.ª y la 3.ª ecuación: $2x=6\Rightarrow x=3$, y queda $y+z=-2$. La 2.ª ecuación da $21+3(y+z)=15$, que se cumple. Así $\operatorname{rg}(A)=\operatorname{rg}(A^*)=2<3$: sistema compatible indeterminado (SCI).
+
+**Soluciones: $(x,y,z)=(3,\lambda,-2-\lambda)$, $\lambda\in\mathbb R$.**
+
+**b)** Todas las soluciones cumplen $y+z=-2$, es decir $y+z+2=0$. **Sí: todas las soluciones del sistema la verifican.**
+::::
 :::::
 
 
@@ -74,6 +125,15 @@ b) ¿Existe alguna solución del sistema que verifique $y+z+2=0$? Razona la resp
 Considera las matrices $A=\begin{pmatrix}1&2&1\\0&3&1\\-2&0&0\end{pmatrix}$, $X=\begin{pmatrix}x\\y\\z\end{pmatrix}$ y $B=\begin{pmatrix}3\\3\\1\end{pmatrix}$. Discute el sistema $AX-mX=B$, según los valores del parámetro $m$.
 
 *Relacionado también con:* [Matrices](01-matrices.qmd), [Determinantes](02-determinantes.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$(A-mI)X=B$. $|A-mI|=-(m-2)(m-1)^2$.
+- Si $m\neq1$ y $m\neq2$: $|A-mI|\neq0$, rangos $3=3$: **sistema compatible determinado (SCD)**.
+- Si $m=2$: $\operatorname{rg}(A-2I)=2$ y $\operatorname{rg}(A^*)=3$: **sistema incompatible (SI)**.
+- Si $m=1$: $\operatorname{rg}(A-I)=2=\operatorname{rg}(A^*)<3$: **sistema compatible indeterminado (SCI)**.
+::::
 :::::
 
 
@@ -91,6 +151,18 @@ Juan ha gastado 80 € por la compra de un jersey, una camisa y un pantalón. Sa
 a) ¿Es posible determinar de forma única el precio del jersey? ¿Y el de la camisa? Razona la respuesta. *(1,25 puntos)*
 
 b) Si Juan hubiera esperado a las rebajas se habría gastado 57 €, pues el jersey, la camisa y el pantalón tenían un descuento del 30 %, del 40 % y del 20 %, respectivamente. Calcula el precio de cada prenda antes de las rebajas. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $j,c,p$ los precios del jersey, la camisa y el pantalón.
+
+**a)** $j+c+p=80$ y $j=\dfrac{c+p}{3}$, es decir $c+p=3j$. Entonces $4j=80$ y $j=20$, pero sólo queda $c+p=60$ (dos incógnitas, una ecuación): sistema compatible indeterminado (SCI). **El jersey sí está determinado ($20$ €); la camisa no** (puede valer cualquier cantidad con $p=60-c$).
+
+**b)** Con descuentos: $0{,}7j+0{,}6c+0{,}8p=57$. Con $j=20$: $0{,}6c+0{,}8p=43$, o $3c+4p=215$. Con $c+p=60$: $3c+4(60-c)=215\Rightarrow c=25$ y $p=35$.
+
+**Jersey $20$ €, camisa $25$ €, pantalón $35$ €.** (Comprobación: $14+15+28=57$.)
+::::
 :::::
 
 
@@ -101,6 +173,20 @@ b) Si Juan hubiera esperado a las rebajas se habría gastado 57 €, pues el jer
 **Ejercicio 1** · Extraordinaria 2025 · Parte obligatoria · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria.pdf){target="_blank"}
 
 Se sabe que la suma de tres números naturales es 22 y que la suma de cuatro veces el primero más el triple del segundo más el doble del tercero es 61. ¿Puede ser 15 uno de los tres números? En caso afirmativo, calcula los restantes. ¿Existen otras opciones?
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $x,y,z$ los tres números. $x+y+z=22$ y $4x+3y+2z=61$. Restando $2\cdot$(primera) a la segunda: $2x+y=17$. Entonces
+$$y=17-2x,\qquad z=22-x-y=x+5,$$
+un sistema compatible indeterminado (SCI) con un parámetro $x$.
+
+- Si $x=15$: $y=-13<0$, imposible.
+- Si $y=15$: $x=1$ y $z=6$; comprobación: $1+15+6=22$ y $4+45+12=61$. **Válido.**
+- Si $z=15$: $x=10$ e $y=-3<0$, imposible.
+
+**Sí, 15 puede ser uno de los números, y sólo como el segundo: los otros son $1$ y $6$ (terna $(1,15,6)$). No hay otras opciones.**
+::::
 :::::
 
 
@@ -120,6 +206,22 @@ $$\begin{cases}y+z=1\\(k-1)x+y+z=k\\x+(k-1)y+z=0\end{cases}$$
 a) Discute el sistema según los valores de $k$. *(1,75 puntos)*
 
 b) Para $k=1$ resuelve el sistema, si es posible. ¿Hay alguna solución en la que $y=0$? En caso afirmativo, calcúlala. En caso negativo, justifica la respuesta. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Determinante de los coeficientes: $|M|=(k-1)(k-2)$.
+
+- $k\neq1,2$: $\operatorname{rg}(M)=\operatorname{rg}(M|N)=3$, compatible determinado (SCD).
+- $k=1$: $\operatorname{rg}(M)=\operatorname{rg}(M|N)=2$, compatible indeterminado (SCI).
+- $k=2$: $\operatorname{rg}(M)=2$ y $\operatorname{rg}(M|N)=3$, incompatible (SI).
+
+**b)** $k=1$: $\begin{cases}y+z=1\\y+z=1\\x+z=0\end{cases}$, es decir $y+z=1$, $x=-z$:
+
+$$\mathbf{(x,y,z)=(-\lambda,\ 1-\lambda,\ \lambda),\ \lambda\in\mathbb{R}}.$$
+
+Sí hay solución con $y=0$: $\lambda=1$, **$(x,y,z)=(-1,0,1)$**.
+::::
 :::::
 
 
@@ -130,6 +232,16 @@ b) Para $k=1$ resuelve el sistema, si es posible. ¿Hay alguna solución en la q
 **Ejercicio 6** · Ordinaria · Suplente 2024 · Bloque C · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria_Suplente.pdf){target="_blank"}
 
 Determina un número natural de tres cifras sabiendo que la suma de sus dígitos es 9, que la diferencia de dicho número con el que se obtiene al intercambiar la cifra de las centenas por la de las unidades es 198, y que si consideramos la suma entre ambos números, es decir, entre el número a determinar y el que se obtiene al intercambiar sus cifras, el resultado es 828.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Número $\overline{cdu}=100c+10d+u$. Condiciones: $c+d+u=9$; $(100c+10d+u)-(100u+10d+c)=99(c-u)=198\Rightarrow c-u=2$; suma: $101(c+u)+20d=828$.
+
+Con $d=9-(c+u)$: $81(c+u)+180=828\Rightarrow c+u=8$. Entonces $c=5$, $u=3$, $d=1$.
+
+**El número es $513$** (comprobación: $513-315=198$ y $513+315=828$).
+::::
 :::::
 
 
@@ -144,6 +256,22 @@ Un proveedor de perfumerías vende a sus comerciantes tres tipos de perfumes A, 
 a) ¿Cuánto tendremos que pagar por un pedido de 25 perfumes de tipo A, 10 perfumes de tipo B y 16 de tipo C? *(1,25 puntos)*
 
 b) Si añadimos que el precio de un perfume de tipo C es $\dfrac25$ del precio de una unidad de tipo A, ¿cuál es el precio de cada tipo de perfume? *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $a$, $b$, $c$ los precios de A, B, C. Los datos: $20a+30b+15c=2200$ y $15a+10b+10c=1250$.
+
+**a)** Se busca $25a+10b+16c$. Combinando $\alpha E_1+\beta E_2$ con $20\alpha+15\beta=25$, $30\alpha+10\beta=10$, $15\alpha+10\beta=16$, resulta $\alpha=-\frac25$, $\beta=\frac{11}5$ (cumple las tres), así que el coste es
+
+$$-\tfrac25\cdot2200+\tfrac{11}5\cdot1250=\mathbf{1870\ \text{euros}}.$$
+
+**b)** Con $c=\frac25a$: $26a+30b=2200$ y $19a+10b=1250$. Restando a la primera el triple de la segunda: $-31a=-1550$.
+
+$$\mathbf{a=50\ \text{€},\quad b=30\ \text{€},\quad c=20\ \text{€}}$$
+
+(comprobación del apartado a: $1250+300+320=1870$).
+::::
 :::::
 
 
@@ -162,6 +290,20 @@ a) Determina los valores de $m$ para los que el sistema es compatible indetermin
 b) Para $m=2$ resuelve el sistema, si es posible. *(0,75 puntos)*
 
 *Relacionado también con:* [Matrices](01-matrices.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+El sistema es $(A-mI)\vec x=\vec 0$, homogéneo (siempre compatible). Será compatible indeterminado (SCI) si $|A-mI|=0$:
+
+$$|A-mI|=-m(m-2)^2=0\ \Rightarrow\ m=0,\ m=2.$$
+
+**a)** Para $m=0$ y para $m=2$ el rango de la matriz de coeficientes es $2<3$, así que **es SCI para $m=0$ y $m=2$**; para cualquier otro $m$ es compatible determinado (SCD), sólo con la solución trivial.
+
+**b)** $m=2$: $\begin{cases}3x-2y-3z=0\\2x-2y-2z=0\end{cases}$. De la segunda, $x=y+z$; en la primera $3y+3z-2y-3z=y=0$. Así $x=z$.
+
+$$\mathbf{(x,y,z)=(\lambda,0,\lambda),\ \lambda\in\mathbb{R}}$$
+::::
 :::::
 
 
@@ -178,6 +320,23 @@ $$\begin{cases}ax+y+z=1+a\\x+2y-z=1-a\\x+(1+a)y-az=0\end{cases}$$
 a) Calcula $a$ para que el sistema sea compatible indeterminado. *(1,5 puntos)*
 
 b) Resuelve el sistema, si es posible, para $a=0$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Determinante de los coeficientes: $|M|=-(a-1)(a-2)$.
+
+**a)** Se anula en $a=1$ y $a=2$.
+
+- $a=1$: $\operatorname{rg}(M)=\operatorname{rg}(M|N)=2<3$, **compatible indeterminado (SCI)**.
+- $a=2$: $\operatorname{rg}(M)=2$ y $\operatorname{rg}(M|N)=3$, incompatible (SI).
+
+**Resultado: SCI sólo para $a=1$.** (Para $a\ne1,2$ es compatible determinado.)
+
+**b)** $a=0$ ($|M|=-2\neq0$, SCD): $\begin{cases}y+z=1\\x+2y-z=1\\x+y=0\end{cases}$. De la tercera $x=-y$; en la segunda $y-z=1$; con la primera, $y=1$, $z=0$.
+
+$$\mathbf{(x,y,z)=(-1,1,0)}$$
+::::
 :::::
 
 

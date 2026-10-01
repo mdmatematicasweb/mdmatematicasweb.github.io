@@ -16,6 +16,16 @@ Ejercicios de **Matemáticas II** de la prueba de acceso a la universidad en And
 **Ejercicio 4.1** · Ordinaria · Suplente 1 2026 · Bloque optativo 2 · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2026/06/2oBachCC_EBAU_Andalucia_2026-Ordinaria_Suplente.pdf){target="_blank"}
 
 Dadas las matrices $A=\begin{pmatrix}1&0&1\\-1&2&0\\0&1&1\end{pmatrix}$, $B=\begin{pmatrix}-1\\2\\3\end{pmatrix}$ y $C=\begin{pmatrix}1&4&2\end{pmatrix}$, calcula la matriz $X$ que satisface $X-2C=B^{t}+XA$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$X-2C=B^t+XA\Rightarrow X(I-A)=B^t+2C\Rightarrow X=(B^t+2C)(I-A)^{-1}$ (con $I-A$ invertible, $|I-A|=1\ne0$).
+
+$B^t+2C=(1,\ 10,\ 7)$ y $I-A=\begin{pmatrix}0&0&-1\\1&-1&0\\0&-1&0\end{pmatrix}$.
+
+**$X=\begin{pmatrix}-7&1&-11\end{pmatrix}$.** (Comprobado: $X-2C-B^t-XA=0$.)
+::::
 :::::
 
 
@@ -32,6 +42,21 @@ a) Halla razonadamente el determinante de una matriz $X$ que verifica $A^{3}XB^{
 b) Determina, si existe, una matriz $Y$ que verifica $A^{3}YB^{-1}=A^{2}$. *(1,5 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$|A|=2$, $|B|=4$.
+
+**a)** Tomando determinantes en $A^3XB^t=5B^2A^{-1}$ (matrices $2\times2$, luego $|5M|=25|M|$):
+$|A|^3|X||B|=25\,|B|^2\,|A|^{-1}\Rightarrow 8\cdot4\,|X|=25\cdot16\cdot\tfrac12=200$.
+
+**$|X|=\dfrac{25}{4}$.**
+
+**b)** $A^3YB^{-1}=A^2\Rightarrow Y=A^{-3}A^2B=A^{-1}B$ (existe, pues $|A|\neq0$). Con $A^{-1}=\begin{pmatrix}2&-1\\-3/2&1\end{pmatrix}$:
+
+**$Y=A^{-1}B=\begin{pmatrix}4&0\\-5/2&1/2\end{pmatrix}$.**
+::::
 :::::
 
 
@@ -49,6 +74,17 @@ Considera la matriz $A=\begin{pmatrix}0&3&4\\1&-4&-5\\-1&3&4\end{pmatrix}$.
 a) Comprueba que $A^{3}+I=O$, siendo $I$ la matriz identidad y $O$ la matriz nula. Calcula $A^{-1}$. *(1,5 puntos)*
 
 b) Calcula $A^{2025}$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $A^2=\begin{pmatrix}-1&0&1\\1&4&4\\-1&-3&-3\end{pmatrix}$ y $A^3=A\cdot A^2=\begin{pmatrix}-1&0&0\\0&-1&0\\0&0&-1\end{pmatrix}=-I$, luego **$A^3+I=O$**.
+
+De $A\cdot A^2=-I$ sale $A(-A^2)=I$:
+$$\mathbf{A^{-1}}=-A^2=\begin{pmatrix}1&0&-1\\-1&-4&-4\\1&3&3\end{pmatrix}.$$
+
+**b)** $2025=3\cdot675$, así que $A^{2025}=(A^3)^{675}=(-I)^{675}=\mathbf{-I}$.
+::::
 :::::
 
 
@@ -65,6 +101,17 @@ a) Calcula $A^{4}$ y $A^{31}$. *(1,25 puntos)*
 b) Halla razonadamente el determinante de la matriz $4A^{25}(A^{t})^{4}$. *(1,25 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $A^2=\begin{pmatrix}-1&0\\0&-1\end{pmatrix}=-I$, así que $A^4=I$ y $A^{31}=(A^4)^7A^3=A^3=-A$.
+
+$$\textbf{A}^{4}=I,\qquad \textbf{A}^{31}=\begin{pmatrix}0&1\\-1&0\end{pmatrix}.$$
+
+**b)** Para matrices $2\times2$, $|4M|=4^2|M|$. Con $|A|=1$ y $|A^t|=|A|$:
+$|4A^{25}(A^t)^4|=16\,|A|^{25}|A|^4=\mathbf{16}$.
+::::
 :::::
 
 
@@ -78,6 +125,16 @@ a) Halla razonadamente el determinante de una matriz $X$ que verifica $X^{3}AX^{
 b) Determina, si existe, una matriz $Y$ que verifique $A^{3}YB^{-1}=A^{2}$. *(1,5 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Tomando determinantes: $|X|^3\,|A|\,|X|^2=|B|^2$, con $|A|=8-6=2$ y $|B|=6-2=4$. Entonces $2|X|^5=16$, $|X|^5=8$ y **$|X|=\sqrt[5]{8}=2^{3/5}$**.
+
+**b)** $|A|=2\neq0$ y $|B|=4\neq0$, así que existe. Multiplicando por $A^{-3}$ por la izquierda y por $B$ por la derecha: $Y=A^{-3}A^{2}B=A^{-1}B$.
+
+$A^{-1}=\begin{pmatrix}2&-1\\-3/2&1\end{pmatrix}$, luego $\mathbf{Y}=\begin{pmatrix}4&0\\-5/2&1/2\end{pmatrix}$.
+::::
 :::::
 
 
@@ -92,6 +149,15 @@ Sean las matrices $A=\begin{pmatrix}a&3\\b&1\end{pmatrix}$ y $B=\begin{pmatrix}1
 a) Determina $a$ y $b$ para que $A^{2}=4I$, donde $I$ es la matriz identidad de orden 2. *(1,5 puntos)*
 
 b) Para $a=-1$ y $b=1$, calcula, si es posible, la matriz $X$ que cumple $A^{2}X=B^{t}$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $A^2=\begin{pmatrix}a^2+3b&3a+3\\ab+b&3b+1\end{pmatrix}=\begin{pmatrix}4&0\\0&4\end{pmatrix}$. De $3b+1=4$ sale $b=1$; de $3a+3=0$ sale $a=-1$, y se cumple $a^2+3b=4$ y $ab+b=0$. **$a=-1$, $b=1$.**
+
+**b)** Con esos valores $A^2=4I$, que es invertible, así que $X=(A^2)^{-1}B^t=\tfrac14B^t$ existe:
+$$\mathbf{X}=\frac14\begin{pmatrix}1&-1&1\\1&2&1\end{pmatrix}=\begin{pmatrix}1/4&-1/4&1/4\\1/4&1/2&1/4\end{pmatrix}.$$
+::::
 :::::
 
 
@@ -109,6 +175,18 @@ Considera la matriz $A=\begin{pmatrix}1&1/8&1/8\\0&1&0\\0&0&1\end{pmatrix}$.
 a) Calcula $A^{2024}$. *(1 punto)*
 
 b) Halla la matriz $X$, si es posible, que verifica $A^{2}XA+I=O$, donde $I$ y $O$ son la matriz identidad y la matriz nula de orden 3, respectivamente. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $A=I+N$, con $N=\begin{pmatrix}0&1/8&1/8\\0&0&0\\0&0&0\end{pmatrix}$ y $N^2=O$. Por el binomio, $A^n=I+nN$:
+
+$$\mathbf{A^{2024}=\begin{pmatrix}1&253&253\\0&1&0\\0&0&1\end{pmatrix}}\qquad(2024/8=253).$$
+
+**b)** $A^2XA=-I\Rightarrow X=-A^{-2}A^{-1}=-A^{-3}$ (existe porque $|A|=1$). Como $A^{-1}=I-N$, $A^{-3}=I-3N$:
+
+$$\mathbf{X=-I+3N=\begin{pmatrix}-1&3/8&3/8\\0&-1&0\\0&0&-1\end{pmatrix}}$$
+::::
 :::::
 
 
@@ -125,6 +203,19 @@ a) Calcula el rango de $A$ según los valores de $a$. *(1,25 puntos)*
 b) Si $B=\begin{pmatrix}1\\2\\4\end{pmatrix}$, $X=\begin{pmatrix}x\\y\\z\end{pmatrix}$ y $a=2$ resuelve, si es posible, el sistema $AX=B$. *(1,25 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd), [Sistemas de ecuaciones lineales](03-sistemas-ecuaciones-lineales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $|A|=-(3a-1)(a-2)$ (desarrollando por la 2.ª columna).
+
+- Si $a\ne\frac13$ y $a\neq2$: $\operatorname{rg}(A)=3$.
+- Si $a=\frac13$ o $a=2$: $\operatorname{rg}(A)=2$ (hay un menor $2\times2$ no nulo, p. ej. $\begin{vmatrix}1&1\\2&a\end{vmatrix}$ con $a=\frac13$, o $\begin{vmatrix}1&0\\5&5\end{vmatrix}=5$ con $a=2$).
+
+**b)** Con $a=2$: $\begin{cases}x+z=1\\2x+2z=2\\5x+5y=4\end{cases}$. La segunda es la primera multiplicada por 2 (SCI, un parámetro): $z=1-x$, $y=\frac45-x$.
+
+$$\mathbf{(x,y,z)=\left(\lambda,\ \tfrac45-\lambda,\ 1-\lambda\right),\ \lambda\in\mathbb{R}}$$
+::::
 :::::
 
 
@@ -141,6 +232,16 @@ a) Determina los valores de $m$ para los que la matriz $A^{2}$ tiene inversa. *(
 b) Para $m=0$ calcula, si es posible, la matriz $X$ que verifica $A^{2}X=\dfrac12(A+B)$. *(1,75 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $|A|=1-m$ y $|A^2|=|A|^2=(1-m)^2$. **$A^2$ tiene inversa si y sólo si $m\neq1$.**
+
+**b)** Con $m=0$, $|A|=1\ne0$, luego $A^2$ es invertible y $X=\tfrac12(A^2)^{-1}(A+B)$:
+
+$$\mathbf{X=\begin{pmatrix}-15&-\tfrac{13}2&-\tfrac{77}2\\[1mm]0&\tfrac52&2\\[1mm]\tfrac{19}2&\tfrac{13}2&\tfrac{53}2\end{pmatrix}}$$
+::::
 :::::
 
 
@@ -155,6 +256,20 @@ Considera la matriz $A=\begin{pmatrix}-1&0\\0&1\end{pmatrix}$.
 a) Halla todas las matrices $X$ que cumplan $XA=-AX^{t}$ y $X^{2}=I$, donde $I$ es la matriz identidad de orden 2. *(1,25 puntos)*
 
 b) Halla todas las matrices $Y$ que cumplan $YA=AY$, la suma de los elementos de su diagonal principal es cero y tienen determinante $-1$. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $X=\begin{pmatrix}p&q\\r&s\end{pmatrix}$.
+
+**a)** $XA=\begin{pmatrix}-p&q\\-r&s\end{pmatrix}$ y $-AX^t=\begin{pmatrix}p&r\\-q&-s\end{pmatrix}$. Igualando: $p=0$, $s=0$, $q=r$. Entonces $X=\begin{pmatrix}0&q\\q&0\end{pmatrix}$ y $X^2=q^2I=I\Rightarrow q=\pm1$:
+
+$$\mathbf{X=\begin{pmatrix}0&1\\1&0\end{pmatrix}\ \text{ o }\ X=\begin{pmatrix}0&-1\\-1&0\end{pmatrix}}$$
+
+**b)** $YA=\begin{pmatrix}-p&q\\-r&s\end{pmatrix}$ y $AY=\begin{pmatrix}-p&-q\\r&s\end{pmatrix}$: $q=r=0$. Diagonal con $p+s=0$ y $|Y|=ps=-1$, o sea $p^2=1$:
+
+$$\mathbf{Y=\begin{pmatrix}1&0\\0&-1\end{pmatrix}\ \text{ o }\ Y=\begin{pmatrix}-1&0\\0&1\end{pmatrix}}$$
+::::
 :::::
 
 
@@ -169,6 +284,22 @@ Considera las matrices $A=\begin{pmatrix}1&3\\-2&5\end{pmatrix}$, $M=\begin{pmat
 a) Sabiendo que $A$ verifica la identidad $(A+aI)^{2}=bI$, halla $a$ y $b$. *(1,5 puntos)*
 
 b) Resuelve la ecuación $MX+M^{2}=I$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $A^2=\begin{pmatrix}-5&18\\-12&19\end{pmatrix}$ y $(A+aI)^2=A^2+2aA+a^2I$.
+
+Elemento $(1,2)$: $18+6a=0\Rightarrow a=-3$. Con $a=-3$ la diagonal es $-5-6+9=-2$ y $19-30+9=-2$, y los elementos fuera de la diagonal son $0$.
+
+$$\mathbf{a=-3,\quad b=-2}$$
+
+**b)** $MX=I-M^2\Rightarrow X=M^{-1}(I-M^2)$. Con $M^{-1}=\begin{pmatrix}-1&1\\1&0\end{pmatrix}$ y $I-M^2=\begin{pmatrix}0&-1\\-1&-1\end{pmatrix}$:
+
+$$\mathbf{X=\begin{pmatrix}-1&0\\0&-1\end{pmatrix}=-I}$$
+
+(comprobación: $-M+M^2=I$).
+::::
 :::::
 
 

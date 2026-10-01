@@ -22,6 +22,22 @@ Las tallas de las niñas al nacer se distribuyen según una distribución normal
 a) Halla la probabilidad de que una niña al nacer mida más de 54 cm. *(1 punto)*
 
 b) Si en un hospital durante un mes han nacido 100 niñas, ¿cuántas tendrán en el momento del nacimiento una talla entre 48,2 y 51,8 cm? *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$X\sim N(50;1{,}8)$.
+
+**a)** $P(X>54)=P(Z>2{,}22)=1-\Phi(2{,}22)=1-0{,}9868$.
+
+**$P\approx0{,}0132$.**
+
+**b)** $48{,}2$ y $51{,}8$ son $50\mp1{,}8$, es decir $z=\mp1$: $P=\Phi(1)-\Phi(-1)=2\cdot0{,}8413-1=0{,}6826$.
+
+Esperado: $100\cdot0{,}6826\approx68{,}3$.
+
+**Unas 68 niñas.**
+::::
 :::::
 
 
@@ -36,6 +52,20 @@ La estatura de los alumnos de un centro de Educación Secundaria sigue una distr
 a) Calcula la probabilidad de que un alumno elegido al azar mida entre 168 y 180 cm. *(1,25 puntos)*
 
 b) ¿Cuánto mide al menos un alumno que está en el grupo del 5 % de alumnos más altos? *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$X\sim N(172;7)$.
+
+**a)** $P(168<X<180)=P\!\left(-0{,}57<Z<1{,}14\right)=\Phi(1{,}14)-\left(1-\Phi(0{,}57)\right)=0{,}8729-0{,}2843$.
+
+**$P\approx0{,}5886$.**
+
+**b)** Se busca $k$ con $P(X\ge k)=0{,}05$, es decir $\Phi(z)=0{,}95\Rightarrow z=1{,}645$. Entonces $k=172+1{,}645\cdot7\approx183{,}5$.
+
+**Mide al menos unos 183,5 cm.**
+::::
 :::::
 
 
@@ -53,6 +83,16 @@ Los rodamientos de las ruedas de un coche se configuran con unas bolas cuyos di�
 a) En circunstancias ideales, ¿cuál es la probabilidad de que la máquina elabore piezas con rodamiento óptimo? *(1,25 puntos)*
 
 b) ¿Cuál es la probabilidad de que el 15 de julio la máquina elabore piezas con rodamiento óptimo? *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $X\sim N(13;\,0{,}1)$:
+$P(12{,}9<X<13{,}15)=P(-1<Z<1{,}5)=\Phi(1{,}5)-\Phi(-1)=0{,}9332-(1-0{,}8413)=\mathbf{0{,}7745}$.
+
+**b)** $X\sim N(12{,}9;\,0{,}2)$:
+$P(12{,}9<X<13{,}15)=P(0<Z<1{,}25)=\Phi(1{,}25)-0{,}5=0{,}8944-0{,}5=\mathbf{0{,}3944}$.
+::::
 :::::
 
 
@@ -67,6 +107,14 @@ La velocidad máxima a la que puede circular un vehículo sobre un determinado p
 a) En uno de los sentidos de circulación, la velocidad de los vehículos sigue una distribución normal de media 64 km/h y desviación típica 4 km/h. Si el radar de control salta a partir de 72 km/h, ¿cuál es el porcentaje de vehículos que se sancionan? *(1 punto)*
 
 b) En el sentido contrario, también sigue una distribución normal de la que sabemos que la velocidad media es de 63,6 km/h y que el 5,05 % de todos los vehículos viaja a más de 80 km/h. En este caso, ¿cuánto vale la desviación típica? *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $P(X>72)=P\!\left(Z>\dfrac{72-64}{4}\right)=P(Z>2)=1-0{,}9772=0{,}0228$. **Se sanciona el $2{,}28\,\%$.**
+
+**b)** $P(X>80)=0{,}0505\Rightarrow P\!\left(Z\le\dfrac{80-63{,}6}{\sigma}\right)=0{,}9495$. En la tabla, $z=1{,}64$. Así $\dfrac{16{,}4}{\sigma}=1{,}64$ y **$\sigma=10$ km/h**.
+::::
 :::::
 
 
@@ -81,6 +129,14 @@ El peso de las manzanas producidas en una granja sigue una distribución normal 
 a) Si el 33 % de las manzanas pesan más de 230 gramos, calcula la desviación típica del peso de las manzanas. *(1,25 puntos)*
 
 b) Si la desviación típica es de 50 gramos, calcula el porcentaje de manzanas que pesan entre 160 y 220 gramos. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $P(X>230)=0{,}33\Rightarrow P\!\left(Z\le\dfrac{30}{\sigma}\right)=0{,}67$. En la tabla, $z=0{,}44$ ($\Phi(0{,}44)=0{,}6700$). Entonces $\dfrac{30}{\sigma}=0{,}44$ y **$\sigma\approx68{,}2$ g**.
+
+**b)** $P(160<X<220)=P(-0{,}8<Z<0{,}4)=\Phi(0{,}4)-\Phi(-0{,}8)=0{,}6554-(1-0{,}7881)=0{,}4435$. **Aproximadamente el $44{,}35\,\%$.**
+::::
 :::::
 
 

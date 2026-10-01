@@ -20,6 +20,18 @@ Se sabe que la función $f:\mathbb{R}\to\mathbb{R}$ dada por
 $$f(x)=\begin{cases}2\,|x^{2}-1| & \text{si } x\le \tfrac12\\ax^{2}+bx & \text{si } x>\tfrac12\end{cases}$$
 
 es derivable en $x=\tfrac12$. Determina $a$ y $b$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Para $x\le\tfrac12$: $x^2-1<0$, luego $f(x)=2(1-x^2)$.
+- Continuidad en $\tfrac12$: $2\left(1-\tfrac14\right)=\tfrac32=\tfrac a4+\tfrac b2\Rightarrow a+2b=6$.
+- Derivabilidad: $f'(x)=-4x\to-2$ por la izquierda; $f'(x)=2ax+b\to a+b$ por la derecha. $a+b=-2$.
+
+Resolviendo el sistema: $b=8$.
+
+**$a=-10$, $b=8$.**
+::::
 :::::
 
 
@@ -32,6 +44,19 @@ es derivable en $x=\tfrac12$. Determina $a$ y $b$.
 Se sabe que la función $f:\mathbb{R}\longrightarrow\mathbb{R}$ definida por $f(x)=x^{3}+ax^{2}+bx+c$, verifica que: $f(1)=0$, $x=0$ es un punto crítico de la función y la recta tangente a su gráfica en $x=-1$, es paralela a la recta de ecuación $y+3x=0$. Determina $a$, $b$ y $c$.
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f'(x)=3x^2+2ax+b$.
+- $f(1)=0$: $1+a+b+c=0$.
+- $x=0$ punto crítico: $f'(0)=b=0$.
+- Tangente en $x=-1$ paralela a $y=-3x$: $f'(-1)=3-2a+b=-3\Rightarrow a=3$.
+
+Entonces $c=-1-a-b=-4$.
+
+**$a=3$, $b=0$, $c=-4$** (es decir, $f(x)=x^3+3x^2-4$).
+::::
 :::::
 
 
@@ -51,6 +76,16 @@ a) Calcula $a\neq 0$ de forma que en el punto $(a,f(a))$ la recta normal a la gr
 b) Determina los intervalos de crecimiento y de decrecimiento de la función $f$. *(1 punto)*
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $f(x)=2\ln|x|-1$, luego $f'(x)=\dfrac2x$. Pendiente de la normal: $-\dfrac{x}{2}$. Pendiente de la tangente a $g$: $g'(x)=3x^2$.
+
+$$-\frac a2=3a^2\;\Rightarrow\;a(6a+1)=0\;\Rightarrow\;\textbf{a}=-\dfrac16\ (a\neq0).$$
+
+**b)** $f'(x)=\dfrac2x$: negativa en $(-1,0)$ y positiva en $(0,1)$. **$f$ decrece en $(-1,0)$ y crece en $(0,1)$.**
+::::
 :::::
 
 
@@ -67,6 +102,16 @@ a) Estudia la derivabilidad de $f$. *(1,5 puntos)*
 b) Halla los intervalos de crecimiento y de decrecimiento de $f$. *(1 punto)*
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Para $x\ge0$, $f(x)=\dfrac{1+x}{1-x}$ y $f'(x)=\dfrac{2}{(1-x)^2}$. Para $x<0$, $f(x)=\dfrac{1-x}{1+x}$ y $f'(x)=\dfrac{-2}{(1+x)^2}$.
+
+$f$ es continua en $0$, pero $f'(0^+)=2\neq-2=f'(0^-)$. **$f$ es derivable en $(-1,1)\setminus\{0\}$ y no es derivable en $x=0$.**
+
+**b)** $f'<0$ en $(-1,0)$ y $f'>0$ en $(0,1)$. **Decrece en $(-1,0)$ y crece en $(0,1)$** (mínimo en $x=0$).
+::::
 :::::
 
 
@@ -86,6 +131,16 @@ a) Determina, si existen, los puntos de la gráfica de $f$ en los que la recta t
 b) Determina la ecuación de la recta normal a la gráfica de $f$ en el punto $A$. *(1 punto)*
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Pendiente de $AB$: $\dfrac{1-0}{e-1}=\dfrac1{e-1}$. Como $f'(x)=\dfrac1x$: $\dfrac1x=\dfrac1{e-1}\Rightarrow x=e-1$.
+
+**Único punto: $\left(e-1,\ \ln(e-1)\right)$.**
+
+**b)** $f'(1)=1$, pendiente de la normal $-1$: **$y=-(x-1)$, es decir $y=-x+1$.**
+::::
 :::::
 
 
@@ -106,6 +161,20 @@ a) Determina $a$ y $b$. *(1,5 puntos)*
 b) Halla la ecuación de la recta tangente y de la recta normal a la gráfica de $f$ en el punto de abscisa $x=0$. *(1 punto)*
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Continuidad en $x=0$: $\lim_{x\to0^-}f=a$ y $f(0)=0$, así que $a=0$.
+
+Derivabilidad: $f'(0^-)=-a-b$ y $f'(0^+)=1+\dfrac1{1+0}=2$. Entonces $-a-b=2$.
+
+$$\mathbf{a=0,\quad b=-2}$$
+
+**b)** $f(0)=0$ y $f'(0)=2$.
+
+**Tangente: $y=2x$.  Normal: $y=-\dfrac x2$.**
+::::
 :::::
 
 
@@ -120,6 +189,19 @@ Sea $f:\mathbb{R}\to\mathbb{R}$ la función definida por
 $$f(x)=a+b\cos(x)+c\operatorname{sen}(x).$$
 
 Halla $a$, $b$ y $c$ sabiendo que su gráfica tiene en el punto de abscisa $x=\dfrac{\pi}{2}$ a la recta $y=1$ como recta tangente, y que la recta $y=x-1$ corta a la gráfica de $f$ en el punto de abscisa $x=0$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f'(x)=-b\operatorname{sen}x+c\cos x$.
+
+- Tangente $y=1$ en $x=\pi/2$: $f'(\pi/2)=-b=0\Rightarrow b=0$, y $f(\pi/2)=a+c=1$.
+- La recta $y=x-1$ pasa por la gráfica en $x=0$: $f(0)=a+b=-1\Rightarrow a=-1$.
+
+Entonces $c=1-a=2$.
+
+$$\mathbf{a=-1,\quad b=0,\quad c=2}\qquad(f(x)=-1+2\operatorname{sen}x).$$
+::::
 :::::
 
 

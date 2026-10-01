@@ -22,6 +22,22 @@ Disponemos de dos bolsas con monedas de oro y monedas de plata. En la primera ha
 a) Calcula la probabilidad de que la segunda moneda sea de oro, sabiendo que la moneda que se extrajo de la primera bolsa era de plata. *(0,75 puntos)*
 
 b) Calcula la probabilidad de que la moneda que se extrajo de la primera bolsa fuera de plata, sabiendo que la segunda moneda es de oro. *(1,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $O_1$ y $P_1$ (oro, plata) en la 1.ª extracción, $O_2$ en la 2.ª. Bolsa 1: 2 oro y 3 plata; bolsa 2: 6 oro y 3 plata.
+
+**a)** Si pasó una plata, la bolsa 2 tiene 6 oro y 4 plata (10 monedas): $P(O_2\mid P_1)=\dfrac{6}{10}$.
+
+**$P(O_2\mid P_1)=\dfrac35$.**
+
+**b)** $P(P_1)=\tfrac35$ y, si pasó oro, la bolsa 2 tiene 7 oro y 3 plata: $P(O_2\mid O_1)=\tfrac7{10}$. Probabilidad total: $P(O_2)=\tfrac35\cdot\tfrac6{10}+\tfrac25\cdot\tfrac7{10}=\tfrac9{25}+\tfrac7{25}=\tfrac{16}{25}$.
+
+Bayes: $P(P_1\mid O_2)=\dfrac{9/25}{16/25}$.
+
+**$P(P_1\mid O_2)=\dfrac{9}{16}$.**
+::::
 :::::
 
 
@@ -45,6 +61,20 @@ Se elige un estudiante al azar y se pide:
 a) ¿Cuál es la probabilidad de que el estudiante elegido esté en la clase A o haya cursado francés? *(1,25 puntos)*
 
 b) Si el estudiante elegido cursaba inglés, ¿cuál es la probabilidad de que esté en la clase C? *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Total: 120. Cada estudiante cursa un solo idioma.
+
+**a)** Clase A: 40 estudiantes (todos). Francés fuera de la clase A: $20+5+0=25$. Entonces $P(A\cup F)=\dfrac{40+25}{120}$.
+
+**$P=\dfrac{65}{120}=\dfrac{13}{24}\approx0{,}542$.**
+
+**b)** Estudiantes de inglés: $30+15+20+20=85$; de ellos, en la clase C: 20.
+
+**$P(C\mid I)=\dfrac{20}{85}=\dfrac{4}{17}\approx0{,}235$.**
+::::
 :::::
 
 
@@ -59,6 +89,22 @@ Tres máquinas A, B y C producen el 45 %, 30 % y 25 %, respectivamente, del tota
 a) Seleccionamos un coche al azar. Calcula la probabilidad de que sea defectuoso. *(1,25 puntos)*
 
 b) Tomamos, al azar, un coche y resulta ser defectuoso. ¿Qué máquina tiene la mayor probabilidad de haber producido dicho coche? *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Probabilidad total:
+$P(D)=0{,}45\cdot0{,}03+0{,}30\cdot0{,}04+0{,}25\cdot0{,}05=0{,}0135+0{,}012+0{,}0125$.
+
+**$P(D)=0{,}038$.**
+
+**b)** Teorema de Bayes, $P(M\mid D)=\dfrac{P(M)P(D\mid M)}{0{,}038}$:
+- $P(A\mid D)=\dfrac{0{,}0135}{0{,}038}\approx0{,}355$
+- $P(B\mid D)=\dfrac{0{,}012}{0{,}038}\approx0{,}316$
+- $P(C\mid D)=\dfrac{0{,}0125}{0{,}038}\approx0{,}329$
+
+**La máquina A es la más probable (≈ 35,5 %).**
+::::
 :::::
 
 
@@ -73,6 +119,21 @@ Dos laboratorios, Virex y Borez, elaboran las dosis de la vacuna contra la gripe
 a) Halla la probabilidad de que la segunda dosis sea del laboratorio Virex. *(1,25 puntos)*
 
 b) Si la segunda dosis es del laboratorio Virex, halla la probabilidad de que la primera hubiese sido de Borez. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Hay 8 dosis: 6 de Virex (V) y 2 de Borez (B).
+
+**a)** Por simetría (o por la probabilidad total):
+$P(V_2)=\tfrac68\cdot\tfrac57+\tfrac28\cdot\tfrac67=\tfrac{30+12}{56}$.
+
+**$P(V_2)=\dfrac34$.**
+
+**b)** $P(B_1\mid V_2)=\dfrac{P(B_1\cap V_2)}{P(V_2)}=\dfrac{\tfrac28\cdot\tfrac67}{3/4}=\dfrac{3/14}{3/4}$.
+
+**$P(B_1\mid V_2)=\dfrac27$.**
+::::
 :::::
 
 
@@ -97,6 +158,16 @@ Se elige un vehículo al azar de entre los coches y motos que se presentaron a d
 a) ¿Cuál es la probabilidad de que el vehículo elegido sea una moto o haya resultado apto? *(1,25 puntos)*
 
 b) Si el vehículo elegido es un coche, ¿cuál es la probabilidad de que haya resultado no apto? *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Total: $116\,383+160\,667+2\,679+3\,447=283\,176$ vehículos.
+
+**a)** El suceso contrario es «coche no apto»: $P(\text{moto}\cup\text{apto})=1-\dfrac{2\,679}{283\,176}=\dfrac{280\,497}{283\,176}\approx\mathbf{0{,}9905}$.
+
+**b)** $P(\text{no apto}\,|\,\text{coche})=\dfrac{2\,679}{116\,383+2\,679}=\dfrac{2\,679}{119\,062}\approx\mathbf{0{,}0225}$.
+::::
 :::::
 
 
@@ -111,6 +182,17 @@ Se hace un estudio sobre el café que se consume en la cafetería de una estaci�
 a) ¿Cuál es la probabilidad de que una persona adquiera un café expreso descafeinado? *(0,75 puntos)*
 
 b) Si sabemos que el café es descafeinado, ¿cuál es la probabilidad de que sea un expreso? *(1,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $E$ expreso, $M$ medio, $A$ americano y $D$ descafeinado. $P(D|E)=0{,}82$, $P(D|M)=0{,}69$, $P(D|A)=0{,}89$.
+
+**a)** $P(E\cap D)=0{,}29\cdot0{,}82=\mathbf{0{,}2378}$.
+
+**b)** $P(D)=0{,}2378+0{,}51\cdot0{,}69+0{,}2\cdot0{,}89=0{,}2378+0{,}3519+0{,}178=0{,}7677$.
+$$P(E|D)=\frac{0{,}2378}{0{,}7677}=\mathbf{0{,}3098}.$$
+::::
 :::::
 
 
@@ -125,6 +207,16 @@ Una empresa fabrica bolígrafos en tres provincias: Almería, Barcelona y Cácer
 a) ¿Cuál es la probabilidad de que un bolígrafo, tomado al azar, sea defectuoso? *(1 punto)*
 
 b) Si se ha escogido un bolígrafo no defectuoso, ¿cuál es la probabilidad de que provenga de Almería? *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $A$, $B$, $C$ las provincias y $D$ defectuoso.
+
+**a)** $P(D)=0{,}2\cdot0{,}07+0{,}5\cdot0{,}06+0{,}3\cdot0{,}02=0{,}014+0{,}03+0{,}006=\mathbf{0{,}05}$.
+
+**b)** $P(A|\overline D)=\dfrac{0{,}2\cdot0{,}93}{1-0{,}05}=\dfrac{0{,}186}{0{,}95}=\mathbf{0{,}1958}$ (aprox. $19{,}6\,\%$).
+::::
 :::::
 
 

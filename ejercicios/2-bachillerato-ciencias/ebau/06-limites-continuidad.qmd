@@ -20,6 +20,18 @@ Determina para qué valores de $a$ el límite
 $$\lim_{x\to 0}\dfrac{e^{-ax}-(1-ax)\cos(2x)}{x^{2}}$$
 
 vale 6.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Desarrollando con $x\to0$: $e^{-ax}=1-ax+\dfrac{a^2x^2}{2}+\dots$ y $(1-ax)\cos2x=(1-ax)(1-2x^2+\dots)=1-ax-2x^2+O(x^3)$.
+
+El numerador es $\left(\dfrac{a^2}{2}+2\right)x^2+O(x^3)$, así que el límite vale $\dfrac{a^2}{2}+2$.
+
+$\dfrac{a^2}{2}+2=6\Rightarrow a^2=8$.
+
+**$a=2\sqrt2$ o $a=-2\sqrt2$.**
+::::
 :::::
 
 
@@ -32,6 +44,16 @@ vale 6.
 Calcula el siguiente límite
 
 $$\lim_{x\to 0}\dfrac{x^{2}-\operatorname{sen}(x^{2})}{1-\cos(x)}$$
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Con $x\to0$: $x^2-\operatorname{sen}(x^2)\sim\dfrac{x^6}{6}$ y $1-\cos x\sim\dfrac{x^2}{2}$.
+
+El cociente se comporta como $\dfrac{x^6/6}{x^2/2}=\dfrac{x^4}{3}$.
+
+**El límite vale $0$.**
+::::
 :::::
 
 
@@ -45,6 +67,16 @@ $$\lim_{x\to 0}\dfrac{x^{2}-\operatorname{sen}(x^{2})}{1-\cos(x)}$$
 **Ejercicio 2** · Ordinaria 2025 · Bloque optativo 1 · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/06/2oBachCC_EBAU_Andalucia_2025-Ordinaria.pdf){target="_blank"}
 
 Sabiendo que $\displaystyle\lim_{x\to 0}\dfrac{\operatorname{sen}(x)-ax+2-2\cos(x)}{e^{x}-x\cos(x)-1}$ es finito, calcula $a$ y el valor del límite.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Por L'Hôpital o por desarrollos: numerador $=\operatorname{sen}x-ax+2-2\cos x=(1-a)x+x^2+\cdots$; denominador $=e^x-x\cos x-1=\dfrac{x^2}{2}+\cdots$ (pues $e^x-1=x+\dfrac{x^2}2+\cdots$ y $x\cos x=x-\dfrac{x^3}{2}+\cdots$).
+
+El denominador es de orden $2$; para que el límite sea finito hace falta $1-a=0$, es decir $a=1$. Entonces
+$$\lim_{x\to0}\frac{x^2+\cdots}{x^2/2+\cdots}=2.$$
+**$a=1$ y el límite vale $2$.**
+::::
 :::::
 
 
@@ -57,6 +89,18 @@ Sabiendo que $\displaystyle\lim_{x\to 0}\dfrac{\operatorname{sen}(x)-ax+2-2\cos(
 Calcula $a$ y $b$ sabiendo que
 
 $$\lim_{x\to 0}\dfrac{x\operatorname{sen}(x)+a(e^{x}-1)+\operatorname{sen}(x)}{bx^{2}+x-\operatorname{sen}(x)}=1.$$
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Desarrollando en $x=0$: $\operatorname{sen}x=x-\dfrac{x^3}{6}+\cdots$, $e^x-1=x+\dfrac{x^2}{2}+\cdots$.
+
+Numerador $=(1+a)\,x+\left(1+\dfrac a2\right)x^2+\cdots$. Denominador $=b\,x^2+\dfrac{x^3}{6}+\cdots$.
+
+Para que el límite sea finito el numerador debe ser de orden al menos igual que el denominador (de orden $\le2$): hace falta $1+a=0$, es decir $a=-1$. Entonces el numerador es $\dfrac{x^2}{2}+\cdots$ y el límite es $\dfrac{1/2}{b}=1$ (si $b=0$ el denominador sería $\sim x^3/6$ y el límite infinito).
+
+**$a=-1$, $b=\dfrac12$.**
+::::
 :::::
 
 
@@ -74,6 +118,18 @@ Considera la función continua $f$ definida por
 $$f(x)=\begin{cases}\dfrac{x\cos(x)-a\operatorname{sen}(x)}{x^{3}} & \text{si } x<0\\[2mm]b\cos(x)-1 & \text{si } x\ge 0\end{cases}$$
 
 Calcula $a$ y $b$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Para $x\ge0$: $f(0)=b-1$. Para $x<0$, el numerador $x\cos x-a\operatorname{sen}x\approx(1-a)x+\left(\frac a6-\frac12\right)x^3$. Para que el límite en $0^-$ sea finito hace falta $a=1$, y entonces
+
+$$\lim_{x\to0^-}\frac{x\cos x-\operatorname{sen}x}{x^3}=\frac16-\frac12=-\frac13.$$
+
+Continuidad: $b-1=-\dfrac13\Rightarrow b=\dfrac23$.
+
+$$\mathbf{a=1,\quad b=\tfrac23}$$
+::::
 :::::
 
 
@@ -84,6 +140,16 @@ Calcula $a$ y $b$.
 **Ejercicio 1** · Ordinaria · Suplente 2024 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria_Suplente.pdf){target="_blank"}
 
 Sea $f$ la función definida por $f(x)=\dfrac{ax^{3}+bx^{2}+x-1}{x^{2}-1}$, para $x\neq\pm1$. Sabiendo que su gráfica tiene una asíntota oblicua que pasa por el punto $(0,1)$ y es paralela a la recta $y=2x$, calcula la asíntota oblicua y los valores de $a$ y $b$.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Dividiendo, $f(x)=ax+b+\dfrac{(a+1)x+b-1}{x^2-1}$, luego la asíntota oblicua es $y=ax+b$.
+
+Paralela a $y=2x$: $a=2$. Pasa por $(0,1)$: $b=1$.
+
+$$\mathbf{a=2,\quad b=1,\quad\text{asíntota oblicua } y=2x+1}$$
+::::
 :::::
 
 
@@ -98,6 +164,21 @@ Considera la función definida por $f(x)=\dfrac{ax^{3}+x-1}{x^{2}+bx-3}$, para $
 a) Calcula $a$ y $b$ para que $y=x-2$ sea una asíntota oblicua de la gráfica de $f$. *(1,5 puntos)*
 
 b) Estudia y halla las asíntotas verticales de la gráfica de $f$ cuando $a=0$ y $b=2$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Dividiendo: $\dfrac{ax^3+x-1}{x^2+bx-3}=ax-ab+\dfrac{(ab^2+3a+1)x-3ab-1}{x^2+bx-3}$. La asíntota oblicua es $y=ax-ab$, que debe ser $y=x-2$:
+
+$$a=1,\quad ab=2\ \Rightarrow\ \mathbf{a=1,\ b=2}.$$
+
+**b)** Con $a=0$, $b=2$: $f(x)=\dfrac{x-1}{x^2+2x-3}=\dfrac{x-1}{(x-1)(x+3)}$.
+
+- En $x=1$: $\lim_{x\to1}f(x)=\dfrac14$, finito (discontinuidad evitable), no hay asíntota.
+- En $x=-3$: $\lim_{x\to-3^+}f=+\infty$ y $\lim_{x\to-3^-}f=-\infty$.
+
+**Única asíntota vertical: $x=-3$.**
+::::
 :::::
 
 
@@ -112,6 +193,18 @@ Calcula $a$ y $b$ sabiendo que
 $$\lim_{x\to 0}\dfrac{a\left(\ln(1+x)-x\right)+b\left(e^{x}-1\right)+1-\cos(x)}{\operatorname{sen}^{2}(x)}=5$$
 
 donde $\ln$ denota el logaritmo neperiano.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Desarrollos en $x=0$: $\ln(1+x)-x\approx-\dfrac{x^2}2$, $e^x-1\approx x+\dfrac{x^2}2$, $1-\cos x\approx\dfrac{x^2}2$ y $\operatorname{sen}^2x\approx x^2$. El numerador es
+
+$$bx+\frac{-a+b+1}{2}\,x^2+\cdots$$
+
+Para que el límite sea finito hace falta que el término en $x$ se anule: $b=0$. Entonces el límite vale $\dfrac{-a+1}{2}=5\Rightarrow a=-9$.
+
+$$\mathbf{a=-9,\quad b=0}$$
+::::
 :::::
 
 

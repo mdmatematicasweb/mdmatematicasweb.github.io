@@ -20,6 +20,23 @@ Considera la matriz $A=\begin{pmatrix}\alpha&\beta&1\\2&\alpha&\beta\\3&4&\alpha
 a) Calcula $\begin{vmatrix}-3&-4&-\alpha\\\alpha-2&\beta-\alpha&1-\beta\\8&4\alpha&4\beta\end{vmatrix}$. *(1,5 puntos)*
 
 b) Calcula $\left|A^{-1}(A^{t})^{2}A\right|$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $F_1,F_2,F_3$ las filas de $A$, con $|A|=-2$.
+
+**a)** Las filas del determinante pedido son $-F_3$, $F_1-F_2$ y $4F_2$. Entonces
+$\begin{vmatrix}-F_3\\F_1-F_2\\4F_2\end{vmatrix}=-4\begin{vmatrix}F_3\\F_1-F_2\\F_2\end{vmatrix}=-4\begin{vmatrix}F_3\\F_1\\F_2\end{vmatrix}=-4|A|$
+
+(se suma la 3.ª fila a la 2.ª, y $(F_3,F_1,F_2)$ es una permutación circular de las filas, que no cambia el signo).
+
+**El determinante vale $8$.**
+
+**b)** $|A^{-1}(A^t)^2A|=|A|^{-1}|A|^2|A|=|A|^2$.
+
+**Vale $4$.**
+::::
 :::::
 
 
@@ -39,6 +56,15 @@ a) Indica para qué valores de $\alpha$ la matriz $A$ admite inversa. *(1 punto)
 b) Para $\alpha=1$ determina, si es posible, la matriz inversa de $A$. *(1,5 puntos)*
 
 *Relacionado también con:* [Matrices](01-matrices.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $|A|=\alpha(\alpha-4)(\alpha+2)$ (desarrollando por la primera columna). **$A$ admite inversa si $\alpha\neq0,\ \alpha\neq4,\ \alpha\neq-2$.**
+
+**b)** Con $\alpha=1$: $A=\begin{pmatrix}1&5&0\\1&1&1\\0&5&1\end{pmatrix}$, $|A|=-9$. Con la matriz adjunta:
+$$\mathbf{A^{-1}}=\frac{1}{9}\begin{pmatrix}4&5&-5\\1&-1&1\\-5&5&4\end{pmatrix}.$$
+::::
 :::::
 
 
@@ -53,6 +79,14 @@ Sabiendo que $\begin{vmatrix}a&b&c\\x&y&z\\u&v&w\end{vmatrix}=1$, calcula razona
 a) $\begin{vmatrix}a+x&b+y&c+z\\a&b&c\\2a+u&2b+v&2c+w\end{vmatrix}$. *(1,5 puntos)*
 
 b) $\begin{vmatrix}z&c&w\\x&a&u\\y&b&v\end{vmatrix}$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** A la fila 1 le restamos la fila 2 y a la fila 3 le restamos $2\cdot$ fila 2 (no cambia el determinante): queda $\left|\begin{matrix}x&y&z\\a&b&c\\u&v&w\end{matrix}\right|$, que es el original con las filas 1 y 2 intercambiadas: **$-1$.**
+
+**b)** Es la traspuesta de la matriz con filas $(z,x,y)$, $(c,a,b)$, $(w,u,v)$. Cada fila es una permutación cíclica de las columnas de una fila del original (no cambia el signo), y las filas 1 y 2 están intercambiadas: **$-1$.**
+::::
 :::::
 
 
@@ -67,6 +101,16 @@ Se considera la matriz $M=\begin{pmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{
 a) Calcula $\begin{vmatrix}a_{11}&a_{31}&2a_{21}\\3a_{12}&3a_{32}&6a_{22}\\2a_{13}&2a_{33}&4a_{23}\end{vmatrix}$. *(1,25 puntos)*
 
 b) Calcula $\begin{vmatrix}2a_{11}-3a_{31}&2a_{12}-3a_{32}&4a_{13}-6a_{33}\\a_{21}&a_{22}&2a_{23}\\a_{31}&a_{32}&2a_{33}\end{vmatrix}$. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Sacando factores: la fila 2 tiene factor $3$, la fila 3 tiene factor $2$ y la columna 3 tiene factor $2$; queda un factor $12$. La matriz resultante tiene por columnas las filas $1$, $3$ y $2$ de $M$, es decir, es la traspuesta de $M$ con dos filas intercambiadas, así que su determinante es $-|M|$.
+$$12\cdot(-|M|)=12\cdot5=\mathbf{60}.$$
+
+**b)** A la fila 1 le sumamos $3\cdot$ fila 3: queda $(2a_{11},\,2a_{12},\,4a_{13})$. Sacamos $2$ de la fila 1 y $2$ de la columna 3:
+$$|\cdot|=2\cdot2\cdot|M|=4\cdot(-5)=\mathbf{-20}.$$
+::::
 :::::
 
 
@@ -86,6 +130,20 @@ a) Calcula los determinantes de las matrices $\left((AB)^{5}\right)^{-1}$ y $27A
 b) Halla la matriz $X$, si es posible, que verifica que $AXB=9I$, donde $I$ es la matriz identidad de orden 3. *(1,25 puntos)*
 
 *Relacionado también con:* [Matrices](01-matrices.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$|A|=9$ y $|B|=-\dfrac19$, luego $|AB|=-1$.
+
+**a)** $\left|\big((AB)^5\big)^{-1}\right|=\dfrac1{|AB|^5}=\mathbf{-1}$. Para matrices $3\times3$, $|27AB^6|=27^3\,|A|\,|B|^6=3^9\cdot3^2\cdot3^{-12}=\mathbf{\dfrac13}$.
+
+**b)** $|A|\neq0$ y $|B|\neq0$, así que ambas son invertibles y $X=9A^{-1}B^{-1}$ (existe y es única):
+
+$$\mathbf{X=\begin{pmatrix}0&1&18\\0&1&-63\\9&0&-162\end{pmatrix}}$$
+
+(comprobado: $AXB=9I$).
+::::
 :::::
 
 
@@ -102,6 +160,22 @@ a) Sabiendo que el determinante de $A$ es 5, calcula $\begin{vmatrix}x-1&y-1&z-1
 b) Calcula los valores $(x,y,z)$ tales que $B\cdot A=C$. *(1,5 puntos)*
 
 *Relacionado también con:* [Matrices](01-matrices.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Sea $D$ el determinante pedido. Su fila 1 es $(x,y,z)-(1,1,1)$ y su fila 3 es $(3,0,2)+(1,1,1)$. Por linealidad en filas, y como un determinante con dos filas iguales vale $0$ (en particular los términos con $(1,1,1)$ repetido), queda
+
+$$D=\begin{vmatrix}x&y&z\\1&1&1\\3&0&2\end{vmatrix}=-\begin{vmatrix}x&y&z\\3&0&2\\1&1&1\end{vmatrix}=-|A|$$
+
+(al intercambiar dos filas el determinante cambia de signo). Luego $\mathbf{D=-5}$.
+
+**b)** $B\cdot A=(x+3y+z,\ y+z,\ 2y+2z)=(3,0,0)$, de donde $y+z=0$ y $x+3y+z=3$. Con $z=\lambda$: $y=-\lambda$, $x=3+2\lambda$.
+
+$$\mathbf{(x,y,z)=(3+2\lambda,\,-\lambda,\,\lambda),\ \lambda\in\mathbb{R}}$$
+
+(infinitas soluciones).
+::::
 :::::
 
 

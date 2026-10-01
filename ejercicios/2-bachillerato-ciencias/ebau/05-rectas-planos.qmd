@@ -20,6 +20,20 @@ Considera los puntos $P(4,-2,3)$ y $Q(6,2,1)$.
 a) Halla la ecuación del plano respecto del cual los puntos $P$ y $Q$ son simétricos. *(1 punto)*
 
 b) Determina el ángulo formado por el plano $2x+y+z-5=0$ y la recta que une $P$ y $Q$. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** El plano es el mediador de $PQ$: normal $\overrightarrow{PQ}=(2,4,-2)\parallel(1,2,-1)$ y pasa por el punto medio $M(5,0,2)$:
+$x+2y-z+D=0$, con $5-2+D=0\Rightarrow D=-3$.
+
+**Plano: $x+2y-z-3=0$.**
+
+**b)** Dirección de la recta: $(1,2,-1)$; normal del plano: $(2,1,1)$.
+$\operatorname{sen}\alpha=\dfrac{|2+2-1|}{\sqrt6\sqrt6}=\dfrac12$.
+
+**$\alpha=30^\circ$.**
+::::
 :::::
 
 
@@ -36,6 +50,19 @@ a) Halla el área del triángulo cuyos vértices están determinados por la inte
 b) Halla los planos paralelos a $\pi$ que distan 2 unidades del punto $P(2,2,1)$. *(1,25 puntos)*
 
 *Relacionado también con:* [Vectores en el espacio](04-vectores-espacio.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Cortes con los ejes: $x=-5$, $y=-4$, $z=1$, es decir $(-5,0,0)$, $(0,-4,0)$, $(0,0,1)$. Con $a=5$, $b=4$, $c=1$ el área es $\tfrac12\sqrt{(ab)^2+(bc)^2+(ac)^2}=\tfrac12\sqrt{400+16+25}$ (equivale a $\tfrac12|\overrightarrow{AB}\times\overrightarrow{AC}|$).
+
+**Área $=\dfrac{21}{2}=10{,}5\ \text{u}^2$.**
+
+**b)** Planos $4x+5y-20z+k=0$, con $|\vec n|=\sqrt{441}=21$:
+$\dfrac{|8+10-20+k|}{21}=2\Rightarrow|k-2|=42$.
+
+**$4x+5y-20z+44=0$ y $4x+5y-20z-40=0$.**
+::::
 :::::
 
 
@@ -47,6 +74,20 @@ Considera los planos $\pi_1\equiv 2x-y-z=7$, $\pi_2\equiv x-2y+z=3$ y el punto $
 a) Determina la ecuación de la recta que pasa por el punto $P$ y es paralela a ambos planos. *(1,25 puntos)*
 
 b) Halla la ecuación del plano que pasa por el punto $P$ y es perpendicular a $\pi_1$ y a $\pi_2$. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Normales: $\vec n_1=(2,-1,-1)$, $\vec n_2=(1,-2,1)$. $\vec n_1\times\vec n_2=(-3,-3,-3)\parallel(1,1,1)$.
+
+**a)** Una recta paralela a ambos planos tiene dirección perpendicular a las dos normales, es decir $(1,1,1)$.
+
+**Recta: $x-1=y-1=z$.**
+
+**b)** Un plano perpendicular a $\pi_1$ y a $\pi_2$ tiene como normal la dirección $(1,1,1)$ (su normal es perpendicular a ambas normales); pasa por $P(1,1,0)$.
+
+**Plano: $x+y+z-2=0$.**
+::::
 :::::
 
 
@@ -61,6 +102,20 @@ Considera la recta $r\equiv\begin{cases}x=-2\lambda\\y=-1+2\lambda\\z=3+2\lambda
 a) Determina la ecuación de la recta que corta perpendicularmente a $r$ y que está contenida en $\pi$. *(1 punto)*
 
 b) Halla el punto simétrico de $P(1,1,1)$ respecto de $\pi$. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$r$: punto $(0,-1,3)$, dirección $\vec d=(-1,1,1)$. Normal de $\pi$: $\vec n=(1,-2,1)$.
+
+**a)** $r$ corta a $\pi$ ($\vec d\cdot\vec n=-2\ne0$): sustituyendo, $-2\lambda-2(-1+2\lambda)+3+2\lambda-3=0\Rightarrow\lambda=\tfrac12$, punto $M(-1,0,4)$. La recta pedida pasa por $M$, está en $\pi$ y es perpendicular a $r$, luego su dirección es $\vec d\times\vec n=(3,2,1)$.
+
+**Recta: $\dfrac{x+1}{3}=\dfrac{y}{2}=\dfrac{z-4}{1}$.**
+
+**b)** Recta por $P$ perpendicular a $\pi$: $(1+t,\,1-2t,\,1+t)$. En $\pi$: $(1+t)-2(1-2t)+(1+t)-3=6t-3=0\Rightarrow t=\tfrac12$, pie $(\tfrac32,0,\tfrac32)$. El simétrico es $P'=2\cdot\text{pie}-P$.
+
+**$P'(2,-1,2)$.**
+::::
 :::::
 
 
@@ -75,6 +130,21 @@ Considera el plano $\pi\equiv 2x-y+2z-3=0$ y la recta $r\equiv\dfrac{x-1}{2}=\df
 a) Halla la posición relativa de $\pi$ y $r$ según los valores de $m$. *(1,5 puntos)*
 
 b) Para $m=1$, determina la ecuación del plano que contiene a $r$ y corta perpendicularmente a $\pi$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Dirección de $r$: $\vec d=(2,1,m-2)$; normal de $\pi$: $\vec n=(2,-1,2)$. Entonces $\vec d\cdot\vec n=4-1+2(m-2)=2m-1$.
+
+**a)**
+- Si $m\neq\tfrac12$: $\vec d\cdot\vec n\neq0$, **la recta corta al plano** en un punto.
+- Si $m=\tfrac12$: $r\parallel\pi$. El punto $(1,0,2)$ de $r$ da $2-0+4-3=3\neq0$, no está en $\pi$: **recta paralela al plano (sin puntos comunes)**.
+
+**b)** Para $m=1$: $\vec d=(2,1,-1)$. El plano contiene a $r$ y es perpendicular a $\pi$, luego su normal es $\vec d\times\vec n=(1,-6,-4)$ y pasa por $(1,0,2)$:
+$(x-1)-6y-4(z-2)=0$.
+
+**Plano: $x-6y-4z+7=0$.**
+::::
 :::::
 
 
@@ -91,6 +161,22 @@ a) Calcula la longitud de la altura del tetraedro de vértices $A$, $B$, $C$, $D
 b) Determina el ángulo que forma la recta que pasa por $A$ y $D$ con el plano que contiene a los puntos $A$, $B$ y $C$. *(1 punto)*
 
 *Relacionado también con:* [Vectores en el espacio](04-vectores-espacio.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$\overrightarrow{AB}=(-2,1,-2)$, $\overrightarrow{AC}=(-1,-1,-1)$, $\overrightarrow{AD}=(0,1,-1)$.
+
+**a)** $\overrightarrow{AB}\times\overrightarrow{AC}=(-3,0,3)$, de módulo $3\sqrt2$. La altura desde $D$ es la distancia de $D$ al plano $ABC$:
+$h=\dfrac{|\overrightarrow{AD}\cdot(\overrightarrow{AB}\times\overrightarrow{AC})|}{|\overrightarrow{AB}\times\overrightarrow{AC}|}=\dfrac{3}{3\sqrt2}$.
+
+**$h=\dfrac{\sqrt2}{2}$ u.**
+
+**b)** Normal del plano: $(1,0,-1)$; dirección de la recta $AD$: $(0,1,-1)$.
+$\operatorname{sen}\alpha=\dfrac{|(1,0,-1)\cdot(0,1,-1)|}{\sqrt2\cdot\sqrt2}=\dfrac12$.
+
+**$\alpha=30^\circ$.**
+::::
 :::::
 
 
@@ -108,6 +194,19 @@ Considera el punto $P(1,1,1)$ y la recta $r\equiv\dfrac{x-1}{1}=\dfrac{y-2}{2}=\
 a) Halla el plano que pasa por el punto $P$ y contiene a la recta $r$. *(1 punto)*
 
 b) Halla la recta que pasa por el punto $P$ y corta perpendicularmente a la recta $r$. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$r$ pasa por $Q(1,2,3)$ con $\vec d=(1,2,2)$; $\overrightarrow{PQ}=(0,1,2)$.
+
+**a)** Normal: $\overrightarrow{PQ}\times\vec d=(-2,2,-1)$. Plano por $P$: $2x-2y+z+D=0$ con $2-2+1+D=0$. **$2x-2y+z-1=0$.**
+
+**b)** Punto de $r$: $R(1+\lambda,2+2\lambda,3+2\lambda)$. $\overrightarrow{PR}\cdot\vec d=0$: $(\lambda,\,1+2\lambda,\,2+2\lambda)\cdot(1,2,2)=9\lambda+6=0\Rightarrow\lambda=-\dfrac23$, $R\left(\dfrac13,\dfrac23,\dfrac53\right)$.
+
+Dirección $\overrightarrow{PR}=\left(-\dfrac23,-\dfrac13,\dfrac23\right)\parallel(2,1,-2)$.
+**$\dfrac{x-1}{2}=\dfrac{y-1}{1}=\dfrac{z-1}{-2}$.**
+::::
 :::::
 
 
@@ -122,6 +221,16 @@ Considera el plano $\pi\equiv 2x+y+2z+5=0$.
 a) Calcula el punto simétrico de $P(1,0,1)$ respecto de $\pi$. *(1,5 puntos)*
 
 b) Calcula los planos paralelos a $\pi$ y que disten 2 unidades de $\pi$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Recta perpendicular a $\pi$ por $P$: $(1+2t,\,t,\,1+2t)$. Corta a $\pi$: $2(1+2t)+t+2(1+2t)+5=9t+9=0\Rightarrow t=-1$, punto medio $M(-1,-1,-1)$.
+
+$P'=2M-P=$ **$(-3,-2,-3)$.**
+
+**b)** Planos $2x+y+2z+D=0$ con $\dfrac{|D-5|}{\sqrt{4+1+4}}=2\Rightarrow|D-5|=6$. **$2x+y+2z+11=0$ y $2x+y+2z-1=0$.**
+::::
 :::::
 
 
@@ -136,6 +245,17 @@ Considera el plano $\pi\equiv x+y+z+1=0$ y los puntos $A(1,2,0)$ y $B(3,1,0)$.
 a) Calcula el punto simétrico del punto $A$ con respecto al plano $\pi$. *(1,5 puntos)*
 
 b) Halla el plano que contiene a los puntos $A$ y $B$ y es perpendicular al plano $\pi$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** La recta perpendicular a $\pi$ por $A$ es $(1+t,\,2+t,\,t)$. Corta a $\pi$: $3+3t+1=0\Rightarrow t=-\dfrac43$, punto medio $M\left(-\dfrac13,\dfrac23,-\dfrac43\right)$.
+
+$A'=2M-A=$ **$\left(-\dfrac53,-\dfrac23,-\dfrac83\right)$.**
+
+**b)** El plano contiene a $\overrightarrow{AB}=(2,-1,0)$ y a la normal de $\pi$, $(1,1,1)$. Su normal es $\overrightarrow{AB}\times(1,1,1)=(-1,-2,3)$ y pasa por $A$:
+**$x+2y-3z-5=0$.** (Comprobación: $B$: $3+2-5=0$.)
+::::
 :::::
 
 
@@ -150,6 +270,16 @@ Considera la recta $r\equiv\begin{cases}x-y+z=3\\x+2y-z=4\end{cases}$ y el plano
 a) Halla $m$ para que $r$ y $\pi$ sean paralelos. *(1,5 puntos)*
 
 b) Para $m=-8$, calcula la distancia de la recta $r$ al plano $\pi$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Vector director de $r$: $\vec d=(1,-1,1)\times(1,2,-1)=(-1,2,3)$. Es paralela al plano si $\vec d\cdot(m,-1,-2)=0$:
+$-m-2-6=0\Rightarrow m=-8$. Además, un punto de $r$, $(10/3,1/3,0)$, no está en $\pi$ ($-27\neq5$), luego no está contenida. **$m=-8$.**
+
+**b)** La distancia de $r$ a $\pi$ es la de cualquier punto de $r$, por ejemplo $P(10/3,1/3,0)$, a $\pi\equiv-8x-y-2z-5=0$:
+$$d=\frac{\left|-\frac{80}{3}-\frac13-5\right|}{\sqrt{64+1+4}}=\frac{32}{\sqrt{69}}=\mathbf{\frac{32\sqrt{69}}{69}}\approx3{,}85.$$
+::::
 :::::
 
 
@@ -161,6 +291,19 @@ Sean las rectas $r\equiv\dfrac{x+1}{4}=\dfrac{y+2}{3}=\dfrac{z-2}{-1}$ y $s\equi
 a) Estudia la posición relativa de las rectas $r$ y $s$. *(1 punto)*
 
 b) Halla la ecuación de un plano que contiene a $r$ y a una recta perpendicular a las rectas $r$ y $s$. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$r$: $A(-1,-2,2)$, $\vec u=(4,3,-1)$. $s$: $B(1,2,-3)$, $\vec v=(-1,1,-2)$. $\overrightarrow{AB}=(2,4,-5)$.
+
+**a)** $\vec u$ y $\vec v$ no son proporcionales y
+$$\left|\begin{matrix}4&3&-1\\-1&1&-2\\2&4&-5\end{matrix}\right|=-9\neq0.$$
+**Las rectas se cruzan.**
+
+**b)** La dirección perpendicular a ambas es $\vec w=\vec u\times\vec v=(-5,9,7)$. El plano contiene a $r$ y tiene dirección $\vec w$, luego su normal es $\vec u\times\vec w=(30,-23,51)$ y pasa por $A$:
+$30(x+1)-23(y+2)+51(z-2)=0$, es decir **$30x-23y+51z-118=0$.**
+::::
 :::::
 
 
@@ -175,6 +318,17 @@ Considera la recta $r\equiv\begin{cases}x+y+z=0\\y-z=0\end{cases}$ y el punto $P
 a) Halla la distancia del punto $P$ a la recta $r$. *(1,25 puntos)*
 
 b) Calcula la ecuación del plano que contiene a la recta $r$ y al punto $P$. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$r$ en paramétricas: de $y=z$ y $x=-2y$, pasa por $O(0,0,0)$ con $\vec d=(-2,1,1)$.
+
+**a)** $\overrightarrow{OP}=(2,1,0)$, $\overrightarrow{OP}\times\vec d=(1,-2,4)$.
+$$d(P,r)=\frac{|\overrightarrow{OP}\times\vec d|}{|\vec d|}=\frac{\sqrt{21}}{\sqrt6}=\mathbf{\frac{\sqrt{14}}{2}}\approx1{,}87.$$
+
+**b)** El plano pasa por $O$ y tiene normal $\overrightarrow{OP}\times\vec d=(1,-2,4)$: **$x-2y+4z=0$.**
+::::
 :::::
 
 
@@ -189,6 +343,18 @@ Considera las rectas $r\equiv\dfrac{x}{1}=\dfrac{y-2}{-1}=\dfrac{z-k}{2}$ y $s\e
 a) Determina $k$ sabiendo que ambas se cortan en un punto. *(1,5 puntos)*
 
 b) Para $k=0$, halla la ecuación general del plano que contiene a $r$ y es paralelo a $s$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$r$: punto $A(0,2,k)$, $\vec u=(1,-1,2)$. $s$: punto $B(-2,-3,1)$, $\vec v=(-1,2,1)$. Los vectores directores no son proporcionales.
+
+**a)** Se cortan si son coplanarias: $\overrightarrow{AB}=(-2,-5,1-k)$ y
+$$\left|\begin{matrix}1&-1&2\\-1&2&1\\-2&-5&1-k\end{matrix}\right|=26-k=0\;\Rightarrow\;\mathbf{k=26}.$$
+
+**b)** Con $k=0$, la normal es $\vec u\times\vec v=(-5,-3,1)$, es decir $5x+3y-z+D=0$. Pasa por $(0,2,0)$: $6+D=0$.
+**Plano: $5x+3y-z-6=0$.**
+::::
 :::::
 
 
@@ -204,6 +370,18 @@ b) Para $k=0$, halla la ecuación general del plano que contiene a $r$ y es para
 a) Halla el punto simétrico de $P(2,2,1)$ respecto de la recta $r\equiv\begin{cases}x-2y+z=2\\y-z=1\end{cases}$ *(1,25 puntos)*
 
 b) Halla el punto simétrico de $Q(1,-1,-3)$ respecto del plano $\pi\equiv x-2y+z+6=0$. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Parametrizando $r$ ($z=t$): $r\equiv(4+t,\,1+t,\,t)$, dirección $(1,1,1)$. El pie de la perpendicular desde $P$ cumple $(2+t,-1+t,t-1)\cdot(1,1,1)=3t=0\Rightarrow t=0$, $H(4,1,0)$. El simétrico es $P'=2H-P$:
+
+$$\mathbf{P'=(6,0,-1)}$$
+
+**b)** Normal $\vec n=(1,-2,1)$, $|\vec n|^2=6$, y $\pi(Q)=1+2-3+6=6$. Pie de la perpendicular: $H=Q-\dfrac66\vec n=(0,1,-4)$. Simétrico $Q'=2H-Q$:
+
+$$\mathbf{Q'=(-1,3,-5)}$$
+::::
 :::::
 
 
@@ -215,6 +393,20 @@ Considera las rectas $r\equiv\begin{cases}y=0\\2x-z=0\end{cases}$ y $s\equiv\beg
 a) Estudia la posición relativa de $r$ y $s$. *(1 punto)*
 
 b) Calcula la ecuación del plano paralelo a $r$ y $s$ que equidista de ambas rectas. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$r$: punto $A(0,0,0)$, dirección $\vec d_r=(1,0,2)$. $s$ ($z=0$, $y=-7-x$): punto $B(0,-7,0)$, dirección $\vec d_s=(1,-1,0)$.
+
+**a)** $\vec d_r$ y $\vec d_s$ no son proporcionales, y $\big[\overrightarrow{AB},\vec d_r,\vec d_s\big]=(0,-7,0)\cdot(2,2,-1)=-14\neq0$ (con $\vec d_r\times\vec d_s=(2,2,-1)$). **Las rectas se cruzan.**
+
+**b)** El plano tiene normal $(2,2,-1)$: $2x+2y-z+D=0$. $r$ está en el plano $2x+2y-z=0$ y $s$ en $2x+2y-z=-14$. El plano equidistante está en medio:
+
+$$\mathbf{2x+2y-z+7=0}$$
+
+(distancia $7/3$ a cada una).
+::::
 :::::
 
 
@@ -229,6 +421,20 @@ Considera la recta $r\equiv\dfrac{x+1}{2}=\dfrac{y-2}{2}=3-z$ y el punto $P(0,2,
 a) Calcula el punto de $r$ a menor distancia de $P$. *(1,25 puntos)*
 
 b) Halla los puntos de $r$ cuya distancia a $P$ sea igual a $\sqrt{50}$. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$r$: punto $(-1,2,3)$, dirección $(2,2,-1)$; un punto genérico es $R(-1+2t,\,2+2t,\,3-t)$ y $\overrightarrow{PR}=(2t-1,\,2t,\,7-t)$.
+
+**a)** El punto más cercano cumple $\overrightarrow{PR}\cdot(2,2,-1)=0$: $9t-9=0\Rightarrow t=1$.
+
+$$\mathbf{R=(1,4,2)}\quad(\text{distancia }\sqrt{41}).$$
+
+**b)** $|\overrightarrow{PR}|^2=9t^2-18t+50=50\Rightarrow 9t(t-2)=0\Rightarrow t=0,\ t=2$.
+
+$$\mathbf{(-1,2,3)\ \text{ y }\ (3,6,1)}$$
+::::
 :::::
 
 
@@ -236,6 +442,16 @@ b) Halla los puntos de $r$ cuya distancia a $P$ sea igual a $\sqrt{50}$. *(1,25 
 **Ejercicio 8** · Ordinaria · Reserva 2024 · Bloque D · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Ordinaria_Reserva.pdf){target="_blank"}
 
 Sea $\pi_1$ el plano determinado por los puntos $A(1,0,0)$, $B(1,1,-3)$ y $C(0,1,1)$, y sea $\pi_2\equiv x-y+z-1=0$. Determina la ecuación de la recta paralela a ambos planos que pasa por el origen.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$\overrightarrow{AB}=(0,1,-3)$, $\overrightarrow{AC}=(-1,1,1)$. Normal de $\pi_1$: $\overrightarrow{AB}\times\overrightarrow{AC}=(4,3,1)$. Normal de $\pi_2$: $(1,-1,1)$.
+
+Una recta paralela a ambos planos tiene dirección perpendicular a las dos normales: $(4,3,1)\times(1,-1,1)=(4,-3,-7)$.
+
+$$\mathbf{(x,y,z)=\lambda(4,-3,-7)}\ \ \text{es decir}\ \ \frac x4=\frac y{-3}=\frac z{-7}.$$
+::::
 :::::
 
 
@@ -250,6 +466,22 @@ Considera los puntos $P(1,0,1)$ y $Q(3,-2,1)$.
 a) Calcula el plano perpendicular al segmento $PQ$ que pasa por su punto medio. *(1 punto)*
 
 b) Calcula el plano paralelo a la recta $r\equiv 1-x=\dfrac{y-2}{3}=z+1$ que pasa por $P$ y $Q$. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$\overrightarrow{PQ}=(2,-2,0)$.
+
+**a)** Punto medio $M(2,-1,1)$; normal $(1,-1,0)$: $x-y+D=0$, con $M$: $D=-3$.
+
+$$\mathbf{x-y-3=0}$$
+
+**b)** Dirección de $r$: $(-1,3,1)$. Normal del plano: $\overrightarrow{PQ}\times(-1,3,1)\parallel(-1,-1,2)$. Plano por $P$: $-(x-1)-y+2(z-1)=0$.
+
+$$\mathbf{x+y-2z+1=0}$$
+
+(contiene a $Q$: $3-2-2+1=0$).
+::::
 :::::
 
 
@@ -264,6 +496,18 @@ Considera el plano $\pi\equiv x-2y+z-2=0$ y la recta $r\equiv\begin{cases}x=1+2\
 a) Estudia la posición relativa de $\pi$ y $r$. *(1 punto)*
 
 b) Calcula la ecuación de la recta contenida en $\pi$ que pasa por el punto $P(2,-1,-2)$ y es perpendicular a $r$. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$\pi$: normal $\vec n=(1,-2,1)$. $r$: punto $A(1,0,1)$, dirección $\vec d=(2,1,0)$.
+
+**a)** $\vec n\cdot\vec d=2-2=0$ y $A\in\pi$ ($1-0+1-2=0$). **La recta $r$ está contenida en el plano $\pi$.**
+
+**b)** $P\in\pi$ ($2+2-2-2=0$). La recta debe estar en $\pi$ (dirección perpendicular a $\vec n$) y ser perpendicular a $r$ (perpendicular a $\vec d$): $\vec n\times\vec d=(-1,2,5)$.
+
+$$\mathbf{(x,y,z)=(2,-1,-2)+\mu(-1,2,5)}\ \ \text{es decir}\ \ \frac{x-2}{-1}=\frac{y+1}{2}=\frac{z+2}{5}.$$
+::::
 :::::
 
 
@@ -278,6 +522,20 @@ Considera las rectas $r\equiv x=y+a=\dfrac{z+1}{2}$ y $s\equiv\begin{cases}x-2y=
 a) Calcula $a$ para que las rectas se corten. *(1,25 puntos)*
 
 b) Para $a=-1$, halla la recta que corta perpendicularmente a $r$ y $s$. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$r$: punto $(0,-a,-1)$, dirección $\vec d_r=(1,1,2)$. $s$: con $y=\mu$, $(x,y,z)=(3a+2\mu,\ \mu,\ 2-3a-2\mu)$: punto $(3a,0,2-3a)$, dirección $\vec d_s=(2,1,-2)$.
+
+**a)** No son paralelas. Se cortan si son coplanarias: $\big[\overrightarrow{P_rP_s},\vec d_r,\vec d_s\big]=0$ con $\overrightarrow{P_rP_s}=(3a,a,3-3a)$ y $\vec d_r\times\vec d_s=(-4,6,-1)$:
+
+$$-12a+6a-3+3a=-3a-3=0\ \Rightarrow\ \mathbf{a=-1}.$$
+
+**b)** Con $a=-1$ se cortan en un punto: igualando $r\,(t,\,1+t,\,-1+2t)$ y $s\,(-3+2\mu,\,\mu,\,5-2\mu)$ se obtiene $t=1$, $\mu=2$, punto $(1,2,1)$. La recta que corta perpendicularmente a ambas pasa por ese punto con dirección $\vec d_r\times\vec d_s=(-4,6,-1)$:
+
+$$\mathbf{(x,y,z)=(1,2,1)+\lambda(-4,6,-1)}\ \ \text{es decir}\ \ \frac{x-1}{-4}=\frac{y-2}{6}=\frac{z-1}{-1}.$$
+::::
 :::::
 
 
@@ -292,6 +550,20 @@ Considera el plano $\pi\equiv x-y=0$ y la recta $r\equiv\dfrac{x-1}{2}=\dfrac{y}
 a) Calcula, si es posible, el plano perpendicular a $\pi$ que contiene a $r$. *(1,25 puntos)*
 
 b) Calcula, si es posible, la recta perpendicular a $r$, contenida en $\pi$ y que pasa por el origen. *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$\pi$ tiene normal $\vec n_\pi=(1,-1,0)$; $r$ pasa por $(1,0,2)$ con dirección $\vec d=(2,3,1)$.
+
+**a)** El plano buscado contiene a $\vec d$ y a $\vec n_\pi$ (para ser perpendicular a $\pi$). Es posible porque $\vec d$ y $\vec n_\pi$ no son paralelos. Normal: $\vec d\times\vec n_\pi\parallel(-1,-1,5)$, es decir $(1,1,-5)$:
+
+$$x+y-5z+D=0,\ \text{por }(1,0,2):\ D=9\ \Rightarrow\ \mathbf{x+y-5z+9=0}.$$
+
+**b)** El origen está en $\pi$. La dirección debe ser perpendicular a $\vec d$ (por ser perpendicular a $r$) y a $\vec n_\pi$ (por estar contenida en $\pi$): $\vec n_\pi\times\vec d=(-1,-1,5)$.
+
+$$\mathbf{(x,y,z)=\lambda(1,1,-5)}\ \ \text{es decir}\ \ x=y=-\frac z5.$$
+::::
 :::::
 
 

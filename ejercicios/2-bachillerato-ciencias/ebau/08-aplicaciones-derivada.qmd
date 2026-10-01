@@ -16,6 +16,18 @@ Ejercicios de **Matemáticas II** de la prueba de acceso a la universidad en And
 **Ejercicio 1** · Ordinaria 2026 · Parte obligatoria · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2026/06/2oBachCC_EBAU_Andalucia_2026-Ordinaria.pdf){target="_blank"}
 
 Una ventana tiene forma de rectángulo y está coronada por un semicírculo. Sabiendo que el perímetro de la ventana mide 8 metros, halla las dimensiones de la ventana que permitan la mayor entrada de luz.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $r$ el radio del semicírculo (anchura $2r$) y $h$ la altura del rectángulo. Perímetro: $2r+2h+\pi r=8\Rightarrow h=\dfrac{8-(2+\pi)r}{2}$.
+
+Luz (área): $A(r)=2rh+\dfrac{\pi r^2}{2}=8r-2r^2-\dfrac{\pi r^2}{2}$.
+
+$A'(r)=8-(4+\pi)r=0\Rightarrow r=\dfrac{8}{4+\pi}$, y $A''=-(4+\pi)<0$ (máximo). Entonces $h=\dfrac{8}{4+\pi}$ (también $h=r$).
+
+**Anchura $\dfrac{16}{4+\pi}\approx2{,}24$ m y altura del rectángulo $\dfrac{8}{4+\pi}\approx1{,}12$ m.**
+::::
 :::::
 
 
@@ -32,6 +44,14 @@ a) Razona que la producción de gas varía siempre entre 7 y 8 metros cúbicos. 
 b) Justifica que la producción de gas se estabiliza con el paso del tiempo. *(0,5 puntos)*
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Como $-(t-4)^2\le0$, se tiene $0<e^{-(t-4)^2}\le1$, luego $7<f(t)\le8$: la producción está siempre entre 7 y 8 m$^3$. El máximo, 8 m$^3$, se alcanza en $t=4$ s. **Nunca llega a ser exactamente 7**, porque $e^{-(t-4)^2}>0$ siempre (no se anula para ningún $t$).
+
+**b)** $\displaystyle\lim_{t\to\infty}f(t)=7+\lim_{t\to\infty}e^{-(t-4)^2}=7+0$. **Se estabiliza en 7 m$^3$.**
+::::
 :::::
 
 
@@ -48,6 +68,18 @@ a) Calcula en qué momento la potencia de pérdida es máxima. *(1,25 puntos)*
 b) La energía total perdida en los $t$ primeros años viene dada por la expresión $E(t)=\displaystyle\int_{0}^{t}P(x)\,dx$ (vatios por año). Calcula la energía total perdida en los tres primeros años. *(1,25 puntos)*
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $P'(t)=\dfrac{4(1+t^2)-4t\cdot2t}{(1+t^2)^2}=\dfrac{4(1-t^2)}{(1+t^2)^2}$. Se anula en $t=1$ ($t\ge0$); $P'>0$ si $t<1$ y $P'<0$ si $t>1$, luego es un máximo.
+
+**Máxima potencia de pérdida al cabo de 1 año ($P(1)=2$ W).**
+
+**b)** $E(3)=\displaystyle\int_0^3\dfrac{4x}{1+x^2}dx=\big[2\ln(1+x^2)\big]_0^3=2\ln10$.
+
+**$E(3)=2\ln10\approx4{,}61$.**
+::::
 :::::
 
 
@@ -58,6 +90,18 @@ b) La energía total perdida en los $t$ primeros años viene dada por la expresi
 **Ejercicio 1** · Extraordinaria · Suplente 1 2026 · Parte obligatoria · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2026/09/2oBachCC_EBAU_Andalucia_2026-Extraordinaria_Suplente1.pdf){target="_blank"}
 
 Un jardinero quiere vallar un campo rectangular que tiene un lado junto a un camino. La valla del lado del camino cuesta 80 euros por metro y el precio de la valla de los tres lados restantes es de 10 euros por metro. Halla las dimensiones del campo de mayor área que puede cercarse con 28800 euros. ¿Qué área tiene el campo?
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $x$ el lado junto al camino (y su opuesto) e $y$ los otros dos lados. Coste: $80x+10x+20y=28800$, luego $y=1440-4{,}5x$.
+
+Área: $A(x)=x\,y=1440x-4{,}5x^2$. $A'(x)=1440-9x=0\Rightarrow x=160$, y $A''=-9<0$ (máximo).
+
+Entonces $y=1440-720=720$.
+
+**Dimensiones: 160 m (lado del camino) por 720 m; área máxima $=115\,200\ \text{m}^2$.**
+::::
 :::::
 
 
@@ -67,6 +111,16 @@ Un jardinero quiere vallar un campo rectangular que tiene un lado junto a un cam
 Considera la función $f:[0,\pi]\to\mathbb{R}$ definida por $f(x)=a\operatorname{sen}(x)+\cos(bx)$. Determina $a$ y $b$ ($0<b<3$), sabiendo que $x=\dfrac{\pi}{2}$ es un punto crítico de $f$ y que $\displaystyle\int_{0}^{\pi}f(x)\,dx=4$.
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f'(x)=a\cos x-b\operatorname{sen}(bx)$. Punto crítico en $\pi/2$: $f'(\pi/2)=-b\operatorname{sen}(b\pi/2)=0$. Como $0<b<3$, hace falta $b\pi/2=\pi$, es decir **$b=2$**.
+
+Integral: $\displaystyle\int_0^\pi\big(a\operatorname{sen}x+\cos 2x\big)dx=\Big[-a\cos x+\tfrac{\operatorname{sen}2x}{2}\Big]_0^\pi=2a=4$.
+
+**$a=2$, $b=2$.**
+::::
 :::::
 
 
@@ -77,6 +131,17 @@ Considera la función $f:[0,\pi]\to\mathbb{R}$ definida por $f(x)=a\operatorname
 **Ejercicio 1** · Extraordinaria · Suplente 2 2026 · Parte obligatoria · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2026/09/2oBachCC_EBAU_Andalucia_2026-Extraordinaria_Suplente2.pdf){target="_blank"}
 
 En un jardín botánico se desea crear un recinto floral con forma de triángulo rectángulo. Por la disposición del recinto y las características del terreno, la hipotenusa ha de medir 20 metros. ¿Qué longitudes han de tener los catetos del triángulo rectángulo para que su área sea lo mayor posible y cuál es el valor de esta área?
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Catetos $x,y$ con $x^2+y^2=400$, así $y=\sqrt{400-x^2}$ y el área es $A(x)=\tfrac12x\sqrt{400-x^2}$. Basta maximizar $A^2=\tfrac14\,(400x^2-x^4)$:
+$(400x^2-x^4)'=800x-4x^3=0\Rightarrow x^2=200$, $x=10\sqrt2$ (máximo; el área vale 0 en los extremos $x=0$ y $x=20$).
+
+Entonces $y=\sqrt{200}=10\sqrt2$.
+
+**Catetos: $10\sqrt2\approx14{,}14$ m cada uno; área máxima $=\tfrac12\cdot200=100\ \text{m}^2$.**
+::::
 :::::
 
 
@@ -96,6 +161,19 @@ a) Calcula $a$ para que $y=1$ sea una asíntota horizontal de la gráfica de $f$
 b) Para $a=0$, calcula los intervalos de crecimiento y de decrecimiento de $f$. Estudia y halla los extremos relativos de $f$ (abscisas donde se obtienen y valores que se alcanzan). *(1,5 puntos)*
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $\displaystyle\lim_{x\to+\infty}\frac{\ln x}{x^2}=0$, luego la asíntota horizontal es $y=a$. **$a=1$.**
+
+**b)** Con $a=0$: $f'(x)=\dfrac{x-2x\ln x}{x^4}=\dfrac{1-2\ln x}{x^3}$, que se anula en $x=\sqrt e$.
+
+- $f'>0$ en $(0,\sqrt e)$: **crece**.
+- $f'<0$ en $(\sqrt e,+\infty)$: **decrece**.
+
+**Máximo relativo en $x=\sqrt e$, de valor $f(\sqrt e)=\dfrac{1}{2e}$.** No hay mínimos relativos.
+::::
 :::::
 
 
@@ -112,6 +190,18 @@ a) Determina la ecuación de la recta tangente y la ecuación de la recta normal
 b) Estudia y calcula las asíntotas de la función. *(1 punto)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd), [Límites y continuidad](06-limites-continuidad.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $f'(x)=xe^{x}$, $f''(x)=(x+1)e^{x}$. $f''$ cambia de signo en $x=-1$: punto de inflexión $\left(-1,-\dfrac2e\right)$. Pendiente $f'(-1)=-\dfrac1e$.
+
+Tangente: $y+\dfrac2e=-\dfrac1e(x+1)$, es decir **$y=-\dfrac{x}{e}-\dfrac3e$**.
+
+Normal (pendiente $e$): $y+\dfrac2e=e(x+1)$, es decir **$y=ex+e-\dfrac2e$**.
+
+**b)** No hay asíntotas verticales (es continua en $\mathbb R$). En $-\infty$: $\lim(x-1)e^{x}=0$, así que **$y=0$ es asíntota horizontal en $-\infty$**. En $+\infty$ el límite es $+\infty$ y $f(x)/x\to+\infty$, luego **no hay asíntota horizontal ni oblicua en $+\infty$**.
+::::
 :::::
 
 
@@ -130,6 +220,16 @@ a) Estudia la derivabilidad de $f$. *(1 punto)*
 b) Halla los extremos absolutos de $f$ (abscisas donde se obtienen y valores que se alcanzan). *(1,5 puntos)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En cada tramo $f$ es derivable. En $x=1$: $f(1^-)=1-e$ y $f(1)=2-1-e=1-e$, luego es continua. Derivadas laterales: $f'(1^-)=-e$ (de $f'=-e^{x}$) y $f'(1^+)=2$. Como son distintas, **$f$ es derivable en $[0,2]\setminus\{1\}$ y no es derivable en $x=1$.**
+
+**b)** En $[0,1)$, $f'=-e^{x}<0$: decrece de $f(0)=0$ hasta $1-e$. En $[1,2]$, $f'=2>0$: crece de $f(1)=1-e$ hasta $f(2)=3-e\approx0{,}28$.
+
+**Mínimo absoluto en $x=1$, valor $1-e$. Máximo absoluto en $x=2$, valor $3-e$** (mayor que $f(0)=0$).
+::::
 :::::
 
 
@@ -146,6 +246,16 @@ a) Estudia la continuidad y derivabilidad de la función $f$. *(1,25 puntos)*
 b) Halla, si existen, sus extremos absolutos (abscisas donde se obtienen y valores que se alcanzan). *(1,25 puntos)*
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd), [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Para $x\ge0$, $f(x)=\dfrac{1}{(1-x)^2}$ y para $x<0$, $f(x)=\dfrac{1}{(1+x)^2}$. Son continuas en cada rama (el denominador no se anula en $(-1,1)$) y en $x=0$ ambos límites laterales valen $1=f(0)$. **$f$ es continua en $(-1,1)$.**
+
+Derivadas: $f'(x)=\dfrac{2}{(1-x)^3}$ si $x>0$ y $f'(x)=-\dfrac{2}{(1+x)^3}$ si $x<0$. Como $f'(0^+)=2\neq-2=f'(0^-)$, **$f$ es derivable en $(-1,1)\setminus\{0\}$ y no lo es en $x=0$.**
+
+**b)** $f'<0$ en $(-1,0)$ y $f'>0$ en $(0,1)$. **Mínimo absoluto en $x=0$, de valor $f(0)=1$.** No hay máximo absoluto porque $f(x)\to+\infty$ cuando $x\to\pm1$.
+::::
 :::::
 
 
@@ -156,6 +266,16 @@ b) Halla, si existen, sus extremos absolutos (abscisas donde se obtienen y valor
 **Ejercicio 2** · Extraordinaria · Suplente 2 2025 · Bloque optativo 1 · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria_Suplente2.pdf){target="_blank"}
 
 Un náufrago se encuentra en una isla situada en el punto de coordenadas $(2,0)$ de un plano. Se sabe que un ferry navega en el mismo plano siempre en la trayectoria dada por la gráfica de la función $f(x)=\sqrt{x+1}$. ¿Hacia qué punto de la trayectoria debe nadar el náufrago para recorrer la menor distancia posible? Calcula dicha distancia.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Un punto de la trayectoria es $(x,\sqrt{x+1})$, con $x\ge-1$. El cuadrado de la distancia a $(2,0)$ es
+$$d^2(x)=(x-2)^2+x+1,\qquad (d^2)'=2(x-2)+1=0\Rightarrow x=\tfrac32.$$
+Como $(d^2)''=2>0$, es un mínimo.
+
+Punto: **$\left(\dfrac32,\dfrac{\sqrt{10}}{2}\right)$**. Distancia: $d=\sqrt{\tfrac14+\tfrac52}=\mathbf{\dfrac{\sqrt{11}}{2}}\approx1{,}66$.
+::::
 :::::
 
 
@@ -173,6 +293,18 @@ Sea la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=(x^{2}+1)e^{x}$.
 a) Calcula los intervalos de crecimiento y de decrecimiento de $f$. *(1 punto)*
 
 b) Determina los intervalos de concavidad y de convexidad de $f$ y los puntos de inflexión de su gráfica (abscisas donde se obtienen y valores que alcanzan). *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f'(x)=(2x+x^2+1)e^x=(x+1)^2e^x$ y $f''(x)=(x+1)(x+3)e^x$.
+
+**a)** $f'(x)\ge0$ para todo $x$ y sólo se anula en $x=-1$: **$f$ es creciente en todo $\mathbb{R}$** (nunca decrece; en $x=-1$ hay tangente horizontal sin extremo).
+
+**b)** $f''=0$ en $x=-3$ y $x=-1$. Signo: $+$ en $(-\infty,-3)$, $-$ en $(-3,-1)$, $+$ en $(-1,+\infty)$.
+
+**Convexa en $(-\infty,-3)\cup(-1,+\infty)$; cóncava en $(-3,-1)$.** Puntos de inflexión: **$\left(-3,\,10e^{-3}\right)$ y $\left(-1,\,2e^{-1}\right)$.**
+::::
 :::::
 
 
@@ -189,6 +321,18 @@ a) Calcula los intervalos de concavidad y convexidad de $f$. Estudia y halla, si
 b) Calcula $\displaystyle\lim_{x\to-\pi}\dfrac{\operatorname{arctg}(x+\pi)}{\operatorname{sen}(x)}$. *(1 punto)*
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $f'(x)=\dfrac1{1+(x+\pi)^2}$ y $f''(x)=\dfrac{-2(x+\pi)}{\left(1+(x+\pi)^2\right)^2}$, que se anula sólo en $x=-\pi$.
+
+$f''>0$ si $x<-\pi$ y $f''<0$ si $x>-\pi$: **convexa en $(-\infty,-\pi)$ y cóncava en $(-\pi,+\infty)$; punto de inflexión en $x=-\pi$, con $f(-\pi)=\operatorname{arctg}0=0$**, es decir en $(-\pi,0)$.
+
+**b)** Es $\dfrac00$. Por L'Hôpital:
+
+$$\lim_{x\to-\pi}\frac{\operatorname{arctg}(x+\pi)}{\operatorname{sen}x}=\lim_{x\to-\pi}\frac{1/(1+(x+\pi)^2)}{\cos x}=\frac{1}{\cos(-\pi)}=\mathbf{-1}.$$
+::::
 :::::
 
 
@@ -203,6 +347,20 @@ Sea la función $f:\mathbb{R}\to\mathbb{R}$ dada por $f(x)=\left(x-\dfrac12\righ
 a) Determina los intervalos de crecimiento y de decrecimiento de $f$. *(1,5 puntos)*
 
 b) Halla los extremos absolutos de $f$ (abscisas donde se obtienen y valores que se alcanzan). *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f'(x)=e^{-x^2}\big(1-2x(x-\tfrac12)\big)=e^{-x^2}(-2x^2+x+1)=-(2x+1)(x-1)e^{-x^2}$, que se anula en $x=-\tfrac12$ y $x=1$.
+
+**a)** Signo de $f'$: $<0$ en $(-\infty,-\tfrac12)$, $>0$ en $(-\tfrac12,1)$, $<0$ en $(1,+\infty)$.
+
+**Decrece en $(-\infty,-\frac12)\cup(1,+\infty)$ y crece en $(-\frac12,1)$.**
+
+**b)** Mínimo relativo en $x=-\tfrac12$: $f(-\tfrac12)=-e^{-1/4}$. Máximo relativo en $x=1$: $f(1)=\dfrac1{2e}$. Como $\lim_{x\to\pm\infty}f(x)=0$, y $f(-\tfrac12)<0<f(1)$, son absolutos:
+
+**mínimo absoluto $-e^{-1/4}$ en $x=-\frac12$; máximo absoluto $\dfrac1{2e}$ en $x=1$.**
+::::
 :::::
 
 
@@ -213,6 +371,18 @@ b) Halla los extremos absolutos de $f$ (abscisas donde se obtienen y valores que
 **Ejercicio 1** · Extraordinaria · Reserva 2024 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Extraordinaria_Reserva.pdf){target="_blank"}
 
 De entre todos los rectángulos de área 25 cm², determina las dimensiones de aquel en el que el producto de las longitudes de sus dos diagonales sea el menor posible.
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Rectángulo de lados $x$ e $y=25/x$. Las dos diagonales miden lo mismo, $d=\sqrt{x^2+y^2}$, así que el producto es $d^2=x^2+\dfrac{625}{x^2}$.
+
+$$g(x)=x^2+\frac{625}{x^2},\qquad g'(x)=2x-\frac{1250}{x^3}=0\ \Rightarrow\ x^4=625\ \Rightarrow\ x=5.$$
+
+$g'<0$ si $x<5$ y $g'>0$ si $x>5$, luego es un mínimo. Entonces $y=5$.
+
+**El rectángulo es un cuadrado de $5\times5$ cm** (producto de diagonales mínimo: $50$ cm²).
+::::
 :::::
 
 
@@ -227,6 +397,18 @@ Sea la función $f:(0,+\infty)\to\mathbb{R}$, definida por $f(x)=\ln\left(\dfrac
 a) Calcula los intervalos de crecimiento y de decrecimiento. *(1 punto)*
 
 b) Estudia y halla los extremos relativos y absolutos de $f$ (abscisas donde se obtienen y valores que alcanzan). *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$f(x)=\ln g(x)$ con $g(x)=\dfrac{x^2+1}{x}=x+\dfrac1x>0$ en $(0,+\infty)$. Como $\ln$ es creciente, $f$ y $g$ tienen el mismo crecimiento.
+
+$$f'(x)=\frac{g'(x)}{g(x)}=\frac{1-\frac1{x^2}}{x+\frac1x}=\frac{x^2-1}{x(x^2+1)}.$$
+
+**a)** $f'<0$ en $(0,1)$ y $f'>0$ en $(1,+\infty)$: **decrece en $(0,1)$ y crece en $(1,+\infty)$.**
+
+**b)** Mínimo relativo en $x=1$, con $f(1)=\ln2$. Como $\lim_{x\to0^+}f=+\infty$ y $\lim_{x\to+\infty}f=+\infty$, ese mínimo es absoluto. **Mínimo absoluto en $x=1$, valor $\ln2$; no hay máximo (ni relativo ni absoluto).**
+::::
 :::::
 
 
