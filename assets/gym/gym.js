@@ -340,11 +340,14 @@
   function tidyTex(t) {
     return t.replace(/\+\s*-/g, '-')
       .replace(/\\d?frac\{(-?[^{}+\-]*)\}\{1\}/g, '$1')
+      .replace(/(^|=\s*)\\d?frac\{([^{}]*)\}\{1\}/g, '$1$2')
+      .replace(/\\sqrt\{1\}/g, '1')
+      .replace(/\+\((\d+)\)(?![\w(^]|\\cdot)/g, '+$1')
       .replace(/\^\{1\}(?![\d])/g, '')
       .replace(/\(\((-?\d+)\)\)/g, '($1)')
-      .replace(/(^|[=+\-(\s{\[&|])1([xyztmh])(?![a-zA-Z])/g, '$1$2')
+      .replace(/(^|[=+\-(\s{\[&|$])1([xyztmhnA-Z])(?![a-zA-Z])/g, '$1$2')
       .replace(/(^|[=+(\s{\[&|])-1(?=\\left\(|\\dfrac)/g, '$1-')
-      .replace(/(^|[=+\-(\s{\[&|])1(?=e(?![a-zA-Z0-9^])|\\left\(|\\cos|\\sin|\\operatorname|\\ln|e\^|\|x\|)/g, '$1');
+      .replace(/(^|[=+\-(\s{\[&|])1(?=e(?![a-zA-Z0-9^])|\\begin\{[pb]matrix\}|\\left\(|\\cos|\\sin|\\operatorname|\\ln|e\^|\|x\|)/g, '$1');
   }
 
   function typeset(el, str) {

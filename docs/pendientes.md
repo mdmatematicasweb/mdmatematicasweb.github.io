@@ -29,4 +29,4 @@ Actualizado el 2026-10-02.
 
 ## Siguiente
 
-Nada pendiente de la lista anterior. Ideas sueltas: revisar a ojo en el navegador las gráficas nuevas y los callouts; repasar con el mismo criterio los textos de los temas 1–5 (p. ej. fracciones `\frac{x}{1}`).
+Nada pendiente de la lista anterior. Hecho el 2026-10-02: repaso de los textos de los temas 1–5 (`tidyTex` quita `1A`, `1n`, `\frac{…}{1}` tras «=», `\sqrt{1}` y `+(2)`). Idea suelta: revisar a ojo en el navegador las gráficas nuevas y los callouts.
