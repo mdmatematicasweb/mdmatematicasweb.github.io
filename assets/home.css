@@ -1,0 +1,268 @@
+/* Portada — neo-brutalist con la paleta de la academia */
+
+.home-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+  padding: 3.5rem 0 4.5rem;
+}
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--md-hero-bg);
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.18) 1.5px, transparent 1.6px);
+  background-size: 22px 22px;
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+  z-index: -1;
+}
+
+.hero-kicker {
+  display: inline-block;
+  margin: 0 0 1.2rem;
+  font: 700 0.78rem "JetBrains Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--md-lime);
+  background: var(--md-navy);
+  border: 2px solid var(--md-edge);
+  box-shadow: 3px 3px 0 var(--md-edge);
+  padding: 0.3rem 0.7rem;
+  transform: rotate(-1.5deg);
+}
+
+/* Titular en escalera: «paso a paso» baja peldaño a peldaño */
+.stairs {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5vw, 3.9rem);
+  line-height: 1;
+  margin: 0 0 1.4rem;
+  border: 0;
+  color: var(--md-ink-hero);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.15em 0.18em;
+}
+.stairs .stair-top { flex: 0 0 100%; }
+.stairs .step {
+  display: inline-block;
+  color: #000;
+  border: 3px solid var(--md-edge);
+  box-shadow: 5px 5px 0 var(--md-edge);
+  padding: 0.05em 0.28em 0.12em;
+  animation: step-in 0.55s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+.stairs .s1 { background: var(--md-lime); transform: rotate(-2deg); animation-delay: 0.1s; }
+.stairs .s2 { background: var(--md-amber); margin-top: 0.35em; transform: rotate(1.5deg); animation-delay: 0.25s; }
+.stairs .s3 { background: var(--md-paper-fixed); margin-top: 0.7em; transform: rotate(-1deg); animation-delay: 0.4s; }
+@keyframes step-in {
+  from { opacity: 0; translate: 0 -30px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+.hero-sub {
+  max-width: 44ch;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--md-ink-hero);
+  margin: 0 0 1.6rem;
+}
+
+.hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+/* Fichas +, −, ×, = flotando alrededor */
+.hero-tiles { display: contents; }
+#title-block-header { display: none; }
+.stairs .step { white-space: nowrap; }
+.hero-tiles .tile {
+  position: absolute;
+  width: 3.4rem; height: 3.4rem;
+  display: grid; place-items: center;
+  font: 900 2rem "Bricolage Grotesque", sans-serif;
+  border: 3px solid var(--md-edge);
+  box-shadow: 4px 4px 0 var(--md-edge);
+  animation: bob 5s ease-in-out infinite;
+  pointer-events: none;
+}
+.t-mint { background: var(--md-teal); color: #000; top: 0.6rem; left: 46%; --r: 8deg; }
+.t-navy { background: #000; color: var(--md-lime); bottom: 1.2rem; left: 41%; --r: -10deg; animation-delay: -1.2s; }
+.t-coral { background: var(--md-amber); color: #000; top: 1.2rem; right: 0.5rem; --r: -6deg; animation-delay: -2.4s; }
+.t-yellow { background: var(--md-lime); color: #000; bottom: 0.8rem; right: 3rem; --r: 12deg; animation-delay: -3.3s; }
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(var(--r)); }
+  50% { transform: translateY(-12px) rotate(calc(var(--r) * -1)); }
+}
+
+/* Laboratorio de Barrow */
+.barrow-lab {
+  margin: 0;
+  background: var(--md-surface);
+  border: 3px solid var(--md-edge);
+  box-shadow: 10px 10px 0 var(--md-edge);
+  transform: rotate(1.3deg);
+  position: relative;
+  z-index: 1;
+}
+.lab-bar {
+  display: flex; align-items: center; gap: 0.8rem;
+  background: var(--md-navy);
+  border-bottom: 3px solid var(--md-edge);
+  padding: 0.45rem 0.8rem;
+}
+.lab-bar .dots { display: flex; gap: 6px; }
+.lab-bar .dots i { width: 12px; height: 12px; border: 2px solid #000; display: block; }
+.lab-bar .dots i:nth-child(1) { background: var(--md-amber); }
+.lab-bar .dots i:nth-child(2) { background: var(--md-lime); }
+.lab-bar .dots i:nth-child(3) { background: var(--md-teal); }
+.lab-title { font: 700 0.75rem "JetBrains Mono", monospace; color: var(--md-paper-fixed); letter-spacing: 0.04em; }
+.barrow-lab svg { display: block; width: 100%; height: auto; touch-action: none; }
+.barrow-lab .grid line { stroke: var(--md-grid); stroke-width: 1; }
+.barrow-lab .axis { stroke: var(--md-text); stroke-width: 3; fill: none; }
+.barrow-lab .curve { stroke: var(--md-text); stroke-width: 4; fill: none; stroke-linejoin: round; }
+.barrow-lab .area { fill: var(--md-teal); fill-opacity: 0.75; stroke: var(--md-text); stroke-width: 2; }
+.barrow-lab .guide { stroke: var(--md-text); stroke-width: 2; stroke-dasharray: 5 4; }
+.barrow-lab .handle { fill: var(--md-lime); stroke: #000; stroke-width: 3; cursor: ew-resize; }
+.barrow-lab .hb { fill: var(--md-amber); }
+.barrow-lab .handle:hover, .barrow-lab .handle.grab, .barrow-lab .handle:focus { stroke-width: 5; outline: none; }
+.barrow-lab .lbl { font: 800 15px "JetBrains Mono", monospace; text-anchor: middle; fill: var(--md-text); pointer-events: none; }
+.barrow-lab figcaption {
+  display: flex; flex-direction: column; gap: 0.2rem;
+  border-top: 3px solid var(--md-edge);
+  padding: 0.6rem 0.9rem 0.7rem;
+  background: var(--md-card);
+  color: var(--md-text);
+}
+.barrow-lab .readout { font: 700 0.92rem "JetBrains Mono", monospace; }
+.barrow-lab small { opacity: 0.75; }
+
+/* Cinta de temas */
+.ticker {
+  position: relative;
+  width: 100vw;
+  margin: 0 0 3.2rem calc(50% - 50vw);
+  overflow: hidden;
+  background: #000;
+  border-top: 3px solid var(--md-edge);
+  border-bottom: 3px solid var(--md-edge);
+  transform: rotate(-1deg);
+}
+.ticker-track { display: flex; width: max-content; animation: ticker 40s linear infinite; }
+.ticker span {
+  font: 800 1.05rem "Bricolage Grotesque", sans-serif;
+  text-transform: uppercase;
+  color: var(--md-lime);
+  padding: 0.55rem 1.4rem;
+}
+.ticker span::after { content: "✦"; margin-left: 2.8rem; color: var(--md-amber); }
+.ticker span:nth-child(3n+2) { color: var(--md-teal); }
+.ticker span:nth-child(3n) { color: var(--md-paper-fixed); }
+@keyframes ticker { to { transform: translateX(-50%); } }
+
+/* Entrada de simulacro PAU: un billete de examen */
+.pau-ticket {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  margin: 0 0 3.5rem;
+  border: 4px solid var(--md-edge);
+  box-shadow: 12px 12px 0 var(--md-edge);
+  transform: rotate(-0.6deg);
+}
+.ticket-main {
+  background: var(--md-navy);
+  color: var(--md-paper-fixed);
+  padding: 2rem 2rem 1.6rem;
+  position: relative;
+}
+.ticket-eyebrow {
+  display: inline-block; margin: 0 0 0.8rem;
+  font: 700 0.75rem "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: 0.08em;
+  background: var(--md-amber); color: #000; padding: 0.2rem 0.6rem; border: 2px solid #000;
+}
+.pau-ticket h2 {
+  font: 800 clamp(2rem, 4.6vw, 3.4rem) / 0.98 "Bricolage Grotesque", sans-serif;
+  color: var(--md-lime); margin: 0 0 1rem; border: 0; padding: 0;
+  text-transform: uppercase;
+}
+.ticket-clock {
+  position: absolute; top: 1.4rem; right: 1.4rem;
+  font: 800 2rem "JetBrains Mono", monospace;
+  background: #000; color: var(--md-teal);
+  border: 3px solid var(--md-paper-fixed);
+  padding: 0.15rem 0.7rem;
+  transform: rotate(3deg);
+}
+.ticket-clock i { animation: blink 1s steps(2, start) infinite; font-style: normal; }
+@keyframes blink { 50% { opacity: 0; } }
+.ticket-facts { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.ticket-facts li {
+  font-size: 0.85rem; font-weight: 600;
+  border: 2px solid var(--md-paper-fixed); padding: 0.25rem 0.6rem;
+}
+.ticket-facts b { font-family: "JetBrains Mono", monospace; color: var(--md-lime); font-size: 1.1rem; margin-right: 0.3rem; }
+.ticket-stub {
+  background: var(--md-lime);
+  color: #000;
+  padding: 2rem 1.8rem;
+  display: flex; flex-direction: column; gap: 1.1rem; justify-content: center;
+  border-left: 4px dashed #000;
+  position: relative;
+}
+.ticket-stub::before, .ticket-stub::after {
+  content: ""; position: absolute; left: -17px; width: 30px; height: 30px; border-radius: 50%;
+  background: var(--md-page); border: 4px solid var(--md-edge);
+}
+.ticket-stub::before { top: -17px; clip-path: inset(50% 0 0 0); }
+.ticket-stub::after { bottom: -17px; clip-path: inset(0 0 50% 0); }
+.ticket-stub p { margin: 0; font-size: 1.05rem; font-weight: 600; }
+.stub-link { font-weight: 700; color: #000 !important; text-decoration-color: #000; }
+.btn-yellow.btn-big { background: var(--md-amber); }
+
+/* Tres puertas */
+.doors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.2rem;
+  margin: 0 0 3rem;
+}
+.door {
+  position: relative;
+  display: flex; flex-direction: column; gap: 0.5rem;
+  color: #000 !important;
+  text-decoration: none !important;
+  border: 3px solid var(--md-edge);
+  box-shadow: 6px 6px 0 var(--md-edge);
+  padding: 1.4rem 1.4rem 1.2rem;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.door:nth-child(1) { transform: rotate(-1.2deg); }
+.door:nth-child(2) { transform: rotate(0.8deg); }
+.door:nth-child(3) { transform: rotate(-0.6deg); }
+.door:hover { transform: rotate(0) translate(-4px, -4px); box-shadow: 10px 10px 0 var(--md-edge); }
+.d-mint { background: var(--md-teal); }
+.d-coral { background: var(--md-amber); }
+.d-yellow { background: var(--md-lime); }
+.door-n { font: 800 3.6rem / 1 "JetBrains Mono", monospace; color: rgba(0, 0, 0, 0.25); }
+.door h3 { font: 800 1.7rem "Bricolage Grotesque", sans-serif; margin: 0; text-transform: uppercase; color: #000; }
+.door p { margin: 0; font-weight: 500; }
+.door-go { margin-top: auto; padding-top: 0.5rem; font: 800 0.85rem "Bricolage Grotesque", sans-serif; text-transform: uppercase; }
+
+@media (max-width: 860px) {
+  .home-hero { grid-template-columns: 1fr; gap: 2.2rem; padding-top: 2.5rem; }
+  .barrow-lab { transform: none; }
+  .hero-tiles .tile { display: none; }
+  .pau-ticket { grid-template-columns: 1fr; transform: none; }
+  .ticket-stub { border-left: 0; border-top: 4px dashed #000; }
+  .ticket-stub::before, .ticket-stub::after { display: none; }
+  .ticket-clock { position: static; display: inline-block; margin: 0 0 1rem; }
+  .door:nth-child(n) { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track, .hero-tiles .tile, .ticket-clock i, .stairs .step { animation: none; }
+}
