@@ -1,5 +1,9 @@
 lang: es
 
+brand:
+  light: _brand.yml
+  dark: _brand-dark.yml
+
 project:
   type: website
   output-dir: _site
@@ -29,6 +33,8 @@ website:
         text: Ejercicios
       - href: actividades/index.qmd
         text: Actividades
+      - href: actividades/2-bachillerato-ciencias/examen/index.qmd
+        text: "★ Simulacro PAU"
   sidebar:
     - id: apuntes
       title: "Apuntes"
@@ -57,9 +63,10 @@ website:
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      light: [cosmo, brand]
+      dark: [cosmo, brand]
     css: styles.css
+    include-in-header: assets/loader.html
     toc: true
     code-copy: true
     smooth-scroll: true

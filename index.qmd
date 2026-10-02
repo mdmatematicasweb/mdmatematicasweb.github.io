@@ -1,33 +1,104 @@
 ---
 title: "MD Matemáticas"
+page-layout: full
+toc: false
+css: assets/home.css
+include-after-body:
+  - text: |
+      <script src="assets/home.js"></script>
 ---
 
-::: {.hero}
-::: {.hero-text}
-# Matemáticas, paso a paso
+```{=html}
+<section class="home-hero">
+  <div class="hero-tiles" aria-hidden="true">
+    <span class="tile t-mint">+</span>
+    <span class="tile t-navy">&minus;</span>
+    <span class="tile t-coral">&times;</span>
+    <span class="tile t-yellow">=</span>
+  </div>
 
-Apuntes, ejercicios y actividades interactivas de 2º Bachillerato de Ciencias. Todo organizado por tema, para repasar antes de un examen o preparar la Selectividad.
-:::
+  <div class="hero-copy">
+    <p class="hero-kicker">2º Bachillerato · Ciencias · PAU</p>
+    <h1 class="stairs" aria-label="Matemáticas, paso a paso">
+      <span class="stair-top">Matemáticas,</span>
+      <span class="step s1">paso</span>
+      <span class="step s2">a</span>
+      <span class="step s3">paso</span>
+    </h1>
+    <p class="hero-sub">Apuntes, ejercicios y actividades interactivas para repasar antes de un examen o preparar la Selectividad.</p>
+    <div class="hero-cta">
+      <a class="btn-brut btn-coral" href="actividades/2-bachillerato-ciencias/examen/index.html">Generar simulacro PAU &rarr;</a>
+      <a class="btn-brut" href="apuntes/2-bachillerato-ciencias/index.html">Ver apuntes</a>
+    </div>
+  </div>
 
-::: {.hero-formula}
-$$\int_a^b f(x)\,dx = F(b) - F(a)$$
-<span class="hero-formula-label">regla de Barrow</span>
-:::
-:::
+  <figure class="barrow-lab" id="barrow-lab">
+    <div class="lab-bar">
+      <span class="dots"><i></i><i></i><i></i></span>
+      <span class="lab-title">laboratorio_barrow</span>
+    </div>
+    <svg viewBox="0 0 480 300" role="img" aria-label="Gráfica de una función con el área bajo la curva entre a y b">
+      <g class="grid"></g>
+      <path class="area" d=""/>
+      <path class="axis" d="M30 260 H470 M30 260 V14"/>
+      <path class="curve" d=""/>
+      <line class="guide ga" y1="260" y2="40"/>
+      <line class="guide gb" y1="260" y2="40"/>
+      <rect class="handle ha" width="22" height="22" y="249" tabindex="0" role="slider" aria-label="Extremo a"/>
+      <rect class="handle hb" width="22" height="22" y="249" tabindex="0" role="slider" aria-label="Extremo b"/>
+      <text class="lbl la" y="294">a</text>
+      <text class="lbl lb" y="294">b</text>
+    </svg>
+    <figcaption>
+      <span class="readout" aria-live="polite"></span>
+      <small>Arrastra a y b: el área es siempre F(b) − F(a).</small>
+    </figcaption>
+  </figure>
+</section>
 
-::: {.lattice-divider}
-:::
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Matrices</span><span>Determinantes</span><span>Sistemas</span><span>Vectores</span><span>Rectas y planos</span><span>Límites</span><span>Derivadas</span><span>Integrales</span><span>Probabilidad</span><span>Distribuciones</span><span>PAU</span>
+    <span>Matrices</span><span>Determinantes</span><span>Sistemas</span><span>Vectores</span><span>Rectas y planos</span><span>Límites</span><span>Derivadas</span><span>Integrales</span><span>Probabilidad</span><span>Distribuciones</span><span>PAU</span>
+  </div>
+</div>
 
-::: {.course-grid}
-::: {.course-card .bach}
-<span class="course-badge">PAU</span>
+<section class="pau-ticket">
+  <div class="ticket-main">
+    <p class="ticket-eyebrow">Matemáticas II · Andalucía</p>
+    <h2>Simulacro<br>de examen PAU</h2>
+    <div class="ticket-clock" aria-hidden="true"><b>90</b><i>:</i><b>00</b></div>
+    <ul class="ticket-facts">
+      <li><b>29</b> tipos de ejercicio</li>
+      <li><b>∞</b> exámenes distintos</li>
+      <li><b>0</b> correcciones a mano</li>
+    </ul>
+  </div>
+  <div class="ticket-stub">
+    <p>Elige los tipos de ejercicio que ya has visto, ponte el cronómetro y deja que se corrija solo.</p>
+    <a class="btn-brut btn-yellow btn-big" href="actividades/2-bachillerato-ciencias/examen/index.html">Generar mi examen</a>
+    <a class="stub-link" href="ejercicios/2-bachillerato-ciencias/ebau/index.html">o resuelve 270 ejercicios reales de 2021–2026 &rarr;</a>
+  </div>
+</section>
 
-### 2º Bachillerato Ciencias
-
-Matrices, análisis, geometría del espacio y probabilidad — preparación para la PAU (Selectividad).
-
-- [Apuntes](apuntes/2-bachillerato-ciencias/index.qmd)
-- [Ejercicios](ejercicios/2-bachillerato-ciencias/index.qmd)
-- [Actividades](actividades/2-bachillerato-ciencias/index.qmd)
-:::
-:::
+<section class="doors">
+  <a class="door d-mint" href="apuntes/2-bachillerato-ciencias/index.html">
+    <span class="door-n">01</span>
+    <h3>Apuntes</h3>
+    <p>Teoría de los 11 temas con figuras, ejemplos y PDF para descargar.</p>
+    <span class="door-go">Entrar &rarr;</span>
+  </a>
+  <a class="door d-coral" href="ejercicios/2-bachillerato-ciencias/index.html">
+    <span class="door-n">02</span>
+    <h3>Ejercicios</h3>
+    <p>25 por tema con soluciones, más todos los de la PAU de Andalucía.</p>
+    <span class="door-go">Entrar &rarr;</span>
+  </a>
+  <a class="door d-yellow" href="actividades/2-bachillerato-ciencias/index.html">
+    <span class="door-n">03</span>
+    <h3>Actividades</h3>
+    <p>77 retos que se generan al azar y se corrigen en el navegador.</p>
+    <span class="door-go">Entrar &rarr;</span>
+  </a>
+</section>
+```
