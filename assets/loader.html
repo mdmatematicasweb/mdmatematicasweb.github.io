@@ -32,7 +32,7 @@
     var hide = function () {
       if (gone) return;
       gone = true;
-      var wait = Math.max(0, 500 - (Date.now() - t0));
+      var wait = Math.max(0, 1000 - (Date.now() - t0));
       setTimeout(function () {
         el.classList.add("md-out");
         setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 450);
