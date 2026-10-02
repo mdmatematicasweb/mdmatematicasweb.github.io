@@ -115,9 +115,25 @@ a {
   border-color: var(--md-edge);
 }
 
-.navbar .quarto-navbar-tools .bi {
-  color: var(--md-paper-fixed, #FBF2D6);
+.navbar .quarto-navbar-tools .bi,
+.navbar .quarto-color-scheme-toggle,
+.navbar .aa-DetachedSearchButton .aa-DetachedSearchButtonIcon {
+  color: var(--md-paper-fixed) !important;
 }
+
+/* Interruptor claro/oscuro: botón con borde para que se vea */
+.navbar .quarto-color-scheme-toggle {
+  border: 2px solid var(--md-paper-fixed);
+  padding: 0.2rem 0.45rem !important;
+  margin-right: 0.5rem;
+  line-height: 1;
+}
+.navbar .quarto-color-scheme-toggle:hover {
+  background: var(--md-lime);
+  color: #000 !important;
+  border-color: #000;
+}
+.navbar .quarto-color-scheme-toggle .bi { font-size: 1.1rem; }
 
 /* --- Sidebar de temario: lista tipo checklist --- */
 #quarto-sidebar .sidebar-item-container {
@@ -335,3 +351,8 @@ div.callout.callout-tip { border-left-color: var(--md-teal) !important; }
 div.callout.callout-note { border-left-color: var(--md-lime) !important; }
 div.callout.callout-warning,
 div.callout.callout-important { border-left-color: var(--md-amber) !important; }
+
+/* Los iconos de la barra son imágenes oscuras: se invierten para verse sobre el fondo navy */
+.navbar .quarto-color-scheme-toggle .bi::before { filter: invert(1); }
+.navbar .aa-DetachedSearchButton svg,
+.navbar .aa-DetachedSearchButtonIcon svg { color: var(--md-paper-fixed) !important; fill: var(--md-paper-fixed) !important; }
