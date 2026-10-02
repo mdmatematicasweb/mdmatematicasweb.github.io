@@ -364,3 +364,15 @@ div.callout.callout-style-default > .callout-header code,
 div.callout.callout-style-default > .callout-header a {
   color: #000 !important;
 }
+
+/* Pies de figura y notas al margen: el coral de la marca no se lee sobre el fondo claro */
+.panel-caption, .figure-caption, .subfigure-caption, .table-caption, figcaption,
+.column-margin figcaption, .margin-caption, div.aside, aside, .column-margin {
+  color: #3d4256;
+}
+body.quarto-dark .panel-caption, body.quarto-dark .figure-caption, body.quarto-dark .subfigure-caption,
+body.quarto-dark .table-caption, body.quarto-dark figcaption, body.quarto-dark .margin-caption,
+body.quarto-dark div.aside, body.quarto-dark aside, body.quarto-dark .column-margin {
+  color: var(--md-muted);
+}
+.barrow-lab figcaption { color: var(--md-text); }
