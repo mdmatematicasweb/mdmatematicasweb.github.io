@@ -356,3 +356,11 @@ div.callout.callout-important { border-left-color: var(--md-amber) !important; }
 .navbar .quarto-color-scheme-toggle .bi::before { filter: invert(1); }
 .navbar .aa-DetachedSearchButton svg,
 .navbar .aa-DetachedSearchButtonIcon svg { color: var(--md-paper-fixed) !important; fill: var(--md-paper-fixed) !important; }
+
+/* Texto sobre fondos de color (amarillo, menta, coral): siempre negro, también el código y los enlaces */
+.gym-tip code, .mdx-banner code, .mdx-nota code, .pau-aviso code, .ticket-stub code, .door code,
+.gym-tip a, .mdx-banner a, .mdx-nota a, .pau-aviso a:not(.btn-brut), .gym-help-btn code,
+div.callout.callout-style-default > .callout-header code,
+div.callout.callout-style-default > .callout-header a {
+  color: #000 !important;
+}
