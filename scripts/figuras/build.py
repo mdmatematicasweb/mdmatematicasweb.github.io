@@ -843,6 +843,45 @@ def fig_asintotas_ccss():
            "A la izquierda, la función (2x+1)/(x−3) con asíntota vertical x igual a 3 y horizontal y igual a 2. A la derecha, (x²−3x+3)/(x−1) con asíntota vertical x igual a 1 y oblicua y igual a x menos 2")
 
 
+def fig_tangente_coste():
+    """Tema 06 CCSS: recta tangente a la función de costes en x = 50 (pendiente = coste marginal)."""
+    C = lambda x: 0.02 * x * x + 5 * x + 300
+    g = Fig(-10, 126, -80, 1260, w=520, h=340)
+    g.axes(xt=(25, 50, 75, 100), yt=(300, 600, 900, 1200))
+    g.curve(C, 0, 124, color=NAVY, width=3.5)
+    g.curve(lambda x: 7 * x + 250, 0, 124, color=CORAL, width=3)
+    g.line((50, 0), (50, 600), width=1.3); g.line((0, 600), (50, 600), width=1.3)
+    g.dot(50, 600, YELLOW)
+    g.text(50, 600, "(50, 600)", dx=12, dy=22, anchor="start", bold=True, size=13)
+    g.text(116, 1150, "C(x)", anchor="end", color=NAVY, bold=True, size=15, dy=-10)
+    g.text(6, 1030, "tangente: y = 7x + 250", anchor="start", color="#C4413A", bold=True, size=13)
+    g.text(6, 940, "pendiente 7 = coste marginal", anchor="start", bold=True, size=12)
+    g.text(126, 0, "unidades x", anchor="end", dy=-8, size=13); g.text(0, 1260, "coste (€)", anchor="start", dx=10, dy=4, size=13)
+    g.save(APC / "06-derivadas" / "fig-tangente-coste.svg", "Gráfica de la función de costes con su recta tangente en 50 unidades, de pendiente 7")
+
+
+def fig_derivabilidad_ccss():
+    """Tema 06 CCSS: punto anguloso (factura del agua) y salto (tarifa de envío): no derivables."""
+    kw = dict(w=270, h=240, pad=16)
+    a = Fig(-3, 23, -4, 34, **kw)
+    a.axes(xt=(10, 20), yt=(10, 20, 30))
+    a.curve(lambda x: 5 + 0.9 * x, 0, 10, color=NAVY, width=3.5)
+    a.curve(lambda x: 1.5 * x - 1, 10, 23, color=CORAL, width=3.5)
+    a.line((10, 14), (23, 5 + 0.9 * 23), color=NAVY, width=1.5, dash="5 4")
+    a.dot(10, 14, YELLOW)
+    a.text(0.5, 1.5, "pendiente 0,9", anchor="start", bold=True, size=11, color=NAVY)
+    a.text(1.5, 27, "pendiente 1,5", anchor="start", bold=True, size=11, color="#C4413A")
+    b = Fig(-0.6, 7.4, -1.5, 12.5, **kw)
+    b.axes(xt=(2, 5), yt=(4, 7, 10))
+    for (x0, x1, v) in ((0, 2, 4), (2, 5, 7), (5, 7.2, 10)):
+        b.line((x0, v), (x1, v), color=NAVY, width=3.5, dash="1 0"); _hueco(b, x0, v)
+    for x1, v in ((2, 4), (5, 7)):
+        b.dot(x1, v, NAVY)
+    b.text(2, 6, "salto en w = 2", anchor="start", dx=10, dy=40, bold=True, size=11)
+    panels([a, b], ["Punto anguloso: no derivable", "Salto: no es ni continua"], APC / "06-derivadas" / "fig-derivabilidad.svg",
+           "A la izquierda, la factura del agua con un punto anguloso en 10 metros cúbicos: las pendientes laterales son 0,9 y 1,5. A la derecha, la tarifa de envío con un salto en 2 kilos: la función no es continua y por tanto no es derivable")
+
+
 if __name__ == "__main__":
     fig_asintotas(); fig_monotonia(); fig_area(); fig_normal()
     fig_dos_planos(); fig_recta_plano(); fig_dos_rectas(); fig_simetrico()
@@ -854,3 +893,4 @@ if __name__ == "__main__":
     fig_region_panaderia(); fig_region_comedor(); fig_lp_casos()
     fig_polinomicas(); fig_racional(); fig_exp_log(); fig_trozos()
     fig_discontinuidades_ccss(); fig_asintotas_ccss()
+    fig_tangente_coste(); fig_derivabilidad_ccss()
