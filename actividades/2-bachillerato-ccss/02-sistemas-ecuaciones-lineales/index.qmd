@@ -1,5 +1,35 @@
 ---
 title: "Sistemas de ecuaciones lineales — ejercicios interactivos"
+format:
+  html:
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+          <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    css: ../../../assets/gym/gym.css
 ---
 
-*Pendiente de redactar (Fase 3 del curso Ciencias Sociales).*
+Cada bloque genera ejercicios nuevos al azar y los corrige al instante en el navegador. Las opciones empiezan en **Aleatorio**; elige una concreta si quieres practicar sólo ese caso. **Ayuda** muestra la teoría en dos pasos (no suma ni quita racha), escribe la respuesta (enteros, fracciones `a/b` o decimales) y pulsa **Comprobar** (o Intro). **Ver resolución** muestra el procedimiento paso a paso; usar ayuda rompe la racha. **Modo clase** pone el ejercicio a pantalla completa para proyectarlo.
+
+## Clasificar un sistema
+
+<div data-gym="cs-clasificar"></div>
+
+## Resolver un sistema (Gauss y Cramer)
+
+<div data-gym="cs-resolver"></div>
+
+## Problemas de planteamiento
+
+<div data-gym="cs-planteamiento"></div>
+
+## Sistema en forma matricial
+
+<div data-gym="ccss-sis-matricial"></div>
+
+<script src="../../../assets/gym/gym.js"></script>
+<script src="../../../assets/gym/matrices.js"></script>
+<script src="../../../assets/gym/sistemas.js"></script>
+<script src="../../../assets/gym/ccss.js"></script>
+<script src="../../../assets/gym/ccss-algebra.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () { MDGym.mountAll(); });</script>
