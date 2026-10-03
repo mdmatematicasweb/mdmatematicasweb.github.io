@@ -8,6 +8,7 @@ Las soluciones van aparte, en soluciones/<slug>.md (mismo nombre que el examen):
 de la solución en Markdown. Se muestran plegadas debajo de cada enunciado.
 Las páginas se escriben en ejercicios/2-bachillerato-ciencias/ebau/. No edites esas páginas a mano: edita data/ y vuelve a ejecutar.
 """
+import json
 import re
 import sys
 from collections import defaultdict
@@ -17,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[2]
 DATA = Path(__file__).resolve().parent / "data"
 SOLS = Path(__file__).resolve().parent / "soluciones"
 OUT = ROOT / "ejercicios" / "2-bachillerato-ciencias" / "ebau"
+OFICIAL = json.loads((Path(__file__).resolve().parent / "oficial.json").read_text())  # copias locales de la Junta (oficial.py)
 URLS = {u.rsplit("/", 1)[1]: u for u in (Path(__file__).resolve().parent / "urls.txt").read_text().split()}
 
 TEMAS = {
@@ -67,9 +69,9 @@ def load_exams():
                 "tex": body.strip(),
             })
         exam = {"slug": meta["slug"], "year": int(meta["year"]), "conv": meta["conv"], "curso": meta["curso"], "file": meta["file"], "ejercicios": exs}
-        if meta["file"] not in URLS:
+        if meta["slug"] not in OFICIAL and meta["file"] not in URLS:
             sys.exit(f"{f.name}: archivo {meta['file']} no está en urls.txt")
-        exam["url"] = URLS[meta["file"]]
+        exam["url"] = URLS.get(meta["file"])
         exam["sol_extra"] = []
         fsol = SOLS / f.name
         if fsol.exists():
@@ -123,6 +125,18 @@ def validate(exams):
     return errs
 
 
+def pdf_links(e, solo_examen=False):
+    """Enlaces a los PDF: copia oficial local (assets/pau) si existe; si no, el PDF de terceros de urls.txt."""
+    files = OFICIAL.get(e["slug"])
+    if not files:
+        return [("PDF del examen", e["url"], True)]
+    return [(f["label"], "../../../" + f["path"], True) for f in files if not (solo_examen and f["label"].startswith(("Criterios", "Tabla")))]
+
+
+def md_links(e, sep, solo_examen=False):
+    return sep.join(f"[{l}]({u}){{target=\"_blank\"}}" for l, u, _ in pdf_links(e, solo_examen))
+
+
 def anchor(e, x):
     return f"ebau-{e['slug']}-{x['n'].replace('.', '-')}"
 
@@ -171,7 +185,7 @@ def tema_page(t, exams):
                    if x.get("sol") else "")
             out.append(
                 f"\n::::: {{.ebau-ej #{anchor(e, x)}}}\n"
-                f"**Ejercicio {x['n']}** · {e['conv']} {y} · {BLOQUE[x['bloque']]} · *({x['pts']} puntos)* · [PDF del examen]({e['url']}){{target=\"_blank\"}}\n\n"
+                f"**Ejercicio {x['n']}** · {e['conv']} {y} · {BLOQUE[x['bloque']]} · *({x['pts']} puntos)* · {md_links(e, ' · ', True) if e['slug'] in OFICIAL else md_links(e, ' · ')}\n\n"
                 f"{x['tex']}{extra}{sol}\n"
                 f":::::\n"
             )
@@ -211,7 +225,10 @@ def index_page(exams):
     out.append("Cada ejercicio vale 2,5 puntos. Enlaces a los PDF de los enunciados:\n")
     for y in years:
         es = sorted([e for e in exams if e["year"] == y], key=lambda e: CONV_ORDER.index(e["conv"]))
-        out.append(f"**{y}** · " + " · ".join(f"[{e['conv']}]({e['url']}){{target=\"_blank\"}}" for e in es) + "\n")
+        out.append(f"- **{y}**")
+        for e in es:
+            out.append(f"  - {e['conv']}: " + (md_links(e, " · ") if e["slug"] in OFICIAL else f"[PDF]({e['url']}){{target=\"_blank\"}}"))
+        out.append("")
     out.append("\n---\n\n*Enunciados: Prueba de Acceso y Admisión a la Universidad (PEvAU hasta 2024, PAU desde 2025), Matemáticas II, Andalucía, Ceuta, Melilla y centros en Marruecos (Distrito Único Andaluz). "
                "La clasificación por temas es propia. Se ha transcrito cada enunciado a partir del examen oficial; ante cualquier duda, el PDF manda.*\n")
     return "\n".join(out)
