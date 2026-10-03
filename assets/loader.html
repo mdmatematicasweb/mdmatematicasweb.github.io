@@ -20,12 +20,13 @@
 <script>
 (function () {
   try {
+    if (/^\/(index\.html)?$/.test(location.pathname)) return;
     var el = document.createElement("div");
     el.id = "md-loader";
     el.setAttribute("role", "status");
     el.innerHTML =
       '<div class="ml-logo" aria-hidden="true"><i>+</i><i>&minus;</i><i>&times;</i><i>=</i></div>' +
-      '<div class="ml-txt">Mientras carga&hellip; <b>un descanso</b></div>' +
+      '<div class="ml-txt">Mientras carga&hellip; <b>&iexcl;&iexcl;&iexcl;un descanso!!!</b></div>' +
       '<div class="ml-bar" aria-hidden="true"></div>';
     document.documentElement.appendChild(el);
     var t0 = Date.now(), gone = false;
