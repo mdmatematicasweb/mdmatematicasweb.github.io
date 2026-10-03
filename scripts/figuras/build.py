@@ -1089,6 +1089,32 @@ def fig_binomial_normal_ccss():
     g.save(APC / "10-distribuciones" / "fig-binomial-normal.svg", "Diagrama de barras de la binomial B(150; 0,4) con la curva normal N(60, 6) superpuesta; en rojo, las barras de 68 en adelante, cuya área corresponde a la normal a la derecha de 67,5")
 
 
+def fig_intervalo_ccss():
+    """Tema 11 CCSS: nivel de confianza en la normal estándar y error en función del tamaño de la muestra."""
+    kw = dict(w=300, h=240, pad=14)
+    phi = lambda z: math.exp(-z * z / 2) / math.sqrt(2 * math.pi)
+    a = Fig(-3.7, 3.7, -0.07, 0.47, **kw)
+    a.region(phi, lambda z: 0, -3.7, -1.96, color=CORAL)
+    a.region(phi, lambda z: 0, -1.96, 1.96, color=YELLOW)
+    a.region(phi, lambda z: 0, 1.96, 3.7, color=CORAL)
+    a.axes(xt=(0,))
+    a.curve(phi, -3.7, 3.7, color=NAVY, width=3.5)
+    a.text(-1.96, 0, "−1,96", dy=18, bold=True, size=11); a.text(1.96, 0, "1,96", dy=18, bold=True, size=11)
+    a.text(0, 0.19, "1 − α", bold=True, size=15, anchor="start", dx=10); a.text(0, 0.14, "= 0,95", bold=True, size=14, anchor="start", dx=10)
+    a.text(-3.05, 0.1, "α/2", bold=True, size=12, color="#C4413A"); a.text(3.05, 0.1, "α/2", bold=True, size=12, color="#C4413A")
+    b = Fig(-250, 1780, -2.2, 24, **kw)
+    b.axes(xt=(500, 1000, 1500), yt=(5, 10, 15, 20))
+    b.curve(lambda n_: 1.96 * 60 / math.sqrt(n_), 32, 1760, color=NAVY, width=3.5)
+    for n_, col in ((100, CORAL), (400, YELLOW), (1600, "#2a8f82")):
+        b.dot(n_, 1.96 * 60 / math.sqrt(n_), col)
+    b.text(100, 11.76, "11,76", dx=14, dy=-10, anchor="start", bold=True, size=12)
+    b.text(400, 5.88, "5,88", dx=10, dy=-12, anchor="start", bold=True, size=12)
+    b.text(1600, 2.94, "2,94", dx=0, dy=-14, bold=True, size=12)
+    b.text(1780, 0, "n", anchor="end", dy=-8, size=13); b.text(0, 24, "E", anchor="start", dx=10, dy=4, size=13)
+    panels([a, b], ["Confianza del 95 %", "Error E = 1,96·60/√n"], APC / "11-muestreo-inferencia" / "fig-intervalo.svg",
+           "A la izquierda, la normal estándar con el 95 por ciento central entre menos 1,96 y 1,96 y una cola de 2,5 por ciento a cada lado. A la derecha, el error máximo en función del tamaño de la muestra: 11,76 con 100, 5,88 con 400 y 2,94 con 1600")
+
+
 if __name__ == "__main__":
     fig_asintotas(); fig_monotonia(); fig_area(); fig_normal()
     fig_dos_planos(); fig_recta_plano(); fig_dos_rectas(); fig_simetrico()
@@ -1105,3 +1131,4 @@ if __name__ == "__main__":
     fig_area_bajo_curva_ccss(); fig_area_signo_ccss(); fig_areas_entre_curvas_ccss()
     fig_venn_ccss(); fig_arbol_ccss()
     fig_normal_tabla_ccss(); fig_binomial_normal_ccss()
+    fig_intervalo_ccss()
