@@ -87,19 +87,22 @@ def norm(s):
     s = s.replace("\\dfrac", "\\frac").replace("\\tfrac", "\\frac")
     for t in ("\\displaystyle", "\\left", "\\right", "\\,", "\\;", "\\!", "\\ ", "\\quad", "\\qquad"):
         s = s.replace(t, "")
-    s = s.replace("{,}", ",")
+    s = s.replace("{,}", "٫")   # coma decimal (distinta de la coma que separa elementos de una lista)
     return re.sub(r"[\s$]+", "", s)
 
 
 # Tras el valor de un resultado «etiqueta=valor» debe terminar la expresión: fin del trozo $…$, otra igualdad o desigualdad,
 # puntuación, un cierre, o un texto. Así «|B|=2» no se da por bueno dentro de «|B|=2\\cdot1-1\\cdot0=3».
 _FIN = (r"(?=$|=|,(?![0-9])|;|\.(?![0-9])|<|>|\)|\}|&|\\\\|%|€"
-        r"|\\(?:neq|ne|le|leq|ge|geq|lt|gt|approx|text|quad|Rightarrow|Longrightarrow|implies|to|in|mid|end|Leftrightarrow|land|wedge|lor|vee|mathrm|operatorname\{u\})(?![a-zA-Z]))")
+        r"|\\(?:neq|ne|leq|le|geq|ge|lt|gt|approx|text|quad|Rightarrow|Longrightarrow|implies|mid|end|Leftrightarrow|land|wedge|lor|vee|mathrm|operatorname\{u\})"
+        r"|\\(?:in|to)(?![a-zA-Z]))")
 
 
 # ---------- búsqueda de un resultado en el bloque de un apartado ----------
 def _patron(nf):
     """Patrón de un fragmento «etiqueta=valor» o «etiqueta\\approx valor» (cadena de igualdades), o None si es literal."""
+    if nf.startswith("!"):   # «!texto»: aparición literal, sin lógica de cadenas (p. ej. una contradicción «0=1»)
+        return None, None
     if "\\approx" in nf and nf.count("=") == 0 and nf.count("\\approx") == 1 and not nf.startswith("\\approx"):
         etiqueta, valor = nf.split("\\approx")
         op = "\\approx"
@@ -112,12 +115,47 @@ def _patron(nf):
     return re.compile(re.escape(etiqueta) + r"(?:=[^=]*?)*" + re.escape(op) + re.escape(valor) + _FIN), valor
 
 
+def _num(e):
+    """Valor exacto (sympy) de un paso numérico escrito en LaTeX, o None si no es una expresión puramente numérica."""
+    from sympy import sympify
+    from sympy.parsing.sympy_parser import parse_expr, standard_transformations, implicit_multiplication_application
+    def _det(m):
+        from sympy import Matrix
+        filas = [[_num(c) for c in f.split("&")] for f in m.group(1).split("\\\\")]
+        if any(c is None for f in filas for c in f) or len({len(f) for f in filas}) != 1 or len(filas) != len(filas[0]):
+            return "?"
+        return f"({Matrix(filas).det()})"
+    e = re.sub(r"\\begin\{vmatrix\}(.*?)\\end\{vmatrix\}", _det, e)
+    e = re.sub(r"(\d+)[٫.](\d+)", lambda m: f"({int(m.group(1) + m.group(2))}/{10 ** len(m.group(2))})", e)   # decimales exactos
+    for _ in range(4):
+        e = re.sub(r"\\frac\{([^{}]*)\}\{([^{}]*)\}", r"((\1)/(\2))", e)
+    e = e.replace("\\cdot", "*").replace("\\times", "*").replace("\\div", "/").replace("^", "**").replace("{", "(").replace("}", ")")
+    if not e or not re.fullmatch(r"[0-9+\-*/(). ]+", e):
+        return None
+    try:
+        return sympify(parse_expr(e, transformations=standard_transformations + (implicit_multiplication_application,), evaluate=True), rational=True)
+    except Exception:
+        return None
+
+
+def _coherente(cadena):
+    """En una cadena de igualdades «a=b=c», todos los pasos puramente numéricos valen lo mismo (antes de un \\approx)."""
+    cadena = cadena.split("\\approx")[0]
+    vals = [_num(t) for t in cadena.split("=")]
+    vals = [x for x in vals if x is not None]
+    return len(set(vals)) <= 1
+
+
 def contar(nf, segmentos, plano):
-    """Número de apariciones del fragmento normalizado nf en el bloque (segmentos $…$ normalizados y texto plano)."""
+    """Número de apariciones del fragmento normalizado nf en el bloque (segmentos $…$ normalizados y texto plano).
+
+    En un resultado «etiqueta=valor» solo cuenta la aparición si la cadena de igualdades es aritméticamente coherente:
+    `|B|=3\\cdot1-1\\cdot0=2` no cuenta aunque termine en el valor correcto.
+    """
     patron, _ = _patron(nf)
     if patron is None:
-        return plano.count(nf)
-    return sum(len(patron.findall(seg)) for seg in segmentos)
+        return plano.count(nf.lstrip("!"))
+    return sum(1 for seg in segmentos for m in patron.finditer(seg) if _coherente(m.group(0)))
 
 
 def _cambiar(texto, ini, fin):
@@ -132,6 +170,7 @@ def mutar(nf, segmentos, plano, i):
     """Devuelve (segmentos, plano) con la aparición número i del fragmento alterada en un carácter."""
     patron, valor = _patron(nf)
     if patron is None:
+        nf = nf.lstrip("!")
         pos = -1
         for _ in range(i + 1):
             pos = plano.index(nf, pos + 1)
@@ -178,7 +217,7 @@ class Relacion:
             trozos = re.split(r"^([a-f])\) ", cuerpo, flags=re.M)
             if len(trozos) == 1:
                 # apartados en línea («…: a) …; b) …»): solo se reconocen sus letras
-                en_linea = re.findall(r"(?:^|[:;]\s)([a-f])\) ", cuerpo)
+                en_linea = re.findall(r"(?:^|[:;.]\s)([a-f])\) ", cuerpo)
                 if len(en_linea) >= 2 and en_linea[0] == "a":
                     for letra in en_linea:
                         res[f"{opc}.{letra}" if opc else letra] = cuerpo

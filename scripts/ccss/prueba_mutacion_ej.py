@@ -5,7 +5,7 @@ Para cada tema: copia scripts/ccss y el .qmd a un directorio temporal, obtiene l
 (CCSS_VOLCADO), y para una muestra de ellos cambia UNA sola aparición (un dígito) dentro de su apartado de la solución
 escrita; el verificador debe terminar con código 1. Solo se usan resultados que aparecen literalmente en el .qmd.
 
-Uso:  python scripts/ccss/prueba_mutacion_ej.py [muestra_por_tema]      (por defecto 25; 0 = todos)
+Uso:  python scripts/ccss/prueba_mutacion_ej.py [muestra_por_tema [temas]]   (muestra por defecto 25, 0 = todos; temas: «01,02»)
 Termina con código 1 si alguna mutación no hace fallar al verificador.
 """
 import json
@@ -19,7 +19,8 @@ from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent
 RAIZ = AQUI.parents[1]
-TEMAS = {"01": "01-matrices-determinantes", "02": "02-sistemas-ecuaciones-lineales", "03": "03-programacion-lineal", "04": "04-funciones"}
+TEMAS = {"01": "01-matrices-determinantes", "02": "02-sistemas-ecuaciones-lineales", "03": "03-programacion-lineal", "04": "04-funciones",
+         "05": "05-limites-continuidad", "06": "06-derivadas", "07": "07-aplicaciones-derivada", "08": "08-integrales"}
 sys.path.insert(0, str(AQUI))
 from _ej_comun import Relacion  # noqa: E402
 
@@ -30,12 +31,19 @@ def correr(raiz, nn, volcado=None):
 
 
 def mutar_literal(bloque, frag, i):
-    """Cambia un dígito de la aparición número i (0, 1…) de frag dentro del bloque; None si no hay."""
-    pos = -1
-    for _ in range(i + 1):
+    """Cambia un dígito de la aparición número i de frag dentro del bloque (se ignoran las que son prefijo de un número
+    más largo, como «x=4» dentro de «x=48»); None si no hay."""
+    pos, vistas = -1, 0
+    while True:
         pos = bloque.find(frag, pos + 1)
         if pos < 0:
             return None
+        sig = bloque[pos + len(frag):pos + len(frag) + 1]
+        if sig.isdigit() or sig in ("{", "^", "_"):
+            continue
+        if vistas == i:
+            break
+        vistas += 1
     for j in range(pos, pos + len(frag)):
         if bloque[j].isdigit():
             return bloque[:j] + str((int(bloque[j]) + 1) % 10) + bloque[j + 1:]
@@ -46,7 +54,10 @@ def main():
     muestra = int(sys.argv[1]) if len(sys.argv) > 1 else 25
     azar = random.Random(2024)
     malos = total = 0
+    sel = sys.argv[2].split(",") if len(sys.argv) > 2 else list(TEMAS)
     for nn, tema in TEMAS.items():
+        if nn not in sel:
+            continue
         with tempfile.TemporaryDirectory() as tmp:
             tmp = Path(tmp)
             shutil.copytree(AQUI, tmp / "scripts" / "ccss", ignore=shutil.ignore_patterns("__pycache__"))

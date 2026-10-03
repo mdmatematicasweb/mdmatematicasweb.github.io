@@ -64,7 +64,7 @@ v.solucion(3, [("x=3-2\\lambda", 2), ("y=3-\\lambda", 2), ("z=3\\lambda", 2), "\
 A4, B4 = M([[1, 1, 1], [2, 2, 2], [1, -1, 0]]), M([1, 3, 0])
 v.enunciado(4, ["x+y+z=1", "2x+2y+2z=3", "x-y=0"])
 v.ok(sist(A4, B4) == [] and rangos(A4, B4) == (2, 3), "ej. 4: incompatible con rangos 2 y 3")
-v.solucion(4, ["0=1", "\\operatorname{rg}A=2", "\\operatorname{rg}A^*=3"])
+v.solucion(4, ["!0=1", "\\operatorname{rg}A=2", "\\operatorname{rg}A^*=3"])
 # 5
 A5, B5 = M([[2, 1, -1], [1, -1, 2], [1, 2, 1]]), M([1, 4, 5])
 d5, ds5 = cramer(A5, B5)
@@ -153,7 +153,7 @@ v.solucion(15, [ec(A14[0, :], B15[0]), ec(A14[1, :], B15[1]), ec(A14[2, :], B15[
 f2 = A14[1, :] - 2 * A14[0, :]; r2 = B15[1] - 2 * B15[0]
 v.ok(list(f2) == [0, 1, 3] and r2 == 80 and B15[0] + B15[1] == 260 and (A14[0, :] + A14[1, :]) == A14[2, :], "ej. 15c: y+3z=80 y la tercera ecuación debería dar 260")
 v.solucion(15, [ec(f2, r2), ec(A14[2, :], B15[0] + B15[1]), "250", "contradicción"], 'c')
-v.solucion(15, [f"0={B15[2] - B15[0] - B15[1]}", "\\operatorname{rg}A=2", "\\operatorname{rg}A^*=3", "incompatible"], 'b')
+v.solucion(15, [f"!0={B15[2] - B15[0] - B15[1]}", "\\operatorname{rg}A=2", "\\operatorname{rg}A^*=3", "incompatible"], 'b')
 # 16
 A16, B16 = M([[2, 1, 0], [1, 1, 0], [1, 2, 1]]), M([5, 3, 8])
 v.enunciado(16, [mat(A16), mat(B16)])
