@@ -150,7 +150,11 @@ class Verificador:
         segmentos = [norm(x) for x in texto.split("$") if x.strip()]
         for f in fragmentos:
             nf = norm(f)
-            if nf.count("=") == 1:
+            if "\\approx" in nf and nf.count("=") == 0 and nf.count("\\approx") == 1 and not nf.startswith("\\approx"):
+                etiqueta, valor = nf.split("\\approx")
+                patron = re.compile(re.escape(etiqueta) + r"(?:=[^=]*?)*" + re.escape("\\approx") + re.escape(valor) + r"(?![0-9.{^_]|\\frac)")
+                hallado = any(patron.search(seg) for seg in segmentos)
+            elif nf.count("=") == 1:
                 etiqueta, valor = nf.split("=")
                 patron = re.compile(re.escape(etiqueta) + r"(?:=[^=]*?)*=" + re.escape(valor) + r"(?![0-9.{^_]|\\frac)")
                 hallado = any(patron.search(seg) for seg in segmentos)
