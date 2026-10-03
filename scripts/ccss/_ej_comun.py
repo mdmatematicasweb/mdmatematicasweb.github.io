@@ -267,7 +267,8 @@ class Verificador:
             self.fallos.append(msg)
 
     # --- estructura ---
-    def estructura(self, n_basicos=9, n_pau=16, comp=(6, 10)):
+    def estructura(self, n_basicos=9, n_pau=16, comp=(6, 10), puntos=None, opciones=True):
+        """`puntos`: si se da, todos los PAU valen esos puntos. `opciones=False`: ningún ejercicio tiene «Opción A/B»."""
         r = self.rel
         total = n_basicos + n_pau
         self.ok(sorted(r.enunciados) == list(range(1, total + 1)), f"los enunciados deben ser 1..{total}, hay {sorted(r.enunciados)}")
@@ -281,6 +282,10 @@ class Verificador:
             cab = re.match(r"\*\(Tipo PAU · (\d+(?:,\d+)?) puntos?", r.enunciados[k])
             self.ok(cab is not None, f"ej. {k}: falta «Tipo PAU · N puntos» en la cabecera")
             total_pts = float(cab.group(1).replace(",", "."))
+            if puntos is not None:
+                self.ok(abs(total_pts - puntos) < 1e-9, f"ej. {k}: debe valer {puntos} puntos y la cabecera dice {total_pts}")
+            if not opciones:
+                self.ok("**Opción" not in r.enunciados[k], f"ej. {k}: no debe tener opción A/B")
             texto = r.enunciados[k]
             partes = re.split(r"\*\*Opción [AB]\.\*\*", texto)
             bloques = partes[1:] if len(partes) > 1 else [texto.split("\n", 1)[1] if "\n" in texto else ""]
