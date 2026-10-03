@@ -18,7 +18,7 @@ from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 
 try:
-    from sympy import Rational, Integer, Matrix, S, sympify
+    from sympy import Rational, Rational as R, Integer, Matrix, S, sympify
 except ImportError:
     sys.exit("Falta sympy: pip install sympy")
 
@@ -100,16 +100,23 @@ _FIN = (r"(?=$|=|,(?![0-9])|;|\.(?![0-9])|<|>|\)|\}|&|\\\\|%|€"
 
 # ---------- búsqueda de un resultado en el bloque de un apartado ----------
 def _patron(nf):
-    """Patrón de un fragmento «etiqueta=valor» o «etiqueta\\approx valor» (cadena de igualdades), o None si es literal."""
-    if nf.startswith("!"):   # «!texto»: aparición literal, sin lógica de cadenas (p. ej. una contradicción «0=1»)
+    """Patrón de un fragmento «etiqueta=valor» o «etiqueta\\approx valor» (cadena de igualdades), o None si es literal.
+
+    «!texto»: aparición literal, sin lógica de cadenas (p. ej. una contradicción «0=1»).
+    «~etiqueta=valor» o «~etiqueta\\approx valor»: la etiqueta puede contener signos «=» (p. ej. «P(X=2)»); el valor es lo que
+    sigue al último «=» (o al «\\approx»).
+    """
+    if nf.startswith("!"):
         return None, None
-    if "\\approx" in nf and nf.count("=") == 0 and nf.count("\\approx") == 1 and not nf.startswith("\\approx"):
+    forzado = nf.startswith("~")
+    if forzado:
+        nf = nf[1:]
+    if "\\approx" in nf and (forzado or nf.count("=") == 0) and nf.count("\\approx") == 1 and not nf.startswith("\\approx"):
         etiqueta, valor = nf.split("\\approx")
         op = "\\approx"
-    elif nf.count("=") == 1:
-        etiqueta, valor = nf.split("=")
+    elif nf.count("=") == 1 or (forzado and "=" in nf):
+        etiqueta, valor = nf.rsplit("=", 1)
         op = "="
-        return re.compile(re.escape(etiqueta) + r"(?:=[^=]*?)*=" + re.escape(valor) + _FIN), valor
     else:
         return None, None
     return re.compile(re.escape(etiqueta) + r"(?:=[^=]*?)*" + re.escape(op) + re.escape(valor) + _FIN), valor
@@ -139,11 +146,23 @@ def _num(e):
 
 
 def _coherente(cadena):
-    """En una cadena de igualdades «a=b=c», todos los pasos puramente numéricos valen lo mismo (antes de un \\approx)."""
+    """En una cadena de igualdades «a=b=c», todos los pasos puramente numéricos valen lo mismo (antes de un \\approx).
+
+    Si no valen exactamente lo mismo pero el último paso es un decimal redondeado a d cifras, se admite que los demás pasos
+    difieran de él menos de media unidad de la última cifra (p. ej. «1-0,8^{10}=1-0,1074=0,8926»).
+    """
     cadena = cadena.split("\\approx")[0]
-    vals = [_num(t) for t in cadena.split("=")]
-    vals = [x for x in vals if x is not None]
-    return len(set(vals)) <= 1
+    piezas = cadena.split("=")
+    vals = [(t, _num(t)) for t in piezas]
+    vals = [(t, x) for t, x in vals if x is not None]
+    if len({x for _, x in vals}) <= 1:
+        return True
+    ult_t, ult = vals[-1]
+    m = re.fullmatch(r"-?\d+[٫.](\d+)", ult_t.strip())
+    if not m:
+        return False
+    tol = R(1, 2 * 10 ** len(m.group(1)))
+    return all(abs(x - ult) < tol for _, x in vals)
 
 
 def contar(nf, segmentos, plano):
