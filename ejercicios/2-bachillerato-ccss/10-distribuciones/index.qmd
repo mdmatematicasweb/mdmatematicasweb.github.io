@@ -2,4 +2,445 @@
 title: "Distribuciones binomial y normal — relación de ejercicios"
 ---
 
-*Pendiente de redactar (Fase 2 del curso Ciencias Sociales).*
+Relación de 25 ejercicios: del 1 al 9 son básicos y del 10 al 25 siguen el estilo de la PAU de Andalucía para Matemáticas Aplicadas a las Ciencias Sociales II (ejercicio de estadística, 2 puntos, sin opciones). Los marcados como *competenciales* piden modelizar, interpretar el resultado en el contexto o justificar. Las soluciones están al final y usan la **tabla de la normal** con $z$ redondeado a dos decimales (cuatro decimales hasta $z=2{,}6$ y cinco desde $z=2{,}7$), no el valor exacto de la calculadora. Cuando un valor de probabilidad no aparece en la tabla, se aceptan el valor más cercano y la interpolación, y se indican ambos.
+
+## Variables aleatorias y binomial
+
+**1.** Una variable $X$ toma los valores $0,1,2,3$ con probabilidades $0{,}2$; $0{,}4$; $0{,}3$ y $0{,}1$. Calcula $\mu$, $\sigma^2$ y $\sigma$.
+
+**2.** La variable $X$ tiene densidad $f(x)=2x$ para $0\le x\le1$ (y $0$ fuera). Comprueba que el área vale $1$ y calcula $P(X\le0{,}5)$ y $\mu$.
+
+**3.** Sea $X\sim B(6;\,0{,}4)$. Calcula: a) $P(X=2)$; b) $P(X\ge1)$; c) $\mu$ y $\sigma$.
+
+## Distribución normal
+
+**4.** Sea $X\sim N(100,\,15)$. Calcula: a) $P(X\le115)$; b) $P(X>130)$; c) $P(85<X<115)$.
+
+**5.** Sea $X\sim N(50,\,8)$. Calcula: a) $P(X\le62)$; b) $P(X\ge44)$; c) $P(40<X<56)$.
+
+**6.** Sea $X\sim N(70,\,10)$. Halla $k$ tal que: a) $P(X\le k)=0{,}9332$; b) $P(X\le k)=0{,}9772$.
+
+**7.** Sea $X\sim N(100,\,20)$. Halla $k$ tal que $P(X\le k)=0{,}80$. (El valor $0{,}80$ no aparece en la tabla: resuelve con el valor más cercano y con la interpolación.)
+
+## Binomial y normal
+
+**8.** Sea $X\sim B(100;\,0{,}5)$. a) Comprueba que se puede aproximar por una normal y escribe sus parámetros. Calcula, con corrección por continuidad: b) $P(X=50)$; c) $P(X\ge58)$; d) $P(X>58)$.
+
+**9.** Decide si se puede aproximar por una normal: a) $B(40;\,0{,}1)$; b) $B(60;\,0{,}1)$. En el caso en que se pueda, calcula $P(X\le4)$ con corrección por continuidad.
+
+## Problemas tipo PAU
+
+**10.** *(Tipo PAU · 2 puntos · competencial)* El tiempo de entrega de una empresa de reparto, en minutos, sigue una distribución $N(30,\,6)$.
+
+a) (0,5 puntos) Calcula la probabilidad de que una entrega tarde como máximo 36 minutos.
+
+b) (0,5 puntos) Calcula la probabilidad de que tarde más de 42 minutos.
+
+c) (0,5 puntos) Calcula la probabilidad de que tarde entre 24 y 39 minutos.
+
+d) (0,5 puntos) Interpreta el resultado del apartado b) en el contexto.
+
+**11.** *(Tipo PAU · 2 puntos · competencial)* El peso, en gramos, de los paquetes de arroz de una máquina sigue una distribución $N(500,\,12)$.
+
+a) (0,5 puntos) Calcula la probabilidad de que un paquete pese menos de 488 g.
+
+b) (0,5 puntos) Calcula la probabilidad de que pese más de 520 g.
+
+c) (0,5 puntos) Halla el peso $k$ tal que el $90{,}32\,\%$ de los paquetes pesa $k$ gramos o menos.
+
+d) (0,5 puntos) Interpreta los resultados de a) y c).
+
+**12.** *(Tipo PAU · 2 puntos)* El $20\,\%$ de los clientes de una tienda paga con tarjeta. Se eligen 10 clientes al azar, de forma independiente. Sea $X$ el número de ellos que pagan con tarjeta.
+
+a) (0,5 puntos) Indica la distribución de $X$ y calcula $P(X=2)$.
+
+b) (0,5 puntos) Calcula $P(X\le1)$.
+
+c) (0,5 puntos) Calcula $P(X\ge1)$.
+
+d) (0,5 puntos) Calcula la media y la desviación típica de $X$.
+
+**13.** *(Tipo PAU · 2 puntos · competencial)* La duración, en horas, de una bombilla sigue una distribución $N(1000,\,100)$.
+
+a) (0,5 puntos) Calcula la probabilidad de que una bombilla dure menos de 900 horas.
+
+b) (0,5 puntos) Calcula la probabilidad de que dure entre 900 y 1100 horas.
+
+c) (0,5 puntos) Se eligen 5 bombillas al azar. Con el resultado del apartado a), calcula la probabilidad de que exactamente una dure menos de 900 horas.
+
+d) (0,5 puntos) Calcula el número medio de bombillas, entre las 5, que duran menos de 900 horas e interpreta el resultado.
+
+**14.** *(Tipo PAU · 2 puntos)* El $30\,\%$ de los usuarios de una aplicación contrata la versión de pago. Se eligen 200 usuarios al azar. Sea $X$ el número de ellos que la contratan.
+
+a) (0,5 puntos) Justifica que $X$ se puede aproximar por una normal y escribe sus parámetros.
+
+b) (0,5 puntos) Calcula $P(X\ge70)$.
+
+c) (0,5 puntos) Calcula $P(X\le55)$.
+
+d) (0,5 puntos) Calcula $P(X=60)$.
+
+**15.** *(Tipo PAU · 2 puntos · competencial)* En una fábrica, el $2\,\%$ de las piezas sale defectuoso. Sea $X$ el número de piezas defectuosas en un lote.
+
+a) (0,5 puntos) Para un lote de 150 piezas, comprueba si se puede aproximar la binomial por una normal.
+
+b) (0,5 puntos) Para un lote de 500 piezas, comprueba las condiciones y escribe la normal que aproxima a $X$.
+
+c) (0,5 puntos) En el lote de 500 piezas, calcula $P(X\ge15)$.
+
+d) (0,5 puntos) En el lote de 500 piezas, calcula $P(X<8)$ e interpreta el resultado.
+
+**16.** *(Tipo PAU · 2 puntos)* Una variable $X$ sigue una distribución $N(72,\,\sigma)$ y se sabe que $P(X\le80)=0{,}9772$.
+
+a) (0,5 puntos) Halla $\sigma$.
+
+b) (0,5 puntos) Calcula $P(X\ge76)$.
+
+c) (0,5 puntos) Halla $k$ tal que $P(X>k)=0{,}0228$.
+
+d) (0,5 puntos) Calcula $P(68<X<76)$.
+
+**17.** *(Tipo PAU · 2 puntos · competencial)* El salario mensual, en euros, de los trabajadores de una empresa sigue una distribución $N(1800,\,300)$.
+
+a) (0,5 puntos) Calcula la probabilidad de que un trabajador gane más de 2400 €.
+
+b) (0,5 puntos) Calcula la probabilidad de que gane entre 1500 y 2100 €.
+
+c) (0,5 puntos) Halla el salario mínimo del $10\,\%$ de los trabajadores mejor pagados. (El valor $0{,}90$ no aparece en la tabla: resuelve con el valor más cercano y con la interpolación.)
+
+d) (0,5 puntos) Interpreta el resultado de a).
+
+**18.** *(Tipo PAU · 2 puntos)* El $55\,\%$ de los votantes de una ciudad apoya una propuesta. Se encuestan 120 votantes elegidos al azar. Sea $X$ el número de ellos que la apoyan.
+
+a) (0,5 puntos) Justifica que $X$ se puede aproximar por una normal y escribe sus parámetros.
+
+b) (0,5 puntos) Calcula $P(X>70)$.
+
+c) (0,5 puntos) Calcula $P(X\ge60)$.
+
+d) (0,5 puntos) Calcula $P(60\le X\le72)$.
+
+**19.** *(Tipo PAU · 2 puntos · competencial)* Dos máquinas llenan botellas de 500 mL. El volumen que echa la primera sigue una $N(500,\,4)$ y el de la segunda, una $N(500,\,2)$.
+
+a) (0,5 puntos) Calcula la probabilidad de que una botella de la primera máquina tenga entre 497 y 503 mL.
+
+b) (0,5 puntos) Calcula la misma probabilidad para la segunda máquina.
+
+c) (0,5 puntos) Calcula, para cada máquina, la probabilidad de que una botella tenga menos de 495 mL.
+
+d) (0,5 puntos) Interpreta los resultados: ¿qué máquina es más precisa y por qué?
+
+**20.** *(Tipo PAU · 2 puntos)* Una variable $X$ toma los valores $0,1,2,3$ con probabilidades $0{,}1$; $k$; $0{,}4$ y $0{,}2$.
+
+a) (0,5 puntos) Halla $k$.
+
+b) (0,5 puntos) Calcula la media.
+
+c) (0,5 puntos) Calcula la varianza y la desviación típica.
+
+d) (0,5 puntos) Calcula $P(X\ge2)$.
+
+**21.** *(Tipo PAU · 2 puntos · competencial)* En una tómbola, el boleto cuesta 2 €. Con probabilidad $0{,}1$ da un premio de 10 €, con probabilidad $0{,}3$ da un premio de 2 € y con probabilidad $0{,}6$ no da premio. Sea $G$ la ganancia neta (premio menos precio).
+
+a) (0,5 puntos) Escribe la tabla de la distribución de $G$.
+
+b) (0,5 puntos) Calcula la ganancia media $E[G]$.
+
+c) (0,5 puntos) Calcula la desviación típica de $G$.
+
+d) (0,5 puntos) Interpreta el signo de $E[G]$.
+
+**22.** *(Tipo PAU · 2 puntos)* La variable $X$ tiene función de densidad $f(x)=k\,x$ para $0\le x\le2$ (y $0$ fuera).
+
+a) (0,5 puntos) Halla $k$.
+
+b) (0,5 puntos) Calcula $P(X\le1)$.
+
+c) (0,5 puntos) Calcula $P(X>1{,}5)$.
+
+d) (0,5 puntos) Calcula la media $\mu$.
+
+**23.** *(Tipo PAU · 2 puntos · competencial)* El $25\,\%$ de los hogares de un barrio tiene una bicicleta eléctrica. Se encuestan 8 hogares al azar, de forma independiente. Sea $X$ el número de hogares con bicicleta eléctrica.
+
+a) (0,5 puntos) Indica la distribución de $X$ y calcula $P(X=2)$.
+
+b) (0,5 puntos) Calcula $P(X\ge1)$.
+
+c) (0,5 puntos) Calcula $P(X\le2)$.
+
+d) (0,5 puntos) Calcula la media y la desviación típica e interpreta la media.
+
+**24.** *(Tipo PAU · 2 puntos)* Una variable $X$ sigue una distribución $N(\mu,\,12)$ y se sabe que $P(X\le100)=0{,}9505$.
+
+a) (0,5 puntos) Halla $\mu$.
+
+b) (0,5 puntos) Con ese valor de $\mu$, calcula $P(X\ge90)$.
+
+c) (0,5 puntos) Con ese valor de $\mu$, calcula $P(70<X<90)$.
+
+d) (0,5 puntos) Compara la probabilidad de b) con la de $P(X\le70)$ e interpreta la diferencia.
+
+**25.** *(Tipo PAU · 2 puntos)* Una aerolínea sabe que el $5\,\%$ de las personas con billete no se presenta al vuelo. Vende 260 billetes para un avión de 250 plazas. Sea $X$ el número de personas que no se presentan.
+
+a) (0,5 puntos) Justifica que $X$ se puede aproximar por una normal y escribe sus parámetros.
+
+b) (0,5 puntos) Calcula $P(X=13)$.
+
+c) (0,5 puntos) Hay sobreventa efectiva (más personas que plazas) si $X\le9$. Calcula esa probabilidad.
+
+d) (0,5 puntos) Interpreta el resultado de c) para la aerolínea.
+
+## Soluciones
+
+::: {.callout-note collapse="true"}
+## 1
+$\mu=0\cdot0{,}2+1\cdot0{,}4+2\cdot0{,}3+3\cdot0{,}1=0{,}4+0{,}6+0{,}3=1{,}3$. Como $\sum x_i^2p_i=0{,}4+4\cdot0{,}3+9\cdot0{,}1=0{,}4+1{,}2+0{,}9=2{,}5$, la varianza es $\sigma^2=2{,}5-1{,}3^2=0{,}81$ y $\sigma=\sqrt{0{,}81}=0{,}9$.
+:::
+
+::: {.callout-note collapse="true"}
+## 2
+El área es $\displaystyle\int_0^12x\,dx=[x^2]_0^1=1$ y $f\ge0$: es una densidad. $P(X\le0{,}5)=\displaystyle\int_0^{0{,}5}2x\,dx=0{,}5^2=0{,}25$. La media es $\mu=\displaystyle\int_0^1x\cdot2x\,dx=\left[\frac{2x^3}{3}\right]_0^1=\frac{2}{3}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 3
+a) $P(X=2)=\binom{6}{2}\cdot0{,}4^2\cdot0{,}6^4=15\cdot0{,}16\cdot0{,}1296=0{,}31104$.
+
+b) $P(X\ge1)=1-P(X=0)=1-0{,}6^6=1-0{,}046656=0{,}953344$.
+
+c) $\mu=np=6\cdot0{,}4=2{,}4$ y $\sigma=\sqrt{npq}=\sqrt{6\cdot0{,}4\cdot0{,}6}=\sqrt{1{,}44}=1{,}2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 4
+a) $P(X\le115)=P\!\left(Z\le\dfrac{115-100}{15}\right)=P(Z\le1)=0{,}8413$.
+
+b) $P(X>130)=P(Z>2)=1-P(Z\le2)=1-0{,}9772=0{,}0228$.
+
+c) $P(85<X<115)=P(-1<Z<1)=P(Z\le1)-P(Z\le-1)=0{,}8413-(1-0{,}8413)=0{,}6826$.
+:::
+
+::: {.callout-note collapse="true"}
+## 5
+a) $P(X\le62)=P\!\left(Z\le\dfrac{62-50}{8}\right)=P(Z\le1{,}5)=0{,}9332$.
+
+b) $P(X\ge44)=P(Z\ge-0{,}75)=P(Z\le0{,}75)=0{,}7734$.
+
+c) $P(40<X<56)=P(-1{,}25<Z<0{,}75)=0{,}7734-(1-0{,}8944)=0{,}6678$.
+:::
+
+::: {.callout-note collapse="true"}
+## 6
+a) En la tabla, $0{,}9332$ corresponde a $z=1{,}50$. Entonces $\dfrac{k-70}{10}=1{,}5$ y $k=70+10\cdot1{,}5=85$.
+
+b) En la tabla, $0{,}9772$ corresponde a $z=2{,}00$. Entonces $k=70+10\cdot2=90$.
+:::
+
+::: {.callout-note collapse="true"}
+## 7
+Se busca $z$ con $P(Z\le z)=0{,}80$. La tabla tiene $\Phi(0{,}84)=0{,}7995$ y $\Phi(0{,}85)=0{,}8023$: el $0{,}80$ no aparece.
+
+- *Valor más cercano*: $0{,}7995$ está a $0{,}0005$ y $0{,}8023$ a $0{,}0023$, luego $z=0{,}84$ y $k=100+20\cdot0{,}84=116{,}8$.
+- *Interpolación*: $z\approx0{,}84+0{,}01\cdot\dfrac{0{,}8000-0{,}7995}{0{,}8023-0{,}7995}\approx0{,}8418$ y $k\approx100+20\cdot0{,}8418=116{,}84$.
+
+Con cualquiera de los dos procedimientos, $k\approx116{,}8$.
+:::
+
+::: {.callout-note collapse="true"}
+## 8
+a) Con $n=100$ y $p=0{,}5$: $np=50\ge5$ y $nq=50\ge5$. Entonces $X\approx Y\sim N\left(50,\ \sqrt{100\cdot0{,}5\cdot0{,}5}\right)=N(50,\,5)$.
+
+b) $P(X=50)=P(49{,}5<Y<50{,}5)=P(-0{,}1<Z<0{,}1)=2\cdot0{,}5398-1=0{,}0796$.
+
+c) $P(X\ge58)=P(Y>57{,}5)=P\!\left(Z>\dfrac{57{,}5-50}{5}\right)=P(Z>1{,}5)=1-0{,}9332=0{,}0668$.
+
+d) $P(X>58)=P(X\ge59)=P(Y>58{,}5)=P(Z>1{,}7)=1-0{,}9554=0{,}0446$.
+:::
+
+::: {.callout-note collapse="true"}
+## 9
+a) En $B(40;\,0{,}1)$, $np=4<5$: **no** se puede aproximar por una normal.
+
+b) En $B(60;\,0{,}1)$, $np=6\ge5$ y $nq=54\ge5$: **sí**. $X\approx Y\sim N(6,\ \sqrt{60\cdot0{,}1\cdot0{,}9})=N(6;\,2{,}3238)$. Entonces $P(X\le4)=P(Y<4{,}5)=P\!\left(Z<\dfrac{4{,}5-6}{2{,}3238}\right)=P(Z<-0{,}65)=1-0{,}7422=0{,}2578$.
+:::
+
+::: {.callout-note collapse="true"}
+## 10
+a) $P(X\le36)=P\!\left(Z\le\dfrac{36-30}{6}\right)=P(Z\le1)=0{,}8413$.
+
+b) $P(X>42)=P(Z>2)=1-0{,}9772=0{,}0228$.
+
+c) $P(24<X<39)=P(-1<Z<1{,}5)=0{,}9332-(1-0{,}8413)=0{,}7745$.
+
+d) Algo más del $2\,\%$ de las entregas (un $2{,}28\,\%$) tarda más de 42 minutos, es decir, más de dos desviaciones típicas por encima de la media: es una demora poco habitual.
+:::
+
+::: {.callout-note collapse="true"}
+## 11
+a) $P(X<488)=P\!\left(Z<\dfrac{488-500}{12}\right)=P(Z<-1)=1-0{,}8413=0{,}1587$.
+
+b) $P(X>520)=P\!\left(Z>\dfrac{520-500}{12}\right)=P(Z>1{,}67)=1-0{,}9525=0{,}0475$.
+
+c) En la tabla, $0{,}9032$ corresponde a $z=1{,}30$. Entonces $k=500+12\cdot1{,}3=515{,}6$ g.
+
+d) El $15{,}87\,\%$ de los paquetes pesa menos de 488 g, lo que puede incumplir el peso indicado; en cambio, el $90{,}32\,\%$ pesa $515{,}6$ g o menos y solo el $4{,}75\,\%$ pesa más de 520 g. Centrar la máquina más alto reduciría los paquetes escasos.
+:::
+
+::: {.callout-note collapse="true"}
+## 12
+a) $X\sim B(10;\,0{,}2)$ y $P(X=2)=\binom{10}{2}\cdot0{,}2^2\cdot0{,}8^8=45\cdot0{,}04\cdot0{,}1678\approx0{,}3020$.
+
+b) $P(X\le1)=P(X=0)+P(X=1)=0{,}8^{10}+10\cdot0{,}2\cdot0{,}8^9=0{,}1074+0{,}2684=0{,}3758$.
+
+c) $P(X\ge1)=1-P(X=0)=1-0{,}8^{10}=1-0{,}1074=0{,}8926$.
+
+d) $\mu=np=10\cdot0{,}2=2$ y $\sigma=\sqrt{npq}=\sqrt{10\cdot0{,}2\cdot0{,}8}=\sqrt{1{,}6}\approx1{,}26$.
+:::
+
+::: {.callout-note collapse="true"}
+## 13
+a) $P(X<900)=P\!\left(Z<\dfrac{900-1000}{100}\right)=P(Z<-1)=1-0{,}8413=0{,}1587$.
+
+b) $P(900<X<1100)=P(-1<Z<1)=0{,}8413-(1-0{,}8413)=0{,}6826$.
+
+c) El número $Y$ de bombillas, entre 5, que duran menos de 900 h sigue $B(5;\,0{,}1587)$: $P(Y=1)=\binom{5}{1}\cdot0{,}1587\cdot0{,}8413^4\approx0{,}3975$.
+
+d) $\mu=np=5\cdot0{,}1587=0{,}7935$. De cada 5 bombillas, en promedio, menos de una (unas $0{,}79$) dura menos de 900 horas.
+:::
+
+::: {.callout-note collapse="true"}
+## 14
+a) $X\sim B(200;\,0{,}3)$ con $np=60\ge5$ y $nq=140\ge5$. Entonces $X\approx Y\sim N(60,\ \sqrt{200\cdot0{,}3\cdot0{,}7})=N(60;\,6{,}4807)$.
+
+b) $P(X\ge70)=P(Y>69{,}5)=P\!\left(Z>\dfrac{69{,}5-60}{6{,}4807}\right)=P(Z>1{,}47)=1-0{,}9292=0{,}0708$.
+
+c) $P(X\le55)=P(Y<55{,}5)=P\!\left(Z<\dfrac{55{,}5-60}{6{,}4807}\right)=P(Z<-0{,}69)=1-0{,}7549=0{,}2451$.
+
+d) $P(X=60)=P(59{,}5<Y<60{,}5)=P(-0{,}08<Z<0{,}08)=2\cdot0{,}5319-1=0{,}0638$.
+:::
+
+::: {.callout-note collapse="true"}
+## 15
+a) $X\sim B(150;\,0{,}02)$ y $np=3<5$: **no** se puede aproximar por una normal.
+
+b) $X\sim B(500;\,0{,}02)$, con $np=10\ge5$ y $nq=490\ge5$. Entonces $X\approx Y\sim N(10,\ \sqrt{500\cdot0{,}02\cdot0{,}98})=N(10;\,3{,}1305)$.
+
+c) $P(X\ge15)=P(Y>14{,}5)=P\!\left(Z>\dfrac{14{,}5-10}{3{,}1305}\right)=P(Z>1{,}44)=1-0{,}9251=0{,}0749$.
+
+d) $P(X<8)=P(X\le7)=P(Y<7{,}5)=P\!\left(Z<\dfrac{7{,}5-10}{3{,}1305}\right)=P(Z<-0{,}80)=1-0{,}7881=0{,}2119$. Es decir, en algo más del $21\,\%$ de los lotes de 500 piezas hay menos de 8 defectuosas.
+:::
+
+::: {.callout-note collapse="true"}
+## 16
+a) En la tabla, $0{,}9772$ corresponde a $z=2{,}00$. Entonces $\dfrac{80-72}{\sigma}=2$ y $\sigma=4$.
+
+b) $P(X\ge76)=P\!\left(Z\ge\dfrac{76-72}{4}\right)=P(Z\ge1)=1-0{,}8413=0{,}1587$.
+
+c) $P(X>k)=0{,}0228\Rightarrow P(X\le k)=0{,}9772$, que corresponde a $z=2{,}00$. Entonces $k=72+4\cdot2=80$.
+
+d) $P(68<X<76)=P(-1<Z<1)=0{,}8413-(1-0{,}8413)=0{,}6826$.
+:::
+
+::: {.callout-note collapse="true"}
+## 17
+a) $P(X>2400)=P\!\left(Z>\dfrac{2400-1800}{300}\right)=P(Z>2)=1-0{,}9772=0{,}0228$.
+
+b) $P(1500<X<2100)=P(-1<Z<1)=0{,}8413-(1-0{,}8413)=0{,}6826$.
+
+c) Se busca $k$ con $P(X>k)=0{,}10$, es decir, $P(Z\le z)=0{,}90$. La tabla tiene $\Phi(1{,}28)=0{,}8997$ y $\Phi(1{,}29)=0{,}9015$: el $0{,}90$ no aparece.
+
+- *Valor más cercano*: $0{,}8997$ está a $0{,}0003$ y $0{,}9015$ a $0{,}0015$, luego $z=1{,}28$ y $k=1800+300\cdot1{,}28=2184$ €.
+- *Interpolación*: $z\approx1{,}28+0{,}01\cdot\dfrac{0{,}9000-0{,}8997}{0{,}9015-0{,}8997}\approx1{,}2817$ y $k\approx1800+300\cdot1{,}2817=2184{,}5$ €.
+
+Con cualquiera de los dos procedimientos, el salario mínimo del $10\,\%$ mejor pagado es de unos $2184$ € (con la interpolación, $2184{,}5$ €).
+
+d) Solo el $2{,}28\,\%$ de los trabajadores gana más de 2400 €, es decir, más de dos desviaciones típicas por encima del salario medio.
+:::
+
+::: {.callout-note collapse="true"}
+## 18
+a) $X\sim B(120;\,0{,}55)$, con $np=66\ge5$ y $nq=54\ge5$. Entonces $X\approx Y\sim N(66,\ \sqrt{120\cdot0{,}55\cdot0{,}45})=N(66;\,5{,}4498)$.
+
+b) $P(X>70)=P(X\ge71)=P(Y>70{,}5)=P\!\left(Z>\dfrac{70{,}5-66}{5{,}4498}\right)=P(Z>0{,}83)=1-0{,}7967=0{,}2033$.
+
+c) $P(X\ge60)=P(Y>59{,}5)=P\!\left(Z>\dfrac{59{,}5-66}{5{,}4498}\right)=P(Z>-1{,}19)=P(Z<1{,}19)=0{,}8830$.
+
+d) $P(60\le X\le72)=P(59{,}5<Y<72{,}5)=P(-1{,}19<Z<1{,}19)=2\cdot0{,}8830-1=0{,}7660$.
+:::
+
+::: {.callout-note collapse="true"}
+## 19
+a) $P(497<X<503)=P\!\left(\dfrac{497-500}{4}<Z<\dfrac{503-500}{4}\right)=P(-0{,}75<Z<0{,}75)=2\cdot0{,}7734-1=0{,}5468$.
+
+b) $P(497<X<503)=P\!\left(-1{,}5<Z<1{,}5\right)=2\cdot0{,}9332-1=0{,}8664$.
+
+c) Primera máquina: $P(X<495)=P(Z<-1{,}25)=1-0{,}8944=0{,}1056$. Segunda máquina: $P(X<495)=P(Z<-2{,}5)=1-0{,}9938=0{,}0062$.
+
+d) La segunda máquina es más precisa: con la misma media, su menor desviación típica hace que el $86{,}64\,\%$ de las botellas esté entre 497 y 503 mL (frente al $54{,}68\,\%$) y que solo el $0{,}62\,\%$ tenga menos de 495 mL (frente al $10{,}56\,\%$).
+:::
+
+::: {.callout-note collapse="true"}
+## 20
+a) Las probabilidades suman $1$: $0{,}1+k+0{,}4+0{,}2=1$, luego $k=0{,}3$.
+
+b) $\mu=0\cdot0{,}1+1\cdot0{,}3+2\cdot0{,}4+3\cdot0{,}2=0{,}3+0{,}8+0{,}6=1{,}7$.
+
+c) $\sum x_i^2p_i=0{,}3+4\cdot0{,}4+9\cdot0{,}2=0{,}3+1{,}6+1{,}8=3{,}7$, luego $\sigma^2=3{,}7-1{,}7^2=0{,}81$ y $\sigma=0{,}9$.
+
+d) $P(X\ge2)=0{,}4+0{,}2=0{,}6$.
+:::
+
+::: {.callout-note collapse="true"}
+## 21
+a) La ganancia neta es premio menos 2 €: $G=8$ con probabilidad $0{,}1$, $G=0$ con $0{,}3$ y $G=-2$ con $0{,}6$.
+
+b) $E[G]=8\cdot0{,}1+0\cdot0{,}3+(-2)\cdot0{,}6=0{,}8+0-1{,}2=-0{,}4$ €.
+
+c) $E[G^2]=64\cdot0{,}1+0+4\cdot0{,}6=6{,}4+2{,}4=8{,}8$, luego $\sigma^2=8{,}8-(-0{,}4)^2=8{,}64$ y $\sigma=\sqrt{8{,}64}\approx2{,}94$ €.
+
+d) $E[G]=-0{,}4<0$: en promedio, quien juega **pierde** 0,40 € por boleto. El juego es desfavorable para el jugador (y favorable para la tómbola).
+:::
+
+::: {.callout-note collapse="true"}
+## 22
+a) El área debe valer $1$: $\displaystyle\int_0^2kx\,dx=\left[\frac{kx^2}{2}\right]_0^2=2k=1$, luego $k=\frac{1}{2}$.
+
+b) $P(X\le1)=\displaystyle\int_0^1\frac x2\,dx=\left[\frac{x^2}{4}\right]_0^1=\frac{1}{4}$.
+
+c) $P(X>1{,}5)=\displaystyle\int_{1{,}5}^2\frac x2\,dx=\left[\frac{x^2}{4}\right]_{1{,}5}^2=1-\dfrac{9}{16}=\dfrac{7}{16}$.
+
+d) $\mu=\displaystyle\int_0^2x\cdot\frac x2\,dx=\left[\frac{x^3}{6}\right]_0^2=\frac{4}{3}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 23
+a) $X\sim B(8;\,0{,}25)$ y $P(X=2)=\binom{8}{2}\cdot0{,}25^2\cdot0{,}75^6=28\cdot0{,}0625\cdot0{,}17798\approx0{,}3115$.
+
+b) $P(X\ge1)=1-P(X=0)=1-0{,}75^8=1-0{,}10011=0{,}8999$.
+
+c) $P(X\le2)=P(X=0)+P(X=1)+P(X=2)=0{,}10011+0{,}26697+0{,}31146=0{,}6785$.
+
+d) $\mu=np=8\cdot0{,}25=2$ y $\sigma=\sqrt{8\cdot0{,}25\cdot0{,}75}=\sqrt{1{,}5}\approx1{,}22$. De cada 8 hogares encuestados, en promedio 2 tienen bicicleta eléctrica.
+:::
+
+::: {.callout-note collapse="true"}
+## 24
+a) En la tabla, $0{,}9505$ corresponde a $z=1{,}65$. Entonces $\dfrac{100-\mu}{12}=1{,}65$, luego $\mu=100-12\cdot1{,}65=80{,}2$.
+
+b) $P(X\ge90)=P\!\left(Z\ge\dfrac{90-80{,}2}{12}\right)=P(Z\ge0{,}82)=1-0{,}7939=0{,}2061$.
+
+c) $P(70<X<90)=P(-0{,}85<Z<0{,}82)=0{,}7939-(1-0{,}8023)=0{,}5962$.
+
+d) $P(X\le70)=P(Z\le-0{,}85)=1-0{,}8023=0{,}1977$. Hay una probabilidad parecida ($0{,}2061$ frente a $0{,}1977$) de estar por encima de 90 que por debajo de 70, porque ambos valores están casi a la misma distancia de la media $80{,}2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 25
+a) $X\sim B(260;\,0{,}05)$, con $np=13\ge5$ y $nq=247\ge5$. Entonces $X\approx Y\sim N(13,\ \sqrt{260\cdot0{,}05\cdot0{,}95})=N(13;\,3{,}5143)$.
+
+b) $P(X=13)=P(12{,}5<Y<13{,}5)=P(-0{,}14<Z<0{,}14)=2\cdot0{,}5557-1=0{,}1114$.
+
+c) $P(X\le9)=P(Y<9{,}5)=P\!\left(Z<\dfrac{9{,}5-13}{3{,}5143}\right)=P(Z<-1)=1-0{,}8413=0{,}1587$.
+
+d) En aproximadamente el $15{,}87\,\%$ de los vuelos se presentarán más de 250 personas y habrá que dejar a alguien en tierra, de modo que la compañía debe valorar el coste de las compensaciones frente al de las plazas vacías.
+:::
