@@ -801,6 +801,48 @@ def fig_trozos():
            "A la izquierda, la factura del agua: dos rectas que se unen en el punto (10,14). A la derecha, el precio de un envío según el peso: tres tramos horizontales con saltos en 2 y 5 kilos")
 
 
+def fig_discontinuidades_ccss():
+    """Tema 05 CCSS: discontinuidad evitable, de salto finito y de salto infinito."""
+    kw = dict(w=250, h=215, pad=18)
+    a = Fig(-1, 5, -1.5, 7.5, **kw)
+    a.axes()
+    a.curve(lambda x: x + 2, -1, 5, color=NAVY, width=3.5)
+    _hueco(a, 2, 4)
+    a.text(2, 4, "(2, 4)", dx=10, dy=24, anchor="start", bold=True, size=12)
+    b = Fig(-1, 5, -1.5, 7.5, **kw)
+    b.axes()
+    b.curve(lambda x: x + 1, -1, 2, color=NAVY, width=3.5)
+    b.curve(lambda x: 5, 2, 5, color=CORAL, width=3.5)
+    _hueco(b, 2, 3); b.dot(2, 5, CORAL)
+    b.text(2, 3, "3", dx=-12, dy=18, anchor="end", bold=True, size=12); b.text(2, 5, "5", dx=-12, dy=-8, anchor="end", bold=True, size=12)
+    c = Fig(-1, 5, -6, 6, **kw)
+    c.axes()
+    c.line((2, -6), (2, 6), color=INK, width=1.5)
+    f = lambda x: 1 / (x - 2)
+    c.curve(f, -1, 1.9999, color=NAVY, width=3.5); c.curve(f, 2.0001, 5, color=NAVY, width=3.5)
+    panels([a, b, c], ["Evitable", "Salto finito", "Salto infinito"], APC / "05-limites-continuidad" / "fig-discontinuidades.svg",
+           "Tres discontinuidades en x igual a 2: evitable (un hueco en una recta), de salto finito (los límites laterales son 3 y 5) y de salto infinito (asíntota vertical de 1 entre x menos 2)")
+
+
+def fig_asintotas_ccss():
+    """Tema 05 CCSS: asíntotas vertical y horizontal de (2x+1)/(x-3) y oblicua de (x²-3x+3)/(x-1)."""
+    kw = dict(w=270, h=240, pad=16)
+    a = Fig(-5, 11, -7, 11, **kw)
+    a.axes(xt=(-4, 4, 8), yt=(-4, 4, 8))
+    a.line((3, -7), (3, 11), color=INK, width=1.5); a.line((-5, 2), (11, 2), color=INK, width=1.5)
+    f = lambda x: (2 * x + 1) / (x - 3)
+    a.curve(f, -5, 2.9995, color=NAVY, width=3.5); a.curve(f, 3.0005, 11, color=NAVY, width=3.5)
+    a.text(3, 10, "x = 3", anchor="end", dx=-6, bold=True, size=12); a.text(-4.8, 2, "y = 2", anchor="start", dy=-8, bold=True, size=12)
+    b = Fig(-3, 6, -8, 8, **kw)
+    b.axes(xt=(-2, 2, 4), yt=(-4, 4))
+    b.line((1, -8), (1, 8), color=INK, width=1.5); b.line((-3, -5), (6, 4), color=INK, width=1.5)
+    g = lambda x: (x * x - 3 * x + 3) / (x - 1)
+    b.curve(g, -3, 0.9995, color=NAVY, width=3.5); b.curve(g, 1.0005, 6, color=NAVY, width=3.5)
+    b.text(1, -7.2, "x = 1", anchor="start", dx=6, bold=True, size=12); b.text(5.9, -2.8, "y = x − 2", anchor="end", bold=True, size=12)
+    panels([a, b], ["Vertical y horizontal", "Vertical y oblicua"], APC / "05-limites-continuidad" / "fig-asintotas.svg",
+           "A la izquierda, la función (2x+1)/(x−3) con asíntota vertical x igual a 3 y horizontal y igual a 2. A la derecha, (x²−3x+3)/(x−1) con asíntota vertical x igual a 1 y oblicua y igual a x menos 2")
+
+
 if __name__ == "__main__":
     fig_asintotas(); fig_monotonia(); fig_area(); fig_normal()
     fig_dos_planos(); fig_recta_plano(); fig_dos_rectas(); fig_simetrico()
@@ -811,3 +853,4 @@ if __name__ == "__main__":
     fig_equilibrio()
     fig_region_panaderia(); fig_region_comedor(); fig_lp_casos()
     fig_polinomicas(); fig_racional(); fig_exp_log(); fig_trozos()
+    fig_discontinuidades_ccss(); fig_asintotas_ccss()
