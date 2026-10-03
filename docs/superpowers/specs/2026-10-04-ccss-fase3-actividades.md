@@ -1,6 +1,6 @@
 # Fase 3 · Actividades interactivas del curso Ciencias Sociales
 
-Estado: en curso (rama `claude/serene-cray-7a24d0`). Curso oculto; pendiente de revisión del autor al terminar.
+Estado: **hecha** el 2026-10-04 (rama `claude/serene-cray-7a24d0`): 11 páginas, 63 módulos (45 reutilizados `cs-*` y 18 propios `ccss-*`). Curso oculto; pendiente de revisión del autor.
 
 ## Diseño
 

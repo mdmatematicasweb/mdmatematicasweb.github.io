@@ -18,7 +18,8 @@ antes de empezar la siguiente fase**. Se trabaja fase a fase, con revisión del 
 ## Fases
 
 0 esqueleto (hecha) · 1 apuntes de los 11 temas (hecha) · 2 relaciones de ejercicios de los 11 temas (hecha, lotes 01–04,
-05–08, 09–11; pendiente de revisión) · 3 actividades · 4 PAU CCSS (`assets/pau-ccss/`, `scripts/ebau`) · 5 simulacro ·
+05–08, 09–11; revisada) · 3 actividades (hecha el 2026-10-04: 11 páginas, 63 módulos; pendiente de revisión; diseño en
+`docs/superpowers/specs/2026-10-04-ccss-fase3-actividades.md`; pruebas `node tests/gym.test.js` y `node tests/ccss-paginas.test.js`) · 4 PAU CCSS (`assets/pau-ccss/`, `scripts/ebau`) · 5 simulacro ·
 6 portada, navbar, sidebar y quitar la exclusión de `render`.
 
 ## Cómo se trabaja cada ejercicio o tema
