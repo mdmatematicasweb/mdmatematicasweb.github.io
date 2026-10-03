@@ -29,7 +29,7 @@ Actualizado el 2026-10-02.
 
 ## En curso (oculto)
 
-- **Curso 2º Bachillerato Ciencias Sociales** (`2-bachillerato-ccss`): fase 0 hecha (esqueleto oculto, 11 temas). Plan y decisiones en `docs/superpowers/specs/2026-10-03-curso-ccss.md`. Fase 1 (apuntes): temas 01–04 escritos y verificados con `scripts/ccss/verificar_NN.py`, pendientes de revisión; los temas 05–11 no se han empezado.
+- **Curso 2º Bachillerato Ciencias Sociales** (`2-bachillerato-ccss`): fase 0 hecha (esqueleto oculto, 11 temas). Plan y decisiones en `docs/superpowers/specs/2026-10-03-curso-ccss.md`. Fase 1 (apuntes): temas 01–08 escritos y verificados con `scripts/ccss/verificar_NN.py`, pendientes de revisión; los temas 09–11 no se han empezado.
 
 ## Siguiente
 
