@@ -18,6 +18,11 @@ TEMAS_EXTRA.forEach((t) => {
   Object.assign(extraVerify, require('./verify-gym-' + t + '.js'));
 });
 
+// Curso CCSS: ccss.js reutiliza módulos de Ciencias («cs-<origen>», mismo verificador) y ccss-*.js define los propios (verify-gym-ccss.js).
+require('../assets/gym/ccss.js');
+['ccss-algebra', 'ccss-funciones', 'ccss-inferencia'].forEach((f) => { if (fs.existsSync(path.join(__dirname, '../assets/gym/' + f + '.js'))) require('../assets/gym/' + f + '.js'); });
+Object.assign(extraVerify, require('./verify-gym-ccss.js'));
+
 const N = Number(process.env.GYM_N || 300);
 const { M, mmul, mI, det, rankOf, meq, flatten, checkAnswer, answerStrings } = G;
 
@@ -334,6 +339,7 @@ verify.sistemaxy = (ch) => {
 };
 
 Object.keys(extraVerify).forEach((id) => { assert(!verify[id], 'id de módulo repetido: ' + id); verify[id] = (ch) => extraVerify[id](ch, { assert, G, near, nearM, toNum, mulNum, rankNum, detNum }); });
+Object.entries(G.ccssAlias || {}).forEach(([id, src]) => { verify[id] = verify[src]; });
 Object.keys(G.modules).forEach((id) => assert(verify[id], id + ': falta verificador'));
 
 let total = 0;
