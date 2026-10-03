@@ -300,7 +300,7 @@
     if (spec.kind === 'expr') {
       const g = parseExpr(raw[0]);
       if (g === null) return { status: 'incomplete', cells: [false] };
-      const ok = exprClose(g, spec.value);
+      const ok = [spec.value].concat(spec.alt || []).some((v) => exprClose(g, v));   // alt: otros valores igual de válidos (p. ej. z = 1,64; 1,645 o 1,65)
       return { status: ok ? 'ok' : 'wrong', cells: [ok] };
     }
     if (spec.kind === 'choice') {
