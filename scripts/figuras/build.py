@@ -992,6 +992,60 @@ def fig_areas_entre_curvas_ccss():
            "A la izquierda, el excedente del consumidor es el triángulo entre la recta de demanda y el precio de equilibrio 10, de área 800. A la derecha, el área entre la parábola f(x) igual a menos x al cuadrado más 4x y la recta g(x) igual a x entre 0 y 3, igual a 9 medios")
 
 
+def fig_venn_ccss():
+    """Tema 09 CCSS: 200 personas encuestadas, A = transporte público, B = bicicleta."""
+    g = Fig(-2.7, 2.7, -1.75, 1.75, w=520, h=330, pad=14)
+    cA, cB, r = -0.7, 0.7, 1.2
+    rx = g.X(r) - g.X(0)
+    e = g.el
+    e.append(f'<rect x="{g.X(-2.55):.1f}" y="{g.Y(1.6):.1f}" width="{g.X(2.55) - g.X(-2.55):.1f}" height="{g.Y(-1.6) - g.Y(1.6):.1f}" fill="none" stroke="{INK}" stroke-width="2"/>')
+    e.append(f'<circle cx="{g.X(cA):.1f}" cy="{g.Y(0):.1f}" r="{rx:.1f}" fill="{MINT}" fill-opacity="0.55" stroke="none"/>')
+    e.append(f'<circle cx="{g.X(cB):.1f}" cy="{g.Y(0):.1f}" r="{rx:.1f}" fill="{CORAL}" fill-opacity="0.45" stroke="none"/>')
+    e.append(f'<path d="{g.path(_lens(cA, cB, r))} Z" fill="{YELLOW}" stroke="none"/>')
+    for c in (cA, cB):
+        e.append(f'<circle cx="{g.X(c):.1f}" cy="{g.Y(0):.1f}" r="{rx:.1f}" fill="none" stroke="{INK}" stroke-width="2.5"/>')
+    g.text(-1.35, 0, "80", bold=True, size=20, dy=7); g.text(0, 0, "40", bold=True, size=20, dy=7); g.text(1.35, 0, "50", bold=True, size=20, dy=7)
+    g.text(-2.3, -1.3, "30", bold=True, size=20, anchor="start", dy=7)
+    g.text(-1.45, 1.38, "A: transporte público (120)", bold=True, size=13, dy=-4)
+    g.text(1.45, 1.38, "B: bicicleta (90)", bold=True, size=13, dy=-4)
+    g.text(2.45, -1.35, "n = 200", bold=True, size=13, anchor="end", dy=6)
+    g.save(APC / "09-probabilidad" / "fig-venn.svg", "Diagrama de Venn de 200 personas: 80 solo usan transporte público, 40 ambos medios, 50 solo bicicleta y 30 ninguno")
+
+
+def fig_arbol_ccss():
+    """Tema 09 CCSS: árbol de la aseguradora (riesgo del cliente y siniestro)."""
+    w, h = 600, 340
+    g = Fig(0, 1, 0, 1, w=w, h=h, pad=0)
+    e = g.el
+    x0, x1, x2 = 30, 210, 380
+    y1 = (60, 170, 280)
+    p1 = ("Bajo 0,50", "Medio 0,30", "Alto 0,20")
+    p2 = ("0,02", "0,05", "0,12")
+    q2 = ("0,98", "0,95", "0,88")
+    fin = ("0,010", "0,490", "0,015", "0,285", "0,024", "0,176")
+
+    def lin(xa, ya, xb, yb, col=INK):
+        e.append(f'<line x1="{xa}" y1="{ya}" x2="{xb}" y2="{yb}" stroke="{col}" stroke-width="2.5" stroke-linecap="round"/>')
+
+    def tx(x, y, t, size=14, anchor="middle", bold=False, col=INK, raw=False):
+        wt = ' font-weight="700"' if bold else ""
+        e.append(f'<text x="{x}" y="{y}" text-anchor="{anchor}" font-size="{size}" fill="{col}"{wt}>{t if raw else escape(t)}</text>')
+    e.append(f'<circle cx="{x0}" cy="170" r="6" fill="{YELLOW}" stroke="{INK}" stroke-width="2"/>')
+    SC = 'S<tspan dy="-6" font-size="10">C</tspan>'
+    for i, yy in enumerate(y1):
+        lin(x0, 170, x1, yy)
+        tx((x0 + x1) / 2 - 16, (170 + yy) / 2 + (-26 if yy < 170 else -10 if yy == 170 else 40), p1[i], bold=True, col=NAVY)
+        e.append(f'<circle cx="{x1}" cy="{yy}" r="6" fill="{MINT}" stroke="{INK}" stroke-width="2"/>')
+        for j, (yy2, lab, pr) in enumerate(((yy - 26, "S", p2[i]), (yy + 26, SC, q2[i]))):
+            lin(x1, yy, x2, yy2, col=CORAL if j == 0 else INK)
+            tx((x1 + x2) / 2, (yy + yy2) / 2 + (-6 if j == 0 else 18), pr, size=13)
+            e.append(f'<circle cx="{x2}" cy="{yy2}" r="5" fill="{PAPER}" stroke="{INK}" stroke-width="2"/>')
+            tx(x2 + 12, yy2 + 5, lab, size=15, anchor="start", bold=True, raw=True)
+            tx(x2 + 56, yy2 + 5, "→ " + fin[2 * i + j], size=14, anchor="start", col="#C4413A" if j == 0 else INK, bold=(j == 0))
+    tx(w - 8, 22, "S = hay siniestro", size=13, anchor="end", bold=True)
+    g.save(APC / "09-probabilidad" / "fig-arbol.svg", "Diagrama de árbol: tres tipos de cliente con probabilidades 0,50, 0,30 y 0,20, y probabilidad de siniestro 0,02, 0,05 y 0,12 en cada uno")
+
+
 if __name__ == "__main__":
     fig_asintotas(); fig_monotonia(); fig_area(); fig_normal()
     fig_dos_planos(); fig_recta_plano(); fig_dos_rectas(); fig_simetrico()
@@ -1006,3 +1060,4 @@ if __name__ == "__main__":
     fig_tangente_coste(); fig_derivabilidad_ccss()
     fig_estudio_funciones(); fig_estudio_racional(); fig_optimizacion()
     fig_area_bajo_curva_ccss(); fig_area_signo_ccss(); fig_areas_entre_curvas_ccss()
+    fig_venn_ccss(); fig_arbol_ccss()
