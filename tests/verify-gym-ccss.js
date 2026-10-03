@@ -147,4 +147,79 @@ module.exports = {
     if (d.tipo === 'incremento') assert(near(ans, simpson(d.lo, d.hi), 1e-6));
     else assert(near(ans, d.F0 + simpson(0, d.hi), 1e-6));
   },
+
+  // ---------- Inferencia (tema 11) ----------
+  // Φ por integración de Simpson (independiente de la serie del generador); tabla a 4 decimales; z a centésimas.
+  'ccss-inf-zcritico': (ch, { assert }) => {
+    const { nivel, z, alt } = ch.data;
+    const Phi = (zz) => { const n = 4000, h = zz / n, f = (t) => Math.exp(-t * t / 2) / Math.sqrt(2 * Math.PI); let s = f(0) + f(zz); for (let i = 1; i < n; i++) s += f(i * h) * (i % 2 ? 4 : 2); return 0.5 + s * h / 3; };
+    const target = 1 - (1 - nivel / 100) / 2;
+    assert(Math.abs(Phi(z) - target) < 6e-4, 'Φ(z) ≈ ' + target);
+    alt.forEach((a) => assert(Math.abs(Phi(a) - target) < 6e-4));
+    assert(JSON.stringify([nivel, z]) !== undefined);
+    assert(nivel === 95 ? alt.length === 0 : alt.length === 2 && alt[0] < z && z < alt[1]);
+  },
+  'ccss-inf-xbar': (ch, { assert }) => {
+    const d = ch.data;
+    const phi = (t) => Math.exp(-t * t / 2) / Math.sqrt(2 * Math.PI);
+    const PhiPos = (z) => { const n = 4000, h = z / n; let s = phi(0) + phi(z); for (let i = 1; i < n; i++) s += phi(i * h) * (i % 2 ? 4 : 2); return 0.5 + s * h / 3; };
+    const r4 = (x) => Math.round(x * 1e4) / 1e4;
+    const T = (z) => (z >= 0 ? r4(PhiPos(z)) : r4(1 - r4(PhiPos(-z))));
+    // error típico por otra vía
+    const se = d.var === 'media' ? d.sg / Math.sqrt(d.n) : Math.sqrt(d.mu * (1 - d.mu) / d.n);
+    assert(near(se, d.se, 1e-9), 'error típico');
+    assert(d.n >= 30);
+    const exp = d.cola === 'lt' ? T(d.zA) : d.cola === 'gt' ? r4(1 - T(d.zA)) : r4(T(d.zB) - T(d.zA));
+    assert(near(ch.answer.value, exp, 1e-9), 'prob ' + exp + ' vs ' + ch.answer.value);
+    assert(Math.abs(d.zA) <= 2.6 && (d.zB === null || Math.abs(d.zB) <= 2.6));
+  },
+  'ccss-inf-ic-media': (ch, { assert }) => {
+    const d = ch.data;
+    const E = (z) => z * d.sg / Math.sqrt(d.n);
+    assert(d.n >= 30 && d.sg > 0 && near(d.sg / Math.sqrt(d.n), d.se, 1e-9));
+    if (d.pide === 'err') { assert(near(ch.answer.value, E(d.z), 1e-9)); d.alt.forEach((z, i) => assert(near(ch.answer.alt[i], E(z), 1e-9))); }
+    else {
+      const [lo, hi] = ch.answer.parts;
+      assert(near(lo.value, d.xb - E(d.z), 1e-9) && near(hi.value, d.xb + E(d.z), 1e-9));
+      assert(near((lo.value + hi.value) / 2, d.xb, 1e-9), 'centrado en la media muestral');
+      d.alt.forEach((z, i) => assert(near(lo.alt[i], d.xb - E(z), 1e-9) && near(hi.alt[i], d.xb + E(z), 1e-9)));
+    }
+  },
+  'ccss-inf-ic-prop': (ch, { assert }) => {
+    const d = ch.data;
+    const ph = d.k / d.n, E = (z) => z * Math.sqrt(ph * (1 - ph) / d.n);
+    assert(near(ph, d.ph, 1e-12) && d.n >= 30);
+    if (d.pide === 'err') assert(near(ch.answer.value, E(d.z), 1e-9));
+    else {
+      const [lo, hi] = ch.answer.parts;
+      assert(near(lo.value, ph - E(d.z), 1e-9) && near(hi.value, ph + E(d.z), 1e-9));
+      assert(lo.value > 0 && hi.value < 1);
+      d.alt.forEach((z, i) => assert(near(lo.alt[i], ph - E(z), 1e-9) && near(hi.alt[i], ph + E(z), 1e-9)));
+    }
+  },
+  'ccss-inf-tamano': (ch, { assert }) => {
+    const d = ch.data;
+    const need = (z) => (d.tipo === 'media' ? Math.pow(z * d.sg / d.E, 2) : z * z * d.pp * (1 - d.pp) / (d.E * d.E));
+    const ns = d.zs.map((z) => Math.ceil(need(z)));
+    assert(JSON.stringify(ns) === JSON.stringify(d.ns));
+    d.zs.forEach((z, i) => {
+      const n = ns[i];
+      // n cumple el error pedido y n-1 no lo cumple (mínimo)
+      const err = (m) => (d.tipo === 'media' ? z * d.sg / Math.sqrt(m) : z * Math.sqrt(d.pp * (1 - d.pp) / m));
+      assert(err(n) <= d.E + 1e-12 && err(n - 1) > d.E, 'mínimo para z=' + z);
+    });
+    assert(ch.answer.value === ns[0] && JSON.stringify(ch.answer.alt) === JSON.stringify(ns.slice(1)));
+  },
+  'ccss-inf-relacion': (ch, { assert }) => {
+    const d = ch.data;
+    if (d.tipo === 'numerica') {
+      assert(near(Math.sqrt(d.n1 / d.n0) * (d.E1 / d.E0), 1, 1e-12), 'E ∝ 1/√n');
+      assert(ch.answer.value.n / ch.answer.value.d === d.E1 && Number.isInteger(d.E1));
+    } else if (d.tipo === 'cualitativa') {
+      assert(ch.answer.options.length === d.n && Number(ch.answer.value) === d.c);
+    } else {
+      assert(d.order.length === 4 && ch.answer.options[Number(ch.answer.value)].startsWith('Con una confianza del $95'));
+      assert(new Set(ch.answer.options).size === 4);
+    }
+  },
 };
