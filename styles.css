@@ -376,3 +376,10 @@ body.quarto-dark div.aside, body.quarto-dark aside, body.quarto-dark .column-mar
   color: var(--md-muted);
 }
 .barrow-lab figcaption { color: var(--md-text); }
+
+/* Fórmulas destacadas más anchas que la pantalla: se desplazan en su propia caja en vez de ensanchar toda la página (móvil) */
+mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+/* Tablas más anchas que la pantalla (p. ej. la tabla de la normal): se desplazan dentro de su caja */
+@media (max-width: 767.98px) {
+  main table { display: block; max-width: 100%; overflow-x: auto; }
+}
