@@ -283,7 +283,7 @@ def panels(figs, titles, path, alt, gap=10):
     h = max(f.h for f in figs) + 40 + gap
     out, x = [], gap
     for f, t in zip(figs, titles):
-        out.append(f'<text x="{x + f.w / 2:.1f}" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="{INK}">{escape(t)}</text>')
+        out.append(f'<text x="{x + f.w / 2:.1f}" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="{INK}">{t if "<tspan" in t else escape(t)}</text>')
         out.append(f'<g transform="translate({x},34)"><rect x="1" y="1" width="{f.w - 2}" height="{f.h - 2}" fill="{PAPER}" stroke="{INK}" stroke-width="2"/>' + "".join(f.el) + "</g>")
         x += f.w + gap
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" font-family="{FONT}" role="img">'
@@ -697,7 +697,7 @@ def fig_lp_casos():
     a.line((30, 20), (35, 10), color=CORAL, width=7, dash="1 0")
     a.line((40, 0), (18, 44), color=INK, width=1.5, dash="5 4")   # 40x + 20y = 1600, paralela al lado CD
     a.dot(30, 20, YELLOW); a.dot(35, 10, YELLOW)
-    a.text(30, 20, "C", dx=-12, dy=-8, bold=True, size=15); a.text(35, 10, "D", dx=10, dy=-8, bold=True, size=15)
+    a.text(30, 20, "C", dx=17, dy=-4, bold=True, size=15); a.text(35, 10, "D", dx=17, dy=6, bold=True, size=15)
     a.text(3, 4.5, "F = 1600", anchor="start", bold=True, size=12)
     b = Fig(-1, 13, -1.5, 16, **kw)
     _region(b, [(0, 12), (2, 6), (8, 0), (13, 0), (13, 16), (0, 16)])
@@ -749,7 +749,7 @@ def fig_racional():
     f = lambda x: (x + 1) / (x - 1)
     b.curve(f, -5, 0.9995, color=NAVY, width=3.5); b.curve(f, 1.0005, 7, color=NAVY, width=3.5)
     b.dot(0, -1, YELLOW); b.dot(-1, 0, YELLOW)
-    b.text(1, 5.3, "x = 1", anchor="end", dx=-6, bold=True, size=12); b.text(-4.8, 1, "y = 1", anchor="start", dy=-8, bold=True, size=12)
+    b.text(1, -4.6, "x = 1", anchor="start", dx=6, bold=True, size=12); b.text(-4.8, 1, "y = 1", anchor="start", dy=-8, bold=True, size=12)
     panels([a, b], ["Coste medio de producción", "f(x) = (x + 1)/(x − 1)"], APC / "04-funciones" / "fig-racional.svg",
            "A la izquierda el coste medio, una hipérbola que se acerca a la asíntota horizontal y igual a 20. A la derecha la función racional x más 1 entre x menos 1, con asíntotas vertical x igual a 1 y horizontal y igual a 1")
 
@@ -902,7 +902,7 @@ def fig_estudio_funciones():
     b.text(10, 10 / math.e, "máx (10; 3,68)", dy=-14, dx=6, anchor="start", bold=True, size=12)
     b.text(20, 20 / math.e ** 2, "inflexión (20; 2,71)", dx=12, dy=-12, anchor="start", bold=True, size=12)
     b.text(60, 0, "x", anchor="end", dy=-8, size=13)
-    panels([a, b], ["B(t) = t³ − 9t² + 24t − 10", "V(x) = x·e^(−x/10)"], APC / "07-aplicaciones-derivada" / "fig-estudio-funciones.svg",
+    panels([a, b], ["B(t) = t³ − 9t² + 24t − 10", 'V(x) = x·e<tspan dy="-7" font-size="11">−x/10</tspan>'], APC / "07-aplicaciones-derivada" / "fig-estudio-funciones.svg",
            "A la izquierda, un polinomio de grado 3 con un máximo relativo en t igual a 2, un mínimo en t igual a 4 y un punto de inflexión en t igual a 3. A la derecha, las ventas en función de la inversión publicitaria, con máximo en 10, inflexión en 20 y asíntota horizontal y igual a 0")
 
 
@@ -910,7 +910,7 @@ def fig_estudio_racional():
     """Tema 07 CCSS: estudio completo de f(x) = x²/(x-1)."""
     f = lambda x: x * x / (x - 1)
     g = Fig(-6.5, 8.5, -9, 12, w=520, h=360)
-    g.axes(xt=(-4, -2, 2, 4, 6, 8), yt=(-8, -4, 4, 8))
+    g.axes(xt=(-4, 2, 4, 6, 8), yt=(-8, -4, 4, 8))
     g.line((1, -9), (1, 12), color=INK, width=1.5); g.line((-6.5, -5.5), (8.5, 9.5), color=INK, width=1.5)
     g.curve(f, -6.5, 0.9995, color=NAVY, width=3.5); g.curve(f, 1.0005, 8.5, color=NAVY, width=3.5)
     g.dot(0, 0, CORAL); g.dot(2, 4, "#2a8f82")
@@ -931,7 +931,7 @@ def fig_optimizacion():
     a.line((20, 0), (20, 20), width=1.2); a.dot(20, 20, YELLOW)
     a.text(20, 20, "mínimo (20, 20)", dx=14, dy=26, anchor="start", bold=True, size=12)
     a.text(60, 31, "Cm", color=NAVY, bold=True, size=14, dy=-12); a.text(55, 55, "C′", color="#C4413A", bold=True, size=14, dx=-14)
-    b = Fig(-4, 55, -120, 1400, **kw)
+    b = Fig(-9, 55, -120, 1400, **kw)
     b.axes(xt=(10, 25, 40, 50), yt=(500, 1000))
     b.curve(lambda p: p * (100 - 2 * p), 0, 50, color=NAVY, width=3.5)
     b.line((25, 0), (25, 1250), width=1.2); b.dot(25, 1250, YELLOW)
@@ -1097,10 +1097,11 @@ def fig_intervalo_ccss():
     a.region(phi, lambda z: 0, -3.7, -1.96, color=CORAL)
     a.region(phi, lambda z: 0, -1.96, 1.96, color=YELLOW)
     a.region(phi, lambda z: 0, 1.96, 3.7, color=CORAL)
-    a.axes(xt=(0,))
+    a.axes()
+    a.text(0, 0, "0", dx=-10, dy=18)
     a.curve(phi, -3.7, 3.7, color=NAVY, width=3.5)
     a.text(-1.96, 0, "−1,96", dy=18, bold=True, size=11); a.text(1.96, 0, "1,96", dy=18, bold=True, size=11)
-    a.text(0, 0.19, "1 − α", bold=True, size=15, anchor="start", dx=10); a.text(0, 0.14, "= 0,95", bold=True, size=14, anchor="start", dx=10)
+    a.text(0, 0.105, "1 − α", bold=True, size=14, anchor="start", dx=8); a.text(0, 0.06, "= 0,95", bold=True, size=13, anchor="start", dx=8)
     a.text(-3.05, 0.1, "α/2", bold=True, size=12, color="#C4413A"); a.text(3.05, 0.1, "α/2", bold=True, size=12, color="#C4413A")
     b = Fig(-250, 1780, -2.2, 24, **kw)
     b.axes(xt=(500, 1000, 1500), yt=(5, 10, 15, 20))

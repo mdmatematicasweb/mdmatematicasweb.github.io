@@ -44,5 +44,5 @@ antes de empezar la siguiente fase**. Se trabaja fase a fase, con revisión del 
 - Número de ejercicios por tema (básicos y PAU).
 - Los datos que se cambiaron para que saliera bonito.
 - Qué ejercicios dieron problemas y cómo se arreglaron.
-- Lo que no se ha podido comprobar (Quarto no está instalado: nada se ha renderizado).
+- Lo que no se ha podido comprobar (Quarto 1.10.18 está instalado: `quarto render ruta/index.qmd` renderiza un tema suelto).
 - Y esperar la revisión del usuario.
