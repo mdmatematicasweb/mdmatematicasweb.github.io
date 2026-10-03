@@ -76,9 +76,10 @@ class Fig:
     def dot(self, x, y, color=CORAL):
         self.el.append(f'<circle cx="{self.X(x):.1f}" cy="{self.Y(y):.1f}" r="5.5" fill="{color}" stroke="{INK}" stroke-width="2"/>')
 
-    def text(self, x, y, s, dx=0, dy=0, anchor="middle", size=14, color=INK, bold=False):
+    def text(self, x, y, s, dx=0, dy=0, anchor="middle", size=14, color=INK, bold=False, raw=False):
+        """raw=True inserta s tal cual (con <tspan> para exponentes y subíndices, que no dependen de la fuente)."""
         w = ' font-weight="700"' if bold else ""
-        self.el.append(f'<text x="{self.X(x)+dx:.1f}" y="{self.Y(y)+dy:.1f}" text-anchor="{anchor}" font-size="{size}" fill="{color}"{w}>{escape(s)}</text>')
+        self.el.append(f'<text x="{self.X(x)+dx:.1f}" y="{self.Y(y)+dy:.1f}" text-anchor="{anchor}" font-size="{size}" fill="{color}"{w}>{s if raw else escape(s)}</text>')
 
     def save(self, path, title):
         svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {self.w} {self.h}" width="{self.w}" height="{self.h}" font-family="{FONT}" role="img">'
@@ -708,6 +709,98 @@ def fig_lp_casos():
            "Dos casos especiales: una recta de nivel paralela a un lado de la región, que da infinitas soluciones óptimas, y una región no acotada donde la función objetivo crece sin límite")
 
 
+def _hueco(g, x, y):
+    """Punto abierto (el valor no pertenece a ese tramo)."""
+    g.el.append(f'<circle cx="{g.X(x):.1f}" cy="{g.Y(y):.1f}" r="5.5" fill="{PAPER}" stroke="{INK}" stroke-width="2.2"/>')
+
+
+def fig_polinomicas():
+    """Tema 04 CCSS: recta de costes e ingresos (umbral de rentabilidad) y parábola de ingresos."""
+    kw = dict(w=270, h=240, pad=16)
+    a = Fig(-24, 138, -700, 8300, **kw)
+    a.axes(xt=(40, 80, 120), yt=(2000, 4000, 6000))
+    a.curve(lambda x: 60 * x, 0, 138, color=CORAL, width=3.5)
+    a.curve(lambda x: 2000 + 35 * x, 0, 138, color=NAVY, width=3.5)
+    a.line((80, 0), (80, 4800), width=1.3); a.dot(80, 4800, YELLOW)
+    a.text(80, 4800, "(80; 4800)", dx=-6, dy=-14, anchor="end", bold=True, size=12)
+    a.text(112, 6720, "I", color="#C4413A", bold=True, size=15, dx=8, dy=-16)
+    a.text(112, 5920, "C", color=NAVY, bold=True, size=15, dx=8, dy=22)
+    b = Fig(-4, 34, -140, 1060, **kw)
+    b.axes(xt=(10, 20, 30), yt=(300, 600, 900))
+    b.curve(lambda q: 120 * q - 4 * q * q, 0, 30, color=CORAL, width=3.5)
+    b.line((15, 0), (15, 900), width=1.3); b.dot(15, 900, YELLOW)
+    b.text(15, 900, "vértice (15, 900)", dy=-12, bold=True, size=12)
+    panels([a, b], ["Recta: umbral de rentabilidad", "Parábola: ingreso I(p)"], APC / "04-funciones" / "fig-polinomicas.svg",
+           "A la izquierda, la recta de ingresos y la de costes se cortan en el umbral de rentabilidad de 80 unidades. A la derecha, la parábola de ingresos con su vértice en precio 15 e ingreso 900")
+
+
+def fig_racional():
+    """Tema 04 CCSS: coste medio (hipérbola con asíntotas) y función racional (x+1)/(x-1)."""
+    kw = dict(w=270, h=240, pad=16)
+    a = Fig(-10, 108, -8, 88, **kw)
+    a.axes(xt=(25, 50, 75, 100), yt=(20, 40, 60, 80))
+    a.line((0, 20), (108, 20), color=INK, width=1.5)
+    a.curve(lambda x: 20 + 500 / x, 6, 108, color=CORAL, width=3.5)
+    a.text(104, 20, "y = 20", anchor="end", dy=18, bold=True, size=12)
+    a.text(95, 42, "Cm(x) = 20 + 500/x", anchor="end", dy=-6, bold=True, size=12, color="#C4413A")
+    b = Fig(-5, 7, -5, 6, **kw)
+    b.axes(xt=(-4, -2, 2, 4, 6), yt=(-4, -2, 2, 4))
+    b.line((1, -5), (1, 6), color=INK, width=1.5); b.line((-5, 1), (7, 1), color=INK, width=1.5)
+    f = lambda x: (x + 1) / (x - 1)
+    b.curve(f, -5, 0.9995, color=NAVY, width=3.5); b.curve(f, 1.0005, 7, color=NAVY, width=3.5)
+    b.dot(0, -1, YELLOW); b.dot(-1, 0, YELLOW)
+    b.text(1, 5.3, "x = 1", anchor="end", dx=-6, bold=True, size=12); b.text(-4.8, 1, "y = 1", anchor="start", dy=-8, bold=True, size=12)
+    panels([a, b], ["Coste medio de producción", "f(x) = (x + 1)/(x − 1)"], APC / "04-funciones" / "fig-racional.svg",
+           "A la izquierda el coste medio, una hipérbola que se acerca a la asíntota horizontal y igual a 20. A la derecha la función racional x más 1 entre x menos 1, con asíntotas vertical x igual a 1 y horizontal y igual a 1")
+
+
+def fig_exp_log():
+    """Tema 04 CCSS: exponenciales creciente y decreciente, y logaritmo como inversa de la exponencial."""
+    a = Fig(-3.2, 3.2, -1.2, 8.4, w=270, h=240, pad=16)
+    a.axes(xt=(-2, -1, 1, 2), yt=(2, 4, 6))
+    a.curve(lambda x: 2 ** x, -3.2, 3.2, color=NAVY, width=3.5)
+    a.curve(lambda x: 0.5 ** x, -3.2, 3.2, color=CORAL, width=3.5)
+    a.dot(0, 1, YELLOW)
+    a.text(1.9, 7.4, 'y = 2<tspan dy="-6" font-size="9">x</tspan>', anchor="end", color=NAVY, bold=True, size=13, raw=True)
+    a.text(-1.85, 4.0, '(1/2)<tspan dy="-6" font-size="9">x</tspan>', anchor="start", color="#C4413A", bold=True, size=13, raw=True)
+    b = Fig(-2, 7.2, -2, 7.2, w=240, h=240, pad=16)
+    b.axes(xt=(2, 4, 6), yt=(2, 4, 6))
+    b.line((-2, -2), (7.2, 7.2), color=INK, width=1.5)
+    b.curve(lambda x: 2 ** x, -2, 2.8, color=NAVY, width=3.5)
+    b.curve(lambda x: math.log2(x), 0.02, 7.2, color=CORAL, width=3.5)
+    b.dot(0, 1, YELLOW); b.dot(1, 0, YELLOW)
+    b.text(0.3, 6.8, 'y = 2<tspan dy="-6" font-size="9">x</tspan>', anchor="start", color=NAVY, bold=True, size=13, raw=True)
+    b.text(7.1, 3.7, 'y = log<tspan dy="4" font-size="9">2</tspan><tspan dy="-4"> x</tspan>', anchor="end", color="#C4413A", bold=True, size=13, raw=True)
+    b.text(6.4, 7.0, "y = x", anchor="end", bold=True, size=12, dx=-6, dy=18)
+    panels([a, b], ["Exponencial: crece o decrece", "El logaritmo es la inversa"], APC / "04-funciones" / "fig-exp-log.svg",
+           "A la izquierda las exponenciales 2 elevado a x, creciente, y un medio elevado a x, decreciente, que pasan por el punto (0,1). A la derecha la exponencial y el logaritmo en base 2, simétricos respecto de la recta y igual a x")
+
+
+def fig_trozos():
+    """Tema 04 CCSS: tarifa de agua (continua, a trozos) y tarifa de envío (con saltos)."""
+    kw = dict(w=270, h=240, pad=16)
+    a = Fig(-3, 32, -4, 48, **kw)
+    a.axes(xt=(10, 20, 30), yt=(10, 20, 30, 40))
+    a.curve(lambda x: 5 + 0.9 * x, 0, 10, color=NAVY, width=3.5)
+    a.curve(lambda x: 1.5 * x - 1, 10, 32, color=CORAL, width=3.5)
+    a.line((10, 0), (10, 14), width=1.3); a.dot(10, 14, YELLOW)
+    a.dot(0, 5, YELLOW)
+    a.text(0, 5, "5", dx=14, dy=18, bold=True, size=12)
+    a.text(10, 14, "(10, 14)", dx=-8, dy=-10, anchor="end", bold=True, size=12)
+    a.text(20, 29, "1,5x − 1", color="#C4413A", bold=True, size=12, dx=-10, dy=30)
+    b = Fig(-1, 8.6, -1.2, 12.5, **kw)
+    b.axes(xt=(2, 5, 8), yt=(4, 7, 10))
+    for (x0, x1, v) in ((0, 2, 4), (2, 5, 7), (5, 8.4, 10)):
+        b.line((x0, v), (x1, v), color=NAVY, width=3.5, dash="1 0")
+        _hueco(b, x0, v)
+    for x1, v in ((2, 4), (5, 7)):
+        b.dot(x1, v, NAVY)
+    b.line((8.4, 10), (8.4, 10), color=NAVY, width=3.5, dash="1 0")
+    b.text(8.5, 10, "→", anchor="end", dy=-8, bold=True, size=14)
+    panels([a, b], ["Tarifa de agua (continua)", "Tarifa de envío (con saltos)"], APC / "04-funciones" / "fig-trozos.svg",
+           "A la izquierda, la factura del agua: dos rectas que se unen en el punto (10,14). A la derecha, el precio de un envío según el peso: tres tramos horizontales con saltos en 2 y 5 kilos")
+
+
 if __name__ == "__main__":
     fig_asintotas(); fig_monotonia(); fig_area(); fig_normal()
     fig_dos_planos(); fig_recta_plano(); fig_dos_rectas(); fig_simetrico()
@@ -717,3 +810,4 @@ if __name__ == "__main__":
     fig_sarrus(); fig_producto_matrices()
     fig_equilibrio()
     fig_region_panaderia(); fig_region_comedor(); fig_lp_casos()
+    fig_polinomicas(); fig_racional(); fig_exp_log(); fig_trozos()
