@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 AP = ROOT / "apuntes" / "2-bachillerato-ciencias"
-NAVY, MINT, CORAL, YELLOW, INK, PAPER = "#262A3D", "#5EC4B6", "#F4736C", "#F5D65B", "#1A1A1A", "#EBF8EE"
+NAVY, MINT, CORAL, YELLOW, INK, PAPER = "#262A3D", "#5EC4B6", "#F4736C", "#FCE678", "#1A1A1A", "#EBF8EE"
 S3 = math.sqrt(3)
 FONT = "Inter, Helvetica, Arial, sans-serif"
 

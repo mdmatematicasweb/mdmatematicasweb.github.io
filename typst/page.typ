@@ -20,9 +20,9 @@ $endif$
         #grid(
           columns: (7pt, 7pt), rows: (7pt, 7pt), gutter: 0pt,
           cell(rgb("#5EC4B6"), rgb("#000000"), "+"),
-          cell(rgb("#262A3D"), rgb("#F5D65B"), sym.minus),
+          cell(rgb("#262A3D"), rgb("#FCE678"), sym.minus),
           cell(rgb("#F4736C"), rgb("#000000"), sym.times),
-          cell(rgb("#F5D65B"), rgb("#000000"), "="),
+          cell(rgb("#FCE678"), rgb("#000000"), "="),
         )
       ]
       #h(6pt)
