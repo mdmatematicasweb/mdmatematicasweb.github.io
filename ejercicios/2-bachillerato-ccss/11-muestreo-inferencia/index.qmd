@@ -2,4 +2,437 @@
 title: "Muestreo e inferencia — relación de ejercicios"
 ---
 
-*Pendiente de redactar (Fase 2 del curso Ciencias Sociales).*
+Relación de 25 ejercicios: del 1 al 9 son básicos y del 10 al 25 siguen el estilo de la PAU de Andalucía para Matemáticas Aplicadas a las Ciencias Sociales II (ejercicio de estadística, 2 puntos, sin opciones). Los marcados como *competenciales* piden modelizar, interpretar el resultado en el contexto o justificar. Las soluciones están al final y usan la **tabla de la normal** con $z$ redondeado a dos decimales. En todos los ejercicios las muestras son de muestreo aleatorio simple y la desviación típica $\sigma$ de la población es conocida. Los valores críticos son $z_{\alpha/2}=1{,}96$ (confianza del $95\,\%$, que aparece en la tabla) y, cuando el enunciado lo indica, $1{,}645$ ($90\,\%$) y $2{,}575$ ($99\,\%$). En los ejercicios 23 y 24 el valor crítico no se indica y la solución muestra los procedimientos aceptados (valor más cercano e interpolación).
+
+## Muestreo y distribuciones muestrales
+
+**1.** a) Para conocer el gasto medio de los 12 000 estudiantes de una universidad se pregunta a 150 que salen de la biblioteca. ¿Es un muestreo aleatorio simple? b) El $40\,\%$ de los hogares de una ciudad tiene fibra óptica; en una muestra de 150 hogares, el $38\,\%$ la tiene. Indica el parámetro y el estadístico. c) ¿Es grande una muestra de 25 individuos?
+
+**2.** Una población tiene media $\mu=50$ y desviación típica $\sigma=12$. Con muestras de $n=36$ individuos, calcula: a) la distribución de $\overline{X}$; b) $P(\overline{X}>52)$; c) $P(48<\overline{X}<53)$.
+
+**3.** El $50\,\%$ de los votantes de una ciudad apoya una propuesta. Con muestras de $n=100$ votantes, calcula: a) la distribución de la proporción muestral $\hat p$; b) $P(\hat p\ge0{,}58)$; c) $P(\hat p\le0{,}45)$.
+
+## Intervalos de confianza y tamaño muestral
+
+**4.** En una población con $\sigma=15$, una muestra de $n=100$ tiene media $\overline{x}=80$. Halla el intervalo de confianza del $95\,\%$ para la media.
+
+**5.** En una población con $\sigma=30$, una muestra de $n=144$ tiene media $\overline{x}=200$. Halla el intervalo de confianza del $99\,\%$ para la media (usa $z_{\alpha/2}=2{,}575$).
+
+**6.** En una muestra de $n=400$ personas, el $20\,\%$ declara ir al trabajo en bicicleta. Halla el intervalo de confianza del $95\,\%$ para la proporción de la población.
+
+**7.** Con $\sigma=20$, ¿qué tamaño muestral mínimo hace falta para estimar la media con un error máximo de $4$ y una confianza del $95\,\%$?
+
+**8.** Se quiere estimar una proporción, de la que no se sabe nada, con un error máximo de $0{,}04$ y una confianza del $95\,\%$. Calcula el tamaño muestral mínimo.
+
+**9.** Un intervalo de confianza del $95\,\%$ para una media es $(46{,}08;\ 53{,}92)$, con $\sigma=20$. Calcula la media muestral, el error máximo admisible y el tamaño de la muestra.
+
+## Problemas tipo PAU
+
+**10.** *(Tipo PAU · 2 puntos · competencial)* El salario mensual, en euros, de los trabajadores de un sector tiene media $\mu=1850$ y desviación típica $\sigma=200$. Se toman muestras de $n=64$ trabajadores.
+
+a) (0,5 puntos) Escribe la distribución de la media muestral $\overline{X}$.
+
+b) (0,5 puntos) Calcula $P(\overline{X}>1890)$.
+
+c) (0,5 puntos) Calcula $P(1800<\overline{X}<1900)$.
+
+d) (0,5 puntos) Calcula la misma probabilidad del apartado c) con muestras de $n=16$ e interpreta la diferencia.
+
+**11.** *(Tipo PAU · 2 puntos · competencial)* El $35\,\%$ de los hogares de una ciudad usa algún servicio de transporte compartido. Se toma una muestra de $n=200$ hogares.
+
+a) (0,5 puntos) Escribe la distribución de la proporción muestral $\hat p$.
+
+b) (0,5 puntos) Calcula $P(\hat p\ge0{,}40)$.
+
+c) (0,5 puntos) Calcula $P(\hat p\le0{,}30)$.
+
+d) (0,5 puntos) Calcula la probabilidad de que $\hat p$ esté entre $0{,}30$ y $0{,}40$ e interpreta el resultado.
+
+**12.** *(Tipo PAU · 2 puntos)* Una muestra de $n=100$ personas tiene una edad media $\overline{x}=62$ años y la desviación típica de la población es $\sigma=12$ años. Halla el intervalo de confianza para la edad media poblacional:
+
+a) (0,5 puntos) con una confianza del $90\,\%$ ($z_{\alpha/2}=1{,}645$);
+
+b) (0,5 puntos) con una confianza del $95\,\%$;
+
+c) (0,5 puntos) con una confianza del $99\,\%$ ($z_{\alpha/2}=2{,}575$);
+
+d) (0,5 puntos) ordena los tres intervalos por su amplitud y explica la relación con la confianza.
+
+**13.** *(Tipo PAU · 2 puntos · competencial)* En una encuesta a 500 personas, 140 aprueban una medida municipal.
+
+a) (0,5 puntos) Calcula la proporción muestral $\hat p$.
+
+b) (0,5 puntos) Calcula el error típico $\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$.
+
+c) (0,5 puntos) Halla el intervalo de confianza del $95\,\%$ para la proporción de la población que aprueba la medida.
+
+d) (0,5 puntos) Interpreta el intervalo e indica si se puede afirmar que la mayoría de la población aprueba la medida.
+
+**14.** *(Tipo PAU · 2 puntos)* Con $\sigma=25$, se quiere estimar la media con un error máximo de $5$. Calcula el tamaño muestral mínimo con una confianza:
+
+a) (0,5 puntos) del $95\,\%$;
+
+b) (0,5 puntos) del $90\,\%$ ($z_{\alpha/2}=1{,}645$);
+
+c) (0,5 puntos) del $99\,\%$ ($z_{\alpha/2}=2{,}575$);
+
+d) (0,5 puntos) explica por qué el tamaño crece con la confianza.
+
+**15.** *(Tipo PAU · 2 puntos · competencial)* Un instituto de opinión quiere estimar con un error máximo de $0{,}025$ y una confianza del $95\,\%$ la proporción de personas que usan una aplicación.
+
+a) (0,5 puntos) Calcula el tamaño muestral mínimo si no se tiene ninguna información previa.
+
+b) (0,5 puntos) Calcula el tamaño mínimo si un estudio previo estimó que la proporción era $0{,}3$.
+
+c) (0,5 puntos) Compara ambos resultados e indica cuál es el más razonable si no se conoce la proporción.
+
+d) (0,5 puntos) Calcula el tamaño mínimo sin información previa si se admite un error de $0{,}05$ e interpreta la diferencia con a).
+
+**16.** *(Tipo PAU · 2 puntos)* Un intervalo de confianza del $95\,\%$ para una media, con $\sigma=15$, es $(97{,}06;\ 102{,}94)$.
+
+a) (0,5 puntos) Calcula la media muestral.
+
+b) (0,5 puntos) Calcula el error máximo admisible.
+
+c) (0,5 puntos) Calcula el tamaño de la muestra.
+
+d) (0,5 puntos) Con la misma muestra, halla el intervalo del $99\,\%$ ($z_{\alpha/2}=2{,}575$).
+
+**17.** *(Tipo PAU · 2 puntos · competencial)* En una encuesta a 400 usuarios de transporte público, elegidos al azar de una lista de abonados, 252 se declaran satisfechos.
+
+a) (0,5 puntos) Calcula la proporción muestral de usuarios satisfechos.
+
+b) (0,5 puntos) Halla el intervalo de confianza del $90\,\%$ ($z_{\alpha/2}=1{,}645$) para la proporción de la población.
+
+c) (0,5 puntos) Interpreta el intervalo.
+
+d) (0,5 puntos) ¿Se puede asegurar, con esa confianza, que más de la mitad de los usuarios está satisfecha?
+
+**18.** *(Tipo PAU · 2 puntos)* Una población tiene $\sigma=10$.
+
+a) (0,5 puntos) Con muestras de $n=25$, escribe la distribución de $\overline{X}$ (en función de $\mu$).
+
+b) (0,5 puntos) Calcula, para $n=25$, la probabilidad de que $\overline{X}$ se aleje de $\mu$ menos de 3 unidades.
+
+c) (0,5 puntos) Halla el tamaño de muestra mínimo para que esa distancia sea menor que $2$ con probabilidad $0{,}95$.
+
+d) (0,5 puntos) Justifica la relación entre este apartado y el cálculo del tamaño mínimo para el error máximo.
+
+**19.** *(Tipo PAU · 2 puntos · competencial)* La duración de las llamadas de un servicio de atención telefónica tiene una desviación típica conocida de $\sigma=40$ segundos. Se quiere estimar la duración media con una confianza del $95\,\%$ y distintos tamaños de muestra.
+
+a) (0,5 puntos) Calcula el error máximo admisible con $n=100$.
+
+b) (0,5 puntos) Calcula el error máximo admisible con $n=400$.
+
+c) (0,5 puntos) Calcula el error máximo admisible con $n=900$.
+
+d) (0,5 puntos) Interpreta cómo cambia el error al aumentar el tamaño de la muestra y cuántas veces hay que aumentar $n$ para dividir el error entre 2.
+
+**20.** *(Tipo PAU · 2 puntos)* Una población tiene $\mu=75$ y $\sigma=10$. Se toman muestras con reemplazamiento de $n=40$ individuos.
+
+a) (0,5 puntos) Justifica que $\overline{X}$ sigue aproximadamente una normal y escribe sus parámetros.
+
+b) (0,5 puntos) Calcula $P(\overline{X}>77)$.
+
+c) (0,5 puntos) Calcula $P(\overline{X}<74)$.
+
+d) (0,5 puntos) Calcula $P(73<\overline{X}<77)$.
+
+**21.** *(Tipo PAU · 2 puntos · competencial)* En una encuesta a 600 personas, el $54\,\%$ está a favor de una propuesta.
+
+a) (0,5 puntos) Calcula el error típico de la proporción muestral.
+
+b) (0,5 puntos) Halla el intervalo de confianza del $95\,\%$ para la proporción de la población a favor.
+
+c) (0,5 puntos) Interpreta el intervalo: ¿se puede afirmar con claridad que hay mayoría a favor?
+
+d) (0,5 puntos) ¿Qué tamaño de muestra haría falta para que el error máximo fuera de $0{,}02$ con la misma confianza, tomando $p=0{,}54$?
+
+**22.** *(Tipo PAU · 2 puntos)* El peso medio de una muestra de $n=100$ naranjas es $\overline{x}=250$ g y $\sigma=20$ g.
+
+a) (0,5 puntos) Halla el intervalo de confianza del $95\,\%$ para el peso medio.
+
+b) (0,5 puntos) Halla el intervalo del $90\,\%$ ($z_{\alpha/2}=1{,}645$).
+
+c) (0,5 puntos) Calcula la amplitud de ambos intervalos y compáralos.
+
+d) (0,5 puntos) ¿Qué tamaño de muestra se necesita para un error máximo de $2$ g al $95\,\%$?
+
+**23.** *(Tipo PAU · 2 puntos · competencial)* Una empresa quiere estimar el tiempo medio de espera de sus llamadas, en minutos, con $\sigma=3$ y una muestra de $n=36$ llamadas cuya media es $7{,}5$ minutos.
+
+a) (0,5 puntos) Calcula el error típico $\dfrac{\sigma}{\sqrt n}$.
+
+b) (0,5 puntos) Indica el valor $P(Z\le z_{\alpha/2})$ para una confianza del $99\,\%$ y explica por qué no aparece en la tabla.
+
+c) (0,5 puntos) Halla el intervalo de confianza del $99\,\%$ con cada uno de los procedimientos aceptados (valor más cercano e interpolación).
+
+d) (0,5 puntos) Interpreta el intervalo y comenta si las diferencias entre procedimientos son relevantes.
+
+**24.** *(Tipo PAU · 2 puntos)* Con $\sigma=30$, se quiere estimar una media con un error máximo de $5$.
+
+a) (0,5 puntos) Calcula el tamaño mínimo para una confianza del $95\,\%$.
+
+b) (0,5 puntos) Halla $P(Z\le z_{\alpha/2})$ para una confianza del $90\,\%$ y explica por qué no aparece en la tabla.
+
+c) (0,5 puntos) Calcula el tamaño mínimo para el $90\,\%$ con cada uno de los procedimientos aceptados (los dos valores más cercanos y la interpolación).
+
+d) (0,5 puntos) Calcula el tamaño mínimo para el $99\,\%$ usando $z_{\alpha/2}=2{,}575$ y comenta por qué todos los valores son aceptables.
+
+**25.** *(Tipo PAU · 2 puntos)* Un fabricante afirma que el $8\,\%$ de sus piezas es defectuoso. Se toman muestras de $n=200$ piezas.
+
+a) (0,5 puntos) Escribe la distribución de la proporción muestral $\hat p$.
+
+b) (0,5 puntos) Calcula $P(\hat p>0{,}12)$.
+
+c) (0,5 puntos) Calcula $P(\hat p<0{,}05)$.
+
+d) (0,5 puntos) Una muestra concreta de 200 piezas tiene un $10\,\%$ de defectuosas. Halla el intervalo de confianza del $95\,\%$ para la proporción de piezas defectuosas.
+
+## Soluciones
+
+::: {.callout-note collapse="true"}
+## 1
+a) **No** es un muestreo aleatorio simple: quien sale de la biblioteca tiene más probabilidad de aparecer en la muestra que quien no va, así que la muestra está sesgada, aunque sea grande.
+
+b) El parámetro es la proporción de la población, $p=0{,}4$ (el $40\,\%$). El estadístico es la proporción muestral, $\hat p=0{,}38$.
+
+c) No: se consideran muestras grandes las de $n\ge30$, y $25<30$.
+:::
+
+::: {.callout-note collapse="true"}
+## 2
+a) $\overline{X}\approx N\!\left(50,\ \dfrac{12}{\sqrt{36}}\right)=N(50,\,2)$.
+
+b) $P(\overline{X}>52)=P\!\left(Z>\dfrac{52-50}{2}\right)=P(Z>1)=1-0{,}8413=0{,}1587$.
+
+c) $P(48<\overline{X}<53)=P(-1<Z<1{,}5)=0{,}9332-(1-0{,}8413)=0{,}7745$.
+:::
+
+::: {.callout-note collapse="true"}
+## 3
+a) $\hat p\approx N\!\left(0{,}5,\ \sqrt{\dfrac{0{,}5\cdot0{,}5}{100}}\right)=N(0{,}5;\,0{,}05)$.
+
+b) $P(\hat p\ge0{,}58)=P\!\left(Z\ge\dfrac{0{,}58-0{,}5}{0{,}05}\right)=P(Z\ge1{,}6)=1-0{,}9452=0{,}0548$.
+
+c) $P(\hat p\le0{,}45)=P(Z\le-1)=1-0{,}8413=0{,}1587$.
+:::
+
+::: {.callout-note collapse="true"}
+## 4
+$\dfrac{\sigma}{\sqrt n}=\dfrac{15}{10}=1{,}5$ y $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}=1{,}96\cdot1{,}5=2{,}94$. El intervalo es $(80-2{,}94;\ 80+2{,}94)=(77{,}06;\ 82{,}94)$.
+:::
+
+::: {.callout-note collapse="true"}
+## 5
+$\dfrac{\sigma}{\sqrt n}=\dfrac{30}{12}=2{,}5$ y $E=2{,}575\cdot2{,}5=6{,}4375$. El intervalo es $(200-6{,}4375;\ 200+6{,}4375)=(193{,}5625;\ 206{,}4375)$.
+:::
+
+::: {.callout-note collapse="true"}
+## 6
+$\hat p=0{,}2$ y el error típico es $\sqrt{\dfrac{0{,}2\cdot0{,}8}{400}}=0{,}02$. Entonces $E=1{,}96\cdot0{,}02=0{,}0392$ y el intervalo es $(0{,}2-0{,}0392;\ 0{,}2+0{,}0392)=(0{,}1608;\ 0{,}2392)$.
+:::
+
+::: {.callout-note collapse="true"}
+## 7
+$n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2=\left(\dfrac{1{,}96\cdot20}{4}\right)^2=9{,}8^2=96{,}04$. Se redondea hacia arriba: $n=97$.
+:::
+
+::: {.callout-note collapse="true"}
+## 8
+Sin información, $p=0{,}5$: $n\ge\dfrac{z_{\alpha/2}^2\,p(1-p)}{E^2}=\dfrac{1{,}96^2\cdot0{,}25}{0{,}04^2}=600{,}25$. Se redondea hacia arriba: $n=601$.
+:::
+
+::: {.callout-note collapse="true"}
+## 9
+El intervalo está centrado en la media muestral: $\overline{x}=\dfrac{46{,}08+53{,}92}{2}=50$. El error es la semiamplitud: $E=\dfrac{53{,}92-46{,}08}{2}=3{,}92$. Como $E=1{,}96\dfrac{20}{\sqrt n}$, $\sqrt n=\dfrac{1{,}96\cdot20}{3{,}92}=10$, luego $n=100$.
+:::
+
+::: {.callout-note collapse="true"}
+## 10
+a) $\overline{X}\approx N\!\left(1850,\ \dfrac{200}{\sqrt{64}}\right)=N(1850,\,25)$.
+
+b) $P(\overline{X}>1890)=P\!\left(Z>\dfrac{1890-1850}{25}\right)=P(Z>1{,}6)=1-0{,}9452=0{,}0548$.
+
+c) $P(1800<\overline{X}<1900)=P(-2<Z<2)=2\cdot0{,}9772-1=0{,}9544$.
+
+d) Con $n=16$, $\overline{X}\approx N\!\left(1850,\ \dfrac{200}{4}\right)=N(1850,\,50)$ y $P(1800<\overline{X}<1900)=P(-1<Z<1)=0{,}6826$. Con 64 trabajadores la media muestral se concentra más alrededor de $\mu$: es más probable (un $95{,}44\,\%$ frente a un $68{,}26\,\%$) que quede a menos de 50 € de la media.
+:::
+
+::: {.callout-note collapse="true"}
+## 11
+a) $\hat p\approx N\!\left(0{,}35,\ \sqrt{\dfrac{0{,}35\cdot0{,}65}{200}}\right)=N(0{,}35;\,0{,}0337)$.
+
+b) $P(\hat p\ge0{,}40)=P\!\left(Z\ge\dfrac{0{,}40-0{,}35}{0{,}0337}\right)=P(Z\ge1{,}48)=1-0{,}9306=0{,}0694$.
+
+c) $P(\hat p\le0{,}30)=P(Z\le-1{,}48)=1-0{,}9306=0{,}0694$.
+
+d) $P(0{,}30<\hat p<0{,}40)=P(-1{,}48<Z<1{,}48)=2\cdot0{,}9306-1=0{,}8612$. En el $86{,}12\,\%$ de las muestras de 200 hogares, el porcentaje de usuarios estará entre el $30\,\%$ y el $40\,\%$.
+:::
+
+::: {.callout-note collapse="true"}
+## 12
+Con $\dfrac{\sigma}{\sqrt n}=\dfrac{12}{10}=1{,}2$:
+
+a) $E=1{,}645\cdot1{,}2=1{,}974$ y el intervalo es $(60{,}026;\ 63{,}974)$.
+
+b) $E=1{,}96\cdot1{,}2=2{,}352$ y el intervalo es $(59{,}648;\ 64{,}352)$.
+
+c) $E=2{,}575\cdot1{,}2=3{,}09$ y el intervalo es $(58{,}91;\ 65{,}09)$.
+
+d) Las amplitudes son $3{,}948$ (90 %), $4{,}704$ (95 %) y $6{,}18$ (99 %): el intervalo del $90\,\%$ es el más estrecho y el del $99\,\%$, el más ancho. A mayor confianza, mayor valor crítico y mayor error, con $n$ fijo.
+:::
+
+::: {.callout-note collapse="true"}
+## 13
+a) $\hat p=\dfrac{140}{500}=0{,}28$.
+
+b) $\sqrt{\dfrac{0{,}28\cdot0{,}72}{500}}\approx0{,}0201$.
+
+c) $E=1{,}96\cdot0{,}0201\approx0{,}0394$ y el intervalo es $(0{,}28-0{,}0394;\ 0{,}28+0{,}0394)=(0{,}2406;\ 0{,}3194)$.
+
+d) Con una confianza del $95\,\%$, la proporción de personas que aprueban la medida está entre el $24{,}06\,\%$ y el $31{,}94\,\%$. Como todo el intervalo está por debajo de $0{,}5$, **no** se puede afirmar que la mayoría aprueba la medida.
+:::
+
+::: {.callout-note collapse="true"}
+## 14
+Con $\dfrac{\sigma}{E}=\dfrac{25}{5}=5$:
+
+a) $n\ge(1{,}96\cdot5)^2=96{,}04$, luego $n=97$.
+
+b) $n\ge(1{,}645\cdot5)^2=67{,}65$, luego $n=68$.
+
+c) $n\ge(2{,}575\cdot5)^2=165{,}77$, luego $n=166$.
+
+d) Una mayor confianza exige un valor crítico mayor ($1{,}645<1{,}96<2{,}575$) y, como $n$ crece con $z_{\alpha/2}^2$, hace falta una muestra más grande para mantener el mismo error máximo.
+:::
+
+::: {.callout-note collapse="true"}
+## 15
+a) Con $p=0{,}5$: $n\ge\dfrac{1{,}96^2\cdot0{,}25}{0{,}025^2}=1536{,}64$, luego $n=1537$.
+
+b) Con $p=0{,}3$: $n\ge\dfrac{1{,}96^2\cdot0{,}3\cdot0{,}7}{0{,}025^2}=1290{,}78$, luego $n=1291$.
+
+c) Con $p=0{,}5$ se obtiene el mayor tamaño posible porque $p(1-p)$ es máximo ahí. Si no se conoce la proporción, es lo más razonable: garantiza el error pedido sea cual sea $p$.
+
+d) Con $E=0{,}05$: $n\ge\dfrac{1{,}96^2\cdot0{,}25}{0{,}05^2}=384{,}16$, luego $n=385$. Al duplicar el error máximo, el tamaño se divide aproximadamente entre $4$ ($1537$ frente a $385$).
+:::
+
+::: {.callout-note collapse="true"}
+## 16
+a) La media muestral es el centro del intervalo: $\overline{x}=\dfrac{97{,}06+102{,}94}{2}=100$.
+
+b) $E=\dfrac{102{,}94-97{,}06}{2}=2{,}94$.
+
+c) $2{,}94=1{,}96\dfrac{15}{\sqrt n}\Rightarrow\sqrt n=\dfrac{1{,}96\cdot15}{2{,}94}=10$, luego $n=100$.
+
+d) $E=2{,}575\cdot\dfrac{15}{10}=3{,}8625$ y el intervalo es $(100-3{,}8625;\ 100+3{,}8625)=(96{,}1375;\ 103{,}8625)$.
+:::
+
+::: {.callout-note collapse="true"}
+## 17
+a) $\hat p=\dfrac{252}{400}=0{,}63$.
+
+b) El error típico es $\sqrt{\dfrac{0{,}63\cdot0{,}37}{400}}\approx0{,}0241$, luego $E=1{,}645\cdot0{,}0241\approx0{,}0397$ y el intervalo es $(0{,}63-0{,}0397;\ 0{,}63+0{,}0397)=(0{,}5903;\ 0{,}6697)$.
+
+c) Con una confianza del $90\,\%$, la proporción de usuarios satisfechos está entre el $59{,}03\,\%$ y el $66{,}97\,\%$. Si se repitiera la encuesta muchas veces, aproximadamente el $90\,\%$ de los intervalos obtenidos contendría la proporción real.
+
+d) Sí: todo el intervalo está por encima de $0{,}5$, así que, con esta confianza, más de la mitad de los usuarios está satisfecha.
+:::
+
+::: {.callout-note collapse="true"}
+## 18
+a) $\overline{X}\approx N\!\left(\mu,\ \dfrac{10}{\sqrt{25}}\right)=N(\mu,\,2)$.
+
+b) $P(|\overline{X}-\mu|<3)=P\!\left(|Z|<\frac{3}{2}\right)=P(-1{,}5<Z<1{,}5)=2\cdot0{,}9332-1=0{,}8664$.
+
+c) $P(|Z|<z_{\alpha/2})=0{,}95$ cuando $z_{\alpha/2}=1{,}96$, y la distancia es $z_{\alpha/2}\dfrac{\sigma}{\sqrt n}<2$. Entonces $n>\left(\dfrac{1{,}96\cdot10}{2}\right)^2=96{,}04$, luego $n=97$.
+
+d) Que $\overline{X}$ esté a una distancia menor que $E$ de $\mu$ con probabilidad $1-\alpha$ equivale a que $\mu$ esté en el intervalo de confianza $\overline{x}\pm E$ con $E=z_{\alpha/2}\sigma/\sqrt n$, así que el cálculo del tamaño mínimo es el mismo.
+:::
+
+::: {.callout-note collapse="true"}
+## 19
+a) $E=1{,}96\cdot\dfrac{40}{\sqrt{100}}=1{,}96\cdot4=7{,}84$.
+
+b) $E=1{,}96\cdot\dfrac{40}{\sqrt{400}}=1{,}96\cdot2=3{,}92$.
+
+c) $E=1{,}96\cdot\dfrac{40}{\sqrt{900}}\approx2{,}61$.
+
+d) El error disminuye al aumentar $n$: pasa de $7{,}84$ a $3{,}92$ al multiplicar $n$ por $4$. Como $E$ depende de $1/\sqrt n$, para dividir el error entre $2$ hay que **cuadruplicar** el tamaño de la muestra.
+:::
+
+::: {.callout-note collapse="true"}
+## 20
+a) Como $n=40\ge30$, $\overline{X}\approx N\!\left(75,\ \dfrac{10}{\sqrt{40}}\right)=N(75;\,1{,}5811)$.
+
+b) $P(\overline{X}>77)=P\!\left(Z>\dfrac{77-75}{1{,}5811}\right)=P(Z>1{,}26)=1-0{,}8962=0{,}1038$.
+
+c) $P(\overline{X}<74)=P(Z<-0{,}63)=1-0{,}7357=0{,}2643$.
+
+d) $P(73<\overline{X}<77)=P(-1{,}26<Z<1{,}26)=2\cdot0{,}8962-1=0{,}7924$.
+:::
+
+::: {.callout-note collapse="true"}
+## 21
+a) $\sqrt{\dfrac{0{,}54\cdot0{,}46}{600}}\approx0{,}0203$.
+
+b) $E=1{,}96\cdot0{,}0203\approx0{,}0399$ y el intervalo es $(0{,}54-0{,}0399;\ 0{,}54+0{,}0399)=(0{,}5001;\ 0{,}5799)$.
+
+c) Con una confianza del $95\,\%$, entre el $50{,}01\,\%$ y el $57{,}99\,\%$ de la población está a favor. El extremo inferior apenas supera $0{,}5$: con esta muestra, la mayoría a favor es **muy ajustada** y no se puede afirmar con claridad.
+
+d) $n\ge\dfrac{1{,}96^2\cdot0{,}54\cdot0{,}46}{0{,}02^2}=2385{,}63$, luego $n=2386$.
+:::
+
+::: {.callout-note collapse="true"}
+## 22
+Con $\dfrac{\sigma}{\sqrt n}=\dfrac{20}{10}=2$:
+
+a) $E=1{,}96\cdot2=3{,}92$ y el intervalo es $(246{,}08;\ 253{,}92)$.
+
+b) $E=1{,}645\cdot2=3{,}29$ y el intervalo es $(246{,}71;\ 253{,}29)$.
+
+c) La amplitud es $2E$: $7{,}84$ g al $95\,\%$ y $6{,}58$ g al $90\,\%$. El intervalo del $90\,\%$ es más estrecho porque su confianza es menor.
+
+d) $n\ge\left(\dfrac{1{,}96\cdot20}{2}\right)^2=384{,}16$, luego $n=385$.
+:::
+
+::: {.callout-note collapse="true"}
+## 23
+a) $\dfrac{\sigma}{\sqrt n}=\dfrac{3}{6}=0{,}5$.
+
+b) Para el $99\,\%$, $P(Z\le z_{\alpha/2})=1-\dfrac{0{,}01}{2}=0{,}995$. En la tabla, $\Phi(2{,}57)=0{,}9949$ y $\Phi(2{,}58)=0{,}9951$: el $0{,}995$ no aparece y está a la misma distancia de ambos.
+
+c) Hay tres resultados aceptables:
+
+- *Valor más cercano* $z=2{,}57$: $E=2{,}57\cdot0{,}5=1{,}285$ y el intervalo es $(6{,}215;\ 8{,}785)$.
+- *Valor más cercano* $z=2{,}58$: $E=2{,}58\cdot0{,}5=1{,}29$ y el intervalo es $(6{,}21;\ 8{,}79)$.
+- *Interpolación* $z=2{,}575$: $E=2{,}575\cdot0{,}5=1{,}2875$ y el intervalo es $(6{,}2125;\ 8{,}7875)$.
+
+d) Con una confianza del $99\,\%$, el tiempo medio de espera está entre unos $6{,}2$ y $8{,}8$ minutos. Los tres intervalos difieren en menos de $0{,}01$ minutos en los extremos: la diferencia entre procedimientos no es relevante.
+:::
+
+::: {.callout-note collapse="true"}
+## 24
+a) $n\ge\left(\dfrac{1{,}96\cdot30}{5}\right)^2=(1{,}96\cdot6)^2=138{,}30$, luego $n=139$.
+
+b) Para el $90\,\%$, $P(Z\le z_{\alpha/2})=0{,}95$. En la tabla, $\Phi(1{,}64)=0{,}9495$ y $\Phi(1{,}65)=0{,}9505$: el $0{,}95$ no aparece y está a la misma distancia de ambos.
+
+c) Con $\dfrac{\sigma}{E}=6$:
+
+- $z=1{,}64$: $n\ge(1{,}64\cdot6)^2=96{,}83$, luego $n=97$.
+- $z=1{,}65$: $n\ge(1{,}65\cdot6)^2=98{,}01$, luego $n=99$.
+- Interpolación $z=1{,}645$: $n\ge(1{,}645\cdot6)^2=97{,}42$, luego $n=98$.
+
+d) Con $z=2{,}575$: $n\ge(2{,}575\cdot6)^2=238{,}70$, luego $n=239$. Los valores $97$, $98$ y $99$ del apartado c) son válidos porque cada uno usa un valor de la tabla de forma coherente; la diferencia es de una o dos unidades y no cambia las conclusiones.
+:::
+
+::: {.callout-note collapse="true"}
+## 25
+a) $\hat p\approx N\!\left(0{,}08,\ \sqrt{\dfrac{0{,}08\cdot0{,}92}{200}}\right)=N(0{,}08;\,0{,}0192)$.
+
+b) $P(\hat p>0{,}12)=P\!\left(Z>\dfrac{0{,}12-0{,}08}{0{,}0192}\right)=P(Z>2{,}09)=1-0{,}9817=0{,}0183$.
+
+c) $P(\hat p<0{,}05)=P\!\left(Z<\dfrac{0{,}05-0{,}08}{0{,}0192}\right)=P(Z<-1{,}56)=1-0{,}9406=0{,}0594$.
+
+d) $\hat p=0{,}1$ y el error típico es $\sqrt{\dfrac{0{,}1\cdot0{,}9}{200}}\approx0{,}0212$. Entonces $E=1{,}96\cdot0{,}0212\approx0{,}0416$ y el intervalo es $(0{,}1-0{,}0416;\ 0{,}1+0{,}0416)=(0{,}0584;\ 0{,}1416)$.
+:::
