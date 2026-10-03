@@ -882,6 +882,64 @@ def fig_derivabilidad_ccss():
            "A la izquierda, la factura del agua con un punto anguloso en 10 metros cúbicos: las pendientes laterales son 0,9 y 1,5. A la derecha, la tarifa de envío con un salto en 2 kilos: la función no es continua y por tanto no es derivable")
 
 
+def fig_estudio_funciones():
+    """Tema 07 CCSS: beneficio cúbico B(t) y ventas V(x) = x·e^(-x/10), con extremos e inflexión."""
+    kw = dict(w=330, h=270, pad=16)
+    a = Fig(-0.6, 5.8, -14, 27, **kw)
+    a.axes(xt=(1, 2, 3, 4, 5), yt=(-10, 10, 20))
+    a.curve(lambda t: t ** 3 - 9 * t ** 2 + 24 * t - 10, 0, 5.5, color=NAVY, width=3.5)
+    for (px, py, col) in ((2, 10, CORAL), (3, 8, YELLOW), (4, 6, "#2a8f82")):
+        a.line((px, 0), (px, py), width=1, dash="3 4"); a.dot(px, py, col)
+    a.text(2, 10, "máx", dy=-14, bold=True, size=12); a.text(4, 6, "mín", dy=24, bold=True, size=12)
+    a.text(3, 8, "inflexión", anchor="start", dx=11, dy=-3, bold=True, size=12)
+    a.text(5.8, 0, "t", anchor="end", dy=-8, size=13)
+    b = Fig(-4, 62, -0.7, 4.7, **kw)
+    b.axes(xt=(10, 20, 40, 60), yt=(1, 2, 3, 4))
+    V = lambda x: x * math.exp(-x / 10)
+    b.curve(V, 0, 60, color=NAVY, width=3.5)
+    for (px, py, col) in ((10, 10 / math.e, CORAL), (20, 20 / math.e ** 2, YELLOW)):
+        b.line((px, 0), (px, py), width=1, dash="3 4"); b.dot(px, py, col)
+    b.text(10, 10 / math.e, "máx (10; 3,68)", dy=-14, dx=6, anchor="start", bold=True, size=12)
+    b.text(20, 20 / math.e ** 2, "inflexión (20; 2,71)", dx=12, dy=-12, anchor="start", bold=True, size=12)
+    b.text(60, 0, "x", anchor="end", dy=-8, size=13)
+    panels([a, b], ["B(t) = t³ − 9t² + 24t − 10", "V(x) = x·e^(−x/10)"], APC / "07-aplicaciones-derivada" / "fig-estudio-funciones.svg",
+           "A la izquierda, un polinomio de grado 3 con un máximo relativo en t igual a 2, un mínimo en t igual a 4 y un punto de inflexión en t igual a 3. A la derecha, las ventas en función de la inversión publicitaria, con máximo en 10, inflexión en 20 y asíntota horizontal y igual a 0")
+
+
+def fig_estudio_racional():
+    """Tema 07 CCSS: estudio completo de f(x) = x²/(x-1)."""
+    f = lambda x: x * x / (x - 1)
+    g = Fig(-6.5, 8.5, -9, 12, w=520, h=360)
+    g.axes(xt=(-4, -2, 2, 4, 6, 8), yt=(-8, -4, 4, 8))
+    g.line((1, -9), (1, 12), color=INK, width=1.5); g.line((-6.5, -5.5), (8.5, 9.5), color=INK, width=1.5)
+    g.curve(f, -6.5, 0.9995, color=NAVY, width=3.5); g.curve(f, 1.0005, 8.5, color=NAVY, width=3.5)
+    g.dot(0, 0, CORAL); g.dot(2, 4, "#2a8f82")
+    g.text(-0.5, 2.2, "máx relativo (0, 0)", anchor="end", bold=True, size=13)
+    g.text(2.4, 2.0, "mín relativo (2, 4)", anchor="start", bold=True, size=13)
+    g.text(1, 11, "x = 1", anchor="start", dx=6, bold=True, size=12)
+    g.text(6.9, 4.2, "y = x + 1", anchor="end", bold=True, size=12)
+    g.save(APC / "07-aplicaciones-derivada" / "fig-estudio-racional.svg", "Gráfica de x al cuadrado entre x menos 1 con asíntota vertical x igual a 1, asíntota oblicua y igual a x más 1, máximo relativo en (0,0) y mínimo relativo en (2,4)")
+
+
+def fig_optimizacion():
+    """Tema 07 CCSS: coste medio mínimo (donde corta al coste marginal) e ingreso máximo."""
+    kw = dict(w=290, h=250, pad=16)
+    a = Fig(-5, 62, -5, 68, **kw)
+    a.axes(xt=(20, 40, 60), yt=(20, 40, 60))
+    a.curve(lambda x: 0.5 * x + 200 / x, 4, 62, color=NAVY, width=3.5)
+    a.curve(lambda x: x, 0, 62, color=CORAL, width=3)
+    a.line((20, 0), (20, 20), width=1.2); a.dot(20, 20, YELLOW)
+    a.text(20, 20, "mínimo (20, 20)", dx=14, dy=26, anchor="start", bold=True, size=12)
+    a.text(60, 31, "Cm", color=NAVY, bold=True, size=14, dy=-12); a.text(55, 55, "C′", color="#C4413A", bold=True, size=14, dx=-14)
+    b = Fig(-4, 55, -120, 1400, **kw)
+    b.axes(xt=(10, 25, 40, 50), yt=(500, 1000))
+    b.curve(lambda p: p * (100 - 2 * p), 0, 50, color=NAVY, width=3.5)
+    b.line((25, 0), (25, 1250), width=1.2); b.dot(25, 1250, YELLOW)
+    b.text(25, 1250, "máximo (25; 1250)", dy=-14, bold=True, size=12)
+    panels([a, b], ["Coste medio mínimo", "Ingreso máximo"], APC / "07-aplicaciones-derivada" / "fig-optimizacion.svg",
+           "A la izquierda, el coste medio alcanza su mínimo, 20 euros con 20 unidades, donde corta a la recta del coste marginal. A la derecha, el ingreso de la compañía de autobuses es una parábola con máximo de 1250 euros con un billete de 25 euros")
+
+
 if __name__ == "__main__":
     fig_asintotas(); fig_monotonia(); fig_area(); fig_normal()
     fig_dos_planos(); fig_recta_plano(); fig_dos_rectas(); fig_simetrico()
@@ -894,3 +952,4 @@ if __name__ == "__main__":
     fig_polinomicas(); fig_racional(); fig_exp_log(); fig_trozos()
     fig_discontinuidades_ccss(); fig_asintotas_ccss()
     fig_tangente_coste(); fig_derivabilidad_ccss()
+    fig_estudio_funciones(); fig_estudio_racional(); fig_optimizacion()
