@@ -11,6 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 AP = ROOT / "apuntes" / "2-bachillerato-ciencias"
+APC = ROOT / "apuntes" / "2-bachillerato-ccss"   # curso Ciencias Sociales (oculto)
 NAVY, MINT, CORAL, YELLOW, INK, PAPER = "#262A3D", "#5EC4B6", "#F4736C", "#FCE678", "#1A1A1A", "#EBF8EE"
 S3 = math.sqrt(3)
 FONT = "Inter, Helvetica, Arial, sans-serif"
@@ -547,9 +548,86 @@ def fig_vectorial_mixto():
     g.save(AP / "04-vectores-espacio" / "fig-vectorial-mixto.svg", "El producto vectorial u×v es perpendicular a u y v y su módulo es el área del paralelogramo; el valor absoluto del producto mixto es el volumen del paralelepípedo")
 
 
+def _ent(i, j, x, y, color=INK, size=16):
+    """Elemento a_ij de una matriz como texto SVG con subíndice (tspan; sin caracteres Unicode de subíndice)."""
+    return (f'<text x="{x:.1f}" y="{y:.1f}" text-anchor="middle" font-size="{size}" font-style="italic" fill="{color}">a'
+            f'<tspan dy="4" font-size="{size - 5}" font-style="normal">{i}{j}</tspan></text>')
+
+
+def fig_sarrus():
+    """Regla de Sarrus: se repiten las dos primeras columnas; diagonales descendentes suman y ascendentes restan."""
+    w, h = 290, 214
+    x0, dx, y0, dy = 53, 46, 62, 40
+
+    def panel(signo):
+        g = Fig(0, 1, 0, 1, w=w, h=h, pad=0)
+        e = g.el
+        e.append(f'<rect x="{x0 + 3 * dx - dx / 2 + 4:.1f}" y="{y0 - 26}" width="{2 * dx - 8}" height="{3 * dy - 4}" fill="{MINT}" fill-opacity="0.35" stroke="none"/>')
+        col = NAVY if signo > 0 else CORAL
+        for k in range(3):
+            if signo > 0:
+                pts = [(k, 0), (k + 1, 1), (k + 2, 2)]
+            else:
+                pts = [(k + 2, 0), (k + 1, 1), (k, 2)]
+            (ax, ay), (bx, by) = pts[0], pts[2]
+            ax, ay, bx, by = x0 + ax * dx, y0 + ay * dy - 5, x0 + bx * dx, y0 + by * dy - 5
+            ux, uy = (bx - ax), (by - ay)
+            n = math.hypot(ux, uy)
+            ux, uy = ux / n * 14, uy / n * 14
+            e.append(f'<line x1="{ax - ux:.1f}" y1="{ay - uy:.1f}" x2="{bx + ux:.1f}" y2="{by + uy:.1f}" stroke="{col}" stroke-width="9" stroke-linecap="round" stroke-opacity="0.32"/>')
+        for r in range(3):
+            for c in range(5):
+                e.append(_ent(r + 1, c % 3 + 1, x0 + c * dx, y0 + r * dy, color=INK if c < 3 else "#2a8f82"))
+        for xb, sg in ((x0 - dx / 2 + 2, 1), (x0 + 2 * dx + dx / 2 - 2, -1)):
+            e.append(f'<path d="M{xb + sg * 7:.1f},{y0 - 28} L{xb:.1f},{y0 - 28} L{xb:.1f},{y0 + 2 * dy + 12} L{xb + sg * 7:.1f},{y0 + 2 * dy + 12}" fill="none" stroke="{INK}" stroke-width="2.5"/>')
+        if signo > 0:
+            e.append(f'<text x="{w / 2:.0f}" y="{h - 16}" text-anchor="middle" font-size="13" font-weight="700" fill="{NAVY}">+ a11·a22·a33 + a12·a23·a31 + a13·a21·a32</text>')
+        else:
+            e.append(f'<text x="{w / 2:.0f}" y="{h - 16}" text-anchor="middle" font-size="13" font-weight="700" fill="{CORAL}">− a13·a22·a31 − a11·a23·a32 − a12·a21·a33</text>')
+        return g
+    panels([panel(1), panel(-1)], ["Diagonales que suman", "Diagonales que restan"], APC / "01-matrices-determinantes" / "fig-sarrus.svg",
+           "Regla de Sarrus: se repiten a la derecha las dos primeras columnas; las tres diagonales descendentes suman y las tres ascendentes restan")
+
+
+def fig_producto_matrices():
+    """Producto fila por columna con el ejemplo de ventas e ingresos del tema 1 (Ciencias Sociales)."""
+    w, h = 560, 190
+    g = Fig(0, 1, 0, 1, w=w, h=h, pad=0)
+    e = g.el
+    V = [[40, 25, 10], [30, 35, 20]]
+    pr = [3, 2, 4]
+    res = [210, 240]
+    xv, xp, xr = (70, 118, 166), 262, 372
+    y0, dy = 78, 44
+    ypr = (y0 - 6, y0 + 20, y0 + 46)   # los 3 precios, repartidos en el alto de la matriz
+    yt, yb = y0 - 30, y0 + dy + 14
+    e.append(f'<rect x="{xv[0] - 22}" y="{y0 - 24}" width="{xv[2] - xv[0] + 44}" height="34" fill="{YELLOW}" stroke="none"/>')
+    e.append(f'<rect x="{xp - 22}" y="{yt + 4}" width="44" height="{yb - yt - 8}" fill="{MINT}" fill-opacity="0.55" stroke="none"/>')
+    e.append(f'<rect x="{xr - 30}" y="{y0 - 24}" width="60" height="34" fill="{CORAL}" fill-opacity="0.6" stroke="none"/>')
+
+    def brk(xl, xr_):
+        for xb, sg in ((xl, 1), (xr_, -1)):
+            e.append(f'<path d="M{xb + sg * 7},{yt} L{xb},{yt} L{xb},{yb} L{xb + sg * 7},{yb}" fill="none" stroke="{INK}" stroke-width="2.5"/>')
+    brk(xv[0] - 34, xv[2] + 34); brk(xp - 30, xp + 30); brk(xr - 40, xr + 40)
+    for r in range(2):
+        for c in range(3):
+            e.append(f'<text x="{xv[c]}" y="{y0 + r * dy}" text-anchor="middle" font-size="18" fill="{INK}">{V[r][c]}</text>')
+        e.append(f'<text x="{xr}" y="{y0 + r * dy}" text-anchor="middle" font-size="18" font-weight="700" fill="{INK}">{res[r]}</text>')
+    for v, yy in zip(pr, ypr):
+        e.append(f'<text x="{xp}" y="{yy}" text-anchor="middle" font-size="18" fill="{INK}">{v}</text>')
+    e.append(f'<text x="{(xv[2] + 34 + xp - 30) / 2:.0f}" y="{y0 + 14}" text-anchor="middle" font-size="26" font-weight="700" fill="{INK}">·</text>')
+    e.append(f'<text x="{(xp + 30 + xr - 40) / 2:.0f}" y="{y0 + 14}" text-anchor="middle" font-size="26" font-weight="700" fill="{INK}">=</text>')
+    for x, t in ((xv[1], "V (2×3)"), (xp, "p (3×1)"), (xr, "V·p (2×1)")):
+        e.append(f'<text x="{x}" y="{yt - 8}" text-anchor="middle" font-size="13" font-weight="700" fill="{INK}">{t}</text>')
+    e.append(f'<text x="{w / 2:.0f}" y="{h - 22}" text-anchor="middle" font-size="14" font-weight="700" fill="{INK}">fila 1 de V × columna de p:  40·3 + 25·2 + 10·4 = 210</text>')
+    g.save(APC / "01-matrices-determinantes" / "fig-producto-matrices.svg",
+           "Producto de una matriz 2×3 por una columna 3×1: el primer elemento del resultado es la fila 1 por la columna")
+
+
 if __name__ == "__main__":
     fig_asintotas(); fig_monotonia(); fig_area(); fig_normal()
     fig_dos_planos(); fig_recta_plano(); fig_dos_rectas(); fig_simetrico()
     fig_discontinuidades(); fig_tangente(); fig_derivabilidad(); fig_rolle_vm(); fig_area_signo()
     fig_simetria_normal(); fig_regla_68(); fig_venn()
     fig_sistemas_2d(); fig_det_area(); fig_vectores_2d(); fig_vectorial_mixto()
+    fig_sarrus(); fig_producto_matrices()
