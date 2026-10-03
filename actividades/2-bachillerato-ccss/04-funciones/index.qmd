@@ -1,5 +1,37 @@
 ---
 title: "Funciones — ejercicios interactivos"
+format:
+  html:
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+          <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    css: ../../../assets/gym/gym.css
 ---
 
-*Pendiente de redactar (Fase 3 del curso Ciencias Sociales).*
+Cada bloque genera ejercicios nuevos al azar y los corrige al instante en el navegador. Las opciones empiezan en **Aleatorio**; elige una concreta si quieres practicar sólo ese caso. **Ayuda** muestra la teoría en dos pasos (no suma ni quita racha), escribe la respuesta (enteros, fracciones `a/b` o decimales) y pulsa **Comprobar** (o Intro). **Ver resolución** muestra el procedimiento paso a paso; usar ayuda rompe la racha. **Modo clase** pone el ejercicio a pantalla completa para proyectarlo.
+
+## Dominio de una función
+
+<div data-gym="ccss-fun-dominio"></div>
+
+## Parábola: vértice y puntos de corte
+
+<div data-gym="ccss-fun-parabola"></div>
+
+## Funciones a trozos: tarifas
+
+<div data-gym="ccss-fun-trozos"></div>
+
+## Ecuaciones exponenciales y logarítmicas
+
+<div data-gym="ccss-fun-expolog"></div>
+
+## Ingresos, costes y beneficio
+
+<div data-gym="ccss-fun-rentabilidad"></div>
+
+<script src="../../../assets/gym/gym.js"></script>
+<script src="../../../assets/gym/ccss-funciones.js"></script>
+<script src="../../../assets/gym/graficas.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () { MDGym.mountAll(); });</script>

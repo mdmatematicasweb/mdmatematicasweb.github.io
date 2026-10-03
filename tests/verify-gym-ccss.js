@@ -74,4 +74,77 @@ module.exports = {
     assert(x === o.at[0] && y === o.at[1] && f === o.best);
     d.cons.forEach((k) => assert(ch.prompt.includes(String(k.c)) || k.b === 0 || k.a === 0, 'falta c=' + k.c + ' en el enunciado'));
   },
+
+  // ---------- Funciones y economía (temas 4, 6 y 8) ----------
+  'ccss-fun-dominio': (ch, { assert }) => {
+    const d = ch.data;
+    if (d.tipo === 'rac') {
+      const den = (x) => d.den.reduce((s, [c, e]) => s + c * Math.pow(x, e), 0);
+      const dado = ch.answer.value.map(fval).sort((a, b) => a - b);
+      const bruto = []; for (let x = -30; x <= 30; x++) if (den(x) === 0) bruto.push(x);
+      assert(JSON.stringify(dado) === JSON.stringify(bruto), 'excluidos ' + bruto + ' vs ' + dado);
+    } else {
+      const c = fval(ch.answer.value);
+      const arg = (x) => d.a * x + d.b;
+      assert(arg(c) === 0 && c === -d.b / d.a);
+      const dentro = d.a > 0 ? c + 1 : c - 1, fuera = d.a > 0 ? c - 1 : c + 1;
+      assert(arg(dentro) > 0 && arg(fuera) < 0);
+    }
+  },
+  'ccss-fun-parabola': (ch, { assert }) => {
+    const f = (x) => ch.data.t.reduce((s, [c, e]) => s + c * Math.pow(x, e), 0);
+    if (ch.data.tipo === 'vertice') {
+      const [h, k] = ch.answer.parts.map((q) => fval(q.value));
+      assert(f(h) === k);
+      const a = ch.data.t[0][0];
+      for (const e of [0.5, 1, 2]) assert(a > 0 ? f(h + e) > k && f(h - e) > k : f(h + e) < k && f(h - e) < k, 'no es extremo');
+    } else {
+      const r = ch.answer.value.map(fval);
+      assert(r.length === 2 && r[0] !== r[1] && r.every((x) => f(x) === 0));
+    }
+  },
+  'ccss-fun-trozos': (ch, { assert }) => {
+    const { fijo, r1, r2, c, xs } = ch.data;
+    const T = (x) => (x <= c ? fijo + r1 * x : fijo + r1 * c + r2 * (x - c));
+    ch.answer.value[0].forEach((v, i) => assert(near(fval(v), T(xs[i]), 1e-9), 'T(' + xs[i] + ')'));
+    assert(xs[0] < c && xs[1] === c && xs[2] > c);
+  },
+  'ccss-fun-expolog': (ch, { assert }) => {
+    const d = ch.data;
+    const ans = fval(ch.answer.value);
+    if (d.tipo === 'exp') assert(near(Math.pow(d.b, d.cf * ans + d.d), Math.pow(d.b, d.e), 1e-6 * Math.pow(d.b, d.e)));
+    else if (d.tipo === 'log') { assert(ans + d.d > 0 && near(Math.log(ans + d.d) / Math.log(d.b), d.k, 1e-9)); }
+    else { assert(Number.isInteger(ans) && d.P0 * Math.pow(d.b, ans) === d.N); for (let t = 0; t < ans; t++) assert(d.P0 * Math.pow(d.b, t) < d.N); }
+  },
+  'ccss-fun-rentabilidad': (ch, { assert }) => {
+    const d = ch.data;
+    if (d.tipo === 'lineal') {
+      const [xs, b] = ch.answer.parts.map((q) => fval(q.value));
+      assert(d.pp * xs === d.fijo + d.c * xs, 'I = C en el umbral');
+      for (let x = 0; x < xs; x += 10) assert(d.pp * x < d.fijo + d.c * x);
+      assert(b === d.pp * d.x1 - (d.fijo + d.c * d.x1));
+    } else {
+      const [h, bm] = ch.answer.parts.map((q) => fval(q.value));
+      const B = (x) => x * (d.m - d.n * x) - (d.fijo + d.c * x);
+      let best = -Infinity, at = -1; for (let x = 0; x <= 200; x++) if (B(x) > best) { best = B(x); at = x; }
+      assert(at === h && best === bm, 'máximo ' + at + ',' + best + ' vs ' + h + ',' + bm);
+      assert(d.m - d.n * h > 0);
+    }
+  },
+  'ccss-der-marginal': (ch, { assert }) => {
+    const { C, x0 } = ch.data;
+    const f = (x) => C.reduce((s, [c, e]) => s + c * Math.pow(x, e), 0);
+    const [m, r] = ch.answer.parts.map((q) => fval(q.value));
+    const e = 1e-4;
+    assert(near(m, (f(x0 + e) - f(x0 - e)) / (2 * e), 1e-3), 'derivada numérica');
+    assert(r === f(x0 + 1) - f(x0));
+  },
+  'ccss-int-marginal': (ch, { assert }) => {
+    const d = ch.data;
+    const g = (x) => d.a1 * x / 10 + d.b1;
+    const simpson = (a, b, n = 2000) => { const h = (b - a) / n; let s = g(a) + g(b); for (let i = 1; i < n; i++) s += g(a + i * h) * (i % 2 ? 4 : 2); return s * h / 3; };
+    const ans = fval(ch.answer.value);
+    if (d.tipo === 'incremento') assert(near(ans, simpson(d.lo, d.hi), 1e-6));
+    else assert(near(ans, d.F0 + simpson(0, d.hi), 1e-6));
+  },
 };
