@@ -2,4 +2,453 @@
 title: "Matrices y determinantes — relación de ejercicios"
 ---
 
-*Pendiente de redactar (Fase 2 del curso Ciencias Sociales).*
+Relación de 25 ejercicios: del 1 al 9 son básicos y del 10 al 25 siguen el estilo de la PAU de Andalucía para Matemáticas Aplicadas a las Ciencias Sociales II (ejercicio de álgebra, 3 puntos, a veces con dos opciones de las que se elige una). Los marcados como *competenciales* piden modelizar, interpretar el resultado en el contexto o justificar. Las soluciones están al final.
+
+## Operaciones y determinantes
+
+**1.** Dadas $A=\begin{pmatrix}1&2\\0&-1\end{pmatrix}$ y $B=\begin{pmatrix}3&0\\1&2\end{pmatrix}$, calcula $A+B$, $2A-B$, $A\cdot B$ y $B\cdot A$. ¿Se cumple $A\cdot B=B\cdot A$?
+
+**2.** Sean $A=\begin{pmatrix}1&0&2\\-1&3&1\end{pmatrix}$ y $B=\begin{pmatrix}2&1\\0&-1\\1&3\end{pmatrix}$. Indica las dimensiones de $A\cdot B$, $B\cdot A$ y $A^t$, y calcula $A\cdot B$ y $A^t$.
+
+**3.** Halla $a$ y $b$ para que sea simétrica la matriz $A=\begin{pmatrix}2&a&1\\3&1&b\\1&-2&4\end{pmatrix}$.
+
+**4.** Calcula $\begin{vmatrix}3&-2\\1&4\end{vmatrix}$ y, por la regla de Sarrus, $\begin{vmatrix}2&1&0\\-1&3&2\\1&0&4\end{vmatrix}$.
+
+**5.** Sea $A$ una matriz de orden 3 con $|A|=-2$. Calcula $|A^t|$, $|3A|$, $|A^2|$, $|A^{-1}|$ y $|A\cdot A^t|$, indicando la propiedad que usas.
+
+## Inversa, rango y ecuaciones matriciales
+
+**6.** Calcula la inversa de $A=\begin{pmatrix}2&5\\1&3\end{pmatrix}$ y comprueba que $A\cdot A^{-1}=I_2$.
+
+**7.** Calcula por adjuntos la inversa de $A=\begin{pmatrix}1&0&2\\0&1&-1\\2&1&0\end{pmatrix}$.
+
+**8.** Calcula el rango de $\begin{pmatrix}1&2&-1&3\\2&4&-2&6\\0&1&1&2\end{pmatrix}$ por Gauss.
+
+**9.** Resuelve $A\cdot X=B$ con $A=\begin{pmatrix}1&2\\3&5\end{pmatrix}$ y $B=\begin{pmatrix}1&0\\2&1\end{pmatrix}$.
+
+## Problemas tipo PAU
+
+**10.** *(Tipo PAU · 3 puntos · competencial)* Una papelería con dos tiendas vende libros, cuadernos y mochilas. Las matrices $V$ y $W$ recogen las unidades vendidas en la semana 1 y en la semana 2 (filas: tienda 1 y tienda 2; columnas: libros, cuadernos y mochilas):
+$$V=\begin{pmatrix}30&20&5\\25&40&10\end{pmatrix},\qquad W=\begin{pmatrix}35&15&8\\20&45&12\end{pmatrix}$$
+Los precios, en euros, son $p=\begin{pmatrix}12\\3\\25\end{pmatrix}$.
+
+a) (0,75 puntos) Calcula $V+W$ e interpreta el elemento de la fila 2 y columna 3.
+
+b) (1 punto) Calcula los ingresos totales de cada tienda en las dos semanas.
+
+c) (0,75 puntos) Calcula $W-V$ e indica en qué tiendas y productos bajaron las ventas.
+
+d) (0,5 puntos) Para una campaña se rebajan los precios un $10\,\%$. Calcula el nuevo vector de precios y el ingreso de la tienda 1 en la semana 2 con esos precios.
+
+**11.** *(Tipo PAU · 3 puntos · competencial)* Una fábrica elabora tres productos usando dos materias primas. La matriz $A=\begin{pmatrix}2&1\\1&3\\4&2\end{pmatrix}$ da las unidades de cada materia prima (columnas) que necesita una unidad de cada producto (filas). Los precios de las materias primas son $q=\begin{pmatrix}5\\8\end{pmatrix}$ euros por unidad, y el plan semanal de producción es $r=\begin{pmatrix}10&20&5\end{pmatrix}$.
+
+a) (0,5 puntos) Calcula $A\cdot q$ e interpreta sus elementos.
+
+b) (1 punto) Calcula $r\cdot A$ e interpreta el resultado.
+
+c) (0,75 puntos) Calcula el coste de las materias primas del plan de producción de dos formas, $(r\cdot A)\cdot q$ y $r\cdot(A\cdot q)$, y justifica que coincidan.
+
+d) (0,75 puntos) Si el precio de la segunda materia prima sube a 10 €, ¿cuánto aumenta el coste del plan semanal?
+
+**12.** *(Tipo PAU · 3 puntos)* Elige una de las dos opciones.
+
+**Opción A.** Sea $A=\begin{pmatrix}1&0\\3&1\end{pmatrix}$.
+
+a) (1 punto) Calcula $A^2$ y $A^3$.
+
+b) (1 punto) Deduce la expresión de $A^n$ y calcula $A^{10}$.
+
+c) (1 punto) Demuestra por inducción la expresión de $A^n$.
+
+**Opción B.** Sea $B=\begin{pmatrix}2&1\\0&1\end{pmatrix}$.
+
+a) (1 punto) Comprueba que $B^2-3B+2I_2=O$.
+
+b) (1 punto) A partir de esa igualdad, deduce que $B$ es invertible y calcula $B^{-1}$ sin usar determinantes ni el método de Gauss.
+
+c) (1 punto) Comprueba el resultado calculando $|B|$ y $B^{-1}$ con la fórmula de las matrices de orden 2.
+
+**13.** *(Tipo PAU · 3 puntos)* Sea $A_m=\begin{pmatrix}m&1&1\\1&m&1\\1&1&m\end{pmatrix}$.
+
+a) (1,25 puntos) Calcula $|A_m|$ y halla los valores de $m$ para los que $A_m$ no tiene inversa.
+
+b) (1 punto) Para $m=2$, calcula $A_2^{-1}$.
+
+c) (0,75 puntos) Halla el rango de $A_m$ para cada valor de $m$ del apartado a).
+
+**14.** *(Tipo PAU · 3 puntos · competencial)* Dos operadoras de telefonía, A y B, se reparten un mercado de 1000 (en miles de clientes): 600 de A y 400 de B, es decir, $x=\begin{pmatrix}600\\400\end{pmatrix}$. Cada mes, el $10\,\%$ de los clientes de A pasa a B y el $20\,\%$ de los de B pasa a A. La matriz $M=\begin{pmatrix}0{,}9&0{,}2\\0{,}1&0{,}8\end{pmatrix}$ transforma el vector de clientes de un mes al siguiente.
+
+a) (0,5 puntos) Explica el significado de cada columna de $M$ y por qué suma 1.
+
+b) (1 punto) Calcula cuántos clientes tendrá cada operadora al cabo de un mes.
+
+c) (1 punto) Calcula $M^2$ y, con ella, los clientes al cabo de dos meses.
+
+d) (0,5 puntos) Justifica que el número total de clientes se mantiene en cada mes.
+
+**15.** *(Tipo PAU · 3 puntos)* Sean $A=\begin{pmatrix}2&1\\1&1\end{pmatrix}$, $B=\begin{pmatrix}1&0\\2&3\end{pmatrix}$ y $C=\begin{pmatrix}5&4\\7&6\end{pmatrix}$.
+
+a) (0,5 puntos) Despeja $X$ en la ecuación matricial $A\cdot X+B=C$ y justifica que se puede.
+
+b) (1,5 puntos) Calcula $A^{-1}$ y resuelve la ecuación.
+
+c) (1 punto) Comprueba que la matriz obtenida cumple la ecuación.
+
+**16.** *(Tipo PAU · 3 puntos)* Sean $A=\begin{pmatrix}3&1\\1&2\end{pmatrix}$ y $B=\begin{pmatrix}2&1\\3&2\end{pmatrix}$. Se quiere hallar $X$ tal que $X\cdot A-X=B$.
+
+a) (0,75 puntos) Saca factor común y explica por qué hay que escribir $I_2$.
+
+b) (1 punto) Calcula $A-I_2$ y su inversa.
+
+c) (1,25 puntos) Calcula $X$.
+
+**17.** *(Tipo PAU · 3 puntos)* Sea $B_m=\begin{pmatrix}1&1&1\\1&2&m\\1&4&m^2\end{pmatrix}$.
+
+a) (1 punto) Calcula $|B_m|$.
+
+b) (1 punto) Estudia el rango de $B_m$ según los valores de $m$.
+
+c) (1 punto) Calcula, si existe, la inversa de $B_3$.
+
+**18.** *(Tipo PAU · 3 puntos)* Sea $A=\begin{pmatrix}1&2\\0&1\end{pmatrix}$.
+
+a) (0,75 puntos) Calcula $A^2$ y $A^3$.
+
+b) (0,75 puntos) Conjetura la expresión de $A^n$ y calcula $A^{10}$.
+
+c) (0,75 puntos) Demuestra por inducción tu conjetura.
+
+d) (0,75 puntos) Calcula $A^{-1}$ y comprueba que la expresión de $A^n$ da $A^{-1}$ al tomar $n=-1$.
+
+**19.** *(Tipo PAU · 3 puntos · competencial)* Sean $A$ y $B$ matrices cuadradas de orden 3 con $|A|=2$ y $|B|=-3$.
+
+a) (0,5 puntos) Calcula $|A\cdot B|$ y di qué propiedad usas.
+
+b) (0,5 puntos) Calcula $|2A|$.
+
+c) (0,75 puntos) Calcula $|B^t\cdot A^{-1}|$ justificando que $A$ es invertible.
+
+d) (0,5 puntos) Calcula $|A^3|$.
+
+e) (0,75 puntos) ¿Se puede asegurar que $A+B$ es invertible? Justifica la respuesta con un ejemplo.
+
+**20.** *(Tipo PAU · 3 puntos · competencial)* Una cooperativa envía códigos de pedido cifrados. Un par de números $x=\begin{pmatrix}x_1\\x_2\end{pmatrix}$ se cifra como $y=C\cdot x$ con $C=\begin{pmatrix}2&1\\3&2\end{pmatrix}$.
+
+a) (0,5 puntos) Comprueba que $C$ es invertible y calcula $C^{-1}$.
+
+b) (1 punto) Cifra el código $x=\begin{pmatrix}3\\5\end{pmatrix}$.
+
+c) (1 punto) Descifra el código recibido $y=\begin{pmatrix}16\\27\end{pmatrix}$.
+
+d) (0,5 puntos) Explica por qué es imprescindible que $|C|\neq0$ para poder descifrar, y por qué conviene aquí que $|C|=1$.
+
+**21.** *(Tipo PAU · 3 puntos)* Elige una de las dos opciones.
+
+**Opción A.** Sea $A=\begin{pmatrix}1&0&1\\0&1&1\\1&1&0\end{pmatrix}$.
+
+a) (1,5 puntos) Calcula $|A|$ y $A^{-1}$.
+
+b) (1,5 puntos) Comprueba que $A\cdot A^{-1}=I_3$.
+
+**Opción B.** Sean $A=\begin{pmatrix}1&a\\0&1\end{pmatrix}$ y $B=\begin{pmatrix}1&1\\0&b\end{pmatrix}$.
+
+a) (1,5 puntos) Calcula $A\cdot B$ y $B\cdot A$.
+
+b) (1,5 puntos) Halla los valores de $a$ y $b$ para los que $A\cdot B=B\cdot A$.
+
+**22.** *(Tipo PAU · 3 puntos)* Sean $A=\begin{pmatrix}1&2\\0&1\end{pmatrix}$ y $B=\begin{pmatrix}3&1\\2&5\end{pmatrix}$.
+
+a) (0,5 puntos) Despeja $X$ en la ecuación $A^t\cdot X=B$.
+
+b) (1 punto) Calcula $A^t$ y su inversa.
+
+c) (1,5 puntos) Calcula $X$.
+
+**23.** *(Tipo PAU · 3 puntos · competencial)* Sea $A_m=\begin{pmatrix}1&m\\2&3\end{pmatrix}$ y $B=\begin{pmatrix}1\\2\end{pmatrix}$.
+
+a) (0,75 puntos) Halla los valores de $m$ para los que $A_m$ no tiene inversa.
+
+b) (0,75 puntos) Para $m=1$, calcula $A_1^{-1}$ y resuelve $A_1\cdot X=B$.
+
+c) (0,75 puntos) Para el valor de $m$ del apartado a), estudia los rangos de $A_m$ y de la matriz ampliada y resuelve $A_m\cdot X=B$.
+
+d) (0,75 puntos) Explica por qué, aunque en c) no exista inversa, el sistema sí tiene solución.
+
+**24.** *(Tipo PAU · 3 puntos · competencial)* En una red social hay cuatro usuarios. La matriz $A$ recoge las amistades: $a_{ij}=1$ si los usuarios $i$ y $j$ son amigos y $a_{ij}=0$ si no (y $a_{ii}=0$):
+$$A=\begin{pmatrix}0&1&1&0\\1&0&1&1\\1&1&0&0\\0&1&0&0\end{pmatrix}$$
+
+a) (0,5 puntos) Justifica que $A$ es simétrica y explica qué significa en la red.
+
+b) (1 punto) Calcula $A^2$.
+
+c) (0,75 puntos) Interpreta los elementos $(A^2)_{14}$ y $(A^2)_{22}$.
+
+d) (0,75 puntos) Calcula $A\cdot u$ con $u=\begin{pmatrix}1\\1\\1\\1\end{pmatrix}$ e interpreta el resultado.
+
+**25.** *(Tipo PAU · 3 puntos · competencial)* Dos plantas fabrican dos productos que consumen dos materias primas. La matriz $A=\begin{pmatrix}2&1\\1&2\end{pmatrix}$ indica las unidades de cada materia prima (columnas) por unidad de cada producto (filas). Se sabe que el consumo total de materias primas de cada planta (filas: plantas) es $B=\begin{pmatrix}100&110\\80&70\end{pmatrix}$. Si $X$ es la matriz de unidades fabricadas de cada producto (filas: plantas; columnas: productos), se cumple $X\cdot A=B$.
+
+a) (0,5 puntos) Justifica que $A$ es invertible.
+
+b) (1,5 puntos) Calcula $X$.
+
+c) (1 punto) Interpreta el resultado: ¿cuántas unidades de cada producto fabrica cada planta?
+
+## Soluciones
+
+::: {.callout-note collapse="true"}
+## 1
+$A+B=\begin{pmatrix}4&2\\1&1\end{pmatrix}$ y $2A-B=\begin{pmatrix}2&4\\0&-2\end{pmatrix}-\begin{pmatrix}3&0\\1&2\end{pmatrix}=\begin{pmatrix}-1&4\\-1&-4\end{pmatrix}$.
+
+$A\cdot B=\begin{pmatrix}1\cdot3+2\cdot1&1\cdot0+2\cdot2\\0\cdot3+(-1)\cdot1&0\cdot0+(-1)\cdot2\end{pmatrix}=\begin{pmatrix}5&4\\-1&-2\end{pmatrix}$ y $B\cdot A=\begin{pmatrix}3&6\\1&0\end{pmatrix}$.
+
+Como $A\cdot B\neq B\cdot A$, **no se cumple** la igualdad: el producto de matrices no es conmutativo.
+:::
+
+::: {.callout-note collapse="true"}
+## 2
+$A\cdot B$ es de dimensión $2\times2$, $B\cdot A$ es $3\times3$ y $A^t$ es $3\times2$.
+
+$A\cdot B=\begin{pmatrix}1\cdot2+0\cdot0+2\cdot1&1\cdot1+0\cdot(-1)+2\cdot3\\-1\cdot2+3\cdot0+1\cdot1&-1\cdot1+3\cdot(-1)+1\cdot3\end{pmatrix}=\begin{pmatrix}4&7\\-1&-1\end{pmatrix}$ y $A^t=\begin{pmatrix}1&-1\\0&3\\2&1\end{pmatrix}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 3
+$A$ es simétrica si $A=A^t$, es decir, si $a_{ij}=a_{ji}$. De $a_{12}=a_{21}$ resulta $a=3$ y de $a_{23}=a_{32}$ resulta $b=-2$. El elemento $a_{13}=a_{31}=1$ ya coincide.
+
+Solución: $a=3$ y $b=-2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 4
+$\begin{vmatrix}3&-2\\1&4\end{vmatrix}=3\cdot4-(-2)\cdot1=12+2=14$.
+
+Por Sarrus: $(2\cdot3\cdot4+1\cdot2\cdot1+0\cdot(-1)\cdot0)-(0\cdot3\cdot1+2\cdot2\cdot0+1\cdot(-1)\cdot4)=(24+2+0)-(0+0-4)=26+4=30$.
+:::
+
+::: {.callout-note collapse="true"}
+## 5
+- El determinante no cambia al trasponer: $|A^t|=-2$.
+- Al multiplicar una matriz de orden 3 por $3$, cada fila queda multiplicada por $3$: $|3A|=3^3\cdot|A|=-54$.
+- El determinante de un producto es el producto de los determinantes: $|A^2|=|A|^2=4$.
+- $|A^{-1}|=\dfrac{1}{|A|}=-\frac{1}{2}$.
+- $|A\cdot A^t|=|A|\cdot|A^t|=4$.
+:::
+
+::: {.callout-note collapse="true"}
+## 6
+$|A|=2\cdot3-5\cdot1=1\neq0$, luego existe la inversa. Con la fórmula de orden 2:
+
+$A^{-1}=\dfrac{1}{1}\begin{pmatrix}3&-5\\-1&2\end{pmatrix}=\begin{pmatrix}3&-5\\-1&2\end{pmatrix}$.
+
+Comprobación: $A\cdot A^{-1}=\begin{pmatrix}2\cdot3+5\cdot(-1)&2\cdot(-5)+5\cdot2\\1\cdot3+3\cdot(-1)&1\cdot(-5)+3\cdot2\end{pmatrix}=\begin{pmatrix}1&0\\0&1\end{pmatrix}=I_2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 7
+$|A|=\begin{vmatrix}1&0&2\\0&1&-1\\2&1&0\end{vmatrix}=(0+0+0)-(4-1+0)=-3\neq0$.
+
+Adjuntos: $A_{11}=1$, $A_{12}=-2$, $A_{13}=-2$, $A_{21}=2$, $A_{22}=-4$, $A_{23}=-1$, $A_{31}=-2$, $A_{32}=1$, $A_{33}=1$. La matriz de adjuntos y su traspuesta son
+
+$\begin{pmatrix}1&-2&-2\\2&-4&-1\\-2&1&1\end{pmatrix}$ y $\begin{pmatrix}1&2&-2\\-2&-4&1\\-2&-1&1\end{pmatrix}$.
+
+Entonces $A^{-1}=\dfrac{1}{|A|}\,(\operatorname{Adj}A)^t=-\dfrac13\begin{pmatrix}1&2&-2\\-2&-4&1\\-2&-1&1\end{pmatrix}=\begin{pmatrix}-\frac{1}{3}&-\frac{2}{3}&\frac{2}{3}\\\frac{2}{3}&\frac{4}{3}&-\frac{1}{3}\\\frac{2}{3}&\frac{1}{3}&-\frac{1}{3}\end{pmatrix}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 8
+$F_2-2F_1$ da la fila $(0,0,0,0)$, luego $F_2$ depende de $F_1$. Quedan $F_1=(1,2,-1,3)$ y $F_3=(0,1,1,2)$, que no son proporcionales. Por tanto $\operatorname{rg}A=2$.
+
+(Comprobación por menores: todos los menores de orden 3 se anulan porque $F_2=2F_1$, y el menor $\begin{vmatrix}1&2\\0&1\end{vmatrix}=1\neq0$.)
+:::
+
+::: {.callout-note collapse="true"}
+## 9
+$|A|=5-6=-1\neq0$ y $A^{-1}=\dfrac{1}{-1}\begin{pmatrix}5&-2\\-3&1\end{pmatrix}=\begin{pmatrix}-5&2\\3&-1\end{pmatrix}$.
+
+De $A\cdot X=B$ se obtiene $X=A^{-1}\cdot B=\begin{pmatrix}-5&2\\3&-1\end{pmatrix}\begin{pmatrix}1&0\\2&1\end{pmatrix}=\begin{pmatrix}-1&2\\1&-1\end{pmatrix}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 10
+a) $V+W=\begin{pmatrix}65&35&13\\45&85&22\end{pmatrix}$. El elemento $22$ (fila 2, columna 3) son las mochilas vendidas por la tienda 2 en las dos semanas.
+
+b) Se multiplica por el vector de precios: $(V+W)\cdot p=\begin{pmatrix}65\cdot12+35\cdot3+13\cdot25\\45\cdot12+85\cdot3+22\cdot25\end{pmatrix}=\begin{pmatrix}1210\\1345\end{pmatrix}$. La tienda 1 ingresó $1210$ € y la tienda 2, $1345$ €.
+
+c) $W-V=\begin{pmatrix}5&-5&3\\-5&5&2\end{pmatrix}$. Los elementos negativos indican que bajaron las ventas de **cuadernos en la tienda 1** ($-5$ unidades) y de **libros en la tienda 2** ($-5$ unidades).
+
+d) El nuevo vector de precios es $0{,}9\,p=\begin{pmatrix}10{,}8\\2{,}7\\22{,}5\end{pmatrix}$. La tienda 1 en la semana 2 vendió $(35,15,8)$ y ingresa $35\cdot10{,}8+15\cdot2{,}7+8\cdot22{,}5=378+40{,}5+180=598{,}5$ €.
+:::
+
+::: {.callout-note collapse="true"}
+## 11
+a) $A\cdot q=\begin{pmatrix}2\cdot5+1\cdot8\\1\cdot5+3\cdot8\\4\cdot5+2\cdot8\end{pmatrix}=\begin{pmatrix}18\\29\\36\end{pmatrix}$: es el coste de las materias primas de **una unidad** de cada producto (18 €, 29 € y 36 €).
+
+b) $r\cdot A=\begin{pmatrix}10\cdot2+20\cdot1+5\cdot4&10\cdot1+20\cdot3+5\cdot2\end{pmatrix}=\begin{pmatrix}60&80\end{pmatrix}$: el plan semanal necesita $60$ unidades de la primera materia prima y $80$ de la segunda.
+
+c) $(r\cdot A)\cdot q=60\cdot5+80\cdot8=940$ y $r\cdot(A\cdot q)=10\cdot18+20\cdot29+5\cdot36=940$. Coinciden por la propiedad asociativa del producto de matrices: el coste total es de $940$ €.
+
+d) Con $q'=\begin{pmatrix}5\\10\end{pmatrix}$ el coste es $60\cdot5+80\cdot10=1100$ €. Aumenta $1100-940=160$ € por semana.
+:::
+
+::: {.callout-note collapse="true"}
+## 12
+**Opción A.**
+
+a) $A^2=\begin{pmatrix}1&0\\3&1\end{pmatrix}\begin{pmatrix}1&0\\3&1\end{pmatrix}=\begin{pmatrix}1&0\\6&1\end{pmatrix}$ y $A^3=A^2\cdot A=\begin{pmatrix}1&0\\9&1\end{pmatrix}$.
+
+b) Se observa que el elemento inferior izquierdo es $3n$: $A^n=\begin{pmatrix}1&0\\3n&1\end{pmatrix}$, y entonces $A^{10}=\begin{pmatrix}1&0\\30&1\end{pmatrix}$.
+
+c) Inducción. Para $n=1$ se cumple. Si $A^n=\begin{pmatrix}1&0\\3n&1\end{pmatrix}$, entonces $A^{n+1}=A^n\cdot A=\begin{pmatrix}1&0\\3n+3&1\end{pmatrix}=\begin{pmatrix}1&0\\3(n+1)&1\end{pmatrix}$, que es la fórmula para $n+1$. Por tanto vale para todo $n\ge1$.
+
+**Opción B.**
+
+a) $B^2=\begin{pmatrix}4&3\\0&1\end{pmatrix}$, luego $B^2-3B+2I_2=\begin{pmatrix}4&3\\0&1\end{pmatrix}-\begin{pmatrix}6&3\\0&3\end{pmatrix}+\begin{pmatrix}2&0\\0&2\end{pmatrix}=\begin{pmatrix}0&0\\0&0\end{pmatrix}=O$.
+
+b) De $B^2-3B+2I_2=O$ se tiene $B\cdot(3I_2-B)=2I_2$, es decir, $B\cdot\dfrac12(3I_2-B)=I_2$. Existe una matriz que multiplicada por $B$ da la identidad, luego $B$ es invertible y $B^{-1}=\dfrac12(3I_2-B)=\dfrac12\begin{pmatrix}1&-1\\0&2\end{pmatrix}=\begin{pmatrix}\frac{1}{2}&-\frac{1}{2}\\0&1\end{pmatrix}$.
+
+c) $|B|=2\cdot1-1\cdot0=2\neq0$ y, con la fórmula de orden 2, $B^{-1}=\dfrac12\begin{pmatrix}1&-1\\0&2\end{pmatrix}$, que coincide con el resultado de b).
+:::
+
+::: {.callout-note collapse="true"}
+## 13
+a) Por Sarrus: $|A_m|=m^3+1+1-m-m-m=m^3-3m+2=(m-1)^2(m+2)$. No tiene inversa cuando $|A_m|=0$, es decir, para $m=1$ y $m=-2$.
+
+b) Para $m=2$: $|A_2|=4$. Los adjuntos de $A_2=\begin{pmatrix}2&1&1\\1&2&1\\1&1&2\end{pmatrix}$ son $3$ en la diagonal y $-1$ fuera de ella, y la matriz es simétrica, luego
+$A_2^{-1}=\dfrac14\begin{pmatrix}3&-1&-1\\-1&3&-1\\-1&-1&3\end{pmatrix}=\begin{pmatrix}\frac{3}{4}&-\frac{1}{4}&-\frac{1}{4}\\-\frac{1}{4}&\frac{3}{4}&-\frac{1}{4}\\-\frac{1}{4}&-\frac{1}{4}&\frac{3}{4}\end{pmatrix}$.
+
+c) Para $m=1$ todas las filas son $(1,1,1)$: $\operatorname{rg}A_1=1$. Para $m=-2$ las filas son $(-2,1,1)$, $(1,-2,1)$ y $(1,1,-2)$, y el menor $\begin{vmatrix}-2&1\\1&-2\end{vmatrix}=3\neq0$ da rango al menos 2, pero $|A_{-2}|=0$: $\operatorname{rg}A_{-2}=2$.
+:::
+
+::: {.callout-note collapse="true"}
+## 14
+a) Cada columna indica cómo se reparten los clientes de una operadora al mes siguiente: la primera columna dice que de los clientes de A, el $90\,\%$ se queda en A y el $10\,\%$ pasa a B; la segunda, que de los de B, el $20\,\%$ pasa a A y el $80\,\%$ se queda. Cada columna suma $0{,}9+0{,}1=1$ y $0{,}2+0{,}8=1$ porque todos los clientes van a alguna de las dos operadoras.
+
+b) $x_1=M\cdot x=\begin{pmatrix}0{,}9\cdot600+0{,}2\cdot400\\0{,}1\cdot600+0{,}8\cdot400\end{pmatrix}=\begin{pmatrix}620\\380\end{pmatrix}$: tras un mes, A tiene $620$ y B tiene $380$.
+
+c) $M^2=\begin{pmatrix}0{,}9\cdot0{,}9+0{,}2\cdot0{,}1&0{,}9\cdot0{,}2+0{,}2\cdot0{,}8\\0{,}1\cdot0{,}9+0{,}8\cdot0{,}1&0{,}1\cdot0{,}2+0{,}8\cdot0{,}8\end{pmatrix}=\begin{pmatrix}0{,}83&0{,}34\\0{,}17&0{,}66\end{pmatrix}$ y $x_2=M^2\cdot x=\begin{pmatrix}634\\366\end{pmatrix}$: tras dos meses, A tiene $634$ y B tiene $366$.
+
+d) La suma de los dos elementos de $M\cdot x$ es $(0{,}9+0{,}1)x_A+(0{,}2+0{,}8)x_B=x_A+x_B$, porque las columnas suman 1. Así el total se mantiene en $1000$ en cada mes (por ejemplo, $620+380=1000$ y $634+366=1000$).
+:::
+
+::: {.callout-note collapse="true"}
+## 15
+a) De $A\cdot X+B=C$ se tiene $A\cdot X=C-B$ y, si $A$ es invertible, $X=A^{-1}\cdot(C-B)$ (la inversa se multiplica por la izquierda). Como $|A|=2\cdot1-1\cdot1=1\neq0$, $A$ es invertible.
+
+b) $A^{-1}=\dfrac{1}{1}\begin{pmatrix}1&-1\\-1&2\end{pmatrix}$ y $C-B=\begin{pmatrix}4&4\\5&3\end{pmatrix}$, luego
+$X=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}\begin{pmatrix}4&4\\5&3\end{pmatrix}=\begin{pmatrix}-1&1\\6&2\end{pmatrix}$.
+
+c) $A\cdot X=\begin{pmatrix}2&1\\1&1\end{pmatrix}\begin{pmatrix}-1&1\\6&2\end{pmatrix}=\begin{pmatrix}4&4\\5&3\end{pmatrix}$ y sumando $B$ resulta $\begin{pmatrix}5&4\\7&6\end{pmatrix}=C$. Se cumple.
+:::
+
+::: {.callout-note collapse="true"}
+## 16
+a) $X\cdot A-X=X\cdot(A-I_2)$. Hay que escribir $I_2$ porque $A-1$ no tiene sentido: no se puede restar un número a una matriz; $X=X\cdot I_2$.
+
+b) $A-I_2=\begin{pmatrix}2&1\\1&1\end{pmatrix}$, con $|A-I_2|=1\neq0$ y $(A-I_2)^{-1}=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}$.
+
+c) De $X\cdot(A-I_2)=B$ se obtiene $X=B\cdot(A-I_2)^{-1}$ (la inversa se multiplica por la derecha):
+$X=\begin{pmatrix}2&1\\3&2\end{pmatrix}\begin{pmatrix}1&-1\\-1&2\end{pmatrix}=\begin{pmatrix}1&0\\1&1\end{pmatrix}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 17
+a) Restando la primera fila a las otras dos, $F_2-F_1=(0,1,m-1)$ y $F_3-F_1=(0,3,m^2-1)$, el determinante no cambia y
+$|B_m|=1\cdot\bigl(1\cdot(m^2-1)-3\cdot(m-1)\bigr)=(m-1)(m+1-3)=(m-1)(m-2)$.
+
+b) Si $m\neq1$ y $m\neq2$, $|B_m|\neq0$ y $\operatorname{rg}B_m=3$. Si $m=1$, $B_1=\begin{pmatrix}1&1&1\\1&2&1\\1&4&1\end{pmatrix}$ tiene la primera y la tercera columna iguales, y el menor $\begin{vmatrix}1&1\\1&2\end{vmatrix}=1\neq0$: $\operatorname{rg}B_1=2$. Si $m=2$, $B_2=\begin{pmatrix}1&1&1\\1&2&2\\1&4&4\end{pmatrix}$ tiene las dos últimas columnas iguales y el mismo menor no nulo: $\operatorname{rg}B_2=2$.
+
+c) Para $m=3$: $|B_3|=2\neq0$, luego existe la inversa. Con los adjuntos de $B_3=\begin{pmatrix}1&1&1\\1&2&3\\1&4&9\end{pmatrix}$ resulta
+$B_3^{-1}=\dfrac12\begin{pmatrix}6&-5&1\\-6&8&-2\\2&-3&1\end{pmatrix}=\begin{pmatrix}3&-\frac{5}{2}&\frac{1}{2}\\-3&4&-1\\1&-\frac{3}{2}&\frac{1}{2}\end{pmatrix}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 18
+a) $A^2=\begin{pmatrix}1&2\\0&1\end{pmatrix}\begin{pmatrix}1&2\\0&1\end{pmatrix}=\begin{pmatrix}1&4\\0&1\end{pmatrix}$ y $A^3=A^2\cdot A=\begin{pmatrix}1&6\\0&1\end{pmatrix}$.
+
+b) El elemento de la esquina superior derecha es $2n$: $A^n=\begin{pmatrix}1&2n\\0&1\end{pmatrix}$, luego $A^{10}=\begin{pmatrix}1&20\\0&1\end{pmatrix}$.
+
+c) Inducción. Para $n=1$ se cumple. Si $A^n=\begin{pmatrix}1&2n\\0&1\end{pmatrix}$, entonces $A^{n+1}=A^n\cdot A=\begin{pmatrix}1&2+2n\\0&1\end{pmatrix}=\begin{pmatrix}1&2(n+1)\\0&1\end{pmatrix}$. Vale para todo $n\ge1$.
+
+d) $|A|=1$ y $A^{-1}=\begin{pmatrix}1&-2\\0&1\end{pmatrix}$. La fórmula $\begin{pmatrix}1&2n\\0&1\end{pmatrix}$ con $n=-1$ da exactamente esa matriz.
+:::
+
+::: {.callout-note collapse="true"}
+## 19
+a) El determinante de un producto es el producto de los determinantes: $|A\cdot B|=|A|\cdot|B|=2\cdot(-3)=-6$.
+
+b) Como $A$ es de orden 3, $|2A|=2^3\cdot|A|=8\cdot2=16$.
+
+c) $|A|=2\neq0$, luego $A$ es invertible y $|A^{-1}|=\dfrac12$. Entonces $|B^t\cdot A^{-1}|=|B^t|\cdot|A^{-1}|=|B|\cdot\dfrac{1}{|A|}=-3\cdot\dfrac12=-\frac{3}{2}$.
+
+d) $|A^3|=|A|^3=2^3=8$.
+
+e) **No se puede asegurar**: el determinante de una suma no es la suma de los determinantes. Contraejemplo: $A=\begin{pmatrix}2&0&0\\0&1&0\\0&0&1\end{pmatrix}$ ($|A|=2$) y $B=\begin{pmatrix}-2&0&0\\0&1&0\\0&0&\frac{3}{2}\end{pmatrix}$ ($|B|=-3$) cumplen las condiciones, pero $A+B=\begin{pmatrix}0&0&0\\0&2&0\\0&0&\frac52\end{pmatrix}$ tiene $|A+B|=0$ y no es invertible.
+:::
+
+::: {.callout-note collapse="true"}
+## 20
+a) $|C|=2\cdot2-1\cdot3=1\neq0$, luego $C$ es invertible y $C^{-1}=\dfrac11\begin{pmatrix}2&-1\\-3&2\end{pmatrix}=\begin{pmatrix}2&-1\\-3&2\end{pmatrix}$.
+
+b) $y=C\cdot x=\begin{pmatrix}2\cdot3+1\cdot5\\3\cdot3+2\cdot5\end{pmatrix}=\begin{pmatrix}11\\19\end{pmatrix}$.
+
+c) $x=C^{-1}\cdot y=\begin{pmatrix}2\cdot16-1\cdot27\\-3\cdot16+2\cdot27\end{pmatrix}=\begin{pmatrix}5\\6\end{pmatrix}$.
+
+d) Para recuperar $x$ hace falta $C^{-1}$, que solo existe si $|C|\neq0$. Si no existiera, distintos códigos podrían dar el mismo cifrado y no se podría descifrar. Con $|C|=1$ la inversa tiene entradas **enteras** y se obtienen enteros al descifrar, sin fracciones.
+:::
+
+::: {.callout-note collapse="true"}
+## 21
+**Opción A.**
+
+a) Por Sarrus, $|A|=(1\cdot1\cdot0+0\cdot1\cdot1+1\cdot0\cdot1)-(1\cdot1\cdot1+1\cdot1\cdot1+0\cdot0\cdot0)=0-2=-2\neq0$. La matriz de adjuntos es $\begin{pmatrix}-1&1&-1\\1&-1&-1\\-1&-1&1\end{pmatrix}$, simétrica, y
+$A^{-1}=\dfrac{1}{-2}\begin{pmatrix}-1&1&-1\\1&-1&-1\\-1&-1&1\end{pmatrix}=\begin{pmatrix}\frac{1}{2}&-\frac{1}{2}&\frac{1}{2}\\-\frac{1}{2}&\frac{1}{2}&\frac{1}{2}\\\frac{1}{2}&\frac{1}{2}&-\frac{1}{2}\end{pmatrix}$.
+
+b) $A\cdot A^{-1}=\dfrac12\begin{pmatrix}1&0&1\\0&1&1\\1&1&0\end{pmatrix}\begin{pmatrix}1&-1&1\\-1&1&1\\1&1&-1\end{pmatrix}=\dfrac12\begin{pmatrix}2&0&0\\0&2&0\\0&0&2\end{pmatrix}=\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix}=I_3$.
+
+**Opción B.**
+
+a) $A\cdot B=\begin{pmatrix}1&1+ab\\0&b\end{pmatrix}$ y $B\cdot A=\begin{pmatrix}1&a+1\\0&b\end{pmatrix}$.
+
+b) $A\cdot B=B\cdot A$ si $1+ab=a+1$, es decir, $ab=a$, o $a\,(b-1)=0$. Se cumple si $a=0$ (con $b$ cualquiera) o si $b=1$ (con $a$ cualquiera).
+:::
+
+::: {.callout-note collapse="true"}
+## 22
+a) $A^t\cdot X=B$. Si $A^t$ es invertible, $X=(A^t)^{-1}\cdot B$ (inversa por la izquierda).
+
+b) $A^t=\begin{pmatrix}1&0\\2&1\end{pmatrix}$, con $|A^t|=1\neq0$ y $(A^t)^{-1}=\begin{pmatrix}1&0\\-2&1\end{pmatrix}$.
+
+c) $X=\begin{pmatrix}1&0\\-2&1\end{pmatrix}\begin{pmatrix}3&1\\2&5\end{pmatrix}=\begin{pmatrix}3&1\\-4&3\end{pmatrix}$.
+:::
+
+::: {.callout-note collapse="true"}
+## 23
+a) $|A_m|=1\cdot3-m\cdot2=3-2m$, que se anula para $m=\frac{3}{2}$. Para ese valor $A_m$ no tiene inversa.
+
+b) Para $m=1$, $A_1=\begin{pmatrix}1&1\\2&3\end{pmatrix}$, $|A_1|=1$ y $A_1^{-1}=\begin{pmatrix}3&-1\\-2&1\end{pmatrix}$. Entonces $X=A_1^{-1}\cdot B=\begin{pmatrix}3\cdot1-1\cdot2\\-2\cdot1+1\cdot2\end{pmatrix}=\begin{pmatrix}1\\0\end{pmatrix}$.
+
+c) Para $m=\frac{3}{2}$, $A=\begin{pmatrix}1&\frac{3}{2}\\2&3\end{pmatrix}$: la segunda fila es el doble de la primera, luego $\operatorname{rg}A_{3/2}=1$. La matriz ampliada $\begin{pmatrix}1&\frac{3}{2}&1\\2&3&2\end{pmatrix}$ también tiene la segunda fila doble de la primera, luego $\operatorname{rg}(A_{3/2}|B)=1$. Como ambos rangos son $1<2$, el sistema es compatible indeterminado: es una sola ecuación $x+\frac{3}{2}y=1$. Con $y=t$: $x=1-\frac{3}{2}t$, es decir, $(x,y)=\bigl(1-\frac{3}{2}t,\ t\bigr)$.
+
+d) La existencia de solución depende de los rangos, no de la inversa. Aquí la segunda ecuación es múltiplo de la primera incluso en el término independiente ($2=2\cdot1$), así que no hay contradicción; si el término fuera otro, el sistema sería incompatible. Que $A_m$ no tenga inversa solo impide *despejar* $X=A^{-1}B$.
+:::
+
+::: {.callout-note collapse="true"}
+## 24
+a) $A$ es simétrica porque $a_{ij}=a_{ji}$ para todo par (por ejemplo $a_{12}=a_{21}=1$ y $a_{24}=a_{42}=1$). En la red significa que la amistad es **mutua**: si $i$ es amigo de $j$, $j$ lo es de $i$.
+
+b) $A^2=\begin{pmatrix}2&1&1&1\\1&3&1&0\\1&1&2&1\\1&0&1&1\end{pmatrix}$.
+
+c) $(A^2)_{14}=1$: hay un único camino de longitud 2 entre los usuarios 1 y 4, es decir, tienen **un amigo en común** (el usuario 2). $(A^2)_{22}=3$: es el número de amigos del usuario 2 (sus tres amigos 1, 3 y 4), porque cada amigo da un camino de ida y vuelta.
+
+d) $A\cdot u=\begin{pmatrix}2\\3\\2\\1\end{pmatrix}$: cada elemento suma una fila de $A$, es decir, el número de amigos de cada usuario (2, 3, 2 y 1).
+:::
+
+::: {.callout-note collapse="true"}
+## 25
+a) $|A|=2\cdot2-1\cdot1=3\neq0$, luego $A$ es invertible.
+
+b) De $X\cdot A=B$ se obtiene $X=B\cdot A^{-1}$ (inversa por la derecha). Como $A^{-1}=\dfrac13\begin{pmatrix}2&-1\\-1&2\end{pmatrix}=\begin{pmatrix}\frac{2}{3}&-\frac{1}{3}\\-\frac{1}{3}&\frac{2}{3}\end{pmatrix}$,
+$X=\dfrac13\begin{pmatrix}100&110\\80&70\end{pmatrix}\begin{pmatrix}2&-1\\-1&2\end{pmatrix}=\dfrac13\begin{pmatrix}90&120\\90&60\end{pmatrix}=\begin{pmatrix}30&40\\30&20\end{pmatrix}$.
+
+c) La planta 1 fabrica $30$ unidades del producto 1 y $40$ del producto 2; la planta 2 fabrica $30$ del producto 1 y $20$ del producto 2. Comprobación en la planta 1: $30\cdot(2,1)+40\cdot(1,2)=(100,110)$, que es la primera fila de $B$.
+:::
