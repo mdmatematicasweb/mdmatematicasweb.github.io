@@ -624,6 +624,23 @@ def fig_producto_matrices():
            "Producto de una matriz 2×3 por una columna 3×1: el primer elemento del resultado es la fila 1 por la columna")
 
 
+def fig_equilibrio():
+    """Punto de equilibrio de oferta y demanda: sistema 2×2 compatible determinado (tema 02 CCSS)."""
+    g = Fig(-1.2, 17, -12, 138, w=520, h=330)
+    g.axes()
+    g.curve(lambda p: 120 - 4 * p, 0, 17, color=CORAL, width=3.5)
+    g.curve(lambda p: 20 + 6 * p, 0, 17, color=NAVY, width=3.5)
+    g.line((10, 0), (10, 80), color=INK, width=1.5); g.line((0, 80), (10, 80), color=INK, width=1.5)
+    g.dot(10, 80, YELLOW)
+    g.text(10, 0, "10", dy=18, bold=True); g.text(0, 80, "80", dx=-10, dy=4, anchor="end", bold=True)
+    g.text(0.7, 126, "Demanda  q = 120 − 4p", anchor="start", color="#C4413A", bold=True, size=14)
+    g.text(10.6, 112, "Oferta  q = 20 + 6p", anchor="start", color=NAVY, bold=True, size=14, dy=-4)
+    g.text(10.6, 34, "equilibrio (10, 80)", anchor="start", bold=True, size=14)
+    g.text(17, 0, "precio p (€)", anchor="end", dy=-8, size=13)
+    g.text(0, 138, "cantidad q", anchor="start", dx=10, dy=4, size=13)
+    g.save(APC / "02-sistemas-ecuaciones-lineales" / "fig-equilibrio.svg", "Rectas de oferta y demanda que se cortan en el punto de equilibrio, precio 10 y cantidad 80")
+
+
 if __name__ == "__main__":
     fig_asintotas(); fig_monotonia(); fig_area(); fig_normal()
     fig_dos_planos(); fig_recta_plano(); fig_dos_rectas(); fig_simetrico()
@@ -631,3 +648,4 @@ if __name__ == "__main__":
     fig_simetria_normal(); fig_regla_68(); fig_venn()
     fig_sistemas_2d(); fig_det_area(); fig_vectores_2d(); fig_vectorial_mixto()
     fig_sarrus(); fig_producto_matrices()
+    fig_equilibrio()
