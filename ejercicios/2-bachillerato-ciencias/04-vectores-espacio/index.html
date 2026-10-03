@@ -48,9 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-08cc7884deb6631a1f577a676debe261.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-87ea98e4aa257f341a24a45904ed7641.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-08cc7884deb6631a1f577a676debe261.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-2d82e0ab39c09339319a3284da2afbd7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -85,13 +85,13 @@ ul.task-list li input[type="checkbox"] {
 #md-loader .ml-logo{width:96px;height:96px;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border:5px solid #000;background:#000;box-shadow:8px 8px 0 #000;animation:ml-tilt 2.4s ease-in-out infinite}
 #md-loader .ml-logo i{display:grid;place-items:center;font:900 28px/1 "Arial Black",Arial,sans-serif;font-style:normal;color:#000;animation:ml-pop 1.6s ease-in-out infinite}
 #md-loader .ml-logo i:nth-child(1){background:#5EC4B6}
-#md-loader .ml-logo i:nth-child(2){background:#262A3D;color:#F5D65B;animation-delay:.2s}
+#md-loader .ml-logo i:nth-child(2){background:#262A3D;color:#FCE678;animation-delay:.2s}
 #md-loader .ml-logo i:nth-child(3){background:#F4736C;animation-delay:.6s}
-#md-loader .ml-logo i:nth-child(4){background:#F5D65B;animation-delay:.4s}
+#md-loader .ml-logo i:nth-child(4){background:#FCE678;animation-delay:.4s}
 #md-loader .ml-txt{font-weight:800;font-size:1.25rem;text-transform:uppercase;letter-spacing:.02em;text-align:center;padding:0 1rem}
-#md-loader .ml-txt b{color:#F5D65B}
+#md-loader .ml-txt b{color:#FCE678}
 #md-loader .ml-bar{width:min(260px,70vw);height:14px;border:3px solid #000;background:#000;box-shadow:4px 4px 0 #000;overflow:hidden}
-#md-loader .ml-bar::after{content:"";display:block;height:100%;width:40%;background:repeating-linear-gradient(-45deg,#5EC4B6 0 10px,#F4736C 10px 20px,#F5D65B 20px 30px);animation:ml-slide 1.1s ease-in-out infinite}
+#md-loader .ml-bar::after{content:"";display:block;height:100%;width:40%;background:repeating-linear-gradient(-45deg,#5EC4B6 0 10px,#F4736C 10px 20px,#FCE678 20px 30px);animation:ml-slide 1.1s ease-in-out infinite}
 @keyframes ml-pop{0%,100%{transform:scale(1)}50%{transform:scale(.8)}}
 @keyframes ml-tilt{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
 @keyframes ml-slide{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
@@ -101,12 +101,13 @@ ul.task-list li input[type="checkbox"] {
 <script>
 (function () {
   try {
+    if (/^\/(index\.html)?$/.test(location.pathname)) return;
     var el = document.createElement("div");
     el.id = "md-loader";
     el.setAttribute("role", "status");
     el.innerHTML =
       '<div class="ml-logo" aria-hidden="true"><i>+</i><i>&minus;</i><i>&times;</i><i>=</i></div>' +
-      '<div class="ml-txt">Mientras carga&hellip; <b>un descanso</b></div>' +
+      '<div class="ml-txt">Mientras carga&hellip; <b>&iexcl;&iexcl;&iexcl;un descanso!!!</b></div>' +
       '<div class="ml-bar" aria-hidden="true"></div>';
     document.documentElement.appendChild(el);
     var t0 = Date.now(), gone = false;

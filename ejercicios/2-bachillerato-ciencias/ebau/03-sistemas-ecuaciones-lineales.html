@@ -48,9 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-08cc7884deb6631a1f577a676debe261.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-87ea98e4aa257f341a24a45904ed7641.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-08cc7884deb6631a1f577a676debe261.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-2d82e0ab39c09339319a3284da2afbd7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -85,13 +85,13 @@ ul.task-list li input[type="checkbox"] {
 #md-loader .ml-logo{width:96px;height:96px;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border:5px solid #000;background:#000;box-shadow:8px 8px 0 #000;animation:ml-tilt 2.4s ease-in-out infinite}
 #md-loader .ml-logo i{display:grid;place-items:center;font:900 28px/1 "Arial Black",Arial,sans-serif;font-style:normal;color:#000;animation:ml-pop 1.6s ease-in-out infinite}
 #md-loader .ml-logo i:nth-child(1){background:#5EC4B6}
-#md-loader .ml-logo i:nth-child(2){background:#262A3D;color:#F5D65B;animation-delay:.2s}
+#md-loader .ml-logo i:nth-child(2){background:#262A3D;color:#FCE678;animation-delay:.2s}
 #md-loader .ml-logo i:nth-child(3){background:#F4736C;animation-delay:.6s}
-#md-loader .ml-logo i:nth-child(4){background:#F5D65B;animation-delay:.4s}
+#md-loader .ml-logo i:nth-child(4){background:#FCE678;animation-delay:.4s}
 #md-loader .ml-txt{font-weight:800;font-size:1.25rem;text-transform:uppercase;letter-spacing:.02em;text-align:center;padding:0 1rem}
-#md-loader .ml-txt b{color:#F5D65B}
+#md-loader .ml-txt b{color:#FCE678}
 #md-loader .ml-bar{width:min(260px,70vw);height:14px;border:3px solid #000;background:#000;box-shadow:4px 4px 0 #000;overflow:hidden}
-#md-loader .ml-bar::after{content:"";display:block;height:100%;width:40%;background:repeating-linear-gradient(-45deg,#5EC4B6 0 10px,#F4736C 10px 20px,#F5D65B 20px 30px);animation:ml-slide 1.1s ease-in-out infinite}
+#md-loader .ml-bar::after{content:"";display:block;height:100%;width:40%;background:repeating-linear-gradient(-45deg,#5EC4B6 0 10px,#F4736C 10px 20px,#FCE678 20px 30px);animation:ml-slide 1.1s ease-in-out infinite}
 @keyframes ml-pop{0%,100%{transform:scale(1)}50%{transform:scale(.8)}}
 @keyframes ml-tilt{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
 @keyframes ml-slide{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
@@ -101,12 +101,13 @@ ul.task-list li input[type="checkbox"] {
 <script>
 (function () {
   try {
+    if (/^\/(index\.html)?$/.test(location.pathname)) return;
     var el = document.createElement("div");
     el.id = "md-loader";
     el.setAttribute("role", "status");
     el.innerHTML =
       '<div class="ml-logo" aria-hidden="true"><i>+</i><i>&minus;</i><i>&times;</i><i>=</i></div>' +
-      '<div class="ml-txt">Mientras carga&hellip; <b>un descanso</b></div>' +
+      '<div class="ml-txt">Mientras carga&hellip; <b>&iexcl;&iexcl;&iexcl;un descanso!!!</b></div>' +
       '<div class="ml-bar" aria-hidden="true"></div>';
     document.documentElement.appendChild(el);
     var t0 = Date.now(), gone = false;
@@ -465,7 +466,7 @@ window.Quarto = {
 <section id="ordinaria-2026" class="level3">
 <h3 class="anchored" data-anchor-id="ordinaria-2026">Ordinaria 2026</h3>
 <div id="ebau-2026-ord-3-1" class="ebau-ej">
-<p><strong>Ejercicio 3.1</strong> · Ordinaria 2026 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/06/2oBachCC_EBAU_Andalucia_2026-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 3.1</strong> · Ordinaria 2026 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2026-ord/examen.pdf" target="_blank">Examen</a></p>
 <p>Considera el sistema</p>
 <p><span class="math display">\[\begin{cases}3x-y=a^{2}\\(1-a)y+2z=0\\4y+(3-a)z=a-5\end{cases}\]</span></p>
 <ol type="a">
@@ -496,7 +497,7 @@ window.Quarto = {
 <section id="ordinaria-suplente-2-2026" class="level3">
 <h3 class="anchored" data-anchor-id="ordinaria-suplente-2-2026">Ordinaria · Suplente 2 2026</h3>
 <div id="ebau-2026-ord-sup2-2" class="ebau-ej">
-<p><strong>Ejercicio 2</strong> · Ordinaria · Suplente 2 2026 · Parte obligatoria · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/06/2oBachCC_EBAU_Andalucia_2026-Ordinaria_Suplente2.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 2</strong> · Ordinaria · Suplente 2 2026 · Parte obligatoria · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2026-ord-sup2/examen.pdf" target="_blank">Examen</a></p>
 <p>Una empresa produce tres tipos de productos, <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span>. Si el precio del producto <span class="math inline">\(A\)</span> tuviera un 10 % de descuento y el de los productos <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span> tuviera un 20 % de descuento cada uno, la suma de los precios de tres productos, uno de cada tipo, sería 66 €. El precio total sin descuento de 3 productos del tipo <span class="math inline">\(A\)</span> y 4 productos del tipo <span class="math inline">\(B\)</span> es 140 €.</p>
 <ol type="a">
 <li><p>¿Cuánto valdrán 3 productos de tipo <span class="math inline">\(A\)</span> más 8 productos de tipo <span class="math inline">\(C\)</span>? <em>(1,25 puntos)</em></p></li>
@@ -527,7 +528,7 @@ window.Quarto = {
 <section id="extraordinaria-2026" class="level3">
 <h3 class="anchored" data-anchor-id="extraordinaria-2026">Extraordinaria 2026</h3>
 <div id="ebau-2026-ext-3-1" class="ebau-ej">
-<p><strong>Ejercicio 3.1</strong> · Extraordinaria 2026 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/09/2oBachCC_EBAU_Andalucia_2026-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 3.1</strong> · Extraordinaria 2026 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2026-ext/examen.pdf" target="_blank">Examen</a></p>
 <p>Una familia va al mercado semanalmente y compra tres tipos de alimentos: verdura, carne y pescado. El año pasado, en el que gastó 115 € semanales, observó que pagaba el doble en el puesto del pescado que en el de la verdura. En 2026 se ha notado un incremento de precios pues ahora gasta 19 € más que el año pasado por la misma compra, comprobando que la verdura ha subido un 12 %, la carne un 15 % y el pescado un 20 %. Calcula el precio que la familia paga semanalmente en 2026, por cada tipo de alimento.</p>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -553,7 +554,7 @@ window.Quarto = {
 <section id="extraordinaria-suplente-1-2026" class="level3">
 <h3 class="anchored" data-anchor-id="extraordinaria-suplente-1-2026">Extraordinaria · Suplente 1 2026</h3>
 <div id="ebau-2026-ext-sup1-4-1" class="ebau-ej">
-<p><strong>Ejercicio 4.1</strong> · Extraordinaria · Suplente 1 2026 · Bloque optativo 2 · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/09/2oBachCC_EBAU_Andalucia_2026-Extraordinaria_Suplente1.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 4.1</strong> · Extraordinaria · Suplente 1 2026 · Bloque optativo 2 · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2026-ext-sup1/examen.pdf" target="_blank">Examen</a></p>
 <p>Considera el sistema de ecuaciones</p>
 <p><span class="math display">\[\begin{cases}x+y+z=1\\7x+3y+3z=15\\x-y-z=5\end{cases}\]</span></p>
 <ol type="a">
@@ -583,7 +584,7 @@ window.Quarto = {
 <section id="extraordinaria-suplente-2-2026" class="level3">
 <h3 class="anchored" data-anchor-id="extraordinaria-suplente-2-2026">Extraordinaria · Suplente 2 2026</h3>
 <div id="ebau-2026-ext-sup2-2" class="ebau-ej">
-<p><strong>Ejercicio 2</strong> · Extraordinaria · Suplente 2 2026 · Parte obligatoria · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2026/09/2oBachCC_EBAU_Andalucia_2026-Extraordinaria_Suplente2.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 2</strong> · Extraordinaria · Suplente 2 2026 · Parte obligatoria · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2026-ext-sup2/examen.pdf" target="_blank">Examen</a></p>
 <p>Considera las matrices <span class="math inline">\(A=\begin{pmatrix}1&amp;2&amp;1\\0&amp;3&amp;1\\-2&amp;0&amp;0\end{pmatrix}\)</span>, <span class="math inline">\(X=\begin{pmatrix}x\\y\\z\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}3\\3\\1\end{pmatrix}\)</span>. Discute el sistema <span class="math inline">\(AX-mX=B\)</span>, según los valores del parámetro <span class="math inline">\(m\)</span>.</p>
 <p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/01-matrices.html">Matrices</a>, <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>.</p>
 <div class="callout callout-style-simple callout-tip callout-titled">
@@ -610,7 +611,7 @@ window.Quarto = {
 <section id="ordinaria-2025" class="level3">
 <h3 class="anchored" data-anchor-id="ordinaria-2025">Ordinaria 2025</h3>
 <div id="ebau-2025-ord-1" class="ebau-ej">
-<p><strong>Ejercicio 1</strong> · Ordinaria 2025 · Parte obligatoria · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/06/2oBachCC_EBAU_Andalucia_2025-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 1</strong> · Ordinaria 2025 · Parte obligatoria · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2025-ord/examen-a.pdf" target="_blank">Examen A</a> · <a href="../../../assets/pau/2025-ord/examen-b.pdf" target="_blank">Examen B</a></p>
 <p>Juan ha gastado 80 € por la compra de un jersey, una camisa y un pantalón. Sabemos que el precio del jersey es un tercio del precio de la camisa y el pantalón juntos.</p>
 <ol type="a">
 <li><p>¿Es posible determinar de forma única el precio del jersey? ¿Y el de la camisa? Razona la respuesta. <em>(1,25 puntos)</em></p></li>
@@ -672,7 +673,7 @@ window.Quarto = {
 <section id="ordinaria-2024" class="level3">
 <h3 class="anchored" data-anchor-id="ordinaria-2024">Ordinaria 2024</h3>
 <div id="ebau-2024-ord-6" class="ebau-ej">
-<p><strong>Ejercicio 6</strong> · Ordinaria 2024 · Bloque C · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 6</strong> · Ordinaria 2024 · Bloque C · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2024-ord/examen-a.pdf" target="_blank">Examen A</a> · <a href="../../../assets/pau/2024-ord/examen-b.pdf" target="_blank">Examen B</a></p>
 <p>Considera el sistema</p>
 <p><span class="math display">\[\begin{cases}y+z=1\\(k-1)x+y+z=k\\x+(k-1)y+z=0\end{cases}\]</span></p>
 <ol type="a">
@@ -708,7 +709,7 @@ window.Quarto = {
 <section id="ordinaria-suplente-2024" class="level3">
 <h3 class="anchored" data-anchor-id="ordinaria-suplente-2024">Ordinaria · Suplente 2024</h3>
 <div id="ebau-2024-ord-sup-6" class="ebau-ej">
-<p><strong>Ejercicio 6</strong> · Ordinaria · Suplente 2024 · Bloque C · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2024/06/2oBachCC_EBAU_Andalucia_2024-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 6</strong> · Ordinaria · Suplente 2024 · Bloque C · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2024-ord-sup/examen-a.pdf" target="_blank">Examen A</a> · <a href="../../../assets/pau/2024-ord-sup/examen-b.pdf" target="_blank">Examen B</a></p>
 <p>Determina un número natural de tres cifras sabiendo que la suma de sus dígitos es 9, que la diferencia de dicho número con el que se obtiene al intercambiar la cifra de las centenas por la de las unidades es 198, y que si consideramos la suma entre ambos números, es decir, entre el número a determinar y el que se obtiene al intercambiar sus cifras, el resultado es 828.</p>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
@@ -837,7 +838,7 @@ window.Quarto = {
 <section id="ordinaria-2023" class="level3">
 <h3 class="anchored" data-anchor-id="ordinaria-2023">Ordinaria 2023</h3>
 <div id="ebau-2023-ord-5" class="ebau-ej">
-<p><strong>Ejercicio 5</strong> · Ordinaria 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 5</strong> · Ordinaria 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2023-ord/examen-a.pdf" target="_blank">Examen A</a> · <a href="../../../assets/pau/2023-ord/examen-b.pdf" target="_blank">Examen B</a></p>
 <p>Una marca de vehículos ha vendido este mes coches de tres colores: blancos, negros y rojos. El 60 % de los coches blancos más el 50 % de los coches negros representan el 30 % de los coches vendidos. El 20 % de los coches blancos junto con el 60 % de los coches negros y el 60 % de los coches rojos representan la mitad de los coches vendidos. Se han vendido 100 coches negros más que blancos. Determina el número de coches vendidos de cada color.</p>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
@@ -863,7 +864,7 @@ window.Quarto = {
 <section id="ordinaria-reserva-2023" class="level3">
 <h3 class="anchored" data-anchor-id="ordinaria-reserva-2023">Ordinaria · Reserva 2023</h3>
 <div id="ebau-2023-ord-res-5" class="ebau-ej">
-<p><strong>Ejercicio 5</strong> · Ordinaria · Reserva 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria-Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 5</strong> · Ordinaria · Reserva 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2023-ord-res/examen-a.pdf" target="_blank">Examen A</a> · <a href="../../../assets/pau/2023-ord-res/examen-b.pdf" target="_blank">Examen B</a></p>
 <p>Una fábrica dispone de tres líquidos <span class="math inline">\(L_1\)</span>, <span class="math inline">\(L_2\)</span> y <span class="math inline">\(L_3\)</span>, en los que se encuentran disueltas dos sustancias: sodio y magnesio. Cada litro del líquido <span class="math inline">\(L_1\)</span> contiene 120 mg de sodio y 90 mg de magnesio, cada litro del líquido <span class="math inline">\(L_2\)</span> contiene 100 mg de sodio y 90 mg de magnesio y cada litro del líquido <span class="math inline">\(L_3\)</span> contiene 60 mg de sodio y 180 mg de magnesio. ¿Es posible obtener un litro de un líquido mezclando distintas cantidades de <span class="math inline">\(L_1\)</span>, <span class="math inline">\(L_2\)</span> y <span class="math inline">\(L_3\)</span> en el que la cantidad de sodio y de magnesio sea de 100 mg cada una? En caso afirmativo, calcula dichas cantidades.</p>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
@@ -889,7 +890,7 @@ window.Quarto = {
 <section id="ordinaria-suplente-2023" class="level3">
 <h3 class="anchored" data-anchor-id="ordinaria-suplente-2023">Ordinaria · Suplente 2023</h3>
 <div id="ebau-2023-ord-sup-6" class="ebau-ej">
-<p><strong>Ejercicio 6</strong> · Ordinaria · Suplente 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Ordinaria-Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 6</strong> · Ordinaria · Suplente 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2023-ord-sup/examen-a.pdf" target="_blank">Examen A</a> · <a href="../../../assets/pau/2023-ord-sup/examen-b.pdf" target="_blank">Examen B</a></p>
 <p>Considera las matrices <span class="math inline">\(A=\begin{pmatrix}x&amp;y&amp;z\\y&amp;x&amp;x\\z&amp;z&amp;y\end{pmatrix}\)</span>, <span class="math inline">\(B=\begin{pmatrix}\alpha&amp;1&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(C=\begin{pmatrix}1&amp;1&amp;1\end{pmatrix}\)</span>.</p>
 <ol type="a">
 <li><p>Discute el sistema <span class="math inline">\(BA=C\)</span>, según los valores de <span class="math inline">\(\alpha\)</span>. <em>(1,5 puntos)</em></p></li>
@@ -979,7 +980,7 @@ window.Quarto = {
 <section id="ordinaria-2022" class="level3">
 <h3 class="anchored" data-anchor-id="ordinaria-2022">Ordinaria 2022</h3>
 <div id="ebau-2022-ord-5" class="ebau-ej">
-<p><strong>Ejercicio 5</strong> · Ordinaria 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 5</strong> · Ordinaria 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2022-ord/examen.pdf" target="_blank">Examen</a></p>
 <p>Considera el sistema:</p>
 <p><span class="math display">\[\begin{cases}x-y+mz=-3\\-mx+3y-z=1\\x-4y+mz=-6\end{cases}\]</span></p>
 <ol type="a">
@@ -1009,7 +1010,7 @@ window.Quarto = {
 <section id="ordinaria-reserva-2022" class="level3">
 <h3 class="anchored" data-anchor-id="ordinaria-reserva-2022">Ordinaria · Reserva 2022</h3>
 <div id="ebau-2022-ord-res-6" class="ebau-ej">
-<p><strong>Ejercicio 6</strong> · Ordinaria · Reserva 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 6</strong> · Ordinaria · Reserva 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2022-ord-res/examen.pdf" target="_blank">Examen</a></p>
 <p>En un estudio del ciclo del sueño se monitoriza la fase NO-REM (es el momento del sueño que el cuerpo utiliza para descansar físicamente). Esta fase se divide a su vez en tres momentos: Fase I (adormecimiento), Fase II (sueño ligero) y Fase III (sueño profundo). Una persona dedica el 75 % de su sueño a la fase NO-REM. Además, el tiempo que dedica a la Fase II es el doble que el de la Fase I y III juntas. Por otro lado, a la Fase III se dedica el cuádruple que a la Fase I. Si una persona ha dormido 8 horas, ¿cuántos minutos dedica a las Fases I, II y III del ciclo del sueño?</p>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
@@ -1033,7 +1034,7 @@ window.Quarto = {
 <section id="ordinaria-suplente-2022" class="level3">
 <h3 class="anchored" data-anchor-id="ordinaria-suplente-2022">Ordinaria · Suplente 2022</h3>
 <div id="ebau-2022-ord-sup-5" class="ebau-ej">
-<p><strong>Ejercicio 5</strong> · Ordinaria · Suplente 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Ordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 5</strong> · Ordinaria · Suplente 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2022-ord-sup/examen.pdf" target="_blank">Examen</a></p>
 <p>Considera el sistema:</p>
 <p><span class="math display">\[\begin{cases}2x+3y+mz=3\\x+my-z=-1\\3x+y-3z=-m\end{cases}\]</span></p>
 <ol type="a">
@@ -1063,7 +1064,7 @@ window.Quarto = {
 <section id="extraordinaria-reserva-2022" class="level3">
 <h3 class="anchored" data-anchor-id="extraordinaria-reserva-2022">Extraordinaria · Reserva 2022</h3>
 <div id="ebau-2022-ext-res-5" class="ebau-ej">
-<p><strong>Ejercicio 5</strong> · Extraordinaria · Reserva 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria_Reserva.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 5</strong> · Extraordinaria · Reserva 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2022-ext-res/examen.pdf" target="_blank">Examen</a></p>
 <p>La suma de los seguidores en una determinada red social de Alberto, Begoña y Carlos es de 13000 personas. Aunque Carlos perdiera una tercera parte de sus seguidores, todavía seguiría teniendo el doble de seguidores que tiene Alberto. Por otro lado, los seguidores de Alberto más la quinta parte de los seguidores de Begoña, son tantos como la mitad de los de Carlos. Calcula cuántos seguidores tiene cada uno.</p>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
@@ -1087,7 +1088,7 @@ window.Quarto = {
 <section id="extraordinaria-suplente-2022" class="level3">
 <h3 class="anchored" data-anchor-id="extraordinaria-suplente-2022">Extraordinaria · Suplente 2022</h3>
 <div id="ebau-2022-ext-sup-5" class="ebau-ej">
-<p><strong>Ejercicio 5</strong> · Extraordinaria · Suplente 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 5</strong> · Extraordinaria · Suplente 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2022-ext-sup/examen.pdf" target="_blank">Examen</a></p>
 <p>Considera el sistema de ecuaciones lineales:</p>
 <p><span class="math display">\[\begin{pmatrix}\alpha&amp;1&amp;1\\\alpha&amp;-1&amp;1\\\alpha&amp;0&amp;\alpha\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}0\\0\\0\end{pmatrix}\]</span></p>
 <ol type="a">
@@ -1115,7 +1116,7 @@ window.Quarto = {
 </div>
 </div>
 <div id="ebau-2022-ext-sup-6" class="ebau-ej">
-<p><strong>Ejercicio 6</strong> · Extraordinaria · Suplente 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/10/2oBachCC_EBAU_Andalucia_2022-Extraordinaria_Suplente.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 6</strong> · Extraordinaria · Suplente 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2022-ext-sup/examen.pdf" target="_blank">Examen</a></p>
 <p>Considera el sistema:</p>
 <p><span class="math display">\[\begin{cases}x-my-2z=m\\x+y+z=2m\\x+2y+mz=3m\end{cases}\]</span></p>
 <ol type="a">
@@ -1148,7 +1149,7 @@ window.Quarto = {
 <section id="ordinaria-2021" class="level3">
 <h3 class="anchored" data-anchor-id="ordinaria-2021">Ordinaria 2021</h3>
 <div id="ebau-2021-ord-5" class="ebau-ej">
-<p><strong>Ejercicio 5</strong> · Ordinaria 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/07/2oBachCC_EBAU_Andalucia_2021-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 5</strong> · Ordinaria 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2021-ord/examen.pdf" target="_blank">Examen</a></p>
 <p>Considera el siguiente sistema de ecuaciones lineales</p>
 <p><span class="math display">\[\begin{cases}mx+2y-z=1\\ 5x-4y+2z=0\\ x+3my=m+\tfrac{2}{5}\end{cases}\]</span></p>
 <ol type="a">
@@ -1180,7 +1181,7 @@ window.Quarto = {
 </div>
 </div>
 <div id="ebau-2021-ord-6" class="ebau-ej">
-<p><strong>Ejercicio 6</strong> · Ordinaria 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/07/2oBachCC_EBAU_Andalucia_2021-Ordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 6</strong> · Ordinaria 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2021-ord/examen.pdf" target="_blank">Examen</a></p>
 <p>En una empresa se fabrican tres tipos de productos plásticos: botellas, garrafas y bidones. Se utiliza como materia prima 10 kg de polietileno cada hora. Se sabe que para fabricar cada botella se necesitan 50 gramos, para cada garrafa 100 gramos y 1 kg para cada bidón.</p>
 <p>El gerente también nos dice que se debe producir el doble de botellas que de garrafas. Por último, se sabe que por motivos de capacidad de trabajo, en las máquinas se producen en total 52 productos cada hora.</p>
 <p>¿Cuántas botellas, garrafas y bidones se producen cada hora?</p>
@@ -1208,7 +1209,7 @@ window.Quarto = {
 <section id="ordinaria-reserva-2021" class="level3">
 <h3 class="anchored" data-anchor-id="ordinaria-reserva-2021">Ordinaria · Reserva 2021</h3>
 <div id="ebau-2021-ord-res-5" class="ebau-ej">
-<p><strong>Ejercicio 5</strong> · Ordinaria · Reserva 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Ordinaria_RESERVA_Modelo4.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 5</strong> · Ordinaria · Reserva 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2021-ord-res/examen.pdf" target="_blank">Examen</a></p>
 <p>Considera el sistema de ecuaciones</p>
 <p><span class="math display">\[\begin{cases}x+y+2z=0\\3x-y-2z=0\\-x+2y+mz=0\end{cases}\]</span></p>
 <ol type="a">
@@ -1240,7 +1241,7 @@ window.Quarto = {
 <section id="extraordinaria-2021" class="level3">
 <h3 class="anchored" data-anchor-id="extraordinaria-2021">Extraordinaria 2021</h3>
 <div id="ebau-2021-ext-6" class="ebau-ej">
-<p><strong>Ejercicio 6</strong> · Extraordinaria 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/07/2oBachCC_EBAU_Andalucia_2021-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 6</strong> · Extraordinaria 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2021-ext/examen.pdf" target="_blank">Examen</a></p>
 <p>Una empresa de mensajería opera en tres rutas distintas A, B y C. Semanalmente hace un total de 70 viajes, y el número de viajes por la ruta B es igual a la suma de los viajes por las rutas A y C.</p>
 <ol type="a">
 <li><p>Si sabemos que el doble de la suma de los viajes por las rutas A y C es 70, ¿podemos deducir el número de viajes por cada ruta? Razona la respuesta. <em>(1,25 puntos)</em></p></li>
@@ -1271,7 +1272,7 @@ window.Quarto = {
 <section id="extraordinaria-reserva-2021" class="level3">
 <h3 class="anchored" data-anchor-id="extraordinaria-reserva-2021">Extraordinaria · Reserva 2021</h3>
 <div id="ebau-2021-ext-res-6" class="ebau-ej">
-<p><strong>Ejercicio 6</strong> · Extraordinaria · Reserva 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Extraordinaria_RESERVA_Modelo2.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 6</strong> · Extraordinaria · Reserva 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2021-ext-res/examen.pdf" target="_blank">Examen</a></p>
 <p>Considera el siguiente sistema de ecuaciones lineales</p>
 <p><span class="math display">\[\begin{cases}x+my+mz=1\\x+2my+(m+1)z=1\\2x+my+mz=2\end{cases}\]</span></p>
 <ol type="a">
@@ -1302,7 +1303,7 @@ window.Quarto = {
 <section id="extraordinaria-suplente-2021" class="level3">
 <h3 class="anchored" data-anchor-id="extraordinaria-suplente-2021">Extraordinaria · Suplente 2021</h3>
 <div id="ebau-2021-ext-sup-6" class="ebau-ej">
-<p><strong>Ejercicio 6</strong> · Extraordinaria · Suplente 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2022/08/2oBachCC_EBAU_Andalucia_2021-Extraordinaria_SUPLENTE_Modelo1.pdf" target="_blank">PDF del examen</a></p>
+<p><strong>Ejercicio 6</strong> · Extraordinaria · Suplente 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2021-ext-sup/examen.pdf" target="_blank">Examen</a></p>
 <p>En una cafetería, tres cafés, una tostada y dos zumos de naranja cuestan 7,50 €. Cuatro cafés, una tostada y un zumo de naranja cuestan 7,20 €.</p>
 <ol type="a">
 <li><p>Calcula, de forma razonada, el precio total de dos cafés, una tostada y tres zumos de naranja. <em>(1,5 puntos)</em></p></li>

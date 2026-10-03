@@ -108,7 +108,7 @@
       // Cuadrado del plano centrado en el pie de la perpendicular desde el origen (polygon3d respeta fillColor).
       const corners = [[-1, -1], [1, -1], [1, 1], [-1, 1]].map(([a, b]) => view.create('point3d', P0.map((x, k) => x + R * (a * e1[k] + b * e2[k])), { visible: false }));
       view.create('polygon3d', corners, {
-        fillColor: i === 0 ? '#5EC4B6' : '#F5D65B', fillOpacity: 0.45, highlight: false,
+        fillColor: i === 0 ? '#5EC4B6' : '#FCE678', fillOpacity: 0.45, highlight: false,
         borders: { strokeColor: '#555', strokeWidth: 0.6 },
       });
     });
