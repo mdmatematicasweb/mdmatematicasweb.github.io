@@ -29,7 +29,7 @@ Actualizado el 2026-10-02.
 
 ## En curso (oculto)
 
-- **Curso 2º Bachillerato Ciencias Sociales** (`2-bachillerato-ccss`): fase 0 hecha (esqueleto oculto, 11 temas). Plan y decisiones en `docs/superpowers/specs/2026-10-03-curso-ccss.md`. Fase 1 (apuntes): los 11 temas de apuntes (fase 1) están escritos y verificados con `scripts/ccss/verificar_NN.py` (`verificar_10.py` y `verificar_11.py` avisan de las diferencias entre la tabla de la normal y el valor exacto), pendientes de revisión. Siguiente: fase 2 (relaciones de ejercicios) cuando se apruebe.
+- **Curso 2º Bachillerato Ciencias Sociales** (`2-bachillerato-ccss`): fase 0 hecha (esqueleto oculto, 11 temas). Plan y decisiones en `docs/superpowers/specs/2026-10-03-curso-ccss.md`. Fase 1 (apuntes): los 11 temas de apuntes (fase 1) están escritos y verificados con `scripts/ccss/verificar_NN.py` (`verificar_10.py` y `verificar_11.py` avisan de las diferencias entre la tabla de la normal y el valor exacto), pendientes de revisión. Fase 2, lote 1: relaciones de ejercicios de los temas 01–04 (25 cada una: 9 básicos + 16 tipo PAU) con `scripts/ccss/verificar_ej_NN.py`, que exige cada resultado esperado dentro del bloque de su apartado (`_ej_comun.py`) y se prueba con mutaciones (`scripts/ccss/prueba_mutacion_ej.py`), pendientes de revisión. Siguiente: temas 05+ de la fase 2 cuando se apruebe.
 
 ## Siguiente
 

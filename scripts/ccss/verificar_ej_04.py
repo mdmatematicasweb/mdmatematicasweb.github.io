@@ -15,6 +15,7 @@ from _ej_comun import Verificador, tx, dec  # noqa: E402
 from sympy import (symbols, Rational as R, solve, log, exp, E, sqrt, ln, Abs, simplify, expand, diff, N, S, FiniteSet, Interval, oo,  # noqa: E402
                    limit, factor, Piecewise)
 from sympy.calculus.util import continuous_domain  # noqa: E402
+from sympy import solve_univariate_inequality, Union  # noqa: E402
 
 QMD = Path(__file__).resolve().parents[2] / "ejercicios" / "2-bachillerato-ccss" / "04-funciones" / "index.qmd"
 v = Verificador(QMD)
@@ -30,7 +31,9 @@ def aprox(val, nd=2):
 d1a = continuous_domain((x + 3) / (x**2 - 9), x, S.Reals); d1b = continuous_domain(log(2 * x - 6), x, S.Reals); d1c = continuous_domain(sqrt(8 - 2 * x), x, S.Reals)
 v.ok(d1a == S.Reals - FiniteSet(-3, 3) and d1b == Interval.open(3, oo) and d1c == Interval(-oo, 4), "ej. 1: dominios")
 v.enunciado(1, ["\\dfrac{x+3}{x^2-9}", "\\ln(2x-6)", "\\sqrt{8-2x}"])
-v.solucion(1, ["\\mathbb{R}\\setminus\\{-3,3\\}", "(3,+\\infty)", "(-\\infty,4]"])
+v.solucion(1, ["\\mathbb{R}\\setminus\\{-3,3\\}"], 'a')
+v.solucion(1, ["(3,+\\infty)"], 'b')
+v.solucion(1, ["(-\\infty,4]"], 'c')
 # 2
 sol2 = solve([a + b - 3, 4 * a + b - 9], [a, b])
 f2 = sol2[a] * x + sol2[b]
@@ -46,9 +49,10 @@ v.solucion(3, ["(3,-4)", "(1,0)", "(5,0)", "(0,5)", "mínimo"])
 # 4
 f4 = (2 * x - 1) / (x + 2)
 v.ok(continuous_domain(f4, x, S.Reals) == S.Reals - FiniteSet(-2) and f4.subs(x, 0) == R(-1, 2) and solve(f4, x) == [R(1, 2)], "ej. 4: dominio y cortes")
-v.ok(limit(f4, x, oo) == 2, "ej. 4: asíntota horizontal y=2")
+pos4 = solve_univariate_inequality(f4 > 0, x, relational=False); neg4 = solve_univariate_inequality(f4 < 0, x, relational=False)
+v.ok(pos4 == Union(Interval.open(-oo, -2), Interval.open(R(1, 2), oo)) and neg4 == Interval.open(-2, R(1, 2)), "ej. 4: signo de f")
 v.enunciado(4, ["\\dfrac{2x-1}{x+2}"])
-v.solucion(4, ["\\mathbb{R}\\setminus\\{-2\\}", "(0,-\\frac{1}{2})", "(\\frac{1}{2},0)"] + [f"f({k})={tx(f4.subs(x, k))}" for k in (-4, -3, -1, 0, 2)] + ["x=-2", "y=2"])
+v.solucion(4, ["\\mathbb{R}\\setminus\\{-2\\}", "(0,-\\frac{1}{2})", "(\\frac{1}{2},0)"] + [(f"f({k})={tx(f4.subs(x, k))}", {-3: 2, 0: 3, 2: 2}.get(k, 1)) for k in (-4, -3, -1, 0, 2)] + ["(-\\infty,-2)\\cup(\\frac{1}{2},+\\infty)", "(-2,\\frac{1}{2})"])
 # 5
 f5 = 3 * 2**x
 v.ok(f5.subs(x, 0) == 3 and f5.subs(x, 3) == 24 and solve(f5 - 48, x) == [4] and diff(f5, x).subs(x, 0) > 0, "ej. 5")
@@ -68,7 +72,7 @@ v.solucion(7, ["(2,+\\infty)", "x=7", "x=\\mathrm{e}^2", f"\\approx{aprox(E**2)}
 f8 = lambda val: 2 * val + 1 if val < 1 else val**2 + 2
 v.ok([f8(-1), f8(1), f8(3)] == [-1, 3, 11] and limit(2 * x + 1, x, 1) == 3 and (x**2 + 2).subs(x, 1) == 3, "ej. 8")
 v.enunciado(8, ["\\begin{cases}2x+1&x<1\\\\x^2+2&x\\ge1\\end{cases}"])
-v.solucion(8, ["f(-1)=-1", "f(1)=3", "f(3)=11", "no hay salto"])
+v.solucion(8, ["f(-1)=-1", ("f(1)=3", 2), "f(3)=11", "no hay salto"])
 # 9
 fs = [("f", x**4 - 3 * x**2, "par"), ("g", x**3 - x, "impar"), ("h", x**2 + x, "ninguna")]
 clases = []
@@ -78,41 +82,64 @@ for nombre, e, esperado in fs:
     clases.append(clase == esperado)
 v.ok(all(clases), "ej. 9: par, impar y ninguna")
 v.enunciado(9, ["x^4-3x^2", "x^3-x", "x^2+x"])
-v.solucion(9, ["f(-x)=x^4-3x^2", "g(-x)=-x^3+x", "h(-x)=x^2-x", "par", "impar"])
+v.solucion(9, ["f(-x)=x^4-3x^2", "g(-x)=-x^3+x", "h(-x)=x^2-x", ("par", 4), ("impar", 2)])
 # 10
 C10, I10 = 1500 + 25 * x, 45 * x
 B10 = expand(I10 - C10)
 v.ok(B10 == 20 * x - 1500 and solve(B10, x) == [75] and B10.subs(x, 100) == 500 and solve(50 * x - C10, x) == [60], "ej. 10")
 v.enunciado(10, ["1500+25x", "45x", "50"])
-v.solucion(10, [f"B(x)={B10}".replace("*", ""), "x=75", "B(100)=500", "x=60", "20", "-1500"])
+v.solucion(10, [f"B(x)={B10}".replace("*", ""), ("20", 2), ("-1500", 2)], 'a')
+v.solucion(10, ["x=75"], 'b')
+v.solucion(10, ["B(100)=500"], 'c')
+v.solucion(10, ["x=60"], 'd')
 # 11
 I11 = expand(p * (150 - 5 * p))
 v.ok(I11 == -5 * p**2 + 150 * p and sorted(solve(I11, p)) == [0, 30] and solve(diff(I11, p), p) == [15] and I11.subs(p, 15) == 1125 and 150 - 5 * 15 == 75 and I11.subs(p, 20) == 1000, "ej. 11")
 v.enunciado(11, ["q=150-5p"])
-v.solucion(11, ["I(p)=-5p^2+150p", "p=0", "p=30", "p=15", "I(15)=1125", "q=75", "I(20)=1000"])
+v.solucion(11, ["I(p)=-5p^2+150p"], 'a')
+v.solucion(11, ["p=0", "p=30"], 'b')
+v.solucion(11, ["p=15", "I(15)=1125", "q=75"], 'c')
+v.solucion(11, ["I(20)=1000"], 'd')
 # 12
 def f12(val):
     return 5 + R(12, 100) * val if val <= 200 else 29 + R(2, 10) * (val - 200)
 v.ok(f12(150) == 23 and f12(300) == 49 and f12(200) == 29 and (29 + R(2, 10) * 0) == 29 and solve(29 + R(2, 10) * (x - 200) - 59, x) == [350] and f12(350) == 59, "ej. 12")
 v.enunciado(12, ["5+0{,}12x", "29+0{,}2\\,(x-200)"])
-v.solucion(12, ["f(150)=23", "f(300)=49", "f(200)=29", "x=350", "0{,}12", "0{,}2"])
+v.solucion(12, ["f(150)=23", "f(300)=49"], 'a')
+pend1, pend2 = diff(5 + R(12, 100) * x, x), diff(29 + R(2, 10) * (x - 200), x)
+v.solucion(12, [f"pendiente del primer tramo es {dec(pend1, 2)}", f"la del segundo, {dec(pend2, 1)}"], 'd')
+v.solucion(12, ["f(200)=29"], 'b')
+v.solucion(12, ["x=350"], 'c')
 # 13
 Cm = (800 + 16 * x) / x
 v.ok(simplify(Cm - (16 + 800 / x)) == 0 and Cm.subs(x, 40) == 36 and solve(Cm - 20, x) == [200] and limit(Cm, x, oo) == 16 and all(Cm.subs(x, k) > 16 for k in (1, 10, 1000, 10**6)), "ej. 13")
 v.enunciado(13, ["800+16x"])
-v.solucion(13, ["C_m(40)=36", "x=200", "y=16"])
+v.solucion(13, ["C_m(40)=36"], 'a')
+v.solucion(13, ["x=200"], 'b')
+x_pos = symbols('x_pos', positive=True)
+v.ok(simplify(Cm.subs(x, x_pos) - 16 - 800 / x_pos) == 0 and (800 / x_pos).is_positive and limit(Cm, x, oo) == 16, "ej. 13c-d: C_m-16=800/x>0")
+v.solucion(13, [f"C_m({k})={dec(Cm.subs(x, k), nd)}" for k, nd in ((100, 0), (1000, 1), (10000, 2))], 'c')
+v.solucion(13, ["acercarse a 16 sin llegar", "coste variable por unidad (16 €)"], 'c')
+v.solucion(13, ["\\frac{800}{x}>0", "16+\\frac{800}{x}>16"], 'd')
 # 14
 U = 2000 * R(5, 4)**t
 v.ok(U.subs(t, 0) == 2000 and round(float(U.subs(t, 4)), 2) == 4882.81, "ej. 14: U(0) y U(4)")
 t14c = N(log(5) / log(R(5, 4)), 20); t14d = N(log(2) / log(R(5, 4)), 20)
 v.enunciado(14, ["2000\\cdot1{,}25^t"])
-v.solucion(14, ["U(0)=2000", f"U(4)\\approx{aprox(U.subs(t, 4))}", "25\\,\\%", f"t\\approx{aprox(t14c)}", f"t\\approx{aprox(t14d)}"])
+v.solucion(14, ["U(0)=2000", f"U(4)\\approx{aprox(U.subs(t, 4))}"], 'a')
+v.solucion(14, ["25\\,\\%"], 'b')
+v.solucion(14, [f"t\\approx{aprox(t14c)}"], 'c')
+v.solucion(14, [f"t\\approx{aprox(t14d)}"], 'd')
 # 15
 W = 24000 * R(85, 100)**t
 t15 = N(log(R(1, 2)) / log(R(85, 100)), 20)
 v.ok(W.subs(t, 3) == 14739 and 24000 - W.subs(t, 3) == 9261, "ej. 15")
 v.enunciado(15, ["24000\\cdot0{,}85^t", "15\\,\\%"])
-v.solucion(15, ["V(3)=14739", f"V(5)\\approx{aprox(W.subs(t, 5))}", "9261", f"t\\approx{aprox(t15)}"])
+v.solucion(15, ["V(3)=14739", f"V(5)\\approx{aprox(W.subs(t, 5))}"], 'a')
+v.solucion(15, ["9261"], 'b')
+v.ok(W.subs(t, 3) > 0 and (R(85, 100)**t).is_positive, "ej. 15d: 0,85^t > 0")
+v.solucion(15, ["V(t)>0"], 'd')
+v.solucion(15, [f"t\\approx{aprox(t15)}"], 'c')
 # 16
 def L(I):
     return 10 * log(I / R(1, 10**12), 10)
@@ -120,26 +147,38 @@ v.ok(simplify(L(R(1, 10**5))) == 70 and simplify(L(R(1, 10**3))) == 90, "ej. 16:
 dif = N(10 * log(2, 10), 20)
 v.ok(abs(float(N(L(2 * R(1, 10**5)) - L(R(1, 10**5)), 20)) - float(dif)) < 1e-12 and abs(float(N(L(2 * R(1, 10**3)) - L(R(1, 10**3)), 20)) - float(dif)) < 1e-12, "ej. 16: duplicar suma 10 log 2 siempre")
 v.enunciado(16, ["10\\cdot\\log\\dfrac{I}{10^{-12}}", "10^{-5}", "10^{-3}"])
-v.solucion(16, ["L(10^{-5})=70", "L(10^{-3})=90", aprox(dif), "73{,}01", "93{,}01"])
+v.solucion(16, ["L(10^{-5})=70", "L(10^{-3})=90"], 'a')
+v.solucion(16, [aprox(dif)], 'b')
+v.solucion(16, ["73{,}01", "93{,}01"], 'c')
+v.ok(simplify(L(R(1, 10**12))) == 0 and simplify(L(1)) == 120, "ej. 16d: rango de 0 a 120 dB")
+v.solucion(16, ["10^{-12}", "120"], 'd')
 # 17
 x_ = symbols('x_', positive=True)
 v.ok(solve(2**(x + 1) - 32, x) == [4] and sorted(solve(3**(2 * x) - 4 * 3**x + 3, x)) == [0, 1], "ej. 17 a), b)")
 v.ok(sorted(solve(x**2 - 2 * x - 3, x)) == [-1, 3] and solve(log(x_) + log(x_ - 2) - log(3), x_) == [3] and solve(log(x_, 2) + log(x_ - 2, 2) - 3, x_) == [4], "ej. 17 c), d)")
 v.ok(sorted(solve(x**2 - 2 * x - 8, x)) == [-2, 4], "ej. 17 d): raíces -2 y 4")
 v.enunciado(17, ["2^{x+1}=32", "3^{2x}-4\\cdot3^x+3=0", "\\ln x+\\ln(x-2)=\\ln 3", "\\log_2 x+\\log_2(x-2)=3"])
-v.solucion(17, ["x=4", "x=0", "x=1", "x=3", "x=-1", "x=-2"])
+v.solucion(17, ["x=4"], 'a')
+v.solucion(17, ["t=1", "t=3", "3^x=1\\Rightarrow x=0", "3^x=3\\Rightarrow x=1"], 'b')
+v.solucion(17, [("x=-1", 2), ("x=3", 2)], 'c')
+v.solucion(17, ["x=-2"], 'd')
 # 18
 s18 = solve([c - 3, a + b + c - 2, 9 * a + 3 * b + c - 6], [a, b, c])
 f18 = s18[a] * x**2 + s18[b] * x + s18[c]
 v.ok(s18 == {a: 1, b: -2, c: 3} and f18.subs(x, 1) == 2 and (4 - 12) < 0, "ej. 18")
 v.enunciado(18, ["(0,3)", "(1,2)", "(3,6)"])
-v.solucion(18, ["c=3", "a=1", "b=-2", "f(x)=x^2-2x+3", "(1,2)"])
+v.solucion(18, [("c=3", 2)], 'a')
+v.solucion(18, ["a=1", "b=-2", "f(x)=x^2-2x+3"], 'b')
+v.solucion(18, ["(1,2)"], 'c')
 # 19
 a19 = R(1, 10) * 12000
 T19 = 1200 + R(2, 10) * (20000 - 12000)
 v.ok(a19 == 1200 and T19 == 2800 and R(T19, 20000) == R(14, 100), "ej. 19")
 v.enunciado(19, ["0{,}10\\,x", "a+0{,}2\\,(x-12000)"])
-v.solucion(19, ["a=1200", "T(20000)=2800", "14\\,\\%"])
+v.solucion(19, ["a=1200"], 'a')
+v.solucion(19, ["0{,}10 es el tipo del primer tramo", "hasta 12000 €", "por encima de 12000", "0{,}2 es el tipo marginal del segundo tramo", "0{,}20 €"], 'd')
+v.solucion(19, ["T(20000)=2800"], 'b')
+v.solucion(19, ["14\\,\\%"], 'c')
 # 20
 f20 = (x**2 - 4) / (x - 1)
 v.ok(continuous_domain(f20, x, S.Reals) == S.Reals - FiniteSet(1) and f20.subs(x, 0) == 4 and sorted(solve(f20, x)) == [-2, 2], "ej. 20: dominio y cortes")
@@ -147,35 +186,58 @@ signos = [(-3, -1), (0, 1), (R(3, 2), -1), (3, 1)]
 v.ok(all((f20.subs(x, k) > 0) == (sg > 0) for k, sg in signos), "ej. 20: signos en los cuatro intervalos")
 v.ok(limit(f20, x, 1, '-') == oo and limit(f20, x, 1, '+') == -oo, "ej. 20: asíntota x=1 (+∞ a la izquierda, -∞ a la derecha)")
 v.enunciado(20, ["\\dfrac{x^2-4}{x-1}"])
-v.solucion(20, ["(0,4)", "(-2,0)", "(2,0)", f"f(-3)={tx(f20.subs(x, -3))}", f"f(\\frac{{1}}{{2}})={tx(f20.subs(x, R(1, 2)))}", f"f(3)={tx(f20.subs(x, 3))}", "x=1"])
+v.solucion(20, ["(0,4)", "(-2,0)", "(2,0)"], 'a')
+v.solucion(20, [f"f(-3)={tx(f20.subs(x, -3))}", f"f(\\frac{{1}}{{2}})={tx(f20.subs(x, R(1, 2)))}", f"f(3)={tx(f20.subs(x, 3))}"], 'c')
+pos20 = solve_univariate_inequality(f20 > 0, x, relational=False); neg20 = solve_univariate_inequality(f20 < 0, x, relational=False)
+v.ok(pos20 == Union(Interval.open(-2, 1), Interval.open(2, oo)) and neg20 == Union(Interval.open(-oo, -2), Interval.open(1, 2)), "ej. 20b: signo de f")
+v.solucion(20, ["f<0 en (-\\infty,-2)", "f>0 en (-2,1)", "f<0 en (1,2)", "f>0 en (2,+\\infty)"], 'b')
+v.solucion(20, [f"f(0{{,}}9)={dec(f20.subs(x, R(9, 10)), 1)}", f"f(1{{,}}1)={dec(f20.subs(x, R(11, 10)), 1)}"], 'd')
 # 21
 A21, B21 = 10 + R(5, 100) * m_, R(12, 100) * m_
 m21 = solve(A21 - B21, m_)[0]
 v.ok(m21 == R(1000, 7) and round(float(m21), 2) == 142.86 and A21.subs(m_, 100) == 15 and B21.subs(m_, 100) == 12 and A21.subs(m_, 200) == 20 and B21.subs(m_, 200) == 24, "ej. 21")
 v.enunciado(21, ["10 €", "0,05 €", "0,12 €"])
-v.solucion(21, ["A(m)=10+0{,}05m", "B(m)=0{,}12m", "m=\\frac{1000}{7}", "142{,}86", "A(100)=15", "B(100)=12", "A(200)=20", "B(200)=24"])
+v.solucion(21, ["A(m)=10+0{,}05m", "B(m)=0{,}12m"], 'a')
+v.solucion(21, ["m=\\frac{1000}{7}", "142{,}86"], 'b')
+v.solucion(21, ["A(100)=15", "B(100)=12", "A(200)=20", "B(200)=24"], 'c')
+v.ok(B21.subs(m_, 100) < A21.subs(m_, 100) and B21.subs(m_, 200) > A21.subs(m_, 200), "ej. 21d: B más barata al principio, A después")
+v.solucion(21, [f"{dec(m21, 2)} minutos", "cuota fija de 10 €"], 'd')
 # 22
 f22 = 30 + 10 * log(x)
 v.ok(f22.subs(x, 1) == 30 and f22.subs(x, E) == 40 and simplify(f22.subs(x, E**2)) == 50 and solve(f22 - 60, x) == [E**3] and simplify(f22.subs(x, E * x) - f22 - 10) == 0, "ej. 22")
 v.enunciado(22, ["30+10\\ln t"])
-v.solucion(22, ["f(1)=30", "f(\\mathrm{e})=40", "f(\\mathrm{e}^2)=50", "t=\\mathrm{e}^3", aprox(E**3)])
+v.solucion(22, ["f(1)=30", "f(\\mathrm{e})=40", "f(\\mathrm{e}^2)=50"], 'a')
+v.solucion(22, ["t=\\mathrm{e}^3", aprox(E**3)], 'b')
+v.ok(simplify(diff(f22, x) - 10 / x) == 0 and (10 / x_pos).is_positive, "ej. 22c: f' = 10/t > 0")
+v.solucion(22, ["t\\ge1", "10>0"], 'c')
+v.solucion(22, ["f(\\mathrm{e}\\,t)=30+10(\\ln\\mathrm{e}+\\ln t)=f(t)+10", f"sube {f22.subs(x, E * x).expand(log=True) - f22} puntos", f"\\mathrm{{e}}\\approx{aprox(E)}"], 'd')
 # 23
 simple = 1000 + 1000 * R(4, 100) * 10
 comp = 1000 * R(104, 100)**10
 t23 = N(log(3) / log(R(104, 100)), 20)
 v.ok(simple == 1400 and round(float(comp), 2) == 1480.24, "ej. 23")
 v.enunciado(23, ["1000 €", "4\\,\\%"])
-v.solucion(23, ["1400", aprox(comp), "C(t)=1000\\cdot1{,}04^t", f"t\\approx{aprox(t23)}", aprox(comp - simple)])
+v.solucion(23, ["1400", aprox(comp), aprox(comp - simple)], 'a')
+v.solucion(23, ["C(t)=1000\\cdot1{,}04^t"], 'b')
+v.solucion(23, [f"{aprox(comp)}-{simple}={aprox(comp - simple)}"], 'd')
+v.solucion(23, [f"t\\approx{aprox(t23)}"], 'c')
 # 24
 f24 = Abs(x - 2) + 1
 v.ok(solve(f24 - 4, x) == [-1, 5] and f24.subs(x, 2) == 1 and all(f24.subs(x, k) >= 1 for k in range(-10, 11)), "ej. 24")
 v.ok(all(f24.subs(x, k) == (3 - k if k < 2 else k - 1) for k in range(-6, 8)), "ej. 24: la definición a trozos coincide con |x-2|+1")
 v.enunciado(24, ["|x-2|+1"])
-v.solucion(24, ["f(x)=\\begin{cases}3-x&x<2\\\\x-1&x\\ge2\\end{cases}", "(2,1)", "x=5", "x=-1"])
+v.solucion(24, ["f(x)=\\begin{cases}3-x&x<2\\\\x-1&x\\ge2\\end{cases}"], 'a')
+v.solucion(24, ["(2,1)"], 'b')
+v.solucion(24, ["x=5", "x=-1"], 'c')
+v.solucion(24, ["(2,1)", f"pendiente {diff(3 - x, x)}", f"pendiente {diff(x - 1, x)}"] + [f"({k},{f24.subs(x, k)})" for k in (-1, 0, 3, 5)], 'd')
 # 25
 B25 = expand((-x**2 + 12 * x) - (2 * x + 16))
 v.ok(B25 == -x**2 + 10 * x - 16 and sorted(solve(B25, x)) == [2, 8] and solve(diff(B25, x), x) == [5] and B25.subs(x, 5) == 9, "ej. 25")
 v.ok((-x**2 + 12 * x).subs(x, 2) == (2 * x + 16).subs(x, 2) == 20 and (-x**2 + 12 * x).subs(x, 8) == (2 * x + 16).subs(x, 8) == 32, "ej. 25: ingresos = costes en 2 y 8")
 v.enunciado(25, ["-x^2+12x", "2x+16"])
-v.solucion(25, ["B(x)=-x^2+10x-16", "x=5", "B(5)=9", "I(2)=20", "C(2)=20", "I(8)=32", "C(8)=32"])
+v.solucion(25, ["B(x)=-x^2+10x-16"], 'a')
+v.solucion(25, ["x=5", "B(5)=9"], 'c')
+v.ok(solve_univariate_inequality(B25 > 0, x, relational=False) == Interval.open(2, 8), "ej. 25b: B>0 en (2,8)")
+v.solucion(25, ["x=2", "x=8", "2<x<8"], 'b')
+v.solucion(25, ["I(2)=20", "C(2)=20", "I(8)=32", "C(8)=32"], 'd')
 v.fin()

@@ -367,7 +367,7 @@ a) $A^2=\begin{pmatrix}1&2\\0&1\end{pmatrix}\begin{pmatrix}1&2\\0&1\end{pmatrix}
 
 b) El elemento de la esquina superior derecha es $2n$: $A^n=\begin{pmatrix}1&2n\\0&1\end{pmatrix}$, luego $A^{10}=\begin{pmatrix}1&20\\0&1\end{pmatrix}$.
 
-c) Inducción. Para $n=1$ se cumple. Si $A^n=\begin{pmatrix}1&2n\\0&1\end{pmatrix}$, entonces $A^{n+1}=A^n\cdot A=\begin{pmatrix}1&2+2n\\0&1\end{pmatrix}=\begin{pmatrix}1&2(n+1)\\0&1\end{pmatrix}$. Vale para todo $n\ge1$.
+c) Inducción. Para $n=1$ se cumple. Si $A^n=\begin{pmatrix}1&2n\\0&1\end{pmatrix}$, entonces $A^{n+1}=A^n\cdot A=\begin{pmatrix}1&2n+2\\0&1\end{pmatrix}=\begin{pmatrix}1&2(n+1)\\0&1\end{pmatrix}$. Vale para todo $n\ge1$.
 
 d) $|A|=1$ y $A^{-1}=\begin{pmatrix}1&-2\\0&1\end{pmatrix}$. La fórmula $\begin{pmatrix}1&2n\\0&1\end{pmatrix}$ con $n=-1$ da exactamente esa matriz.
 :::

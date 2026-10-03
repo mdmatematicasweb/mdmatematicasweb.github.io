@@ -10,6 +10,8 @@ Un verificador resuelve cada ejercicio con sympy, de forma independiente del tex
 Las comparaciones de texto se hacen sobre una forma normalizada (sin espacios, \\dfrac y \\tfrac como \\frac, coma decimal
 con o sin llaves, signo menos Unicode como «-»).
 """
+import json
+import os
 import re
 import sys
 from decimal import Decimal, ROUND_HALF_UP
@@ -46,6 +48,34 @@ def mat(M):
     return "\\begin{pmatrix}" + "\\\\".join(filas) + "\\end{pmatrix}"
 
 
+def matl(M):
+    """Matriz con entradas simbólicas (sympy.latex), p. ej. \\begin{pmatrix}1&0\\\\3n+3&1\\end{pmatrix}."""
+    from sympy import latex
+    M = Matrix(M)
+    filas = ["&".join(latex(M[i, j]) for j in range(M.cols)) for i in range(M.rows)]
+    return "\\begin{pmatrix}" + "\\\\".join(filas) + "\\end{pmatrix}"
+
+
+def ec(coefs, rhs, var="xyz"):
+    """Ecuación lineal como en el texto: [1, 3, 5], 200 -> «x+3y+5z=200» (coeficiente 1 implícito, signos al escribir)."""
+    t = ""
+    for c_, v_ in zip(coefs, var):
+        c_ = sympify(c_)
+        if c_ == 0:
+            continue
+        signo = "-" if c_ < 0 else ("+" if t else "")
+        mod = abs(c_)
+        t += signo + ("" if mod == 1 else tx(mod)) + v_
+    return f"{t}={tx(rhs)}"
+
+
+def ampliada(M, b):
+    """Matriz ampliada como \\begin{array}{ccc|c}…\\end{array} (sin los paréntesis exteriores)."""
+    M, b = Matrix(M), Matrix(b)
+    filas = ["&".join([tx(M[i, j]) for j in range(M.cols)] + [tx(b[i])]) for i in range(M.rows)]
+    return "\\begin{array}{" + "c" * M.cols + "|c}" + "\\\\".join(filas) + "\\end{array}"
+
+
 def igual(nombre, valor):
     """Fragmento «nombre=valor» con valor racional."""
     return f"{nombre}={tx(valor)}"
@@ -61,6 +91,62 @@ def norm(s):
     return re.sub(r"[\s$]+", "", s)
 
 
+# Tras el valor de un resultado «etiqueta=valor» debe terminar la expresión: fin del trozo $…$, otra igualdad o desigualdad,
+# puntuación, un cierre, o un texto. Así «|B|=2» no se da por bueno dentro de «|B|=2\\cdot1-1\\cdot0=3».
+_FIN = (r"(?=$|=|,(?![0-9])|;|\.(?![0-9])|<|>|\)|\}|&|\\\\|%|€"
+        r"|\\(?:neq|ne|le|leq|ge|geq|lt|gt|approx|text|quad|Rightarrow|Longrightarrow|implies|to|in|mid|end|Leftrightarrow|land|wedge|lor|vee|mathrm|operatorname\{u\})(?![a-zA-Z]))")
+
+
+# ---------- búsqueda de un resultado en el bloque de un apartado ----------
+def _patron(nf):
+    """Patrón de un fragmento «etiqueta=valor» o «etiqueta\\approx valor» (cadena de igualdades), o None si es literal."""
+    if "\\approx" in nf and nf.count("=") == 0 and nf.count("\\approx") == 1 and not nf.startswith("\\approx"):
+        etiqueta, valor = nf.split("\\approx")
+        op = "\\approx"
+    elif nf.count("=") == 1:
+        etiqueta, valor = nf.split("=")
+        op = "="
+        return re.compile(re.escape(etiqueta) + r"(?:=[^=]*?)*=" + re.escape(valor) + _FIN), valor
+    else:
+        return None, None
+    return re.compile(re.escape(etiqueta) + r"(?:=[^=]*?)*" + re.escape(op) + re.escape(valor) + _FIN), valor
+
+
+def contar(nf, segmentos, plano):
+    """Número de apariciones del fragmento normalizado nf en el bloque (segmentos $…$ normalizados y texto plano)."""
+    patron, _ = _patron(nf)
+    if patron is None:
+        return plano.count(nf)
+    return sum(len(patron.findall(seg)) for seg in segmentos)
+
+
+def _cambiar(texto, ini, fin):
+    """Cambia un carácter del trozo texto[ini:fin]: el primer dígito (+1) o, si no hay, la primera letra por «Z»."""
+    for j in range(ini, fin):
+        if texto[j].isdigit():
+            return texto[:j] + str((int(texto[j]) + 1) % 10) + texto[j + 1:]
+    return texto[:ini] + "Z" + texto[ini + 1:]
+
+
+def mutar(nf, segmentos, plano, i):
+    """Devuelve (segmentos, plano) con la aparición número i del fragmento alterada en un carácter."""
+    patron, valor = _patron(nf)
+    if patron is None:
+        pos = -1
+        for _ in range(i + 1):
+            pos = plano.index(nf, pos + 1)
+        return segmentos, _cambiar(plano, pos, pos + len(nf))
+    vistas = 0
+    nuevos = list(segmentos)
+    for s_i, seg in enumerate(segmentos):
+        for m in patron.finditer(seg):
+            if vistas == i:
+                nuevos[s_i] = _cambiar(seg, m.end() - len(valor), m.end())
+                return nuevos, plano
+            vistas += 1
+    raise ValueError("aparición inexistente")
+
+
 # ---------- lectura del .qmd ----------
 class Relacion:
     def __init__(self, ruta):
@@ -71,6 +157,38 @@ class Relacion:
             fallo("no hay sección «## Soluciones»")
         self.enunciados = self._partir(cuerpo)
         self.soluciones = self._soluciones(soluciones)
+        self.ap_enunciados = {k: self.apartados(t) for k, t in self.enunciados.items()}
+        self.ap_soluciones = {k: self.apartados(t) for k, t in self.soluciones.items()}
+
+    @staticmethod
+    def apartados(texto):
+        """Divide un enunciado o una solución en bloques por apartado.
+
+        Claves: «a», «b»… si no hay opciones; «A.a», «B.b»… si hay «**Opción A.**/**Opción B.**»; «» (o «A», «B») si el
+        ejercicio (o la opción) no tiene apartados «a) …». Un apartado empieza en una línea que comienza por «x) ».
+        El texto anterior al primer apartado (introducción) no pertenece a ningún apartado.
+        """
+        partes = re.split(r"^\*\*Opción ([AB])\.\*\*", texto, flags=re.M)
+        if len(partes) > 1:
+            grupos = [(partes[i], partes[i + 1]) for i in range(1, len(partes), 2)]
+        else:
+            grupos = [("", texto)]
+        res = {}
+        for opc, cuerpo in grupos:
+            trozos = re.split(r"^([a-f])\) ", cuerpo, flags=re.M)
+            if len(trozos) == 1:
+                # apartados en línea («…: a) …; b) …»): solo se reconocen sus letras
+                en_linea = re.findall(r"(?:^|[:;]\s)([a-f])\) ", cuerpo)
+                if len(en_linea) >= 2 and en_linea[0] == "a":
+                    for letra in en_linea:
+                        res[f"{opc}.{letra}" if opc else letra] = cuerpo
+                else:
+                    res[opc] = cuerpo
+                continue
+            for i in range(1, len(trozos), 2):
+                clave = f"{opc}.{trozos[i]}" if opc else trozos[i]
+                res[clave] = trozos[i + 1]
+        return res
 
     @staticmethod
     def _partir(cuerpo):
@@ -98,6 +216,9 @@ class Verificador:
         self.rel = Relacion(ruta_qmd)
         self.n = 0
         self.fallos = []
+        self.cubiertos = {}
+        self.registro = []
+        self.mutaciones = 0
 
     def ok(self, cond, msg):
         """Cuenta una comprobación; si falla, la anota (se muestran todas al final y se sale con código 1)."""
@@ -138,34 +259,57 @@ class Verificador:
         for f in fragmentos:
             self.ok(norm(f) in t, f"ej. {k}: el enunciado no contiene el dato {f!r}")
 
-    def solucion(self, k, fragmentos):
-        """Cada fragmento debe aparecer en la solución k.
+    def solucion(self, k, fragmentos, ap=""):
+        """Cada fragmento esperado debe aparecer en el bloque del apartado `ap` de la solución k, no en otro sitio.
 
-        Un fragmento «etiqueta=valor» (un solo signo =) puede aparecer dentro de una cadena de igualdades de la misma
-        fórmula, como «|A|=2\\cdot3-5\\cdot1=1»; el valor debe ser exactamente el calculado y no continuar con más cifras.
-        El resto de fragmentos (matrices, fórmulas con varios =) deben aparecer tal cual.
+        `ap` es la clave del apartado («a», «b», «A.a»…; «» si el ejercicio no tiene apartados). Un fragmento es un texto
+        o un par (texto, n) si debe aparecer exactamente n veces en el bloque (por defecto 1: si aparece más veces el
+        verificador lo exige explícito, para que cambiar una sola aparición lo haga fallar).
+
+        Un fragmento «etiqueta=valor» (un solo =) puede aparecer dentro de una cadena de igualdades de la misma fórmula,
+        como «|A|=2\\cdot3-5\\cdot1=1»; el valor debe ser exactamente el calculado y no seguir con más cifras.
+        El resto (matrices, fórmulas con varios =) debe aparecer tal cual.
         """
-        texto = self.rel.soluciones[k]
-        plano = norm(texto)
-        segmentos = [norm(x) for x in texto.split("$") if x.strip()]
+        bloques = self.rel.ap_soluciones[k]
+        if ap not in bloques:
+            self.ok(False, f"ej. {k}: la solución no tiene apartado {ap!r} (tiene {sorted(bloques)})")
+            return
+        self.cubiertos.setdefault(k, set()).add(ap)
+        segmentos = [norm(x) for x in bloques[ap].split("$") if x.strip()]
+        plano = norm(bloques[ap])
         for f in fragmentos:
+            f, n = f if isinstance(f, tuple) else (f, 1)
+            self.registro.append((k, ap, f, n, segmentos, plano))
+            hay = contar(norm(f), segmentos, plano)
+            self.ok(hay == n, f"ej. {k}, apartado {ap or '(único)'}: el resultado calculado {f!r} debe aparecer {n} vez/veces en su apartado y aparece {hay}")
+
+    def comprobar_apartados(self):
+        """Los apartados del enunciado y de la solución coinciden y todos tienen al menos un resultado comprobado."""
+        for k in sorted(self.rel.enunciados):
+            e, s = set(self.rel.ap_enunciados[k]), set(self.rel.ap_soluciones[k])
+            self.ok(e == s, f"ej. {k}: apartados del enunciado {sorted(e)} distintos de los de la solución {sorted(s)}")
+            falta = s - self.cubiertos.get(k, set())
+            self.ok(not falta, f"ej. {k}: apartados de la solución sin ningún resultado comprobado: {sorted(falta)}")
+
+    def mutacion(self):
+        """Prueba de mutación: cambiar UNA aparición de cada resultado, dentro de su apartado, debe hacer fallar la comprobación."""
+        for k, ap, f, n, segmentos, plano in self.registro:
             nf = norm(f)
-            if "\\approx" in nf and nf.count("=") == 0 and nf.count("\\approx") == 1 and not nf.startswith("\\approx"):
-                etiqueta, valor = nf.split("\\approx")
-                patron = re.compile(re.escape(etiqueta) + r"(?:=[^=]*?)*" + re.escape("\\approx") + re.escape(valor) + r"(?![0-9.{^_]|\\frac)")
-                hallado = any(patron.search(seg) for seg in segmentos)
-            elif nf.count("=") == 1:
-                etiqueta, valor = nf.split("=")
-                patron = re.compile(re.escape(etiqueta) + r"(?:=[^=]*?)*=" + re.escape(valor) + r"(?![0-9.{^_]|\\frac)")
-                hallado = any(patron.search(seg) for seg in segmentos)
-            else:
-                hallado = nf in plano
-            self.ok(hallado, f"ej. {k}: la solución escrita no contiene el resultado calculado {f!r}")
+            if contar(nf, segmentos, plano) != n:   # ya anotado como fallo; no se puede mutar
+                continue
+            for i in range(n):
+                seg2, plano2 = mutar(nf, segmentos, plano, i)
+                self.ok(contar(nf, seg2, plano2) != n, f"mutación no detectada: ej. {k}, apartado {ap or '(único)'}, {f!r}, aparición {i + 1}")
+                self.mutaciones += 1
 
     def fin(self):
+        self.comprobar_apartados()
+        self.mutacion()
+        if os.environ.get("CCSS_VOLCADO"):   # lo usa prueba_mutacion_ej.py
+            Path(os.environ["CCSS_VOLCADO"]).write_text(json.dumps([[k, ap, f, n] for k, ap, f, n, _, _ in self.registro]))
         if self.fallos:
             for f in self.fallos:
                 print("FALLA:", f, file=sys.stderr)
             print(f"{len(self.fallos)} comprobaciones fallidas ({self.n} superadas)", file=sys.stderr)
             sys.exit(1)
-        print(f"OK: {self.n} comprobaciones superadas ({self.competenciales} ejercicios competenciales)")
+        print(f"OK: {self.n} comprobaciones superadas, {self.mutaciones} mutaciones detectadas ({self.competenciales} ejercicios competenciales)")
