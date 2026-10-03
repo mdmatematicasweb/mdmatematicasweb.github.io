@@ -50,4 +50,6 @@ Estado: **fase 0 hecha** (esqueleto oculto). Curso oculto hasta completarlo.
 5. Simulacro PAU CCSS (catálogo de tipos propio, pruebas).
 6. Portada con selector de curso, navbar, barras laterales, índices raíz, README y `pendientes.md`; quitar la exclusión de `render`.
 
+Los cálculos de cada tema de apuntes se verifican con sympy en `scripts/ccss/verificar_NN.py` (`python scripts/ccss/verificar_01.py`; sale con código 1 si falla alguna comprobación).
+
 Cada fase termina con revisión del autor antes de seguir.
