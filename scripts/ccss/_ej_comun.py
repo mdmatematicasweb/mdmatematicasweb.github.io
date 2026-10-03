@@ -234,9 +234,11 @@ class Relacion:
         res = {}
         for opc, cuerpo in grupos:
             trozos = re.split(r"^([a-f])\) ", cuerpo, flags=re.M)
+            if len(trozos) == 3 and len(re.findall(r"(?:^\s*|[:;.?]\s)([a-f])\) ", cuerpo)) >= 2:
+                trozos = [cuerpo]   # un solo «a)» al principio y los demás apartados en línea
             if len(trozos) == 1:
                 # apartados en línea («…: a) …; b) …»): solo se reconocen sus letras
-                en_linea = re.findall(r"(?:^|[:;.]\s)([a-f])\) ", cuerpo)
+                en_linea = re.findall(r"(?:^\s*|[:;.?]\s)([a-f])\) ", cuerpo)
                 if len(en_linea) >= 2 and en_linea[0] == "a":
                     for letra in en_linea:
                         res[f"{opc}.{letra}" if opc else letra] = cuerpo

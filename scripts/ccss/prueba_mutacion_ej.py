@@ -20,7 +20,8 @@ from pathlib import Path
 AQUI = Path(__file__).resolve().parent
 RAIZ = AQUI.parents[1]
 TEMAS = {"01": "01-matrices-determinantes", "02": "02-sistemas-ecuaciones-lineales", "03": "03-programacion-lineal", "04": "04-funciones",
-         "05": "05-limites-continuidad", "06": "06-derivadas", "07": "07-aplicaciones-derivada", "08": "08-integrales"}
+         "05": "05-limites-continuidad", "06": "06-derivadas", "07": "07-aplicaciones-derivada", "08": "08-integrales",
+         "09": "09-probabilidad", "10": "10-distribuciones", "11": "11-muestreo-inferencia"}
 sys.path.insert(0, str(AQUI))
 from _ej_comun import Relacion  # noqa: E402
 
