@@ -940,6 +940,58 @@ def fig_optimizacion():
            "A la izquierda, el coste medio alcanza su mínimo, 20 euros con 20 unidades, donde corta a la recta del coste marginal. A la derecha, el ingreso de la compañía de autobuses es una parábola con máximo de 1250 euros con un billete de 25 euros")
 
 
+def fig_area_bajo_curva_ccss():
+    """Tema 08 CCSS: coste de pasar de 50 a 100 unidades = área bajo el coste marginal."""
+    g = Fig(-8, 125, -1.4, 11.5, w=520, h=330)
+    mg = lambda x: 0.04 * x + 5
+    g.region(mg, lambda x: 0, 50, 100, color=YELLOW)
+    g.axes(xt=(25, 50, 75, 100), yt=(2, 4, 6, 8, 10))
+    g.curve(mg, 0, 122, color=NAVY, width=3.5)
+    g.text(75, 3.2, "área = 400 €", bold=True, size=15)
+    g.text(5, 10.2, "C′(x) = 0,04x + 5", anchor="start", color=NAVY, bold=True, size=14, dx=8)
+    g.text(125, 0, "unidades x", anchor="end", dy=-8, size=13); g.text(0, 11.5, "€ por unidad", anchor="start", dx=10, dy=4, size=13)
+    g.save(APC / "08-integrales" / "fig-area-bajo-curva.svg", "Área bajo la recta del coste marginal entre 50 y 100 unidades, igual a 400 euros")
+
+
+def fig_area_signo_ccss():
+    """Tema 08 CCSS: la integral resta las partes bajo el eje; el área las suma."""
+    f = lambda x: x * x - 4 * x + 3
+    g = Fig(-0.7, 4.9, -1.9, 3.9, w=520, h=330)
+    g.region(f, lambda x: 0, 0, 1, color=YELLOW)
+    g.region(lambda x: 0, f, 1, 3, color=CORAL)
+    g.region(f, lambda x: 0, 3, 4, color=YELLOW)
+    g.axes(xt=(1, 2, 3, 4), yt=(-1, 1, 2, 3))
+    g.curve(f, -0.5, 4.5, color=NAVY, width=3.5)
+    g.text(0.38, 0.8, "+4/3", bold=True, size=14); g.text(2, -0.74, "−4/3", bold=True, size=14); g.text(3.55, 0.5, "+4/3", bold=True, size=14)
+    g.text(2.2, 3.5, "integral de 0 a 4 = 4/3", bold=True, size=14, anchor="start", dx=-20)
+    g.text(2.2, 3.05, "área = 4/3 + 4/3 + 4/3 = 4", bold=True, size=14, anchor="start", dx=-20)
+    g.save(APC / "08-integrales" / "fig-area-signo.svg", "La función x al cuadrado menos 4x más 3 entre 0 y 4: tres regiones de área 4/3, la central bajo el eje, por lo que la integral vale 4/3 y el área total 4")
+
+
+def fig_areas_entre_curvas_ccss():
+    """Tema 08 CCSS: excedente del consumidor y área entre una parábola y una recta."""
+    kw = dict(w=290, h=250, pad=16)
+    a = Fig(-10, 126, -4, 35, **kw)
+    a.el.append(f'<path d="{a.path([(0, 30), (80, 10), (0, 10)])} Z" fill="{YELLOW}" fill-opacity="0.85" stroke="none"/>')
+    a.axes(xt=(40, 80, 120), yt=(10, 20, 30))
+    a.line((0, 10), (126, 10), width=1.5)
+    a.curve(lambda q: 30 - q / 4, 0, 120, color=NAVY, width=3.5)
+    a.dot(80, 10, CORAL)
+    a.text(80, 10, "(80, 10)", dx=0, dy=24, bold=True, size=12)
+    a.text(4, 16.8, "excedente", bold=True, size=13, anchor="start"); a.text(4, 12.6, "= 800", bold=True, size=13, anchor="start")
+    a.text(60, 29, "demanda", color=NAVY, bold=True, size=13, anchor="start", dx=8)
+    b = Fig(-0.7, 4.4, -1, 4.7, **kw)
+    f = lambda x: -x * x + 4 * x
+    b.region(f, lambda x: x, 0, 3, color=YELLOW)
+    b.axes(xt=(1, 2, 3, 4), yt=(1, 2, 3, 4))
+    b.curve(f, -0.2, 4.2, color=CORAL, width=3.5); b.curve(lambda x: x, -0.5, 4.4, color=NAVY, width=3.5)
+    b.dot(0, 0, CORAL); b.dot(3, 3, CORAL)
+    b.text(1.5, 2.6, "área = 9/2", bold=True, size=13)
+    b.text(2.0, 4.4, "f", color="#C4413A", bold=True, size=14); b.text(3.75, 4.55, "g", color=NAVY, bold=True, size=14)
+    panels([a, b], ["Excedente del consumidor", "Entre una parábola y una recta"], APC / "08-integrales" / "fig-areas-entre-curvas.svg",
+           "A la izquierda, el excedente del consumidor es el triángulo entre la recta de demanda y el precio de equilibrio 10, de área 800. A la derecha, el área entre la parábola f(x) igual a menos x al cuadrado más 4x y la recta g(x) igual a x entre 0 y 3, igual a 9 medios")
+
+
 if __name__ == "__main__":
     fig_asintotas(); fig_monotonia(); fig_area(); fig_normal()
     fig_dos_planos(); fig_recta_plano(); fig_dos_rectas(); fig_simetrico()
@@ -953,3 +1005,4 @@ if __name__ == "__main__":
     fig_discontinuidades_ccss(); fig_asintotas_ccss()
     fig_tangente_coste(); fig_derivabilidad_ccss()
     fig_estudio_funciones(); fig_estudio_racional(); fig_optimizacion()
+    fig_area_bajo_curva_ccss(); fig_area_signo_ccss(); fig_areas_entre_curvas_ccss()
