@@ -641,6 +641,73 @@ def fig_equilibrio():
     g.save(APC / "02-sistemas-ecuaciones-lineales" / "fig-equilibrio.svg", "Rectas de oferta y demanda que se cortan en el punto de equilibrio, precio 10 y cantidad 80")
 
 
+def _region(g, pts, color=YELLOW, opacity=0.75):
+    """Región factible: polígono de vértices pts (coordenadas de la figura)."""
+    g.el.append(f'<path d="{g.path(pts)} Z" fill="{color}" fill-opacity="{opacity}" stroke="{INK}" stroke-width="2"/>')
+
+
+def _recta(g, p1, p2, color, dash="1 0", width=3):
+    g.line(p1, p2, color=color, width=width, dash=dash)
+
+
+def fig_region_panaderia():
+    """Ejemplo 1 de programación lineal (CCSS, tema 03): región acotada con cuatro vértices y recta de nivel."""
+    g = Fig(-3, 50, -3, 44, w=520, h=370)
+    _region(g, [(0, 10), (35, 10), (30, 20), (0, 35)])
+    g.axes(xt=(10, 20, 30, 40), yt=(10, 20, 30, 40))
+    _recta(g, (18, 44), (40, 0), CORAL)
+    _recta(g, (0, 35), (50, 10), NAVY)
+    _recta(g, (0, 10), (50, 10), "#2a8f82", dash="7 5", width=2.5)
+    g.line((46, 0), (10.8, 44), color=INK, width=1.5, dash="5 4")
+    for (a, b), t, dx, dy in (((0, 10), "A (0, 10)", 12, 20), ((35, 10), "D (35, 10)", 0, 24), ((30, 20), "C (30, 20)", 10, -12), ((0, 35), "B (0, 35)", 12, -8)):
+        g.dot(a, b, YELLOW if (a, b) != (30, 20) else CORAL)
+        g.text(a, b, t, dx=dx, dy=dy, anchor="end" if t.startswith("D") else "start", bold=True, size=14)
+    g.text(19.2, 41, "2x + y = 80", anchor="start", color="#C4413A", bold=True, size=13, dx=4)
+    g.text(49, 14, "x + 2y = 70", anchor="end", color=NAVY, bold=True, size=13, dy=-4)
+    g.text(49.5, 10, "y = 10", anchor="end", color="#2a8f82", bold=True, size=13, dy=18)
+    g.text(12.4, 40.6, "F = 2300", anchor="end", bold=True, size=13)
+    g.text(50, 0, "x", anchor="end", dy=-8, size=13); g.text(0, 44, "y", anchor="start", dx=8, dy=4, size=13)
+    g.save(APC / "03-programacion-lineal" / "fig-region-panaderia.svg", "Región factible de la panadería con vértices A, B, C y D y la recta de nivel F igual a 2300 que pasa por C")
+
+
+def fig_region_comedor():
+    """Ejemplo 2 (CCSS, tema 03): región no acotada de un problema de minimizar."""
+    g = Fig(-1, 13, -1.5, 16, w=520, h=370)
+    _region(g, [(0, 12), (2, 6), (8, 0), (13, 0), (13, 16), (0, 16)])
+    g.axes(xt=(2, 4, 6, 8, 10, 12), yt=(4, 8, 12, 16))
+    _recta(g, (-1, 15), (4.5, -1.5), CORAL)
+    _recta(g, (-1, 9), (9.5, -1.5), NAVY)
+    g.line((0, 26 / 3), (6.5, 0), color=INK, width=1.5, dash="5 4")
+    for (a, b), t, dx, dy in (((0, 12), "P (0, 12): 36", 10, -2), ((2, 6), "Q (2, 6): 26", 10, -10), ((8, 0), "R (8, 0): 32", 6, -12)):
+        g.dot(a, b, CORAL if (a, b) == (2, 6) else YELLOW)
+        g.text(a, b, t, dx=dx, dy=dy, anchor="start", bold=True, size=14)
+    g.text(0.5, 14.5, "3x + y = 12", anchor="start", color="#C4413A", bold=True, size=13)
+    g.text(9.7, 1.8, "x + y = 8", anchor="start", color=NAVY, bold=True, size=13)
+    g.text(0.8, 1.6, "F = 26", anchor="start", bold=True, size=13)
+    g.text(13, 0, "x", anchor="end", dy=-8, size=13); g.text(0, 16, "y", anchor="start", dx=16, dy=4, size=13)
+    g.save(APC / "03-programacion-lineal" / "fig-region-comedor.svg", "Región factible no acotada del comedor social con vértices P, Q y R; el mínimo del coste está en Q")
+
+
+def fig_lp_casos():
+    kw = dict(w=270, h=230, pad=14)
+    a = Fig(-3, 50, -3, 44, **kw)
+    _region(a, [(0, 10), (35, 10), (30, 20), (0, 35)])
+    a.axes()
+    a.line((30, 20), (35, 10), color=CORAL, width=7, dash="1 0")
+    a.line((40, 0), (18, 44), color=INK, width=1.5, dash="5 4")   # 40x + 20y = 1600, paralela al lado CD
+    a.dot(30, 20, YELLOW); a.dot(35, 10, YELLOW)
+    a.text(30, 20, "C", dx=-12, dy=-8, bold=True, size=15); a.text(35, 10, "D", dx=10, dy=-8, bold=True, size=15)
+    a.text(3, 4.5, "F = 1600", anchor="start", bold=True, size=12)
+    b = Fig(-1, 13, -1.5, 16, **kw)
+    _region(b, [(0, 12), (2, 6), (8, 0), (13, 0), (13, 16), (0, 16)])
+    b.axes()
+    arrow(b, (5, 5), (9.5, 11), NAVY, 3.5)
+    b.text(6, 10.5, "F crece", anchor="end", bold=True, size=13, color=NAVY)
+    b.text(6, 8.7, "sin límite", anchor="end", bold=True, size=13, color=NAVY)
+    panels([a, b], ["Óptimo en todo un lado", "Región no acotada: sin máximo"], APC / "03-programacion-lineal" / "fig-lp-casos.svg",
+           "Dos casos especiales: una recta de nivel paralela a un lado de la región, que da infinitas soluciones óptimas, y una región no acotada donde la función objetivo crece sin límite")
+
+
 if __name__ == "__main__":
     fig_asintotas(); fig_monotonia(); fig_area(); fig_normal()
     fig_dos_planos(); fig_recta_plano(); fig_dos_rectas(); fig_simetrico()
@@ -649,3 +716,4 @@ if __name__ == "__main__":
     fig_sistemas_2d(); fig_det_area(); fig_vectores_2d(); fig_vectorial_mixto()
     fig_sarrus(); fig_producto_matrices()
     fig_equilibrio()
+    fig_region_panaderia(); fig_region_comedor(); fig_lp_casos()
