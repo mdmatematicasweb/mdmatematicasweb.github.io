@@ -27,6 +27,10 @@ Actualizado el 2026-10-02.
 - **Formas exactas en «Ver solución»** de las respuestas `expr` de integrales (derivadas y límites ya las tenían).
 - **PDF**: los callouts ya no muestran «?» (iconos desactivados en Typst).
 
+## En curso (oculto)
+
+- **Curso 2º Bachillerato Ciencias Sociales** (`2-bachillerato-ccss`): fase 0 hecha (esqueleto oculto, 11 temas). Plan y decisiones en `docs/superpowers/specs/2026-10-03-curso-ccss.md`. Siguiente: fase 1 (apuntes) tras la revisión del autor.
+
 ## Siguiente
 
 Nada pendiente de la lista anterior. Hecho el 2026-10-02: repaso de los textos de los temas 1–5 (`tidyTex` quita `1A`, `1n`, `\frac{…}{1}` tras «=», `\sqrt{1}` y `+(2)`). Idea suelta: revisar a ojo en el navegador las gráficas nuevas y los callouts.
