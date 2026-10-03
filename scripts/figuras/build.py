@@ -1046,6 +1046,49 @@ def fig_arbol_ccss():
     g.save(APC / "09-probabilidad" / "fig-arbol.svg", "Diagrama de árbol: tres tipos de cliente con probabilidades 0,50, 0,30 y 0,20, y probabilidad de siniestro 0,02, 0,05 y 0,12 en cada uno")
 
 
+def fig_normal_tabla_ccss():
+    """Tema 10 CCSS: P(Z <= 0,75) y simetría de las colas de la normal estándar."""
+    kw = dict(w=290, h=230, pad=14)
+    phi = lambda z: math.exp(-z * z / 2) / math.sqrt(2 * math.pi)
+    a = Fig(-3.7, 3.7, -0.07, 0.46, **kw)
+    a.region(phi, lambda z: 0, -3.7, 0.75, color=YELLOW)
+    a.axes(xt=(-2, 0, 2))
+    a.curve(phi, -3.7, 3.7, color=NAVY, width=3.5)
+    a.line((0.75, 0), (0.75, phi(0.75)), width=1.5)
+    a.text(0.75, 0, "0,75", dy=18, bold=True, size=12)
+    a.text(-0.95, 0.09, "0,7734", bold=True, size=15)
+    b = Fig(-3.7, 3.7, -0.07, 0.46, **kw)
+    b.region(phi, lambda z: 0, -3.7, -1.25, color=CORAL)
+    b.region(phi, lambda z: 0, 1.25, 3.7, color=CORAL)
+    b.axes(xt=(-2, 0, 2))
+    b.curve(phi, -3.7, 3.7, color=NAVY, width=3.5)
+    b.text(-1.25, 0, "−1,25", dy=18, bold=True, size=12); b.text(1.25, 0, "1,25", dy=18, bold=True, size=12)
+    b.text(-3.0, 0.14, "0,1056", bold=True, size=13); b.text(3.0, 0.14, "0,1056", bold=True, size=13)
+    panels([a, b], ["P(Z ≤ 0,75) se lee en la tabla", "P(Z ≤ −1,25) = P(Z ≥ 1,25)"], APC / "10-distribuciones" / "fig-normal-tabla.svg",
+           "A la izquierda, el área bajo la normal estándar a la izquierda de 0,75, que vale 0,7734. A la derecha, las dos colas de la normal estándar más allá de menos 1,25 y 1,25, cada una con área 0,1056")
+
+
+def fig_binomial_normal_ccss():
+    """Tema 10 CCSS: B(150; 0,4) aproximada por N(60, 6); P(X >= 68) con corrección por continuidad."""
+    from math import comb
+    n_, p_ = 150, 0.4
+    pmf = lambda k: comb(n_, k) * p_ ** k * (1 - p_) ** (n_ - k)
+    g = Fig(45.5, 76, -0.012, 0.078, w=520, h=330)
+    for k in range(46, 76):
+        col = CORAL if k >= 68 else MINT
+        x0, x1 = g.X(k - 0.5), g.X(k + 0.5)
+        y0, y1 = g.Y(0), g.Y(pmf(k))
+        g.el.append(f'<rect x="{x0:.1f}" y="{y1:.1f}" width="{x1 - x0:.1f}" height="{y0 - y1:.1f}" fill="{col}" fill-opacity="0.8" stroke="{INK}" stroke-width="1"/>')
+    g.axes(xt=(50, 55, 60, 65, 70, 75), yt=(0.02, 0.04, 0.06))
+    g.curve(lambda x: math.exp(-((x - 60) / 6) ** 2 / 2) / (6 * math.sqrt(2 * math.pi)), 45.5, 76, color=NAVY, width=3.5)
+    g.line((67.5, 0), (67.5, 0.046), width=1.5)
+    g.text(67.5, 0.046, "67,5", dy=-8, bold=True, size=13)
+    g.text(72.6, 0.026, "P(X ≥ 68)", bold=True, size=13, color="#C4413A", dy=-8)
+    g.text(47.2, 0.07, "B(150; 0,4) ≈ N(60, 6)", anchor="start", bold=True, size=14)
+    g.text(76, 0, "k", anchor="end", dy=-8, size=13)
+    g.save(APC / "10-distribuciones" / "fig-binomial-normal.svg", "Diagrama de barras de la binomial B(150; 0,4) con la curva normal N(60, 6) superpuesta; en rojo, las barras de 68 en adelante, cuya área corresponde a la normal a la derecha de 67,5")
+
+
 if __name__ == "__main__":
     fig_asintotas(); fig_monotonia(); fig_area(); fig_normal()
     fig_dos_planos(); fig_recta_plano(); fig_dos_rectas(); fig_simetrico()
@@ -1061,3 +1104,4 @@ if __name__ == "__main__":
     fig_estudio_funciones(); fig_estudio_racional(); fig_optimizacion()
     fig_area_bajo_curva_ccss(); fig_area_signo_ccss(); fig_areas_entre_curvas_ccss()
     fig_venn_ccss(); fig_arbol_ccss()
+    fig_normal_tabla_ccss(); fig_binomial_normal_ccss()
