@@ -301,4 +301,83 @@ V['eso3-recta-problema'] = (ch, { assert }) => {
   else assert(Math.abs(d.fijo + pr * v - fv(d.pr2) * v) < 1e-9 && v > 0);
 };
 
+// ---------- Tema 13 ----------
+const med = (a) => { const s = a.slice().sort((x, y) => x - y), n = s.length; return n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2; };
+V['eso3-est-central'] = (ch, { assert }) => {
+  const { d } = ch.data, [m, me, mo] = parts(ch);
+  assert(Math.abs(m - d.reduce((s, x) => s + x, 0) / d.length) < 1e-12);
+  assert.strictEqual(me, med(d));
+  const cnt = (v) => d.filter((x) => x === v).length;
+  assert(d.every((x) => cnt(x) <= cnt(mo)) && cnt(mo) >= 2);
+};
+V['eso3-est-tabla'] = (ch, { assert }) => {
+  const { xs, fs, tipo } = ch.data, flat = [];
+  xs.forEach((x, i) => { for (let k = 0; k < fs[i]; k++) flat.push(x); });
+  if (tipo === 'media') assert(Math.abs(fv(ch.answer.value) - flat.reduce((s, x) => s + x, 0) / flat.length) < 1e-12);
+  else { const [mo, me] = parts(ch); assert.strictEqual(me, med(flat)); const cnt = (v) => flat.filter((x) => x === v).length; assert(flat.every((x) => cnt(x) <= cnt(mo))); }
+};
+V['eso3-est-dispersion'] = (ch, { assert }) => {
+  const d = ch.data;
+  if (d.tipo === 'rango') {
+    const [r, iqr] = parts(ch), s = d.d.slice().sort((a, b) => a - b), n = s.length;
+    assert.strictEqual(r, Math.max(...s) - Math.min(...s));
+    const q1 = med(s.slice(0, n / 2)), q3 = med(s.slice(n / 2));
+    assert.strictEqual(iqr, q3 - q1);
+    assert(iqr >= 0);
+  } else {
+    const n = d.d.length, m = d.d.reduce((s, x) => s + x, 0) / n;
+    const v2 = d.d.reduce((s, x) => s + x * x, 0) / n - m * m;        // fórmula alternativa: media de cuadrados menos cuadrado de la media
+    assert(Math.abs(fv(ch.answer.value) - v2) < 1e-9);
+  }
+};
+V['eso3-est-frecuencias'] = (ch, { assert }) => {
+  const d = ch.data, v = fv(ch.answer.value);
+  assert(d.f > 0 && d.f < d.N);
+  if (d.tipo === 'rel') assert(Math.abs(v - d.f / d.N) < 1e-12);
+  else if (d.tipo === 'pct') assert(Math.abs(v - 100 * d.f / d.N) < 1e-9);
+  else assert(Math.abs(v - 360 * d.f / d.N) < 1e-9);
+};
+// ---------- Tema 14 ----------
+const prod = (a, b) => { const out = []; a.forEach((x) => b.forEach((y) => out.push([x, y]))); return out; };
+V['eso3-prob-laplace'] = (ch, { assert }) => {
+  const d = ch.data, v = fv(ch.answer.value);
+  if (d.exp === 'dados') { const todos = prod([1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6]); assert(Math.abs(v - todos.filter(([a, b]) => a + b === d.S).length / todos.length) < 1e-12); }
+  else if (d.exp === 'dado') assert(Math.abs(v - d.fav / 6) < 1e-12 && d.tot === 6);
+  else if (d.exp === 'baraja') {
+    const baraja = []; ['o', 'c', 'e', 'b'].forEach((p) => { for (let n = 1; n <= 10; n++) baraja.push([p, n]); });   // 1 = as, 8 = sota, 9 = caballo, 10 = rey
+    const pr = ch.prompt;
+    const cond = pr.includes('un as') && !pr.includes('rey') ? (c) => c[1] === 1 : pr.includes('de oros') ? (c) => c[0] === 'o' : pr.includes('figura') ? (c) => c[1] >= 8 : pr.includes('rey o un as') ? (c) => c[1] === 10 || c[1] === 1 : (c) => c[0] !== 'e';
+    assert(Math.abs(v - baraja.filter(cond).length / 40) < 1e-12);
+  } else { assert.strictEqual(d.tot, d.r + d.a + d.v); assert(Math.abs(v - d.fav / d.tot) < 1e-12); }
+};
+V['eso3-prob-union'] = (ch, { assert }) => {
+  const d = ch.data, v = fv(ch.answer.value), c = (x) => x / 100;
+  // construimos un espacio de 100 casos que cumpla los datos y contamos
+  const A = d.pa, B = d.pb, I = d.pi;
+  const U = A + B - I;
+  assert(I <= Math.min(A, B) && U <= 100);
+  if (d.tipo === 'union') assert(Math.abs(v - c(U)) < 1e-12);
+  else if (d.tipo === 'ninguno') assert(Math.abs(v - c(100 - U)) < 1e-12);
+  else assert(Math.abs(v - c(I)) < 1e-12);
+};
+V['eso3-prob-compuesta'] = (ch, { assert }) => {
+  const { r, a, con, dos } = ch.data, v = fv(ch.answer.value);
+  const bolsa = Array(r).fill('R').concat(Array(a).fill('A')), t = r + a;
+  let fav = 0, tot = 0;
+  for (let i = 0; i < t; i++) for (let j = 0; j < t; j++) {
+    if (!con && i === j) continue;
+    tot++;
+    const same = bolsa[i] === bolsa[j];
+    if (dos ? (bolsa[i] === 'R' && bolsa[j] === 'R') : !same) fav++;
+  }
+  assert(Math.abs(v - fav / tot) < 1e-12);
+};
+V['eso3-prob-recuento'] = (ch, { assert }) => {
+  const d = ch.data, v = fv(ch.answer.value);
+  if (d.tipo === 'mult') { let n = 0; for (let i = 0; i < d.a; i++) for (let j = 0; j < d.b; j++) for (let k = 0; k < d.c; k++) n++; assert.strictEqual(v, n); }
+  else if (d.tipo === 'rep') { let n = 0; const rec = (k) => { if (k === d.k) { n++; return; } for (let c = 1; c <= d.n; c++) rec(k + 1); }; rec(0); assert.strictEqual(v, n); }
+  else if (d.tipo === 'sinrep') { let n = 0; const rec = (k, used) => { if (k === d.k) { n++; return; } for (let c = 1; c <= d.n; c++) if (!used.includes(c)) rec(k + 1, used.concat(c)); }; rec(0, []); assert.strictEqual(v, n); }
+  else { let fav = 0; const tot = 1 << d.k; for (let m = 0; m < tot; m++) { const caras = [...Array(d.k).keys()].filter((i) => (m >> i) & 1).length; if (d.j === 'todas caras' ? caras === d.k : d.j === 'ninguna cara' ? caras === 0 : caras < d.k) fav++; } assert(Math.abs(v - fav / tot) < 1e-12); }
+};
+
 module.exports = V;
