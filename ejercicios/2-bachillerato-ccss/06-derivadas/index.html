@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Derivadas — relación de ejercicios – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-2d82e0ab39c09339319a3284da2afbd7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+#md-loader{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;background:#262A3D;color:#EBF8EE;font-family:"Bricolage Grotesque",system-ui,sans-serif;transition:opacity .35s ease,visibility .35s}
+#md-loader.md-out{opacity:0;visibility:hidden}
+#md-loader .ml-logo{width:96px;height:96px;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border:5px solid #000;background:#000;box-shadow:8px 8px 0 #000;animation:ml-tilt 2.4s ease-in-out infinite}
+#md-loader .ml-logo i{display:grid;place-items:center;font:900 28px/1 "Arial Black",Arial,sans-serif;font-style:normal;color:#000;animation:ml-pop 1.6s ease-in-out infinite}
+#md-loader .ml-logo i:nth-child(1){background:#5EC4B6}
+#md-loader .ml-logo i:nth-child(2){background:#262A3D;color:#FCE678;animation-delay:.2s}
+#md-loader .ml-logo i:nth-child(3){background:#F4736C;animation-delay:.6s}
+#md-loader .ml-logo i:nth-child(4){background:#FCE678;animation-delay:.4s}
+#md-loader .ml-txt{font-weight:800;font-size:1.25rem;text-transform:uppercase;letter-spacing:.02em;text-align:center;padding:0 1rem}
+#md-loader .ml-txt b{color:#FCE678}
+#md-loader .ml-bar{width:min(260px,70vw);height:14px;border:3px solid #000;background:#000;box-shadow:4px 4px 0 #000;overflow:hidden}
+#md-loader .ml-bar::after{content:"";display:block;height:100%;width:40%;background:repeating-linear-gradient(-45deg,#5EC4B6 0 10px,#F4736C 10px 20px,#FCE678 20px 30px);animation:ml-slide 1.1s ease-in-out infinite}
+@keyframes ml-pop{0%,100%{transform:scale(1)}50%{transform:scale(.8)}}
+@keyframes ml-tilt{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes ml-slide{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+@media (prefers-reduced-motion:reduce){#md-loader *{animation:none!important}}
+</style>
+<noscript><style>#md-loader{display:none!important}</style></noscript>
+<script>
+(function () {
+  try {
+    if (/^\/(index\.html)?$/.test(location.pathname)) return;
+    var el = document.createElement("div");
+    el.id = "md-loader";
+    el.setAttribute("role", "status");
+    el.innerHTML =
+      '<div class="ml-logo" aria-hidden="true"><i>+</i><i>&minus;</i><i>&times;</i><i>=</i></div>' +
+      '<div class="ml-txt">Mientras carga&hellip; <b>&iexcl;&iexcl;&iexcl;un descanso!!!</b></div>' +
+      '<div class="ml-bar" aria-hidden="true"></div>';
+    document.documentElement.appendChild(el);
+    var t0 = Date.now(), gone = false;
+    var hide = function () {
+      if (gone) return;
+      gone = true;
+      var wait = Math.max(0, 1000 - (Date.now() - t0));
+      setTimeout(function () {
+        el.classList.add("md-out");
+        setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 450);
+      }, wait);
+    };
+    var ready = function () {
+      var m = window.MathJax;
+      if (m && m.startup && m.startup.promise && m.startup.promise.then) {
+        m.startup.promise.then(hide, hide);
+      } else { hide(); }
+    };
+    if (document.readyState === "complete") ready();
+    else window.addEventListener("load", ready);
+    window.addEventListener("pageshow", function (e) { if (e.persisted) hide(); });
+    setTimeout(hide, 10000);
+  } catch (e) {}
+})();
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-simulacro-pau" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">★ Simulacro PAU</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-simulacro-pau">    
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ciencias/examen/index.html">
+ <span class="dropdown-text">Ciencias (Matemáticas II)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ccss/examen/index.html">
+ <span class="dropdown-text">Ciencias Sociales (Mat. Aplicadas II)</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#definición-y-reglas-de-derivación" id="toc-definición-y-reglas-de-derivación" class="nav-link active" data-scroll-target="#definición-y-reglas-de-derivación">Definición y reglas de derivación</a></li>
+  <li><a href="#recta-tangente-derivabilidad-y-parámetros" id="toc-recta-tangente-derivabilidad-y-parámetros" class="nav-link" data-scroll-target="#recta-tangente-derivabilidad-y-parámetros">Recta tangente, derivabilidad y parámetros</a></li>
+  <li><a href="#problemas-tipo-pau" id="toc-problemas-tipo-pau" class="nav-link" data-scroll-target="#problemas-tipo-pau">Problemas tipo PAU</a></li>
+  <li><a href="#soluciones" id="toc-soluciones" class="nav-link" data-scroll-target="#soluciones">Soluciones</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Derivadas — relación de ejercicios</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Relación de 25 ejercicios: del 1 al 9 son básicos y del 10 al 25 siguen el estilo de la PAU de Andalucía para Matemáticas Aplicadas a las Ciencias Sociales II (ejercicio de análisis, 3 puntos). Los marcados como <em>competenciales</em> piden modelizar, interpretar el resultado en el contexto o justificar. Las soluciones están al final. Los logaritmos se escriben <span class="math inline">\(\log\)</span> (decimal) y <span class="math inline">\(\ln\)</span> (neperiano).</p>
+<section id="definición-y-reglas-de-derivación" class="level2">
+<h2 class="anchored" data-anchor-id="definición-y-reglas-de-derivación">Definición y reglas de derivación</h2>
+<p><strong>1.</strong> Sea <span class="math inline">\(f(x)=x^2-3x\)</span>. a) Calcula la tasa de variación media de <span class="math inline">\(f\)</span> en <span class="math inline">\([1,4]\)</span>. b) Calcula <span class="math inline">\(f'(2)\)</span> con la definición de derivada.</p>
+<p><strong>2.</strong> Deriva: a) <span class="math inline">\(f(x)=3x^4-2x^2+7x\)</span>; b) <span class="math inline">\(g(x)=\sqrt{x}+\dfrac{2}{x}\)</span>; c) <span class="math inline">\(h(x)=5e^x-3\ln x\)</span>.</p>
+<p><strong>3.</strong> Deriva: a) <span class="math inline">\(f(x)=x^2e^x\)</span>; b) <span class="math inline">\(g(x)=\dfrac{x+1}{x-2}\)</span>; c) <span class="math inline">\(h(x)=x\ln x\)</span>.</p>
+<p><strong>4.</strong> Deriva aplicando la regla de la cadena: a) <span class="math inline">\(f(x)=(3x-1)^5\)</span>; b) <span class="math inline">\(g(x)=e^{x^2-x}\)</span>; c) <span class="math inline">\(h(x)=\ln(x^2+1)\)</span>; d) <span class="math inline">\(k(x)=\sqrt{2x+3}\)</span>.</p>
+</section>
+<section id="recta-tangente-derivabilidad-y-parámetros" class="level2">
+<h2 class="anchored" data-anchor-id="recta-tangente-derivabilidad-y-parámetros">Recta tangente, derivabilidad y parámetros</h2>
+<p><strong>5.</strong> Halla la ecuación de la recta tangente a <span class="math inline">\(f(x)=x^3-2x\)</span> en <span class="math inline">\(x=1\)</span>.</p>
+<p><strong>6.</strong> Halla la recta tangente a <span class="math inline">\(f(x)=x^2-4x+1\)</span> que es paralela a la recta <span class="math inline">\(y=2x+5\)</span>.</p>
+<p><strong>7.</strong> Estudia si <span class="math inline">\(f(x)=\begin{cases}x^2+1&amp;x\le1\\3x-1&amp;x&gt;1\end{cases}\)</span> es continua y derivable en <span class="math inline">\(x=1\)</span>.</p>
+<p><strong>8.</strong> Halla <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para que la gráfica de <span class="math inline">\(f(x)=x^2+ax+b\)</span> pase por el punto <span class="math inline">\((1,2)\)</span> y tenga tangente horizontal en <span class="math inline">\(x=3\)</span>.</p>
+<p><strong>9.</strong> Calcula con la regla de L’Hôpital: a) <span class="math inline">\(\displaystyle\lim_{x\to0}\frac{e^{2x}-1}{x}\)</span>; b) <span class="math inline">\(\displaystyle\lim_{x\to+\infty}\frac{x^3}{e^x}\)</span>; c) <span class="math inline">\(\displaystyle\lim_{x\to1}\frac{\ln x}{x^2-1}\)</span>.</p>
+</section>
+<section id="problemas-tipo-pau" class="level2">
+<h2 class="anchored" data-anchor-id="problemas-tipo-pau">Problemas tipo PAU</h2>
+<p><strong>10.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> El coste, en euros, de fabricar <span class="math inline">\(x\)</span> unidades de un producto es <span class="math inline">\(C(x)=0{,}05x^2+4x+500\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula la tasa de variación media del coste entre 100 y 120 unidades.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(C'(x)\)</span> y el coste marginal en <span class="math inline">\(x=100\)</span>.</p></li>
+<li><p>(0,75 puntos) Interpreta <span class="math inline">\(C'(100)\)</span> y compáralo con el coste real de fabricar la unidad 101.</p></li>
+<li><p>(0,75 puntos) Halla la recta tangente a <span class="math inline">\(C\)</span> en <span class="math inline">\(x=100\)</span> y úsala para estimar <span class="math inline">\(C(103)\)</span>. Compara con el valor exacto.</p></li>
+</ol>
+<p><strong>11.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Las ventas, en miles de euros, de una tienda al invertir <span class="math inline">\(x\)</span> miles de euros en publicidad son <span class="math inline">\(V(x)=x\,e^{-x/10}\)</span>, con <span class="math inline">\(x\ge0\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(V'(x)\)</span>.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(V'(10)\)</span> e interpreta el resultado.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(V'(20)\)</span> e interpreta su signo.</p></li>
+<li><p>(0,75 puntos) Halla la recta tangente a <span class="math inline">\(V\)</span> en <span class="math inline">\(x=0\)</span>.</p></li>
+</ol>
+<p><strong>12.</strong> <em>(Tipo PAU · 3 puntos)</em></p>
+<p><strong>Opción A.</strong> Sea <span class="math inline">\(f(x)=\begin{cases}ax^2+b&amp;x\le1\\3-\dfrac1x&amp;x&gt;1\end{cases}\)</span>.</p>
+<ol type="a">
+<li><p>(1 punto) Escribe la condición que debe cumplir <span class="math inline">\(a+b\)</span> para que <span class="math inline">\(f\)</span> sea continua en <span class="math inline">\(x=1\)</span>.</p></li>
+<li><p>(1 punto) Halla <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para que <span class="math inline">\(f\)</span> sea derivable en <span class="math inline">\(x=1\)</span>.</p></li>
+<li><p>(1 punto) Con esos valores, halla la recta tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\(x=2\)</span>.</p></li>
+</ol>
+<p><strong>Opción B.</strong> Sea <span class="math inline">\(g(x)=\dfrac{x^2+1}{x-2}\)</span>.</p>
+<ol type="a">
+<li><p>(1 punto) Calcula <span class="math inline">\(g'(x)\)</span>.</p></li>
+<li><p>(1 punto) Halla la recta tangente a <span class="math inline">\(g\)</span> en <span class="math inline">\(x=3\)</span>.</p></li>
+<li><p>(1 punto) Halla los puntos de la gráfica donde la tangente es horizontal.</p></li>
+</ol>
+<p><strong>13.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> El beneficio, en miles de euros, de una empresa al fabricar <span class="math inline">\(x\)</span> unidades es <span class="math inline">\(B(x)=-0{,}5x^2+30x-200\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(B'(x)\)</span>.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(B'(20)\)</span> e interpreta el resultado.</p></li>
+<li><p>(0,75 puntos) ¿Para qué producción es horizontal la tangente? Calcula el beneficio en ese punto.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(B'(40)\)</span> e interpreta su signo.</p></li>
+</ol>
+<p><strong>14.</strong> <em>(Tipo PAU · 3 puntos)</em> Sea <span class="math inline">\(f(x)=\begin{cases}x^2+ax+b&amp;x\le2\\\dfrac8x&amp;x&gt;2\end{cases}\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Escribe la condición de continuidad en <span class="math inline">\(x=2\)</span>.</p></li>
+<li><p>(0,75 puntos) Halla <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para que <span class="math inline">\(f\)</span> sea derivable en <span class="math inline">\(x=2\)</span>.</p></li>
+<li><p>(0,75 puntos) Con esos valores, halla la recta tangente en <span class="math inline">\(x=1\)</span>.</p></li>
+<li><p>(0,75 puntos) Con esos valores, halla la recta tangente en <span class="math inline">\(x=4\)</span>.</p></li>
+</ol>
+<p><strong>15.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> La población de una colonia de bacterias, en miles, es <span class="math inline">\(P(t)=200\,e^{0{,}3t}\)</span> con <span class="math inline">\(t\)</span> en horas.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(P'(t)\)</span> y la velocidad de crecimiento inicial <span class="math inline">\(P'(0)\)</span>.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(P'(5)\)</span> e interpreta el resultado.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(\dfrac{P'(t)}{P(t)}\)</span> e interpreta el resultado.</p></li>
+<li><p>(0,75 puntos) Halla la recta tangente en <span class="math inline">\(t=0\)</span> y estima <span class="math inline">\(P(0{,}5)\)</span>. Compara con el valor exacto.</p></li>
+</ol>
+<p><strong>16.</strong> <em>(Tipo PAU · 3 puntos)</em> Calcula, con la regla de L’Hôpital cuando proceda:</p>
+<ol type="a">
+<li><p>(0,75 puntos) <span class="math inline">\(\displaystyle\lim_{x\to0}\frac{e^{3x}-1}{x}\)</span>.</p></li>
+<li><p>(0,75 puntos) <span class="math inline">\(\displaystyle\lim_{x\to1}\frac{x^3-1}{\ln x}\)</span>.</p></li>
+<li><p>(0,75 puntos) <span class="math inline">\(\displaystyle\lim_{x\to+\infty}\frac{\ln x}{x^2}\)</span>.</p></li>
+<li><p>(0,75 puntos) <span class="math inline">\(\displaystyle\lim_{x\to+\infty}\frac{x^2}{e^{2x}}\)</span>.</p></li>
+</ol>
+<p><strong>17.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> El ingreso, en euros, de una empresa al vender <span class="math inline">\(x\)</span> unidades es <span class="math inline">\(I(x)=-0{,}02x^2+8x\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula el ingreso marginal <span class="math inline">\(I'(x)\)</span>.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(I'(50)\)</span> e interpreta el resultado.</p></li>
+<li><p>(0,75 puntos) Halla la recta tangente a <span class="math inline">\(I\)</span> en <span class="math inline">\(x=50\)</span>.</p></li>
+<li><p>(0,75 puntos) Estima <span class="math inline">\(I(52)\)</span> con la tangente y calcula el error cometido.</p></li>
+</ol>
+<p><strong>18.</strong> <em>(Tipo PAU · 3 puntos)</em> Deriva y simplifica:</p>
+<ol type="a">
+<li><p>(0,75 puntos) <span class="math inline">\(f(x)=(2x-1)\,e^{x^2}\)</span>.</p></li>
+<li><p>(0,75 puntos) <span class="math inline">\(g(x)=\ln\dfrac{x+1}{x-1}\)</span>.</p></li>
+<li><p>(0,75 puntos) <span class="math inline">\(h(x)=\dfrac{x}{\sqrt{x^2+1}}\)</span>.</p></li>
+<li><p>(0,75 puntos) <span class="math inline">\(k(x)=\dfrac{e^x}{x^2+1}\)</span>.</p></li>
+</ol>
+<p><strong>19.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> El impuesto, en euros, que paga un trabajador con una renta de <span class="math inline">\(x\)</span> euros es <span class="math display">\[T(x)=\begin{cases}0{,}1x&amp;0\le x\le20000\\2000+0{,}25\,(x-20000)&amp;x&gt;20000\end{cases}\]</span></p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(T(10000)\)</span> y <span class="math inline">\(T(30000)\)</span>.</p></li>
+<li><p>(0,75 puntos) Comprueba que <span class="math inline">\(T\)</span> es continua en <span class="math inline">\(x=20000\)</span>.</p></li>
+<li><p>(0,75 puntos) Calcula las derivadas laterales en <span class="math inline">\(x=20000\)</span> y decide si <span class="math inline">\(T\)</span> es derivable en ese punto.</p></li>
+<li><p>(0,75 puntos) Interpreta las derivadas de cada tramo como tipos impositivos marginales.</p></li>
+</ol>
+<p><strong>20.</strong> <em>(Tipo PAU · 3 puntos)</em> Sea <span class="math inline">\(f(x)=x^3+ax^2+bx+c\)</span>. Se sabe que su gráfica pasa por el punto <span class="math inline">\((0,1)\)</span> y que tiene tangente horizontal en el punto <span class="math inline">\((1,-1)\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Halla <span class="math inline">\(c\)</span>.</p></li>
+<li><p>(0,75 puntos) Plantea las dos ecuaciones que cumplen <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>.</p></li>
+<li><p>(0,75 puntos) Resuelve el sistema y escribe <span class="math inline">\(f(x)\)</span>.</p></li>
+<li><p>(0,75 puntos) Halla el otro punto con tangente horizontal.</p></li>
+</ol>
+<p><strong>21.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> El beneficio, en miles de euros, de una empresa al producir <span class="math inline">\(x\)</span> unidades es <span class="math inline">\(B(x)=ax^2+bx\)</span>. Se sabe que el beneficio es máximo para <span class="math inline">\(x=40\)</span> unidades y que entonces vale 800.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Plantea las dos ecuaciones que cumplen <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>.</p></li>
+<li><p>(0,75 puntos) Resuélvelas y escribe <span class="math inline">\(B(x)\)</span>.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(B(30)\)</span> y <span class="math inline">\(B'(30)\)</span>.</p></li>
+<li><p>(0,75 puntos) Interpreta <span class="math inline">\(B'(30)\)</span> en el contexto.</p></li>
+</ol>
+<p><strong>22.</strong> <em>(Tipo PAU · 3 puntos)</em> Sea <span class="math inline">\(f(x)=x^2+1\)</span>. Se quieren hallar las rectas tangentes a la gráfica de <span class="math inline">\(f\)</span> que pasan por el origen.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Escribe la ecuación de la recta tangente en el punto de abscisa <span class="math inline">\(x=a\)</span>.</p></li>
+<li><p>(0,75 puntos) Impón que pase por el origen <span class="math inline">\((0,0)\)</span>.</p></li>
+<li><p>(0,75 puntos) Resuelve la ecuación y halla los valores de <span class="math inline">\(a\)</span>.</p></li>
+<li><p>(0,75 puntos) Escribe las ecuaciones de las rectas tangentes pedidas.</p></li>
+</ol>
+<p><strong>23.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> El rendimiento de un estudiante, en puntos, tras <span class="math inline">\(t\)</span> horas de estudio es <span class="math inline">\(R(t)=40\ln(t+1)\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(R'(t)\)</span>.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(R'(0)\)</span>, <span class="math inline">\(R'(3)\)</span> y <span class="math inline">\(R'(9)\)</span>.</p></li>
+<li><p>(0,75 puntos) Interpreta cómo cambia el aumento de rendimiento por hora de estudio.</p></li>
+<li><p>(0,75 puntos) Halla la recta tangente en <span class="math inline">\(t=3\)</span>.</p></li>
+</ol>
+<p><strong>24.</strong> <em>(Tipo PAU · 3 puntos)</em> El coste total de producir <span class="math inline">\(x\)</span> unidades es <span class="math inline">\(C(x)=0{,}5x^2+200\)</span>, y el coste medio es <span class="math inline">\(C_m(x)=\dfrac{C(x)}{x}=0{,}5x+\dfrac{200}{x}\)</span> con <span class="math inline">\(x&gt;0\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(C_m'(x)\)</span>.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(C_m'(10)\)</span> e interpreta su signo.</p></li>
+<li><p>(0,75 puntos) Halla el valor de <span class="math inline">\(x\)</span> en el que <span class="math inline">\(C_m'(x)=0\)</span>.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(C_m(20)\)</span> y el coste marginal <span class="math inline">\(C'(20)\)</span> y compáralos.</p></li>
+</ol>
+<p><strong>25.</strong> <em>(Tipo PAU · 3 puntos)</em></p>
+<p><strong>Opción A.</strong></p>
+<ol type="a">
+<li><p>(1 punto) Sea <span class="math inline">\(f(x)=x^2-x\)</span>. Calcula <span class="math inline">\(f'(3)\)</span> con la definición de derivada.</p></li>
+<li><p>(1 punto) Sea <span class="math inline">\(g(x)=|x-1|\)</span>. Calcula las derivadas laterales en <span class="math inline">\(x=1\)</span> y decide si <span class="math inline">\(g\)</span> es derivable en ese punto.</p></li>
+<li><p>(1 punto) Halla la recta tangente a <span class="math inline">\(h(x)=\ln x\)</span> que es paralela a <span class="math inline">\(y=\frac{x}{2}+3\)</span>.</p></li>
+</ol>
+<p><strong>Opción B.</strong> Sea <span class="math inline">\(f(x)=ax^2+bx+c\)</span>. Se sabe que <span class="math inline">\(f\)</span> pasa por <span class="math inline">\((0,2)\)</span> y por <span class="math inline">\((1,3)\)</span> y que su recta tangente en <span class="math inline">\(x=1\)</span> tiene pendiente <span class="math inline">\(-1\)</span>.</p>
+<ol type="a">
+<li><p>(1 punto) Halla <span class="math inline">\(c\)</span>.</p></li>
+<li><p>(1 punto) Plantea las dos ecuaciones que cumplen <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>.</p></li>
+<li><p>(1 punto) Resuélvelas y escribe <span class="math inline">\(f(x)\)</span>.</p></li>
+</ol>
+</section>
+<section id="soluciones" class="level2">
+<h2 class="anchored" data-anchor-id="soluciones">Soluciones</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(\dfrac{f(4)-f(1)}{4-1}=\dfrac{4-(-2)}{3}=2\)</span>, porque <span class="math inline">\(f(4)=16-12=4\)</span> y <span class="math inline">\(f(1)=1-3=-2\)</span>.</p></li>
+<li><p><span class="math inline">\(f(2)=4-6=-2\)</span> y <span class="math inline">\(f(2+h)=(2+h)^2-3(2+h)=h^2+h-2\)</span>. Entonces <span class="math inline">\(f'(2)=\displaystyle\lim_{h\to0}\frac{f(2+h)-f(2)}{h}=\lim_{h\to0}\frac{h^2+h}{h}=\lim_{h\to0}(h+1)=1\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(f'(x)=12x^3-4x+7\)</span>.</p></li>
+<li><p><span class="math inline">\(g(x)=x^{1/2}+2x^{-1}\)</span>, luego <span class="math inline">\(g'(x)=\dfrac{1}{2\sqrt{x}}-\dfrac{2}{x^2}\)</span>.</p></li>
+<li><p><span class="math inline">\(h'(x)=5e^x-\dfrac{3}{x}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Producto: <span class="math inline">\(f'(x)=2x\,e^x+x^2e^x=(x^2+2x)e^x\)</span>.</p></li>
+<li><p>Cociente: <span class="math inline">\(g'(x)=\dfrac{1\cdot(x-2)-(x+1)\cdot1}{(x-2)^2}=\dfrac{-3}{(x-2)^2}\)</span>.</p></li>
+<li><p>Producto: <span class="math inline">\(h'(x)=1\cdot\ln x+x\cdot\dfrac1x=\ln x+1\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(f'(x)=5(3x-1)^4\cdot3=15(3x-1)^4\)</span>.</p></li>
+<li><p><span class="math inline">\(g'(x)=e^{x^2-x}\cdot(2x-1)=(2x-1)e^{x^2-x}\)</span>.</p></li>
+<li><p><span class="math inline">\(h'(x)=\dfrac{2x}{x^2+1}\)</span>.</p></li>
+<li><p><span class="math inline">\(k'(x)=\dfrac{2}{2\sqrt{2x+3}}=\dfrac{1}{\sqrt{2x+3}}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(f(1)=1-2=-1\)</span> y <span class="math inline">\(f'(x)=3x^2-2\)</span>, luego <span class="math inline">\(f'(1)=1\)</span>. La tangente es <span class="math inline">\(y-(-1)=1\cdot(x-1)\)</span>, es decir, <span class="math inline">\(y=x-2\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>La recta <span class="math inline">\(y=2x+5\)</span> tiene pendiente <span class="math inline">\(2\)</span>. Se impone <span class="math inline">\(f'(x)=2x-4=2\)</span>, de donde <span class="math inline">\(x=3\)</span>. Como <span class="math inline">\(f(3)=9-12+1=-2\)</span>, la tangente es <span class="math inline">\(y-(-2)=2(x-3)\)</span>, es decir, <span class="math inline">\(y=2x-8\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>7
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Continuidad: <span class="math inline">\(f(1)=1^2+1=2\)</span>, <span class="math inline">\(\displaystyle\lim_{x\to1^-}f(x)=2\)</span> y <span class="math inline">\(\displaystyle\lim_{x\to1^+}f(x)=3\cdot1-1=2\)</span>. Los tres valores coinciden: <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(x=1\)</span>.</p>
+<p>Derivabilidad: <span class="math inline">\(f'(x)=2x\)</span> para <span class="math inline">\(x&lt;1\)</span> y <span class="math inline">\(f'(x)=3\)</span> para <span class="math inline">\(x&gt;1\)</span>, luego <span class="math inline">\(f'(1^-)=2\)</span> y <span class="math inline">\(f'(1^+)=3\)</span>. Son distintas: <span class="math inline">\(f\)</span> es continua pero <strong>no derivable</strong> en <span class="math inline">\(x=1\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>8
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Como <span class="math inline">\(f'(x)=2x+a\)</span>, la tangente horizontal en <span class="math inline">\(x=3\)</span> da <span class="math inline">\(f'(3)=6+a=0\)</span>, es decir, <span class="math inline">\(a=-6\)</span>. Al pasar por <span class="math inline">\((1,2)\)</span>, <span class="math inline">\(f(1)=1+a+b=2\)</span>, luego <span class="math inline">\(b=2-1+6=7\)</span>. Entonces <span class="math inline">\(f(x)=x^2-6x+7\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>9
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Da <span class="math inline">\(\frac{0}{0}\)</span>. <span class="math inline">\(\displaystyle\lim_{x\to0}\frac{e^{2x}-1}{x}=\lim_{x\to0}\frac{2e^{2x}}{1}=2\)</span>.</p></li>
+<li><p>Da <span class="math inline">\(\frac\infty\infty\)</span>. <span class="math inline">\(\displaystyle\lim_{x\to+\infty}\frac{x^3}{e^x}=\lim_{x\to+\infty}\frac{3x^2}{e^x}=\lim_{x\to+\infty}\frac{6x}{e^x}=\lim_{x\to+\infty}\frac{6}{e^x}=0\)</span>.</p></li>
+<li><p>Da <span class="math inline">\(\frac{0}{0}\)</span>. <span class="math inline">\(\displaystyle\lim_{x\to1}\frac{\ln x}{x^2-1}=\lim_{x\to1}\frac{1/x}{2x}=\lim_{x\to1}\frac{1}{2x^2}=\frac{1}{2}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>10
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(C(100)=500+400+500=1400\)</span> y <span class="math inline">\(C(120)=720+480+500=1700\)</span>. La tasa de variación media es <span class="math inline">\(\dfrac{1700-1400}{120-100}=15\)</span> €/unidad.</p></li>
+<li><p><span class="math inline">\(C'(x)=0{,}1x+4\)</span>. El coste marginal en <span class="math inline">\(x=100\)</span> es <span class="math inline">\(C'(100)=0{,}1\cdot100+4=14\)</span> €/unidad.</p></li>
+<li><p><span class="math inline">\(C'(100)=14\)</span> significa que fabricar una unidad más sobre las 100 cuesta aproximadamente 14 €. El coste real de la unidad 101 es <span class="math inline">\(C(101)-C(100)=1414{,}05-1400=14{,}05\)</span> €, muy cercano.</p></li>
+<li><p>Tangente: <span class="math inline">\(y-1400=14(x-100)\)</span>, es decir, <span class="math inline">\(y=14x\)</span>. Con ella, <span class="math inline">\(C(103)\approx14\cdot103=1442\)</span> €. El valor exacto es <span class="math inline">\(C(103)=1442{,}45\)</span> €, así que el error es de <span class="math inline">\(0{,}45\)</span> €.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>11
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Producto y cadena: <span class="math inline">\(V'(x)=1\cdot e^{-x/10}+x\cdot\left(-\dfrac{1}{10}\right)e^{-x/10}=\left(1-\dfrac{x}{10}\right)e^{-x/10}\)</span>.</p></li>
+<li><p><span class="math inline">\(V'(10)=(1-1)e^{-1}=0\)</span>. La tangente es horizontal: con una inversión de 10 000 €, un poco más de publicidad ya no aumenta las ventas (la pendiente es nula).</p></li>
+<li><p><span class="math inline">\(V'(20)=(1-2)e^{-2}=-e^{-2}\approx-0{,}14\)</span>. Es negativa: con 20 000 € invertidos, más publicidad <strong>reduce</strong> las ventas.</p></li>
+<li><p><span class="math inline">\(V(0)=0\)</span> y <span class="math inline">\(V'(0)=1\)</span>, luego la tangente en <span class="math inline">\(x=0\)</span> es <span class="math inline">\(y=x\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>12
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Opción A.</strong></p>
+<ol type="a">
+<li><p><span class="math inline">\(f(1)=a+b\)</span> y <span class="math inline">\(\displaystyle\lim_{x\to1^+}\left(3-\frac1x\right)=2\)</span>. Continuidad: <span class="math inline">\(a+b=2\)</span>.</p></li>
+<li><p><span class="math inline">\(f'(x)=2ax\)</span> para <span class="math inline">\(x&lt;1\)</span> y <span class="math inline">\(f'(x)=\dfrac{1}{x^2}\)</span> para <span class="math inline">\(x&gt;1\)</span>. Derivabilidad: <span class="math inline">\(f'(1^-)=2a=f'(1^+)=1\)</span>, luego <span class="math inline">\(a=\frac{1}{2}\)</span>, y de <span class="math inline">\(a+b=2\)</span> resulta <span class="math inline">\(b=\frac{3}{2}\)</span>.</p></li>
+<li><p>En <span class="math inline">\(x=2\)</span> se usa el segundo trozo: <span class="math inline">\(f(2)=3-\frac{1}{2}=\frac{5}{2}\)</span> y <span class="math inline">\(f'(2)=\frac{1}{4}\)</span>. La tangente es <span class="math inline">\(y-\frac{5}{2}=\frac{1}{4}(x-2)\)</span>, es decir, <span class="math inline">\(y=\frac{x}{4}+2\)</span>.</p></li>
+</ol>
+<p><strong>Opción B.</strong></p>
+<ol type="a">
+<li><p><span class="math inline">\(g'(x)=\dfrac{2x(x-2)-(x^2+1)\cdot1}{(x-2)^2}=\dfrac{x^2-4x-1}{(x-2)^2}\)</span>.</p></li>
+<li><p><span class="math inline">\(g(3)=\dfrac{10}{1}=10\)</span> y <span class="math inline">\(g'(3)=\dfrac{9-12-1}{1}=-4\)</span>. La tangente es <span class="math inline">\(y-10=-4(x-3)\)</span>, es decir, <span class="math inline">\(y=-4x+22\)</span>.</p></li>
+<li><p>La tangente es horizontal si <span class="math inline">\(g'(x)=0\)</span>: <span class="math inline">\(x^2-4x-1=0\Rightarrow x=2\pm\sqrt{5}\)</span>. Los puntos son <span class="math inline">\(\left(2+\sqrt5,\ g(2+\sqrt5)\right)\)</span> y <span class="math inline">\(\left(2-\sqrt5,\ g(2-\sqrt5)\right)\)</span> (con <span class="math inline">\(x\ne2\)</span>, ambos en el dominio).</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>13
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(B'(x)=-x+30\)</span>.</p></li>
+<li><p><span class="math inline">\(B'(20)=-20+30=10\)</span>. Al producir una unidad más sobre las 20, el beneficio aumenta aproximadamente 10 (mil euros).</p></li>
+<li><p><span class="math inline">\(B'(x)=0\Rightarrow x=30\)</span> unidades, con <span class="math inline">\(B(30)=-450+900-200=250\)</span> (mil euros).</p></li>
+<li><p><span class="math inline">\(B'(40)=-40+30=-10&lt;0\)</span>. Con 40 unidades, producir una unidad más <strong>reduce</strong> el beneficio unos 10 mil euros: ya se ha pasado del punto de beneficio máximo.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>14
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(f(2)=4+2a+b\)</span> y <span class="math inline">\(\displaystyle\lim_{x\to2^+}\frac8x=4\)</span>. Continuidad: <span class="math inline">\(4+2a+b=4\)</span>, es decir, <span class="math inline">\(2a+b=0\)</span>.</p></li>
+<li><p><span class="math inline">\(f'(x)=2x+a\)</span> para <span class="math inline">\(x&lt;2\)</span> y <span class="math inline">\(f'(x)=-\dfrac{8}{x^2}\)</span> para <span class="math inline">\(x&gt;2\)</span>. Derivabilidad: <span class="math inline">\(f'(2^-)=4+a\)</span> y <span class="math inline">\(f'(2^+)=-\frac{8}{4}=-2\)</span>, luego <span class="math inline">\(4+a=-2\)</span> y <span class="math inline">\(a=-6\)</span>. Entonces <span class="math inline">\(b=-2a=12\)</span>.</p></li>
+<li><p>Con <span class="math inline">\(f(x)=x^2-6x+12\)</span> para <span class="math inline">\(x\le2\)</span>: <span class="math inline">\(f(1)=7\)</span> y <span class="math inline">\(f'(1)=2-6=-4\)</span>. La tangente es <span class="math inline">\(y-7=-4(x-1)\)</span>, es decir, <span class="math inline">\(y=-4x+11\)</span>.</p></li>
+<li><p>Con <span class="math inline">\(f(x)=\dfrac8x\)</span>: <span class="math inline">\(f(4)=2\)</span> y <span class="math inline">\(f'(4)=-\dfrac{8}{16}=-\frac{1}{2}\)</span>. La tangente es <span class="math inline">\(y-2=-\frac{1}{2}(x-4)\)</span>, es decir, <span class="math inline">\(y=-\frac{x}{2}+4\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>15
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P'(t)=200\cdot0{,}3\,e^{0{,}3t}=60\,e^{0{,}3t}\)</span>. Inicialmente, <span class="math inline">\(P'(0)=60\)</span>: la población crece a 60 mil bacterias por hora.</p></li>
+<li><p><span class="math inline">\(P'(5)=60\,e^{1{,}5}\approx268{,}90\)</span>. A las 5 horas, la población crece a unas 268,9 mil bacterias por hora, mucho más deprisa que al inicio.</p></li>
+<li><p><span class="math inline">\(\dfrac{P'(t)}{P(t)}=\dfrac{60\,e^{0{,}3t}}{200\,e^{0{,}3t}}=0{,}3\)</span>. Es constante: en cada instante, la población crece a un ritmo proporcional a su tamaño, un <span class="math inline">\(30\,\%\)</span> por hora.</p></li>
+<li><p><span class="math inline">\(P(0)=200\)</span> y <span class="math inline">\(P'(0)=60\)</span>, luego la tangente es <span class="math inline">\(y=200+60t\)</span>. Con ella, <span class="math inline">\(P(0{,}5)\approx230\)</span>. El valor exacto es <span class="math inline">\(P(0{,}5)=200\,e^{0{,}15}\approx232{,}37\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>16
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Da <span class="math inline">\(\frac{0}{0}\)</span>. <span class="math inline">\(\displaystyle\lim_{x\to0}\frac{e^{3x}-1}{x}=\lim_{x\to0}\frac{3e^{3x}}{1}=3\)</span>.</p></li>
+<li><p>Da <span class="math inline">\(\frac{0}{0}\)</span>. <span class="math inline">\(\displaystyle\lim_{x\to1}\frac{x^3-1}{\ln x}=\lim_{x\to1}\frac{3x^2}{1/x}=\lim_{x\to1}3x^3=3\)</span>.</p></li>
+<li><p>Da <span class="math inline">\(\frac\infty\infty\)</span>. <span class="math inline">\(\displaystyle\lim_{x\to+\infty}\frac{\ln x}{x^2}=\lim_{x\to+\infty}\frac{1/x}{2x}=\lim_{x\to+\infty}\frac{1}{2x^2}=0\)</span>.</p></li>
+<li><p>Da <span class="math inline">\(\frac\infty\infty\)</span>. <span class="math inline">\(\displaystyle\lim_{x\to+\infty}\frac{x^2}{e^{2x}}=\lim_{x\to+\infty}\frac{2x}{2e^{2x}}=\lim_{x\to+\infty}\frac{1}{2e^{2x}}=0\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>17
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(I'(x)=-0{,}04x+8\)</span>.</p></li>
+<li><p><span class="math inline">\(I'(50)=-2+8=6\)</span>. Al vender una unidad más sobre las 50, el ingreso aumenta aproximadamente 6 €.</p></li>
+<li><p><span class="math inline">\(I(50)=-50+400=350\)</span> y <span class="math inline">\(I'(50)=6\)</span>, luego la tangente es <span class="math inline">\(y-350=6(x-50)\)</span>, es decir, <span class="math inline">\(y=6x+50\)</span>.</p></li>
+<li><p>La tangente da <span class="math inline">\(I(52)\approx6\cdot52+50=362\)</span> €. El valor exacto es <span class="math inline">\(I(52)=-0{,}02\cdot2704+416=361{,}92\)</span> €, así que el error es de <span class="math inline">\(0{,}08\)</span> €.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>18
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(f'(x)=2e^{x^2}+(2x-1)\cdot2x\,e^{x^2}=(4x^2-2x+2)e^{x^2}\)</span>.</p></li>
+<li><p>Como <span class="math inline">\(g(x)=\ln(x+1)-\ln(x-1)\)</span>, <span class="math inline">\(g'(x)=\dfrac{1}{x+1}-\dfrac{1}{x-1}=\dfrac{-2}{x^2-1}\)</span>.</p></li>
+<li><p><span class="math inline">\(h'(x)=\dfrac{\sqrt{x^2+1}-x\cdot\dfrac{x}{\sqrt{x^2+1}}}{x^2+1}=\dfrac{\dfrac{1}{\sqrt{x^2+1}}}{x^2+1}=\dfrac{1}{(x^2+1)\sqrt{x^2+1}}\)</span>.</p></li>
+<li><p><span class="math inline">\(k'(x)=\dfrac{e^x(x^2+1)-e^x\cdot2x}{(x^2+1)^2}=\dfrac{(x-1)^2e^x}{(x^2+1)^2}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>19
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(T(10000)=0{,}1\cdot10000=1000\)</span> € y <span class="math inline">\(T(30000)=2000+0{,}25\cdot10000=4500\)</span> €.</p></li>
+<li><p><span class="math inline">\(T(20000)=0{,}1\cdot20000=2000\)</span>; por la izquierda, <span class="math inline">\(\displaystyle\lim_{x\to20000^-}0{,}1x=2000\)</span>; por la derecha, <span class="math inline">\(\displaystyle\lim_{x\to20000^+}(2000+0{,}25(x-20000))=2000\)</span>. Coinciden: <span class="math inline">\(T\)</span> es continua.</p></li>
+<li><p><span class="math inline">\(T'(x)=0{,}1\)</span> si <span class="math inline">\(x&lt;20000\)</span> y <span class="math inline">\(T'(x)=0{,}25\)</span> si <span class="math inline">\(x&gt;20000\)</span>. Entonces <span class="math inline">\(T'(20000^-)=0{,}1\)</span> y <span class="math inline">\(T'(20000^+)=0{,}25\)</span>: son distintas, así que <span class="math inline">\(T\)</span> <strong>no es derivable</strong> en <span class="math inline">\(x=20000\)</span>.</p></li>
+<li><p>La derivada es lo que se paga por cada euro más de renta: hasta 20 000 €, el <span class="math inline">\(10\,\%\)</span> (0,1); por encima, el <span class="math inline">\(25\,\%\)</span> (0,25). En <span class="math inline">\(x=20000\)</span> el tipo marginal cambia de golpe, y por eso la gráfica tiene un punto anguloso.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>20
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Como pasa por <span class="math inline">\((0,1)\)</span>, <span class="math inline">\(f(0)=c=1\)</span>.</p></li>
+<li><p>La tangente horizontal en <span class="math inline">\(x=1\)</span> da <span class="math inline">\(f'(1)=3+2a+b=0\)</span>, porque <span class="math inline">\(f'(x)=3x^2+2ax+b\)</span>. Pasar por <span class="math inline">\((1,-1)\)</span> da <span class="math inline">\(f(1)=1+a+b+1=-1\)</span>, es decir, <span class="math inline">\(a+b=-3\)</span>.</p></li>
+<li><p>De <span class="math inline">\(2a+b=-3\)</span> y <span class="math inline">\(a+b=-3\)</span>, restando, <span class="math inline">\(a=0\)</span> y <span class="math inline">\(b=-3\)</span>. Entonces <span class="math inline">\(f(x)=x^3-3x+1\)</span>.</p></li>
+<li><p><span class="math inline">\(f'(x)=3x^2-3=0\Rightarrow x=\pm1\)</span>. Además de <span class="math inline">\((1,-1)\)</span>, hay tangente horizontal en <span class="math inline">\(x=-1\)</span>, con <span class="math inline">\(f(-1)=3\)</span>: el punto <span class="math inline">\((-1,3)\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>21
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Como <span class="math inline">\(B'(x)=2ax+b\)</span>, el máximo en <span class="math inline">\(x=40\)</span> exige tangente horizontal: <span class="math inline">\(B'(40)=80a+b=0\)</span>. Además, <span class="math inline">\(B(40)=1600a+40b=800\)</span>.</p></li>
+<li><p>De <span class="math inline">\(b=-80a\)</span>: <span class="math inline">\(1600a-3200a=800\)</span>, luego <span class="math inline">\(a=-\frac{1}{2}\)</span> y <span class="math inline">\(b=40\)</span>. Entonces <span class="math inline">\(B(x)=-\frac{1}{2}x^2+40x\)</span>.</p></li>
+<li><p><span class="math inline">\(B(30)=-450+1200=750\)</span> y <span class="math inline">\(B'(30)=-30+40=10\)</span>.</p></li>
+<li><p><span class="math inline">\(B'(30)=10&gt;0\)</span>: con 30 unidades, producir una más aumenta el beneficio unos 10 mil euros; aún no se ha llegado a la producción óptima de 40 unidades.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>22
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(f'(x)=2x\)</span>, luego la tangente en <span class="math inline">\(x=a\)</span> es <span class="math inline">\(y-(a^2+1)=2a(x-a)\)</span>.</p></li>
+<li><p>Al pasar por <span class="math inline">\((0,0)\)</span>: <span class="math inline">\(0-(a^2+1)=2a(0-a)\)</span>, es decir, <span class="math inline">\(-(a^2+1)=-2a^2\)</span>.</p></li>
+<li><p><span class="math inline">\(a^2+1=2a^2\Rightarrow a^2=1\)</span>, luego <span class="math inline">\(a=1\)</span> o <span class="math inline">\(a=-1\)</span>.</p></li>
+<li><p>Con <span class="math inline">\(a=1\)</span>: <span class="math inline">\(y-2=2(x-1)\)</span>, es decir, <span class="math inline">\(y=2x\)</span>. Con <span class="math inline">\(a=-1\)</span>: <span class="math inline">\(y-2=-2(x+1)\)</span>, es decir, <span class="math inline">\(y=-2x\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>23
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(R'(t)=\dfrac{40}{t+1}\)</span>.</p></li>
+<li><p><span class="math inline">\(R'(0)=40\)</span>, <span class="math inline">\(R'(3)=\dfrac{40}{4}=10\)</span> y <span class="math inline">\(R'(9)=\dfrac{40}{10}=4\)</span> puntos por hora.</p></li>
+<li><p>La derivada disminuye al aumentar <span class="math inline">\(t\)</span>: las primeras horas de estudio aumentan mucho el rendimiento (40 puntos por hora al principio), pero cada hora adicional aporta menos (solo 4 puntos por hora hacia la hora 9).</p></li>
+<li><p><span class="math inline">\(R(3)=40\ln4\)</span> y <span class="math inline">\(R'(3)=10\)</span>, luego la tangente es <span class="math inline">\(y-40\ln4=10(t-3)\)</span>, es decir, <span class="math inline">\(y=40\ln4+10(t-3)\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>24
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(C_m'(x)=0{,}5-\dfrac{200}{x^2}\)</span>.</p></li>
+<li><p><span class="math inline">\(C_m'(10)=0{,}5-2=-1{,}5&lt;0\)</span>: con 10 unidades, aumentar la producción <strong>reduce</strong> el coste medio (el coste fijo se reparte entre más unidades).</p></li>
+<li><p><span class="math inline">\(0{,}5-\dfrac{200}{x^2}=0\Rightarrow x^2=400\Rightarrow x=20\)</span> (con <span class="math inline">\(x&gt;0\)</span>).</p></li>
+<li><p><span class="math inline">\(C_m(20)=10+10=20\)</span> €/unidad y <span class="math inline">\(C'(x)=x\)</span>, luego <span class="math inline">\(C'(20)=20\)</span> €/unidad. Coinciden: en el punto donde el coste medio tiene tangente horizontal, el coste medio es igual al coste marginal.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>25
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Opción A.</strong></p>
+<ol type="a">
+<li><p><span class="math inline">\(f(3)=9-3=6\)</span> y <span class="math inline">\(f(3+h)=(3+h)^2-(3+h)=6+5h+h^2\)</span>. Entonces <span class="math inline">\(f'(3)=\displaystyle\lim_{h\to0}\frac{f(3+h)-f(3)}{h}=\lim_{h\to0}\frac{5h+h^2}{h}=\lim_{h\to0}(5+h)=5\)</span>.</p></li>
+<li><p><span class="math inline">\(g(x)=1-x\)</span> si <span class="math inline">\(x&lt;1\)</span> y <span class="math inline">\(g(x)=x-1\)</span> si <span class="math inline">\(x\ge1\)</span>. Entonces <span class="math inline">\(g'(1^-)=-1\)</span> y <span class="math inline">\(g'(1^+)=1\)</span>. Son distintas: <span class="math inline">\(g\)</span> es continua pero <strong>no derivable</strong> en <span class="math inline">\(x=1\)</span> (tiene un punto anguloso).</p></li>
+<li><p>La pendiente de <span class="math inline">\(y=\frac{x}{2}+3\)</span> es <span class="math inline">\(\frac{1}{2}\)</span>. Se impone <span class="math inline">\(h'(x)=\dfrac{1}{x}=\frac{1}{2}\)</span>, luego <span class="math inline">\(x=2\)</span> y <span class="math inline">\(h(2)=\ln2\)</span>. La tangente es <span class="math inline">\(y-\ln2=\frac{1}{2}(x-2)\)</span>, es decir, <span class="math inline">\(y=\frac{x}{2}+\ln2-1\)</span>.</p></li>
+</ol>
+<p><strong>Opción B.</strong></p>
+<ol type="a">
+<li><p>Pasa por <span class="math inline">\((0,2)\)</span>: <span class="math inline">\(f(0)=c=2\)</span>.</p></li>
+<li><p>Pasa por <span class="math inline">\((1,3)\)</span>: <span class="math inline">\(a+b+2=3\)</span>, es decir, <span class="math inline">\(a+b=1\)</span>. Pendiente <span class="math inline">\(-1\)</span> en <span class="math inline">\(x=1\)</span>: <span class="math inline">\(f'(1)=2a+b=-1\)</span>.</p></li>
+<li><p>Restando, <span class="math inline">\(a=-2\)</span>, y entonces <span class="math inline">\(b=3\)</span>. Así <span class="math inline">\(f(x)=-2x^2+3x+2\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

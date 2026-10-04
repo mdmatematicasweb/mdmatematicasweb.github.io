@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Matrices y determinantes — relación de ejercicios – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-2d82e0ab39c09339319a3284da2afbd7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+#md-loader{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;background:#262A3D;color:#EBF8EE;font-family:"Bricolage Grotesque",system-ui,sans-serif;transition:opacity .35s ease,visibility .35s}
+#md-loader.md-out{opacity:0;visibility:hidden}
+#md-loader .ml-logo{width:96px;height:96px;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border:5px solid #000;background:#000;box-shadow:8px 8px 0 #000;animation:ml-tilt 2.4s ease-in-out infinite}
+#md-loader .ml-logo i{display:grid;place-items:center;font:900 28px/1 "Arial Black",Arial,sans-serif;font-style:normal;color:#000;animation:ml-pop 1.6s ease-in-out infinite}
+#md-loader .ml-logo i:nth-child(1){background:#5EC4B6}
+#md-loader .ml-logo i:nth-child(2){background:#262A3D;color:#FCE678;animation-delay:.2s}
+#md-loader .ml-logo i:nth-child(3){background:#F4736C;animation-delay:.6s}
+#md-loader .ml-logo i:nth-child(4){background:#FCE678;animation-delay:.4s}
+#md-loader .ml-txt{font-weight:800;font-size:1.25rem;text-transform:uppercase;letter-spacing:.02em;text-align:center;padding:0 1rem}
+#md-loader .ml-txt b{color:#FCE678}
+#md-loader .ml-bar{width:min(260px,70vw);height:14px;border:3px solid #000;background:#000;box-shadow:4px 4px 0 #000;overflow:hidden}
+#md-loader .ml-bar::after{content:"";display:block;height:100%;width:40%;background:repeating-linear-gradient(-45deg,#5EC4B6 0 10px,#F4736C 10px 20px,#FCE678 20px 30px);animation:ml-slide 1.1s ease-in-out infinite}
+@keyframes ml-pop{0%,100%{transform:scale(1)}50%{transform:scale(.8)}}
+@keyframes ml-tilt{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes ml-slide{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+@media (prefers-reduced-motion:reduce){#md-loader *{animation:none!important}}
+</style>
+<noscript><style>#md-loader{display:none!important}</style></noscript>
+<script>
+(function () {
+  try {
+    if (/^\/(index\.html)?$/.test(location.pathname)) return;
+    var el = document.createElement("div");
+    el.id = "md-loader";
+    el.setAttribute("role", "status");
+    el.innerHTML =
+      '<div class="ml-logo" aria-hidden="true"><i>+</i><i>&minus;</i><i>&times;</i><i>=</i></div>' +
+      '<div class="ml-txt">Mientras carga&hellip; <b>&iexcl;&iexcl;&iexcl;un descanso!!!</b></div>' +
+      '<div class="ml-bar" aria-hidden="true"></div>';
+    document.documentElement.appendChild(el);
+    var t0 = Date.now(), gone = false;
+    var hide = function () {
+      if (gone) return;
+      gone = true;
+      var wait = Math.max(0, 1000 - (Date.now() - t0));
+      setTimeout(function () {
+        el.classList.add("md-out");
+        setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 450);
+      }, wait);
+    };
+    var ready = function () {
+      var m = window.MathJax;
+      if (m && m.startup && m.startup.promise && m.startup.promise.then) {
+        m.startup.promise.then(hide, hide);
+      } else { hide(); }
+    };
+    if (document.readyState === "complete") ready();
+    else window.addEventListener("load", ready);
+    window.addEventListener("pageshow", function (e) { if (e.persisted) hide(); });
+    setTimeout(hide, 10000);
+  } catch (e) {}
+})();
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-simulacro-pau" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">★ Simulacro PAU</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-simulacro-pau">    
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ciencias/examen/index.html">
+ <span class="dropdown-text">Ciencias (Matemáticas II)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ccss/examen/index.html">
+ <span class="dropdown-text">Ciencias Sociales (Mat. Aplicadas II)</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#operaciones-y-determinantes" id="toc-operaciones-y-determinantes" class="nav-link active" data-scroll-target="#operaciones-y-determinantes">Operaciones y determinantes</a></li>
+  <li><a href="#inversa-rango-y-ecuaciones-matriciales" id="toc-inversa-rango-y-ecuaciones-matriciales" class="nav-link" data-scroll-target="#inversa-rango-y-ecuaciones-matriciales">Inversa, rango y ecuaciones matriciales</a></li>
+  <li><a href="#problemas-tipo-pau" id="toc-problemas-tipo-pau" class="nav-link" data-scroll-target="#problemas-tipo-pau">Problemas tipo PAU</a></li>
+  <li><a href="#soluciones" id="toc-soluciones" class="nav-link" data-scroll-target="#soluciones">Soluciones</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Matrices y determinantes — relación de ejercicios</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Relación de 25 ejercicios: del 1 al 9 son básicos y del 10 al 25 siguen el estilo de la PAU de Andalucía para Matemáticas Aplicadas a las Ciencias Sociales II (ejercicio de álgebra, 3 puntos, a veces con dos opciones de las que se elige una). Los marcados como <em>competenciales</em> piden modelizar, interpretar el resultado en el contexto o justificar. Las soluciones están al final.</p>
+<section id="operaciones-y-determinantes" class="level2">
+<h2 class="anchored" data-anchor-id="operaciones-y-determinantes">Operaciones y determinantes</h2>
+<p><strong>1.</strong> Dadas <span class="math inline">\(A=\begin{pmatrix}1&amp;2\\0&amp;-1\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}3&amp;0\\1&amp;2\end{pmatrix}\)</span>, calcula <span class="math inline">\(A+B\)</span>, <span class="math inline">\(2A-B\)</span>, <span class="math inline">\(A\cdot B\)</span> y <span class="math inline">\(B\cdot A\)</span>. ¿Se cumple <span class="math inline">\(A\cdot B=B\cdot A\)</span>?</p>
+<p><strong>2.</strong> Sean <span class="math inline">\(A=\begin{pmatrix}1&amp;0&amp;2\\-1&amp;3&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}2&amp;1\\0&amp;-1\\1&amp;3\end{pmatrix}\)</span>. Indica las dimensiones de <span class="math inline">\(A\cdot B\)</span>, <span class="math inline">\(B\cdot A\)</span> y <span class="math inline">\(A^t\)</span>, y calcula <span class="math inline">\(A\cdot B\)</span> y <span class="math inline">\(A^t\)</span>.</p>
+<p><strong>3.</strong> Halla <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para que sea simétrica la matriz <span class="math inline">\(A=\begin{pmatrix}2&amp;a&amp;1\\3&amp;1&amp;b\\1&amp;-2&amp;4\end{pmatrix}\)</span>.</p>
+<p><strong>4.</strong> Calcula <span class="math inline">\(\begin{vmatrix}3&amp;-2\\1&amp;4\end{vmatrix}\)</span> y, por la regla de Sarrus, <span class="math inline">\(\begin{vmatrix}2&amp;1&amp;0\\-1&amp;3&amp;2\\1&amp;0&amp;4\end{vmatrix}\)</span>.</p>
+<p><strong>5.</strong> Sea <span class="math inline">\(A\)</span> una matriz de orden 3 con <span class="math inline">\(|A|=-2\)</span>. Calcula <span class="math inline">\(|A^t|\)</span>, <span class="math inline">\(|3A|\)</span>, <span class="math inline">\(|A^2|\)</span>, <span class="math inline">\(|A^{-1}|\)</span> y <span class="math inline">\(|A\cdot A^t|\)</span>, indicando la propiedad que usas.</p>
+</section>
+<section id="inversa-rango-y-ecuaciones-matriciales" class="level2">
+<h2 class="anchored" data-anchor-id="inversa-rango-y-ecuaciones-matriciales">Inversa, rango y ecuaciones matriciales</h2>
+<p><strong>6.</strong> Calcula la inversa de <span class="math inline">\(A=\begin{pmatrix}2&amp;5\\1&amp;3\end{pmatrix}\)</span> y comprueba que <span class="math inline">\(A\cdot A^{-1}=I_2\)</span>.</p>
+<p><strong>7.</strong> Calcula por adjuntos la inversa de <span class="math inline">\(A=\begin{pmatrix}1&amp;0&amp;2\\0&amp;1&amp;-1\\2&amp;1&amp;0\end{pmatrix}\)</span>.</p>
+<p><strong>8.</strong> Calcula el rango de <span class="math inline">\(\begin{pmatrix}1&amp;2&amp;-1&amp;3\\2&amp;4&amp;-2&amp;6\\0&amp;1&amp;1&amp;2\end{pmatrix}\)</span> por Gauss.</p>
+<p><strong>9.</strong> Resuelve <span class="math inline">\(A\cdot X=B\)</span> con <span class="math inline">\(A=\begin{pmatrix}1&amp;2\\3&amp;5\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}1&amp;0\\2&amp;1\end{pmatrix}\)</span>.</p>
+</section>
+<section id="problemas-tipo-pau" class="level2">
+<h2 class="anchored" data-anchor-id="problemas-tipo-pau">Problemas tipo PAU</h2>
+<p><strong>10.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Una papelería con dos tiendas vende libros, cuadernos y mochilas. Las matrices <span class="math inline">\(V\)</span> y <span class="math inline">\(W\)</span> recogen las unidades vendidas en la semana 1 y en la semana 2 (filas: tienda 1 y tienda 2; columnas: libros, cuadernos y mochilas): <span class="math display">\[V=\begin{pmatrix}30&amp;20&amp;5\\25&amp;40&amp;10\end{pmatrix},\qquad W=\begin{pmatrix}35&amp;15&amp;8\\20&amp;45&amp;12\end{pmatrix}\]</span> Los precios, en euros, son <span class="math inline">\(p=\begin{pmatrix}12\\3\\25\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(V+W\)</span> e interpreta el elemento de la fila 2 y columna 3.</p></li>
+<li><p>(1 punto) Calcula los ingresos totales de cada tienda en las dos semanas.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(W-V\)</span> e indica en qué tiendas y productos bajaron las ventas.</p></li>
+<li><p>(0,5 puntos) Para una campaña se rebajan los precios un <span class="math inline">\(10\,\%\)</span>. Calcula el nuevo vector de precios y el ingreso de la tienda 1 en la semana 2 con esos precios.</p></li>
+</ol>
+<p><strong>11.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Una fábrica elabora tres productos usando dos materias primas. La matriz <span class="math inline">\(A=\begin{pmatrix}2&amp;1\\1&amp;3\\4&amp;2\end{pmatrix}\)</span> da las unidades de cada materia prima (columnas) que necesita una unidad de cada producto (filas). Los precios de las materias primas son <span class="math inline">\(q=\begin{pmatrix}5\\8\end{pmatrix}\)</span> euros por unidad, y el plan semanal de producción es <span class="math inline">\(r=\begin{pmatrix}10&amp;20&amp;5\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(A\cdot q\)</span> e interpreta sus elementos.</p></li>
+<li><p>(1 punto) Calcula <span class="math inline">\(r\cdot A\)</span> e interpreta el resultado.</p></li>
+<li><p>(0,75 puntos) Calcula el coste de las materias primas del plan de producción de dos formas, <span class="math inline">\((r\cdot A)\cdot q\)</span> y <span class="math inline">\(r\cdot(A\cdot q)\)</span>, y justifica que coincidan.</p></li>
+<li><p>(0,75 puntos) Si el precio de la segunda materia prima sube a 10 €, ¿cuánto aumenta el coste del plan semanal?</p></li>
+</ol>
+<p><strong>12.</strong> <em>(Tipo PAU · 3 puntos)</em> Elige una de las dos opciones.</p>
+<p><strong>Opción A.</strong> Sea <span class="math inline">\(A=\begin{pmatrix}1&amp;0\\3&amp;1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>(1 punto) Calcula <span class="math inline">\(A^2\)</span> y <span class="math inline">\(A^3\)</span>.</p></li>
+<li><p>(1 punto) Deduce la expresión de <span class="math inline">\(A^n\)</span> y calcula <span class="math inline">\(A^{10}\)</span>.</p></li>
+<li><p>(1 punto) Demuestra por inducción la expresión de <span class="math inline">\(A^n\)</span>.</p></li>
+</ol>
+<p><strong>Opción B.</strong> Sea <span class="math inline">\(B=\begin{pmatrix}2&amp;1\\0&amp;1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>(1 punto) Comprueba que <span class="math inline">\(B^2-3B+2I_2=O\)</span>.</p></li>
+<li><p>(1 punto) A partir de esa igualdad, deduce que <span class="math inline">\(B\)</span> es invertible y calcula <span class="math inline">\(B^{-1}\)</span> sin usar determinantes ni el método de Gauss.</p></li>
+<li><p>(1 punto) Comprueba el resultado calculando <span class="math inline">\(|B|\)</span> y <span class="math inline">\(B^{-1}\)</span> con la fórmula de las matrices de orden 2.</p></li>
+</ol>
+<p><strong>13.</strong> <em>(Tipo PAU · 3 puntos)</em> Sea <span class="math inline">\(A_m=\begin{pmatrix}m&amp;1&amp;1\\1&amp;m&amp;1\\1&amp;1&amp;m\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>(1,25 puntos) Calcula <span class="math inline">\(|A_m|\)</span> y halla los valores de <span class="math inline">\(m\)</span> para los que <span class="math inline">\(A_m\)</span> no tiene inversa.</p></li>
+<li><p>(1 punto) Para <span class="math inline">\(m=2\)</span>, calcula <span class="math inline">\(A_2^{-1}\)</span>.</p></li>
+<li><p>(0,75 puntos) Halla el rango de <span class="math inline">\(A_m\)</span> para cada valor de <span class="math inline">\(m\)</span> del apartado a).</p></li>
+</ol>
+<p><strong>14.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Dos operadoras de telefonía, A y B, se reparten un mercado de 1000 (en miles de clientes): 600 de A y 400 de B, es decir, <span class="math inline">\(x=\begin{pmatrix}600\\400\end{pmatrix}\)</span>. Cada mes, el <span class="math inline">\(10\,\%\)</span> de los clientes de A pasa a B y el <span class="math inline">\(20\,\%\)</span> de los de B pasa a A. La matriz <span class="math inline">\(M=\begin{pmatrix}0{,}9&amp;0{,}2\\0{,}1&amp;0{,}8\end{pmatrix}\)</span> transforma el vector de clientes de un mes al siguiente.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Explica el significado de cada columna de <span class="math inline">\(M\)</span> y por qué suma 1.</p></li>
+<li><p>(1 punto) Calcula cuántos clientes tendrá cada operadora al cabo de un mes.</p></li>
+<li><p>(1 punto) Calcula <span class="math inline">\(M^2\)</span> y, con ella, los clientes al cabo de dos meses.</p></li>
+<li><p>(0,5 puntos) Justifica que el número total de clientes se mantiene en cada mes.</p></li>
+</ol>
+<p><strong>15.</strong> <em>(Tipo PAU · 3 puntos)</em> Sean <span class="math inline">\(A=\begin{pmatrix}2&amp;1\\1&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(B=\begin{pmatrix}1&amp;0\\2&amp;3\end{pmatrix}\)</span> y <span class="math inline">\(C=\begin{pmatrix}5&amp;4\\7&amp;6\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Despeja <span class="math inline">\(X\)</span> en la ecuación matricial <span class="math inline">\(A\cdot X+B=C\)</span> y justifica que se puede.</p></li>
+<li><p>(1,5 puntos) Calcula <span class="math inline">\(A^{-1}\)</span> y resuelve la ecuación.</p></li>
+<li><p>(1 punto) Comprueba que la matriz obtenida cumple la ecuación.</p></li>
+</ol>
+<p><strong>16.</strong> <em>(Tipo PAU · 3 puntos)</em> Sean <span class="math inline">\(A=\begin{pmatrix}3&amp;1\\1&amp;2\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}2&amp;1\\3&amp;2\end{pmatrix}\)</span>. Se quiere hallar <span class="math inline">\(X\)</span> tal que <span class="math inline">\(X\cdot A-X=B\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Saca factor común y explica por qué hay que escribir <span class="math inline">\(I_2\)</span>.</p></li>
+<li><p>(1 punto) Calcula <span class="math inline">\(A-I_2\)</span> y su inversa.</p></li>
+<li><p>(1,25 puntos) Calcula <span class="math inline">\(X\)</span>.</p></li>
+</ol>
+<p><strong>17.</strong> <em>(Tipo PAU · 3 puntos)</em> Sea <span class="math inline">\(B_m=\begin{pmatrix}1&amp;1&amp;1\\1&amp;2&amp;m\\1&amp;4&amp;m^2\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>(1 punto) Calcula <span class="math inline">\(|B_m|\)</span>.</p></li>
+<li><p>(1 punto) Estudia el rango de <span class="math inline">\(B_m\)</span> según los valores de <span class="math inline">\(m\)</span>.</p></li>
+<li><p>(1 punto) Calcula, si existe, la inversa de <span class="math inline">\(B_3\)</span>.</p></li>
+</ol>
+<p><strong>18.</strong> <em>(Tipo PAU · 3 puntos)</em> Sea <span class="math inline">\(A=\begin{pmatrix}1&amp;2\\0&amp;1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(A^2\)</span> y <span class="math inline">\(A^3\)</span>.</p></li>
+<li><p>(0,75 puntos) Conjetura la expresión de <span class="math inline">\(A^n\)</span> y calcula <span class="math inline">\(A^{10}\)</span>.</p></li>
+<li><p>(0,75 puntos) Demuestra por inducción tu conjetura.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(A^{-1}\)</span> y comprueba que la expresión de <span class="math inline">\(A^n\)</span> da <span class="math inline">\(A^{-1}\)</span> al tomar <span class="math inline">\(n=-1\)</span>.</p></li>
+</ol>
+<p><strong>19.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> matrices cuadradas de orden 3 con <span class="math inline">\(|A|=2\)</span> y <span class="math inline">\(|B|=-3\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(|A\cdot B|\)</span> y di qué propiedad usas.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(|2A|\)</span>.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(|B^t\cdot A^{-1}|\)</span> justificando que <span class="math inline">\(A\)</span> es invertible.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(|A^3|\)</span>.</p></li>
+<li><p>(0,75 puntos) ¿Se puede asegurar que <span class="math inline">\(A+B\)</span> es invertible? Justifica la respuesta con un ejemplo.</p></li>
+</ol>
+<p><strong>20.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Una cooperativa envía códigos de pedido cifrados. Un par de números <span class="math inline">\(x=\begin{pmatrix}x_1\\x_2\end{pmatrix}\)</span> se cifra como <span class="math inline">\(y=C\cdot x\)</span> con <span class="math inline">\(C=\begin{pmatrix}2&amp;1\\3&amp;2\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Comprueba que <span class="math inline">\(C\)</span> es invertible y calcula <span class="math inline">\(C^{-1}\)</span>.</p></li>
+<li><p>(1 punto) Cifra el código <span class="math inline">\(x=\begin{pmatrix}3\\5\end{pmatrix}\)</span>.</p></li>
+<li><p>(1 punto) Descifra el código recibido <span class="math inline">\(y=\begin{pmatrix}16\\27\end{pmatrix}\)</span>.</p></li>
+<li><p>(0,5 puntos) Explica por qué es imprescindible que <span class="math inline">\(|C|\neq0\)</span> para poder descifrar, y por qué conviene aquí que <span class="math inline">\(|C|=1\)</span>.</p></li>
+</ol>
+<p><strong>21.</strong> <em>(Tipo PAU · 3 puntos)</em> Elige una de las dos opciones.</p>
+<p><strong>Opción A.</strong> Sea <span class="math inline">\(A=\begin{pmatrix}1&amp;0&amp;1\\0&amp;1&amp;1\\1&amp;1&amp;0\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>(1,5 puntos) Calcula <span class="math inline">\(|A|\)</span> y <span class="math inline">\(A^{-1}\)</span>.</p></li>
+<li><p>(1,5 puntos) Comprueba que <span class="math inline">\(A\cdot A^{-1}=I_3\)</span>.</p></li>
+</ol>
+<p><strong>Opción B.</strong> Sean <span class="math inline">\(A=\begin{pmatrix}1&amp;a\\0&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}1&amp;1\\0&amp;b\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>(1,5 puntos) Calcula <span class="math inline">\(A\cdot B\)</span> y <span class="math inline">\(B\cdot A\)</span>.</p></li>
+<li><p>(1,5 puntos) Halla los valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para los que <span class="math inline">\(A\cdot B=B\cdot A\)</span>.</p></li>
+</ol>
+<p><strong>22.</strong> <em>(Tipo PAU · 3 puntos)</em> Sean <span class="math inline">\(A=\begin{pmatrix}1&amp;2\\0&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}3&amp;1\\2&amp;5\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Despeja <span class="math inline">\(X\)</span> en la ecuación <span class="math inline">\(A^t\cdot X=B\)</span>.</p></li>
+<li><p>(1 punto) Calcula <span class="math inline">\(A^t\)</span> y su inversa.</p></li>
+<li><p>(1,5 puntos) Calcula <span class="math inline">\(X\)</span>.</p></li>
+</ol>
+<p><strong>23.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Sea <span class="math inline">\(A_m=\begin{pmatrix}1&amp;m\\2&amp;3\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}1\\2\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Halla los valores de <span class="math inline">\(m\)</span> para los que <span class="math inline">\(A_m\)</span> no tiene inversa.</p></li>
+<li><p>(0,75 puntos) Para <span class="math inline">\(m=1\)</span>, calcula <span class="math inline">\(A_1^{-1}\)</span> y resuelve <span class="math inline">\(A_1\cdot X=B\)</span>.</p></li>
+<li><p>(0,75 puntos) Para el valor de <span class="math inline">\(m\)</span> del apartado a), estudia los rangos de <span class="math inline">\(A_m\)</span> y de la matriz ampliada y resuelve <span class="math inline">\(A_m\cdot X=B\)</span>.</p></li>
+<li><p>(0,75 puntos) Explica por qué, aunque en c) no exista inversa, el sistema sí tiene solución.</p></li>
+</ol>
+<p><strong>24.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> En una red social hay cuatro usuarios. La matriz <span class="math inline">\(A\)</span> recoge las amistades: <span class="math inline">\(a_{ij}=1\)</span> si los usuarios <span class="math inline">\(i\)</span> y <span class="math inline">\(j\)</span> son amigos y <span class="math inline">\(a_{ij}=0\)</span> si no (y <span class="math inline">\(a_{ii}=0\)</span>): <span class="math display">\[A=\begin{pmatrix}0&amp;1&amp;1&amp;0\\1&amp;0&amp;1&amp;1\\1&amp;1&amp;0&amp;0\\0&amp;1&amp;0&amp;0\end{pmatrix}\]</span></p>
+<ol type="a">
+<li><p>(0,5 puntos) Justifica que <span class="math inline">\(A\)</span> es simétrica y explica qué significa en la red.</p></li>
+<li><p>(1 punto) Calcula <span class="math inline">\(A^2\)</span>.</p></li>
+<li><p>(0,75 puntos) Interpreta los elementos <span class="math inline">\((A^2)_{14}\)</span> y <span class="math inline">\((A^2)_{22}\)</span>.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(A\cdot u\)</span> con <span class="math inline">\(u=\begin{pmatrix}1\\1\\1\\1\end{pmatrix}\)</span> e interpreta el resultado.</p></li>
+</ol>
+<p><strong>25.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Dos plantas fabrican dos productos que consumen dos materias primas. La matriz <span class="math inline">\(A=\begin{pmatrix}2&amp;1\\1&amp;2\end{pmatrix}\)</span> indica las unidades de cada materia prima (columnas) por unidad de cada producto (filas). Se sabe que el consumo total de materias primas de cada planta (filas: plantas) es <span class="math inline">\(B=\begin{pmatrix}100&amp;110\\80&amp;70\end{pmatrix}\)</span>. Si <span class="math inline">\(X\)</span> es la matriz de unidades fabricadas de cada producto (filas: plantas; columnas: productos), se cumple <span class="math inline">\(X\cdot A=B\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Justifica que <span class="math inline">\(A\)</span> es invertible.</p></li>
+<li><p>(1,5 puntos) Calcula <span class="math inline">\(X\)</span>.</p></li>
+<li><p>(1 punto) Interpreta el resultado: ¿cuántas unidades de cada producto fabrica cada planta?</p></li>
+</ol>
+</section>
+<section id="soluciones" class="level2">
+<h2 class="anchored" data-anchor-id="soluciones">Soluciones</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(A+B=\begin{pmatrix}4&amp;2\\1&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(2A-B=\begin{pmatrix}2&amp;4\\0&amp;-2\end{pmatrix}-\begin{pmatrix}3&amp;0\\1&amp;2\end{pmatrix}=\begin{pmatrix}-1&amp;4\\-1&amp;-4\end{pmatrix}\)</span>.</p>
+<p><span class="math inline">\(A\cdot B=\begin{pmatrix}1\cdot3+2\cdot1&amp;1\cdot0+2\cdot2\\0\cdot3+(-1)\cdot1&amp;0\cdot0+(-1)\cdot2\end{pmatrix}=\begin{pmatrix}5&amp;4\\-1&amp;-2\end{pmatrix}\)</span> y <span class="math inline">\(B\cdot A=\begin{pmatrix}3&amp;6\\1&amp;0\end{pmatrix}\)</span>.</p>
+<p>Como <span class="math inline">\(A\cdot B\neq B\cdot A\)</span>, <strong>no se cumple</strong> la igualdad: el producto de matrices no es conmutativo.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(A\cdot B\)</span> es de dimensión <span class="math inline">\(2\times2\)</span>, <span class="math inline">\(B\cdot A\)</span> es <span class="math inline">\(3\times3\)</span> y <span class="math inline">\(A^t\)</span> es <span class="math inline">\(3\times2\)</span>.</p>
+<p><span class="math inline">\(A\cdot B=\begin{pmatrix}1\cdot2+0\cdot0+2\cdot1&amp;1\cdot1+0\cdot(-1)+2\cdot3\\-1\cdot2+3\cdot0+1\cdot1&amp;-1\cdot1+3\cdot(-1)+1\cdot3\end{pmatrix}=\begin{pmatrix}4&amp;7\\-1&amp;-1\end{pmatrix}\)</span> y <span class="math inline">\(A^t=\begin{pmatrix}1&amp;-1\\0&amp;3\\2&amp;1\end{pmatrix}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(A\)</span> es simétrica si <span class="math inline">\(A=A^t\)</span>, es decir, si <span class="math inline">\(a_{ij}=a_{ji}\)</span>. De <span class="math inline">\(a_{12}=a_{21}\)</span> resulta <span class="math inline">\(a=3\)</span> y de <span class="math inline">\(a_{23}=a_{32}\)</span> resulta <span class="math inline">\(b=-2\)</span>. El elemento <span class="math inline">\(a_{13}=a_{31}=1\)</span> ya coincide.</p>
+<p>Solución: <span class="math inline">\(a=3\)</span> y <span class="math inline">\(b=-2\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\begin{vmatrix}3&amp;-2\\1&amp;4\end{vmatrix}=3\cdot4-(-2)\cdot1=12+2=14\)</span>.</p>
+<p>Por Sarrus: <span class="math inline">\((2\cdot3\cdot4+1\cdot2\cdot1+0\cdot(-1)\cdot0)-(0\cdot3\cdot1+2\cdot2\cdot0+1\cdot(-1)\cdot4)=(24+2+0)-(0+0-4)=26+4=30\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>El determinante no cambia al trasponer: <span class="math inline">\(|A^t|=-2\)</span>.</li>
+<li>Al multiplicar una matriz de orden 3 por <span class="math inline">\(3\)</span>, cada fila queda multiplicada por <span class="math inline">\(3\)</span>: <span class="math inline">\(|3A|=3^3\cdot|A|=-54\)</span>.</li>
+<li>El determinante de un producto es el producto de los determinantes: <span class="math inline">\(|A^2|=|A|^2=4\)</span>.</li>
+<li><span class="math inline">\(|A^{-1}|=\dfrac{1}{|A|}=-\frac{1}{2}\)</span>.</li>
+<li><span class="math inline">\(|A\cdot A^t|=|A|\cdot|A^t|=4\)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(|A|=2\cdot3-5\cdot1=1\neq0\)</span>, luego existe la inversa. Con la fórmula de orden 2:</p>
+<p><span class="math inline">\(A^{-1}=\dfrac{1}{1}\begin{pmatrix}3&amp;-5\\-1&amp;2\end{pmatrix}=\begin{pmatrix}3&amp;-5\\-1&amp;2\end{pmatrix}\)</span>.</p>
+<p>Comprobación: <span class="math inline">\(A\cdot A^{-1}=\begin{pmatrix}2\cdot3+5\cdot(-1)&amp;2\cdot(-5)+5\cdot2\\1\cdot3+3\cdot(-1)&amp;1\cdot(-5)+3\cdot2\end{pmatrix}=\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}=I_2\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>7
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(|A|=\begin{vmatrix}1&amp;0&amp;2\\0&amp;1&amp;-1\\2&amp;1&amp;0\end{vmatrix}=(0+0+0)-(4-1+0)=-3\neq0\)</span>.</p>
+<p>Adjuntos: <span class="math inline">\(A_{11}=1\)</span>, <span class="math inline">\(A_{12}=-2\)</span>, <span class="math inline">\(A_{13}=-2\)</span>, <span class="math inline">\(A_{21}=2\)</span>, <span class="math inline">\(A_{22}=-4\)</span>, <span class="math inline">\(A_{23}=-1\)</span>, <span class="math inline">\(A_{31}=-2\)</span>, <span class="math inline">\(A_{32}=1\)</span>, <span class="math inline">\(A_{33}=1\)</span>. La matriz de adjuntos y su traspuesta son</p>
+<p><span class="math inline">\(\begin{pmatrix}1&amp;-2&amp;-2\\2&amp;-4&amp;-1\\-2&amp;1&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(\begin{pmatrix}1&amp;2&amp;-2\\-2&amp;-4&amp;1\\-2&amp;-1&amp;1\end{pmatrix}\)</span>.</p>
+<p>Entonces <span class="math inline">\(A^{-1}=\dfrac{1}{|A|}\,(\operatorname{Adj}A)^t=-\dfrac13\begin{pmatrix}1&amp;2&amp;-2\\-2&amp;-4&amp;1\\-2&amp;-1&amp;1\end{pmatrix}=\begin{pmatrix}-\frac{1}{3}&amp;-\frac{2}{3}&amp;\frac{2}{3}\\\frac{2}{3}&amp;\frac{4}{3}&amp;-\frac{1}{3}\\\frac{2}{3}&amp;\frac{1}{3}&amp;-\frac{1}{3}\end{pmatrix}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>8
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(F_2-2F_1\)</span> da la fila <span class="math inline">\((0,0,0,0)\)</span>, luego <span class="math inline">\(F_2\)</span> depende de <span class="math inline">\(F_1\)</span>. Quedan <span class="math inline">\(F_1=(1,2,-1,3)\)</span> y <span class="math inline">\(F_3=(0,1,1,2)\)</span>, que no son proporcionales. Por tanto <span class="math inline">\(\operatorname{rg}A=2\)</span>.</p>
+<p>(Comprobación por menores: todos los menores de orden 3 se anulan porque <span class="math inline">\(F_2=2F_1\)</span>, y el menor <span class="math inline">\(\begin{vmatrix}1&amp;2\\0&amp;1\end{vmatrix}=1\neq0\)</span>.)</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>9
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(|A|=5-6=-1\neq0\)</span> y <span class="math inline">\(A^{-1}=\dfrac{1}{-1}\begin{pmatrix}5&amp;-2\\-3&amp;1\end{pmatrix}=\begin{pmatrix}-5&amp;2\\3&amp;-1\end{pmatrix}\)</span>.</p>
+<p>De <span class="math inline">\(A\cdot X=B\)</span> se obtiene <span class="math inline">\(X=A^{-1}\cdot B=\begin{pmatrix}-5&amp;2\\3&amp;-1\end{pmatrix}\begin{pmatrix}1&amp;0\\2&amp;1\end{pmatrix}=\begin{pmatrix}-1&amp;2\\1&amp;-1\end{pmatrix}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>10
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(V+W=\begin{pmatrix}65&amp;35&amp;13\\45&amp;85&amp;22\end{pmatrix}\)</span>. El elemento <span class="math inline">\(22\)</span> (fila 2, columna 3) son las mochilas vendidas por la tienda 2 en las dos semanas.</p></li>
+<li><p>Se multiplica por el vector de precios: <span class="math inline">\((V+W)\cdot p=\begin{pmatrix}65\cdot12+35\cdot3+13\cdot25\\45\cdot12+85\cdot3+22\cdot25\end{pmatrix}=\begin{pmatrix}1210\\1345\end{pmatrix}\)</span>. La tienda 1 ingresó <span class="math inline">\(1210\)</span> € y la tienda 2, <span class="math inline">\(1345\)</span> €.</p></li>
+<li><p><span class="math inline">\(W-V=\begin{pmatrix}5&amp;-5&amp;3\\-5&amp;5&amp;2\end{pmatrix}\)</span>. Los elementos negativos indican que bajaron las ventas de <strong>cuadernos en la tienda 1</strong> (<span class="math inline">\(-5\)</span> unidades) y de <strong>libros en la tienda 2</strong> (<span class="math inline">\(-5\)</span> unidades).</p></li>
+<li><p>El nuevo vector de precios es <span class="math inline">\(0{,}9\,p=\begin{pmatrix}10{,}8\\2{,}7\\22{,}5\end{pmatrix}\)</span>. La tienda 1 en la semana 2 vendió <span class="math inline">\((35,15,8)\)</span> y ingresa <span class="math inline">\(35\cdot10{,}8+15\cdot2{,}7+8\cdot22{,}5=378+40{,}5+180=598{,}5\)</span> €.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>11
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(A\cdot q=\begin{pmatrix}2\cdot5+1\cdot8\\1\cdot5+3\cdot8\\4\cdot5+2\cdot8\end{pmatrix}=\begin{pmatrix}18\\29\\36\end{pmatrix}\)</span>: es el coste de las materias primas de <strong>una unidad</strong> de cada producto (18 €, 29 € y 36 €).</p></li>
+<li><p><span class="math inline">\(r\cdot A=\begin{pmatrix}10\cdot2+20\cdot1+5\cdot4&amp;10\cdot1+20\cdot3+5\cdot2\end{pmatrix}=\begin{pmatrix}60&amp;80\end{pmatrix}\)</span>: el plan semanal necesita <span class="math inline">\(60\)</span> unidades de la primera materia prima y <span class="math inline">\(80\)</span> de la segunda.</p></li>
+<li><p><span class="math inline">\((r\cdot A)\cdot q=60\cdot5+80\cdot8=940\)</span> y <span class="math inline">\(r\cdot(A\cdot q)=10\cdot18+20\cdot29+5\cdot36=940\)</span>. Coinciden por la propiedad asociativa del producto de matrices: el coste total es de <span class="math inline">\(940\)</span> €.</p></li>
+<li><p>Con <span class="math inline">\(q'=\begin{pmatrix}5\\10\end{pmatrix}\)</span> el coste es <span class="math inline">\(60\cdot5+80\cdot10=1100\)</span> €. Aumenta <span class="math inline">\(1100-940=160\)</span> € por semana.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>12
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Opción A.</strong></p>
+<ol type="a">
+<li><p><span class="math inline">\(A^2=\begin{pmatrix}1&amp;0\\3&amp;1\end{pmatrix}\begin{pmatrix}1&amp;0\\3&amp;1\end{pmatrix}=\begin{pmatrix}1&amp;0\\6&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(A^3=A^2\cdot A=\begin{pmatrix}1&amp;0\\9&amp;1\end{pmatrix}\)</span>.</p></li>
+<li><p>Se observa que el elemento inferior izquierdo es <span class="math inline">\(3n\)</span>: <span class="math inline">\(A^n=\begin{pmatrix}1&amp;0\\3n&amp;1\end{pmatrix}\)</span>, y entonces <span class="math inline">\(A^{10}=\begin{pmatrix}1&amp;0\\30&amp;1\end{pmatrix}\)</span>.</p></li>
+<li><p>Inducción. Para <span class="math inline">\(n=1\)</span> se cumple. Si <span class="math inline">\(A^n=\begin{pmatrix}1&amp;0\\3n&amp;1\end{pmatrix}\)</span>, entonces <span class="math inline">\(A^{n+1}=A^n\cdot A=\begin{pmatrix}1&amp;0\\3n+3&amp;1\end{pmatrix}=\begin{pmatrix}1&amp;0\\3(n+1)&amp;1\end{pmatrix}\)</span>, que es la fórmula para <span class="math inline">\(n+1\)</span>. Por tanto vale para todo <span class="math inline">\(n\ge1\)</span>.</p></li>
+</ol>
+<p><strong>Opción B.</strong></p>
+<ol type="a">
+<li><p><span class="math inline">\(B^2=\begin{pmatrix}4&amp;3\\0&amp;1\end{pmatrix}\)</span>, luego <span class="math inline">\(B^2-3B+2I_2=\begin{pmatrix}4&amp;3\\0&amp;1\end{pmatrix}-\begin{pmatrix}6&amp;3\\0&amp;3\end{pmatrix}+\begin{pmatrix}2&amp;0\\0&amp;2\end{pmatrix}=\begin{pmatrix}0&amp;0\\0&amp;0\end{pmatrix}=O\)</span>.</p></li>
+<li><p>De <span class="math inline">\(B^2-3B+2I_2=O\)</span> se tiene <span class="math inline">\(B\cdot(3I_2-B)=2I_2\)</span>, es decir, <span class="math inline">\(B\cdot\dfrac12(3I_2-B)=I_2\)</span>. Existe una matriz que multiplicada por <span class="math inline">\(B\)</span> da la identidad, luego <span class="math inline">\(B\)</span> es invertible y <span class="math inline">\(B^{-1}=\dfrac12(3I_2-B)=\dfrac12\begin{pmatrix}1&amp;-1\\0&amp;2\end{pmatrix}=\begin{pmatrix}\frac{1}{2}&amp;-\frac{1}{2}\\0&amp;1\end{pmatrix}\)</span>.</p></li>
+<li><p><span class="math inline">\(|B|=2\cdot1-1\cdot0=2\neq0\)</span> y, con la fórmula de orden 2, <span class="math inline">\(B^{-1}=\dfrac12\begin{pmatrix}1&amp;-1\\0&amp;2\end{pmatrix}\)</span>, que coincide con el resultado de b).</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>13
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Por Sarrus: <span class="math inline">\(|A_m|=m^3+1+1-m-m-m=m^3-3m+2=(m-1)^2(m+2)\)</span>. No tiene inversa cuando <span class="math inline">\(|A_m|=0\)</span>, es decir, para <span class="math inline">\(m=1\)</span> y <span class="math inline">\(m=-2\)</span>.</p></li>
+<li><p>Para <span class="math inline">\(m=2\)</span>: <span class="math inline">\(|A_2|=4\)</span>. Los adjuntos de <span class="math inline">\(A_2=\begin{pmatrix}2&amp;1&amp;1\\1&amp;2&amp;1\\1&amp;1&amp;2\end{pmatrix}\)</span> son <span class="math inline">\(3\)</span> en la diagonal y <span class="math inline">\(-1\)</span> fuera de ella, y la matriz es simétrica, luego <span class="math inline">\(A_2^{-1}=\dfrac14\begin{pmatrix}3&amp;-1&amp;-1\\-1&amp;3&amp;-1\\-1&amp;-1&amp;3\end{pmatrix}=\begin{pmatrix}\frac{3}{4}&amp;-\frac{1}{4}&amp;-\frac{1}{4}\\-\frac{1}{4}&amp;\frac{3}{4}&amp;-\frac{1}{4}\\-\frac{1}{4}&amp;-\frac{1}{4}&amp;\frac{3}{4}\end{pmatrix}\)</span>.</p></li>
+<li><p>Para <span class="math inline">\(m=1\)</span> todas las filas son <span class="math inline">\((1,1,1)\)</span>: <span class="math inline">\(\operatorname{rg}A_1=1\)</span>. Para <span class="math inline">\(m=-2\)</span> las filas son <span class="math inline">\((-2,1,1)\)</span>, <span class="math inline">\((1,-2,1)\)</span> y <span class="math inline">\((1,1,-2)\)</span>, y el menor <span class="math inline">\(\begin{vmatrix}-2&amp;1\\1&amp;-2\end{vmatrix}=3\neq0\)</span> da rango al menos 2, pero <span class="math inline">\(|A_{-2}|=0\)</span>: <span class="math inline">\(\operatorname{rg}A_{-2}=2\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>14
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Cada columna indica cómo se reparten los clientes de una operadora al mes siguiente: la primera columna dice que de los clientes de A, el <span class="math inline">\(90\,\%\)</span> se queda en A y el <span class="math inline">\(10\,\%\)</span> pasa a B; la segunda, que de los de B, el <span class="math inline">\(20\,\%\)</span> pasa a A y el <span class="math inline">\(80\,\%\)</span> se queda. Cada columna suma <span class="math inline">\(0{,}9+0{,}1=1\)</span> y <span class="math inline">\(0{,}2+0{,}8=1\)</span> porque todos los clientes van a alguna de las dos operadoras.</p></li>
+<li><p><span class="math inline">\(x_1=M\cdot x=\begin{pmatrix}0{,}9\cdot600+0{,}2\cdot400\\0{,}1\cdot600+0{,}8\cdot400\end{pmatrix}=\begin{pmatrix}620\\380\end{pmatrix}\)</span>: tras un mes, A tiene <span class="math inline">\(620\)</span> y B tiene <span class="math inline">\(380\)</span>.</p></li>
+<li><p><span class="math inline">\(M^2=\begin{pmatrix}0{,}9\cdot0{,}9+0{,}2\cdot0{,}1&amp;0{,}9\cdot0{,}2+0{,}2\cdot0{,}8\\0{,}1\cdot0{,}9+0{,}8\cdot0{,}1&amp;0{,}1\cdot0{,}2+0{,}8\cdot0{,}8\end{pmatrix}=\begin{pmatrix}0{,}83&amp;0{,}34\\0{,}17&amp;0{,}66\end{pmatrix}\)</span> y <span class="math inline">\(x_2=M^2\cdot x=\begin{pmatrix}634\\366\end{pmatrix}\)</span>: tras dos meses, A tiene <span class="math inline">\(634\)</span> y B tiene <span class="math inline">\(366\)</span>.</p></li>
+<li><p>La suma de los dos elementos de <span class="math inline">\(M\cdot x\)</span> es <span class="math inline">\((0{,}9+0{,}1)x_A+(0{,}2+0{,}8)x_B=x_A+x_B\)</span>, porque las columnas suman 1. Así el total se mantiene en <span class="math inline">\(1000\)</span> en cada mes (por ejemplo, <span class="math inline">\(620+380=1000\)</span> y <span class="math inline">\(634+366=1000\)</span>).</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>15
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>De <span class="math inline">\(A\cdot X+B=C\)</span> se tiene <span class="math inline">\(A\cdot X=C-B\)</span> y, si <span class="math inline">\(A\)</span> es invertible, <span class="math inline">\(X=A^{-1}\cdot(C-B)\)</span> (la inversa se multiplica por la izquierda). Como <span class="math inline">\(|A|=2\cdot1-1\cdot1=1\neq0\)</span>, <span class="math inline">\(A\)</span> es invertible.</p></li>
+<li><p><span class="math inline">\(A^{-1}=\dfrac{1}{1}\begin{pmatrix}1&amp;-1\\-1&amp;2\end{pmatrix}\)</span> y <span class="math inline">\(C-B=\begin{pmatrix}4&amp;4\\5&amp;3\end{pmatrix}\)</span>, luego <span class="math inline">\(X=\begin{pmatrix}1&amp;-1\\-1&amp;2\end{pmatrix}\begin{pmatrix}4&amp;4\\5&amp;3\end{pmatrix}=\begin{pmatrix}-1&amp;1\\6&amp;2\end{pmatrix}\)</span>.</p></li>
+<li><p><span class="math inline">\(A\cdot X=\begin{pmatrix}2&amp;1\\1&amp;1\end{pmatrix}\begin{pmatrix}-1&amp;1\\6&amp;2\end{pmatrix}=\begin{pmatrix}4&amp;4\\5&amp;3\end{pmatrix}\)</span> y sumando <span class="math inline">\(B\)</span> resulta <span class="math inline">\(\begin{pmatrix}5&amp;4\\7&amp;6\end{pmatrix}=C\)</span>. Se cumple.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>16
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(X\cdot A-X=X\cdot(A-I_2)\)</span>. Hay que escribir <span class="math inline">\(I_2\)</span> porque <span class="math inline">\(A-1\)</span> no tiene sentido: no se puede restar un número a una matriz; <span class="math inline">\(X=X\cdot I_2\)</span>.</p></li>
+<li><p><span class="math inline">\(A-I_2=\begin{pmatrix}2&amp;1\\1&amp;1\end{pmatrix}\)</span>, con <span class="math inline">\(|A-I_2|=1\neq0\)</span> y <span class="math inline">\((A-I_2)^{-1}=\begin{pmatrix}1&amp;-1\\-1&amp;2\end{pmatrix}\)</span>.</p></li>
+<li><p>De <span class="math inline">\(X\cdot(A-I_2)=B\)</span> se obtiene <span class="math inline">\(X=B\cdot(A-I_2)^{-1}\)</span> (la inversa se multiplica por la derecha): <span class="math inline">\(X=\begin{pmatrix}2&amp;1\\3&amp;2\end{pmatrix}\begin{pmatrix}1&amp;-1\\-1&amp;2\end{pmatrix}=\begin{pmatrix}1&amp;0\\1&amp;1\end{pmatrix}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>17
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Restando la primera fila a las otras dos, <span class="math inline">\(F_2-F_1=(0,1,m-1)\)</span> y <span class="math inline">\(F_3-F_1=(0,3,m^2-1)\)</span>, el determinante no cambia y <span class="math inline">\(|B_m|=1\cdot\bigl(1\cdot(m^2-1)-3\cdot(m-1)\bigr)=(m-1)(m+1-3)=(m-1)(m-2)\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(m\neq1\)</span> y <span class="math inline">\(m\neq2\)</span>, <span class="math inline">\(|B_m|\neq0\)</span> y <span class="math inline">\(\operatorname{rg}B_m=3\)</span>. Si <span class="math inline">\(m=1\)</span>, <span class="math inline">\(B_1=\begin{pmatrix}1&amp;1&amp;1\\1&amp;2&amp;1\\1&amp;4&amp;1\end{pmatrix}\)</span> tiene la primera y la tercera columna iguales, y el menor <span class="math inline">\(\begin{vmatrix}1&amp;1\\1&amp;2\end{vmatrix}=1\neq0\)</span>: <span class="math inline">\(\operatorname{rg}B_1=2\)</span>. Si <span class="math inline">\(m=2\)</span>, <span class="math inline">\(B_2=\begin{pmatrix}1&amp;1&amp;1\\1&amp;2&amp;2\\1&amp;4&amp;4\end{pmatrix}\)</span> tiene las dos últimas columnas iguales y el mismo menor no nulo: <span class="math inline">\(\operatorname{rg}B_2=2\)</span>.</p></li>
+<li><p>Para <span class="math inline">\(m=3\)</span>: <span class="math inline">\(|B_3|=2\neq0\)</span>, luego existe la inversa. Con los adjuntos de <span class="math inline">\(B_3=\begin{pmatrix}1&amp;1&amp;1\\1&amp;2&amp;3\\1&amp;4&amp;9\end{pmatrix}\)</span> resulta <span class="math inline">\(B_3^{-1}=\dfrac12\begin{pmatrix}6&amp;-5&amp;1\\-6&amp;8&amp;-2\\2&amp;-3&amp;1\end{pmatrix}=\begin{pmatrix}3&amp;-\frac{5}{2}&amp;\frac{1}{2}\\-3&amp;4&amp;-1\\1&amp;-\frac{3}{2}&amp;\frac{1}{2}\end{pmatrix}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>18
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(A^2=\begin{pmatrix}1&amp;2\\0&amp;1\end{pmatrix}\begin{pmatrix}1&amp;2\\0&amp;1\end{pmatrix}=\begin{pmatrix}1&amp;4\\0&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(A^3=A^2\cdot A=\begin{pmatrix}1&amp;6\\0&amp;1\end{pmatrix}\)</span>.</p></li>
+<li><p>El elemento de la esquina superior derecha es <span class="math inline">\(2n\)</span>: <span class="math inline">\(A^n=\begin{pmatrix}1&amp;2n\\0&amp;1\end{pmatrix}\)</span>, luego <span class="math inline">\(A^{10}=\begin{pmatrix}1&amp;20\\0&amp;1\end{pmatrix}\)</span>.</p></li>
+<li><p>Inducción. Para <span class="math inline">\(n=1\)</span> se cumple. Si <span class="math inline">\(A^n=\begin{pmatrix}1&amp;2n\\0&amp;1\end{pmatrix}\)</span>, entonces <span class="math inline">\(A^{n+1}=A^n\cdot A=\begin{pmatrix}1&amp;2n+2\\0&amp;1\end{pmatrix}=\begin{pmatrix}1&amp;2(n+1)\\0&amp;1\end{pmatrix}\)</span>. Vale para todo <span class="math inline">\(n\ge1\)</span>.</p></li>
+<li><p><span class="math inline">\(|A|=1\)</span> y <span class="math inline">\(A^{-1}=\begin{pmatrix}1&amp;-2\\0&amp;1\end{pmatrix}\)</span>. La fórmula <span class="math inline">\(\begin{pmatrix}1&amp;2n\\0&amp;1\end{pmatrix}\)</span> con <span class="math inline">\(n=-1\)</span> da exactamente esa matriz.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>19
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>El determinante de un producto es el producto de los determinantes: <span class="math inline">\(|A\cdot B|=|A|\cdot|B|=2\cdot(-3)=-6\)</span>.</p></li>
+<li><p>Como <span class="math inline">\(A\)</span> es de orden 3, <span class="math inline">\(|2A|=2^3\cdot|A|=8\cdot2=16\)</span>.</p></li>
+<li><p><span class="math inline">\(|A|=2\neq0\)</span>, luego <span class="math inline">\(A\)</span> es invertible y <span class="math inline">\(|A^{-1}|=\dfrac12\)</span>. Entonces <span class="math inline">\(|B^t\cdot A^{-1}|=|B^t|\cdot|A^{-1}|=|B|\cdot\dfrac{1}{|A|}=-3\cdot\dfrac12=-\frac{3}{2}\)</span>.</p></li>
+<li><p><span class="math inline">\(|A^3|=|A|^3=2^3=8\)</span>.</p></li>
+<li><p><strong>No se puede asegurar</strong>: el determinante de una suma no es la suma de los determinantes. Contraejemplo: <span class="math inline">\(A=\begin{pmatrix}2&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\end{pmatrix}\)</span> (<span class="math inline">\(|A|=2\)</span>) y <span class="math inline">\(B=\begin{pmatrix}-2&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;\frac{3}{2}\end{pmatrix}\)</span> (<span class="math inline">\(|B|=-3\)</span>) cumplen las condiciones, pero <span class="math inline">\(A+B=\begin{pmatrix}0&amp;0&amp;0\\0&amp;2&amp;0\\0&amp;0&amp;\frac52\end{pmatrix}\)</span> tiene <span class="math inline">\(|A+B|=0\)</span> y no es invertible.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>20
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(|C|=2\cdot2-1\cdot3=1\neq0\)</span>, luego <span class="math inline">\(C\)</span> es invertible y <span class="math inline">\(C^{-1}=\dfrac11\begin{pmatrix}2&amp;-1\\-3&amp;2\end{pmatrix}=\begin{pmatrix}2&amp;-1\\-3&amp;2\end{pmatrix}\)</span>.</p></li>
+<li><p><span class="math inline">\(y=C\cdot x=\begin{pmatrix}2\cdot3+1\cdot5\\3\cdot3+2\cdot5\end{pmatrix}=\begin{pmatrix}11\\19\end{pmatrix}\)</span>.</p></li>
+<li><p><span class="math inline">\(x=C^{-1}\cdot y=\begin{pmatrix}2\cdot16-1\cdot27\\-3\cdot16+2\cdot27\end{pmatrix}=\begin{pmatrix}5\\6\end{pmatrix}\)</span>.</p></li>
+<li><p>Para recuperar <span class="math inline">\(x\)</span> hace falta <span class="math inline">\(C^{-1}\)</span>, que solo existe si <span class="math inline">\(|C|\neq0\)</span>. Si no existiera, distintos códigos podrían dar el mismo cifrado y no se podría descifrar. Con <span class="math inline">\(|C|=1\)</span> la inversa tiene entradas <strong>enteras</strong> y se obtienen enteros al descifrar, sin fracciones.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>21
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Opción A.</strong></p>
+<ol type="a">
+<li><p>Por Sarrus, <span class="math inline">\(|A|=(1\cdot1\cdot0+0\cdot1\cdot1+1\cdot0\cdot1)-(1\cdot1\cdot1+1\cdot1\cdot1+0\cdot0\cdot0)=0-2=-2\neq0\)</span>. La matriz de adjuntos es <span class="math inline">\(\begin{pmatrix}-1&amp;1&amp;-1\\1&amp;-1&amp;-1\\-1&amp;-1&amp;1\end{pmatrix}\)</span>, simétrica, y <span class="math inline">\(A^{-1}=\dfrac{1}{-2}\begin{pmatrix}-1&amp;1&amp;-1\\1&amp;-1&amp;-1\\-1&amp;-1&amp;1\end{pmatrix}=\begin{pmatrix}\frac{1}{2}&amp;-\frac{1}{2}&amp;\frac{1}{2}\\-\frac{1}{2}&amp;\frac{1}{2}&amp;\frac{1}{2}\\\frac{1}{2}&amp;\frac{1}{2}&amp;-\frac{1}{2}\end{pmatrix}\)</span>.</p></li>
+<li><p><span class="math inline">\(A\cdot A^{-1}=\dfrac12\begin{pmatrix}1&amp;0&amp;1\\0&amp;1&amp;1\\1&amp;1&amp;0\end{pmatrix}\begin{pmatrix}1&amp;-1&amp;1\\-1&amp;1&amp;1\\1&amp;1&amp;-1\end{pmatrix}=\dfrac12\begin{pmatrix}2&amp;0&amp;0\\0&amp;2&amp;0\\0&amp;0&amp;2\end{pmatrix}=\begin{pmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\end{pmatrix}=I_3\)</span>.</p></li>
+</ol>
+<p><strong>Opción B.</strong></p>
+<ol type="a">
+<li><p><span class="math inline">\(A\cdot B=\begin{pmatrix}1&amp;1+ab\\0&amp;b\end{pmatrix}\)</span> y <span class="math inline">\(B\cdot A=\begin{pmatrix}1&amp;a+1\\0&amp;b\end{pmatrix}\)</span>.</p></li>
+<li><p><span class="math inline">\(A\cdot B=B\cdot A\)</span> si <span class="math inline">\(1+ab=a+1\)</span>, es decir, <span class="math inline">\(ab=a\)</span>, o <span class="math inline">\(a\,(b-1)=0\)</span>. Se cumple si <span class="math inline">\(a=0\)</span> (con <span class="math inline">\(b\)</span> cualquiera) o si <span class="math inline">\(b=1\)</span> (con <span class="math inline">\(a\)</span> cualquiera).</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>22
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(A^t\cdot X=B\)</span>. Si <span class="math inline">\(A^t\)</span> es invertible, <span class="math inline">\(X=(A^t)^{-1}\cdot B\)</span> (inversa por la izquierda).</p></li>
+<li><p><span class="math inline">\(A^t=\begin{pmatrix}1&amp;0\\2&amp;1\end{pmatrix}\)</span>, con <span class="math inline">\(|A^t|=1\neq0\)</span> y <span class="math inline">\((A^t)^{-1}=\begin{pmatrix}1&amp;0\\-2&amp;1\end{pmatrix}\)</span>.</p></li>
+<li><p><span class="math inline">\(X=\begin{pmatrix}1&amp;0\\-2&amp;1\end{pmatrix}\begin{pmatrix}3&amp;1\\2&amp;5\end{pmatrix}=\begin{pmatrix}3&amp;1\\-4&amp;3\end{pmatrix}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>23
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(|A_m|=1\cdot3-m\cdot2=3-2m\)</span>, que se anula para <span class="math inline">\(m=\frac{3}{2}\)</span>. Para ese valor <span class="math inline">\(A_m\)</span> no tiene inversa.</p></li>
+<li><p>Para <span class="math inline">\(m=1\)</span>, <span class="math inline">\(A_1=\begin{pmatrix}1&amp;1\\2&amp;3\end{pmatrix}\)</span>, <span class="math inline">\(|A_1|=1\)</span> y <span class="math inline">\(A_1^{-1}=\begin{pmatrix}3&amp;-1\\-2&amp;1\end{pmatrix}\)</span>. Entonces <span class="math inline">\(X=A_1^{-1}\cdot B=\begin{pmatrix}3\cdot1-1\cdot2\\-2\cdot1+1\cdot2\end{pmatrix}=\begin{pmatrix}1\\0\end{pmatrix}\)</span>.</p></li>
+<li><p>Para <span class="math inline">\(m=\frac{3}{2}\)</span>, <span class="math inline">\(A=\begin{pmatrix}1&amp;\frac{3}{2}\\2&amp;3\end{pmatrix}\)</span>: la segunda fila es el doble de la primera, luego <span class="math inline">\(\operatorname{rg}A_{3/2}=1\)</span>. La matriz ampliada <span class="math inline">\(\begin{pmatrix}1&amp;\frac{3}{2}&amp;1\\2&amp;3&amp;2\end{pmatrix}\)</span> también tiene la segunda fila doble de la primera, luego <span class="math inline">\(\operatorname{rg}(A_{3/2}|B)=1\)</span>. Como ambos rangos son <span class="math inline">\(1&lt;2\)</span>, el sistema es compatible indeterminado: es una sola ecuación <span class="math inline">\(x+\frac{3}{2}y=1\)</span>. Con <span class="math inline">\(y=t\)</span>: <span class="math inline">\(x=1-\frac{3}{2}t\)</span>, es decir, <span class="math inline">\((x,y)=\bigl(1-\frac{3}{2}t,\ t\bigr)\)</span>.</p></li>
+<li><p>La existencia de solución depende de los rangos, no de la inversa. Aquí la segunda ecuación es múltiplo de la primera incluso en el término independiente (<span class="math inline">\(2=2\cdot1\)</span>), así que no hay contradicción; si el término fuera otro, el sistema sería incompatible. Que <span class="math inline">\(A_m\)</span> no tenga inversa solo impide <em>despejar</em> <span class="math inline">\(X=A^{-1}B\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>24
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(A\)</span> es simétrica porque <span class="math inline">\(a_{ij}=a_{ji}\)</span> para todo par (por ejemplo <span class="math inline">\(a_{12}=a_{21}=1\)</span> y <span class="math inline">\(a_{24}=a_{42}=1\)</span>). En la red significa que la amistad es <strong>mutua</strong>: si <span class="math inline">\(i\)</span> es amigo de <span class="math inline">\(j\)</span>, <span class="math inline">\(j\)</span> lo es de <span class="math inline">\(i\)</span>.</p></li>
+<li><p><span class="math inline">\(A^2=\begin{pmatrix}2&amp;1&amp;1&amp;1\\1&amp;3&amp;1&amp;0\\1&amp;1&amp;2&amp;1\\1&amp;0&amp;1&amp;1\end{pmatrix}\)</span>.</p></li>
+<li><p><span class="math inline">\((A^2)_{14}=1\)</span>: hay un único camino de longitud 2 entre los usuarios 1 y 4, es decir, tienen <strong>un amigo en común</strong> (el usuario 2). <span class="math inline">\((A^2)_{22}=3\)</span>: es el número de amigos del usuario 2 (sus tres amigos 1, 3 y 4), porque cada amigo da un camino de ida y vuelta.</p></li>
+<li><p><span class="math inline">\(A\cdot u=\begin{pmatrix}2\\3\\2\\1\end{pmatrix}\)</span>: cada elemento suma una fila de <span class="math inline">\(A\)</span>, es decir, el número de amigos de cada usuario (2, 3, 2 y 1).</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>25
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(|A|=2\cdot2-1\cdot1=3\neq0\)</span>, luego <span class="math inline">\(A\)</span> es invertible.</p></li>
+<li><p>De <span class="math inline">\(X\cdot A=B\)</span> se obtiene <span class="math inline">\(X=B\cdot A^{-1}\)</span> (inversa por la derecha). Como <span class="math inline">\(A^{-1}=\dfrac13\begin{pmatrix}2&amp;-1\\-1&amp;2\end{pmatrix}=\begin{pmatrix}\frac{2}{3}&amp;-\frac{1}{3}\\-\frac{1}{3}&amp;\frac{2}{3}\end{pmatrix}\)</span>, <span class="math inline">\(X=\dfrac13\begin{pmatrix}100&amp;110\\80&amp;70\end{pmatrix}\begin{pmatrix}2&amp;-1\\-1&amp;2\end{pmatrix}=\dfrac13\begin{pmatrix}90&amp;120\\90&amp;60\end{pmatrix}=\begin{pmatrix}30&amp;40\\30&amp;20\end{pmatrix}\)</span>.</p></li>
+<li><p>La planta 1 fabrica <span class="math inline">\(30\)</span> unidades del producto 1 y <span class="math inline">\(40\)</span> del producto 2; la planta 2 fabrica <span class="math inline">\(30\)</span> del producto 1 y <span class="math inline">\(20\)</span> del producto 2. Comprobación en la planta 1: <span class="math inline">\(30\cdot(2,1)+40\cdot(1,2)=(100,110)\)</span>, que es la primera fila de <span class="math inline">\(B\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

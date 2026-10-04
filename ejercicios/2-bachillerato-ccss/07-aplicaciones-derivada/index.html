@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Aplicaciones de la derivada — relación de ejercicios – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-2d82e0ab39c09339319a3284da2afbd7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+#md-loader{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;background:#262A3D;color:#EBF8EE;font-family:"Bricolage Grotesque",system-ui,sans-serif;transition:opacity .35s ease,visibility .35s}
+#md-loader.md-out{opacity:0;visibility:hidden}
+#md-loader .ml-logo{width:96px;height:96px;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border:5px solid #000;background:#000;box-shadow:8px 8px 0 #000;animation:ml-tilt 2.4s ease-in-out infinite}
+#md-loader .ml-logo i{display:grid;place-items:center;font:900 28px/1 "Arial Black",Arial,sans-serif;font-style:normal;color:#000;animation:ml-pop 1.6s ease-in-out infinite}
+#md-loader .ml-logo i:nth-child(1){background:#5EC4B6}
+#md-loader .ml-logo i:nth-child(2){background:#262A3D;color:#FCE678;animation-delay:.2s}
+#md-loader .ml-logo i:nth-child(3){background:#F4736C;animation-delay:.6s}
+#md-loader .ml-logo i:nth-child(4){background:#FCE678;animation-delay:.4s}
+#md-loader .ml-txt{font-weight:800;font-size:1.25rem;text-transform:uppercase;letter-spacing:.02em;text-align:center;padding:0 1rem}
+#md-loader .ml-txt b{color:#FCE678}
+#md-loader .ml-bar{width:min(260px,70vw);height:14px;border:3px solid #000;background:#000;box-shadow:4px 4px 0 #000;overflow:hidden}
+#md-loader .ml-bar::after{content:"";display:block;height:100%;width:40%;background:repeating-linear-gradient(-45deg,#5EC4B6 0 10px,#F4736C 10px 20px,#FCE678 20px 30px);animation:ml-slide 1.1s ease-in-out infinite}
+@keyframes ml-pop{0%,100%{transform:scale(1)}50%{transform:scale(.8)}}
+@keyframes ml-tilt{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes ml-slide{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+@media (prefers-reduced-motion:reduce){#md-loader *{animation:none!important}}
+</style>
+<noscript><style>#md-loader{display:none!important}</style></noscript>
+<script>
+(function () {
+  try {
+    if (/^\/(index\.html)?$/.test(location.pathname)) return;
+    var el = document.createElement("div");
+    el.id = "md-loader";
+    el.setAttribute("role", "status");
+    el.innerHTML =
+      '<div class="ml-logo" aria-hidden="true"><i>+</i><i>&minus;</i><i>&times;</i><i>=</i></div>' +
+      '<div class="ml-txt">Mientras carga&hellip; <b>&iexcl;&iexcl;&iexcl;un descanso!!!</b></div>' +
+      '<div class="ml-bar" aria-hidden="true"></div>';
+    document.documentElement.appendChild(el);
+    var t0 = Date.now(), gone = false;
+    var hide = function () {
+      if (gone) return;
+      gone = true;
+      var wait = Math.max(0, 1000 - (Date.now() - t0));
+      setTimeout(function () {
+        el.classList.add("md-out");
+        setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 450);
+      }, wait);
+    };
+    var ready = function () {
+      var m = window.MathJax;
+      if (m && m.startup && m.startup.promise && m.startup.promise.then) {
+        m.startup.promise.then(hide, hide);
+      } else { hide(); }
+    };
+    if (document.readyState === "complete") ready();
+    else window.addEventListener("load", ready);
+    window.addEventListener("pageshow", function (e) { if (e.persisted) hide(); });
+    setTimeout(hide, 10000);
+  } catch (e) {}
+})();
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-simulacro-pau" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">★ Simulacro PAU</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-simulacro-pau">    
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ciencias/examen/index.html">
+ <span class="dropdown-text">Ciencias (Matemáticas II)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ccss/examen/index.html">
+ <span class="dropdown-text">Ciencias Sociales (Mat. Aplicadas II)</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#monotonía-extremos-y-curvatura" id="toc-monotonía-extremos-y-curvatura" class="nav-link active" data-scroll-target="#monotonía-extremos-y-curvatura">Monotonía, extremos y curvatura</a></li>
+  <li><a href="#optimización" id="toc-optimización" class="nav-link" data-scroll-target="#optimización">Optimización</a></li>
+  <li><a href="#estudio-de-una-función" id="toc-estudio-de-una-función" class="nav-link" data-scroll-target="#estudio-de-una-función">Estudio de una función</a></li>
+  <li><a href="#problemas-tipo-pau" id="toc-problemas-tipo-pau" class="nav-link" data-scroll-target="#problemas-tipo-pau">Problemas tipo PAU</a></li>
+  <li><a href="#soluciones" id="toc-soluciones" class="nav-link" data-scroll-target="#soluciones">Soluciones</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Aplicaciones de la derivada — relación de ejercicios</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Relación de 25 ejercicios: del 1 al 9 son básicos y del 10 al 25 siguen el estilo de la PAU de Andalucía para Matemáticas Aplicadas a las Ciencias Sociales II (ejercicio de análisis, 3 puntos). Los marcados como <em>competenciales</em> piden modelizar, interpretar el resultado en el contexto o justificar. Las soluciones están al final. Una función es <strong>convexa</strong> donde <span class="math inline">\(f''&gt;0\)</span> y <strong>cóncava</strong> donde <span class="math inline">\(f''&lt;0\)</span>.</p>
+<section id="monotonía-extremos-y-curvatura" class="level2">
+<h2 class="anchored" data-anchor-id="monotonía-extremos-y-curvatura">Monotonía, extremos y curvatura</h2>
+<p><strong>1.</strong> Sea <span class="math inline">\(f(x)=x^3-6x^2+9x+1\)</span>. a) Halla los intervalos de crecimiento y de decrecimiento. b) Halla sus extremos relativos.</p>
+<p><strong>2.</strong> Sea <span class="math inline">\(f(x)=x\,e^{-x}\)</span>. a) Calcula <span class="math inline">\(f'(x)\)</span>. b) Halla su extremo relativo y clasifícalo. c) Calcula <span class="math inline">\(f''(x)\)</span> y halla el punto de inflexión.</p>
+<p><strong>3.</strong> Sea <span class="math inline">\(f(x)=x^4-4x^3\)</span>. a) Halla los puntos con <span class="math inline">\(f'(x)=0\)</span> y estudia el signo de <span class="math inline">\(f'\)</span> para decidir cuáles son extremos. b) Estudia la curvatura (intervalos de convexidad y concavidad). c) Halla los puntos de inflexión.</p>
+<p><strong>4.</strong> Halla los extremos absolutos de <span class="math inline">\(f(x)=x^3-6x^2+9x+1\)</span> en el intervalo <span class="math inline">\([0,5]\)</span>: a) calcula <span class="math inline">\(f\)</span> en los puntos críticos y en los extremos del intervalo; b) escribe el máximo y el mínimo absolutos y dónde se alcanzan.</p>
+<p><strong>5.</strong> Estudia la curvatura de <span class="math inline">\(f(x)=x^3-3x^2+2\)</span> y halla su punto de inflexión.</p>
+</section>
+<section id="optimización" class="level2">
+<h2 class="anchored" data-anchor-id="optimización">Optimización</h2>
+<p><strong>6.</strong> Halla dos números positivos que sumen 20 y cuyo producto sea máximo.</p>
+<p><strong>7.</strong> Entre todos los rectángulos de perímetro 60 m, halla las dimensiones del de área máxima y calcula esa área.</p>
+<p><strong>8.</strong> El beneficio, en euros, de una empresa al fabricar <span class="math inline">\(x\)</span> unidades es <span class="math inline">\(B(x)=-2x^2+40x-100\)</span>. Halla las unidades que dan el beneficio máximo y ese beneficio.</p>
+</section>
+<section id="estudio-de-una-función" class="level2">
+<h2 class="anchored" data-anchor-id="estudio-de-una-función">Estudio de una función</h2>
+<p><strong>9.</strong> Sea <span class="math inline">\(f(x)=\ln(x^2+1)\)</span>. a) Calcula <span class="math inline">\(f'(x)\)</span> y estudia la monotonía. b) Halla su extremo relativo. c) Estudia la curvatura y halla los puntos de inflexión.</p>
+</section>
+<section id="problemas-tipo-pau" class="level2">
+<h2 class="anchored" data-anchor-id="problemas-tipo-pau">Problemas tipo PAU</h2>
+<p><strong>10.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> El beneficio, en miles de euros, de una empresa <span class="math inline">\(t\)</span> años después de abrir es <span class="math inline">\(B(t)=t^3-12t^2+36t-5\)</span>, para <span class="math inline">\(1\le t\le7\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(B'(t)\)</span> y resuelve <span class="math inline">\(B'(t)=0\)</span>.</p></li>
+<li><p>(0,75 puntos) Estudia el crecimiento y el decrecimiento de <span class="math inline">\(B\)</span> y clasifica los extremos relativos.</p></li>
+<li><p>(0,75 puntos) Estudia la curvatura de <span class="math inline">\(B\)</span> e interpreta el punto de inflexión.</p></li>
+<li><p>(0,75 puntos) Halla el máximo y el mínimo absolutos de <span class="math inline">\(B\)</span> en <span class="math inline">\([1,7]\)</span> e interpreta el resultado.</p></li>
+</ol>
+<p><strong>11.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Un cine vende 400 entradas por sesión al precio de 8 €. Por cada euro que sube el precio pierde 40 espectadores.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Comprueba que, con el precio <span class="math inline">\(p\)</span>, el ingreso es <span class="math inline">\(I(p)=720p-40p^2\)</span>.</p></li>
+<li><p>(0,75 puntos) Halla el precio que da el ingreso máximo.</p></li>
+<li><p>(0,75 puntos) Comprueba con la segunda derivada que es un máximo y calcula ese ingreso y las entradas vendidas.</p></li>
+<li><p>(0,75 puntos) Compara con el ingreso al precio actual de 8 € e interpreta la diferencia.</p></li>
+</ol>
+<p><strong>12.</strong> <em>(Tipo PAU · 3 puntos)</em></p>
+<p><strong>Opción A.</strong> Se quiere vallar un terreno rectangular de <span class="math inline">\(900\ \mathrm{m}^2\)</span> con la menor cantidad de valla.</p>
+<ol type="a">
+<li><p>(1 punto) Si un lado mide <span class="math inline">\(x\)</span>, escribe el perímetro <span class="math inline">\(P(x)\)</span>.</p></li>
+<li><p>(1 punto) Halla el valor de <span class="math inline">\(x\)</span> que hace mínimo el perímetro y comprueba que es un mínimo.</p></li>
+<li><p>(1 punto) Escribe las dimensiones del terreno y el perímetro mínimo.</p></li>
+</ol>
+<p><strong>Opción B.</strong> Sea <span class="math inline">\(f(x)=x^3-3x^2\)</span>.</p>
+<ol type="a">
+<li><p>(1 punto) Halla los intervalos de crecimiento y de decrecimiento.</p></li>
+<li><p>(1 punto) Halla los extremos relativos.</p></li>
+<li><p>(1 punto) Estudia la curvatura y halla el punto de inflexión.</p></li>
+</ol>
+<p><strong>13.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> El coste, en euros, de producir <span class="math inline">\(x\)</span> unidades es <span class="math inline">\(C(x)=0{,}02x^2+8x+1800\)</span>, con <span class="math inline">\(x&gt;0\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Escribe el coste medio <span class="math inline">\(C_m(x)=\dfrac{C(x)}{x}\)</span>.</p></li>
+<li><p>(0,75 puntos) Halla las unidades que hacen mínimo el coste medio y comprueba que es un mínimo.</p></li>
+<li><p>(0,75 puntos) Calcula el coste medio mínimo.</p></li>
+<li><p>(0,75 puntos) Calcula el coste marginal <span class="math inline">\(C'(300)\)</span> y compáralo con el coste medio mínimo.</p></li>
+</ol>
+<p><strong>14.</strong> <em>(Tipo PAU · 3 puntos)</em> Sea <span class="math inline">\(f(x)=\dfrac{x^2+1}{x}\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Halla el dominio de <span class="math inline">\(f\)</span> y sus asíntotas. (Escribe <span class="math inline">\(f(x)=x+\frac{1}{x}\)</span>.)</p></li>
+<li><p>(0,75 puntos) Estudia la monotonía y halla los extremos relativos.</p></li>
+<li><p>(0,75 puntos) Estudia la curvatura.</p></li>
+<li><p>(0,75 puntos) Indica si la gráfica corta a los ejes y resume el estudio en una descripción de la gráfica.</p></li>
+</ol>
+<p><strong>15.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> La demanda de un producto es <span class="math inline">\(p=60-\dfrac{x}{2}\)</span> euros cuando se venden <span class="math inline">\(x\)</span> unidades, y el coste de producir <span class="math inline">\(x\)</span> unidades es <span class="math inline">\(C(x)=10x+400\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Escribe el ingreso <span class="math inline">\(I(x)=x\cdot p\)</span>.</p></li>
+<li><p>(0,75 puntos) Escribe el beneficio <span class="math inline">\(B(x)=I(x)-C(x)\)</span>.</p></li>
+<li><p>(0,75 puntos) Halla las unidades que dan el máximo beneficio y ese beneficio.</p></li>
+<li><p>(0,75 puntos) Calcula el precio óptimo e interpreta el resultado.</p></li>
+</ol>
+<p><strong>16.</strong> <em>(Tipo PAU · 3 puntos)</em> Sea <span class="math inline">\(f(x)=x^3-3x^2-9x+5\)</span> en el intervalo <span class="math inline">\([-2,4]\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(f'(x)\)</span>.</p></li>
+<li><p>(0,75 puntos) Halla los puntos críticos que están en el intervalo.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(f\)</span> en los puntos críticos y en los extremos del intervalo.</p></li>
+<li><p>(0,75 puntos) Escribe el máximo y el mínimo absolutos de <span class="math inline">\(f\)</span> en <span class="math inline">\([-2,4]\)</span>.</p></li>
+</ol>
+<p><strong>17.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Una tienda gasta cada año, al pedir <span class="math inline">\(q\)</span> unidades por pedido, <span class="math inline">\(C(q)=\dfrac{20000}{q}+0{,}5q\)</span> euros (el primer sumando son los gastos de gestión y el segundo, los de almacenamiento), con <span class="math inline">\(q&gt;0\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Interpreta por qué un término decrece y el otro crece con <span class="math inline">\(q\)</span>.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(C'(q)\)</span>.</p></li>
+<li><p>(0,75 puntos) Halla el tamaño del pedido que minimiza el coste y comprueba que es un mínimo.</p></li>
+<li><p>(0,75 puntos) Calcula el coste mínimo y compáralo con el de pedir 100 y 400 unidades.</p></li>
+</ol>
+<p><strong>18.</strong> <em>(Tipo PAU · 3 puntos)</em> Sea <span class="math inline">\(f(x)=x^4-6x^2\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Halla los puntos con <span class="math inline">\(f'(x)=0\)</span>.</p></li>
+<li><p>(0,75 puntos) Clasifícalos con la segunda derivada.</p></li>
+<li><p>(0,75 puntos) Halla los puntos de inflexión.</p></li>
+<li><p>(0,75 puntos) Escribe los intervalos de convexidad y de concavidad.</p></li>
+</ol>
+<p><strong>19.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> El número de usuarios activos, en miles, de una aplicación <span class="math inline">\(t\)</span> meses después de lanzarla es <span class="math inline">\(G(t)=10\,t\,e^{-t/4}\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(G'(t)\)</span>.</p></li>
+<li><p>(0,75 puntos) Halla cuándo hay más usuarios y cuántos son.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(G''(t)\)</span>.</p></li>
+<li><p>(0,75 puntos) Halla el punto de inflexión e interpreta su significado.</p></li>
+</ol>
+<p><strong>20.</strong> <em>(Tipo PAU · 3 puntos)</em> La función <span class="math inline">\(f(x)=x^3+ax^2+bx\)</span> tiene un máximo relativo en <span class="math inline">\(x=1\)</span> y un mínimo relativo en <span class="math inline">\(x=3\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Plantea las dos ecuaciones que cumplen <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>.</p></li>
+<li><p>(0,75 puntos) Resuélvelas y escribe <span class="math inline">\(f(x)\)</span>.</p></li>
+<li><p>(0,75 puntos) Comprueba con la segunda derivada que <span class="math inline">\(x=1\)</span> es un máximo y <span class="math inline">\(x=3\)</span> es un mínimo.</p></li>
+<li><p>(0,75 puntos) Calcula los valores de <span class="math inline">\(f\)</span> en esos puntos.</p></li>
+</ol>
+<p><strong>21.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Un camión recorre un trayecto a velocidad constante <span class="math inline">\(v\)</span> km/h. El coste total del viaje, en euros, es <span class="math inline">\(C(v)=\dfrac{3600}{v}+\frac{v}{4}\)</span>, con <span class="math inline">\(v&gt;0\)</span> (el primer sumando es el coste del conductor y el segundo, el del combustible).</p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(C'(v)\)</span>.</p></li>
+<li><p>(0,75 puntos) Halla la velocidad que minimiza el coste y comprueba que es un mínimo.</p></li>
+<li><p>(0,75 puntos) Calcula el coste mínimo.</p></li>
+<li><p>(0,75 puntos) Interpreta por qué ir más despacio o más deprisa que la velocidad óptima encarece el viaje.</p></li>
+</ol>
+<p><strong>22.</strong> <em>(Tipo PAU · 3 puntos)</em> Sea <span class="math inline">\(f(x)=\dfrac{x}{x^2+1}\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Halla el dominio y los cortes con los ejes.</p></li>
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(\displaystyle\lim_{x\to\pm\infty}f(x)\)</span> y escribe la asíntota.</p></li>
+<li><p>(0,75 puntos) Estudia la monotonía y halla los extremos relativos.</p></li>
+<li><p>(0,75 puntos) Describe la gráfica a partir de lo anterior.</p></li>
+</ol>
+<p><strong>23.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> El rendimiento de un estudiante, en puntos, tras <span class="math inline">\(t\)</span> horas seguidas de estudio es <span class="math inline">\(R(t)=40\ln(t+1)-5t\)</span>, con <span class="math inline">\(t\ge0\)</span> (el segundo término recoge el cansancio).</p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(R'(t)\)</span>.</p></li>
+<li><p>(0,75 puntos) Halla las horas de estudio que dan el máximo rendimiento.</p></li>
+<li><p>(0,75 puntos) Comprueba con la segunda derivada que es un máximo y calcula el rendimiento máximo.</p></li>
+<li><p>(0,75 puntos) Interpreta en el contexto el signo de <span class="math inline">\(R'\)</span> antes y después de ese punto.</p></li>
+</ol>
+<p><strong>24.</strong> <em>(Tipo PAU · 3 puntos)</em> Sea <span class="math inline">\(f(x)=x^3-6x^2+9x+2\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Estudia el crecimiento y el decrecimiento.</p></li>
+<li><p>(0,75 puntos) Halla los extremos relativos.</p></li>
+<li><p>(0,75 puntos) Halla el punto de inflexión.</p></li>
+<li><p>(0,75 puntos) Halla la recta tangente a la gráfica en el punto de inflexión.</p></li>
+</ol>
+<p><strong>25.</strong> <em>(Tipo PAU · 3 puntos)</em></p>
+<p><strong>Opción A.</strong> Halla dos números positivos que sumen 24 y tales que el producto del primero por el cuadrado del segundo sea máximo.</p>
+<ol type="a">
+<li><p>(1 punto) Escribe la función que hay que maximizar, con <span class="math inline">\(x\)</span> el primer número, y su dominio.</p></li>
+<li><p>(1 punto) Calcula la derivada y halla sus puntos críticos.</p></li>
+<li><p>(1 punto) Comprueba que se trata de un máximo y escribe los números y el producto máximo.</p></li>
+</ol>
+<p><strong>Opción B.</strong> Sea <span class="math inline">\(g(x)=e^{-x^2}\)</span>.</p>
+<ol type="a">
+<li><p>(1 punto) Estudia la monotonía y halla el extremo relativo.</p></li>
+<li><p>(1 punto) Estudia la curvatura y halla los puntos de inflexión.</p></li>
+<li><p>(1 punto) Calcula <span class="math inline">\(\displaystyle\lim_{x\to\pm\infty}g(x)\)</span> y escribe la asíntota.</p></li>
+</ol>
+</section>
+<section id="soluciones" class="level2">
+<h2 class="anchored" data-anchor-id="soluciones">Soluciones</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(f'(x)=3x^2-12x+9=3(x-1)(x-3)\)</span>, que se anula en <span class="math inline">\(x=1\)</span> y <span class="math inline">\(x=3\)</span>. Signo de <span class="math inline">\(f'\)</span>: positivo en <span class="math inline">\((-\infty,1)\)</span>, negativo en <span class="math inline">\((1,3)\)</span> y positivo en <span class="math inline">\((3,+\infty)\)</span>. Luego <span class="math inline">\(f\)</span> <strong>crece</strong> en <span class="math inline">\((-\infty,1)\cup(3,+\infty)\)</span> y <strong>decrece</strong> en <span class="math inline">\((1,3)\)</span>.</p></li>
+<li><p><span class="math inline">\(f'\)</span> pasa de <span class="math inline">\(+\)</span> a <span class="math inline">\(-\)</span> en <span class="math inline">\(x=1\)</span>: máximo relativo en <span class="math inline">\((1,5)\)</span>. Pasa de <span class="math inline">\(-\)</span> a <span class="math inline">\(+\)</span> en <span class="math inline">\(x=3\)</span>: mínimo relativo en <span class="math inline">\((3,1)\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(f'(x)=1\cdot e^{-x}+x\cdot(-e^{-x})=(1-x)e^{-x}\)</span>.</p></li>
+<li><p><span class="math inline">\(f'(x)=0\Rightarrow x=1\)</span>. Como <span class="math inline">\(e^{-x}&gt;0\)</span>, <span class="math inline">\(f'\)</span> es positiva para <span class="math inline">\(x&lt;1\)</span> y negativa para <span class="math inline">\(x&gt;1\)</span>: máximo relativo en <span class="math inline">\(\left(1,\frac{1}{e}\right)\)</span>.</p></li>
+<li><p><span class="math inline">\(f''(x)=-e^{-x}-(1-x)e^{-x}=(x-2)e^{-x}\)</span>. Se anula en <span class="math inline">\(x=2\)</span> y cambia de signo (negativa antes, positiva después): punto de inflexión en <span class="math inline">\(\left(2,\frac{2}{e^2}\right)\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(f'(x)=4x^3-12x^2=4x^2(x-3)\)</span>, que se anula en <span class="math inline">\(x=0\)</span> y <span class="math inline">\(x=3\)</span>. Como <span class="math inline">\(4x^2\ge0\)</span>, el signo de <span class="math inline">\(f'\)</span> es el de <span class="math inline">\(x-3\)</span>: negativo en <span class="math inline">\((-\infty,3)\)</span> (también alrededor de <span class="math inline">\(x=0\)</span>) y positivo en <span class="math inline">\((3,+\infty)\)</span>. En <span class="math inline">\(x=3\)</span> pasa de <span class="math inline">\(-\)</span> a <span class="math inline">\(+\)</span>: <strong>mínimo</strong> relativo en <span class="math inline">\((3,-27)\)</span>. En <span class="math inline">\(x=0\)</span> no cambia de signo: <strong>no hay extremo</strong>.</p></li>
+<li><p><span class="math inline">\(f''(x)=12x^2-24x=12x(x-2)\)</span>. Es positiva en <span class="math inline">\((-\infty,0)\cup(2,+\infty)\)</span>: <span class="math inline">\(f\)</span> es convexa ahí; y negativa en <span class="math inline">\((0,2)\)</span>: <span class="math inline">\(f\)</span> es cóncava.</p></li>
+<li><p><span class="math inline">\(f''\)</span> cambia de signo en <span class="math inline">\(x=0\)</span> y en <span class="math inline">\(x=2\)</span>: puntos de inflexión <span class="math inline">\((0,0)\)</span> y <span class="math inline">\((2,-16)\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(f'(x)=3(x-1)(x-3)\)</span>, luego los puntos críticos son <span class="math inline">\(x=1\)</span> y <span class="math inline">\(x=3\)</span>. <span class="math inline">\(f(0)=1\)</span>, <span class="math inline">\(f(1)=5\)</span>, <span class="math inline">\(f(3)=1\)</span> y <span class="math inline">\(f(5)=125-150+45+1=21\)</span>.</p></li>
+<li><p>El mayor valor es <span class="math inline">\(21\)</span>: <strong>máximo absoluto</strong> en <span class="math inline">\(x=5\)</span>. El menor es <span class="math inline">\(1\)</span>: <strong>mínimo absoluto</strong>, que se alcanza en <span class="math inline">\(x=0\)</span> y en <span class="math inline">\(x=3\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(f'(x)=3x^2-6x\)</span> y <span class="math inline">\(f''(x)=6x-6=6(x-1)\)</span>. Es negativa para <span class="math inline">\(x&lt;1\)</span> (cóncava) y positiva para <span class="math inline">\(x&gt;1\)</span> (convexa). Cambia de signo en <span class="math inline">\(x=1\)</span>: punto de inflexión <span class="math inline">\((1,0)\)</span>, porque <span class="math inline">\(f(1)=1-3+2=0\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> e <span class="math inline">\(y=20-x\)</span>. El producto es <span class="math inline">\(P(x)=x(20-x)=20x-x^2\)</span> con <span class="math inline">\(0&lt;x&lt;20\)</span>. <span class="math inline">\(P'(x)=20-2x=0\Rightarrow x=10\)</span>, y <span class="math inline">\(P''=-2&lt;0\)</span> (máximo). Los números son <span class="math inline">\(10\)</span> y <span class="math inline">\(10\)</span>, con producto <span class="math inline">\(100\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>7
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Con un lado <span class="math inline">\(x\)</span>, el otro mide <span class="math inline">\(30-x\)</span> (el semiperímetro es 30) y el área es <span class="math inline">\(A(x)=x(30-x)=30x-x^2\)</span> con <span class="math inline">\(0&lt;x&lt;30\)</span>. <span class="math inline">\(A'(x)=30-2x=0\Rightarrow x=15\)</span>, y <span class="math inline">\(A''=-2&lt;0\)</span> (máximo). Es un cuadrado de <span class="math inline">\(15\times15\)</span> m, con área <span class="math inline">\(225\ \mathrm{m}^2\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>8
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(B'(x)=-4x+40=0\Rightarrow x=10\)</span>. Como <span class="math inline">\(B''=-4&lt;0\)</span>, es un máximo. <span class="math inline">\(B(10)=-200+400-100=100\)</span>. Hay que fabricar 10 unidades y el beneficio máximo es de <span class="math inline">\(100\)</span> €.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>9
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(f'(x)=\dfrac{2x}{x^2+1}\)</span>. Como <span class="math inline">\(x^2+1&gt;0\)</span>, <span class="math inline">\(f'\)</span> es negativa para <span class="math inline">\(x&lt;0\)</span> y positiva para <span class="math inline">\(x&gt;0\)</span>: <span class="math inline">\(f\)</span> decrece en <span class="math inline">\((-\infty,0)\)</span> y crece en <span class="math inline">\((0,+\infty)\)</span>.</p></li>
+<li><p><span class="math inline">\(f'(0)=0\)</span> y <span class="math inline">\(f'\)</span> pasa de <span class="math inline">\(-\)</span> a <span class="math inline">\(+\)</span>: mínimo relativo en <span class="math inline">\((0,0)\)</span>, porque <span class="math inline">\(f(0)=\ln1=0\)</span>.</p></li>
+<li><p><span class="math inline">\(f''(x)=\dfrac{2(x^2+1)-2x\cdot2x}{(x^2+1)^2}=\dfrac{2(1-x^2)}{(x^2+1)^2}\)</span>. Es positiva para <span class="math inline">\(-1&lt;x&lt;1\)</span> (convexa) y negativa para <span class="math inline">\(|x|&gt;1\)</span> (cóncava). Los puntos de inflexión son <span class="math inline">\(x=\pm1\)</span>: <span class="math inline">\((-1,\ln2)\)</span> y <span class="math inline">\((1,\ln2)\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>10
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(B'(t)=3t^2-24t+36=3(t-2)(t-6)\)</span>, que se anula en <span class="math inline">\(t=2\)</span> y <span class="math inline">\(t=6\)</span>.</p></li>
+<li><p><span class="math inline">\(B'&gt;0\)</span> en <span class="math inline">\((1,2)\)</span>, <span class="math inline">\(B'&lt;0\)</span> en <span class="math inline">\((2,6)\)</span> y <span class="math inline">\(B'&gt;0\)</span> en <span class="math inline">\((6,7)\)</span>. El beneficio <strong>crece</strong> en <span class="math inline">\((1,2)\cup(6,7)\)</span> y <strong>decrece</strong> en <span class="math inline">\((2,6)\)</span>. Máximo relativo en <span class="math inline">\(t=2\)</span>, con <span class="math inline">\(B(2)=27\)</span>; mínimo relativo en <span class="math inline">\(t=6\)</span>, con <span class="math inline">\(B(6)=-5\)</span>.</p></li>
+<li><p><span class="math inline">\(B''(t)=6t-24=6(t-4)\)</span>: cóncava en <span class="math inline">\((1,4)\)</span>, convexa en <span class="math inline">\((4,7)\)</span>, con punto de inflexión en <span class="math inline">\(t=4\)</span>, con <span class="math inline">\(B(4)=11\)</span>. Hasta el año 4 la bajada del beneficio se acelera y desde el año 4 se frena, hasta que el beneficio se recupera.</p></li>
+<li><p>Valores: <span class="math inline">\(B(1)=20\)</span>, <span class="math inline">\(B(2)=27\)</span>, <span class="math inline">\(B(6)=-5\)</span> y <span class="math inline">\(B(7)=2\)</span>. El <strong>máximo absoluto</strong> es <span class="math inline">\(27\)</span> mil euros en <span class="math inline">\(t=2\)</span> y el <strong>mínimo absoluto</strong> es <span class="math inline">\(-5\)</span> mil euros en <span class="math inline">\(t=6\)</span> (el año en que la empresa pierde más dinero).</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>11
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Si el precio es <span class="math inline">\(p\)</span>, hay <span class="math inline">\(p-8\)</span> euros de subida y se pierden <span class="math inline">\(40(p-8)\)</span> espectadores, así que se venden <span class="math inline">\(400-40(p-8)=720-40p\)</span> entradas. El ingreso es <span class="math inline">\(I(p)=p(720-40p)=720p-40p^2\)</span>.</p></li>
+<li><p><span class="math inline">\(I'(p)=720-80p=0\Rightarrow p=9\)</span> €.</p></li>
+<li><p><span class="math inline">\(I''(p)=-80&lt;0\)</span>: es un máximo. Se venden <span class="math inline">\(720-40\cdot9=360\)</span> entradas y el ingreso es <span class="math inline">\(I(9)=3240\)</span> €.</p></li>
+<li><p>Con 8 € el ingreso es <span class="math inline">\(I(8)=3200\)</span> €. Subir el precio a 9 € aumenta el ingreso en <span class="math inline">\(40\)</span> €, aunque se vendan 40 entradas menos.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>12
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Opción A.</strong></p>
+<ol type="a">
+<li><p>Si un lado mide <span class="math inline">\(x\)</span>, el otro mide <span class="math inline">\(\dfrac{900}{x}\)</span> y el perímetro es <span class="math inline">\(P(x)=2x+\dfrac{1800}{x}\)</span>, con <span class="math inline">\(x&gt;0\)</span>.</p></li>
+<li><p><span class="math inline">\(P'(x)=2-\dfrac{1800}{x^2}=0\Rightarrow x^2=900\Rightarrow x=30\)</span>. Como <span class="math inline">\(P''(x)=\dfrac{3600}{x^3}&gt;0\)</span>, es un mínimo.</p></li>
+<li><p>El terreno es un cuadrado de <span class="math inline">\(30\times30\)</span> m y el perímetro mínimo es <span class="math inline">\(P(30)=60+60=120\)</span> m.</p></li>
+</ol>
+<p><strong>Opción B.</strong></p>
+<ol type="a">
+<li><p><span class="math inline">\(f'(x)=3x^2-6x=3x(x-2)\)</span>, que se anula en <span class="math inline">\(x=0\)</span> y <span class="math inline">\(x=2\)</span>. <span class="math inline">\(f\)</span> <strong>crece</strong> en <span class="math inline">\((-\infty,0)\cup(2,+\infty)\)</span> y <strong>decrece</strong> en <span class="math inline">\((0,2)\)</span>.</p></li>
+<li><p>Máximo relativo en <span class="math inline">\((0,0)\)</span> y mínimo relativo en <span class="math inline">\((2,-4)\)</span>.</p></li>
+<li><p><span class="math inline">\(f''(x)=6x-6=6(x-1)\)</span>: cóncava en <span class="math inline">\((-\infty,1)\)</span> y convexa en <span class="math inline">\((1,+\infty)\)</span>. Punto de inflexión: <span class="math inline">\((1,-2)\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>13
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(C_m(x)=\dfrac{0{,}02x^2+8x+1800}{x}=0{,}02x+8+\dfrac{1800}{x}\)</span>.</p></li>
+<li><p><span class="math inline">\(C_m'(x)=0{,}02-\dfrac{1800}{x^2}=0\Rightarrow x^2=90000\Rightarrow x=300\)</span>. Como <span class="math inline">\(C_m''(x)=\dfrac{3600}{x^3}&gt;0\)</span>, es un mínimo.</p></li>
+<li><p><span class="math inline">\(C_m(300)=6+8+6=20\)</span> €/unidad.</p></li>
+<li><p><span class="math inline">\(C'(x)=0{,}04x+8\)</span>, luego <span class="math inline">\(C'(300)=12+8=20\)</span> €/unidad. Coincide con el coste medio mínimo: en el mínimo del coste medio, el coste marginal es igual al coste medio.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>14
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(\operatorname{Dom}f=\mathbb{R}\setminus\{0\}\)</span>. Como <span class="math inline">\(f(x)=x+\frac{1}{x}\)</span>: <span class="math inline">\(\displaystyle\lim_{x\to0^+}f(x)=+\infty\)</span> y <span class="math inline">\(\displaystyle\lim_{x\to0^-}f(x)=-\infty\)</span>, luego <span class="math inline">\(x=0\)</span> es asíntota vertical. Además, <span class="math inline">\(f(x)-x=\frac{1}{x}\to0\)</span> cuando <span class="math inline">\(x\to\pm\infty\)</span>: la recta <span class="math inline">\(y=x\)</span> es asíntota oblicua.</p></li>
+<li><p><span class="math inline">\(f'(x)=1-\dfrac{1}{x^2}=\dfrac{x^2-1}{x^2}\)</span>, que se anula en <span class="math inline">\(x=\pm1\)</span>. <span class="math inline">\(f'&gt;0\)</span> en <span class="math inline">\((-\infty,-1)\cup(1,+\infty)\)</span> y <span class="math inline">\(f'&lt;0\)</span> en <span class="math inline">\((-1,0)\cup(0,1)\)</span>. Máximo relativo en <span class="math inline">\((-1,-2)\)</span> y mínimo relativo en <span class="math inline">\((1,2)\)</span>.</p></li>
+<li><p><span class="math inline">\(f''(x)=\dfrac{2}{x^3}\)</span>: negativa para <span class="math inline">\(x&lt;0\)</span> (cóncava) y positiva para <span class="math inline">\(x&gt;0\)</span> (convexa). No hay puntos de inflexión, porque <span class="math inline">\(f''\)</span> no se anula y <span class="math inline">\(x=0\)</span> no está en el dominio.</p></li>
+<li><p>No corta al eje <span class="math inline">\(Y\)</span> (no está definida en <span class="math inline">\(x=0\)</span>) ni al eje <span class="math inline">\(X\)</span> (<span class="math inline">\(x^2+1\ne0\)</span>). La gráfica tiene dos ramas: en <span class="math inline">\(x&gt;0\)</span> baja desde <span class="math inline">\(+\infty\)</span> hasta el mínimo <span class="math inline">\((1,2)\)</span> y luego sube pegada a <span class="math inline">\(y=x\)</span>; en <span class="math inline">\(x&lt;0\)</span> sube desde la asíntota <span class="math inline">\(y=x\)</span> hasta el máximo <span class="math inline">\((-1,-2)\)</span> y luego baja hasta <span class="math inline">\(-\infty\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>15
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(I(x)=x\left(60-\dfrac{x}{2}\right)=60x-\dfrac{x^2}{2}\)</span>.</p></li>
+<li><p><span class="math inline">\(B(x)=60x-\dfrac{x^2}{2}-10x-400=-\dfrac{x^2}{2}+50x-400\)</span>.</p></li>
+<li><p><span class="math inline">\(B'(x)=-x+50=0\Rightarrow x=50\)</span>. Como <span class="math inline">\(B''(x)=-1&lt;0\)</span>, es un máximo. <span class="math inline">\(B(50)=-1250+2500-400=850\)</span> €.</p></li>
+<li><p>El precio es <span class="math inline">\(p=60-\dfrac{50}{2}=35\)</span> €. Hay que producir y vender 50 unidades a 35 € cada una para obtener el máximo beneficio, <span class="math inline">\(850\)</span> €.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>16
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(f'(x)=3x^2-6x-9=3(x^2-2x-3)=3(x-3)(x+1)\)</span>.</p></li>
+<li><p><span class="math inline">\(f'(x)=0\)</span> en <span class="math inline">\(x=-1\)</span> y <span class="math inline">\(x=3\)</span>, que están en <span class="math inline">\([-2,4]\)</span>.</p></li>
+<li><p><span class="math inline">\(f(-2)=-8-12+18+5=3\)</span>, <span class="math inline">\(f(-1)=-1-3+9+5=10\)</span>, <span class="math inline">\(f(3)=27-27-27+5=-22\)</span> y <span class="math inline">\(f(4)=64-48-36+5=-15\)</span>.</p></li>
+<li><p>El máximo absoluto es <span class="math inline">\(10\)</span>, en <span class="math inline">\(x=-1\)</span>, y el mínimo absoluto es <span class="math inline">\(-22\)</span>, en <span class="math inline">\(x=3\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>17
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>El término <span class="math inline">\(\dfrac{20000}{q}\)</span> (gestión) decrece con <span class="math inline">\(q\)</span>: cuantos más pedidos grandes, menos pedidos hay que tramitar al año. El término <span class="math inline">\(0{,}5q\)</span> (almacenamiento) crece con <span class="math inline">\(q\)</span>: cuanto más se almacena, más cuesta. El coste total es un equilibrio entre ambos.</p></li>
+<li><p><span class="math inline">\(C'(q)=-\dfrac{20000}{q^2}+0{,}5\)</span>.</p></li>
+<li><p><span class="math inline">\(C'(q)=0\Rightarrow q^2=40000\Rightarrow q=200\)</span> unidades. Como <span class="math inline">\(C''(q)=\dfrac{40000}{q^3}&gt;0\)</span>, es un mínimo.</p></li>
+<li><p><span class="math inline">\(C(200)=100+100=200\)</span> €. Con 100 unidades, <span class="math inline">\(C(100)=200+50=250\)</span> €; con 400 unidades, <span class="math inline">\(C(400)=50+200=250\)</span> €. Ambos extremos cuestan 50 € más que el pedido óptimo.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>18
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(f'(x)=4x^3-12x=4x(x^2-3)=0\Rightarrow x=0\)</span> y <span class="math inline">\(x=\pm\sqrt{3}\)</span>.</p></li>
+<li><p><span class="math inline">\(f''(x)=12x^2-12\)</span>. <span class="math inline">\(f''(0)=-12&lt;0\)</span>: máximo relativo en <span class="math inline">\((0,0)\)</span>. <span class="math inline">\(f''(\pm\sqrt{3})=24&gt;0\)</span>: mínimos relativos en <span class="math inline">\(\left(\pm\sqrt{3},-9\right)\)</span>.</p></li>
+<li><p><span class="math inline">\(f''(x)=12(x-1)(x+1)=0\Rightarrow x=\pm1\)</span>, y <span class="math inline">\(f''\)</span> cambia de signo en ambos. Puntos de inflexión: <span class="math inline">\((-1,-5)\)</span> y <span class="math inline">\((1,-5)\)</span>.</p></li>
+<li><p><span class="math inline">\(f''&gt;0\)</span> en <span class="math inline">\((-\infty,-1)\cup(1,+\infty)\)</span>: convexa. <span class="math inline">\(f''&lt;0\)</span> en <span class="math inline">\((-1,1)\)</span>: cóncava.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>19
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(G'(t)=10e^{-t/4}+10t\cdot\left(-\frac{1}{4}\right)e^{-t/4}=10\left(1-\frac{t}{4}\right)e^{-t/4}\)</span>.</p></li>
+<li><p><span class="math inline">\(G'(t)=0\Rightarrow t=4\)</span>. <span class="math inline">\(G'&gt;0\)</span> para <span class="math inline">\(t&lt;4\)</span> y <span class="math inline">\(G'&lt;0\)</span> para <span class="math inline">\(t&gt;4\)</span>: máximo en <span class="math inline">\(t=4\)</span>. <span class="math inline">\(G(4)=40e^{-1}\approx14{,}72\)</span>. Hay más usuarios a los 4 meses, unos 14 720.</p></li>
+<li><p><span class="math inline">\(G''(t)=-\dfrac{10}{4}e^{-t/4}-\dfrac{10}{4}\left(1-\frac{t}{4}\right)e^{-t/4}=\dfrac{5}{8}(t-8)e^{-t/4}\)</span>.</p></li>
+<li><p><span class="math inline">\(G''(t)=0\Rightarrow t=8\)</span>, y cambia de signo (negativa antes, positiva después). Punto de inflexión: <span class="math inline">\(\left(8,\ 80e^{-2}\right)\approx(8;\ 10{,}83)\)</span>. Hasta el mes 8 los usuarios pierden cada vez más rápido, y desde ese momento la bajada se frena.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>20
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(f'(x)=3x^2+2ax+b\)</span>. Los extremos en <span class="math inline">\(x=1\)</span> y <span class="math inline">\(x=3\)</span> exigen <span class="math inline">\(f'(1)=3+2a+b=0\)</span> y <span class="math inline">\(f'(3)=27+6a+b=0\)</span>.</p></li>
+<li><p>Restando, <span class="math inline">\(24+4a=0\)</span>, luego <span class="math inline">\(a=-6\)</span> y <span class="math inline">\(b=-3-2a=9\)</span>. Entonces <span class="math inline">\(f(x)=x^3-6x^2+9x\)</span>.</p></li>
+<li><p><span class="math inline">\(f''(x)=6x+2a=6x-12\)</span>. <span class="math inline">\(f''(1)=-6&lt;0\)</span>: máximo en <span class="math inline">\(x=1\)</span>. <span class="math inline">\(f''(3)=6&gt;0\)</span>: mínimo en <span class="math inline">\(x=3\)</span>.</p></li>
+<li><p><span class="math inline">\(f(1)=1-6+9=4\)</span> y <span class="math inline">\(f(3)=27-54+27=0\)</span>. El máximo relativo es <span class="math inline">\((1,4)\)</span> y el mínimo relativo es <span class="math inline">\((3,0)\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>21
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(C'(v)=-\dfrac{3600}{v^2}+\frac{1}{4}\)</span>.</p></li>
+<li><p><span class="math inline">\(C'(v)=0\Rightarrow v^2=14400\Rightarrow v=120\)</span> km/h. Como <span class="math inline">\(C''(v)=\dfrac{7200}{v^3}&gt;0\)</span>, es un mínimo.</p></li>
+<li><p><span class="math inline">\(C(120)=30+30=60\)</span> €.</p></li>
+<li><p>Al ir más despacio, el viaje dura más y sube el coste del conductor <span class="math inline">\(\left(\dfrac{3600}{v}\right)\)</span>; al ir más deprisa, se gasta más combustible <span class="math inline">\(\left(\frac{v}{4}\right)\)</span>. A <span class="math inline">\(120\)</span> km/h ambos costes están equilibrados y el total es mínimo.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>22
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(x^2+1&gt;0\)</span> para todo <span class="math inline">\(x\)</span>: <span class="math inline">\(\operatorname{Dom}f=\mathbb{R}\)</span>. Con el eje <span class="math inline">\(Y\)</span>: <span class="math inline">\(f(0)=0\)</span>. Con el eje <span class="math inline">\(X\)</span>: <span class="math inline">\(\dfrac{x}{x^2+1}=0\Rightarrow x=0\)</span>. Solo corta en el origen.</p></li>
+<li><p>El grado del numerador, <span class="math inline">\(1\)</span>, es menor que el del denominador, <span class="math inline">\(2\)</span>: <span class="math inline">\(\displaystyle\lim_{x\to\pm\infty}f(x)=0\)</span>. La asíntota horizontal es <span class="math inline">\(y=0\)</span>.</p></li>
+<li><p><span class="math inline">\(f'(x)=\dfrac{(x^2+1)-x\cdot2x}{(x^2+1)^2}=\dfrac{1-x^2}{(x^2+1)^2}\)</span>, que se anula en <span class="math inline">\(x=\pm1\)</span>. <span class="math inline">\(f'&lt;0\)</span> en <span class="math inline">\((-\infty,-1)\)</span>, <span class="math inline">\(f'&gt;0\)</span> en <span class="math inline">\((-1,1)\)</span> y <span class="math inline">\(f'&lt;0\)</span> en <span class="math inline">\((1,+\infty)\)</span>. Mínimo relativo en <span class="math inline">\(\left(-1,-\frac{1}{2}\right)\)</span> y máximo relativo en <span class="math inline">\(\left(1,\frac{1}{2}\right)\)</span>.</p></li>
+<li><p>La gráfica pasa por el origen, baja hasta el mínimo <span class="math inline">\(\left(-1,-\frac{1}{2}\right)\)</span> por la izquierda, sube hasta el máximo <span class="math inline">\(\left(1,\frac{1}{2}\right)\)</span> y luego decrece acercándose a la asíntota <span class="math inline">\(y=0\)</span> por la derecha; por la izquierda también se acerca a <span class="math inline">\(y=0\)</span> (desde valores negativos). Es simétrica respecto del origen.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>23
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(R'(t)=\dfrac{40}{t+1}-5\)</span>.</p></li>
+<li><p><span class="math inline">\(R'(t)=0\Rightarrow\dfrac{40}{t+1}=5\Rightarrow t+1=8\)</span>, luego <span class="math inline">\(t=7\)</span> horas.</p></li>
+<li><p><span class="math inline">\(R''(t)=-\dfrac{40}{(t+1)^2}\)</span>, y <span class="math inline">\(R''(7)=-\dfrac{40}{64}=-\frac{5}{8}&lt;0\)</span>: es un máximo. <span class="math inline">\(R(7)=40\ln8-35\approx48{,}18\)</span> puntos.</p></li>
+<li><p><span class="math inline">\(R'(t)&gt;0\)</span> si <span class="math inline">\(t&lt;7\)</span>: el rendimiento aumenta con cada hora de estudio. <span class="math inline">\(R'(t)&lt;0\)</span> si <span class="math inline">\(t&gt;7\)</span>: a partir de las 7 horas, estudiar más <strong>empeora</strong> el rendimiento por el cansancio.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>24
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(f'(x)=3x^2-12x+9=3(x-1)(x-3)\)</span>. <span class="math inline">\(f'&gt;0\)</span> en <span class="math inline">\((-\infty,1)\cup(3,+\infty)\)</span> y <span class="math inline">\(f'&lt;0\)</span> en <span class="math inline">\((1,3)\)</span>: crece en <span class="math inline">\((-\infty,1)\cup(3,+\infty)\)</span> y decrece en <span class="math inline">\((1,3)\)</span>.</p></li>
+<li><p>Máximo relativo en <span class="math inline">\((1,6)\)</span> y mínimo relativo en <span class="math inline">\((3,2)\)</span>, porque <span class="math inline">\(f(1)=1-6+9+2=6\)</span> y <span class="math inline">\(f(3)=27-54+27+2=2\)</span>.</p></li>
+<li><p><span class="math inline">\(f''(x)=6x-12=0\Rightarrow x=2\)</span>, y cambia de signo. Punto de inflexión: <span class="math inline">\((2,4)\)</span>, porque <span class="math inline">\(f(2)=8-24+18+2=4\)</span>.</p></li>
+<li><p><span class="math inline">\(f'(2)=12-24+9=-3\)</span>, luego la tangente es <span class="math inline">\(y-4=-3(x-2)\)</span>, es decir, <span class="math inline">\(y=-3x+10\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>25
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Opción A.</strong></p>
+<ol type="a">
+<li><p>Si el primer número es <span class="math inline">\(x\)</span>, el segundo es <span class="math inline">\(24-x\)</span> y hay que maximizar <span class="math inline">\(P(x)=x(24-x)^2\)</span> con <span class="math inline">\(0&lt;x&lt;24\)</span>.</p></li>
+<li><p><span class="math inline">\(P'(x)=(24-x)^2-2x(24-x)=(24-x)(24-3x)\)</span>. Se anula en <span class="math inline">\(x=24\)</span> (fuera del dominio) y en <span class="math inline">\(x=8\)</span>.</p></li>
+<li><p><span class="math inline">\(P'&gt;0\)</span> en <span class="math inline">\((0,8)\)</span> y <span class="math inline">\(P'&lt;0\)</span> en <span class="math inline">\((8,24)\)</span>, luego <span class="math inline">\(x=8\)</span> es un máximo. Los números son <span class="math inline">\(8\)</span> y <span class="math inline">\(16\)</span>, y el producto máximo es <span class="math inline">\(P(8)=8\cdot256=2048\)</span>.</p></li>
+</ol>
+<p><strong>Opción B.</strong></p>
+<ol type="a">
+<li><p><span class="math inline">\(g'(x)=-2x\,e^{-x^2}\)</span>. Como <span class="math inline">\(e^{-x^2}&gt;0\)</span>, <span class="math inline">\(g'&gt;0\)</span> para <span class="math inline">\(x&lt;0\)</span> y <span class="math inline">\(g'&lt;0\)</span> para <span class="math inline">\(x&gt;0\)</span>: crece en <span class="math inline">\((-\infty,0)\)</span> y decrece en <span class="math inline">\((0,+\infty)\)</span>. Máximo relativo en <span class="math inline">\((0,1)\)</span>.</p></li>
+<li><p><span class="math inline">\(g''(x)=-2e^{-x^2}+4x^2e^{-x^2}=(4x^2-2)e^{-x^2}\)</span>, que se anula en <span class="math inline">\(x=\pm\dfrac{\sqrt{2}}{2}\)</span>. Es positiva (convexa) para <span class="math inline">\(|x|&gt;\dfrac{\sqrt{2}}{2}\)</span> y negativa (cóncava) entre ambos puntos. Puntos de inflexión: <span class="math inline">\(\left(\pm\dfrac{\sqrt{2}}{2},\ e^{-1/2}\right)\)</span>.</p></li>
+<li><p>Cuando <span class="math inline">\(x\to\pm\infty\)</span>, <span class="math inline">\(x^2\to+\infty\)</span> y <span class="math inline">\(e^{-x^2}\to0\)</span>: <span class="math inline">\(\displaystyle\lim_{x\to\pm\infty}g(x)=0\)</span>. La asíntota horizontal es <span class="math inline">\(y=0\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

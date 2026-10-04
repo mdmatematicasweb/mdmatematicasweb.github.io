@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Probabilidad — relación de ejercicios – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-2d82e0ab39c09339319a3284da2afbd7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+#md-loader{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;background:#262A3D;color:#EBF8EE;font-family:"Bricolage Grotesque",system-ui,sans-serif;transition:opacity .35s ease,visibility .35s}
+#md-loader.md-out{opacity:0;visibility:hidden}
+#md-loader .ml-logo{width:96px;height:96px;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border:5px solid #000;background:#000;box-shadow:8px 8px 0 #000;animation:ml-tilt 2.4s ease-in-out infinite}
+#md-loader .ml-logo i{display:grid;place-items:center;font:900 28px/1 "Arial Black",Arial,sans-serif;font-style:normal;color:#000;animation:ml-pop 1.6s ease-in-out infinite}
+#md-loader .ml-logo i:nth-child(1){background:#5EC4B6}
+#md-loader .ml-logo i:nth-child(2){background:#262A3D;color:#FCE678;animation-delay:.2s}
+#md-loader .ml-logo i:nth-child(3){background:#F4736C;animation-delay:.6s}
+#md-loader .ml-logo i:nth-child(4){background:#FCE678;animation-delay:.4s}
+#md-loader .ml-txt{font-weight:800;font-size:1.25rem;text-transform:uppercase;letter-spacing:.02em;text-align:center;padding:0 1rem}
+#md-loader .ml-txt b{color:#FCE678}
+#md-loader .ml-bar{width:min(260px,70vw);height:14px;border:3px solid #000;background:#000;box-shadow:4px 4px 0 #000;overflow:hidden}
+#md-loader .ml-bar::after{content:"";display:block;height:100%;width:40%;background:repeating-linear-gradient(-45deg,#5EC4B6 0 10px,#F4736C 10px 20px,#FCE678 20px 30px);animation:ml-slide 1.1s ease-in-out infinite}
+@keyframes ml-pop{0%,100%{transform:scale(1)}50%{transform:scale(.8)}}
+@keyframes ml-tilt{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes ml-slide{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+@media (prefers-reduced-motion:reduce){#md-loader *{animation:none!important}}
+</style>
+<noscript><style>#md-loader{display:none!important}</style></noscript>
+<script>
+(function () {
+  try {
+    if (/^\/(index\.html)?$/.test(location.pathname)) return;
+    var el = document.createElement("div");
+    el.id = "md-loader";
+    el.setAttribute("role", "status");
+    el.innerHTML =
+      '<div class="ml-logo" aria-hidden="true"><i>+</i><i>&minus;</i><i>&times;</i><i>=</i></div>' +
+      '<div class="ml-txt">Mientras carga&hellip; <b>&iexcl;&iexcl;&iexcl;un descanso!!!</b></div>' +
+      '<div class="ml-bar" aria-hidden="true"></div>';
+    document.documentElement.appendChild(el);
+    var t0 = Date.now(), gone = false;
+    var hide = function () {
+      if (gone) return;
+      gone = true;
+      var wait = Math.max(0, 1000 - (Date.now() - t0));
+      setTimeout(function () {
+        el.classList.add("md-out");
+        setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 450);
+      }, wait);
+    };
+    var ready = function () {
+      var m = window.MathJax;
+      if (m && m.startup && m.startup.promise && m.startup.promise.then) {
+        m.startup.promise.then(hide, hide);
+      } else { hide(); }
+    };
+    if (document.readyState === "complete") ready();
+    else window.addEventListener("load", ready);
+    window.addEventListener("pageshow", function (e) { if (e.persisted) hide(); });
+    setTimeout(hide, 10000);
+  } catch (e) {}
+})();
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-simulacro-pau" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">★ Simulacro PAU</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-simulacro-pau">    
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ciencias/examen/index.html">
+ <span class="dropdown-text">Ciencias (Matemáticas II)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ccss/examen/index.html">
+ <span class="dropdown-text">Ciencias Sociales (Mat. Aplicadas II)</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#sucesos-y-propiedades" id="toc-sucesos-y-propiedades" class="nav-link active" data-scroll-target="#sucesos-y-propiedades">Sucesos y propiedades</a></li>
+  <li><a href="#experimentos-compuestos-condicionada-e-independencia" id="toc-experimentos-compuestos-condicionada-e-independencia" class="nav-link" data-scroll-target="#experimentos-compuestos-condicionada-e-independencia">Experimentos compuestos, condicionada e independencia</a></li>
+  <li><a href="#probabilidad-total-y-bayes" id="toc-probabilidad-total-y-bayes" class="nav-link" data-scroll-target="#probabilidad-total-y-bayes">Probabilidad total y Bayes</a></li>
+  <li><a href="#problemas-tipo-pau" id="toc-problemas-tipo-pau" class="nav-link" data-scroll-target="#problemas-tipo-pau">Problemas tipo PAU</a></li>
+  <li><a href="#soluciones" id="toc-soluciones" class="nav-link" data-scroll-target="#soluciones">Soluciones</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Probabilidad — relación de ejercicios</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Relación de 25 ejercicios: del 1 al 9 son básicos y del 10 al 25 siguen el estilo de la PAU de Andalucía para Matemáticas Aplicadas a las Ciencias Sociales II (ejercicio de estadística, 2 puntos, sin opciones). Los marcados como <em>competenciales</em> piden modelizar, interpretar el resultado en el contexto o justificar. Las soluciones están al final. Se usa <span class="math inline">\(A^C\)</span> para el complementario de <span class="math inline">\(A\)</span> y <span class="math inline">\(A-B=A\cap B^C\)</span>. En las poblaciones finitas, las extracciones se hacen con reemplazamiento, salvo que se diga lo contrario.</p>
+<section id="sucesos-y-propiedades" class="level2">
+<h2 class="anchored" data-anchor-id="sucesos-y-propiedades">Sucesos y propiedades</h2>
+<p><strong>1.</strong> Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> dos sucesos con <span class="math inline">\(P(A)=0{,}5\)</span>, <span class="math inline">\(P(B)=0{,}4\)</span> y <span class="math inline">\(P(A\cap B)=0{,}2\)</span>. Calcula: a) <span class="math inline">\(P(A\cup B)\)</span>; b) <span class="math inline">\(P(A^C)\)</span>; c) <span class="math inline">\(P(A-B)\)</span>; d) <span class="math inline">\(P(A^C\cap B^C)\)</span>.</p>
+<p><strong>2.</strong> Sean <span class="math inline">\(P(A)=0{,}6\)</span>, <span class="math inline">\(P(B)=0{,}5\)</span> y <span class="math inline">\(P(A\cup B)=0{,}8\)</span>. Calcula: a) <span class="math inline">\(P(A\cap B)\)</span>; b) <span class="math inline">\(P(A^C\cup B^C)\)</span>; c) <span class="math inline">\(P(A^C\cap B^C)\)</span>. Indica qué ley de De Morgan usas en b) y en c).</p>
+<p><strong>3.</strong> Se lanzan dos dados equilibrados. Calcula la probabilidad de: a) que la suma sea 8; b) que la suma sea al menos 10; c) que salga al menos un 6.</p>
+</section>
+<section id="experimentos-compuestos-condicionada-e-independencia" class="level2">
+<h2 class="anchored" data-anchor-id="experimentos-compuestos-condicionada-e-independencia">Experimentos compuestos, condicionada e independencia</h2>
+<p><strong>4.</strong> Una urna tiene 5 bolas rojas y 3 azules. Se extraen dos bolas. Calcula la probabilidad de que las dos sean rojas: a) con reemplazamiento; b) sin reemplazamiento. c) Calcula, sin reemplazamiento, la probabilidad de que sean de distinto color.</p>
+<p><strong>5.</strong> Sean <span class="math inline">\(P(A)=0{,}5\)</span>, <span class="math inline">\(P(B)=0{,}4\)</span> y <span class="math inline">\(P(A\cap B)=0{,}2\)</span>. Calcula <span class="math inline">\(P(A\mid B)\)</span> y <span class="math inline">\(P(B\mid A)\)</span> y decide si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes.</p>
+<p><strong>6.</strong> Los sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes, con <span class="math inline">\(P(A)=0{,}3\)</span> y <span class="math inline">\(P(B)=0{,}5\)</span>. Calcula: a) <span class="math inline">\(P(A\cap B)\)</span>; b) <span class="math inline">\(P(A\cup B)\)</span>; c) <span class="math inline">\(P(A^C\cap B)\)</span>.</p>
+<p><strong>7.</strong> En un club deportivo de 120 personas, 30 hombres y 20 mujeres están federados, y 25 hombres y 45 mujeres no lo están. Se elige una persona al azar. Sean <span class="math inline">\(F\)</span> «está federada» y <span class="math inline">\(M\)</span> «es mujer». Calcula: a) <span class="math inline">\(P(F)\)</span> y <span class="math inline">\(P(M)\)</span>; b) <span class="math inline">\(P(F\cap M)\)</span>; c) <span class="math inline">\(P(F\mid M)\)</span> y <span class="math inline">\(P(M\mid F)\)</span>; d) ¿son <span class="math inline">\(F\)</span> y <span class="math inline">\(M\)</span> independientes?</p>
+</section>
+<section id="probabilidad-total-y-bayes" class="level2">
+<h2 class="anchored" data-anchor-id="probabilidad-total-y-bayes">Probabilidad total y Bayes</h2>
+<p><strong>8.</strong> Se elige una de dos urnas con la misma probabilidad. La urna 1 tiene 3 bolas rojas y 2 blancas; la urna 2, 1 roja y 4 blancas. Se extrae una bola de la urna elegida. Calcula la probabilidad de que sea roja.</p>
+<p><strong>9.</strong> En el experimento del ejercicio 8, la bola extraída es roja. ¿Cuál es la probabilidad de que proceda de la urna 1?</p>
+</section>
+<section id="problemas-tipo-pau" class="level2">
+<h2 class="anchored" data-anchor-id="problemas-tipo-pau">Problemas tipo PAU</h2>
+<p><strong>10.</strong> <em>(Tipo PAU · 2 puntos · competencial)</em> Una fábrica tiene tres máquinas. La máquina <span class="math inline">\(M_1\)</span> produce el <span class="math inline">\(50\,\%\)</span> de las piezas, <span class="math inline">\(M_2\)</span> el <span class="math inline">\(30\,\%\)</span> y <span class="math inline">\(M_3\)</span> el <span class="math inline">\(20\,\%\)</span>. Son defectuosas el <span class="math inline">\(2\,\%\)</span> de las de <span class="math inline">\(M_1\)</span>, el <span class="math inline">\(3\,\%\)</span> de las de <span class="math inline">\(M_2\)</span> y el <span class="math inline">\(6\,\%\)</span> de las de <span class="math inline">\(M_3\)</span>. Se elige una pieza al azar.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula la probabilidad de que sea defectuosa.</p></li>
+<li><p>(0,5 puntos) Si es defectuosa, calcula la probabilidad de que proceda de <span class="math inline">\(M_1\)</span>.</p></li>
+<li><p>(0,5 puntos) Si es defectuosa, calcula la probabilidad de que proceda de <span class="math inline">\(M_3\)</span> y decide qué máquina es el origen más probable.</p></li>
+<li><p>(0,5 puntos) Interpreta por qué <span class="math inline">\(M_3\)</span>, que produce menos piezas, es el origen más probable.</p></li>
+</ol>
+<p><strong>11.</strong> <em>(Tipo PAU · 2 puntos · competencial)</em> Una enfermedad afecta al <span class="math inline">\(1\,\%\)</span> de la población. Una prueba da positivo en el <span class="math inline">\(90\,\%\)</span> de las personas enfermas y, por error, en el <span class="math inline">\(5\,\%\)</span> de las sanas. Se elige una persona al azar.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula la probabilidad de que la prueba dé positivo.</p></li>
+<li><p>(0,5 puntos) Si da positivo, calcula la probabilidad de que la persona esté enferma.</p></li>
+<li><p>(0,5 puntos) Si da negativo, calcula la probabilidad de que la persona esté enferma.</p></li>
+<li><p>(0,5 puntos) Interpreta el resultado de b): ¿conviene confirmar un positivo con otra prueba?</p></li>
+</ol>
+<p><strong>12.</strong> <em>(Tipo PAU · 2 puntos)</em> Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> sucesos con <span class="math inline">\(P(A)=0{,}55\)</span>, <span class="math inline">\(P(B)=0{,}4\)</span> y <span class="math inline">\(P(A\cup B)=0{,}7\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(A\cap B)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(A-B)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(A^C\cap B^C)\)</span>.</p></li>
+<li><p>(0,5 puntos) Estudia si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes.</p></li>
+</ol>
+<p><strong>13.</strong> <em>(Tipo PAU · 2 puntos · competencial)</em> En una encuesta a 500 personas, 80 viven en zona urbana y van en coche al trabajo, 170 viven en zona urbana y van en transporte público, 190 viven en zona rural y van en coche, y 60 viven en zona rural y van en transporte público. Se elige una persona al azar. Sean <span class="math inline">\(C\)</span> «va en coche» y <span class="math inline">\(U\)</span> «vive en zona urbana».</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(C)\)</span> y <span class="math inline">\(P(U)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(C\mid U)\)</span> y <span class="math inline">\(P(C\mid U^C)\)</span>.</p></li>
+<li><p>(0,5 puntos) Estudia si <span class="math inline">\(C\)</span> y <span class="math inline">\(U\)</span> son independientes.</p></li>
+<li><p>(0,5 puntos) Interpreta los resultados del apartado b) en el contexto.</p></li>
+</ol>
+<p><strong>14.</strong> <em>(Tipo PAU · 2 puntos)</em> Una bolsa contiene 4 bolas verdes y 2 amarillas. Se extraen dos bolas <strong>sin reemplazamiento</strong>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula la probabilidad de que las dos sean verdes.</p></li>
+<li><p>(0,5 puntos) Calcula la probabilidad de que sean de distinto color.</p></li>
+<li><p>(0,5 puntos) Calcula la probabilidad de que al menos una sea amarilla.</p></li>
+<li><p>(0,5 puntos) Comprueba que los apartados a), b) y la probabilidad de que las dos sean amarillas suman 1.</p></li>
+</ol>
+<p><strong>15.</strong> <em>(Tipo PAU · 2 puntos · competencial)</em> Un local tiene dos sistemas de alarma independientes, que detectan una intrusión con probabilidad <span class="math inline">\(0{,}9\)</span> y <span class="math inline">\(0{,}85\)</span>, respectivamente. Hay una intrusión.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula la probabilidad de que la detecten los dos.</p></li>
+<li><p>(0,5 puntos) Calcula la probabilidad de que la detecte al menos uno.</p></li>
+<li><p>(0,5 puntos) Calcula la probabilidad de que la detecte exactamente uno.</p></li>
+<li><p>(0,5 puntos) Interpreta por qué instalar dos sistemas aumenta la seguridad.</p></li>
+</ol>
+<p><strong>16.</strong> <em>(Tipo PAU · 2 puntos)</em> Una empresa de reparto tiene dos almacenes: el <span class="math inline">\(A_1\)</span> prepara el <span class="math inline">\(60\,\%\)</span> de los pedidos y el <span class="math inline">\(A_2\)</span> el <span class="math inline">\(40\,\%\)</span>. Se retrasa el <span class="math inline">\(10\,\%\)</span> de los pedidos de <span class="math inline">\(A_1\)</span> y el <span class="math inline">\(25\,\%\)</span> de los de <span class="math inline">\(A_2\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula la probabilidad de que un pedido se retrase.</p></li>
+<li><p>(0,5 puntos) Si un pedido se ha retrasado, calcula la probabilidad de que lo prepare <span class="math inline">\(A_1\)</span>.</p></li>
+<li><p>(0,5 puntos) Si un pedido se ha retrasado, calcula la probabilidad de que lo prepare <span class="math inline">\(A_2\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula la probabilidad de que un pedido llegue a tiempo.</p></li>
+</ol>
+<p><strong>17.</strong> <em>(Tipo PAU · 2 puntos · competencial)</em> En una encuesta a 300 personas, 150 compran ropa por internet (<span class="math inline">\(A\)</span>), 120 compran calzado (<span class="math inline">\(B\)</span>) y 60 compran ambas cosas.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(A\cup B)\)</span> y la probabilidad de que no compre ninguna de las dos cosas.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(A-B)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(A\mid B)\)</span>.</p></li>
+<li><p>(0,5 puntos) Estudia si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes e interpreta el resultado.</p></li>
+</ol>
+<p><strong>18.</strong> <em>(Tipo PAU · 2 puntos)</em> Se extrae una carta de una baraja española de 40 cartas. Sean <span class="math inline">\(R\)</span> «es un rey» y <span class="math inline">\(O\)</span> «es de oros».</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(R)\)</span> y <span class="math inline">\(P(O)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(R\cap O)\)</span> y estudia si <span class="math inline">\(R\)</span> y <span class="math inline">\(O\)</span> son independientes.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(F\mid O)\)</span>, siendo <span class="math inline">\(F\)</span> «es una figura» (sota, caballo o rey).</p></li>
+<li><p>(0,5 puntos) Se extraen dos cartas sin reemplazamiento. Calcula la probabilidad de que las dos sean reyes.</p></li>
+</ol>
+<p><strong>19.</strong> <em>(Tipo PAU · 2 puntos · competencial)</em> Una aseguradora clasifica a sus clientes en riesgo bajo (<span class="math inline">\(60\,\%\)</span>), medio (<span class="math inline">\(30\,\%\)</span>) y alto (<span class="math inline">\(10\,\%\)</span>). La probabilidad de tener un siniestro en el año es <span class="math inline">\(0{,}01\)</span>, <span class="math inline">\(0{,}04\)</span> y <span class="math inline">\(0{,}15\)</span>, respectivamente.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula la probabilidad de que un cliente tenga un siniestro.</p></li>
+<li><p>(0,5 puntos) Si un cliente ha tenido un siniestro, calcula la probabilidad de que sea de riesgo alto.</p></li>
+<li><p>(0,5 puntos) Si un cliente ha tenido un siniestro, calcula la probabilidad de que sea de riesgo bajo.</p></li>
+<li><p>(0,5 puntos) Interpreta cómo cambia la probabilidad de riesgo alto antes y después de saber que hubo siniestro.</p></li>
+</ol>
+<p><strong>20.</strong> <em>(Tipo PAU · 2 puntos)</em> Un jugador de baloncesto encesta cada tiro libre con probabilidad <span class="math inline">\(0{,}7\)</span>, con independencia de los demás. Lanza tres tiros libres.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula la probabilidad de que enceste los tres.</p></li>
+<li><p>(0,5 puntos) Calcula la probabilidad de que no enceste ninguno.</p></li>
+<li><p>(0,5 puntos) Calcula la probabilidad de que enceste al menos uno.</p></li>
+<li><p>(0,5 puntos) Calcula la probabilidad de que enceste exactamente dos.</p></li>
+</ol>
+<p><strong>21.</strong> <em>(Tipo PAU · 2 puntos · competencial)</em> La probabilidad de que llueva un día es <span class="math inline">\(0{,}3\)</span>. Un servicio de predicción avisa de lluvia el <span class="math inline">\(80\,\%\)</span> de los días en que llueve y el <span class="math inline">\(10\,\%\)</span> de los días en que no llueve.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula la probabilidad de que el servicio avise de lluvia.</p></li>
+<li><p>(0,5 puntos) Si ha avisado de lluvia, calcula la probabilidad de que llueva.</p></li>
+<li><p>(0,5 puntos) Si no ha avisado, calcula la probabilidad de que llueva.</p></li>
+<li><p>(0,5 puntos) Decide, con estos resultados, si conviene llevar paraguas cuando hay aviso y cuando no lo hay.</p></li>
+</ol>
+<p><strong>22.</strong> <em>(Tipo PAU · 2 puntos)</em> Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> dos sucesos incompatibles con <span class="math inline">\(P(A)=0{,}3\)</span> y <span class="math inline">\(P(B)=0{,}45\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(A\cup B)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(A^C\cap B^C)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(A\mid B)\)</span>.</p></li>
+<li><p>(0,5 puntos) ¿Son independientes? Justifica la respuesta.</p></li>
+</ol>
+<p><strong>23.</strong> <em>(Tipo PAU · 2 puntos · competencial)</em> En un proceso de selección, el <span class="math inline">\(60\,\%\)</span> de los candidatos supera la primera fase. Quien la supera pasa la segunda fase con probabilidad <span class="math inline">\(0{,}5\)</span>, y quien no la supera queda eliminado. Se contrata a quien supera las dos fases.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula la probabilidad de que un candidato sea contratado.</p></li>
+<li><p>(0,5 puntos) Calcula la probabilidad de que no sea contratado.</p></li>
+<li><p>(0,5 puntos) Entre los no contratados, calcula la probabilidad de que hubieran superado la primera fase.</p></li>
+<li><p>(0,5 puntos) Interpreta el resultado de c).</p></li>
+</ol>
+<p><strong>24.</strong> <em>(Tipo PAU · 2 puntos)</em> Sean <span class="math inline">\(P(A)=0{,}7\)</span>, <span class="math inline">\(P(B)=0{,}6\)</span> y <span class="math inline">\(P(A\cup B)=0{,}9\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(A\cap B)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(A^C\cap B^C)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(A^C\cup B^C)\)</span> y justifica con De Morgan que es el complementario de <span class="math inline">\(A\cap B\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(B-A)\)</span> y estudia si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes.</p></li>
+</ol>
+<p><strong>25.</strong> <em>(Tipo PAU · 2 puntos)</em> Una tienda vende el <span class="math inline">\(40\,\%\)</span> de sus productos por internet y el <span class="math inline">\(60\,\%\)</span> en la tienda física. Se devuelve el <span class="math inline">\(15\,\%\)</span> de lo vendido por internet y el <span class="math inline">\(5\,\%\)</span> de lo vendido en tienda.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula la probabilidad de que un producto vendido sea devuelto.</p></li>
+<li><p>(0,5 puntos) Si un producto ha sido devuelto, calcula la probabilidad de que se vendiera por internet.</p></li>
+<li><p>(0,5 puntos) Si un producto ha sido devuelto, calcula la probabilidad de que se vendiera en la tienda.</p></li>
+<li><p>(0,5 puntos) Calcula la probabilidad de que un producto no sea devuelto.</p></li>
+</ol>
+</section>
+<section id="soluciones" class="level2">
+<h2 class="anchored" data-anchor-id="soluciones">Soluciones</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(A\cup B)=P(A)+P(B)-P(A\cap B)=0{,}5+0{,}4-0{,}2=0{,}7\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A^C)=1-P(A)=1-0{,}5=0{,}5\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A-B)=P(A)-P(A\cap B)=0{,}5-0{,}2=0{,}3\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A^C\cap B^C)=P((A\cup B)^C)=1-0{,}7=0{,}3\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(A\cap B)=P(A)+P(B)-P(A\cup B)=0{,}6+0{,}5-0{,}8=0{,}3\)</span>.</p></li>
+<li><p>Por la ley de De Morgan, <span class="math inline">\(A^C\cup B^C=(A\cap B)^C\)</span>, luego <span class="math inline">\(P(A^C\cup B^C)=1-P(A\cap B)=1-0{,}3=0{,}7\)</span>.</p></li>
+<li><p>Por la otra ley de De Morgan, <span class="math inline">\(A^C\cap B^C=(A\cup B)^C\)</span>, luego <span class="math inline">\(P(A^C\cap B^C)=1-P(A\cup B)=1-0{,}8=0{,}2\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Hay <span class="math inline">\(36\)</span> resultados equiprobables (regla de Laplace).</p>
+<ol type="a">
+<li><p>Suma 8: <span class="math inline">\((2,6),(3,5),(4,4),(5,3),(6,2)\)</span>: <span class="math inline">\(P=\dfrac{5}{36}\)</span>.</p></li>
+<li><p>Suma al menos 10: <span class="math inline">\((4,6),(5,5),(6,4),(5,6),(6,5),(6,6)\)</span>: <span class="math inline">\(P=\dfrac{6}{36}=\dfrac{1}{6}\)</span>.</p></li>
+<li><p>Al menos un 6: <span class="math inline">\(36-25=11\)</span> resultados: <span class="math inline">\(P=\dfrac{11}{36}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Con reemplazamiento las extracciones son independientes: <span class="math inline">\(P(\text{dos rojas})=\frac{5}{8}\cdot\frac{5}{8}=\dfrac{25}{64}\)</span>.</p></li>
+<li><p>Sin reemplazamiento: <span class="math inline">\(P(\text{dos rojas})=\frac{5}{8}\cdot\frac{4}{7}=\dfrac{5}{14}\)</span>.</p></li>
+<li><p>Sin reemplazamiento: <span class="math inline">\(P(\text{distinto color})=\frac{5}{8}\cdot\frac{3}{7}+\frac{3}{8}\cdot\frac{5}{7}=\dfrac{15}{28}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{0{,}2}{0{,}4}=0{,}5\)</span> y <span class="math inline">\(P(B\mid A)=\dfrac{0{,}2}{0{,}5}=0{,}4\)</span>. Como <span class="math inline">\(P(A\mid B)=P(A)=0{,}5\)</span>, o también <span class="math inline">\(P(A\cap B)=0{,}2=P(A)P(B)=0{,}5\cdot0{,}4\)</span>, los sucesos <strong>son independientes</strong>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(A\cap B)=P(A)P(B)=0{,}3\cdot0{,}5=0{,}15\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A\cup B)=0{,}3+0{,}5-0{,}15=0{,}65\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes, también lo son <span class="math inline">\(A^C\)</span> y <span class="math inline">\(B\)</span>: <span class="math inline">\(P(A^C\cap B)=0{,}7\cdot0{,}5=0{,}35\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>7
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(F)=\dfrac{30+20}{120}=\dfrac{5}{12}\)</span> y <span class="math inline">\(P(M)=\dfrac{20+45}{120}=\dfrac{13}{24}\)</span>.</p></li>
+<li><p><span class="math inline">\(P(F\cap M)=\dfrac{20}{120}=\frac{1}{6}\)</span>.</p></li>
+<li><p><span class="math inline">\(P(F\mid M)=\dfrac{20}{65}=\dfrac{4}{13}\)</span> y <span class="math inline">\(P(M\mid F)=\dfrac{20}{50}=\frac{2}{5}\)</span>.</p></li>
+<li><p><span class="math inline">\(P(F\cap M)=\frac{1}{6}\)</span> y <span class="math inline">\(P(F)P(M)=\dfrac{5}{12}\cdot\dfrac{13}{24}=\dfrac{65}{288}\)</span>. Son distintos: <strong>no son independientes</strong> (entre las mujeres, solo el <span class="math inline">\(4/13\approx31\,\%\)</span> está federada, frente al <span class="math inline">\(5/12\approx42\,\%\)</span> del total).</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>8
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sea <span class="math inline">\(U_i\)</span> «se elige la urna <span class="math inline">\(i\)</span>» y <span class="math inline">\(R\)</span> «la bola es roja». Por la probabilidad total, <span class="math inline">\(P(R)=P(U_1)P(R\mid U_1)+P(U_2)P(R\mid U_2)=\frac{1}{2}\cdot\frac{3}{5}+\frac{1}{2}\cdot\frac{1}{5}=\frac{2}{5}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>9
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Por Bayes, <span class="math inline">\(P(U_1\mid R)=\dfrac{P(U_1)P(R\mid U_1)}{P(R)}=\dfrac{\frac{1}{2}\cdot\frac{3}{5}}{\frac{2}{5}}=\dfrac{3}{4}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>10
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Por la probabilidad total, <span class="math inline">\(P(D)=0{,}5\cdot0{,}02+0{,}3\cdot0{,}03+0{,}2\cdot0{,}06=0{,}010+0{,}009+0{,}012=0{,}031\)</span>.</p></li>
+<li><p>Por Bayes, <span class="math inline">\(P(M_1\mid D)=\dfrac{0{,}5\cdot0{,}02}{0{,}031}=\dfrac{0{,}010}{0{,}031}=\dfrac{10}{31}\approx0{,}323\)</span>.</p></li>
+<li><p><span class="math inline">\(P(M_3\mid D)=\dfrac{0{,}2\cdot0{,}06}{0{,}031}=\dfrac{0{,}012}{0{,}031}=\dfrac{12}{31}\approx0{,}387\)</span>. Además, <span class="math inline">\(P(M_2\mid D)=\dfrac{9}{31}\approx0{,}290\)</span>. El origen más probable es <span class="math inline">\(M_3\)</span>.</p></li>
+<li><p><span class="math inline">\(M_3\)</span> produce solo el <span class="math inline">\(20\,\%\)</span> de las piezas, pero entre las defectuosas su peso sube al <span class="math inline">\(38{,}7\,\%\)</span> porque su tasa de defectos es la mayor (<span class="math inline">\(6\,\%\)</span>). Al saber que la pieza es defectuosa, las probabilidades a priori <span class="math inline">\((0{,}5;\ 0{,}3;\ 0{,}2)\)</span> se actualizan a las probabilidades a posteriori.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>11
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sea <span class="math inline">\(E\)</span> «está enferma» y <span class="math inline">\(P\)</span> «la prueba da positivo».</p>
+<ol type="a">
+<li><p><span class="math inline">\(P(P)=0{,}01\cdot0{,}9+0{,}99\cdot0{,}05=0{,}009+0{,}0495=0{,}0585\)</span>.</p></li>
+<li><p><span class="math inline">\(P(E\mid P)=\dfrac{0{,}009}{0{,}0585}=\dfrac{2}{13}\approx0{,}154\)</span>.</p></li>
+<li><p><span class="math inline">\(P(E\mid P^C)=\dfrac{0{,}01\cdot0{,}1}{1-0{,}0585}=\dfrac{0{,}001}{0{,}9415}\approx0{,}0011\)</span>.</p></li>
+<li><p>Aunque la prueba acierta el <span class="math inline">\(90\,\%\)</span> de los enfermos, solo el <span class="math inline">\(15{,}4\,\%\)</span> de los positivos está realmente enfermo, porque la enfermedad es rara. Conviene <strong>confirmar</strong> un positivo con otra prueba. Un negativo, en cambio, deja una probabilidad de enfermedad de apenas el <span class="math inline">\(0{,}11\,\%\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>12
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(A\cap B)=P(A)+P(B)-P(A\cup B)=0{,}55+0{,}4-0{,}7=0{,}25\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A-B)=P(A)-P(A\cap B)=0{,}55-0{,}25=0{,}3\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A^C\cap B^C)=1-P(A\cup B)=1-0{,}7=0{,}3\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A)P(B)=0{,}55\cdot0{,}4=0{,}22\neq P(A\cap B)=0{,}25\)</span>: <strong>no son independientes</strong>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>13
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(C)=\dfrac{80+190}{500}=0{,}54\)</span> y <span class="math inline">\(P(U)=\dfrac{80+170}{500}=0{,}5\)</span>.</p></li>
+<li><p><span class="math inline">\(P(C\mid U)=\dfrac{80}{250}=0{,}32\)</span> y <span class="math inline">\(P(C\mid U^C)=\dfrac{190}{250}=0{,}76\)</span>.</p></li>
+<li><p><span class="math inline">\(P(C\cap U)=\dfrac{80}{500}=0{,}16\)</span> y <span class="math inline">\(P(C)P(U)=0{,}54\cdot0{,}5=0{,}27\)</span>. Son distintos: <strong>no son independientes</strong>.</p></li>
+<li><p>En zona urbana solo el <span class="math inline">\(32\,\%\)</span> va en coche al trabajo, frente al <span class="math inline">\(76\,\%\)</span> en zona rural: la zona de residencia influye en el medio de transporte (más transporte público en la ciudad).</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>14
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(\text{dos verdes})=\frac{4}{6}\cdot\frac{3}{5}=\frac{2}{5}\)</span>.</p></li>
+<li><p><span class="math inline">\(P(\text{distinto color})=\frac{4}{6}\cdot\frac{2}{5}+\frac{2}{6}\cdot\frac{4}{5}=\dfrac{8}{15}\)</span>.</p></li>
+<li><p><span class="math inline">\(P(\text{al menos una amarilla})=1-P(\text{dos verdes})=1-\frac{2}{5}=\frac{3}{5}\)</span>.</p></li>
+<li><p><span class="math inline">\(P(\text{dos amarillas})=\frac{2}{6}\cdot\frac{1}{5}=\frac{1}{15}\)</span> y <span class="math inline">\(\frac{2}{5}+\frac{8}{15}+\frac{1}{15}=\dfrac{6+8+1}{15}=1\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>15
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Por independencia, <span class="math inline">\(P(\text{ambos})=0{,}9\cdot0{,}85=0{,}765\)</span>.</p></li>
+<li><p><span class="math inline">\(P(\text{al menos uno})=1-P(\text{ninguno})=1-0{,}1\cdot0{,}15=0{,}985\)</span>.</p></li>
+<li><p><span class="math inline">\(P(\text{exactamente uno})=0{,}9\cdot0{,}15+0{,}1\cdot0{,}85=0{,}135+0{,}085=0{,}22\)</span>.</p></li>
+<li><p>Con un solo sistema, la probabilidad de no detectar es <span class="math inline">\(0{,}1\)</span> o <span class="math inline">\(0{,}15\)</span>; con los dos, solo <span class="math inline">\(0{,}1\cdot0{,}15=0{,}015\)</span>. La intrusión pasa inadvertida <span class="math inline">\(1{,}5\)</span> de cada 100 veces, mucho menos que con un sistema aislado.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>16
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(R)=0{,}6\cdot0{,}1+0{,}4\cdot0{,}25=0{,}06+0{,}10=0{,}16\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A_1\mid R)=\dfrac{0{,}6\cdot0{,}1}{0{,}16}=\dfrac{0{,}06}{0{,}16}=0{,}375\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A_2\mid R)=\dfrac{0{,}4\cdot0{,}25}{0{,}16}=\dfrac{0{,}10}{0{,}16}=0{,}625\)</span>.</p></li>
+<li><p><span class="math inline">\(P(R^C)=1-0{,}16=0{,}84\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>17
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(A\cup B)=P(A)+P(B)-P(A\cap B)=0{,}5+0{,}4-0{,}2=0{,}7\)</span>. No compra ninguna: <span class="math inline">\(1-0{,}7=0{,}3\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A-B)=P(A)-P(A\cap B)=0{,}5-0{,}2=0{,}3\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{0{,}2}{0{,}4}=0{,}5\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A)P(B)=0{,}5\cdot0{,}4=0{,}2=P(A\cap B)\)</span>: <strong>son independientes</strong>. Comprar calzado por internet no cambia la probabilidad de comprar ropa por internet: la mitad de los compradores de calzado (como la mitad del total) compra ropa.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>18
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(R)=\dfrac{4}{40}=\dfrac{1}{10}\)</span> y <span class="math inline">\(P(O)=\dfrac{10}{40}=\frac{1}{4}\)</span>.</p></li>
+<li><p>Solo hay un rey de oros: <span class="math inline">\(P(R\cap O)=\frac{1}{40}\)</span>. Como <span class="math inline">\(P(R)P(O)=\dfrac{1}{10}\cdot\frac{1}{4}=\frac{1}{40}\)</span>, <strong>son independientes</strong>.</p></li>
+<li><p>Entre las 10 cartas de oros hay 3 figuras: <span class="math inline">\(P(F\mid O)=\dfrac{3}{10}\)</span>, igual que <span class="math inline">\(P(F)=\dfrac{12}{40}=\frac{3}{10}\)</span>.</p></li>
+<li><p><span class="math inline">\(P(\text{dos reyes})=\dfrac{4}{40}\cdot\dfrac{3}{39}=\dfrac{1}{130}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>19
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sea <span class="math inline">\(S\)</span> «tiene un siniestro».</p>
+<ol type="a">
+<li><p><span class="math inline">\(P(S)=0{,}6\cdot0{,}01+0{,}3\cdot0{,}04+0{,}1\cdot0{,}15=0{,}006+0{,}012+0{,}015=0{,}033\)</span>.</p></li>
+<li><p><span class="math inline">\(P(\text{alto}\mid S)=\dfrac{0{,}1\cdot0{,}15}{0{,}033}=\dfrac{0{,}015}{0{,}033}=\dfrac{5}{11}\approx0{,}455\)</span>.</p></li>
+<li><p><span class="math inline">\(P(\text{bajo}\mid S)=\dfrac{0{,}6\cdot0{,}01}{0{,}033}=\dfrac{0{,}006}{0{,}033}=\dfrac{2}{11}\approx0{,}182\)</span>.</p></li>
+<li><p>Los clientes de riesgo alto son el <span class="math inline">\(10\,\%\)</span> de la cartera (probabilidad a priori), pero entre los que sufren un siniestro suben al <span class="math inline">\(45{,}5\,\%\)</span> (probabilidad a posteriori): la aseguradora debe revisar al alza el riesgo de quien ha tenido un siniestro.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>20
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(\text{tres})=0{,}7^3=0{,}343\)</span>.</p></li>
+<li><p><span class="math inline">\(P(\text{ninguno})=0{,}3^3=0{,}027\)</span>.</p></li>
+<li><p><span class="math inline">\(P(\text{al menos uno})=1-0{,}027=0{,}973\)</span>.</p></li>
+<li><p>Hay 3 formas de encestar dos y fallar uno: <span class="math inline">\(P(\text{dos})=3\cdot0{,}7^2\cdot0{,}3=0{,}441\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>21
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sea <span class="math inline">\(L\)</span> «llueve» y <span class="math inline">\(V\)</span> «el servicio avisa».</p>
+<ol type="a">
+<li><p><span class="math inline">\(P(V)=0{,}3\cdot0{,}8+0{,}7\cdot0{,}1=0{,}24+0{,}07=0{,}31\)</span>.</p></li>
+<li><p><span class="math inline">\(P(L\mid V)=\dfrac{0{,}24}{0{,}31}=\dfrac{24}{31}\approx0{,}774\)</span>.</p></li>
+<li><p><span class="math inline">\(P(L\mid V^C)=\dfrac{0{,}3\cdot0{,}2}{1-0{,}31}=\dfrac{0{,}06}{0{,}69}=\dfrac{2}{23}\approx0{,}087\)</span>.</p></li>
+<li><p>Con aviso, llueve con probabilidad <span class="math inline">\(0{,}77\)</span>: conviene llevar paraguas. Sin aviso, solo con probabilidad <span class="math inline">\(0{,}087\)</span>: se puede salir sin él, aunque con algo de riesgo.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>22
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Por ser incompatibles, <span class="math inline">\(P(A\cup B)=0{,}3+0{,}45=0{,}75\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A^C\cap B^C)=1-P(A\cup B)=1-0{,}75=0{,}25\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{0}{0{,}45}=0\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A)P(B)=0{,}3\cdot0{,}45=0{,}135\neq P(A\cap B)=0\)</span>: <strong>no son independientes</strong>. Dos sucesos incompatibles con probabilidad positiva nunca son independientes: si ocurre uno, el otro es imposible.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>23
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sea <span class="math inline">\(F_1\)</span> «supera la primera fase» y <span class="math inline">\(H\)</span> «es contratado».</p>
+<ol type="a">
+<li><p><span class="math inline">\(P(H)=0{,}6\cdot0{,}5=0{,}3\)</span>.</p></li>
+<li><p><span class="math inline">\(P(H^C)=1-0{,}3=0{,}7\)</span>.</p></li>
+<li><p>No contratado y con la primera fase superada: <span class="math inline">\(0{,}6\cdot0{,}5=0{,}3\)</span>. Entonces <span class="math inline">\(P(F_1\mid H^C)=\dfrac{0{,}3}{0{,}7}=\dfrac{3}{7}\approx0{,}429\)</span>.</p></li>
+<li><p>Entre los candidatos no contratados, el <span class="math inline">\(42{,}9\,\%\)</span> había superado la primera fase y cayó en la segunda; el resto, el <span class="math inline">\(57{,}1\,\%\)</span>, se quedó en la primera.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>24
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(A\cap B)=P(A)+P(B)-P(A\cup B)=0{,}7+0{,}6-0{,}9=0{,}4\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A^C\cap B^C)=1-P(A\cup B)=1-0{,}9=0{,}1\)</span>.</p></li>
+<li><p>Por De Morgan, <span class="math inline">\(A^C\cup B^C=(A\cap B)^C\)</span>, luego <span class="math inline">\(P(A^C\cup B^C)=1-0{,}4=0{,}6\)</span>.</p></li>
+<li><p><span class="math inline">\(P(B-A)=P(B)-P(A\cap B)=0{,}6-0{,}4=0{,}2\)</span>. Como <span class="math inline">\(P(A)P(B)=0{,}7\cdot0{,}6=0{,}42\neq0{,}4=P(A\cap B)\)</span>, <strong>no son independientes</strong>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>25
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sea <span class="math inline">\(I\)</span> «vendido por internet» y <span class="math inline">\(D\)</span> «devuelto».</p>
+<ol type="a">
+<li><p><span class="math inline">\(P(D)=0{,}4\cdot0{,}15+0{,}6\cdot0{,}05=0{,}06+0{,}03=0{,}09\)</span>.</p></li>
+<li><p><span class="math inline">\(P(I\mid D)=\dfrac{0{,}06}{0{,}09}=\dfrac{2}{3}\approx0{,}667\)</span>.</p></li>
+<li><p><span class="math inline">\(P(I^C\mid D)=\dfrac{0{,}03}{0{,}09}=\dfrac{1}{3}\approx0{,}333\)</span>.</p></li>
+<li><p><span class="math inline">\(P(D^C)=1-0{,}09=0{,}91\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

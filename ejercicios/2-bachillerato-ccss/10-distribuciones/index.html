@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Distribuciones binomial y normal — relación de ejercicios – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-2d82e0ab39c09339319a3284da2afbd7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+#md-loader{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;background:#262A3D;color:#EBF8EE;font-family:"Bricolage Grotesque",system-ui,sans-serif;transition:opacity .35s ease,visibility .35s}
+#md-loader.md-out{opacity:0;visibility:hidden}
+#md-loader .ml-logo{width:96px;height:96px;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border:5px solid #000;background:#000;box-shadow:8px 8px 0 #000;animation:ml-tilt 2.4s ease-in-out infinite}
+#md-loader .ml-logo i{display:grid;place-items:center;font:900 28px/1 "Arial Black",Arial,sans-serif;font-style:normal;color:#000;animation:ml-pop 1.6s ease-in-out infinite}
+#md-loader .ml-logo i:nth-child(1){background:#5EC4B6}
+#md-loader .ml-logo i:nth-child(2){background:#262A3D;color:#FCE678;animation-delay:.2s}
+#md-loader .ml-logo i:nth-child(3){background:#F4736C;animation-delay:.6s}
+#md-loader .ml-logo i:nth-child(4){background:#FCE678;animation-delay:.4s}
+#md-loader .ml-txt{font-weight:800;font-size:1.25rem;text-transform:uppercase;letter-spacing:.02em;text-align:center;padding:0 1rem}
+#md-loader .ml-txt b{color:#FCE678}
+#md-loader .ml-bar{width:min(260px,70vw);height:14px;border:3px solid #000;background:#000;box-shadow:4px 4px 0 #000;overflow:hidden}
+#md-loader .ml-bar::after{content:"";display:block;height:100%;width:40%;background:repeating-linear-gradient(-45deg,#5EC4B6 0 10px,#F4736C 10px 20px,#FCE678 20px 30px);animation:ml-slide 1.1s ease-in-out infinite}
+@keyframes ml-pop{0%,100%{transform:scale(1)}50%{transform:scale(.8)}}
+@keyframes ml-tilt{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes ml-slide{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+@media (prefers-reduced-motion:reduce){#md-loader *{animation:none!important}}
+</style>
+<noscript><style>#md-loader{display:none!important}</style></noscript>
+<script>
+(function () {
+  try {
+    if (/^\/(index\.html)?$/.test(location.pathname)) return;
+    var el = document.createElement("div");
+    el.id = "md-loader";
+    el.setAttribute("role", "status");
+    el.innerHTML =
+      '<div class="ml-logo" aria-hidden="true"><i>+</i><i>&minus;</i><i>&times;</i><i>=</i></div>' +
+      '<div class="ml-txt">Mientras carga&hellip; <b>&iexcl;&iexcl;&iexcl;un descanso!!!</b></div>' +
+      '<div class="ml-bar" aria-hidden="true"></div>';
+    document.documentElement.appendChild(el);
+    var t0 = Date.now(), gone = false;
+    var hide = function () {
+      if (gone) return;
+      gone = true;
+      var wait = Math.max(0, 1000 - (Date.now() - t0));
+      setTimeout(function () {
+        el.classList.add("md-out");
+        setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 450);
+      }, wait);
+    };
+    var ready = function () {
+      var m = window.MathJax;
+      if (m && m.startup && m.startup.promise && m.startup.promise.then) {
+        m.startup.promise.then(hide, hide);
+      } else { hide(); }
+    };
+    if (document.readyState === "complete") ready();
+    else window.addEventListener("load", ready);
+    window.addEventListener("pageshow", function (e) { if (e.persisted) hide(); });
+    setTimeout(hide, 10000);
+  } catch (e) {}
+})();
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-simulacro-pau" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">★ Simulacro PAU</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-simulacro-pau">    
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ciencias/examen/index.html">
+ <span class="dropdown-text">Ciencias (Matemáticas II)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ccss/examen/index.html">
+ <span class="dropdown-text">Ciencias Sociales (Mat. Aplicadas II)</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#variables-aleatorias-y-binomial" id="toc-variables-aleatorias-y-binomial" class="nav-link active" data-scroll-target="#variables-aleatorias-y-binomial">Variables aleatorias y binomial</a></li>
+  <li><a href="#distribución-normal" id="toc-distribución-normal" class="nav-link" data-scroll-target="#distribución-normal">Distribución normal</a></li>
+  <li><a href="#binomial-y-normal" id="toc-binomial-y-normal" class="nav-link" data-scroll-target="#binomial-y-normal">Binomial y normal</a></li>
+  <li><a href="#problemas-tipo-pau" id="toc-problemas-tipo-pau" class="nav-link" data-scroll-target="#problemas-tipo-pau">Problemas tipo PAU</a></li>
+  <li><a href="#soluciones" id="toc-soluciones" class="nav-link" data-scroll-target="#soluciones">Soluciones</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Distribuciones binomial y normal — relación de ejercicios</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Relación de 25 ejercicios: del 1 al 9 son básicos y del 10 al 25 siguen el estilo de la PAU de Andalucía para Matemáticas Aplicadas a las Ciencias Sociales II (ejercicio de estadística, 2 puntos, sin opciones). Los marcados como <em>competenciales</em> piden modelizar, interpretar el resultado en el contexto o justificar. Las soluciones están al final y usan la <strong>tabla de la normal</strong> con <span class="math inline">\(z\)</span> redondeado a dos decimales (cuatro decimales hasta <span class="math inline">\(z=2{,}6\)</span> y cinco desde <span class="math inline">\(z=2{,}7\)</span>), no el valor exacto de la calculadora. Cuando un valor de probabilidad no aparece en la tabla, se aceptan el valor más cercano y la interpolación, y se indican ambos.</p>
+<section id="variables-aleatorias-y-binomial" class="level2">
+<h2 class="anchored" data-anchor-id="variables-aleatorias-y-binomial">Variables aleatorias y binomial</h2>
+<p><strong>1.</strong> Una variable <span class="math inline">\(X\)</span> toma los valores <span class="math inline">\(0,1,2,3\)</span> con probabilidades <span class="math inline">\(0{,}2\)</span>; <span class="math inline">\(0{,}4\)</span>; <span class="math inline">\(0{,}3\)</span> y <span class="math inline">\(0{,}1\)</span>. Calcula <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^2\)</span> y <span class="math inline">\(\sigma\)</span>.</p>
+<p><strong>2.</strong> La variable <span class="math inline">\(X\)</span> tiene densidad <span class="math inline">\(f(x)=2x\)</span> para <span class="math inline">\(0\le x\le1\)</span> (y <span class="math inline">\(0\)</span> fuera). Comprueba que el área vale <span class="math inline">\(1\)</span> y calcula <span class="math inline">\(P(X\le0{,}5)\)</span> y <span class="math inline">\(\mu\)</span>.</p>
+<p><strong>3.</strong> Sea <span class="math inline">\(X\sim B(6;\,0{,}4)\)</span>. Calcula: a) <span class="math inline">\(P(X=2)\)</span>; b) <span class="math inline">\(P(X\ge1)\)</span>; c) <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma\)</span>.</p>
+</section>
+<section id="distribución-normal" class="level2">
+<h2 class="anchored" data-anchor-id="distribución-normal">Distribución normal</h2>
+<p><strong>4.</strong> Sea <span class="math inline">\(X\sim N(100,\,15)\)</span>. Calcula: a) <span class="math inline">\(P(X\le115)\)</span>; b) <span class="math inline">\(P(X&gt;130)\)</span>; c) <span class="math inline">\(P(85&lt;X&lt;115)\)</span>.</p>
+<p><strong>5.</strong> Sea <span class="math inline">\(X\sim N(50,\,8)\)</span>. Calcula: a) <span class="math inline">\(P(X\le62)\)</span>; b) <span class="math inline">\(P(X\ge44)\)</span>; c) <span class="math inline">\(P(40&lt;X&lt;56)\)</span>.</p>
+<p><strong>6.</strong> Sea <span class="math inline">\(X\sim N(70,\,10)\)</span>. Halla <span class="math inline">\(k\)</span> tal que: a) <span class="math inline">\(P(X\le k)=0{,}9332\)</span>; b) <span class="math inline">\(P(X\le k)=0{,}9772\)</span>.</p>
+<p><strong>7.</strong> Sea <span class="math inline">\(X\sim N(100,\,20)\)</span>. Halla <span class="math inline">\(k\)</span> tal que <span class="math inline">\(P(X\le k)=0{,}80\)</span>. (El valor <span class="math inline">\(0{,}80\)</span> no aparece en la tabla: resuelve con el valor más cercano y con la interpolación.)</p>
+</section>
+<section id="binomial-y-normal" class="level2">
+<h2 class="anchored" data-anchor-id="binomial-y-normal">Binomial y normal</h2>
+<p><strong>8.</strong> Sea <span class="math inline">\(X\sim B(100;\,0{,}5)\)</span>. a) Comprueba que se puede aproximar por una normal y escribe sus parámetros. Calcula, con corrección por continuidad: b) <span class="math inline">\(P(X=50)\)</span>; c) <span class="math inline">\(P(X\ge58)\)</span>; d) <span class="math inline">\(P(X&gt;58)\)</span>.</p>
+<p><strong>9.</strong> Decide si se puede aproximar por una normal: a) <span class="math inline">\(B(40;\,0{,}1)\)</span>; b) <span class="math inline">\(B(60;\,0{,}1)\)</span>. En el caso en que se pueda, calcula <span class="math inline">\(P(X\le4)\)</span> con corrección por continuidad.</p>
+</section>
+<section id="problemas-tipo-pau" class="level2">
+<h2 class="anchored" data-anchor-id="problemas-tipo-pau">Problemas tipo PAU</h2>
+<p><strong>10.</strong> <em>(Tipo PAU · 2 puntos · competencial)</em> El tiempo de entrega de una empresa de reparto, en minutos, sigue una distribución <span class="math inline">\(N(30,\,6)\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula la probabilidad de que una entrega tarde como máximo 36 minutos.</p></li>
+<li><p>(0,5 puntos) Calcula la probabilidad de que tarde más de 42 minutos.</p></li>
+<li><p>(0,5 puntos) Calcula la probabilidad de que tarde entre 24 y 39 minutos.</p></li>
+<li><p>(0,5 puntos) Interpreta el resultado del apartado b) en el contexto.</p></li>
+</ol>
+<p><strong>11.</strong> <em>(Tipo PAU · 2 puntos · competencial)</em> El peso, en gramos, de los paquetes de arroz de una máquina sigue una distribución <span class="math inline">\(N(500,\,12)\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula la probabilidad de que un paquete pese menos de 488 g.</p></li>
+<li><p>(0,5 puntos) Calcula la probabilidad de que pese más de 520 g.</p></li>
+<li><p>(0,5 puntos) Halla el peso <span class="math inline">\(k\)</span> tal que el <span class="math inline">\(90{,}32\,\%\)</span> de los paquetes pesa <span class="math inline">\(k\)</span> gramos o menos.</p></li>
+<li><p>(0,5 puntos) Interpreta los resultados de a) y c).</p></li>
+</ol>
+<p><strong>12.</strong> <em>(Tipo PAU · 2 puntos)</em> El <span class="math inline">\(20\,\%\)</span> de los clientes de una tienda paga con tarjeta. Se eligen 10 clientes al azar, de forma independiente. Sea <span class="math inline">\(X\)</span> el número de ellos que pagan con tarjeta.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Indica la distribución de <span class="math inline">\(X\)</span> y calcula <span class="math inline">\(P(X=2)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(X\le1)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(X\ge1)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula la media y la desviación típica de <span class="math inline">\(X\)</span>.</p></li>
+</ol>
+<p><strong>13.</strong> <em>(Tipo PAU · 2 puntos · competencial)</em> La duración, en horas, de una bombilla sigue una distribución <span class="math inline">\(N(1000,\,100)\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula la probabilidad de que una bombilla dure menos de 900 horas.</p></li>
+<li><p>(0,5 puntos) Calcula la probabilidad de que dure entre 900 y 1100 horas.</p></li>
+<li><p>(0,5 puntos) Se eligen 5 bombillas al azar. Con el resultado del apartado a), calcula la probabilidad de que exactamente una dure menos de 900 horas.</p></li>
+<li><p>(0,5 puntos) Calcula el número medio de bombillas, entre las 5, que duran menos de 900 horas e interpreta el resultado.</p></li>
+</ol>
+<p><strong>14.</strong> <em>(Tipo PAU · 2 puntos)</em> El <span class="math inline">\(30\,\%\)</span> de los usuarios de una aplicación contrata la versión de pago. Se eligen 200 usuarios al azar. Sea <span class="math inline">\(X\)</span> el número de ellos que la contratan.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Justifica que <span class="math inline">\(X\)</span> se puede aproximar por una normal y escribe sus parámetros.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(X\ge70)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(X\le55)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(X=60)\)</span>.</p></li>
+</ol>
+<p><strong>15.</strong> <em>(Tipo PAU · 2 puntos · competencial)</em> En una fábrica, el <span class="math inline">\(2\,\%\)</span> de las piezas sale defectuoso. Sea <span class="math inline">\(X\)</span> el número de piezas defectuosas en un lote.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Para un lote de 150 piezas, comprueba si se puede aproximar la binomial por una normal.</p></li>
+<li><p>(0,5 puntos) Para un lote de 500 piezas, comprueba las condiciones y escribe la normal que aproxima a <span class="math inline">\(X\)</span>.</p></li>
+<li><p>(0,5 puntos) En el lote de 500 piezas, calcula <span class="math inline">\(P(X\ge15)\)</span>.</p></li>
+<li><p>(0,5 puntos) En el lote de 500 piezas, calcula <span class="math inline">\(P(X&lt;8)\)</span> e interpreta el resultado.</p></li>
+</ol>
+<p><strong>16.</strong> <em>(Tipo PAU · 2 puntos)</em> Una variable <span class="math inline">\(X\)</span> sigue una distribución <span class="math inline">\(N(72,\,\sigma)\)</span> y se sabe que <span class="math inline">\(P(X\le80)=0{,}9772\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Halla <span class="math inline">\(\sigma\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(X\ge76)\)</span>.</p></li>
+<li><p>(0,5 puntos) Halla <span class="math inline">\(k\)</span> tal que <span class="math inline">\(P(X&gt;k)=0{,}0228\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(68&lt;X&lt;76)\)</span>.</p></li>
+</ol>
+<p><strong>17.</strong> <em>(Tipo PAU · 2 puntos · competencial)</em> El salario mensual, en euros, de los trabajadores de una empresa sigue una distribución <span class="math inline">\(N(1800,\,300)\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula la probabilidad de que un trabajador gane más de 2400 €.</p></li>
+<li><p>(0,5 puntos) Calcula la probabilidad de que gane entre 1500 y 2100 €.</p></li>
+<li><p>(0,5 puntos) Halla el salario mínimo del <span class="math inline">\(10\,\%\)</span> de los trabajadores mejor pagados. (El valor <span class="math inline">\(0{,}90\)</span> no aparece en la tabla: resuelve con el valor más cercano y con la interpolación.)</p></li>
+<li><p>(0,5 puntos) Interpreta el resultado de a).</p></li>
+</ol>
+<p><strong>18.</strong> <em>(Tipo PAU · 2 puntos)</em> El <span class="math inline">\(55\,\%\)</span> de los votantes de una ciudad apoya una propuesta. Se encuestan 120 votantes elegidos al azar. Sea <span class="math inline">\(X\)</span> el número de ellos que la apoyan.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Justifica que <span class="math inline">\(X\)</span> se puede aproximar por una normal y escribe sus parámetros.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(X&gt;70)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(X\ge60)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(60\le X\le72)\)</span>.</p></li>
+</ol>
+<p><strong>19.</strong> <em>(Tipo PAU · 2 puntos · competencial)</em> Dos máquinas llenan botellas de 500 mL. El volumen que echa la primera sigue una <span class="math inline">\(N(500,\,4)\)</span> y el de la segunda, una <span class="math inline">\(N(500,\,2)\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Calcula la probabilidad de que una botella de la primera máquina tenga entre 497 y 503 mL.</p></li>
+<li><p>(0,5 puntos) Calcula la misma probabilidad para la segunda máquina.</p></li>
+<li><p>(0,5 puntos) Calcula, para cada máquina, la probabilidad de que una botella tenga menos de 495 mL.</p></li>
+<li><p>(0,5 puntos) Interpreta los resultados: ¿qué máquina es más precisa y por qué?</p></li>
+</ol>
+<p><strong>20.</strong> <em>(Tipo PAU · 2 puntos)</em> Una variable <span class="math inline">\(X\)</span> toma los valores <span class="math inline">\(0,1,2,3\)</span> con probabilidades <span class="math inline">\(0{,}1\)</span>; <span class="math inline">\(k\)</span>; <span class="math inline">\(0{,}4\)</span> y <span class="math inline">\(0{,}2\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Halla <span class="math inline">\(k\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula la media.</p></li>
+<li><p>(0,5 puntos) Calcula la varianza y la desviación típica.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(X\ge2)\)</span>.</p></li>
+</ol>
+<p><strong>21.</strong> <em>(Tipo PAU · 2 puntos · competencial)</em> En una tómbola, el boleto cuesta 2 €. Con probabilidad <span class="math inline">\(0{,}1\)</span> da un premio de 10 €, con probabilidad <span class="math inline">\(0{,}3\)</span> da un premio de 2 € y con probabilidad <span class="math inline">\(0{,}6\)</span> no da premio. Sea <span class="math inline">\(G\)</span> la ganancia neta (premio menos precio).</p>
+<ol type="a">
+<li><p>(0,5 puntos) Escribe la tabla de la distribución de <span class="math inline">\(G\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula la ganancia media <span class="math inline">\(E[G]\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula la desviación típica de <span class="math inline">\(G\)</span>.</p></li>
+<li><p>(0,5 puntos) Interpreta el signo de <span class="math inline">\(E[G]\)</span>.</p></li>
+</ol>
+<p><strong>22.</strong> <em>(Tipo PAU · 2 puntos)</em> La variable <span class="math inline">\(X\)</span> tiene función de densidad <span class="math inline">\(f(x)=k\,x\)</span> para <span class="math inline">\(0\le x\le2\)</span> (y <span class="math inline">\(0\)</span> fuera).</p>
+<ol type="a">
+<li><p>(0,5 puntos) Halla <span class="math inline">\(k\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(X\le1)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(X&gt;1{,}5)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula la media <span class="math inline">\(\mu\)</span>.</p></li>
+</ol>
+<p><strong>23.</strong> <em>(Tipo PAU · 2 puntos · competencial)</em> El <span class="math inline">\(25\,\%\)</span> de los hogares de un barrio tiene una bicicleta eléctrica. Se encuestan 8 hogares al azar, de forma independiente. Sea <span class="math inline">\(X\)</span> el número de hogares con bicicleta eléctrica.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Indica la distribución de <span class="math inline">\(X\)</span> y calcula <span class="math inline">\(P(X=2)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(X\ge1)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(X\le2)\)</span>.</p></li>
+<li><p>(0,5 puntos) Calcula la media y la desviación típica e interpreta la media.</p></li>
+</ol>
+<p><strong>24.</strong> <em>(Tipo PAU · 2 puntos)</em> Una variable <span class="math inline">\(X\)</span> sigue una distribución <span class="math inline">\(N(\mu,\,12)\)</span> y se sabe que <span class="math inline">\(P(X\le100)=0{,}9505\)</span>.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Halla <span class="math inline">\(\mu\)</span>.</p></li>
+<li><p>(0,5 puntos) Con ese valor de <span class="math inline">\(\mu\)</span>, calcula <span class="math inline">\(P(X\ge90)\)</span>.</p></li>
+<li><p>(0,5 puntos) Con ese valor de <span class="math inline">\(\mu\)</span>, calcula <span class="math inline">\(P(70&lt;X&lt;90)\)</span>.</p></li>
+<li><p>(0,5 puntos) Compara la probabilidad de b) con la de <span class="math inline">\(P(X\le70)\)</span> e interpreta la diferencia.</p></li>
+</ol>
+<p><strong>25.</strong> <em>(Tipo PAU · 2 puntos)</em> Una aerolínea sabe que el <span class="math inline">\(5\,\%\)</span> de las personas con billete no se presenta al vuelo. Vende 260 billetes para un avión de 250 plazas. Sea <span class="math inline">\(X\)</span> el número de personas que no se presentan.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Justifica que <span class="math inline">\(X\)</span> se puede aproximar por una normal y escribe sus parámetros.</p></li>
+<li><p>(0,5 puntos) Calcula <span class="math inline">\(P(X=13)\)</span>.</p></li>
+<li><p>(0,5 puntos) Hay sobreventa efectiva (más personas que plazas) si <span class="math inline">\(X\le9\)</span>. Calcula esa probabilidad.</p></li>
+<li><p>(0,5 puntos) Interpreta el resultado de c) para la aerolínea.</p></li>
+</ol>
+</section>
+<section id="soluciones" class="level2">
+<h2 class="anchored" data-anchor-id="soluciones">Soluciones</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\mu=0\cdot0{,}2+1\cdot0{,}4+2\cdot0{,}3+3\cdot0{,}1=0{,}4+0{,}6+0{,}3=1{,}3\)</span>. Como <span class="math inline">\(\sum x_i^2p_i=0{,}4+4\cdot0{,}3+9\cdot0{,}1=0{,}4+1{,}2+0{,}9=2{,}5\)</span>, la varianza es <span class="math inline">\(\sigma^2=2{,}5-1{,}3^2=0{,}81\)</span> y <span class="math inline">\(\sigma=\sqrt{0{,}81}=0{,}9\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>El área es <span class="math inline">\(\displaystyle\int_0^12x\,dx=[x^2]_0^1=1\)</span> y <span class="math inline">\(f\ge0\)</span>: es una densidad. <span class="math inline">\(P(X\le0{,}5)=\displaystyle\int_0^{0{,}5}2x\,dx=0{,}5^2=0{,}25\)</span>. La media es <span class="math inline">\(\mu=\displaystyle\int_0^1x\cdot2x\,dx=\left[\frac{2x^3}{3}\right]_0^1=\frac{2}{3}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(X=2)=\binom{6}{2}\cdot0{,}4^2\cdot0{,}6^4=15\cdot0{,}16\cdot0{,}1296=0{,}31104\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\ge1)=1-P(X=0)=1-0{,}6^6=1-0{,}046656=0{,}953344\)</span>.</p></li>
+<li><p><span class="math inline">\(\mu=np=6\cdot0{,}4=2{,}4\)</span> y <span class="math inline">\(\sigma=\sqrt{npq}=\sqrt{6\cdot0{,}4\cdot0{,}6}=\sqrt{1{,}44}=1{,}2\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(X\le115)=P\!\left(Z\le\dfrac{115-100}{15}\right)=P(Z\le1)=0{,}8413\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X&gt;130)=P(Z&gt;2)=1-P(Z\le2)=1-0{,}9772=0{,}0228\)</span>.</p></li>
+<li><p><span class="math inline">\(P(85&lt;X&lt;115)=P(-1&lt;Z&lt;1)=P(Z\le1)-P(Z\le-1)=0{,}8413-(1-0{,}8413)=0{,}6826\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(X\le62)=P\!\left(Z\le\dfrac{62-50}{8}\right)=P(Z\le1{,}5)=0{,}9332\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\ge44)=P(Z\ge-0{,}75)=P(Z\le0{,}75)=0{,}7734\)</span>.</p></li>
+<li><p><span class="math inline">\(P(40&lt;X&lt;56)=P(-1{,}25&lt;Z&lt;0{,}75)=0{,}7734-(1-0{,}8944)=0{,}6678\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>En la tabla, <span class="math inline">\(0{,}9332\)</span> corresponde a <span class="math inline">\(z=1{,}50\)</span>. Entonces <span class="math inline">\(\dfrac{k-70}{10}=1{,}5\)</span> y <span class="math inline">\(k=70+10\cdot1{,}5=85\)</span>.</p></li>
+<li><p>En la tabla, <span class="math inline">\(0{,}9772\)</span> corresponde a <span class="math inline">\(z=2{,}00\)</span>. Entonces <span class="math inline">\(k=70+10\cdot2=90\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>7
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Se busca <span class="math inline">\(z\)</span> con <span class="math inline">\(P(Z\le z)=0{,}80\)</span>. La tabla tiene <span class="math inline">\(\Phi(0{,}84)=0{,}7995\)</span> y <span class="math inline">\(\Phi(0{,}85)=0{,}8023\)</span>: el <span class="math inline">\(0{,}80\)</span> no aparece.</p>
+<ul>
+<li><em>Valor más cercano</em>: <span class="math inline">\(0{,}7995\)</span> está a <span class="math inline">\(0{,}0005\)</span> y <span class="math inline">\(0{,}8023\)</span> a <span class="math inline">\(0{,}0023\)</span>, luego <span class="math inline">\(z=0{,}84\)</span> y <span class="math inline">\(k=100+20\cdot0{,}84=116{,}8\)</span>.</li>
+<li><em>Interpolación</em>: <span class="math inline">\(z\approx0{,}84+0{,}01\cdot\dfrac{0{,}8000-0{,}7995}{0{,}8023-0{,}7995}\approx0{,}8418\)</span> y <span class="math inline">\(k\approx100+20\cdot0{,}8418=116{,}84\)</span>.</li>
+</ul>
+<p>Con cualquiera de los dos procedimientos, <span class="math inline">\(k\approx116{,}8\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>8
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Con <span class="math inline">\(n=100\)</span> y <span class="math inline">\(p=0{,}5\)</span>: <span class="math inline">\(np=50\ge5\)</span> y <span class="math inline">\(nq=50\ge5\)</span>. Entonces <span class="math inline">\(X\approx Y\sim N\left(50,\ \sqrt{100\cdot0{,}5\cdot0{,}5}\right)=N(50,\,5)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X=50)=P(49{,}5&lt;Y&lt;50{,}5)=P(-0{,}1&lt;Z&lt;0{,}1)=2\cdot0{,}5398-1=0{,}0796\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\ge58)=P(Y&gt;57{,}5)=P\!\left(Z&gt;\dfrac{57{,}5-50}{5}\right)=P(Z&gt;1{,}5)=1-0{,}9332=0{,}0668\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X&gt;58)=P(X\ge59)=P(Y&gt;58{,}5)=P(Z&gt;1{,}7)=1-0{,}9554=0{,}0446\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>9
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>En <span class="math inline">\(B(40;\,0{,}1)\)</span>, <span class="math inline">\(np=4&lt;5\)</span>: <strong>no</strong> se puede aproximar por una normal.</p></li>
+<li><p>En <span class="math inline">\(B(60;\,0{,}1)\)</span>, <span class="math inline">\(np=6\ge5\)</span> y <span class="math inline">\(nq=54\ge5\)</span>: <strong>sí</strong>. <span class="math inline">\(X\approx Y\sim N(6,\ \sqrt{60\cdot0{,}1\cdot0{,}9})=N(6;\,2{,}3238)\)</span>. Entonces <span class="math inline">\(P(X\le4)=P(Y&lt;4{,}5)=P\!\left(Z&lt;\dfrac{4{,}5-6}{2{,}3238}\right)=P(Z&lt;-0{,}65)=1-0{,}7422=0{,}2578\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>10
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(X\le36)=P\!\left(Z\le\dfrac{36-30}{6}\right)=P(Z\le1)=0{,}8413\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X&gt;42)=P(Z&gt;2)=1-0{,}9772=0{,}0228\)</span>.</p></li>
+<li><p><span class="math inline">\(P(24&lt;X&lt;39)=P(-1&lt;Z&lt;1{,}5)=0{,}9332-(1-0{,}8413)=0{,}7745\)</span>.</p></li>
+<li><p>Algo más del <span class="math inline">\(2\,\%\)</span> de las entregas (un <span class="math inline">\(2{,}28\,\%\)</span>) tarda más de 42 minutos, es decir, más de dos desviaciones típicas por encima de la media: es una demora poco habitual.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>11
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(X&lt;488)=P\!\left(Z&lt;\dfrac{488-500}{12}\right)=P(Z&lt;-1)=1-0{,}8413=0{,}1587\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X&gt;520)=P\!\left(Z&gt;\dfrac{520-500}{12}\right)=P(Z&gt;1{,}67)=1-0{,}9525=0{,}0475\)</span>.</p></li>
+<li><p>En la tabla, <span class="math inline">\(0{,}9032\)</span> corresponde a <span class="math inline">\(z=1{,}30\)</span>. Entonces <span class="math inline">\(k=500+12\cdot1{,}3=515{,}6\)</span> g.</p></li>
+<li><p>El <span class="math inline">\(15{,}87\,\%\)</span> de los paquetes pesa menos de 488 g, lo que puede incumplir el peso indicado; en cambio, el <span class="math inline">\(90{,}32\,\%\)</span> pesa <span class="math inline">\(515{,}6\)</span> g o menos y solo el <span class="math inline">\(4{,}75\,\%\)</span> pesa más de 520 g. Centrar la máquina más alto reduciría los paquetes escasos.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>12
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(X\sim B(10;\,0{,}2)\)</span> y <span class="math inline">\(P(X=2)=\binom{10}{2}\cdot0{,}2^2\cdot0{,}8^8=45\cdot0{,}04\cdot0{,}1678\approx0{,}3020\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\le1)=P(X=0)+P(X=1)=0{,}8^{10}+10\cdot0{,}2\cdot0{,}8^9=0{,}1074+0{,}2684=0{,}3758\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\ge1)=1-P(X=0)=1-0{,}8^{10}=1-0{,}1074=0{,}8926\)</span>.</p></li>
+<li><p><span class="math inline">\(\mu=np=10\cdot0{,}2=2\)</span> y <span class="math inline">\(\sigma=\sqrt{npq}=\sqrt{10\cdot0{,}2\cdot0{,}8}=\sqrt{1{,}6}\approx1{,}26\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>13
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(X&lt;900)=P\!\left(Z&lt;\dfrac{900-1000}{100}\right)=P(Z&lt;-1)=1-0{,}8413=0{,}1587\)</span>.</p></li>
+<li><p><span class="math inline">\(P(900&lt;X&lt;1100)=P(-1&lt;Z&lt;1)=0{,}8413-(1-0{,}8413)=0{,}6826\)</span>.</p></li>
+<li><p>El número <span class="math inline">\(Y\)</span> de bombillas, entre 5, que duran menos de 900 h sigue <span class="math inline">\(B(5;\,0{,}1587)\)</span>: <span class="math inline">\(P(Y=1)=\binom{5}{1}\cdot0{,}1587\cdot0{,}8413^4\approx0{,}3975\)</span>.</p></li>
+<li><p><span class="math inline">\(\mu=np=5\cdot0{,}1587=0{,}7935\)</span>. De cada 5 bombillas, en promedio, menos de una (unas <span class="math inline">\(0{,}79\)</span>) dura menos de 900 horas.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>14
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(X\sim B(200;\,0{,}3)\)</span> con <span class="math inline">\(np=60\ge5\)</span> y <span class="math inline">\(nq=140\ge5\)</span>. Entonces <span class="math inline">\(X\approx Y\sim N(60,\ \sqrt{200\cdot0{,}3\cdot0{,}7})=N(60;\,6{,}4807)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\ge70)=P(Y&gt;69{,}5)=P\!\left(Z&gt;\dfrac{69{,}5-60}{6{,}4807}\right)=P(Z&gt;1{,}47)=1-0{,}9292=0{,}0708\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\le55)=P(Y&lt;55{,}5)=P\!\left(Z&lt;\dfrac{55{,}5-60}{6{,}4807}\right)=P(Z&lt;-0{,}69)=1-0{,}7549=0{,}2451\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X=60)=P(59{,}5&lt;Y&lt;60{,}5)=P(-0{,}08&lt;Z&lt;0{,}08)=2\cdot0{,}5319-1=0{,}0638\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>15
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(X\sim B(150;\,0{,}02)\)</span> y <span class="math inline">\(np=3&lt;5\)</span>: <strong>no</strong> se puede aproximar por una normal.</p></li>
+<li><p><span class="math inline">\(X\sim B(500;\,0{,}02)\)</span>, con <span class="math inline">\(np=10\ge5\)</span> y <span class="math inline">\(nq=490\ge5\)</span>. Entonces <span class="math inline">\(X\approx Y\sim N(10,\ \sqrt{500\cdot0{,}02\cdot0{,}98})=N(10;\,3{,}1305)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\ge15)=P(Y&gt;14{,}5)=P\!\left(Z&gt;\dfrac{14{,}5-10}{3{,}1305}\right)=P(Z&gt;1{,}44)=1-0{,}9251=0{,}0749\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X&lt;8)=P(X\le7)=P(Y&lt;7{,}5)=P\!\left(Z&lt;\dfrac{7{,}5-10}{3{,}1305}\right)=P(Z&lt;-0{,}80)=1-0{,}7881=0{,}2119\)</span>. Es decir, en algo más del <span class="math inline">\(21\,\%\)</span> de los lotes de 500 piezas hay menos de 8 defectuosas.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>16
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>En la tabla, <span class="math inline">\(0{,}9772\)</span> corresponde a <span class="math inline">\(z=2{,}00\)</span>. Entonces <span class="math inline">\(\dfrac{80-72}{\sigma}=2\)</span> y <span class="math inline">\(\sigma=4\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\ge76)=P\!\left(Z\ge\dfrac{76-72}{4}\right)=P(Z\ge1)=1-0{,}8413=0{,}1587\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X&gt;k)=0{,}0228\Rightarrow P(X\le k)=0{,}9772\)</span>, que corresponde a <span class="math inline">\(z=2{,}00\)</span>. Entonces <span class="math inline">\(k=72+4\cdot2=80\)</span>.</p></li>
+<li><p><span class="math inline">\(P(68&lt;X&lt;76)=P(-1&lt;Z&lt;1)=0{,}8413-(1-0{,}8413)=0{,}6826\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>17
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(X&gt;2400)=P\!\left(Z&gt;\dfrac{2400-1800}{300}\right)=P(Z&gt;2)=1-0{,}9772=0{,}0228\)</span>.</p></li>
+<li><p><span class="math inline">\(P(1500&lt;X&lt;2100)=P(-1&lt;Z&lt;1)=0{,}8413-(1-0{,}8413)=0{,}6826\)</span>.</p></li>
+<li><p>Se busca <span class="math inline">\(k\)</span> con <span class="math inline">\(P(X&gt;k)=0{,}10\)</span>, es decir, <span class="math inline">\(P(Z\le z)=0{,}90\)</span>. La tabla tiene <span class="math inline">\(\Phi(1{,}28)=0{,}8997\)</span> y <span class="math inline">\(\Phi(1{,}29)=0{,}9015\)</span>: el <span class="math inline">\(0{,}90\)</span> no aparece.</p></li>
+</ol>
+<ul>
+<li><em>Valor más cercano</em>: <span class="math inline">\(0{,}8997\)</span> está a <span class="math inline">\(0{,}0003\)</span> y <span class="math inline">\(0{,}9015\)</span> a <span class="math inline">\(0{,}0015\)</span>, luego <span class="math inline">\(z=1{,}28\)</span> y <span class="math inline">\(k=1800+300\cdot1{,}28=2184\)</span> €.</li>
+<li><em>Interpolación</em>: <span class="math inline">\(z\approx1{,}28+0{,}01\cdot\dfrac{0{,}9000-0{,}8997}{0{,}9015-0{,}8997}\approx1{,}2817\)</span> y <span class="math inline">\(k\approx1800+300\cdot1{,}2817=2184{,}5\)</span> €.</li>
+</ul>
+<p>Con cualquiera de los dos procedimientos, el salario mínimo del <span class="math inline">\(10\,\%\)</span> mejor pagado es de unos <span class="math inline">\(2184\)</span> € (con la interpolación, <span class="math inline">\(2184{,}5\)</span> €).</p>
+<ol start="4" type="a">
+<li>Solo el <span class="math inline">\(2{,}28\,\%\)</span> de los trabajadores gana más de 2400 €, es decir, más de dos desviaciones típicas por encima del salario medio.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>18
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(X\sim B(120;\,0{,}55)\)</span>, con <span class="math inline">\(np=66\ge5\)</span> y <span class="math inline">\(nq=54\ge5\)</span>. Entonces <span class="math inline">\(X\approx Y\sim N(66,\ \sqrt{120\cdot0{,}55\cdot0{,}45})=N(66;\,5{,}4498)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X&gt;70)=P(X\ge71)=P(Y&gt;70{,}5)=P\!\left(Z&gt;\dfrac{70{,}5-66}{5{,}4498}\right)=P(Z&gt;0{,}83)=1-0{,}7967=0{,}2033\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\ge60)=P(Y&gt;59{,}5)=P\!\left(Z&gt;\dfrac{59{,}5-66}{5{,}4498}\right)=P(Z&gt;-1{,}19)=P(Z&lt;1{,}19)=0{,}8830\)</span>.</p></li>
+<li><p><span class="math inline">\(P(60\le X\le72)=P(59{,}5&lt;Y&lt;72{,}5)=P(-1{,}19&lt;Z&lt;1{,}19)=2\cdot0{,}8830-1=0{,}7660\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>19
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(P(497&lt;X&lt;503)=P\!\left(\dfrac{497-500}{4}&lt;Z&lt;\dfrac{503-500}{4}\right)=P(-0{,}75&lt;Z&lt;0{,}75)=2\cdot0{,}7734-1=0{,}5468\)</span>.</p></li>
+<li><p><span class="math inline">\(P(497&lt;X&lt;503)=P\!\left(-1{,}5&lt;Z&lt;1{,}5\right)=2\cdot0{,}9332-1=0{,}8664\)</span>.</p></li>
+<li><p>Primera máquina: <span class="math inline">\(P(X&lt;495)=P(Z&lt;-1{,}25)=1-0{,}8944=0{,}1056\)</span>. Segunda máquina: <span class="math inline">\(P(X&lt;495)=P(Z&lt;-2{,}5)=1-0{,}9938=0{,}0062\)</span>.</p></li>
+<li><p>La segunda máquina es más precisa: con la misma media, su menor desviación típica hace que el <span class="math inline">\(86{,}64\,\%\)</span> de las botellas esté entre 497 y 503 mL (frente al <span class="math inline">\(54{,}68\,\%\)</span>) y que solo el <span class="math inline">\(0{,}62\,\%\)</span> tenga menos de 495 mL (frente al <span class="math inline">\(10{,}56\,\%\)</span>).</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>20
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Las probabilidades suman <span class="math inline">\(1\)</span>: <span class="math inline">\(0{,}1+k+0{,}4+0{,}2=1\)</span>, luego <span class="math inline">\(k=0{,}3\)</span>.</p></li>
+<li><p><span class="math inline">\(\mu=0\cdot0{,}1+1\cdot0{,}3+2\cdot0{,}4+3\cdot0{,}2=0{,}3+0{,}8+0{,}6=1{,}7\)</span>.</p></li>
+<li><p><span class="math inline">\(\sum x_i^2p_i=0{,}3+4\cdot0{,}4+9\cdot0{,}2=0{,}3+1{,}6+1{,}8=3{,}7\)</span>, luego <span class="math inline">\(\sigma^2=3{,}7-1{,}7^2=0{,}81\)</span> y <span class="math inline">\(\sigma=0{,}9\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\ge2)=0{,}4+0{,}2=0{,}6\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>21
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>La ganancia neta es premio menos 2 €: <span class="math inline">\(G=8\)</span> con probabilidad <span class="math inline">\(0{,}1\)</span>, <span class="math inline">\(G=0\)</span> con <span class="math inline">\(0{,}3\)</span> y <span class="math inline">\(G=-2\)</span> con <span class="math inline">\(0{,}6\)</span>.</p></li>
+<li><p><span class="math inline">\(E[G]=8\cdot0{,}1+0\cdot0{,}3+(-2)\cdot0{,}6=0{,}8+0-1{,}2=-0{,}4\)</span> €.</p></li>
+<li><p><span class="math inline">\(E[G^2]=64\cdot0{,}1+0+4\cdot0{,}6=6{,}4+2{,}4=8{,}8\)</span>, luego <span class="math inline">\(\sigma^2=8{,}8-(-0{,}4)^2=8{,}64\)</span> y <span class="math inline">\(\sigma=\sqrt{8{,}64}\approx2{,}94\)</span> €.</p></li>
+<li><p><span class="math inline">\(E[G]=-0{,}4&lt;0\)</span>: en promedio, quien juega <strong>pierde</strong> 0,40 € por boleto. El juego es desfavorable para el jugador (y favorable para la tómbola).</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>22
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>El área debe valer <span class="math inline">\(1\)</span>: <span class="math inline">\(\displaystyle\int_0^2kx\,dx=\left[\frac{kx^2}{2}\right]_0^2=2k=1\)</span>, luego <span class="math inline">\(k=\frac{1}{2}\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\le1)=\displaystyle\int_0^1\frac x2\,dx=\left[\frac{x^2}{4}\right]_0^1=\frac{1}{4}\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X&gt;1{,}5)=\displaystyle\int_{1{,}5}^2\frac x2\,dx=\left[\frac{x^2}{4}\right]_{1{,}5}^2=1-\dfrac{9}{16}=\dfrac{7}{16}\)</span>.</p></li>
+<li><p><span class="math inline">\(\mu=\displaystyle\int_0^2x\cdot\frac x2\,dx=\left[\frac{x^3}{6}\right]_0^2=\frac{4}{3}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>23
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(X\sim B(8;\,0{,}25)\)</span> y <span class="math inline">\(P(X=2)=\binom{8}{2}\cdot0{,}25^2\cdot0{,}75^6=28\cdot0{,}0625\cdot0{,}17798\approx0{,}3115\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\ge1)=1-P(X=0)=1-0{,}75^8=1-0{,}10011=0{,}8999\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\le2)=P(X=0)+P(X=1)+P(X=2)=0{,}10011+0{,}26697+0{,}31146=0{,}6785\)</span>.</p></li>
+<li><p><span class="math inline">\(\mu=np=8\cdot0{,}25=2\)</span> y <span class="math inline">\(\sigma=\sqrt{8\cdot0{,}25\cdot0{,}75}=\sqrt{1{,}5}\approx1{,}22\)</span>. De cada 8 hogares encuestados, en promedio 2 tienen bicicleta eléctrica.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>24
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>En la tabla, <span class="math inline">\(0{,}9505\)</span> corresponde a <span class="math inline">\(z=1{,}65\)</span>. Entonces <span class="math inline">\(\dfrac{100-\mu}{12}=1{,}65\)</span>, luego <span class="math inline">\(\mu=100-12\cdot1{,}65=80{,}2\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\ge90)=P\!\left(Z\ge\dfrac{90-80{,}2}{12}\right)=P(Z\ge0{,}82)=1-0{,}7939=0{,}2061\)</span>.</p></li>
+<li><p><span class="math inline">\(P(70&lt;X&lt;90)=P(-0{,}85&lt;Z&lt;0{,}82)=0{,}7939-(1-0{,}8023)=0{,}5962\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\le70)=P(Z\le-0{,}85)=1-0{,}8023=0{,}1977\)</span>. Hay una probabilidad parecida (<span class="math inline">\(0{,}2061\)</span> frente a <span class="math inline">\(0{,}1977\)</span>) de estar por encima de 90 que por debajo de 70, porque ambos valores están casi a la misma distancia de la media <span class="math inline">\(80{,}2\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>25
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(X\sim B(260;\,0{,}05)\)</span>, con <span class="math inline">\(np=13\ge5\)</span> y <span class="math inline">\(nq=247\ge5\)</span>. Entonces <span class="math inline">\(X\approx Y\sim N(13,\ \sqrt{260\cdot0{,}05\cdot0{,}95})=N(13;\,3{,}5143)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X=13)=P(12{,}5&lt;Y&lt;13{,}5)=P(-0{,}14&lt;Z&lt;0{,}14)=2\cdot0{,}5557-1=0{,}1114\)</span>.</p></li>
+<li><p><span class="math inline">\(P(X\le9)=P(Y&lt;9{,}5)=P\!\left(Z&lt;\dfrac{9{,}5-13}{3{,}5143}\right)=P(Z&lt;-1)=1-0{,}8413=0{,}1587\)</span>.</p></li>
+<li><p>En aproximadamente el <span class="math inline">\(15{,}87\,\%\)</span> de los vuelos se presentarán más de 250 personas y habrá que dejar a alguien en tierra, de modo que la compañía debe valorar el coste de las compensaciones frente al de las plazas vacías.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

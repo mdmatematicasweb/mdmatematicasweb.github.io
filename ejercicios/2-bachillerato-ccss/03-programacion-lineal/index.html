@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Programación lineal — relación de ejercicios – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-2d82e0ab39c09339319a3284da2afbd7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+#md-loader{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;background:#262A3D;color:#EBF8EE;font-family:"Bricolage Grotesque",system-ui,sans-serif;transition:opacity .35s ease,visibility .35s}
+#md-loader.md-out{opacity:0;visibility:hidden}
+#md-loader .ml-logo{width:96px;height:96px;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border:5px solid #000;background:#000;box-shadow:8px 8px 0 #000;animation:ml-tilt 2.4s ease-in-out infinite}
+#md-loader .ml-logo i{display:grid;place-items:center;font:900 28px/1 "Arial Black",Arial,sans-serif;font-style:normal;color:#000;animation:ml-pop 1.6s ease-in-out infinite}
+#md-loader .ml-logo i:nth-child(1){background:#5EC4B6}
+#md-loader .ml-logo i:nth-child(2){background:#262A3D;color:#FCE678;animation-delay:.2s}
+#md-loader .ml-logo i:nth-child(3){background:#F4736C;animation-delay:.6s}
+#md-loader .ml-logo i:nth-child(4){background:#FCE678;animation-delay:.4s}
+#md-loader .ml-txt{font-weight:800;font-size:1.25rem;text-transform:uppercase;letter-spacing:.02em;text-align:center;padding:0 1rem}
+#md-loader .ml-txt b{color:#FCE678}
+#md-loader .ml-bar{width:min(260px,70vw);height:14px;border:3px solid #000;background:#000;box-shadow:4px 4px 0 #000;overflow:hidden}
+#md-loader .ml-bar::after{content:"";display:block;height:100%;width:40%;background:repeating-linear-gradient(-45deg,#5EC4B6 0 10px,#F4736C 10px 20px,#FCE678 20px 30px);animation:ml-slide 1.1s ease-in-out infinite}
+@keyframes ml-pop{0%,100%{transform:scale(1)}50%{transform:scale(.8)}}
+@keyframes ml-tilt{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes ml-slide{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+@media (prefers-reduced-motion:reduce){#md-loader *{animation:none!important}}
+</style>
+<noscript><style>#md-loader{display:none!important}</style></noscript>
+<script>
+(function () {
+  try {
+    if (/^\/(index\.html)?$/.test(location.pathname)) return;
+    var el = document.createElement("div");
+    el.id = "md-loader";
+    el.setAttribute("role", "status");
+    el.innerHTML =
+      '<div class="ml-logo" aria-hidden="true"><i>+</i><i>&minus;</i><i>&times;</i><i>=</i></div>' +
+      '<div class="ml-txt">Mientras carga&hellip; <b>&iexcl;&iexcl;&iexcl;un descanso!!!</b></div>' +
+      '<div class="ml-bar" aria-hidden="true"></div>';
+    document.documentElement.appendChild(el);
+    var t0 = Date.now(), gone = false;
+    var hide = function () {
+      if (gone) return;
+      gone = true;
+      var wait = Math.max(0, 1000 - (Date.now() - t0));
+      setTimeout(function () {
+        el.classList.add("md-out");
+        setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 450);
+      }, wait);
+    };
+    var ready = function () {
+      var m = window.MathJax;
+      if (m && m.startup && m.startup.promise && m.startup.promise.then) {
+        m.startup.promise.then(hide, hide);
+      } else { hide(); }
+    };
+    if (document.readyState === "complete") ready();
+    else window.addEventListener("load", ready);
+    window.addEventListener("pageshow", function (e) { if (e.persisted) hide(); });
+    setTimeout(hide, 10000);
+  } catch (e) {}
+})();
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-simulacro-pau" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">★ Simulacro PAU</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-simulacro-pau">    
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ciencias/examen/index.html">
+ <span class="dropdown-text">Ciencias (Matemáticas II)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ccss/examen/index.html">
+ <span class="dropdown-text">Ciencias Sociales (Mat. Aplicadas II)</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#región-factible-y-vértices" id="toc-región-factible-y-vértices" class="nav-link active" data-scroll-target="#región-factible-y-vértices">Región factible y vértices</a></li>
+  <li><a href="#casos-particulares-y-planteamiento" id="toc-casos-particulares-y-planteamiento" class="nav-link" data-scroll-target="#casos-particulares-y-planteamiento">Casos particulares y planteamiento</a></li>
+  <li><a href="#problemas-tipo-pau" id="toc-problemas-tipo-pau" class="nav-link" data-scroll-target="#problemas-tipo-pau">Problemas tipo PAU</a></li>
+  <li><a href="#soluciones" id="toc-soluciones" class="nav-link" data-scroll-target="#soluciones">Soluciones</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Programación lineal — relación de ejercicios</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Relación de 25 ejercicios: del 1 al 9 son básicos y del 10 al 25 siguen el estilo de la PAU de Andalucía para Matemáticas Aplicadas a las Ciencias Sociales II (ejercicio de álgebra, 3 puntos, a veces con dos opciones de las que se elige una). Los marcados como <em>competenciales</em> piden modelizar, interpretar el resultado en el contexto o justificar. Las soluciones están al final.</p>
+<section id="región-factible-y-vértices" class="level2">
+<h2 class="anchored" data-anchor-id="región-factible-y-vértices">Región factible y vértices</h2>
+<p><strong>1.</strong> Representa la región definida por <span class="math inline">\(x+y\le6\)</span>, <span class="math inline">\(2x+y\ge4\)</span>, <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span> y calcula sus vértices.</p>
+<p><strong>2.</strong> Maximiza <span class="math inline">\(F(x,y)=3x+2y\)</span> sujeta a <span class="math inline">\(x+2y\le10\)</span>, <span class="math inline">\(3x+y\le15\)</span>, <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>.</p>
+<p><strong>3.</strong> Minimiza <span class="math inline">\(F(x,y)=2x+5y\)</span> sujeta a <span class="math inline">\(x+y\ge4\)</span>, <span class="math inline">\(x\le6\)</span>, <span class="math inline">\(y\le5\)</span>, <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>.</p>
+<p><strong>4.</strong> Calcula los vértices de la región <span class="math inline">\(x+y\ge2\)</span>, <span class="math inline">\(x-y\le2\)</span>, <span class="math inline">\(x+y\le6\)</span>, <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>.</p>
+<p><strong>5.</strong> Una región es el cuadrilátero de vértices <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((4,0)\)</span>, <span class="math inline">\((3,3)\)</span> y <span class="math inline">\((0,2)\)</span>. Halla el máximo y el mínimo de <span class="math inline">\(F(x,y)=4x-y\)</span> en ella.</p>
+</section>
+<section id="casos-particulares-y-planteamiento" class="level2">
+<h2 class="anchored" data-anchor-id="casos-particulares-y-planteamiento">Casos particulares y planteamiento</h2>
+<p><strong>6.</strong> Maximiza <span class="math inline">\(F(x,y)=2x+2y\)</span> sujeta a <span class="math inline">\(x+y\le5\)</span>, <span class="math inline">\(x\le4\)</span>, <span class="math inline">\(y\le4\)</span>, <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. ¿Cuántas soluciones óptimas hay? Descríbelas.</p>
+<p><strong>7.</strong> Dada la región <span class="math inline">\(x+y\ge3\)</span>, <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>, halla el mínimo y el máximo de <span class="math inline">\(F(x,y)=2x+y\)</span> si existen.</p>
+<p><strong>8.</strong> Una tienda de bolsos fabrica bolsos de tipo A (beneficio de 8 €) y de tipo B (beneficio de 12 €). Un bolso A necesita 1 hora de cosido y uno B, 2 horas; hay 40 horas disponibles. Además, se pueden hacer como mucho 20 bolsos A. Plantea el problema y halla cuántos de cada tipo maximizan el beneficio.</p>
+<p><strong>9.</strong> Estudia si existe región factible en <span class="math inline">\(x+y\le2\)</span>, <span class="math inline">\(x+y\ge5\)</span>, <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span> y razona qué ocurre con el problema de maximizar <span class="math inline">\(F(x,y)=x+y\)</span>.</p>
+</section>
+<section id="problemas-tipo-pau" class="level2">
+<h2 class="anchored" data-anchor-id="problemas-tipo-pau">Problemas tipo PAU</h2>
+<p><strong>10.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Una granja escuela compra dos piensos, P1 (0,90 € el kilo) y P2 (1,20 € el kilo). Cada animal necesita al día al menos 30 unidades de proteína y 14 de calcio. Un kilo de P1 aporta 3 unidades de proteína y 1 de calcio, y un kilo de P2 aporta 2 de proteína y 2 de calcio.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Plantea el problema: variables, restricciones y función de coste.</p></li>
+<li><p>(0,75 puntos) Dibuja la región factible.</p></li>
+<li><p>(0,75 puntos) Calcula sus vértices.</p></li>
+<li><p>(0,75 puntos) Halla la combinación de piensos de coste mínimo y su coste, e interpreta el resultado.</p></li>
+</ol>
+<p><strong>11.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Un taller fabrica sillas (<span class="math inline">\(x\)</span>) y mesas (<span class="math inline">\(y\)</span>). Una silla necesita 1 hora de carpintería y 3 de barnizado; una mesa, 2 horas de carpintería y 1 de barnizado. Hay 40 horas de carpintería y 60 de barnizado. Cada silla deja 30 € de beneficio y cada mesa, 50 €.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Plantea el problema de programación lineal.</p></li>
+<li><p>(0,75 puntos) Representa la región factible y calcula sus vértices.</p></li>
+<li><p>(0,75 puntos) Calcula cuántas sillas y mesas dan el máximo beneficio y cuál es.</p></li>
+<li><p>(0,75 puntos) ¿Se agotan las horas de carpintería y de barnizado en esa solución? Justifícalo.</p></li>
+</ol>
+<p><strong>12.</strong> <em>(Tipo PAU · 3 puntos)</em> Elige una de las dos opciones.</p>
+<p><strong>Opción A.</strong> Un taller de cerámica fabrica jarrones (<span class="math inline">\(x\)</span>, beneficio de 20 €) y platos (<span class="math inline">\(y\)</span>, beneficio de 15 €). Sujeto a <span class="math inline">\(2x+y\le60\)</span> (horno), <span class="math inline">\(x+y\le50\)</span> (decoración), <span class="math inline">\(x\le25\)</span> y <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>:</p>
+<ol type="a">
+<li><p>(1 punto) Dibuja la región factible.</p></li>
+<li><p>(1 punto) Calcula sus vértices.</p></li>
+<li><p>(1 punto) Halla el beneficio máximo y dónde se alcanza.</p></li>
+</ol>
+<p><strong>Opción B.</strong> Una cocina solidaria prepara bandejas de tipo A (1,5 € de coste) y de tipo B (2 € de coste). Debe preparar al menos 8 bandejas en total y cubrir con ellas una cantidad de nutrientes que exige <span class="math inline">\(2x+y\ge12\)</span>.</p>
+<ol type="a">
+<li><p>(1 punto) Plantea el problema y dibuja la región factible.</p></li>
+<li><p>(1 punto) Calcula sus vértices.</p></li>
+<li><p>(1 punto) Halla el coste mínimo y cuántas bandejas de cada tipo lo consiguen.</p></li>
+</ol>
+<p><strong>13.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Una asociación contrata monitores de tipo A (60 € al día) y de tipo B (80 € al día). Debe haber al menos 10 monitores en total y, como cada monitor A atiende a 1 grupo y cada monitor B a 3, la cobertura exige <span class="math inline">\(x+3y\ge18\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Plantea el problema y dibuja la región factible.</p></li>
+<li><p>(0,75 puntos) Calcula los vértices.</p></li>
+<li><p>(0,75 puntos) Halla el coste mínimo diario.</p></li>
+<li><p>(0,75 puntos) Justifica que el problema de maximizar el coste no tiene solución e interpreta por qué.</p></li>
+</ol>
+<p><strong>14.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Una empresa de reparto usa furgonetas pequeñas (<span class="math inline">\(x\)</span>, beneficio de 3 mil euros por viaje) y grandes (<span class="math inline">\(y\)</span>, beneficio de 6 mil euros). Por limitaciones de personal, <span class="math inline">\(x+2y\le12\)</span>, y no puede salir más de 8 furgonetas pequeñas (<span class="math inline">\(x\le8\)</span>), con <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Dibuja la región factible y calcula sus vértices.</p></li>
+<li><p>(0,75 puntos) Calcula el beneficio en cada vértice.</p></li>
+<li><p>(0,75 puntos) Observa que hay más de un vértice óptimo. Describe todas las soluciones óptimas y da una que tenga valores enteros distinta de los vértices.</p></li>
+<li><p>(0,75 puntos) Explica geométricamente por qué ocurre.</p></li>
+</ol>
+<p><strong>15.</strong> <em>(Tipo PAU · 3 puntos)</em> Un colegio contrata furgonetas de 9 plazas (60 € al día) y autocares de 50 plazas (400 € al día) para una excursión de 200 personas. Solo puede contratar 12 vehículos como máximo.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Plantea el problema.</p></li>
+<li><p>(0,75 puntos) Calcula el mínimo cuando <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> pueden ser números reales cualesquiera (vértices de la región).</p></li>
+<li><p>(0,75 puntos) Como los vehículos son enteros, la solución anterior no vale. Comprueba que el vértice óptimo no tiene coordenadas enteras.</p></li>
+<li><p>(0,75 puntos) Halla la solución óptima con valores enteros y su coste.</p></li>
+</ol>
+<p><strong>16.</strong> <em>(Tipo PAU · 3 puntos)</em> Una empresa de limpieza ofrece servicios a oficinas (<span class="math inline">\(x\)</span>, beneficio de 40 €) y a domicilios (<span class="math inline">\(y\)</span>, beneficio de 25 €). El personal necesita 2 horas por oficina y 1 por domicilio, con 100 horas disponibles; el desplazamiento, 1 hora por servicio con 70 horas disponibles; y no puede atender más de 45 oficinas.</p>
+<ol type="a">
+<li><p>(0,5 puntos) Escribe el sistema de inecuaciones.</p></li>
+<li><p>(1 punto) Dibuja la región factible y calcula sus vértices.</p></li>
+<li><p>(0,75 puntos) Halla el beneficio máximo.</p></li>
+<li><p>(0,75 puntos) Si el beneficio por oficina bajara a 20 €, ¿cambia la solución óptima?</p></li>
+</ol>
+<p><strong>17.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Una pastelería elabora tartas (<span class="math inline">\(x\)</span>, 40 € de beneficio) y bizcochos (<span class="math inline">\(y\)</span>, 30 € de beneficio). Dispone de 60 kg de harina y cada tarta usa 2 kg y cada bizcocho 1 kg; de 75 horas de trabajo, con 1 y 3 horas respectivamente; y tiene encargados como máximo 20 bizcochos.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Plantea el problema y calcula los vértices de la región.</p></li>
+<li><p>(0,75 puntos) Halla la producción de beneficio máximo.</p></li>
+<li><p>(0,75 puntos) ¿Qué recursos se agotan en la solución óptima?</p></li>
+<li><p>(0,75 puntos) ¿Cuánto sobra del recurso que no se agota? Interpreta.</p></li>
+</ol>
+<p><strong>18.</strong> <em>(Tipo PAU · 3 puntos)</em> Una región queda definida por <span class="math inline">\(x+2y\le10\)</span>, <span class="math inline">\(3x+y\le15\)</span>, <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>.</p>
+<ol type="a">
+<li><p>(1 punto) Calcula sus vértices.</p></li>
+<li><p>(1 punto) Halla el máximo de <span class="math inline">\(F_1(x,y)=3x+2y\)</span>.</p></li>
+<li><p>(1 punto) Halla el máximo de <span class="math inline">\(F_2(x,y)=x+3y\)</span> y compara las dos soluciones.</p></li>
+</ol>
+<p><strong>19.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> En la región del ejercicio anterior se estudia <span class="math inline">\(F(x,y)=kx+y\)</span>, donde <span class="math inline">\(k&gt;0\)</span> es el precio relativo de un producto.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula <span class="math inline">\(F\)</span> en cada vértice en función de <span class="math inline">\(k\)</span>.</p></li>
+<li><p>(1,5 puntos) Halla los valores de <span class="math inline">\(k\)</span> para los que el máximo se alcanza en el vértice <span class="math inline">\((4,3)\)</span>.</p></li>
+<li><p>(0,75 puntos) Indica dónde está el máximo si <span class="math inline">\(k=5\)</span> y si <span class="math inline">\(k=0{,}25\)</span>, e interpreta el resultado.</p></li>
+</ol>
+<p><strong>20.</strong> <em>(Tipo PAU · 3 puntos)</em> Una región es el cuadrilátero de vértices <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((6,0)\)</span>, <span class="math inline">\((4,3)\)</span> y <span class="math inline">\((0,5)\)</span>.</p>
+<ol type="a">
+<li><p>(1,5 puntos) Escribe las inecuaciones que la definen.</p></li>
+<li><p>(0,75 puntos) Calcula el máximo de <span class="math inline">\(F(x,y)=5x+4y\)</span> en ella.</p></li>
+<li><p>(0,75 puntos) Comprueba que el punto <span class="math inline">\((3,3)\)</span> pertenece a la región y que <span class="math inline">\(F(3,3)\)</span> es menor que el máximo.</p></li>
+</ol>
+<p><strong>21.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> Una persona dispone de 20 000 € para invertir en bonos (<span class="math inline">\(x\)</span> euros, rentabilidad del <span class="math inline">\(4\,\%\)</span>) y en un fondo (<span class="math inline">\(y\)</span> euros, rentabilidad del <span class="math inline">\(7\,\%\)</span>). Quiere invertir al menos 5 000 € en bonos y al menos 2 000 € en el fondo, y en el fondo no más de 4 000 € más que en bonos.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Plantea el problema.</p></li>
+<li><p>(0,75 puntos) Calcula los vértices de la región.</p></li>
+<li><p>(0,75 puntos) Halla la inversión que maximiza el interés anual y su valor.</p></li>
+<li><p>(0,75 puntos) Interpreta el resultado: ¿invierte todo el dinero disponible? ¿Qué rentabilidad total obtiene?</p></li>
+</ol>
+<p><strong>22.</strong> <em>(Tipo PAU · 3 puntos)</em> Un gimnasio municipal programa sesiones de yoga (<span class="math inline">\(x\)</span>, coste de 40 €) y de pilates (<span class="math inline">\(y\)</span>, coste de 30 €). Debe ofrecer al menos 10 sesiones en total, no más de 8 de yoga y no más de 9 de pilates.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Plantea el problema.</p></li>
+<li><p>(0,75 puntos) Dibuja la región factible y calcula los vértices.</p></li>
+<li><p>(0,75 puntos) Halla el programa de coste mínimo.</p></li>
+<li><p>(0,75 puntos) Justifica que la región no incluye el punto <span class="math inline">\((0,10)\)</span> y por qué.</p></li>
+</ol>
+<p><strong>23.</strong> <em>(Tipo PAU · 3 puntos · competencial)</em> En el taller del ejercicio 11, el dueño estudia ampliar las horas de carpintería de 40 a 50.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Calcula la nueva región factible y sus vértices.</p></li>
+<li><p>(0,75 puntos) Halla el nuevo beneficio máximo y cuántas sillas y mesas se hacen.</p></li>
+<li><p>(0,75 puntos) ¿Cuánto aumenta el beneficio por esas 10 horas extra?</p></li>
+<li><p>(0,75 puntos) Calcula el beneficio extra por cada hora adicional y úsalo para decidir si compensa ampliar las horas si cada hora extra cuesta 20 €.</p></li>
+</ol>
+<p><strong>24.</strong> <em>(Tipo PAU · 3 puntos)</em> Un pedido debe repartirse entre dos almacenes: <span class="math inline">\(x+y=10\)</span> unidades, con al menos 2 en el primero y al menos 1 en el segundo. El coste de transporte es <span class="math inline">\(F(x,y)=3x+2y\)</span>.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Describe la región factible y razona por qué es un segmento.</p></li>
+<li><p>(0,75 puntos) Calcula sus extremos.</p></li>
+<li><p>(0,75 puntos) Halla el coste mínimo y el máximo.</p></li>
+<li><p>(0,75 puntos) Escribe <span class="math inline">\(F\)</span> en función de <span class="math inline">\(x\)</span> y comprueba el resultado.</p></li>
+</ol>
+<p><strong>25.</strong> <em>(Tipo PAU · 3 puntos)</em> Un ayuntamiento concede becas de comedor (<span class="math inline">\(x\)</span>, 40 € cada una) y de transporte (<span class="math inline">\(y\)</span>, 60 € cada una) con un presupuesto de 11 000 €. Quiere dar al menos 50 becas de comedor y 30 de transporte, y no más de 200 de comedor.</p>
+<ol type="a">
+<li><p>(0,75 puntos) Plantea el problema para maximizar el número total de becas.</p></li>
+<li><p>(0,75 puntos) Calcula los vértices de la región factible.</p></li>
+<li><p>(0,75 puntos) Halla el número máximo de becas y cómo se reparten.</p></li>
+<li><p>(0,75 puntos) Comprueba si se gasta todo el presupuesto.</p></li>
+</ol>
+</section>
+<section id="soluciones" class="level2">
+<h2 class="anchored" data-anchor-id="soluciones">Soluciones</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Rectas: <span class="math inline">\(x+y=6\)</span> pasa por <span class="math inline">\((6,0)\)</span> y <span class="math inline">\((0,6)\)</span>; <span class="math inline">\(2x+y=4\)</span> pasa por <span class="math inline">\((2,0)\)</span> y <span class="math inline">\((0,4)\)</span>. Con el punto de prueba <span class="math inline">\((0,0)\)</span>: <span class="math inline">\(0\le6\)</span> se cumple (el semiplano de <span class="math inline">\(x+y\le6\)</span> contiene al origen) y <span class="math inline">\(0\ge4\)</span> no se cumple (el semiplano de <span class="math inline">\(2x+y\ge4\)</span> es el que <strong>no</strong> contiene al origen). La región está entre ambas rectas, en el primer cuadrante.</p>
+<p>Vértices: <span class="math inline">\((2,0)\)</span> (<span class="math inline">\(y=0\)</span> con <span class="math inline">\(2x+y=4\)</span>), <span class="math inline">\((6,0)\)</span> (<span class="math inline">\(y=0\)</span> con <span class="math inline">\(x+y=6\)</span>), <span class="math inline">\((0,6)\)</span> (<span class="math inline">\(x=0\)</span> con <span class="math inline">\(x+y=6\)</span>) y <span class="math inline">\((0,4)\)</span> (<span class="math inline">\(x=0\)</span> con <span class="math inline">\(2x+y=4\)</span>). Las rectas <span class="math inline">\(x+y=6\)</span> y <span class="math inline">\(2x+y=4\)</span> se cortan en <span class="math inline">\((-2,8)\)</span>, que no cumple <span class="math inline">\(x\ge0\)</span> y no es vértice.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vértices: <span class="math inline">\((0,0)\)</span>; <span class="math inline">\((5,0)\)</span> (<span class="math inline">\(y=0\)</span> con <span class="math inline">\(3x+y=15\)</span>); <span class="math inline">\((0,5)\)</span> (<span class="math inline">\(x=0\)</span> con <span class="math inline">\(x+2y=10\)</span>); y la intersección de <span class="math inline">\(x+2y=10\)</span> y <span class="math inline">\(3x+y=15\)</span>: de la segunda, <span class="math inline">\(y=15-3x\)</span>, y en la primera <span class="math inline">\(x+30-6x=10\)</span>, luego <span class="math inline">\(x=4\)</span> e <span class="math inline">\(y=3\)</span>: <span class="math inline">\((4,3)\)</span>.</p>
+<ul>
+<li><span class="math inline">\(F(0,0)=0\)</span>.</li>
+<li><span class="math inline">\(F(5,0)=3\cdot5+2\cdot0=15\)</span>.</li>
+<li><span class="math inline">\(F(0,5)=3\cdot0+2\cdot5=10\)</span>.</li>
+<li><span class="math inline">\(F(4,3)=3\cdot4+2\cdot3=18\)</span>.</li>
+</ul>
+<p>El máximo es <span class="math inline">\(18\)</span> y se alcanza en <span class="math inline">\((4,3)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Región: por encima de <span class="math inline">\(x+y=4\)</span> (el origen no cumple <span class="math inline">\(x+y\ge4\)</span>), con <span class="math inline">\(x\le6\)</span> e <span class="math inline">\(y\le5\)</span>. Vértices: <span class="math inline">\((4,0)\)</span>, <span class="math inline">\((6,0)\)</span>, <span class="math inline">\((6,5)\)</span>, <span class="math inline">\((0,5)\)</span> y <span class="math inline">\((0,4)\)</span>.</p>
+<ul>
+<li><span class="math inline">\(F(4,0)=2\cdot4+5\cdot0=8\)</span>.</li>
+<li><span class="math inline">\(F(6,0)=12\)</span>.</li>
+<li><span class="math inline">\(F(6,5)=2\cdot6+5\cdot5=37\)</span>.</li>
+<li><span class="math inline">\(F(0,5)=25\)</span>.</li>
+<li><span class="math inline">\(F(0,4)=20\)</span>.</li>
+</ul>
+<p>El mínimo es <span class="math inline">\(8\)</span> y se alcanza en <span class="math inline">\((4,0)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Las rectas <span class="math inline">\(x+y=2\)</span>, <span class="math inline">\(x-y=2\)</span> y <span class="math inline">\(x+y=6\)</span> junto con los ejes. Vértices:</p>
+<ul>
+<li><span class="math inline">\((0,2)\)</span>: <span class="math inline">\(x=0\)</span> con <span class="math inline">\(x+y=2\)</span>.</li>
+<li><span class="math inline">\((2,0)\)</span>: <span class="math inline">\(y=0\)</span> con <span class="math inline">\(x+y=2\)</span> (y con <span class="math inline">\(x-y=2\)</span>).</li>
+<li><span class="math inline">\((4,2)\)</span>: <span class="math inline">\(x-y=2\)</span> con <span class="math inline">\(x+y=6\)</span> (sumando, <span class="math inline">\(2x=8\)</span>).</li>
+<li><span class="math inline">\((0,6)\)</span>: <span class="math inline">\(x=0\)</span> con <span class="math inline">\(x+y=6\)</span>.</li>
+</ul>
+<p>El punto <span class="math inline">\((6,0)\)</span> (<span class="math inline">\(y=0\)</span> con <span class="math inline">\(x+y=6\)</span>) incumple <span class="math inline">\(x-y\le2\)</span>, y <span class="math inline">\((0,-2)\)</span> incumple <span class="math inline">\(y\ge0\)</span>: no son vértices.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Se evalúa <span class="math inline">\(F\)</span> en los cuatro vértices:</p>
+<ul>
+<li><span class="math inline">\(F(0,0)=0\)</span>.</li>
+<li><span class="math inline">\(F(4,0)=4\cdot4-0=16\)</span>.</li>
+<li><span class="math inline">\(F(3,3)=4\cdot3-3=9\)</span>.</li>
+<li><span class="math inline">\(F(0,2)=4\cdot0-2=-2\)</span>.</li>
+</ul>
+<p>El máximo es <span class="math inline">\(16\)</span> en <span class="math inline">\((4,0)\)</span> y el mínimo es <span class="math inline">\(-2\)</span> en <span class="math inline">\((0,2)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((4,0)\)</span>, <span class="math inline">\((4,1)\)</span> (<span class="math inline">\(x=4\)</span> con <span class="math inline">\(x+y=5\)</span>), <span class="math inline">\((1,4)\)</span> (<span class="math inline">\(y=4\)</span> con <span class="math inline">\(x+y=5\)</span>) y <span class="math inline">\((0,4)\)</span>.</p>
+<ul>
+<li><span class="math inline">\(F(0,0)=0\)</span>, <span class="math inline">\(F(4,0)=8\)</span> y <span class="math inline">\(F(0,4)=8\)</span>.</li>
+<li><span class="math inline">\(F(4,1)=2\cdot4+2\cdot1=10\)</span>.</li>
+<li><span class="math inline">\(F(1,4)=2\cdot1+2\cdot4=10\)</span>.</li>
+</ul>
+<p>El máximo, <span class="math inline">\(10\)</span>, se alcanza en dos vértices consecutivos, <span class="math inline">\((4,1)\)</span> y <span class="math inline">\((1,4)\)</span>: hay <strong>infinitas soluciones óptimas</strong>, todos los puntos del segmento <span class="math inline">\(x+y=5\)</span> con <span class="math inline">\(1\le x\le4\)</span> (la recta de nivel <span class="math inline">\(2x+2y=10\)</span> es paralela a ese lado).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>7
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>La región es no acotada: por encima de la recta <span class="math inline">\(x+y=3\)</span> en el primer cuadrante. Sus vértices son <span class="math inline">\((3,0)\)</span> y <span class="math inline">\((0,3)\)</span>.</p>
+<ul>
+<li><span class="math inline">\(F(3,0)=2\cdot3+0=6\)</span>.</li>
+<li><span class="math inline">\(F(0,3)=0+3=3\)</span>.</li>
+</ul>
+<p>Como <span class="math inline">\(F=2x+y\ge0\)</span> y crece al alejarse, hay mínimo: <span class="math inline">\(3\)</span> en <span class="math inline">\((0,3)\)</span>. <strong>No hay máximo</strong>: en <span class="math inline">\((1000,0)\)</span> ya vale <span class="math inline">\(2000\)</span>, y puede crecer sin límite.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>8
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> el número de bolsos de tipo A y B. Maximizar <span class="math inline">\(F(x,y)=8x+12y\)</span> sujeta a <span class="math inline">\(x+2y\le40\)</span>, <span class="math inline">\(x\le20\)</span>, <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>.</p>
+<p>Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((20,0)\)</span>, <span class="math inline">\((20,10)\)</span> (<span class="math inline">\(x=20\)</span> con <span class="math inline">\(x+2y=40\)</span>) y <span class="math inline">\((0,20)\)</span>.</p>
+<ul>
+<li><span class="math inline">\(F(0,0)=0\)</span> y <span class="math inline">\(F(20,0)=160\)</span>.</li>
+<li><span class="math inline">\(F(20,10)=8\cdot20+12\cdot10=280\)</span>.</li>
+<li><span class="math inline">\(F(0,20)=240\)</span>.</li>
+</ul>
+<p>El máximo beneficio es <span class="math inline">\(280\)</span> € con <span class="math inline">\(20\)</span> bolsos de tipo A y <span class="math inline">\(10\)</span> de tipo B.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>9
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Las condiciones <span class="math inline">\(x+y\le2\)</span> y <span class="math inline">\(x+y\ge5\)</span> no pueden cumplirse a la vez: una suma no puede ser a la vez menor o igual que <span class="math inline">\(2\)</span> y mayor o igual que <span class="math inline">\(5\)</span>. La región factible es <strong>vacía</strong> (las dos franjas son paralelas y no se solapan).</p>
+<p>Por tanto, el problema de maximizar <span class="math inline">\(F(x,y)=x+y\)</span> <strong>no tiene solución</strong>: no hay ningún punto que cumpla todas las restricciones.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>10
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Sean <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> los kilos de P1 y P2. Minimizar <span class="math inline">\(F(x,y)=0{,}9x+1{,}2y\)</span> sujeta a <span class="math inline">\(3x+2y\ge30\)</span> (proteína), <span class="math inline">\(x+2y\ge14\)</span> (calcio), <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>.</p></li>
+<li><p>Rectas: <span class="math inline">\(3x+2y=30\)</span> pasa por <span class="math inline">\((10,0)\)</span> y <span class="math inline">\((0,15)\)</span>; <span class="math inline">\(x+2y=14\)</span>, por <span class="math inline">\((14,0)\)</span> y <span class="math inline">\((0,7)\)</span>. En el origen ninguna se cumple (<span class="math inline">\(0\ge30\)</span> y <span class="math inline">\(0\ge14\)</span> son falsas), luego la región está por encima de ambas rectas. Es no acotada.</p></li>
+<li><p>Vértices: <span class="math inline">\((14,0)\)</span> (<span class="math inline">\(y=0\)</span> con <span class="math inline">\(x+2y=14\)</span>, que es más exigente que <span class="math inline">\(3x\ge30\)</span>); <span class="math inline">\((0,15)\)</span> (<span class="math inline">\(x=0\)</span> con <span class="math inline">\(3x+2y=30\)</span>); y la intersección de las rectas: restando, <span class="math inline">\(2x=16\)</span>, luego <span class="math inline">\(x=8\)</span> e <span class="math inline">\(y=3\)</span>: <span class="math inline">\((8,3)\)</span>.</p></li>
+<li><p><span class="math inline">\(F(14,0)=0{,}9\cdot14=12{,}6\)</span>, <span class="math inline">\(F(0,15)=1{,}2\cdot15=18\)</span> y <span class="math inline">\(F(8,3)=0{,}9\cdot8+1{,}2\cdot3=10{,}8\)</span>. El mínimo es <span class="math inline">\(10{,}8\)</span> €, con <span class="math inline">\(8\)</span> kg de P1 y <span class="math inline">\(3\)</span> kg de P2 por animal y día. Con esa mezcla se obtiene <span class="math inline">\(3\cdot8+2\cdot3=30\)</span> de proteína y <span class="math inline">\(8+2\cdot3=14\)</span> de calcio: justo lo necesario.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>11
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Maximizar <span class="math inline">\(F(x,y)=30x+50y\)</span> sujeta a <span class="math inline">\(x+2y\le40\)</span> (carpintería), <span class="math inline">\(3x+y\le60\)</span> (barnizado), <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>.</p></li>
+<li><p>Vértices: <span class="math inline">\((0,0)\)</span>; <span class="math inline">\((20,0)\)</span> (<span class="math inline">\(y=0\)</span> con <span class="math inline">\(3x+y=60\)</span>); <span class="math inline">\((0,20)\)</span> (<span class="math inline">\(x=0\)</span> con <span class="math inline">\(x+2y=40\)</span>); y la intersección de las dos rectas: de <span class="math inline">\(y=60-3x\)</span>, <span class="math inline">\(x+120-6x=40\)</span>, luego <span class="math inline">\(x=16\)</span> e <span class="math inline">\(y=12\)</span>: <span class="math inline">\((16,12)\)</span>.</p></li>
+<li><p><span class="math inline">\(F(0,0)=0\)</span>, <span class="math inline">\(F(20,0)=600\)</span>, <span class="math inline">\(F(0,20)=1000\)</span> y <span class="math inline">\(F(16,12)=30\cdot16+50\cdot12=1080\)</span>. El máximo es <span class="math inline">\(1080\)</span> € con <span class="math inline">\(16\)</span> sillas y <span class="math inline">\(12\)</span> mesas.</p></li>
+<li><p>Carpintería: <span class="math inline">\(16+2\cdot12=40\)</span> horas, las <span class="math inline">\(40\)</span> disponibles. Barnizado: <span class="math inline">\(3\cdot16+12=60\)</span> horas, las <span class="math inline">\(60\)</span> disponibles. <strong>Se agotan las dos</strong>, porque el vértice óptimo es la intersección de ambas restricciones.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>12
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Opción A.</strong></p>
+<ol type="a">
+<li><p>La región está limitada por <span class="math inline">\(2x+y=60\)</span> (pasa por <span class="math inline">\((30,0)\)</span> y <span class="math inline">\((0,60)\)</span>), <span class="math inline">\(x+y=50\)</span> (por <span class="math inline">\((50,0)\)</span> y <span class="math inline">\((0,50)\)</span>) y <span class="math inline">\(x=25\)</span>, en el primer cuadrante. El origen cumple las tres desigualdades.</p></li>
+<li><p>Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((25,0)\)</span>, <span class="math inline">\((25,10)\)</span> (<span class="math inline">\(x=25\)</span> con <span class="math inline">\(2x+y=60\)</span>), <span class="math inline">\((10,40)\)</span> (<span class="math inline">\(2x+y=60\)</span> con <span class="math inline">\(x+y=50\)</span>: restando, <span class="math inline">\(x=10\)</span>) y <span class="math inline">\((0,50)\)</span>.</p></li>
+<li><p><span class="math inline">\(F=20x+15y\)</span>: <span class="math inline">\(F(0,0)=0\)</span>, <span class="math inline">\(F(25,0)=500\)</span>, <span class="math inline">\(F(25,10)=20\cdot25+15\cdot10=650\)</span>, <span class="math inline">\(F(10,40)=20\cdot10+15\cdot40=800\)</span> y <span class="math inline">\(F(0,50)=750\)</span>. El beneficio máximo es <span class="math inline">\(800\)</span> € con <span class="math inline">\(10\)</span> jarrones y <span class="math inline">\(40\)</span> platos.</p></li>
+</ol>
+<p><strong>Opción B.</strong></p>
+<ol type="a">
+<li><p>Minimizar <span class="math inline">\(F(x,y)=1{,}5x+2y\)</span> sujeta a <span class="math inline">\(x+y\ge8\)</span>, <span class="math inline">\(2x+y\ge12\)</span>, <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. El origen no cumple ninguna de las dos condiciones, luego la región está por encima de las rectas <span class="math inline">\(x+y=8\)</span> y <span class="math inline">\(2x+y=12\)</span>; es no acotada.</p></li>
+<li><p>Vértices: <span class="math inline">\((8,0)\)</span> (<span class="math inline">\(y=0\)</span> con <span class="math inline">\(x+y=8\)</span>), <span class="math inline">\((0,12)\)</span> (<span class="math inline">\(x=0\)</span> con <span class="math inline">\(2x+y=12\)</span>) y <span class="math inline">\((4,4)\)</span> (restando las dos rectas, <span class="math inline">\(x=4\)</span>).</p></li>
+<li><p><span class="math inline">\(F(8,0)=1{,}5\cdot8=12\)</span>, <span class="math inline">\(F(0,12)=24\)</span> y <span class="math inline">\(F(4,4)=1{,}5\cdot4+2\cdot4=14\)</span>. El coste mínimo es <span class="math inline">\(12\)</span> €, con <span class="math inline">\(8\)</span> bandejas de tipo A y ninguna de tipo B.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>13
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Minimizar <span class="math inline">\(F(x,y)=60x+80y\)</span> sujeta a <span class="math inline">\(x+y\ge10\)</span>, <span class="math inline">\(x+3y\ge18\)</span>, <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. El origen no cumple ninguna, así que la región queda por encima de las dos rectas y no está acotada.</p></li>
+<li><p>Vértices: <span class="math inline">\((18,0)\)</span> (<span class="math inline">\(y=0\)</span> con <span class="math inline">\(x+3y=18\)</span>), <span class="math inline">\((0,10)\)</span> (<span class="math inline">\(x=0\)</span> con <span class="math inline">\(x+y=10\)</span>) y la intersección de las rectas: restando, <span class="math inline">\(2y=8\)</span>, luego <span class="math inline">\(y=4\)</span> y <span class="math inline">\(x=6\)</span>: <span class="math inline">\((6,4)\)</span>.</p></li>
+<li><p><span class="math inline">\(F(18,0)=1080\)</span>, <span class="math inline">\(F(0,10)=800\)</span> y <span class="math inline">\(F(6,4)=60\cdot6+80\cdot4=680\)</span>. El coste mínimo es <span class="math inline">\(680\)</span> € al día con <span class="math inline">\(6\)</span> monitores de tipo A y <span class="math inline">\(4\)</span> de tipo B.</p></li>
+<li><p>La región no está acotada: hay puntos con <span class="math inline">\(x\)</span> o <span class="math inline">\(y\)</span> tan grandes como se quiera que cumplen todas las restricciones, y allí <span class="math inline">\(F\)</span> crece sin límite (por ejemplo, <span class="math inline">\(F(1000,0)=60000\)</span>). No hay máximo del coste: tiene sentido, pues no hay un tope al número de monitores que se podrían contratar.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>14
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((8,0)\)</span>, <span class="math inline">\((8,2)\)</span> (<span class="math inline">\(x=8\)</span> con <span class="math inline">\(x+2y=12\)</span>) y <span class="math inline">\((0,6)\)</span> (<span class="math inline">\(x=0\)</span> con <span class="math inline">\(x+2y=12\)</span>).</p></li>
+<li><p><span class="math inline">\(F=3x+6y\)</span>: <span class="math inline">\(F(0,0)=0\)</span>, <span class="math inline">\(F(8,0)=24\)</span>, <span class="math inline">\(F(8,2)=3\cdot8+6\cdot2=36\)</span> y <span class="math inline">\(F(0,6)=3\cdot0+6\cdot6=36\)</span>.</p></li>
+<li><p>El máximo, <span class="math inline">\(36\)</span> mil euros, se alcanza en <span class="math inline">\((8,2)\)</span> y en <span class="math inline">\((0,6)\)</span>: son óptimos <strong>todos los puntos del segmento</strong> que los une, <span class="math inline">\(x+2y=12\)</span> con <span class="math inline">\(0\le x\le8\)</span>. Una solución con valores enteros distinta de los vértices es <span class="math inline">\((4,4)\)</span>, con <span class="math inline">\(F(4,4)=3\cdot4+6\cdot4=36\)</span>.</p></li>
+<li><p>La recta de nivel <span class="math inline">\(3x+6y=36\)</span> es paralela al lado <span class="math inline">\(x+2y=12\)</span> de la región (<span class="math inline">\(3x+6y=3(x+2y)\)</span>): al desplazar la recta de nivel hasta el último contacto con la región, toca todo un lado y no un solo vértice.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>15
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Minimizar <span class="math inline">\(F(x,y)=60x+400y\)</span> sujeta a <span class="math inline">\(9x+50y\ge200\)</span> (plazas), <span class="math inline">\(x+y\le12\)</span> (vehículos), <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>, con <span class="math inline">\(x\)</span> furgonetas e <span class="math inline">\(y\)</span> autocares.</p></li>
+<li><p>Vértices: <span class="math inline">\((0,4)\)</span> (<span class="math inline">\(x=0\)</span> con <span class="math inline">\(9x+50y=200\)</span>), <span class="math inline">\((0,12)\)</span> (<span class="math inline">\(x=0\)</span> con <span class="math inline">\(x+y=12\)</span>) y la intersección de <span class="math inline">\(9x+50y=200\)</span> y <span class="math inline">\(x+y=12\)</span>: de <span class="math inline">\(x=12-y\)</span>, <span class="math inline">\(108+41y=200\)</span>, luego <span class="math inline">\(y=\frac{92}{41}\)</span> y <span class="math inline">\(x=\frac{400}{41}\)</span>. Valores de <span class="math inline">\(F\)</span>: <span class="math inline">\(F(0,4)=1600\)</span>, <span class="math inline">\(F(0,12)=4800\)</span> y <span class="math inline">\(F\!\left(\frac{400}{41},\frac{92}{41}\right)=\frac{60800}{41}\approx1482{,}93\)</span>. El mínimo es <span class="math inline">\(\approx1482{,}93\)</span> en el tercer vértice.</p></li>
+<li><p><span class="math inline">\(x=\frac{400}{41}\approx9{,}76\)</span> e <span class="math inline">\(y=\frac{92}{41}\approx2{,}24\)</span> no son enteros: no se pueden contratar <span class="math inline">\(9{,}76\)</span> furgonetas.</p></li>
+<li><p>Entre los puntos enteros de la región: con <span class="math inline">\(y=2\)</span> haría falta <span class="math inline">\(9x\ge100\)</span>, es decir <span class="math inline">\(x\ge12\)</span>, y <span class="math inline">\(x+y\le12\)</span> lo impide. Con <span class="math inline">\(y=3\)</span> hace falta <span class="math inline">\(9x\ge50\)</span>, es decir <span class="math inline">\(x\ge6\)</span> (y <span class="math inline">\(x+3\le12\)</span> permite <span class="math inline">\(x\le9\)</span>): el mejor es <span class="math inline">\((6,3)\)</span>, con <span class="math inline">\(F(6,3)=60\cdot6+400\cdot3=1560\)</span>. Con <span class="math inline">\(y=4\)</span> el mejor es <span class="math inline">\((0,4)\)</span>, con <span class="math inline">\(1600\)</span>. La solución entera óptima es <span class="math inline">\(6\)</span> furgonetas y <span class="math inline">\(3\)</span> autocares, con un coste de <span class="math inline">\(1560\)</span> € (algo más que el mínimo real, <span class="math inline">\(1482{,}93\)</span>).</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>16
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(2x+y\le100\)</span> (personal), <span class="math inline">\(x+y\le70\)</span> (desplazamiento), <span class="math inline">\(x\le45\)</span>, <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>.</p></li>
+<li><p>Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((45,0)\)</span>, <span class="math inline">\((45,10)\)</span> (<span class="math inline">\(x=45\)</span> con <span class="math inline">\(2x+y=100\)</span>), <span class="math inline">\((30,40)\)</span> (<span class="math inline">\(2x+y=100\)</span> con <span class="math inline">\(x+y=70\)</span>: restando, <span class="math inline">\(x=30\)</span>) y <span class="math inline">\((0,70)\)</span>.</p></li>
+<li><p><span class="math inline">\(F=40x+25y\)</span>: <span class="math inline">\(F(0,0)=0\)</span>, <span class="math inline">\(F(45,0)=1800\)</span>, <span class="math inline">\(F(45,10)=1800+250=2050\)</span>, <span class="math inline">\(F(30,40)=40\cdot30+25\cdot40=2200\)</span> y <span class="math inline">\(F(0,70)=1750\)</span>. El beneficio máximo es <span class="math inline">\(2200\)</span> € con <span class="math inline">\(30\)</span> oficinas y <span class="math inline">\(40\)</span> domicilios.</p></li>
+<li><p>Con <span class="math inline">\(F=20x+25y\)</span>: <span class="math inline">\(F(0,0)=0\)</span>, <span class="math inline">\(F(45,0)=900\)</span>, <span class="math inline">\(F(45,10)=1150\)</span>, <span class="math inline">\(F(30,40)=1600\)</span> y <span class="math inline">\(F(0,70)=1750\)</span>. Ahora el máximo es <span class="math inline">\(1750\)</span> en <span class="math inline">\((0,70)\)</span>: <strong>sí cambia</strong> la solución óptima (solo domicilios).</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>17
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Maximizar <span class="math inline">\(F(x,y)=40x+30y\)</span> sujeta a <span class="math inline">\(2x+y\le60\)</span> (harina), <span class="math inline">\(x+3y\le75\)</span> (horas), <span class="math inline">\(y\le20\)</span> y <span class="math inline">\(x,y\ge0\)</span>. Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((30,0)\)</span>, <span class="math inline">\((21,18)\)</span> (de <span class="math inline">\(2x+y=60\)</span> y <span class="math inline">\(x+3y=75\)</span>: <span class="math inline">\(y=60-2x\)</span>, <span class="math inline">\(x+180-6x=75\)</span>, luego <span class="math inline">\(x=21\)</span>), <span class="math inline">\((15,20)\)</span> (<span class="math inline">\(y=20\)</span> con <span class="math inline">\(x+3y=75\)</span>) y <span class="math inline">\((0,20)\)</span>.</p></li>
+<li><p><span class="math inline">\(F(0,0)=0\)</span>, <span class="math inline">\(F(30,0)=1200\)</span>, <span class="math inline">\(F(21,18)=40\cdot21+30\cdot18=1380\)</span>, <span class="math inline">\(F(15,20)=600+600=1200\)</span> y <span class="math inline">\(F(0,20)=600\)</span>. El máximo es <span class="math inline">\(1380\)</span> € con <span class="math inline">\(21\)</span> tartas y <span class="math inline">\(18\)</span> bizcochos.</p></li>
+<li><p>Harina: <span class="math inline">\(2\cdot21+18=60\)</span> kg, los <span class="math inline">\(60\)</span> disponibles. Horas: <span class="math inline">\(21+3\cdot18=75\)</span>, las <span class="math inline">\(75\)</span> disponibles. Se agotan <strong>la harina y las horas de trabajo</strong>.</p></li>
+<li><p>El pedido máximo de bizcochos no se agota: se hacen <span class="math inline">\(18\)</span> y podría hacerse hasta <span class="math inline">\(20\)</span>, así que <strong>sobran <span class="math inline">\(2\)</span> bizcochos</strong> de capacidad en esa restricción. Interpretación: lo que limita el beneficio son la harina y el trabajo, no los encargos.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>18
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((5,0)\)</span>, <span class="math inline">\((0,5)\)</span> y <span class="math inline">\((4,3)\)</span> (la intersección de <span class="math inline">\(x+2y=10\)</span> y <span class="math inline">\(3x+y=15\)</span>).</p></li>
+<li><p><span class="math inline">\(F_1=3x+2y\)</span>: <span class="math inline">\(F_1(0,0)=0\)</span>, <span class="math inline">\(F_1(5,0)=15\)</span>, <span class="math inline">\(F_1(0,5)=10\)</span> y <span class="math inline">\(F_1(4,3)=18\)</span>. Máximo <span class="math inline">\(18\)</span> en <span class="math inline">\((4,3)\)</span>.</p></li>
+<li><p><span class="math inline">\(F_2=x+3y\)</span>: <span class="math inline">\(F_2(0,0)=0\)</span>, <span class="math inline">\(F_2(5,0)=5\)</span>, <span class="math inline">\(F_2(0,5)=15\)</span> y <span class="math inline">\(F_2(4,3)=4+9=13\)</span>. Máximo <span class="math inline">\(15\)</span> en <span class="math inline">\((0,5)\)</span>. Con <span class="math inline">\(F_1\)</span> conviene el vértice <span class="math inline">\((4,3)\)</span> y con <span class="math inline">\(F_2\)</span> el vértice <span class="math inline">\((0,5)\)</span>: al cambiar la función objetivo, cambia la solución óptima aunque la región sea la misma.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>19
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Con los vértices <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((5,0)\)</span>, <span class="math inline">\((4,3)\)</span> y <span class="math inline">\((0,5)\)</span>: <span class="math inline">\(F(0,0)=0\)</span>, <span class="math inline">\(F(5,0)=5k\)</span>, <span class="math inline">\(F(4,3)=4k+3\)</span> y <span class="math inline">\(F(0,5)=5\)</span>.</p></li>
+<li><p>El máximo está en <span class="math inline">\((4,3)\)</span> si <span class="math inline">\(4k+3\ge5k\)</span> (es decir, <span class="math inline">\(k\le3\)</span>) y <span class="math inline">\(4k+3\ge5\)</span> (es decir, <span class="math inline">\(k\ge\frac12\)</span>). Por tanto, <span class="math inline">\(\frac{1}{2}\le k\le3\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(k=5&gt;3\)</span>, <span class="math inline">\(F(5,0)=25\)</span> es mayor que <span class="math inline">\(F(4,3)=23\)</span>: el máximo está en <span class="math inline">\((5,0)\)</span>. Si <span class="math inline">\(k=0{,}25&lt;\frac12\)</span>, <span class="math inline">\(F(0,5)=5\)</span> es mayor que <span class="math inline">\(F(4,3)=4\)</span>: el máximo está en <span class="math inline">\((0,5)\)</span>. Interpretación: cuando el primer producto vale mucho más que el segundo (<span class="math inline">\(k\)</span> grande), conviene dedicar todos los recursos a él; si vale poco, al segundo; y en el rango intermedio conviene producir de los dos.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>20
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>El lado de <span class="math inline">\((0,0)\)</span> a <span class="math inline">\((6,0)\)</span> es <span class="math inline">\(y\ge0\)</span> y el de <span class="math inline">\((0,0)\)</span> a <span class="math inline">\((0,5)\)</span> es <span class="math inline">\(x\ge0\)</span>. La recta por <span class="math inline">\((6,0)\)</span> y <span class="math inline">\((4,3)\)</span> es <span class="math inline">\(3x+2y=18\)</span> y la recta por <span class="math inline">\((4,3)\)</span> y <span class="math inline">\((0,5)\)</span> es <span class="math inline">\(x+2y=10\)</span>. El origen cumple <span class="math inline">\(3x+2y\le18\)</span> y <span class="math inline">\(x+2y\le10\)</span>. Inecuaciones: <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>, <span class="math inline">\(3x+2y\le18\)</span> y <span class="math inline">\(x+2y\le10\)</span>.</p></li>
+<li><p><span class="math inline">\(F=5x+4y\)</span>: <span class="math inline">\(F(0,0)=0\)</span>, <span class="math inline">\(F(6,0)=30\)</span>, <span class="math inline">\(F(4,3)=5\cdot4+4\cdot3=32\)</span> y <span class="math inline">\(F(0,5)=20\)</span>. El máximo es <span class="math inline">\(32\)</span> en <span class="math inline">\((4,3)\)</span>.</p></li>
+<li><p><span class="math inline">\((3,3)\)</span>: <span class="math inline">\(3\cdot3+2\cdot3=15\le18\)</span> y <span class="math inline">\(3+2\cdot3=9\le10\)</span>, además <span class="math inline">\(x,y\ge0\)</span>: pertenece a la región. <span class="math inline">\(F(3,3)=5\cdot3+4\cdot3=27&lt;32\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>21
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Maximizar <span class="math inline">\(F(x,y)=0{,}04x+0{,}07y\)</span> sujeta a <span class="math inline">\(x+y\le20000\)</span>, <span class="math inline">\(x\ge5000\)</span>, <span class="math inline">\(y\ge2000\)</span> e <span class="math inline">\(y\le x+4000\)</span>.</p></li>
+<li><p>Vértices: <span class="math inline">\((5000,2000)\)</span>; <span class="math inline">\((18000,2000)\)</span> (<span class="math inline">\(y=2000\)</span> con <span class="math inline">\(x+y=20000\)</span>); <span class="math inline">\((8000,12000)\)</span> (<span class="math inline">\(y=x+4000\)</span> con <span class="math inline">\(x+y=20000\)</span>: <span class="math inline">\(2x+4000=20000\)</span>); y <span class="math inline">\((5000,9000)\)</span> (<span class="math inline">\(x=5000\)</span> con <span class="math inline">\(y=x+4000\)</span>).</p></li>
+<li><p><span class="math inline">\(F(5000,2000)=200+140=340\)</span>, <span class="math inline">\(F(18000,2000)=720+140=860\)</span>, <span class="math inline">\(F(8000,12000)=0{,}04\cdot8000+0{,}07\cdot12000=320+840=1160\)</span> y <span class="math inline">\(F(5000,9000)=200+630=830\)</span>. El máximo interés es <span class="math inline">\(1160\)</span> € con <span class="math inline">\(8000\)</span> € en bonos y <span class="math inline">\(12000\)</span> € en el fondo.</p></li>
+<li><p>Sí invierte todo el dinero: <span class="math inline">\(8000+12000=20000\)</span>. La rentabilidad total es <span class="math inline">\(\dfrac{1160}{20000}=0{,}058\)</span>, es decir, <span class="math inline">\(5{,}8\,\%\)</span>, entre el <span class="math inline">\(4\,\%\)</span> y el <span class="math inline">\(7\,\%\)</span> de los productos.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>22
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Minimizar <span class="math inline">\(F(x,y)=40x+30y\)</span> sujeta a <span class="math inline">\(x+y\ge10\)</span>, <span class="math inline">\(x\le8\)</span>, <span class="math inline">\(y\le9\)</span>, <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>.</p></li>
+<li><p>Vértices: <span class="math inline">\((1,9)\)</span> (<span class="math inline">\(y=9\)</span> con <span class="math inline">\(x+y=10\)</span>), <span class="math inline">\((8,2)\)</span> (<span class="math inline">\(x=8\)</span> con <span class="math inline">\(x+y=10\)</span>) y <span class="math inline">\((8,9)\)</span>. La región es un triángulo.</p></li>
+<li><p><span class="math inline">\(F(1,9)=40\cdot1+30\cdot9=310\)</span>, <span class="math inline">\(F(8,2)=320+60=380\)</span> y <span class="math inline">\(F(8,9)=320+270=590\)</span>. El coste mínimo es <span class="math inline">\(310\)</span> € con <span class="math inline">\(1\)</span> sesión de yoga y <span class="math inline">\(9\)</span> de pilates.</p></li>
+<li><p><span class="math inline">\((0,10)\)</span> cumple <span class="math inline">\(x+y\ge10\)</span>, pero <span class="math inline">\(y=10\)</span> <strong>no</strong> cumple <span class="math inline">\(y\le9\)</span>. Por eso no está en la región y el programa <span class="math inline">\((0,10)\)</span> no es válido.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>23
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Con <span class="math inline">\(50\)</span> horas de carpintería: <span class="math inline">\(x+2y\le50\)</span>, <span class="math inline">\(3x+y\le60\)</span>. Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((20,0)\)</span>, <span class="math inline">\((0,25)\)</span> (<span class="math inline">\(x=0\)</span> con <span class="math inline">\(x+2y=50\)</span>) y la intersección: <span class="math inline">\(y=60-3x\)</span>, <span class="math inline">\(x+120-6x=50\)</span>, luego <span class="math inline">\(x=14\)</span> e <span class="math inline">\(y=18\)</span>: <span class="math inline">\((14,18)\)</span>.</p></li>
+<li><p><span class="math inline">\(F=30x+50y\)</span>: <span class="math inline">\(F(0,0)=0\)</span>, <span class="math inline">\(F(20,0)=600\)</span>, <span class="math inline">\(F(0,25)=1250\)</span> y <span class="math inline">\(F(14,18)=30\cdot14+50\cdot18=1320\)</span>. El máximo es <span class="math inline">\(1320\)</span> € con <span class="math inline">\(14\)</span> sillas y <span class="math inline">\(18\)</span> mesas.</p></li>
+<li><p>Antes era <span class="math inline">\(1080\)</span> €. Ahora el beneficio aumenta <span class="math inline">\(1320-1080=240\)</span> €.</p></li>
+<li><p>Cada hora extra aporta <span class="math inline">\(\dfrac{240}{10}=24\)</span> €. Como cuesta <span class="math inline">\(20\)</span> €, <strong>compensa</strong>: el beneficio neto por hora es <span class="math inline">\(24-20=4\)</span> €, y por las <span class="math inline">\(10\)</span> horas, <span class="math inline">\(40\)</span> €.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>24
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Con <span class="math inline">\(x+y=10\)</span>, los puntos están sobre una recta; las condiciones <span class="math inline">\(x\ge2\)</span> e <span class="math inline">\(y\ge1\)</span> (es decir, <span class="math inline">\(x\le9\)</span>) recortan un trozo de ella. Una recta recortada por dos condiciones es un <strong>segmento</strong>.</p></li>
+<li><p>Extremos: <span class="math inline">\(x=2\)</span> da <span class="math inline">\(y=8\)</span>, es decir, <span class="math inline">\((2,8)\)</span>; <span class="math inline">\(y=1\)</span> da <span class="math inline">\(x=9\)</span>, es decir, <span class="math inline">\((9,1)\)</span>.</p></li>
+<li><p><span class="math inline">\(F(2,8)=3\cdot2+2\cdot8=22\)</span> y <span class="math inline">\(F(9,1)=3\cdot9+2\cdot1=29\)</span>. Coste mínimo <span class="math inline">\(22\)</span> en <span class="math inline">\((2,8)\)</span> y máximo <span class="math inline">\(29\)</span> en <span class="math inline">\((9,1)\)</span>.</p></li>
+<li><p>Con <span class="math inline">\(y=10-x\)</span>: <span class="math inline">\(F=3x+2(10-x)=20+x\)</span>, creciente en <span class="math inline">\(x\)</span> para <span class="math inline">\(2\le x\le9\)</span>. Su mínimo es <span class="math inline">\(20+2=22\)</span> y su máximo <span class="math inline">\(20+9=29\)</span>, como antes.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>25
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Maximizar <span class="math inline">\(F(x,y)=x+y\)</span> sujeta a <span class="math inline">\(40x+60y\le11000\)</span>, <span class="math inline">\(x\ge50\)</span>, <span class="math inline">\(y\ge30\)</span> y <span class="math inline">\(x\le200\)</span>.</p></li>
+<li><p>Vértices: <span class="math inline">\((50,30)\)</span>; <span class="math inline">\((200,30)\)</span>; <span class="math inline">\((200,50)\)</span> (<span class="math inline">\(x=200\)</span> con <span class="math inline">\(40x+60y=11000\)</span>: <span class="math inline">\(60y=3000\)</span>); y <span class="math inline">\((50,150)\)</span> (<span class="math inline">\(x=50\)</span> con <span class="math inline">\(40x+60y=11000\)</span>: <span class="math inline">\(60y=9000\)</span>).</p></li>
+<li><p><span class="math inline">\(F(50,30)=80\)</span>, <span class="math inline">\(F(200,30)=230\)</span>, <span class="math inline">\(F(200,50)=250\)</span> y <span class="math inline">\(F(50,150)=200\)</span>. El máximo es <span class="math inline">\(250\)</span> becas: <span class="math inline">\(200\)</span> de comedor y <span class="math inline">\(50\)</span> de transporte.</p></li>
+<li><p>Coste: <span class="math inline">\(40\cdot200+60\cdot50=8000+3000=11000\)</span> €. Sí, <strong>se gasta todo el presupuesto</strong>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

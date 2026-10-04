@@ -1,7 +1,7 @@
 /* Gráficas interactivas con JSXGraph (carga diferida desde cdnjs).
  * MDPlot.draw(contenedor, spec) dibuja una gráfica a partir de los datos de un reto:
  *   2D: {type:'2d', x:[xmin,xmax], y:[ymin,ymax]?, curves:[{f, label}], points:[{x, y, label}],
- *        lines:[{m, n, label}], vlines:[x], hlines:[y], fill:[{f, g, a, b}]}
+ *        lines:[{m, n, label}], vlines:[x], hlines:[y], fill:[{f, g, a, b}], polygons:[[[x,y],…]]}
  *   3D: {type:'3d', r: semilado de la caja, points:[{p:[x,y,z], label}], lines:[{p, v, label}],
  *        planes:[{eq:[a,b,c,d], label}], segments:[{a:[x,y,z], b:[x,y,z], solid?}]}
  * Las funciones f, g son funciones JS de una variable.
@@ -62,6 +62,9 @@
       for (let i = 0; i <= 120; i++) { const x = r.a + (r.b - r.a) * i / 120; xs.push(x); ys.push(r.f(x)); }
       for (let i = 120; i >= 0; i--) { const x = r.a + (r.b - r.a) * i / 120; xs.push(x); ys.push(r.g ? r.g(x) : 0); }
       board.create('curve', [xs, ys], { strokeWidth: 0, fillColor: FILL, fillOpacity: 0.35, highlight: false });
+    });
+    (spec.polygons || []).forEach((pg) => {   // región rellena: lista de vértices [[x,y],…]
+      board.create('polygon', pg.map((q) => [q[0], q[1]]), { fillColor: FILL, fillOpacity: 0.35, highlight: false, vertices: { visible: false }, borders: { strokeWidth: 0, highlight: false } });
     });
     (spec.curves || []).forEach((c, i) => {
       board.create('functiongraph', [c.f, x0 - (x1 - x0), x1 + (x1 - x0)], {

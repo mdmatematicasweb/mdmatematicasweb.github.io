@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Matrices y determinantes – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-2d82e0ab39c09339319a3284da2afbd7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+#md-loader{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;background:#262A3D;color:#EBF8EE;font-family:"Bricolage Grotesque",system-ui,sans-serif;transition:opacity .35s ease,visibility .35s}
+#md-loader.md-out{opacity:0;visibility:hidden}
+#md-loader .ml-logo{width:96px;height:96px;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border:5px solid #000;background:#000;box-shadow:8px 8px 0 #000;animation:ml-tilt 2.4s ease-in-out infinite}
+#md-loader .ml-logo i{display:grid;place-items:center;font:900 28px/1 "Arial Black",Arial,sans-serif;font-style:normal;color:#000;animation:ml-pop 1.6s ease-in-out infinite}
+#md-loader .ml-logo i:nth-child(1){background:#5EC4B6}
+#md-loader .ml-logo i:nth-child(2){background:#262A3D;color:#FCE678;animation-delay:.2s}
+#md-loader .ml-logo i:nth-child(3){background:#F4736C;animation-delay:.6s}
+#md-loader .ml-logo i:nth-child(4){background:#FCE678;animation-delay:.4s}
+#md-loader .ml-txt{font-weight:800;font-size:1.25rem;text-transform:uppercase;letter-spacing:.02em;text-align:center;padding:0 1rem}
+#md-loader .ml-txt b{color:#FCE678}
+#md-loader .ml-bar{width:min(260px,70vw);height:14px;border:3px solid #000;background:#000;box-shadow:4px 4px 0 #000;overflow:hidden}
+#md-loader .ml-bar::after{content:"";display:block;height:100%;width:40%;background:repeating-linear-gradient(-45deg,#5EC4B6 0 10px,#F4736C 10px 20px,#FCE678 20px 30px);animation:ml-slide 1.1s ease-in-out infinite}
+@keyframes ml-pop{0%,100%{transform:scale(1)}50%{transform:scale(.8)}}
+@keyframes ml-tilt{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes ml-slide{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+@media (prefers-reduced-motion:reduce){#md-loader *{animation:none!important}}
+</style>
+<noscript><style>#md-loader{display:none!important}</style></noscript>
+<script>
+(function () {
+  try {
+    if (/^\/(index\.html)?$/.test(location.pathname)) return;
+    var el = document.createElement("div");
+    el.id = "md-loader";
+    el.setAttribute("role", "status");
+    el.innerHTML =
+      '<div class="ml-logo" aria-hidden="true"><i>+</i><i>&minus;</i><i>&times;</i><i>=</i></div>' +
+      '<div class="ml-txt">Mientras carga&hellip; <b>&iexcl;&iexcl;&iexcl;un descanso!!!</b></div>' +
+      '<div class="ml-bar" aria-hidden="true"></div>';
+    document.documentElement.appendChild(el);
+    var t0 = Date.now(), gone = false;
+    var hide = function () {
+      if (gone) return;
+      gone = true;
+      var wait = Math.max(0, 1000 - (Date.now() - t0));
+      setTimeout(function () {
+        el.classList.add("md-out");
+        setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 450);
+      }, wait);
+    };
+    var ready = function () {
+      var m = window.MathJax;
+      if (m && m.startup && m.startup.promise && m.startup.promise.then) {
+        m.startup.promise.then(hide, hide);
+      } else { hide(); }
+    };
+    if (document.readyState === "complete") ready();
+    else window.addEventListener("load", ready);
+    window.addEventListener("pageshow", function (e) { if (e.persisted) hide(); });
+    setTimeout(hide, 10000);
+  } catch (e) {}
+})();
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-simulacro-pau" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">★ Simulacro PAU</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-simulacro-pau">    
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ciencias/examen/index.html">
+ <span class="dropdown-text">Ciencias (Matemáticas II)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ccss/examen/index.html">
+ <span class="dropdown-text">Ciencias Sociales (Mat. Aplicadas II)</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#concepto-y-tipos" id="toc-concepto-y-tipos" class="nav-link active" data-scroll-target="#concepto-y-tipos">1. Concepto y tipos</a></li>
+  <li><a href="#operaciones" id="toc-operaciones" class="nav-link" data-scroll-target="#operaciones">2. Operaciones</a></li>
+  <li><a href="#determinantes" id="toc-determinantes" class="nav-link" data-scroll-target="#determinantes">3. Determinantes</a></li>
+  <li><a href="#rango-de-una-matriz" id="toc-rango-de-una-matriz" class="nav-link" data-scroll-target="#rango-de-una-matriz">4. Rango de una matriz</a></li>
+  <li><a href="#matriz-inversa" id="toc-matriz-inversa" class="nav-link" data-scroll-target="#matriz-inversa">5. Matriz inversa</a></li>
+  <li><a href="#ecuaciones-matriciales" id="toc-ecuaciones-matriciales" class="nav-link" data-scroll-target="#ecuaciones-matriciales">6. Ecuaciones matriciales</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Matrices y determinantes</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="concepto-y-tipos" class="level2">
+<h2 class="anchored" data-anchor-id="concepto-y-tipos">1. Concepto y tipos</h2>
+<p>Una <strong>matriz</strong> de dimensión <span class="math inline">\(m \times n\)</span> es una tabla de números con <span class="math inline">\(m\)</span> filas y <span class="math inline">\(n\)</span> columnas. El elemento <span class="math inline">\(a_{ij}\)</span> está en la fila <span class="math inline">\(i\)</span> y la columna <span class="math inline">\(j\)</span>. Las matrices sirven para organizar datos: ventas por tienda, personas encuestadas por edad, costes por producto.</p>
+<p>Ejemplo: en una encuesta sobre el transporte público, las filas son la respuesta (a favor, en contra) y las columnas, la franja de edad (18–35, 36–55, más de 55):</p>
+<p><span class="math display">\[E=\begin{pmatrix}120&amp;95&amp;60\\80&amp;105&amp;140\end{pmatrix}\in\mathcal{M}_{2\times 3}\]</span></p>
+<p>El elemento <span class="math inline">\(e_{23}=140\)</span> son las personas de más de 55 años que están en contra.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tipo</th>
+<th>Condición</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cuadrada de orden <span class="math inline">\(n\)</span></td>
+<td><span class="math inline">\(m=n\)</span></td>
+</tr>
+<tr class="even">
+<td>Fila / columna</td>
+<td><span class="math inline">\(m=1\)</span> / <span class="math inline">\(n=1\)</span></td>
+</tr>
+<tr class="odd">
+<td>Diagonal</td>
+<td>cuadrada con <span class="math inline">\(a_{ij}=0\)</span> si <span class="math inline">\(i\neq j\)</span></td>
+</tr>
+<tr class="even">
+<td>Identidad <span class="math inline">\(I_n\)</span></td>
+<td>diagonal con unos en la diagonal</td>
+</tr>
+<tr class="odd">
+<td>Triangular</td>
+<td>ceros por encima (o por debajo) de la diagonal</td>
+</tr>
+<tr class="even">
+<td>Simétrica</td>
+<td><span class="math inline">\(A=A^t\)</span></td>
+</tr>
+<tr class="odd">
+<td>Nula <span class="math inline">\(O\)</span></td>
+<td>todos los elementos son 0</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="operaciones" class="level2">
+<h2 class="anchored" data-anchor-id="operaciones">2. Operaciones</h2>
+<p><strong>Suma y resta</strong>: solo entre matrices de la misma dimensión, elemento a elemento. Si <span class="math inline">\(E_A\)</span> y <span class="math inline">\(E_B\)</span> son las encuestas de dos municipios, el conjunto de ambos es</p>
+<p><span class="math display">\[E_A+E_B=\begin{pmatrix}120&amp;95&amp;60\\80&amp;105&amp;140\end{pmatrix}+\begin{pmatrix}70&amp;60&amp;40\\50&amp;65&amp;90\end{pmatrix}=\begin{pmatrix}190&amp;155&amp;100\\130&amp;170&amp;230\end{pmatrix}\]</span></p>
+<p><strong>Producto por un número</strong>: se multiplica cada elemento por el número. Si una tienda vende cada semana <span class="math inline">\(V=\begin{pmatrix}40&amp;25&amp;10\\30&amp;35&amp;20\end{pmatrix}\)</span> unidades de café, té y cacao (filas: tienda 1 y tienda 2), en dos semanas iguales vende <span class="math inline">\(2\cdot V=\begin{pmatrix}80&amp;50&amp;20\\60&amp;70&amp;40\end{pmatrix}\)</span>.</p>
+<p><strong>Producto de matrices</strong>: <span class="math inline">\(A_{m\times n}\cdot B_{n\times p}=C_{m\times p}\)</span>. El elemento <span class="math inline">\(c_{ij}\)</span> es la fila <span class="math inline">\(i\)</span> de <span class="math inline">\(A\)</span> por la columna <span class="math inline">\(j\)</span> de <span class="math inline">\(B\)</span>:</p>
+<p><span class="math display">\[c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\dots+a_{in}b_{nj}\]</span></p>
+<p>Si el precio por unidad es <span class="math inline">\(p=\begin{pmatrix}3\\2\\4\end{pmatrix}\)</span> euros, los ingresos de cada tienda son <span class="math inline">\(V\cdot p\)</span>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig-producto-matrices.svg" class="img-fluid figure-img" style="width:85.0%" alt="Producto de una matriz de ventas de 2 filas y 3 columnas por una columna de tres precios, con la primera fila y la columna resaltadas y el resultado 210 y 240"></p>
+<figcaption>Cada elemento del producto es una fila de la primera matriz por una columna de la segunda: los ingresos de la tienda 1 son <span class="math inline">\(40\cdot3+25\cdot2+10\cdot4=210\)</span> euros.</figcaption>
+</figure>
+</div>
+<p>Otro ejemplo con matrices cuadradas:</p>
+<p><span class="math display">\[A=\begin{pmatrix}2&amp;1\\0&amp;1\end{pmatrix},\ B=\begin{pmatrix}1&amp;3\\1&amp;0\end{pmatrix}:\qquad A\cdot B=\begin{pmatrix}3&amp;6\\1&amp;0\end{pmatrix},\quad B\cdot A=\begin{pmatrix}2&amp;4\\2&amp;1\end{pmatrix}\]</span></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Advertencia</span>Cuidado con el producto
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Solo se puede multiplicar si <strong>columnas de <span class="math inline">\(A\)</span> = filas de <span class="math inline">\(B\)</span></strong>.</li>
+<li><strong>No es conmutativo</strong>: en general <span class="math inline">\(A\cdot B\neq B\cdot A\)</span>, como en el ejemplo anterior.</li>
+<li><span class="math inline">\(A\cdot B=O\)</span> <strong>no</strong> implica <span class="math inline">\(A=O\)</span> ni <span class="math inline">\(B=O\)</span>.</li>
+<li><span class="math inline">\((A+B)^2=A^2+A\cdot B+B\cdot A+B^2\)</span>, que no es <span class="math inline">\(A^2+2A\cdot B+B^2\)</span> salvo que <span class="math inline">\(A\cdot B=B\cdot A\)</span>.</li>
+</ul>
+</div>
+</div>
+<p><strong>Propiedades útiles</strong>: <span class="math inline">\(A\cdot(B+C)=A\cdot B+A\cdot C\)</span>, <span class="math inline">\((A\cdot B)\cdot C=A\cdot(B\cdot C)\)</span> y <span class="math inline">\(A\cdot I_n=I_n\cdot A=A\)</span>.</p>
+<p><strong>Traspuesta</strong>. La <strong>traspuesta</strong> <span class="math inline">\(A^t\)</span> se obtiene cambiando filas por columnas. Por ejemplo, <span class="math inline">\(V^t=\begin{pmatrix}40&amp;30\\25&amp;35\\10&amp;20\end{pmatrix}\)</span>. Propiedades:</p>
+<p><span class="math display">\[(A+B)^t=A^t+B^t \qquad (k\cdot A)^t=k\cdot A^t \qquad (A\cdot B)^t=B^t\cdot A^t \qquad (A^t)^t=A\]</span></p>
+<p><strong>Potencias</strong>. <span class="math inline">\(A^n=A\cdot A\cdots A\)</span> (<span class="math inline">\(n\)</span> veces), solo para matrices cuadradas. Para calcular <span class="math inline">\(A^n\)</span>, halla <span class="math inline">\(A^2,\ A^3,\ A^4\)</span>, detecta el patrón y generalízalo. Ejemplo con <span class="math inline">\(A=\begin{pmatrix}1&amp;0\\2&amp;1\end{pmatrix}\)</span>:</p>
+<p><span class="math display">\[A^2=\begin{pmatrix}1&amp;0\\4&amp;1\end{pmatrix},\quad A^3=\begin{pmatrix}1&amp;0\\6&amp;1\end{pmatrix},\quad A^4=\begin{pmatrix}1&amp;0\\8&amp;1\end{pmatrix}\ \Rightarrow\ A^n=\begin{pmatrix}1&amp;0\\2n&amp;1\end{pmatrix}\]</span></p>
+<p>Si <span class="math inline">\(A^2=I_n\)</span> (por ejemplo <span class="math inline">\(\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}\)</span>), las potencias alternan: <span class="math inline">\(A^n=A\)</span> si <span class="math inline">\(n\)</span> es impar y <span class="math inline">\(A^n=I_n\)</span> si <span class="math inline">\(n\)</span> es par.</p>
+</section>
+<section id="determinantes" class="level2">
+<h2 class="anchored" data-anchor-id="determinantes">3. Determinantes</h2>
+<p>El <strong>determinante</strong> de una matriz cuadrada <span class="math inline">\(A\)</span>, que se escribe <span class="math inline">\(|A|\)</span>, es un número asociado a ella. Sirve para saber si <span class="math inline">\(A\)</span> tiene inversa, para calcularla y para hallar el rango. En este curso se calculan hasta <strong>orden 3</strong>.</p>
+<p><strong>Orden 2</strong>: producto de la diagonal principal menos producto de la diagonal secundaria.</p>
+<p><span class="math display">\[\left|\begin{matrix}a&amp;b\\c&amp;d\end{matrix}\right|=ad-bc\qquad\text{Ejemplo: }\left|\begin{matrix}5&amp;2\\3&amp;4\end{matrix}\right|=20-6=14\]</span></p>
+<p><strong>Orden 3 — regla de Sarrus</strong>. Se repiten a la derecha las dos primeras columnas. Suman los productos de las tres diagonales descendentes y restan los de las tres ascendentes:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig-sarrus.svg" class="img-fluid figure-img" style="width:85.0%" alt="Dos dibujos de una matriz de orden 3 con sus dos primeras columnas repetidas a la derecha: a la izquierda las diagonales descendentes que suman y a la derecha las ascendentes que restan"></p>
+<figcaption>Regla de Sarrus: las tres diagonales descendentes suman y las tres ascendentes restan.</figcaption>
+</figure>
+</div>
+<p><span class="math display">\[\left|\begin{matrix}a_{11}&amp;a_{12}&amp;a_{13}\\a_{21}&amp;a_{22}&amp;a_{23}\\a_{31}&amp;a_{32}&amp;a_{33}\end{matrix}\right|=a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}-a_{13}a_{22}a_{31}-a_{11}a_{23}a_{32}-a_{12}a_{21}a_{33}\]</span></p>
+<p>Ejemplo: <span class="math display">\[\left|\begin{matrix}1&amp;2&amp;3\\0&amp;1&amp;4\\2&amp;1&amp;0\end{matrix}\right|=(0+16+0)-(6+4+0)=16-10=6\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sarrus solo vale para orden 3. Para otros órdenes se usan los adjuntos.</p>
+</div>
+</div>
+<p><strong>Menores y adjuntos</strong>. El <strong>menor</strong> <span class="math inline">\(M_{ij}\)</span> es el determinante que queda al quitar la fila <span class="math inline">\(i\)</span> y la columna <span class="math inline">\(j\)</span>. El <strong>adjunto</strong> es <span class="math inline">\(A_{ij}=(-1)^{i+j}M_{ij}\)</span>; los signos forman el tablero <span class="math inline">\(\begin{pmatrix}+&amp;-&amp;+\\-&amp;+&amp;-\\+&amp;-&amp;+\end{pmatrix}\)</span>. El determinante se puede <strong>desarrollar por cualquier fila o columna</strong>:</p>
+<p><span class="math display">\[|A|=a_{i1}A_{i1}+a_{i2}A_{i2}+a_{i3}A_{i3}\]</span></p>
+<p>Conviene elegir la fila o columna con más ceros. Desarrollando por la segunda columna:</p>
+<p><span class="math display">\[\left|\begin{matrix}3&amp;0&amp;2\\1&amp;4&amp;-1\\2&amp;0&amp;5\end{matrix}\right|=4\cdot(+1)\left|\begin{matrix}3&amp;2\\2&amp;5\end{matrix}\right|=4\cdot11=44\]</span></p>
+<p><strong>Propiedades</strong>. Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> matrices cuadradas de orden <span class="math inline">\(n\)</span>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Propiedad</th>
+<th>Fórmula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Traspuesta</td>
+<td><span class="math inline">\(\lvert A^t\rvert=\lvert A\rvert\)</span></td>
+</tr>
+<tr class="even">
+<td>Producto</td>
+<td><span class="math inline">\(\lvert A\cdot B\rvert=\lvert A\rvert\cdot\lvert B\rvert\)</span></td>
+</tr>
+<tr class="odd">
+<td>Inversa</td>
+<td><span class="math inline">\(\lvert A^{-1}\rvert=\dfrac{1}{\lvert A\rvert}\)</span></td>
+</tr>
+<tr class="even">
+<td>Producto por un número</td>
+<td><span class="math inline">\(\lvert k\cdot A\rvert=k^n\cdot\lvert A\rvert\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Sobre filas (o columnas):</p>
+<ol type="1">
+<li>Si se <strong>intercambian</strong> dos filas, el determinante <strong>cambia de signo</strong>.</li>
+<li>Si una fila se <strong>multiplica por <span class="math inline">\(k\)</span></strong>, el determinante queda multiplicado por <span class="math inline">\(k\)</span>.</li>
+<li>Si a una fila se le <strong>suma un múltiplo de otra</strong>, el determinante <strong>no cambia</strong>.</li>
+<li>Si hay una fila de ceros, o dos filas iguales o proporcionales (en general, una fila combinación lineal de las otras), el determinante es <span class="math inline">\(0\)</span>.</li>
+</ol>
+<p>Ejemplo: si <span class="math inline">\(A\)</span> es de orden 3 y <span class="math inline">\(|A|=3\)</span>, entonces <span class="math inline">\(|A^t|=3\)</span>, <span class="math inline">\(|A^2|=9\)</span>, <span class="math inline">\(|A^{-1}|=\tfrac13\)</span> y <span class="math inline">\(|2\cdot A|=2^3\cdot3=24\)</span>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ojo: <span class="math inline">\(|A+B|\neq|A|+|B|\)</span> en general, y <span class="math inline">\(|k\cdot A|\neq k\cdot|A|\)</span> (es <span class="math inline">\(k^n\cdot|A|\)</span>).</p>
+</div>
+</div>
+</section>
+<section id="rango-de-una-matriz" class="level2">
+<h2 class="anchored" data-anchor-id="rango-de-una-matriz">4. Rango de una matriz</h2>
+<p>El <strong>rango</strong> <span class="math inline">\(\operatorname{rg}A\)</span> es el número máximo de filas (o columnas) linealmente independientes. Se puede calcular de dos formas.</p>
+<p><strong>Por Gauss</strong>: se hacen ceros por debajo de la diagonal y se cuenta el número de filas no nulas. Ejemplo:</p>
+<p><span class="math display">\[\begin{pmatrix}1&amp;2&amp;1\\2&amp;1&amp;-1\\3&amp;3&amp;0\end{pmatrix}\xrightarrow[F_3-3F_1]{F_2-2F_1}\begin{pmatrix}1&amp;2&amp;1\\0&amp;-3&amp;-3\\0&amp;-3&amp;-3\end{pmatrix}\xrightarrow{F_3-F_2}\begin{pmatrix}1&amp;2&amp;1\\0&amp;-3&amp;-3\\0&amp;0&amp;0\end{pmatrix}\]</span></p>
+<p>Hay dos filas no nulas, luego el rango es 2.</p>
+<p><strong>Por menores</strong>: el rango es el orden del mayor menor distinto de cero. En la matriz anterior, el determinante de orden 3 vale <span class="math inline">\(0\)</span> (la tercera fila es la suma de las otras dos) y el menor <span class="math inline">\(\left|\begin{matrix}1&amp;2\\2&amp;1\end{matrix}\right|=-3\neq0\)</span>, luego el rango es 2.</p>
+<p><strong>Con un parámetro</strong>. Se calcula el determinante, se ve para qué valores se anula y se estudia el rango en cada caso. Para <span class="math inline">\(P(m)=\begin{pmatrix}1&amp;1&amp;m\\1&amp;m&amp;1\\m&amp;1&amp;1\end{pmatrix}\)</span>:</p>
+<p><span class="math display">\[|P(m)|=-(m-1)^2(m+2)\]</span></p>
+<ul>
+<li>Si <span class="math inline">\(m\neq1\)</span> y <span class="math inline">\(m\neq-2\)</span>, el determinante no es 0 y <span class="math inline">\(\operatorname{rg}P=3\)</span>.</li>
+<li>Si <span class="math inline">\(m=1\)</span>, todas las filas son <span class="math inline">\((1,\,1,\,1)\)</span> y <span class="math inline">\(\operatorname{rg}P=1\)</span>.</li>
+<li>Si <span class="math inline">\(m=-2\)</span>, las dos primeras filas <span class="math inline">\((1,\,1,\,-2)\)</span> y <span class="math inline">\((1,\,-2,\,1)\)</span> no son proporcionales y el determinante es 0, luego <span class="math inline">\(\operatorname{rg}P=2\)</span>.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="math inline">\(\operatorname{rg}A\le\min(m,n)\)</span>.</li>
+<li>Una matriz cuadrada de orden <span class="math inline">\(n\)</span> tiene <span class="math inline">\(|A|\neq0\)</span> si y solo si <span class="math inline">\(\operatorname{rg}A=n\)</span>.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="matriz-inversa" class="level2">
+<h2 class="anchored" data-anchor-id="matriz-inversa">5. Matriz inversa</h2>
+<p>Una matriz cuadrada <span class="math inline">\(A\)</span> de orden <span class="math inline">\(n\)</span> es <strong>invertible</strong> si existe <span class="math inline">\(A^{-1}\)</span> con <span class="math inline">\(A\cdot A^{-1}=A^{-1}\cdot A=I_n\)</span>. Esto ocurre <strong>si y solo si <span class="math inline">\(|A|\neq0\)</span></strong>. La inversa, si existe, es <strong>única</strong>, y además:</p>
+<p><span class="math display">\[(A\cdot B)^{-1}=B^{-1}\cdot A^{-1}\qquad (A^t)^{-1}=(A^{-1})^t\]</span></p>
+<p><strong>Cálculo por adjuntos</strong>:</p>
+<p><span class="math display">\[A^{-1}=\frac{1}{|A|}\,\bigl(\operatorname{Adj}A\bigr)^t\]</span></p>
+<p>donde <span class="math inline">\(\operatorname{Adj}A\)</span> es la matriz de los adjuntos <span class="math inline">\(A_{ij}\)</span>. Pasos: (1) calcula <span class="math inline">\(|A|\)</span> y comprueba que no es 0; (2) calcula los adjuntos; (3) traspón la matriz de adjuntos; (4) divide entre <span class="math inline">\(|A|\)</span>.</p>
+<p>Para <strong>orden 2</strong> hay atajo: si <span class="math inline">\(|A|=ad-bc\neq0\)</span>, entonces <span class="math inline">\(\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}^{-1}=\dfrac{1}{ad-bc}\begin{pmatrix}d&amp;-b\\-c&amp;a\end{pmatrix}\)</span>. Por ejemplo, si <span class="math inline">\(H=\begin{pmatrix}4&amp;6\\1&amp;2\end{pmatrix}\)</span>, entonces <span class="math inline">\(|H|=2\)</span> y</p>
+<p><span class="math display">\[H^{-1}=\frac12\begin{pmatrix}2&amp;-6\\-1&amp;4\end{pmatrix}=\begin{pmatrix}1&amp;-3\\-\tfrac12&amp;2\end{pmatrix}\]</span></p>
+<p>Ejemplo de <strong>orden 3</strong> con <span class="math inline">\(Q=\begin{pmatrix}2&amp;1&amp;1\\1&amp;1&amp;0\\0&amp;1&amp;1\end{pmatrix}\)</span>:</p>
+<ol type="1">
+<li>Por Sarrus, <span class="math inline">\(|Q|=(2+0+1)-(0+0+1)=2\neq0\)</span>, luego <span class="math inline">\(Q\)</span> es invertible.</li>
+<li>Adjuntos: <span class="math inline">\(A_{11}=1,\ A_{12}=-1,\ A_{13}=1\)</span>; <span class="math inline">\(A_{21}=0,\ A_{22}=2,\ A_{23}=-2\)</span>; <span class="math inline">\(A_{31}=-1,\ A_{32}=1,\ A_{33}=1\)</span>.</li>
+<li>Se traspone la matriz de adjuntos y se divide entre <span class="math inline">\(|Q|=2\)</span>:</li>
+</ol>
+<p><span class="math display">\[Q^{-1}=\frac12\begin{pmatrix}1&amp;-1&amp;1\\0&amp;2&amp;-2\\-1&amp;1&amp;1\end{pmatrix}^{t}=\frac12\begin{pmatrix}1&amp;0&amp;-1\\-1&amp;2&amp;1\\1&amp;-2&amp;1\end{pmatrix}=\begin{pmatrix}\tfrac12&amp;0&amp;-\tfrac12\\-\tfrac12&amp;1&amp;\tfrac12\\\tfrac12&amp;-1&amp;\tfrac12\end{pmatrix}\]</span></p>
+<p><strong>Con un parámetro</strong>: para <span class="math inline">\(A(m)=\begin{pmatrix}m&amp;1\\4&amp;m\end{pmatrix}\)</span> se tiene <span class="math inline">\(|A|=m^2-4\)</span>, que se anula en <span class="math inline">\(m=\pm2\)</span>. Luego <span class="math inline">\(A\)</span> tiene inversa para todo <span class="math inline">\(m\neq2\)</span> y <span class="math inline">\(m\neq-2\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Otro método: Gauss-Jordan
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Se escribe <span class="math inline">\((A\,|\,I_n)\)</span> y se hacen operaciones entre filas hasta obtener <span class="math inline">\((I_n\,|\,A^{-1})\)</span>. Si aparece una fila de ceros a la izquierda, <span class="math inline">\(A\)</span> no es invertible. Con <span class="math inline">\(G=\begin{pmatrix}3&amp;1\\5&amp;2\end{pmatrix}\)</span>:</p>
+<p><span class="math display">\[\left(\begin{array}{cc|cc}3&amp;1&amp;1&amp;0\\5&amp;2&amp;0&amp;1\end{array}\right)\xrightarrow{3F_2-5F_1}\left(\begin{array}{cc|cc}3&amp;1&amp;1&amp;0\\0&amp;1&amp;-5&amp;3\end{array}\right)\xrightarrow{F_1-F_2}\left(\begin{array}{cc|cc}3&amp;0&amp;6&amp;-3\\0&amp;1&amp;-5&amp;3\end{array}\right)\xrightarrow{F_1/3}\left(\begin{array}{cc|cc}1&amp;0&amp;2&amp;-1\\0&amp;1&amp;-5&amp;3\end{array}\right)\]</span></p>
+<p>Luego <span class="math inline">\(G^{-1}=\begin{pmatrix}2&amp;-1\\-5&amp;3\end{pmatrix}\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="ecuaciones-matriciales" class="level2">
+<h2 class="anchored" data-anchor-id="ecuaciones-matriciales">6. Ecuaciones matriciales</h2>
+<p>Se despeja la matriz incógnita <span class="math inline">\(X\)</span> como en una ecuación normal, pero <strong>cuidando el orden</strong> del producto y <strong>sin dividir</strong>: se multiplica por la inversa, que debe existir (<span class="math inline">\(|A|\neq0\)</span>).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Ecuación</th>
+<th>Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(A\cdot X=B\)</span></td>
+<td><span class="math inline">\(X=A^{-1}\cdot B\)</span> (inversa <strong>a la izquierda</strong>)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(X\cdot A=B\)</span></td>
+<td><span class="math inline">\(X=B\cdot A^{-1}\)</span> (inversa <strong>a la derecha</strong>)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A\cdot X+B=C\)</span></td>
+<td><span class="math inline">\(X=A^{-1}\cdot(C-B)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A\cdot X+X=B\)</span></td>
+<td><span class="math inline">\((A+I_n)\cdot X=B\)</span>, luego <span class="math inline">\(X=(A+I_n)^{-1}\cdot B\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A\cdot X\cdot B=C\)</span></td>
+<td><span class="math inline">\(X=A^{-1}\cdot C\cdot B^{-1}\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Al sacar factor común, la identidad aparece explícita: <span class="math inline">\(A\cdot X+X=(A+I_n)\cdot X\)</span>, no <span class="math inline">\((A+1)\cdot X\)</span>.</p>
+</div>
+</div>
+<p><strong>Ejemplo 1 (producción).</strong> Una fábrica elabora dos productos, <span class="math inline">\(P_1\)</span> y <span class="math inline">\(P_2\)</span>, con dos materias primas, <span class="math inline">\(M_1\)</span> y <span class="math inline">\(M_2\)</span>. La matriz <span class="math inline">\(A\)</span> da las unidades de materia prima por unidad de producto (filas: <span class="math inline">\(M_1\)</span> y <span class="math inline">\(M_2\)</span>; columnas: <span class="math inline">\(P_1\)</span> y <span class="math inline">\(P_2\)</span>), y <span class="math inline">\(B\)</span> el consumo total de materias primas en dos semanas (una columna por semana). La matriz <span class="math inline">\(X\)</span> de unidades producidas de cada producto en cada semana cumple <span class="math inline">\(A\cdot X=B\)</span>:</p>
+<p><span class="math display">\[A=\begin{pmatrix}2&amp;1\\1&amp;3\end{pmatrix},\quad B=\begin{pmatrix}100&amp;120\\105&amp;135\end{pmatrix}\]</span></p>
+<p>Como <span class="math inline">\(|A|=5\)</span>, <span class="math inline">\(A^{-1}=\dfrac15\begin{pmatrix}3&amp;-1\\-1&amp;2\end{pmatrix}\)</span> y</p>
+<p><span class="math display">\[X=A^{-1}\cdot B=\frac15\begin{pmatrix}3&amp;-1\\-1&amp;2\end{pmatrix}\begin{pmatrix}100&amp;120\\105&amp;135\end{pmatrix}=\frac15\begin{pmatrix}195&amp;225\\110&amp;150\end{pmatrix}=\begin{pmatrix}39&amp;45\\22&amp;30\end{pmatrix}\]</span></p>
+<p>En la primera semana se producen 39 unidades de <span class="math inline">\(P_1\)</span> y 22 de <span class="math inline">\(P_2\)</span>.</p>
+<p><strong>Ejemplo 2.</strong> Resuelve <span class="math inline">\(A\cdot X+X=B\)</span> con <span class="math inline">\(A=\begin{pmatrix}2&amp;1\\1&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}5&amp;10\\5&amp;5\end{pmatrix}\)</span>. Se tiene <span class="math inline">\((A+I_2)\cdot X=B\)</span>, con <span class="math inline">\(A+I_2=\begin{pmatrix}3&amp;1\\1&amp;2\end{pmatrix}\)</span> y <span class="math inline">\(|A+I_2|=5\)</span>, luego</p>
+<p><span class="math display">\[X=(A+I_2)^{-1}\cdot B=\frac15\begin{pmatrix}2&amp;-1\\-1&amp;3\end{pmatrix}\begin{pmatrix}5&amp;10\\5&amp;5\end{pmatrix}=\begin{pmatrix}1&amp;3\\2&amp;1\end{pmatrix}\]</span></p>
+<p><strong>Ejemplo 3.</strong> Resuelve <span class="math inline">\(X\cdot A-2I_2=B\)</span> con <span class="math inline">\(A=\begin{pmatrix}1&amp;2\\1&amp;3\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}3&amp;1\\2&amp;5\end{pmatrix}\)</span>. Se pasa <span class="math inline">\(2I_2\)</span> al otro lado y se multiplica por <span class="math inline">\(A^{-1}\)</span> <strong>a la derecha</strong>: <span class="math inline">\(X=(B+2I_2)\cdot A^{-1}\)</span>. Como <span class="math inline">\(|A|=1\)</span>, <span class="math inline">\(A^{-1}=\begin{pmatrix}3&amp;-2\\-1&amp;1\end{pmatrix}\)</span> y</p>
+<p><span class="math display">\[X=\begin{pmatrix}5&amp;1\\2&amp;7\end{pmatrix}\begin{pmatrix}3&amp;-2\\-1&amp;1\end{pmatrix}=\begin{pmatrix}14&amp;-9\\-1&amp;3\end{pmatrix}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Resumen rápido
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="math inline">\(A\cdot B\)</span> existe si columnas de <span class="math inline">\(A\)</span> = filas de <span class="math inline">\(B\)</span>, y en general <span class="math inline">\(A\cdot B\neq B\cdot A\)</span>.</li>
+<li><span class="math inline">\((A\cdot B)^t=B^t\cdot A^t\)</span> y <span class="math inline">\((A\cdot B)^{-1}=B^{-1}\cdot A^{-1}\)</span>.</li>
+<li><span class="math inline">\(|A|\)</span> de orden 2: <span class="math inline">\(ad-bc\)</span>; de orden 3: Sarrus o adjuntos. <span class="math inline">\(|A\cdot B|=|A|\cdot|B|\)</span> y <span class="math inline">\(|k\cdot A|=k^n\cdot|A|\)</span>.</li>
+<li><span class="math inline">\(\operatorname{rg}A\)</span> = nº de filas no nulas tras Gauss, o mayor orden de un menor <span class="math inline">\(\neq0\)</span>.</li>
+<li><span class="math inline">\(A\)</span> es invertible si y solo si <span class="math inline">\(|A|\neq0\)</span>, y entonces <span class="math inline">\(A^{-1}=\dfrac{1}{|A|}(\operatorname{Adj}A)^t\)</span>.</li>
+<li><span class="math inline">\(A\cdot X=B\Rightarrow X=A^{-1}\cdot B\)</span>; <span class="math inline">\(X\cdot A=B\Rightarrow X=B\cdot A^{-1}\)</span>.</li>
+</ul>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

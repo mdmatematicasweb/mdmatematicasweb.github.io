@@ -1,0 +1,2672 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>PAU Andalucía — Programación lineal – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-2d82e0ab39c09339319a3284da2afbd7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+#md-loader{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;background:#262A3D;color:#EBF8EE;font-family:"Bricolage Grotesque",system-ui,sans-serif;transition:opacity .35s ease,visibility .35s}
+#md-loader.md-out{opacity:0;visibility:hidden}
+#md-loader .ml-logo{width:96px;height:96px;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border:5px solid #000;background:#000;box-shadow:8px 8px 0 #000;animation:ml-tilt 2.4s ease-in-out infinite}
+#md-loader .ml-logo i{display:grid;place-items:center;font:900 28px/1 "Arial Black",Arial,sans-serif;font-style:normal;color:#000;animation:ml-pop 1.6s ease-in-out infinite}
+#md-loader .ml-logo i:nth-child(1){background:#5EC4B6}
+#md-loader .ml-logo i:nth-child(2){background:#262A3D;color:#FCE678;animation-delay:.2s}
+#md-loader .ml-logo i:nth-child(3){background:#F4736C;animation-delay:.6s}
+#md-loader .ml-logo i:nth-child(4){background:#FCE678;animation-delay:.4s}
+#md-loader .ml-txt{font-weight:800;font-size:1.25rem;text-transform:uppercase;letter-spacing:.02em;text-align:center;padding:0 1rem}
+#md-loader .ml-txt b{color:#FCE678}
+#md-loader .ml-bar{width:min(260px,70vw);height:14px;border:3px solid #000;background:#000;box-shadow:4px 4px 0 #000;overflow:hidden}
+#md-loader .ml-bar::after{content:"";display:block;height:100%;width:40%;background:repeating-linear-gradient(-45deg,#5EC4B6 0 10px,#F4736C 10px 20px,#FCE678 20px 30px);animation:ml-slide 1.1s ease-in-out infinite}
+@keyframes ml-pop{0%,100%{transform:scale(1)}50%{transform:scale(.8)}}
+@keyframes ml-tilt{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes ml-slide{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+@media (prefers-reduced-motion:reduce){#md-loader *{animation:none!important}}
+</style>
+<noscript><style>#md-loader{display:none!important}</style></noscript>
+<script>
+(function () {
+  try {
+    if (/^\/(index\.html)?$/.test(location.pathname)) return;
+    var el = document.createElement("div");
+    el.id = "md-loader";
+    el.setAttribute("role", "status");
+    el.innerHTML =
+      '<div class="ml-logo" aria-hidden="true"><i>+</i><i>&minus;</i><i>&times;</i><i>=</i></div>' +
+      '<div class="ml-txt">Mientras carga&hellip; <b>&iexcl;&iexcl;&iexcl;un descanso!!!</b></div>' +
+      '<div class="ml-bar" aria-hidden="true"></div>';
+    document.documentElement.appendChild(el);
+    var t0 = Date.now(), gone = false;
+    var hide = function () {
+      if (gone) return;
+      gone = true;
+      var wait = Math.max(0, 1000 - (Date.now() - t0));
+      setTimeout(function () {
+        el.classList.add("md-out");
+        setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 450);
+      }, wait);
+    };
+    var ready = function () {
+      var m = window.MathJax;
+      if (m && m.startup && m.startup.promise && m.startup.promise.then) {
+        m.startup.promise.then(hide, hide);
+      } else { hide(); }
+    };
+    if (document.readyState === "complete") ready();
+    else window.addEventListener("load", ready);
+    window.addEventListener("pageshow", function (e) { if (e.persisted) hide(); });
+    setTimeout(hide, 10000);
+  } catch (e) {}
+})();
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-simulacro-pau" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">★ Simulacro PAU</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-simulacro-pau">    
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ciencias/examen/index.html">
+ <span class="dropdown-text">Ciencias (Matemáticas II)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ccss/examen/index.html">
+ <span class="dropdown-text">Ciencias Sociales (Mat. Aplicadas II)</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">2026</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2026" id="toc-ordinaria-2026" class="nav-link" data-scroll-target="#ordinaria-2026">Ordinaria 2026</a></li>
+  <li><a href="#ordinaria-suplente-1-2026" id="toc-ordinaria-suplente-1-2026" class="nav-link" data-scroll-target="#ordinaria-suplente-1-2026">Ordinaria · Suplente 1 2026</a></li>
+  <li><a href="#ordinaria-suplente-2-2026" id="toc-ordinaria-suplente-2-2026" class="nav-link" data-scroll-target="#ordinaria-suplente-2-2026">Ordinaria · Suplente 2 2026</a></li>
+  <li><a href="#extraordinaria-suplente-1-2026" id="toc-extraordinaria-suplente-1-2026" class="nav-link" data-scroll-target="#extraordinaria-suplente-1-2026">Extraordinaria · Suplente 1 2026</a></li>
+  <li><a href="#extraordinaria-suplente-2-2026" id="toc-extraordinaria-suplente-2-2026" class="nav-link" data-scroll-target="#extraordinaria-suplente-2-2026">Extraordinaria · Suplente 2 2026</a></li>
+  </ul></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">2025</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-modelo-b-2025" id="toc-ordinaria-modelo-b-2025" class="nav-link" data-scroll-target="#ordinaria-modelo-b-2025">Ordinaria · Modelo B 2025</a></li>
+  <li><a href="#ordinaria-suplente-1-modelo-a-2025" id="toc-ordinaria-suplente-1-modelo-a-2025" class="nav-link" data-scroll-target="#ordinaria-suplente-1-modelo-a-2025">Ordinaria · Suplente 1 · Modelo A 2025</a></li>
+  <li><a href="#ordinaria-suplente-1-modelo-b-2025" id="toc-ordinaria-suplente-1-modelo-b-2025" class="nav-link" data-scroll-target="#ordinaria-suplente-1-modelo-b-2025">Ordinaria · Suplente 1 · Modelo B 2025</a></li>
+  <li><a href="#ordinaria-suplente-2-modelo-a-2025" id="toc-ordinaria-suplente-2-modelo-a-2025" class="nav-link" data-scroll-target="#ordinaria-suplente-2-modelo-a-2025">Ordinaria · Suplente 2 · Modelo A 2025</a></li>
+  <li><a href="#ordinaria-suplente-2-modelo-b-2025" id="toc-ordinaria-suplente-2-modelo-b-2025" class="nav-link" data-scroll-target="#ordinaria-suplente-2-modelo-b-2025">Ordinaria · Suplente 2 · Modelo B 2025</a></li>
+  </ul></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">2024</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-modelo-a-2024" id="toc-ordinaria-modelo-a-2024" class="nav-link" data-scroll-target="#ordinaria-modelo-a-2024">Ordinaria · Modelo A 2024</a></li>
+  <li><a href="#ordinaria-modelo-b-2024" id="toc-ordinaria-modelo-b-2024" class="nav-link" data-scroll-target="#ordinaria-modelo-b-2024">Ordinaria · Modelo B 2024</a></li>
+  <li><a href="#ordinaria-reserva-modelo-a-2024" id="toc-ordinaria-reserva-modelo-a-2024" class="nav-link" data-scroll-target="#ordinaria-reserva-modelo-a-2024">Ordinaria · Reserva · Modelo A 2024</a></li>
+  <li><a href="#ordinaria-reserva-modelo-b-2024" id="toc-ordinaria-reserva-modelo-b-2024" class="nav-link" data-scroll-target="#ordinaria-reserva-modelo-b-2024">Ordinaria · Reserva · Modelo B 2024</a></li>
+  <li><a href="#ordinaria-suplente-modelo-a-2024" id="toc-ordinaria-suplente-modelo-a-2024" class="nav-link" data-scroll-target="#ordinaria-suplente-modelo-a-2024">Ordinaria · Suplente · Modelo A 2024</a></li>
+  <li><a href="#ordinaria-suplente-modelo-b-2024" id="toc-ordinaria-suplente-modelo-b-2024" class="nav-link" data-scroll-target="#ordinaria-suplente-modelo-b-2024">Ordinaria · Suplente · Modelo B 2024</a></li>
+  </ul></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">2023</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-modelo-a-2023" id="toc-ordinaria-modelo-a-2023" class="nav-link" data-scroll-target="#ordinaria-modelo-a-2023">Ordinaria · Modelo A 2023</a></li>
+  <li><a href="#ordinaria-modelo-b-2023" id="toc-ordinaria-modelo-b-2023" class="nav-link" data-scroll-target="#ordinaria-modelo-b-2023">Ordinaria · Modelo B 2023</a></li>
+  <li><a href="#ordinaria-reserva-modelo-a-2023" id="toc-ordinaria-reserva-modelo-a-2023" class="nav-link" data-scroll-target="#ordinaria-reserva-modelo-a-2023">Ordinaria · Reserva · Modelo A 2023</a></li>
+  <li><a href="#ordinaria-reserva-modelo-b-2023" id="toc-ordinaria-reserva-modelo-b-2023" class="nav-link" data-scroll-target="#ordinaria-reserva-modelo-b-2023">Ordinaria · Reserva · Modelo B 2023</a></li>
+  <li><a href="#ordinaria-suplente-modelo-a-2023" id="toc-ordinaria-suplente-modelo-a-2023" class="nav-link" data-scroll-target="#ordinaria-suplente-modelo-a-2023">Ordinaria · Suplente · Modelo A 2023</a></li>
+  <li><a href="#ordinaria-suplente-modelo-b-2023" id="toc-ordinaria-suplente-modelo-b-2023" class="nav-link" data-scroll-target="#ordinaria-suplente-modelo-b-2023">Ordinaria · Suplente · Modelo B 2023</a></li>
+  </ul></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">2022</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2022" id="toc-ordinaria-2022" class="nav-link" data-scroll-target="#ordinaria-2022">Ordinaria 2022</a></li>
+  <li><a href="#ordinaria-reserva-2022" id="toc-ordinaria-reserva-2022" class="nav-link" data-scroll-target="#ordinaria-reserva-2022">Ordinaria · Reserva 2022</a></li>
+  <li><a href="#ordinaria-suplente-2022" id="toc-ordinaria-suplente-2022" class="nav-link" data-scroll-target="#ordinaria-suplente-2022">Ordinaria · Suplente 2022</a></li>
+  <li><a href="#extraordinaria-2022" id="toc-extraordinaria-2022" class="nav-link" data-scroll-target="#extraordinaria-2022">Extraordinaria 2022</a></li>
+  <li><a href="#extraordinaria-reserva-2022" id="toc-extraordinaria-reserva-2022" class="nav-link" data-scroll-target="#extraordinaria-reserva-2022">Extraordinaria · Reserva 2022</a></li>
+  <li><a href="#extraordinaria-suplente-2022" id="toc-extraordinaria-suplente-2022" class="nav-link" data-scroll-target="#extraordinaria-suplente-2022">Extraordinaria · Suplente 2022</a></li>
+  </ul></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">2021</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2021" id="toc-ordinaria-2021" class="nav-link" data-scroll-target="#ordinaria-2021">Ordinaria 2021</a></li>
+  <li><a href="#ordinaria-reserva-2021" id="toc-ordinaria-reserva-2021" class="nav-link" data-scroll-target="#ordinaria-reserva-2021">Ordinaria · Reserva 2021</a></li>
+  <li><a href="#ordinaria-suplente-2021" id="toc-ordinaria-suplente-2021" class="nav-link" data-scroll-target="#ordinaria-suplente-2021">Ordinaria · Suplente 2021</a></li>
+  <li><a href="#extraordinaria-2021" id="toc-extraordinaria-2021" class="nav-link" data-scroll-target="#extraordinaria-2021">Extraordinaria 2021</a></li>
+  <li><a href="#extraordinaria-reserva-2021" id="toc-extraordinaria-reserva-2021" class="nav-link" data-scroll-target="#extraordinaria-reserva-2021">Extraordinaria · Reserva 2021</a></li>
+  <li><a href="#extraordinaria-suplente-2021" id="toc-extraordinaria-suplente-2021" class="nav-link" data-scroll-target="#extraordinaria-suplente-2021">Extraordinaria · Suplente 2021</a></li>
+  </ul></li>
+  <li><a href="#también-trabajan-este-tema" id="toc-también-trabajan-este-tema" class="nav-link" data-scroll-target="#también-trabajan-este-tema">También trabajan este tema</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PAU Andalucía — Programación lineal</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Ejercicios de <strong>Matemáticas Aplicadas a las Ciencias Sociales II</strong> de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de <strong>2021 a 2026</strong> cuyo tema principal es <em>programación lineal</em>: <strong>34 ejercicios</strong> de convocatorias ordinarias y extraordinarias y de sus reservas o suplentes. Repasa antes la <a href="../../../apuntes/2-bachillerato-ccss/03-programacion-lineal/index.html">teoría</a>, los <a href="../../../ejercicios/2-bachillerato-ccss/03-programacion-lineal/index.html">ejercicios del tema</a> y las <a href="../../../actividades/2-bachillerato-ccss/03-programacion-lineal/index.html">actividades interactivas</a>.</p>
+<p>Debajo de cada ejercicio hay una <strong>resolución breve</strong> plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.</p>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">2026</h2>
+<section id="ordinaria-2026" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2026">Ordinaria 2026</h3>
+<div id="ebau-2026-ord-1B" class="ebau-ej">
+<p><strong>Ejercicio 1B</strong> · Ordinaria 2026 · Bloque A · <em>(3 puntos)</em> · <a href="../../../assets/pau-ccss/2026-ord/examen.pdf" target="_blank">Examen</a></p>
+<p>Una empresa maderera fabrica tableros de dos tipos, DM y aglomerado, a partir de madera triturada. Para producir <span class="math inline">\(1\ \text{m}^{2}\)</span> de tablero DM se consumen <span class="math inline">\(10\ \text{m}^{3}\)</span> de madera triturada y se obtiene un beneficio de 10 €. Para producir <span class="math inline">\(1\ \text{m}^{2}\)</span> de tablero aglomerado se consumen <span class="math inline">\(30\ \text{m}^{3}\)</span> de madera triturada y se obtiene un beneficio de 20 €. La empresa puede fabricar diariamente como máximo <span class="math inline">\(12\ \text{m}^{2}\)</span> de tableros DM y <span class="math inline">\(18\ \text{m}^{2}\)</span> de tableros de aglomerado. Además, la capacidad total de la empresa limita la producción conjunta a <span class="math inline">\(26\ \text{m}^{2}\)</span> diarios y dispone de <span class="math inline">\(600\ \text{m}^{3}\)</span> de madera triturada al día. Determine cuántos metros cuadrados de cada tipo de tablero deben producirse diariamente para maximizar el beneficio total y calcule cuál es ese beneficio.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> los m<span class="math inline">\(^2\)</span> de tablero DM e <span class="math inline">\(y\)</span> los de aglomerado. Restricciones: <span class="math inline">\(x\le12\)</span>; <span class="math inline">\(y\le18\)</span>; <span class="math inline">\(x+y\le26\)</span>; madera <span class="math inline">\(10x+30y\le600\iff x+3y\le60\)</span>; <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. Beneficio: <span class="math inline">\(B(x,y)=10x+20y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((0,18)\)</span>, <span class="math inline">\((6,18)\)</span> (corte de <span class="math inline">\(y=18\)</span> con <span class="math inline">\(x+3y=60\)</span>), <span class="math inline">\((9,17)\)</span> (corte de <span class="math inline">\(x+y=26\)</span> con <span class="math inline">\(x+3y=60\)</span>), <span class="math inline">\((12,14)\)</span> (corte de <span class="math inline">\(x=12\)</span> con <span class="math inline">\(x+y=26\)</span>) y <span class="math inline">\((12,0)\)</span>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((0,0)\)</span></th>
+<th><span class="math inline">\((0,18)\)</span></th>
+<th><span class="math inline">\((6,18)\)</span></th>
+<th><span class="math inline">\((9,17)\)</span></th>
+<th><span class="math inline">\((12,14)\)</span></th>
+<th><span class="math inline">\((12,0)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(B\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(360\)</span></td>
+<td><span class="math inline">\(420\)</span></td>
+<td><span class="math inline">\(430\)</span></td>
+<td><span class="math inline">\(400\)</span></td>
+<td><span class="math inline">\(120\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2026-ord-e1b.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 1B (2026-ord), con sus vértices: (0, 0), (12, 0), (12, 14), (9, 17), (6, 18), (0, 18)"></p>
+<figcaption>Región factible del ejercicio 1B (2026-ord), con sus vértices: (0, 0), (12, 0), (12, 14), (9, 17), (6, 18), (0, 18)</figcaption>
+</figure>
+</div>
+<p><strong>Deben producirse <span class="math inline">\(9\)</span> m<span class="math inline">\(^2\)</span> de tablero DM y <span class="math inline">\(17\)</span> m<span class="math inline">\(^2\)</span> de aglomerado, con un beneficio máximo de <span class="math inline">\(430\)</span> €.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-1-2026" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-1-2026">Ordinaria · Suplente 1 2026</h3>
+<div id="ebau-2026-ord-sup1-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Suplente 1 2026 · Bloque A · <em>(3 puntos)</em> · <a href="../../../assets/pau-ccss/2026-ord-sup1/examen.pdf" target="_blank">Examen</a></p>
+<p>Una empresa fabrica dos productos, <span class="math inline">\(P_1\)</span> y <span class="math inline">\(P_2\)</span>, a partir de tres recursos productivos: mano de obra, energía y capital. La disponibilidad anual de energía y de capital son <span class="math inline">\(3\,500\)</span> unidades y <span class="math inline">\(1\,300\)</span> unidades respectivamente. Para poder optar a una ayuda del gobierno para el fomento del empleo, la empresa va a contratar, al menos, <span class="math inline">\(4\,200\)</span> horas anuales. Cada unidad de <span class="math inline">\(P_1\)</span> necesita para su fabricación 10 horas de mano de obra, 10 unidades de energía y 5 unidades de capital; siendo el precio de cada unidad de <span class="math inline">\(P_1\)</span> 800 euros. Cada unidad de <span class="math inline">\(P_2\)</span> necesita para su fabricación 20 horas de mano de obra y 5 unidades de energía; vendiéndose a 400 euros la unidad de <span class="math inline">\(P_2\)</span>.</p>
+<p>La empresa vende todo lo que produce y quiere maximizar sus ingresos anuales por la venta de los dos productos.</p>
+<ol type="a">
+<li><p>¿Cuántas unidades de cada producto han de fabricarse anualmente para maximizar los ingresos? ¿Cuál es dicho ingreso óptimo? <em>(2,5 puntos)</em></p></li>
+<li><p>¿Es posible alcanzar el máximo elaborando un único producto? <em>(0,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Sean <span class="math inline">\(x\)</span> las unidades de <span class="math inline">\(P_1\)</span> e <span class="math inline">\(y\)</span> las de <span class="math inline">\(P_2\)</span>. Restricciones: energía <span class="math inline">\(10x+5y\le3\,500\iff2x+y\le700\)</span>; capital <span class="math inline">\(5x\le1\,300\iff x\le260\)</span>; mano de obra (ayuda) <span class="math inline">\(10x+20y\ge4\,200\iff x+2y\ge420\)</span>; <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. Ingresos: <span class="math inline">\(I(x,y)=800x+400y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((0,210)\)</span> (corte de <span class="math inline">\(x=0\)</span> con <span class="math inline">\(x+2y=420\)</span>), <span class="math inline">\((0,700)\)</span> (corte de <span class="math inline">\(x=0\)</span> con <span class="math inline">\(2x+y=700\)</span>), <span class="math inline">\((260,180)\)</span> (corte de <span class="math inline">\(x=260\)</span> con <span class="math inline">\(2x+y=700\)</span>) y <span class="math inline">\((260,80)\)</span> (corte de <span class="math inline">\(x=260\)</span> con <span class="math inline">\(x+2y=420\)</span>).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((0,210)\)</span></th>
+<th><span class="math inline">\((0,700)\)</span></th>
+<th><span class="math inline">\((260,180)\)</span></th>
+<th><span class="math inline">\((260,80)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(I\)</span></td>
+<td><span class="math inline">\(84\,000\)</span></td>
+<td><span class="math inline">\(280\,000\)</span></td>
+<td><span class="math inline">\(280\,000\)</span></td>
+<td><span class="math inline">\(240\,000\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2026-ord-sup1-e1.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 1 (2026-ord-sup1), con sus vértices: (0, 210), (260, 80), (260, 180), (0, 700)"></p>
+<figcaption>Región factible del ejercicio 1 (2026-ord-sup1), con sus vértices: (0, 210), (260, 80), (260, 180), (0, 700)</figcaption>
+</figure>
+</div>
+<p>El máximo se alcanza en dos vértices, <span class="math inline">\((0,700)\)</span> y <span class="math inline">\((260,180)\)</span>, porque <span class="math inline">\(I=400(2x+y)\)</span> y la recta de la energía <span class="math inline">\(2x+y=700\)</span> es paralela a las rectas de nivel: <strong>el ingreso óptimo es de <span class="math inline">\(280\,000\)</span> € y se alcanza en todos los puntos del segmento que une <span class="math inline">\((0,700)\)</span> y <span class="math inline">\((260,180)\)</span></strong> (por ejemplo, <span class="math inline">\(260\)</span> unidades de <span class="math inline">\(P_1\)</span> y <span class="math inline">\(180\)</span> de <span class="math inline">\(P_2\)</span>, o <span class="math inline">\(0\)</span> de <span class="math inline">\(P_1\)</span> y <span class="math inline">\(700\)</span> de <span class="math inline">\(P_2\)</span>).</p>
+<p><strong>b)</strong> <strong>Sí:</strong> fabricando solo <span class="math inline">\(P_2\)</span>, <span class="math inline">\(700\)</span> unidades, se agota la energía (<span class="math inline">\(5\cdot700=3\,500\)</span>), se cumplen las horas (<span class="math inline">\(20\cdot700=14\,000\ge4\,200\)</span>) y el ingreso es <span class="math inline">\(400\cdot700=280\,000\)</span> €. (Fabricando solo <span class="math inline">\(P_1\)</span> no es posible: como mucho <span class="math inline">\(260\)</span> unidades y <span class="math inline">\(208\,000\)</span> €.)</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2-2026" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2-2026">Ordinaria · Suplente 2 2026</h3>
+<div id="ebau-2026-ord-sup2-1B" class="ebau-ej">
+<p><strong>Ejercicio 1B</strong> · Ordinaria · Suplente 2 2026 · Bloque A · <em>(3 puntos)</em> · <a href="../../../assets/pau-ccss/2026-ord-sup2/examen.pdf" target="_blank">Examen</a></p>
+<p>Se considera la función <span class="math inline">\(f(x,y)=2x+y\)</span> cuando <span class="math inline">\((x,y)\)</span> pertenece a la región factible delimitada por las inecuaciones: <span class="math display">\[4x+2y\ge5;\qquad2x+5y\le9;\qquad x+y\le3;\qquad y\ge0\]</span></p>
+<ol type="a">
+<li><p>Dibuje la región factible y obtenga sus vértices. <em>(1,5 puntos)</em></p></li>
+<li><p>Obtenga algún punto de la región factible con abscisa <span class="math inline">\(x=1\)</span>. <em>(0,5 puntos)</em></p></li>
+<li><p>¿Para qué valores de <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> se alcanza el máximo de la función <span class="math inline">\(f\)</span>? ¿Cuánto vale dicho máximo? Análogamente para el mínimo. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Rectas frontera: <span class="math inline">\(4x+2y=5\)</span>, <span class="math inline">\(2x+5y=9\)</span>, <span class="math inline">\(x+y=3\)</span> e <span class="math inline">\(y=0\)</span>. Los vértices de la región factible son <span class="math display">\[\left(\tfrac{7}{16},\tfrac{13}{8}\right),\quad\left(\tfrac{5}{4},0\right),\quad(3,0),\quad(2,1),\]</span> con <span class="math inline">\(\left(\tfrac{7}{16},\tfrac{13}{8}\right)\)</span> el corte de <span class="math inline">\(4x+2y=5\)</span> con <span class="math inline">\(2x+5y=9\)</span>, <span class="math inline">\(\left(\tfrac{5}{4},0\right)\)</span> el de <span class="math inline">\(4x+2y=5\)</span> con <span class="math inline">\(y=0\)</span>, <span class="math inline">\((3,0)\)</span> el de <span class="math inline">\(x+y=3\)</span> con <span class="math inline">\(y=0\)</span> y <span class="math inline">\((2,1)\)</span> el de <span class="math inline">\(x+y=3\)</span> con <span class="math inline">\(2x+5y=9\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2026-ord-sup2-e1b.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 1B (2026-ord-sup2), con sus vértices: (1,25, 0), (3, 0), (2, 1), (0,44, 1,62)"></p>
+<figcaption>Región factible del ejercicio 1B (2026-ord-sup2), con sus vértices: (1,25, 0), (3, 0), (2, 1), (0,44, 1,62)</figcaption>
+</figure>
+</div>
+<p><strong>b)</strong> Con <span class="math inline">\(x=1\)</span>: <span class="math inline">\(4+2y\ge5\Rightarrow y\ge\dfrac{1}{2}\)</span>; <span class="math inline">\(2+5y\le9\Rightarrow y\le\dfrac{7}{5}\)</span>; <span class="math inline">\(1+y\le3\Rightarrow y\le2\)</span>. Por ejemplo, <strong><span class="math inline">\((1,1)\)</span></strong> pertenece a la región (<span class="math inline">\(6\ge5\)</span>, <span class="math inline">\(7\le9\)</span>, <span class="math inline">\(2\le3\)</span>).</p>
+<p><strong>c)</strong> <span class="math inline">\(f\left(\tfrac{7}{16},\tfrac{13}{8}\right)=\tfrac{5}{2}\)</span>, <span class="math inline">\(f\left(\tfrac{5}{4},0\right)=\tfrac{5}{2}\)</span>, <span class="math inline">\(f(3,0)=6\)</span> y <span class="math inline">\(f(2,1)=5\)</span>.</p>
+<p><strong>Máximo <span class="math inline">\(6\)</span>, en el punto <span class="math inline">\((3,0)\)</span>. Mínimo <span class="math inline">\(\dfrac{5}{2}\)</span>, que se alcanza en <span class="math inline">\(\left(\tfrac{7}{16},\tfrac{13}{8}\right)\)</span> y en <span class="math inline">\(\left(\tfrac{5}{4},0\right)\)</span> y, por tanto, en todo el segmento que los une</strong> (<span class="math inline">\(f=2x+y\)</span> es paralela a la recta <span class="math inline">\(4x+2y=5\)</span>).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-1-2026" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-1-2026">Extraordinaria · Suplente 1 2026</h3>
+<div id="ebau-2026-ext-sup1-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Extraordinaria · Suplente 1 2026 · Bloque A · <em>(3 puntos)</em> · <a href="../../../assets/pau-ccss/2026-ext-sup1/examen.pdf" target="_blank">Examen</a></p>
+<p>Una empresa comercializa dos especias a granel: orégano y pimienta. Para elaborar un kilo de orégano se requieren 2 horas de secado y 2 horas de envasado, mientras que para elaborar un kilo de pimienta se requieren 1 hora de secado y 5 horas de envasado. La empresa dispone de un horno para secado que funciona 24 horas al día de lunes a viernes. Para el envasado hay 4 empleados que trabajan 40 horas a la semana como máximo cada uno. La empresa tiene el compromiso contractual de producir a la semana al menos 35 kilogramos contabilizando ambas especies. El precio de venta del orégano es de 50 € el kilogramo y el de la pimienta es de 70 € el kilogramo. Sabiendo que el coste de producción de cada kilogramo de orégano y pimienta es de 5 € y 7 € respectivamente, ¿cuántos kilogramos de cada especie deben producirse semanalmente para obtener el máximo beneficio? ¿Cuál sería dicho beneficio?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> los kg de orégano e <span class="math inline">\(y\)</span> los de pimienta por semana. Horno: <span class="math inline">\(24\cdot5=120\)</span> h. Envasado: <span class="math inline">\(4\cdot40=160\)</span> h. Restricciones: secado <span class="math inline">\(2x+y\le120\)</span>; envasado <span class="math inline">\(2x+5y\le160\)</span>; producción mínima <span class="math inline">\(x+y\ge35\)</span>; <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. Beneficio por kg: orégano <span class="math inline">\(50-5=45\)</span> €, pimienta <span class="math inline">\(70-7=63\)</span> €: <span class="math inline">\(B(x,y)=45x+63y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((5,30)\)</span> (corte de <span class="math inline">\(x+y=35\)</span> con <span class="math inline">\(2x+5y=160\)</span>), <span class="math inline">\((35,0)\)</span> (corte de <span class="math inline">\(x+y=35\)</span> con <span class="math inline">\(y=0\)</span>), <span class="math inline">\((60,0)\)</span> (corte de <span class="math inline">\(2x+y=120\)</span> con <span class="math inline">\(y=0\)</span>) y <span class="math inline">\((55,10)\)</span> (corte de <span class="math inline">\(2x+y=120\)</span> con <span class="math inline">\(2x+5y=160\)</span>).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((5,30)\)</span></th>
+<th><span class="math inline">\((35,0)\)</span></th>
+<th><span class="math inline">\((60,0)\)</span></th>
+<th><span class="math inline">\((55,10)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(B\)</span></td>
+<td><span class="math inline">\(2\,115\)</span></td>
+<td><span class="math inline">\(1\,575\)</span></td>
+<td><span class="math inline">\(2\,700\)</span></td>
+<td><span class="math inline">\(3\,105\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2026-ext-sup1-e1.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 1 (2026-ext-sup1), con sus vértices: (35, 0), (60, 0), (55, 10), (5, 30)"></p>
+<figcaption>Región factible del ejercicio 1 (2026-ext-sup1), con sus vértices: (35, 0), (60, 0), (55, 10), (5, 30)</figcaption>
+</figure>
+</div>
+<p><strong>Deben producirse 55 kg de orégano y 10 kg de pimienta a la semana, con un beneficio máximo de <span class="math inline">\(3\,105\)</span> €.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2-2026" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2-2026">Extraordinaria · Suplente 2 2026</h3>
+<div id="ebau-2026-ext-sup2-1B" class="ebau-ej">
+<p><strong>Ejercicio 1B</strong> · Extraordinaria · Suplente 2 2026 · Bloque A · <em>(3 puntos)</em> · <a href="../../../assets/pau-ccss/2026-ext-sup2/examen.pdf" target="_blank">Examen</a></p>
+<p>Consideremos el recinto definido por las siguientes inecuaciones: <span class="math display">\[3x-4y\le6;\qquad x+y\le9;\qquad x+4y\le24;\qquad3x+2y\ge6;\qquad x\ge0\]</span></p>
+<ol type="a">
+<li><p>Represente gráficamente el recinto y calcule sus vértices. <em>(1,75 puntos)</em></p></li>
+<li><p>Indique razonadamente si los puntos <span class="math inline">\(P(3;\,0{,}9)\)</span> y <span class="math inline">\(Q(1;\,5{,}9)\)</span> pertenecen al recinto. <em>(0,5 puntos)</em></p></li>
+<li><p>Obtenga el valor máximo y mínimo de la función objetivo <span class="math inline">\(F(x,y)=2x+3y-2\)</span> en el recinto anterior, así como los puntos donde se alcanzan. <em>(0,75 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Rectas frontera: <span class="math inline">\(3x-4y=6\)</span>, <span class="math inline">\(x+y=9\)</span>, <span class="math inline">\(x+4y=24\)</span>, <span class="math inline">\(3x+2y=6\)</span> y <span class="math inline">\(x=0\)</span>. Los vértices del recinto son <span class="math display">\[(0,3),\quad(0,6),\quad(2,0),\quad(4,5),\quad(6,3),\]</span> donde <span class="math inline">\((0,3)\)</span> es el corte de <span class="math inline">\(x=0\)</span> con <span class="math inline">\(3x+2y=6\)</span>, <span class="math inline">\((0,6)\)</span> el de <span class="math inline">\(x=0\)</span> con <span class="math inline">\(x+4y=24\)</span>, <span class="math inline">\((4,5)\)</span> el de <span class="math inline">\(x+4y=24\)</span> con <span class="math inline">\(x+y=9\)</span>, <span class="math inline">\((6,3)\)</span> el de <span class="math inline">\(x+y=9\)</span> con <span class="math inline">\(3x-4y=6\)</span> y <span class="math inline">\((2,0)\)</span> el de <span class="math inline">\(3x-4y=6\)</span> con <span class="math inline">\(3x+2y=6\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2026-ext-sup2-e1b.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 1B (2026-ext-sup2), con sus vértices: (0, 3), (2, 0), (6, 3), (4, 5), (0, 6)"></p>
+<figcaption>Región factible del ejercicio 1B (2026-ext-sup2), con sus vértices: (0, 3), (2, 0), (6, 3), (4, 5), (0, 6)</figcaption>
+</figure>
+</div>
+<p><strong>b)</strong> <span class="math inline">\(P(3;0{,}9)\)</span>: <span class="math inline">\(3\cdot3-4\cdot0{,}9=5{,}4\le6\)</span>; <span class="math inline">\(3+0{,}9=3{,}9\le9\)</span>; <span class="math inline">\(3+4\cdot0{,}9=6{,}6\le24\)</span>; <span class="math inline">\(3\cdot3+2\cdot0{,}9=10{,}8\ge6\)</span>; <span class="math inline">\(3\ge0\)</span>. <strong><span class="math inline">\(P\)</span> pertenece al recinto.</strong></p>
+<p><span class="math inline">\(Q(1;5{,}9)\)</span>: <span class="math inline">\(1+4\cdot5{,}9=24{,}6&gt;24\)</span>, no cumple <span class="math inline">\(x+4y\le24\)</span>. <strong><span class="math inline">\(Q\)</span> no pertenece al recinto.</strong></p>
+<p><strong>c)</strong> <span class="math inline">\(F(0,3)=7\)</span>, <span class="math inline">\(F(0,6)=16\)</span>, <span class="math inline">\(F(2,0)=2\)</span>, <span class="math inline">\(F(4,5)=21\)</span>, <span class="math inline">\(F(6,3)=19\)</span>.</p>
+<p><strong>Máximo <span class="math inline">\(21\)</span> en el punto <span class="math inline">\((4,5)\)</span> y mínimo <span class="math inline">\(2\)</span> en el punto <span class="math inline">\((2,0)\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1">2025</h2>
+<section id="ordinaria-modelo-b-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-modelo-b-2025">Ordinaria · Modelo B 2025</h3>
+<div id="ebau-2025-ord-b-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Modelo B 2025 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2025-ord-b/examen.pdf" target="_blank">Examen</a></p>
+<p>Un agricultor cultiva dos tipos de lechuga: iceberg y romana. Por razones de demanda, en cada ciclo de cultivo, la cantidad de iceberg debe ser al menos la mitad de la de romana, pero no puede superar las 1500 unidades. Además, deben cultivarse en total entre 900 y 2400 lechugas. El cultivo de iceberg requiere 15 litros de agua por unidad, mientras que el de romana necesita 18 litros de agua por unidad. ¿Cuántas unidades de cada tipo de lechuga deben cultivarse para minimizar el consumo total de agua?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> las unidades de iceberg e <span class="math inline">\(y\)</span> las de romana. Restricciones: <span class="math inline">\(x\ge\dfrac y2\)</span> (iceberg al menos la mitad que romana); <span class="math inline">\(x\le1\,500\)</span>; <span class="math inline">\(900\le x+y\le2\,400\)</span>; <span class="math inline">\(y\ge0\)</span>. Consumo de agua (litros): <span class="math inline">\(W(x,y)=15x+18y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((300,600)\)</span> (corte de <span class="math inline">\(y=2x\)</span> con <span class="math inline">\(x+y=900\)</span>), <span class="math inline">\((800,1600)\)</span> (corte de <span class="math inline">\(y=2x\)</span> con <span class="math inline">\(x+y=2\,400\)</span>), <span class="math inline">\((1\,500,900)\)</span> (corte de <span class="math inline">\(x=1\,500\)</span> con <span class="math inline">\(x+y=2\,400\)</span>), <span class="math inline">\((1\,500,0)\)</span> y <span class="math inline">\((900,0)\)</span>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((300,600)\)</span></th>
+<th><span class="math inline">\((800,1\,600)\)</span></th>
+<th><span class="math inline">\((1\,500,900)\)</span></th>
+<th><span class="math inline">\((1\,500,0)\)</span></th>
+<th><span class="math inline">\((900,0)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(W\)</span></td>
+<td><span class="math inline">\(15\,300\)</span></td>
+<td><span class="math inline">\(40\,800\)</span></td>
+<td><span class="math inline">\(38\,700\)</span></td>
+<td><span class="math inline">\(22\,500\)</span></td>
+<td><span class="math inline">\(13\,500\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2025-ord-b-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2025-ord-b), con sus vértices: (300, 600), (900, 0), (1500, 0), (1500, 900), (800, 1600)"></p>
+<figcaption>Región factible del ejercicio 2 (2025-ord-b), con sus vértices: (300, 600), (900, 0), (1500, 0), (1500, 900), (800, 1600)</figcaption>
+</figure>
+</div>
+<p><strong>El consumo mínimo, <span class="math inline">\(13\,500\)</span> litros, se obtiene cultivando <span class="math inline">\(900\)</span> lechugas iceberg y ninguna romana.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-1-modelo-a-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-1-modelo-a-2025">Ordinaria · Suplente 1 · Modelo A 2025</h3>
+<div id="ebau-2025-ord-sup1-a-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Suplente 1 · Modelo A 2025 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2025-ord-sup1-a/examen.pdf" target="_blank">Examen</a></p>
+<p>Una empresa de catering dispone semanalmente de 58 horas de cocina, 50 horas de empaquetado y <span class="math inline">\(60\ \text{dm}^{3}\)</span> de almacenamiento en cámaras frigoríficas para elaborar dos tipos de menús: <em>premium</em> y <em>estándar</em>. Ambos menús requieren tiempo, tanto de preparación como de empaquetado, y espacio de almacenamiento en frigoríficos. Concretamente, el menú <em>premium</em> requiere de 2 horas de cocina, 2 horas de empaquetado y ocupa <span class="math inline">\(1\ \text{dm}^{3}\)</span> en frigoríficos. Por su parte, el menú <em>estándar</em> requiere de 3 horas de cocina, 1 hora de empaquetado y ocupa <span class="math inline">\(4\ \text{dm}^{3}\)</span> en frigoríficos. El beneficio obtenido por cada menú <em>premium</em> es de <span class="math inline">\(10{,}50\)</span> € y por cada menú <em>estándar</em> es de <span class="math inline">\(5{,}50\)</span> €. La empresa sabe que venderá todos los menús producidos. Determine cuántos menús de cada tipo deben elaborarse semanalmente para maximizar el beneficio total y a cuánto asciende este beneficio.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> los menús <em>premium</em> e <span class="math inline">\(y\)</span> los <em>estándar</em>. Restricciones: cocina <span class="math inline">\(2x+3y\le58\)</span>; empaquetado <span class="math inline">\(2x+y\le50\)</span>; almacenamiento <span class="math inline">\(x+4y\le60\)</span>; <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. Beneficio: <span class="math inline">\(B(x,y)=10{,}5x+5{,}5y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((0,15)\)</span>, <span class="math inline">\(\left(\dfrac{52}{5},\dfrac{62}{5}\right)\)</span> (corte de <span class="math inline">\(x+4y=60\)</span> con <span class="math inline">\(2x+3y=58\)</span>), <span class="math inline">\((23,4)\)</span> (corte de <span class="math inline">\(2x+3y=58\)</span> con <span class="math inline">\(2x+y=50\)</span>) y <span class="math inline">\((25,0)\)</span>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((0,0)\)</span></th>
+<th><span class="math inline">\((0,15)\)</span></th>
+<th><span class="math inline">\(\left(\frac{52}{5},\frac{62}{5}\right)\)</span></th>
+<th><span class="math inline">\((23,4)\)</span></th>
+<th><span class="math inline">\((25,0)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(B\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(82{,}5\)</span></td>
+<td><span class="math inline">\(177{,}4\)</span></td>
+<td><span class="math inline">\(263{,}5\)</span></td>
+<td><span class="math inline">\(262{,}5\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2025-ord-sup1-a-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2025-ord-sup1-a), con sus vértices: (0, 0), (25, 0), (23, 4), (10,4, 12,4), (0, 15)"></p>
+<figcaption>Región factible del ejercicio 2 (2025-ord-sup1-a), con sus vértices: (0, 0), (25, 0), (23, 4), (10,4, 12,4), (0, 15)</figcaption>
+</figure>
+</div>
+<p><strong>Deben elaborarse 23 menús <em>premium</em> y 4 <em>estándar</em>, con un beneficio máximo de <span class="math inline">\(263{,}50\)</span> €.</strong> (Almacenamiento usado: <span class="math inline">\(23+16=39\le60\)</span>.)</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-1-modelo-b-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-1-modelo-b-2025">Ordinaria · Suplente 1 · Modelo B 2025</h3>
+<div id="ebau-2025-ord-sup1-b-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Suplente 1 · Modelo B 2025 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2025-ord-sup1-b/examen.pdf" target="_blank">Examen</a></p>
+<p>Una agricultora vende en su tienda <em>online</em> frutas y hortalizas envasándolas en cajas de dos tipos diferentes. La caja «El regalo de la tierra» la vende a <span class="math inline">\(19{,}75\)</span> € y contiene 3 kg de frutas y <span class="math inline">\(3{,}5\)</span> kg de hortalizas. La caja «El tesoro de la huerta» contiene 2 kg de frutas y 4 kg de hortalizas y la vende a <span class="math inline">\(18{,}50\)</span> €. La agricultora dispone semanalmente de 210 kg de hortalizas y 150 kg de frutas. Debe vender al menos 12 cajas de «El regalo de la tierra» y no menos de 15 cajas de «El tesoro de la huerta». ¿Cuántas cajas de cada tipo debe vender a la semana para que el ingreso por la venta sea máximo? ¿A cuánto asciende este ingreso?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> las cajas «El regalo de la tierra» e <span class="math inline">\(y\)</span> las de «El tesoro de la huerta». Restricciones: frutas <span class="math inline">\(3x+2y\le150\)</span>; hortalizas <span class="math inline">\(3{,}5x+4y\le210\)</span>; <span class="math inline">\(x\ge12\)</span>; <span class="math inline">\(y\ge15\)</span>. Ingreso: <span class="math inline">\(I(x,y)=19{,}75x+18{,}5y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((12,15)\)</span>, <span class="math inline">\((12,42)\)</span> (corte de <span class="math inline">\(x=12\)</span> con <span class="math inline">\(3{,}5x+4y=210\)</span>), <span class="math inline">\((36,21)\)</span> (corte de <span class="math inline">\(3x+2y=150\)</span> con <span class="math inline">\(3{,}5x+4y=210\)</span>) y <span class="math inline">\((40,15)\)</span> (corte de <span class="math inline">\(3x+2y=150\)</span> con <span class="math inline">\(y=15\)</span>).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((12,15)\)</span></th>
+<th><span class="math inline">\((12,42)\)</span></th>
+<th><span class="math inline">\((36,21)\)</span></th>
+<th><span class="math inline">\((40,15)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(I\)</span></td>
+<td><span class="math inline">\(514{,}5\)</span></td>
+<td><span class="math inline">\(1\,014\)</span></td>
+<td><span class="math inline">\(1\,099{,}5\)</span></td>
+<td><span class="math inline">\(1\,067{,}5\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2025-ord-sup1-b-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2025-ord-sup1-b), con sus vértices: (12, 15), (40, 15), (36, 21), (12, 42)"></p>
+<figcaption>Región factible del ejercicio 2 (2025-ord-sup1-b), con sus vértices: (12, 15), (40, 15), (36, 21), (12, 42)</figcaption>
+</figure>
+</div>
+<p><strong>Debe vender 36 cajas de «El regalo de la tierra» y 21 de «El tesoro de la huerta», con un ingreso máximo de <span class="math inline">\(1\,099{,}50\)</span> €.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2-modelo-a-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2-modelo-a-2025">Ordinaria · Suplente 2 · Modelo A 2025</h3>
+<div id="ebau-2025-ord-sup2-a-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Suplente 2 · Modelo A 2025 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2025-ord-sup2-a/examen.pdf" target="_blank">Examen</a></p>
+<p>Un servicio técnico recibe un encargo para revisar lavadoras y frigoríficos de una empresa de apartahoteles. La revisión de cada lavadora requiere 100 minutos de trabajo, mientras que cada frigorífico requiere 50 minutos. El servicio técnico dispone de 26 horas y 40 minutos para hacer las revisiones. Por política de empresa, no se aceptan encargos de más de 12 lavadoras ni de más de 16 frigoríficos. Sabiendo que las revisiones se pagan a 50 € la hora, en ambos tipos de electrodomésticos, ¿cuántos electrodomésticos de cada clase debe revisar el servicio técnico para maximizar el ingreso con el encargo? ¿A cuánto asciende este ingreso máximo?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> las lavadoras e <span class="math inline">\(y\)</span> los frigoríficos. El tiempo disponible es <span class="math inline">\(26\ \text{h}\ 40\ \text{min}=1\,600\)</span> min. Restricciones: <span class="math inline">\(100x+50y\le1\,600\iff2x+y\le32\)</span>; <span class="math inline">\(x\le12\)</span>; <span class="math inline">\(y\le16\)</span>; <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. Como se paga a <span class="math inline">\(50\)</span> €/h <span class="math inline">\(=\dfrac{5}{6}\)</span> €/min, el ingreso es <span class="math inline">\(I(x,y)=\dfrac{5}{6}\left(100x+50y\right)=\dfrac{250}{3}x+\dfrac{125}{3}y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((12,0)\)</span>, <span class="math inline">\((12,8)\)</span>, <span class="math inline">\((8,16)\)</span> y <span class="math inline">\((0,16)\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((0,0)\)</span></th>
+<th><span class="math inline">\((12,0)\)</span></th>
+<th><span class="math inline">\((12,8)\)</span></th>
+<th><span class="math inline">\((8,16)\)</span></th>
+<th><span class="math inline">\((0,16)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(I\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(1\,000\)</span></td>
+<td><span class="math inline">\(1\,333{,}33\)</span></td>
+<td><span class="math inline">\(1\,333{,}33\)</span></td>
+<td><span class="math inline">\(666{,}67\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2025-ord-sup2-a-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2025-ord-sup2-a), con sus vértices: (0, 0), (12, 0), (12, 8), (8, 16), (0, 16)"></p>
+<figcaption>Región factible del ejercicio 2 (2025-ord-sup2-a), con sus vértices: (0, 0), (12, 0), (12, 8), (8, 16), (0, 16)</figcaption>
+</figure>
+</div>
+<p>El máximo se alcanza en los dos vértices <span class="math inline">\((12,8)\)</span> y <span class="math inline">\((8,16)\)</span> y, por tanto, en todos los puntos del segmento <span class="math inline">\(2x+y=32\)</span> que los une (aquellos en que se agotan los <span class="math inline">\(1\,600\)</span> minutos).</p>
+<p><strong>Ingreso máximo: <span class="math inline">\(1\,333{,}33\)</span> € (es decir, <span class="math inline">\(\dfrac{4\,000}{3}\)</span> €), por ejemplo revisando 12 lavadoras y 8 frigoríficos, u 8 lavadoras y 16 frigoríficos</strong> (o cualquier combinación entera con <span class="math inline">\(2x+y=32\)</span>, <span class="math inline">\(8\le x\le12\)</span>: <span class="math inline">\((11,10)\)</span>, <span class="math inline">\((10,12)\)</span>, <span class="math inline">\((9,14)\)</span>).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2-modelo-b-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2-modelo-b-2025">Ordinaria · Suplente 2 · Modelo B 2025</h3>
+<div id="ebau-2025-ord-sup2-b-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Suplente 2 · Modelo B 2025 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2025-ord-sup2-b/examen.pdf" target="_blank">Examen</a></p>
+<p>Un fabricante produce mensualmente dos tipos de abonos ecológicos, <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, que vende en su totalidad, obteniendo unos beneficios de 15 y 10 euros por kilogramo (kg), respectivamente. La producción de abono del tipo <span class="math inline">\(A\)</span> no puede superar los 200 kg; el doble de la producción de <span class="math inline">\(B\)</span> menos el triple de la producción de <span class="math inline">\(A\)</span> es a lo sumo 100 kg. Además, la producción de <span class="math inline">\(A\)</span> más el doble de la producción de <span class="math inline">\(B\)</span> es como mucho de 500 kg. Obtenga las cantidades que este fabricante debe producir de sendos abonos para obtener el máximo beneficio e indique el valor de este beneficio.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> los kg de abono <span class="math inline">\(A\)</span> e <span class="math inline">\(y\)</span> los de <span class="math inline">\(B\)</span>. Restricciones: <span class="math inline">\(x\le200\)</span>; <span class="math inline">\(2y-3x\le100\)</span>; <span class="math inline">\(x+2y\le500\)</span>; <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. Beneficio: <span class="math inline">\(B(x,y)=15x+10y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((0,50)\)</span>, <span class="math inline">\((100,200)\)</span> (corte de <span class="math inline">\(2y-3x=100\)</span> con <span class="math inline">\(x+2y=500\)</span>), <span class="math inline">\((200,150)\)</span> (corte de <span class="math inline">\(x=200\)</span> con <span class="math inline">\(x+2y=500\)</span>) y <span class="math inline">\((200,0)\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((0,0)\)</span></th>
+<th><span class="math inline">\((0,50)\)</span></th>
+<th><span class="math inline">\((100,200)\)</span></th>
+<th><span class="math inline">\((200,150)\)</span></th>
+<th><span class="math inline">\((200,0)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(B\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(500\)</span></td>
+<td><span class="math inline">\(3\,500\)</span></td>
+<td><span class="math inline">\(4\,500\)</span></td>
+<td><span class="math inline">\(3\,000\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2025-ord-sup2-b-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2025-ord-sup2-b), con sus vértices: (0, 50), (0, 0), (200, 0), (200, 150), (100, 200)"></p>
+<figcaption>Región factible del ejercicio 2 (2025-ord-sup2-b), con sus vértices: (0, 50), (0, 0), (200, 0), (200, 150), (100, 200)</figcaption>
+</figure>
+</div>
+<p><strong>Debe producir <span class="math inline">\(200\)</span> kg de abono <span class="math inline">\(A\)</span> y <span class="math inline">\(150\)</span> kg de abono <span class="math inline">\(B\)</span>, con un beneficio máximo de <span class="math inline">\(4\,500\)</span> €.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2">2024</h2>
+<section id="ordinaria-modelo-a-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-modelo-a-2024">Ordinaria · Modelo A 2024</h3>
+<div id="ebau-2024-ord-a-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Modelo A 2024 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2024-ord-a/examen.pdf" target="_blank">Examen</a></p>
+<p>Un agricultor posee una finca con un olivar intensivo de secano y desea transformar una parte de la misma en regadío, pero manteniendo un mínimo de 20 hectáreas de cultivo de secano. Para ello, anualmente dispone de <span class="math inline">\(30\,000\ \text{m}^{3}\)</span> de agua, de <span class="math inline">\(5\,500\)</span> kg de abono y de <span class="math inline">\(3\,000\)</span> kg de productos fitosanitarios. Cada hectárea de olivar de regadío necesita <span class="math inline">\(1\,500\ \text{m}^{3}\)</span> de agua, <span class="math inline">\(110\)</span> kg de abono y <span class="math inline">\(80\)</span> kg de productos fitosanitarios; mientras que cada hectárea de olivar de secano precisa de <span class="math inline">\(100\)</span> kg de abono y <span class="math inline">\(50\)</span> kg de productos fitosanitarios. Se sabe que la producción anual por hectárea es de <span class="math inline">\(5\,000\)</span> kg en secano y de <span class="math inline">\(10\,000\)</span> kg en regadío. Determine el número de hectáreas de olivar de secano y de regadío que el agricultor debe cultivar para maximizar su producción, así como la producción máxima esperada.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> las hectáreas de secano e <span class="math inline">\(y\)</span> las de regadío. Restricciones: agua <span class="math inline">\(1\,500y\le30\,000\iff y\le20\)</span>; abono <span class="math inline">\(100x+110y\le5\,500\)</span>; fitosanitarios <span class="math inline">\(50x+80y\le3\,000\)</span>; <span class="math inline">\(x\ge20\)</span>; <span class="math inline">\(y\ge0\)</span>. Producción (kg): <span class="math inline">\(P(x,y)=5\,000x+10\,000y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((20,0)\)</span>, <span class="math inline">\((20,20)\)</span>, <span class="math inline">\((28,20)\)</span> (corte de <span class="math inline">\(y=20\)</span> con <span class="math inline">\(50x+80y=3\,000\)</span>), <span class="math inline">\((44,10)\)</span> (corte de <span class="math inline">\(50x+80y=3\,000\)</span> con <span class="math inline">\(100x+110y=5\,500\)</span>) y <span class="math inline">\((55,0)\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((20,0)\)</span></th>
+<th><span class="math inline">\((20,20)\)</span></th>
+<th><span class="math inline">\((28,20)\)</span></th>
+<th><span class="math inline">\((44,10)\)</span></th>
+<th><span class="math inline">\((55,0)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(P\)</span></td>
+<td><span class="math inline">\(100\,000\)</span></td>
+<td><span class="math inline">\(300\,000\)</span></td>
+<td><span class="math inline">\(340\,000\)</span></td>
+<td><span class="math inline">\(320\,000\)</span></td>
+<td><span class="math inline">\(275\,000\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2024-ord-a-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2024-ord-a), con sus vértices: (20, 0), (55, 0), (44, 10), (28, 20), (20, 20)"></p>
+<figcaption>Región factible del ejercicio 2 (2024-ord-a), con sus vértices: (20, 0), (55, 0), (44, 10), (28, 20), (20, 20)</figcaption>
+</figure>
+</div>
+<p><strong>Debe cultivar 28 hectáreas de secano y 20 de regadío, con una producción máxima de <span class="math inline">\(340\,000\)</span> kg.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-modelo-b-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-modelo-b-2024">Ordinaria · Modelo B 2024</h3>
+<div id="ebau-2024-ord-b-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Modelo B 2024 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2024-ord-b/examen.pdf" target="_blank">Examen</a></p>
+<p>Una empresa tiene un presupuesto de <span class="math inline">\(78\,000\)</span> € para promocionar un producto y quiere contratar la emisión de anuncios por radio y televisión. El coste de emisión de un anuncio de radio es de <span class="math inline">\(2\,400\)</span> € y de un anuncio de televisión de <span class="math inline">\(3\,600\)</span> €. La empresa quiere que la diferencia entre el número de anuncios emitidos de cada tipo no sea mayor que 10 y que se emitan un mínimo de 10 anuncios en total. Si la emisión de un anuncio de radio llega a <span class="math inline">\(34\,000\)</span> personas y de un anuncio de televisión a <span class="math inline">\(72\,000\)</span> personas, ¿cuántas emisiones de cada tipo debe contratar para que la audiencia sea la mayor posible? ¿A cuánto ascendería dicha audiencia?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> los anuncios de radio e <span class="math inline">\(y\)</span> los de televisión. Restricciones: presupuesto <span class="math inline">\(2\,400x+3\,600y\le78\,000\iff2x+3y\le65\)</span>; diferencia <span class="math inline">\(|x-y|\le10\)</span> (es decir, <span class="math inline">\(x-y\le10\)</span> e <span class="math inline">\(y-x\le10\)</span>); total <span class="math inline">\(x+y\ge10\)</span>; <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. Audiencia: <span class="math inline">\(A(x,y)=34\,000x+72\,000y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((0,10)\)</span>, <span class="math inline">\((10,0)\)</span>, <span class="math inline">\((19,9)\)</span> (corte de <span class="math inline">\(x-y=10\)</span> con <span class="math inline">\(2x+3y=65\)</span>) y <span class="math inline">\((7,17)\)</span> (corte de <span class="math inline">\(y-x=10\)</span> con <span class="math inline">\(2x+3y=65\)</span>).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((0,10)\)</span></th>
+<th><span class="math inline">\((10,0)\)</span></th>
+<th><span class="math inline">\((19,9)\)</span></th>
+<th><span class="math inline">\((7,17)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(A\)</span></td>
+<td><span class="math inline">\(720\,000\)</span></td>
+<td><span class="math inline">\(340\,000\)</span></td>
+<td><span class="math inline">\(1\,294\,000\)</span></td>
+<td><span class="math inline">\(1\,462\,000\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2024-ord-b-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2024-ord-b), con sus vértices: (10, 0), (19, 9), (7, 17), (0, 10)"></p>
+<figcaption>Región factible del ejercicio 2 (2024-ord-b), con sus vértices: (10, 0), (19, 9), (7, 17), (0, 10)</figcaption>
+</figure>
+</div>
+<p><strong>Debe contratar 7 anuncios de radio y 17 de televisión, con una audiencia máxima de <span class="math inline">\(1\,462\,000\)</span> personas.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-modelo-a-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-modelo-a-2024">Ordinaria · Reserva · Modelo A 2024</h3>
+<div id="ebau-2024-ord-res-a-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Reserva · Modelo A 2024 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2024-ord-res-a/examen.pdf" target="_blank">Examen</a></p>
+<p>Un centro de bricolaje, que almacena bidones de pintura de interior y de exterior, cuenta con una capacidad máxima de almacenaje de 160 bidones. Por una cuestión logística, en el almacén deben mantenerse al menos 60 bidones, siendo como mínimo 20 bidones de pintura interior. Además, el número de bidones de pintura exterior almacenados no podrá ser inferior al de pintura interior. Se sabe que el gasto diario por almacenar cada bidón de pintura interior es de <span class="math inline">\(1{,}50\)</span> € y por cada bidón de pintura exterior es de <span class="math inline">\(0{,}90\)</span> €. Calcule cuántos bidones de cada tipo se deben almacenar para que el gasto diario sea mínimo e indique cuánto supone ese gasto mínimo.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> los bidones de pintura interior e <span class="math inline">\(y\)</span> los de exterior. Restricciones: <span class="math inline">\(x+y\le160\)</span>; <span class="math inline">\(x+y\ge60\)</span>; <span class="math inline">\(x\ge20\)</span>; <span class="math inline">\(y\ge x\)</span>. Gasto: <span class="math inline">\(G(x,y)=1{,}5x+0{,}9y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((20,40)\)</span> (corte de <span class="math inline">\(x=20\)</span> con <span class="math inline">\(x+y=60\)</span>), <span class="math inline">\((20,140)\)</span> (corte de <span class="math inline">\(x=20\)</span> con <span class="math inline">\(x+y=160\)</span>), <span class="math inline">\((80,80)\)</span> (corte de <span class="math inline">\(y=x\)</span> con <span class="math inline">\(x+y=160\)</span>) y <span class="math inline">\((30,30)\)</span> (corte de <span class="math inline">\(y=x\)</span> con <span class="math inline">\(x+y=60\)</span>).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((20,40)\)</span></th>
+<th><span class="math inline">\((20,140)\)</span></th>
+<th><span class="math inline">\((80,80)\)</span></th>
+<th><span class="math inline">\((30,30)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(G\)</span></td>
+<td><span class="math inline">\(66\)</span></td>
+<td><span class="math inline">\(156\)</span></td>
+<td><span class="math inline">\(192\)</span></td>
+<td><span class="math inline">\(72\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2024-ord-res-a-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2024-ord-res-a), con sus vértices: (20, 40), (30, 30), (80, 80), (20, 140)"></p>
+<figcaption>Región factible del ejercicio 2 (2024-ord-res-a), con sus vértices: (20, 40), (30, 30), (80, 80), (20, 140)</figcaption>
+</figure>
+</div>
+<p><strong>Deben almacenarse 20 bidones de pintura interior y 40 de exterior, con un gasto diario mínimo de <span class="math inline">\(66\)</span> €.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-modelo-b-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-modelo-b-2024">Ordinaria · Reserva · Modelo B 2024</h3>
+<div id="ebau-2024-ord-res-b-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Reserva · Modelo B 2024 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2024-ord-res-b/examen.pdf" target="_blank">Examen</a></p>
+<p>Un joyero desea fabricar dos tipos de pulseras, <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, y para ello dispone de <span class="math inline">\(50\)</span> g de oro, <span class="math inline">\(40\)</span> g de platino y <span class="math inline">\(25\)</span> g de plata. Para fabricar las del tipo <span class="math inline">\(A\)</span> necesita 1 g de oro y 2 g de platino, mientras que para las del tipo <span class="math inline">\(B\)</span> requiere 2 g de oro, 1 g de platino y 1 g de plata. Cada pulsera del tipo <span class="math inline">\(A\)</span> se vende por <span class="math inline">\(150\)</span> € y cada una del tipo <span class="math inline">\(B\)</span> por <span class="math inline">\(200\)</span> €. Si se vende toda la producción, ¿cuántas pulseras de cada tipo debe fabricar para maximizar los ingresos y a cuánto ascienden éstos? ¿Qué cantidad de cada metal sobrará cuando se fabrique el número de joyas que proporciona el máximo beneficio?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> las pulseras de tipo <span class="math inline">\(A\)</span> e <span class="math inline">\(y\)</span> las de tipo <span class="math inline">\(B\)</span>. Restricciones: oro <span class="math inline">\(x+2y\le50\)</span>; platino <span class="math inline">\(2x+y\le40\)</span>; plata <span class="math inline">\(y\le25\)</span>; <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. Ingresos: <span class="math inline">\(I(x,y)=150x+200y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((0,25)\)</span>, <span class="math inline">\((10,20)\)</span> (corte de <span class="math inline">\(x+2y=50\)</span> con <span class="math inline">\(2x+y=40\)</span>) y <span class="math inline">\((20,0)\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((0,0)\)</span></th>
+<th><span class="math inline">\((0,25)\)</span></th>
+<th><span class="math inline">\((10,20)\)</span></th>
+<th><span class="math inline">\((20,0)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(I\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(5\,000\)</span></td>
+<td><span class="math inline">\(5\,500\)</span></td>
+<td><span class="math inline">\(3\,000\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2024-ord-res-b-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2024-ord-res-b), con sus vértices: (0, 0), (20, 0), (10, 20), (0, 25)"></p>
+<figcaption>Región factible del ejercicio 2 (2024-ord-res-b), con sus vértices: (0, 0), (20, 0), (10, 20), (0, 25)</figcaption>
+</figure>
+</div>
+<p><strong>Debe fabricar 10 pulseras del tipo <span class="math inline">\(A\)</span> y 20 del tipo <span class="math inline">\(B\)</span>, con unos ingresos máximos de <span class="math inline">\(5\,500\)</span> €.</strong></p>
+<p>Metales usados con <span class="math inline">\((10,20)\)</span>: oro <span class="math inline">\(10+40=50\)</span> g, platino <span class="math inline">\(20+20=40\)</span> g y plata <span class="math inline">\(20\)</span> g. <strong>Sobran <span class="math inline">\(0\)</span> g de oro, <span class="math inline">\(0\)</span> g de platino y <span class="math inline">\(5\)</span> g de plata.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-modelo-a-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-modelo-a-2024">Ordinaria · Suplente · Modelo A 2024</h3>
+<div id="ebau-2024-ord-sup-a-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Suplente · Modelo A 2024 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2024-ord-sup-a/examen.pdf" target="_blank">Examen</a></p>
+<p>A una tienda de decoración le han encargado decorar las mesas de un salón de celebraciones con centros florales y candelabros. En el salón se montan siempre entre 12 y 40 mesas. En cada mesa solo se puede colocar un centro floral o un candelabro y, además, el número de candelabros no puede ser superior a una tercera parte de los centros florales. Si el precio de cada centro floral es de 32 € y el de cada candelabro de 35 €, ¿cuántos artículos de cada tipo debe seleccionar la tienda para maximizar sus ingresos? ¿A cuánto ascenderán dichos ingresos?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> los centros florales e <span class="math inline">\(y\)</span> los candelabros. Restricciones: <span class="math inline">\(12\le x+y\le40\)</span>; <span class="math inline">\(y\le\dfrac x3\)</span>; <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. Ingresos: <span class="math inline">\(I(x,y)=32x+35y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((12,0)\)</span>, <span class="math inline">\((40,0)\)</span>, <span class="math inline">\((30,10)\)</span> (corte de <span class="math inline">\(x+y=40\)</span> con <span class="math inline">\(x=3y\)</span>) y <span class="math inline">\((9,3)\)</span> (corte de <span class="math inline">\(x+y=12\)</span> con <span class="math inline">\(x=3y\)</span>).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((12,0)\)</span></th>
+<th><span class="math inline">\((40,0)\)</span></th>
+<th><span class="math inline">\((30,10)\)</span></th>
+<th><span class="math inline">\((9,3)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(I\)</span></td>
+<td><span class="math inline">\(384\)</span></td>
+<td><span class="math inline">\(1\,280\)</span></td>
+<td><span class="math inline">\(1\,310\)</span></td>
+<td><span class="math inline">\(393\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2024-ord-sup-a-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2024-ord-sup-a), con sus vértices: (9, 3), (12, 0), (40, 0), (30, 10)"></p>
+<figcaption>Región factible del ejercicio 2 (2024-ord-sup-a), con sus vértices: (9, 3), (12, 0), (40, 0), (30, 10)</figcaption>
+</figure>
+</div>
+<p><strong>Debe seleccionar 30 centros florales y 10 candelabros, con unos ingresos de <span class="math inline">\(1\,310\)</span> €.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-modelo-b-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-modelo-b-2024">Ordinaria · Suplente · Modelo B 2024</h3>
+<div id="ebau-2024-ord-sup-b-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Suplente · Modelo B 2024 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2024-ord-sup-b/examen.pdf" target="_blank">Examen</a></p>
+<p>Para un proyecto de software libre se dispone de 150 desarrolladores de Javascript y 120 de Python. Es necesario formar equipos de trabajo de dos tipos. El primer tipo estará compuesto por 2 desarrolladores de Javascript y 3 de Python, y el segundo tipo por 6 de Javascript y 4 de Python. Se requieren al menos 6 equipos del segundo tipo. Determine cuántos equipos de cada tipo se podrán formar para obtener el mayor número de equipos posible. En tal caso, ¿cuántos desarrolladores de Javascript y Python se utilizarán?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> los equipos del primer tipo e <span class="math inline">\(y\)</span> los del segundo. Restricciones: Javascript <span class="math inline">\(2x+6y\le150\)</span>; Python <span class="math inline">\(3x+4y\le120\)</span>; <span class="math inline">\(y\ge6\)</span>; <span class="math inline">\(x\ge0\)</span>. Hay que maximizar el número de equipos: <span class="math inline">\(F(x,y)=x+y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((0,6)\)</span>, <span class="math inline">\((0,25)\)</span>, <span class="math inline">\((12,21)\)</span> (corte de <span class="math inline">\(2x+6y=150\)</span> con <span class="math inline">\(3x+4y=120\)</span>) y <span class="math inline">\((32,6)\)</span> (corte de <span class="math inline">\(3x+4y=120\)</span> con <span class="math inline">\(y=6\)</span>).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((0,6)\)</span></th>
+<th><span class="math inline">\((0,25)\)</span></th>
+<th><span class="math inline">\((12,21)\)</span></th>
+<th><span class="math inline">\((32,6)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x+y\)</span></td>
+<td><span class="math inline">\(6\)</span></td>
+<td><span class="math inline">\(25\)</span></td>
+<td><span class="math inline">\(33\)</span></td>
+<td><span class="math inline">\(38\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2024-ord-sup-b-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2024-ord-sup-b), con sus vértices: (0, 6), (32, 6), (12, 21), (0, 25)"></p>
+<figcaption>Región factible del ejercicio 2 (2024-ord-sup-b), con sus vértices: (0, 6), (32, 6), (12, 21), (0, 25)</figcaption>
+</figure>
+</div>
+<p><strong>Se pueden formar 32 equipos del primer tipo y 6 del segundo (38 equipos).</strong> Desarrolladores utilizados: Javascript <span class="math inline">\(2\cdot32+6\cdot6=100\)</span> y Python <span class="math inline">\(3\cdot32+4\cdot6=120\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-3">2023</h2>
+<section id="ordinaria-modelo-a-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-modelo-a-2023">Ordinaria · Modelo A 2023</h3>
+<div id="ebau-2023-ord-a-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Modelo A 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2023-ord-a/examen.pdf" target="_blank">Examen</a></p>
+<p>Sean la función <span class="math inline">\(F(x,y)=5x-3y\)</span> y la región del plano <span class="math inline">\(R\)</span> definida mediante las inecuaciones <span class="math display">\[2x-3y\le1;\qquad4x+y\le9;\qquad x+y\le5;\qquad9x-y\ge0;\qquad y\ge0\]</span></p>
+<ol type="a">
+<li><p>Dibuje la región <span class="math inline">\(R\)</span> y calcule sus vértices. <em>(1,3 puntos)</em></p></li>
+<li><p>Indique razonadamente si los puntos <span class="math inline">\(A(2,2)\)</span> y <span class="math inline">\(B(1;3{,}5)\)</span> pertenecen a la región <span class="math inline">\(R\)</span>. <em>(0,5 puntos)</em></p></li>
+<li><p>Obtenga los puntos de la región <span class="math inline">\(R\)</span> donde <span class="math inline">\(F\)</span> alcanza el máximo y el mínimo y calcule sus correspondientes valores. <em>(0,7 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Rectas frontera: <span class="math inline">\(2x-3y=1\)</span>, <span class="math inline">\(4x+y=9\)</span>, <span class="math inline">\(x+y=5\)</span>, <span class="math inline">\(9x-y=0\)</span> e <span class="math inline">\(y=0\)</span>. Los vértices de la región <span class="math inline">\(R\)</span> son <span class="math display">\[(0,0),\quad\left(\tfrac{1}{2},0\right),\quad(2,1),\quad\left(\tfrac{4}{3},\tfrac{11}{3}\right),\quad\left(\tfrac{1}{2},\tfrac{9}{2}\right),\]</span> con <span class="math inline">\(\left(\tfrac{1}{2},0\right)\)</span> el corte de <span class="math inline">\(2x-3y=1\)</span> con <span class="math inline">\(y=0\)</span>, <span class="math inline">\((2,1)\)</span> el de <span class="math inline">\(2x-3y=1\)</span> con <span class="math inline">\(4x+y=9\)</span>, <span class="math inline">\(\left(\tfrac{4}{3},\tfrac{11}{3}\right)\)</span> el de <span class="math inline">\(4x+y=9\)</span> con <span class="math inline">\(x+y=5\)</span> y <span class="math inline">\(\left(\tfrac{1}{2},\tfrac{9}{2}\right)\)</span> el de <span class="math inline">\(x+y=5\)</span> con <span class="math inline">\(9x-y=0\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2023-ord-a-e1.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 1 (2023-ord-a), con sus vértices: (0, 0), (0,5, 0), (2, 1), (1,33, 3,67), (0,5, 4,5)"></p>
+<figcaption>Región factible del ejercicio 1 (2023-ord-a), con sus vértices: (0, 0), (0,5, 0), (2, 1), (1,33, 3,67), (0,5, 4,5)</figcaption>
+</figure>
+</div>
+<p><strong>b)</strong> <span class="math inline">\(A(2,2)\)</span>: <span class="math inline">\(4x+y=4\cdot2+2=10&gt;9\)</span>, no cumple <span class="math inline">\(4x+y\le9\)</span>: <strong><span class="math inline">\(A\)</span> no pertenece a <span class="math inline">\(R\)</span>.</strong></p>
+<p><span class="math inline">\(B(1;3{,}5)\)</span>: <span class="math inline">\(2-10{,}5=-8{,}5\le1\)</span>; <span class="math inline">\(4+3{,}5=7{,}5\le9\)</span>; <span class="math inline">\(1+3{,}5=4{,}5\le5\)</span>; <span class="math inline">\(9-3{,}5=5{,}5\ge0\)</span>; <span class="math inline">\(3{,}5\ge0\)</span>. Cumple todas: <strong><span class="math inline">\(B\)</span> pertenece a <span class="math inline">\(R\)</span>.</strong></p>
+<p><strong>c)</strong> <span class="math inline">\(F(0,0)=0\)</span>, <span class="math inline">\(F\left(\tfrac{1}{2},0\right)=\tfrac{5}{2}\)</span>, <span class="math inline">\(F(2,1)=7\)</span>, <span class="math inline">\(F\left(\tfrac{4}{3},\tfrac{11}{3}\right)=-\tfrac{13}{3}\)</span>, <span class="math inline">\(F\left(\tfrac{1}{2},\tfrac{9}{2}\right)=-11\)</span>.</p>
+<p><strong>Máximo <span class="math inline">\(7\)</span> en <span class="math inline">\((2,1)\)</span> y mínimo <span class="math inline">\(-11\)</span> en <span class="math inline">\(\left(\tfrac{1}{2},\tfrac{9}{2}\right)\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-modelo-b-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-modelo-b-2023">Ordinaria · Modelo B 2023</h3>
+<div id="ebau-2023-ord-b-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Modelo B 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2023-ord-b/examen.pdf" target="_blank">Examen</a></p>
+<p>Un artesano decide montar dos tipos de anillos utilizando dos tipos de piedras semipreciosas, una de mayor calidad que otra. Para montar uno de los anillos tarda 20 minutos y utiliza 1 de las piedras de mayor calidad y 2 de las de menor calidad. Para el otro tarda 50 minutos y utiliza 3 piedras de mayor calidad y 1 de menor calidad.</p>
+<p>Semanalmente, el artesano dispone de 200 piedras de mayor calidad y 150 de menor calidad. Además, quiere trabajar al menos 1900 minutos a la semana.</p>
+<p>Sabiendo que el primer tipo de anillo se vende a 21 €, el segundo a 50 € y que deben fabricarse al menos 20 anillos del primer tipo a la semana, determine cuántos anillos de cada tipo deben montarse para maximizar el valor de la venta. ¿A cuánto asciende dicho valor?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> los anillos del primer tipo e <span class="math inline">\(y\)</span> los del segundo. Restricciones: piedras de mayor calidad <span class="math inline">\(x+3y\le200\)</span>; de menor calidad <span class="math inline">\(2x+y\le150\)</span>; tiempo <span class="math inline">\(20x+50y\ge1900\iff2x+5y\ge190\)</span>; <span class="math inline">\(x\ge20\)</span>; <span class="math inline">\(y\ge0\)</span>. Valor de la venta: <span class="math inline">\(V(x,y)=21x+50y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((20,30)\)</span>, <span class="math inline">\((20,60)\)</span>, <span class="math inline">\((50,50)\)</span> (corte de <span class="math inline">\(x+3y=200\)</span> con <span class="math inline">\(2x+y=150\)</span>) y <span class="math inline">\((70,10)\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((20,30)\)</span></th>
+<th><span class="math inline">\((20,60)\)</span></th>
+<th><span class="math inline">\((50,50)\)</span></th>
+<th><span class="math inline">\((70,10)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(V\)</span></td>
+<td><span class="math inline">\(1\,920\)</span></td>
+<td><span class="math inline">\(3\,420\)</span></td>
+<td><span class="math inline">\(3\,550\)</span></td>
+<td><span class="math inline">\(1\,970\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2023-ord-b-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2023-ord-b), con sus vértices: (20, 30), (70, 10), (50, 50), (20, 60)"></p>
+<figcaption>Región factible del ejercicio 2 (2023-ord-b), con sus vértices: (20, 30), (70, 10), (50, 50), (20, 60)</figcaption>
+</figure>
+</div>
+<p><strong>Deben montarse 50 anillos de cada tipo, con un valor de venta de <span class="math inline">\(3\,550\)</span> €.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-modelo-a-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-modelo-a-2023">Ordinaria · Reserva · Modelo A 2023</h3>
+<div id="ebau-2023-ord-res-a-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Reserva · Modelo A 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2023-ord-res-a/examen.pdf" target="_blank">Examen</a></p>
+<p>Una empresa de material informático dispone de dos cadenas de fabricación, <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, en las que quiere aumentar su producción realizando horas extraordinarias.</p>
+<p>En una hora extraordinaria de trabajo, la cadena <span class="math inline">\(A\)</span> prepara 15 portátiles y 6 tablets, y la cadena <span class="math inline">\(B\)</span> prepara 10 portátiles y 10 tablets. Los costes de producción por hora extraordinaria de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son de <span class="math inline">\(300\)</span> € y <span class="math inline">\(600\)</span> € respectivamente. La cadena <span class="math inline">\(B\)</span> puede realizar, como máximo, el triple de horas extraordinarias que la cadena <span class="math inline">\(A\)</span>. Si para la próxima semana se debe producir adicionalmente un máximo de 360 portátiles y al menos 216 tablets, formule y resuelva el problema que permita la planificación de la empresa que minimice los costes de producción. ¿A cuánto ascienden dichos costes?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> las horas extraordinarias de la cadena <span class="math inline">\(A\)</span> e <span class="math inline">\(y\)</span> las de la cadena <span class="math inline">\(B\)</span>. Hay que <strong>minimizar <span class="math inline">\(C(x,y)=300x+600y\)</span></strong> sujeto a: portátiles <span class="math inline">\(15x+10y\le360\)</span>; tablets <span class="math inline">\(6x+10y\ge216\)</span>; <span class="math inline">\(y\le3x\)</span>; <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>.</p>
+<p>Vértices de la región factible: <span class="math inline">\((6,18)\)</span> (corte de <span class="math inline">\(y=3x\)</span> con <span class="math inline">\(6x+10y=216\)</span>), <span class="math inline">\((8,24)\)</span> (corte de <span class="math inline">\(y=3x\)</span> con <span class="math inline">\(15x+10y=360\)</span>) y <span class="math inline">\((16,12)\)</span> (corte de <span class="math inline">\(15x+10y=360\)</span> con <span class="math inline">\(6x+10y=216\)</span>).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((6,18)\)</span></th>
+<th><span class="math inline">\((8,24)\)</span></th>
+<th><span class="math inline">\((16,12)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(C\)</span></td>
+<td><span class="math inline">\(12\,600\)</span></td>
+<td><span class="math inline">\(16\,800\)</span></td>
+<td><span class="math inline">\(12\,000\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2023-ord-res-a-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2023-ord-res-a), con sus vértices: (16, 12), (8, 24), (6, 18)"></p>
+<figcaption>Región factible del ejercicio 2 (2023-ord-res-a), con sus vértices: (16, 12), (8, 24), (6, 18)</figcaption>
+</figure>
+</div>
+<p><strong>El coste mínimo es de <span class="math inline">\(12\,000\)</span> €, con 16 horas extraordinarias en <span class="math inline">\(A\)</span> y 12 en <span class="math inline">\(B\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-modelo-b-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-modelo-b-2023">Ordinaria · Reserva · Modelo B 2023</h3>
+<div id="ebau-2023-ord-res-b-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Reserva · Modelo B 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2023-ord-res-b/examen.pdf" target="_blank">Examen</a></p>
+<p>Una compañía de transporte marítimo de mercancías dispone de dos barcos <span class="math inline">\(B_1\)</span> y <span class="math inline">\(B_2\)</span> para realizar una determinada ruta, durante un año, entre dos ciudades costeras europeas. El barco <span class="math inline">\(B_1\)</span> no puede realizar más de 14 viajes y debe realizar tantos viajes o más que el barco <span class="math inline">\(B_2\)</span>. Entre los dos barcos deben realizar al menos 10 viajes y como mucho 24. La compañía obtiene unos beneficios de <span class="math inline">\(15\,000\)</span> € por cada viaje del barco <span class="math inline">\(B_1\)</span> y <span class="math inline">\(17\,000\)</span> € por cada viaje del barco <span class="math inline">\(B_2\)</span>.</p>
+<p>Halle el número de viajes que debe realizar cada barco para que el beneficio obtenido por la empresa sea máximo y obtenga dicho beneficio.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> los viajes de <span class="math inline">\(B_1\)</span> e <span class="math inline">\(y\)</span> los de <span class="math inline">\(B_2\)</span>. Restricciones: <span class="math inline">\(x\le14\)</span>; <span class="math inline">\(x\ge y\)</span>; <span class="math inline">\(10\le x+y\le24\)</span>; <span class="math inline">\(y\ge0\)</span>. Beneficio: <span class="math inline">\(B(x,y)=15\,000x+17\,000y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((5,5)\)</span>, <span class="math inline">\((10,0)\)</span>, <span class="math inline">\((14,0)\)</span>, <span class="math inline">\((14,10)\)</span> y <span class="math inline">\((12,12)\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((5,5)\)</span></th>
+<th><span class="math inline">\((10,0)\)</span></th>
+<th><span class="math inline">\((14,0)\)</span></th>
+<th><span class="math inline">\((14,10)\)</span></th>
+<th><span class="math inline">\((12,12)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(B\)</span></td>
+<td><span class="math inline">\(160\,000\)</span></td>
+<td><span class="math inline">\(150\,000\)</span></td>
+<td><span class="math inline">\(210\,000\)</span></td>
+<td><span class="math inline">\(380\,000\)</span></td>
+<td><span class="math inline">\(384\,000\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2023-ord-res-b-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2023-ord-res-b), con sus vértices: (5, 5), (10, 0), (14, 0), (14, 10), (12, 12)"></p>
+<figcaption>Región factible del ejercicio 2 (2023-ord-res-b), con sus vértices: (5, 5), (10, 0), (14, 0), (14, 10), (12, 12)</figcaption>
+</figure>
+</div>
+<p><strong>Cada barco debe realizar 12 viajes, con un beneficio máximo de <span class="math inline">\(384\,000\)</span> €.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-modelo-a-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-modelo-a-2023">Ordinaria · Suplente · Modelo A 2023</h3>
+<div id="ebau-2023-ord-sup-a-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Suplente · Modelo A 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2023-ord-sup-a/examen.pdf" target="_blank">Examen</a></p>
+<p>El aforo de un campo de fútbol es de <span class="math inline">\(10\,000\)</span> personas. Según el reglamento establecido por la federación de fútbol, como máximo deben ponerse a la venta <span class="math inline">\(3\,000\)</span> entradas para los aficionados del equipo visitante y por cada aficionado visitante debe haber dos aficionados locales como mínimo y cuatro aficionados locales como máximo.</p>
+<p>Si el precio de la entrada es de 50 € pero el aficionado local tiene un descuento del <span class="math inline">\(20\,\%\)</span>, ¿cuántos aficionados locales y visitantes deben asistir para obtener el mayor importe con la venta de las entradas?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> los aficionados locales e <span class="math inline">\(y\)</span> los visitantes. Restricciones: aforo <span class="math inline">\(x+y\le10\,000\)</span>; visitantes <span class="math inline">\(y\le3\,000\)</span>; al menos dos locales por visitante <span class="math inline">\(x\ge2y\)</span>; como máximo cuatro <span class="math inline">\(x\le4y\)</span>; <span class="math inline">\(y\ge0\)</span>. Con el descuento, la entrada local cuesta <span class="math inline">\(0{,}8\cdot50=40\)</span> €. Importe: <span class="math inline">\(I(x,y)=40x+50y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((6\,000,3\,000)\)</span> (corte de <span class="math inline">\(x=2y\)</span> con <span class="math inline">\(y=3\,000\)</span>), <span class="math inline">\((7\,000,3\,000)\)</span> (corte de <span class="math inline">\(x+y=10\,000\)</span> con <span class="math inline">\(y=3\,000\)</span>) y <span class="math inline">\((8\,000,2\,000)\)</span> (corte de <span class="math inline">\(x+y=10\,000\)</span> con <span class="math inline">\(x=4y\)</span>).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((0,0)\)</span></th>
+<th><span class="math inline">\((6\,000,3\,000)\)</span></th>
+<th><span class="math inline">\((7\,000,3\,000)\)</span></th>
+<th><span class="math inline">\((8\,000,2\,000)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(I\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(390\,000\)</span></td>
+<td><span class="math inline">\(430\,000\)</span></td>
+<td><span class="math inline">\(420\,000\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2023-ord-sup-a-e1.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 1 (2023-ord-sup-a), con sus vértices: (0, 0), (8000, 2000), (7000, 3000), (6000, 3000)"></p>
+<figcaption>Región factible del ejercicio 1 (2023-ord-sup-a), con sus vértices: (0, 0), (8000, 2000), (7000, 3000), (6000, 3000)</figcaption>
+</figure>
+</div>
+<p><strong>Deben asistir <span class="math inline">\(7\,000\)</span> aficionados locales y <span class="math inline">\(3\,000\)</span> visitantes, con un importe de <span class="math inline">\(430\,000\)</span> €.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-modelo-b-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-modelo-b-2023">Ordinaria · Suplente · Modelo B 2023</h3>
+<div id="ebau-2023-ord-sup-b-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Suplente · Modelo B 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2023-ord-sup-b/examen.pdf" target="_blank">Examen</a></p>
+<p>Una empresa de pinturas quiere elaborar botes de pintura de dos colores nuevos: Júpiter y Minerva. Para ello, dispone de <span class="math inline">\(1000\)</span> kg de pintura de color verde, <span class="math inline">\(800\)</span> kg de color morado y <span class="math inline">\(300\)</span> kg de color naranja. Para elaborar un bote de color Júpiter se necesitan <span class="math inline">\(10\)</span> kg de pintura verde, <span class="math inline">\(5\)</span> kg de morada y <span class="math inline">\(5\)</span> kg de naranja. Para elaborar un bote de color Minerva se necesitan <span class="math inline">\(5\)</span> kg de pintura verde y <span class="math inline">\(5\)</span> kg de morada. Sabiendo que se obtiene un beneficio de <span class="math inline">\(30\)</span> € por cada bote de pintura Júpiter y <span class="math inline">\(20\)</span> € por un bote de pintura Minerva, ¿cuántos botes de cada tipo deberá fabricar la empresa para obtener un beneficio máximo? ¿Cuál será el valor de ese beneficio?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> los botes Júpiter e <span class="math inline">\(y\)</span> los Minerva. Restricciones: verde <span class="math inline">\(10x+5y\le1\,000\)</span>; morado <span class="math inline">\(5x+5y\le800\)</span>; naranja <span class="math inline">\(5x\le300\)</span> (solo lo usa Júpiter); <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. Beneficio: <span class="math inline">\(B(x,y)=30x+20y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((0,160)\)</span>, <span class="math inline">\((40,120)\)</span> (corte de <span class="math inline">\(10x+5y=1\,000\)</span> con <span class="math inline">\(5x+5y=800\)</span>), <span class="math inline">\((60,80)\)</span> (corte de <span class="math inline">\(x=60\)</span> con <span class="math inline">\(5x+5y=800\)</span>) y <span class="math inline">\((60,0)\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((0,0)\)</span></th>
+<th><span class="math inline">\((0,160)\)</span></th>
+<th><span class="math inline">\((40,120)\)</span></th>
+<th><span class="math inline">\((60,80)\)</span></th>
+<th><span class="math inline">\((60,0)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(B\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(3\,200\)</span></td>
+<td><span class="math inline">\(3\,600\)</span></td>
+<td><span class="math inline">\(3\,400\)</span></td>
+<td><span class="math inline">\(1\,800\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2023-ord-sup-b-e1.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 1 (2023-ord-sup-b), con sus vértices: (0, 0), (60, 0), (60, 80), (40, 120), (0, 160)"></p>
+<figcaption>Región factible del ejercicio 1 (2023-ord-sup-b), con sus vértices: (0, 0), (60, 0), (60, 80), (40, 120), (0, 160)</figcaption>
+</figure>
+</div>
+<p><strong>Debe fabricar 40 botes Júpiter y 120 Minerva, con un beneficio máximo de <span class="math inline">\(3\,600\)</span> €.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-4" class="level2">
+<h2 class="anchored" data-anchor-id="section-4">2022</h2>
+<section id="ordinaria-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2022">Ordinaria 2022</h3>
+<div id="ebau-2022-ord-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2022-ord/examen.pdf" target="_blank">Examen</a></p>
+<p>Una pastelería decide preparar dos tipos de cajas de pastelitos para regalar a los clientes en su inauguración. En total dispone de 120 piononos y 150 pestiños. En la caja del primer tipo habrá 3 piononos y 2 pestiños y en la del segundo tipo 4 piononos y 6 pestiños. Deben preparar al menos 9 cajas del segundo tipo.</p>
+<p>Determine cuántas cajas de cada tipo deberá preparar para realizar el máximo número de regalos posible. En este caso, indique cuántos piononos y cuántos pestiños se utilizarán.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> las cajas del primer tipo e <span class="math inline">\(y\)</span> las del segundo. Restricciones: piononos <span class="math inline">\(3x+4y\le120\)</span>; pestiños <span class="math inline">\(2x+6y\le150\iff x+3y\le75\)</span>; <span class="math inline">\(y\ge9\)</span>; <span class="math inline">\(x\ge0\)</span>. Hay que maximizar el número de cajas, <span class="math inline">\(F(x,y)=x+y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((0,9)\)</span>, <span class="math inline">\((0,25)\)</span>, <span class="math inline">\((12,21)\)</span> (corte de <span class="math inline">\(3x+4y=120\)</span> con <span class="math inline">\(x+3y=75\)</span>) y <span class="math inline">\((28,9)\)</span> (corte de <span class="math inline">\(3x+4y=120\)</span> con <span class="math inline">\(y=9\)</span>).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((0,9)\)</span></th>
+<th><span class="math inline">\((0,25)\)</span></th>
+<th><span class="math inline">\((12,21)\)</span></th>
+<th><span class="math inline">\((28,9)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x+y\)</span></td>
+<td><span class="math inline">\(9\)</span></td>
+<td><span class="math inline">\(25\)</span></td>
+<td><span class="math inline">\(33\)</span></td>
+<td><span class="math inline">\(37\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2022-ord-e1.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 1 (2022-ord), con sus vértices: (0, 9), (28, 9), (12, 21), (0, 25)"></p>
+<figcaption>Región factible del ejercicio 1 (2022-ord), con sus vértices: (0, 9), (28, 9), (12, 21), (0, 25)</figcaption>
+</figure>
+</div>
+<p><strong>Debe preparar 28 cajas del primer tipo y 9 del segundo (37 regalos).</strong> Piononos utilizados: <span class="math inline">\(3\cdot28+4\cdot9=120\)</span>. Pestiños utilizados: <span class="math inline">\(2\cdot28+6\cdot9=110\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-2022">Ordinaria · Reserva 2022</h3>
+<div id="ebau-2022-ord-res-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Reserva 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2022-ord-res/examen.pdf" target="_blank">Examen</a></p>
+<p>Una papelería quiere vender 400 cuadernos de vacaciones y 300 estuches de lápices de colores. Para ello ha preparado dos lotes de esos productos a precios especiales. Los lotes de tipo A contienen 2 cuadernos y 2 estuches; los lotes de tipo B contienen 3 cuadernos y 1 estuche. No es posible vender más de 100 lotes de tipo B. Cada lote de tipo A se vende a 35 € y cada lote de tipo B a 45 €. Calcule cuántos lotes de cada tipo debe vender la papelería para conseguir el máximo valor de ventas. ¿A cuánto asciende dicho valor?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> los lotes de tipo A e <span class="math inline">\(y\)</span> los de tipo B. Restricciones: cuadernos <span class="math inline">\(2x+3y\le400\)</span>; estuches <span class="math inline">\(2x+y\le300\)</span>; <span class="math inline">\(y\le100\)</span>; <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. Ventas: <span class="math inline">\(V(x,y)=35x+45y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((0,100)\)</span>, <span class="math inline">\((50,100)\)</span>, <span class="math inline">\((125,50)\)</span> (corte de <span class="math inline">\(2x+3y=400\)</span> con <span class="math inline">\(2x+y=300\)</span>) y <span class="math inline">\((150,0)\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((0,0)\)</span></th>
+<th><span class="math inline">\((0,100)\)</span></th>
+<th><span class="math inline">\((50,100)\)</span></th>
+<th><span class="math inline">\((125,50)\)</span></th>
+<th><span class="math inline">\((150,0)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(V\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(4\,500\)</span></td>
+<td><span class="math inline">\(6\,250\)</span></td>
+<td><span class="math inline">\(6\,625\)</span></td>
+<td><span class="math inline">\(5\,250\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2022-ord-res-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2022-ord-res), con sus vértices: (0, 0), (150, 0), (125, 50), (50, 100), (0, 100)"></p>
+<figcaption>Región factible del ejercicio 2 (2022-ord-res), con sus vértices: (0, 0), (150, 0), (125, 50), (50, 100), (0, 100)</figcaption>
+</figure>
+</div>
+<p><strong>Debe vender 125 lotes de tipo A y 50 de tipo B, con un valor máximo de ventas de <span class="math inline">\(6\,625\)</span> €.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2022">Ordinaria · Suplente 2022</h3>
+<div id="ebau-2022-ord-sup-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Suplente 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2022-ord-sup/examen.pdf" target="_blank">Examen</a></p>
+<p>Una fábrica de juguetes educativos produce juegos de ajedrez y dominó. Para fabricar un ajedrez se necesitan 2 kg de madera y 4 horas de trabajo, mientras que para fabricar un dominó se necesita 1 kg de madera y 1 hora de trabajo. Para que la producción sea rentable hay que hacer al día al menos 3 juegos y emplear como máximo 7 kg de madera y 9 horas de trabajo. Cada ajedrez se vende por 40 € y cada dominó por 15 €. ¿Cuántos juegos de ajedrez y dominó deben fabricarse diariamente para que la ganancia obtenida sea máxima? ¿Cuál será esa ganancia?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> los ajedreces e <span class="math inline">\(y\)</span> los dominós diarios. Restricciones: <span class="math inline">\(x+y\ge3\)</span>; madera <span class="math inline">\(2x+y\le7\)</span>; horas <span class="math inline">\(4x+y\le9\)</span>; <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. Ganancia: <span class="math inline">\(G(x,y)=40x+15y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((0,3)\)</span>, <span class="math inline">\((0,7)\)</span>, <span class="math inline">\((1,5)\)</span> (corte de <span class="math inline">\(2x+y=7\)</span> con <span class="math inline">\(4x+y=9\)</span>) y <span class="math inline">\((2,1)\)</span> (corte de <span class="math inline">\(4x+y=9\)</span> con <span class="math inline">\(x+y=3\)</span>).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((0,3)\)</span></th>
+<th><span class="math inline">\((0,7)\)</span></th>
+<th><span class="math inline">\((1,5)\)</span></th>
+<th><span class="math inline">\((2,1)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(G\)</span></td>
+<td><span class="math inline">\(45\)</span></td>
+<td><span class="math inline">\(105\)</span></td>
+<td><span class="math inline">\(115\)</span></td>
+<td><span class="math inline">\(95\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2022-ord-sup-e1.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 1 (2022-ord-sup), con sus vértices: (0, 3), (2, 1), (1, 5), (0, 7)"></p>
+<figcaption>Región factible del ejercicio 1 (2022-ord-sup), con sus vértices: (0, 3), (2, 1), (1, 5), (0, 7)</figcaption>
+</figure>
+</div>
+<p><strong>Deben fabricarse 1 ajedrez y 5 dominós al día, con una ganancia máxima de <span class="math inline">\(115\)</span> €.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2022" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2022">Extraordinaria 2022</h3>
+<div id="ebau-2022-ext-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Extraordinaria 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2022-ext/examen.pdf" target="_blank">Examen</a></p>
+<p>Se considera el recinto definido por las siguientes inecuaciones:</p>
+<p><span class="math display">\[y-2x\le7;\qquad-x+3y\le21;\qquad x+2y\le19;\qquad x+y\le14\]</span></p>
+<ol type="a">
+<li><p>Represente dicho recinto y determine sus vértices. <em>(1,4 puntos)</em></p></li>
+<li><p>Calcule los valores máximo y mínimo de la función <span class="math inline">\(F(x,y)=x+4y\)</span> en el recinto anterior, así como los puntos donde se alcanzan. <em>(0,6 puntos)</em></p></li>
+<li><p>¿Podría tomar la función objetivo <span class="math inline">\(F\)</span> el valor 40 en algún punto de la región factible? ¿Y el valor 20? Justifique las respuestas. <em>(0,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>(Se toma <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>, como es habitual en estos problemas: sin esas condiciones el recinto no estaría acotado y la función <span class="math inline">\(F\)</span> no tendría mínimo.)</p>
+<p><strong>a)</strong> Rectas frontera: <span class="math inline">\(y=2x+7\)</span>, <span class="math inline">\(-x+3y=21\)</span>, <span class="math inline">\(x+2y=19\)</span>, <span class="math inline">\(x+y=14\)</span>, <span class="math inline">\(x=0\)</span>, <span class="math inline">\(y=0\)</span>. Vértices del recinto: <span class="math display">\[(0,0),\quad(0,7),\quad(3,8),\quad(9,5),\quad(14,0),\]</span> donde <span class="math inline">\((0,7)\)</span> es el corte de <span class="math inline">\(x=0\)</span> con <span class="math inline">\(y=2x+7\)</span> (que también está en <span class="math inline">\(-x+3y=21\)</span>), <span class="math inline">\((3,8)\)</span> el de <span class="math inline">\(-x+3y=21\)</span> con <span class="math inline">\(x+2y=19\)</span>, <span class="math inline">\((9,5)\)</span> el de <span class="math inline">\(x+2y=19\)</span> con <span class="math inline">\(x+y=14\)</span> y <span class="math inline">\((14,0)\)</span> el de <span class="math inline">\(x+y=14\)</span> con <span class="math inline">\(y=0\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2022-ext-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2022-ext), con sus vértices: (0, 0), (14, 0), (9, 5), (3, 8), (0, 7)"></p>
+<figcaption>Región factible del ejercicio 2 (2022-ext), con sus vértices: (0, 0), (14, 0), (9, 5), (3, 8), (0, 7)</figcaption>
+</figure>
+</div>
+<p><strong>b)</strong> <span class="math inline">\(F(0,0)=0\)</span>, <span class="math inline">\(F(0,7)=28\)</span>, <span class="math inline">\(F(3,8)=35\)</span>, <span class="math inline">\(F(9,5)=29\)</span>, <span class="math inline">\(F(14,0)=14\)</span>.</p>
+<p><strong>Máximo <span class="math inline">\(35\)</span> en <span class="math inline">\((3,8)\)</span> y mínimo <span class="math inline">\(0\)</span> en <span class="math inline">\((0,0)\)</span>.</strong></p>
+<p><strong>c)</strong> <span class="math inline">\(F\)</span> toma en la región todos los valores entre su mínimo (<span class="math inline">\(0\)</span>) y su máximo (<span class="math inline">\(35\)</span>). <strong>El valor <span class="math inline">\(40&gt;35\)</span> no puede alcanzarse; el valor <span class="math inline">\(20\)</span> sí</strong> (por ejemplo, en el punto <span class="math inline">\((4,4)\)</span>: <span class="math inline">\(4+16=20\)</span>, que está en la región).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-reserva-2022" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-reserva-2022">Extraordinaria · Reserva 2022</h3>
+<div id="ebau-2022-ext-res-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Extraordinaria · Reserva 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2022-ext-res/examen.pdf" target="_blank">Examen</a></p>
+<p>Una sastrería dispone de <span class="math inline">\(70\ \text{m}^{2}\)</span> de tela de lino y de <span class="math inline">\(150\ \text{m}^{2}\)</span> de tela de algodón. En la confección de un traje se emplea <span class="math inline">\(1\ \text{m}^{2}\)</span> de tela de lino y <span class="math inline">\(3\ \text{m}^{2}\)</span> de tela de algodón, y en un vestido se necesitan <span class="math inline">\(2\ \text{m}^{2}\)</span> de tela de cada tipo. Se obtienen 60 euros de beneficio por cada traje y 70 euros por cada vestido. Determine el número de trajes y vestidos que se deben confeccionar para obtener el máximo beneficio, así como dicho beneficio máximo.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> los trajes e <span class="math inline">\(y\)</span> los vestidos. Restricciones: lino <span class="math inline">\(x+2y\le70\)</span>; algodón <span class="math inline">\(3x+2y\le150\)</span>; <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. Beneficio: <span class="math inline">\(B(x,y)=60x+70y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((0,35)\)</span>, <span class="math inline">\((40,15)\)</span> (corte de <span class="math inline">\(x+2y=70\)</span> con <span class="math inline">\(3x+2y=150\)</span>) y <span class="math inline">\((50,0)\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((0,0)\)</span></th>
+<th><span class="math inline">\((0,35)\)</span></th>
+<th><span class="math inline">\((40,15)\)</span></th>
+<th><span class="math inline">\((50,0)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(B\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(2\,450\)</span></td>
+<td><span class="math inline">\(3\,450\)</span></td>
+<td><span class="math inline">\(3\,000\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2022-ext-res-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2022-ext-res), con sus vértices: (0, 0), (50, 0), (40, 15), (0, 35)"></p>
+<figcaption>Región factible del ejercicio 2 (2022-ext-res), con sus vértices: (0, 0), (50, 0), (40, 15), (0, 35)</figcaption>
+</figure>
+</div>
+<p><strong>Hay que confeccionar 40 trajes y 15 vestidos, con un beneficio máximo de <span class="math inline">\(3\,450\)</span> €.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2022" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2022">Extraordinaria · Suplente 2022</h3>
+<div id="ebau-2022-ext-sup-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Extraordinaria · Suplente 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2022-ext-sup/examen.pdf" target="_blank">Examen</a></p>
+<p>Se considera el recinto definido por las siguientes inecuaciones:</p>
+<p><span class="math display">\[x+2y\ge7;\qquad2x-y\le4;\qquad4x-y\ge1;\qquad3x+2y\le20\]</span></p>
+<ol type="a">
+<li><p>Represente dicho recinto y calcule sus vértices. <em>(2 puntos)</em></p></li>
+<li><p>Obtenga el valor máximo de la función <span class="math inline">\(F(x,y)=x+3y\)</span> en el recinto anterior, así como el punto donde se alcanza. <em>(0,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Rectas frontera: <span class="math inline">\(x+2y=7\)</span>, <span class="math inline">\(2x-y=4\)</span>, <span class="math inline">\(4x-y=1\)</span>, <span class="math inline">\(3x+2y=20\)</span>. Los vértices del recinto son <span class="math display">\[(1,3),\quad(2,7),\quad(3,2),\quad(4,4),\]</span> donde <span class="math inline">\((1,3)\)</span> es el corte de <span class="math inline">\(x+2y=7\)</span> con <span class="math inline">\(4x-y=1\)</span>, <span class="math inline">\((2,7)\)</span> el de <span class="math inline">\(4x-y=1\)</span> con <span class="math inline">\(3x+2y=20\)</span>, <span class="math inline">\((4,4)\)</span> el de <span class="math inline">\(3x+2y=20\)</span> con <span class="math inline">\(2x-y=4\)</span> y <span class="math inline">\((3,2)\)</span> el de <span class="math inline">\(2x-y=4\)</span> con <span class="math inline">\(x+2y=7\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2022-ext-sup-e1.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 1 (2022-ext-sup), con sus vértices: (1, 3), (3, 2), (4, 4), (2, 7)"></p>
+<figcaption>Región factible del ejercicio 1 (2022-ext-sup), con sus vértices: (1, 3), (3, 2), (4, 4), (2, 7)</figcaption>
+</figure>
+</div>
+<p><strong>b)</strong> <span class="math inline">\(F(1,3)=10\)</span>, <span class="math inline">\(F(2,7)=23\)</span>, <span class="math inline">\(F(3,2)=9\)</span> y <span class="math inline">\(F(4,4)=16\)</span>.</p>
+<p><strong>El máximo vale <span class="math inline">\(23\)</span> y se alcanza en el punto <span class="math inline">\((2,7)\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-5" class="level2">
+<h2 class="anchored" data-anchor-id="section-5">2021</h2>
+<section id="ordinaria-2021" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2021">Ordinaria 2021</h3>
+<div id="ebau-2021-ord-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2021-ord/examen.pdf" target="_blank">Examen</a></p>
+<p>Una empresa de recambios industriales produce dos tipos de baterías, <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>. Su producción semanal debe ser de al menos 10 baterías en total y el número de baterías de tipo <span class="math inline">\(B\)</span> no puede superar en más de 10 unidades a las fabricadas de tipo <span class="math inline">\(A\)</span>. Cada batería de tipo <span class="math inline">\(A\)</span> tiene unos gastos de producción de 150 euros y cada batería de tipo <span class="math inline">\(B\)</span> de 100 euros, disponiendo de un máximo de 6000 euros a la semana para el coste total de producción.</p>
+<p>Si la empresa vende todo lo que produce y cada batería de tipo <span class="math inline">\(A\)</span> genera un beneficio de 130 euros y la de tipo <span class="math inline">\(B\)</span> de 140 euros, ¿cuántas baterías de cada tipo tendrán que producir a la semana para que el beneficio total sea máximo? ¿Cuál es ese beneficio?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> las baterías de tipo <span class="math inline">\(A\)</span> e <span class="math inline">\(y\)</span> las de tipo <span class="math inline">\(B\)</span> producidas a la semana. Restricciones: <span class="math inline">\(x+y\ge10\)</span>, <span class="math inline">\(y\le x+10\)</span>, <span class="math inline">\(150x+100y\le6000\)</span> (es decir, <span class="math inline">\(3x+2y\le120\)</span>), <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. Beneficio: <span class="math inline">\(B(x,y)=130x+140y\)</span>.</p>
+<p>Vértices de la región factible: <span class="math inline">\((10,0)\)</span>, <span class="math inline">\((40,0)\)</span>, <span class="math inline">\((20,30)\)</span> (corte de <span class="math inline">\(y=x+10\)</span> con <span class="math inline">\(3x+2y=120\)</span>) y <span class="math inline">\((0,10)\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((10,0)\)</span></th>
+<th><span class="math inline">\((40,0)\)</span></th>
+<th><span class="math inline">\((20,30)\)</span></th>
+<th><span class="math inline">\((0,10)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(B\)</span></td>
+<td><span class="math inline">\(1\,300\)</span></td>
+<td><span class="math inline">\(5\,200\)</span></td>
+<td><span class="math inline">\(6\,800\)</span></td>
+<td><span class="math inline">\(1\,400\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2021-ord-e1.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 1 (2021-ord), con sus vértices: (10, 0), (40, 0), (20, 30), (0, 10)"></p>
+<figcaption>Región factible del ejercicio 1 (2021-ord), con sus vértices: (10, 0), (40, 0), (20, 30), (0, 10)</figcaption>
+</figure>
+</div>
+<p><strong>Hay que producir 20 baterías de tipo <span class="math inline">\(A\)</span> y 30 de tipo <span class="math inline">\(B\)</span>, con un beneficio máximo de <span class="math inline">\(6\,800\)</span> €.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-2021" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-2021">Ordinaria · Reserva 2021</h3>
+<div id="ebau-2021-ord-res-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Reserva 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2021-ord-res/examen.pdf" target="_blank">Examen</a></p>
+<ol type="a">
+<li>Una frutería vende dos tipos de surtidos de frutos rojos, <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>. El surtido de tipo <span class="math inline">\(A\)</span> contiene 75 g de arándanos, 100 g de frambuesas y se vende a 2,40 euros, mientras que el de tipo <span class="math inline">\(B\)</span> contiene 75 g de arándanos, 50 g de frambuesas y se vende a 1,80 euros. La frutería dispone de un total de 3,75 kg de arándanos y 4 kg de frambuesas y el número de surtidos que vende del tipo <span class="math inline">\(A\)</span>, siempre es menor o igual al doble de los del tipo <span class="math inline">\(B\)</span>.</li>
+</ol>
+<p>Formule, sin resolver, el problema que permite obtener el número de surtidos de cada tipo que debe vender para que el beneficio sea máximo. <em>(1 punto)</em></p>
+<ol start="2" type="a">
+<li>Represente el recinto limitado por las siguientes restricciones, calculando sus vértices: <em>(1,5 puntos)</em></li>
+</ol>
+<p><span class="math display">\[x+4y\ge5\qquad x+2y\ge4\qquad 7x+5y\le35\qquad x\ge0\]</span></p>
+<p>¿En qué punto de la región anterior la función <span class="math inline">\(F(x,y)=2x+y\)</span> alcanza el mínimo y cuál es dicho valor?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Sean <span class="math inline">\(x\)</span> el número de surtidos de tipo <span class="math inline">\(A\)</span> e <span class="math inline">\(y\)</span> el de tipo <span class="math inline">\(B\)</span>. Hay que <strong>maximizar <span class="math inline">\(F(x,y)=2{,}4x+1{,}8y\)</span></strong> sujeto a:</p>
+<ul>
+<li>arándanos: <span class="math inline">\(75x+75y\le3750\iff x+y\le50\)</span>,</li>
+<li>frambuesas: <span class="math inline">\(100x+50y\le4000\iff2x+y\le80\)</span>,</li>
+<li><span class="math inline">\(x\le2y\)</span>,</li>
+<li><span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>.</li>
+</ul>
+<p><strong>b)</strong> Los vértices de la región son <span class="math inline">\((0,7)\)</span> (de <span class="math inline">\(x=0\)</span> y <span class="math inline">\(7x+5y=35\)</span>), <span class="math inline">\((0,2)\)</span> (de <span class="math inline">\(x=0\)</span> y <span class="math inline">\(x+2y=4\)</span>), <span class="math inline">\(\left(3,\frac{1}{2}\right)\)</span> (de <span class="math inline">\(x+4y=5\)</span> y <span class="math inline">\(x+2y=4\)</span>) y <span class="math inline">\((5,0)\)</span> (de <span class="math inline">\(x+4y=5\)</span> y <span class="math inline">\(7x+5y=35\)</span>).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((0,7)\)</span></th>
+<th><span class="math inline">\((0,2)\)</span></th>
+<th><span class="math inline">\(\left(3,\frac{1}{2}\right)\)</span></th>
+<th><span class="math inline">\((5,0)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(F=2x+y\)</span></td>
+<td><span class="math inline">\(7\)</span></td>
+<td><span class="math inline">\(2\)</span></td>
+<td><span class="math inline">\(\frac{13}{2}\)</span></td>
+<td><span class="math inline">\(10\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2021-ord-res-e1.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 1 (2021-ord-res), con sus vértices: (0, 2), (3, 0,5), (5, 0), (0, 7)"></p>
+<figcaption>Región factible del ejercicio 1 (2021-ord-res), con sus vértices: (0, 2), (3, 0,5), (5, 0), (0, 7)</figcaption>
+</figure>
+</div>
+<p><strong>El mínimo se alcanza en el punto <span class="math inline">\((0,2)\)</span> y vale <span class="math inline">\(2\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2021" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2021">Ordinaria · Suplente 2021</h3>
+<div id="ebau-2021-ord-sup-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Suplente 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2021-ord-sup/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las siguientes inecuaciones:</p>
+<p><span class="math display">\[5x-3y\ge-9\qquad x+y\le11\qquad 6x+y\le36\qquad x+2y\ge6\]</span></p>
+<ol type="a">
+<li><p>Represente la región factible definida por las inecuaciones anteriores y determine sus vértices. <em>(1,5 puntos)</em></p></li>
+<li><p>¿Pertenece el punto <span class="math inline">\((5,7)\)</span> a la región factible anterior? <em>(0,25 puntos)</em></p></li>
+<li><p>Calcule los valores máximo y mínimo de la función <span class="math inline">\(F(x,y)=10x-6y\)</span> en la región anterior y determine los puntos en los que se alcanzan. <em>(0,75 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Las rectas frontera son <span class="math inline">\(5x-3y=-9\)</span>, <span class="math inline">\(x+y=11\)</span>, <span class="math inline">\(6x+y=36\)</span> y <span class="math inline">\(x+2y=6\)</span>. Los vértices de la región factible son <span class="math display">\[(0,3),\quad(3,8),\quad(5,6),\quad(6,0),\]</span> que se obtienen cortando <span class="math inline">\(x+2y=6\)</span> con <span class="math inline">\(x=0\)</span>, <span class="math inline">\(5x-3y=-9\)</span> con <span class="math inline">\(x+y=11\)</span>, <span class="math inline">\(x+y=11\)</span> con <span class="math inline">\(6x+y=36\)</span> y <span class="math inline">\(6x+y=36\)</span> con <span class="math inline">\(y=0\)</span>, respectivamente. (La región es el cuadrilátero de esos cuatro vértices.)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2021-ord-sup-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2021-ord-sup), con sus vértices: (0, 3), (6, 0), (5, 6), (3, 8)"></p>
+<figcaption>Región factible del ejercicio 2 (2021-ord-sup), con sus vértices: (0, 3), (6, 0), (5, 6), (3, 8)</figcaption>
+</figure>
+</div>
+<p><strong>b)</strong> Para <span class="math inline">\((5,7)\)</span>: <span class="math inline">\(5+7=12&gt;11\)</span>, no cumple <span class="math inline">\(x+y\le11\)</span>. <strong>No pertenece a la región.</strong></p>
+<p><strong>c)</strong> Valores de <span class="math inline">\(F=10x-6y\)</span> en los vértices: <span class="math inline">\(F(0,3)=-18\)</span>, <span class="math inline">\(F(3,8)=-18\)</span>, <span class="math inline">\(F(5,6)=14\)</span>, <span class="math inline">\(F(6,0)=60\)</span>.</p>
+<p><strong>Máximo <span class="math inline">\(60\)</span> en <span class="math inline">\((6,0)\)</span>. Mínimo <span class="math inline">\(-18\)</span>, que se alcanza en <span class="math inline">\((0,3)\)</span> y en <span class="math inline">\((3,8)\)</span> y, por tanto, en todos los puntos del segmento que los une</strong> (porque <span class="math inline">\(F=-18\)</span> es la recta <span class="math inline">\(5x-3y=-9\)</span> multiplicada por 2).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2021" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2021">Extraordinaria 2021</h3>
+<div id="ebau-2021-ext-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Extraordinaria 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2021-ext/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las siguientes inecuaciones:</p>
+<p><span class="math display">\[5x-4y\le-19\qquad3x-4y\le-13\qquad x\ge-7\qquad-x-y\ge2\]</span></p>
+<ol type="a">
+<li><p>Represente la región factible definida por las inecuaciones anteriores y determine sus vértices. <em>(1,5 puntos)</em></p></li>
+<li><p>¿Cuáles son los puntos en los que se alcanzan el mínimo y el máximo de la función <span class="math inline">\(G(x,y)=-\dfrac{1}{5}x+\dfrac{5}{2}y\)</span> en la citada región factible? ¿Cuál es su valor? <em>(0,5 puntos)</em></p></li>
+<li><p>Responda de forma razonada si la función <span class="math inline">\(G(x,y)=-\dfrac{1}{5}x+\dfrac{5}{2}y\)</span> puede alcanzar el valor <span class="math inline">\(\dfrac{47}{3}\)</span> en la región factible hallada. <em>(0,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Las rectas frontera son <span class="math inline">\(5x-4y=-19\)</span>, <span class="math inline">\(3x-4y=-13\)</span>, <span class="math inline">\(x=-7\)</span> y <span class="math inline">\(x+y=-2\)</span>. La región factible es el triángulo de vértices <span class="math display">\[(-7,-2),\quad(-7,5),\quad(-3,1).\]</span> En efecto: <span class="math inline">\(x=-7\)</span> corta a <span class="math inline">\(x+y=-2\)</span> en <span class="math inline">\((-7,5)\)</span> y a <span class="math inline">\(3x-4y=-13\)</span> en <span class="math inline">\((-7,-2)\)</span>; <span class="math inline">\(5x-4y=-19\)</span> y <span class="math inline">\(3x-4y=-13\)</span> se cortan en <span class="math inline">\((-3,1)\)</span>, que está también en <span class="math inline">\(x+y=-2\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2021-ext-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 2 (2021-ext), con sus vértices: (-7, -2), (-3, 1), (-7, 5)"></p>
+<figcaption>Región factible del ejercicio 2 (2021-ext), con sus vértices: (-7, -2), (-3, 1), (-7, 5)</figcaption>
+</figure>
+</div>
+<p><strong>b)</strong> <span class="math inline">\(G(-7,-2)=\dfrac{7}{5}-5=-\dfrac{18}{5}\)</span>, <span class="math inline">\(G(-7,5)=\dfrac{7}{5}+\dfrac{25}{2}=\dfrac{139}{10}\)</span> y <span class="math inline">\(G(-3,1)=\dfrac{3}{5}+\dfrac{5}{2}=\dfrac{31}{10}\)</span>.</p>
+<p><strong>Mínimo <span class="math inline">\(-\dfrac{18}{5}\)</span> en <span class="math inline">\((-7,-2)\)</span> y máximo <span class="math inline">\(\dfrac{139}{10}\)</span> en <span class="math inline">\((-7,5)\)</span>.</strong></p>
+<p><strong>c)</strong> <span class="math inline">\(\dfrac{47}{3}\approx15{,}67&gt;\dfrac{139}{10}=13{,}9\)</span>, que es el máximo de <span class="math inline">\(G\)</span> en la región. <strong>No puede alcanzar ese valor.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-reserva-2021" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-reserva-2021">Extraordinaria · Reserva 2021</h3>
+<div id="ebau-2021-ext-res-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Extraordinaria · Reserva 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2021-ext-res/examen.pdf" target="_blank">Examen</a></p>
+<p>La Agencia Espacial Europea contará con un presupuesto de 2,4 millones de euros para financiar misiones sobre Observación de la Tierra y para financiar programas de Transporte Espacial. Cada misión supone una inversión de 200 000 euros y cada programa, 100 000 euros. Teniendo en cuenta que en la decisión final deben superarse los 2 millones de euros de inversión y el número de misiones debe ser al menos 4, pero no más de la mitad del número de programas, ¿cuántas misiones y cuántos programas se deben llevar a cabo para obtener el máximo de la función <span class="math inline">\(F(x,y)=0{,}6x+0{,}4y\)</span>, con <span class="math inline">\(x\)</span> misiones e <span class="math inline">\(y\)</span> programas?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> las misiones e <span class="math inline">\(y\)</span> los programas. Inversión (en millones de euros): <span class="math inline">\(0{,}2x+0{,}1y\)</span>. Restricciones:</p>
+<ul>
+<li>presupuesto: <span class="math inline">\(0{,}2x+0{,}1y\le2{,}4\iff2x+y\le24\)</span>,</li>
+<li>inversión superior a 2 millones: <span class="math inline">\(0{,}2x+0{,}1y\ge2\iff2x+y\ge20\)</span>,</li>
+<li>al menos 4 misiones: <span class="math inline">\(x\ge4\)</span>,</li>
+<li>misiones no más de la mitad de los programas: <span class="math inline">\(x\le\dfrac y2\iff2x\le y\)</span>.</li>
+</ul>
+<p>Vértices: <span class="math inline">\((4,12)\)</span>, <span class="math inline">\((4,16)\)</span>, <span class="math inline">\((5,10)\)</span> y <span class="math inline">\((6,12)\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((4,12)\)</span></th>
+<th><span class="math inline">\((4,16)\)</span></th>
+<th><span class="math inline">\((5,10)\)</span></th>
+<th><span class="math inline">\((6,12)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(F=0{,}6x+0{,}4y\)</span></td>
+<td><span class="math inline">\(7{,}2\)</span></td>
+<td><span class="math inline">\(8{,}8\)</span></td>
+<td><span class="math inline">\(7\)</span></td>
+<td><span class="math inline">\(8{,}4\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2021-ext-res-e1.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 1 (2021-ext-res), con sus vértices: (4, 12), (5, 10), (6, 12), (4, 16)"></p>
+<figcaption>Región factible del ejercicio 1 (2021-ext-res), con sus vértices: (4, 12), (5, 10), (6, 12), (4, 16)</figcaption>
+</figure>
+</div>
+<p><strong>Hay que llevar a cabo 4 misiones y 16 programas, y el máximo de <span class="math inline">\(F\)</span> es <span class="math inline">\(8{,}8\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2021" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2021">Extraordinaria · Suplente 2021</h3>
+<div id="ebau-2021-ext-sup-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Extraordinaria · Suplente 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2021-ext-sup/examen.pdf" target="_blank">Examen</a></p>
+<p>Un laboratorio farmacéutico tiene una línea de producción con dos medicamentos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, con marca comercial y genérico respectivamente, de los cuales, entre los dos como máximo puede fabricar 10 unidades a la hora. Desde el punto de vista del rendimiento, se han de producir al menos 4 unidades por hora entre los dos y por motivos de política sanitaria, la producción de <span class="math inline">\(A\)</span> ha de ser como mucho 2 unidades más que la de <span class="math inline">\(B\)</span>.</p>
+<p>Cada unidad de tipo <span class="math inline">\(A\)</span> que vende le produce un beneficio de 60 euros, mientras que cada unidad de tipo <span class="math inline">\(B\)</span> le produce un beneficio de 25 euros. Si se vende todo lo que se produce, determine las unidades de cada medicamento que deberá fabricar por hora para maximizar su beneficio y obtenga el valor de dicho beneficio.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sean <span class="math inline">\(x\)</span> las unidades de <span class="math inline">\(A\)</span> e <span class="math inline">\(y\)</span> las de <span class="math inline">\(B\)</span> por hora. Restricciones: <span class="math inline">\(x+y\le10\)</span>, <span class="math inline">\(x+y\ge4\)</span>, <span class="math inline">\(x\le y+2\)</span> (es decir, <span class="math inline">\(x-y\le2\)</span>), <span class="math inline">\(x\ge0\)</span>, <span class="math inline">\(y\ge0\)</span>. Beneficio: <span class="math inline">\(B(x,y)=60x+25y\)</span>.</p>
+<p>Vértices: <span class="math inline">\((0,4)\)</span>, <span class="math inline">\((0,10)\)</span>, <span class="math inline">\((6,4)\)</span> (corte de <span class="math inline">\(x+y=10\)</span> con <span class="math inline">\(x-y=2\)</span>) y <span class="math inline">\((3,1)\)</span> (corte de <span class="math inline">\(x+y=4\)</span> con <span class="math inline">\(x-y=2\)</span>).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vértice</th>
+<th><span class="math inline">\((0,4)\)</span></th>
+<th><span class="math inline">\((0,10)\)</span></th>
+<th><span class="math inline">\((6,4)\)</span></th>
+<th><span class="math inline">\((3,1)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(B\)</span></td>
+<td><span class="math inline">\(100\)</span></td>
+<td><span class="math inline">\(250\)</span></td>
+<td><span class="math inline">\(460\)</span></td>
+<td><span class="math inline">\(205\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2021-ext-sup-e1.svg" class="img-fluid figure-img" style="width:75.0%" alt="Región factible del ejercicio 1 (2021-ext-sup), con sus vértices: (0, 4), (3, 1), (6, 4), (0, 10)"></p>
+<figcaption>Región factible del ejercicio 1 (2021-ext-sup), con sus vértices: (0, 4), (3, 1), (6, 4), (0, 10)</figcaption>
+</figure>
+</div>
+<p><strong>Debe fabricar 6 unidades de <span class="math inline">\(A\)</span> y 4 de <span class="math inline">\(B\)</span> por hora, con un beneficio máximo de <span class="math inline">\(460\)</span> €.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="también-trabajan-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="también-trabajan-este-tema">También trabajan este tema</h2>
+<p>Ejercicios cuyo tema principal es otro pero en los que aparece este tema:</p>
+<ul>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html#ebau-2025-ord-b-1">2025 Ordinaria · Modelo B, ejercicio 1</a> (tema principal: Sistemas de ecuaciones lineales)</li>
+</ul>
+<hr>
+<p><em>Enunciados: Prueba de Acceso y Admisión a la Universidad (PEvAU hasta 2024, PAU desde 2025), Matemáticas Aplicadas a las Ciencias Sociales II, Andalucía, Ceuta, Melilla y centros en Marruecos (Distrito Único Andaluz). Cada ejercicio enlaza al PDF oficial del examen completo. La clasificación por temas es propia y puede discutirse: los ejercicios mixtos figuran en su tema principal.</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

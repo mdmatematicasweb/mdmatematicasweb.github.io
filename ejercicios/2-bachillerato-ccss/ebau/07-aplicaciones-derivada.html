@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>PAU Andalucía — Aplicaciones de la derivada – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-2d82e0ab39c09339319a3284da2afbd7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+#md-loader{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;background:#262A3D;color:#EBF8EE;font-family:"Bricolage Grotesque",system-ui,sans-serif;transition:opacity .35s ease,visibility .35s}
+#md-loader.md-out{opacity:0;visibility:hidden}
+#md-loader .ml-logo{width:96px;height:96px;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border:5px solid #000;background:#000;box-shadow:8px 8px 0 #000;animation:ml-tilt 2.4s ease-in-out infinite}
+#md-loader .ml-logo i{display:grid;place-items:center;font:900 28px/1 "Arial Black",Arial,sans-serif;font-style:normal;color:#000;animation:ml-pop 1.6s ease-in-out infinite}
+#md-loader .ml-logo i:nth-child(1){background:#5EC4B6}
+#md-loader .ml-logo i:nth-child(2){background:#262A3D;color:#FCE678;animation-delay:.2s}
+#md-loader .ml-logo i:nth-child(3){background:#F4736C;animation-delay:.6s}
+#md-loader .ml-logo i:nth-child(4){background:#FCE678;animation-delay:.4s}
+#md-loader .ml-txt{font-weight:800;font-size:1.25rem;text-transform:uppercase;letter-spacing:.02em;text-align:center;padding:0 1rem}
+#md-loader .ml-txt b{color:#FCE678}
+#md-loader .ml-bar{width:min(260px,70vw);height:14px;border:3px solid #000;background:#000;box-shadow:4px 4px 0 #000;overflow:hidden}
+#md-loader .ml-bar::after{content:"";display:block;height:100%;width:40%;background:repeating-linear-gradient(-45deg,#5EC4B6 0 10px,#F4736C 10px 20px,#FCE678 20px 30px);animation:ml-slide 1.1s ease-in-out infinite}
+@keyframes ml-pop{0%,100%{transform:scale(1)}50%{transform:scale(.8)}}
+@keyframes ml-tilt{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes ml-slide{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+@media (prefers-reduced-motion:reduce){#md-loader *{animation:none!important}}
+</style>
+<noscript><style>#md-loader{display:none!important}</style></noscript>
+<script>
+(function () {
+  try {
+    if (/^\/(index\.html)?$/.test(location.pathname)) return;
+    var el = document.createElement("div");
+    el.id = "md-loader";
+    el.setAttribute("role", "status");
+    el.innerHTML =
+      '<div class="ml-logo" aria-hidden="true"><i>+</i><i>&minus;</i><i>&times;</i><i>=</i></div>' +
+      '<div class="ml-txt">Mientras carga&hellip; <b>&iexcl;&iexcl;&iexcl;un descanso!!!</b></div>' +
+      '<div class="ml-bar" aria-hidden="true"></div>';
+    document.documentElement.appendChild(el);
+    var t0 = Date.now(), gone = false;
+    var hide = function () {
+      if (gone) return;
+      gone = true;
+      var wait = Math.max(0, 1000 - (Date.now() - t0));
+      setTimeout(function () {
+        el.classList.add("md-out");
+        setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 450);
+      }, wait);
+    };
+    var ready = function () {
+      var m = window.MathJax;
+      if (m && m.startup && m.startup.promise && m.startup.promise.then) {
+        m.startup.promise.then(hide, hide);
+      } else { hide(); }
+    };
+    if (document.readyState === "complete") ready();
+    else window.addEventListener("load", ready);
+    window.addEventListener("pageshow", function (e) { if (e.persisted) hide(); });
+    setTimeout(hide, 10000);
+  } catch (e) {}
+})();
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-simulacro-pau" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">★ Simulacro PAU</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-simulacro-pau">    
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ciencias/examen/index.html">
+ <span class="dropdown-text">Ciencias (Matemáticas II)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ccss/examen/index.html">
+ <span class="dropdown-text">Ciencias Sociales (Mat. Aplicadas II)</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">2026</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-suplente-2-2026" id="toc-ordinaria-suplente-2-2026" class="nav-link" data-scroll-target="#ordinaria-suplente-2-2026">Ordinaria · Suplente 2 2026</a></li>
+  <li><a href="#extraordinaria-2026" id="toc-extraordinaria-2026" class="nav-link" data-scroll-target="#extraordinaria-2026">Extraordinaria 2026</a></li>
+  </ul></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">2025</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-modelo-a-2025" id="toc-ordinaria-modelo-a-2025" class="nav-link" data-scroll-target="#ordinaria-modelo-a-2025">Ordinaria · Modelo A 2025</a></li>
+  <li><a href="#ordinaria-suplente-1-modelo-a-2025" id="toc-ordinaria-suplente-1-modelo-a-2025" class="nav-link" data-scroll-target="#ordinaria-suplente-1-modelo-a-2025">Ordinaria · Suplente 1 · Modelo A 2025</a></li>
+  <li><a href="#ordinaria-suplente-1-modelo-b-2025" id="toc-ordinaria-suplente-1-modelo-b-2025" class="nav-link" data-scroll-target="#ordinaria-suplente-1-modelo-b-2025">Ordinaria · Suplente 1 · Modelo B 2025</a></li>
+  <li><a href="#ordinaria-suplente-2-modelo-a-2025" id="toc-ordinaria-suplente-2-modelo-a-2025" class="nav-link" data-scroll-target="#ordinaria-suplente-2-modelo-a-2025">Ordinaria · Suplente 2 · Modelo A 2025</a></li>
+  </ul></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">2023</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-modelo-a-2023" id="toc-ordinaria-modelo-a-2023" class="nav-link" data-scroll-target="#ordinaria-modelo-a-2023">Ordinaria · Modelo A 2023</a></li>
+  <li><a href="#ordinaria-suplente-modelo-b-2023" id="toc-ordinaria-suplente-modelo-b-2023" class="nav-link" data-scroll-target="#ordinaria-suplente-modelo-b-2023">Ordinaria · Suplente · Modelo B 2023</a></li>
+  </ul></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">2022</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2022" id="toc-ordinaria-2022" class="nav-link" data-scroll-target="#ordinaria-2022">Ordinaria 2022</a></li>
+  <li><a href="#ordinaria-suplente-2022" id="toc-ordinaria-suplente-2022" class="nav-link" data-scroll-target="#ordinaria-suplente-2022">Ordinaria · Suplente 2022</a></li>
+  <li><a href="#extraordinaria-2022" id="toc-extraordinaria-2022" class="nav-link" data-scroll-target="#extraordinaria-2022">Extraordinaria 2022</a></li>
+  <li><a href="#extraordinaria-suplente-2022" id="toc-extraordinaria-suplente-2022" class="nav-link" data-scroll-target="#extraordinaria-suplente-2022">Extraordinaria · Suplente 2022</a></li>
+  </ul></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">2021</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2021" id="toc-ordinaria-2021" class="nav-link" data-scroll-target="#ordinaria-2021">Ordinaria 2021</a></li>
+  <li><a href="#ordinaria-suplente-2021" id="toc-ordinaria-suplente-2021" class="nav-link" data-scroll-target="#ordinaria-suplente-2021">Ordinaria · Suplente 2021</a></li>
+  <li><a href="#extraordinaria-reserva-2021" id="toc-extraordinaria-reserva-2021" class="nav-link" data-scroll-target="#extraordinaria-reserva-2021">Extraordinaria · Reserva 2021</a></li>
+  <li><a href="#extraordinaria-suplente-2021" id="toc-extraordinaria-suplente-2021" class="nav-link" data-scroll-target="#extraordinaria-suplente-2021">Extraordinaria · Suplente 2021</a></li>
+  </ul></li>
+  <li><a href="#también-trabajan-este-tema" id="toc-también-trabajan-este-tema" class="nav-link" data-scroll-target="#también-trabajan-este-tema">También trabajan este tema</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PAU Andalucía — Aplicaciones de la derivada</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Ejercicios de <strong>Matemáticas Aplicadas a las Ciencias Sociales II</strong> de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de <strong>2021 a 2026</strong> cuyo tema principal es <em>aplicaciones de la derivada</em>: <strong>19 ejercicios</strong> de convocatorias ordinarias y extraordinarias y de sus reservas o suplentes. Repasa antes la <a href="../../../apuntes/2-bachillerato-ccss/07-aplicaciones-derivada/index.html">teoría</a>, los <a href="../../../ejercicios/2-bachillerato-ccss/07-aplicaciones-derivada/index.html">ejercicios del tema</a> y las <a href="../../../actividades/2-bachillerato-ccss/07-aplicaciones-derivada/index.html">actividades interactivas</a>.</p>
+<p>Debajo de cada ejercicio hay una <strong>resolución breve</strong> plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.</p>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">2026</h2>
+<section id="ordinaria-suplente-2-2026" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2-2026">Ordinaria · Suplente 2 2026</h3>
+<div id="ebau-2026-ord-sup2-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Suplente 2 2026 · Bloque B · <em>(3 puntos)</em> · <a href="../../../assets/pau-ccss/2026-ord-sup2/examen.pdf" target="_blank">Examen</a></p>
+<p>El peso en kilogramos (kg) de una persona que inicia un determinado régimen alimenticio viene dado por la función: <span class="math display">\[P(t)=75-\frac{15t}{t+120};\qquad t\ge0\]</span> siendo <span class="math inline">\(t\)</span> el tiempo, en días, que lleva haciendo la dieta.</p>
+<ol type="a">
+<li><p>Compruebe que, si la persona sigue de manera continuada el régimen alimenticio, irá reduciendo peso paulatinamente. ¿Cuál es el peso mínimo que podría llegar a alcanzar si pudiera seguir la dieta indefinidamente? <em>(1 punto)</em></p></li>
+<li><p>¿Cuántos días debe hacer de régimen para llegar a un peso de <span class="math inline">\(64\)</span> kg? <em>(0,75 puntos)</em></p></li>
+<li><p>El índice de masa corporal viene dado por la función <span class="math inline">\(i(t)=\dfrac{P(t)}{h^{2}}\)</span>, siendo <span class="math inline">\(h\)</span> la estatura, en metros, de la persona. Se considera que la persona tiene sobrepeso si el índice de masa corporal es superior a <span class="math inline">\(25\ \text{kg}/\text{m}^{2}\)</span>. Si la persona mide <span class="math inline">\(1{,}68\)</span> m, determine si ha tenido sobrepeso durante la dieta, y en caso afirmativo, calcule los días que han de transcurrir para dejar de tenerlo. <em>(1,25 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html">Funciones</a>, <a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html">Límites y continuidad</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(P'(t)=-\dfrac{15(t+120)-15t}{(t+120)^2}=-\dfrac{1\,800}{(t+120)^2}&lt;0\)</span> para todo <span class="math inline">\(t\ge0\)</span>: <strong>el peso es decreciente, la persona va perdiendo peso.</strong> Además, <span class="math inline">\(\displaystyle\lim_{t\to+\infty}P(t)=75-15=60\)</span>.</p>
+<p><strong>El peso mínimo al que podría llegar es de <span class="math inline">\(60\)</span> kg</strong> (se acerca a él sin alcanzarlo).</p>
+<p><strong>b)</strong> <span class="math inline">\(P(t)=64\iff\dfrac{15t}{t+120}=11\iff15t=11t+1\,320\iff t=330\)</span>.</p>
+<p><strong>Debe hacer régimen <span class="math inline">\(330\)</span> días.</strong></p>
+<p><strong>c)</strong> <span class="math inline">\(h^2=1{,}68^2=2{,}8224\)</span> y <span class="math inline">\(i(t)&gt;25\iff P(t)&gt;25\cdot2{,}8224=70{,}56\)</span>. Al inicio, <span class="math inline">\(P(0)=75\)</span> e <span class="math inline">\(i(0)=\dfrac{75}{2{,}8224}=26{,}57&gt;25\)</span>: <strong>sí tenía sobrepeso.</strong> Deja de tenerlo cuando <span class="math inline">\(P(t)=70{,}56\)</span>: <span class="math display">\[75-\frac{15t}{t+120}=70{,}56\iff\frac{15t}{t+120}=4{,}44\iff10{,}56t=532{,}8\iff t=\frac{532{,}8}{10{,}56}=50{,}45.\]</span> <strong>Han de transcurrir unos <span class="math inline">\(50{,}45\)</span> días</strong> (es decir, a partir del día <span class="math inline">\(51\)</span> deja de tener sobrepeso).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2026" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2026">Extraordinaria 2026</h3>
+<div id="ebau-2026-ext-2A" class="ebau-ej">
+<p><strong>Ejercicio 2A</strong> · Extraordinaria 2026 · Bloque B · <em>(3 puntos)</em> · <a href="../../../assets/pau-ccss/2026-ext/examen.pdf" target="_blank">Examen</a></p>
+<p>Los ingresos (en miles de euros) de una empresa que opera en mercados financieros en los últimos años vienen dados por la función <span class="math display">\[f(t)=-t^{3}+\frac{21}{2}t^{2}-30t+80;\qquad1\le t\le6\]</span> siendo <span class="math inline">\(t\)</span> el tiempo medido en años.</p>
+<ol type="a">
+<li><p>Determine los intervalos de tiempo en los que los ingresos aumentaron y los intervalos en los que disminuyeron. <em>(0,75 puntos)</em></p></li>
+<li><p>Calcule los momentos en los que la empresa obtuvo el mayor y el menor ingreso, así como los valores correspondientes. <em>(0,75 puntos)</em></p></li>
+<li><p>Estudie la evolución de los ingresos de la empresa, obteniendo sus puntos de inflexión, realizando su gráfica e interpretándola. <em>(1,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(f'(t)=-3t^2+21t-30=-3(t-2)(t-5)\)</span>, que se anula en <span class="math inline">\(t=2\)</span> y <span class="math inline">\(t=5\)</span>.</p>
+<ul>
+<li><span class="math inline">\(f'&lt;0\)</span> en <span class="math inline">\((1,2)\)</span>: <strong>los ingresos disminuyeron.</strong></li>
+<li><span class="math inline">\(f'&gt;0\)</span> en <span class="math inline">\((2,5)\)</span>: <strong>los ingresos aumentaron.</strong></li>
+<li><span class="math inline">\(f'&lt;0\)</span> en <span class="math inline">\((5,6)\)</span>: <strong>los ingresos disminuyeron.</strong></li>
+</ul>
+<p><strong>b)</strong> Valores: <span class="math inline">\(f(1)=59{,}5\)</span>, <span class="math inline">\(f(2)=54\)</span>, <span class="math inline">\(f(5)=67{,}5\)</span> y <span class="math inline">\(f(6)=62\)</span>.</p>
+<p><strong>El mayor ingreso, <span class="math inline">\(67{,}5\)</span> mil euros, se obtuvo a los <span class="math inline">\(5\)</span> años; el menor, <span class="math inline">\(54\)</span> mil euros, a los <span class="math inline">\(2\)</span> años.</strong></p>
+<p><strong>c)</strong> <span class="math inline">\(f''(t)=-6t+21=0\Rightarrow t=\dfrac{7}{2}=3{,}5\)</span>, con <span class="math inline">\(f''&gt;0\)</span> en <span class="math inline">\((1;3{,}5)\)</span> (convexa) y <span class="math inline">\(f''&lt;0\)</span> en <span class="math inline">\((3{,}5;6)\)</span> (cóncava): <strong>punto de inflexión en <span class="math inline">\(\left(\dfrac{7}{2},\dfrac{243}{4}\right)=(3{,}5;\ 60{,}75)\)</span>.</strong></p>
+<p>Gráfica: parte de <span class="math inline">\((1;59{,}5)\)</span>, desciende hasta el mínimo <span class="math inline">\((2,54)\)</span>, asciende pasando por el punto de inflexión <span class="math inline">\((3{,}5;60{,}75)\)</span> hasta el máximo <span class="math inline">\((5;67{,}5)\)</span> y vuelve a descender hasta <span class="math inline">\((6,62)\)</span>.</p>
+<p><strong>Interpretación:</strong> tras un descenso inicial hasta el segundo año, los ingresos crecen entre los años <span class="math inline">\(2\)</span> y <span class="math inline">\(5\)</span>; el crecimiento es más rápido en el punto de inflexión (<span class="math inline">\(t=3{,}5\)</span>, donde <span class="math inline">\(f'(3{,}5)=6{,}75\)</span> mil euros por año es la máxima velocidad de aumento) y se frena después hasta el máximo del año <span class="math inline">\(5\)</span>; desde ahí los ingresos vuelven a caer.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2026-ext-2B" class="ebau-ej">
+<p><strong>Ejercicio 2B</strong> · Extraordinaria 2026 · Bloque B · <em>(3 puntos)</em> · <a href="../../../assets/pau-ccss/2026-ext/examen.pdf" target="_blank">Examen</a></p>
+<p>El coste en euros de producción de <span class="math inline">\(x\)</span> toneladas de un determinado producto en una factoría es <span class="math display">\[C(x)=0{,}2x^{2}+40x+5000\]</span> El ingreso por venta es de 150 euros por tonelada. Se vende todo lo que se produce.</p>
+<ol type="a">
+<li><p>Calcule la función <span class="math inline">\(B(x)\)</span> que expresa el beneficio obtenido al vender <span class="math inline">\(x\)</span> toneladas del producto. <em>(0,25 puntos)</em></p></li>
+<li><p>Halle la cantidad de toneladas de producto que debe venderse para maximizar el beneficio. Obtenga dicho beneficio. <em>(1 punto)</em></p></li>
+<li><p>Obtenga el beneficio cuando no hay producción y calcule para qué valores de la producción el beneficio es positivo. ¿Para qué producción se obtiene un beneficio de <span class="math inline">\(4000\)</span> €? <em>(1,25 puntos)</em></p></li>
+<li><p>Estudie cuándo los beneficios van aumentando y cuándo van disminuyendo. <em>(0,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html">Funciones</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(B(x)=150x-\left(0{,}2x^2+40x+5\,000\right)=-0{,}2x^2+110x-5\,000\)</span>.</p>
+<p><strong>b)</strong> <span class="math inline">\(B'(x)=-0{,}4x+110=0\Rightarrow x=275\)</span> y <span class="math inline">\(B''=-0{,}4&lt;0\)</span>: máximo. <span class="math inline">\(B(275)=-0{,}2\cdot75\,625+30\,250-5\,000=10\,125\)</span>.</p>
+<p><strong>Deben venderse <span class="math inline">\(275\)</span> toneladas, con un beneficio máximo de <span class="math inline">\(10\,125\)</span> €.</strong></p>
+<p><strong>c)</strong> Sin producción: <span class="math inline">\(B(0)=-5\,000\)</span> (<strong>pérdidas de <span class="math inline">\(5\,000\)</span> €</strong>, los costes fijos). <span class="math inline">\(B(x)&gt;0\iff-0{,}2x^2+110x-5\,000&gt;0\iff x^2-550x+25\,000&lt;0\iff50&lt;x&lt;500\)</span>: <strong>el beneficio es positivo si se producen entre <span class="math inline">\(50\)</span> y <span class="math inline">\(500\)</span> toneladas.</strong></p>
+<p><span class="math inline">\(B(x)=4\,000\iff-0{,}2x^2+110x-9\,000=0\iff x^2-550x+45\,000=0\iff x=\dfrac{550\pm350}{2}\)</span>: <strong>con <span class="math inline">\(100\)</span> o con <span class="math inline">\(450\)</span> toneladas.</strong></p>
+<p><strong>d)</strong> <span class="math inline">\(B'(x)=-0{,}4x+110&gt;0\iff x&lt;275\)</span>: <strong>los beneficios aumentan para <span class="math inline">\(x&lt;275\)</span> toneladas y disminuyen para <span class="math inline">\(x&gt;275\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1">2025</h2>
+<section id="ordinaria-modelo-a-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-modelo-a-2025">Ordinaria · Modelo A 2025</h3>
+<div id="ebau-2025-ord-a-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Modelo A 2025 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2025-ord-a/examen.pdf" target="_blank">Examen</a></p>
+<p>Un periódico digital ha publicado una noticia de última hora. El número de personas que han visto la noticia <span class="math inline">\(t\)</span> horas después de su lanzamiento viene modelado por la función: <span class="math display">\[N(t)=500\,000\cdot\left(1-e^{-0{,}2t}\right);\quad t&gt;0\]</span></p>
+<ol type="a">
+<li><p>Estudie la monotonía y curvatura de la función <span class="math inline">\(N\)</span>. <em>(0,8 puntos)</em></p></li>
+<li><p>Represente gráficamente la función <span class="math inline">\(N\)</span> y describa su tendencia a lo largo del tiempo. <em>(0,7 puntos)</em></p></li>
+<li><p>¿Cuánto tiempo ha debido de pasar para que la noticia haya sido vista por <span class="math inline">\(450\,000\)</span> personas? <em>(0,5 puntos)</em></p></li>
+<li><p>La velocidad de difusión de la noticia (número de personas por hora que han visto la publicación) es <span class="math inline">\(N'(t)\)</span>. ¿Qué conclusión se obtiene al comparar <span class="math inline">\(N'(t)\)</span> en los instantes <span class="math inline">\(t=1\)</span> y <span class="math inline">\(t=10\)</span>? <em>(0,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html">Funciones</a>, <a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html">Límites y continuidad</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(N'(t)=500\,000\cdot0{,}2\,e^{-0{,}2t}=100\,000\,e^{-0{,}2t}&gt;0\)</span>: <strong><span class="math inline">\(N\)</span> es creciente.</strong> <span class="math inline">\(N''(t)=-20\,000\,e^{-0{,}2t}&lt;0\)</span>: <strong><span class="math inline">\(N\)</span> es cóncava.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(N(0)=0\)</span> (no incluido, pues <span class="math inline">\(t&gt;0\)</span>) y <span class="math inline">\(N\)</span> crece cada vez más despacio. Como <span class="math inline">\(\displaystyle\lim_{t\to+\infty}N(t)=500\,000\)</span>, la gráfica tiene la asíntota horizontal <span class="math inline">\(y=500\,000\)</span> y se acerca a ella por debajo.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2025-ord-a-e2.svg" class="img-fluid figure-img" style="width:75.0%" alt="Curva creciente y cóncava N(t)=500000(1−e^(−0,2t)) que parte de 0 y tiende a la asíntota horizontal y=500000"></p>
+<figcaption>Curva creciente y cóncava N(t)=500000(1−e^(−0,2t)) que parte de 0 y tiende a la asíntota horizontal y=500000</figcaption>
+</figure>
+</div>
+<p><strong>La noticia es vista cada vez por más personas, pero con un ritmo que decrece; el número de personas tiende a <span class="math inline">\(500\,000\)</span> sin llegar a alcanzarlo.</strong></p>
+<p><strong>c)</strong> <span class="math inline">\(N(t)=450\,000\iff1-e^{-0{,}2t}=0{,}9\iff e^{-0{,}2t}=0{,}1\iff-0{,}2t=\ln0{,}1\iff t=\dfrac{\ln10}{0{,}2}=5\ln10\approx11{,}51\)</span>.</p>
+<p><strong>Han debido pasar unas <span class="math inline">\(11{,}51\)</span> horas</strong> (11 horas y 31 minutos).</p>
+<p><strong>d)</strong> <span class="math inline">\(N'(1)=100\,000\,e^{-0{,}2}\approx81\,873\)</span> y <span class="math inline">\(N'(10)=100\,000\,e^{-2}\approx13\,534\)</span> personas por hora.</p>
+<p><strong>La velocidad de difusión disminuye con el tiempo:</strong> a la hora la noticia la ven <span class="math inline">\(\approx81\,873\)</span> personas por hora y a las <span class="math inline">\(10\)</span> horas solo <span class="math inline">\(\approx13\,534\)</span>, unas <span class="math inline">\(6\)</span> veces menos.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2025-ord-a-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria · Modelo A 2025 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2025-ord-a/examen.pdf" target="_blank">Examen</a></p>
+<p>A un paciente con diabetes se le monitoriza durante un día completo, suministrándole un medicamento a mediodía para observar su reacción. La función que aproxima la cantidad de glucosa en sangre (mg/dl) del paciente, en cada instante <span class="math inline">\(t\)</span> (horas), es: <span class="math display">\[f(t)=\begin{cases}\dfrac{5}{6}\left(\dfrac{t^{3}}{3}-12t^{2}+108t+108\right)&amp;0\le t\le12\\t^{2}-40t+546&amp;12&lt;t\le24\end{cases}\]</span></p>
+<ol type="a">
+<li><p>Halle en qué periodos de tiempo el nivel de glucosa va aumentando. <em>(0,75 puntos)</em></p></li>
+<li><p>¿En qué momentos del día el paciente tiene los niveles más alto y más bajo de glucosa en sangre y a cuánto ascienden? <em>(1 punto)</em></p></li>
+<li><p>¿En qué momentos, después del mediodía, el paciente tiene <span class="math inline">\(155\)</span> mg/dl? <em>(0,75 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html">Límites y continuidad</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> En <span class="math inline">\(0\le t\le12\)</span>: <span class="math inline">\(f'(t)=\dfrac{5}{6}\left(t^2-24t+108\right)=\dfrac{5}{6}(t-6)(t-18)\)</span>, con <span class="math inline">\(f'&gt;0\)</span> en <span class="math inline">\((0,6)\)</span> y <span class="math inline">\(f'&lt;0\)</span> en <span class="math inline">\((6,12)\)</span>. En <span class="math inline">\(12&lt;t\le24\)</span>: <span class="math inline">\(f'(t)=2t-40\)</span>, con <span class="math inline">\(f'&lt;0\)</span> en <span class="math inline">\((12,20)\)</span> y <span class="math inline">\(f'&gt;0\)</span> en <span class="math inline">\((20,24)\)</span>.</p>
+<p><strong>El nivel de glucosa aumenta de las <span class="math inline">\(0\)</span> a las <span class="math inline">\(6\)</span> h y de las <span class="math inline">\(20\)</span> a las <span class="math inline">\(24\)</span> h.</strong> (Es continua en <span class="math inline">\(t=12\)</span>: <span class="math inline">\(f(12)=210\)</span>.)</p>
+<p><strong>b)</strong> Valores en los puntos críticos y extremos: <span class="math inline">\(f(0)=90\)</span>, <span class="math inline">\(f(6)=330\)</span>, <span class="math inline">\(f(12)=210\)</span>, <span class="math inline">\(f(20)=146\)</span>, <span class="math inline">\(f(24)=162\)</span>.</p>
+<p><strong>El nivel más alto, <span class="math inline">\(330\)</span> mg/dl, se da a las <span class="math inline">\(6\)</span> h; el más bajo, <span class="math inline">\(90\)</span> mg/dl, a las <span class="math inline">\(0\)</span> h (al empezar el día).</strong> (El mínimo relativo de la tarde es <span class="math inline">\(146\)</span> mg/dl a las <span class="math inline">\(20\)</span> h.)</p>
+<p><strong>c)</strong> Después del mediodía: <span class="math inline">\(t^2-40t+546=155\iff t^2-40t+391=0\iff t=\dfrac{40\pm6}{2}\)</span>.</p>
+<p><strong>A las <span class="math inline">\(17\)</span> h y a las <span class="math inline">\(23\)</span> h.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-1-modelo-a-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-1-modelo-a-2025">Ordinaria · Suplente 1 · Modelo A 2025</h3>
+<div id="ebau-2025-ord-sup1-a-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria · Suplente 1 · Modelo A 2025 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2025-ord-sup1-a/examen.pdf" target="_blank">Examen</a></p>
+<p>El nivel de concentración de un alumno universitario durante un examen viene dado por la siguiente función: <span class="math display">\[f(t)=\begin{cases}-t^{2}+2t+10&amp;0\le t\le2{,}5\\t^{2}+at+b&amp;2{,}5&lt;t\le5\end{cases}\]</span> donde <span class="math inline">\(t\)</span> es el tiempo en horas y <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> números reales.</p>
+<ol type="a">
+<li><p>¿Con qué nivel de concentración el alumno comienza el examen? Determine los valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para que la función <span class="math inline">\(f\)</span> sea continua y derivable en <span class="math inline">\(t=2{,}5\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(a=-8\)</span> y <span class="math inline">\(b=22{,}5\)</span>, esboce la gráfica de la función <span class="math inline">\(f\)</span>, estudiando previamente la monotonía y calculando en qué momentos se alcanzan los niveles máximo y mínimo de concentración. <em>(1,25 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html">Límites y continuidad</a>, <a href="../../../ejercicios/2-bachillerato-ccss/ebau/06-derivadas.html">Derivadas</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> El nivel inicial es <span class="math inline">\(f(0)=10\)</span>.</p>
+<p>Continuidad en <span class="math inline">\(t=2{,}5\)</span>: <span class="math inline">\(-2{,}5^2+2\cdot2{,}5+10=8{,}75\)</span> y <span class="math inline">\(2{,}5^2+2{,}5a+b=6{,}25+2{,}5a+b\)</span>; luego <span class="math inline">\(6{,}25+2{,}5a+b=8{,}75\)</span>. Derivabilidad: <span class="math inline">\(f'(t)=-2t+2\)</span> si <span class="math inline">\(t&lt;2{,}5\)</span> y <span class="math inline">\(f'(t)=2t+a\)</span> si <span class="math inline">\(t&gt;2{,}5\)</span>; en <span class="math inline">\(t=2{,}5\)</span>: <span class="math inline">\(-3=5+a\Rightarrow a=-8\)</span>. Entonces <span class="math inline">\(6{,}25-20+b=8{,}75\Rightarrow b=22{,}5\)</span>.</p>
+<p><strong>Comienza con nivel <span class="math inline">\(10\)</span>; <span class="math inline">\(a=-8\)</span> y <span class="math inline">\(b=22{,}5\)</span>.</strong></p>
+<p><strong>b)</strong> Tramo 1: <span class="math inline">\(f'(t)=-2t+2=0\Rightarrow t=1\)</span>; crece en <span class="math inline">\((0,1)\)</span> y decrece en <span class="math inline">\((1,2{,}5)\)</span>, con <span class="math inline">\(f(1)=11\)</span>. Tramo 2: <span class="math inline">\(f(t)=t^2-8t+22{,}5\)</span>, <span class="math inline">\(f'(t)=2t-8=0\Rightarrow t=4\)</span>; decrece en <span class="math inline">\((2{,}5;4)\)</span> y crece en <span class="math inline">\((4,5)\)</span>, con <span class="math inline">\(f(4)=6{,}5\)</span>. Valores: <span class="math inline">\(f(0)=10\)</span>, <span class="math inline">\(f(2{,}5)=8{,}75\)</span>, <span class="math inline">\(f(5)=7{,}5\)</span>.</p>
+<p><strong>Concentración máxima <span class="math inline">\(11\)</span> a la hora <span class="math inline">\(t=1\)</span> y mínima <span class="math inline">\(6{,}5\)</span> a las <span class="math inline">\(4\)</span> horas.</strong> Gráfica: sube desde <span class="math inline">\((0,10)\)</span> hasta el máximo <span class="math inline">\((1,11)\)</span>, baja hasta el mínimo <span class="math inline">\((4;6{,}5)\)</span> (pasando por <span class="math inline">\((2{,}5;8{,}75)\)</span> sin pico) y sube hasta <span class="math inline">\((5;7{,}5)\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2025-ord-sup1-a-e4.svg" class="img-fluid figure-img" style="width:75.0%" alt="Concentración f(t): sube de 10 a 11 en t=1, baja hasta el mínimo 6,5 en t=4 y sube a 7,5 en t=5; la gráfica es continua y suave en t=2,5"></p>
+<figcaption>Concentración f(t): sube de 10 a 11 en t=1, baja hasta el mínimo 6,5 en t=4 y sube a 7,5 en t=5; la gráfica es continua y suave en t=2,5</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-1-modelo-b-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-1-modelo-b-2025">Ordinaria · Suplente 1 · Modelo B 2025</h3>
+<div id="ebau-2025-ord-sup1-b-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria · Suplente 1 · Modelo B 2025 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2025-ord-sup1-b/examen.pdf" target="_blank">Examen</a></p>
+<p>Las ventas de un producto (en miles de euros), en los 6 primeros años desde que se lanzó una campaña de publicidad, evolucionan de acuerdo con la siguiente función: <span class="math display">\[V(t)=4t^{3}-24t^{2}+36t+100;\qquad0\le t\le6\]</span> siendo <span class="math inline">\(t\)</span> el tiempo transcurrido en años.</p>
+<ol type="a">
+<li><p>Estudie el crecimiento y decrecimiento de las ventas a lo largo de los 6 años. Calcule los extremos. <em>(1,25 puntos)</em></p></li>
+<li><p>Represente gráficamente la función <span class="math inline">\(V\)</span>. <em>(0,5 puntos)</em></p></li>
+<li><p>Calcule el área de la región limitada por la gráfica de <span class="math inline">\(V\)</span>, la recta <span class="math inline">\(t=6\)</span> y los ejes de coordenadas. <em>(0,75 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/08-integrales.html">Integrales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(V'(t)=12t^2-48t+36=12(t-1)(t-3)\)</span>.</p>
+<ul>
+<li><span class="math inline">\(V'&gt;0\)</span> en <span class="math inline">\((0,1)\)</span> y en <span class="math inline">\((3,6)\)</span>: <strong>las ventas crecen.</strong></li>
+<li><span class="math inline">\(V'&lt;0\)</span> en <span class="math inline">\((1,3)\)</span>: <strong>las ventas decrecen.</strong></li>
+</ul>
+<p>Valores: <span class="math inline">\(V(0)=100\)</span>, <span class="math inline">\(V(1)=116\)</span>, <span class="math inline">\(V(3)=100\)</span>, <span class="math inline">\(V(6)=316\)</span>. <strong>Máximo relativo en <span class="math inline">\((1,116)\)</span> y mínimo relativo en <span class="math inline">\((3,100)\)</span>.</strong> En el intervalo <span class="math inline">\([0,6]\)</span>: <strong>máximo absoluto <span class="math inline">\(316\)</span> en <span class="math inline">\(t=6\)</span> y mínimo absoluto <span class="math inline">\(100\)</span> (en <span class="math inline">\(t=0\)</span> y en <span class="math inline">\(t=3\)</span>).</strong></p>
+<p><strong>b)</strong> Cúbica que parte de <span class="math inline">\((0,100)\)</span>, sube hasta el máximo <span class="math inline">\((1,116)\)</span>, baja hasta el mínimo <span class="math inline">\((3,100)\)</span> y vuelve a subir hasta <span class="math inline">\((6,316)\)</span>.</p>
+<p><strong>c)</strong> <span class="math inline">\(V&gt;0\)</span> en <span class="math inline">\([0,6]\)</span>: <span class="math display">\[A=\int_0^6\left(4t^3-24t^2+36t+100\right)dt=\left[t^4-8t^3+18t^2+100t\right]_0^6=1\,296-1\,728+648+600=816.\]</span> <strong><span class="math inline">\(A=816\)</span> u<span class="math inline">\(^2\)</span></strong> (miles de euros por año).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2025-ord-sup1-b-e4.svg" class="img-fluid figure-img" style="width:75.0%" alt="Ventas V(t) en [0,6]: parte de 100, máximo relativo 116 en t=1, mínimo relativo 100 en t=3 y llega a 316 en t=6; sombreada el área bajo la curva"></p>
+<figcaption>Ventas V(t) en [0,6]: parte de 100, máximo relativo 116 en t=1, mínimo relativo 100 en t=3 y llega a 316 en t=6; sombreada el área bajo la curva</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2-modelo-a-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2-modelo-a-2025">Ordinaria · Suplente 2 · Modelo A 2025</h3>
+<div id="ebau-2025-ord-sup2-a-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria · Suplente 2 · Modelo A 2025 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2025-ord-sup2-a/examen.pdf" target="_blank">Examen</a></p>
+<ol type="a">
+<li><p>El índice de audiencia de un programa de radio se puede modelizar por una función del tipo: <span class="math display">\[f(t)=at^{2}+bt+c,\qquad t\in[0,60]\]</span> donde <span class="math inline">\(t\)</span> es el tiempo medido en minutos y <span class="math inline">\(a,b,c\in\mathbb R\)</span>. Se sabe que cuando comienza el programa el índice de audiencia es 20 puntos y que a los 40 minutos se alcanza el máximo índice de audiencia, que es 36 puntos. Determine <span class="math inline">\(a,b\)</span> y <span class="math inline">\(c\)</span> y represente gráficamente la función obtenida. <em>(1,5 puntos)</em></p></li>
+<li><p>Calcule la derivada de las siguientes funciones: <em>(1 punto)</em></p></li>
+</ol>
+<p><span class="math display">\[g(x)=\ln\left(\frac{x^{2}-1}{x^{2}+1}\right)\qquad\qquad h(x)=(2x-1)\,e^{x^{2}-x}\]</span></p>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html">Funciones</a>, <a href="../../../ejercicios/2-bachillerato-ccss/ebau/06-derivadas.html">Derivadas</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(f(0)=c=20\)</span>. El máximo en <span class="math inline">\(t=40\)</span> exige <span class="math inline">\(f'(40)=2a\cdot40+b=0\Rightarrow b=-80a\)</span>, y <span class="math inline">\(f(40)=1\,600a+40b+c=36\)</span>: <span class="math inline">\(1\,600a-3\,200a+20=36\Rightarrow-1\,600a=16\Rightarrow a=-0{,}01\)</span> y <span class="math inline">\(b=0{,}8\)</span>.</p>
+<p><strong><span class="math inline">\(a=-0{,}01\)</span>, <span class="math inline">\(b=0{,}8\)</span>, <span class="math inline">\(c=20\)</span>:</strong> <span class="math inline">\(f(t)=-0{,}01t^2+0{,}8t+20\)</span>.</p>
+<p>Gráfica: arco de parábola abierta hacia abajo que parte de <span class="math inline">\((0,20)\)</span>, crece hasta el máximo <span class="math inline">\((40,36)\)</span> y decrece hasta <span class="math inline">\((60,32)\)</span> (pasa por <span class="math inline">\((20,32)\)</span>, simétrico de <span class="math inline">\((60,32)\)</span> respecto de <span class="math inline">\(t=40\)</span>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2025-ord-sup2-a-e3.svg" class="img-fluid figure-img" style="width:75.0%" alt="Índice de audiencia f(t)=−0,01t²+0,8t+20: parte de 20, alcanza el máximo 36 a los 40 minutos y baja a 32 en t=60"></p>
+<figcaption>Índice de audiencia f(t)=−0,01t²+0,8t+20: parte de 20, alcanza el máximo 36 a los 40 minutos y baja a 32 en t=60</figcaption>
+</figure>
+</div>
+<p><strong>b)</strong> <span class="math inline">\(g'(x)=\dfrac{2x}{x^2-1}-\dfrac{2x}{x^2+1}=\dfrac{2x\left(x^2+1\right)-2x\left(x^2-1\right)}{x^4-1}=\dfrac{4x}{x^4-1}\)</span>.</p>
+<p><span class="math inline">\(h'(x)=2e^{x^2-x}+(2x-1)(2x-1)e^{x^2-x}=e^{x^2-x}\left[(2x-1)^2+2\right]=e^{x^2-x}\left(4x^2-4x+3\right)\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2">2023</h2>
+<section id="ordinaria-modelo-a-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-modelo-a-2023">Ordinaria · Modelo A 2023</h3>
+<div id="ebau-2023-ord-a-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria · Modelo A 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2023-ord-a/examen.pdf" target="_blank">Examen</a></p>
+<p>Se considera la función <span class="math inline">\(f(x)=x^{3}-3x^{2}+2x\)</span>.</p>
+<ol type="a">
+<li><p>Halle los puntos de corte con los ejes, los intervalos de crecimiento y decrecimiento, los extremos relativos de <span class="math inline">\(f\)</span> y su curvatura. <em>(1 punto)</em></p></li>
+<li><p>Represente gráficamente la función <span class="math inline">\(f\)</span>. <em>(0,5 puntos)</em></p></li>
+<li><p>Calcule el área del recinto acotado, limitado por la gráfica de <span class="math inline">\(f\)</span> y el eje de abscisas. <em>(1 punto)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html">Funciones</a>, <a href="../../../ejercicios/2-bachillerato-ccss/ebau/08-integrales.html">Integrales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(f(x)=x(x-1)(x-2)\)</span>.</p>
+<p><strong>a)</strong> Cortes: con <span class="math inline">\(OY\)</span> en <span class="math inline">\((0,0)\)</span>; con <span class="math inline">\(OX\)</span> en <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((1,0)\)</span> y <span class="math inline">\((2,0)\)</span>. <span class="math inline">\(f'(x)=3x^2-6x+2=0\Rightarrow x=1\pm\dfrac{\sqrt3}{3}\)</span>.</p>
+<ul>
+<li><span class="math inline">\(f'&gt;0\)</span> en <span class="math inline">\(\left(-\infty,1-\frac{\sqrt3}{3}\right)\)</span> y en <span class="math inline">\(\left(1+\frac{\sqrt3}{3},+\infty\right)\)</span>: <strong>crece</strong>.</li>
+<li><span class="math inline">\(f'&lt;0\)</span> en <span class="math inline">\(\left(1-\frac{\sqrt3}{3},1+\frac{\sqrt3}{3}\right)\)</span>: <strong>decrece</strong>.</li>
+</ul>
+<p><strong>Máximo relativo en <span class="math inline">\(\left(1-\dfrac{\sqrt3}{3},\dfrac{2\sqrt3}{9}\right)\)</span> y mínimo relativo en <span class="math inline">\(\left(1+\dfrac{\sqrt3}{3},-\dfrac{2\sqrt3}{9}\right)\)</span>.</strong> Curvatura: <span class="math inline">\(f''(x)=6x-6\)</span>; <strong>cóncava en <span class="math inline">\((-\infty,1)\)</span> (<span class="math inline">\(f''&lt;0\)</span>) y convexa en <span class="math inline">\((1,+\infty)\)</span> (<span class="math inline">\(f''&gt;0\)</span>)</strong>, con punto de inflexión en <span class="math inline">\((1,0)\)</span>.</p>
+<p><strong>b)</strong> Cúbica que viene de <span class="math inline">\(-\infty\)</span>, corta al eje en <span class="math inline">\((0,0)\)</span>, sube hasta el máximo (<span class="math inline">\(\approx(0{,}42;\,0{,}38)\)</span>), baja pasando por <span class="math inline">\((1,0)\)</span> (punto de inflexión) hasta el mínimo (<span class="math inline">\(\approx(1{,}58;\,-0{,}38)\)</span>), y vuelve a subir cortando el eje en <span class="math inline">\((2,0)\)</span> hacia <span class="math inline">\(+\infty\)</span>.</p>
+<p><strong>c)</strong> Entre <span class="math inline">\(0\)</span> y <span class="math inline">\(1\)</span>, <span class="math inline">\(f\ge0\)</span>; entre <span class="math inline">\(1\)</span> y <span class="math inline">\(2\)</span>, <span class="math inline">\(f\le0\)</span>: <span class="math display">\[\int_0^1f=\left[\frac{x^4}{4}-x^3+x^2\right]_0^1=\frac{1}{4},\qquad\int_1^2f=-\frac{1}{4}.\]</span> <span class="math display">\[A=\frac{1}{4}+\left|-\frac{1}{4}\right|=\frac{1}{2}.\]</span> <strong><span class="math inline">\(A=\dfrac{1}{2}\ \text{u}^2\)</span></strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2023-ord-a-e3.svg" class="img-fluid figure-img" style="width:75.0%" alt="Gráfica de f(x)=x³−3x²+2x: cortes en x=0, 1, 2, máximo en x=1−√3/3 y mínimo en x=1+√3/3; recinto sombreado entre la curva y el eje X de 0 a 2"></p>
+<figcaption>Gráfica de f(x)=x³−3x²+2x: cortes en x=0, 1, 2, máximo en x=1−√3/3 y mínimo en x=1+√3/3; recinto sombreado entre la curva y el eje X de 0 a 2</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="ebau-2023-ord-a-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria · Modelo A 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2023-ord-a/examen.pdf" target="_blank">Examen</a></p>
+<p>Se desea analizar el valor de las acciones de una empresa en un día. La función <span class="math inline">\(v(t)\)</span> nos indica el valor, en euros, de cada acción de la empresa en función del tiempo <span class="math inline">\(t\)</span>, medido en horas, a partir de la hora de apertura del mercado. De la función <span class="math inline">\(v(t)\)</span> se conoce que su variación instantánea es <span class="math display">\[v'(t)=t^{2}-5t+6,\qquad t\in[0,6]\]</span></p>
+<ol type="a">
+<li><p>Determine los intervalos de crecimiento y decrecimiento de la función <span class="math inline">\(v\)</span>. <em>(0,75 puntos)</em></p></li>
+<li><p>Si en el momento de la apertura del mercado se conoce que <span class="math inline">\(v(0)=10\)</span>, halle la función <span class="math inline">\(v\)</span>. <em>(0,75 puntos)</em></p></li>
+<li><p>Si un inversor compró <span class="math inline">\(3000\)</span> de estas acciones en el instante <span class="math inline">\(t=2\)</span> y posteriormente las vendió en el instante <span class="math inline">\(t=4\)</span>, indique a cuánto ascendió la ganancia o la pérdida que obtuvo el inversor con esta gestión. <em>(0,5 puntos)</em></p></li>
+<li><p>¿En qué momentos debería haber realizado este inversor las gestiones de compra y de venta para que la ganancia hubiese sido máxima? Justifique su respuesta. <em>(0,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/08-integrales.html">Integrales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(v'(t)=t^2-5t+6=(t-2)(t-3)\)</span>. <strong><span class="math inline">\(v\)</span> crece en <span class="math inline">\((0,2)\cup(3,6)\)</span> y decrece en <span class="math inline">\((2,3)\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(v(t)=\displaystyle\int\left(t^2-5t+6\right)dt=\frac{t^3}{3}-\frac{5t^2}{2}+6t+K\)</span> y <span class="math inline">\(v(0)=10\)</span>, así que <span class="math inline">\(K=10\)</span>.</p>
+<p><strong><span class="math inline">\(v(t)=\dfrac{t^3}{3}-\dfrac{5t^2}{2}+6t+10\)</span>.</strong></p>
+<p><strong>c)</strong> <span class="math inline">\(v(2)=\dfrac{8}{3}-10+12+10=\dfrac{44}{3}\)</span> y <span class="math inline">\(v(4)=\dfrac{64}{3}-40+24+10=\dfrac{46}{3}\)</span>. Ganancia por acción: <span class="math inline">\(\dfrac{46}{3}-\dfrac{44}{3}=\dfrac{2}{3}\)</span> €. Con <span class="math inline">\(3000\)</span> acciones: <span class="math inline">\(3000\cdot\dfrac{2}{3}=2000\)</span>.</p>
+<p><strong>Ganó <span class="math inline">\(2\,000\)</span> €.</strong></p>
+<p><strong>d)</strong> Valores en los puntos críticos y extremos: <span class="math inline">\(v(0)=10\)</span>, <span class="math inline">\(v(2)=\dfrac{44}{3}\approx14{,}67\)</span>, <span class="math inline">\(v(3)=\dfrac{29}{2}=14{,}5\)</span>, <span class="math inline">\(v(6)=28\)</span>. La ganancia por acción es <span class="math inline">\(v(t_2)-v(t_1)\)</span> con <span class="math inline">\(t_1&lt;t_2\)</span>, y se hace máxima comprando en el mínimo y vendiendo en el máximo posteriores: <span class="math inline">\(v(6)-v(0)=18\)</span> €, mayor que cualquier otra combinación (por ejemplo, <span class="math inline">\(v(6)-v(3)=13{,}5\)</span>).</p>
+<p><strong>Debería haber comprado en la apertura (<span class="math inline">\(t=0\)</span>) y vendido al final (<span class="math inline">\(t=6\)</span>), con una ganancia de <span class="math inline">\(18\)</span> € por acción.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-modelo-b-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-modelo-b-2023">Ordinaria · Suplente · Modelo B 2023</h3>
+<div id="ebau-2023-ord-sup-b-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria · Suplente · Modelo B 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2023-ord-sup-b/examen.pdf" target="_blank">Examen</a></p>
+<p>La función <span class="math inline">\(B(t)=-t^{2}+21t-20\)</span> con <span class="math inline">\(0\le t\le15\)</span> representa el beneficio, en miles de euros, de una empresa en función de los años, <span class="math inline">\(t\)</span>.</p>
+<ol type="a">
+<li><p>Si la función <span class="math inline">\(I(t)=-t^{2}+48t\)</span> representa los ingresos de esta empresa, en miles de euros, para el mismo intervalo de tiempo, ¿cuál es la función de gastos de dicha empresa? ¿Cuáles son los gastos iniciales? <em>(0,5 puntos)</em></p></li>
+<li><p>Calcule el momento a partir del cual el beneficio fue positivo. <em>(0,5 puntos)</em></p></li>
+<li><p>Calcule en qué momento el beneficio fue máximo y el valor del mismo. <em>(0,75 puntos)</em></p></li>
+<li><p>Represente gráficamente la función beneficio. <em>(0,75 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html">Funciones</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Beneficio <span class="math inline">\(=\)</span> ingresos <span class="math inline">\(-\)</span> gastos, luego <span class="math inline">\(G(t)=I(t)-B(t)=-t^2+48t-\left(-t^2+21t-20\right)=27t+20\)</span>.</p>
+<p><strong>La función de gastos es <span class="math inline">\(G(t)=27t+20\)</span> y los gastos iniciales son <span class="math inline">\(G(0)=20\)</span> mil euros (<span class="math inline">\(20\,000\)</span> €).</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(B(t)=-(t-1)(t-20)&gt;0\iff1&lt;t&lt;20\)</span>. En el intervalo <span class="math inline">\([0,15]\)</span>: <strong>el beneficio es positivo a partir del año <span class="math inline">\(1\)</span></strong> (<span class="math inline">\(t&gt;1\)</span>).</p>
+<p><strong>c)</strong> <span class="math inline">\(B'(t)=-2t+21=0\Rightarrow t=10{,}5\)</span> y <span class="math inline">\(B''&lt;0\)</span>: máximo. <span class="math inline">\(B(10{,}5)=-110{,}25+220{,}5-20=90{,}25\)</span>.</p>
+<p><strong>El beneficio máximo se alcanza a los <span class="math inline">\(10{,}5\)</span> años y vale <span class="math inline">\(90{,}25\)</span> mil euros (<span class="math inline">\(90\,250\)</span> €).</strong></p>
+<p><strong>d)</strong> Parábola abierta hacia abajo con vértice <span class="math inline">\((10{,}5;\ 90{,}25)\)</span>, que arranca en <span class="math inline">\((0,-20)\)</span>, corta al eje <span class="math inline">\(OX\)</span> en <span class="math inline">\(t=1\)</span> y llega a <span class="math inline">\(t=15\)</span> con <span class="math inline">\(B(15)=70\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2023-ord-sup-b-e4.svg" class="img-fluid figure-img" style="width:75.0%" alt="Parábola de beneficio B(t)=−t²+21t−20 en [0,15]: parte de −20, corta al eje en t=1, alcanza el máximo 90,25 en t=10,5 y llega a 70 en t=15"></p>
+<figcaption>Parábola de beneficio B(t)=−t²+21t−20 en [0,15]: parte de −20, corta al eje en t=1, alcanza el máximo 90,25 en t=10,5 y llega a 70 en t=15</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-3">2022</h2>
+<section id="ordinaria-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2022">Ordinaria 2022</h3>
+<div id="ebau-2022-ord-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2022-ord/examen.pdf" target="_blank">Examen</a></p>
+<ol type="a">
+<li><p>Se considera la función <span class="math inline">\(f(x)=x^{3}+ax^{2}+bx+c\)</span>, con <span class="math inline">\(a,b\)</span> y <span class="math inline">\(c\)</span> números reales. Calcule los valores <span class="math inline">\(a,b\)</span> y <span class="math inline">\(c\)</span>, sabiendo que la gráfica de <span class="math inline">\(f\)</span> posee un extremo relativo en el punto de abscisa <span class="math inline">\(x=3\)</span> y que la pendiente de la recta tangente a la gráfica de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(P(0,18)\)</span> es <span class="math inline">\(-3\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Calcule el área del recinto acotado, limitado por la gráfica de la función <span class="math inline">\(g(x)=x^{3}-4x^{2}-3x+18\)</span> y el eje de abscisas. <em>(1,25 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/06-derivadas.html">Derivadas</a>, <a href="../../../ejercicios/2-bachillerato-ccss/ebau/08-integrales.html">Integrales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(f'(x)=3x^2+2ax+b\)</span>. <span class="math inline">\(f(0)=c=18\)</span>; la pendiente en <span class="math inline">\(P\)</span> es <span class="math inline">\(f'(0)=b=-3\)</span>; el extremo en <span class="math inline">\(x=3\)</span>: <span class="math inline">\(f'(3)=27+6a+b=0\Rightarrow27+6a-3=0\Rightarrow a=-4\)</span>.</p>
+<p><strong><span class="math inline">\(a=-4\)</span>, <span class="math inline">\(b=-3\)</span>, <span class="math inline">\(c=18\)</span></strong>, es decir, <span class="math inline">\(f(x)=x^3-4x^2-3x+18\)</span> (que es la función <span class="math inline">\(g\)</span> del apartado siguiente).</p>
+<p><strong>b)</strong> <span class="math inline">\(g(x)=(x-3)^2(x+2)\)</span> se anula en <span class="math inline">\(x=-2\)</span> y <span class="math inline">\(x=3\)</span> (doble), y <span class="math inline">\(g\ge0\)</span> en <span class="math inline">\([-2,3]\)</span>: <span class="math display">\[A=\int_{-2}^{3}\left(x^3-4x^2-3x+18\right)dx=\left[\frac{x^4}{4}-\frac{4x^3}{3}-\frac{3x^2}{2}+18x\right]_{-2}^{3}=\frac{99}{4}-\left(-\frac{82}{3}\right)=\frac{625}{12}.\]</span> <strong><span class="math inline">\(A=\dfrac{625}{12}\ \text{u}^2\approx52{,}08\ \text{u}^2\)</span></strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2022">Ordinaria · Suplente 2022</h3>
+<div id="ebau-2022-ord-sup-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria · Suplente 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2022-ord-sup/examen.pdf" target="_blank">Examen</a></p>
+<p>Una empresa de fumigación sabe que los beneficios, en miles de euros, que obtiene en función de las hectáreas que le encargan fumigar mensualmente viene dada por la expresión <span class="math display">\[B(x)=-x^{2}+16x-48\]</span> Además, por problemas de personal, la empresa no puede fumigar más de 10 hectáreas al mes.</p>
+<ol type="a">
+<li><p>¿Cuántas hectáreas tiene que fumigar al mes para que la empresa tenga beneficios? <em>(0,75 puntos)</em></p></li>
+<li><p>¿Cuántas hectáreas tiene que fumigar para obtener el máximo beneficio mensual? ¿A cuánto asciende dicho beneficio? <em>(0,75 puntos)</em></p></li>
+<li><p>Si un mes ha obtenido un beneficio de 7000 €, ¿cuántas hectáreas ha fumigado? <em>(1 punto)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html">Funciones</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(B(x)=-(x-4)(x-12)&gt;0\iff4&lt;x&lt;12\)</span>. Con <span class="math inline">\(x\le10\)</span>: <strong>hay beneficios si fumiga más de 4 y hasta 10 hectáreas</strong> (<span class="math inline">\(4&lt;x\le10\)</span>).</p>
+<p><strong>b)</strong> <span class="math inline">\(B'(x)=-2x+16=0\Rightarrow x=8\)</span> y <span class="math inline">\(B''&lt;0\)</span>: máximo. <span class="math inline">\(B(8)=-64+128-48=16\)</span>. <strong>Debe fumigar 8 hectáreas y el beneficio máximo es de 16 mil euros (<span class="math inline">\(16\,000\)</span> €).</strong></p>
+<p><strong>c)</strong> <span class="math inline">\(B(x)=7\iff-x^2+16x-48=7\iff x^2-16x+55=0\iff x=5\)</span> o <span class="math inline">\(x=11\)</span>. Como <span class="math inline">\(x\le10\)</span>, <strong>ha fumigado 5 hectáreas.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2022" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2022">Extraordinaria 2022</h3>
+<div id="ebau-2022-ext-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Extraordinaria 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2022-ext/examen.pdf" target="_blank">Examen</a></p>
+<ol type="a">
+<li><p>Se considera la función <span class="math inline">\(f(x)=x^{3}+bx^{2}+cx-1\)</span> donde <span class="math inline">\(b\)</span> y <span class="math inline">\(c\)</span> son números reales. Determine el valor de <span class="math inline">\(b\)</span> y <span class="math inline">\(c\)</span> para que la función <span class="math inline">\(f\)</span> presente un extremo en el punto de abscisa <span class="math inline">\(x=\dfrac{1}{3}\)</span> y además la gráfica de la función <span class="math inline">\(f\)</span> pase por el punto <span class="math inline">\((-2,-3)\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Dada la función <span class="math inline">\(g(x)=-x^{3}-x^{2}+x+1\)</span>, realice el esbozo de su gráfica, estudiando los puntos de corte con los ejes coordenados y su monotonía. Determine el área del recinto acotado, limitado por la gráfica de la función <span class="math inline">\(g\)</span> y el eje de abscisas. <em>(1,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html">Funciones</a>, <a href="../../../ejercicios/2-bachillerato-ccss/ebau/08-integrales.html">Integrales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(f'(x)=3x^2+2bx+c\)</span>. Extremo en <span class="math inline">\(x=\dfrac{1}{3}\)</span>: <span class="math inline">\(f'\left(\dfrac{1}{3}\right)=\dfrac{1}{3}+\dfrac{2b}{3}+c=0\)</span>. Pasa por <span class="math inline">\((-2,-3)\)</span>: <span class="math inline">\(-8+4b-2c-1=-3\Rightarrow2b-c=3\)</span>. Sumando <span class="math inline">\(c=-\dfrac{1}{3}-\dfrac{2b}{3}\)</span> en la segunda: <span class="math inline">\(2b+\dfrac{1}{3}+\dfrac{2b}{3}=3\)</span>, es decir, <span class="math inline">\(\dfrac{8b}{3}=\dfrac{8}{3}\)</span>.</p>
+<p><strong><span class="math inline">\(b=1\)</span> y <span class="math inline">\(c=-1\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(g(x)=-(x-1)(x+1)^2\)</span>. Cortes: con <span class="math inline">\(OX\)</span> en <span class="math inline">\(x=-1\)</span> (doble, tangente al eje) y <span class="math inline">\(x=1\)</span>; con <span class="math inline">\(OY\)</span> en <span class="math inline">\((0,1)\)</span>. <span class="math inline">\(g'(x)=-3x^2-2x+1=-(3x-1)(x+1)\)</span>:</p>
+<ul>
+<li><span class="math inline">\(g'&lt;0\)</span> en <span class="math inline">\((-\infty,-1)\)</span>: decrece.</li>
+<li><span class="math inline">\(g'&gt;0\)</span> en <span class="math inline">\(\left(-1,\dfrac{1}{3}\right)\)</span>: crece.</li>
+<li><span class="math inline">\(g'&lt;0\)</span> en <span class="math inline">\(\left(\dfrac{1}{3},+\infty\right)\)</span>: decrece.</li>
+</ul>
+<p>Mínimo relativo en <span class="math inline">\((-1,0)\)</span> y máximo relativo en <span class="math inline">\(\left(\dfrac{1}{3},\dfrac{32}{27}\right)\)</span>. La gráfica viene de <span class="math inline">\(+\infty\)</span>, toca el eje en <span class="math inline">\((-1,0)\)</span>, sube hasta el máximo, pasa por <span class="math inline">\((0,1)\)</span> y cruza el eje en <span class="math inline">\((1,0)\)</span> hacia <span class="math inline">\(-\infty\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2022-ext-e3.svg" class="img-fluid figure-img" style="width:75.0%" alt="Gráfica de g(x)=−x³−x²+x+1: tangente al eje X en (−1,0), máximo en (1/3, 32/27) y corte con el eje X en (1,0); recinto sombreado entre x=−1 y x=1"></p>
+<figcaption>Gráfica de g(x)=−x³−x²+x+1: tangente al eje X en (−1,0), máximo en (1/3, 32/27) y corte con el eje X en (1,0); recinto sombreado entre x=−1 y x=1</figcaption>
+</figure>
+</div>
+<p>El recinto acotado va de <span class="math inline">\(x=-1\)</span> a <span class="math inline">\(x=1\)</span>, con <span class="math inline">\(g\ge0\)</span>: <span class="math display">\[A=\int_{-1}^{1}\left(-x^3-x^2+x+1\right)dx=\left[-\frac{x^4}{4}-\frac{x^3}{3}+\frac{x^2}{2}+x\right]_{-1}^{1}=\frac{11}{12}-\left(-\frac{5}{12}\right)=\frac{4}{3}.\]</span> <strong><span class="math inline">\(A=\dfrac{4}{3}\ \text{u}^2\)</span></strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2022" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2022">Extraordinaria · Suplente 2022</h3>
+<div id="ebau-2022-ext-sup-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Extraordinaria · Suplente 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2022-ext-sup/examen.pdf" target="_blank">Examen</a></p>
+<p>Los ingresos (<span class="math inline">\(I\)</span>) y costes (<span class="math inline">\(C\)</span>) de una discoteca, en miles de euros, en función del número de horas diarias que permanece abierta, vienen dados por las funciones: <span class="math display">\[I(x)=x^{3}-x,\qquad C(x)=x^{3}-x^{2}+6\]</span> respectivamente. Sabiendo que la licencia del ayuntamiento no permite que este tipo de local permanezca abierto más de 8 horas diarias, halle:</p>
+<ol type="a">
+<li><p>La función beneficio en función del número de horas diarias que la discoteca permanece abierta. <em>(0,5 puntos)</em></p></li>
+<li><p>El número de horas que debe permanecer abierta para obtener beneficios. <em>(0,5 puntos)</em></p></li>
+<li><p>En qué momento se tienen las mayores pérdidas y a cuánto ascienden. <em>(0,75 puntos)</em></p></li>
+<li><p>El tiempo que debe permanecer abierta para obtener el máximo beneficio y a cuánto asciende. <em>(0,75 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html">Funciones</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Beneficio <span class="math inline">\(=\)</span> ingresos <span class="math inline">\(-\)</span> costes: <span class="math inline">\(B(x)=I(x)-C(x)=x^3-x-x^3+x^2-6=x^2-x-6\)</span>, con <span class="math inline">\(0\le x\le8\)</span>.</p>
+<p><strong>b)</strong> <span class="math inline">\(B(x)=(x-3)(x+2)&gt;0\iff x&gt;3\)</span> (pues <span class="math inline">\(x\ge0\)</span>). <strong>Obtiene beneficios si está abierta más de 3 horas y hasta 8 horas</strong> (<span class="math inline">\(3&lt;x\le8\)</span>).</p>
+<p><strong>c)</strong> <span class="math inline">\(B'(x)=2x-1=0\Rightarrow x=\dfrac{1}{2}\)</span>, con <span class="math inline">\(B''=2&gt;0\)</span>: mínimo. <span class="math inline">\(B\left(\dfrac{1}{2}\right)=\dfrac{1}{4}-\dfrac{1}{2}-6=-\dfrac{25}{4}\)</span>. En el extremo <span class="math inline">\(B(0)=-6\)</span>.</p>
+<p><strong>Las mayores pérdidas se tienen a las <span class="math inline">\(0{,}5\)</span> horas (media hora) y ascienden a <span class="math inline">\(6{,}25\)</span> mil euros (<span class="math inline">\(6\,250\)</span> €).</strong></p>
+<p><strong>d)</strong> <span class="math inline">\(B\)</span> es creciente para <span class="math inline">\(x&gt;\dfrac{1}{2}\)</span>, luego el máximo está en el extremo <span class="math inline">\(x=8\)</span>: <span class="math inline">\(B(8)=64-8-6=50\)</span>.</p>
+<p><strong>Debe permanecer abierta 8 horas, con un beneficio máximo de <span class="math inline">\(50\)</span> mil euros (<span class="math inline">\(50\,000\)</span> €).</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-4" class="level2">
+<h2 class="anchored" data-anchor-id="section-4">2021</h2>
+<section id="ordinaria-2021" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2021">Ordinaria 2021</h3>
+<div id="ebau-2021-ord-3" class="ebau-ej">
+<p><strong>Ejercicio 3</strong> · Ordinaria 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2021-ord/examen.pdf" target="_blank">Examen</a></p>
+<p>Se considera la función <span class="math inline">\(f(x)=x^{3}-4x^{2}+4x\)</span>.</p>
+<ol type="a">
+<li><p>Estudie su monotonía y calcule sus extremos. <em>(1 punto)</em></p></li>
+<li><p>Represente gráficamente la función. <em>(0,5 puntos)</em></p></li>
+<li><p>Calcule <span class="math inline">\(\displaystyle\int f(x)\,dx\)</span>. <em>(0,5 puntos)</em></p></li>
+<li><p>Calcule el área del recinto acotado limitado por la gráfica de <span class="math inline">\(f\)</span> y el eje de abscisas. <em>(0,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html">Funciones</a>, <a href="../../../ejercicios/2-bachillerato-ccss/ebau/08-integrales.html">Integrales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(f'(x)=3x^2-8x+4=(3x-2)(x-2)\)</span>, que se anula en <span class="math inline">\(x=\dfrac{2}{3}\)</span> y <span class="math inline">\(x=2\)</span>. <strong>Crece en <span class="math inline">\(\left(-\infty,\dfrac{2}{3}\right)\)</span> y en <span class="math inline">\((2,+\infty)\)</span>; decrece en <span class="math inline">\(\left(\dfrac{2}{3},2\right)\)</span>.</strong> Como <span class="math inline">\(f''(x)=6x-8\)</span>, <span class="math inline">\(f''\!\left(\frac{2}{3}\right)=-4&lt;0\)</span> y <span class="math inline">\(f''(2)=4&gt;0\)</span>: <strong>máximo relativo en <span class="math inline">\(\left(\dfrac{2}{3},\dfrac{32}{27}\right)\)</span> y mínimo relativo en <span class="math inline">\((2,0)\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(f(x)=x(x-2)^2\)</span>: corta a los ejes en <span class="math inline">\((0,0)\)</span> y es tangente al eje de abscisas en <span class="math inline">\((2,0)\)</span>. Parte de <span class="math inline">\(-\infty\)</span> (cuando <span class="math inline">\(x\to-\infty\)</span>), pasa por el origen, sube hasta el máximo <span class="math inline">\(\left(\frac{2}{3},\frac{32}{27}\right)\)</span>, baja hasta el mínimo <span class="math inline">\((2,0)\)</span> y vuelve a crecer hacia <span class="math inline">\(+\infty\)</span>.</p>
+<p><strong>c)</strong> <span class="math inline">\(\displaystyle\int f(x)\,dx=\frac{x^4}{4}-\frac{4x^3}{3}+2x^2+C.\)</span></p>
+<p><strong>d)</strong> El recinto está entre <span class="math inline">\(x=0\)</span> y <span class="math inline">\(x=2\)</span>, con <span class="math inline">\(f\ge0\)</span>: <span class="math display">\[A=\int_0^2f(x)\,dx=\left[\frac{x^4}{4}-\frac{4x^3}{3}+2x^2\right]_0^2=4-\frac{32}{3}+8=\frac{4}{3}.\]</span> <strong><span class="math inline">\(A=\dfrac{4}{3}\ \text{u}^2\)</span></strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2021-ord-e3.svg" class="img-fluid figure-img" style="width:75.0%" alt="Gráfica de f(x)=x³−4x²+4x: pasa por el origen, máximo en (2/3, 32/27), tangente al eje X en (2,0); recinto sombreado entre x=0 y x=2"></p>
+<figcaption>Gráfica de f(x)=x³−4x²+4x: pasa por el origen, máximo en (2/3, 32/27), tangente al eje X en (2,0); recinto sombreado entre x=0 y x=2</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2021" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2021">Ordinaria · Suplente 2021</h3>
+<div id="ebau-2021-ord-sup-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Ordinaria · Suplente 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2021-ord-sup/examen.pdf" target="_blank">Examen</a></p>
+<p>Una fábrica estima que sus costes de producción, expresados en miles de euros, vienen dados por la función <span class="math inline">\(f(x)=x^{2}-6x+10\)</span>, donde <span class="math inline">\(x\)</span> es la cantidad semanal a producir expresada en miles de kilogramos.</p>
+<ol type="a">
+<li><p>¿Cuál debe ser la producción semanal para que el coste sea mínimo? ¿Cuál es dicho coste? <em>(1 punto)</em></p></li>
+<li><p>Calcule la recta tangente a la función de costes en el punto de abscisa <span class="math inline">\(x=4\)</span>. Represente gráficamente la función de costes y la recta tangente hallada. <em>(1,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/06-derivadas.html">Derivadas</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(f'(x)=2x-6=0\Rightarrow x=3\)</span>, y <span class="math inline">\(f''(x)=2&gt;0\)</span>: mínimo. <span class="math inline">\(f(3)=9-18+10=1\)</span>.</p>
+<p><strong>El coste es mínimo con una producción de <span class="math inline">\(3\)</span> mil kg (<span class="math inline">\(3\,000\)</span> kg) y vale <span class="math inline">\(1\)</span> mil euros (<span class="math inline">\(1\,000\)</span> €).</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(f(4)=16-24+10=2\)</span> y <span class="math inline">\(f'(4)=2\cdot4-6=2\)</span>. Tangente: <span class="math inline">\(y-2=2(x-4)\)</span>.</p>
+<p><strong><span class="math inline">\(y=2x-6\)</span>.</strong></p>
+<p>Gráfica: parábola de vértice <span class="math inline">\((3,1)\)</span>, abierta hacia arriba, que corta al eje <span class="math inline">\(OY\)</span> en <span class="math inline">\((0,10)\)</span> (no corta al eje <span class="math inline">\(OX\)</span> porque <span class="math inline">\(\Delta=36-40&lt;0\)</span>) y pasa por <span class="math inline">\((2,2)\)</span> y <span class="math inline">\((4,2)\)</span>; la recta <span class="math inline">\(y=2x-6\)</span> la toca en <span class="math inline">\((4,2)\)</span> y corta al eje <span class="math inline">\(OX\)</span> en <span class="math inline">\((3,0)\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2021-ord-sup-e4.svg" class="img-fluid figure-img" style="width:75.0%" alt="Parábola de costes f(x)=x²−6x+10 con vértice (3,1) y su recta tangente y=2x−6 en el punto (4,2)"></p>
+<figcaption>Parábola de costes f(x)=x²−6x+10 con vértice (3,1) y su recta tangente y=2x−6 en el punto (4,2)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-reserva-2021" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-reserva-2021">Extraordinaria · Reserva 2021</h3>
+<div id="ebau-2021-ext-res-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Extraordinaria · Reserva 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2021-ext-res/examen.pdf" target="_blank">Examen</a></p>
+<p>La cotización en bolsa de una empresa en un determinado día viene expresada, en euros, por la función <span class="math inline">\(c(t)\)</span>, con <span class="math inline">\(t\in[0,24]\)</span>, medido en horas.</p>
+<p>La variación instantánea de esta función es la derivada de <span class="math inline">\(c\)</span>, que viene dada por <span class="math inline">\(c'(t)=0{,}03t^{2}-0{,}9t+6\)</span>, con <span class="math inline">\(t\in(0,24)\)</span>.</p>
+<ol type="a">
+<li><p>Estudie los intervalos en los que la función <span class="math inline">\(c\)</span> es creciente. <em>(1,25 puntos)</em></p></li>
+<li><p>Analice los puntos críticos de la función <span class="math inline">\(c\)</span>, indicando en cuáles se alcanza el máximo y el mínimo relativos. <em>(0,5 puntos)</em></p></li>
+<li><p>Halle la expresión analítica de la función <span class="math inline">\(c\)</span>, sabiendo que la cotización en bolsa de la empresa era de 50 euros en el instante inicial. <em>(0,75 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/08-integrales.html">Integrales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(c'(t)=0{,}03t^2-0{,}9t+6=0\iff t^2-30t+200=0\iff t=10\)</span> o <span class="math inline">\(t=20\)</span>.</p>
+<ul>
+<li><span class="math inline">\(c'&gt;0\)</span> en <span class="math inline">\((0,10)\)</span>.</li>
+<li><span class="math inline">\(c'&lt;0\)</span> en <span class="math inline">\((10,20)\)</span>.</li>
+<li><span class="math inline">\(c'&gt;0\)</span> en <span class="math inline">\((20,24)\)</span>.</li>
+</ul>
+<p><strong><span class="math inline">\(c\)</span> es creciente en <span class="math inline">\((0,10)\cup(20,24)\)</span></strong> (y decreciente en <span class="math inline">\((10,20)\)</span>).</p>
+<p><strong>b)</strong> Los puntos críticos son <span class="math inline">\(t=10\)</span> y <span class="math inline">\(t=20\)</span>. En <span class="math inline">\(t=10\)</span> pasa de crecer a decrecer: <strong>máximo relativo en <span class="math inline">\(t=10\)</span></strong>. En <span class="math inline">\(t=20\)</span> pasa de decrecer a crecer: <strong>mínimo relativo en <span class="math inline">\(t=20\)</span></strong>.</p>
+<p><strong>c)</strong> <span class="math inline">\(c(t)=\displaystyle\int\left(0{,}03t^2-0{,}9t+6\right)dt=0{,}01t^3-0{,}45t^2+6t+K\)</span>, con <span class="math inline">\(c(0)=50\Rightarrow K=50\)</span>.</p>
+<p><strong><span class="math inline">\(c(t)=0{,}01t^3-0{,}45t^2+6t+50\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2021" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2021">Extraordinaria · Suplente 2021</h3>
+<div id="ebau-2021-ext-sup-4" class="ebau-ej">
+<p><strong>Ejercicio 4</strong> · Extraordinaria · Suplente 2021 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2021-ext-sup/examen.pdf" target="_blank">Examen</a></p>
+<ol type="a">
+<li>Sea <span class="math inline">\(f\)</span> una función de la que sabemos que la gráfica de su derivada, <span class="math inline">\(f'\)</span>, es una parábola con vértice en el punto <span class="math inline">\((0,8)\)</span> que corta al eje de abscisas en los puntos <span class="math inline">\((-4,0)\)</span> y <span class="math inline">\((4,0)\)</span>. <em>(2 puntos)</em></li>
+</ol>
+<ol type="1">
+<li>Dibuje la gráfica de <span class="math inline">\(f'\)</span>.</li>
+<li>A partir de dicha gráfica, halle los intervalos de crecimiento y decrecimiento de <span class="math inline">\(f\)</span>, así como las abscisas de los extremos relativos de <span class="math inline">\(f\)</span>.</li>
+<li>Sabiendo que la gráfica de <span class="math inline">\(f\)</span> pasa por el origen de coordenadas, calcule la recta tangente a la gráfica de <span class="math inline">\(f\)</span> en el punto de abscisa <span class="math inline">\(x=0\)</span>.</li>
+</ol>
+<ol start="2" type="a">
+<li>Calcule la derivada de la función <span class="math inline">\(g(x)=\left(-3+x^{2}\right)\cdot e^{2x-1}\)</span>. <em>(0,5 puntos)</em></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/06-derivadas.html">Derivadas</a>, <a href="../../../ejercicios/2-bachillerato-ccss/ebau/08-integrales.html">Integrales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> La parábola con vértice <span class="math inline">\((0,8)\)</span> y raíces <span class="math inline">\(\pm4\)</span> es <span class="math inline">\(f'(x)=8-\dfrac{x^2}{2}\)</span> (porque <span class="math inline">\(f'(4)=8-8=0\)</span>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2021-ext-sup-e4.svg" class="img-fluid figure-img" style="width:75.0%" alt="Gráfica de f′: parábola abierta hacia abajo con vértice (0,8) que corta al eje X en (−4,0) y (4,0); f′>0 entre −4 y 4"></p>
+<figcaption>Gráfica de f′: parábola abierta hacia abajo con vértice (0,8) que corta al eje X en (−4,0) y (4,0); f′&gt;0 entre −4 y 4</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li>Gráfica de <span class="math inline">\(f'\)</span>: parábola abierta hacia abajo, con máximo <span class="math inline">\((0,8)\)</span>, que corta al eje <span class="math inline">\(OX\)</span> en <span class="math inline">\((-4,0)\)</span> y <span class="math inline">\((4,0)\)</span>.</li>
+<li><span class="math inline">\(f'&gt;0\)</span> en <span class="math inline">\((-4,4)\)</span> y <span class="math inline">\(f'&lt;0\)</span> en <span class="math inline">\((-\infty,-4)\cup(4,+\infty)\)</span>. <strong><span class="math inline">\(f\)</span> crece en <span class="math inline">\((-4,4)\)</span> y decrece en <span class="math inline">\((-\infty,-4)\cup(4,+\infty)\)</span>; mínimo relativo en <span class="math inline">\(x=-4\)</span> y máximo relativo en <span class="math inline">\(x=4\)</span>.</strong></li>
+<li><span class="math inline">\(f(0)=0\)</span> y <span class="math inline">\(f'(0)=8\)</span>: tangente <span class="math inline">\(y-0=8(x-0)\)</span>. <strong><span class="math inline">\(y=8x\)</span>.</strong></li>
+</ol>
+<p><strong>b)</strong> <span class="math inline">\(g'(x)=2x\,e^{2x-1}+\left(x^2-3\right)\cdot2e^{2x-1}=e^{2x-1}\left(2x^2+2x-6\right).\)</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="también-trabajan-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="también-trabajan-este-tema">También trabajan este tema</h2>
+<p>Ejercicios cuyo tema principal es otro pero en los que aparece este tema:</p>
+<ul>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html#ebau-2026-ord-2">2026 Ordinaria, ejercicio 2</a> (tema principal: Límites y continuidad)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html#ebau-2026-ord-sup1-2A">2026 Ordinaria · Suplente 1, ejercicio 2A</a> (tema principal: Límites y continuidad)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html#ebau-2026-ord-sup1-2B">2026 Ordinaria · Suplente 1, ejercicio 2B</a> (tema principal: Funciones)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html#ebau-2026-ext-sup1-2B">2026 Extraordinaria · Suplente 1, ejercicio 2B</a> (tema principal: Límites y continuidad)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html#ebau-2026-ext-sup2-2">2026 Extraordinaria · Suplente 2, ejercicio 2</a> (tema principal: Funciones)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html#ebau-2025-ord-b-3">2025 Ordinaria · Modelo B, ejercicio 3</a> (tema principal: Funciones)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html#ebau-2025-ord-sup1-b-3">2025 Ordinaria · Suplente 1 · Modelo B, ejercicio 3</a> (tema principal: Funciones)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/06-derivadas.html#ebau-2024-ord-a-3">2024 Ordinaria · Modelo A, ejercicio 3</a> (tema principal: Derivadas)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html#ebau-2024-ord-a-4">2024 Ordinaria · Modelo A, ejercicio 4</a> (tema principal: Límites y continuidad)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html#ebau-2024-ord-b-3">2024 Ordinaria · Modelo B, ejercicio 3</a> (tema principal: Límites y continuidad)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html#ebau-2024-ord-b-4">2024 Ordinaria · Modelo B, ejercicio 4</a> (tema principal: Límites y continuidad)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html#ebau-2024-ord-res-b-4">2024 Ordinaria · Reserva · Modelo B, ejercicio 4</a> (tema principal: Límites y continuidad)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html#ebau-2024-ord-sup-b-3">2024 Ordinaria · Suplente · Modelo B, ejercicio 3</a> (tema principal: Funciones)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html#ebau-2023-ord-b-4">2023 Ordinaria · Modelo B, ejercicio 4</a> (tema principal: Funciones)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html#ebau-2023-ord-res-b-4">2023 Ordinaria · Reserva · Modelo B, ejercicio 4</a> (tema principal: Límites y continuidad)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html#ebau-2023-ord-sup-a-3">2023 Ordinaria · Suplente · Modelo A, ejercicio 3</a> (tema principal: Límites y continuidad)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html#ebau-2023-ord-sup-a-4">2023 Ordinaria · Suplente · Modelo A, ejercicio 4</a> (tema principal: Límites y continuidad)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html#ebau-2022-ord-sup-4">2022 Ordinaria · Suplente, ejercicio 4</a> (tema principal: Límites y continuidad)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html#ebau-2022-ext-4">2022 Extraordinaria, ejercicio 4</a> (tema principal: Funciones)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/04-funciones.html#ebau-2022-ext-res-4">2022 Extraordinaria · Reserva, ejercicio 4</a> (tema principal: Funciones)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html#ebau-2021-ord-res-3">2021 Ordinaria · Reserva, ejercicio 3</a> (tema principal: Límites y continuidad)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html#ebau-2021-ext-3">2021 Extraordinaria, ejercicio 3</a> (tema principal: Límites y continuidad)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html#ebau-2021-ext-4">2021 Extraordinaria, ejercicio 4</a> (tema principal: Límites y continuidad)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html#ebau-2021-ext-res-3">2021 Extraordinaria · Reserva, ejercicio 3</a> (tema principal: Límites y continuidad)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/05-limites-continuidad.html#ebau-2021-ext-sup-3">2021 Extraordinaria · Suplente, ejercicio 3</a> (tema principal: Límites y continuidad)</li>
+</ul>
+<hr>
+<p><em>Enunciados: Prueba de Acceso y Admisión a la Universidad (PEvAU hasta 2024, PAU desde 2025), Matemáticas Aplicadas a las Ciencias Sociales II, Andalucía, Ceuta, Melilla y centros en Marruecos (Distrito Único Andaluz). Cada ejercicio enlaza al PDF oficial del examen completo. La clasificación por temas es propia y puede discutirse: los ejercicios mixtos figuran en su tema principal.</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

@@ -338,10 +338,21 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./actividades/index.html"> 
 <span class="menu-text">Actividades</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./actividades/2-bachillerato-ciencias/examen/index.html"> 
-<span class="menu-text">★ Simulacro PAU</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-simulacro-pau" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">★ Simulacro PAU</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-simulacro-pau">    
+        <li>
+    <a class="dropdown-item" href="./actividades/2-bachillerato-ciencias/examen/index.html">
+ <span class="dropdown-text">Ciencias (Matemáticas II)</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./actividades/2-bachillerato-ccss/examen/index.html">
+ <span class="dropdown-text">Ciencias Sociales (Mat. Aplicadas II)</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -378,6 +389,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="hero-slides" id="hero-slides">
+  <div class="hero-slide" id="hero-ciencias" data-course="ciencias">
 <section class="home-hero">
   <div class="hero-tiles" aria-hidden="true">
     <span class="tile t-mint">+</span>
@@ -387,7 +400,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 
   <div class="hero-copy">
-    <p class="hero-kicker">2º Bachillerato · Ciencias · PAU</p>
+    <p class="hero-kicker">2º Bachillerato · Ciencias y Ciencias Sociales · PAU</p>
     <h1 class="stairs" aria-label="Matemáticas, paso a paso">
       <span class="stair-top">Matemáticas,</span>
       <span class="step s1">paso</span>
@@ -396,8 +409,8 @@ ul.task-list li input[type="checkbox"] {
     </h1>
     <p class="hero-sub">Apuntes, ejercicios y actividades interactivas para repasar antes de un examen o preparar la Selectividad.</p>
     <div class="hero-cta">
-      <a class="btn-brut btn-coral" href="actividades/2-bachillerato-ciencias/examen/index.html">Generar simulacro PAU →</a>
-      <a class="btn-brut" href="apuntes/2-bachillerato-ciencias/index.html">Ver apuntes</a>
+      <a class="btn-brut btn-coral" id="cta-sim" href="actividades/2-bachillerato-ciencias/examen/index.html">Generar simulacro PAU →</a>
+      <a class="btn-brut" id="cta-apu" href="apuntes/2-bachillerato-ciencias/index.html">Ver apuntes</a>
     </div>
   </div>
 
@@ -424,7 +437,68 @@ ul.task-list li input[type="checkbox"] {
     </figcaption>
   </figure>
 </section>
+  </div>
+  <div class="hero-slide" id="hero-ccss" data-course="ccss" hidden="">
+<section class="home-hero hero-ccss">
+  <div class="hero-tiles" aria-hidden="true">
+    <span class="tile t-mint">%</span>
+    <span class="tile t-navy">Σ</span>
+    <span class="tile t-coral">≈</span>
+    <span class="tile t-yellow">±</span>
+  </div>
 
+  <div class="hero-copy">
+    <p class="hero-kicker">2º Bachillerato · Ciencias Sociales · PAU</p>
+    <h1 class="stairs" aria-label="Matemáticas que cuentan">
+      <span class="stair-top">Matemáticas,</span>
+      <span class="step s1">que</span>
+      <span class="step s2">cuentan</span>
+    </h1>
+    <p class="hero-sub">Matrices, programación lineal, funciones, probabilidad e inferencia: todo lo de Matemáticas Aplicadas a las CC. SS. II, con ejercicios reales de la PAU de Andalucía.</p>
+    <div class="hero-cta">
+      <a class="btn-brut btn-coral" href="actividades/2-bachillerato-ccss/examen/index.html">Generar simulacro PAU →</a>
+      <a class="btn-brut" href="apuntes/2-bachillerato-ccss/index.html">Ver apuntes</a>
+    </div>
+  </div>
+
+  <figure class="barrow-lab bell-lab figure" id="bell-lab">
+    <div class="lab-bar">
+      <span class="dots"><i></i><i></i><i></i></span>
+      <span class="lab-title">laboratorio_campana</span>
+    </div>
+    <svg viewbox="0 0 480 300" role="img" aria-label="Campana de Gauss N(0,1) con el área entre a y b">
+      <g class="grid"></g>
+      <path class="area" d=""></path>
+      <path class="axis" d="M30 260 H470 M250 260 V14"></path>
+      <path class="curve" d=""></path>
+      <line class="guide ga" y1="260" y2="40"></line>
+      <line class="guide gb" y1="260" y2="40"></line>
+      <rect class="handle ha" width="22" height="22" y="249" tabindex="0" role="slider" aria-label="Extremo a"></rect>
+      <rect class="handle hb" width="22" height="22" y="249" tabindex="0" role="slider" aria-label="Extremo b"></rect>
+      <text class="lbl la" y="294">a</text>
+      <text class="lbl lb" y="294">b</text>
+    </svg>
+    <figcaption>
+      <span class="readout" aria-live="polite"></span>
+      <span class="bell-pills"><button type="button" data-z="1.645">90 %</button><button type="button" data-z="1.96">95 %</button><button type="button" data-z="2.575">99 %</button></span>
+      <small>Arrastra a y b, o pulsa un nivel de confianza: el área es P(a &lt; Z &lt; b).</small>
+    </figcaption>
+  </figure>
+</section>
+  </div>
+  <div class="hero-nav" aria-label="Cambiar de curso">
+    <button type="button" class="hn-arrow" data-dir="-1" aria-label="Curso anterior">←</button>
+    <span class="hn-dots"><i data-go="ciencias"></i><i data-go="ccss"></i></span>
+    <button type="button" class="hn-arrow" data-dir="1" aria-label="Curso siguiente">→</button>
+  </div>
+</div>
+
+<nav class="course-switch" aria-label="Elige tu curso">
+  <button type="button" class="cs-btn cs-ciencias" data-go="ciencias" aria-pressed="true"><small>Matemáticas II</small><b>Ciencias</b></button>
+  <button type="button" class="cs-btn cs-ccss" data-go="ccss" aria-pressed="false"><small>Matemáticas Aplicadas II</small><b>Ciencias Sociales</b></button>
+</nav>
+
+<div class="course" id="course-ciencias" data-course="ciencias">
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
     <span>Matrices</span><span>Determinantes</span><span>Sistemas</span><span>Vectores</span><span>Rectas y planos</span><span>Límites</span><span>Derivadas</span><span>Integrales</span><span>Probabilidad</span><span>Distribuciones</span><span>PAU</span>
@@ -470,6 +544,55 @@ ul.task-list li input[type="checkbox"] {
     <span class="door-go">Entrar →</span>
   </a>
 </section>
+</div>
+
+<div class="course" id="course-ccss" data-course="ccss">
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Matrices</span><span>Sistemas</span><span>Programación lineal</span><span>Funciones</span><span>Límites</span><span>Derivadas</span><span>Integrales</span><span>Probabilidad</span><span>Normal</span><span>Inferencia</span><span>PAU</span>
+    <span>Matrices</span><span>Sistemas</span><span>Programación lineal</span><span>Funciones</span><span>Límites</span><span>Derivadas</span><span>Integrales</span><span>Probabilidad</span><span>Normal</span><span>Inferencia</span><span>PAU</span>
+  </div>
+</div>
+
+<section class="pau-ticket">
+  <div class="ticket-main">
+    <p class="ticket-eyebrow">Matemáticas Aplicadas CC. SS. II · Andalucía</p>
+    <h2 class="anchored">Simulacro<br>de examen PAU</h2>
+    <div class="ticket-clock" aria-hidden="true"><b>90</b><i>:</i><b>00</b></div>
+    <ul class="ticket-facts">
+      <li><b>21</b> tipos de ejercicio</li>
+      <li><b>∞</b> exámenes distintos</li>
+      <li><b>0</b> correcciones a mano</li>
+    </ul>
+  </div>
+  <div class="ticket-stub">
+    <p>Cuatro ejercicios con opción A/B, tabla N(0,1) y 1 h 30 min. Elige lo que ya has visto y deja que se corrija solo.</p>
+    <a class="btn-brut btn-yellow btn-big" href="actividades/2-bachillerato-ccss/examen/index.html">Generar mi examen</a>
+    <a class="stub-link" href="ejercicios/2-bachillerato-ccss/ebau/index.html">o resuelve 270 ejercicios reales de 2021–2026 →</a>
+  </div>
+</section>
+
+<section class="doors">
+  <a class="door d-mint" href="apuntes/2-bachillerato-ccss/index.html">
+    <span class="door-n">01</span>
+    <h3 class="anchored">Apuntes</h3>
+    <p>Teoría de los 11 temas del curso con figuras y ejemplos resueltos.</p>
+    <span class="door-go">Entrar →</span>
+  </a>
+  <a class="door d-coral" href="ejercicios/2-bachillerato-ccss/index.html">
+    <span class="door-n">02</span>
+    <h3 class="anchored">Ejercicios</h3>
+    <p>25 por tema con soluciones, más todos los de la PAU de Andalucía (2021–2026).</p>
+    <span class="door-go">Entrar →</span>
+  </a>
+  <a class="door d-yellow" href="actividades/2-bachillerato-ccss/index.html">
+    <span class="door-n">03</span>
+    <h3 class="anchored">Actividades</h3>
+    <p>63 retos que se generan al azar y se corrigen en el navegador.</p>
+    <span class="door-go">Entrar →</span>
+  </a>
+</section>
+</div>
 
 
 

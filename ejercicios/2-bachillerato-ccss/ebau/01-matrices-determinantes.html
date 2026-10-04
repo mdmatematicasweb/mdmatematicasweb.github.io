@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>PAU Andalucía — Matrices y determinantes – MD Matemáticas</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo-mark.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-2d82e0ab39c09339319a3284da2afbd7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-07918e347c89ac235351c58e5638aeaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+#md-loader{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;background:#262A3D;color:#EBF8EE;font-family:"Bricolage Grotesque",system-ui,sans-serif;transition:opacity .35s ease,visibility .35s}
+#md-loader.md-out{opacity:0;visibility:hidden}
+#md-loader .ml-logo{width:96px;height:96px;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border:5px solid #000;background:#000;box-shadow:8px 8px 0 #000;animation:ml-tilt 2.4s ease-in-out infinite}
+#md-loader .ml-logo i{display:grid;place-items:center;font:900 28px/1 "Arial Black",Arial,sans-serif;font-style:normal;color:#000;animation:ml-pop 1.6s ease-in-out infinite}
+#md-loader .ml-logo i:nth-child(1){background:#5EC4B6}
+#md-loader .ml-logo i:nth-child(2){background:#262A3D;color:#FCE678;animation-delay:.2s}
+#md-loader .ml-logo i:nth-child(3){background:#F4736C;animation-delay:.6s}
+#md-loader .ml-logo i:nth-child(4){background:#FCE678;animation-delay:.4s}
+#md-loader .ml-txt{font-weight:800;font-size:1.25rem;text-transform:uppercase;letter-spacing:.02em;text-align:center;padding:0 1rem}
+#md-loader .ml-txt b{color:#FCE678}
+#md-loader .ml-bar{width:min(260px,70vw);height:14px;border:3px solid #000;background:#000;box-shadow:4px 4px 0 #000;overflow:hidden}
+#md-loader .ml-bar::after{content:"";display:block;height:100%;width:40%;background:repeating-linear-gradient(-45deg,#5EC4B6 0 10px,#F4736C 10px 20px,#FCE678 20px 30px);animation:ml-slide 1.1s ease-in-out infinite}
+@keyframes ml-pop{0%,100%{transform:scale(1)}50%{transform:scale(.8)}}
+@keyframes ml-tilt{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes ml-slide{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+@media (prefers-reduced-motion:reduce){#md-loader *{animation:none!important}}
+</style>
+<noscript><style>#md-loader{display:none!important}</style></noscript>
+<script>
+(function () {
+  try {
+    if (/^\/(index\.html)?$/.test(location.pathname)) return;
+    var el = document.createElement("div");
+    el.id = "md-loader";
+    el.setAttribute("role", "status");
+    el.innerHTML =
+      '<div class="ml-logo" aria-hidden="true"><i>+</i><i>&minus;</i><i>&times;</i><i>=</i></div>' +
+      '<div class="ml-txt">Mientras carga&hellip; <b>&iexcl;&iexcl;&iexcl;un descanso!!!</b></div>' +
+      '<div class="ml-bar" aria-hidden="true"></div>';
+    document.documentElement.appendChild(el);
+    var t0 = Date.now(), gone = false;
+    var hide = function () {
+      if (gone) return;
+      gone = true;
+      var wait = Math.max(0, 1000 - (Date.now() - t0));
+      setTimeout(function () {
+        el.classList.add("md-out");
+        setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 450);
+      }, wait);
+    };
+    var ready = function () {
+      var m = window.MathJax;
+      if (m && m.startup && m.startup.promise && m.startup.promise.then) {
+        m.startup.promise.then(hide, hide);
+      } else { hide(); }
+    };
+    if (document.readyState === "complete") ready();
+    else window.addEventListener("load", ready);
+    window.addEventListener("pageshow", function (e) { if (e.persisted) hide(); });
+    setTimeout(hide, 10000);
+  } catch (e) {}
+})();
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../logo-mark.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">MD Matemáticas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../ejercicios/index.html"> 
+<span class="menu-text">Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../actividades/index.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-simulacro-pau" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">★ Simulacro PAU</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-simulacro-pau">    
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ciencias/examen/index.html">
+ <span class="dropdown-text">Ciencias (Matemáticas II)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../actividades/2-bachillerato-ccss/examen/index.html">
+ <span class="dropdown-text">Ciencias Sociales (Mat. Aplicadas II)</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">2026</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-suplente-2-2026" id="toc-ordinaria-suplente-2-2026" class="nav-link" data-scroll-target="#ordinaria-suplente-2-2026">Ordinaria · Suplente 2 2026</a></li>
+  <li><a href="#extraordinaria-2026" id="toc-extraordinaria-2026" class="nav-link" data-scroll-target="#extraordinaria-2026">Extraordinaria 2026</a></li>
+  </ul></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">2025</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-modelo-a-2025" id="toc-ordinaria-modelo-a-2025" class="nav-link" data-scroll-target="#ordinaria-modelo-a-2025">Ordinaria · Modelo A 2025</a></li>
+  <li><a href="#ordinaria-suplente-1-modelo-a-2025" id="toc-ordinaria-suplente-1-modelo-a-2025" class="nav-link" data-scroll-target="#ordinaria-suplente-1-modelo-a-2025">Ordinaria · Suplente 1 · Modelo A 2025</a></li>
+  </ul></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">2024</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-modelo-a-2024" id="toc-ordinaria-modelo-a-2024" class="nav-link" data-scroll-target="#ordinaria-modelo-a-2024">Ordinaria · Modelo A 2024</a></li>
+  <li><a href="#ordinaria-modelo-b-2024" id="toc-ordinaria-modelo-b-2024" class="nav-link" data-scroll-target="#ordinaria-modelo-b-2024">Ordinaria · Modelo B 2024</a></li>
+  <li><a href="#ordinaria-reserva-modelo-a-2024" id="toc-ordinaria-reserva-modelo-a-2024" class="nav-link" data-scroll-target="#ordinaria-reserva-modelo-a-2024">Ordinaria · Reserva · Modelo A 2024</a></li>
+  <li><a href="#ordinaria-reserva-modelo-b-2024" id="toc-ordinaria-reserva-modelo-b-2024" class="nav-link" data-scroll-target="#ordinaria-reserva-modelo-b-2024">Ordinaria · Reserva · Modelo B 2024</a></li>
+  <li><a href="#ordinaria-suplente-modelo-a-2024" id="toc-ordinaria-suplente-modelo-a-2024" class="nav-link" data-scroll-target="#ordinaria-suplente-modelo-a-2024">Ordinaria · Suplente · Modelo A 2024</a></li>
+  <li><a href="#ordinaria-suplente-modelo-b-2024" id="toc-ordinaria-suplente-modelo-b-2024" class="nav-link" data-scroll-target="#ordinaria-suplente-modelo-b-2024">Ordinaria · Suplente · Modelo B 2024</a></li>
+  </ul></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">2023</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-modelo-a-2023" id="toc-ordinaria-modelo-a-2023" class="nav-link" data-scroll-target="#ordinaria-modelo-a-2023">Ordinaria · Modelo A 2023</a></li>
+  <li><a href="#ordinaria-modelo-b-2023" id="toc-ordinaria-modelo-b-2023" class="nav-link" data-scroll-target="#ordinaria-modelo-b-2023">Ordinaria · Modelo B 2023</a></li>
+  <li><a href="#ordinaria-reserva-modelo-a-2023" id="toc-ordinaria-reserva-modelo-a-2023" class="nav-link" data-scroll-target="#ordinaria-reserva-modelo-a-2023">Ordinaria · Reserva · Modelo A 2023</a></li>
+  <li><a href="#ordinaria-reserva-modelo-b-2023" id="toc-ordinaria-reserva-modelo-b-2023" class="nav-link" data-scroll-target="#ordinaria-reserva-modelo-b-2023">Ordinaria · Reserva · Modelo B 2023</a></li>
+  <li><a href="#ordinaria-suplente-modelo-a-2023" id="toc-ordinaria-suplente-modelo-a-2023" class="nav-link" data-scroll-target="#ordinaria-suplente-modelo-a-2023">Ordinaria · Suplente · Modelo A 2023</a></li>
+  <li><a href="#ordinaria-suplente-modelo-b-2023" id="toc-ordinaria-suplente-modelo-b-2023" class="nav-link" data-scroll-target="#ordinaria-suplente-modelo-b-2023">Ordinaria · Suplente · Modelo B 2023</a></li>
+  </ul></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">2022</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2022" id="toc-ordinaria-2022" class="nav-link" data-scroll-target="#ordinaria-2022">Ordinaria 2022</a></li>
+  <li><a href="#ordinaria-reserva-2022" id="toc-ordinaria-reserva-2022" class="nav-link" data-scroll-target="#ordinaria-reserva-2022">Ordinaria · Reserva 2022</a></li>
+  <li><a href="#ordinaria-suplente-2022" id="toc-ordinaria-suplente-2022" class="nav-link" data-scroll-target="#ordinaria-suplente-2022">Ordinaria · Suplente 2022</a></li>
+  <li><a href="#extraordinaria-2022" id="toc-extraordinaria-2022" class="nav-link" data-scroll-target="#extraordinaria-2022">Extraordinaria 2022</a></li>
+  <li><a href="#extraordinaria-reserva-2022" id="toc-extraordinaria-reserva-2022" class="nav-link" data-scroll-target="#extraordinaria-reserva-2022">Extraordinaria · Reserva 2022</a></li>
+  <li><a href="#extraordinaria-suplente-2022" id="toc-extraordinaria-suplente-2022" class="nav-link" data-scroll-target="#extraordinaria-suplente-2022">Extraordinaria · Suplente 2022</a></li>
+  </ul></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">2021</a>
+  <ul class="collapse">
+  <li><a href="#ordinaria-2021" id="toc-ordinaria-2021" class="nav-link" data-scroll-target="#ordinaria-2021">Ordinaria 2021</a></li>
+  <li><a href="#ordinaria-reserva-2021" id="toc-ordinaria-reserva-2021" class="nav-link" data-scroll-target="#ordinaria-reserva-2021">Ordinaria · Reserva 2021</a></li>
+  <li><a href="#ordinaria-suplente-2021" id="toc-ordinaria-suplente-2021" class="nav-link" data-scroll-target="#ordinaria-suplente-2021">Ordinaria · Suplente 2021</a></li>
+  <li><a href="#extraordinaria-2021" id="toc-extraordinaria-2021" class="nav-link" data-scroll-target="#extraordinaria-2021">Extraordinaria 2021</a></li>
+  <li><a href="#extraordinaria-reserva-2021" id="toc-extraordinaria-reserva-2021" class="nav-link" data-scroll-target="#extraordinaria-reserva-2021">Extraordinaria · Reserva 2021</a></li>
+  <li><a href="#extraordinaria-suplente-2021" id="toc-extraordinaria-suplente-2021" class="nav-link" data-scroll-target="#extraordinaria-suplente-2021">Extraordinaria · Suplente 2021</a></li>
+  </ul></li>
+  <li><a href="#también-trabajan-este-tema" id="toc-también-trabajan-este-tema" class="nav-link" data-scroll-target="#también-trabajan-este-tema">También trabajan este tema</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PAU Andalucía — Matrices y determinantes</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Ejercicios de <strong>Matemáticas Aplicadas a las Ciencias Sociales II</strong> de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de <strong>2021 a 2026</strong> cuyo tema principal es <em>matrices y determinantes</em>: <strong>28 ejercicios</strong> de convocatorias ordinarias y extraordinarias y de sus reservas o suplentes. Repasa antes la <a href="../../../apuntes/2-bachillerato-ccss/01-matrices-determinantes/index.html">teoría</a>, los <a href="../../../ejercicios/2-bachillerato-ccss/01-matrices-determinantes/index.html">ejercicios del tema</a> y las <a href="../../../actividades/2-bachillerato-ccss/01-matrices-determinantes/index.html">actividades interactivas</a>.</p>
+<p>Debajo de cada ejercicio hay una <strong>resolución breve</strong> plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.</p>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">2026</h2>
+<section id="ordinaria-suplente-2-2026" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2-2026">Ordinaria · Suplente 2 2026</h3>
+<div id="ebau-2026-ord-sup2-1A" class="ebau-ej">
+<p><strong>Ejercicio 1A</strong> · Ordinaria · Suplente 2 2026 · Bloque A · <em>(3 puntos)</em> · <a href="../../../assets/pau-ccss/2026-ord-sup2/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las matrices <span class="math inline">\(A=\begin{pmatrix}m&amp;0&amp;1\\0&amp;1&amp;0\\2&amp;0&amp;m+1\end{pmatrix}\)</span>, <span class="math inline">\(B=\begin{pmatrix}3\\2\\6\end{pmatrix}\)</span>, <span class="math inline">\(C=\begin{pmatrix}1&amp;0&amp;2\\0&amp;1&amp;3\end{pmatrix}\)</span>, siendo <span class="math inline">\(m\)</span> un número real.</p>
+<ol type="a">
+<li><p>Halle los valores de <span class="math inline">\(m\)</span> para que el rango de <span class="math inline">\(A\)</span> sea 3. <em>(0,75 puntos)</em></p></li>
+<li><p>Calcule los valores de <span class="math inline">\(m\)</span> para los que <span class="math inline">\(A\)</span> no tiene inversa. <em>(0,25 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(m=2\)</span>, calcule <span class="math inline">\(A^{-1}\)</span> y resuelva la ecuación <span class="math inline">\(X\cdot A=C\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(m=1\)</span>, clasifique el sistema <span class="math inline">\(A\cdot Y=B\)</span> atendiendo al número de soluciones que tiene. <em>(0,75 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=\left|\begin{matrix}m&amp;0&amp;1\\0&amp;1&amp;0\\2&amp;0&amp;m+1\end{matrix}\right|=m(m+1)-2=m^2+m-2=(m-1)(m+2)\)</span>. El rango es <span class="math inline">\(3\)</span> si <span class="math inline">\(|A|\neq0\)</span>: <strong><span class="math inline">\(m\neq1\)</span> y <span class="math inline">\(m\neq-2\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(A\)</span> no tiene inversa si <span class="math inline">\(|A|=0\)</span>: <strong><span class="math inline">\(m=1\)</span> o <span class="math inline">\(m=-2\)</span>.</strong></p>
+<p><strong>c)</strong> Para <span class="math inline">\(m=2\)</span>: <span class="math inline">\(A=\begin{pmatrix}2&amp;0&amp;1\\0&amp;1&amp;0\\2&amp;0&amp;3\end{pmatrix}\)</span>, <span class="math inline">\(|A|=4\)</span> y <span class="math inline">\(A^{-1}=\begin{pmatrix}\frac{3}{4}&amp;0&amp;-\frac{1}{4}\\0&amp;1&amp;0\\-\frac{1}{2}&amp;0&amp;\frac{1}{2}\end{pmatrix}\)</span>. De <span class="math inline">\(XA=C\)</span>: <span class="math inline">\(X=CA^{-1}\)</span>: <span class="math display">\[X=\begin{pmatrix}1&amp;0&amp;2\\0&amp;1&amp;3\end{pmatrix}\begin{pmatrix}\frac{3}{4}&amp;0&amp;-\frac{1}{4}\\0&amp;1&amp;0\\-\frac{1}{2}&amp;0&amp;\frac{1}{2}\end{pmatrix}=\begin{pmatrix}-\frac{1}{4}&amp;0&amp;\frac{3}{4}\\-\frac{3}{2}&amp;1&amp;\frac{3}{2}\end{pmatrix}.\]</span></p>
+<p><strong>d)</strong> Para <span class="math inline">\(m=1\)</span>: <span class="math inline">\(A=\begin{pmatrix}1&amp;0&amp;1\\0&amp;1&amp;0\\2&amp;0&amp;2\end{pmatrix}\)</span>, con <span class="math inline">\(|A|=0\)</span> y rango <span class="math inline">\(2\)</span>. La matriz ampliada <span class="math inline">\(\left(A\mid B\right)\)</span> también tiene rango <span class="math inline">\(2\)</span> (la tercera ecuación, <span class="math inline">\(2y_1+2y_3=6\)</span>, es el doble de la primera, <span class="math inline">\(y_1+y_3=3\)</span>). Como <span class="math inline">\(\operatorname{rango}A=\operatorname{rango}(A\mid B)=2&lt;3\)</span> incógnitas: <strong>sistema compatible indeterminado</strong> (infinitas soluciones, <span class="math inline">\(y_2=2\)</span> e <span class="math inline">\(y_1+y_3=3\)</span>).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2026" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2026">Extraordinaria 2026</h3>
+<div id="ebau-2026-ext-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Extraordinaria 2026 · Bloque A · <em>(3 puntos)</em> · <a href="../../../assets/pau-ccss/2026-ext/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las matrices <span class="math inline">\(A=\begin{pmatrix}2&amp;m&amp;0\\-1&amp;m&amp;2\\0&amp;m&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(B=\begin{pmatrix}1&amp;0&amp;2\\0&amp;1&amp;1\\1&amp;0&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(C=\begin{pmatrix}3\\1\\-1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Calcule los valores de <span class="math inline">\(m\)</span> para que el rango de la matriz <span class="math inline">\(A\)</span> sea 3. <em>(0,75 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(m=1\)</span>, resuelva la ecuación matricial <span class="math inline">\(A^{t}\cdot X-B^{2}=2\cdot X\)</span>. <em>(1,75 puntos)</em></p></li>
+<li><p>¿Es posible encontrar una matriz <span class="math inline">\(D\)</span> que satisfaga <span class="math inline">\(C^{t}\cdot A=B\cdot D\)</span>? <em>(0,5 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=\left|\begin{matrix}2&amp;m&amp;0\\-1&amp;m&amp;2\\0&amp;m&amp;1\end{matrix}\right|=2(m-2m)-m(-1-0)=-2m+m=-m\)</span>. El rango es <span class="math inline">\(3\)</span> si <span class="math inline">\(|A|\neq0\)</span>: <strong><span class="math inline">\(m\neq0\)</span>.</strong></p>
+<p><strong>b)</strong> Con <span class="math inline">\(m=1\)</span>: <span class="math inline">\(A^tX-B^2=2X\Rightarrow\left(A^t-2I_3\right)X=B^2\)</span>. Se tiene <span class="math inline">\(A^t-2I_3=\begin{pmatrix}0&amp;-1&amp;0\\1&amp;-1&amp;1\\0&amp;2&amp;-1\end{pmatrix}\)</span>, con <span class="math inline">\(\left|A^t-2I_3\right|=-1\neq0\)</span>, y <span class="math inline">\(B^2=\begin{pmatrix}3&amp;0&amp;4\\1&amp;1&amp;2\\2&amp;0&amp;3\end{pmatrix}\)</span>. Entonces <span class="math display">\[X=\left(A^t-2I_3\right)^{-1}B^2=\begin{pmatrix}6&amp;1&amp;9\\-3&amp;0&amp;-4\\-8&amp;0&amp;-11\end{pmatrix}.\]</span> (Comprobación: la primera fila de <span class="math inline">\(\left(A^t-2I_3\right)X\)</span> es <span class="math inline">\(-1\cdot(-3,0,-4)=(3,0,4)\)</span>, la primera de <span class="math inline">\(B^2\)</span>.)</p>
+<p><strong>c)</strong> <span class="math inline">\(C^t\)</span> es <span class="math inline">\(1\times3\)</span> y <span class="math inline">\(A\)</span> es <span class="math inline">\(3\times3\)</span>, luego <span class="math inline">\(C^t\cdot A\)</span> es <span class="math inline">\(1\times3\)</span>. En <span class="math inline">\(B\cdot D\)</span>, <span class="math inline">\(B\)</span> es <span class="math inline">\(3\times3\)</span>, luego <span class="math inline">\(B\cdot D\)</span> tiene <span class="math inline">\(3\)</span> filas. Una matriz de <span class="math inline">\(1\)</span> fila no puede ser igual a una de <span class="math inline">\(3\)</span> filas: <strong>no es posible encontrar tal matriz <span class="math inline">\(D\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1">2025</h2>
+<section id="ordinaria-modelo-a-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-modelo-a-2025">Ordinaria · Modelo A 2025</h3>
+<div id="ebau-2025-ord-a-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Modelo A 2025 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2025-ord-a/examen.pdf" target="_blank">Examen</a></p>
+<ol type="a">
+<li>Plantee y resuelva el siguiente problema de forma matricial: <em>(1,75 puntos)</em></li>
+</ol>
+<p>El gerente de una empresa de productos hospitalarios desea introducir un nuevo producto en el mercado nacional. Para ello contrata a 3 vendedores que se han encargado de las zonas A, B y C del país, respectivamente. El vendedor de la zona A ha trabajado 40 horas, ha realizado 10 demostraciones y 5 viajes para dicha promoción. El vendedor de la zona <span class="math inline">\(B\)</span> ha trabajado el doble de horas que el de la zona A, realizando 15 demostraciones y 8 viajes. En cuanto al vendedor de la zona C, ha trabajado 100 horas, ha realizado 25 demostraciones y 10 viajes. El gerente debe abonarles 75 € por hora trabajada, 300 € por demostración y 250 € por viaje realizado. Teniendo en cuenta que, además, debe aplicárseles una retención en concepto del impuesto del IRPF del <span class="math inline">\(15\,\%\)</span> si la cantidad a abonar al vendedor es menor de diez mil euros y del <span class="math inline">\(18\,\%\)</span> en caso contrario, determine la cantidad final que cobrará cada vendedor.</p>
+<ol start="2" type="a">
+<li>Sea <span class="math inline">\(A=\begin{pmatrix}-2&amp;2&amp;1\\3&amp;a-1&amp;2\\4&amp;0&amp;3\end{pmatrix}\)</span>. ¿Para qué valores de <span class="math inline">\(a\)</span> es la matriz <span class="math inline">\(A\)</span> invertible? <em>(0,75 puntos)</em></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Matriz de trabajo (filas: vendedores <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>; columnas: horas, demostraciones, viajes) y vector de precios (€ por hora, demostración y viaje): <span class="math display">\[T=\begin{pmatrix}40&amp;10&amp;5\\80&amp;15&amp;8\\100&amp;25&amp;10\end{pmatrix},\qquad P=\begin{pmatrix}75\\300\\250\end{pmatrix}.\]</span> Cantidad bruta a abonar a cada vendedor: <span class="math display">\[T\cdot P=\begin{pmatrix}40\cdot75+10\cdot300+5\cdot250\\80\cdot75+15\cdot300+8\cdot250\\100\cdot75+25\cdot300+10\cdot250\end{pmatrix}=\begin{pmatrix}7\,250\\12\,500\\17\,500\end{pmatrix}.\]</span> Retención: <span class="math inline">\(15\,\%\)</span> al vendedor <span class="math inline">\(A\)</span> (<span class="math inline">\(7\,250&lt;10\,000\)</span>) y <span class="math inline">\(18\,\%\)</span> a <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span>. Con la matriz diagonal <span class="math inline">\(D=\begin{pmatrix}0{,}85&amp;0&amp;0\\0&amp;0{,}82&amp;0\\0&amp;0&amp;0{,}82\end{pmatrix}\)</span>: <span class="math display">\[D\cdot T\cdot P=\begin{pmatrix}0{,}85\cdot7\,250\\0{,}82\cdot12\,500\\0{,}82\cdot17\,500\end{pmatrix}=\begin{pmatrix}6\,162{,}5\\10\,250\\14\,350\end{pmatrix}.\]</span> <strong>Cobrarán: zona <span class="math inline">\(A\)</span> <span class="math inline">\(6\,162{,}50\)</span> €, zona <span class="math inline">\(B\)</span> <span class="math inline">\(10\,250\)</span> € y zona <span class="math inline">\(C\)</span> <span class="math inline">\(14\,350\)</span> €.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(|A|=-2\left[3(a-1)-0\right]-2\,(9-8)+1\cdot\left[0-4(a-1)\right]=-10a+8=-2(5a-4)\)</span>. <span class="math inline">\(A\)</span> es invertible si <span class="math inline">\(|A|\neq0\)</span>: <strong><span class="math inline">\(a\neq\dfrac{4}{5}\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-1-modelo-a-2025" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-1-modelo-a-2025">Ordinaria · Suplente 1 · Modelo A 2025</h3>
+<div id="ebau-2025-ord-sup1-a-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Suplente 1 · Modelo A 2025 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2025-ord-sup1-a/examen.pdf" target="_blank">Examen</a></p>
+<p>Se considera la matriz <span class="math inline">\(A=\begin{pmatrix}2&amp;1&amp;0\\0&amp;1&amp;2\\2&amp;2&amp;2\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Resuelva el sistema de ecuaciones matriciales: <em>(1,75 puntos)</em> <span class="math display">\[\left(A+I_3\right)\cdot X+Y=A-I_3\qquad\qquad X-Y=I_3\]</span></p></li>
+<li><p>Halle el rango de las matrices <span class="math inline">\(A+I_3\)</span> y <span class="math inline">\(A-I_3\)</span>. ¿Son matrices invertibles? <em>(0,75 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Sumando las dos ecuaciones: <span class="math inline">\((A+I_3)X+Y+X-Y=(A-I_3)+I_3\Rightarrow(A+2I_3)X=A\)</span>. Con <span class="math inline">\(A+2I_3=\begin{pmatrix}4&amp;1&amp;0\\0&amp;3&amp;2\\2&amp;2&amp;4\end{pmatrix}\)</span>, <span class="math inline">\(|A+2I_3|=36\neq0\)</span> y <span class="math inline">\((A+2I_3)^{-1}=\begin{pmatrix}\frac{2}{9}&amp;-\frac{1}{9}&amp;\frac{1}{18}\\\frac{1}{9}&amp;\frac{4}{9}&amp;-\frac{2}{9}\\-\frac{1}{6}&amp;-\frac{1}{6}&amp;\frac{1}{3}\end{pmatrix}\)</span>: <span class="math display">\[X=(A+2I_3)^{-1}A=\begin{pmatrix}\frac{5}{9}&amp;\frac{2}{9}&amp;-\frac{1}{9}\\-\frac{2}{9}&amp;\frac{1}{9}&amp;\frac{4}{9}\\\frac{1}{3}&amp;\frac{1}{3}&amp;\frac{1}{3}\end{pmatrix},\qquad Y=X-I_3=\begin{pmatrix}-\frac{4}{9}&amp;\frac{2}{9}&amp;-\frac{1}{9}\\-\frac{2}{9}&amp;-\frac{8}{9}&amp;\frac{4}{9}\\\frac{1}{3}&amp;\frac{1}{3}&amp;-\frac{2}{3}\end{pmatrix}.\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(A+I_3=\begin{pmatrix}3&amp;1&amp;0\\0&amp;2&amp;2\\2&amp;2&amp;3\end{pmatrix}\)</span>, con <span class="math inline">\(|A+I_3|=10\neq0\)</span>: <strong>rango <span class="math inline">\(3\)</span>, es invertible.</strong></p>
+<p><span class="math inline">\(A-I_3=\begin{pmatrix}1&amp;1&amp;0\\0&amp;0&amp;2\\2&amp;2&amp;1\end{pmatrix}\)</span>, con <span class="math inline">\(|A-I_3|=0\)</span> (las columnas primera y segunda son iguales) y un menor <span class="math inline">\(\left|\begin{matrix}1&amp;0\\0&amp;2\end{matrix}\right|=2\neq0\)</span>: <strong>rango <span class="math inline">\(2\)</span>, no es invertible.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2">2024</h2>
+<section id="ordinaria-modelo-a-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-modelo-a-2024">Ordinaria · Modelo A 2024</h3>
+<div id="ebau-2024-ord-a-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Modelo A 2024 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2024-ord-a/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las matrices <span class="math inline">\(A=\begin{pmatrix}1&amp;1&amp;-2\\a-3&amp;a-1&amp;1\\0&amp;2&amp;a\end{pmatrix}\)</span>, <span class="math inline">\(B=\begin{pmatrix}-1&amp;3&amp;2\end{pmatrix}\)</span>, <span class="math inline">\(C=\begin{pmatrix}-2&amp;1&amp;4\end{pmatrix}\)</span>, siendo <span class="math inline">\(a\)</span> un número real.</p>
+<ol type="a">
+<li><p>Obtenga los valores de <span class="math inline">\(a\)</span> para los que la matriz <span class="math inline">\(A\)</span> tenga inversa. <em>(0,75 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(a=1\)</span>, resuelva la ecuación <span class="math inline">\(X\cdot A-B=C\cdot A\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Determine razonadamente la dimensión de la matriz <span class="math inline">\(D\)</span> que permita realizar la operación <span class="math inline">\(B\cdot A+D\cdot C^{t}\cdot B\)</span>. <em>(0,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=\left|\begin{matrix}1&amp;1&amp;-2\\a-3&amp;a-1&amp;1\\0&amp;2&amp;a\end{matrix}\right|=-2(a-5)=10-2a\)</span>. Tiene inversa si <span class="math inline">\(|A|\neq0\)</span>: <strong><span class="math inline">\(a\neq5\)</span>.</strong></p>
+<p><strong>b)</strong> Para <span class="math inline">\(a=1\)</span>, <span class="math inline">\(|A|=8\neq0\)</span> y <span class="math inline">\(A=\begin{pmatrix}1&amp;1&amp;-2\\-2&amp;0&amp;1\\0&amp;2&amp;1\end{pmatrix}\)</span>. De <span class="math inline">\(XA-B=CA\)</span> se obtiene <span class="math inline">\(XA=B+CA\)</span> y <span class="math inline">\(X=\left(B+CA\right)A^{-1}=BA^{-1}+C\)</span>. Con <span class="math inline">\(A^{-1}=\begin{pmatrix}-\frac{1}{4}&amp;-\frac{5}{8}&amp;\frac{1}{8}\\\frac{1}{4}&amp;\frac{1}{8}&amp;\frac{3}{8}\\-\frac{1}{2}&amp;-\frac{1}{4}&amp;\frac{1}{4}\end{pmatrix}\)</span>: <span class="math display">\[BA^{-1}=\begin{pmatrix}-1&amp;3&amp;2\end{pmatrix}A^{-1}=\begin{pmatrix}0&amp;\frac{1}{2}&amp;\frac{3}{2}\end{pmatrix},\qquad X=BA^{-1}+C=\begin{pmatrix}-2&amp;\frac{3}{2}&amp;\frac{11}{2}\end{pmatrix}.\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(B\cdot A\)</span> es de dimensión <span class="math inline">\(1\times3\)</span> (<span class="math inline">\(B\)</span> es <span class="math inline">\(1\times3\)</span> y <span class="math inline">\(A\)</span> es <span class="math inline">\(3\times3\)</span>). En <span class="math inline">\(D\cdot C^t\cdot B\)</span>, <span class="math inline">\(C^t\)</span> es <span class="math inline">\(3\times1\)</span> y <span class="math inline">\(B\)</span> es <span class="math inline">\(1\times3\)</span>, luego <span class="math inline">\(C^tB\)</span> es <span class="math inline">\(3\times3\)</span>; para que la suma exista, <span class="math inline">\(D\cdot C^tB\)</span> debe ser <span class="math inline">\(1\times3\)</span>, es decir, <span class="math inline">\(D\)</span> es <span class="math inline">\(1\times3\)</span>.</p>
+<p><strong><span class="math inline">\(D\)</span> es de dimensión <span class="math inline">\(1\times3\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-modelo-b-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-modelo-b-2024">Ordinaria · Modelo B 2024</h3>
+<div id="ebau-2024-ord-b-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Modelo B 2024 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2024-ord-b/examen.pdf" target="_blank">Examen</a></p>
+<p>Dada la matriz <span class="math inline">\(A=\begin{pmatrix}1&amp;2&amp;0\\0&amp;-1&amp;2\\-2&amp;0&amp;1\end{pmatrix}\)</span>, resuelva la ecuación <span class="math inline">\(A^{2}\cdot X+A^{4}=A\)</span>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(|A|=-9\neq0\)</span>, luego <span class="math inline">\(A\)</span> es invertible. De <span class="math inline">\(A^2X+A^4=A\)</span> se obtiene <span class="math inline">\(A^2X=A-A^4\)</span> y, multiplicando por <span class="math inline">\(A^{-2}\)</span> por la izquierda, <span class="math display">\[X=A^{-2}\left(A-A^4\right)=A^{-1}-A^2.\]</span> Con <span class="math inline">\(A^{-1}=\begin{pmatrix}\frac{1}{9}&amp;\frac{2}{9}&amp;-\frac{4}{9}\\\frac{4}{9}&amp;-\frac{1}{9}&amp;\frac{2}{9}\\\frac{2}{9}&amp;\frac{4}{9}&amp;\frac{1}{9}\end{pmatrix}\)</span> y <span class="math inline">\(A^2=\begin{pmatrix}1&amp;0&amp;4\\-4&amp;1&amp;0\\-4&amp;-4&amp;1\end{pmatrix}\)</span>: <span class="math display">\[X=\begin{pmatrix}-\frac{8}{9}&amp;\frac{2}{9}&amp;-\frac{40}{9}\\\frac{40}{9}&amp;-\frac{10}{9}&amp;\frac{2}{9}\\\frac{38}{9}&amp;\frac{40}{9}&amp;-\frac{8}{9}\end{pmatrix}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-modelo-a-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-modelo-a-2024">Ordinaria · Reserva · Modelo A 2024</h3>
+<div id="ebau-2024-ord-res-a-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Reserva · Modelo A 2024 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2024-ord-res-a/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las matrices <span class="math inline">\(A=\begin{pmatrix}1&amp;-1&amp;1\\-2&amp;1&amp;0\end{pmatrix}\)</span>, <span class="math inline">\(B=\begin{pmatrix}0&amp;-1\\1&amp;0\\-1&amp;2\end{pmatrix}\)</span> y <span class="math inline">\(C=\begin{pmatrix}1&amp;3&amp;2\\1&amp;1&amp;1\\0&amp;3&amp;1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Resuelva la siguiente ecuación <span class="math inline">\(A\cdot B\cdot X\cdot C=\begin{pmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\end{pmatrix}\)</span>. <em>(2 puntos)</em></p></li>
+<li><p>Halle las dimensiones de las matrices <span class="math inline">\(D\)</span> y <span class="math inline">\(E\)</span> para que tenga sentido la igualdad <span class="math inline">\(A\cdot D=E\cdot B\)</span>. <em>(0,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(A\cdot B=\begin{pmatrix}1&amp;-1&amp;1\\-2&amp;1&amp;0\end{pmatrix}\begin{pmatrix}0&amp;-1\\1&amp;0\\-1&amp;2\end{pmatrix}=\begin{pmatrix}-2&amp;1\\1&amp;2\end{pmatrix}\)</span>, con <span class="math inline">\(|AB|=-5\neq0\)</span> y <span class="math inline">\((AB)^{-1}=\begin{pmatrix}-\frac{2}{5}&amp;\frac{1}{5}\\\frac{1}{5}&amp;\frac{2}{5}\end{pmatrix}\)</span>. También <span class="math inline">\(|C|=1\neq0\)</span> y <span class="math inline">\(C^{-1}=\begin{pmatrix}-2&amp;3&amp;1\\-1&amp;1&amp;1\\3&amp;-3&amp;-2\end{pmatrix}\)</span>. Entonces, con <span class="math inline">\(I'=\begin{pmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\end{pmatrix}\)</span>, <span class="math display">\[X=(AB)^{-1}\,I'\,C^{-1}=\begin{pmatrix}-\frac{2}{5}&amp;\frac{1}{5}\\\frac{1}{5}&amp;\frac{2}{5}\end{pmatrix}\begin{pmatrix}-2&amp;3&amp;1\\-1&amp;1&amp;1\end{pmatrix}=\begin{pmatrix}\frac{3}{5}&amp;-1&amp;-\frac{1}{5}\\-\frac{4}{5}&amp;1&amp;\frac{3}{5}\end{pmatrix}.\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(A\)</span> es <span class="math inline">\(2\times3\)</span>, luego <span class="math inline">\(A\cdot D\)</span> requiere que <span class="math inline">\(D\)</span> tenga <span class="math inline">\(3\)</span> filas; <span class="math inline">\(E\cdot B\)</span> requiere que <span class="math inline">\(E\)</span> tenga <span class="math inline">\(3\)</span> columnas (pues <span class="math inline">\(B\)</span> es <span class="math inline">\(3\times2\)</span>) y <span class="math inline">\(E\cdot B\)</span> tendrá tantas filas como <span class="math inline">\(E\)</span>. Para que ambos productos tengan la misma dimensión, <span class="math inline">\(A\cdot D\)</span> (<span class="math inline">\(2\times\)</span> columnas de <span class="math inline">\(D\)</span>) <span class="math inline">\(=E\cdot B\)</span> (<span class="math inline">\((\)</span>filas de <span class="math inline">\(E)\times2\)</span>): <span class="math inline">\(E\)</span> tiene <span class="math inline">\(2\)</span> filas y <span class="math inline">\(D\)</span> tiene <span class="math inline">\(2\)</span> columnas.</p>
+<p><strong><span class="math inline">\(D\)</span> es <span class="math inline">\(3\times2\)</span> y <span class="math inline">\(E\)</span> es <span class="math inline">\(2\times3\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-modelo-b-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-modelo-b-2024">Ordinaria · Reserva · Modelo B 2024</h3>
+<div id="ebau-2024-ord-res-b-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Reserva · Modelo B 2024 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2024-ord-res-b/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las matrices <span class="math inline">\(A=\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}\)</span>, <span class="math inline">\(B=\begin{pmatrix}3&amp;2\\2&amp;0\end{pmatrix}\)</span>, <span class="math inline">\(C=\begin{pmatrix}1&amp;0\\1&amp;1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Determine las matrices <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> que satisfacen simultáneamente las ecuaciones <span class="math inline">\(2\cdot X-Y=4\cdot A\)</span> y <span class="math inline">\(X+Y=B\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Calcule la matriz <span class="math inline">\(C^{2024}\)</span>. <em>(0,75 puntos)</em></p></li>
+<li><p>Si <span class="math inline">\(D\)</span> es una matriz de dimensión <span class="math inline">\(2\times3\)</span>, razone si las siguientes operaciones se pueden realizar y, en aquellos casos en los que sea posible, indique la dimensión de la matriz resultante: <em>(0,75 puntos)</em></p></li>
+</ol>
+<p><span class="math display">\[A^{t}\cdot B+D\cdot D^{t}\qquad\qquad D\cdot B^{t}+A\qquad\qquad D^{t}\cdot A^{t}+D\]</span></p>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> Sumando las dos ecuaciones: <span class="math inline">\(3X=4A+B\)</span>, luego <span class="math inline">\(X=\dfrac{4A+B}{3}\)</span> e <span class="math inline">\(Y=B-X\)</span>. <span class="math display">\[4A+B=\begin{pmatrix}0&amp;4\\4&amp;0\end{pmatrix}+\begin{pmatrix}3&amp;2\\2&amp;0\end{pmatrix}=\begin{pmatrix}3&amp;6\\6&amp;0\end{pmatrix},\qquad X=\begin{pmatrix}1&amp;2\\2&amp;0\end{pmatrix},\qquad Y=B-X=\begin{pmatrix}2&amp;0\\0&amp;0\end{pmatrix}.\]</span> (Comprobación: <span class="math inline">\(2X-Y=\begin{pmatrix}0&amp;4\\4&amp;0\end{pmatrix}=4A\)</span> y <span class="math inline">\(X+Y=B\)</span>.)</p>
+<p><strong>b)</strong> <span class="math inline">\(C^2=\begin{pmatrix}1&amp;0\\2&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(C^3=\begin{pmatrix}1&amp;0\\3&amp;1\end{pmatrix}\)</span> y, por inducción, <span class="math inline">\(C^n=\begin{pmatrix}1&amp;0\\n&amp;1\end{pmatrix}\)</span>.</p>
+<p><strong><span class="math inline">\(C^{2024}=\begin{pmatrix}1&amp;0\\2024&amp;1\end{pmatrix}\)</span>.</strong></p>
+<p><strong>c)</strong> <span class="math inline">\(D\)</span> es <span class="math inline">\(2\times3\)</span>, <span class="math inline">\(D^t\)</span> es <span class="math inline">\(3\times2\)</span>; <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son <span class="math inline">\(2\times2\)</span>.</p>
+<ul>
+<li><span class="math inline">\(A^tB+DD^t\)</span>: <span class="math inline">\(A^tB\)</span> es <span class="math inline">\(2\times2\)</span> y <span class="math inline">\(DD^t\)</span> es <span class="math inline">\((2\times3)(3\times2)=2\times2\)</span>. <strong>Se puede y el resultado es <span class="math inline">\(2\times2\)</span>.</strong></li>
+<li><span class="math inline">\(DB^t+A\)</span>: <span class="math inline">\(DB^t\)</span> es <span class="math inline">\((2\times3)(2\times2)\)</span>: el número de columnas de <span class="math inline">\(D\)</span> (<span class="math inline">\(3\)</span>) no coincide con el de filas de <span class="math inline">\(B^t\)</span> (<span class="math inline">\(2\)</span>). <strong>No se puede.</strong></li>
+<li><span class="math inline">\(D^tA^t+D\)</span>: <span class="math inline">\(D^tA^t\)</span> es <span class="math inline">\((3\times2)(2\times2)=3\times2\)</span> y <span class="math inline">\(D\)</span> es <span class="math inline">\(2\times3\)</span>; no se pueden sumar matrices de distinta dimensión. <strong>No se puede.</strong></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-modelo-a-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-modelo-a-2024">Ordinaria · Suplente · Modelo A 2024</h3>
+<div id="ebau-2024-ord-sup-a-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Suplente · Modelo A 2024 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2024-ord-sup-a/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las matrices <span class="math inline">\(P=\begin{pmatrix}1&amp;0&amp;1\\0&amp;1&amp;0\\1&amp;-1&amp;-1\end{pmatrix}\)</span> y <span class="math inline">\(J=\begin{pmatrix}2&amp;1&amp;0\\0&amp;2&amp;0\\0&amp;0&amp;-1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Halle la matriz <span class="math inline">\(A\)</span> que satisfaga la ecuación <span class="math inline">\(P^{-1}\cdot A\cdot P=J\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Compruebe que <span class="math inline">\(A^{3}=P\cdot J^{3}\cdot P^{-1}\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> De <span class="math inline">\(P^{-1}AP=J\)</span> se obtiene <span class="math inline">\(A=PJP^{-1}\)</span>. <span class="math inline">\(|P|=-2\neq0\)</span> y <span class="math inline">\(P^{-1}=\begin{pmatrix}\frac{1}{2}&amp;\frac{1}{2}&amp;\frac{1}{2}\\0&amp;1&amp;0\\\frac{1}{2}&amp;-\frac{1}{2}&amp;-\frac{1}{2}\end{pmatrix}\)</span>. <span class="math display">\[PJ=\begin{pmatrix}1&amp;0&amp;1\\0&amp;1&amp;0\\1&amp;-1&amp;-1\end{pmatrix}\begin{pmatrix}2&amp;1&amp;0\\0&amp;2&amp;0\\0&amp;0&amp;-1\end{pmatrix}=\begin{pmatrix}2&amp;1&amp;-1\\0&amp;2&amp;0\\2&amp;-1&amp;1\end{pmatrix},\]</span> <span class="math display">\[A=PJP^{-1}=\begin{pmatrix}2&amp;1&amp;-1\\0&amp;2&amp;0\\2&amp;-1&amp;1\end{pmatrix}\begin{pmatrix}\frac{1}{2}&amp;\frac{1}{2}&amp;\frac{1}{2}\\0&amp;1&amp;0\\\frac{1}{2}&amp;-\frac{1}{2}&amp;-\frac{1}{2}\end{pmatrix}=\begin{pmatrix}\frac{1}{2}&amp;\frac{5}{2}&amp;\frac{3}{2}\\0&amp;2&amp;0\\\frac{3}{2}&amp;-\frac{1}{2}&amp;\frac{1}{2}\end{pmatrix}.\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(A^3=\left(PJP^{-1}\right)\left(PJP^{-1}\right)\left(PJP^{-1}\right)=PJ\left(P^{-1}P\right)J\left(P^{-1}P\right)JP^{-1}=PJ^3P^{-1}\)</span>, ya que <span class="math inline">\(P^{-1}P=I\)</span>.</p>
+<p>Comprobación con números: <span class="math inline">\(J^3=\begin{pmatrix}8&amp;12&amp;0\\0&amp;8&amp;0\\0&amp;0&amp;-1\end{pmatrix}\)</span> y <span class="math display">\[PJ^3P^{-1}=\begin{pmatrix}8&amp;12&amp;-1\\0&amp;8&amp;0\\8&amp;4&amp;1\end{pmatrix}\begin{pmatrix}\frac{1}{2}&amp;\frac{1}{2}&amp;\frac{1}{2}\\0&amp;1&amp;0\\\frac{1}{2}&amp;-\frac{1}{2}&amp;-\frac{1}{2}\end{pmatrix}=\begin{pmatrix}\frac{7}{2}&amp;\frac{33}{2}&amp;\frac{9}{2}\\0&amp;8&amp;0\\\frac{9}{2}&amp;\frac{15}{2}&amp;\frac{7}{2}\end{pmatrix}=A^3.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-modelo-b-2024" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-modelo-b-2024">Ordinaria · Suplente · Modelo B 2024</h3>
+<div id="ebau-2024-ord-sup-b-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Suplente · Modelo B 2024 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2024-ord-sup-b/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las matrices <span class="math inline">\(M=\begin{pmatrix}1&amp;0&amp;1\\2&amp;1&amp;0\\1&amp;1&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(N=\begin{pmatrix}3&amp;2&amp;2\\5&amp;2&amp;1\\7&amp;4&amp;0\end{pmatrix}\)</span> y <span class="math inline">\(V=\begin{pmatrix}5-a^{2}\\a-1\\a^{2}\end{pmatrix}\)</span>, siendo <span class="math inline">\(a\)</span> un número real.</p>
+<ol type="a">
+<li><p>Halle el valor de <span class="math inline">\(a\)</span> para que se verifique que <span class="math inline">\(M^{t}\cdot V=\begin{pmatrix}5&amp;1&amp;5\end{pmatrix}^{t}\)</span>. <em>(0,75 puntos)</em></p></li>
+<li><p>Calcule <span class="math inline">\(M^{-1}\)</span> y resuelva la ecuación matricial <span class="math inline">\(X\cdot M-I_3=N\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Razone si las operaciones <span class="math inline">\(2\cdot V\cdot N^{t}\)</span> y <span class="math inline">\(\left(N+M^{t}\right)\cdot V\)</span> se pueden realizar y, en aquellos casos en que sea posible, indique la dimensión de la matriz resultante. <em>(0,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(M^t=\begin{pmatrix}1&amp;2&amp;1\\0&amp;1&amp;1\\1&amp;0&amp;1\end{pmatrix}\)</span> y <span class="math display">\[M^tV=\begin{pmatrix}(5-a^2)+2(a-1)+a^2\\(a-1)+a^2\\(5-a^2)+a^2\end{pmatrix}=\begin{pmatrix}2a+3\\a^2+a-1\\5\end{pmatrix}=\begin{pmatrix}5\\1\\5\end{pmatrix}.\]</span> De <span class="math inline">\(2a+3=5\)</span> resulta <span class="math inline">\(a=1\)</span>, y se cumple <span class="math inline">\(a^2+a-1=1\)</span>. <strong><span class="math inline">\(a=1\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(|M|=2\neq0\)</span> y <span class="math inline">\(M^{-1}=\begin{pmatrix}\frac{1}{2}&amp;\frac{1}{2}&amp;-\frac{1}{2}\\-1&amp;0&amp;1\\\frac{1}{2}&amp;-\frac{1}{2}&amp;\frac{1}{2}\end{pmatrix}\)</span>. De <span class="math inline">\(XM-I_3=N\)</span>: <span class="math inline">\(XM=N+I_3\)</span> y <span class="math inline">\(X=(N+I_3)M^{-1}\)</span>: <span class="math display">\[X=\begin{pmatrix}4&amp;2&amp;2\\5&amp;3&amp;1\\7&amp;4&amp;1\end{pmatrix}\begin{pmatrix}\frac{1}{2}&amp;\frac{1}{2}&amp;-\frac{1}{2}\\-1&amp;0&amp;1\\\frac{1}{2}&amp;-\frac{1}{2}&amp;\frac{1}{2}\end{pmatrix}=\begin{pmatrix}1&amp;1&amp;1\\0&amp;2&amp;1\\0&amp;3&amp;1\end{pmatrix}.\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(V\)</span> es <span class="math inline">\(3\times1\)</span> y <span class="math inline">\(N^t\)</span> es <span class="math inline">\(3\times3\)</span>: en <span class="math inline">\(2\cdot V\cdot N^t\)</span> el número de columnas de <span class="math inline">\(V\)</span> (<span class="math inline">\(1\)</span>) no coincide con el de filas de <span class="math inline">\(N^t\)</span> (<span class="math inline">\(3\)</span>). <strong>No se puede realizar.</strong></p>
+<p><span class="math inline">\(N+M^t\)</span> es <span class="math inline">\(3\times3\)</span> y <span class="math inline">\(V\)</span> es <span class="math inline">\(3\times1\)</span>: <strong><span class="math inline">\((N+M^t)\cdot V\)</span> se puede realizar y es de dimensión <span class="math inline">\(3\times1\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-3">2023</h2>
+<section id="ordinaria-modelo-a-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-modelo-a-2023">Ordinaria · Modelo A 2023</h3>
+<div id="ebau-2023-ord-a-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Modelo A 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2023-ord-a/examen.pdf" target="_blank">Examen</a></p>
+<p>Dadas las matrices <span class="math inline">\(A=\begin{pmatrix}a&amp;1&amp;0\\0&amp;a&amp;2\\0&amp;1&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(B=\begin{pmatrix}2&amp;-1\\a&amp;-1\end{pmatrix}\)</span>, <span class="math inline">\(C=\begin{pmatrix}2&amp;-1\\1&amp;-1\\2&amp;0\end{pmatrix}\)</span>:</p>
+<ol type="a">
+<li><p>Calcule los valores del parámetro <span class="math inline">\(a\)</span> para los que tanto <span class="math inline">\(A\)</span> como <span class="math inline">\(B\)</span> admitan inversa. <em>(1 punto)</em></p></li>
+<li><p>Para <span class="math inline">\(a=1\)</span>, halle una matriz <span class="math inline">\(X\)</span> que satisfaga <span class="math inline">\(A\cdot X\cdot B=C\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=a\cdot(a-2)\)</span> (desarrollando por la primera columna) y <span class="math inline">\(|B|=-2+a=a-2\)</span>. Ambas tienen inversa si <span class="math inline">\(a(a-2)\neq0\)</span> y <span class="math inline">\(a-2\neq0\)</span>: <strong><span class="math inline">\(a\neq0\)</span> y <span class="math inline">\(a\neq2\)</span>.</strong></p>
+<p><strong>b)</strong> Para <span class="math inline">\(a=1\)</span>: <span class="math inline">\(|A|=-1\)</span> y <span class="math inline">\(|B|=-1\)</span>, y <span class="math inline">\(A\cdot X\cdot B=C\Rightarrow X=A^{-1}\,C\,B^{-1}\)</span>, con <span class="math display">\[A^{-1}=\begin{pmatrix}1&amp;1&amp;-2\\0&amp;-1&amp;2\\0&amp;1&amp;-1\end{pmatrix},\qquad B^{-1}=\begin{pmatrix}1&amp;-1\\1&amp;-2\end{pmatrix}.\]</span> <span class="math display">\[A^{-1}C=\begin{pmatrix}-1&amp;-2\\3&amp;1\\-1&amp;-1\end{pmatrix}\ \Rightarrow\ X=\begin{pmatrix}-1&amp;-2\\3&amp;1\\-1&amp;-1\end{pmatrix}\begin{pmatrix}1&amp;-1\\1&amp;-2\end{pmatrix}=\begin{pmatrix}-3&amp;5\\4&amp;-5\\-2&amp;3\end{pmatrix}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-modelo-b-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-modelo-b-2023">Ordinaria · Modelo B 2023</h3>
+<div id="ebau-2023-ord-b-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Modelo B 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2023-ord-b/examen.pdf" target="_blank">Examen</a></p>
+<p>Se considera la matriz <span class="math inline">\(A=\begin{pmatrix}1&amp;0&amp;0\\0&amp;2&amp;0\\0&amp;-1&amp;1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Pruebe que se verifica que <span class="math inline">\(A^{-1}=\dfrac{1}{2}\left(A^{2}-4A+5I_3\right)\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Dada la ecuación matricial <span class="math inline">\(X^{t}A=\begin{pmatrix}1&amp;2&amp;0\\3&amp;-1&amp;1\end{pmatrix}\)</span>, determine la dimensión de <span class="math inline">\(X\)</span> y resuelva la ecuación. <em>(1 punto)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(A^2=\begin{pmatrix}1&amp;0&amp;0\\0&amp;4&amp;0\\0&amp;-3&amp;1\end{pmatrix}\)</span>, luego <span class="math display">\[A^2-4A+5I_3=\begin{pmatrix}1&amp;0&amp;0\\0&amp;4&amp;0\\0&amp;-3&amp;1\end{pmatrix}-\begin{pmatrix}4&amp;0&amp;0\\0&amp;8&amp;0\\0&amp;-4&amp;4\end{pmatrix}+\begin{pmatrix}5&amp;0&amp;0\\0&amp;5&amp;0\\0&amp;0&amp;5\end{pmatrix}=\begin{pmatrix}2&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;1&amp;2\end{pmatrix}.\]</span> Por tanto <span class="math inline">\(\dfrac{1}{2}\left(A^2-4A+5I_3\right)=\begin{pmatrix}1&amp;0&amp;0\\0&amp;\frac{1}{2}&amp;0\\0&amp;\frac{1}{2}&amp;1\end{pmatrix}\)</span>. Por otra parte, <span class="math inline">\(|A|=2\neq0\)</span> y <span class="math inline">\(A^{-1}=\begin{pmatrix}1&amp;0&amp;0\\0&amp;\frac{1}{2}&amp;0\\0&amp;\frac{1}{2}&amp;1\end{pmatrix}\)</span> (comprobable con <span class="math inline">\(A\cdot A^{-1}=I_3\)</span>). <strong>Coinciden: queda probado.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(A\)</span> es <span class="math inline">\(3\times3\)</span> y el segundo miembro es <span class="math inline">\(2\times3\)</span>; para que <span class="math inline">\(X^tA\)</span> sea <span class="math inline">\(2\times3\)</span>, <span class="math inline">\(X^t\)</span> debe ser <span class="math inline">\(2\times3\)</span>, luego <strong><span class="math inline">\(X\)</span> es de dimensión <span class="math inline">\(3\times2\)</span>.</strong> Entonces <span class="math inline">\(X^t=\begin{pmatrix}1&amp;2&amp;0\\3&amp;-1&amp;1\end{pmatrix}A^{-1}\)</span>: <span class="math display">\[X^t=\begin{pmatrix}1&amp;2&amp;0\\3&amp;-1&amp;1\end{pmatrix}\begin{pmatrix}1&amp;0&amp;0\\0&amp;\frac{1}{2}&amp;0\\0&amp;\frac{1}{2}&amp;1\end{pmatrix}=\begin{pmatrix}1&amp;1&amp;0\\3&amp;0&amp;1\end{pmatrix},\qquad X=\begin{pmatrix}1&amp;3\\1&amp;0\\0&amp;1\end{pmatrix}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-modelo-a-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-modelo-a-2023">Ordinaria · Reserva · Modelo A 2023</h3>
+<div id="ebau-2023-ord-res-a-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Reserva · Modelo A 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2023-ord-res-a/examen.pdf" target="_blank">Examen</a></p>
+<ol type="a">
+<li>Un agricultor vende la producción de tres tipos de uva, Tempranillo, Garnacha y Macabeo, de dos de sus fincas. La matriz <span class="math inline">\(Q=\begin{pmatrix}50&amp;40&amp;35\\0&amp;60&amp;55\end{pmatrix}\)</span> recoge la producción, en miles de kilogramos, de estos tipos de uva en cada finca. El precio de venta por kilogramo, en céntimos de euro, según el tipo de uva y la finca, viene dado por la matriz <span class="math inline">\(P=\begin{pmatrix}40&amp;38&amp;42\\34&amp;37&amp;40\end{pmatrix}\)</span>.</li>
+</ol>
+<p>Calcule el producto <span class="math inline">\(Q\cdot P^{t}\)</span> y explique el significado económico de los elementos de la diagonal principal del resultado. Indique también la cantidad total de dinero que ha obtenido el agricultor por la venta de la cosecha de las dos fincas. <em>(1,25 puntos)</em></p>
+<ol start="2" type="a">
+<li>Dada la siguiente ecuación matricial <span class="math inline">\(M\cdot X+N=V\)</span>:</li>
+</ol>
+<p>b1) Suponiendo que <span class="math inline">\(M\)</span> sea invertible, despeje la matriz <span class="math inline">\(X\)</span> en la ecuación anterior. <em>(0,5 puntos)</em></p>
+<p>b2) Para <span class="math inline">\(M=\begin{pmatrix}1&amp;0\\1&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(N=\begin{pmatrix}5&amp;4\\3&amp;2\end{pmatrix}\)</span> y <span class="math inline">\(V=\begin{pmatrix}8&amp;7\\6&amp;5\end{pmatrix}\)</span>, calcule la matriz <span class="math inline">\(X\)</span>. <em>(0,75 puntos)</em></p>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(Q\)</span> es <span class="math inline">\(2\times3\)</span> y <span class="math inline">\(P^t\)</span> es <span class="math inline">\(3\times2\)</span>: <span class="math display">\[Q\cdot P^t=\begin{pmatrix}50&amp;40&amp;35\\0&amp;60&amp;55\end{pmatrix}\begin{pmatrix}40&amp;34\\38&amp;37\\42&amp;40\end{pmatrix}=\begin{pmatrix}4\,990&amp;4\,580\\4\,590&amp;4\,420\end{pmatrix}.\]</span> El elemento <span class="math inline">\((i,j)\)</span> es la producción de la finca <span class="math inline">\(i\)</span> valorada con los precios de la finca <span class="math inline">\(j\)</span>. <strong>Los elementos de la diagonal principal son lo que obtiene el agricultor por la venta de la cosecha de cada finca con sus propios precios:</strong> <span class="math inline">\(4\,990\)</span> por la finca 1 y <span class="math inline">\(4\,420\)</span> por la finca 2 (en miles de kg por céntimos de euro por kg, es decir, en decenas de euros: <span class="math inline">\(49\,900\)</span> € y <span class="math inline">\(44\,200\)</span> €).</p>
+<p>Total: <span class="math inline">\(4\,990+4\,420=9\,410\)</span> decenas de euros, es decir, <strong><span class="math inline">\(94\,100\)</span> €.</strong></p>
+<p><strong>b1)</strong> <span class="math inline">\(MX+N=V\Rightarrow MX=V-N\Rightarrow X=M^{-1}(V-N)\)</span>.</p>
+<p><strong>b2)</strong> <span class="math inline">\(V-N=\begin{pmatrix}3&amp;3\\3&amp;3\end{pmatrix}\)</span> y <span class="math inline">\(M^{-1}=\begin{pmatrix}1&amp;0\\-1&amp;1\end{pmatrix}\)</span>: <span class="math display">\[X=\begin{pmatrix}1&amp;0\\-1&amp;1\end{pmatrix}\begin{pmatrix}3&amp;3\\3&amp;3\end{pmatrix}=\begin{pmatrix}3&amp;3\\0&amp;0\end{pmatrix}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-modelo-b-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-modelo-b-2023">Ordinaria · Reserva · Modelo B 2023</h3>
+<div id="ebau-2023-ord-res-b-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Reserva · Modelo B 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2023-ord-res-b/examen.pdf" target="_blank">Examen</a></p>
+<p>Una conservera fabrica latas de pisto con tomate, cebolla y pimiento siguiendo dos recetas distintas. La matriz <span class="math inline">\(\begin{pmatrix}500&amp;300&amp;200\\600&amp;100&amp;300\end{pmatrix}\)</span> indica los gramos necesarios de cada producto para conseguir una lata de cada receta. Se dispone de dos proveedores, siendo la matriz de precios en euros por kilo de cada producto <span class="math inline">\(\begin{pmatrix}0{,}5&amp;0{,}4&amp;0{,}6\\0{,}4&amp;0{,}5&amp;0{,}7\end{pmatrix}\)</span>. Los costes de producción de cada receta en euros por lata vienen dados por la matriz <span class="math inline">\(\begin{pmatrix}0{,}11&amp;0{,}09\end{pmatrix}\)</span>. Los costes de transporte en euros por lata según cada proveedor vienen dados por la matriz <span class="math inline">\(\begin{pmatrix}0{,}02&amp;0{,}03\end{pmatrix}\)</span>. La conservera quiere obtener un beneficio de 5 céntimos por lata. Una distribuidora compra 11 000 latas de la primera receta, siendo 5 000 del primer proveedor, y otras 11 000 de la segunda receta, siendo 6 000 del primer proveedor. ¿Cuánto debe cobrar la conservera por el pedido de esta distribuidora?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Gramos por lata y precio por kilo: el coste de las materias primas de una lata de la receta <span class="math inline">\(i\)</span> con el proveedor <span class="math inline">\(j\)</span> es <span class="math inline">\(\dfrac{1}{1000}\,R\cdot P^t\)</span>, con <span class="math inline">\(R=\begin{pmatrix}500&amp;300&amp;200\\600&amp;100&amp;300\end{pmatrix}\)</span> (recetas en filas) y <span class="math inline">\(P=\begin{pmatrix}0{,}5&amp;0{,}4&amp;0{,}6\\0{,}4&amp;0{,}5&amp;0{,}7\end{pmatrix}\)</span> (proveedores en filas): <span class="math display">\[\frac{1}{1000}R\,P^t=\begin{pmatrix}0{,}49&amp;0{,}49\\0{,}52&amp;0{,}50\end{pmatrix}\quad\text{(euros por lata; filas: recetas; columnas: proveedores)}.\]</span> Precio de venta por lata <span class="math inline">\(=\)</span> materias primas <span class="math inline">\(+\)</span> producción <span class="math inline">\(+\)</span> transporte <span class="math inline">\(+\)</span> beneficio (<span class="math inline">\(0{,}05\)</span> €):</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Proveedor 1</th>
+<th>Proveedor 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Receta 1</td>
+<td><span class="math inline">\(0{,}49+0{,}11+0{,}02+0{,}05=0{,}67\)</span></td>
+<td><span class="math inline">\(0{,}49+0{,}11+0{,}03+0{,}05=0{,}68\)</span></td>
+</tr>
+<tr class="even">
+<td>Receta 2</td>
+<td><span class="math inline">\(0{,}52+0{,}09+0{,}02+0{,}05=0{,}68\)</span></td>
+<td><span class="math inline">\(0{,}50+0{,}09+0{,}03+0{,}05=0{,}67\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Pedido: receta 1, <span class="math inline">\(5\,000\)</span> latas del proveedor 1 y <span class="math inline">\(6\,000\)</span> del proveedor 2; receta 2, <span class="math inline">\(6\,000\)</span> del proveedor 1 y <span class="math inline">\(5\,000\)</span> del proveedor 2. <span class="math display">\[5\,000\cdot0{,}67+6\,000\cdot0{,}68+6\,000\cdot0{,}68+5\,000\cdot0{,}67=3\,350+4\,080+4\,080+3\,350=14\,860.\]</span> <strong>La conservera debe cobrar <span class="math inline">\(14\,860\)</span> €.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-modelo-a-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-modelo-a-2023">Ordinaria · Suplente · Modelo A 2023</h3>
+<div id="ebau-2023-ord-sup-a-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Suplente · Modelo A 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2023-ord-sup-a/examen.pdf" target="_blank">Examen</a></p>
+<ol type="a">
+<li>Se considera la matriz <span class="math inline">\(A=\begin{pmatrix}1&amp;-1&amp;0\\0&amp;m&amp;-2\\1&amp;m&amp;4\end{pmatrix}\)</span>.</li>
+</ol>
+<p>a1) Obtenga para qué valores de <span class="math inline">\(m\)</span> la matriz <span class="math inline">\(A\)</span> tiene inversa. <em>(0,5 puntos)</em></p>
+<p>a2) Calcule, en caso de existir, la inversa de <span class="math inline">\(A\)</span> para <span class="math inline">\(m=1\)</span>. <em>(1 punto)</em></p>
+<ol start="2" type="a">
+<li>Despeje y simplifique <span class="math inline">\(X\)</span> en la ecuación <span class="math inline">\(X\cdot B-B^{2}+B=0\)</span>, sabiendo que la matriz <span class="math inline">\(B\)</span> es invertible. <em>(1 punto)</em></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a1)</strong> <span class="math inline">\(|A|=\left|\begin{matrix}1&amp;-1&amp;0\\0&amp;m&amp;-2\\1&amp;m&amp;4\end{matrix}\right|=(4m+2m)+(0+2)=6m+2\)</span>. Tiene inversa si <span class="math inline">\(|A|\neq0\)</span>: <strong><span class="math inline">\(m\neq-\dfrac{1}{3}\)</span>.</strong></p>
+<p><strong>a2)</strong> Para <span class="math inline">\(m=1\)</span>, <span class="math inline">\(|A|=8\)</span> y <span class="math display">\[A^{-1}=\frac{1}{8}\begin{pmatrix}6&amp;4&amp;2\\-2&amp;4&amp;2\\-1&amp;-2&amp;1\end{pmatrix}=\begin{pmatrix}\frac{3}{4}&amp;\frac{1}{2}&amp;\frac{1}{4}\\-\frac{1}{4}&amp;\frac{1}{2}&amp;\frac{1}{4}\\-\frac{1}{8}&amp;-\frac{1}{4}&amp;\frac{1}{8}\end{pmatrix}.\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(XB-B^2+B=0\Rightarrow XB=B^2-B\)</span>. Multiplicando por <span class="math inline">\(B^{-1}\)</span> por la derecha: <span class="math inline">\(X=\left(B^2-B\right)B^{-1}=B-I\)</span>.</p>
+<p><strong><span class="math inline">\(X=B-I\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-modelo-b-2023" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-modelo-b-2023">Ordinaria · Suplente · Modelo B 2023</h3>
+<div id="ebau-2023-ord-sup-b-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Suplente · Modelo B 2023 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2023-ord-sup-b/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las matrices <span class="math display">\[A=\begin{pmatrix}5&amp;-7&amp;6\\7&amp;0&amp;4\\0&amp;3&amp;-1\end{pmatrix},\qquad B=\begin{pmatrix}1&amp;2&amp;-9\\-2&amp;0&amp;11\\0&amp;4&amp;-7\end{pmatrix},\qquad C=\begin{pmatrix}1\\2\\-1\end{pmatrix}\]</span></p>
+<ol type="a">
+<li><p>Halle las dimensiones de las siguientes matrices <span class="math inline">\(C^{t}AC\)</span>, <span class="math inline">\(CC^{t}B\)</span>. <em>(0,5 puntos)</em></p></li>
+<li><p>Calcule, en caso de existir, las inversas de las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Resuelva el siguiente sistema matricial <em>(1 punto)</em> <span class="math display">\[\begin{cases}2X+3Y=A\\-3X+4Y=B\end{cases}\]</span></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(C^t\)</span> es <span class="math inline">\(1\times3\)</span>, <span class="math inline">\(A\)</span> es <span class="math inline">\(3\times3\)</span> y <span class="math inline">\(C\)</span> es <span class="math inline">\(3\times1\)</span>: <strong><span class="math inline">\(C^tAC\)</span> es <span class="math inline">\(1\times1\)</span>.</strong> <span class="math inline">\(C\)</span> es <span class="math inline">\(3\times1\)</span>, <span class="math inline">\(C^t\)</span> es <span class="math inline">\(1\times3\)</span> (luego <span class="math inline">\(CC^t\)</span> es <span class="math inline">\(3\times3\)</span>) y <span class="math inline">\(B\)</span> es <span class="math inline">\(3\times3\)</span>: <strong><span class="math inline">\(CC^tB\)</span> es <span class="math inline">\(3\times3\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(|A|=17\neq0\)</span>: <strong><span class="math inline">\(A\)</span> tiene inversa</strong> <span class="math display">\[A^{-1}=\frac{1}{17}\begin{pmatrix}-12&amp;11&amp;-28\\7&amp;-5&amp;22\\21&amp;-15&amp;49\end{pmatrix}.\]</span> <span class="math inline">\(|B|=0\)</span> (la tercera fila es combinación lineal de las otras dos): <strong><span class="math inline">\(B\)</span> no tiene inversa.</strong></p>
+<p><strong>c)</strong> Eliminando: <span class="math inline">\(4\cdot(2X+3Y=A)-3\cdot(-3X+4Y=B)\)</span> da <span class="math inline">\(17X=4A-3B\)</span>, y <span class="math inline">\(3\cdot(2X+3Y=A)+2\cdot(-3X+4Y=B)\)</span> da <span class="math inline">\(17Y=3A+2B\)</span>: <span class="math display">\[X=\frac{4A-3B}{17}=\begin{pmatrix}1&amp;-2&amp;3\\2&amp;0&amp;-1\\0&amp;0&amp;1\end{pmatrix},\qquad Y=\frac{3A+2B}{17}=\begin{pmatrix}1&amp;-1&amp;0\\1&amp;0&amp;2\\0&amp;1&amp;-1\end{pmatrix}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-4" class="level2">
+<h2 class="anchored" data-anchor-id="section-4">2022</h2>
+<section id="ordinaria-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2022">Ordinaria 2022</h3>
+<div id="ebau-2022-ord-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2022-ord/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las matrices <span class="math display">\[A=\begin{pmatrix}a&amp;1&amp;0\\0&amp;a&amp;1\\3&amp;4&amp;1\end{pmatrix},\qquad B=\begin{pmatrix}2&amp;-1&amp;0\end{pmatrix},\qquad C=\begin{pmatrix}1&amp;3&amp;-1\end{pmatrix}\]</span> donde <span class="math inline">\(a\)</span> es un número real.</p>
+<ol type="a">
+<li><p>Halle los valores del parámetro <span class="math inline">\(a\)</span> para que la matriz <span class="math inline">\(A\)</span> tenga inversa. <em>(0,75 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(a=2\)</span>, calcule la matriz inversa de <span class="math inline">\(A\)</span>. <em>(0,75 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(a=2\)</span>, resuelva la ecuación matricial <span class="math inline">\(X\cdot A+I_3=B^{t}\cdot C\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=\left|\begin{matrix}a&amp;1&amp;0\\0&amp;a&amp;1\\3&amp;4&amp;1\end{matrix}\right|=a(a-4)-1\cdot(0-3)=a^2-4a+3=(a-1)(a-3)\)</span>. Tiene inversa si <span class="math inline">\(|A|\neq0\)</span>: <strong><span class="math inline">\(a\neq1\)</span> y <span class="math inline">\(a\neq3\)</span>.</strong></p>
+<p><strong>b)</strong> Para <span class="math inline">\(a=2\)</span>, <span class="math inline">\(|A|=-1\)</span>. Calculando la adjunta traspuesta: <span class="math display">\[A^{-1}=\begin{pmatrix}2&amp;1&amp;-1\\-3&amp;-2&amp;2\\6&amp;5&amp;-4\end{pmatrix}.\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(XA+I_3=B^tC\Rightarrow X=\left(B^tC-I_3\right)A^{-1}\)</span>. Con <span class="math inline">\(B^t=\begin{pmatrix}2\\-1\\0\end{pmatrix}\)</span>, <span class="math inline">\(B^tC=\begin{pmatrix}2&amp;6&amp;-2\\-1&amp;-3&amp;1\\0&amp;0&amp;0\end{pmatrix}\)</span> y <span class="math inline">\(B^tC-I_3=\begin{pmatrix}1&amp;6&amp;-2\\-1&amp;-4&amp;1\\0&amp;0&amp;-1\end{pmatrix}\)</span>: <span class="math display">\[X=\begin{pmatrix}1&amp;6&amp;-2\\-1&amp;-4&amp;1\\0&amp;0&amp;-1\end{pmatrix}\begin{pmatrix}2&amp;1&amp;-1\\-3&amp;-2&amp;2\\6&amp;5&amp;-4\end{pmatrix}=\begin{pmatrix}-28&amp;-21&amp;19\\16&amp;12&amp;-11\\-6&amp;-5&amp;4\end{pmatrix}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-2022">Ordinaria · Reserva 2022</h3>
+<div id="ebau-2022-ord-res-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Reserva 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2022-ord-res/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las matrices <span class="math display">\[A=\begin{pmatrix}1&amp;0&amp;1\\-1&amp;-1&amp;1\\2&amp;-1&amp;0\end{pmatrix},\qquad B=\begin{pmatrix}1&amp;-1&amp;1\\-1&amp;-1&amp;-1\\1&amp;-1&amp;1\end{pmatrix},\qquad C=\begin{pmatrix}3\\-7\\-2\end{pmatrix}\]</span></p>
+<ol type="a">
+<li>Razone si se pueden efectuar las siguientes operaciones y realice las que sean posibles: <em>(1 punto)</em></li>
+</ol>
+<p><span class="math display">\[C\cdot A,\qquad A+B,\qquad C^{t}\cdot B^{t}\]</span></p>
+<ol start="2" type="a">
+<li>Resuelva la ecuación matricial <span class="math inline">\(A\cdot X=B\cdot X+C\)</span>. <em>(1,5 puntos)</em></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(C\cdot A\)</span>: <span class="math inline">\(C\)</span> es <span class="math inline">\(3\times1\)</span> y <span class="math inline">\(A\)</span> es <span class="math inline">\(3\times3\)</span>; el número de columnas de <span class="math inline">\(C\)</span> (1) no coincide con el de filas de <span class="math inline">\(A\)</span> (3): <strong>no se puede efectuar.</strong></p>
+<p><span class="math inline">\(A+B\)</span>: ambas son <span class="math inline">\(3\times3\)</span>, <strong>sí se puede:</strong> <span class="math display">\[A+B=\begin{pmatrix}2&amp;-1&amp;2\\-2&amp;-2&amp;0\\3&amp;-2&amp;1\end{pmatrix}.\]</span></p>
+<p><span class="math inline">\(C^t\cdot B^t\)</span>: <span class="math inline">\(C^t\)</span> es <span class="math inline">\(1\times3\)</span> y <span class="math inline">\(B^t\)</span> es <span class="math inline">\(3\times3\)</span>, <strong>sí se puede</strong> y el resultado es <span class="math inline">\(1\times3\)</span>: <span class="math display">\[C^tB^t=\begin{pmatrix}3&amp;-7&amp;-2\end{pmatrix}\begin{pmatrix}1&amp;-1&amp;1\\-1&amp;-1&amp;-1\\1&amp;-1&amp;1\end{pmatrix}=\begin{pmatrix}8&amp;6&amp;8\end{pmatrix}.\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(AX=BX+C\Rightarrow(A-B)X=C\)</span>, con <span class="math inline">\(A-B=\begin{pmatrix}0&amp;1&amp;0\\0&amp;0&amp;2\\1&amp;0&amp;-1\end{pmatrix}\)</span> y <span class="math inline">\(|A-B|=2\neq0\)</span>. Entonces <span class="math inline">\(X=(A-B)^{-1}C\)</span>: <span class="math display">\[X=\begin{pmatrix}0&amp;\frac{1}{2}&amp;1\\1&amp;0&amp;0\\0&amp;\frac{1}{2}&amp;0\end{pmatrix}\begin{pmatrix}3\\-7\\-2\end{pmatrix}=\begin{pmatrix}-\frac{11}{2}\\3\\-\frac{7}{2}\end{pmatrix}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2022" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2022">Ordinaria · Suplente 2022</h3>
+<div id="ebau-2022-ord-sup-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Suplente 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2022-ord-sup/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las matrices <span class="math display">\[A=\begin{pmatrix}7&amp;-6&amp;-2\\3&amp;1&amp;4\\-5&amp;0&amp;-4\end{pmatrix},\quad B=\begin{pmatrix}2&amp;2&amp;3\\5&amp;3&amp;4\\-4&amp;0&amp;1\end{pmatrix},\quad C=\begin{pmatrix}1&amp;2&amp;-1\\-2&amp;-3&amp;0\end{pmatrix},\quad D=\begin{pmatrix}a^{2}&amp;0&amp;-1\\1&amp;-1&amp;a\end{pmatrix}\]</span></p>
+<ol type="a">
+<li><p>Resuelva la siguiente ecuación matricial <span class="math inline">\(A^{t}-X\cdot A=3I_3\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>¿Existe algún valor del parámetro <span class="math inline">\(a\)</span> para el que se verifique <span class="math inline">\(C^{t}\cdot D=B\)</span>? En caso afirmativo, calcule dicho valor. <em>(1 punto)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(XA=A^t-3I_3\)</span>, y <span class="math inline">\(|A|=10\neq0\)</span>, así que <span class="math inline">\(X=\left(A^t-3I_3\right)A^{-1}\)</span>. Con <span class="math inline">\(A^t-3I_3=\begin{pmatrix}4&amp;3&amp;-5\\-6&amp;-2&amp;0\\-2&amp;4&amp;-7\end{pmatrix}\)</span> y <span class="math inline">\(A^{-1}=\begin{pmatrix}-\frac{2}{5}&amp;-\frac{12}{5}&amp;-\frac{11}{5}\\-\frac{4}{5}&amp;-\frac{19}{5}&amp;-\frac{17}{5}\\\frac{1}{2}&amp;3&amp;\frac{5}{2}\end{pmatrix}\)</span>: <span class="math display">\[X=\begin{pmatrix}-\frac{13}{2}&amp;-36&amp;-\frac{63}{2}\\4&amp;22&amp;20\\-\frac{59}{10}&amp;-\frac{157}{5}&amp;-\frac{267}{10}\end{pmatrix}.\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(C^t\)</span> es <span class="math inline">\(3\times2\)</span> y <span class="math inline">\(D\)</span> es <span class="math inline">\(2\times3\)</span>, luego <span class="math inline">\(C^tD\)</span> es <span class="math inline">\(3\times3\)</span>: <span class="math display">\[C^tD=\begin{pmatrix}1&amp;-2\\2&amp;-3\\-1&amp;0\end{pmatrix}\begin{pmatrix}a^2&amp;0&amp;-1\\1&amp;-1&amp;a\end{pmatrix}=\begin{pmatrix}a^2-2&amp;2&amp;-1-2a\\2a^2-3&amp;3&amp;-2-3a\\-a^2&amp;0&amp;1\end{pmatrix}.\]</span> Igualando con <span class="math inline">\(B\)</span>: <span class="math inline">\(a^2-2=2\)</span>, <span class="math inline">\(-1-2a=3\)</span>, <span class="math inline">\(2a^2-3=5\)</span>, <span class="math inline">\(-2-3a=4\)</span> y <span class="math inline">\(-a^2=-4\)</span>. Todas se cumplen solo para <span class="math inline">\(a=-2\)</span>.</p>
+<p><strong>Sí existe: <span class="math inline">\(a=-2\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2022" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2022">Extraordinaria 2022</h3>
+<div id="ebau-2022-ext-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Extraordinaria 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2022-ext/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las matrices <span class="math inline">\(A=\begin{pmatrix}1&amp;1&amp;2\\-2&amp;0&amp;1\\0&amp;-1&amp;-1\end{pmatrix}\)</span>, <span class="math inline">\(B=\begin{pmatrix}-2&amp;1\\3&amp;1\\0&amp;2\end{pmatrix}\)</span>, <span class="math inline">\(C=\begin{pmatrix}1&amp;2\\-1&amp;-1\\-2&amp;3\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Determine la matriz <span class="math inline">\(X\)</span> que verifica <span class="math inline">\(A\cdot X+B=A^{2}\cdot C\)</span>. <em>(1,5 puntos)</em></p></li>
+<li><p>Determine las dimensiones de dos matrices <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> sabiendo que <span class="math display">\[A\cdot P^{t}+C=C\cdot(Q\cdot B)\]</span> <em>(1 punto)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=3\neq0\)</span>, luego <span class="math inline">\(A\)</span> es invertible y <span class="math inline">\(X=A^{-1}\left(A^2C-B\right)\)</span>. Con <span class="math inline">\(A^2=\begin{pmatrix}-1&amp;-1&amp;1\\-2&amp;-3&amp;-5\\2&amp;1&amp;0\end{pmatrix}\)</span>: <span class="math display">\[A^2C=\begin{pmatrix}-2&amp;2\\11&amp;-16\\1&amp;3\end{pmatrix},\qquad A^2C-B=\begin{pmatrix}0&amp;1\\8&amp;-17\\1&amp;1\end{pmatrix}.\]</span> Con <span class="math inline">\(A^{-1}=\begin{pmatrix}\frac{1}{3}&amp;-\frac{1}{3}&amp;\frac{1}{3}\\-\frac{2}{3}&amp;-\frac{1}{3}&amp;-\frac{5}{3}\\\frac{2}{3}&amp;\frac{1}{3}&amp;\frac{2}{3}\end{pmatrix}\)</span>: <span class="math display">\[X=A^{-1}\begin{pmatrix}0&amp;1\\8&amp;-17\\1&amp;1\end{pmatrix}=\begin{pmatrix}-\frac{7}{3}&amp;\frac{19}{3}\\-\frac{13}{3}&amp;\frac{10}{3}\\\frac{10}{3}&amp;-\frac{13}{3}\end{pmatrix}.\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(A\)</span> es <span class="math inline">\(3\times3\)</span> y <span class="math inline">\(C\)</span> es <span class="math inline">\(3\times2\)</span>. Para que <span class="math inline">\(A\cdot P^t+C\)</span> exista, <span class="math inline">\(A\cdot P^t\)</span> debe ser <span class="math inline">\(3\times2\)</span>, luego <span class="math inline">\(P^t\)</span> es <span class="math inline">\(3\times2\)</span> y <strong><span class="math inline">\(P\)</span> es <span class="math inline">\(2\times3\)</span>.</strong> Para que <span class="math inline">\(C\cdot(Q\cdot B)\)</span> sea <span class="math inline">\(3\times2\)</span>, <span class="math inline">\(Q\cdot B\)</span> debe ser <span class="math inline">\(2\times2\)</span> y, como <span class="math inline">\(B\)</span> es <span class="math inline">\(3\times2\)</span>, <strong><span class="math inline">\(Q\)</span> es <span class="math inline">\(2\times3\)</span>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-reserva-2022" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-reserva-2022">Extraordinaria · Reserva 2022</h3>
+<div id="ebau-2022-ext-res-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Extraordinaria · Reserva 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2022-ext-res/examen.pdf" target="_blank">Examen</a></p>
+<p>Considere la matriz <span class="math display">\[A=\begin{pmatrix}2&amp;-3&amp;-a-1\\-1&amp;a&amp;a+1\\1&amp;-3&amp;-a\end{pmatrix}\]</span> donde <span class="math inline">\(a\)</span> es un número real. Determine de manera justificada:</p>
+<ol type="a">
+<li><p>Los valores de <span class="math inline">\(a\)</span> para los que la matriz <span class="math inline">\(A\)</span> tiene inversa. <em>(0,75 puntos)</em></p></li>
+<li><p>Las matrices <span class="math inline">\(A^{2}\)</span>, <span class="math inline">\(A^{3}\)</span> y <span class="math inline">\(A^{2022}\)</span> para <span class="math inline">\(a=4\)</span>. <em>(0,75 puntos)</em></p></li>
+<li><p>La matriz <span class="math inline">\(X\)</span> que verifica que <span class="math inline">\(X\cdot A=I_3\)</span> para <span class="math inline">\(a=3\)</span>. <em>(1 punto)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=\left|\begin{matrix}2&amp;-3&amp;-a-1\\-1&amp;a&amp;a+1\\1&amp;-3&amp;-a\end{matrix}\right|=-a(a-4)=-a^2+4a\)</span>. La matriz tiene inversa si <span class="math inline">\(|A|\neq0\)</span>: <strong><span class="math inline">\(a\neq0\)</span> y <span class="math inline">\(a\neq4\)</span>.</strong></p>
+<p><strong>b)</strong> Para <span class="math inline">\(a=4\)</span>, <span class="math inline">\(A=\begin{pmatrix}2&amp;-3&amp;-5\\-1&amp;4&amp;5\\1&amp;-3&amp;-4\end{pmatrix}\)</span> y, multiplicando, <span class="math display">\[A^2=\begin{pmatrix}2&amp;-3&amp;-5\\-1&amp;4&amp;5\\1&amp;-3&amp;-4\end{pmatrix}=A.\]</span> Como <span class="math inline">\(A^2=A\)</span>, entonces <span class="math inline">\(A^3=A^2\cdot A=A\cdot A=A\)</span> y, por inducción, <span class="math inline">\(A^n=A\)</span> para todo <span class="math inline">\(n\ge1\)</span>:</p>
+<p><strong><span class="math inline">\(A^2=A^3=A^{2022}=A=\begin{pmatrix}2&amp;-3&amp;-5\\-1&amp;4&amp;5\\1&amp;-3&amp;-4\end{pmatrix}\)</span>.</strong></p>
+<p><strong>c)</strong> Para <span class="math inline">\(a=3\)</span>, <span class="math inline">\(|A|=3\neq0\)</span> y <span class="math inline">\(XA=I_3\)</span> significa <span class="math inline">\(X=A^{-1}\)</span>: <span class="math display">\[X=\begin{pmatrix}1&amp;1&amp;0\\\frac{1}{3}&amp;-\frac{2}{3}&amp;-\frac{4}{3}\\0&amp;1&amp;1\end{pmatrix}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2022" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2022">Extraordinaria · Suplente 2022</h3>
+<div id="ebau-2022-ext-sup-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Extraordinaria · Suplente 2022 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2022-ext-sup/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las matrices <span class="math inline">\(A=\begin{pmatrix}a&amp;2&amp;0\\8&amp;a&amp;0\\0&amp;0&amp;a\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}1\\-2\\10\end{pmatrix}\)</span>, donde <span class="math inline">\(a\)</span> es un número real.</p>
+<ol type="a">
+<li><p>Determine los valores de <span class="math inline">\(a\)</span> para que la matriz <span class="math inline">\(A\)</span> sea no invertible. <em>(0,75 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(a=5\)</span>, calcule la inversa de la matriz <span class="math inline">\(A\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Para <span class="math inline">\(a=5\)</span>, resuelva la ecuación matricial <span class="math inline">\(A\cdot X=B\)</span>. <em>(0,75 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=a\left(a^2-16\right)=a(a-4)(a+4)\)</span> (desarrollando por la tercera fila). <span class="math inline">\(A\)</span> no es invertible si <span class="math inline">\(|A|=0\)</span>: <strong><span class="math inline">\(a=0\)</span>, <span class="math inline">\(a=4\)</span> o <span class="math inline">\(a=-4\)</span>.</strong></p>
+<p><strong>b)</strong> Para <span class="math inline">\(a=5\)</span>, <span class="math inline">\(|A|=5\cdot9=45\neq0\)</span>. Calculando la adjunta traspuesta: <span class="math display">\[A^{-1}=\begin{pmatrix}\frac{5}{9}&amp;-\frac{2}{9}&amp;0\\-\frac{8}{9}&amp;\frac{5}{9}&amp;0\\0&amp;0&amp;\frac{1}{5}\end{pmatrix}.\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(X=A^{-1}B\)</span>: <span class="math display">\[X=\begin{pmatrix}\frac{5}{9}&amp;-\frac{2}{9}&amp;0\\-\frac{8}{9}&amp;\frac{5}{9}&amp;0\\0&amp;0&amp;\frac{1}{5}\end{pmatrix}\begin{pmatrix}1\\-2\\10\end{pmatrix}=\begin{pmatrix}1\\-2\\2\end{pmatrix}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section-5" class="level2">
+<h2 class="anchored" data-anchor-id="section-5">2021</h2>
+<section id="ordinaria-2021" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-2021">Ordinaria 2021</h3>
+<div id="ebau-2021-ord-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2021-ord/examen.pdf" target="_blank">Examen</a></p>
+<p>Se considera la matriz <span class="math inline">\(A=\begin{pmatrix}1&amp;-1&amp;m\\0&amp;2&amp;-3\\m&amp;1&amp;1\end{pmatrix}\)</span>, con <span class="math inline">\(m\)</span> un parámetro real.</p>
+<ol type="a">
+<li><p>¿Para qué valores del parámetro <span class="math inline">\(m\)</span> existe la matriz inversa de <span class="math inline">\(A\)</span>? <em>(0,7 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(m=2\)</span>, resuelva la ecuación matricial <span class="math inline">\(X\cdot A-A^{2}=I_3\)</span>. <em>(1,8 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=\left|\begin{matrix}1&amp;-1&amp;m\\0&amp;2&amp;-3\\m&amp;1&amp;1\end{matrix}\right|=-2m^2+3m+5=-(m+1)(2m-5)\)</span>. La inversa existe si <span class="math inline">\(|A|\neq0\)</span>: <strong><span class="math inline">\(m\neq-1\)</span> y <span class="math inline">\(m\neq\dfrac{5}{2}\)</span>.</strong></p>
+<p><strong>b)</strong> Con <span class="math inline">\(m=2\)</span>, <span class="math inline">\(|A|=3\neq0\)</span>. De <span class="math inline">\(XA-A^2=I\)</span> se obtiene <span class="math inline">\(XA=I+A^2\)</span> y, multiplicando por la derecha por <span class="math inline">\(A^{-1}\)</span>, <span class="math inline">\(X=(I+A^2)A^{-1}\)</span>.</p>
+<p><span class="math display">\[A^2=\begin{pmatrix}5&amp;-1&amp;7\\-6&amp;1&amp;-9\\4&amp;1&amp;2\end{pmatrix},\qquad A^{-1}=\begin{pmatrix}\frac{5}{3}&amp;1&amp;-\frac{1}{3}\\-2&amp;-1&amp;1\\-\frac{4}{3}&amp;-1&amp;\frac{2}{3}\end{pmatrix}.\]</span></p>
+<p><span class="math display">\[X=\begin{pmatrix}6&amp;-1&amp;7\\-6&amp;2&amp;-9\\4&amp;1&amp;3\end{pmatrix}A^{-1}=\begin{pmatrix}\frac{8}{3}&amp;0&amp;\frac{5}{3}\\-2&amp;1&amp;-2\\\frac{2}{3}&amp;0&amp;\frac{5}{3}\end{pmatrix}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-reserva-2021" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-reserva-2021">Ordinaria · Reserva 2021</h3>
+<div id="ebau-2021-ord-res-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Ordinaria · Reserva 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2021-ord-res/examen.pdf" target="_blank">Examen</a></p>
+<p>Se considera la ecuación matricial <span class="math inline">\((10I_3-A)\cdot X=B\)</span>, donde <span class="math inline">\(A=\begin{pmatrix}2&amp;1&amp;0\\4&amp;2&amp;0\\2&amp;2&amp;5\end{pmatrix}\)</span> y <span class="math inline">\(B\)</span> es una matriz con tres filas y una columna.</p>
+<ol type="a">
+<li><p>Razone qué dimensión ha de tener la matriz <span class="math inline">\(X\)</span>. <em>(0,5 puntos)</em></p></li>
+<li><p>¿Tiene solución la ecuación matricial anterior para cualquier matriz <span class="math inline">\(B\)</span> de orden <span class="math inline">\(3\times1\)</span>? ¿Por qué? <em>(0,5 puntos)</em></p></li>
+<li><p>Resuelva dicha ecuación matricial si <span class="math inline">\(B=\begin{pmatrix}5&amp;20&amp;-3\end{pmatrix}^{t}\)</span>. <em>(1,5 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\((10I_3-A)\)</span> es <span class="math inline">\(3\times3\)</span> y <span class="math inline">\(B\)</span> es <span class="math inline">\(3\times1\)</span>. Para que el producto <span class="math inline">\((3\times3)\cdot X\)</span> sea <span class="math inline">\(3\times1\)</span>, <span class="math inline">\(X\)</span> ha de ser de <strong>dimensión <span class="math inline">\(3\times1\)</span></strong>.</p>
+<p><strong>b)</strong> <span class="math inline">\(10I_3-A=\begin{pmatrix}8&amp;-1&amp;0\\-4&amp;8&amp;0\\-2&amp;-2&amp;5\end{pmatrix}\)</span> y <span class="math inline">\(|10I_3-A|=300\neq0\)</span>. Es invertible, luego <span class="math inline">\(X=(10I_3-A)^{-1}B\)</span> existe y es única <strong>para cualquier <span class="math inline">\(B\)</span> de orden <span class="math inline">\(3\times1\)</span>.</strong></p>
+<p><strong>c)</strong> <span class="math inline">\((10I_3-A)^{-1}=\begin{pmatrix}\frac{2}{15}&amp;\frac{1}{60}&amp;0\\\frac{1}{15}&amp;\frac{2}{15}&amp;0\\\frac{2}{25}&amp;\frac{3}{50}&amp;\frac{1}{5}\end{pmatrix}\)</span> y</p>
+<p><span class="math display">\[X=(10I_3-A)^{-1}\begin{pmatrix}5\\20\\-3\end{pmatrix}=\begin{pmatrix}1\\3\\1\end{pmatrix}.\]</span></p>
+<p>(Comprobación: <span class="math inline">\(8\cdot1-3=5\)</span>, <span class="math inline">\(-4+24=20\)</span>, <span class="math inline">\(-2-6+5=-3\)</span>.)</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordinaria-suplente-2021" class="level3">
+<h3 class="anchored" data-anchor-id="ordinaria-suplente-2021">Ordinaria · Suplente 2021</h3>
+<div id="ebau-2021-ord-sup-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Ordinaria · Suplente 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2021-ord-sup/examen.pdf" target="_blank">Examen</a></p>
+<p>Se considera la matriz <span class="math inline">\(A=\begin{pmatrix}1&amp;0\\-1&amp;1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Calcule <span class="math inline">\(A^{40}\)</span> y <span class="math inline">\(\left(A^{t}\right)^{30}\)</span>. <em>(0,7 puntos)</em></p></li>
+<li><p>Calcule <span class="math inline">\(\left(A^{-1}+A\right)^{2}\)</span>. <em>(0,6 puntos)</em></p></li>
+<li><p>Resuelva la ecuación matricial <span class="math inline">\(\left(A^{t}+I_2\right)\cdot X=A^{t}-I_2\)</span>. <em>(1,2 puntos)</em></p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(A^2=\begin{pmatrix}1&amp;0\\-2&amp;1\end{pmatrix}\)</span>, y por inducción <span class="math inline">\(A^n=\begin{pmatrix}1&amp;0\\-n&amp;1\end{pmatrix}\)</span>. Así <span class="math display">\[A^{40}=\begin{pmatrix}1&amp;0\\-40&amp;1\end{pmatrix},\qquad\left(A^t\right)^{30}=\left(A^{30}\right)^t=\begin{pmatrix}1&amp;-30\\0&amp;1\end{pmatrix}.\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(A^{-1}=\begin{pmatrix}1&amp;0\\1&amp;1\end{pmatrix}\)</span>, luego <span class="math inline">\(A^{-1}+A=\begin{pmatrix}2&amp;0\\0&amp;2\end{pmatrix}=2I_2\)</span> y <span class="math display">\[\left(A^{-1}+A\right)^2=4I_2=\begin{pmatrix}4&amp;0\\0&amp;4\end{pmatrix}.\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(A^t+I_2=\begin{pmatrix}2&amp;-1\\0&amp;2\end{pmatrix}\)</span>, con determinante <span class="math inline">\(4\neq0\)</span>, y <span class="math inline">\(A^t-I_2=\begin{pmatrix}0&amp;-1\\0&amp;0\end{pmatrix}\)</span>. Entonces <span class="math inline">\(X=\left(A^t+I_2\right)^{-1}\left(A^t-I_2\right)\)</span> con <span class="math inline">\(\left(A^t+I_2\right)^{-1}=\begin{pmatrix}\frac{1}{2}&amp;\frac{1}{4}\\0&amp;\frac{1}{2}\end{pmatrix}\)</span>: <span class="math display">\[X=\begin{pmatrix}\frac{1}{2}&amp;\frac{1}{4}\\0&amp;\frac{1}{2}\end{pmatrix}\begin{pmatrix}0&amp;-1\\0&amp;0\end{pmatrix}=\begin{pmatrix}0&amp;-\frac{1}{2}\\0&amp;0\end{pmatrix}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-2021" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-2021">Extraordinaria 2021</h3>
+<div id="ebau-2021-ext-1" class="ebau-ej">
+<p><strong>Ejercicio 1</strong> · Extraordinaria 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2021-ext/examen.pdf" target="_blank">Examen</a></p>
+<p>Se considera la matriz <span class="math inline">\(A=\begin{pmatrix}2&amp;1&amp;0\\1&amp;0&amp;2\\0&amp;2&amp;a\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Determine para qué valores del parámetro <span class="math inline">\(a\)</span>, la matriz <span class="math inline">\(A\)</span> tiene inversa. <em>(0,7 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(a=1\)</span>, calcule la inversa de <span class="math inline">\(A\)</span>. <em>(1 punto)</em></p></li>
+<li><p>Para <span class="math inline">\(a=1\)</span>, resuelva la ecuación matricial <span class="math inline">\(A\cdot X=B^{t}\)</span>, siendo <span class="math inline">\(B=\begin{pmatrix}0&amp;1&amp;-1\end{pmatrix}\)</span>. <em>(0,8 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=\left|\begin{matrix}2&amp;1&amp;0\\1&amp;0&amp;2\\0&amp;2&amp;a\end{matrix}\right|=2(0-4)-1(a-0)=-a-8\)</span>. Tiene inversa si <span class="math inline">\(|A|\neq0\)</span>: <strong><span class="math inline">\(a\neq-8\)</span>.</strong></p>
+<p><strong>b)</strong> Para <span class="math inline">\(a=1\)</span>, <span class="math inline">\(|A|=-9\)</span>. Por adjuntos, <span class="math inline">\(A^{-1}=\dfrac{1}{|A|}\left(\operatorname{Adj}A\right)^t\)</span>: <span class="math display">\[A^{-1}=\begin{pmatrix}\frac{4}{9}&amp;\frac{1}{9}&amp;-\frac{2}{9}\\\frac{1}{9}&amp;-\frac{2}{9}&amp;\frac{4}{9}\\-\frac{2}{9}&amp;\frac{4}{9}&amp;\frac{1}{9}\end{pmatrix}.\]</span></p>
+<p><strong>c)</strong> <span class="math inline">\(B^t=\begin{pmatrix}0\\1\\-1\end{pmatrix}\)</span> y <span class="math inline">\(X=A^{-1}B^t\)</span>: <span class="math display">\[X=\begin{pmatrix}\frac{4}{9}&amp;\frac{1}{9}&amp;-\frac{2}{9}\\\frac{1}{9}&amp;-\frac{2}{9}&amp;\frac{4}{9}\\-\frac{2}{9}&amp;\frac{4}{9}&amp;\frac{1}{9}\end{pmatrix}\begin{pmatrix}0\\1\\-1\end{pmatrix}=\begin{pmatrix}\frac{1}{3}\\-\frac{2}{3}\\\frac{1}{3}\end{pmatrix}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-reserva-2021" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-reserva-2021">Extraordinaria · Reserva 2021</h3>
+<div id="ebau-2021-ext-res-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Extraordinaria · Reserva 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2021-ext-res/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las matrices <span class="math inline">\(A=\begin{pmatrix}1&amp;0&amp;1\\0&amp;1&amp;0\\1&amp;0&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(B=\begin{pmatrix}1&amp;0&amp;2\\1&amp;1&amp;-1\\2&amp;1&amp;0\end{pmatrix}\)</span> y <span class="math inline">\(C=\begin{pmatrix}1\\-3\\1\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Calcule <span class="math inline">\(A^2\)</span>, <span class="math inline">\(A^3\)</span>, <span class="math inline">\(A^4\)</span> y deduzca la expresión de <span class="math inline">\(A^n\)</span>, con <span class="math inline">\(n\)</span> un número natural. <em>(1 punto)</em></p></li>
+<li><p>Razone si existe la inversa de la matriz <span class="math inline">\(B\)</span>. <em>(0,5 puntos)</em></p></li>
+<li><p>Razone si la ecuación matricial <span class="math inline">\(B\cdot X=C\)</span> tiene solución y resuélvala en caso de que sea posible. <em>(1 punto)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(A^2=\begin{pmatrix}2&amp;0&amp;2\\0&amp;1&amp;0\\2&amp;0&amp;2\end{pmatrix}\)</span>, <span class="math inline">\(A^3=\begin{pmatrix}4&amp;0&amp;4\\0&amp;1&amp;0\\4&amp;0&amp;4\end{pmatrix}\)</span>, <span class="math inline">\(A^4=\begin{pmatrix}8&amp;0&amp;8\\0&amp;1&amp;0\\8&amp;0&amp;8\end{pmatrix}\)</span>. Por tanto <span class="math display">\[A^n=\begin{pmatrix}2^{n-1}&amp;0&amp;2^{n-1}\\0&amp;1&amp;0\\2^{n-1}&amp;0&amp;2^{n-1}\end{pmatrix}.\]</span></p>
+<p><strong>b)</strong> <span class="math inline">\(|B|=\left|\begin{matrix}1&amp;0&amp;2\\1&amp;1&amp;-1\\2&amp;1&amp;0\end{matrix}\right|=(0+1)+2(1-2)=-1\neq0\)</span>: <strong>existe <span class="math inline">\(B^{-1}\)</span>.</strong></p>
+<p><strong>c)</strong> Como <span class="math inline">\(B\)</span> es invertible y <span class="math inline">\(C\)</span> tiene 3 filas, <strong>la ecuación <span class="math inline">\(BX=C\)</span> tiene solución única</strong> <span class="math inline">\(X=B^{-1}C\)</span>, con <span class="math inline">\(B^{-1}=\begin{pmatrix}-1&amp;-2&amp;2\\2&amp;4&amp;-3\\1&amp;1&amp;-1\end{pmatrix}\)</span>: <span class="math display">\[X=\begin{pmatrix}-1&amp;-2&amp;2\\2&amp;4&amp;-3\\1&amp;1&amp;-1\end{pmatrix}\begin{pmatrix}1\\-3\\1\end{pmatrix}=\begin{pmatrix}7\\-13\\-3\end{pmatrix}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extraordinaria-suplente-2021" class="level3">
+<h3 class="anchored" data-anchor-id="extraordinaria-suplente-2021">Extraordinaria · Suplente 2021</h3>
+<div id="ebau-2021-ext-sup-2" class="ebau-ej">
+<p><strong>Ejercicio 2</strong> · Extraordinaria · Suplente 2021 · Bloque A · <em>(2,5 puntos)</em> · <a href="../../../assets/pau-ccss/2021-ext-sup/examen.pdf" target="_blank">Examen</a></p>
+<p>Se consideran las matrices <span class="math inline">\(A=\begin{pmatrix}a&amp;4\\6&amp;8\end{pmatrix}\)</span>, <span class="math inline">\(B=\begin{pmatrix}2&amp;2\\3&amp;3\end{pmatrix}\)</span> y <span class="math inline">\(C=\begin{pmatrix}1&amp;2\end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li><p>Calcule el valor del parámetro <span class="math inline">\(a\)</span> para que la matriz <span class="math inline">\(A\)</span> no tenga inversa. <em>(0,5 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(a=3\)</span>, resuelva la ecuación matricial <span class="math inline">\(X\cdot A-X\cdot B=C\)</span>. <em>(1,25 puntos)</em></p></li>
+<li><p>Para <span class="math inline">\(a=3\)</span>, compruebe que <span class="math inline">\(A^{2}=11\cdot A\)</span> y exprese <span class="math inline">\(A^{8}\)</span> en función de la matriz <span class="math inline">\(A\)</span>. <em>(0,75 puntos)</em></p></li>
+</ol>
+<p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html">Sistemas de ecuaciones lineales</a>.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a)</strong> <span class="math inline">\(|A|=8a-24=0\iff\)</span> <strong><span class="math inline">\(a=3\)</span>.</strong></p>
+<p><strong>b)</strong> <span class="math inline">\(XA-XB=X(A-B)=C\)</span>. Para <span class="math inline">\(a=3\)</span>: <span class="math inline">\(A-B=\begin{pmatrix}1&amp;2\\3&amp;5\end{pmatrix}\)</span>, con <span class="math inline">\(|A-B|=-1\neq0\)</span> y <span class="math inline">\((A-B)^{-1}=\begin{pmatrix}-5&amp;2\\3&amp;-1\end{pmatrix}\)</span>. Entonces <span class="math display">\[X=C\,(A-B)^{-1}=\begin{pmatrix}1&amp;2\end{pmatrix}\begin{pmatrix}-5&amp;2\\3&amp;-1\end{pmatrix}=\begin{pmatrix}1&amp;0\end{pmatrix}.\]</span></p>
+<p><strong>c)</strong> Para <span class="math inline">\(a=3\)</span>, <span class="math inline">\(A=\begin{pmatrix}3&amp;4\\6&amp;8\end{pmatrix}\)</span> y <span class="math display">\[A^2=\begin{pmatrix}9+24&amp;12+32\\18+48&amp;24+64\end{pmatrix}=\begin{pmatrix}33&amp;44\\66&amp;88\end{pmatrix}=11A.\]</span> Por tanto <span class="math inline">\(A^3=A^2A=11A^2=11^2A\)</span> y, en general, <span class="math inline">\(A^n=11^{n-1}A\)</span>: <span class="math display">\[A^8=11^7A=19\,487\,171\,A.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="también-trabajan-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="también-trabajan-este-tema">También trabajan este tema</h2>
+<p>Ejercicios cuyo tema principal es otro pero en los que aparece este tema:</p>
+<ul>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html#ebau-2025-ord-b-1">2025 Ordinaria · Modelo B, ejercicio 1</a> (tema principal: Sistemas de ecuaciones lineales)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html#ebau-2025-ord-sup2-a-1">2025 Ordinaria · Suplente 2 · Modelo A, ejercicio 1</a> (tema principal: Sistemas de ecuaciones lineales)</li>
+<li><a href="../../../ejercicios/2-bachillerato-ccss/ebau/02-sistemas-ecuaciones-lineales.html#ebau-2025-ord-sup2-b-1">2025 Ordinaria · Suplente 2 · Modelo B, ejercicio 1</a> (tema principal: Sistemas de ecuaciones lineales)</li>
+</ul>
+<hr>
+<p><em>Enunciados: Prueba de Acceso y Admisión a la Universidad (PEvAU hasta 2024, PAU desde 2025), Matemáticas Aplicadas a las Ciencias Sociales II, Andalucía, Ceuta, Melilla y centros en Marruecos (Distrito Único Andaluz). Cada ejercicio enlaza al PDF oficial del examen completo. La clasificación por temas es propia y puede discutirse: los ejercicios mixtos figuran en su tema principal.</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/mdmatematicasweb\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 MD Matemáticas · contenidos <a href="../../../licencia.html">CC BY-NC-ND 4.0</a> · código y diseño: todos los derechos reservados</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
