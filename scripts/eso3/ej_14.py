@@ -17,7 +17,7 @@ dos = list(product(dado, repeat=2))
 
 # ---- básicos ----
 T.b("Clasifica como determinista o aleatorio: a) lanzar una moneda b) calcular el área de un cuadrado de lado $3$ c) la lotería de Navidad d) hervir agua a nivel del mar y medir su temperatura.",
-    "a) Aleatorio. b) Determinista. c) Aleatorio. d) Determinista ($100\\,^\\circ$C).",
+    "a) Aleatorio. b) Determinista. c) Aleatorio. d) Determinista ($100^\\circ$C).",
     ["a) Aleatorio", "b) Determinista", "c) Aleatorio", "d) Determinista"])
 
 T.b("Se lanza un dado. Describe el espacio muestral y los sucesos $A=$«par», $B=$«mayor que $4$», $A\\cup B$, $A\\cap B$ y $A^C$.",

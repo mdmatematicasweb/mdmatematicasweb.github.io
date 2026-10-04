@@ -137,7 +137,7 @@
         partes: [
           parte('Plantea el sistema y halla los kg del tipo más barato (' + i$('a') + ').', num('a=', F(a)), ['Sistema: ' + d$('\\begin{cases}a+b=' + T + '\\\\' + pa + 'a+' + pb + 'b=' + TP + '\\end{cases}'), 'De la primera ' + i$('a=' + T + '-b') + '; sustituyendo: ' + i$((pb - pa) + 'b=' + (TP - pa * T)) + ', luego ' + i$('b=' + b) + ' y ' + i$('a=' + a) + '.']),
           parte('¿Cuántos kg del tipo más caro (' + i$('b') + ')?', num('b=', F(b)), ['Del apartado anterior: ' + i$('b=' + b) + '.']),
-          parte('¿Cuánto cuesta el kg de la mezcla (en €)? (Redondea a las centésimas.)', apx('\\text{€/kg}=', TP / T, 2), [d$(TP + ':' + T + '\\approx' + dc(Math.round(TP / T * 100) / 100))]),
+          parte('¿Cuánto cuesta el kg de la mezcla (en €)? (Redondea a las centésimas.)', apx('\\text{euros/kg}=', TP / T, 2), [d$(TP + ':' + T + '\\approx' + dc(Math.round(TP / T * 100) / 100))]),
           parte('¿Qué porcentaje de la mezcla es del tipo más caro? (Redondea a las unidades.)', apx('\\%=', b / T * 100, 0), [d$('\\frac{' + b + '}{' + T + '}\\cdot100\\approx' + dc(Math.round(b / T * 1000) / 10) + '\\,\\%')]),
         ], data: { pa, pb, a, b, T, TP } };
     }
