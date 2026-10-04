@@ -57,6 +57,12 @@ class Tema:
     def p(self, enun, sol, esp): self._add("p", enun, sol, esp)
     def c(self, enun, sol, esp): self._add("c", enun, sol, esp)
 
+    def chk(self, cond, msg):
+        """Comprobación independiente (sympy) de un dato escrito a mano en el texto."""
+        self.nchk = getattr(self, "nchk", 0) + 1
+        if not cond:
+            self._falla(f"comprobación fallida: {msg}")
+
     # ---- verificación ----
     def _falla(self, msg):
         self.errores.append(msg)
@@ -102,7 +108,7 @@ class Tema:
             for e in self.errores:
                 print(f"FALLA tema {self.num:02d}: {e}", file=sys.stderr)
             sys.exit(1)
-        return n
+        return n + getattr(self, 'nchk', 0)
 
     # ---- salida ----
     def render(self):
