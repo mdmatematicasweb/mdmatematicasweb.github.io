@@ -279,6 +279,7 @@
 .cs-btn b { font-size: 1.5rem; font-weight: 800; text-transform: uppercase; }
 .cs-ciencias { background: var(--md-teal); }
 .cs-ccss { background: var(--md-amber); }
+.cs-eso3 { background: var(--md-lime); }
 .cs-btn[aria-pressed="true"] { opacity: 1; filter: none; transform: translate(-3px, -3px); box-shadow: 8px 8px 0 var(--md-edge); }
 .cs-btn[aria-pressed="true"] small::before { content: "● "; }
 .cs-btn:hover, .cs-btn:focus-visible { opacity: 1; filter: none; }
@@ -319,3 +320,18 @@
 .bell-pills button:hover { background: var(--md-amber); }
 @media (max-width: 860px) { .hero-ccss .barrow-lab { transform: none; } .hero-nav { bottom: 0.4rem; } }
 @media (prefers-reduced-motion: reduce) { .hero-slide.in-right, .hero-slide.in-left { animation: none; } }
+
+/* cabecera de 3º ESO: fondo, peldaños y laboratorio de Pitágoras propios */
+.hero-eso3::before { background-color: color-mix(in srgb, var(--md-hero-bg) 72%, var(--md-lime)); }
+.hero-eso3 .stairs .s1 { background: var(--md-amber); transform: rotate(-2deg); }
+.hero-eso3 .stairs .s2 { background: var(--md-teal); transform: rotate(1.5deg); margin-top: 0.3em; }
+.hero-eso3 .barrow-lab { transform: rotate(1.2deg); }
+.pit-lab .sq { stroke: var(--md-edge); stroke-width: 2.5; }
+.pit-lab .sq-a { fill: var(--md-amber); }
+.pit-lab .sq-b { fill: var(--md-teal); }
+.pit-lab .sq-c { fill: var(--md-lime); }
+.pit-lab .tri { fill: var(--md-paper-fixed); stroke: var(--md-edge); stroke-width: 3; }
+.pit-lab text { font: 800 15px "JetBrains Mono", monospace; fill: #000; }
+.pit-sliders { display: flex; gap: 1rem; flex-wrap: wrap; font: 800 0.85rem "JetBrains Mono", monospace; }
+.pit-sliders input { vertical-align: middle; accent-color: var(--md-teal); }
+@media (max-width: 860px) { .hero-eso3 .barrow-lab { transform: none; } }

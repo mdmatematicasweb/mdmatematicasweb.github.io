@@ -104,6 +104,37 @@
   requestAnimationFrame(tick);
 })();
 
+/* Portada, 3º ESO: laboratorio de Pitágoras (los catetos se cambian con dos deslizadores). */
+(function () {
+  var root = document.getElementById("pit-lab");
+  if (!root) return;
+  var svg = root.querySelector("svg"), NS = "http://www.w3.org/2000/svg";
+  var pa = root.querySelector(".pa"), pb = root.querySelector(".pb"), out = root.querySelector(".readout");
+  var sA = svg.querySelector(".sq-a"), sB = svg.querySelector(".sq-b"), sC = svg.querySelector(".sq-c"), tri = svg.querySelector(".tri");
+  var ta = svg.querySelector(".ta"), tb = svg.querySelector(".tb"), tc = svg.querySelector(".tc");
+  var S = 12, AX = 180, AY = 198;
+  function pts(arr) { return arr.map(function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" "); }
+  function rect(el, x, y, w, h) { el.setAttribute("x", x); el.setAttribute("y", y); el.setAttribute("width", w); el.setAttribute("height", h); }
+  function label(el, x, y, t) { el.setAttribute("x", x); el.setAttribute("y", y); el.setAttribute("text-anchor", "middle"); el.textContent = t; }
+  function draw() {
+    var a = +pa.value, b = +pb.value, c2 = a * a + b * b, c = Math.sqrt(c2);
+    var A = [AX, AY], B = [AX + b * S, AY], C = [AX, AY - a * S];
+    var nx = a * S, ny = -b * S;                       // normal a la hipotenusa, hacia fuera
+    var P1 = [B[0] + nx, B[1] + ny], P2 = [C[0] + nx, C[1] + ny];
+    rect(sA, AX - a * S, AY - a * S, a * S, a * S);    // cuadrado del cateto vertical (izquierda)
+    rect(sB, AX, AY, b * S, b * S);                    // cuadrado del cateto horizontal (abajo)
+    sC.setAttribute("points", pts([B, C, P2, P1]));
+    tri.setAttribute("points", pts([A, B, C]));
+    label(ta, AX - a * S / 2, AY - a * S / 2 + 5, a * a);
+    label(tb, AX + b * S / 2, AY + b * S / 2 + 5, b * b);
+    label(tc, (B[0] + C[0]) / 2 + nx / 2, (B[1] + C[1]) / 2 + ny / 2 + 5, c2);
+    var cs = Number.isInteger(c) ? String(c) : c.toFixed(2).replace(".", ",");
+    out.textContent = a + "² + " + b + "² = " + a * a + " + " + b * b + " = " + c2 + "  →  c = " + cs;
+  }
+  pa.addEventListener("input", draw); pb.addEventListener("input", draw);
+  draw();
+})();
+
 /* Campana de Gauss del curso Ciencias Sociales: P(a < Z < b) con a y b arrastrables y niveles de confianza. */
 var bellLab = (function () {
   var root = document.getElementById("bell-lab");
@@ -193,7 +224,7 @@ var bellLab = (function () {
   var btns = document.querySelectorAll(".cs-btn");
   var slides = document.getElementById("hero-slides");
   if (!btns.length || !slides) return;
-  var ORDEN = ["ciencias", "ccss"], actual = null;
+  var ORDEN = ["eso3", "ciencias", "ccss"], actual = null;
   function set(c, guardar) {
     if (ORDEN.indexOf(c) < 0) c = "ciencias";
     var dir = actual === null ? 0 : ORDEN.indexOf(c) - ORDEN.indexOf(actual);
@@ -221,7 +252,7 @@ var bellLab = (function () {
   slides.addEventListener("touchend", function (e) {
     if (x0 === null || e.target.closest("svg")) { x0 = null; return; }
     var dx = e.changedTouches[0].clientX - x0; x0 = null;
-    if (Math.abs(dx) > 60) set(ORDEN[dx < 0 ? 1 : 0], true);
+    if (Math.abs(dx) > 60) set(ORDEN[(ORDEN.indexOf(actual) + (dx < 0 ? 1 : ORDEN.length - 1)) % ORDEN.length], true);
   }, { passive: true });
   var ini = (location.hash || "").replace("#", "");
   if (ORDEN.indexOf(ini) < 0) { try { ini = localStorage.getItem("md:curso"); } catch (e) { ini = null; } }
