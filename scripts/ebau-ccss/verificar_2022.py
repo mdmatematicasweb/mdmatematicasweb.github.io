@@ -8,7 +8,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _verif import Verificador, R, Matrix, tx, dec, mat, vertices  # noqa: E402
-from sympy import symbols, solve, diff, integrate, sqrt, log, exp, simplify, eye, factor, expand  # noqa: E402
+from sympy import symbols, solve, diff, integrate, sqrt, log, exp, simplify, eye, factor, expand, limit, oo  # noqa: E402
 
 v = Verificador(2022)
 x, y, a, b, c, t = symbols("x y a b c t")
@@ -165,5 +165,140 @@ E8 = R(217, 100) * 11 / sqrt(10)
 n8 = (R(188, 100) * 11 / 5) ** 2
 v.ok(sum(d) == 9915 and m8 == R(1983, 2) and cerca(E8, 7.548, 5e-4) and cerca(m8 - E8, 983.95, 5e-3) and cerca(m8 + E8, 999.05, 5e-3) and cerca(n8, 17.11, 5e-3) and int(n8) + 1 == 18, "2022-ord-sup ej.8")
 v.solucion(s, "8", "\\bar x=\\frac{9\\,915}{10}=991{,}5", "E=7{,}548", "(983{,}95,999{,}05)", "17{,}11", "n=18")
+
+# ======================= 2022-ext =======================
+s = "2022-ext"
+A = Matrix([[1, 1, 2], [-2, 0, 1], [0, -1, -1]])
+B = Matrix([[-2, 1], [3, 1], [0, 2]])
+C = Matrix([[1, 2], [-1, -1], [-2, 3]])
+X = A.inv() * (A ** 2 * C - B)
+v.ok(A.det() == 3 and A * X + B == A ** 2 * C, "2022-ext ej.1a")
+v.ok((A.shape, C.shape, B.shape) == ((3, 3), (3, 2), (3, 2)) and (3, 3)[1] == 3, "2022-ext ej.1b")
+v.solucion(s, "1", "|A|=3", mat(A ** 2), mat(A ** 2 * C), mat(A ** 2 * C - B), mat(A.inv()), mat(X), "P$ es $2\\times3")
+
+V = vertices([(-2, 1, 7, "<="), (-1, 3, 21, "<="), (1, 2, 19, "<="), (1, 1, 14, "<="), (1, 0, 0, ">="), (0, 1, 0, ">=")])
+Fv = {q: q[0] + 4 * q[1] for q in V}
+v.ok(V == [(0, 0), (0, 7), (3, 8), (9, 5), (14, 0)] and max(Fv.values()) == Fv[(3, 8)] == 35 and min(Fv.values()) == Fv[(0, 0)] == 0 and 4 + 16 == 20, "2022-ext ej.2")
+v.solucion(s, "2", "(0,0)", "(0,7)", "(3,8)", "(9,5)", "(14,0)", "F(3,8)=35", "F(0,0)=0", "F(9,5)=29", "4+16=20")
+
+b_, c_ = symbols("b c")
+f = x ** 3 + b_ * x ** 2 + c_ * x - 1
+sol = solve([diff(f, x).subs(x, R(1, 3)), f.subs(x, -2) + 3], [b_, c_])
+g = -x ** 3 - x ** 2 + x + 1
+v.ok(sol == {b_: 1, c_: -1} and expand(g + (x - 1) * (x + 1) ** 2) == 0 and sorted(solve(diff(g, x), x)) == [-1, R(1, 3)] and g.subs(x, R(1, 3)) == R(32, 27) and integrate(g, (x, -1, 1)) == R(4, 3), "2022-ext ej.3")
+v.solucion(s, "3", "b=1", "c=-1", "\\left(\\frac{1}{3},\\frac{32}{27}\\right)", "A=\\frac{4}{3}")
+
+Bx = -R(2, 100) * x ** 2 + R(13, 10) * x - 15
+v.ok(sorted(solve(Bx, x)) == [15, 50] and solve(diff(Bx, x), x) == [R(65, 2)] and Bx.subs(x, R(65, 2)) == R(49, 8) and sorted(solve(Bx - 5, x)) == [25, 40], "2022-ext ej.4")
+v.solucion(s, "4", "(15,0)", "(50,0)", "B(32{,}5)=6{,}125", "x=\\frac{65\\pm15}{2}")
+
+pN = R(6, 10) * R(4, 10) + R(3, 10) * R(5, 10)
+pNC = (R(395, 1000) - pN) / R(1, 10)
+v.ok(pNC == R(5, 100) and 1 - pNC == R(95, 100) and (pN) / R(395, 1000) == R(78, 79) and cerca(R(78, 79), 0.9873), "2022-ext ej.5")
+v.solucion(s, "5", "P(N\\mid C)=0{,}05", "\\frac{78}{79}", "\\approx0{,}9873")
+
+pA, pB, pU = 1 - R(5, 7), 1 - R(2, 3), R(3, 7)
+pAB = pA + pB - pU
+v.ok(pA == R(2, 7) and pB == R(1, 3) and pAB == R(4, 21) and pA * pB == R(2, 21) and 1 - pU == R(4, 7) and (pB - pAB) / (1 - pA) == R(1, 5), "2022-ext ej.6")
+v.solucion(s, "6", "P(A\\cap B)=\\frac{4}{21}", "P(A)P(B)=\\frac{2}{21}", "P(A^C\\cap B^C)=\\frac{4}{7}", "P(B\\mid A^C)=\\frac{1}{5}")
+
+E7, lo7, hi7 = ic_prop(R(95, 100), 1500, R(217, 100))
+n7 = R(217, 100) ** 2 * R(95, 100) * R(5, 100) / R(1, 100) ** 2
+v.ok(cerca(E7, 0.0122) and cerca(lo7, 0.9378) and cerca(hi7, 0.9622) and cerca(n7, 2236.73, 5e-3) and int(n7) + 1 == 2237, "2022-ext ej.7")
+v.solucion(s, "7", "E=0{,}0122", "(0{,}9378,0{,}9622)", "2\\,236{,}73", "n=2\\,237")
+
+E8 = R(217, 100) * 3 / 10
+n8 = (R(175, 100) * 3) ** 2
+v.ok(E8 == R(651, 1000) and 8.1 - float(E8) == 7.449 and 8.1 + float(E8) == 8.751 and n8 == R(275625, 10000) and int(n8) + 1 == 28 and R(3, 6) == R(1, 2) and (8 - R(761, 100)) / R(1, 2) == R(78, 100), "2022-ext ej.8")
+v.solucion(s, "8", "E=0{,}651", "(7{,}449,8{,}751)", "27{,}5625", "n=28", "N(7{,}61,0{,}5)", "P(\\bar X>8)=0{,}2177")
+
+# ======================= 2022-ext-res =======================
+s = "2022-ext-res"
+A = Matrix([[2, -3, -a - 1], [-1, a, a + 1], [1, -3, -a]])
+A4 = A.subs(a, 4)
+A3 = A.subs(a, 3)
+v.ok(expand(A.det() + a * (a - 4)) == 0 and A4 ** 2 == A4 and A4 ** 3 == A4 and A4 ** 2022 == A4 and A3.det() == 3 and A3.inv() * A3 == eye(3), "2022-ext-res ej.1")
+v.solucion(s, "1", "|A|=-a(a-4)", mat(A4), "A^2=A^3=A^{2022}=A", "|A|=3", mat(A3.inv()))
+
+V = vertices([(1, 2, 70, "<="), (3, 2, 150, "<="), (1, 0, 0, ">="), (0, 1, 0, ">=")])
+Bn = {q: 60 * q[0] + 70 * q[1] for q in V}
+v.ok(V == [(0, 0), (0, 35), (40, 15), (50, 0)] and max(Bn.values()) == Bn[(40, 15)] == 3450, "2022-ext-res ej.2")
+v.solucion(s, "2", "(0,0)", "(0,35)", "(40,15)", "(50,0)", "3\\,450")
+
+aa, bb = symbols("aa bb")
+sol = solve([4 * aa - bb / 2 - 2, 4 * aa - bb], [aa, bb])
+v.ok(sol == {aa: 1, bb: 4} and integrate((x + 1) ** 2, (x, -2, 1)) == 3 and (1 + 1) ** 2 == 4 and 2 ** 2 / 1 - 1 == 3, "2022-ext-res ej.3")
+v.solucion(s, "3", "a=1", "b=4", "A=3")
+
+fx = (x - 3) / (x + 2)
+v.ok(simplify(diff(fx, x) - 5 / (x + 2) ** 2) == 0 and simplify(diff(fx, x, 2) + 10 / (x + 2) ** 3) == 0 and fx.subs(x, 0) == R(-3, 2) and fx.subs(x, 3) == 0 and fx.subs(x, -3) == 6
+     and limit(fx, x, oo) == 1 and limit(fx, x, -2, "+") == -oo and limit(fx, x, -2, "-") == oo, "2022-ext-res ej.4")
+v.solucion(s, "4", "f'(x)=\\frac{5}{(x+2)^2}", "f''(x)=-\\frac{10}{(x+2)^3}", "(3,0)", "\\left(0,-\\frac{3}{2}\\right)", "f(-3)=6")
+
+pTM = R(8, 10) + R(5, 10) - R(9, 10)
+v.ok(1 - R(1, 10) == R(9, 10) and pTM == R(4, 10) and pTM / R(8, 10) == R(1, 2) and R(8, 10) * R(5, 10) == pTM, "2022-ext-res ej.5")
+v.solucion(s, "5", "P(T\\cup M)=0{,}9", "P(T\\cap M)=0{,}8+0{,}5-0{,}9=0{,}4", "P(M\\mid T)=0{,}5", "P(T)\\cdot P(M)=0{,}4")
+
+pB, pC = R(94, 1335), R(169, 1335)
+pA_ = R(95, 100) - pB - pC
+v.ok(1335 - 1054 - 99 == 182 and pA_ / R(95, 100) == R(4021, 5073) and cerca(R(4021, 5073), 0.7926) and cerca(pB / R(95, 100), 0.0741) and cerca(pC / R(95, 100), 0.1333) and pA_ == R(4021, 5340), "2022-ext-res ej.6")
+v.solucion(s, "6", "182", "P(A\\mid NP)=\\frac{4021}{5073}", "\\approx0{,}7926", "\\approx0{,}0741", "\\approx0{,}1333")
+
+import itertools as it
+medias = [R(i + j, 2) for i, j in it.product([1, 4, 7], repeat=2)]
+mu = sum(medias) / 9
+var = sum((m - mu) ** 2 for m in medias) / 9
+v.ok(60000 + 20000 + 24000 + 16000 == 120000 and R(144, 24000) * 120000 == 720 and [R(144, 24000) * q for q in (60000, 20000, 24000, 16000)] == [360, 120, 144, 96]
+     and mu == 4 and var == 3 and cerca(sqrt(var), 1.7321), "2022-ext-res ej.7")
+v.solucion(s, "7", "0{,}006\\cdot120\\,000=720", "0{,}006\\cdot60\\,000=360", "0{,}006\\cdot20\\,000=120", "0{,}006\\cdot16\\,000=96", "\\mu_{\\bar x}=4", "\\sigma_{\\bar x}^2=3", "\\approx1{,}7321")
+
+E8, lo8, hi8 = ic_prop(R(3, 10), 2100, R(224, 100))
+n8 = R(224, 100) ** 2 * R(3, 10) * R(7, 10) / R(1, 100) ** 2
+v.ok(R(630, 2100) == R(3, 10) and E8 == R(224, 10000) and lo8 == R(2776, 10000) and hi8 == R(3224, 10000) and n8 == R(1053696, 100) and int(n8) + 1 == 10537, "2022-ext-res ej.8")
+v.solucion(s, "8", "E=0{,}0224", "(0{,}2776,0{,}3224)", "10\\,536{,}96", "n=10\\,537")
+
+# ======================= 2022-ext-sup =======================
+s = "2022-ext-sup"
+V = vertices([(1, 2, 7, ">="), (2, -1, 4, "<="), (4, -1, 1, ">="), (3, 2, 20, "<=")])
+Fv = {q: q[0] + 3 * q[1] for q in V}
+v.ok(V == [(1, 3), (2, 7), (3, 2), (4, 4)] and max(Fv.values()) == Fv[(2, 7)] == 23 and Fv[(1, 3)] == 10 and Fv[(3, 2)] == 9 and Fv[(4, 4)] == 16, "2022-ext-sup ej.1")
+v.solucion(s, "1", "(1,3)", "(2,7)", "(3,2)", "(4,4)", "F(1,3)=10", "F(3,2)=9", "F(4,4)=16")
+
+A = Matrix([[a, 2, 0], [8, a, 0], [0, 0, a]])
+A5 = A.subs(a, 5)
+X = A5.inv() * Matrix([1, -2, 10])
+v.ok(expand(A.det() - a * (a - 4) * (a + 4)) == 0 and sorted(solve(A.det(), a)) == [-4, 0, 4] and A5.det() == 45 and X == Matrix([1, -2, 2]), "2022-ext-sup ej.2")
+v.solucion(s, "2", "|A|=a\\left(a^2-16\\right)", "a=0", "a=4", "a=-4", mat(A5.inv()), mat(X))
+
+Bx = (x ** 3 - x) - (x ** 3 - x ** 2 + 6)
+v.ok(expand(Bx - (x ** 2 - x - 6)) == 0 and sorted(solve(Bx, x)) == [-2, 3] and solve(diff(Bx, x), x) == [R(1, 2)] and Bx.subs(x, R(1, 2)) == R(-25, 4) and Bx.subs(x, 0) == -6 and Bx.subs(x, 8) == 50, "2022-ext-sup ej.3")
+v.solucion(s, "3", "B(x)=x^2-x-6", "B\\left(\\frac{1}{2}\\right)=\\frac{1}{4}-\\frac{1}{2}-6=-\\frac{25}{4}", "B(8)=64-8-6=50")
+
+aa, bb = symbols("aa bb")
+sol = solve([aa + bb + 2 - 2, 2 * aa + bb + 1], [aa, bb])
+f1 = -x ** 2 + x + 2
+v.ok(sol == {aa: -1, bb: 1} and diff(4 / (x + 1), x).subs(x, 1) == -1 and f1.subs(x, 1) == 2 and sorted(solve(f1, x)) == [-1, 2] and integrate(f1, (x, -1, 1)) == R(10, 3), "2022-ext-sup ej.4")
+v.solucion(s, "4", "a=-1", "b=1", "A=\\frac{10}{3}")
+
+pI = 1 - R(6, 10)
+pD = R(8, 10) - pI + R(35, 100)
+v.ok(pI == R(4, 10) and pD == R(75, 100) and pD - R(35, 100) == R(4, 10) and pI - R(35, 100) == R(5, 100) and R(4, 10) + R(5, 100) == R(45, 100) and 1 - R(8, 10) == R(2, 10) and pD * pI == R(3, 10) != R(35, 100), "2022-ext-sup ej.5")
+v.solucion(s, "5", "P(D)=0{,}75", "P(D\\cap I^C)=0{,}4", "P(I\\cap D^C)=0{,}05", "P(\\text{solo una})=0{,}45", "P(D^C\\cap I^C)=0{,}2", "P(D)P(I)=0{,}3")
+
+pE = R(48, 100) * R(7, 10) + R(35, 100) * R(95, 100) + R(17, 100) * R(94, 100)
+v.ok(R(48, 100) * R(3, 10) == R(144, 1000) and pE == R(8283, 10000) and R(17, 100) * R(6, 100) / (1 - pE) == R(6, 101) and cerca(R(6, 101), 0.0594), "2022-ext-sup ej.6")
+v.solucion(s, "6", "P(A\\cap E^C)=0{,}144", "P(E)=0{,}8283", "P(C\\mid E^C)=\\frac{6}{101}", "\\approx0{,}0594")
+
+E7, lo7, hi7 = ic_prop(R(36, 100), 100, R(175, 100))
+n7 = R(175, 100) ** 2 * R(36, 100) * R(64, 100) / R(25, 1000) ** 2
+v.ok(E7 == R(84, 1000) and lo7 == R(276, 1000) and hi7 == R(444, 1000) and n7 == R(28224, 25) and int(n7) + 1 == 1129, "2022-ext-sup ej.7")
+v.solucion(s, "7", "E=0{,}084", "(0{,}276,0{,}444)", "1\\,128{,}96", "n=1\\,129")
+
+d = [R(q) for q in "30.6 30 31.3 29.7 32.3 32 32.8 31.5 31.2 30.5".split()]
+m8 = sum(d) / 10
+E8 = R(217, 100) * R(31, 10) / sqrt(10)
+n8 = (R(217, 100) * R(31, 10) / R(15, 100)) ** 2
+v.ok(sqrt(R(961, 100)) == R(31, 10) and sum(d) == R(3119, 10) and m8 == R(3119, 100) and cerca(E8, 2.1273) and cerca(m8 - E8, 29.0627) and cerca(m8 + E8, 33.3173) and cerca(n8, 2011.22, 5e-3) and int(n8) + 1 == 2012, "2022-ext-sup ej.8")
+v.solucion(s, "8", "\\bar x=31{,}19", "E=2{,}1273", "(29{,}0627,33{,}3173)", "2\\,011{,}22", "n=2\\,012")
 
 v.fin()
