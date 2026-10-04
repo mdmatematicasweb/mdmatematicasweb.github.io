@@ -283,3 +283,36 @@
 .cs-btn[aria-pressed="true"] small::before { content: "● "; }
 .cs-btn:hover, .cs-btn:focus-visible { opacity: 1; filter: none; }
 .course[hidden] { display: none; }
+
+/* Slide con las dos cabeceras */
+.hero-slides { position: relative; }
+.hero-slide[hidden] { display: none; }
+.hero-slide.in-right { animation: slide-r 0.55s cubic-bezier(0.2, 0.9, 0.3, 1) both; }
+.hero-slide.in-left { animation: slide-l 0.55s cubic-bezier(0.2, 0.9, 0.3, 1) both; }
+@keyframes slide-r { from { opacity: 0; translate: 80px 0; } to { opacity: 1; translate: 0 0; } }
+@keyframes slide-l { from { opacity: 0; translate: -80px 0; } to { opacity: 1; translate: 0 0; } }
+.hero-nav { position: absolute; left: 0; bottom: 1.2rem; display: flex; align-items: center; gap: 0.7rem; z-index: 3; }
+.hn-arrow {
+  width: 2.4rem; height: 2.4rem; display: grid; place-items: center; cursor: pointer;
+  font: 800 1.1rem "Bricolage Grotesque", sans-serif; color: #000; background: var(--md-paper-fixed);
+  border: 3px solid var(--md-edge); box-shadow: 3px 3px 0 var(--md-edge);
+}
+.hn-arrow:hover { background: var(--md-lime); }
+.hn-dots { display: flex; gap: 0.5rem; }
+.hn-dots i { width: 1.1rem; height: 1.1rem; border: 3px solid var(--md-edge); background: var(--md-paper-fixed); cursor: pointer; display: block; }
+.hn-dots i.on { background: var(--md-amber); transform: rotate(45deg); }
+/* cabecera de Ciencias Sociales: fondo, peldaños y campana propios */
+.hero-ccss::before { background-color: color-mix(in srgb, var(--md-hero-bg) 72%, var(--md-amber)); }
+.hero-ccss .stairs .s1 { background: var(--md-teal); transform: rotate(2deg); }
+.hero-ccss .stairs .s2 { background: var(--md-lime); transform: rotate(-1.5deg); margin-top: 0.3em; }
+.hero-ccss .barrow-lab { transform: rotate(-1.3deg); }
+.bell-lab .area { fill: var(--md-amber); fill-opacity: 0.8; }
+.bell-lab .ha { fill: var(--md-teal); }
+.bell-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.bell-pills button {
+  font: 800 0.78rem "JetBrains Mono", monospace; cursor: pointer; color: #000; background: var(--md-lime);
+  border: 2px solid var(--md-edge); box-shadow: 2px 2px 0 var(--md-edge); padding: 0.15rem 0.6rem;
+}
+.bell-pills button:hover { background: var(--md-amber); }
+@media (max-width: 860px) { .hero-ccss .barrow-lab { transform: none; } .hero-nav { bottom: 0.4rem; } }
+@media (prefers-reduced-motion: reduce) { .hero-slide.in-right, .hero-slide.in-left { animation: none; } }

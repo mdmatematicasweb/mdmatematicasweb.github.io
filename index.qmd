@@ -9,6 +9,8 @@ include-after-body:
 ---
 
 ```{=html}
+<div class="hero-slides" id="hero-slides">
+  <div class="hero-slide" id="hero-ciencias" data-course="ciencias">
 <section class="home-hero">
   <div class="hero-tiles" aria-hidden="true">
     <span class="tile t-mint">+</span>
@@ -55,6 +57,61 @@ include-after-body:
     </figcaption>
   </figure>
 </section>
+  </div>
+  <div class="hero-slide" id="hero-ccss" data-course="ccss" hidden>
+<section class="home-hero hero-ccss">
+  <div class="hero-tiles" aria-hidden="true">
+    <span class="tile t-mint">%</span>
+    <span class="tile t-navy">&Sigma;</span>
+    <span class="tile t-coral">&asymp;</span>
+    <span class="tile t-yellow">&plusmn;</span>
+  </div>
+
+  <div class="hero-copy">
+    <p class="hero-kicker">2º Bachillerato · Ciencias Sociales · PAU</p>
+    <h1 class="stairs" aria-label="Matemáticas que cuentan">
+      <span class="stair-top">Matemáticas,</span>
+      <span class="step s1">que</span>
+      <span class="step s2">cuentan</span>
+    </h1>
+    <p class="hero-sub">Matrices, programación lineal, funciones, probabilidad e inferencia: todo lo de Matemáticas Aplicadas a las CC. SS. II, con ejercicios reales de la PAU de Andalucía.</p>
+    <div class="hero-cta">
+      <a class="btn-brut btn-coral" href="actividades/2-bachillerato-ccss/examen/index.html">Generar simulacro PAU &rarr;</a>
+      <a class="btn-brut" href="apuntes/2-bachillerato-ccss/index.html">Ver apuntes</a>
+    </div>
+  </div>
+
+  <figure class="barrow-lab bell-lab" id="bell-lab">
+    <div class="lab-bar">
+      <span class="dots"><i></i><i></i><i></i></span>
+      <span class="lab-title">laboratorio_campana</span>
+    </div>
+    <svg viewBox="0 0 480 300" role="img" aria-label="Campana de Gauss N(0,1) con el área entre a y b">
+      <g class="grid"></g>
+      <path class="area" d=""/>
+      <path class="axis" d="M30 260 H470 M250 260 V14"/>
+      <path class="curve" d=""/>
+      <line class="guide ga" y1="260" y2="40"/>
+      <line class="guide gb" y1="260" y2="40"/>
+      <rect class="handle ha" width="22" height="22" y="249" tabindex="0" role="slider" aria-label="Extremo a"/>
+      <rect class="handle hb" width="22" height="22" y="249" tabindex="0" role="slider" aria-label="Extremo b"/>
+      <text class="lbl la" y="294">a</text>
+      <text class="lbl lb" y="294">b</text>
+    </svg>
+    <figcaption>
+      <span class="readout" aria-live="polite"></span>
+      <span class="bell-pills"><button type="button" data-z="1.645">90 %</button><button type="button" data-z="1.96">95 %</button><button type="button" data-z="2.575">99 %</button></span>
+      <small>Arrastra a y b, o pulsa un nivel de confianza: el área es P(a &lt; Z &lt; b).</small>
+    </figcaption>
+  </figure>
+</section>
+  </div>
+  <div class="hero-nav" aria-label="Cambiar de curso">
+    <button type="button" class="hn-arrow" data-dir="-1" aria-label="Curso anterior">&larr;</button>
+    <span class="hn-dots"><i data-go="ciencias"></i><i data-go="ccss"></i></span>
+    <button type="button" class="hn-arrow" data-dir="1" aria-label="Curso siguiente">&rarr;</button>
+  </div>
+</div>
 
 <nav class="course-switch" aria-label="Elige tu curso">
   <button type="button" class="cs-btn cs-ciencias" data-go="ciencias" aria-pressed="true"><small>Matemáticas II</small><b>Ciencias</b></button>
