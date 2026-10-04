@@ -188,6 +188,154 @@ def fig_desarrollos():
     svg(AP / "10-cuerpos-geometricos" / "fig-desarrollos.svg", w, h, body, "Desarrollo del cilindro y del cono")
 
 
+def fig_recta_numerica():
+    w, h = 640, 150
+    x0, x1 = 50, 590                      # de -2 a 2
+    X = lambda v: x0 + (v + 2) / 4 * (x1 - x0)
+    y = 80
+    body = f'<line x1="{x0-20}" y1="{y}" x2="{x1+20}" y2="{y}" stroke="{INK}" stroke-width="2"/>'
+    for v in range(-2, 3):
+        body += f'<line x1="{X(v)}" y1="{y-9}" x2="{X(v)}" y2="{y+9}" stroke="{INK}" stroke-width="2"/>' + T(X(v), y + 30, str(v).replace("-", "−"), 16)
+    for k in range(-8, 9):
+        if k % 4: body += f'<line x1="{X(k/4)}" y1="{y-5}" x2="{X(k/4)}" y2="{y+5}" stroke="{INK}" stroke-width="1"/>'
+    for v, lab, col, up in [(7 / 4, "7/4", CORAL, True), (-3 / 4, "−3/4", MINT, True), (1 / 3, "1/3", YELLOW, False), (-1.5, "−3/2", YELLOW, False)]:
+        body += f'<circle cx="{X(v)}" cy="{y}" r="7" fill="{col}" stroke="{INK}" stroke-width="2"/>' + T(X(v), y - 18 if up else y + 56, lab, 15, bold=True)
+    svg(AP / "01-numeros-racionales" / "fig-recta-numerica.svg", w, h + 20, body, "Recta numérica con las fracciones 7/4, −3/4, 1/3 y −3/2")
+
+
+def fig_progresiones():
+    g = Fig(-1.2, 9, -1, 42, w=560, h=300)
+    g.axes(xt=(1, 2, 3, 4, 5, 6, 7, 8), yt=(10, 20, 30))
+    for n in range(1, 9):
+        g.dot(n, 5 + 3 * (n - 1), MINT)
+    for n in range(1, 7):
+        g.dot(n, 2 * 2 ** (n - 1) if 2 * 2 ** (n - 1) <= 39 else 39, CORAL)
+    g.text(6.0, 11, "aritmética: se suma 3", anchor="start", dx=-20, color="#2a8f82", bold=True, size=13)
+    g.text(1.2, 36, "geométrica: se multiplica por 2", anchor="start", dx=-10, color=CORAL, bold=True, size=13)
+    g.text(8.8, 0, "n", anchor="end", dy=-8, size=13)
+    g.save(AP / "03-progresiones" / "fig-progresiones.svg", "Una progresión aritmética (puntos alineados) y una geométrica (crecimiento cada vez más rápido)")
+
+
+def fig_proporcionalidad():
+    g = Fig(-1.4, 12.5, -1, 13, w=560, h=300)
+    g.axes(xt=(2, 4, 6, 8, 10, 12), yt=(4, 8, 12))
+    g.curve(lambda x: x, 0, 12, color=MINT, width=3.5)
+    g.curve(lambda x: 24 / x, 1.9, 12, color=CORAL, width=3.5)
+    g.text(9.6, 10.6, "directa: y = x", color="#2a8f82", bold=True, size=13)
+    g.text(8.4, 4.6, "inversa: x·y = 24", color=CORAL, bold=True, size=13)
+    g.save(AP / "04-proporcionalidad" / "fig-proporcionalidad.svg", "Proporcionalidad directa (recta que pasa por el origen) e inversa (hipérbola)")
+
+
+def fig_sistemas():
+    w, h = 660, 220
+    body = ""
+    cases = [("una solución", lambda x: 0.5 * x + 0.2, lambda x: -x + 2.6, True), ("infinitas soluciones", lambda x: 0.5 * x + 1, lambda x: 0.5 * x + 1, False), ("ninguna solución", lambda x: 0.5 * x + 0.2, lambda x: 0.5 * x + 1.4, False)]
+    for i, (t, f1, f2, pt) in enumerate(cases):
+        ox = 20 + i * 215
+        gx = lambda x: ox + 20 + (x + 1) / 5 * 160
+        gy = lambda y: 160 - (y + 0.5) / 4 * 130
+        body += f'<rect x="{ox}" y="30" width="195" height="160" fill="none" stroke="{INK}" stroke-width="1.5"/>'
+        body += f'<line x1="{ox+10}" y1="{gy(0)}" x2="{ox+185}" y2="{gy(0)}" stroke="{INK}" stroke-width="1"/><line x1="{gx(0)}" y1="{gy(-0.4)}" x2="{gx(0)}" y2="{gy(3.4)}" stroke="{INK}" stroke-width="1"/>'
+        xs = (-0.8, 3.8)
+        if i == 1:
+            body += f'<line x1="{gx(xs[0])}" y1="{gy(f1(xs[0]))}" x2="{gx(xs[1])}" y2="{gy(f1(xs[1]))}" stroke="{MINT}" stroke-width="5"/>'
+            body += f'<line x1="{gx(xs[0])}" y1="{gy(f2(xs[0]))}" x2="{gx(xs[1])}" y2="{gy(f2(xs[1]))}" stroke="{CORAL}" stroke-width="2" stroke-dasharray="6 5"/>'
+        else:
+            body += f'<line x1="{gx(xs[0])}" y1="{gy(f1(xs[0]))}" x2="{gx(xs[1])}" y2="{gy(f1(xs[1]))}" stroke="{MINT}" stroke-width="3.5"/>'
+            body += f'<line x1="{gx(xs[0])}" y1="{gy(f2(xs[0]))}" x2="{gx(xs[1])}" y2="{gy(f2(xs[1]))}" stroke="{CORAL}" stroke-width="3.5"/>'
+        if pt:
+            xp = (2.6 - 0.2) / 1.5
+            body += f'<circle cx="{gx(xp)}" cy="{gy(f1(xp))}" r="6" fill="{YELLOW}" stroke="{INK}" stroke-width="2"/>'
+        body += T(ox + 97, 22, t, 15, bold=True)
+    svg(AP / "07-sistemas-ecuaciones" / "fig-sistemas.svg", w, h, body, "Dos rectas que se cortan, que coinciden o que son paralelas")
+
+
+def fig_pitagoras():
+    w, h = 520, 350
+    s = 24                                  # px por unidad; triángulo 3-4-5
+    A = (230, 220); B = (230 + 4 * s, 220); C = (230, 220 - 3 * s)   # ángulo recto en A; cateto horizontal b=4, cateto vertical a=3
+    body = f'<rect x="{A[0]}" y="{A[1]}" width="{4*s}" height="{4*s}" fill="{MINT}" fill-opacity="0.85" stroke="{INK}" stroke-width="2.5"/>'      # cuadrado de b=4 (debajo)
+    body += f'<rect x="{A[0]-3*s}" y="{C[1]}" width="{3*s}" height="{3*s}" fill="{YELLOW}" stroke="{INK}" stroke-width="2.5"/>'                       # cuadrado de a=3 (izquierda)
+    dx, dy = C[0] - B[0], C[1] - B[1]       # B→C
+    nx, ny = -dy, dx                          # normal hacia fuera (arriba-derecha)
+    P1 = (B[0] + nx, B[1] + ny); P2 = (C[0] + nx, C[1] + ny)
+    body += f'<polygon points="{B[0]},{B[1]} {C[0]},{C[1]} {P2[0]},{P2[1]} {P1[0]},{P1[1]}" fill="{CORAL}" fill-opacity="0.85" stroke="{INK}" stroke-width="2.5"/>'
+    body += f'<polygon points="{A[0]},{A[1]} {B[0]},{B[1]} {C[0]},{C[1]}" fill="{PAPER}" stroke="{INK}" stroke-width="3"/>'
+    body += f'<polyline points="{A[0]},{A[1]-12} {A[0]+12},{A[1]-12} {A[0]+12},{A[1]}" fill="none" stroke="{INK}" stroke-width="2"/>'
+    body += T(A[0] + 2 * s, A[1] + 2 * s + 6, "b² = 16", 18, bold=True) + T(A[0] - 1.5 * s, C[1] + 1.5 * s + 6, "a² = 9", 18, bold=True)
+    body += T((B[0] + C[0]) / 2 + nx / 2, (B[1] + C[1]) / 2 + ny / 2 + 6, "c² = 25", 18, bold=True)
+    body += T(A[0] + 12, A[1] - 1.6 * s, "a", 16, anchor="start", bold=True) + T(A[0] + 2 * s, A[1] - 18, "b", 16, bold=True)
+    body += T(w / 2, 26, "a² + b² = c²   (9 + 16 = 25)", 18, bold=True)
+    svg(AP / "08-lugares-geometricos" / "fig-pitagoras.svg", w, h, body, "Teorema de Pitágoras: los cuadrados de los catetos, 9 y 16, suman el cuadrado de la hipotenusa, 25")
+
+
+def fig_tales():
+    w, h = 560, 310
+    O = (60, 250); A = (480, 250); Bp = (300, 50)           # triángulo grande O-A-B'
+    t = 0.45
+    A2 = (O[0] + t * (A[0] - O[0]), O[1]); B2 = (O[0] + t * (Bp[0] - O[0]), O[1] + t * (Bp[1] - O[1]))
+    body = f'<polygon points="{O[0]},{O[1]} {A[0]},{A[1]} {Bp[0]},{Bp[1]}" fill="{YELLOW}" fill-opacity="0.55" stroke="{INK}" stroke-width="3"/>'
+    body += f'<polygon points="{O[0]},{O[1]} {A2[0]},{A2[1]} {B2[0]},{B2[1]}" fill="{MINT}" fill-opacity="0.8" stroke="{INK}" stroke-width="3"/>'
+    for P, lab, dx, dy in [(O, "O", -14, 8), (A, "A", 14, 16), (Bp, "B", 0, -12), (A2, "A'", 0, 22), (B2, "B'", -16, -6)]:
+        body += f'<circle cx="{P[0]}" cy="{P[1]}" r="4" fill="{INK}"/>' + T(P[0] + dx, P[1] + dy, lab, 17, bold=True)
+    body += T(110, 70, "A'B' ∥ AB", 16, anchor="start", color=CORAL, bold=True)
+    body += T(w / 2, 298, "OA' / OA = OB' / OB = A'B' / AB", 17, bold=True)
+    svg(AP / "09-movimientos-semejanzas" / "fig-tales.svg", w, h, body, "Teorema de Tales: dos triángulos con lados paralelos tienen lados proporcionales")
+
+
+def fig_estadistica():
+    w, h = 620, 280
+    datos = [(0, 4), (1, 7), (2, 6), (3, 2), (4, 1)]
+    body = f'<text x="140" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="{INK}">Diagrama de barras</text>'
+    base, top = 220, 50
+    body += f'<line x1="40" y1="{base}" x2="250" y2="{base}" stroke="{INK}" stroke-width="2"/><line x1="40" y1="{base}" x2="40" y2="{top-10}" stroke="{INK}" stroke-width="2"/>'
+    cols = [MINT, CORAL, YELLOW, "#B8B2E8", NAVY]
+    for i, (x, f) in enumerate(datos):
+        bx = 58 + i * 38; bh = f * 22
+        body += f'<rect x="{bx}" y="{base-bh}" width="28" height="{bh}" fill="{cols[i]}" stroke="{INK}" stroke-width="2"/>' + T(bx + 14, base - bh - 6, str(f), 14, bold=True) + T(bx + 14, base + 20, str(x), 14)
+    body += T(145, base + 42, "número de hermanos", 13) + T(26, 40, "f", 13)
+    # sectores
+    cx, cy, r = 470, 140, 85
+    import math as m
+    ang = -m.pi / 2
+    body += f'<text x="{cx}" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="{INK}">Diagrama de sectores</text>'
+    for i, (x, f) in enumerate(datos):
+        a2 = ang + 2 * m.pi * f / 20
+        x1, y1 = cx + r * m.cos(ang), cy + r * m.sin(ang); x2, y2 = cx + r * m.cos(a2), cy + r * m.sin(a2)
+        large = 1 if (a2 - ang) > m.pi else 0
+        body += f'<path d="M{cx},{cy} L{x1:.1f},{y1:.1f} A{r},{r} 0 {large} 1 {x2:.1f},{y2:.1f} Z" fill="{cols[i]}" stroke="{INK}" stroke-width="2"/>'
+        mid = (ang + a2) / 2
+        body += T(cx + 0.62 * r * m.cos(mid), cy + 0.62 * r * m.sin(mid) + 5, f"{x}", 14, bold=True, color=INK if i != 4 else PAPER)
+        ang = a2
+    body += T(cx, cy + r + 30, "sector de «1 hermano»: 126°", 13)
+    svg(AP / "13-estadistica" / "fig-graficos.svg", w, h, body, "Diagrama de barras y diagrama de sectores del número de hermanos de 20 alumnos")
+
+
+def fig_vertical():
+    w, h = 640, 260
+    body = ""
+    for i, (t, circle) in enumerate([("Es función", False), ("No es función", True)]):
+        ox = 20 + i * 315
+        body += f'<rect x="{ox}" y="34" width="290" height="200" fill="none" stroke="{INK}" stroke-width="1.5"/>' + T(ox + 145, 24, t, 16, bold=True)
+        cx, cy = ox + 145, 140
+        body += f'<line x1="{ox+15}" y1="{cy}" x2="{ox+275}" y2="{cy}" stroke="{INK}" stroke-width="1.2"/><line x1="{cx}" y1="44" x2="{cx}" y2="224" stroke="{INK}" stroke-width="1.2"/>'
+        if circle:
+            body += f'<circle cx="{cx}" cy="{cy}" r="70" fill="none" stroke="{NAVY}" stroke-width="3.5"/>'
+            vx = cx + 35
+            body += f'<line x1="{vx}" y1="44" x2="{vx}" y2="224" stroke="{CORAL}" stroke-width="2.5" stroke-dasharray="7 5"/>'
+            yy = (70**2 - 35**2) ** 0.5
+            for sgn in (-1, 1): body += f'<circle cx="{vx}" cy="{cy + sgn*yy}" r="6" fill="{CORAL}" stroke="{INK}" stroke-width="2"/>'
+        else:
+            pts = " ".join(f"{cx + (x-0)*1:.1f},{cy - (0.012*(x)**2 - 40):.1f}" for x in range(-100, 101, 5))
+            body += f'<polyline points="{pts}" fill="none" stroke="{NAVY}" stroke-width="3.5"/>'
+            vx = cx + 45
+            body += f'<line x1="{vx}" y1="44" x2="{vx}" y2="224" stroke="{MINT}" stroke-width="2.5" stroke-dasharray="7 5"/>'
+            body += f'<circle cx="{vx}" cy="{cy - (0.012*45**2 - 40):.1f}" r="6" fill="{MINT}" stroke="{INK}" stroke-width="2"/>'
+    svg(AP / "11-funciones" / "fig-vertical.svg", w, h, body, "Una recta vertical corta una vez a la gráfica de una función y dos veces a una circunferencia")
+
+
 if __name__ == "__main__":
     fig_identidad_notable(); fig_puntos_notables(); fig_movimientos(); fig_desarrollos()
     fig_temperatura(); fig_rectas(); fig_parabola(); fig_arbol()
+    fig_recta_numerica(); fig_progresiones(); fig_proporcionalidad(); fig_sistemas()
+    fig_pitagoras(); fig_tales(); fig_estadistica(); fig_vertical()
