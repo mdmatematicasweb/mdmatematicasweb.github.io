@@ -103,3 +103,25 @@
   }
   requestAnimationFrame(tick);
 })();
+
+/* Selector de curso de la portada: se recuerda la elección; sin JavaScript se ven los dos cursos. */
+(function () {
+  var btns = document.querySelectorAll(".cs-btn");
+  if (!btns.length) return;
+  var CURSOS = {
+    ciencias: { sim: "actividades/2-bachillerato-ciencias/examen/index.html", apu: "apuntes/2-bachillerato-ciencias/index.html" },
+    ccss: { sim: "actividades/2-bachillerato-ccss/examen/index.html", apu: "apuntes/2-bachillerato-ccss/index.html" }
+  };
+  function set(c, guardar) {
+    if (!CURSOS[c]) c = "ciencias";
+    document.querySelectorAll(".course").forEach(function (el) { el.hidden = el.dataset.course !== c; });
+    btns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.go === c)); });
+    document.getElementById("cta-sim").href = CURSOS[c].sim;
+    document.getElementById("cta-apu").href = CURSOS[c].apu;
+    if (guardar) { try { localStorage.setItem("md:curso", c); } catch (e) { /* sin almacenamiento */ } }
+  }
+  btns.forEach(function (b) { b.addEventListener("click", function () { set(b.dataset.go, true); try { history.replaceState(null, "", "#" + b.dataset.go); } catch (e) { /* ... */ } }); });
+  var ini = (location.hash || "").replace("#", "");
+  if (!CURSOS[ini]) { try { ini = localStorage.getItem("md:curso"); } catch (e) { ini = null; } }
+  set(ini, false);
+})();

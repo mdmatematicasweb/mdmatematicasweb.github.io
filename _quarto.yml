@@ -14,7 +14,6 @@ project:
     - "actividades/**/*.qmd"
     - "!**/fuentes/**"
     - "!**/3-eso/**"   # 3º ESO: oculto de momento (los ficheros se conservan)
-    - "!**/2-bachillerato-ccss/**"   # 2º Bachillerato Ciencias Sociales: oculto hasta completar el curso (ver docs/superpowers/specs/2026-10-03-curso-ccss.md)
   resources:
     - "assets/**"
 
@@ -34,8 +33,12 @@ website:
         text: Ejercicios
       - href: actividades/index.qmd
         text: Actividades
-      - href: actividades/2-bachillerato-ciencias/examen/index.qmd
-        text: "★ Simulacro PAU"
+      - text: "★ Simulacro PAU"
+        menu:
+          - href: actividades/2-bachillerato-ciencias/examen/index.qmd
+            text: "Ciencias (Matemáticas II)"
+          - href: actividades/2-bachillerato-ccss/examen/index.qmd
+            text: "Ciencias Sociales (Mat. Aplicadas II)"
   sidebar:
     - id: apuntes
       title: "Apuntes"
@@ -44,11 +47,10 @@ website:
           contents:
             - "apuntes/2-bachillerato-ciencias/**/*.qmd"
             - "!apuntes/2-bachillerato-ciencias/**/fuentes/**"
-        # Fase 6: descomentar al publicar el curso Ciencias Sociales (junto con quitar su exclusión de `render`)
-        # - section: "2º Bachillerato Ciencias Sociales"
-        #   contents:
-        #     - "apuntes/2-bachillerato-ccss/**/*.qmd"
-        #     - "!apuntes/2-bachillerato-ccss/**/fuentes/**"
+        - section: "2º Bachillerato Ciencias Sociales"
+          contents:
+            - "apuntes/2-bachillerato-ccss/**/*.qmd"
+            - "!apuntes/2-bachillerato-ccss/**/fuentes/**"
     - id: ejercicios
       title: "Ejercicios"
       contents:
@@ -56,10 +58,10 @@ website:
           contents:
             - "ejercicios/2-bachillerato-ciencias/**/*.qmd"
             - "!ejercicios/2-bachillerato-ciencias/**/fuentes/**"
-        # - section: "2º Bachillerato Ciencias Sociales"
-        #   contents:
-        #     - "ejercicios/2-bachillerato-ccss/**/*.qmd"
-        #     - "!ejercicios/2-bachillerato-ccss/**/fuentes/**"
+        - section: "2º Bachillerato Ciencias Sociales"
+          contents:
+            - "ejercicios/2-bachillerato-ccss/**/*.qmd"
+            - "!ejercicios/2-bachillerato-ccss/**/fuentes/**"
     - id: actividades
       title: "Actividades"
       contents:
@@ -67,10 +69,10 @@ website:
           contents:
             - "actividades/2-bachillerato-ciencias/**/*.qmd"
             - "!actividades/2-bachillerato-ciencias/**/fuentes/**"
-        # - section: "2º Bachillerato Ciencias Sociales"
-        #   contents:
-        #     - "actividades/2-bachillerato-ccss/**/*.qmd"
-        #     - "!actividades/2-bachillerato-ccss/**/fuentes/**"
+        - section: "2º Bachillerato Ciencias Sociales"
+          contents:
+            - "actividades/2-bachillerato-ccss/**/*.qmd"
+            - "!actividades/2-bachillerato-ccss/**/fuentes/**"
   page-footer:
     center: "© 2026 MD Matemáticas · contenidos [CC BY-NC-ND 4.0](/licencia.qmd) · código y diseño: todos los derechos reservados"
 

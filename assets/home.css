@@ -266,3 +266,20 @@
 @media (prefers-reduced-motion: reduce) {
   .ticker-track, .hero-tiles .tile, .ticket-clock i, .stairs .step { animation: none; }
 }
+
+/* Selector de curso */
+.course-switch { display: flex; flex-wrap: wrap; gap: 1.2rem; margin: 0 0 2.2rem; }
+.cs-btn {
+  flex: 1 1 240px; display: flex; flex-direction: column; align-items: flex-start; gap: 0.1rem;
+  font-family: "Bricolage Grotesque", sans-serif; text-align: left; color: #000; cursor: pointer;
+  border: 3px solid var(--md-edge); box-shadow: 5px 5px 0 var(--md-edge); padding: 0.7rem 1.2rem;
+  transition: transform 0.12s, box-shadow 0.12s, opacity 0.12s, filter 0.12s; opacity: 0.6; filter: grayscale(0.6);
+}
+.cs-btn small { font: 700 0.72rem "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: 0.06em; }
+.cs-btn b { font-size: 1.5rem; font-weight: 800; text-transform: uppercase; }
+.cs-ciencias { background: var(--md-teal); }
+.cs-ccss { background: var(--md-amber); }
+.cs-btn[aria-pressed="true"] { opacity: 1; filter: none; transform: translate(-3px, -3px); box-shadow: 8px 8px 0 var(--md-edge); }
+.cs-btn[aria-pressed="true"] small::before { content: "● "; }
+.cs-btn:hover, .cs-btn:focus-visible { opacity: 1; filter: none; }
+.course[hidden] { display: none; }

@@ -67,3 +67,7 @@ antes de empezar la siguiente fase**. Se trabaja fase a fase, con revisión del 
 - Motor `assets/gym/examen-ccss.js` (`MDExamCCSS`, adaptado de `examen.js`): un solo formato, 4 ejercicios en 90 min. Bloques: álgebra y análisis (3 pts, opción A/B), probabilidad y distribuciones, inferencia (2 pts, sin opciones). Un bloque sin tipos marcados no aparece y la nota se calcula sobre el resto. Código reproducible `ccss-semilla-mask-duración`; el orden de `CATALOGO` fija la máscara, no reordenar.
 - Generadores en `tipos-ccss-{algebra,analisis,estadistica}.js` (`X.implementar`); contrato `{enunciado, partes:[{texto, pts, answer, steps}], data}` con los apartados sumando los puntos del bloque. Convención de la tabla: z a centésimas, Φ a 4 decimales, |z| ≤ 2,6; valores críticos 1,645/1,96/2,575 con `alt`.
 - Tests: `node tests/examen-ccss.test.js` (todos los tipos, ensamblado, corrección), `node tests/mutacion-ccss.test.js` (cada apartado de cada tipo debe estar cubierto por su verificador) y `node tests/ccss-paginas.test.js`. Un tipo nuevo necesita su verificador en `tests/verify-ccss-examen.js`; no relajar tolerancias.
+
+## Fase 6: publicación
+
+- Hecha en la rama: sin exclusión en `_quarto.yml`, selector de curso en `index.qmd` (+ `assets/home.js`/`home.css`), navbar con menú del simulacro, sidebars e índices. Pendiente: merge a `main` y push cuando el usuario lo pida.
