@@ -5,6 +5,7 @@
   'use strict';
   const G = root.MDGym;
 
+  /* ====== Perfil de Ciencias (2.º Bachillerato de Ciencias) ====== */
   /* ---------- Catálogo de tipos (el orden es estable: fija el código del examen) ---------- */
   const AREAS = [['algebra', 'Álgebra'], ['geometria', 'Geometría'], ['analisis', 'Análisis'], ['probabilidad', 'Probabilidad y estadística']];
   const CATALOGO = [
@@ -38,20 +39,6 @@
     { id: 'normal-prob', nombre: 'Distribución normal: probabilidades', area: 'probabilidad', tema: 11 },
     { id: 'normal-desconocido', nombre: 'Distribución normal: valor desconocido', area: 'probabilidad', tema: 11 },
   ];
-  const tipos = {};
-  CATALOGO.forEach((t) => { tipos[t.id] = t; });
-
-  // Gráficas que se muestran en el resultado (nunca durante el examen): grafica(id, data => spec de MDPlot).
-  const GRAFICAS = {};
-  function grafica(id, fn) { GRAFICAS[id] = fn; }
-
-  function implementar(def) {
-    const t = tipos[def.id];
-    if (!t) throw new Error('tipo desconocido: ' + def.id);
-    t.generate = def.generate;
-    t.listo = true;
-  }
-
   /* ---------- Formatos ---------- */
   const OPT1 = 'Resuelve sólo uno de los siguientes ejercicios:';
   const FORMATOS = {
@@ -99,8 +86,36 @@
   };
   const FMT_ORDEN = ['2026', '2025', '2024', 'clasico'];
 
+  const PERFIL_CIENCIAS = {
+    id: 'ciencias', AREAS, CATALOGO, FORMATOS, FMT_ORDEN, ptsEj: 2.5, formatoInicial: '2026',
+    claves: { curso: 'mdexam:curso', hist: 'mdexam:historial' },
+    reCodigo: /^(2026|2025|2024|clasico)-([a-z0-9]{3,12})-([0-9a-f]{1,8})-(\d{1,3})$/i,
+    asignatura: 'MATEMÁTICAS II',
+    extraInstr: ['Se permite calculadora no programable.'],
+    intro: 'Marca los <b>tipos de ejercicio</b> que ya has estudiado: sólo saldrán esos.',
+    placeholder: 'ej.: 2026-k3j9ab-1f-90',
+  };
+
+  /* ====== Motor (parametrizado por perfil) ====== */
+  function crear(P) {
+  const { AREAS, CATALOGO, FORMATOS, FMT_ORDEN } = P;
+
+  const tipos = {};
+  CATALOGO.forEach((t) => { tipos[t.id] = t; });
+
+  // Gráficas que se muestran en el resultado (nunca durante el examen): grafica(id, data => spec de MDPlot).
+  const GRAFICAS = {};
+  function grafica(id, fn) { GRAFICAS[id] = fn; }
+
+  function implementar(def) {
+    const t = tipos[def.id];
+    if (!t) throw new Error('tipo desconocido: ' + def.id);
+    t.generate = def.generate;
+    t.listo = true;
+  }
+
   /* ---------- Utilidades ---------- */
-  const PTS_EJ = 2.5;
+  const PTS_EJ = P.ptsEj;
   const fmtPts = (p) => String(p).replace('.', ',');
   const shuffleWith = (rng, arr) => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rng() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
   const nuevaSemilla = () => Math.random().toString(36).slice(2, 8).padEnd(6, '0');
@@ -109,20 +124,20 @@
 
   function codigoDe(cfg) { return [cfg.formato, cfg.semilla, maskDe(cfg.tipos).toString(16), cfg.duracion || 90].join('-'); }
   function parseCodigo(str) {
-    const m = /^(2026|2025|2024|clasico)-([a-z0-9]{3,12})-([0-9a-f]{1,8})-(\d{1,3})$/i.exec(String(str || '').trim());
+    const m = P.reCodigo.exec(String(str || '').trim());
     if (!m) return null;
     return { formato: m[1], semilla: m[2].toLowerCase(), tipos: idsDeMask(parseInt(m[3], 16)), duracion: Number(m[4]) };
   }
 
   /* ---------- Generación del examen ---------- */
-  function generarEjercicio(tipo, semilla, idx) {
+  function generarEjercicio(tipo, semilla, idx, ptsEj) {
     let ultimo;
     for (let intento = 0; intento < 8; intento++) {
       const prev = G.setRandom(G.seeded(semilla + '|ej|' + idx + '|' + intento));
       try {
         const ex = tipo.generate();
         const suma = ex.partes.reduce((s, p) => s + p.pts, 0);
-        if (Math.abs(suma - PTS_EJ) > 1e-9) throw new Error(tipo.id + ': los apartados suman ' + suma);
+        if (Math.abs(suma - ptsEj) > 1e-9) throw new Error(tipo.id + ': los apartados suman ' + suma);
         return ex;
       } catch (e) { ultimo = e; } finally { G.setRandom(prev); }
     }
@@ -149,17 +164,26 @@
     const grupos = fmt.grupos.map((g, gi) => {
       const usados = new Set();
       const ejercicios = [];
+      // Grupo ligado a un área (perfil CCSS): bolsa propia con los tipos marcados de esa área.
+      let propia = null;
+      if (g.area) {
+        const lista = listos.filter((id) => tipos[id].area === g.area);
+        if (!lista.length) throw new Error('Marca al menos un tipo de ejercicio de ' + (AREAS.find((a) => a[0] === g.area) || [0, g.area])[1] + '.');
+        propia = shuffleWith(G.seeded('tipos|' + cfg.semilla + '|' + g.area), lista);
+      }
+      const robarG = () => { const cand = propia.filter((id) => !usados.has(id)); return (cand.length ? cand : propia)[0]; };
+      const ptsG = g.pts || P.ptsEj;
       for (let k = 0; k < g.n; k++) {
-        const id = robar(usados);
+        const id = g.area ? robarG() : robar(usados);
         usados.add(id);
         const t = tipos[id];
-        const ex = generarEjercicio(t, cfg.semilla, idx++);
+        const ex = generarEjercicio(t, cfg.semilla, idx++, ptsG);
         contador++;
-        ejercicios.push({ num: fmt.num ? fmt.num(gi, k) : String(contador), grupo: gi, tipoId: id, tipoNombre: t.nombre, enunciado: ex.enunciado, partes: ex.partes, data: ex.data });
+        ejercicios.push({ num: fmt.num ? fmt.num(gi, k) : String(contador), grupo: gi, tipoId: id, tipoNombre: t.nombre, pts: ptsG, enunciado: ex.enunciado, partes: ex.partes, data: ex.data });
       }
       return { titulo: g.titulo, consigna: g.consigna, n: g.n, elegir: g.elegir, ejercicios };
     });
-    return { cfg: Object.assign({}, cfg), codigo: codigoDe(cfg), nombreFormato: fmt.nombre, instr: fmt.instr, elegirTotal: fmt.elegirTotal || null, grupos };
+    return { cfg: Object.assign({}, cfg), codigo: codigoDe(cfg), nombreFormato: fmt.nombre, instr: fmt.instr, puntos: fmt.puntos || null, elegirTotal: fmt.elegirTotal || null, grupos };
   }
 
   /* ---------- Corrección ---------- */
@@ -200,7 +224,7 @@
         if (ok) puntos += p.pts;
         return { pts: p.pts, ok, res, raw };
       });
-      if (evaluado) { nota += puntos; max += PTS_EJ; }
+      if (evaluado) { nota += puntos; max += e.pts || PTS_EJ; }
       return { num: e.num, evaluado, puntos, partes };
     });
     return { nota, max, sobre10: max ? Math.round((nota / max) * 100) / 10 : 0, ejercicios };
@@ -225,7 +249,7 @@
   }
 
   /* ---------- Almacenamiento ---------- */
-  const K_CURSO = 'mdexam:curso', K_HIST = 'mdexam:historial';
+  const K_CURSO = P.claves.curso, K_HIST = P.claves.hist;
   const ls = {
     get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* sin almacenamiento */ } },
@@ -239,7 +263,7 @@
 
   function montar(container) {
     let st = { vista: 'config', exam: null, resp: {}, elegidos: [], inicio: 0, timer: null, uis: {} };
-    const cfgPrev = { formato: '2026', tipos: CATALOGO.filter((t) => t.listo).map((t) => t.id), duracion: 90 };
+    const cfgPrev = { formato: P.formatoInicial, tipos: CATALOGO.filter((t) => t.listo).map((t) => t.id), duracion: 90 };
 
     const parar = () => { if (st.timer) { clearInterval(st.timer); st.timer = null; } };
     const limpiar = () => { parar(); container.innerHTML = ''; window.scrollTo(0, 0); };
@@ -250,7 +274,7 @@
       st.vista = 'config';
       const cfg = Object.assign({}, cfgPrev, precarga || {});
       const w = el('div', 'mdx-config');
-      w.appendChild(el('p', 'mdx-intro', 'Marca los <b>tipos de ejercicio</b> que ya has estudiado: sólo saldrán esos.'));
+      w.appendChild(el('p', 'mdx-intro', P.intro));
 
       const curso = ls.get(K_CURSO);
       if (curso && curso.codigo) {
@@ -309,7 +333,7 @@
       const dn = el('input'); dn.type = 'number'; dn.min = 10; dn.max = 180; dn.value = cfg.duracion; ld.appendChild(dn);
       o.appendChild(ld);
       const lc = el('label', 'mdx-cod', 'Código de examen (opcional) ');
-      const cn = el('input'); cn.type = 'text'; cn.placeholder = 'ej.: 2026-k3j9ab-1f-90'; cn.value = (precarga && precarga.codigo) || '';
+      const cn = el('input'); cn.type = 'text'; cn.placeholder = P.placeholder; cn.value = (precarga && precarga.codigo) || '';
       lc.appendChild(cn);
       o.appendChild(lc);
       w.appendChild(o);
@@ -385,14 +409,20 @@
       container.appendChild(bar);
 
       const hoja = el('div', 'mdx-hoja');
-      hoja.appendChild(el('div', 'mdx-cab', '<div class="mdx-cab-t">SIMULACRO DE PRUEBA DE ACCESO A LA UNIVERSIDAD</div><div>Formato PAU · Andalucía</div><div class="mdx-cab-m">MATEMÁTICAS II</div>'));
+      hoja.appendChild(el('div', 'mdx-cab', '<div class="mdx-cab-t">SIMULACRO DE PRUEBA DE ACCESO A LA UNIVERSIDAD</div><div>Formato PAU · Andalucía</div><div class="mdx-cab-m">' + P.asignatura + '</div>'));
       const ins = el('div', 'mdx-instr'); ins.appendChild(el('b', '', 'Instrucciones:'));
       const ul = el('ul');
       ['Duración: ' + exam.cfg.duracion + ' minutos.'].concat(exam.instr, [
-        'Cada ejercicio tiene un valor máximo de 2,5 puntos.',
-        'Responde en las casillas. La corrección es automática: escribe enteros, fracciones (<code>a/b</code>), decimales o expresiones como <code>ln(2)/2</code>, <code>sqrt(3)</code> o <code>pi/4</code>.',
-        'Se permite calculadora no programable.']).forEach((t) => ul.appendChild(el('li', '', t)));
+        exam.puntos || 'Cada ejercicio tiene un valor máximo de 2,5 puntos.',
+        'Responde en las casillas. La corrección es automática: escribe enteros, fracciones (<code>a/b</code>), decimales o expresiones como <code>ln(2)/2</code>, <code>sqrt(3)</code> o <code>pi/4</code>.'].concat(P.extraInstr)).forEach((t) => ul.appendChild(el('li', '', t)));
       ins.appendChild(ul); hoja.appendChild(ins);
+      if (P.tablaNormal && G.normalTableCCSS) {
+        const det = el('details', 'mdx-tabla');
+        det.appendChild(el('summary', '', 'Tabla de la distribución normal N(0,1) (la facilita el examen)'));
+        const cont = el('div', 'gym-ntab-wrap'); det.appendChild(cont);
+        G.normalTableCCSS(cont);
+        hoja.appendChild(det);
+      }
 
       exam.grupos.forEach((g, gi) => {
         const gb = el('section', 'mdx-grupo');
@@ -421,7 +451,7 @@
     function tarjeta(e, g) {
       const card = el('article', 'mdx-ej');
       const head = el('div', 'mdx-ej-h');
-      head.appendChild(el('span', 'mdx-ej-t', 'EJERCICIO ' + e.num + ' <small>(2,5 puntos)</small>'));
+      head.appendChild(el('span', 'mdx-ej-t', 'EJERCICIO ' + e.num + ' <small>(' + fmtPts(e.pts) + ' puntos)</small>'));
       const unico = g.elegir >= g.n && !st.exam.elegirTotal;
       if (!unico) {
         const l = el('label', 'mdx-elijo');
@@ -508,7 +538,7 @@
           const r = res.ejercicios.find((x) => x.num === e.num);
           const card = el('article', 'mdx-ej' + (r.evaluado ? '' : ' mdx-no'));
           card.appendChild(el('div', 'mdx-ej-h', '<span class="mdx-ej-t">EJERCICIO ' + e.num + '</span> <span class="mdx-tipo">' + e.tipoNombre + '</span> ' +
-            (r.evaluado ? '<span class="mdx-ptsr">' + fmtPts(r.puntos) + ' / 2,5</span>' : '<span class="mdx-ptsr">no elegido</span>')));
+            (r.evaluado ? '<span class="mdx-ptsr">' + fmtPts(r.puntos) + ' / ' + fmtPts(e.pts) + '</span>' : '<span class="mdx-ptsr">no elegido</span>')));
           const en = el('div', 'mdx-enun'); typ(en, e.enunciado); card.appendChild(en);
           let spec = null;
           try { spec = root.MDPlot && GRAFICAS[e.tipoId] ? GRAFICAS[e.tipoId](e.data) : null; } catch (err) { spec = null; }
@@ -554,8 +584,13 @@
     vistaConfig(pc ? { formato: pc.formato, tipos: pc.tipos, duracion: pc.duracion, codigo: hash } : null);
   }
 
-  root.MDExam = {
+    return {
     CATALOGO, AREAS, FORMATOS, tipos, implementar, grafica, GRAFICAS, armarExamen, corregir, evaluados, parseCodigo, codigoDe, nuevaSemilla, textoSolucion, cellsOf, montar, PTS_EJ,
   };
+  }
+
+  const MDExam = crear(PERFIL_CIENCIAS);
+  MDExam.crear = crear;
+  root.MDExam = MDExam;
   if (typeof module !== 'undefined' && module.exports) module.exports = root.MDExam;
 })(typeof globalThis !== 'undefined' ? globalThis : this);
