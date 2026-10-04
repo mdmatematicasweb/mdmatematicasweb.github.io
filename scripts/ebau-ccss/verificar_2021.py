@@ -136,7 +136,7 @@ E8 = z8 * sqrt(p8 * (1 - p8) / n8)
 v.ok(abs(float(E8) - 0.1184) < 5e-5 and abs(float(p8 - E8) - 0.1216) < 5e-5 and abs(float(p8 + E8) - 0.3584) < 5e-5, "2021-ord-res ej.8a")
 n8min = z8 ** 2 * p8 * (1 - p8) / R(1, 10) ** 2
 v.ok(abs(float(n8min) - 70.07) < 5e-3 and int(n8min) + 1 == 71, "2021-ord-res ej.8b")
-v.solucion(s, "8", "E=0{,}1184", "(0{,}1216,0{,}3584)", "n=71" if False else "\\approx70{,}07")
+v.solucion(s, "8", "E=0{,}1184", "(0{,}1216,0{,}3584)", "\\approx70{,}07")
 
 # ======================= 2021-ord-sup =======================
 s = "2021-ord-sup"
@@ -145,7 +145,7 @@ At = A1.T
 Xs = (At + eye(2)).inv() * (At - eye(2))
 v.ok(A1 ** 40 == Matrix([[1, 0], [-40, 1]]) and At ** 30 == Matrix([[1, -30], [0, 1]]) and (A1.inv() + A1) ** 2 == 4 * eye(2)
      and (At + eye(2)).det() == 4 and Xs == Matrix([[0, R(-1, 2)], [0, 0]]), "2021-ord-sup ej.1")
-v.enunciado(s, "1", ["\\begin{pmatrix}1&0\\\\-1&1\\end{pmatrix}", "A^{40}" if False else "A^{t}"])
+v.enunciado(s, "1", ["\\begin{pmatrix}1&0\\\\-1&1\\end{pmatrix}", "A^{t}"])
 v.solucion(s, "1", mat(A1 ** 40), mat(At ** 30), mat(4 * eye(2)), mat((At + eye(2)).inv()), mat(Xs))
 
 V = vertices([(5, -3, -9, ">="), (1, 1, 11, "<="), (6, 1, 36, "<="), (1, 2, 6, ">=")])
@@ -246,7 +246,7 @@ a_, b_ = symbols("a b")
 g1, g2 = a_ * x + b_, x ** 2 - b_ * x + a_
 v.ok(solve(g1.subs(x, 1) - g2.subs(x, 1), b_) == [R(1, 2)] and solve(diff(g1, x) - diff(g2, x).subs(b_, R(1, 2)).subs(x, 1), a_) == [R(3, 2)]
      and integrate(R(1, 2), (x, 0, 1)) + integrate(x ** 2 - x / 2, (x, 1, 2)) == R(25, 12), "2021-ext-res ej.3")
-v.solucion(s, "3", "b=\\frac{1}{2}", "a=\\frac{3}{2}", "A=\\frac{1}{2}+\\frac{5}{3}-\\frac{1}{12}=\\frac{25}{12}" if False else "\\frac{1}{2}+\\frac{5}{3}-\\frac{1}{12}=\\frac{25}{12}")
+v.solucion(s, "3", "b=\\frac{1}{2}", "a=\\frac{3}{2}", "\\frac{1}{2}+\\frac{5}{3}-\\frac{1}{12}=\\frac{25}{12}")
 
 t = symbols("t")
 cp = R(3, 100) * t ** 2 - R(9, 10) * t + 6
@@ -322,6 +322,6 @@ datos = [30, 42, 38, 45, 52, 60, 21, 26, 33, 44, 28, 49, 32, 51, 49, 40]
 n8 = (R(233, 100) * 9 / 2) ** 2
 E8 = R(196, 100) * 9 / 4
 v.ok(sum(datos) == 640 and R(sum(datos), 16) == 40 and E8 == R(441, 100) and abs(float(n8) - 109.93) < 1e-2 and int(n8) + 1 == 110, "2021-ext-sup ej.8")
-v.solucion(s, "8", "\\bar x=\\frac{640}{16}=40", "E=1{,}96\\cdot\\frac{9}{\\sqrt{16}}=4{,}41", "(35{,}59,44{,}41)", "z_{\\alpha/2}=2{,}33", "n=110" if False else "109{,}93")
+v.solucion(s, "8", "\\bar x=\\frac{640}{16}=40", "E=1{,}96\\cdot\\frac{9}{\\sqrt{16}}=4{,}41", "(35{,}59,44{,}41)", "z_{\\alpha/2}=2{,}33", "109{,}93")
 
 v.fin()

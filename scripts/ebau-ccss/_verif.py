@@ -15,12 +15,28 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "ccss"))
-from _ej_comun import norm, contar, mutar, tx, dec  # noqa: E402,F401
+from _ej_comun import norm, contar, mutar, tx, dec, mat  # noqa: E402,F401
 
 try:
     from sympy import Rational as R, Integer, Matrix, S, sympify  # noqa: E402,F401
 except ImportError:
     sys.exit("Falta sympy: pip install sympy")
+
+
+def vertices(cons):
+    """Vértices de una región {a x + b y (>=|<=) c}; cons = [(a, b, c, '>=' | '<='), ...]. Devuelve los puntos factibles ordenados."""
+    import itertools
+    from sympy import solve, symbols
+    x, y = symbols("x y")
+
+    def ok(p):
+        return all((A * p[0] + B * p[1] >= C if t == ">=" else A * p[0] + B * p[1] <= C) for A, B, C, t in cons)
+    out = set()
+    for (a1, b1, c1, _), (a2, b2, c2, _) in itertools.combinations(cons, 2):
+        s = solve([a1 * x + b1 * y - c1, a2 * x + b2 * y - c2], [x, y], dict=True)
+        if s and ok((s[0][x], s[0][y])):
+            out.add((s[0][x], s[0][y]))
+    return sorted(out)
 
 
 def sin_negrita(texto):
