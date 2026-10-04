@@ -29,6 +29,8 @@ $$A^8=11^7A=19\,487\,171\,A.$$
 
 **b)** $f'=0$ en $x=-1$ y $x=1$ (los vértices de las parábolas). Valores: $f(-2)=1$, $f(-1)=0$, $f(0)=1$, $f(1)=0$, $f(2)=1$.
 
+![Gráfica de f: dos arcos de parábola, (x+1)² en [−2,0) y (x−1)² en [0,2], con forma de W; recinto sombreado entre x=−1 y x=1](fig/2021-ext-sup-e3.svg){fig-alt="Gráfica de f: dos arcos de parábola, (x+1)² en [−2,0) y (x−1)² en [0,2], con forma de W; recinto sombreado entre x=−1 y x=1" width="75%" fig-align="center"}
+
 **Mínimos (absolutos y relativos) $(-1,0)$ y $(1,0)$; máximo relativo $(0,1)$; máximo absoluto $1$, que se alcanza en $x=-2$, $x=0$ y $x=2$.**
 
 **c)** La gráfica son dos arcos de parábola «en forma de W» con mínimos en $(-1,0)$ y $(1,0)$ y pico en $(0,1)$. El recinto entre $x=-1$ y $x=1$ queda sobre el eje $OX$:
@@ -37,6 +39,8 @@ $$A=\int_{-1}^{0}(x+1)^2dx+\int_0^1(x-1)^2dx=\left[\frac{(x+1)^3}{3}\right]_{-1}
 
 @@ 4
 **a)** La parábola con vértice $(0,8)$ y raíces $\pm4$ es $f'(x)=8-\dfrac{x^2}{2}$ (porque $f'(4)=8-8=0$).
+
+![Gráfica de f′: parábola abierta hacia abajo con vértice (0,8) que corta al eje X en (−4,0) y (4,0); f′>0 entre −4 y 4](fig/2021-ext-sup-e4.svg){fig-alt="Gráfica de f′: parábola abierta hacia abajo con vértice (0,8) que corta al eje X en (−4,0) y (4,0); f′>0 entre −4 y 4" width="75%" fig-align="center"}
 
 1. Gráfica de $f'$: parábola abierta hacia abajo, con máximo $(0,8)$, que corta al eje $OX$ en $(-4,0)$ y $(4,0)$.
 2. $f'>0$ en $(-4,4)$ y $f'<0$ en $(-\infty,-4)\cup(4,+\infty)$. **$f$ crece en $(-4,4)$ y decrece en $(-\infty,-4)\cup(4,+\infty)$; mínimo relativo en $x=-4$ y máximo relativo en $x=4$.**

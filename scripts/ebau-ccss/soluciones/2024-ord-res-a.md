@@ -47,6 +47,8 @@ Derivabilidad: $f'(x)=e^x$ si $x<1$ y $f'(x)=2x+a$ si $x>1$: $f'(1^-)=e$ y $f'(1
 $$A=\int_2^4\left(x^2-3x+2\right)dx=\left[\frac{x^3}{3}-\frac{3x^2}{2}+2x\right]_2^4=\frac{16}{3}-\frac{2}{3}=\frac{14}{3}.$$
 **$A=\dfrac{14}{3}\ \text{u}^2$**
 
+![Gráfica de f para a=−3: 3+eˣ hasta x=1 (con salto) y parábola x²−3x+2 desde x=1; recta tangente y=x+4 en x=0 y recinto sombreado entre x=2 y x=4](fig/2024-ord-res-a-e4.svg){fig-alt="Gráfica de f para a=−3: 3+eˣ hasta x=1 (con salto) y parábola x²−3x+2 desde x=1; recta tangente y=x+4 en x=0 y recinto sombreado entre x=2 y x=4" width="75%" fig-align="center"}
+
 @@ 5
 Sean $F$ «mujer» ($0{,}65$) y $H$ «hombre» ($0{,}35$). Mujeres: $M$ $50\,\%$, $XL$ $10\,\%$, luego $L$ $40\,\%$. Hombres: $L$ $40\,\%$, $XL$ $45\,\%$, luego $M$ $15\,\%$.
 

@@ -28,6 +28,8 @@ Vértices: $(0,0)$, $(0,15)$, $\left(\dfrac{52}{5},\dfrac{62}{5}\right)$ (corte 
 $$A=\int_{-1}^{2}\left[\left(-x^2+5\right)-\left(-x+3\right)\right]dx=\int_{-1}^{2}\left(-x^2+x+2\right)dx=\left[-\frac{x^3}{3}+\frac{x^2}{2}+2x\right]_{-1}^{2}=\frac{10}{3}-\left(-\frac{7}{6}\right)=\frac{9}{2}.$$
 **$A=\dfrac{9}{2}\ \text{u}^2$**
 
+![Recinto acotado entre la parábola y=−x²+5 y la recta y=−x+3, que se cortan en (−1,4) y (2,1)](fig/2025-ord-sup1-a-e3.svg){fig-alt="Recinto acotado entre la parábola y=−x²+5 y la recta y=−x+3, que se cortan en (−1,4) y (2,1)" width="75%" fig-align="center"}
+
 @@ 4
 **a)** El nivel inicial es $f(0)=10$.
 
@@ -38,6 +40,8 @@ Continuidad en $t=2{,}5$: $-2{,}5^2+2\cdot2{,}5+10=8{,}75$ y $2{,}5^2+2{,}5a+b=6
 **b)** Tramo 1: $f'(t)=-2t+2=0\Rightarrow t=1$; crece en $(0,1)$ y decrece en $(1,2{,}5)$, con $f(1)=11$. Tramo 2: $f(t)=t^2-8t+22{,}5$, $f'(t)=2t-8=0\Rightarrow t=4$; decrece en $(2{,}5;4)$ y crece en $(4,5)$, con $f(4)=6{,}5$. Valores: $f(0)=10$, $f(2{,}5)=8{,}75$, $f(5)=7{,}5$.
 
 **Concentración máxima $11$ a la hora $t=1$ y mínima $6{,}5$ a las $4$ horas.** Gráfica: sube desde $(0,10)$ hasta el máximo $(1,11)$, baja hasta el mínimo $(4;6{,}5)$ (pasando por $(2{,}5;8{,}75)$ sin pico) y sube hasta $(5;7{,}5)$.
+
+![Concentración f(t): sube de 10 a 11 en t=1, baja hasta el mínimo 6,5 en t=4 y sube a 7,5 en t=5; la gráfica es continua y suave en t=2,5](fig/2025-ord-sup1-a-e4.svg){fig-alt="Concentración f(t): sube de 10 a 11 en t=1, baja hasta el mínimo 6,5 en t=4 y sube a 7,5 en t=5; la gráfica es continua y suave en t=2,5" width="75%" fig-align="center"}
 
 @@ 5
 $P(CF)=0{,}62$, $P(T)=0{,}25$, $P(M)=1-0{,}62-0{,}25=0{,}13$. Sea $R$ «recomendación correcta»: $P(R\mid CF)=0{,}7$, $P(R\mid T)=0{,}75$, $P(R\mid M)=0{,}15$.

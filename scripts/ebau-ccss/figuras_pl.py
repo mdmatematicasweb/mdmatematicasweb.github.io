@@ -34,16 +34,26 @@ def lee_restricciones():
     for f in sorted(HERE.glob("verificar_20*.py")):
         slug = None
         cons = None
+        objs = {}
+        buf = ""
         for lin in f.read_text().splitlines():
+            mo = re.match(r"(\w+) = \{(\w+): (.*) for \2 in V\}", lin)
+            if mo:
+                objs[mo.group(1)] = (mo.group(2), mo.group(3))
             m = re.match(r's = "([^"]+)"', lin)
             if m:
                 slug, cons = m.group(1), None
+            buf = (buf + lin) if cons is not None else lin
             m = re.search(r"vertices\((\[.*\])\)", lin) or re.match(r"cons = (\[.*\])$", lin)
             if m and slug:
                 cons = eval(m.group(1), {"R": Rational})
             m = re.search(rf'"{re.escape(slug or "~")} ej\.(\w+)"', lin) if slug else None
             if m and cons is not None:
-                res.append((slug, re.sub(r'(?<=\d)[a-z]+$', '', m.group(1)), cons))
+                opts = []
+                for kind, name in re.findall(r"(max|min)\((\w+)\.values\(\)\)", buf):
+                    if name in objs:
+                        opts.append((kind, objs[name]))
+                res.append((slug, re.sub(r'(?<=\d)[a-z]+$', '', m.group(1)), cons, opts))
                 cons = None
     return res
 
@@ -55,7 +65,7 @@ def fmt(v):
     return f"{float(v):.2f}".rstrip("0").replace(".", ",")
 
 
-def dibuja(slug, n, cons):
+def dibuja(slug, n, cons, opts=()):
     V = [(Rational(p[0]), Rational(p[1])) for p in vertices(cons)]
     xs = [float(p[0]) for p in V] + [0]
     ys = [float(p[1]) for p in V] + [0]
@@ -91,13 +101,24 @@ def dibuja(slug, n, cons):
             p, q = max(((u, w) for u in cand for w in cand), key=lambda t: (t[0][0] - t[1][0]) ** 2 + (t[0][1] - t[1][1]) ** 2)
             g.line(p, q, color=CORAL, width=2, dash="0")
     g.el.append(f'<path d="M{pts} Z" fill="none" stroke="{NAVY}" stroke-width="3"/>')
+    optimos = {}
+    for kind, (var, expr) in opts:
+        val = {p: eval(expr, {"R": Rational, var: p}) for p in V}
+        best = (max if kind == "max" else min)(val.values())
+        for p in V:
+            if val[p] == best:
+                optimos.setdefault(p, []).append("máximo" if kind == "max" else "mínimo")
     for p in orden:
-        g.dot(float(p[0]), float(p[1]), MINT)
+        if p in optimos:
+            g.el.append(f'<circle cx="{g.X(float(p[0])):.1f}" cy="{g.Y(float(p[1])):.1f}" r="11" fill="none" stroke="{CORAL}" stroke-width="3.5"/>')
+            g.dot(float(p[0]), float(p[1]), CORAL)
+        else:
+            g.dot(float(p[0]), float(p[1]), MINT)
         sx = -1 if float(p[0]) > (x0 + x1) / 2 + 0.25 * (x1 - x0) else 1
-        g.text(float(p[0]), float(p[1]), f"({fmt(p[0])}, {fmt(p[1])})", dx=12 * sx, dy=-10 if float(p[1]) >= cy else 18, anchor="start" if sx > 0 else "end", size=13, color=NAVY, bold=True)
+        g.text(float(p[0]), float(p[1]), f"({fmt(p[0])}, {fmt(p[1])})" + (" " + " y ".join(optimos[p]) if p in optimos else ""), dx=12 * sx, dy=-10 if float(p[1]) >= cy else 18, anchor="start" if sx > 0 else "end", size=13, color=NAVY, bold=True)
     g.text(cx, cy, "región factible", size=14, color=INK, bold=True)
     name = f"{slug}-e{n.lower()}"
-    alt = f"Región factible del ejercicio {n} ({slug}), con sus vértices: " + ", ".join(f"({fmt(p[0])}, {fmt(p[1])})" for p in orden)
+    alt = f"Región factible del ejercicio {n} ({slug}), con sus vértices: " + ", ".join(f"({fmt(p[0])}, {fmt(p[1])})" for p in orden) + "".join(f". Vértice con el {' y '.join(k)}: ({fmt(p[0])}, {fmt(p[1])})" for p, k in optimos.items())
     OUT.mkdir(parents=True, exist_ok=True)
     g.save(OUT / f"{name}.svg", alt)
     return name, alt
@@ -124,8 +145,8 @@ def enlaza(slug, n, name, alt):
 
 if __name__ == "__main__":
     n_ok = 0
-    for slug, n, cons in lee_restricciones():
-        name, alt = dibuja(slug, n, cons)
+    for slug, n, cons, opts in lee_restricciones():
+        name, alt = dibuja(slug, n, cons, opts)
         enlaza(slug, n, name, alt)
         n_ok += 1
     print(f"OK: {n_ok} figuras de programación lineal")

@@ -53,6 +53,8 @@ Valores: $V(0)=100$, $V(1)=116$, $V(3)=100$, $V(6)=316$. **Máximo relativo en $
 $$A=\int_0^6\left(4t^3-24t^2+36t+100\right)dt=\left[t^4-8t^3+18t^2+100t\right]_0^6=1\,296-1\,728+648+600=816.$$
 **$A=816$ u$^2$** (miles de euros por año).
 
+![Ventas V(t) en [0,6]: parte de 100, máximo relativo 116 en t=1, mínimo relativo 100 en t=3 y llega a 316 en t=6; sombreada el área bajo la curva](fig/2025-ord-sup1-b-e4.svg){fig-alt="Ventas V(t) en [0,6]: parte de 100, máximo relativo 116 en t=1, mínimo relativo 100 en t=3 y llega a 316 en t=6; sombreada el área bajo la curva" width="75%" fig-align="center"}
+
 @@ 5
 Sean $O$ «operario» ($1-0{,}2-0{,}35=0{,}45$), $I$ «ingeniero» ($0{,}35$), $D$ «directivo» ($0{,}2$) y $M$ «mujer»: $P(M\mid O)=0{,}2$, $P(M\mid I)=0{,}4$, $P(M\mid D)=0{,}3$.
 

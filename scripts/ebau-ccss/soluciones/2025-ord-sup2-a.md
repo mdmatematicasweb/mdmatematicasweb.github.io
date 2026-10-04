@@ -31,6 +31,8 @@ El máximo se alcanza en los dos vértices $(12,8)$ y $(8,16)$ y, por tanto, en 
 
 Gráfica: arco de parábola abierta hacia abajo que parte de $(0,20)$, crece hasta el máximo $(40,36)$ y decrece hasta $(60,32)$ (pasa por $(20,32)$, simétrico de $(60,32)$ respecto de $t=40$).
 
+![Índice de audiencia f(t)=−0,01t²+0,8t+20: parte de 20, alcanza el máximo 36 a los 40 minutos y baja a 32 en t=60](fig/2025-ord-sup2-a-e3.svg){fig-alt="Índice de audiencia f(t)=−0,01t²+0,8t+20: parte de 20, alcanza el máximo 36 a los 40 minutos y baja a 32 en t=60" width="75%" fig-align="center"}
+
 **b)** $g'(x)=\dfrac{2x}{x^2-1}-\dfrac{2x}{x^2+1}=\dfrac{2x\left(x^2+1\right)-2x\left(x^2-1\right)}{x^4-1}=\dfrac{4x}{x^4-1}$.
 
 $h'(x)=2e^{x^2-x}+(2x-1)(2x-1)e^{x^2-x}=e^{x^2-x}\left[(2x-1)^2+2\right]=e^{x^2-x}\left(4x^2-4x+3\right)$.
@@ -45,6 +47,8 @@ $h'(x)=2e^{x^2-x}+(2x-1)(2x-1)e^{x^2-x}=e^{x^2-x}\left[(2x-1)^2+2\right]=e^{x^2-
 **c)** $f\ge0$ en $[-4,4]$ ($10+\frac{5x}{2}=0$ en $x=-4$ y $10-\frac{5x}{2}=0$ en $x=4$); fuera de ese intervalo $f<0$. La región acotada va de $x=-4$ a $x=4$: una «tienda» con vértices $(-4,0)$, $(-2,5)$, $(2,5)$ y $(4,0)$ cuyo techo central es la parábola $y=x^2+1$.
 $$A=\int_{-4}^{-2}\left(10+\frac{5x}{2}\right)dx+\int_{-2}^{2}\left(x^2+1\right)dx+\int_2^4\left(10-\frac{5x}{2}\right)dx=5+\frac{28}{3}+5=\frac{58}{3}.$$
 **$A=\dfrac{58}{3}\ \text{u}^2$**
+
+![Gráfica de f: dos rectas y un arco de parábola x²+1 entre ellas, formando una tienda sobre el eje X de x=−4 a x=4; recta tangente y=−x+3/4 en x=−1/2](fig/2025-ord-sup2-a-e4.svg){fig-alt="Gráfica de f: dos rectas y un arco de parábola x²+1 entre ellas, formando una tienda sobre el eje X de x=−4 a x=4; recta tangente y=−x+3/4 en x=−1/2" width="75%" fig-align="center"}
 
 @@ 5
 Sean $M$ «mujer» ($0{,}66$) y $N$ «cosmética natural»: $P(N\mid M)=0{,}71$, $P(H\cap N^C)=0{,}1786$.

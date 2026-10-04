@@ -45,6 +45,8 @@ Vértices: $(0,6)$, $(0,25)$, $(12,21)$ (corte de $2x+6y=150$ con $3x+4y=120$) y
 $$A=\int_{-1}^{1}\left[2x-\left(-x^2+2x\right)\right]dx=\int_{-1}^{1}x^2\,dx=\left[\frac{x^3}{3}\right]_{-1}^{1}=\frac{2}{3}.$$
 **$A=\dfrac{2}{3}\ \text{u}^2$**
 
+![Recinto entre la recta y=2x y la parábola −x²+2x entre x=−1 y x=1, tangentes en el origen; la gráfica de f continúa con x²−2x desde x=2](fig/2024-ord-sup-b-e4.svg){fig-alt="Recinto entre la recta y=2x y la parábola −x²+2x entre x=−1 y x=1, tangentes en el origen; la gráfica de f continúa con x²−2x desde x=2" width="75%" fig-align="center"}
+
 @@ 5
 **a)** $P=\dfrac{3}{15}\cdot\dfrac{2}{14}=\dfrac{6}{210}=\dfrac{1}{35}\approx\mathbf{0{,}0286}$.
 

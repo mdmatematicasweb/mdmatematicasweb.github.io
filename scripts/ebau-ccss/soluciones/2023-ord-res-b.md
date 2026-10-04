@@ -34,10 +34,14 @@ $g'(x)=\dfrac{\dfrac{4x^3-4x}{x^4-2x^2}\left(8-x^3\right)+3x^2\ln\left(x^4-2x^2\
 $$A=\int_1^3\left[\left(-x^2+2x+3\right)-\left(-2x+6\right)\right]dx=\int_1^3\left(-x^2+4x-3\right)dx=\left[-\frac{x^3}{3}+2x^2-3x\right]_1^3=0-\left(-\frac{4}{3}\right)=\frac{4}{3}.$$
 **$A=\dfrac{4}{3}\ \text{u}^2$**
 
+![Región acotada entre la recta y=−2x+6 y la parábola y=−x²+2x+3, que se cortan en (1,4) y (3,0)](fig/2023-ord-res-b-e3.svg){fig-alt="Región acotada entre la recta y=−2x+6 y la parábola y=−x²+2x+3, que se cortan en (1,4) y (3,0)" width="75%" fig-align="center"}
+
 @@ 4
 **a)** En $t=1$: $-1+12-20=-9=f(1)$. En $t=11$: $-121+132-20=-9=f(11)$. **$f$ es continua en todo su dominio $[0,24]$.**
 
 **b)** Es la recta constante $y=-9$ en $[0,1]$ y en $[11,24]$, y entre $t=1$ y $t=11$ un arco de parábola abierta hacia abajo con máximo en $t=6$: $f(6)=-36+72-20=16$. Corta al eje $OX$ en $t=2$ y $t=10$.
+
+![Temperatura f(t): constante −9 °C hasta t=1, arco de parábola con máximo 16 °C en t=6 entre t=1 y t=11, y de nuevo −9 °C hasta t=24](fig/2023-ord-res-b-e4.svg){fig-alt="Temperatura f(t): constante −9 °C hasta t=1, arco de parábola con máximo 16 °C en t=6 entre t=1 y t=11, y de nuevo −9 °C hasta t=24" width="75%" fig-align="center"}
 
 **c)** Con el equipo funcionando, la temperatura es constante ($-9\,^\circ$C). Cuando se produce el corte la temperatura empieza a subir, y el equipo vuelve a $-9\,^\circ$C cuando se restablece la energía: **el corte empezó a la $1$ ($t=1$) y terminó a las $11$ ($t=11$); duró $10$ horas.**
 

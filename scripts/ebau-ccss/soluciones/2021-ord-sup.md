@@ -34,6 +34,8 @@ Derivabilidad: $f'(x)=-\dfrac{1}{x^2}$ si $x<-1$, $f'(x)=-6x$ si $-1<x<1$, $f'(x
 
 **b)** Primer tramo: hipérbola $y=\dfrac1x$ (con $x\le-1$), que parte de $0^-$ y llega a $(-1,-1)$ (punto relleno). Segundo tramo: arco de parábola $y=-3x^2+4$ en $(-1,1)$, de vértice $(0,4)$, con los extremos «abiertos» en $(-1,1)$ y $(1,1)$. Tercer tramo: semirrecta $y=2x-1$ desde $(1,1)$ hacia arriba (pasa por $(2,3)$).
 
+![Gráfica de f: hipérbola 1/x para x≤−1, parábola −3x²+4 en (−1,1) y recta 2x−1 para x≥1; salto en x=−1 y recinto sombreado entre x=0 y x=3](fig/2021-ord-sup-e3.svg){fig-alt="Gráfica de f: hipérbola 1/x para x≤−1, parábola −3x²+4 en (−1,1) y recta 2x−1 para x≥1; salto en x=−1 y recinto sombreado entre x=0 y x=3" width="75%" fig-align="center"}
+
 **c)** En $[0,3]$ la función es positiva: $-3x^2+4\ge1$ en $[0,1]$ y $2x-1\ge1$ en $[1,3]$.
 $$A=\int_0^1\left(-3x^2+4\right)dx+\int_1^3(2x-1)\,dx=\left[-x^3+4x\right]_0^1+\left[x^2-x\right]_1^3=3+6=9.$$
 **$A=9\ \text{u}^2$**
@@ -48,6 +50,8 @@ $$A=\int_0^1\left(-3x^2+4\right)dx+\int_1^3(2x-1)\,dx=\left[-x^3+4x\right]_0^1+\
 **$y=2x-6$.**
 
 Gráfica: parábola de vértice $(3,1)$, abierta hacia arriba, que corta al eje $OY$ en $(0,10)$ (no corta al eje $OX$ porque $\Delta=36-40<0$) y pasa por $(2,2)$ y $(4,2)$; la recta $y=2x-6$ la toca en $(4,2)$ y corta al eje $OX$ en $(3,0)$.
+
+![Parábola de costes f(x)=x²−6x+10 con vértice (3,1) y su recta tangente y=2x−6 en el punto (4,2)](fig/2021-ord-sup-e4.svg){fig-alt="Parábola de costes f(x)=x²−6x+10 con vértice (3,1) y su recta tangente y=2x−6 en el punto (4,2)" width="75%" fig-align="center"}
 
 @@ 5
 Sea $M$ «ser mujer». Plantilla total: $1000+600+400=2000$. Mujeres: $0{,}42\cdot1000+0{,}2\cdot600+0{,}5\cdot400=420+120+200=740$.

@@ -24,6 +24,8 @@ Vértices: $(12,0)$, $(40,0)$, $(30,10)$ (corte de $x+y=40$ con $x=3y$) y $(9,3)
 @@ 3
 **a)** $f(x)=-x(x-6)$ es una parábola abierta hacia abajo con vértice $(3,9)$ que corta al eje $OX$ en $x=0$ y $x=6$; $g(x)=\dfrac{x^2}{5}$ es una parábola abierta hacia arriba con vértice en el origen. Se cortan donde $-x^2+6x=\dfrac{x^2}{5}\iff6x=\dfrac{6}{5}x^2\iff x=0$ o $x=5$, en los puntos $(0,0)$ y $(5,5)$. La superficie es la región entre ambas, con $f$ por encima de $g$.
 
+![Superficie de ampliación: región entre las parábolas f(x)=−x²+6x y g(x)=x²/5, que se cortan en (0,0) y (5,5)](fig/2024-ord-sup-a-e3.svg){fig-alt="Superficie de ampliación: región entre las parábolas f(x)=−x²+6x y g(x)=x²/5, que se cortan en (0,0) y (5,5)" width="75%" fig-align="center"}
+
 **b)** $A=\displaystyle\int_0^5\left(-x^2+6x-\frac{x^2}{5}\right)dx=\int_0^5\left(-\frac{6}{5}x^2+6x\right)dx=\left[-\frac{2x^3}{5}+3x^2\right]_0^5=-50+75=25$.
 
 **El área es de $25$ dam$^2$, es decir, $2\,500$ m$^2$ ($1$ dam$^2=100$ m$^2$).** Coste: $2\,500\cdot75=187\,500$ €.
@@ -38,6 +40,8 @@ Para $f$, en $x=1$: $\displaystyle\lim_{x\to1^-}\left(2-x^2\right)=1$ y $f(1)=(1
 **b)** $f$ y $g$ se cortan donde $2-x^2=1$ (en $[-1,1]$, $x=\pm1$) y donde $(x-2)^2=1$ (en $(1,3]$, $x=3$; en $x=1$ también), es decir, en $x=-1$, $x=1$ y $x=3$. En $[-1,1]$ la parábola $2-x^2$ queda sobre la recta $y=1$ (vale $2$ en $x=0$); en $[1,3]$ la parábola $(x-2)^2$ queda bajo la recta (vale $0$ en $x=2$).
 $$A=\int_{-1}^{1}\left(2-x^2-1\right)dx+\int_1^3\left(1-(x-2)^2\right)dx=\left[x-\frac{x^3}{3}\right]_{-1}^{1}+\left[x-\frac{(x-2)^3}{3}\right]_1^3=\frac{4}{3}+\frac{4}{3}=\frac{8}{3}.$$
 **$A=\dfrac{8}{3}\ \text{u}^2$**
+
+![Recinto entre f (parábolas 2−x² en [−1,1] y (x−2)² en [1,3]) y la recta g(x)=1, con cortes en x=−1, 1 y 3](fig/2024-ord-sup-a-e4.svg){fig-alt="Recinto entre f (parábolas 2−x² en [−1,1] y (x−2)² en [1,3]) y la recta g(x)=1, con cortes en x=−1, 1 y 3" width="75%" fig-align="center"}
 
 @@ 5
 Sean $H$ «compra novelas históricas» y $F$ «compra novelas de fantasía»: $P(H)=0{,}45$, $P(F^C)=0{,}4\Rightarrow P(F)=0{,}6$, $P(H\mid F)=0{,}3$.

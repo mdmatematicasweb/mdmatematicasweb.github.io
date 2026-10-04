@@ -60,4 +60,4 @@ antes de empezar la siguiente fase**. Se trabaja fase a fase, con revisión del 
   (misma lógica y mutación que `scripts/ccss/_ej_comun.py`; ver `_verif.py`). Los criterios de la Junta solo dan el reparto de puntos: las soluciones son propias.
 - Notas de lectura de enunciados: 2022 ext. titular ej. 2 no dice `x≥0, y≥0` y se supone (si no, `F` no tendría mínimo); `log` es decimal (2025 sup1-A ej. 3 y 2026 sup1);
   para 99 % se usa `z=2,575` (interpolación) y para 92 % `z=1,75`; 2025 sup2-B ej. 7b: «10 %» se lee como el 10 % de la media muestral (se da también la lectura 0,1 kg).
-- Los apartados «represente» están descritos con palabras; faltan figuras (como las 15 de `scripts/ebau/figuras.py` en Ciencias).
+- Figuras en `ejercicios/2-bachillerato-ccss/ebau/fig/`: `python3 scripts/ebau-ccss/figuras_pl.py` (región factible de los 34 de programación lineal, con el vértice óptimo marcado; lee las restricciones y el objetivo de los verificadores) y `python3 scripts/ebau-ccss/figuras_fn.py` (42 gráficas de «represente/esboce/dibuje», una función `e_…` a mano por figura). Ambos enlazan la imagen en `soluciones/` (idempotentes); después, `build.py`.

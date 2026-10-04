@@ -36,6 +36,8 @@ $$X=\begin{pmatrix}-1&-2&2\\2&4&-3\\1&1&-1\end{pmatrix}\begin{pmatrix}1\\-3\\1\e
 $$A=\int_0^1\frac{1}{2}\,dx+\int_1^2\left(x^2-\frac x2\right)dx=\frac{1}{2}+\left[\frac{x^3}{3}-\frac{x^2}{4}\right]_1^2=\frac{1}{2}+\frac{5}{3}-\frac{1}{12}=\frac{25}{12}.$$
 **$A=\dfrac{25}{12}\ \text{u}^2$**
 
+![Gráfica de f para a=0 y b=1/2: tramo horizontal y=1/2 hasta x=1 y parábola x²−x/2 desde x=1; recinto sombreado entre x=0 y x=2](fig/2021-ext-res-e3.svg){fig-alt="Gráfica de f para a=0 y b=1/2: tramo horizontal y=1/2 hasta x=1 y parábola x²−x/2 desde x=1; recinto sombreado entre x=0 y x=2" width="75%" fig-align="center"}
+
 @@ 4
 **a)** $c'(t)=0{,}03t^2-0{,}9t+6=0\iff t^2-30t+200=0\iff t=10$ o $t=20$.
 

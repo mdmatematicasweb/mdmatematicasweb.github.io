@@ -28,6 +28,8 @@ El máximo se alcanza en dos vértices, $(0,700)$ y $(260,180)$, porque $I=400(2
 
 **iii)** Cúbica $y=x(x-3)^2$ viniendo de $-\infty$, que corta al eje en $(0,0)$, sube hasta el máximo $(1,4)$, baja hasta tocar el eje en $(3,0)$; a partir de ahí continúa descendiendo como la hipérbola $y=\dfrac{-6x+18}{x+1}$ (pasa por $\left(5,-2\right)$) acercándose por encima a $y=-6$.
 
+![Gráfica de f para a=b=−6: cúbica con máximo (1,4) que toca al eje X en (3,0) y, desde ahí, rama de hipérbola decreciente con asíntota horizontal y=−6](fig/2026-ord-sup1-e2a.svg){fig-alt="Gráfica de f para a=b=−6: cúbica con máximo (1,4) que toca al eje X en (3,0) y, desde ahí, rama de hipérbola decreciente con asíntota horizontal y=−6" width="75%" fig-align="center"}
+
 @@ 2B
 **a)** $f(x)=1-\dfrac{x-6}{x+2}=\dfrac{(x+2)-(x-6)}{x+2}=\dfrac{8}{x+2}$. **Dominio: $\mathbb R\setminus\{-2\}$.** Asíntotas: vertical $x=-2$ y horizontal $y=\displaystyle\lim_{x\to\pm\infty}\dfrac{8}{x+2}=0$.
 
@@ -41,6 +43,8 @@ El máximo se alcanza en dos vértices, $(0,700)$ y $(260,180)$, porque $I=400(2
 
 - $x=-1$: $f(-1)=8$; tangente $y-8=-8(x+1)$, es decir, **$y=-8x$.**
 - $x=-3$: $f(-3)=-8$; tangente $y+8=-8(x+3)$, es decir, **$y=-8x-32$.**
+
+![Hipérbola f(x)=8/(x+2) con asíntotas x=−2 e y=0 y las dos rectas tangentes de pendiente −8: y=−8x en (−1,8) e y=−8x−32 en (−3,−8)](fig/2026-ord-sup1-e2b.svg){fig-alt="Hipérbola f(x)=8/(x+2) con asíntotas x=−2 e y=0 y las dos rectas tangentes de pendiente −8: y=−8x en (−1,8) e y=−8x−32 en (−3,−8)" width="75%" fig-align="center"}
 
 @@ 3A
 $\sigma=2$, $n=81$, $\bar x=20$. Nivel $98{,}5\,\%$: $\Phi(z_{\alpha/2})=0{,}9925$ y en la tabla $\Phi(2{,}43)=0{,}9925$: $z_{\alpha/2}=2{,}43$.

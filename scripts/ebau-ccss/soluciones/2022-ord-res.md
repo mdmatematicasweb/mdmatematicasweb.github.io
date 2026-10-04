@@ -32,6 +32,8 @@ En $x=2$: $f(2)=\dfrac{1}{3}(10-10)=0$ y $\displaystyle\lim_{x\to2^+}f=\dfrac{3}
 
 **b)** Para $x<-1$: parábola $y=4x^2+16x+17$ (vértice $(-2,1)$, pasa por $(-1,5)$). Para $-1\le x\le2$: segmento de recta de $(-1,5)$ a $(2,0)$. Para $x>2$: recta horizontal $y=\dfrac{3}{2}$ (con el punto «abierto» en $\left(2,\dfrac{3}{2}\right)$).
 
+![Gráfica de f: parábola 4x²+16x+17 hasta x=−1, segmento de (−1,5) a (2,0) y recta horizontal y=3/2 desde x=2 (salto en x=2); recinto sombreado entre x=−2 y x=2](fig/2022-ord-res-e3.svg){fig-alt="Gráfica de f: parábola 4x²+16x+17 hasta x=−1, segmento de (−1,5) a (2,0) y recta horizontal y=3/2 desde x=2 (salto en x=2); recinto sombreado entre x=−2 y x=2" width="75%" fig-align="center"}
+
 **c)** En $[-2,2]$, $f\ge0$ ($4x^2+16x+17$ no se anula, $\Delta<0$):
 $$A=\int_{-2}^{-1}\left(4x^2+16x+17\right)dx+\int_{-1}^{2}\frac{10-5x}{3}\,dx=\frac{7}{3}+\frac{15}{2}=\frac{59}{6}.$$
 **$A=\dfrac{59}{6}\ \text{u}^2$**

@@ -30,6 +30,8 @@ $$A^{-1}=\frac{1}{8}\begin{pmatrix}6&4&2\\-2&4&2\\-1&-2&1\end{pmatrix}=\begin{pm
 $$A=\int_{-1}^{2}\left(-2x^2+2x+4\right)dx=\left[-\frac{2x^3}{3}+x^2+4x\right]_{-1}^{2}=\frac{20}{3}-\left(-\frac{7}{3}\right)=9.$$
 **$A=9\ \text{u}^2$**
 
+![Parábola g(x)=−2x²+2x+4 con vértice (1/2, 9/2) y cortes con el eje X en x=−1 y x=2; recinto sombreado entre ambas raíces](fig/2023-ord-sup-a-e3.svg){fig-alt="Parábola g(x)=−2x²+2x+4 con vértice (1/2, 9/2) y cortes con el eje X en x=−1 y x=2; recinto sombreado entre ambas raíces" width="75%" fig-align="center"}
+
 @@ 4
 **a)** En $x=2$: $\dfrac{2^2}{3}=\dfrac{4}{3}$ y $\dfrac{4}{2+1}=\dfrac{4}{3}$: **continua en $x=2$.** Dentro de cada tramo es continua (el segundo no se anula en el denominador para $x>2$): **$f$ es continua en $[0,+\infty)$.**
 
@@ -38,6 +40,8 @@ $f'(x)=\dfrac{2x}{3}$ si $0<x<2$ y $f'(x)=-\dfrac{4}{(x+1)^2}$ si $x>2$. En $x=2
 **b)** $f'>0$ en $(0,2)$ y $f'<0$ en $(2,+\infty)$. **$f$ crece en $(0,2)$ y decrece en $(2,+\infty)$; máximo en $\left(2,\dfrac{4}{3}\right)$.**
 
 Gráfica: arco de parábola $y=\dfrac{x^2}{3}$ desde $(0,0)$ hasta el pico $\left(2,\dfrac{4}{3}\right)$, y desde ahí la rama de hipérbola $y=\dfrac{4}{x+1}$ decreciente, con asíntota horizontal $y=0$ (pasa por $(3,1)$).
+
+![Gráfica de f: parábola x²/3 creciente hasta el máximo (2, 4/3) e hipérbola 4/(x+1) decreciente desde ese punto](fig/2023-ord-sup-a-e4.svg){fig-alt="Gráfica de f: parábola x²/3 creciente hasta el máximo (2, 4/3) e hipérbola 4/(x+1) decreciente desde ese punto" width="75%" fig-align="center"}
 
 @@ 5
 Sean $T$ «jugó sobre tierra» y $G$ «ganó»: $P(T)=\dfrac{25}{40}=\dfrac{5}{8}$, $P(T^C)=\dfrac{3}{8}$, $P(G\mid T)=0{,}9$, $P(G\mid T^C)=0{,}5$.

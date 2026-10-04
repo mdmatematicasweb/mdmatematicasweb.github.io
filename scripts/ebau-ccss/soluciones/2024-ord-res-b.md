@@ -44,6 +44,8 @@ Derivabilidad: $f'(x)=2x+2$ si $x<1$, $f'(x)=-\dfrac{2}{x^2}$ si $1<x<3$ y $f'(x
 $$A=\int_2^3\frac2x\,dx+\int_3^4\frac{x-1}{3}\,dx=2\ln\frac{3}{2}+\left[\frac{(x-1)^2}{6}\right]_3^4=2\ln\frac{3}{2}+\frac{9-4}{6}=2\ln\frac{3}{2}+\frac{5}{6}.$$
 **$A=2\ln\dfrac{3}{2}+\dfrac{5}{6}\approx1{,}644\ \text{u}^2$**
 
+![Gráfica de f para a=5 y b=2 entre x=1 y x=5: hipérbola 2/x hasta x=3 y recta (x−1)/3 desde (3,2/3); recinto sombreado entre x=2 y x=4](fig/2024-ord-res-b-e3.svg){fig-alt="Gráfica de f para a=5 y b=2 entre x=1 y x=5: hipérbola 2/x hasta x=3 y recta (x−1)/3 desde (3,2/3); recinto sombreado entre x=2 y x=4" width="75%" fig-align="center"}
+
 @@ 4
 **a)** En $x=2$: $-2+2+1=1$ y $\dfrac{1}{2-1}=1$: **continua** (cada tramo lo es en su intervalo). Derivadas: $f'(x)=1-x$ si $x<2$ y $f'(x)=-\dfrac{1}{(x-1)^2}$ si $x>2$; $f'(2^-)=-1=f'(2^+)$: **derivable.**
 
@@ -52,6 +54,8 @@ $$A=\int_2^3\frac2x\,dx+\int_3^4\frac{x-1}{3}\,dx=2\ln\frac{3}{2}+\left[\frac{(x
 Monotonía: $f'>0$ en $(-\infty,1)$ y $f'<0$ en $(1,2)$ y en $(2,+\infty)$. **$f$ crece en $(-\infty,1)$ y decrece en $(1,+\infty)$, con máximo en $\left(1,\dfrac{3}{2}\right)$.**
 
 Gráfica: arco de parábola abierta hacia abajo con vértice $\left(1,\dfrac{3}{2}\right)$, que pasa por $(0,1)$ y llega a $(2,1)$; a partir de ahí, la rama de hipérbola $y=\dfrac{1}{x-1}$ decreciente, con asíntota horizontal $y=0$ (pasa por $\left(3,\dfrac{1}{2}\right)$).
+
+![Gráfica de f: parábola con máximo (1, 3/2) hasta (2,1) y hipérbola 1/(x−1) decreciente desde ahí; recinto sombreado entre x=0 y x=4](fig/2024-ord-res-b-e4.svg){fig-alt="Gráfica de f: parábola con máximo (1, 3/2) hasta (2,1) y hipérbola 1/(x−1) decreciente desde ahí; recinto sombreado entre x=0 y x=4" width="75%" fig-align="center"}
 
 **b)** En $[0,4]$, $f>0$:
 $$A=\int_0^2\left(-\frac{x^2}{2}+x+1\right)dx+\int_2^4\frac{dx}{x-1}=\left[-\frac{x^3}{6}+\frac{x^2}{2}+x\right]_0^2+\left[\ln(x-1)\right]_2^4=\frac{8}{3}+\ln3.$$

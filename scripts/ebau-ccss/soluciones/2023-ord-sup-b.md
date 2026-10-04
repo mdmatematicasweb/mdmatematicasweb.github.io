@@ -28,6 +28,8 @@ $$X=\frac{4A-3B}{17}=\begin{pmatrix}1&-2&3\\2&0&-1\\0&0&1\end{pmatrix},\qquad Y=
 
 **b)** Para $x<3$: parábola $y=(x-2)^2$ de vértice $(2,0)$ (pasa por $(0,4)$ y $(3,1)$). Para $x\ge3$: semirrecta $y=-x+4$ desde $(3,1)$ (corta al eje $OX$ en $(4,0)$ y sigue hacia abajo).
 
+![Gráfica de f: parábola (x−2)² hasta x=3 y recta −x+4 desde x=3, continua en (3,1) pero con pico; recinto sombreado entre x=2 y x=4](fig/2023-ord-sup-b-e3.svg){fig-alt="Gráfica de f: parábola (x−2)² hasta x=3 y recta −x+4 desde x=3, continua en (3,1) pero con pico; recinto sombreado entre x=2 y x=4" width="75%" fig-align="center"}
+
 **c)** En $[2,4]$, $f\ge0$:
 $$A=\int_2^3(x-2)^2dx+\int_3^4(-x+4)\,dx=\left[\frac{(x-2)^3}{3}\right]_2^3+\left[-\frac{x^2}{2}+4x\right]_3^4=\frac{1}{3}+\frac{1}{2}=\frac{5}{6}.$$
 **$A=\dfrac{5}{6}\ \text{u}^2$**
@@ -44,6 +46,8 @@ $$A=\int_2^3(x-2)^2dx+\int_3^4(-x+4)\,dx=\left[\frac{(x-2)^3}{3}\right]_2^3+\lef
 **El beneficio máximo se alcanza a los $10{,}5$ años y vale $90{,}25$ mil euros ($90\,250$ €).**
 
 **d)** Parábola abierta hacia abajo con vértice $(10{,}5;\ 90{,}25)$, que arranca en $(0,-20)$, corta al eje $OX$ en $t=1$ y llega a $t=15$ con $B(15)=70$.
+
+![Parábola de beneficio B(t)=−t²+21t−20 en [0,15]: parte de −20, corta al eje en t=1, alcanza el máximo 90,25 en t=10,5 y llega a 70 en t=15](fig/2023-ord-sup-b-e4.svg){fig-alt="Parábola de beneficio B(t)=−t²+21t−20 en [0,15]: parte de −20, corta al eje en t=1, alcanza el máximo 90,25 en t=10,5 y llega a 70 en t=15" width="75%" fig-align="center"}
 
 @@ 5
 Sea $D$ «descartado»: $P(A)=0{,}6$, $P(B)=0{,}3$, $P(C)=0{,}1$, $P(D\mid A)=0{,}2$, $P(D\mid B)=0{,}5$, $P(D\mid C)=0{,}6$.
