@@ -106,17 +106,114 @@ include-after-body:
   </figure>
 </section>
   </div>
+  <div class="hero-slide" id="hero-eso3" data-course="eso3" hidden>
+<section class="home-hero hero-eso3">
+  <div class="hero-tiles" aria-hidden="true">
+    <span class="tile t-mint">&radic;</span>
+    <span class="tile t-navy">&pi;</span>
+    <span class="tile t-coral">x&sup2;</span>
+    <span class="tile t-yellow">&frac12;</span>
+  </div>
+
+  <div class="hero-copy">
+    <p class="hero-kicker">3º ESO · Matemáticas · Andalucía</p>
+    <h1 class="stairs" aria-label="Matemáticas con sentido">
+      <span class="stair-top">Matemáticas,</span>
+      <span class="step s1">con</span>
+      <span class="step s2">sentido</span>
+    </h1>
+    <p class="hero-sub">Números, álgebra, geometría, funciones y estadística del currículo de Andalucía, con ejercicios graduados y pruebas competenciales de situaciones reales.</p>
+    <div class="hero-cta">
+      <a class="btn-brut btn-coral" href="actividades/3-eso/prueba-competencial/index.html">Generar prueba competencial &rarr;</a>
+      <a class="btn-brut" href="apuntes/3-eso/index.html">Ver apuntes</a>
+    </div>
+  </div>
+
+  <figure class="barrow-lab pit-lab" id="pit-lab">
+    <div class="lab-bar">
+      <span class="dots"><i></i><i></i><i></i></span>
+      <span class="lab-title">laboratorio_pitagoras</span>
+    </div>
+    <svg viewBox="0 0 480 300" role="img" aria-label="Triángulo rectángulo con un cuadrado sobre cada lado">
+      <rect class="sq sq-a" x="0" y="0" width="0" height="0"/>
+      <rect class="sq sq-b" x="0" y="0" width="0" height="0"/>
+      <polygon class="sq sq-c" points="0,0 0,0 0,0 0,0"/>
+      <polygon class="tri" points="0,0 0,0 0,0"/>
+      <text class="ta" x="0" y="0"></text>
+      <text class="tb" x="0" y="0"></text>
+      <text class="tc" x="0" y="0"></text>
+    </svg>
+    <figcaption>
+      <span class="readout" aria-live="polite"></span>
+      <span class="pit-sliders">
+        <label>a <input type="range" class="pa" min="1" max="8" step="1" value="6" aria-label="Cateto a"></label>
+        <label>b <input type="range" class="pb" min="1" max="8" step="1" value="8" aria-label="Cateto b"></label>
+      </span>
+      <small>Cambia los catetos: el área del cuadrado grande es siempre la suma de los otros dos.</small>
+    </figcaption>
+  </figure>
+</section>
+  </div>
   <div class="hero-nav" aria-label="Cambiar de curso">
     <button type="button" class="hn-arrow" data-dir="-1" aria-label="Curso anterior">&larr;</button>
-    <span class="hn-dots"><i data-go="ciencias"></i><i data-go="ccss"></i></span>
+    <span class="hn-dots"><i data-go="eso3"></i><i data-go="ciencias"></i><i data-go="ccss"></i></span>
     <button type="button" class="hn-arrow" data-dir="1" aria-label="Curso siguiente">&rarr;</button>
   </div>
 </div>
 
 <nav class="course-switch" aria-label="Elige tu curso">
+  <button type="button" class="cs-btn cs-eso3" data-go="eso3" aria-pressed="false"><small>Matemáticas</small><b>3º ESO</b></button>
   <button type="button" class="cs-btn cs-ciencias" data-go="ciencias" aria-pressed="true"><small>Matemáticas II</small><b>Ciencias</b></button>
   <button type="button" class="cs-btn cs-ccss" data-go="ccss" aria-pressed="false"><small>Matemáticas Aplicadas II</small><b>Ciencias Sociales</b></button>
 </nav>
+
+<div class="course" id="course-eso3" data-course="eso3">
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Fracciones</span><span>Potencias</span><span>Proporcionalidad</span><span>Polinomios</span><span>Ecuaciones</span><span>Sistemas</span><span>Geometría</span><span>Funciones</span><span>Estadística</span><span>Probabilidad</span>
+    <span>Fracciones</span><span>Potencias</span><span>Proporcionalidad</span><span>Polinomios</span><span>Ecuaciones</span><span>Sistemas</span><span>Geometría</span><span>Funciones</span><span>Estadística</span><span>Probabilidad</span>
+  </div>
+</div>
+
+<section class="pau-ticket">
+  <div class="ticket-main">
+    <p class="ticket-eyebrow">Matemáticas 3º ESO · Andalucía</p>
+    <h2>Prueba<br>competencial</h2>
+    <div class="ticket-clock" aria-hidden="true"><b>60</b><i>:</i><b>00</b></div>
+    <ul class="ticket-facts">
+      <li><b>20</b> tipos de situación</li>
+      <li><b>∞</b> pruebas distintas</li>
+      <li><b>0</b> correcciones a mano</li>
+    </ul>
+  </div>
+  <div class="ticket-stub">
+    <p>Cinco situaciones de la vida cotidiana, una por bloque de contenidos, con cuatro apartados cada una. Elige lo que ya has visto y deja que se corrija sola.</p>
+    <a class="btn-brut btn-yellow btn-big" href="actividades/3-eso/prueba-competencial/index.html">Generar mi prueba</a>
+    <a class="stub-link" href="ejercicios/3-eso/index.html">o practica con 336 ejercicios por temas &rarr;</a>
+  </div>
+</section>
+
+<section class="doors">
+  <a class="door d-mint" href="apuntes/3-eso/index.html">
+    <span class="door-n">01</span>
+    <h3>Apuntes</h3>
+    <p>Teoría de los 14 temas con figuras, ejemplos y PDF para descargar.</p>
+    <span class="door-go">Entrar &rarr;</span>
+  </a>
+  <a class="door d-coral" href="ejercicios/3-eso/index.html">
+    <span class="door-n">02</span>
+    <h3>Ejercicios</h3>
+    <p>24 por tema: básicos, problemas y situaciones competenciales, con soluciones.</p>
+    <span class="door-go">Entrar &rarr;</span>
+  </a>
+  <a class="door d-yellow" href="actividades/3-eso/index.html">
+    <span class="door-n">03</span>
+    <h3>Actividades</h3>
+    <p>50 retos que se generan al azar y se corrigen en el navegador.</p>
+    <span class="door-go">Entrar &rarr;</span>
+  </a>
+</section>
+</div>
 
 <div class="course" id="course-ciencias" data-course="ciencias">
 <div class="ticker" aria-hidden="true">
