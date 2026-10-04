@@ -59,6 +59,11 @@ Ejemplo: un menú se compone de $3$ primeros y $4$ segundos: hay $3\cdot4=12$ me
 
 La probabilidad de un resultado de un experimento compuesto de **etapas independientes** es el producto de las probabilidades de cada rama. Si se lanza dos veces una moneda, $P(CC)=\dfrac12\cdot\dfrac12=\dfrac14$. En una bolsa con $3$ bolas rojas y $2$ azules, sacando $2$ con reemplazamiento, $P(\text{roja y roja})=\dfrac35\cdot\dfrac35=\dfrac9{25}$; **sin reemplazamiento** (la segunda extracción cambia), $P=\dfrac35\cdot\dfrac24=\dfrac3{10}$.
 
+::: {.callout-note}
+## Simulación con hoja de cálculo
+Con `=ALEATORIO.ENTRE(1;6)` en una hoja de cálculo simulas el lanzamiento de un dado; arrastra la fórmula 600 veces y cuenta con `=CONTAR.SI(A1:A600;3)` cuántas veces sale el 3. Verás que la frecuencia relativa se acerca a $\frac16$ al repetir muchas veces.
+:::
+
 ::: {.callout-tip}
 ## Resumen rápido
 - Laplace: $P(A)=\frac{\text{favorables}}{\text{posibles}}$ (solo si son equiprobables).

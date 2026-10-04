@@ -26,4 +26,8 @@ ok(isclose(sum((x - 1.45)**2 for x in datos) / 20, 1.1475), "varianza por defini
 orden = sorted(datos); ok(orden[9] == 1 and orden[10] == 1, "centrales")
 # efecto de un atípico
 sal = [1500] * 9 + [30000]; ok(median(sal) == 1500 and mean(sal) == 4350, "salarios")
+# cuartiles del apartado de cuartiles (mediana de cada mitad) y marca de clase
+q = [2, 3, 5, 6, 7, 9, 10, 12]
+ok(median(q) == 6.5 and median(q[:4]) == 4 and median(q[4:]) == 9.5, "cuartiles del ejemplo")
+ok((150 + 160) / 2 == 155, "marca de clase")
 fin("tema 13")

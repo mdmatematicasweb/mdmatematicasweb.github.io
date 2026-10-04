@@ -64,11 +64,17 @@ Resumen en un solo número lo "típico" de los datos.
 
 Con los datos de los $20$ alumnos del apartado anterior: $\bar{x}=\dfrac{0\cdot4+1\cdot7+2\cdot6+3\cdot2+4\cdot1}{20}=\dfrac{29}{20}=1{,}45$ hermanos, $Me=1$ y $Mo=1$.
 
+Con datos **agrupados en intervalos** se usa la marca de clase como $x_i$ y se obtiene una media aproximada: para $[150,160)$ con frecuencia $4$ se toma $x_i=155$.
+
 La media es sensible a los **valores atípicos**; la mediana, no. En los salarios de una empresa donde casi todos cobran $1\,500$ € y el director $30\,000$ €, la mediana describe mejor lo típico.
 
 ### Cuartiles
 
 Los **cuartiles** $Q_1,\ Q_2=Me,\ Q_3$ dividen los datos ordenados en cuatro partes con el mismo número de datos. El $25\,\%$ queda por debajo de $Q_1$ y el $75\,\%$ por debajo de $Q_3$.
+
+Para calcularlos: $Q_2$ es la mediana; $Q_1$ es la mediana de la mitad inferior y $Q_3$ la de la mitad superior (si hay un número impar de datos, la mediana no se incluye en ninguna mitad). Ejemplo: $2,\ 3,\ 5,\ 6,\ 7,\ 9,\ 10,\ 12$ tiene $Q_2=6{,}5$, $Q_1=\frac{3+5}{2}=4$ y $Q_3=\frac{9+10}{2}=9{,}5$.
+
+Un dato se considera **atípico** si queda por debajo de $Q_1-1{,}5\,(Q_3-Q_1)$ o por encima de $Q_3+1{,}5\,(Q_3-Q_1)$.
 
 ## 5. Medidas de dispersión
 
@@ -83,6 +89,11 @@ Indican cuánto se alejan los datos del centro.
 Con los mismos datos: $\sum f_ix_i^2=0+7+24+18+16=65$, luego $\sigma^2=\dfrac{65}{20}-1{,}45^2=3{,}25-2{,}1025=1{,}1475$ y $\sigma\approx1{,}07$ hermanos.
 
 **Comparar dos conjuntos.** Dos clases tienen la misma nota media, $6$, pero la clase A tiene $\sigma=0{,}5$ y la B tiene $\sigma=2$. En A las notas son muy parecidas; en B hay mucha diferencia entre alumnos. Una dispersión pequeña indica que la media es **representativa** y que los datos son más **fiables** como conjunto.
+
+::: {.callout-note}
+## Hoja de cálculo
+En una hoja de cálculo introduce los datos en una columna y usa `=PROMEDIO(A1:A20)`, `=MEDIANA(A1:A20)`, `=MODA(A1:A20)` y `=DESVEST.P(A1:A20)` para la media, la mediana, la moda y la desviación típica. También puedes crear gráficos de barras, sectores e histogramas con el asistente de gráficos.
+:::
 
 ::: {.callout-tip}
 ## Resumen rápido
