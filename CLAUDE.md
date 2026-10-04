@@ -71,3 +71,13 @@ antes de empezar la siguiente fase**. Se trabaja fase a fase, con revisión del 
 ## Fase 6: publicación
 
 - Hecha en la rama: sin exclusión en `_quarto.yml`, selector de curso en `index.qmd` (+ `assets/home.js`/`home.css`), navbar con menú del simulacro, sidebars e índices. Pendiente: merge a `main` y push cuando el usuario lo pida.
+
+
+## Curso 3º ESO (`3-eso`)
+
+- Spec y decisiones: `docs/superpowers/specs/2026-10-04-curso-3eso.md`. Fuentes: Orden de 30 de mayo de 2023 (BOJA nº 104, currículo de ESO en Andalucía; Matemáticas de 3.º, saberes `MAT.3.*`) y, como guía de orden, nivel y estilo, el libro de Santillana «Matemáticas Académicas 3.º ESO» (14 unidades; los enunciados son siempre originales). No hay PAU ni pruebas por trimestre: en su lugar, pruebas competenciales.
+- Rama de trabajo de esta sesión: `claude/admiring-clarke-tgsd2o` (la regla de `serene-cray` de arriba es solo del curso CCSS). Curso **oculto** (`"!**/3-eso/**"` en `render`) hasta que el usuario revise y pida publicarlo (fase 6 pendiente: portada, navbar, sidebar, índices).
+- 14 temas: 01-numeros-racionales, 02-potencias-raices, 03-progresiones, 04-proporcionalidad, 05-polinomios, 06-ecuaciones, 07-sistemas-ecuaciones, 08-lugares-geometricos, 09-movimientos-semejanzas, 10-cuerpos-geometricos, 11-funciones, 12-funciones-lineales-cuadraticas, 13-estadistica, 14-probabilidad. La carpeta antigua `14-parametros-estadisticos` (solo `.gitkeep`) sobra y se puede borrar.
+- Notación: coma decimal (`0{,}25` en fórmulas), fracciones `\frac{p}{q}`, `:` para dividir. Primero se calcula con sympy y después se escribe el texto; los verificadores no se relajan.
+- Comandos: `python scripts/eso3/verificar_NN.py` (apuntes), `python scripts/eso3/ej_NN.py` (verifica y escribe la relación de ejercicios; no editar `ejercicios/3-eso/NN-…/index.qmd` a mano), `python3 scripts/eso3/figuras.py`, `python3 scripts/eso3/build_actividades.py`, `node tests/gym-eso3.test.js`, `node tests/eso3-paginas.test.js`, `node tests/prueba-eso3.test.js`.
+- Un módulo nuevo de actividades (`eso3-*`) necesita su verificador en `tests/verify-gym-eso3.js` y su sitio en `scripts/eso3/build_actividades.py`; un tipo nuevo de situación competencial necesita su verificador en `tests/verify-eso3-comp.js`.
