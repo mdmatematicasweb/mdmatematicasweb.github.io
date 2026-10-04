@@ -1,0 +1,86 @@
+---
+title: "Ecuaciones de primer y segundo grado"
+---
+
+## 1. Ecuaciones y soluciones
+
+Una **ecuación** es una igualdad entre expresiones algebraicas que solo se cumple para ciertos valores de la incógnita. Esos valores son las **soluciones**. Dos ecuaciones son **equivalentes** si tienen las mismas soluciones.
+
+Transformaciones que dan ecuaciones equivalentes:
+
+- Sumar o restar la misma expresión a los dos miembros ("lo que suma pasa restando").
+- Multiplicar o dividir los dos miembros por un número **distinto de cero** ("lo que multiplica pasa dividiendo").
+
+## 2. Ecuaciones de primer grado
+
+Se pueden escribir como $ax+b=0$ con $a\neq0$ y tienen una solución: $x=-\dfrac{b}{a}$. Método:
+
+1. Quitar paréntesis.
+2. Quitar denominadores (multiplicando por el m.c.m.).
+3. Pasar los términos con $x$ a un miembro y los números al otro.
+4. Reducir y despejar.
+5. Comprobar.
+
+Ejemplo:
+
+$$\frac{x-1}{2}-\frac{2x+3}{3}=\frac{x}{6}-2$$
+
+Multiplicando por $6$: $3(x-1)-2(2x+3)=x-12$, es decir, $3x-3-4x-6=x-12$. Entonces $-x-9=x-12$, $-2x=-3$ y $x=\dfrac32$.
+
+Una ecuación puede no tener solución ($x+1=x+2$, imposible) o tener infinitas ($2(x+1)=2x+2$, una identidad).
+
+## 3. Ecuaciones de segundo grado
+
+La **ecuación de segundo grado** es $ax^2+bx+c=0$ con $a\neq0$.
+
+### Fórmula general
+
+$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+
+El **discriminante** $\Delta=b^2-4ac$ indica cuántas soluciones reales hay:
+
+| $\Delta$ | Soluciones |
+|---|---|
+| $\Delta>0$ | dos soluciones reales distintas |
+| $\Delta=0$ | una solución doble, $x=-\dfrac{b}{2a}$ |
+| $\Delta<0$ | ninguna solución real |
+
+Ejemplo: $x^2-5x+6=0$ tiene $\Delta=25-24=1$ y $x=\dfrac{5\pm1}{2}$, es decir, $x=3$ o $x=2$. La ecuación $x^2+2x+5=0$ tiene $\Delta=4-20=-16<0$: no tiene solución real.
+
+### Ecuaciones incompletas
+
+- Sin término en $x$ ($b=0$): $ax^2+c=0\Rightarrow x=\pm\sqrt{-c/a}$. $\ 3x^2-48=0\Rightarrow x=\pm4$.
+- Sin término independiente ($c=0$): se saca factor común. $\ 2x^2-8x=0\Rightarrow2x(x-4)=0\Rightarrow x=0$ o $x=4$.
+
+::: {.callout-note}
+## Suma y producto de las raíces
+Si $x_1$ y $x_2$ son las soluciones de $ax^2+bx+c=0$, entonces $x_1+x_2=-\dfrac{b}{a}$ y $x_1\cdot x_2=\dfrac{c}{a}$. Sirve para comprobar el resultado. En $x^2-5x+6=0$: $2+3=5$ y $2\cdot3=6$.
+:::
+
+## 4. Resolver problemas con ecuaciones
+
+1. **Leer** el enunciado y decidir qué es la incógnita ($x$).
+2. **Plantear** la ecuación traduciendo cada dato.
+3. **Resolver**.
+4. **Comprobar** que la solución cumple el enunciado y tiene sentido (¿puede ser negativa? ¿entera?).
+
+Ejemplo 1 (primer grado): un padre tiene $42$ años y su hija $12$. ¿Dentro de cuántos años tendrá el padre el doble de edad que la hija? $42+x=2(12+x)\Rightarrow x=18$. Dentro de $18$ años tendrán $60$ y $30$.
+
+Ejemplo 2 (segundo grado): un campo rectangular mide $5$ m más de largo que de ancho y su área es de $84$ m². Con ancho $x$: $x(x+5)=84\Rightarrow x^2+5x-84=0$, $\Delta=361$ y $x=\dfrac{-5\pm19}{2}$. La solución $x=-12$ no tiene sentido (una longitud no es negativa), luego mide $7$ m de ancho y $12$ m de largo.
+
+::: {.callout-warning}
+## Rechaza lo que no tiene sentido
+En problemas de segundo grado aparecen dos soluciones y a veces una no es válida (longitudes negativas, personas fraccionarias...). Interpreta siempre el resultado.
+:::
+
+## 5. Ecuaciones con la tecnología
+
+Las ecuaciones se pueden resolver con la calculadora (modo ecuación) o con programas como GeoGebra o una hoja de cálculo. Sirve para **comprobar**, pero hay que saber plantearlas y resolverlas a mano.
+
+::: {.callout-tip}
+## Resumen rápido
+- Primer grado: despejar $x$; comprobar.
+- Segundo grado: $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$; si $\Delta<0$, sin solución real.
+- Incompletas: factor común ($c=0$) o despejar ($b=0$).
+- Problemas: incógnita, ecuación, resolver, comprobar y descartar lo absurdo.
+:::

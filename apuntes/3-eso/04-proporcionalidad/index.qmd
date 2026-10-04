@@ -1,0 +1,92 @@
+---
+title: "Proporcionalidad numérica"
+---
+
+## 1. Razón y proporción
+
+La **razón** entre dos cantidades $a$ y $b$ es el cociente $\dfrac{a}{b}$. Una **proporción** es la igualdad de dos razones:
+
+$$\frac{a}{b}=\frac{c}{d}\iff a\cdot d=b\cdot c$$
+
+Si falta un término, se calcula con el producto cruzado: de $\dfrac{18}{11}=\dfrac{72}{x}$ sale $x=\dfrac{11\cdot72}{18}=44$.
+
+## 2. Magnitudes directamente proporcionales
+
+Dos magnitudes son **directamente proporcionales** si al multiplicar una por un número, la otra queda multiplicada por el mismo número. El cociente $\dfrac{y}{x}=k$ es constante: la **constante de proporcionalidad**.
+
+Ejemplo: 3 kg de manzanas cuestan 4,50 €. Entonces $k=\dfrac{4{,}50}{3}=1{,}50$ €/kg, y 7 kg cuestan $7\cdot1{,}50=10{,}50$ €.
+
+**Regla de tres directa**: $\dfrac{3}{7}=\dfrac{4{,}50}{x}\Rightarrow x=\dfrac{7\cdot4{,}50}{3}=10{,}50$ €.
+
+## 3. Magnitudes inversamente proporcionales
+
+Son **inversamente proporcionales** si al multiplicar una por un número, la otra queda dividida por ese número. El producto $x\cdot y=k$ es constante.
+
+Ejemplo: 6 operarios hacen una obra en 10 días. Con 15 operarios (al mismo ritmo) tardarán $x$ días: $6\cdot10=15\cdot x\Rightarrow x=4$ días.
+
+::: {.callout-warning}
+## ¿Directa o inversa?
+Pregúntate: *si una magnitud aumenta, ¿la otra también aumenta?* Más kilos, más dinero: **directa**. Más operarios, menos días: **inversa**. Sin esta pregunta es fácil equivocarse.
+:::
+
+### Regla de tres compuesta
+
+Se usa cuando intervienen más de dos magnitudes. Se analiza cada una respecto a la incógnita (directa o inversa) y se combinan.
+
+Ejemplo: 8 máquinas fabrican 960 piezas en 6 horas. ¿Cuántas piezas fabrican 5 máquinas en 9 horas? Piezas es directa con máquinas y con horas:
+
+$$x=960\cdot\frac{5}{8}\cdot\frac{9}{6}=900\text{ piezas}$$
+
+### Repartos proporcionales
+
+Para repartir una cantidad $T$ en partes proporcionales a $a,\ b,\ c$ (directo), cada parte es $T\cdot\dfrac{a}{a+b+c}$. Ejemplo: repartir $1\,200$ € entre tres socios que aportaron $2\,000$, $3\,000$ y $5\,000$ €. La suma es $10\,000$ y reciben $240$, $360$ y $600$ €. En un reparto **inverso** se reparte en proporción a los inversos $\frac1a,\frac1b,\dots$
+
+## 4. Porcentajes
+
+El **tanto por ciento** $r\,\%$ es la razón $\dfrac{r}{100}$.
+
+- **Porcentaje de una cantidad**: $\dfrac{r}{100}\cdot C$. El $15\,\%$ de $240$ es $36$.
+- **¿Qué porcentaje es $a$ de $b$?**: $\dfrac{a}{b}\cdot100$. $18$ de $120$ es el $15\,\%$.
+- **Cantidad total** si se conoce una parte: $C=\dfrac{\text{parte}}{r/100}$. Si el $15\,\%$ es $36$, el total es $240$.
+
+### Aumentos y disminuciones porcentuales
+
+Se usan los **índices de variación**, que multiplican directamente la cantidad inicial:
+
+$$\text{aumento del }r\,\%:\ 1+\frac{r}{100}\qquad\text{disminución del }r\,\%:\ 1-\frac{r}{100}$$
+
+Una camiseta de $30$ € con un $20\,\%$ de descuento cuesta $30\cdot0{,}80=24$ €. Con un IVA del $21\,\%$ sobre $80$ €, el precio final es $80\cdot1{,}21=96{,}80$ €. Para obtener el precio sin IVA: $96{,}80:1{,}21=80$ €.
+
+### Variaciones porcentuales encadenadas
+
+Los índices **se multiplican**. Un precio sube un $10\,\%$ y luego baja un $10\,\%$:
+
+$$1{,}10\cdot0{,}90=0{,}99\quad\Rightarrow\quad\text{el precio final es un }1\,\%\text{ menor}$$
+
+::: {.callout-warning}
+## Subir y bajar el mismo porcentaje no vuelve al inicio
+Subir un $10\,\%$ y bajar un $10\,\%$ no deja el precio igual, porque el segundo porcentaje se calcula sobre una cantidad distinta.
+:::
+
+## 5. Interés simple y compuesto
+
+Con un capital $C$, un tanto anual $r\,\%$ y $t$ años:
+
+- **Interés simple**: los intereses no se reinvierten. $I=C\cdot\dfrac{r}{100}\cdot t$.
+- **Interés compuesto**: los intereses se suman al capital cada año. $C_t=C\cdot\left(1+\dfrac{r}{100}\right)^t$.
+
+Con $5\,000$ € al $4\,\%$ durante $3$ años: simple, $I=5\,000\cdot0{,}04\cdot3=600$ € (total $5\,600$ €); compuesto, $5\,000\cdot1{,}04^3=5\,624{,}32$ €.
+
+## 6. Educación financiera y escalas
+
+- **Precio unitario**: para comparar ofertas se calcula el precio por unidad (por kilo, litro...). Un pack de 6 yogures a 2,10 € sale a 0,35 € cada uno; uno de 4 a 1,56 €, a 0,39 €.
+- **Cambio de divisas**: es una proporcionalidad directa. Si $1$ € $=1{,}08$ $\$$, $250$ € son $270$ $\$$.
+- **Escala** $1:E$: $1$ cm del plano son $E$ cm de la realidad. Con escala $1:25\,000$, $4$ cm del mapa son $100\,000$ cm $=1$ km.
+
+::: {.callout-tip}
+## Resumen rápido
+- Directa: $y/x$ constante. Inversa: $x\cdot y$ constante.
+- Aumento del $r\,\%$: multiplica por $1+r/100$; disminución: por $1-r/100$.
+- Variaciones encadenadas: se multiplican los índices.
+- Interés compuesto: $C(1+r/100)^t$.
+:::

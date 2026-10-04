@@ -1,0 +1,103 @@
+---
+title: "Potencias y raíces"
+---
+
+## 1. Potencias de exponente entero
+
+Una **potencia** $a^n$ con $n$ natural es el producto de $n$ factores iguales a $a$. La base es $a$ y el exponente es $n$.
+
+$$2^5=2\cdot2\cdot2\cdot2\cdot2=32 \qquad (-3)^2=9 \qquad (-3)^3=-27$$
+
+::: {.callout-warning}
+## El signo
+Con base negativa, el resultado es **positivo** si el exponente es par y **negativo** si es impar. Y $-3^2=-9$ (el signo no está dentro de la base), pero $(-3)^2=9$.
+:::
+
+Definiciones para los demás exponentes enteros ($a\neq0$):
+
+$$a^0=1 \qquad a^{-n}=\frac{1}{a^n} \qquad \left(\frac{a}{b}\right)^{-n}=\left(\frac{b}{a}\right)^{n}$$
+
+Ejemplo: $5^{-2}=\dfrac{1}{25}$ y $\left(\dfrac{2}{3}\right)^{-3}=\dfrac{27}{8}$.
+
+## 2. Propiedades de las potencias
+
+| Propiedad | Fórmula | Ejemplo |
+|---|---|---|
+| Producto de igual base | $a^m\cdot a^n=a^{m+n}$ | $2^3\cdot2^4=2^7$ |
+| Cociente de igual base | $a^m:a^n=a^{m-n}$ | $3^5:3^2=3^3$ |
+| Potencia de una potencia | $(a^m)^n=a^{m\cdot n}$ | $(5^2)^3=5^6$ |
+| Producto de igual exponente | $a^n\cdot b^n=(a\cdot b)^n$ | $2^3\cdot5^3=10^3$ |
+| Cociente de igual exponente | $a^n:b^n=(a:b)^n$ | $12^2:4^2=3^2$ |
+
+Se aplican para simplificar. Ejemplo:
+
+$$\frac{2^5\cdot4^{-1}}{8^2}=\frac{2^5\cdot2^{-2}}{2^6}=\frac{2^3}{2^6}=2^{-3}=\frac{1}{8}$$
+
+## 3. Notación científica
+
+Los números muy grandes o muy pequeños se escriben como $a\cdot10^n$, con $1\leq a<10$ y $n$ entero. Si $n>0$ el número es grande; si $n<0$, pequeño.
+
+$$149\,600\,000\ \text{km}=1{,}496\cdot10^{8}\ \text{km} \qquad 0{,}000\,000\,53=5{,}3\cdot10^{-7}$$
+
+**Operaciones**. En el producto y el cociente se operan por separado los coeficientes y las potencias de 10. En la suma y la resta se saca factor común la menor potencia (o se igualan los exponentes).
+
+$$(3{,}2\cdot10^{5})\cdot(2\cdot10^{-2})=6{,}4\cdot10^{3} \qquad 4{,}5\cdot10^{6}+3\cdot10^{5}=4{,}5\cdot10^{6}+0{,}3\cdot10^{6}=4{,}8\cdot10^{6}$$
+
+En la calculadora, la tecla de exponente (`EXP` o `×10ˣ`) permite introducir estos números.
+
+## 4. Raíces
+
+La **raíz $n$-ésima** de $a$ es el número $b$ que elevado a $n$ da $a$:
+
+$$\sqrt[n]{a}=b\iff b^n=a$$
+
+$\sqrt{49}=7$ porque $7^2=49$, y $\sqrt[3]{-8}=-2$ porque $(-2)^3=-8$. Si el índice es par, el radicando no puede ser negativo y la raíz es no negativa. Una raíz que no es exacta es un número **irracional** ($\sqrt{2}$, $\sqrt[3]{5}$).
+
+Se puede escribir como potencia de exponente fraccionario:
+
+$$\sqrt[n]{a^m}=a^{m/n} \qquad \sqrt[3]{2^6}=2^2=4$$
+
+### Propiedades
+
+$$\sqrt[n]{a}\cdot\sqrt[n]{b}=\sqrt[n]{a\cdot b} \qquad \frac{\sqrt[n]{a}}{\sqrt[n]{b}}=\sqrt[n]{\frac{a}{b}} \qquad \sqrt[m]{\sqrt[n]{a}}=\sqrt[m\cdot n]{a}$$
+
+::: {.callout-warning}
+## No se puede
+$\sqrt{a+b}\neq\sqrt{a}+\sqrt{b}$. Por ejemplo $\sqrt{9+16}=5$, pero $\sqrt9+\sqrt{16}=7$.
+:::
+
+### Simplificar y extraer factores
+
+Se descompone el radicando en factores primos y se sacan fuera los que tengan exponente igual o mayor que el índice.
+
+$$\sqrt{72}=\sqrt{2^3\cdot3^2}=2\cdot3\sqrt{2}=6\sqrt{2} \qquad \sqrt[3]{54}=\sqrt[3]{2\cdot3^3}=3\sqrt[3]{2}$$
+
+### Operar con radicales
+
+Solo se suman o restan radicales **semejantes** (mismo índice y mismo radicando), sacando factor común:
+
+$$3\sqrt{2}+5\sqrt{2}=8\sqrt{2} \qquad \sqrt{50}-\sqrt{18}=5\sqrt{2}-3\sqrt{2}=2\sqrt{2}$$
+
+### Racionalizar
+
+Racionalizar es quitar la raíz del denominador:
+
+$$\frac{6}{\sqrt{3}}=\frac{6\sqrt{3}}{3}=2\sqrt{3} \qquad \frac{1}{2+\sqrt{3}}=\frac{2-\sqrt{3}}{(2+\sqrt{3})(2-\sqrt{3})}=\frac{2-\sqrt{3}}{1}=2-\sqrt{3}$$
+
+## 5. Aproximaciones y errores
+
+Al aproximar un valor $x$ por otro $\tilde{x}$:
+
+- **Error absoluto**: $E_a=|x-\tilde{x}|$.
+- **Error relativo**: $E_r=\dfrac{E_a}{|x|}$ (se suele dar en %).
+
+Ejemplo: $\sqrt{2}\approx1{,}41$ tiene $E_a\approx0{,}0042$ y $E_r\approx0{,}30\,\%$. Cuanto menor es el error relativo, mejor es la aproximación.
+
+::: {.callout-tip}
+## Resumen rápido
+- $a^0=1$ y $a^{-n}=\frac{1}{a^n}$. Igual base: se suman o restan exponentes.
+- Notación científica: $a\cdot10^n$ con $1\leq a<10$.
+- $\sqrt[n]{a^m}=a^{m/n}$. Para simplificar, factoriza el radicando.
+- Solo se suman radicales semejantes. $\sqrt{a+b}\neq\sqrt a+\sqrt b$.
+- Racionalizar: multiplica por la raíz (o por el conjugado) arriba y abajo.
+:::
