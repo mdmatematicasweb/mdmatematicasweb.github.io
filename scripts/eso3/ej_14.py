@@ -57,9 +57,9 @@ T.b("Se lanza una moneda tres veces. Dibuja el árbol (mentalmente) y calcula: a
     ["a) $\\frac{1}{8}$", "b) $\\{CCX,CXC,XCC\\}$: $\\frac{3}{8}$", "c) $1-\\frac{1}{8}=\\frac{7}{8}$"])
 
 # ---- problemas ----
-T.p("Se forma un número de dos cifras distintas con los dígitos $1,\\ 2,\\ 3,\\ 4$. ¿Cuántos números pueden formarse? ¿Cuál es la probabilidad de que sea par? ¿Y mayor que $30$?",
-    "Total: $4\\cdot3=12$. Pares: terminan en $2$ o $4$: $2\\cdot3=6$; $P=\\frac{6}{12}=\\frac{1}{2}$. Mayores que $30$: empiezan en $3$ o $4$: $2\\cdot3=6$; $P=\\frac{6}{12}=\\frac{1}{2}$.",
-    ["Total: $4\\cdot3=12$", "P=\\frac{6}{12}=\\frac{1}{2}$"])
+T.p("Se forma un número de dos cifras distintas con los dígitos $1,\\ 2,\\ 3,\\ 4$. ¿Cuántos números pueden formarse? ¿Cuál es la probabilidad de que sea par? ¿Y mayor que $20$?",
+    "Total: $4\\cdot3=12$. Pares: terminan en $2$ o $4$: $2\\cdot3=6$; $P=\\frac{6}{12}=\\frac{1}{2}$. Mayores que $20$: solo quedan fuera los que empiezan en $1$ ($3$ números), luego hay $9$; $P=\\frac{9}{12}=\\frac{3}{4}$.",
+    ["Total: $4\\cdot3=12$", "$2\\cdot3=6$; $P=\\frac{6}{12}=\\frac{1}{2}$", "luego hay $9$; $P=\\frac{9}{12}=\\frac{3}{4}$"])
 
 T.p("En una clase de $30$ alumnos, $18$ practican fútbol, $12$ baloncesto y $5$ ambos. Se elige un alumno al azar. Calcula la probabilidad de que practique: a) fútbol o baloncesto b) ninguno de los dos c) solo fútbol.",
     f"a) $\\frac{{18}}{{30}}+\\frac{{12}}{{30}}-\\frac{{5}}{{30}}=\\frac{{25}}{{30}}={L(R(5,6))}$. b) $1-\\frac{{5}}{{6}}={L(R(1,6))}$. c) $\\frac{{18-5}}{{30}}=\\frac{{13}}{{30}}$.",
@@ -77,9 +77,9 @@ T.p("En un instituto, el $60\\,\\%$ de los alumnos son chicas. Se eligen dos alu
     f"a) $0{{,}}6\\cdot0{{,}}6=0{{,}}36$. b) $2\\cdot0{{,}}6\\cdot0{{,}}4=0{{,}}48$. c) $1-0{{,}}4\\cdot0{{,}}4=0{{,}}84$.",
     ["a) $0{,}6\\cdot0{,}6=0{,}36$", "b) $2\\cdot0{,}6\\cdot0{,}4=0{,}48$", "c) $1-0{,}4\\cdot0{,}4=0{,}84$"])
 
-T.p("Se lanza un dado $600$ veces. ¿Cuántas veces se espera que salga un múltiplo de $3$? ¿Y un número menor que $3$?",
-    "Múltiplo de $3$: $\\frac{2}{6}\\cdot600=200$ veces. Menor que $3$ ($1$ o $2$): $\\frac{2}{6}\\cdot600=200$ veces.",
-    ["\\frac{2}{6}\\cdot600=200$ veces"])
+T.p("Se lanza un dado $600$ veces. ¿Cuántas veces se espera que salga un múltiplo de $3$? ¿Y un número par?",
+    "Múltiplo de $3$: $\\frac{2}{6}\\cdot600=200$ veces. Par ($2$, $4$ o $6$): $\\frac{3}{6}\\cdot600=300$ veces.",
+    ["Múltiplo de $3$: $\\frac{2}{6}\\cdot600=200$ veces", "$\\frac{3}{6}\\cdot600=300$ veces"])
 
 T.p("Con las cifras $1,\\ 2,\\ 3,\\ 4,\\ 5$ se forman números de tres cifras sin repetir. ¿Cuántos hay? ¿Cuál es la probabilidad de que sea múltiplo de $5$?",
     "Total: $5\\cdot4\\cdot3=60$. Terminan en $5$: $4\\cdot3=12$. $P=\\frac{12}{60}=\\frac{1}{5}$.",
@@ -126,14 +126,14 @@ T.chk(4*5*3 == 60 and 4*5*4 == 80, "ex 9")
 tres = list(product("CX", repeat=3))
 T.chk(P(lambda t: t == ("C",)*3, tres) == R(1, 8) and P(lambda t: t.count("C") == 2, tres) == R(3, 8) and P(lambda t: "X" in t, tres) == R(7, 8), "ex 10")
 nums = [a*10 + b for a, b in permutations([1, 2, 3, 4], 2)]
-T.chk(len(nums) == 12 and sum(1 for n in nums if n % 2 == 0) == 6 and sum(1 for n in nums if n > 30) == 6, "ex 11")
+T.chk(len(nums) == 12 and sum(1 for n in nums if n % 2 == 0) == 6 and sum(1 for n in nums if n > 20) == 9 and sum(1 for n in nums if n < 20) == 3, "ex 11")
 T.chk(R(18 + 12 - 5, 30) == R(5, 6) and 1 - R(5, 6) == R(1, 6) and R(18 - 5, 30) == R(13, 30), "ex 12")
 bolsa = ["b"]*4 + ["n"]*6
 con = list(product(bolsa, repeat=2)); sin = list(permutations(bolsa, 2))
 T.chk(P(lambda p: p == ("b", "b"), con) == R(4, 25) and P(lambda p: set(p) == {"b", "n"}, con) == R(12, 25) and P(lambda p: p == ("n", "n"), con) == R(9, 25), "ex 13")
 T.chk(P(lambda p: p == ("b", "b"), sin) == R(2, 15) and P(lambda p: set(p) == {"b", "n"}, sin) == R(8, 15), "ex 14")
 T.chk(abs(0.6*0.6 - 0.36) < 1e-12 and abs(2*0.6*0.4 - 0.48) < 1e-12 and abs(1 - 0.4*0.4 - 0.84) < 1e-12, "ex 15")
-T.chk(R(2, 6)*600 == 200, "ex 16")
+T.chk(R(2, 6)*600 == 200 and R(3, 6)*600 == 300, "ex 16")
 n3 = list(permutations([1, 2, 3, 4, 5], 3))
 T.chk(len(n3) == 60 and sum(1 for p in n3 if p[2] == 5) == 12, "ex 17")
 T.chk(len([n for n in range(1, 21) if n % 4 == 0]) == 5 and len([n for n in (2, 3, 5, 7, 11, 13, 17, 19)]) == 8 and all(n % 4 for n in (2, 3, 5, 7, 11, 13, 17, 19)), "ex 18")

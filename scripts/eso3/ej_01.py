@@ -59,7 +59,7 @@ T.b("Calcula las fracciones: a) $\\frac{3}{5}$ de $350$ b) el $\\frac{2}{7}$ de 
 x = R(5, 3)
 T.b("Representa en la recta numérica $\\frac{5}{3}$, $-\\frac{3}{4}$ y $1{,}\\overline{3}$ e indica entre qué enteros están.",
     "$\\frac{5}{3}=1{,}\\overline{6}$ está entre $1$ y $2$. $-\\frac{3}{4}=-0{,}75$ está entre $-1$ y $0$. $1{,}\\overline{3}=\\frac{4}{3}$ está entre $1$ y $2$, antes que $\\frac{5}{3}$.",
-    ["entre $1$ y $2$", "entre $-1$ y $0$"])
+    ["$\\frac{5}{3}=1{,}\\overline{6}$ está entre $1$ y $2$", "$-\\frac{3}{4}=-0{,}75$ está entre $-1$ y $0$"])
 
 # ---- problemas ----
 T.p("Un depósito está lleno de agua. El lunes se gasta $\\frac{1}{4}$, el martes $\\frac{2}{5}$ de lo que había al principio. ¿Qué fracción queda? Si el depósito tiene $2\\,000$ L, ¿cuántos litros quedan?",

@@ -11,7 +11,7 @@ d1 = lambda v: D(v, 1, False)
 # ---- básicos ----
 T.b("Calcula la hipotenusa de un triángulo rectángulo de catetos $9$ cm y $12$ cm, y el cateto que falta si la hipotenusa mide $17$ cm y un cateto $8$ cm.",
     f"$h=\\sqrt{{81+144}}=\\sqrt{{225}}={int(hypot(9,12))}$ cm. Cateto: $\\sqrt{{289-64}}=\\sqrt{{225}}={int(sqrt(289-64))}$ cm.",
-    [f"={int(hypot(9,12))}$ cm", f"={int(sqrt(289-64))}$ cm"])
+    [f"\\sqrt{{225}}={int(hypot(9,12))}$ cm. Cateto", f"\\sqrt{{225}}={int(sqrt(289-64))}$ cm."])
 
 T.b("Indica cuáles de estas ternas son pitagóricas (lados de un triángulo rectángulo): a) $(6,8,10)$ b) $(7,24,25)$ c) $(5,10,12)$ d) $(9,40,41)$.",
     "a) $36+64=100$: sí. b) $49+576=625$: sí. c) $25+100=125\\neq144$: no. d) $81+1600=1681=41^2$: sí.",

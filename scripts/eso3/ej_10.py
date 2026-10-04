@@ -100,7 +100,7 @@ T.c("**Un envase.** Un fabricante de cereales compara dos cajas de $1\\,000$ cm�
 
 T.c("**Latas y cajas.** Una caja de cartón de $30\\times20\\times12$ cm se llena con latas cilíndricas de $6$ cm de diámetro y $12$ cm de altura, colocadas de pie. a) ¿Cuántas latas caben en la base? b) ¿Qué volumen ocupan las latas y qué fracción del volumen de la caja es? c) ¿Cuántos litros de refresco hay en la caja si las latas se llenan al $95\\,\\%$?",
     f"a) En el largo caben $30:6=5$ y en el ancho $20:6=3$ (quedan $2$ cm): $15$ latas. b) Cada lata: $\\pi\\cdot9\\cdot12\\approx{d1(pi*9*12)}$ cm³; $15$ latas: $\\approx{d1(15*pi*9*12)}$ cm³. La caja: $7200$ cm³. Fracción: $\\approx{d1(15*pi*9*12/7200*100)}\\,\\%$. c) $0{{,}}95\\cdot{d1(15*pi*9*12)}\\approx{d1(0.95*15*pi*9*12)}$ cm³ $\\approx{D(0.95*15*pi*9*12/1000,2,False)}$ L.",
-    ["$15$ latas", f"\\approx{d1(15*pi*9*12/7200*100)}\\,\\%$", f"\\approx{D(0.95*15*pi*9*12/1000,2,False)}$ L"])
+    ["(quedan $2$ cm): $15$ latas", f"\\approx{d1(15*pi*9*12/7200*100)}\\,\\%$", f"\\approx{D(0.95*15*pi*9*12/1000,2,False)}$ L"])
 
 T.c("**La Tierra y la naranja.** La Tierra se puede aproximar por una esfera de radio $6\\,371$ km. a) Calcula su superficie (en notación científica, km²). b) Si el $71\\,\\%$ está cubierto por agua, ¿cuánta superficie es tierra firme? c) Una naranja de $4$ cm de radio es una esfera semejante: ¿qué escala hay entre la Tierra y la naranja?",
     f"a) $4\\pi\\cdot6371^2\\approx{D(4*pi*6371**2/1e8,3,False)}\\cdot10^8$ km². b) Tierra firme: $0{{,}}29\\cdot{D(4*pi*6371**2/1e8,3,False)}\\cdot10^8\\approx{D(0.29*4*pi*6371**2/1e8,2,False)}\\cdot10^8$ km². c) $6371$ km $=6{{,}}371\\cdot10^8$ cm; escala $4:6{{,}}371\\cdot10^8$, es decir, $1:{D(6.371e8/4/1e7,2,False)}\\cdot10^7$.",

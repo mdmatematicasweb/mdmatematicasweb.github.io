@@ -71,7 +71,7 @@ T.p("Comprueba que $x=3$ es raíz de $P(x)=x^3-6x^2+11x-6$ y factoriza el polino
 
 T.p("Demuestra con identidades notables que $(n+1)^2-n^2$ es siempre un número impar. ¿Cuánto vale para $n=49$?",
     f"$(n+1)^2-n^2=n^2+2n+1-n^2=2n+1$, que es impar. Para $n=49$: ${2*49+1}$.",
-    ["2n+1", f"{2*49+1}"])
+    ["=2n+1$, que es impar", f"Para $n=49$: ${2*49+1}$"])
 
 T.p("Calcula mentalmente usando identidades notables: a) $101^2$ b) $99^2$ c) $52\\cdot48$.",
     f"a) $(100+1)^2=10000+200+1={101**2}$. b) $(100-1)^2=10000-200+1={99**2}$. c) $(50+2)(50-2)=2500-4={52*48}$.",
