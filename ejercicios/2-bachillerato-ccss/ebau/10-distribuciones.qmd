@@ -1,0 +1,401 @@
+---
+title: "PAU Andalucía — Distribuciones binomial y normal"
+lang: es
+---
+
+Ejercicios de **Matemáticas Aplicadas a las Ciencias Sociales II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *distribuciones binomial y normal*: **12 ejercicios** de convocatorias ordinarias y extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ccss/10-distribuciones/index.qmd), los [ejercicios del tema](../10-distribuciones/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ccss/10-distribuciones/index.qmd).
+
+Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+
+> Se usa la tabla de la normal N(0,1) que acompaña a cada examen: los resultados se dan con los valores de la tabla (z a dos decimales), no con la calculadora.
+
+
+## 2026
+
+
+### Ordinaria · Suplente 1 2026
+
+
+::::: {.ebau-ej #ebau-2026-ord-sup1-4}
+**Ejercicio 4** · Ordinaria · Suplente 1 2026 · Bloque D · *(2 puntos)* · [Examen](../../../assets/pau-ccss/2026-ord-sup1/examen.pdf){target="_blank"}
+
+Una empresa de alquiler de patinetes eléctricos quiere analizar el comportamiento de sus usuarios durante la hora punta de la mañana en una determinada ciudad. La duración del trayecto de cada usuario (en minutos) se distribuye según una ley Normal con media 18 y desviación típica 4.
+
+a) ¿Cuál es la probabilidad de que un usuario tarde menos de 15 minutos en hacer su trayecto? *(0,75 puntos)*
+
+b) Se sabe que cada usuario que desbloquea un patinete tiene una probabilidad de $0{,}9$ de completar su trayecto sin incidencias. Si 120 usuarios desbloquean un patinete para moverse por la ciudad, ¿cuál es la probabilidad de que al menos 110 completen el trayecto sin incidencias? *(1,25 puntos)*
+
+*Relacionado también con:* [Muestreo e inferencia](11-muestreo-inferencia.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $X\sim N(18,\ 4)$: $P(X<15)=P\!\left(Z<\dfrac{15-18}{4}\right)=P(Z<-0{,}75)=1-P(Z<0{,}75)=1-0{,}7734=\mathbf{0{,}2266}$.
+
+**b)** Sea $Y$ el número de usuarios, de $120$, que completan el trayecto sin incidencias: $Y\sim B(120;\ 0{,}9)$. Como $np=108\ge5$ y $nq=12\ge5$, se aproxima por $Y'\sim N\!\left(108,\ \sqrt{120\cdot0{,}9\cdot0{,}1}\right)=N(108,\ 3{,}2863)$. Con corrección por continuidad:
+$$P(Y\ge110)=P(Y'>109{,}5)=P\!\left(Z>\frac{109{,}5-108}{3{,}2863}\right)=P(Z>0{,}46)=1-0{,}6772=\mathbf{0{,}3228}.$$
+::::
+:::::
+
+
+### Ordinaria · Suplente 2 2026
+
+
+::::: {.ebau-ej #ebau-2026-ord-sup2-3B}
+**Ejercicio 3B** · Ordinaria · Suplente 2 2026 · Bloque C · *(2 puntos)* · [Examen](../../../assets/pau-ccss/2026-ord-sup2/examen.pdf){target="_blank"}
+
+Sea $X$ una variable aleatoria que sigue una distribución Normal de media 16 y varianza 4. Se pide:
+
+a) Calcule la probabilidad de que la variable aleatoria tome valores comprendidos entre $14{,}5$ y $16{,}2$. *(0,75 puntos)*
+
+b) Halle el valor de $a$ para el que $P[X\ge a]=0{,}25$. *(0,5 puntos)*
+
+c) Se consideran muestras de tamaño 64, ¿qué distribución sigue la variable media muestral? ¿Qué probabilidad hay de que, elegida una muestra al azar, la media sea superior a $16{,}3$? *(0,75 puntos)*
+
+*Relacionado también con:* [Muestreo e inferencia](11-muestreo-inferencia.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$X\sim N(16,\ 2)$ (la desviación típica es $\sqrt4=2$).
+
+**a)** $P(14{,}5<X<16{,}2)=P\!\left(\dfrac{14{,}5-16}{2}<Z<\dfrac{16{,}2-16}{2}\right)=P(-0{,}75<Z<0{,}1)=0{,}5398-(1-0{,}7734)=\mathbf{0{,}3132}$.
+
+**b)** $P(X\ge a)=0{,}25\iff P(X<a)=0{,}75$. En la tabla $\Phi(0{,}67)=0{,}7486$ y $\Phi(0{,}68)=0{,}7517$, luego $z\approx0{,}675$ y $a=16+2\cdot0{,}675=\mathbf{17{,}35}$.
+
+**c)** $\bar X\sim N\!\left(16,\ \dfrac{2}{\sqrt{64}}\right)=N(16,\ 0{,}25)$.
+$$P(\bar X>16{,}3)=P\!\left(Z>\frac{16{,}3-16}{0{,}25}\right)=P(Z>1{,}2)=1-0{,}8849=\mathbf{0{,}1151}.$$
+::::
+:::::
+
+
+### Extraordinaria · Suplente 1 2026
+
+
+::::: {.ebau-ej #ebau-2026-ext-sup1-4A}
+**Ejercicio 4A** · Extraordinaria · Suplente 1 2026 · Bloque D · *(2 puntos)* · [Examen](../../../assets/pau-ccss/2026-ext-sup1/examen.pdf){target="_blank"}
+
+La probabilidad de que Paco gane un partido de bádminton es $0{,}8$.
+
+a) En un torneo participan 10 jugadores (incluido Paco) y cada jugador juega un partido con cada uno de los restantes jugadores. Calcule la probabilidad de que Paco:
+
+i) Gane exactamente 8 partidos. *(0,5 puntos)*
+
+ii) Gane como mucho 8 partidos. *(0,5 puntos)*
+
+b) Si a lo largo de un año Paco juega 80 partidos, ¿cuál es la probabilidad de que pierda más de 10 pero menos de 20 partidos ese año? *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En el torneo, Paco juega $9$ partidos (uno contra cada uno de los otros $9$ jugadores). $X$ = «partidos ganados»: $X\sim B(9;\ 0{,}8)$.
+
+**i)** $P(X=8)=\dbinom98\,0{,}8^8\cdot0{,}2=9\cdot0{,}8^8\cdot0{,}2\approx\mathbf{0{,}3020}$.
+
+**ii)** $P(X\le8)=1-P(X=9)=1-0{,}8^9\approx\mathbf{0{,}8658}$.
+
+**b)** $Y$ = «partidos perdidos» de $80$: $Y\sim B(80;\ 0{,}2)$. Como $np=16\ge5$ y $nq=64\ge5$, se aproxima por $Y'\sim N\!\left(16,\ \sqrt{80\cdot0{,}2\cdot0{,}8}\right)=N(16,\ 3{,}5777)$. «Más de $10$ pero menos de $20$» son $11,\dots,19$, es decir, con corrección por continuidad $10{,}5<Y'<19{,}5$:
+$$P=P\!\left(\frac{10{,}5-16}{3{,}5777}<Z<\frac{19{,}5-16}{3{,}5777}\right)=P(-1{,}54<Z<0{,}98)=0{,}8365-(1-0{,}9382)=\mathbf{0{,}7747}.$$
+::::
+:::::
+
+
+### Extraordinaria · Suplente 2 2026
+
+
+::::: {.ebau-ej #ebau-2026-ext-sup2-4A}
+**Ejercicio 4A** · Extraordinaria · Suplente 2 2026 · Bloque D · *(2 puntos)* · [Examen](../../../assets/pau-ccss/2026-ext-sup2/examen.pdf){target="_blank"}
+
+El tiempo, en minutos, que tardan los autobuses de cierta ciudad en recorrer la ruta principal, sigue una distribución Normal de media 40 y desviación típica 5. La empresa clasifica un viaje como «rápido» si el autobús tarda menos de $33{,}6$ minutos en recorrer el trayecto.
+
+a) Calcule la probabilidad de que un viaje sea «rápido». *(0,5 puntos)*
+
+b) Calcule la probabilidad de que al menos 3 de 5 trayectos seleccionados de esta ruta hayan sido «rápidos». *(0,75 puntos)*
+
+c) Seleccionados 80 trayectos de esta ruta, calcule la probabilidad de que a lo sumo 15 sean «rápidos». *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$T\sim N(40,\ 5)$.
+
+**a)** $P(T<33{,}6)=P\!\left(Z<\dfrac{33{,}6-40}{5}\right)=P(Z<-1{,}28)=1-P(Z<1{,}28)=1-0{,}8997=\mathbf{0{,}1003}$.
+
+**b)** $X$ = «viajes rápidos de $5$»: $X\sim B(5;\ 0{,}1003)$.
+$$P(X\ge3)=\binom53p^3q^2+\binom54p^4q+p^5\quad(p=0{,}1003,\ q=0{,}8997)=0{,}00817+0{,}00046+0{,}00001\approx\mathbf{0{,}0086}.$$
+
+**c)** $Y$ = «viajes rápidos de $80$»: $Y\sim B(80;\ 0{,}1003)$. Como $np=8{,}02\ge5$ y $nq=71{,}98\ge5$, $Y\approx N\!\left(8{,}02,\ \sqrt{80\cdot0{,}1003\cdot0{,}8997}\right)=N(8{,}02;\ 2{,}687)$. Con corrección por continuidad:
+$$P(Y\le15)=P(Y'<15{,}5)=P\!\left(Z<\frac{15{,}5-8{,}02}{2{,}687}\right)=P(Z<2{,}78)=\mathbf{0{,}9973}.$$
+::::
+:::::
+
+
+## 2025
+
+
+### Ordinaria · Modelo A 2025
+
+
+::::: {.ebau-ej #ebau-2025-ord-a-5}
+**Ejercicio 5** · Ordinaria · Modelo A 2025 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-a/examen.pdf){target="_blank"}
+
+Una empresa de marketing ha lanzado una campaña publicitaria para promocionar un nuevo servicio de energía solar para hogares. Según estudios previos, se estima que el $20\,\%$ de las personas que ven el anuncio terminan contratando el servicio. Para analizar más en profundidad la efectividad de la campaña, se seleccionan aleatoriamente a 20 personas que han visto el anuncio.
+
+a) Calcule la probabilidad de que exactamente 10 personas contraten el servicio. *(0,75 puntos)*
+
+b) Determine la probabilidad de que al menos 2 personas contraten el servicio. *(0,75 puntos)*
+
+c) Determine el valor esperado del número de personas que contratarán el servicio de entre las seleccionadas. *(0,5 puntos)*
+
+d) ¿Cuántas personas, de entre las que han visto el anuncio, se deberían seleccionar para que el número esperado de personas que contraten el servicio sea mayor o igual a 13? *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $X$ el número de personas, de $20$, que contratan el servicio: $X\sim B(20;\ 0{,}2)$.
+
+**a)** $P(X=10)=\dbinom{20}{10}\,0{,}2^{10}\cdot0{,}8^{10}=184\,756\cdot0{,}2^{10}\cdot0{,}8^{10}\approx\mathbf{0{,}0020}$.
+
+**b)** $P(X\ge2)=1-P(X=0)-P(X=1)=1-0{,}8^{20}-20\cdot0{,}2\cdot0{,}8^{19}=1-0{,}0115-0{,}0576\approx\mathbf{0{,}9308}$.
+
+**c)** $E(X)=np=20\cdot0{,}2=\mathbf{4}$ personas.
+
+**d)** Con $n$ personas, $E(X)=0{,}2n\ge13\iff n\ge65$. **Hay que seleccionar al menos $65$ personas.**
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2025-ord-a-7}
+**Ejercicio 7** · Ordinaria · Modelo A 2025 · Bloque D · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-a/examen.pdf){target="_blank"}
+
+Los desajustes sobre el horario previsto de llegada de los trenes de alta velocidad, medidos en minutos, sigue una ley Normal con media 0 y desviación típica $2{,}2$.
+
+a) Calcule el porcentaje de trenes que tienen un desajuste máximo de un minuto. *(0,5 puntos)*
+
+b) Elegidos al azar 15 trenes de alta velocidad, los desajustes han sido:
+
+$$0,\ 1{,}3,\ -2{,}1,\ -1{,}5,\ 2,\ 0{,}8,\ 5,\ 2{,}1,\ -3,\ 1{,}8,\ 3{,}1,\ 4,\ -0{,}7,\ 1{,}6,\ -5{,}4$$
+
+b1) Calcule un intervalo de confianza, con un nivel de confianza del $96\,\%$, para la media poblacional. ¿Cuál es el error máximo que se comete en la estimación de esta media? Con este nivel de confianza y a partir de los datos obtenidos, ¿puede afirmarse que un tren tenga un retraso de 2 minutos? *(1,25 puntos)*
+
+b2) Con un nivel de confianza del $98\,\%$, ¿cuántos trenes de alta velocidad deberían elegirse, como mínimo, para que la diferencia entre la media poblacional y su estimación muestral sea como máximo de $1{,}1$ minutos? *(0,75 puntos)*
+
+*Relacionado también con:* [Muestreo e inferencia](11-muestreo-inferencia.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $X\sim N(0,\ 2{,}2)$. $P(|X|\le1)=P(-1\le X\le1)=P\!\left(-\dfrac{1}{2{,}2}\le Z\le\dfrac{1}{2{,}2}\right)=P(-0{,}45\le Z\le0{,}45)=2\cdot0{,}6736-1=0{,}3472$.
+
+**El $34{,}72\,\%$ de los trenes.**
+
+**b1)** Suma de los desajustes: $9$, luego $\bar x=\dfrac{9}{15}=0{,}6$ minutos. Nivel $96\,\%$: $\Phi(z_{\alpha/2})=0{,}98$ y en la tabla $\Phi(2{,}05)=0{,}9798$ (el más cercano a $0{,}98$), luego $z_{\alpha/2}=2{,}05$. $E=2{,}05\cdot\dfrac{2{,}2}{\sqrt{15}}=1{,}1645$.
+$$IC=(0{,}6-1{,}1645,\ 0{,}6+1{,}1645)=(-0{,}5645,\ 1{,}7645).$$
+**Error máximo $1{,}1645$ minutos.** El valor $2$ **no pertenece al intervalo**, luego con este nivel de confianza **no puede afirmarse** que el retraso medio de un tren sea de $2$ minutos.
+
+**b2)** Nivel $98\,\%$: $z_{\alpha/2}=2{,}33$. $E\le1{,}1\iff n\ge\left(\dfrac{2{,}33\cdot2{,}2}{1{,}1}\right)^2=21{,}72$. **Hay que elegir al menos $n=22$ trenes.**
+::::
+:::::
+
+
+### Ordinaria · Modelo B 2025
+
+
+::::: {.ebau-ej #ebau-2025-ord-b-7}
+**Ejercicio 7** · Ordinaria · Modelo B 2025 · Bloque D · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-b/examen.pdf){target="_blank"}
+
+El tiempo de adaptación a la guardería, en días, de los menores de dos años andaluces, sigue una distribución Normal de media $10{,}5$ días y desviación típica $1{,}5$ días.
+
+a) Se toma una muestra aleatoria de 25 menores de estas características. ¿Qué distribución sigue la media muestral del tiempo de adaptación? ¿Cuál es la probabilidad de que el tiempo medio de adaptación de esta muestra supere los 10 días? *(1,25 puntos)*
+
+b) ¿Qué porcentaje de muestras de tamaño 25 nos proporcionará un tiempo medio de adaptación entre 8 y 11 días? *(1,25 puntos)*
+
+*Relacionado también con:* [Muestreo e inferencia](11-muestreo-inferencia.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $\bar X\sim N\!\left(10{,}5,\ \dfrac{1{,}5}{\sqrt{25}}\right)=N(10{,}5,\ 0{,}3)$.
+$$P(\bar X>10)=P\!\left(Z>\frac{10-10{,}5}{0{,}3}\right)=P(Z>-1{,}67)=P(Z<1{,}67)=\mathbf{0{,}9525}.$$
+
+**b)** $P(8<\bar X<11)=P\!\left(\dfrac{8-10{,}5}{0{,}3}<Z<\dfrac{11-10{,}5}{0{,}3}\right)=P(-8{,}33<Z<1{,}67)\approx P(Z<1{,}67)-0=0{,}9525$.
+
+**El $95{,}25\,\%$ de las muestras.**
+::::
+:::::
+
+
+### Ordinaria · Suplente 2 · Modelo A 2025
+
+
+::::: {.ebau-ej #ebau-2025-ord-sup2-a-6}
+**Ejercicio 6** · Ordinaria · Suplente 2 · Modelo A 2025 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-sup2-a/examen.pdf){target="_blank"}
+
+Un tratamiento experimental para tratar una determinada intolerancia alimentaria mejora al $60\,\%$ de los pacientes a los que se les suministra. Cinco pacientes deciden someterse a dicho tratamiento.
+
+a) Indique la distribución que sigue la variable «número de pacientes de entre los 5 que mejoran con este tratamiento». ¿Cuál es la probabilidad de que mejoren cuatro pacientes gracias al tratamiento? *(0,75 puntos)*
+
+b) Calcule la probabilidad de que al menos dos pacientes experimenten mejoría tras someterse al tratamiento. *(0,75 puntos)*
+
+c) ¿Cuántos pacientes se espera que mejoren al someterse a ese tratamiento? *(0,5 puntos)*
+
+d) ¿Cuántos pacientes deberían someterse al tratamiento para que el número esperado de pacientes que mejoren sea mayor o igual a 12? *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $X$ = «número de pacientes, de $5$, que mejoran»: $X\sim B(5;\ 0{,}6)$.
+$$P(X=4)=\binom54\,0{,}6^4\cdot0{,}4=5\cdot0{,}1296\cdot0{,}4=\mathbf{0{,}2592}.$$
+
+**b)** $P(X\ge2)=1-P(X=0)-P(X=1)=1-0{,}4^5-5\cdot0{,}6\cdot0{,}4^4=1-0{,}01024-0{,}0768=\mathbf{0{,}91296}$.
+
+**c)** $E(X)=np=5\cdot0{,}6=\mathbf{3}$ pacientes.
+
+**d)** $E(X)=0{,}6n\ge12\iff n\ge20$. **Deberían someterse al menos $20$ pacientes.**
+::::
+:::::
+
+
+## 2024
+
+
+### Ordinaria · Modelo B 2024
+
+
+::::: {.ebau-ej #ebau-2024-ord-b-7}
+**Ejercicio 7** · Ordinaria · Modelo B 2024 · Bloque D · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-b/examen.pdf){target="_blank"}
+
+La altura de un cierto tipo de plantas de maíz sigue una distribución Normal de media 145 cm y desviación típica 22 cm.
+
+a) ¿Qué porcentaje de plantas tiene una altura comprendida entre 135 cm y 155 cm? *(1 punto)*
+
+b) ¿Qué altura, como mínimo, debe tener una planta para estar entre el $50\,\%$ de las más altas? *(0,5 puntos)*
+
+c) Se selecciona una muestra aleatoria de 16 plantas. Halle la probabilidad de que la altura media de las plantas de esta muestra esté comprendida entre 140 cm y 151 cm. *(1 punto)*
+
+*Relacionado también con:* [Muestreo e inferencia](11-muestreo-inferencia.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $X\sim N(145,\ 22)$. $P(135<X<155)=P\!\left(\dfrac{135-145}{22}<Z<\dfrac{155-145}{22}\right)=P(-0{,}45<Z<0{,}45)=2\,P(Z<0{,}45)-1=2\cdot0{,}6736-1=0{,}3472$.
+
+**El $34{,}72\,\%$ de las plantas.**
+
+**b)** Estar entre el $50\,\%$ de las más altas equivale a superar la mediana, que en una normal coincide con la media: **$145$ cm.**
+
+**c)** $\bar X\sim N\!\left(145,\ \dfrac{22}{\sqrt{16}}\right)=N(145,\ 5{,}5)$.
+$$P(140<\bar X<151)=P\!\left(\frac{140-145}{5{,}5}<Z<\frac{151-145}{5{,}5}\right)=P(-0{,}91<Z<1{,}09)=0{,}8621-(1-0{,}8186)=\mathbf{0{,}6807}.$$
+::::
+:::::
+
+
+### Ordinaria · Suplente · Modelo B 2024
+
+
+::::: {.ebau-ej #ebau-2024-ord-sup-b-8}
+**Ejercicio 8** · Ordinaria · Suplente · Modelo B 2024 · Bloque D · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-sup-b/examen.pdf){target="_blank"}
+
+a) El tiempo que un carpintero necesita para fabricar una mesa sigue una distribución Normal de media 60 minutos y desviación típica de 30 minutos. Si en un mes ese carpintero ha fabricado 100 mesas, calcule la probabilidad de que el tiempo medio de fabricación de las mesas de esa muestra sea superior a 54 minutos. *(1,25 puntos)*
+
+b) El tiempo que un carpintero necesita para fabricar una puerta sigue una distribución Normal de media desconocida y desviación típica de 20 minutos. En un mes ese carpintero ha fabricado 25 puertas, obteniendo un tiempo medio de fabricación de 40 minutos. Halle un intervalo de confianza para el tiempo medio de fabricación de una puerta con un nivel de confianza del $97\,\%$. Determine el error máximo cometido al realizar la estimación. *(1,25 puntos)*
+
+*Relacionado también con:* [Muestreo e inferencia](11-muestreo-inferencia.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $\bar X\sim N\!\left(60,\ \dfrac{30}{\sqrt{100}}\right)=N(60,\ 3)$.
+$$P(\bar X>54)=P\!\left(Z>\frac{54-60}{3}\right)=P(Z>-2)=P(Z<2)=\mathbf{0{,}9772}.$$
+
+**b)** $\bar x=40$, $\sigma=20$, $n=25$. Nivel $97\,\%$: $z_{\alpha/2}=2{,}17$. $E=2{,}17\cdot\dfrac{20}{\sqrt{25}}=2{,}17\cdot4=8{,}68$.
+$$IC=(40-8{,}68,\ 40+8{,}68)=(31{,}32,\ 48{,}68).$$
+**Error máximo $8{,}68$ minutos.**
+::::
+:::::
+
+
+## 2023
+
+
+### Ordinaria · Reserva · Modelo B 2023
+
+
+::::: {.ebau-ej #ebau-2023-ord-res-b-8}
+**Ejercicio 8** · Ordinaria · Reserva · Modelo B 2023 · Bloque D · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-res-b/examen.pdf){target="_blank"}
+
+El tiempo de adaptación al uso de unas gafas progresivas depende de la persona, de la graduación de las lentes y del tipo de progresivo elegido. No obstante, se sabe que el tiempo de adaptación sigue una ley Normal de media $12{,}5$ días y desviación típica $2{,}5$ días.
+
+a) Se toma una muestra aleatoria de 16 individuos que han comenzado a utilizar este tipo de gafas, ¿qué distribución sigue la media muestral del tiempo de adaptación? ¿Cuál es la probabilidad de que el tiempo medio de adaptación a las gafas progresivas para dicha muestra supere los 12 días? *(1,25 puntos)*
+
+b) Si la muestra elegida es de tamaño 25, ¿cuál es la probabilidad de que el tiempo medio muestral de adaptación a las gafas progresivas diste de 12 días a lo sumo 1 día? *(1,25 puntos)*
+
+*Relacionado también con:* [Muestreo e inferencia](11-muestreo-inferencia.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $\bar X\sim N\!\left(12{,}5,\ \dfrac{2{,}5}{\sqrt{16}}\right)=N(12{,}5,\ 0{,}625)$.
+$$P(\bar X>12)=P\!\left(Z>\frac{12-12{,}5}{0{,}625}\right)=P(Z>-0{,}8)=P(Z<0{,}8)=\mathbf{0{,}7881}.$$
+
+**b)** Con $n=25$: $\bar X\sim N\!\left(12{,}5,\ \dfrac{2{,}5}{5}\right)=N(12{,}5,\ 0{,}5)$. «Dista de $12$ a lo sumo $1$» significa $11\le\bar X\le13$:
+$$P(11\le\bar X\le13)=P\!\left(\frac{11-12{,}5}{0{,}5}\le Z\le\frac{13-12{,}5}{0{,}5}\right)=P(-3\le Z\le1)=P(Z\le1)-P(Z\le-3).$$
+Con la tabla, $P(Z\le1)=0{,}8413$ y $P(Z\le-3)=1-0{,}99865=0{,}00135$:
+$$P=0{,}8413-0{,}00135\approx\mathbf{0{,}8400}.$$
+::::
+:::::
+
+
+## 2021
+
+
+### Ordinaria · Suplente 2021
+
+
+::::: {.ebau-ej #ebau-2021-ord-sup-8}
+**Ejercicio 8** · Ordinaria · Suplente 2021 · Bloque D · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ord-sup/examen.pdf){target="_blank"}
+
+El peso de los paquetes de arroz de una marca comercial concreta sigue una ley Normal de media 1000 g y varianza 256 g$^{2}$.
+
+a) Calcule la probabilidad de que el peso medio de las muestras de tamaño 64 sea menor que 996 g. *(0,75 puntos)*
+
+b) Tras varias denuncias presentadas por falta de peso en los citados paquetes, una organización de consumidores ha procedido a tomar una muestra de 64 paquetes, resultando que la suma de los pesos ha sido de 63 744 g. Halle un intervalo de confianza al $90\,\%$ para estimar el peso medio real de los paquetes de arroz de esa marca. *(1,5 puntos)*
+
+c) A la vista del intervalo obtenido y teniendo en cuenta que el peso que marca el paquete es de 1000 g, ¿cree que la denuncia tiene base? *(0,25 puntos)*
+
+*Relacionado también con:* [Muestreo e inferencia](11-muestreo-inferencia.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $\bar X\sim N\!\left(1000,\dfrac{16}{\sqrt{64}}\right)=N(1000,\,2)$ (la desviación típica de $X$ es $\sqrt{256}=16$ g).
+$$P(\bar X<996)=P\!\left(Z<\frac{996-1000}{2}\right)=P(Z<-2)=1-P(Z<2)=1-0{,}9772=\mathbf{0{,}0228}.$$
+
+**b)** Media muestral: $\bar x=\dfrac{63\,744}{64}=996$ g. Nivel $90\,\%$: $\Phi(z_{\alpha/2})=0{,}95$, que está entre $\Phi(1{,}64)=0{,}9495$ y $\Phi(1{,}65)=0{,}9505$; se toma $z_{\alpha/2}=1{,}645$. Error: $E=1{,}645\cdot\dfrac{16}{\sqrt{64}}=3{,}29$.
+$$IC=(996-3{,}29,\ 996+3{,}29)=(992{,}71,\ 999{,}29).$$
+
+**c)** El valor $1000$ g **no pertenece al intervalo**: al $90\,\%$ de confianza el peso medio real es menor que el que indica el paquete. **La denuncia parece tener base.**
+::::
+:::::
+
+
+## También trabajan este tema
+
+Ejercicios cuyo tema principal es otro pero en los que aparece este tema:
+
+- [2026 Ordinaria, ejercicio 3B](09-probabilidad.qmd#ebau-2026-ord-3B) (tema principal: Probabilidad)
+- [2026 Ordinaria · Suplente 2, ejercicio 3A](09-probabilidad.qmd#ebau-2026-ord-sup2-3A) (tema principal: Probabilidad)
+- [2026 Extraordinaria, ejercicio 4](09-probabilidad.qmd#ebau-2026-ext-4) (tema principal: Probabilidad)
+- [2025 Ordinaria · Suplente 2 · Modelo B, ejercicio 7](11-muestreo-inferencia.qmd#ebau-2025-ord-sup2-b-7) (tema principal: Muestreo e inferencia)
+- [2024 Ordinaria · Reserva · Modelo A, ejercicio 8](11-muestreo-inferencia.qmd#ebau-2024-ord-res-a-8) (tema principal: Muestreo e inferencia)
+- [2024 Ordinaria · Reserva · Modelo B, ejercicio 7](11-muestreo-inferencia.qmd#ebau-2024-ord-res-b-7) (tema principal: Muestreo e inferencia)
+- [2024 Ordinaria · Reserva · Modelo B, ejercicio 8](11-muestreo-inferencia.qmd#ebau-2024-ord-res-b-8) (tema principal: Muestreo e inferencia)
+- [2023 Ordinaria · Modelo A, ejercicio 7](11-muestreo-inferencia.qmd#ebau-2023-ord-a-7) (tema principal: Muestreo e inferencia)
+- [2023 Ordinaria · Suplente · Modelo A, ejercicio 7](11-muestreo-inferencia.qmd#ebau-2023-ord-sup-a-7) (tema principal: Muestreo e inferencia)
+- [2023 Ordinaria · Suplente · Modelo B, ejercicio 7](11-muestreo-inferencia.qmd#ebau-2023-ord-sup-b-7) (tema principal: Muestreo e inferencia)
+- [2022 Extraordinaria, ejercicio 8](11-muestreo-inferencia.qmd#ebau-2022-ext-8) (tema principal: Muestreo e inferencia)
+
+
+---
+
+*Enunciados: Prueba de Acceso y Admisión a la Universidad (PEvAU hasta 2024, PAU desde 2025), Matemáticas Aplicadas a las Ciencias Sociales II, Andalucía, Ceuta, Melilla y centros en Marruecos (Distrito Único Andaluz). Cada ejercicio enlaza al PDF oficial del examen completo. La clasificación por temas es propia y puede discutirse: los ejercicios mixtos figuran en su tema principal.*

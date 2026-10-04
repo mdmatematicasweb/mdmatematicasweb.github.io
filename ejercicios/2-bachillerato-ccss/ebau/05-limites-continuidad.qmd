@@ -1,0 +1,1047 @@
+---
+title: "PAU Andalucía — Límites y continuidad"
+lang: es
+---
+
+Ejercicios de **Matemáticas Aplicadas a las Ciencias Sociales II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *límites y continuidad*: **30 ejercicios** de convocatorias ordinarias y extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ccss/05-limites-continuidad/index.qmd), los [ejercicios del tema](../05-limites-continuidad/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ccss/05-limites-continuidad/index.qmd).
+
+Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+
+
+## 2026
+
+
+### Ordinaria 2026
+
+
+::::: {.ebau-ej #ebau-2026-ord-2}
+**Ejercicio 2** · Ordinaria 2026 · Bloque B · *(3 puntos)* · [Examen](../../../assets/pau-ccss/2026-ord/examen.pdf){target="_blank"}
+
+Se considera la función
+$$f(x)=\begin{cases}\dfrac{x^{2}}{20}&\text{si }0\le x<20\\a+bx&\text{si }20\le x<50\\36-\dfrac{x^{2}}{100}&\text{si }50\le x\le60\end{cases}$$
+siendo $a$ y $b$ números reales.
+
+a) Determine los valores de $a$ y $b$ para que la función $f$ sea continua en todo su dominio. *(0,75 puntos)*
+
+b) Para $a=26$ y $b=-\dfrac{3}{10}$:
+
+i) Calcule los extremos relativos de $f$. *(0,75 puntos)*
+
+ii) Represente gráficamente $f$. *(0,5 puntos)*
+
+iii) Calcule el área del recinto acotado limitado por el eje $OX$ y la gráfica de la función $f$. *(1 punto)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Continuidad en $x=20$: $\dfrac{20^2}{20}=20=a+20b$. En $x=50$: $a+50b=36-\dfrac{50^2}{100}=11$. Restando, $30b=-9\Rightarrow b=-\dfrac{3}{10}$ y $a=20+6=26$.
+
+**$a=26$ y $b=-\dfrac{3}{10}$.**
+
+**b) i)** $f'(x)=\dfrac{x}{10}$ en $(0,20)$, $f'(x)=-\dfrac{3}{10}$ en $(20,50)$ y $f'(x)=-\dfrac{x}{50}$ en $(50,60)$. En $(0,20)$ $f$ crece y en el resto decrece: en $x=20$ pasa de crecer a decrecer (aunque no es derivable en ese punto: $f'(20^-)=2\neq f'(20^+)=-0{,}3$). En $x=50$ la función sigue decreciendo ($f'<0$ a ambos lados).
+
+**Máximo relativo en $(20,20)$; no hay mínimos relativos** (los valores $f(0)=0$ y $f(60)=0$ son mínimos en los extremos del dominio).
+
+**ii)** Arco de parábola convexa $y=\dfrac{x^2}{20}$ desde $(0,0)$ hasta el pico $(20,20)$; segmento de recta decreciente desde $(20,20)$ hasta $(50,11)$; arco de parábola cóncava (parte de $y=36-\dfrac{x^2}{100}$) desde $(50,11)$ hasta $(60,0)$.
+
+**iii)** $f\ge0$ en $[0,60]$:
+$$A=\int_0^{20}\frac{x^2}{20}dx+\int_{20}^{50}\left(26-\frac{3x}{10}\right)dx+\int_{50}^{60}\left(36-\frac{x^2}{100}\right)dx=\frac{400}{3}+465+\frac{170}{3}=655.$$
+**$A=655\ \text{u}^2$**
+::::
+:::::
+
+
+### Ordinaria · Suplente 1 2026
+
+
+::::: {.ebau-ej #ebau-2026-ord-sup1-2A}
+**Ejercicio 2A** · Ordinaria · Suplente 1 2026 · Bloque B · *(3 puntos)* · [Examen](../../../assets/pau-ccss/2026-ord-sup1/examen.pdf){target="_blank"}
+
+Sea $f$ la función definida por
+$$f(x)=\begin{cases}x^{3}+ax^{2}+9x&\text{si }x<3\\\dfrac{bx+18}{x+1}&\text{si }x\ge3\end{cases}$$
+siendo $a$ y $b$ números reales.
+
+a) Determine los valores de $a$ y $b$ para que $f$ sea continua en su dominio y su gráfica pase por el punto $(2,2)$. *(1 punto)*
+
+b) Para $a=b=-6$:
+
+i) Determine las asíntotas de $f$, en el caso de que existan. *(0,5 puntos)*
+
+ii) Estudie la monotonía de $f$ y calcule sus extremos relativos. *(0,75 puntos)*
+
+iii) Esboce la gráfica de $f$. *(0,75 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Pasa por $(2,2)$ con $x=2<3$: $f(2)=8+4a+18=2\Rightarrow4a=-24\Rightarrow a=-6$. Continuidad en $x=3$: $\displaystyle\lim_{x\to3^-}f=27+9a+27=54-54=0$ y $f(3)=\dfrac{3b+18}{4}$; luego $3b+18=0\Rightarrow b=-6$.
+
+**$a=-6$ y $b=-6$.**
+
+**b) i)** Con $a=b=-6$: $f(x)=x^3-6x^2+9x$ si $x<3$ y $f(x)=\dfrac{-6x+18}{x+1}$ si $x\ge3$. Verticales: no hay ($x=-1$ no está en el tramo $x\ge3$ y el tramo cúbico no tiene). Horizontal: $\displaystyle\lim_{x\to+\infty}\dfrac{-6x+18}{x+1}=-6$. En $-\infty$ el tramo cúbico no tiene asíntotas.
+
+**Asíntota horizontal $y=-6$ (por la derecha); no hay verticales ni oblicuas.**
+
+**ii)** Si $x<3$: $f'(x)=3x^2-12x+9=3(x-1)(x-3)$, con $f'>0$ en $(-\infty,1)$ y $f'<0$ en $(1,3)$. Si $x>3$: $f'(x)=\dfrac{-6(x+1)-(-6x+18)}{(x+1)^2}=\dfrac{-24}{(x+1)^2}<0$.
+
+**$f$ crece en $(-\infty,1)$ y decrece en $(1,+\infty)$. Máximo relativo en $(1,4)$; no hay mínimos relativos** (en $x=3$ es $f(3)=0$ y la función sigue decreciendo a ambos lados, con $f'(3^-)=0$ y $f'(3^+)=-\tfrac{3}{2}$).
+
+**iii)** Cúbica $y=x(x-3)^2$ viniendo de $-\infty$, que corta al eje en $(0,0)$, sube hasta el máximo $(1,4)$, baja hasta tocar el eje en $(3,0)$; a partir de ahí continúa descendiendo como la hipérbola $y=\dfrac{-6x+18}{x+1}$ (pasa por $\left(5,-2\right)$) acercándose por encima a $y=-6$.
+::::
+:::::
+
+
+### Extraordinaria · Suplente 1 2026
+
+
+::::: {.ebau-ej #ebau-2026-ext-sup1-2A}
+**Ejercicio 2A** · Extraordinaria · Suplente 1 2026 · Bloque B · *(3 puntos)* · [Examen](../../../assets/pau-ccss/2026-ext-sup1/examen.pdf){target="_blank"}
+
+a) Calcule los valores de $a$ y $b$ para que la función
+$$f(x)=\begin{cases}\dfrac{x-a}{x-1}&\text{si }x\le0\\x^{2}+bx+3&\text{si }x>0\end{cases}$$
+sea continua y derivable en $x=0$. *(1 punto)*
+
+b) Dada la función $g(x)=\dfrac{x-3}{x-1}$, calcule las asíntotas, los puntos de corte con los ejes, estudie la monotonía y esboce la gráfica de la función. *(1,25 puntos)*
+
+c) Calcule el área del recinto acotado limitado por el eje de abscisas y la gráfica de la función $h(x)=x^{2}-x-6$. *(0,75 puntos)*
+
+*Relacionado también con:* [Funciones](04-funciones.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Con $x\le0$: $f(0)=\dfrac{-a}{-1}=a$ y con $x>0$: $\displaystyle\lim_{x\to0^+}f=3$. Continuidad: $a=3$. Derivadas: para $x<0$, $f'(x)=\dfrac{(x-1)-(x-a)}{(x-1)^2}=\dfrac{a-1}{(x-1)^2}$, con $f'(0^-)=a-1=2$; para $x>0$, $f'(x)=2x+b$, con $f'(0^+)=b$. Derivabilidad: $b=2$.
+
+**$a=3$ y $b=2$.**
+
+**b)** Asíntotas: vertical $x=1$ (porque $\displaystyle\lim_{x\to1^\pm}g=\dfrac{-2}{0^\pm}=\mp\infty$) y horizontal $y=\displaystyle\lim_{x\to\pm\infty}\dfrac{x-3}{x-1}=1$.
+
+Cortes: con $OX$, $x=3$, punto $(3,0)$; con $OY$, $g(0)=3$, punto $(0,3)$.
+
+Monotonía: $g'(x)=\dfrac{(x-1)-(x-3)}{(x-1)^2}=\dfrac{2}{(x-1)^2}>0$: **$g$ es creciente en $(-\infty,1)$ y en $(1,+\infty)$** (sin extremos).
+
+Gráfica: hipérbola con asíntotas $x=1$ e $y=1$. La rama izquierda ($x<1$) pasa por $(0,3)$, sube a $+\infty$ junto a $x=1$ y baja hacia $1$ por encima cuando $x\to-\infty$; la rama derecha ($x>1$) viene de $-\infty$ junto a $x=1$, pasa por $(3,0)$ y se acerca a $1$ por debajo cuando $x\to+\infty$.
+
+**c)** $h(x)=(x-3)(x+2)$ corta al eje $OX$ en $x=-2$ y $x=3$, y $h\le0$ entre ambos:
+$$A=\left|\int_{-2}^{3}\left(x^2-x-6\right)dx\right|=\left|\left[\frac{x^3}{3}-\frac{x^2}{2}-6x\right]_{-2}^{3}\right|=\left|-\frac{27}{2}-\frac{22}{3}\right|=\frac{125}{6}.$$
+**$A=\dfrac{125}{6}\ \text{u}^2$**
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2026-ext-sup1-2B}
+**Ejercicio 2B** · Extraordinaria · Suplente 1 2026 · Bloque B · *(3 puntos)* · [Examen](../../../assets/pau-ccss/2026-ext-sup1/examen.pdf){target="_blank"}
+
+Sea $f$ la función definida por
+$$f(x)=\begin{cases}x^{3}-3x+2&\text{si }0<x\le3\\\dfrac{10}{a-x}&\text{si }x>3\end{cases}$$
+siendo $a$ un número real.
+
+a) Determine el valor de $a$ para el que $f$ es continua en $x=3$. *(0,5 puntos)*
+
+b) Para $a=4$:
+
+i) Determine las ecuaciones de las asíntotas de $f$, si existen. *(1 punto)*
+
+ii) Estudie la derivabilidad y monotonía de $f$. *(1,5 puntos)*
+
+*Relacionado también con:* [Funciones](04-funciones.qmd), [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $\displaystyle\lim_{x\to3^-}\left(x^3-3x+2\right)=27-9+2=20$ y $\displaystyle\lim_{x\to3^+}\dfrac{10}{a-x}=\dfrac{10}{a-3}$. Continuidad: $\dfrac{10}{a-3}=20\Rightarrow a-3=\dfrac{1}{2}$, **$a=\dfrac{7}{2}$.**
+
+**b)** Con $a=4$: $f(x)=x^3-3x+2$ si $0<x\le3$ y $f(x)=\dfrac{10}{4-x}$ si $x>3$.
+
+**i)** Vertical: $x=4$ (en el tramo $x>3$, $\displaystyle\lim_{x\to4^-}f=+\infty$ y $\displaystyle\lim_{x\to4^+}f=-\infty$). Horizontal: $\displaystyle\lim_{x\to+\infty}\dfrac{10}{4-x}=0$, es decir, $y=0$.
+
+**Asíntotas: $x=4$ e $y=0$.**
+
+**ii)** Derivabilidad: en $x=3$, $\displaystyle\lim_{x\to3^+}f=\dfrac{10}{1}=10\neq f(3)=20$: **no es continua en $x=3$** (salto), y por tanto no derivable en $x=3$; tampoco está definida en $x=4$. Es derivable en $(0,3)\cup(3,4)\cup(4,+\infty)$.
+
+Monotonía: $f'(x)=3x^2-3=3(x-1)(x+1)$ en $(0,3)$: $f'<0$ en $(0,1)$ y $f'>0$ en $(1,3)$. En $x>3$: $f'(x)=\dfrac{10}{(4-x)^2}>0$.
+
+**$f$ decrece en $(0,1)$ y crece en $(1,3)$, en $(3,4)$ y en $(4,+\infty)$. Mínimo relativo en $(1,0)$; máximo relativo en $(3,20)$** (porque a su derecha la función toma valores cercanos a $10<20$).
+::::
+:::::
+
+
+## 2025
+
+
+### Ordinaria · Suplente 1 · Modelo A 2025
+
+
+::::: {.ebau-ej #ebau-2025-ord-sup1-a-3}
+**Ejercicio 3** · Ordinaria · Suplente 1 · Modelo A 2025 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-sup1-a/examen.pdf){target="_blank"}
+
+a) Se considera la función
+$$f(x)=\begin{cases}a\cdot e^{x+1}&x\le-1\\x^{2}-2&-1<x<2\\b\cdot\log(12-x)&2\le x<12\end{cases}$$
+siendo $a$ y $b$ números reales. Determine los valores de $a$ y $b$ para que la función $f$ sea continua en su dominio. *(1,2 puntos)*
+
+b) Represente el recinto acotado, limitado por la recta $y=-x+3$ y la parábola $y=-x^{2}+5$. Calcule el área del recinto. *(1,3 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En $x=-1$: $\displaystyle\lim_{x\to-1^-}ae^{x+1}=a$ y $\displaystyle\lim_{x\to-1^+}\left(x^2-2\right)=-1$: $a=-1$. En $x=2$: $\displaystyle\lim_{x\to2^-}\left(x^2-2\right)=2$ y $f(2)=b\log(12-2)=b\log10=b$ (logaritmo decimal): $b=2$.
+
+**$a=-1$ y $b=2$.**
+
+**b)** Los cortes: $-x+3=-x^2+5\iff x^2-x-2=0\iff x=-1$ o $x=2$, en los puntos $(-1,4)$ y $(2,1)$. En $[-1,2]$ la parábola (de vértice $(0,5)$, abierta hacia abajo) queda por encima de la recta.
+$$A=\int_{-1}^{2}\left[\left(-x^2+5\right)-\left(-x+3\right)\right]dx=\int_{-1}^{2}\left(-x^2+x+2\right)dx=\left[-\frac{x^3}{3}+\frac{x^2}{2}+2x\right]_{-1}^{2}=\frac{10}{3}-\left(-\frac{7}{6}\right)=\frac{9}{2}.$$
+**$A=\dfrac{9}{2}\ \text{u}^2$**
+::::
+:::::
+
+
+### Ordinaria · Suplente 2 · Modelo A 2025
+
+
+::::: {.ebau-ej #ebau-2025-ord-sup2-a-4}
+**Ejercicio 4** · Ordinaria · Suplente 2 · Modelo A 2025 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-sup2-a/examen.pdf){target="_blank"}
+
+Se considera la función
+$$f(x)=\begin{cases}10+\dfrac{5x}{2}&x\le-2\\x^{2}+1&-2<x<2\\10-\dfrac{5x}{2}&x\ge2\end{cases}$$
+
+a) Estudie la continuidad y derivabilidad de $f$ en el punto de abscisa $x=-2$. *(0,5 puntos)*
+
+b) Calcule la ecuación de la recta tangente a la gráfica de la función $f$ con pendiente $-1$. *(0,75 puntos)*
+
+c) Represente la región del plano acotada superiormente por la gráfica de $f$ e inferiormente por el eje de abscisas. Calcule el área de dicha región. *(1,25 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En $x=-2$: $\displaystyle\lim_{x\to-2^-}\left(10+\frac{5x}{2}\right)=5$ y $\displaystyle\lim_{x\to-2^+}\left(x^2+1\right)=5=f(-2)$: **continua.** Derivadas: $f'(x)=\dfrac{5}{2}$ si $x<-2$ y $f'(x)=2x$ si $-2<x<2$; $f'(-2^-)=\dfrac{5}{2}\neq f'(-2^+)=-4$: **no derivable en $x=-2$.**
+
+**b)** Pendiente $-1$: en el tramo central $f'(x)=2x=-1\Rightarrow x=-\dfrac{1}{2}$ (válido, pues está en $(-2,2)$); los otros tramos tienen pendientes $\pm\dfrac{5}{2}$. $f\left(-\dfrac{1}{2}\right)=\dfrac{5}{4}$. Tangente: $y-\dfrac{5}{4}=-\left(x+\dfrac{1}{2}\right)$.
+
+**$y=-x+\dfrac{3}{4}$.**
+
+**c)** $f\ge0$ en $[-4,4]$ ($10+\frac{5x}{2}=0$ en $x=-4$ y $10-\frac{5x}{2}=0$ en $x=4$); fuera de ese intervalo $f<0$. La región acotada va de $x=-4$ a $x=4$: una «tienda» con vértices $(-4,0)$, $(-2,5)$, $(2,5)$ y $(4,0)$ cuyo techo central es la parábola $y=x^2+1$.
+$$A=\int_{-4}^{-2}\left(10+\frac{5x}{2}\right)dx+\int_{-2}^{2}\left(x^2+1\right)dx+\int_2^4\left(10-\frac{5x}{2}\right)dx=5+\frac{28}{3}+5=\frac{58}{3}.$$
+**$A=\dfrac{58}{3}\ \text{u}^2$**
+::::
+:::::
+
+
+## 2024
+
+
+### Ordinaria · Modelo A 2024
+
+
+::::: {.ebau-ej #ebau-2024-ord-a-4}
+**Ejercicio 4** · Ordinaria · Modelo A 2024 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-a/examen.pdf){target="_blank"}
+
+La velocidad media del viento en la zona de Sierra Nevada, prevista para cierto día, viene dada por la función $v(t)$ expresada en km/h, donde $t$ es el tiempo expresado en horas:
+$$v(t)=\begin{cases}t^{2}-8t+60&\text{si }0\le t\le10\\-t^{2}+32t-140&\text{si }10<t\le24\end{cases}$$
+
+a) Compruebe que la función $v$ es continua y derivable. *(0,75 puntos)*
+
+b) Represente gráficamente la función, estudiando previamente la monotonía y calculando los extremos absolutos. *(1 punto)*
+
+c) La Agencia Estatal de Meteorología emite avisos de alerta por vientos siguiendo el código de colores: naranja para vientos entre $100$ y $140$ km/h, y rojo para vientos de más de $140$ km/h. Según la previsión, indique si se debe emitir alguna alerta naranja en Sierra Nevada ese día y durante qué horas estaría activa. ¿Se emitiría alerta roja? *(0,75 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En $t=10$: $10^2-80+60=80$ y $-100+320-140=80$: **continua.** Derivadas: $v'(t)=2t-8$ si $t<10$ y $v'(t)=-2t+32$ si $t>10$; $v'(10^-)=12=v'(10^+)$: **derivable.** (En cada tramo es un polinomio.)
+
+**b)** $v'(t)=2t-8=0\Rightarrow t=4$ en el primer tramo y $v'(t)=-2t+32=0\Rightarrow t=16$ en el segundo.
+
+- $(0,4)$: $v'<0$, **decrece**.
+- $(4,16)$: $v'>0$, **crece** (en $(4,10)$ por el primer tramo y en $(10,16)$ por el segundo).
+- $(16,24)$: $v'<0$, **decrece**.
+
+Valores: $v(0)=60$, $v(4)=44$, $v(10)=80$, $v(16)=116$, $v(24)=52$. **Mínimo absoluto $44$ km/h en $t=4$ y máximo absoluto $116$ km/h en $t=16$.** Gráfica: arco de parábola convexa desde $(0,60)$ hasta el mínimo $(4,44)$, sube hasta $(10,80)$, continúa hasta el máximo $(16,116)$ y baja hasta $(24,52)$.
+
+**c)** Alerta naranja si $100\le v\le140$. En el primer tramo $v\le80$ en $[0,10]$: no hay. En el segundo: $-t^2+32t-140\ge100\iff t^2-32t+240\le0\iff12\le t\le20$.
+
+**Se emitiría alerta naranja entre las $12$ h y las $20$ h (8 horas). No se emitiría alerta roja**, porque el máximo es $116<140$.
+::::
+:::::
+
+
+### Ordinaria · Modelo B 2024
+
+
+::::: {.ebau-ej #ebau-2024-ord-b-3}
+**Ejercicio 3** · Ordinaria · Modelo B 2024 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-b/examen.pdf){target="_blank"}
+
+Dada la función $f(x)=\dfrac{2x-6}{2-x}$:
+
+a) Estudie la continuidad y derivabilidad de dicha función. Calcule sus asíntotas. *(0,75 puntos)*
+
+b) Estudie los intervalos de crecimiento y decrecimiento, así como la existencia de extremos relativos. *(0,75 puntos)*
+
+c) Halle los puntos de corte con los ejes de coordenadas y represente gráficamente la función. *(1 punto)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** El dominio es $\mathbb R\setminus\{2\}$ y $f$ es continua y derivable en todo su dominio (cociente de polinomios). Asíntotas: vertical $x=2$, porque $\displaystyle\lim_{x\to2^-}f=-\infty$ y $\displaystyle\lim_{x\to2^+}f=+\infty$ (el numerador tiende a $-2$ y $2-x$ tiende a $0^+$ por la izquierda y a $0^-$ por la derecha); horizontal $y=\displaystyle\lim_{x\to\pm\infty}\frac{2x-6}{2-x}=-2$.
+
+**$x=2$ (vertical) e $y=-2$ (horizontal).**
+
+**b)** $f'(x)=\dfrac{2(2-x)+(2x-6)}{(2-x)^2}=\dfrac{-2}{(2-x)^2}<0$ para $x\neq2$. **$f$ es decreciente en $(-\infty,2)$ y en $(2,+\infty)$ y no tiene extremos relativos.**
+
+**c)** Cortes: con $OX$, $2x-6=0\Rightarrow x=3$, punto $(3,0)$; con $OY$, $f(0)=-3$, punto $(0,-3)$. Gráfica: hipérbola con asíntotas $x=2$ e $y=-2$. La rama de la izquierda ($x<2$) pasa por $(0,-3)$ y $(1,-4)$, baja hacia $-\infty$ junto a $x=2$ y tiende a $-2$ por debajo cuando $x\to-\infty$. La rama de la derecha ($x>2$) viene de $+\infty$ junto a $x=2$, pasa por $(3,0)$ y tiende a $-2$ por encima cuando $x\to+\infty$.
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2024-ord-b-4}
+**Ejercicio 4** · Ordinaria · Modelo B 2024 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-b/examen.pdf){target="_blank"}
+
+Se considera la función
+$$f(x)=\begin{cases}-x^{2}+4x+3&\text{si }x<4\\2x-5&\text{si }x\ge4\end{cases}$$
+
+a) Estudie su continuidad y derivabilidad. *(0,75 puntos)*
+
+b) Estudie su monotonía y calcule sus extremos relativos. *(0,75 puntos)*
+
+c) Represente la región del plano limitada por la gráfica de $f$, las rectas $x=3$, $x=5$ y el eje de abscisas. Calcule su área. *(1 punto)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En $x=4$: $-16+16+3=3$ y $2\cdot4-5=3$: **continua.** Derivadas: $f'(x)=-2x+4$ si $x<4$ y $f'(x)=2$ si $x>4$; $f'(4^-)=-4\neq f'(4^+)=2$.
+
+**$f$ es continua en $\mathbb R$ y derivable en $\mathbb R\setminus\{4\}$.**
+
+**b)** Si $x<4$: $f'(x)=-2x+4=0\Rightarrow x=2$, con $f'>0$ en $(-\infty,2)$ y $f'<0$ en $(2,4)$. Si $x>4$: $f'=2>0$.
+
+**$f$ crece en $(-\infty,2)\cup(4,+\infty)$ y decrece en $(2,4)$. Máximo relativo en $(2,7)$ y mínimo relativo en $(4,3)$** (en $x=4$ la función no es derivable, pero pasa de decrecer a crecer).
+
+**c)** En $[3,5]$, $f>0$ (en $x=3$ vale $6$ y en $x=4$ vale $3$). La región es un trozo de parábola entre $x=3$ y $x=4$ seguido de un trozo de recta entre $x=4$ y $x=5$:
+$$A=\int_3^4\left(-x^2+4x+3\right)dx+\int_4^5(2x-5)\,dx=\left[-\frac{x^3}{3}+2x^2+3x\right]_3^4+\left[x^2-5x\right]_4^5=\frac{14}{3}+4=\frac{26}{3}.$$
+**$A=\dfrac{26}{3}\ \text{u}^2$**
+::::
+:::::
+
+
+### Ordinaria · Reserva · Modelo A 2024
+
+
+::::: {.ebau-ej #ebau-2024-ord-res-a-4}
+**Ejercicio 4** · Ordinaria · Reserva · Modelo A 2024 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-res-a/examen.pdf){target="_blank"}
+
+Se considera la función $f(x)=\begin{cases}3+e^{x}&\text{si }x<1\\x^{2}+ax+2&\text{si }x\ge1\end{cases}$
+
+a) Determine el valor de $a$ para que la función $f$ sea continua en $\mathbb R$. Para ese valor de $a$, ¿es $f$ derivable? *(1 punto)*
+
+b) Para $a=-3$, calcule la recta tangente a la gráfica de $f$ en el punto de abscisa $x=0$. *(0,5 puntos)*
+
+c) Para $a=-3$, represente la región limitada por la gráfica de $f$, las rectas $x=2$, $x=4$ y el eje de abscisas. Calcule el área de dicha región. *(1 punto)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Continuidad en $x=1$: $3+e$ y $1+a+2=3+a$; luego $3+e=3+a$ y **$a=e$.**
+
+Derivabilidad: $f'(x)=e^x$ si $x<1$ y $f'(x)=2x+a$ si $x>1$: $f'(1^-)=e$ y $f'(1^+)=2+a=2+e$. Como $e\neq2+e$: **$f$ no es derivable en $x=1$.**
+
+**b)** Con $a=-3$, en $x=0$ la función es $f(x)=3+e^x$: $f(0)=4$ y $f'(0)=e^0=1$.
+
+**$y=x+4$.**
+
+**c)** Con $a=-3$, para $x\ge1$: $f(x)=x^2-3x+2=(x-1)(x-2)$, parábola que corta al eje $OX$ en $x=1$ y $x=2$ y que es positiva para $x>2$. En $[2,4]$:
+$$A=\int_2^4\left(x^2-3x+2\right)dx=\left[\frac{x^3}{3}-\frac{3x^2}{2}+2x\right]_2^4=\frac{16}{3}-\frac{2}{3}=\frac{14}{3}.$$
+**$A=\dfrac{14}{3}\ \text{u}^2$**
+::::
+:::::
+
+
+### Ordinaria · Reserva · Modelo B 2024
+
+
+::::: {.ebau-ej #ebau-2024-ord-res-b-3}
+**Ejercicio 3** · Ordinaria · Reserva · Modelo B 2024 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-res-b/examen.pdf){target="_blank"}
+
+Se considera la función
+$$f(x)=\begin{cases}x^{2}+ax-1&\text{si }x\le1\\\dfrac{b}{x}&\text{si }1<x\le3\\\dfrac{x-1}{3}&\text{si }x>3\end{cases}$$
+con $a$ y $b$ números reales.
+
+a) Determine los valores de $a$ y $b$ para que $f$ sea continua. Para dichos valores, estudie la derivabilidad de $f$. *(1,5 puntos)*
+
+b) Para $a=5$ y $b=2$, represente el recinto limitado por la gráfica de $f$, las rectas $x=2$, $x=4$ y el eje $OX$. Calcule su área. *(1 punto)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Continuidad en $x=1$: $\displaystyle\lim_{x\to1^-}f=1+a-1=a$ y $\displaystyle\lim_{x\to1^+}f=b$; luego $a=b$. En $x=3$: $\dfrac b3$ y $\dfrac{3-1}{3}=\dfrac{2}{3}$; luego $b=2$.
+
+**$a=b=2$.**
+
+Derivabilidad: $f'(x)=2x+2$ si $x<1$, $f'(x)=-\dfrac{2}{x^2}$ si $1<x<3$ y $f'(x)=\dfrac{1}{3}$ si $x>3$.
+
+- En $x=1$: $f'(1^-)=4\neq f'(1^+)=-2$.
+- En $x=3$: $f'(3^-)=-\dfrac{2}{9}\neq f'(3^+)=\dfrac{1}{3}$.
+
+**$f$ es derivable en $\mathbb R\setminus\{1,3\}$.**
+
+**b)** Con $b=2$ (y $a=5$, que no influye entre $x=2$ y $x=4$): en $[2,3]$, $f(x)=\dfrac2x$ (hipérbola decreciente de $(2,1)$ a $\left(3,\dfrac{2}{3}\right)$) y en $(3,4]$, $f(x)=\dfrac{x-1}{3}$ (recta de $\left(3,\dfrac{2}{3}\right)$ a $(4,1)$). Ambas son positivas.
+$$A=\int_2^3\frac2x\,dx+\int_3^4\frac{x-1}{3}\,dx=2\ln\frac{3}{2}+\left[\frac{(x-1)^2}{6}\right]_3^4=2\ln\frac{3}{2}+\frac{9-4}{6}=2\ln\frac{3}{2}+\frac{5}{6}.$$
+**$A=2\ln\dfrac{3}{2}+\dfrac{5}{6}\approx1{,}644\ \text{u}^2$**
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2024-ord-res-b-4}
+**Ejercicio 4** · Ordinaria · Reserva · Modelo B 2024 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-res-b/examen.pdf){target="_blank"}
+
+Se considera la función
+$$f(x)=\begin{cases}-\dfrac{1}{2}x^{2}+x+1&\text{si }x\le2\\\dfrac{1}{x-1}&\text{si }x>2\end{cases}$$
+
+a) Estudie la continuidad, derivabilidad y monotonía de $f$. Represente gráficamente dicha función. *(1,5 puntos)*
+
+b) Calcule el área del recinto limitado por la gráfica de $f$, las rectas $x=0$, $x=4$ y el eje $OX$. *(1 punto)*
+
+*Relacionado también con:* [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En $x=2$: $-2+2+1=1$ y $\dfrac{1}{2-1}=1$: **continua** (cada tramo lo es en su intervalo). Derivadas: $f'(x)=1-x$ si $x<2$ y $f'(x)=-\dfrac{1}{(x-1)^2}$ si $x>2$; $f'(2^-)=-1=f'(2^+)$: **derivable.**
+
+**$f$ es continua y derivable en $\mathbb R$.**
+
+Monotonía: $f'>0$ en $(-\infty,1)$ y $f'<0$ en $(1,2)$ y en $(2,+\infty)$. **$f$ crece en $(-\infty,1)$ y decrece en $(1,+\infty)$, con máximo en $\left(1,\dfrac{3}{2}\right)$.**
+
+Gráfica: arco de parábola abierta hacia abajo con vértice $\left(1,\dfrac{3}{2}\right)$, que pasa por $(0,1)$ y llega a $(2,1)$; a partir de ahí, la rama de hipérbola $y=\dfrac{1}{x-1}$ decreciente, con asíntota horizontal $y=0$ (pasa por $\left(3,\dfrac{1}{2}\right)$).
+
+**b)** En $[0,4]$, $f>0$:
+$$A=\int_0^2\left(-\frac{x^2}{2}+x+1\right)dx+\int_2^4\frac{dx}{x-1}=\left[-\frac{x^3}{6}+\frac{x^2}{2}+x\right]_0^2+\left[\ln(x-1)\right]_2^4=\frac{8}{3}+\ln3.$$
+**$A=\dfrac{8}{3}+\ln3\approx3{,}765\ \text{u}^2$**
+::::
+:::::
+
+
+### Ordinaria · Suplente · Modelo A 2024
+
+
+::::: {.ebau-ej #ebau-2024-ord-sup-a-4}
+**Ejercicio 4** · Ordinaria · Suplente · Modelo A 2024 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-sup-a/examen.pdf){target="_blank"}
+
+Se consideran las funciones
+$$f(x)=\begin{cases}2-x^{2}&\text{si }-1\le x\le1\\(x-2)^{2}&\text{si }1<x\le3\end{cases}\qquad;\qquad g(x)=1\quad\text{si }-1\le x\le3$$
+
+a) Estudie la continuidad y la derivabilidad de $f$ y $g$ en sus dominios. *(1 punto)*
+
+b) Represente el recinto limitado por las gráficas de ambas funciones y calcule su área. *(1,5 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $g(x)=1$ es constante: **continua y derivable en $[-1,3]$.**
+
+Para $f$, en $x=1$: $\displaystyle\lim_{x\to1^-}\left(2-x^2\right)=1$ y $f(1)=(1-2)^2=1$: **continua.** Derivadas: $f'(x)=-2x$ si $-1<x<1$ y $f'(x)=2(x-2)$ si $1<x<3$; $f'(1^-)=-2=f'(1^+)$: **derivable.**
+
+**$f$ es continua y derivable en $[-1,3]$ (en el interior del intervalo, en los extremos solo hay derivadas laterales).**
+
+**b)** $f$ y $g$ se cortan donde $2-x^2=1$ (en $[-1,1]$, $x=\pm1$) y donde $(x-2)^2=1$ (en $(1,3]$, $x=3$; en $x=1$ también), es decir, en $x=-1$, $x=1$ y $x=3$. En $[-1,1]$ la parábola $2-x^2$ queda sobre la recta $y=1$ (vale $2$ en $x=0$); en $[1,3]$ la parábola $(x-2)^2$ queda bajo la recta (vale $0$ en $x=2$).
+$$A=\int_{-1}^{1}\left(2-x^2-1\right)dx+\int_1^3\left(1-(x-2)^2\right)dx=\left[x-\frac{x^3}{3}\right]_{-1}^{1}+\left[x-\frac{(x-2)^3}{3}\right]_1^3=\frac{4}{3}+\frac{4}{3}=\frac{8}{3}.$$
+**$A=\dfrac{8}{3}\ \text{u}^2$**
+::::
+:::::
+
+
+### Ordinaria · Suplente · Modelo B 2024
+
+
+::::: {.ebau-ej #ebau-2024-ord-sup-b-4}
+**Ejercicio 4** · Ordinaria · Suplente · Modelo B 2024 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-sup-b/examen.pdf){target="_blank"}
+
+Se considera la función
+$$f(x)=\begin{cases}-x^{2}+2x&\text{si }x<2\\x^{2}-2x&\text{si }x\ge2\end{cases}$$
+
+a) Estudie la continuidad y derivabilidad de $f$. *(1 punto)*
+
+b) Represente el recinto limitado por las rectas $y=2x$, $x=-1$, $x=1$ y la gráfica de $f$. Calcule su área. *(1,5 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En $x=2$: $\displaystyle\lim_{x\to2^-}\left(-x^2+2x\right)=0$ y $f(2)=4-4=0$: **continua.** Derivadas: $f'(x)=-2x+2$ si $x<2$ y $f'(x)=2x-2$ si $x>2$; $f'(2^-)=-2\neq f'(2^+)=2$.
+
+**$f$ es continua en $\mathbb R$ y derivable en $\mathbb R\setminus\{2\}$.**
+
+**b)** En $[-1,1]$, $f(x)=-x^2+2x$ (parábola abierta hacia abajo con vértice $(1,1)$). La recta $y=2x$ y la parábola se cortan donde $-x^2+2x=2x\iff x=0$. Como $2x-\left(-x^2+2x\right)=x^2\ge0$, la recta queda por encima de la parábola en todo el intervalo $[-1,1]$:
+$$A=\int_{-1}^{1}\left[2x-\left(-x^2+2x\right)\right]dx=\int_{-1}^{1}x^2\,dx=\left[\frac{x^3}{3}\right]_{-1}^{1}=\frac{2}{3}.$$
+**$A=\dfrac{2}{3}\ \text{u}^2$**
+::::
+:::::
+
+
+## 2023
+
+
+### Ordinaria · Reserva · Modelo A 2023
+
+
+::::: {.ebau-ej #ebau-2023-ord-res-a-4}
+**Ejercicio 4** · Ordinaria · Reserva · Modelo A 2023 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-res-a/examen.pdf){target="_blank"}
+
+Se considera la función
+$$f(x)=\begin{cases}x^{3}+2x^{2}-3&x\le1\\1+\dfrac{1}{x-2}&x>1\end{cases}$$
+
+a) Estudie la continuidad de $f$. Si la función no es continua en algún punto, indique el tipo de discontinuidad que presenta. *(1 punto)*
+
+b) Estudie la derivabilidad de $f$. *(0,75 puntos)*
+
+c) Determine las asíntotas de $f$. *(0,75 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** El dominio es $\mathbb R\setminus\{2\}$ (el segundo tramo no está definido en $x=2$). En $x=1$: $f(1)=1+2-3=0$ y $\displaystyle\lim_{x\to1^+}\left(1+\frac{1}{x-2}\right)=1-1=0$: **continua en $x=1$.** En $x=2$ hay $\displaystyle\lim_{x\to2^\pm}\frac{1}{x-2}=\pm\infty$: **discontinuidad de salto infinito (asintótica) en $x=2$.**
+
+**$f$ es continua en $\mathbb R\setminus\{2\}$.**
+
+**b)** $f'(x)=3x^2+4x$ si $x<1$ y $f'(x)=-\dfrac{1}{(x-2)^2}$ si $x>1$. En $x=1$: $f'(1^-)=7\neq f'(1^+)=-1$. **$f$ es derivable en $\mathbb R\setminus\{1,2\}$** y no lo es en $x=1$.
+
+**c)** Vertical: $\displaystyle\lim_{x\to2^+}f=+\infty$, así que **$x=2$** es asíntota vertical. Horizontal: $\displaystyle\lim_{x\to+\infty}f=1$, luego **$y=1$** es asíntota horizontal en $+\infty$. En $-\infty$ el tramo cúbico no tiene asíntotas.
+::::
+:::::
+
+
+### Ordinaria · Reserva · Modelo B 2023
+
+
+::::: {.ebau-ej #ebau-2023-ord-res-b-4}
+**Ejercicio 4** · Ordinaria · Reserva · Modelo B 2023 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-res-b/examen.pdf){target="_blank"}
+
+La temperatura en el interior de un equipo de refrigeración durante un día que sufrió un corte de energía viene dada por la función $f$ expresada en grados centígrados y el tiempo $t$ en horas:
+$$f(t)=\begin{cases}-9&0\le t\le1\\-t^{2}+12t-20&1<t<11\\-9&11\le t\le24\end{cases}$$
+
+a) Estudie la continuidad de $f$. *(0,75 puntos)*
+
+b) Represente gráficamente la función $f$. *(0,75 puntos)*
+
+c) Conteste razonadamente a qué hora se produjo el corte de energía y cuánto duró dicho corte. *(0,5 puntos)*
+
+d) El equipo de refrigeración se utiliza para conservar suelos y vacunas. Los suelos se estropean si se alcanzan temperaturas de $20\,^\circ\text{C}$ en algún momento. Las vacunas se estropean si están por encima de $0\,^\circ\text{C}$ durante más de seis horas. Razone si alguno de esos productos se estropeó ese día. *(0,5 puntos)*
+
+*Relacionado también con:* [Funciones](04-funciones.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En $t=1$: $-1+12-20=-9=f(1)$. En $t=11$: $-121+132-20=-9=f(11)$. **$f$ es continua en todo su dominio $[0,24]$.**
+
+**b)** Es la recta constante $y=-9$ en $[0,1]$ y en $[11,24]$, y entre $t=1$ y $t=11$ un arco de parábola abierta hacia abajo con máximo en $t=6$: $f(6)=-36+72-20=16$. Corta al eje $OX$ en $t=2$ y $t=10$.
+
+**c)** Con el equipo funcionando, la temperatura es constante ($-9\,^\circ$C). Cuando se produce el corte la temperatura empieza a subir, y el equipo vuelve a $-9\,^\circ$C cuando se restablece la energía: **el corte empezó a la $1$ ($t=1$) y terminó a las $11$ ($t=11$); duró $10$ horas.**
+
+**d)** El máximo de $f$ es $f(6)=16<20$: **los suelos no se estropean.** $f(t)>0\iff-t^2+12t-20>0\iff2<t<10$: la temperatura está por encima de $0\,^\circ$C durante $10-2=8$ horas, más de seis: **las vacunas sí se estropean.**
+::::
+:::::
+
+
+### Ordinaria · Suplente · Modelo A 2023
+
+
+::::: {.ebau-ej #ebau-2023-ord-sup-a-3}
+**Ejercicio 3** · Ordinaria · Suplente · Modelo A 2023 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-sup-a/examen.pdf){target="_blank"}
+
+a) Se considera la función
+$$f(x)=\begin{cases}ax^{2}+bx+6&x\le2{,}5\\-1{,}4x+7&x>2{,}5\end{cases}$$
+con $a$ y $b$ números reales. Calcule el valor de los parámetros $a$ y $b$ para que la función sea continua y tenga un máximo en $x=1$. *(1,5 puntos)*
+
+b) Represente gráficamente la función $g(x)=-2x^{2}+2x+4$ y calcule el área de la región acotada, limitada por la gráfica de dicha función y el eje de abscisas. *(1 punto)*
+
+*Relacionado también con:* [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Continuidad en $x=2{,}5$: $6{,}25a+2{,}5b+6=-1{,}4\cdot2{,}5+7=3{,}5$, es decir, $6{,}25a+2{,}5b=-2{,}5$. Máximo en $x=1$: $f'(1)=2a+b=0\Rightarrow b=-2a$. Sustituyendo, $6{,}25a-5a=1{,}25a=-2{,}5\Rightarrow a=-2$ y $b=4$.
+
+**$a=-2$ y $b=4$.** (Comprobación: $f(x)=-2x^2+4x+6$ tiene un máximo en $x=1$, $f(1)=8$, y $f''=-4<0$.)
+
+**b)** $g(x)=-2(x-2)(x+1)$: parábola abierta hacia abajo, que corta al eje $OX$ en $x=-1$ y $x=2$, al eje $OY$ en $(0,4)$ y con vértice $\left(\dfrac{1}{2},\dfrac{9}{2}\right)$.
+$$A=\int_{-1}^{2}\left(-2x^2+2x+4\right)dx=\left[-\frac{2x^3}{3}+x^2+4x\right]_{-1}^{2}=\frac{20}{3}-\left(-\frac{7}{3}\right)=9.$$
+**$A=9\ \text{u}^2$**
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2023-ord-sup-a-4}
+**Ejercicio 4** · Ordinaria · Suplente · Modelo A 2023 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-sup-a/examen.pdf){target="_blank"}
+
+Se considera la función $f(x)=\begin{cases}\dfrac{x^{2}}{3}&0\le x\le2\\\dfrac{4}{x+1}&x>2\end{cases}$
+
+a) Estudie la continuidad y derivabilidad de la función $f$. *(1,25 puntos)*
+
+b) Determine los intervalos de crecimiento y decrecimiento, el máximo de la función y represente gráficamente la función $f$. *(1,25 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En $x=2$: $\dfrac{2^2}{3}=\dfrac{4}{3}$ y $\dfrac{4}{2+1}=\dfrac{4}{3}$: **continua en $x=2$.** Dentro de cada tramo es continua (el segundo no se anula en el denominador para $x>2$): **$f$ es continua en $[0,+\infty)$.**
+
+$f'(x)=\dfrac{2x}{3}$ si $0<x<2$ y $f'(x)=-\dfrac{4}{(x+1)^2}$ si $x>2$. En $x=2$: $f'(2^-)=\dfrac{4}{3}\neq f'(2^+)=-\dfrac{4}{9}$: **no es derivable en $x=2$** (sí en $(0,2)\cup(2,+\infty)$).
+
+**b)** $f'>0$ en $(0,2)$ y $f'<0$ en $(2,+\infty)$. **$f$ crece en $(0,2)$ y decrece en $(2,+\infty)$; máximo en $\left(2,\dfrac{4}{3}\right)$.**
+
+Gráfica: arco de parábola $y=\dfrac{x^2}{3}$ desde $(0,0)$ hasta el pico $\left(2,\dfrac{4}{3}\right)$, y desde ahí la rama de hipérbola $y=\dfrac{4}{x+1}$ decreciente, con asíntota horizontal $y=0$ (pasa por $(3,1)$).
+::::
+:::::
+
+
+### Ordinaria · Suplente · Modelo B 2023
+
+
+::::: {.ebau-ej #ebau-2023-ord-sup-b-3}
+**Ejercicio 3** · Ordinaria · Suplente · Modelo B 2023 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-sup-b/examen.pdf){target="_blank"}
+
+Se considera la función
+$$f(x)=\begin{cases}x^{2}-4x+4&x<3\\-x+4&x\ge3\end{cases}$$
+
+a) Estudie la continuidad y derivabilidad de la función $f$ en todos los puntos de su dominio. *(1,25 puntos)*
+
+b) Represente gráficamente $f$. *(0,5 puntos)*
+
+c) Calcule el área de la región limitada por la gráfica de $f$, el eje de abscisas y las rectas $x=2$ y $x=4$. *(0,75 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En $x=3$: $\displaystyle\lim_{x\to3^-}\left(x^2-4x+4\right)=1$ y $f(3)=-3+4=1$: **continua.** Derivadas: $f'(x)=2x-4$ si $x<3$ y $f'(x)=-1$ si $x>3$, con $f'(3^-)=2\neq f'(3^+)=-1$.
+
+**$f$ es continua en $\mathbb R$ y derivable en $\mathbb R\setminus\{3\}$.**
+
+**b)** Para $x<3$: parábola $y=(x-2)^2$ de vértice $(2,0)$ (pasa por $(0,4)$ y $(3,1)$). Para $x\ge3$: semirrecta $y=-x+4$ desde $(3,1)$ (corta al eje $OX$ en $(4,0)$ y sigue hacia abajo).
+
+**c)** En $[2,4]$, $f\ge0$:
+$$A=\int_2^3(x-2)^2dx+\int_3^4(-x+4)\,dx=\left[\frac{(x-2)^3}{3}\right]_2^3+\left[-\frac{x^2}{2}+4x\right]_3^4=\frac{1}{3}+\frac{1}{2}=\frac{5}{6}.$$
+**$A=\dfrac{5}{6}\ \text{u}^2$**
+::::
+:::::
+
+
+## 2022
+
+
+### Ordinaria 2022
+
+
+::::: {.ebau-ej #ebau-2022-ord-4}
+**Ejercicio 4** · Ordinaria 2022 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ord/examen.pdf){target="_blank"}
+
+a) Se considera la función $f(x)=\begin{cases}6x-3&x\le1\\ax^{2}+bx+2&x>1\end{cases}$ con $a$ y $b$ números reales. Determine los valores de $a$ y $b$ para que $f$ sea continua y derivable en todo su dominio. *(1,25 puntos)*
+
+b) Calcule el área del recinto acotado, limitado por el eje $OX$ y la gráfica de la función $g(x)=-2x^{2}+8x-6$. *(1,25 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Continuidad en $x=1$: $6\cdot1-3=3$ y $a+b+2$; así $a+b+2=3\Rightarrow a+b=1$. Derivabilidad: $f'(x)=6$ si $x<1$ y $f'(x)=2ax+b$ si $x>1$, luego $2a+b=6$. Restando, $a=5$ y $b=-4$.
+
+**$a=5$ y $b=-4$.**
+
+**b)** $g(x)=-2(x-1)(x-3)$ corta al eje $OX$ en $x=1$ y $x=3$, y $g\ge0$ entre ellos:
+$$A=\int_1^3\left(-2x^2+8x-6\right)dx=\left[-\frac{2x^3}{3}+4x^2-6x\right]_1^3=0-\left(-\frac{8}{3}\right)=\frac{8}{3}.$$
+**$A=\dfrac{8}{3}\ \text{u}^2$**
+::::
+:::::
+
+
+### Ordinaria · Reserva 2022
+
+
+::::: {.ebau-ej #ebau-2022-ord-res-3}
+**Ejercicio 3** · Ordinaria · Reserva 2022 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ord-res/examen.pdf){target="_blank"}
+
+Se considera la función
+$$f(x)=\begin{cases}4x^{2}+16x+17&x<-1\\\dfrac{1}{3}(10-5x)&-1\le x\le2\\\dfrac{3}{2}&x>2\end{cases}$$
+
+a) Estudie la continuidad y derivabilidad de $f$. *(1,25 puntos)*
+
+b) Represente gráficamente la función $f$. *(0,5 puntos)*
+
+c) Calcule el área de la región limitada por la gráfica de $f$ y el eje de abscisas entre $x=-2$ y $x=2$. *(0,75 puntos)*
+
+*Relacionado también con:* [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En $x=-1$: $\displaystyle\lim_{x\to-1^-}f=4-16+17=5$ y $f(-1)=\dfrac{1}{3}(10+5)=5$: **continua.** Derivadas laterales: $f'(-1^-)=8x+16=8$ y $f'(-1^+)=-\dfrac{5}{3}$: **no derivable en $x=-1$.**
+
+En $x=2$: $f(2)=\dfrac{1}{3}(10-10)=0$ y $\displaystyle\lim_{x\to2^+}f=\dfrac{3}{2}$: **discontinuidad de salto finito**, luego no derivable.
+
+**$f$ es continua en $\mathbb R\setminus\{2\}$ y derivable en $\mathbb R\setminus\{-1,2\}$.**
+
+**b)** Para $x<-1$: parábola $y=4x^2+16x+17$ (vértice $(-2,1)$, pasa por $(-1,5)$). Para $-1\le x\le2$: segmento de recta de $(-1,5)$ a $(2,0)$. Para $x>2$: recta horizontal $y=\dfrac{3}{2}$ (con el punto «abierto» en $\left(2,\dfrac{3}{2}\right)$).
+
+**c)** En $[-2,2]$, $f\ge0$ ($4x^2+16x+17$ no se anula, $\Delta<0$):
+$$A=\int_{-2}^{-1}\left(4x^2+16x+17\right)dx+\int_{-1}^{2}\frac{10-5x}{3}\,dx=\frac{7}{3}+\frac{15}{2}=\frac{59}{6}.$$
+**$A=\dfrac{59}{6}\ \text{u}^2$**
+::::
+:::::
+
+
+### Ordinaria · Suplente 2022
+
+
+::::: {.ebau-ej #ebau-2022-ord-sup-4}
+**Ejercicio 4** · Ordinaria · Suplente 2022 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ord-sup/examen.pdf){target="_blank"}
+
+Se considera la función $f(x)=\begin{cases}ax^{2}+bx+1&\text{si }x\le1\\\dfrac2x&\text{si }x>1\end{cases}$, con $a$ y $b$ números reales.
+
+a) ¿Para qué valores de $a$ y $b$ la función es continua y derivable en $x=1$? *(1 punto)*
+
+b) Para $a=-3$ y $b=4$, calcule los extremos relativos de $f$. *(0,75 puntos)*
+
+c) Para $a=-2$ y $b=3$, calcule el valor de la integral $\displaystyle\int_{-1}^{3}f(x)\,dx$. *(0,75 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Continuidad en $x=1$: $a+b+1=2$, es decir $a+b=1$. Derivabilidad: $f'(x)=2ax+b$ si $x<1$ y $f'(x)=-\dfrac{2}{x^2}$ si $x>1$, luego $2a+b=-2$. Restando, $a=-3$ y $b=4$.
+
+**$a=-3$ y $b=4$.**
+
+**b)** Con $a=-3$, $b=4$: si $x\le1$, $f(x)=-3x^2+4x+1$, $f'(x)=-6x+4=0\Rightarrow x=\dfrac{2}{3}$, con $f''=-6<0$: máximo, $f\left(\dfrac{2}{3}\right)=\dfrac{7}{3}$. Si $x>1$, $f'(x)=-\dfrac{2}{x^2}<0$ (no hay extremos), y en $x=1$ es derivable con $f'(1)=-2<0$.
+
+**Máximo relativo en $\left(\dfrac{2}{3},\dfrac{7}{3}\right)$; no hay mínimos relativos.**
+
+**c)** Con $a=-2$, $b=3$:
+$$\int_{-1}^{3}f=\int_{-1}^{1}\left(-2x^2+3x+1\right)dx+\int_1^3\frac2x\,dx=\left[-\frac{2x^3}{3}+\frac{3x^2}{2}+x\right]_{-1}^{1}+\left[2\ln x\right]_1^3=\frac{2}{3}+2\ln3.$$
+**$\displaystyle\int_{-1}^{3}f(x)\,dx=\dfrac{2}{3}+2\ln3\approx2{,}864$**
+::::
+:::::
+
+
+### Extraordinaria · Reserva 2022
+
+
+::::: {.ebau-ej #ebau-2022-ext-res-3}
+**Ejercicio 3** · Extraordinaria · Reserva 2022 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ext-res/examen.pdf){target="_blank"}
+
+Se considera la función
+$$f(x)=\begin{cases}a(x+1)^{2}&-3\le x\le1\\\dfrac{bx^{2}}{2}+2&1<x\le2\end{cases}$$
+con $a$ y $b$ números reales.
+
+a) Determine los valores de $a$ y $b$ para que $f$ sea continua y derivable. *(1,25 puntos)*
+
+b) Para $a=1$ y $b=2$, esboce la gráfica de la función $f$ y calcule el área del recinto limitado por la gráfica de $f$, el eje $OX$ y las rectas $x=-2$ y $x=1$. *(1,25 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Continuidad en $x=1$: $a(1+1)^2=4a$ y $\dfrac b2+2$; así $4a=\dfrac b2+2$. Derivabilidad: $f'(x)=2a(x+1)$ si $x<1$ y $f'(x)=bx$ si $x>1$, luego $4a=b$. Sustituyendo, $4a=2a+2\Rightarrow a=1$ y $b=4$.
+
+**$a=1$ y $b=4$.**
+
+**b)** Con $a=1$ y $b=2$: $f(x)=(x+1)^2$ en $[-3,1]$ (arco de parábola de vértice $(-1,0)$, que pasa por $(-3,4)$, $(0,1)$ y $(1,4)$) y $f(x)=x^2+2$ en $(1,2]$ (arco de parábola que empieza, «abierto», en $(1,3)$ y llega a $(2,6)$). Hay un salto en $x=1$ (de $4$ a $3$).
+
+Área entre $x=-2$ y $x=1$, con $f\ge0$:
+$$A=\int_{-2}^{1}(x+1)^2dx=\left[\frac{(x+1)^3}{3}\right]_{-2}^{1}=\frac{8}{3}-\left(-\frac{1}{3}\right)=3.$$
+**$A=3\ \text{u}^2$**
+::::
+:::::
+
+
+### Extraordinaria · Suplente 2022
+
+
+::::: {.ebau-ej #ebau-2022-ext-sup-4}
+**Ejercicio 4** · Extraordinaria · Suplente 2022 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ext-sup/examen.pdf){target="_blank"}
+
+Se considera la función $f(x)=\begin{cases}ax^{2}+bx+2&\text{si }x\le1\\\dfrac{4}{x+1}&\text{si }x>1\end{cases}$ con $a$ y $b$ números reales.
+
+a) Calcule $a$ y $b$ para que la función $f$ sea continua y derivable. *(1 punto)*
+
+b) Para $a=-1$ y $b=1$, realice un esbozo de la gráfica de la función $f$. *(0,75 puntos)*
+
+c) Para $a=-1$ y $b=1$, halle el área del recinto acotado, limitado por la gráfica de $f$, la recta $x=1$ y el eje $OX$. *(0,75 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Continuidad en $x=1$: $a+b+2=\dfrac{4}{2}=2\Rightarrow a+b=0$. Derivabilidad: $f'(x)=2ax+b$ si $x<1$ y $f'(x)=-\dfrac{4}{(x+1)^2}$ si $x>1$; en $x=1$: $2a+b=-1$. Restando, $a=-1$ y $b=1$.
+
+**$a=-1$ y $b=1$.**
+
+**b)** Para $x\le1$: $f(x)=-x^2+x+2=-(x-2)(x+1)$, parábola abierta hacia abajo con vértice $\left(\dfrac{1}{2},\dfrac{9}{4}\right)$ que corta al eje $OX$ en $x=-1$ y $x=2$ (aunque solo hasta $x=1$), al eje $OY$ en $(0,2)$ y llega a $(1,2)$. Para $x>1$: $f(x)=\dfrac{4}{x+1}$, hipérbola decreciente desde $(1,2)$, con asíntota horizontal $y=0$. La función es continua y suave en $x=1$.
+
+**c)** El recinto acotado va de $x=-1$ (donde $f$ corta al eje $OX$) a $x=1$, con $f\ge0$:
+$$A=\int_{-1}^{1}\left(-x^2+x+2\right)dx=\left[-\frac{x^3}{3}+\frac{x^2}{2}+2x\right]_{-1}^{1}=\frac{13}{6}-\left(-\frac{7}{6}\right)=\frac{10}{3}.$$
+**$A=\dfrac{10}{3}\ \text{u}^2$**
+::::
+:::::
+
+
+## 2021
+
+
+### Ordinaria · Reserva 2021
+
+
+::::: {.ebau-ej #ebau-2021-ord-res-3}
+**Ejercicio 3** · Ordinaria · Reserva 2021 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ord-res/examen.pdf){target="_blank"}
+
+Se considera la función
+$$f(x)=\begin{cases}-2x+2a&\text{si }-4\le x\le-2\\-2x^{2}-4a&\text{si }-2<x\le2\\-8x+b&\text{si }2<x\le3\end{cases}$$
+
+a) Calcule los valores $a$ y $b$ para que la función sea continua en su dominio. Para esos valores, ¿es $f$ derivable? *(1 punto)*
+
+b) Para $a=-2$ y $b=16$, estudie la monotonía de la función $f$ y calcule sus extremos relativos y absolutos. *(0,8 puntos)*
+
+c) Para $a=-2$ y $b=16$, calcule el área del recinto limitado por la gráfica de $f$, el eje $OX$ y las rectas $x=-2$ y $x=2$. *(0,7 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En $x=-2$: $-2(-2)+2a=4+2a$ y $-2(-2)^2-4a=-8-4a$; igualando, $6a=-12$, **$a=-2$**. En $x=2$: $-2\cdot2^2-4a=-8-4a$ y $-8\cdot2+b=-16+b$; con $a=-2$ queda $0=-16+b$, **$b=16$**.
+
+Derivabilidad: $f'(x)=-2$ si $-4<x<-2$, $f'(x)=-4x$ si $-2<x<2$, $f'(x)=-8$ si $2<x<3$. En $x=-2$: $f'(-2^-)=-2\neq f'(-2^+)=8$. En $x=2$: $f'(2^-)=-8=f'(2^+)$. **$f$ no es derivable en $x=-2$ y sí lo es en $x=2$** (y en el resto de su dominio).
+
+**b)** Con $a=-2$, $b=16$: $f(x)=-2x-4$ en $[-4,-2]$, $f(x)=-2x^2+8$ en $(-2,2]$ y $f(x)=-8x+16$ en $(2,3]$.
+
+- $[-4,-2]$: $f'=-2<0$, **decrece**.
+- $(-2,0)$: $f'=-4x>0$, **crece**; $(0,2)$: $f'<0$, **decrece**.
+- $(2,3]$: $f'=-8<0$, **decrece**.
+
+**Mínimo relativo en $(-2,0)$ y máximo relativo en $(0,8)$.** En los extremos del intervalo: $f(-4)=4$ y $f(3)=-8$. **Máximo absoluto $8$ en $x=0$ y mínimo absoluto $-8$ en $x=3$.**
+
+**c)** En $[-2,2]$, $f(x)=-2x^2+8\ge0$:
+$$A=\int_{-2}^{2}\left(-2x^2+8\right)dx=\left[-\frac{2x^3}{3}+8x\right]_{-2}^{2}=\frac{32}{3}+\frac{32}{3}=\frac{64}{3}.$$
+**$A=\dfrac{64}{3}\ \text{u}^2$**
+::::
+:::::
+
+
+### Ordinaria · Suplente 2021
+
+
+::::: {.ebau-ej #ebau-2021-ord-sup-3}
+**Ejercicio 3** · Ordinaria · Suplente 2021 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ord-sup/examen.pdf){target="_blank"}
+
+Se considera la función
+$$f(x)=\begin{cases}\dfrac1x&\text{si }x\le-1\\-3x^{2}+4&\text{si }-1<x<1\\2x-1&\text{si }x\ge1\end{cases}$$
+
+a) Estudie la continuidad y derivabilidad de la función $f$ en todo su dominio. *(1 punto)*
+
+b) Represente gráficamente la función $f$. *(0,8 puntos)*
+
+c) Calcule el área de la región limitada por la gráfica de la función $f$, el eje de abscisas y las rectas $x=0$ y $x=3$. *(0,7 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Continuidad.
+
+- En $x=-1$: $\displaystyle\lim_{x\to-1^-}\frac1x=-1$ y $\displaystyle\lim_{x\to-1^+}\left(-3x^2+4\right)=1$. Distintos: **discontinuidad de salto finito en $x=-1$.**
+- En $x=1$: $\displaystyle\lim_{x\to1^-}\left(-3x^2+4\right)=1$, $\displaystyle\lim_{x\to1^+}(2x-1)=1$ y $f(1)=1$: **continua en $x=1$.**
+- En el resto es continua (el dominio es $\mathbb R$ y $\dfrac1x$ solo falla en $x=0$, que no está en su tramo).
+
+Derivabilidad: $f'(x)=-\dfrac{1}{x^2}$ si $x<-1$, $f'(x)=-6x$ si $-1<x<1$, $f'(x)=2$ si $x>1$. En $x=1$: $f'(1^-)=-6\neq f'(1^+)=2$: **no derivable en $x=1$.**
+
+**$f$ es continua en $\mathbb R\setminus\{-1\}$ y derivable en $\mathbb R\setminus\{-1,1\}$.**
+
+**b)** Primer tramo: hipérbola $y=\dfrac1x$ (con $x\le-1$), que parte de $0^-$ y llega a $(-1,-1)$ (punto relleno). Segundo tramo: arco de parábola $y=-3x^2+4$ en $(-1,1)$, de vértice $(0,4)$, con los extremos «abiertos» en $(-1,1)$ y $(1,1)$. Tercer tramo: semirrecta $y=2x-1$ desde $(1,1)$ hacia arriba (pasa por $(2,3)$).
+
+**c)** En $[0,3]$ la función es positiva: $-3x^2+4\ge1$ en $[0,1]$ y $2x-1\ge1$ en $[1,3]$.
+$$A=\int_0^1\left(-3x^2+4\right)dx+\int_1^3(2x-1)\,dx=\left[-x^3+4x\right]_0^1+\left[x^2-x\right]_1^3=3+6=9.$$
+**$A=9\ \text{u}^2$**
+::::
+:::::
+
+
+### Extraordinaria 2021
+
+
+::::: {.ebau-ej #ebau-2021-ext-3}
+**Ejercicio 3** · Extraordinaria 2021 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ext/examen.pdf){target="_blank"}
+
+Se considera la función $f(x)=\begin{cases}2^{x+1}&\text{si }x<0\\x^{2}-2x&\text{si }x\ge0\end{cases}$
+
+a) Estudie la continuidad y derivabilidad de la función $f$ en su dominio. *(1 punto)*
+
+b) Estudie la monotonía de la función $f$ y calcule el mínimo. *(0,8 puntos)*
+
+c) Calcule $\displaystyle\int_{-2}^{2}f(x)\,dx$. *(0,7 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En $x=0$: $\displaystyle\lim_{x\to0^-}2^{x+1}=2$ y $\displaystyle\lim_{x\to0^+}\left(x^2-2x\right)=0=f(0)$. **Discontinuidad de salto finito en $x=0$**, luego no es derivable en $x=0$. Para $x\neq0$ es continua y derivable (exponencial y polinomio): $f'(x)=2^{x+1}\ln2$ si $x<0$ y $f'(x)=2x-2$ si $x>0$.
+
+**$f$ es continua y derivable en $\mathbb R\setminus\{0\}$.**
+
+**b)** Si $x<0$, $f'(x)=2^{x+1}\ln2>0$: **crece en $(-\infty,0)$.** Si $x>0$, $f'(x)=2(x-1)$: **decrece en $(0,1)$ y crece en $(1,+\infty)$.**
+
+En $x=1$ hay un mínimo relativo, $f(1)=-1$, que es el **mínimo** de la función ($f>0$ para $x<0$ y $f\ge-1$ para $x\ge0$): **$(1,-1)$.**
+
+**c)** $$\int_{-2}^{2}f=\int_{-2}^{0}2^{x+1}dx+\int_0^2\left(x^2-2x\right)dx=\left[\frac{2^{x+1}}{\ln2}\right]_{-2}^{0}+\left[\frac{x^3}{3}-x^2\right]_0^2=\frac{2-\frac{1}{2}}{\ln2}+\left(\frac{8}{3}-4\right)=\frac{3}{2\ln2}-\frac{4}{3}\approx0{,}8307.$$
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2021-ext-4}
+**Ejercicio 4** · Extraordinaria 2021 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ext/examen.pdf){target="_blank"}
+
+El número de diagnosticados de COVID-19 por PCR en Andalucía, medido en miles de personas, se aproxima por la siguiente función:
+
+$$f(t)=\begin{cases}-t^{2}+2t-0{,}3&\text{si }0{,}2\le t\le1{,}8\\0{,}1\,t-0{,}12&\text{si }1{,}8<t\le5\\-0{,}5\,t^{2}+8{,}3\,t-28{,}62&\text{si }5<t\le10\end{cases}$$
+
+donde $t$ es el tiempo, medido en meses, a partir del inicio de conteo en el mes de marzo de 2020.
+
+a) Estudie la continuidad y derivabilidad de la función $f$ en su dominio. *(1,5 puntos)*
+
+b) ¿En qué instante o instantes es máximo el número de diagnosticados? ¿Cuál es ese número? *(1 punto)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Continuidad. En $t=1{,}8$: $-1{,}8^2+2\cdot1{,}8-0{,}3=0{,}06$ y $0{,}1\cdot1{,}8-0{,}12=0{,}06$. En $t=5$: $0{,}1\cdot5-0{,}12=0{,}38$ y $-0{,}5\cdot25+8{,}3\cdot5-28{,}62=0{,}38$. **Es continua en todo su dominio.**
+
+Derivabilidad: $f'(t)=-2t+2$ en $(0{,}2;1{,}8)$, $f'(t)=0{,}1$ en $(1{,}8;5)$ y $f'(t)=-t+8{,}3$ en $(5;10)$.
+
+- En $t=1{,}8$: $f'(1{,}8^-)=-1{,}6\neq f'(1{,}8^+)=0{,}1$.
+- En $t=5$: $f'(5^-)=0{,}1\neq f'(5^+)=3{,}3$.
+
+**No es derivable en $t=1{,}8$ ni en $t=5$** (sí en el resto de su dominio).
+
+**b)** Primer tramo: máximo en $t=1$, $f(1)=0{,}7$. Segundo tramo: creciente. Tercer tramo: $f'(t)=0\Rightarrow t=8{,}3$, y $f$ crece antes y decrece después, con $f(8{,}3)=5{,}825$. Comparando con $f(10)=4{,}38$ y $f(0{,}2)=0{,}06$:
+
+**El máximo se alcanza a los $8{,}3$ meses, con $5{,}825$ miles de diagnosticados (5 825 personas).**
+::::
+:::::
+
+
+### Extraordinaria · Reserva 2021
+
+
+::::: {.ebau-ej #ebau-2021-ext-res-3}
+**Ejercicio 3** · Extraordinaria · Reserva 2021 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ext-res/examen.pdf){target="_blank"}
+
+Se considera la función $f(x)=\begin{cases}ax+b&\text{si }x<1\\x^{2}-bx+a&\text{si }x\ge1\end{cases}$
+
+a) Halle el valor de $b$ para que $f$ sea continua en $\mathbb R$. *(0,5 puntos)*
+
+b) Para $b=\dfrac{1}{2}$, halle el valor de $a$ para que $f$ sea derivable en $\mathbb R$. *(0,5 puntos)*
+
+c) Para $a<0$ y $b=\dfrac{1}{2}$, estudie el crecimiento y halle las abscisas de los extremos de la función $f$. *(0,7 puntos)*
+
+d) Para $a=0$ y $b=\dfrac{1}{2}$, represente la región del plano delimitada por la gráfica de $f$, el eje de abscisas y las rectas $x=0$ y $x=2$. Calcule el área de dicha región. *(0,8 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En $x=1$: $\displaystyle\lim_{x\to1^-}f=a+b$ y $\displaystyle\lim_{x\to1^+}f=f(1)=1-b+a$. Igualando, $b=1-b$, **$b=\dfrac{1}{2}$.**
+
+**b)** Con $b=\dfrac{1}{2}$: $f'(x)=a$ si $x<1$ y $f'(x)=2x-\dfrac{1}{2}$ si $x>1$. Derivable en $x=1$ si $a=2\cdot1-\dfrac{1}{2}$: **$a=\dfrac{3}{2}$.**
+
+**c)** Con $a<0$ y $b=\dfrac{1}{2}$: si $x<1$, $f'(x)=a<0$ y **$f$ decrece en $(-\infty,1)$**; si $x>1$, $f'(x)=2x-\dfrac{1}{2}>0$ y **$f$ crece en $(1,+\infty)$**. Hay un **mínimo en la abscisa $x=1$** y no hay máximos.
+
+**d)** Con $a=0$ y $b=\dfrac{1}{2}$: $f(x)=\dfrac{1}{2}$ si $x<1$ (recta horizontal) y $f(x)=x^2-\dfrac x2$ si $x\ge1$ (parábola desde $(1,\tfrac{1}{2})$, que pasa por $(2,3)$). La región es positiva en $[0,2]$:
+$$A=\int_0^1\frac{1}{2}\,dx+\int_1^2\left(x^2-\frac x2\right)dx=\frac{1}{2}+\left[\frac{x^3}{3}-\frac{x^2}{4}\right]_1^2=\frac{1}{2}+\frac{5}{3}-\frac{1}{12}=\frac{25}{12}.$$
+**$A=\dfrac{25}{12}\ \text{u}^2$**
+::::
+:::::
+
+
+### Extraordinaria · Suplente 2021
+
+
+::::: {.ebau-ej #ebau-2021-ext-sup-3}
+**Ejercicio 3** · Extraordinaria · Suplente 2021 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ext-sup/examen.pdf){target="_blank"}
+
+Se considera la función $f(x)=\begin{cases}(x+1)^{2}&\text{si }-2\le x<0\\(x-1)^{2}&\text{si }0\le x\le2\end{cases}$
+
+a) Estudie la continuidad y derivabilidad de la función $f$ en todo su dominio. *(1 punto)*
+
+b) Calcule los extremos de la función $f$. *(0,7 puntos)*
+
+c) Represente el recinto que encierra la gráfica de $f$, las rectas $x=-1$, $x=1$ y el eje $OX$. Calcule el área de dicho recinto. *(0,8 puntos)*
+
+*Relacionado también con:* [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd), [Integrales](08-integrales.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** En $x=0$: $\displaystyle\lim_{x\to0^-}(x+1)^2=1$ y $f(0)=(0-1)^2=1=\lim_{x\to0^+}(x-1)^2$: **continua.** Derivadas: $f'(x)=2(x+1)$ si $-2<x<0$ y $f'(x)=2(x-1)$ si $0<x<2$; $f'(0^-)=2\neq f'(0^+)=-2$.
+
+**$f$ es continua en $[-2,2]$ y derivable en $(-2,2)\setminus\{0\}$** (no derivable en $x=0$).
+
+**b)** $f'=0$ en $x=-1$ y $x=1$ (los vértices de las parábolas). Valores: $f(-2)=1$, $f(-1)=0$, $f(0)=1$, $f(1)=0$, $f(2)=1$.
+
+**Mínimos (absolutos y relativos) $(-1,0)$ y $(1,0)$; máximo relativo $(0,1)$; máximo absoluto $1$, que se alcanza en $x=-2$, $x=0$ y $x=2$.**
+
+**c)** La gráfica son dos arcos de parábola «en forma de W» con mínimos en $(-1,0)$ y $(1,0)$ y pico en $(0,1)$. El recinto entre $x=-1$ y $x=1$ queda sobre el eje $OX$:
+$$A=\int_{-1}^{0}(x+1)^2dx+\int_0^1(x-1)^2dx=\left[\frac{(x+1)^3}{3}\right]_{-1}^{0}+\left[\frac{(x-1)^3}{3}\right]_0^1=\frac{1}{3}+\frac{1}{3}=\frac{2}{3}.$$
+**$A=\dfrac{2}{3}\ \text{u}^2$**
+::::
+:::::
+
+
+## También trabajan este tema
+
+Ejercicios cuyo tema principal es otro pero en los que aparece este tema:
+
+- [2026 Ordinaria · Suplente 1, ejercicio 2B](04-funciones.qmd#ebau-2026-ord-sup1-2B) (tema principal: Funciones)
+- [2026 Ordinaria · Suplente 2, ejercicio 2](07-aplicaciones-derivada.qmd#ebau-2026-ord-sup2-2) (tema principal: Aplicaciones de la derivada)
+- [2025 Ordinaria · Modelo A, ejercicio 2](07-aplicaciones-derivada.qmd#ebau-2025-ord-a-2) (tema principal: Aplicaciones de la derivada)
+- [2025 Ordinaria · Modelo A, ejercicio 3](07-aplicaciones-derivada.qmd#ebau-2025-ord-a-3) (tema principal: Aplicaciones de la derivada)
+- [2025 Ordinaria · Modelo B, ejercicio 3](04-funciones.qmd#ebau-2025-ord-b-3) (tema principal: Funciones)
+- [2025 Ordinaria · Suplente 1 · Modelo A, ejercicio 4](07-aplicaciones-derivada.qmd#ebau-2025-ord-sup1-a-4) (tema principal: Aplicaciones de la derivada)
+- [2025 Ordinaria · Suplente 1 · Modelo B, ejercicio 3](04-funciones.qmd#ebau-2025-ord-sup1-b-3) (tema principal: Funciones)
+- [2025 Ordinaria · Suplente 2 · Modelo B, ejercicio 3](04-funciones.qmd#ebau-2025-ord-sup2-b-3) (tema principal: Funciones)
+- [2024 Ordinaria · Suplente · Modelo B, ejercicio 3](04-funciones.qmd#ebau-2024-ord-sup-b-3) (tema principal: Funciones)
+
+
+---
+
+*Enunciados: Prueba de Acceso y Admisión a la Universidad (PEvAU hasta 2024, PAU desde 2025), Matemáticas Aplicadas a las Ciencias Sociales II, Andalucía, Ceuta, Melilla y centros en Marruecos (Distrito Único Andaluz). Cada ejercicio enlaza al PDF oficial del examen completo. La clasificación por temas es propia y puede discutirse: los ejercicios mixtos figuran en su tema principal.*

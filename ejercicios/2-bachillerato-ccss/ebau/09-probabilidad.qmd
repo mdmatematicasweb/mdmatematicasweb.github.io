@@ -1,0 +1,1846 @@
+---
+title: "PAU Andalucía — Probabilidad"
+lang: es
+---
+
+Ejercicios de **Matemáticas Aplicadas a las Ciencias Sociales II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *probabilidad*: **63 ejercicios** de convocatorias ordinarias y extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ccss/09-probabilidad/index.qmd), los [ejercicios del tema](../09-probabilidad/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ccss/09-probabilidad/index.qmd).
+
+Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+
+
+## 2026
+
+
+### Ordinaria 2026
+
+
+::::: {.ebau-ej #ebau-2026-ord-3B}
+**Ejercicio 3B** · Ordinaria 2026 · Bloque C · *(2 puntos)* · [Examen](../../../assets/pau-ccss/2026-ord/examen.pdf){target="_blank"}
+
+Sean $A$ y $B$ dos sucesos del espacio muestral asociado a un experimento aleatorio. Se sabe que $P(A)$ es el doble de $P(B)$, $P\left(B^{C}\mid A\right)=0{,}75$ y $P(A\cap B)=0{,}2$.
+
+a) Calcule la probabilidad de que ocurra $B$. *(0,5 puntos)*
+
+b) Calcule la probabilidad de que no ocurra ni $A$ ni $B$. ¿Son los sucesos $A^{C}$ y $B^{C}$ incompatibles? *(0,5 puntos)*
+
+c) Si el experimento se realiza 1350 veces de forma independiente:
+
+i) Determine la distribución de la variable aleatoria $X$: «Número de veces que ocurre $B$». *(0,25 puntos)*
+
+ii) Calcule la probabilidad de que $B$ ocurra a lo sumo 580 veces, pero más de 499 veces. *(0,75 puntos)*
+
+*Relacionado también con:* [Distribuciones binomial y normal](10-distribuciones.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $P\left(B^C\mid A\right)=0{,}75\Rightarrow P(B\mid A)=0{,}25$, luego $P(A)=\dfrac{P(A\cap B)}{P(B\mid A)}=\dfrac{0{,}2}{0{,}25}=0{,}8$. Como $P(A)=2P(B)$: **$P(B)=0{,}4$.**
+
+**b)** $P(A\cup B)=0{,}8+0{,}4-0{,}2=1$, luego $P\left(A^C\cap B^C\right)=1-1=\mathbf{0}$. Como $P\left(A^C\cap B^C\right)=0$, **los sucesos $A^C$ y $B^C$ son incompatibles.**
+
+**c) i)** $X$ cuenta éxitos en $1\,350$ repeticiones independientes de probabilidad $0{,}4$: **$X\sim B(1\,350;\ 0{,}4)$.**
+
+**ii)** $np=540\ge5$ y $nq=810\ge5$: se aproxima por $X'\sim N\!\left(540,\ \sqrt{1\,350\cdot0{,}4\cdot0{,}6}\right)=N(540,\ 18)$. Con corrección por continuidad, $P(499<X\le580)=P(499{,}5<X'<580{,}5)$:
+$$P\!\left(\frac{499{,}5-540}{18}<Z<\frac{580{,}5-540}{18}\right)=P(-2{,}25<Z<2{,}25)=2\cdot0{,}9878-1=\mathbf{0{,}9756}.$$
+::::
+:::::
+
+
+### Ordinaria · Suplente 1 2026
+
+
+::::: {.ebau-ej #ebau-2026-ord-sup1-3B}
+**Ejercicio 3B** · Ordinaria · Suplente 1 2026 · Bloque C · *(2 puntos)* · [Examen](../../../assets/pau-ccss/2026-ord-sup1/examen.pdf){target="_blank"}
+
+Sean $A$ y $B$ dos sucesos de un mismo espacio muestral tales que:
+$$P(A)=0{,}4,\qquad P\left(B^{C}\right)=0{,}7,\qquad P(A\cup B)=0{,}58$$
+
+a) ¿Son $A$ y $B$ independientes? ¿Son incompatibles? *(0,5 puntos)*
+
+b) Calcule la probabilidad de que:
+
+i) Ocurra alguno de los sucesos contrarios. *(0,5 puntos)*
+
+ii) Ocurra $B$ sabiendo que no ha ocurrido $A$. *(0,5 puntos)*
+
+iii) Ocurra uno y solo uno de los dos sucesos. *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$P(B)=1-0{,}7=0{,}3$ y $P(A\cap B)=P(A)+P(B)-P(A\cup B)=0{,}4+0{,}3-0{,}58=0{,}12$.
+
+**a)** $P(A)P(B)=0{,}4\cdot0{,}3=0{,}12=P(A\cap B)$: **son independientes.** $P(A\cap B)=0{,}12\neq0$: **no son incompatibles.**
+
+**b) i)** Ocurre alguno de los contrarios: $P\left(A^C\cup B^C\right)=1-P(A\cap B)=1-0{,}12=\mathbf{0{,}88}$.
+
+**ii)** $P\left(B\mid A^C\right)=\dfrac{P(B)-P(A\cap B)}{1-P(A)}=\dfrac{0{,}3-0{,}12}{0{,}6}=\mathbf{0{,}3}$ (coincide con $P(B)$, por la independencia).
+
+**iii)** $P(\text{uno y solo uno})=\left(0{,}4-0{,}12\right)+\left(0{,}3-0{,}12\right)=0{,}28+0{,}18=\mathbf{0{,}46}$.
+::::
+:::::
+
+
+### Ordinaria · Suplente 2 2026
+
+
+::::: {.ebau-ej #ebau-2026-ord-sup2-3A}
+**Ejercicio 3A** · Ordinaria · Suplente 2 2026 · Bloque C · *(2 puntos)* · [Examen](../../../assets/pau-ccss/2026-ord-sup2/examen.pdf){target="_blank"}
+
+De dos sucesos $A$ y $B$ de un mismo espacio muestral se sabe que:
+
+- La probabilidad de que ocurra alguno de ellos es $0{,}82$.
+- La probabilidad de que ocurran simultáneamente es $0{,}38$.
+- La probabilidad de que no ocurra $A$ es $0{,}35$.
+
+a) Calcule la probabilidad de que ocurra $B$ sabiendo que no ocurre $A$. *(0,75 puntos)*
+
+b) Calcule la probabilidad de que ocurra solo uno de los dos sucesos. *(0,5 puntos)*
+
+c) Si repetimos el experimento en 10 ocasiones, halle la probabilidad de que el suceso $A$ ocurra al menos 2 veces. *(0,75 puntos)*
+
+*Relacionado también con:* [Distribuciones binomial y normal](10-distribuciones.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$P(A)=1-0{,}35=0{,}65$. Como $P(A\cup B)=P(A)+P(B)-P(A\cap B)$: $0{,}82=0{,}65+P(B)-0{,}38\Rightarrow P(B)=0{,}55$.
+
+**a)** $P\left(B\mid A^C\right)=\dfrac{P(B)-P(A\cap B)}{P\left(A^C\right)}=\dfrac{0{,}55-0{,}38}{0{,}35}=\dfrac{17}{35}\approx\mathbf{0{,}4857}$.
+
+**b)** $P(\text{solo uno})=P(A\cup B)-P(A\cap B)=0{,}82-0{,}38=\mathbf{0{,}44}$.
+
+**c)** $X$ = número de veces que ocurre $A$ en $10$ repeticiones: $X\sim B(10;\ 0{,}65)$.
+$$P(X\ge2)=1-P(X=0)-P(X=1)=1-0{,}35^{10}-10\cdot0{,}65\cdot0{,}35^9=1-0{,}00003-0{,}00051\approx\mathbf{0{,}9995}.$$
+::::
+:::::
+
+
+### Extraordinaria 2026
+
+
+::::: {.ebau-ej #ebau-2026-ext-3A}
+**Ejercicio 3A** · Extraordinaria 2026 · Bloque C · *(2 puntos)* · [Examen](../../../assets/pau-ccss/2026-ext/examen.pdf){target="_blank"}
+
+Una urna contiene bolas de tres colores, siendo el $30\,\%$ rojas, el $20\,\%$ blancas y el resto azules. Algunas bolas están premiadas: de cada 4 bolas rojas 1 contiene un premio de 20 €; de cada 2 bolas blancas 1 contiene un premio de 10 €; todas las bolas azules tienen premio (de cada 3 bolas azules 2 contienen un premio de 20 € y el resto contiene un premio de 10 €). Si se extrae una bola al azar, calcule la probabilidad de que:
+
+a) La bola contenga 20 € de premio. *(0,75 puntos)*
+
+b) La bola sea blanca o no contenga premio. *(0,5 puntos)*
+
+c) La bola no contenga premio, sabiendo que no es azul. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $R$, $W$ y $Z$ «roja» ($0{,}3$), «blanca» ($0{,}2$) y «azul» ($0{,}5$). Premio de $20$ €: rojas $\frac{1}{4}$; blancas $0$; azules $\frac{2}{3}$. Premio de $10$ €: rojas $0$; blancas $\frac{1}{2}$; azules $\frac{1}{3}$. Sin premio: rojas $\frac{3}{4}$, blancas $\frac{1}{2}$, azules $0$.
+
+**a)** $P(20\ €)=0{,}3\cdot\dfrac{1}{4}+0{,}5\cdot\dfrac{2}{3}=0{,}075+\dfrac{1}{3}=\dfrac{49}{120}\approx\mathbf{0{,}4083}$.
+
+**b)** $P(\text{sin premio})=0{,}3\cdot\dfrac{3}{4}+0{,}2\cdot\dfrac{1}{2}=0{,}225+0{,}1=0{,}325$ y $P(W\cap\text{sin premio})=0{,}2\cdot\dfrac{1}{2}=0{,}1$.
+$$P(W\cup\text{sin premio})=0{,}2+0{,}325-0{,}1=\mathbf{0{,}425}.$$
+
+**c)** $P(\text{sin premio}\mid Z^C)=\dfrac{P(\text{sin premio})}{P(Z^C)}=\dfrac{0{,}325}{0{,}5}=\mathbf{0{,}65}$ (las azules siempre tienen premio).
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2026-ext-4}
+**Ejercicio 4** · Extraordinaria 2026 · Bloque D · *(2 puntos)* · [Examen](../../../assets/pau-ccss/2026-ext/examen.pdf){target="_blank"}
+
+Sean $A$ y $B$ dos sucesos asociados a un mismo experimento aleatorio de los que se sabe que
+$$P\left(A\cap B^{C}\right)=0{,}3;\qquad P\left(A^{C}\right)=0{,}35;\qquad P(B)=0{,}55$$
+
+a) Calcule la probabilidad de que:
+
+i) Suceda al menos uno de ellos. *(0,75 puntos)*
+
+ii) Ocurra $B$, sabiendo que no ha ocurrido $A$. *(0,5 puntos)*
+
+b) Se realiza este experimento aleatorio 11 veces, calcule:
+
+i) La probabilidad de que el suceso $B$ ocurra exactamente 8 veces. *(0,5 puntos)*
+
+ii) El número esperado de veces que ocurre el suceso $B$. *(0,25 puntos)*
+
+*Relacionado también con:* [Distribuciones binomial y normal](10-distribuciones.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$P(A)=1-0{,}35=0{,}65$. $P(A\cap B)=P(A)-P(A\cap B^C)=0{,}65-0{,}3=0{,}35$.
+
+**a) i)** $P(A\cup B)=0{,}65+0{,}55-0{,}35=\mathbf{0{,}85}$.
+
+**ii)** $P\left(B\mid A^C\right)=\dfrac{P(B)-P(A\cap B)}{P\left(A^C\right)}=\dfrac{0{,}55-0{,}35}{0{,}35}=\dfrac{0{,}2}{0{,}35}=\dfrac{4}{7}\approx\mathbf{0{,}5714}$.
+
+**b)** $X$ = número de veces que ocurre $B$ en $11$ repeticiones: $X\sim B(11;\ 0{,}55)$.
+
+**i)** $P(X=8)=\dbinom{11}{8}\,0{,}55^8\cdot0{,}45^3=165\cdot0{,}55^8\cdot0{,}45^3\approx\mathbf{0{,}1259}$.
+
+**ii)** $E(X)=np=11\cdot0{,}55=\mathbf{6{,}05}$ veces.
+::::
+:::::
+
+
+### Extraordinaria · Suplente 1 2026
+
+
+::::: {.ebau-ej #ebau-2026-ext-sup1-3}
+**Ejercicio 3** · Extraordinaria · Suplente 1 2026 · Bloque C · *(2 puntos)* · [Examen](../../../assets/pau-ccss/2026-ext-sup1/examen.pdf){target="_blank"}
+
+Sean $A$ y $B$ dos sucesos de un mismo espacio muestral que verifican:
+
+- La probabilidad de que ocurra el suceso $A$ es $0{,}5$.
+- La probabilidad de que ocurra $A$ y no ocurra $B$ es $0{,}35$.
+- La probabilidad de que no ocurra ninguno de los dos es $0{,}35$.
+
+a) Calcule la probabilidad de que ocurran los dos sucesos a la vez. *(0,6 puntos)*
+
+b) Calcule la probabilidad de que ocurra $B$ sabiendo que $A$ no ha ocurrido. *(0,6 puntos)*
+
+c) Calcule la probabilidad de que ocurra uno y solo uno de los dos. *(0,4 puntos)*
+
+d) ¿Son dependientes los sucesos $A$ y $B$? ¿Son incompatibles? *(0,4 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $P(A\cap B)=P(A)-P(A\cap B^C)=0{,}5-0{,}35=\mathbf{0{,}15}$.
+
+**b)** $P\left(A^C\right)=0{,}5$ y $P\left(A^C\cap B\right)=P\left(A^C\right)-P\left(A^C\cap B^C\right)=0{,}5-0{,}35=0{,}15$.
+$$P\left(B\mid A^C\right)=\frac{0{,}15}{0{,}5}=\mathbf{0{,}3}.$$
+
+**c)** $P(\text{uno y solo uno})=P\left(A\cap B^C\right)+P\left(A^C\cap B\right)=0{,}35+0{,}15=\mathbf{0{,}5}$.
+
+**d)** $P(B)=P(A\cap B)+P\left(A^C\cap B\right)=0{,}15+0{,}15=0{,}3$ y $P(A)P(B)=0{,}5\cdot0{,}3=0{,}15=P(A\cap B)$: **son independientes (no dependientes).** $P(A\cap B)=0{,}15\neq0$: **no son incompatibles.**
+::::
+:::::
+
+
+### Extraordinaria · Suplente 2 2026
+
+
+::::: {.ebau-ej #ebau-2026-ext-sup2-3}
+**Ejercicio 3** · Extraordinaria · Suplente 2 2026 · Bloque C · *(2 puntos)* · [Examen](../../../assets/pau-ccss/2026-ext-sup2/examen.pdf){target="_blank"}
+
+Sean $A$ y $B$ dos sucesos de un mismo espacio muestral que verifican:
+
+- La probabilidad de que ocurra el suceso $A$ es $0{,}6$.
+- La probabilidad de que no ocurra ninguno de los dos es $0{,}15$.
+- La probabilidad de que ocurra el suceso $B$ sabiendo que ha ocurrido $A$ es $0{,}3$.
+
+a) Calcule la probabilidad de que ocurra alguno de los dos sucesos. *(0,75 puntos)*
+
+b) Calcule la probabilidad de que ocurran los dos sucesos a la vez. *(0,5 puntos)*
+
+c) Calcule la probabilidad de que ocurra uno y solo uno de los sucesos. *(0,5 puntos)*
+
+d) ¿Son dependientes los sucesos $A$ y $B$? *(0,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$P(A)=0{,}6$, $P\left(A^C\cap B^C\right)=0{,}15$, $P(B\mid A)=0{,}3$.
+
+**a)** $P(A\cup B)=1-P\left(A^C\cap B^C\right)=1-0{,}15=\mathbf{0{,}85}$.
+
+**b)** $P(A\cap B)=P(A)\,P(B\mid A)=0{,}6\cdot0{,}3=\mathbf{0{,}18}$.
+
+**c)** $P(\text{uno y solo uno})=P(A\cup B)-P(A\cap B)=0{,}85-0{,}18=\mathbf{0{,}67}$.
+
+**d)** $P(B)=P(A\cup B)-P(A)+P(A\cap B)=0{,}85-0{,}6+0{,}18=0{,}43$ y $P(A)P(B)=0{,}6\cdot0{,}43=0{,}258\neq0{,}18=P(A\cap B)$: **sí son dependientes.**
+::::
+:::::
+
+
+## 2025
+
+
+### Ordinaria · Modelo A 2025
+
+
+::::: {.ebau-ej #ebau-2025-ord-a-4}
+**Ejercicio 4** · Ordinaria · Modelo A 2025 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-a/examen.pdf){target="_blank"}
+
+En una casa con trastero viven tres personas y cada una tiene un llavero con las llaves de la casa. El primer llavero contiene 7 llaves, el segundo 8 y el tercero 5. En cada uno de los llaveros hay una única llave que abre el trastero. Otra persona necesita abrir el trastero y, para ello, selecciona un llavero al azar y, de este, elige una llave aleatoriamente e intenta abrirlo. Calcule la probabilidad de que:
+
+a) No haya acertado con la llave seleccionada. *(1 punto)*
+
+b) El llavero sea el tercero y la llave abra el trastero. *(0,5 puntos)*
+
+c) Sabiendo que la llave elegida abre el trastero, esta pertenezca al primer o al tercer llavero. *(0,5 puntos)*
+
+d) Si la llave no abre el trastero, esta no pertenezca al primer llavero. *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Cada llavero se elige con probabilidad $\dfrac{1}{3}$ y la llave correcta es una de entre $7$, $8$ o $5$. Sea $T$ «la llave abre el trastero»: $P(T\cap L_1)=\dfrac{1}{3}\cdot\dfrac{1}{7}$, $P(T\cap L_2)=\dfrac{1}{3}\cdot\dfrac{1}{8}$, $P(T\cap L_3)=\dfrac{1}{3}\cdot\dfrac{1}{5}$.
+
+$$P(T)=\frac{1}{3}\left(\frac{1}{7}+\frac{1}{8}+\frac{1}{5}\right)=\frac{1}{3}\cdot\frac{131}{280}=\frac{131}{840}.$$
+
+**a)** $P(T^C)=1-\dfrac{131}{840}=\dfrac{709}{840}\approx\mathbf{0{,}8440}$.
+
+**b)** $P(L_3\cap T)=\dfrac{1}{3}\cdot\dfrac{1}{5}=\dfrac{1}{15}\approx\mathbf{0{,}0667}$.
+
+**c)** $P(L_1\cup L_3\mid T)=\dfrac{\frac{1}{21}+\frac{1}{15}}{\frac{131}{840}}=\dfrac{\frac{12}{105}}{\frac{131}{840}}=\dfrac{96}{131}\approx\mathbf{0{,}7328}$.
+
+**d)** $P(L_1\cap T^C)=\dfrac{1}{3}\cdot\dfrac{6}{7}=\dfrac{2}{7}$, luego $P(L_1\mid T^C)=\dfrac{2/7}{709/840}=\dfrac{240}{709}$ y
+$$P(L_1^C\mid T^C)=1-\frac{240}{709}=\frac{469}{709}\approx\mathbf{0{,}6615}.$$
+::::
+:::::
+
+
+### Ordinaria · Modelo B 2025
+
+
+::::: {.ebau-ej #ebau-2025-ord-b-4}
+**Ejercicio 4** · Ordinaria · Modelo B 2025 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-b/examen.pdf){target="_blank"}
+
+En un determinado centro educativo, el $50\,\%$ del alumnado aprueba Historia, el $70\,\%$ aprueba Matemáticas y $30\,\%$ aprueba ambas asignaturas. Si se elige un alumno al azar:
+
+a) Halle la probabilidad de que apruebe solo una de las dos asignaturas. *(0,75 puntos)*
+
+b) Halle la probabilidad de que no apruebe más de una asignatura. *(0,5 puntos)*
+
+c) Halle la probabilidad de que apruebe Historia si ha suspendido Matemáticas. *(0,75 puntos)*
+
+d) Determine si los sucesos «Aprobar Matemáticas» y «Aprobar Historia» son independientes. ¿Son incompatibles? *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $H$ «aprueba Historia» y $M$ «aprueba Matemáticas»: $P(H)=0{,}5$, $P(M)=0{,}7$, $P(H\cap M)=0{,}3$.
+
+**a)** $P(\text{solo una})=\left(0{,}5-0{,}3\right)+\left(0{,}7-0{,}3\right)=0{,}2+0{,}4=\mathbf{0{,}6}$.
+
+**b)** «No aprobar más de una» es el contrario de «aprobar las dos»: $1-P(H\cap M)=1-0{,}3=\mathbf{0{,}7}$.
+
+**c)** $P(H\mid M^C)=\dfrac{P(H\cap M^C)}{P(M^C)}=\dfrac{0{,}5-0{,}3}{0{,}3}=\dfrac{0{,}2}{0{,}3}=\dfrac{2}{3}\approx\mathbf{0{,}6667}$.
+
+**d)** $P(H)P(M)=0{,}5\cdot0{,}7=0{,}35\neq0{,}3=P(H\cap M)$: **no son independientes.** $P(H\cap M)=0{,}3\neq0$: **no son incompatibles.**
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2025-ord-b-5}
+**Ejercicio 5** · Ordinaria · Modelo B 2025 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-b/examen.pdf){target="_blank"}
+
+Los alumnos de un colegio de una localidad andaluza van a realizar una excursión a la estación de esquí de Sierra Nevada desplazándose en tres autobuses $A$, $B$ y $C$. En el autobús $A$ se desplazan cuatro novenos de los alumnos de la excursión, en el $B$ se desplaza la tercera parte y el resto van en el autobús $C$. Se sabe que el $65\,\%$ de los alumnos que viajan en el autobús $A$ y el $40\,\%$ de los del autobús $B$ no sabe esquiar y todos los del autobús $C$ sí que saben esquiar. Se escoge al azar a uno de los alumnos de la excursión. Calcule la probabilidad de que:
+
+a) Sepa esquiar. *(1 punto)*
+
+b) Viaje en el autobús $C$, si sabe esquiar. *(0,75 puntos)*
+
+c) Sepa esquiar y no viaje en el autobús $B$. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$P(A)=\dfrac{4}{9}$, $P(B)=\dfrac{1}{3}=\dfrac{3}{9}$, $P(C)=\dfrac{2}{9}$. Sea $E$ «sabe esquiar»: $P(E\mid A)=0{,}35$, $P(E\mid B)=0{,}6$, $P(E\mid C)=1$.
+
+**a)** $P(E)=\dfrac{4}{9}\cdot0{,}35+\dfrac{3}{9}\cdot0{,}6+\dfrac{2}{9}\cdot1=\dfrac{1{,}4+1{,}8+2}{9}=\dfrac{5{,}2}{9}=\dfrac{26}{45}\approx\mathbf{0{,}5778}$.
+
+**b)** $P(C\mid E)=\dfrac{\frac{2}{9}\cdot1}{\frac{26}{45}}=\dfrac{10}{26}=\dfrac{5}{13}\approx\mathbf{0{,}3846}$.
+
+**c)** $P(E\cap B^C)=P(E)-P(E\cap B)=\dfrac{26}{45}-\dfrac{1}{3}\cdot0{,}6=\dfrac{26}{45}-\dfrac{9}{45}=\dfrac{17}{45}\approx\mathbf{0{,}3778}$.
+::::
+:::::
+
+
+### Ordinaria · Suplente 1 · Modelo A 2025
+
+
+::::: {.ebau-ej #ebau-2025-ord-sup1-a-5}
+**Ejercicio 5** · Ordinaria · Suplente 1 · Modelo A 2025 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-sup1-a/examen.pdf){target="_blank"}
+
+Un nuevo servicio de streaming utiliza un algoritmo para recomendar películas a sus usuarios en función de las películas vistas anteriormente. Como la plataforma es de reciente creación, solo tiene disponibles tres géneros: ciencia ficción, terror y musicales. El $62\,\%$ de las películas disponibles son de ciencia ficción, la cuarta parte son de terror y el resto musicales. De las películas de ciencia ficción, el algoritmo hace una recomendación correcta en el $70\,\%$ de las ocasiones, de las de terror, el $75\,\%$ de las veces y de los musicales, el $15\,\%$. Un usuario selecciona al azar una película de su lista de recomendaciones:
+
+a) ¿Cuál es la probabilidad de que el algoritmo haya hecho una recomendación correcta? *(1,25 puntos)*
+
+b) Si no ha sido recomendada correctamente, ¿qué probabilidad hay de que la película sea de terror? *(0,75 puntos)*
+
+c) De las recomendaciones correctas del género de ciencia ficción, el usuario queda satisfecho con la elección de la película en el $55\,\%$ de las ocasiones. ¿Qué probabilidad hay de que la película sea de ciencia ficción, esté recomendada correctamente y el usuario haya quedado satisfecho? *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$P(CF)=0{,}62$, $P(T)=0{,}25$, $P(M)=1-0{,}62-0{,}25=0{,}13$. Sea $R$ «recomendación correcta»: $P(R\mid CF)=0{,}7$, $P(R\mid T)=0{,}75$, $P(R\mid M)=0{,}15$.
+
+**a)** $P(R)=0{,}62\cdot0{,}7+0{,}25\cdot0{,}75+0{,}13\cdot0{,}15=0{,}434+0{,}1875+0{,}0195=\mathbf{0{,}641}$.
+
+**b)** $P(T\mid R^C)=\dfrac{P(T)\,P(R^C\mid T)}{P(R^C)}=\dfrac{0{,}25\cdot0{,}25}{1-0{,}641}=\dfrac{0{,}0625}{0{,}359}=\dfrac{125}{718}\approx\mathbf{0{,}1741}$.
+
+**c)** $P(CF\cap R\cap\text{satisfecho})=0{,}62\cdot0{,}7\cdot0{,}55=\mathbf{0{,}2387}$.
+::::
+:::::
+
+
+### Ordinaria · Suplente 1 · Modelo B 2025
+
+
+::::: {.ebau-ej #ebau-2025-ord-sup1-b-5}
+**Ejercicio 5** · Ordinaria · Suplente 1 · Modelo B 2025 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-sup1-b/examen.pdf){target="_blank"}
+
+En un estudio sobre la presencia de mujeres en las empresas tecnológicas se observa que el $20\,\%$ de los operarios, el $40\,\%$ de los ingenieros y el $30\,\%$ de los directivos son mujeres. Se sabe que en estas empresas el $20\,\%$ de las plantillas son directivos, el $35\,\%$ son ingenieros y el resto son operarios. Se elige un trabajador al azar de una de estas empresas.
+
+a) ¿Cuál es la probabilidad de que no sea un operario y sea mujer? *(1 punto)*
+
+b) Si el trabajador elegido no es un operario, ¿cuál es la probabilidad de que sea mujer? *(0,5 puntos)*
+
+c) Si el trabajador elegido es hombre, ¿a qué colectivo es más probable que pertenezca? *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $O$ «operario» ($1-0{,}2-0{,}35=0{,}45$), $I$ «ingeniero» ($0{,}35$), $D$ «directivo» ($0{,}2$) y $M$ «mujer»: $P(M\mid O)=0{,}2$, $P(M\mid I)=0{,}4$, $P(M\mid D)=0{,}3$.
+
+**a)** $P(O^C\cap M)=0{,}35\cdot0{,}4+0{,}2\cdot0{,}3=0{,}14+0{,}06=\mathbf{0{,}2}$.
+
+**b)** $P(M\mid O^C)=\dfrac{0{,}2}{0{,}55}=\dfrac{4}{11}\approx\mathbf{0{,}3636}$.
+
+**c)** Hombres por colectivo: $P(O\cap H)=0{,}45\cdot0{,}8=0{,}36$, $P(I\cap H)=0{,}35\cdot0{,}6=0{,}21$, $P(D\cap H)=0{,}2\cdot0{,}7=0{,}14$. Total: $P(H)=0{,}71$.
+$$P(O\mid H)=\frac{0{,}36}{0{,}71}\approx0{,}507,\quad P(I\mid H)=\frac{0{,}21}{0{,}71}\approx0{,}296,\quad P(D\mid H)=\frac{0{,}14}{0{,}71}\approx0{,}197.$$
+**Es más probable que pertenezca al colectivo de los operarios** ($\approx50{,}7\,\%$).
+::::
+:::::
+
+
+### Ordinaria · Suplente 2 · Modelo A 2025
+
+
+::::: {.ebau-ej #ebau-2025-ord-sup2-a-5}
+**Ejercicio 5** · Ordinaria · Suplente 2 · Modelo A 2025 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-sup2-a/examen.pdf){target="_blank"}
+
+Una encuesta realizada a personas que utilizan productos de cosmética arroja los siguientes datos: el $66\,\%$ de las personas encuestadas son mujeres y, de estas, el $71\,\%$ utilizan cosmética natural. Además, se sabe que el $17{,}86\,\%$ son hombres que no utilizan cosmética natural. Se selecciona una de estas personas al azar.
+
+a) Calcule la probabilidad de que sea mujer o use cosmética natural. *(0,75 puntos)*
+
+b) Calcule la probabilidad de que utilice cosmética natural. *(0,5 puntos)*
+
+c) Sabiendo que usa cosmética natural, calcule la probabilidad de que sea hombre. *(0,75 puntos)*
+
+d) ¿Son sucesos incompatibles «utilizar cosmética natural» y «ser mujer»? ¿Son independientes? *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $M$ «mujer» ($0{,}66$) y $N$ «cosmética natural»: $P(N\mid M)=0{,}71$, $P(H\cap N^C)=0{,}1786$.
+
+$P(M\cap N)=0{,}66\cdot0{,}71=0{,}4686$. $P(H)=1-0{,}66=0{,}34$, luego $P(H\cap N)=P(H)-P(H\cap N^C)=0{,}34-0{,}1786=0{,}1614$.
+
+**b)** $P(N)=P(M\cap N)+P(H\cap N)=0{,}4686+0{,}1614=\mathbf{0{,}63}$.
+
+**a)** $P(M\cup N)=P(M)+P(N)-P(M\cap N)=0{,}66+0{,}63-0{,}4686=\mathbf{0{,}8214}$.
+
+**c)** $P(H\mid N)=\dfrac{P(H\cap N)}{P(N)}=\dfrac{0{,}1614}{0{,}63}=\dfrac{269}{1050}\approx\mathbf{0{,}2562}$.
+
+**d)** $P(M\cap N)=0{,}4686\neq0$: **no son incompatibles.** $P(M)P(N)=0{,}66\cdot0{,}63=0{,}4158\neq0{,}4686=P(M\cap N)$: **no son independientes.**
+::::
+:::::
+
+
+### Ordinaria · Suplente 2 · Modelo B 2025
+
+
+::::: {.ebau-ej #ebau-2025-ord-sup2-b-4}
+**Ejercicio 4** · Ordinaria · Suplente 2 · Modelo B 2025 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-sup2-b/examen.pdf){target="_blank"}
+
+Una empresa de tecnología fabrica tres modelos de teléfonos móviles: *Básico*, *Intermedio* y *Premium*. Cada modelo puede estar fabricado con uno de los siguientes tipos de pantalla: $A$ o $B$. El $35\,\%$ de los móviles fabricados por esta empresa son del modelo *Básico*, el $45\,\%$ son del *Intermedio* y el resto son *Premium*. Se sabe que el $80\,\%$ de los móviles fabricados del modelo *Básico* tienen una pantalla del tipo $A$, mientras que en el modelo *Premium* solo un $5\,\%$ dispone de esta pantalla. Finalmente, el $53\,\%$ de los teléfonos producidos tienen pantalla del tipo $A$. Se selecciona un teléfono al azar de la línea de producción. Determine la probabilidad de que:
+
+a) Tenga una pantalla del tipo $A$ sabiendo que es del modelo *Intermedio*. *(1,5 puntos)*
+
+b) Sea del modelo *Intermedio* sabiendo que tiene pantalla del tipo $A$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$P(B)=0{,}35$ (*Básico*), $P(I)=0{,}45$ (*Intermedio*), $P(P)=0{,}2$ (*Premium*). Sea $A$ «pantalla del tipo $A$»: $P(A\mid B)=0{,}8$, $P(A\mid P)=0{,}05$ y $P(A)=0{,}53$.
+
+**a)** $P(A)=0{,}35\cdot0{,}8+0{,}45\cdot P(A\mid I)+0{,}2\cdot0{,}05=0{,}28+0{,}01+0{,}45\,P(A\mid I)=0{,}53$, de donde $0{,}45\,P(A\mid I)=0{,}24$.
+
+**$P(A\mid I)=\dfrac{0{,}24}{0{,}45}=\dfrac{8}{15}\approx\mathbf{0{,}5333}$.**
+
+**b)** $P(I\mid A)=\dfrac{P(I)\,P(A\mid I)}{P(A)}=\dfrac{0{,}24}{0{,}53}=\dfrac{24}{53}\approx\mathbf{0{,}4528}$.
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2025-ord-sup2-b-5}
+**Ejercicio 5** · Ordinaria · Suplente 2 · Modelo B 2025 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-sup2-b/examen.pdf){target="_blank"}
+
+El $20\,\%$ de los estudiantes de danza de una localidad andaluza están matriculados en la escuela $A$ y el resto en la $B$. En estas escuelas se practica danza clásica y moderna y cada estudiante solo se puede matricular en una de estas dos especialidades. De los matriculados en $A$, el $70\,\%$ practica danza clásica y el resto danza moderna. Se sabe también que el $32\,\%$ de los estudiantes de danza son de la escuela $B$ y practican danza clásica. Elegido al azar un estudiante de danza de la localidad, calcule la probabilidad de que:
+
+a) Practique danza clásica. *(1 punto)*
+
+b) Practique danza moderna si es de la escuela $B$. *(0,5 puntos)*
+
+c) Estudie en la escuela $B$ si resulta ser un estudiante de danza moderna. *(0,5 puntos)*
+
+d) Sea de la escuela $A$, practique danza clásica y realice un Máster, sabiendo que el $80\,\%$ de los estudiantes de danza clásica de la escuela $A$ realiza un Máster. *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $C$ «danza clásica» y $M$ «danza moderna»: $P(A)=0{,}2$, $P(B)=0{,}8$, $P(C\mid A)=0{,}7$, $P(B\cap C)=0{,}32$.
+
+**a)** $P(C)=P(A\cap C)+P(B\cap C)=0{,}2\cdot0{,}7+0{,}32=0{,}14+0{,}32=\mathbf{0{,}46}$.
+
+**b)** $P(C\mid B)=\dfrac{0{,}32}{0{,}8}=0{,}4$, luego $P(M\mid B)=1-0{,}4=\mathbf{0{,}6}$.
+
+**c)** $P(M)=1-0{,}46=0{,}54$ y $P(B\cap M)=0{,}8\cdot0{,}6=0{,}48$. $P(B\mid M)=\dfrac{0{,}48}{0{,}54}=\dfrac{8}{9}\approx\mathbf{0{,}8889}$.
+
+**d)** $P(A\cap C\cap\text{Máster})=0{,}2\cdot0{,}7\cdot0{,}8=\mathbf{0{,}112}$.
+::::
+:::::
+
+
+## 2024
+
+
+### Ordinaria · Modelo A 2024
+
+
+::::: {.ebau-ej #ebau-2024-ord-a-5}
+**Ejercicio 5** · Ordinaria · Modelo A 2024 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-a/examen.pdf){target="_blank"}
+
+Una agencia ha realizado un estudio acerca de la siniestralidad de los vehículos de una región. Se ha dividido a los conductores en dos grupos: *jóvenes* los menores de 30 años y *sénior* el resto de conductores. Asimismo, también se ha dividido a los vehículos en dos grupos: *nuevos* los que tienen menos de 5 años de antigüedad y *viejos* el resto de vehículos. De los 54 siniestros registrados, en 19 de ellos el vehículo implicado era *nuevo* y en 29 los conductores eran *jóvenes*. Finalmente, 21 de los siniestros se dieron con vehículos *viejos* y conductores *jóvenes*. Se escoge uno de estos siniestros al azar.
+
+a) Calcule la probabilidad de que el conductor sea *sénior* y el vehículo *viejo*. *(1 punto)*
+
+b) Calcule la probabilidad de que el conductor sea *joven* sabiendo que el vehículo es *viejo*. *(1 punto)*
+
+c) Determine razonadamente si la siguiente afirmación es cierta: «Los siniestros de este estudio menos probables son aquellos en los que el conductor es *sénior* y el vehículo es *nuevo*». *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Total $54$. Nuevos: $19$, luego viejos: $54-19=35$. Jóvenes: $29$, luego sénior: $54-29=25$. Jóvenes y viejos: $21$. Entonces:
+
+| | Nuevo | Viejo | Total |
+|---|---|---|---|
+| Joven | $29-21=8$ | $21$ | $29$ |
+| Sénior | $19-8=11$ | $35-21=14$ | $25$ |
+| Total | $19$ | $35$ | $54$ |
+
+**a)** $P(\text{sénior}\cap\text{viejo})=\dfrac{14}{54}=\dfrac{7}{27}\approx\mathbf{0{,}2593}$.
+
+**b)** $P(\text{joven}\mid\text{viejo})=\dfrac{21}{35}=\dfrac{3}{5}=\mathbf{0{,}6}$.
+
+**c)** Sénior y nuevo son $11$ siniestros; joven y nuevo son $8<11$. **La afirmación es falsa:** los siniestros menos probables son aquellos con conductor *joven* y vehículo *nuevo* ($\dfrac{8}{54}$), no *sénior* y *nuevo* ($\dfrac{11}{54}$).
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2024-ord-a-6}
+**Ejercicio 6** · Ordinaria · Modelo A 2024 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-a/examen.pdf){target="_blank"}
+
+Un grupo de turistas programa una visita a la Geoda de Pulpí. El $42\,\%$ de los turistas del grupo proceden de Andalucía, el $32\,\%$ de otras comunidades autónomas y el resto del extranjero. Son mayores de edad el $65\,\%$ de los visitantes que proceden de Andalucía y el $75\,\%$ de los que proceden de otras comunidades autónomas. Son menores de edad el $20\,\%$ de los visitantes extranjeros. Elegido un turista de este grupo al azar, halle la probabilidad de que:
+
+a) Sea mayor de edad. *(1 punto)*
+
+b) Proceda de Andalucía y sea menor de edad. *(0,5 puntos)*
+
+c) Sea extranjero sabiendo que es menor de edad. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $A$ «Andalucía» ($0{,}42$), $O$ «otras comunidades» ($0{,}32$), $X$ «extranjero» ($1-0{,}42-0{,}32=0{,}26$) y $M$ «mayor de edad»: $P(M\mid A)=0{,}65$, $P(M\mid O)=0{,}75$, $P(M\mid X)=0{,}8$.
+
+**a)** $P(M)=0{,}42\cdot0{,}65+0{,}32\cdot0{,}75+0{,}26\cdot0{,}8=0{,}273+0{,}24+0{,}208=\mathbf{0{,}721}$.
+
+**b)** $P(A\cap M^C)=0{,}42\cdot0{,}35=\mathbf{0{,}147}$.
+
+**c)** $P(X\mid M^C)=\dfrac{0{,}26\cdot0{,}2}{1-0{,}721}=\dfrac{0{,}052}{0{,}279}=\dfrac{52}{279}\approx\mathbf{0{,}1864}$.
+::::
+:::::
+
+
+### Ordinaria · Modelo B 2024
+
+
+::::: {.ebau-ej #ebau-2024-ord-b-5}
+**Ejercicio 5** · Ordinaria · Modelo B 2024 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-b/examen.pdf){target="_blank"}
+
+El $7\,\%$ de los habitantes de una ciudad no tienen ni coche ni moto. De entre los que tienen coche el $36\,\%$ tienen moto y de entre los que no tienen coche el $28\,\%$ no tienen moto. Se elige al azar un habitante de esa ciudad:
+
+a) Calcule la probabilidad de que solo tenga uno de los dos vehículos. *(1 punto)*
+
+b) Calcule la probabilidad de que al menos tenga uno de los dos vehículos. *(0,5 puntos)*
+
+c) Si tiene coche, ¿cuál es la probabilidad de que no tenga moto? *(0,5 puntos)*
+
+d) ¿Son independientes los sucesos «tener coche» y «no tener moto»? ¿Son incompatibles? *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $C$ «tiene coche» y $M$ «tiene moto»: $P(C^C\cap M^C)=0{,}07$, $P(M\mid C)=0{,}36$, $P(M^C\mid C^C)=0{,}28$.
+
+Como $P(C^C\cap M^C)=P(C^C)\cdot0{,}28=0{,}07$, $P(C^C)=0{,}25$ y $P(C)=0{,}75$. Entonces $P(C\cap M)=0{,}75\cdot0{,}36=0{,}27$, $P(C\cap M^C)=0{,}75-0{,}27=0{,}48$ y $P(C^C\cap M)=0{,}25-0{,}07=0{,}18$.
+
+**a)** $P(\text{solo uno})=P(C\cap M^C)+P(C^C\cap M)=0{,}48+0{,}18=\mathbf{0{,}66}$.
+
+**b)** $P(\text{al menos uno})=1-P(C^C\cap M^C)=1-0{,}07=\mathbf{0{,}93}$.
+
+**c)** $P(M^C\mid C)=1-P(M\mid C)=1-0{,}36=\mathbf{0{,}64}$.
+
+**d)** $P(M^C)=0{,}48+0{,}07=0{,}55$ y $P(C)\,P(M^C)=0{,}75\cdot0{,}55=0{,}4125\neq0{,}48=P(C\cap M^C)$: **no son independientes.** $P(C\cap M^C)=0{,}48\neq0$: **no son incompatibles.**
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2024-ord-b-6}
+**Ejercicio 6** · Ordinaria · Modelo B 2024 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-b/examen.pdf){target="_blank"}
+
+Se ha realizado un estudio a personas que están teletrabajando actualmente. De estos, el $72\,\%$ trabajan por cuenta ajena con contrato indefinido, el $11\,\%$ lo hacen por cuenta ajena con contrato temporal y el resto trabajan por cuenta propia. El $87\,\%$ de los que tienen contrato indefinido y el $86\,\%$ de los que trabajan por cuenta propia piensan que el teletrabajo mejora la conciliación familiar. Además, este estudio ha revelado que el $12{,}51\,\%$ de los trabajadores opinan que el teletrabajo no mejora la conciliación familiar. Seleccionado un teletrabajador al azar, determine la probabilidad de que:
+
+a) Opine que el teletrabajo sí mejora la conciliación familiar sabiendo que tiene un contrato temporal. *(1,5 puntos)*
+
+b) No esté trabajando por cuenta propia sabiendo que opina que el teletrabajo mejora la conciliación familiar. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $I$ «indefinido» ($0{,}72$), $T$ «temporal» ($0{,}11$), $P$ «cuenta propia» ($1-0{,}72-0{,}11=0{,}17$) y $M$ «opina que mejora»: $P(M\mid I)=0{,}87$, $P(M\mid P)=0{,}86$ y $P(M)=1-0{,}1251=0{,}8749$.
+
+**a)** $P(M)=0{,}72\cdot0{,}87+0{,}11\cdot P(M\mid T)+0{,}17\cdot0{,}86=0{,}6264+0{,}1462+0{,}11\,P(M\mid T)=0{,}8749$, de donde $0{,}11\,P(M\mid T)=0{,}1023$.
+
+**$P(M\mid T)=\mathbf{0{,}93}$.**
+
+**b)** $P(P\mid M)=\dfrac{0{,}17\cdot0{,}86}{0{,}8749}=\dfrac{0{,}1462}{0{,}8749}\approx0{,}1671$. Entonces $P(P^C\mid M)=1-0{,}1671=\mathbf{0{,}8329}$.
+::::
+:::::
+
+
+### Ordinaria · Reserva · Modelo A 2024
+
+
+::::: {.ebau-ej #ebau-2024-ord-res-a-5}
+**Ejercicio 5** · Ordinaria · Reserva · Modelo A 2024 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-res-a/examen.pdf){target="_blank"}
+
+Una tienda vende ropa de tallas $M$, $L$ y $XL$. Se sabe que el $65\,\%$ de sus clientes son mujeres. El $50\,\%$ de las mujeres que compran ropa en esa tienda usan la talla $M$ y el $10\,\%$ la talla $XL$. De los hombres, el $40\,\%$ usan la talla $L$ y el $45\,\%$ la talla $XL$.
+
+a) ¿Qué porcentaje de mujeres que compran ropa en esa tienda no usan la talla $XL$? *(1 punto)*
+
+b) Halle el porcentaje de clientes que no usan la talla $L$. *(0,75 puntos)*
+
+c) De los clientes que usan la talla $M$, ¿qué porcentaje son mujeres? *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $F$ «mujer» ($0{,}65$) y $H$ «hombre» ($0{,}35$). Mujeres: $M$ $50\,\%$, $XL$ $10\,\%$, luego $L$ $40\,\%$. Hombres: $L$ $40\,\%$, $XL$ $45\,\%$, luego $M$ $15\,\%$.
+
+**a)** Mujeres que no usan $XL$: $100\,\%-10\,\%=\mathbf{90\,\%}$.
+
+**b)** $P(L)=0{,}65\cdot0{,}4+0{,}35\cdot0{,}4=0{,}26+0{,}14=0{,}4$, luego **no usan la talla $L$ el $60\,\%$ de los clientes.**
+
+**c)** $P(M)=0{,}65\cdot0{,}5+0{,}35\cdot0{,}15=0{,}325+0{,}0525=0{,}3775$.
+$$P(F\mid M)=\frac{0{,}325}{0{,}3775}=\frac{130}{151}\approx0{,}8609.$$
+**El $86{,}09\,\%$ de los clientes que usan la talla $M$ son mujeres.**
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2024-ord-res-a-6}
+**Ejercicio 6** · Ordinaria · Reserva · Modelo A 2024 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-res-a/examen.pdf){target="_blank"}
+
+El $75\,\%$ de los estudiantes de un centro aprueba la asignatura $A$ y un $55\,\%$ aprueba la asignatura $B$. Además, un $35\,\%$ del total de estudiantes aprueba ambas. Elegido un estudiante al azar de este centro, calcule las siguientes probabilidades:
+
+a) No apruebe $B$ sabiendo que ha aprobado $A$. *(1 punto)*
+
+b) Apruebe alguna de estas asignaturas. *(0,25 puntos)*
+
+c) No apruebe ni $A$ ni $B$. *(0,5 puntos)*
+
+d) Haya aprobado $A$ si se sabe que ha aprobado alguna de estas dos asignaturas. *(0,5 puntos)*
+
+e) Estudie si los sucesos «aprobar $A$» y «aprobar $B$» son independientes. *(0,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $P(B^C\mid A)=\dfrac{P(A)-P(A\cap B)}{P(A)}=\dfrac{0{,}75-0{,}35}{0{,}75}=\dfrac{0{,}4}{0{,}75}=\dfrac{8}{15}\approx\mathbf{0{,}5333}$.
+
+**b)** $P(A\cup B)=0{,}75+0{,}55-0{,}35=\mathbf{0{,}95}$.
+
+**c)** $P(A^C\cap B^C)=1-P(A\cup B)=1-0{,}95=\mathbf{0{,}05}$.
+
+**d)** $P(A\mid A\cup B)=\dfrac{P(A)}{P(A\cup B)}=\dfrac{0{,}75}{0{,}95}=\dfrac{15}{19}\approx\mathbf{0{,}7895}$.
+
+**e)** $P(A)P(B)=0{,}75\cdot0{,}55=0{,}4125\neq0{,}35=P(A\cap B)$: **no son independientes.**
+::::
+:::::
+
+
+### Ordinaria · Reserva · Modelo B 2024
+
+
+::::: {.ebau-ej #ebau-2024-ord-res-b-5}
+**Ejercicio 5** · Ordinaria · Reserva · Modelo B 2024 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-res-b/examen.pdf){target="_blank"}
+
+En cierta localidad el $30\,\%$ de los habitantes profesan la religión $A$ y el $50\,\%$ profesan otras religiones diferentes de $A$. De los que profesan la religión $A$ el $40\,\%$ son mujeres. De las mujeres el $25\,\%$ profesa la religión $A$. Se elige un habitante al azar de esa localidad. Calcule la probabilidad de que:
+
+a) No profese ninguna religión. *(0,5 puntos)*
+
+b) Sea hombre. *(1 punto)*
+
+c) Solo verifique uno de los siguientes sucesos: «profesa la religión $A$»; «es mujer». *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $R$ «profesa la religión $A$», $M$ «mujer»: $P(R)=0{,}3$, $P(\text{otras})=0{,}5$, $P(M\mid R)=0{,}4$, $P(R\mid M)=0{,}25$.
+
+**a)** $P(\text{ninguna})=1-0{,}3-0{,}5=\mathbf{0{,}2}$.
+
+**b)** $P(R\cap M)=0{,}3\cdot0{,}4=0{,}12$. Como $P(R\cap M)=P(R\mid M)\,P(M)$, $P(M)=\dfrac{0{,}12}{0{,}25}=0{,}48$ y $P(\text{hombre})=1-0{,}48=\mathbf{0{,}52}$.
+
+**c)** $P(R\cap M^C)=0{,}3-0{,}12=0{,}18$ y $P(R^C\cap M)=0{,}48-0{,}12=0{,}36$.
+$$P(\text{solo uno})=0{,}18+0{,}36=\mathbf{0{,}54}.$$
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2024-ord-res-b-6}
+**Ejercicio 6** · Ordinaria · Reserva · Modelo B 2024 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-res-b/examen.pdf){target="_blank"}
+
+En una empresa, el $30\,\%$ de los empleados ejercen de economistas y el $25\,\%$ ejercen de abogados. El $75\,\%$ de los economistas y el $60\,\%$ de los abogados ocupan puestos directivos, mientras que, de los empleados que no ejercen ni de economistas ni de abogados, el $15\,\%$ ocupa un puesto directivo. Seleccionado un empleado al azar de esa empresa, calcule la probabilidad de que:
+
+a) No ocupe un puesto directivo. *(1,5 puntos)*
+
+b) Ejerza de economista sabiendo que ocupa un puesto directivo. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $E$ «economista» ($0{,}3$), $L$ «abogado» ($0{,}25$), $O$ «otros» ($0{,}45$) y $D$ «puesto directivo»: $P(D\mid E)=0{,}75$, $P(D\mid L)=0{,}6$, $P(D\mid O)=0{,}15$.
+
+**a)** $P(D)=0{,}3\cdot0{,}75+0{,}25\cdot0{,}6+0{,}45\cdot0{,}15=0{,}225+0{,}15+0{,}0675=0{,}4425$, luego $P(D^C)=1-0{,}4425=\mathbf{0{,}5575}$.
+
+**b)** $P(E\mid D)=\dfrac{0{,}225}{0{,}4425}=\dfrac{30}{59}\approx\mathbf{0{,}5085}$.
+::::
+:::::
+
+
+### Ordinaria · Suplente · Modelo A 2024
+
+
+::::: {.ebau-ej #ebau-2024-ord-sup-a-5}
+**Ejercicio 5** · Ordinaria · Suplente · Modelo A 2024 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-sup-a/examen.pdf){target="_blank"}
+
+En una encuesta realizada en una librería se ha determinado que el $45\,\%$ de sus clientes compran novelas históricas, mientras que el $40\,\%$ no compra novelas de fantasía. Además, de los clientes que compran novelas de fantasía, sólo el $30\,\%$ compran también novelas históricas. Elegido un cliente al azar, calcule la probabilidad de que:
+
+a) Compre novelas históricas y de fantasía. *(0,75 puntos)*
+
+b) No compre novelas históricas y tampoco de fantasía. *(1 punto)*
+
+c) Compre una novela de fantasía, sabiendo que no ha comprado ninguna novela histórica. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $H$ «compra novelas históricas» y $F$ «compra novelas de fantasía»: $P(H)=0{,}45$, $P(F^C)=0{,}4\Rightarrow P(F)=0{,}6$, $P(H\mid F)=0{,}3$.
+
+**a)** $P(H\cap F)=P(F)\,P(H\mid F)=0{,}6\cdot0{,}3=\mathbf{0{,}18}$.
+
+**b)** $P(H\cup F)=0{,}45+0{,}6-0{,}18=0{,}87$, luego $P(H^C\cap F^C)=1-0{,}87=\mathbf{0{,}13}$.
+
+**c)** $P(F\mid H^C)=\dfrac{P(F\cap H^C)}{P(H^C)}=\dfrac{0{,}6-0{,}18}{0{,}55}=\dfrac{0{,}42}{0{,}55}=\dfrac{42}{55}\approx\mathbf{0{,}7636}$.
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2024-ord-sup-a-6}
+**Ejercicio 6** · Ordinaria · Suplente · Modelo A 2024 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-sup-a/examen.pdf){target="_blank"}
+
+Una fábrica dispone de 3 máquinas $A$, $B$ y $C$ para la fabricación de una cierta pieza. El $25\,\%$ de las piezas son fabricadas por la máquina $A$, el $35\,\%$ por $B$ y el resto por $C$. Tras un estudio se determina que el $2{,}05\,\%$ del total de las piezas fabricadas son defectuosas y que el $1\,\%$ de las piezas fabricadas por $B$ son defectuosas.
+
+a) *(1,25 puntos)* Se selecciona una pieza al azar y resulta no ser defectuosa, ¿qué probabilidad hay de que fuera fabricada por la máquina $B$?
+
+b) *(1,25 puntos)* Si $A$ y $C$ tienen la misma probabilidad de fabricar una pieza defectuosa, ¿cuál es la probabilidad de que una pieza sea fabricada por $A$ sabiendo que es defectuosa?
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$P(A)=0{,}25$, $P(B)=0{,}35$, $P(C)=0{,}4$; sea $D$ «defectuosa»: $P(D)=0{,}0205$, $P(D\mid B)=0{,}01$.
+
+**a)** $P(B\mid D^C)=\dfrac{P(B)\,P(D^C\mid B)}{P(D^C)}=\dfrac{0{,}35\cdot0{,}99}{1-0{,}0205}=\dfrac{0{,}3465}{0{,}9795}=\dfrac{231}{653}\approx\mathbf{0{,}3538}$.
+
+**b)** Sea $p=P(D\mid A)=P(D\mid C)$. $P(D)=0{,}25p+0{,}35\cdot0{,}01+0{,}4p=0{,}65p+0{,}0035=0{,}0205$, luego $p=\dfrac{0{,}017}{0{,}65}=\dfrac{17}{650}$.
+$$P(A\mid D)=\frac{0{,}25\cdot\frac{17}{650}}{0{,}0205}=\frac{170}{533}\approx\mathbf{0{,}3189}.$$
+::::
+:::::
+
+
+### Ordinaria · Suplente · Modelo B 2024
+
+
+::::: {.ebau-ej #ebau-2024-ord-sup-b-5}
+**Ejercicio 5** · Ordinaria · Suplente · Modelo B 2024 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-sup-b/examen.pdf){target="_blank"}
+
+Un grupo de 15 amigas se van a pasar un fin de semana a una casa rural. Al llegar reparten las tareas: 3 irán al mercado, 2 a comprar leña y el resto se quedarán en la casa. Para realizar el reparto de las tareas se introducen 15 papeletas en una urna de las que 3 tienen la palabra «mercado», 2 la palabra «leña» y el resto la palabra «casa». Cada una coge una papeleta de forma ordenada y sin reposición. Calcule la probabilidad de los siguientes sucesos:
+
+a) Las dos primeras papeletas extraídas tienen escrita la palabra «mercado». *(0,75 puntos)*
+
+b) Las dos primeras papeletas extraídas no tienen escrita la palabra «casa». *(0,75 puntos)*
+
+c) Si la segunda papeleta extraída tiene escrita «leña», ¿cuál es la probabilidad de que la primera también tenga escrita «leña»? *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $P=\dfrac{3}{15}\cdot\dfrac{2}{14}=\dfrac{6}{210}=\dfrac{1}{35}\approx\mathbf{0{,}0286}$.
+
+**b)** Las dos primeras no son «casa» si son «mercado» o «leña» ($5$ papeletas): $P=\dfrac{5}{15}\cdot\dfrac{4}{14}=\dfrac{20}{210}=\dfrac{2}{21}\approx\mathbf{0{,}0952}$.
+
+**c)** Sean $L_1$ y $L_2$ «leña en la primera» y «leña en la segunda». $P(L_1\cap L_2)=\dfrac{2}{15}\cdot\dfrac{1}{14}=\dfrac{1}{105}$ y $P(L_2)=\dfrac{2}{15}$ (por simetría).
+$$P(L_1\mid L_2)=\frac{1/105}{2/15}=\frac{1}{14}\approx\mathbf{0{,}0714}.$$
+(Es lógico: si la segunda es «leña», quedan $14$ papeletas para la primera y solo una es «leña».)
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2024-ord-sup-b-6}
+**Ejercicio 6** · Ordinaria · Suplente · Modelo B 2024 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-sup-b/examen.pdf){target="_blank"}
+
+Una empresa ha instalado 50 alarmas de las que 30 son de tipo básico y el resto de tipo superior. Se sabe que el $80\,\%$ de todas las alarmas no presentan incidencias y que de las de tipo básico un $30\,\%$ presentan alguna incidencia. Se elige al azar una de estas alarmas. Calcule la probabilidad de que:
+
+a) Sea de tipo básico y no presente incidencias. *(1 punto)*
+
+b) No presente incidencias siendo de tipo superior. *(0,5 puntos)*
+
+c) Teniendo incidencias sea de tipo básico. *(0,5 puntos)*
+
+d) Sea de «tipo básico y tenga incidencias» o sea de «tipo superior y no tenga incidencias». *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $B$ «básico» ($\dfrac{30}{50}=0{,}6$), $S$ «superior» ($0{,}4$) e $I$ «presenta incidencias»: $P(I^C)=0{,}8$, $P(I\mid B)=0{,}3$.
+
+$P(B\cap I)=0{,}6\cdot0{,}3=0{,}18$; $P(B\cap I^C)=0{,}6-0{,}18=0{,}42$; $P(S\cap I^C)=P(I^C)-P(B\cap I^C)=0{,}8-0{,}42=0{,}38$; $P(S\cap I)=0{,}4-0{,}38=0{,}02$.
+
+**a)** $P(B\cap I^C)=\mathbf{0{,}42}$.
+
+**b)** $P(I^C\mid S)=\dfrac{0{,}38}{0{,}4}=\mathbf{0{,}95}$.
+
+**c)** $P(I)=1-0{,}8=0{,}2$ y $P(B\mid I)=\dfrac{0{,}18}{0{,}2}=\mathbf{0{,}9}$.
+
+**d)** $P\left((B\cap I)\cup(S\cap I^C)\right)=0{,}18+0{,}38=\mathbf{0{,}56}$ (sucesos incompatibles).
+::::
+:::::
+
+
+## 2023
+
+
+### Ordinaria · Modelo A 2023
+
+
+::::: {.ebau-ej #ebau-2023-ord-a-5}
+**Ejercicio 5** · Ordinaria · Modelo A 2023 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-a/examen.pdf){target="_blank"}
+
+Disponemos de una moneda trucada en la que la probabilidad de obtener cara, al lanzarla, es el doble de la de obtener cruz.
+
+a) Halle la probabilidad de que, al lanzar la moneda, se obtenga cara. *(0,5 puntos)*
+
+b) Halle la probabilidad de que, al lanzar dos veces la moneda, se obtenga una cara y una cruz sin importar el orden. *(0,75 puntos)*
+
+c) Halle la probabilidad de que, al lanzar dos veces la moneda, se obtenga al menos una cara. *(0,5 puntos)*
+
+d) Si al lanzar la moneda dos veces observamos que ha salido al menos una cara, halle la probabilidad de que se obtengan dos caras. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $P(\text{cara})=2P(\text{cruz})$ y $P(\text{cara})+P(\text{cruz})=1$: **$P(\text{cara})=\dfrac{2}{3}$** y $P(\text{cruz})=\dfrac{1}{3}$.
+
+**b)** Una cara y una cruz sin importar el orden: $\dfrac{2}{3}\cdot\dfrac{1}{3}+\dfrac{1}{3}\cdot\dfrac{2}{3}=\dfrac{4}{9}$.
+
+**c)** Al menos una cara: $1-P(\text{dos cruces})=1-\dfrac{1}{9}=\dfrac{8}{9}$.
+
+**d)** $P(\text{dos caras}\mid\text{al menos una cara})=\dfrac{P(\text{dos caras})}{P(\text{al menos una})}=\dfrac{\frac{4}{9}}{\frac{8}{9}}=\dfrac{1}{2}$.
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2023-ord-a-6}
+**Ejercicio 6** · Ordinaria · Modelo A 2023 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-a/examen.pdf){target="_blank"}
+
+En una base de datos de correos electrónicos se ha observado que el $20\,\%$ de los correos recibidos son spam. Además, se ha observado que la palabra «lottery» ha aparecido en el $40\,\%$ de los correos que son spam y en el $0{,}6\,\%$ de los correos que no lo son.
+
+a) Halle la probabilidad de que en un correo elegido al azar en el que aparezca la palabra «lottery» sea spam. *(1,25 puntos)*
+
+b) Halle la probabilidad de que un correo elegido al azar en el que no aparezca la palabra «lottery» no sea spam. *(0,5 puntos)*
+
+c) Si un correo se etiqueta como spam si aparece la palabra «lottery» y como no spam si esta palabra no aparece, calcule la probabilidad de que un correo se etiquete incorrectamente. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $S$ «es spam» y $L$ «aparece la palabra lottery»: $P(S)=0{,}2$, $P(L\mid S)=0{,}4$, $P(L\mid S^C)=0{,}006$.
+
+**a)** $P(L)=0{,}2\cdot0{,}4+0{,}8\cdot0{,}006=0{,}08+0{,}0048=0{,}0848$.
+$$P(S\mid L)=\frac{0{,}08}{0{,}0848}=\frac{50}{53}\approx\mathbf{0{,}9434}.$$
+
+**b)** $P(L^C)=0{,}2\cdot0{,}6+0{,}8\cdot0{,}994=0{,}12+0{,}7952=0{,}9152$.
+$$P(S^C\mid L^C)=\frac{0{,}7952}{0{,}9152}\approx\mathbf{0{,}8689}.$$
+
+**c)** Se etiqueta mal si es spam y no aparece «lottery», o no es spam y aparece:
+$$P=0{,}2\cdot0{,}6+0{,}8\cdot0{,}006=0{,}12+0{,}0048=\mathbf{0{,}1248}.$$
+::::
+:::::
+
+
+### Ordinaria · Modelo B 2023
+
+
+::::: {.ebau-ej #ebau-2023-ord-b-5}
+**Ejercicio 5** · Ordinaria · Modelo B 2023 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-b/examen.pdf){target="_blank"}
+
+Una caja contiene 3 fichas verdes, 2 fichas azules y 4 fichas rojas. Un juego consiste en realizar dos extracciones, sin reemplazamiento, de tal manera que el jugador que saque dos fichas azules gana el primer premio, el jugador que saque dos fichas verdes gana el segundo premio y el jugador que, de las dos fichas, una sea azul y otra de un color diferente gana el tercer premio.
+
+a) Calcule la probabilidad de que un jugador consiga el primer o el segundo premio. *(0,75 puntos)*
+
+b) Calcule la probabilidad de que un jugador gane el tercer premio. *(0,75 puntos)*
+
+c) Sabiendo que un jugador ha obtenido premio, ¿cuál es la probabilidad de que haya ganado el tercer premio? *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Hay $\dbinom92=36$ pares de fichas, todos equiprobables.
+
+- Dos azules: $\dbinom22=1$ par, $P=\dfrac{1}{36}$.
+- Dos verdes: $\dbinom32=3$ pares, $P=\dfrac{3}{36}$.
+- Una azul y otra de distinto color: $2\cdot7=14$ pares, $P=\dfrac{14}{36}$.
+
+**a)** $P(\text{1.º o 2.º premio})=\dfrac{1}{36}+\dfrac{3}{36}=\dfrac{4}{36}=\dfrac{1}{9}\approx\mathbf{0{,}1111}$.
+
+**b)** $P(\text{3.er premio})=\dfrac{14}{36}=\dfrac{7}{18}\approx\mathbf{0{,}3889}$.
+
+**c)** $P(\text{3.º}\mid\text{premio})=\dfrac{14/36}{(1+3+14)/36}=\dfrac{14}{18}=\dfrac{7}{9}\approx\mathbf{0{,}7778}$.
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2023-ord-b-6}
+**Ejercicio 6** · Ordinaria · Modelo B 2023 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-b/examen.pdf){target="_blank"}
+
+Dados dos sucesos $A$ y $B$ de un experimento aleatorio, se sabe que $P(A)=0{,}6$, $P(B)=0{,}3$ y $P(A\mid B)=0{,}6$. Se pide:
+
+a) $P(A\cup B)$ *(0,5 puntos)*
+
+b) $P(A-B)+P(B-A)$ *(0,75 puntos)*
+
+c) $P\left(B\mid A^{C}\right)$ *(0,75 puntos)*
+
+d) Razone si los sucesos $A$ y $B$ son independientes. ¿Son incompatibles? *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$P(A\cap B)=P(A\mid B)\,P(B)=0{,}6\cdot0{,}3=0{,}18$.
+
+**a)** $P(A\cup B)=0{,}6+0{,}3-0{,}18=\mathbf{0{,}72}$.
+
+**b)** $P(A-B)=0{,}6-0{,}18=0{,}42$ y $P(B-A)=0{,}3-0{,}18=0{,}12$, luego $P(A-B)+P(B-A)=\mathbf{0{,}54}$.
+
+**c)** $P(B\mid A^C)=\dfrac{P(B\cap A^C)}{P(A^C)}=\dfrac{0{,}12}{0{,}4}=\mathbf{0{,}3}$.
+
+**d)** $P(A\mid B)=0{,}6=P(A)$, o bien $P(A)P(B)=0{,}18=P(A\cap B)$: **son independientes.** Como $P(A\cap B)=0{,}18\neq0$, **no son incompatibles.**
+::::
+:::::
+
+
+### Ordinaria · Reserva · Modelo A 2023
+
+
+::::: {.ebau-ej #ebau-2023-ord-res-a-5}
+**Ejercicio 5** · Ordinaria · Reserva · Modelo A 2023 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-res-a/examen.pdf){target="_blank"}
+
+Una empresa de transporte dispone de tres tipos de camiones, $A$, $B$ y $C$. El $30\,\%$ de los transportes son realizados por camiones de tipo $A$; el $20\,\%$ por camiones de tipo $B$ y el resto por camiones de tipo $C$. Se sabe que los transportes tienen una probabilidad de $0{,}02$ de sufrir algún tipo de incidencia si son realizados en camiones de tipo $A$; de $0{,}01$ si son realizados en camiones de tipo $B$ y de $0{,}05$ si son realizados en camiones de tipo $C$. Se elige un transporte de esta empresa al azar.
+
+a) Calcule la probabilidad de que no haya sufrido ningún tipo de incidencia. *(1 punto)*
+
+b) Calcule la probabilidad de que lo haya realizado un camión de tipo $C$ si se sabe que sufrió algún tipo de incidencia. *(1 punto)*
+
+c) Si además se conoce que el $40\,\%$ de las incidencias sufridas por los camiones de tipo $A$ fueron debidas a la lluvia, calcule la probabilidad de que el transporte haya sido realizado por un camión de tipo $A$, haya sufrido una incidencia y también esta sea debida a la lluvia. *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $I$ «sufre alguna incidencia»: $P(A)=0{,}3$, $P(B)=0{,}2$, $P(C)=0{,}5$, $P(I\mid A)=0{,}02$, $P(I\mid B)=0{,}01$, $P(I\mid C)=0{,}05$.
+
+**a)** $P(I)=0{,}3\cdot0{,}02+0{,}2\cdot0{,}01+0{,}5\cdot0{,}05=0{,}006+0{,}002+0{,}025=0{,}033$, luego $P(I^C)=1-0{,}033=\mathbf{0{,}967}$.
+
+**b)** $P(C\mid I)=\dfrac{0{,}5\cdot0{,}05}{0{,}033}=\dfrac{0{,}025}{0{,}033}=\dfrac{25}{33}\approx\mathbf{0{,}7576}$.
+
+**c)** $P(A\cap I\cap\text{lluvia})=0{,}3\cdot0{,}02\cdot0{,}4=\mathbf{0{,}0024}$.
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2023-ord-res-a-6}
+**Ejercicio 6** · Ordinaria · Reserva · Modelo A 2023 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-res-a/examen.pdf){target="_blank"}
+
+Una tienda vende caramelos con sabor a frutas (naranja o limón) y a menta. El $60\,\%$ son azucarados y de estos el $25\,\%$ son de limón. De los no azucarados, el $40\,\%$ son de naranja, el $30\,\%$ son de limón y el resto de menta. Además, el $40\,\%$ de todos los caramelos son de naranja. Se escoge un caramelo al azar de esa tienda.
+
+a) Calcule la probabilidad de que sea de naranja sabiendo que es azucarado. *(1,5 puntos)*
+
+b) Razone si es más probable que sea de sabor a frutas o a menta. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $Z$ «azucarado», $N$ «naranja», $L$ «limón» y $M$ «menta». Datos: $P(Z)=0{,}6$, $P(L\mid Z)=0{,}25$, y entre los no azucarados ($0{,}4$ del total): $0{,}4$ naranja, $0{,}3$ limón y $0{,}3$ menta; $P(N)=0{,}4$.
+
+Naranja no azucarada: $P(N\cap Z^C)=0{,}4\cdot0{,}4=0{,}16$. Luego $P(N\cap Z)=P(N)-P(N\cap Z^C)=0{,}4-0{,}16=0{,}24$.
+
+**a)** $P(N\mid Z)=\dfrac{P(N\cap Z)}{P(Z)}=\dfrac{0{,}24}{0{,}6}=\mathbf{0{,}4}$.
+
+**b)** Entre los azucarados: limón $0{,}6\cdot0{,}25=0{,}15$, naranja $0{,}24$ y menta $0{,}6-0{,}15-0{,}24=0{,}21$. Entre los no azucarados: menta $0{,}4\cdot0{,}3=0{,}12$. Entonces $P(\text{menta})=0{,}21+0{,}12=0{,}33$ y $P(\text{frutas})=1-0{,}33=0{,}67$.
+
+**Es más probable que sea de sabor a frutas ($0{,}67$) que a menta ($0{,}33$).**
+::::
+:::::
+
+
+### Ordinaria · Reserva · Modelo B 2023
+
+
+::::: {.ebau-ej #ebau-2023-ord-res-b-5}
+**Ejercicio 5** · Ordinaria · Reserva · Modelo B 2023 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-res-b/examen.pdf){target="_blank"}
+
+En una encuesta realizada en un instituto sobre los hábitos de los estudiantes en su tiempo libre, el $80\,\%$ de los encuestados dedica el tiempo libre a enviar mensajes con el móvil o a jugar a videojuegos, el $45\,\%$ realiza ambas cosas y el $40\,\%$ no juega a videojuegos. Si se elige un estudiante de ese instituto al azar, calcule la probabilidad de que dedique su tiempo libre a:
+
+a) Enviar mensajes con el móvil y no jugar a videojuegos. *(1 punto)*
+
+b) Jugar a videojuegos sabiendo que no envía mensajes con el móvil. *(0,5 puntos)*
+
+c) Hacer solamente una de las dos cosas. *(0,5 puntos)*
+
+d) No hacer ninguna de las dos cosas. *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $M$ «envía mensajes con el móvil» y $V$ «juega a videojuegos»: $P(M\cup V)=0{,}8$, $P(M\cap V)=0{,}45$, $P(V^C)=0{,}4$, luego $P(V)=0{,}6$ y $P(M)=P(M\cup V)-P(V)+P(M\cap V)=0{,}8-0{,}6+0{,}45=0{,}65$.
+
+**a)** $P(M\cap V^C)=P(M)-P(M\cap V)=0{,}65-0{,}45=\mathbf{0{,}2}$.
+
+**b)** $P(V\mid M^C)=\dfrac{P(V\cap M^C)}{P(M^C)}=\dfrac{0{,}6-0{,}45}{0{,}35}=\dfrac{0{,}15}{0{,}35}=\dfrac{3}{7}\approx\mathbf{0{,}4286}$.
+
+**c)** $P(\text{solo una})=\left(0{,}65-0{,}45\right)+\left(0{,}6-0{,}45\right)=0{,}2+0{,}15=\mathbf{0{,}35}$.
+
+**d)** $P(M^C\cap V^C)=1-P(M\cup V)=1-0{,}8=\mathbf{0{,}2}$.
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2023-ord-res-b-6}
+**Ejercicio 6** · Ordinaria · Reserva · Modelo B 2023 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-res-b/examen.pdf){target="_blank"}
+
+Un componente electrónico se produce en dos fábricas, $A$ y $B$. Se exporta el $40\,\%$ de los componentes producidos en $A$ y la cuarta parte de los producidos en $B$, mientras que el resto es para consumo nacional. Además, el $37\,\%$ de todos los componentes producidos es exportado. Si se elige un componente electrónico al azar, halle la probabilidad de que:
+
+a) Se haya producido en la fábrica $A$. *(1,5 puntos)*
+
+b) Se haya producido en la fábrica $A$ sabiendo que no es exportado. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $p=P(A)$, $P(B)=1-p$ y $E$ «se exporta»: $P(E\mid A)=0{,}4$, $P(E\mid B)=0{,}25$ y $P(E)=0{,}37$.
+
+**a)** $0{,}4p+0{,}25(1-p)=0{,}37\Rightarrow0{,}15p=0{,}12\Rightarrow p=0{,}8$. **$P(A)=0{,}8$.**
+
+**b)** $P(A\mid E^C)=\dfrac{P(A)\,P(E^C\mid A)}{P(E^C)}=\dfrac{0{,}8\cdot0{,}6}{1-0{,}37}=\dfrac{0{,}48}{0{,}63}=\dfrac{16}{21}\approx\mathbf{0{,}7619}$.
+::::
+:::::
+
+
+### Ordinaria · Suplente · Modelo A 2023
+
+
+::::: {.ebau-ej #ebau-2023-ord-sup-a-5}
+**Ejercicio 5** · Ordinaria · Suplente · Modelo A 2023 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-sup-a/examen.pdf){target="_blank"}
+
+Durante la pasada temporada, una tenista ganó el $90\,\%$ de los partidos que jugó sobre tierra y la mitad cuando lo hizo sobre otro tipo de superficie. De los 40 partidos que jugó la temporada pasada, 25 lo hizo sobre tierra. Elegido al azar un partido de la temporada pasada de esta tenista, halle la probabilidad de que:
+
+a) Ganase el partido. *(1,25 puntos)*
+
+b) No ganase sabiendo que jugó sobre tierra. *(0,5 puntos)*
+
+c) Jugase sobre tierra sabiendo que ganó. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $T$ «jugó sobre tierra» y $G$ «ganó»: $P(T)=\dfrac{25}{40}=\dfrac{5}{8}$, $P(T^C)=\dfrac{3}{8}$, $P(G\mid T)=0{,}9$, $P(G\mid T^C)=0{,}5$.
+
+**a)** $P(G)=\dfrac{5}{8}\cdot0{,}9+\dfrac{3}{8}\cdot0{,}5=0{,}5625+0{,}1875=\mathbf{0{,}75}$.
+
+**b)** $P(G^C\mid T)=1-0{,}9=\mathbf{0{,}1}$.
+
+**c)** $P(T\mid G)=\dfrac{P(T)\,P(G\mid T)}{P(G)}=\dfrac{0{,}5625}{0{,}75}=\mathbf{0{,}75}$.
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2023-ord-sup-a-6}
+**Ejercicio 6** · Ordinaria · Suplente · Modelo A 2023 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-sup-a/examen.pdf){target="_blank"}
+
+El $32\,\%$ de las microempresas tiene página web y el $64{,}6\,\%$ ni tiene página web ni realiza ventas por comercio electrónico. De las microempresas que tienen página web, el $30\,\%$ realiza ventas por comercio electrónico. Se selecciona al azar una microempresa.
+
+a) Calcule la probabilidad de que tenga página web o realice ventas por comercio electrónico. *(1 punto)*
+
+b) Calcule la probabilidad de que realice ventas por comercio electrónico. *(0,5 puntos)*
+
+c) Calcule la probabilidad de que no tenga página web y realice ventas por comercio electrónico. *(0,5 puntos)*
+
+d) Razone si son independientes los sucesos «Tener página web» y «Realizar ventas por comercio electrónico». ¿Son incompatibles? *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $W$ «tiene página web» y $C$ «vende por comercio electrónico»: $P(W)=0{,}32$, $P(W^C\cap C^C)=0{,}646$, $P(C\mid W)=0{,}3$.
+
+**a)** $P(W\cup C)=1-P(W^C\cap C^C)=1-0{,}646=\mathbf{0{,}354}$.
+
+**b)** $P(W\cap C)=0{,}32\cdot0{,}3=0{,}096$. Como $P(W\cup C)=P(W)+P(C)-P(W\cap C)$: $0{,}354=0{,}32+P(C)-0{,}096$, de donde $P(C)=\mathbf{0{,}13}$.
+
+**c)** $P(W^C\cap C)=P(C)-P(W\cap C)=0{,}13-0{,}096=\mathbf{0{,}034}$.
+
+**d)** $P(W)P(C)=0{,}32\cdot0{,}13=0{,}0416\neq0{,}096=P(W\cap C)$: **no son independientes.** $P(W\cap C)=0{,}096\neq0$: **no son incompatibles.**
+::::
+:::::
+
+
+### Ordinaria · Suplente · Modelo B 2023
+
+
+::::: {.ebau-ej #ebau-2023-ord-sup-b-5}
+**Ejercicio 5** · Ordinaria · Suplente · Modelo B 2023 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-sup-b/examen.pdf){target="_blank"}
+
+Una fábrica produce procesadores que se clasifican en un primer control en tres tipos, $A$, $B$ y $C$, según la frecuencia a la que pueden trabajar. El $60\,\%$ de los procesadores fabricados se clasifican de tipo $A$, el $30\,\%$ de tipo $B$ y el resto de tipo $C$. En un segundo control, se desechan el $20\,\%$ de los procesadores de tipo $A$, el $50\,\%$ de los de tipo $B$ y el $60\,\%$ de los de tipo $C$, por problemas al trabajar a ciertas temperaturas. Si se elige un procesador de esta fábrica al azar, calcule la probabilidad de que:
+
+a) Sea descartado y sea de tipo $A$ o de tipo $B$. *(1 punto)*
+
+b) Sea descartado. *(0,75 puntos)*
+
+c) Sea de tipo $C$ sabiendo que no ha sido descartado. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $D$ «descartado»: $P(A)=0{,}6$, $P(B)=0{,}3$, $P(C)=0{,}1$, $P(D\mid A)=0{,}2$, $P(D\mid B)=0{,}5$, $P(D\mid C)=0{,}6$.
+
+**a)** $P\big(D\cap(A\cup B)\big)=0{,}6\cdot0{,}2+0{,}3\cdot0{,}5=0{,}12+0{,}15=\mathbf{0{,}27}$.
+
+**b)** $P(D)=0{,}12+0{,}15+0{,}1\cdot0{,}6=0{,}12+0{,}15+0{,}06=\mathbf{0{,}33}$.
+
+**c)** $P(C\mid D^C)=\dfrac{P(C)\,P(D^C\mid C)}{P(D^C)}=\dfrac{0{,}1\cdot0{,}4}{1-0{,}33}=\dfrac{0{,}04}{0{,}67}=\dfrac{4}{67}\approx\mathbf{0{,}0597}$.
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2023-ord-sup-b-6}
+**Ejercicio 6** · Ordinaria · Suplente · Modelo B 2023 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-sup-b/examen.pdf){target="_blank"}
+
+El $75\,\%$ del alumnado de un instituto utiliza la plataforma del centro como medio para comunicarse con sus profesores y el $40\,\%$ lo hace a través del correo electrónico. Además, hay un $15\,\%$ que no usa ninguno de estos medios. Se elige un estudiante de este instituto al azar.
+
+a) Calcule la probabilidad de que utilice ambos medios de comunicación. *(0,75 puntos)*
+
+b) Calcule la probabilidad de que utilice solamente uno de estos medios de comunicación. *(0,75 puntos)*
+
+c) Calcule la probabilidad de que utilice la plataforma del centro sabiendo que no usa el correo electrónico como medio de comunicación. *(0,5 puntos)*
+
+d) Razone si los sucesos «Utilizar la plataforma del centro» y «Utilizar el correo electrónico» son independientes. *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $P$ «usa la plataforma» y $E$ «usa el correo»: $P(P)=0{,}75$, $P(E)=0{,}4$, $P(P^C\cap E^C)=0{,}15$, luego $P(P\cup E)=0{,}85$.
+
+**a)** $P(P\cap E)=0{,}75+0{,}4-0{,}85=\mathbf{0{,}3}$.
+
+**b)** $P(\text{solo uno})=\left(0{,}75-0{,}3\right)+\left(0{,}4-0{,}3\right)=0{,}45+0{,}1=\mathbf{0{,}55}$.
+
+**c)** $P(P\mid E^C)=\dfrac{P(P\cap E^C)}{P(E^C)}=\dfrac{0{,}45}{0{,}6}=\mathbf{0{,}75}$.
+
+**d)** $P(P)P(E)=0{,}75\cdot0{,}4=0{,}3=P(P\cap E)$: **son independientes** (también $P(P\mid E^C)=0{,}75=P(P)$).
+::::
+:::::
+
+
+## 2022
+
+
+### Ordinaria 2022
+
+
+::::: {.ebau-ej #ebau-2022-ord-5}
+**Ejercicio 5** · Ordinaria 2022 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ord/examen.pdf){target="_blank"}
+
+En un estudio realizado en una sucursal bancaria se ha determinado que el $70\,\%$ de los créditos concedidos son hipotecarios y el $25\,\%$ de los créditos superan los $200\,000$ €. El $20\,\%$ de los créditos son hipotecarios y de más de $200\,000$ €. Se elige al azar un cliente al que le han concedido un crédito. Calcule la probabilidad de que:
+
+a) El crédito no sea hipotecario y no supere los $200\,000$ €. *(1 punto)*
+
+b) Si su crédito no es hipotecario, este no supere los $200\,000$ €. *(0,75 puntos)*
+
+c) Si su crédito supera los $200\,000$ €, que este no sea hipotecario. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $H$ «hipotecario» y $G$ «supera los $200\,000$ €»: $P(H)=0{,}7$, $P(G)=0{,}25$, $P(H\cap G)=0{,}2$.
+
+**a)** $P(H^C\cap G^C)=1-P(H\cup G)=1-(0{,}7+0{,}25-0{,}2)=1-0{,}75=\mathbf{0{,}25}$.
+
+**b)** $P(G^C\mid H^C)=\dfrac{P(H^C\cap G^C)}{P(H^C)}=\dfrac{0{,}25}{0{,}3}=\dfrac{5}{6}\approx\mathbf{0{,}8333}$.
+
+**c)** $P(H^C\mid G)=\dfrac{P(G\cap H^C)}{P(G)}=\dfrac{0{,}25-0{,}2}{0{,}25}=\dfrac{0{,}05}{0{,}25}=\mathbf{0{,}2}$.
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2022-ord-6}
+**Ejercicio 6** · Ordinaria 2022 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ord/examen.pdf){target="_blank"}
+
+En su tiempo libre, el $65\,\%$ de los estudiantes de un centro educativo juega con videojuegos, el $45\,\%$ lee libros y el $15\,\%$ no hace ninguna de las dos cosas. Elegido al azar un estudiante de dicho centro, calcule la probabilidad de que:
+
+a) Juegue con videojuegos o lea libros. *(1 punto)*
+
+b) Juegue con videojuegos y no lea libros. *(0,75 puntos)*
+
+c) Lea libros sabiendo que no juega con videojuegos. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $V$ «juega con videojuegos» y $L$ «lee libros»: $P(V)=0{,}65$, $P(L)=0{,}45$, $P(V^C\cap L^C)=0{,}15$.
+
+**a)** $P(V\cup L)=1-0{,}15=\mathbf{0{,}85}$.
+
+**b)** $P(V\cap L)=0{,}65+0{,}45-0{,}85=0{,}25$, luego $P(V\cap L^C)=P(V)-P(V\cap L)=0{,}65-0{,}25=\mathbf{0{,}4}$.
+
+**c)** $P(L\mid V^C)=\dfrac{P(L\cap V^C)}{P(V^C)}=\dfrac{0{,}45-0{,}25}{0{,}35}=\dfrac{0{,}2}{0{,}35}=\dfrac{4}{7}\approx\mathbf{0{,}5714}$.
+::::
+:::::
+
+
+### Ordinaria · Reserva 2022
+
+
+::::: {.ebau-ej #ebau-2022-ord-res-5}
+**Ejercicio 5** · Ordinaria · Reserva 2022 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ord-res/examen.pdf){target="_blank"}
+
+De los sucesos $A$ y $B$ de un mismo experimento aleatorio se conocen las siguientes probabilidades:
+
+$$P(A)=0{,}7\qquad P(B)=0{,}6\qquad P(A\cup B)=0{,}8$$
+
+Calcule la probabilidad de que:
+
+a) Ocurra $A$ y $B$. *(0,75 puntos)*
+
+b) No ocurra ni $A$ ni $B$. *(0,75 puntos)*
+
+c) Ocurra $A$ pero no $B$. *(0,5 puntos)*
+
+d) Ocurra $A$ sabiendo que no ha ocurrido $B$. *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $P(A\cap B)=P(A)+P(B)-P(A\cup B)=0{,}7+0{,}6-0{,}8=\mathbf{0{,}5}$.
+
+**b)** $P(A^C\cap B^C)=1-P(A\cup B)=1-0{,}8=\mathbf{0{,}2}$.
+
+**c)** $P(A\cap B^C)=P(A)-P(A\cap B)=0{,}7-0{,}5=\mathbf{0{,}2}$.
+
+**d)** $P(A\mid B^C)=\dfrac{P(A\cap B^C)}{P(B^C)}=\dfrac{0{,}2}{0{,}4}=\mathbf{0{,}5}$.
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2022-ord-res-6}
+**Ejercicio 6** · Ordinaria · Reserva 2022 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ord-res/examen.pdf){target="_blank"}
+
+El porcentaje de conductores que consumen alcohol durante la madrugada del sábado es del $5\,\%$. La policía realiza controles de alcoholemia mediante un test del que se sabe que da positivo en un $96\,\%$ si la persona ha bebido alcohol y en un $10\,\%$ si la persona no ha bebido alcohol.
+
+Elegido al azar un conductor en la madrugada del sábado y realizado este test de alcoholemia, halle la probabilidad de que:
+
+a) Si el test da positivo, el conductor haya consumido alcohol. *(1,25 puntos)*
+
+b) El test dé negativo y el conductor no haya consumido alcohol. *(0,5 puntos)*
+
+c) Si el test ha dado negativo, el conductor no haya consumido alcohol. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $A$ «ha bebido alcohol» y $+$ «test positivo»: $P(A)=0{,}05$, $P(+\mid A)=0{,}96$, $P(+\mid A^C)=0{,}1$.
+
+**a)** $P(+)=0{,}05\cdot0{,}96+0{,}95\cdot0{,}1=0{,}048+0{,}095=0{,}143$.
+$$P(A\mid+)=\frac{0{,}048}{0{,}143}=\frac{48}{143}\approx\mathbf{0{,}3357}.$$
+
+**b)** $P(-\cap A^C)=0{,}95\cdot0{,}9=\mathbf{0{,}855}$.
+
+**c)** $P(-)=1-0{,}143=0{,}857$ y $P(A^C\mid-)=\dfrac{0{,}855}{0{,}857}=\dfrac{855}{857}\approx\mathbf{0{,}9977}$.
+::::
+:::::
+
+
+### Ordinaria · Suplente 2022
+
+
+::::: {.ebau-ej #ebau-2022-ord-sup-5}
+**Ejercicio 5** · Ordinaria · Suplente 2022 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ord-sup/examen.pdf){target="_blank"}
+
+Juan realiza el siguiente juego: lanza dos dados simultáneamente y si la suma es 2 o mayor que 7, gana y termina el juego. En caso contrario, tiene una segunda y última oportunidad lanzando de nuevo los dos dados y ganaría si la suma es mayor que 9.
+
+a) ¿Cuál es la probabilidad de que Juan gane lanzando una sola vez los dados? *(1 punto)*
+
+b) ¿Cuál es la probabilidad de que Juan gane en la segunda oportunidad? *(1 punto)*
+
+c) ¿Cuál es la probabilidad de que Juan gane? *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Hay $36$ resultados posibles. Suma $2$: $1$ caso; suma mayor que $7$ ($8,9,10,11,12$): $5+4+3+2+1=15$ casos.
+
+**a)** $P(\text{gana a la primera})=\dfrac{1+15}{36}=\dfrac{16}{36}=\mathbf{\dfrac{4}{9}}$.
+
+**b)** Suma mayor que $9$ ($10,11,12$): $3+2+1=6$ casos, probabilidad $\dfrac{6}{36}=\dfrac{1}{6}$. Gana en la segunda oportunidad si no ganó antes y gana ahora:
+$$P=\frac{5}{9}\cdot\frac{1}{6}=\frac{5}{54}\approx\mathbf{0{,}0926}.$$
+
+**c)** $P(\text{gana})=\dfrac{4}{9}+\dfrac{5}{54}=\dfrac{24}{54}+\dfrac{5}{54}=\dfrac{29}{54}\approx\mathbf{0{,}5370}$.
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2022-ord-sup-6}
+**Ejercicio 6** · Ordinaria · Suplente 2022 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ord-sup/examen.pdf){target="_blank"}
+
+Una encuesta realizada a los clientes de un banco muestra que el $60\,\%$ de sus clientes tiene un ordenador, el $50\,\%$ tiene una tablet y el $20\,\%$ posee un ordenador y una tablet. Se elige al azar un cliente de ese banco.
+
+a) Calcule la probabilidad de que:
+
+i) Tenga un ordenador o una tablet. *(0,5 puntos)*
+
+ii) No tenga tablet si no tiene ordenador. *(0,75 puntos)*
+
+iii) Tenga ordenador y no tenga tablet. *(0,75 puntos)*
+
+b) ¿Son los sucesos «Tener un ordenador» y «Tener una tablet» incompatibles? ¿Son sucesos independientes? *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $O$ «tener ordenador» y $T$ «tener tablet»: $P(O)=0{,}6$, $P(T)=0{,}5$, $P(O\cap T)=0{,}2$.
+
+**a)** i) $P(O\cup T)=0{,}6+0{,}5-0{,}2=\mathbf{0{,}9}$.
+
+ii) $P(T^C\mid O^C)=\dfrac{P(O^C\cap T^C)}{P(O^C)}=\dfrac{1-0{,}9}{0{,}4}=\dfrac{0{,}1}{0{,}4}=\mathbf{0{,}25}$.
+
+iii) $P(O\cap T^C)=P(O)-P(O\cap T)=0{,}6-0{,}2=\mathbf{0{,}4}$.
+
+**b)** $P(O\cap T)=0{,}2\neq0$: **no son incompatibles.** $P(O)P(T)=0{,}3\neq0{,}2=P(O\cap T)$: **no son independientes.**
+::::
+:::::
+
+
+### Extraordinaria 2022
+
+
+::::: {.ebau-ej #ebau-2022-ext-5}
+**Ejercicio 5** · Extraordinaria 2022 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ext/examen.pdf){target="_blank"}
+
+En una determinada región hay tres universidades $A$, $B$ y $C$. De los estudiantes que terminaron sus estudios el año pasado, el $60\,\%$ procedían de la universidad $A$, el $30\,\%$ de la universidad $B$ y el resto de $C$. Además, se conoce que la probabilidad de que un estudiante de la universidad $A$ no encuentre trabajo en su región es $0{,}4$ y para un estudiante de $B$ es $0{,}5$.
+
+a) Si la probabilidad de que un estudiante no encuentre trabajo en su región es $0{,}395$, determine la probabilidad de que un estudiante de la universidad $C$ encuentre trabajo en su región. *(1,5 puntos)*
+
+b) Calcule la probabilidad de que un estudiante que no haya encontrado trabajo en su región proceda de la universidad $A$ o de la $B$. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $N$ «no encuentra trabajo en su región»: $P(A)=0{,}6$, $P(B)=0{,}3$, $P(C)=0{,}1$, $P(N\mid A)=0{,}4$, $P(N\mid B)=0{,}5$.
+
+**a)** $P(N)=0{,}6\cdot0{,}4+0{,}3\cdot0{,}5+0{,}1\cdot P(N\mid C)=0{,}24+0{,}15+0{,}1\,P(N\mid C)=0{,}395$, de donde $P(N\mid C)=0{,}05$. **$P(\text{trabajo}\mid C)=1-0{,}05=\mathbf{0{,}95}$.**
+
+**b)** $P(A\cup B\mid N)=\dfrac{P(A)P(N\mid A)+P(B)P(N\mid B)}{P(N)}=\dfrac{0{,}24+0{,}15}{0{,}395}=\dfrac{78}{79}\approx\mathbf{0{,}9873}$.
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2022-ext-6}
+**Ejercicio 6** · Extraordinaria 2022 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ext/examen.pdf){target="_blank"}
+
+Sean $A$ y $B$ dos sucesos del mismo espacio muestral tales que:
+$$P(A\cup B)=\frac{3}{7},\qquad P(A^{C})=\frac{5}{7},\qquad P\left(B^{C}\right)=\frac{2}{3}$$
+
+a) ¿Son $A$ y $B$ independientes? ¿Son $A$ y $B$ incompatibles? *(1 punto)*
+
+b) Calcule $P\left(A^{C}\cap B^{C}\right)$. *(0,75 puntos)*
+
+c) Calcule $P\left(B\mid A^{C}\right)$. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$P(A)=1-\dfrac{5}{7}=\dfrac{2}{7}$ y $P(B)=1-\dfrac{2}{3}=\dfrac{1}{3}$. Entonces $P(A\cap B)=P(A)+P(B)-P(A\cup B)=\dfrac{2}{7}+\dfrac{1}{3}-\dfrac{3}{7}=\dfrac{4}{21}$.
+
+**a)** $P(A)P(B)=\dfrac{2}{7}\cdot\dfrac{1}{3}=\dfrac{2}{21}\neq\dfrac{4}{21}=P(A\cap B)$: **no son independientes.** $P(A\cap B)\neq0$: **no son incompatibles.**
+
+**b)** $P(A^C\cap B^C)=1-P(A\cup B)=1-\dfrac{3}{7}=\dfrac{4}{7}$.
+
+**c)** $P(B\mid A^C)=\dfrac{P(B\cap A^C)}{P(A^C)}=\dfrac{P(B)-P(A\cap B)}{5/7}=\dfrac{\frac{1}{3}-\frac{4}{21}}{\frac{5}{7}}=\dfrac{\frac{1}{7}}{\frac{5}{7}}=\dfrac{1}{5}=\mathbf{0{,}2}$.
+::::
+:::::
+
+
+### Extraordinaria · Reserva 2022
+
+
+::::: {.ebau-ej #ebau-2022-ext-res-5}
+**Ejercicio 5** · Extraordinaria · Reserva 2022 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ext-res/examen.pdf){target="_blank"}
+
+El $80\,\%$ de los restaurantes de una localidad admite el pago con tarjeta de crédito, el $50\,\%$ admite pagar mediante el móvil y el $10\,\%$ no admite el pago con ninguno de estos métodos. Escogido al azar un restaurante de dicha localidad.
+
+a) Calcule la probabilidad de que el restaurante admita:
+
+i) alguno de estos dos medios de pago. *(1 punto)*
+
+ii) Pagar con móvil sabiendo que admite pagar con tarjeta de crédito. *(1 punto)*
+
+b) ¿Son independientes los sucesos «Pagar con tarjeta» y «Pagar con móvil»? *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $T$ «admite tarjeta» y $M$ «admite móvil»: $P(T)=0{,}8$, $P(M)=0{,}5$, $P(T^C\cap M^C)=0{,}1$.
+
+**a)** i) $P(T\cup M)=1-0{,}1=\mathbf{0{,}9}$.
+
+ii) $P(T\cap M)=0{,}8+0{,}5-0{,}9=0{,}4$, luego $P(M\mid T)=\dfrac{P(M\cap T)}{P(T)}=\dfrac{0{,}4}{0{,}8}=\mathbf{0{,}5}$.
+
+**b)** $P(T)\cdot P(M)=0{,}8\cdot0{,}5=0{,}4=P(T\cap M)$: **sí son independientes** (equivalentemente, $P(M\mid T)=P(M)$).
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2022-ext-res-6}
+**Ejercicio 6** · Extraordinaria · Reserva 2022 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ext-res/examen.pdf){target="_blank"}
+
+En una localidad se han vendido 1335 boletos de lotería en tres establecimientos $A$, $B$ y $C$. En el establecimiento $A$ se han vendido 1054 boletos, 99 en $B$ y el resto en $C$. De los boletos premiados, 5 han sido vendidos en $B$ y 13 en $C$. Sabemos que 95 de cada 100 boletos vendidos no han obtenido premio. Elegido un boleto al azar, se pide:
+
+a) ¿Cuál es el establecimiento que tiene una mayor probabilidad de haber vendido un boleto no premiado? *(1,75 puntos)*
+
+b) ¿Cuál es la probabilidad de que un boleto no premiado haya sido vendido en el establecimiento $A$? *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Boletos: $A$: $1054$, $B$: $99$, $C$: $1335-1054-99=182$. Sea $NP$ «no premiado»: $P(NP)=0{,}95$. Boletos premiados: $5$ de $B$ y $13$ de $C$, luego
+$$P(NP\cap B)=\frac{99-5}{1335}=\frac{94}{1335},\qquad P(NP\cap C)=\frac{182-13}{1335}=\frac{169}{1335},$$
+$$P(NP\cap A)=0{,}95-\frac{94}{1335}-\frac{169}{1335}=\frac{4021}{5340}\approx0{,}753.$$
+(El dato del $95\,\%$ se usa como probabilidad exacta.)
+
+**b)** $P(A\mid NP)=\dfrac{P(NP\cap A)}{P(NP)}=\dfrac{4021/5340}{0{,}95}=\dfrac{4021}{5073}\approx\mathbf{0{,}7926}$.
+
+**a)** $P(B\mid NP)=\dfrac{94/1335}{0{,}95}\approx0{,}0741$ y $P(C\mid NP)=\dfrac{169/1335}{0{,}95}\approx0{,}1333$. La mayor probabilidad es la de $A$: **el establecimiento $A$** ($0{,}7926$ frente a $0{,}1333$ y $0{,}0741$).
+::::
+:::::
+
+
+### Extraordinaria · Suplente 2022
+
+
+::::: {.ebau-ej #ebau-2022-ext-sup-5}
+**Ejercicio 5** · Extraordinaria · Suplente 2022 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ext-sup/examen.pdf){target="_blank"}
+
+Se ha llevado a cabo una encuesta en un centro educativo para saber qué actividades extraescolares se realizan por la tarde. El $80\,\%$ de los encuestados practican deporte o estudian idiomas, el $35\,\%$ realizan ambas actividades y el $60\,\%$ no estudian idiomas.
+
+a) Elegido un estudiante de ese centro al azar, calcule la probabilidad de que:
+
+i) Practique deporte y no estudie idiomas. *(0,75 puntos)*
+
+ii) Estudie idiomas y no practique deporte. *(0,5 puntos)*
+
+iii) Haga solamente una de las dos actividades. *(0,5 puntos)*
+
+iv) No haga ninguna de las dos actividades. *(0,25 puntos)*
+
+b) ¿Son independientes los sucesos «Practicar deporte» y «Estudiar idiomas»? *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $D$ «practica deporte» e $I$ «estudia idiomas»: $P(D\cup I)=0{,}8$, $P(D\cap I)=0{,}35$, $P(I^C)=0{,}6$, luego $P(I)=0{,}4$ y $P(D)=P(D\cup I)-P(I)+P(D\cap I)=0{,}8-0{,}4+0{,}35=0{,}75$.
+
+**a)** i) $P(D\cap I^C)=P(D)-P(D\cap I)=0{,}75-0{,}35=\mathbf{0{,}4}$.
+
+ii) $P(I\cap D^C)=P(I)-P(D\cap I)=0{,}4-0{,}35=\mathbf{0{,}05}$.
+
+iii) $P(\text{solo una})=0{,}4+0{,}05=\mathbf{0{,}45}$.
+
+iv) $P(D^C\cap I^C)=1-P(D\cup I)=1-0{,}8=\mathbf{0{,}2}$.
+
+**b)** $P(D)P(I)=0{,}75\cdot0{,}4=0{,}3\neq0{,}35=P(D\cap I)$: **no son independientes.**
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2022-ext-sup-6}
+**Ejercicio 6** · Extraordinaria · Suplente 2022 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ext-sup/examen.pdf){target="_blank"}
+
+Del total de personas vacunadas en un país para prevenir una enfermedad, el $48\,\%$ recibió la vacuna $A$, el $35\,\%$ la vacuna $B$ y el resto la vacuna $C$.
+
+La efectividad de la vacuna $A$ se sitúa en el $70\,\%$, la de $B$ en el $95\,\%$ y la de $C$ en el $94\,\%$. Elegida al azar una persona vacunada,
+
+a) ¿Cuál es la probabilidad de que haya sido vacunada con $A$ y no le sea efectiva? *(1,25 puntos)*
+
+b) ¿Qué probabilidad hay de que la vacuna le sea efectiva? *(0,75 puntos)*
+
+c) Sabiendo que la vacuna no le ha sido efectiva, ¿cuál es la probabilidad de que haya sido vacunada con $C$? *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$P(A)=0{,}48$, $P(B)=0{,}35$, $P(C)=0{,}17$. Sea $E$ «la vacuna le es efectiva»: $P(E\mid A)=0{,}7$, $P(E\mid B)=0{,}95$, $P(E\mid C)=0{,}94$.
+
+**a)** $P(A\cap E^C)=P(A)\,P(E^C\mid A)=0{,}48\cdot0{,}3=\mathbf{0{,}144}$.
+
+**b)** $P(E)=0{,}48\cdot0{,}7+0{,}35\cdot0{,}95+0{,}17\cdot0{,}94=0{,}336+0{,}3325+0{,}1598=\mathbf{0{,}8283}$.
+
+**c)** $P(C\mid E^C)=\dfrac{P(C)\,P(E^C\mid C)}{P(E^C)}=\dfrac{0{,}17\cdot0{,}06}{1-0{,}8283}=\dfrac{0{,}0102}{0{,}1717}=\dfrac{6}{101}\approx\mathbf{0{,}0594}$.
+::::
+:::::
+
+
+## 2021
+
+
+### Ordinaria 2021
+
+
+::::: {.ebau-ej #ebau-2021-ord-5}
+**Ejercicio 5** · Ordinaria 2021 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ord/examen.pdf){target="_blank"}
+
+Se desea probar la eficacia de dos tipos de vacunas, $A$ y $B$, contra un virus determinado. Para ello, se seleccionan 5000 voluntarios sin anticuerpos para este virus, a los que se les administra una de las vacunas o un placebo, resultando que 3000 reciben la vacuna $A$, 1500 la $B$ y el resto el placebo. Se comprueba que el $90\,\%$ de los vacunados con la $A$ y el $95\,\%$ de los vacunados con la $B$, generan anticuerpos, no generando anticuerpos los que han recibido el placebo. Se selecciona uno de esos voluntarios al azar.
+
+a) ¿Cuál es la probabilidad de que haya generado anticuerpos? *(1,5 puntos)*
+
+b) Si dicho voluntario no ha generado anticuerpos, ¿qué probabilidad hay de que se le haya administrado placebo? *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $A$, $B$, $P$ los sucesos «recibe la vacuna $A$», «la $B$» y «el placebo», y $G$ «genera anticuerpos». $P(A)=\dfrac{3000}{5000}=0{,}6$, $P(B)=0{,}3$, $P(P)=0{,}1$; $P(G\mid A)=0{,}9$, $P(G\mid B)=0{,}95$, $P(G\mid P)=0$.
+
+**a)** Probabilidad total: $P(G)=0{,}6\cdot0{,}9+0{,}3\cdot0{,}95+0{,}1\cdot0=0{,}54+0{,}285=0{,}825$. **La probabilidad es $0{,}825$.**
+
+**b)** Bayes: $P(P\mid G^C)=\dfrac{P(P)\cdot P(G^C\mid P)}{P(G^C)}=\dfrac{0{,}1\cdot1}{1-0{,}825}=\dfrac{0{,}1}{0{,}175}=\dfrac{4}{7}\approx0{,}5714$. **La probabilidad es $\dfrac{4}{7}\approx0{,}5714$.**
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2021-ord-6}
+**Ejercicio 6** · Ordinaria 2021 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ord/examen.pdf){target="_blank"}
+
+De las compras realizadas en el último período de rebajas del pasado año, el $55\,\%$ se dedicaron a productos electrónicos, el $72\,\%$ se hicieron a través de Internet y, de las compras que se hicieron por Internet, el $64\,\%$ fueron de productos electrónicos. Se elige una compra al azar.
+
+a) Calcule la probabilidad de que haya sido de productos electrónicos y se haya realizado por Internet. *(1 punto)*
+
+b) Calcule la probabilidad de que la compra se haya realizado por Internet o que se hayan comprado productos electrónicos. *(0,75 puntos)*
+
+c) Calcule la probabilidad de que sabiendo que no se compraron productos electrónicos, la compra no se hiciera a través de Internet. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $E$ «producto electrónico» e $I$ «compra por Internet»: $P(E)=0{,}55$, $P(I)=0{,}72$, $P(E\mid I)=0{,}64$.
+
+**a)** $P(E\cap I)=P(I)\cdot P(E\mid I)=0{,}72\cdot0{,}64=0{,}4608$. **La probabilidad es $0{,}4608$.**
+
+**b)** $P(E\cup I)=P(E)+P(I)-P(E\cap I)=0{,}55+0{,}72-0{,}4608=0{,}8092$. **La probabilidad es $0{,}8092$.**
+
+**c)** $P(I^C\mid E^C)=\dfrac{P(E^C\cap I^C)}{P(E^C)}=\dfrac{1-P(E\cup I)}{1-P(E)}=\dfrac{1-0{,}8092}{0{,}45}=0{,}424$. **La probabilidad es $0{,}424$.**
+::::
+:::::
+
+
+### Ordinaria · Reserva 2021
+
+
+::::: {.ebau-ej #ebau-2021-ord-res-5}
+**Ejercicio 5** · Ordinaria · Reserva 2021 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ord-res/examen.pdf){target="_blank"}
+
+Sean $A$ y $B$ dos sucesos de un mismo experimento aleatorio de los que se sabe que:
+
+$$P(A-B)=0{,}3\qquad P(A^{C})=0{,}35\qquad P(B)=0{,}55$$
+
+a) Calcule la probabilidad de que suceda al menos uno de ellos. *(0,8 puntos)*
+
+b) Calcule la probabilidad de que ocurra $B$, sabiendo que no ha ocurrido $A$. *(0,6 puntos)*
+
+c) Calcule la probabilidad de que no ocurra ninguno de los dos sucesos. *(0,6 puntos)*
+
+d) Razone si los sucesos $A$ y $B$ son independientes. *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$P(A)=1-P(A^C)=1-0{,}35=0{,}65$. Como $P(A-B)=P(A)-P(A\cap B)=0{,}3$, $P(A\cap B)=0{,}65-0{,}3=0{,}35$.
+
+**a)** $P(A\cup B)=0{,}65+0{,}55-0{,}35=\mathbf{0{,}85}$.
+
+**b)** $P(B\mid A^C)=\dfrac{P(B\cap A^C)}{P(A^C)}=\dfrac{P(B)-P(A\cap B)}{0{,}35}=\dfrac{0{,}2}{0{,}35}=\dfrac{4}{7}\approx\mathbf{0{,}5714}$.
+
+**c)** $P(A^C\cap B^C)=1-P(A\cup B)=1-0{,}85=\mathbf{0{,}15}$.
+
+**d)** $P(A)\cdot P(B)=0{,}65\cdot0{,}55=0{,}3575\neq0{,}35=P(A\cap B)$: **no son independientes.**
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2021-ord-res-6}
+**Ejercicio 6** · Ordinaria · Reserva 2021 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ord-res/examen.pdf){target="_blank"}
+
+En una determinada muestra de suelo se han aislado dos tipos de bacterias, $A$ y $B$, de las cuales el $70\,\%$ son de $A$ y el $30\,\%$ de $B$. La probabilidad de que una bacteria de tipo $A$ reaccione a la prueba del nitrato es 0,15 y para la bacteria $B$ es 0,8. De las bacterias aisladas se selecciona una al azar.
+
+a) Calcule la probabilidad de que reaccione a la prueba del nitrato. *(1 punto)*
+
+b) Si la bacteria ha reaccionado a la prueba del nitrato, calcule la probabilidad de que sea del tipo $B$. *(1 punto)*
+
+c) Calcule la probabilidad de que la bacteria sea del tipo $A$ y no reaccione a la prueba del nitrato. *(0,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $N$ «reacciona a la prueba del nitrato»: $P(A)=0{,}7$, $P(B)=0{,}3$, $P(N\mid A)=0{,}15$, $P(N\mid B)=0{,}8$.
+
+**a)** $P(N)=0{,}7\cdot0{,}15+0{,}3\cdot0{,}8=0{,}105+0{,}24=\mathbf{0{,}345}$.
+
+**b)** $P(B\mid N)=\dfrac{P(B)\,P(N\mid B)}{P(N)}=\dfrac{0{,}24}{0{,}345}=\dfrac{16}{23}\approx\mathbf{0{,}6957}$.
+
+**c)** $P(A\cap N^C)=P(A)\,P(N^C\mid A)=0{,}7\cdot0{,}85=\mathbf{0{,}595}$.
+::::
+:::::
+
+
+### Ordinaria · Suplente 2021
+
+
+::::: {.ebau-ej #ebau-2021-ord-sup-5}
+**Ejercicio 5** · Ordinaria · Suplente 2021 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ord-sup/examen.pdf){target="_blank"}
+
+Una determinada ciudad tiene en la plantilla del ayuntamiento 1000 agentes de la policía local, 600 bomberos y 400 funcionarios de protección civil. En esta plantilla, el $42\,\%$ de policías, el $20\,\%$ de bomberos y el $50\,\%$ de funcionarios de protección civil son mujeres. Se elige una persona al azar de la plantilla.
+
+a) ¿Cuál es la probabilidad de que sea mujer? *(1,5 puntos)*
+
+b) Si la persona elegida es hombre, ¿cuál es la probabilidad de que sea bombero? *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $M$ «ser mujer». Plantilla total: $1000+600+400=2000$. Mujeres: $0{,}42\cdot1000+0{,}2\cdot600+0{,}5\cdot400=420+120+200=740$.
+
+**a)** $P(M)=\dfrac{740}{2000}=\mathbf{0{,}37}$.
+
+**b)** Hombres: $2000-740=1260$, de los cuales bomberos hay $600-120=480$. $P(\text{bombero}\mid\text{hombre})=\dfrac{480}{1260}=\dfrac{8}{21}\approx\mathbf{0{,}3810}$.
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2021-ord-sup-6}
+**Ejercicio 6** · Ordinaria · Suplente 2021 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ord-sup/examen.pdf){target="_blank"}
+
+Una urna $A$ contiene 4 bolas rojas y 5 verdes y otra urna $B$ contiene 6 bolas rojas y 3 verdes. Lanzamos dos dados y si la suma es mayor o igual a 9, extraemos una bola de la urna $A$ y en caso contrario, la extraemos de $B$.
+
+a) Calcule la probabilidad de que la bola extraída sea verde y de la urna $B$. *(1,5 puntos)*
+
+b) Halle la probabilidad de que la bola extraída sea roja. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $S$ «suma de los dados $\ge9$»: casos favorables $(3,6),(4,5),(4,6),(5,4),(5,5),(5,6),(6,3),(6,4),(6,5),(6,6)$, es decir $P(S)=\dfrac{10}{36}=\dfrac{5}{18}$ y $P(S^C)=\dfrac{13}{18}$.
+
+**a)** $P(\text{verde}\cap B)=P(S^C)\cdot P(\text{verde}\mid B)=\dfrac{13}{18}\cdot\dfrac{3}{9}=\dfrac{13}{54}\approx\mathbf{0{,}2407}$.
+
+**b)** $P(\text{roja})=P(S)\cdot\dfrac{4}{9}+P(S^C)\cdot\dfrac{6}{9}=\dfrac{5}{18}\cdot\dfrac{4}{9}+\dfrac{13}{18}\cdot\dfrac{6}{9}=\dfrac{20}{162}+\dfrac{78}{162}=\dfrac{49}{81}\approx\mathbf{0{,}6049}$.
+::::
+:::::
+
+
+### Extraordinaria 2021
+
+
+::::: {.ebau-ej #ebau-2021-ext-5}
+**Ejercicio 5** · Extraordinaria 2021 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ext/examen.pdf){target="_blank"}
+
+En una población, se sabe que el $15\,\%$ de las personas padece una determinada enfermedad. Si la persona está enferma, un test da positivo en el $92\,\%$ de los casos, mientras que si la persona está sana, el test da positivo en el $4\,\%$ de los casos (falso positivo). Se elige una persona al azar de esa población.
+
+a) Calcule la probabilidad de que, habiendo dado positivo el test, la persona esté enferma. *(1,25 puntos)*
+
+b) Calcule la probabilidad de que la persona esté enferma y el test salga negativo. *(0,5 puntos)*
+
+c) Calcule la probabilidad de que saliendo el test negativo, la persona esté enferma. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $E$ «enfermo» y $+$ «test positivo»: $P(E)=0{,}15$, $P(+\mid E)=0{,}92$, $P(+\mid E^C)=0{,}04$.
+
+**a)** $P(+)=0{,}15\cdot0{,}92+0{,}85\cdot0{,}04=0{,}138+0{,}034=0{,}172$.
+$$P(E\mid+)=\frac{0{,}138}{0{,}172}=\frac{69}{86}\approx\mathbf{0{,}8023}.$$
+
+**b)** $P(E\cap-)=0{,}15\cdot0{,}08=\mathbf{0{,}012}$.
+
+**c)** $P(-)=1-0{,}172=0{,}828$ y $P(E\mid-)=\dfrac{0{,}012}{0{,}828}=\dfrac{1}{69}\approx\mathbf{0{,}0145}$.
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2021-ext-6}
+**Ejercicio 6** · Extraordinaria 2021 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ext/examen.pdf){target="_blank"}
+
+En una comunidad de vecinos, el $90\,\%$ de sus miembros tiene vehículo propio, el $40\,\%$ hace uso del transporte público y un $3\,\%$ ni tiene vehículo propio ni usa el transporte público. Se elige al azar un miembro de esa comunidad.
+
+a) Calcule la probabilidad de que tenga vehículo propio o use el transporte público. *(1 punto)*
+
+b) Calcule la probabilidad de que use el transporte público y no tenga vehículo propio. *(0,5 puntos)*
+
+c) Calcule la probabilidad de que use el transporte público, sabiendo que no tiene vehículo propio. *(1 punto)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sean $V$ «tiene vehículo propio» y $T$ «usa el transporte público»: $P(V)=0{,}9$, $P(T)=0{,}4$, $P(V^C\cap T^C)=0{,}03$.
+
+**a)** $P(V\cup T)=1-P(V^C\cap T^C)=1-0{,}03=\mathbf{0{,}97}$.
+
+**b)** $P(V\cap T)=P(V)+P(T)-P(V\cup T)=0{,}9+0{,}4-0{,}97=0{,}33$, luego $P(T\cap V^C)=P(T)-P(T\cap V)=0{,}4-0{,}33=\mathbf{0{,}07}$.
+
+**c)** $P(T\mid V^C)=\dfrac{P(T\cap V^C)}{P(V^C)}=\dfrac{0{,}07}{0{,}1}=\mathbf{0{,}7}$.
+::::
+:::::
+
+
+### Extraordinaria · Reserva 2021
+
+
+::::: {.ebau-ej #ebau-2021-ext-res-5}
+**Ejercicio 5** · Extraordinaria · Reserva 2021 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ext-res/examen.pdf){target="_blank"}
+
+Una empresa dedicada a la fabricación de coches lanza al mercado un nuevo modelo que fabrica en tres plantas diferentes, $A$, $B$ y $C$. La planta $A$ produce el $45\,\%$ de los vehículos, la planta $B$ el $21\,\%$ y el resto los produce la planta $C$. Se ha detectado un defecto en la colocación del airbag, que afecta al $1\,\%$ de los coches procedentes de la planta $A$, al $3\,\%$ de los procedentes de la planta $B$ y al $2\,\%$ de los de la planta $C$. Se selecciona un coche al azar de este nuevo modelo.
+
+a) ¿Cuál es la probabilidad de que no sea defectuoso y proceda de la planta $C$? *(1,25 puntos)*
+
+b) Si el coche elegido no es defectuoso, ¿cuál es la probabilidad de que proceda de la planta $A$? *(1,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+$P(A)=0{,}45$, $P(B)=0{,}21$, $P(C)=0{,}34$. Sea $D$ «defectuoso»: $P(D\mid A)=0{,}01$, $P(D\mid B)=0{,}03$, $P(D\mid C)=0{,}02$.
+
+**a)** $P(D^C\cap C)=P(C)\cdot P(D^C\mid C)=0{,}34\cdot0{,}98=\mathbf{0{,}3332}$.
+
+**b)** $P(D^C)=0{,}45\cdot0{,}99+0{,}21\cdot0{,}97+0{,}34\cdot0{,}98=0{,}4455+0{,}2037+0{,}3332=0{,}9824$.
+$$P(A\mid D^C)=\frac{0{,}4455}{0{,}9824}=\frac{4455}{9824}\approx\mathbf{0{,}4535}.$$
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2021-ext-res-6}
+**Ejercicio 6** · Extraordinaria · Reserva 2021 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ext-res/examen.pdf){target="_blank"}
+
+La probabilidad de que una persona sana se contagie de otra enferma por un virus es del $80\,\%$ si coinciden en una reunión.
+
+a) Si una persona enferma se reúne con dos personas sanas, teniendo en cuenta que contagiar a distintas personas son sucesos independientes entre sí, ¿cuál es la probabilidad de que se contagien las dos personas a la vez? ¿Cuál es la probabilidad de que se contagie alguna de ellas? *(1 punto)*
+
+b) Una prueba para detectar la enfermedad da el resultado correcto en el $90\,\%$ de los casos cuando se le aplica a personas contagiadas y da falsos positivos en el $5\,\%$ de los casos cuando se aplica a personas sanas. Si una persona sana se reúne con una enferma y resulta positivo en una prueba posterior, ¿qué probabilidad hay de que se haya contagiado en la reunión? *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Contagiar a cada una tiene probabilidad $0{,}8$, de forma independiente. $P(\text{las dos})=0{,}8\cdot0{,}8=\mathbf{0{,}64}$; $P(\text{alguna})=1-0{,}2\cdot0{,}2=1-0{,}04=\mathbf{0{,}96}$.
+
+**b)** Sea $C$ «contagiado» y $+$ «resultado positivo»: $P(C)=0{,}8$, $P(+\mid C)=0{,}9$, $P(+\mid C^C)=0{,}05$.
+$$P(+)=0{,}8\cdot0{,}9+0{,}2\cdot0{,}05=0{,}72+0{,}01=0{,}73,\qquad P(C\mid+)=\frac{0{,}72}{0{,}73}=\frac{72}{73}\approx\mathbf{0{,}9863}.$$
+::::
+:::::
+
+
+### Extraordinaria · Suplente 2021
+
+
+::::: {.ebau-ej #ebau-2021-ext-sup-5}
+**Ejercicio 5** · Extraordinaria · Suplente 2021 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ext-sup/examen.pdf){target="_blank"}
+
+Un equipo andaluz de baloncesto jugó en una temporada un $40\,\%$ de los partidos en casa y el resto fuera. De los partidos que jugó en casa, obtuvo un $60\,\%$ de victorias y el resto fueron derrotas, mientras que de los que jugó fuera, obtuvo un $30\,\%$ de victorias y el resto derrotas. Se elige un partido de este equipo al azar.
+
+a) Calcule la probabilidad de que el partido acabe en victoria. *(1,25 puntos)*
+
+b) Calcule la probabilidad de que el partido haya sido jugado en casa, sabiendo que el resultado final fue una derrota. *(1 punto)*
+
+c) Si además se sabe que el $10\,\%$ de las victorias obtenidas en casa y el $20\,\%$ de las obtenidas fuera se produjeron tras una prórroga, calcule la probabilidad de que el partido acabe en victoria y que además esa victoria haya sido tras una prórroga. *(0,25 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+Sea $V$ «victoria»: $P(\text{casa})=0{,}4$, $P(\text{fuera})=0{,}6$, $P(V\mid\text{casa})=0{,}6$, $P(V\mid\text{fuera})=0{,}3$.
+
+**a)** $P(V)=0{,}4\cdot0{,}6+0{,}6\cdot0{,}3=0{,}24+0{,}18=\mathbf{0{,}42}$.
+
+**b)** $P(\text{casa}\mid V^C)=\dfrac{0{,}4\cdot0{,}4}{1-0{,}42}=\dfrac{0{,}16}{0{,}58}=\dfrac{8}{29}\approx\mathbf{0{,}2759}$.
+
+**c)** Victoria con prórroga: $0{,}4\cdot0{,}6\cdot0{,}1+0{,}6\cdot0{,}3\cdot0{,}2=0{,}024+0{,}036=\mathbf{0{,}06}$.
+::::
+:::::
+
+
+::::: {.ebau-ej #ebau-2021-ext-sup-6}
+**Ejercicio 6** · Extraordinaria · Suplente 2021 · Bloque C · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ext-sup/examen.pdf){target="_blank"}
+
+Sean $A$ y $B$ dos sucesos asociados a un mismo espacio muestral con $P(A^{C})=0{,}4$ y $P(A\cap B^{C})=0{,}12$.
+
+a) Calcule $P(A)$ y $P(A\cap B)$. *(0,5 puntos)*
+
+b) Determine $P(B)$ para que $A$ y $B$ sean independientes. *(0,5 puntos)*
+
+c) Si $P(B^{C})=0{,}2$, calcule $P(A\cup B)$, $P(A^{C}\cup B^{C})$ y $P(A\mid B^{C})$. *(1,5 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** $P(A)=1-0{,}4=\mathbf{0{,}6}$. Como $P(A)=P(A\cap B)+P(A\cap B^C)$, $P(A\cap B)=0{,}6-0{,}12=\mathbf{0{,}48}$.
+
+**b)** Independientes: $P(A\cap B)=P(A)P(B)\Rightarrow P(B)=\dfrac{0{,}48}{0{,}6}=\mathbf{0{,}8}$.
+
+**c)** $P(B)=1-0{,}2=0{,}8$ (coincide con el valor anterior, así que son independientes).
+
+- $P(A\cup B)=0{,}6+0{,}8-0{,}48=\mathbf{0{,}92}$.
+- $P(A^C\cup B^C)=1-P(A\cap B)=1-0{,}48=\mathbf{0{,}52}$.
+- $P(A\mid B^C)=\dfrac{P(A\cap B^C)}{P(B^C)}=\dfrac{0{,}12}{0{,}2}=\mathbf{0{,}6}$.
+::::
+:::::
+
+
+## También trabajan este tema
+
+Ejercicios cuyo tema principal es otro pero en los que aparece este tema:
+
+- [2026 Ordinaria, ejercicio 3A](11-muestreo-inferencia.qmd#ebau-2026-ord-3A) (tema principal: Muestreo e inferencia)
+
+
+---
+
+*Enunciados: Prueba de Acceso y Admisión a la Universidad (PEvAU hasta 2024, PAU desde 2025), Matemáticas Aplicadas a las Ciencias Sociales II, Andalucía, Ceuta, Melilla y centros en Marruecos (Distrito Único Andaluz). Cada ejercicio enlaza al PDF oficial del examen completo. La clasificación por temas es propia y puede discutirse: los ejercicios mixtos figuran en su tema principal.*

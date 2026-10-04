@@ -1,0 +1,219 @@
+---
+title: "PAU Andalucía — Sistemas de ecuaciones lineales"
+lang: es
+---
+
+Ejercicios de **Matemáticas Aplicadas a las Ciencias Sociales II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *sistemas de ecuaciones lineales*: **6 ejercicios** de convocatorias ordinarias y extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ccss/02-sistemas-ecuaciones-lineales/index.qmd), los [ejercicios del tema](../02-sistemas-ecuaciones-lineales/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ccss/02-sistemas-ecuaciones-lineales/index.qmd).
+
+Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+
+
+## 2026
+
+
+### Ordinaria 2026
+
+
+::::: {.ebau-ej #ebau-2026-ord-1A}
+**Ejercicio 1A** · Ordinaria 2026 · Bloque A · *(3 puntos)* · [Examen](../../../assets/pau-ccss/2026-ord/examen.pdf){target="_blank"}
+
+En un festival de cine con tres sesiones se venden tres tipos de entradas: Estándar, Premium y VIP. En la sesión inaugural se vendieron 5 entradas Premium, 20 Estándar y 20 VIP, obteniéndose una recaudación de 1800 €. En la sesión nocturna se vendieron 10 VIP, 10 Estándar y 5 Premium, recaudándose 1000 €. El día de la proyección de clausura, el número de entradas Premium superó en 4 al resto de entradas, que fueron 12 VIP y 4 Estándar, arrojando una recaudación de 1560 €.
+
+a) Calcule el precio de cada tipo de entrada y la recaudación total obtenida. *(2,25 puntos)*
+
+b) Determine el tipo de entrada con la que se obtuvo una mayor recaudación y el valor de dicha recaudación. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Sean $e$, $p$ y $v$ los precios de las entradas Estándar, Premium y VIP. En la clausura, las Premium fueron $4$ más que el resto ($12+4=16$): $16+4=20$. El sistema es
+$$\begin{cases}20e+5p+20v=1\,800\\10e+5p+10v=1\,000\\4e+20p+12v=1\,560\end{cases}\qquad\text{es decir}\qquad\begin{pmatrix}20&5&20\\10&5&10\\4&20&12\end{pmatrix}\begin{pmatrix}e\\p\\v\end{pmatrix}=\begin{pmatrix}1\,800\\1\,000\\1\,560\end{pmatrix}.$$
+Restando la segunda ecuación de la primera: $10e+10v=800\Rightarrow e+v=80$. De la segunda, $10(e+v)+5p=1\,000\Rightarrow800+5p=1\,000\Rightarrow p=40$. En la tercera: $4e+12v=1\,560-800=760\Rightarrow e+3v=190$, y con $e+v=80$ resulta $2v=110$, $v=55$ y $e=25$.
+
+**Estándar $25$ €, Premium $40$ € y VIP $55$ €.** Recaudación total: $1\,800+1\,000+1\,560=4\,360$ €.
+
+**b)** Entradas vendidas: Estándar $20+10+4=34$, Premium $5+5+20=30$ y VIP $20+10+12=42$. Recaudación por tipo: Estándar $34\cdot25=850$ €, Premium $30\cdot40=1\,200$ € y VIP $42\cdot55=2\,310$ € (suman $4\,360$ €).
+
+**La mayor recaudación se obtuvo con las entradas VIP: $2\,310$ €.**
+::::
+:::::
+
+
+### Extraordinaria · Suplente 2 2026
+
+
+::::: {.ebau-ej #ebau-2026-ext-sup2-1A}
+**Ejercicio 1A** · Extraordinaria · Suplente 2 2026 · Bloque A · *(3 puntos)* · [Examen](../../../assets/pau-ccss/2026-ext-sup2/examen.pdf){target="_blank"}
+
+Considere el sistema de ecuaciones lineales:
+$$\begin{cases}4x-7y+5z=9\\-2x+3y-z=-4\\6x-11y+9z=14\end{cases}$$
+
+a) Clasifique el sistema de ecuaciones y, si es posible, resuélvalo. *(1,5 puntos)*
+
+b) ¿Existe alguna solución donde la incógnita $y$ es el doble de $z$? En caso afirmativo, obténgala. *(0,75 puntos)*
+
+c) Indique si existe alguna solución del sistema en la que $y=-4$. En caso afirmativo, obténgala. *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Matriz de coeficientes $M=\begin{pmatrix}4&-7&5\\-2&3&-1\\6&-11&9\end{pmatrix}$, con $|M|=0$ y un menor $\left|\begin{matrix}4&-7\\-2&3\end{matrix}\right|=-2\neq0$: $\operatorname{rango}M=2$.
+
+La tercera ecuación es combinación de las otras dos: $E_3=2E_1+E_2$ ($4\cdot2-2=6$, $-7\cdot2+3=-11$, $5\cdot2-1=9$ y, en los términos independientes, $9\cdot2-4=14$). Por tanto la matriz ampliada también tiene rango $2$. Como $\operatorname{rango}M=\operatorname{rango}\left(M\mid b\right)=2<3$ incógnitas: **sistema compatible indeterminado, con un parámetro.**
+
+Se resuelven $E_1$ y $E_2$ tomando $z=\lambda$ como parámetro: $4x-7y=9-5\lambda$ y $-2x+3y=-4+\lambda$. Multiplicando la segunda por $2$ y sumando: $-y=1-3\lambda$, es decir, $y=3\lambda-1$; y de la segunda, $-2x=-4+\lambda-3(3\lambda-1)=-1-8\lambda$, es decir, $x=4\lambda+\dfrac{1}{2}$.
+
+**Soluciones: $(x,y,z)=\left(4\lambda+\dfrac{1}{2},\ 3\lambda-1,\ \lambda\right)$, $\lambda\in\mathbb R$.**
+
+**b)** $y=2z\Rightarrow3\lambda-1=2\lambda\Rightarrow\lambda=1$. **Sí existe: $(x,y,z)=\left(\dfrac{9}{2},\ 2,\ 1\right)$.**
+
+**c)** $y=-4\Rightarrow3\lambda-1=-4\Rightarrow\lambda=-1$. **Sí existe: $(x,y,z)=\left(-\dfrac{7}{2},\ -4,\ -1\right)$.**
+::::
+:::::
+
+
+## 2025
+
+
+### Ordinaria · Modelo B 2025
+
+
+::::: {.ebau-ej #ebau-2025-ord-b-1}
+**Ejercicio 1** · Ordinaria · Modelo B 2025 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-b/examen.pdf){target="_blank"}
+
+a) Un fabricante de paneles fotovoltaicos está analizando la eficiencia de tres modelos de placas (A, B y C). En un día determinado se realizaron tres pruebas. En la primera, utilizando 2 placas del modelo A, 1 placa del modelo B y 3 placas del modelo C, se generó una potencia efectiva total de $2\,960$ W. En la segunda, al combinar 1 placa del modelo A, 3 placas del modelo B y 2 placas del modelo C, se obtuvo una potencia efectiva total de $2\,990$ W. En la tercera, una configuración con 3 placas del modelo A, 2 placas del modelo B y 1 placa del modelo C produjo una potencia efectiva total de $2\,870$ W. Exprese el problema en forma matricial y discuta, a partir de la matriz del sistema, si se puede obtener la potencia efectiva que generó individualmente cada modelo de placa fotovoltaica. En caso afirmativo, obtenga dichas potencias efectivas. *(1,75 puntos)*
+
+b) Resuelva la ecuación matricial $2X=\begin{pmatrix}1&1\\0&-1\end{pmatrix}^{2}\cdot\begin{pmatrix}4\\1\end{pmatrix}$. *(0,75 puntos)*
+
+*Relacionado también con:* [Matrices y determinantes](01-matrices-determinantes.qmd), [Programación lineal](03-programacion-lineal.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Sean $a$, $b$ y $c$ las potencias efectivas (en W) de una placa de los modelos A, B y C. El sistema es
+$$\begin{cases}2a+b+3c=2\,960\\a+3b+2c=2\,990\\3a+2b+c=2\,870\end{cases}\qquad\text{es decir}\qquad\begin{pmatrix}2&1&3\\1&3&2\\3&2&1\end{pmatrix}\begin{pmatrix}a\\b\\c\end{pmatrix}=\begin{pmatrix}2\,960\\2\,990\\2\,870\end{pmatrix}.$$
+**Discusión:** $|M|=\left|\begin{matrix}2&1&3\\1&3&2\\3&2&1\end{matrix}\right|=-18\neq0$, luego el rango de $M$ es $3$, igual al de la ampliada y al número de incógnitas: **sistema compatible determinado; sí se puede obtener la potencia de cada modelo.**
+
+Resolviendo ($X=M^{-1}B$, o por Gauss):
+$$\begin{pmatrix}a\\b\\c\end{pmatrix}=M^{-1}\begin{pmatrix}2\,960\\2\,990\\2\,870\end{pmatrix}=\begin{pmatrix}450\\500\\520\end{pmatrix}.$$
+**Cada placa del modelo A genera $450$ W, la del B $500$ W y la del C $520$ W.** (Comprobación: $900+500+1\,560=2\,960$.)
+
+**b)** $\begin{pmatrix}1&1\\0&-1\end{pmatrix}^2=\begin{pmatrix}1&1\\0&-1\end{pmatrix}\begin{pmatrix}1&1\\0&-1\end{pmatrix}=\begin{pmatrix}1&0\\0&1\end{pmatrix}=I$. Entonces
+$$2X=I\begin{pmatrix}4\\1\end{pmatrix}=\begin{pmatrix}4\\1\end{pmatrix}\ \Rightarrow\ X=\begin{pmatrix}2\\\frac{1}{2}\end{pmatrix}.$$
+::::
+:::::
+
+
+### Ordinaria · Suplente 1 · Modelo B 2025
+
+
+::::: {.ebau-ej #ebau-2025-ord-sup1-b-1}
+**Ejercicio 1** · Ordinaria · Suplente 1 · Modelo B 2025 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-sup1-b/examen.pdf){target="_blank"}
+
+En una empresa de diseño gráfico, tres personas empleadas, Ana, Bruno y Carla, trabajan en un proyecto conjunto.
+
+a) Se sabe que Ana ha dedicado un tercio del total de horas que ha necesitado el proyecto. Además, la suma de las horas trabajadas por Ana y Bruno excede en 6 horas a las que ha dedicado Carla, quien a su vez ha trabajado 4 horas más que Bruno. ¿Cuántas horas ha trabajado cada persona involucrada en el proyecto? *(1,75 puntos)*
+
+b) Si la empresa paga 25 € por cada hora de trabajo en el proyecto y de seguros sociales el $23{,}60\,\%$ del salario, ¿cuánto tiene que abonar la empresa para pagar los costes de este proyecto? *(0,75 puntos)*
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Sean $a$, $b$ y $c$ las horas de Ana, Bruno y Carla, y $T=a+b+c$ el total. Datos: $a=\dfrac T3$; $a+b=c+6$; $c=b+4$.
+
+Sustituyendo $c=b+4$ en la segunda: $a+b=b+4+6\Rightarrow a=10$. Entonces $T=3a=30$ y $b+c=20$, con $c=b+4$: $2b+4=20\Rightarrow b=8$ y $c=12$.
+
+**Ana $10$ horas, Bruno $8$ horas y Carla $12$ horas.** (Comprobación: $10+8=18=12+6$.)
+
+**b)** Total de horas: $30$. Salarios: $30\cdot25=750$ €. Seguros sociales: $23{,}6\,\%$ de $750$ €, $177$ €. Coste total: $750\cdot1{,}236=927$.
+
+**La empresa tiene que abonar $927$ €.**
+::::
+:::::
+
+
+### Ordinaria · Suplente 2 · Modelo A 2025
+
+
+::::: {.ebau-ej #ebau-2025-ord-sup2-a-1}
+**Ejercicio 1** · Ordinaria · Suplente 2 · Modelo A 2025 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-sup2-a/examen.pdf){target="_blank"}
+
+a) En un festival gastronómico gaditano se han vendido entradas para tres eventos culinarios. Concretamente, 120 entradas para un taller de repostería, 50 para una demostración de cocina gourmet y 150 para una cata de vinos de la tierra de Cádiz. El total recaudado por la venta de entradas ha sido de $6\,460$ €. Se sabe que el precio de 10 entradas para el taller de repostería coincide con el coste de la suma de 2 entradas para la cata de vinos y 1 entrada para la demostración de cocina gourmet. Además, el coste de 2 entradas para el taller y 1 entrada para la cata de vinos supera en 6 € al de 2 entradas para la demostración de cocina gourmet. ¿Cuánto cuesta la entrada de cada evento? *(1,75 puntos)*
+
+b) Dada la matriz $A=\begin{pmatrix}1&0&-1\\-1&2&3\\1&2&1\end{pmatrix}$, calcule el rango de $A$ y $A^{2}$. *(0,75 puntos)*
+
+*Relacionado también con:* [Matrices y determinantes](01-matrices-determinantes.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Sean $r$, $g$ y $v$ los precios de la entrada del taller de repostería, la demostración de cocina gourmet y la cata de vinos. Las condiciones dan
+$$\begin{cases}120r+50g+150v=6\,460\\10r=2v+g\\2r+v=2g+6\end{cases}\qquad\text{es decir}\qquad\begin{cases}120r+50g+150v=6\,460\\10r-g-2v=0\\2r-2g+v=6\end{cases}$$
+De la segunda, $g=10r-2v$. En la tercera: $2r-20r+4v+v=6\Rightarrow-18r+5v=6$. En la primera: $120r+500r-100v+150v=6\,460\Rightarrow620r+50v=6\,460\Rightarrow62r+5v=646$. Restando: $80r=640\Rightarrow r=8$; entonces $5v=6+144=150\Rightarrow v=30$ y $g=80-60=20$.
+
+**Taller de repostería $8$ €, demostración de cocina gourmet $20$ € y cata de vinos $30$ €.** (Comprobación: $960+1\,000+4\,500=6\,460$.)
+
+**b)** $|A|=0$ (la tercera fila es $2F_1+F_2$) y el menor $\left|\begin{matrix}1&0\\-1&2\end{matrix}\right|=2\neq0$: **rango de $A$ igual a $2$.**
+
+$A^2=\begin{pmatrix}0&-2&-2\\0&10&10\\0&6&6\end{pmatrix}$: todas sus filas son proporcionales a $(0,1,1)$ y no es nula: **rango de $A^2$ igual a $1$.**
+::::
+:::::
+
+
+### Ordinaria · Suplente 2 · Modelo B 2025
+
+
+::::: {.ebau-ej #ebau-2025-ord-sup2-b-1}
+**Ejercicio 1** · Ordinaria · Suplente 2 · Modelo B 2025 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-sup2-b/examen.pdf){target="_blank"}
+
+a) La suma de tres números naturales es 113; al dividir el mayor entre el menor se obtiene de cociente 6 y resto 4 y al dividir el mayor entre el intermedio se obtiene de cociente 2 y resto 6. Halle dichos números. *(1,5 puntos)*
+
+b) Dadas las matrices $A=\begin{pmatrix}1&-1\\2&3\end{pmatrix}$ y $B=\begin{pmatrix}0&1\\2&1\end{pmatrix}$, compruebe si la inversa de la suma de dichas matrices coincide con la suma de las inversas de cada una. *(1 punto)*
+
+*Relacionado también con:* [Matrices y determinantes](01-matrices-determinantes.qmd).
+
+:::: {.callout-tip collapse="true" appearance="simple"}
+## Solución
+
+**a)** Sean $M>I>m$ los números. Condiciones: $M+I+m=113$; $M=6m+4$ (cociente $6$ y resto $4$); $M=2I+6$ (cociente $2$ y resto $6$). Entonces $m=\dfrac{M-4}{6}$ e $I=\dfrac{M-6}{2}$, y
+$$M+\frac{M-6}{2}+\frac{M-4}{6}=113\Rightarrow6M+3M-18+M-4=678\Rightarrow10M=700.$$
+**$M=70$, $I=32$ y $m=11$.** (Comprobación: $70+32+11=113$, $70=6\cdot11+4$ y $70=2\cdot32+6$.)
+
+**b)** $A+B=\begin{pmatrix}1&0\\4&4\end{pmatrix}$ con $|A+B|=4$ y $(A+B)^{-1}=\begin{pmatrix}1&0\\-1&\frac{1}{4}\end{pmatrix}$.
+
+Por otro lado, $|A|=5$, $A^{-1}=\dfrac{1}{5}\begin{pmatrix}3&1\\-2&1\end{pmatrix}$ y $|B|=-2$, $B^{-1}=\begin{pmatrix}-\frac{1}{2}&\frac{1}{2}\\1&0\end{pmatrix}$, de modo que
+$$A^{-1}+B^{-1}=\begin{pmatrix}\frac{1}{10}&\frac{7}{10}\\\frac{3}{5}&\frac{1}{5}\end{pmatrix}.$$
+**No coinciden:** $(A+B)^{-1}\neq A^{-1}+B^{-1}$ (en general, la inversa de una suma no es la suma de las inversas).
+::::
+:::::
+
+
+## También trabajan este tema
+
+Ejercicios cuyo tema principal es otro pero en los que aparece este tema:
+
+- [2026 Ordinaria · Suplente 2, ejercicio 1A](01-matrices-determinantes.qmd#ebau-2026-ord-sup2-1A) (tema principal: Matrices y determinantes)
+- [2025 Ordinaria · Suplente 1 · Modelo A, ejercicio 1](01-matrices-determinantes.qmd#ebau-2025-ord-sup1-a-1) (tema principal: Matrices y determinantes)
+- [2024 Ordinaria · Modelo A, ejercicio 1](01-matrices-determinantes.qmd#ebau-2024-ord-a-1) (tema principal: Matrices y determinantes)
+- [2024 Ordinaria · Reserva · Modelo A, ejercicio 1](01-matrices-determinantes.qmd#ebau-2024-ord-res-a-1) (tema principal: Matrices y determinantes)
+- [2024 Ordinaria · Reserva · Modelo B, ejercicio 1](01-matrices-determinantes.qmd#ebau-2024-ord-res-b-1) (tema principal: Matrices y determinantes)
+- [2024 Ordinaria · Suplente · Modelo A, ejercicio 1](01-matrices-determinantes.qmd#ebau-2024-ord-sup-a-1) (tema principal: Matrices y determinantes)
+- [2024 Ordinaria · Suplente · Modelo B, ejercicio 1](01-matrices-determinantes.qmd#ebau-2024-ord-sup-b-1) (tema principal: Matrices y determinantes)
+- [2023 Ordinaria · Modelo A, ejercicio 2](01-matrices-determinantes.qmd#ebau-2023-ord-a-2) (tema principal: Matrices y determinantes)
+- [2023 Ordinaria · Modelo B, ejercicio 1](01-matrices-determinantes.qmd#ebau-2023-ord-b-1) (tema principal: Matrices y determinantes)
+- [2023 Ordinaria · Reserva · Modelo A, ejercicio 1](01-matrices-determinantes.qmd#ebau-2023-ord-res-a-1) (tema principal: Matrices y determinantes)
+- [2023 Ordinaria · Suplente · Modelo B, ejercicio 2](01-matrices-determinantes.qmd#ebau-2023-ord-sup-b-2) (tema principal: Matrices y determinantes)
+- [2022 Ordinaria · Reserva, ejercicio 1](01-matrices-determinantes.qmd#ebau-2022-ord-res-1) (tema principal: Matrices y determinantes)
+- [2022 Ordinaria · Suplente, ejercicio 2](01-matrices-determinantes.qmd#ebau-2022-ord-sup-2) (tema principal: Matrices y determinantes)
+- [2022 Extraordinaria, ejercicio 1](01-matrices-determinantes.qmd#ebau-2022-ext-1) (tema principal: Matrices y determinantes)
+- [2022 Extraordinaria · Suplente, ejercicio 2](01-matrices-determinantes.qmd#ebau-2022-ext-sup-2) (tema principal: Matrices y determinantes)
+- [2021 Ordinaria, ejercicio 2](01-matrices-determinantes.qmd#ebau-2021-ord-2) (tema principal: Matrices y determinantes)
+- [2021 Ordinaria · Reserva, ejercicio 2](01-matrices-determinantes.qmd#ebau-2021-ord-res-2) (tema principal: Matrices y determinantes)
+- [2021 Extraordinaria, ejercicio 1](01-matrices-determinantes.qmd#ebau-2021-ext-1) (tema principal: Matrices y determinantes)
+- [2021 Extraordinaria · Reserva, ejercicio 2](01-matrices-determinantes.qmd#ebau-2021-ext-res-2) (tema principal: Matrices y determinantes)
+- [2021 Extraordinaria · Suplente, ejercicio 2](01-matrices-determinantes.qmd#ebau-2021-ext-sup-2) (tema principal: Matrices y determinantes)
+
+
+---
+
+*Enunciados: Prueba de Acceso y Admisión a la Universidad (PEvAU hasta 2024, PAU desde 2025), Matemáticas Aplicadas a las Ciencias Sociales II, Andalucía, Ceuta, Melilla y centros en Marruecos (Distrito Único Andaluz). Cada ejercicio enlaza al PDF oficial del examen completo. La clasificación por temas es propia y puede discutirse: los ejercicios mixtos figuran en su tema principal.*

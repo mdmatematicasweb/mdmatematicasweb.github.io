@@ -18,8 +18,8 @@ antes de empezar la siguiente fase**. Se trabaja fase a fase, con revisión del 
 ## Fases
 
 0 esqueleto (hecha) · 1 apuntes de los 11 temas (hecha) · 2 relaciones de ejercicios de los 11 temas (hecha, lotes 01–04,
-05–08, 09–11; revisada) · 3 actividades (hecha el 2026-10-04: 11 páginas, 63 módulos; pendiente de revisión; diseño en
-`docs/superpowers/specs/2026-10-04-ccss-fase3-actividades.md`; pruebas `node tests/gym.test.js` y `node tests/ccss-paginas.test.js`) · 4 PAU CCSS (`assets/pau-ccss/`, `scripts/ebau`) · 5 simulacro ·
+05–08, 09–11; revisada) · 3 actividades (hecha y cerrada el 2026-10-04: 11 páginas, 63 módulos; diseño en
+`docs/superpowers/specs/2026-10-04-ccss-fase3-actividades.md`; pruebas `node tests/gym.test.js` y `node tests/ccss-paginas.test.js`) · 4 PAU CCSS (hecha el 2026-10-04, pendiente de revisión: ver abajo) · 5 simulacro ·
 6 portada, navbar, sidebar y quitar la exclusión de `render`.
 
 ## Cómo se trabaja cada ejercicio o tema
@@ -47,3 +47,17 @@ antes de empezar la siguiente fase**. Se trabaja fase a fase, con revisión del 
 - Qué ejercicios dieron problemas y cómo se arreglaron.
 - Lo que no se ha podido comprobar (Quarto 1.10.18 está instalado: `quarto render ruta/index.qmd` renderiza un tema suelto).
 - Y esperar la revisión del usuario.
+
+## Fase 4: PAU CCSS (`scripts/ebau-ccss/`)
+
+- 36 exámenes oficiales de la Junta (2021-2026; las extraordinarias de 2023-2025 no están en su web), copiados en `assets/pau-ccss/<slug>/`
+  (`examen.pdf`, `criterios.pdf`; las tablas N(0,1) están en `assets/pau-ccss/tablas/`, una por contenido). `python3 scripts/ebau-ccss/oficial.py <carpeta con los zip>`
+  los extrae y escribe `oficial.json`. Origen: `https://www.juntadeandalucia.es/economiaconocimientoempresasyuniversidad/sguit/examanes_anios_anteriores/selectividad/sel_AAAA_matematicas_aplicadas.zip`.
+- Slug: `AAAA-ord|ext[-res|-sup|-sup1|-sup2][-a|-b]` (a/b: modelos A y B de 2023-2025, que son dos exámenes distintos). Cada examen es
+  `data/<slug>.md` (enunciados) + `soluciones/<slug>.md` (resolución breve). Ejercicios de 2026 con opción A)/B): `1A`, `1B`, etc.
+- `python3 scripts/ebau-ccss/build.py` genera `ejercicios/2-bachillerato-ccss/ebau/` (índice y una página por tema). No editar esas páginas a mano.
+- `python scripts/ebau-ccss/verificar_AAAA.py` (uno por año) resuelve con sympy y comprueba que cada resultado aparece en la solución
+  (misma lógica y mutación que `scripts/ccss/_ej_comun.py`; ver `_verif.py`). Los criterios de la Junta solo dan el reparto de puntos: las soluciones son propias.
+- Notas de lectura de enunciados: 2022 ext. titular ej. 2 no dice `x≥0, y≥0` y se supone (si no, `F` no tendría mínimo); `log` es decimal (2025 sup1-A ej. 3 y 2026 sup1);
+  para 99 % se usa `z=2,575` (interpolación) y para 92 % `z=1,75`; 2025 sup2-B ej. 7b: «10 %» se lee como el 10 % de la media muestral (se da también la lectura 0,1 kg).
+- Los apartados «represente» están descritos con palabras; faltan figuras (como las 15 de `scripts/ebau/figuras.py` en Ciencias).
