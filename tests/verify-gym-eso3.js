@@ -2,6 +2,7 @@
 // Cada función recibe el reto y recalcula la respuesta con otro método (enteros, fuerza bruta, otra fórmula).
 const gcdI = (a, b) => { a = Math.abs(a); b = Math.abs(b); while (b) [a, b] = [b, a % b]; return a; };
 const V = {};
+const eqn = (assert, a, b) => assert(Math.abs(a - b) < 1e-9, a + ' ≠ ' + b);
 const fv = (f) => f.n / f.d;
 const parts = (ch) => ch.answer.parts.map((p) => fv(p.value));
 
@@ -90,6 +91,86 @@ V['eso3-interes'] = (ch, { assert }) => {
   if (d.simple !== undefined) assert(Math.abs(v - simple) < 0.006);
   else if (d.comp !== undefined) assert(Math.abs(v - c) < 0.006);
   else assert(Math.abs(v - (c - d.C - simple)) < 0.006);
+};
+
+// ---------- Tema 5 ----------
+const horner = (c, x) => c.reduce((s, k) => s * x + k, 0);
+const powSum = (c, x) => c.reduce((s, k, i) => s + k * Math.pow(x, c.length - 1 - i), 0);
+V['eso3-pol-valor'] = (ch, { assert }) => {
+  const { c, a } = ch.data;
+  eqn(assert, fv(ch.answer.value), powSum(c, a));
+  eqn(assert, horner(c, a), powSum(c, a));
+};
+V['eso3-pol-operar'] = (ch, { assert }) => {
+  const d = ch.data, got = parts(ch);
+  const pts = [-2, -1, 0, 1, 2, 3];
+  const q = (r) => (x) => r[0] * x * x + r[1] * x + r[2];
+  if (d.c !== undefined && d.r.length === 3 && d.a !== undefined && d.d !== undefined) pts.forEach((x) => eqn(assert, (d.a * x + d.b) * (d.c * x + d.d), q(got)(x)));
+  else if (d.sign !== undefined) pts.forEach((x) => eqn(assert, Math.pow(d.a * x + d.sign * d.b, 2), q(got)(x)));
+  else if (d.k !== undefined) pts.forEach((x) => eqn(assert, d.A[0] * x * x + d.A[1] * x + d.A[2] - d.k * (d.B[0] * x * x + d.B[1] * x + d.B[2]), q(got)(x)));
+  else { eqn(assert, got[0], d.a * d.a); eqn(assert, got[1], -d.b * d.b); pts.forEach((x) => eqn(assert, (d.a * x + d.b) * (d.a * x - d.b), got[0] * x * x + got[1])); }
+};
+V['eso3-pol-division'] = (ch, { assert }) => {
+  const { a, P } = ch.data, [q0, q1, q2, rem] = parts(ch);
+  [-3, -1, 0, 2, 5].forEach((x) => eqn(assert, horner(P, x), (x - a) * (q0 * x * x + q1 * x + q2) + rem));
+  eqn(assert, rem, horner(P, a));
+};
+V['eso3-pol-factorizar'] = (ch, { assert }) => {
+  const d = ch.data, r = ch.answer.value.map(fv);
+  eqn(assert, new Set(r).size, 2);
+  if (d.c !== undefined) r.forEach((x) => assert(Math.abs(x * x + d.b * x + d.c) < 1e-9));
+  else if (d.a !== undefined) r.forEach((x) => assert(Math.abs(d.a * d.a * x * x - d.b * d.b) < 1e-9));
+  else r.forEach((x) => assert(Math.abs(d.k * x * x + d.k * d.r * x) < 1e-9));
+};
+// ---------- Tema 6 ----------
+V['eso3-ec-1grado'] = (ch, { assert }) => {
+  const d = ch.data, x = fv(ch.answer.value);
+  if (d.e === undefined && d.pp === undefined) assert(Math.abs(d.a * x + d.b - (d.c * x + d.d)) < 1e-9);
+  else if (d.pp === undefined) assert(Math.abs(d.a * (x + d.b) - (d.c * (x + d.d) + d.e)) < 1e-9);
+  else assert(Math.abs((x + d.a) / d.pp - (x + d.b) / d.qq - d.r) < 1e-9);
+};
+V['eso3-ec-2grado'] = (ch, { assert }) => {
+  const d = ch.data, r = ch.answer.value.map(fv);
+  eqn(assert, new Set(r).size, 2);
+  if (d.B !== undefined) r.forEach((x) => assert(Math.abs(d.a * x * x + d.B * x + d.C) < 1e-9));
+  else if (d.a !== undefined) r.forEach((x) => assert(Math.abs(d.a * x * x - d.a * d.r * d.r) < 1e-9));
+  else r.forEach((x) => assert(Math.abs(d.k * x * x - d.k * d.r * x) < 1e-9));
+};
+V['eso3-ec-discriminante'] = (ch, { assert }) => {
+  const { a, b, c } = ch.data, v = Number(ch.answer.value);
+  const t = 4 * a * c - b * b;                              // 4a·y_v, con y_v el valor del vértice
+  const sgnV = Math.sign(t) * Math.sign(a);                 // signo de y_v
+  const n = sgnV === 0 ? 1 : (a > 0 ? sgnV < 0 : sgnV > 0) ? 2 : 0;   // hay raíces si el vértice está al otro lado del eje que la apertura
+  eqn(assert, v, n);
+  // recuento numérico de cambios de signo
+  let cambios = 0, prev = Math.sign(a * -50 * -50 + b * -50 + c);
+  for (let x = -49.9; x <= 50; x += 0.1) { const s = Math.sign(a * x * x + b * x + c); if (s !== 0 && prev !== 0 && s !== prev) cambios++; if (s !== 0) prev = s; }
+  if (v !== 1) eqn(assert, cambios, v === 2 ? 2 : 0);
+};
+V['eso3-ec-problema'] = (ch, { assert }) => {
+  const d = ch.data, v = fv(ch.answer.value);
+  if (d.n !== undefined && d.S !== undefined && d.x !== undefined) { let s = 0; for (let i = 0; i < d.n; i++) s += v + i; eqn(assert, s, d.S); }
+  else if (d.madre !== undefined) eqn(assert, d.madre + v, d.k * (d.hij + v));
+  else if (d.P !== undefined) eqn(assert, 2 * v + 2 * (v + d.k), d.P);
+  else { eqn(assert, v * (v + d.k), d.A); assert(v > 0); }
+};
+// ---------- Tema 7 ----------
+V['eso3-sis-resolver'] = (ch, { assert }) => {
+  const { e } = ch.data, [x, y] = parts(ch);
+  e.forEach(([a, b, c]) => eqn(assert, a * x + b * y, c));
+  assert.notStrictEqual(e[0][0] * e[1][1] - e[1][0] * e[0][1], 0);
+};
+V['eso3-sis-clasificar'] = (ch, { assert }) => {
+  const [[a1, b1, c1], [a2, b2, c2]] = ch.data.e, det = a1 * b2 - a2 * b1;
+  const t = det !== 0 ? 0 : (a1 * c2 - a2 * c1 === 0 && b1 * c2 - b2 * c1 === 0 ? 1 : 2);
+  eqn(assert, Number(ch.answer.value), t);
+};
+V['eso3-sis-problema'] = (ch, { assert }) => {
+  const d = ch.data, [u, w] = parts(ch), has = (n) => ch.prompt.includes('$' + n + '$');
+  if (d.ctx === 'entradas') { assert(has(u + w) && has(u * d.pa + w * d.pn) && has(d.pa) && has(d.pn)); }
+  else if (d.ctx === 'animales') { assert(has(u + w) && has(2 * u + 4 * w)); }
+  else if (d.ctx === 'mezcla') { assert(has(u + w) && has(u * d.pa + w * d.pb)); }
+  else { assert(has(u + w) && has(u - w) && u > w); }
 };
 
 module.exports = V;
