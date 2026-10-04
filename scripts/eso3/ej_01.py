@@ -119,4 +119,16 @@ T.c("**Escalas de música.** En una partitura, una redonda dura $1$ tiempo compl
     f"a) $\\frac{{1}}{{2}}+\\frac{{1}}{{4}}+2\\cdot\\frac{{1}}{{8}}={L(R(1,2)+R(1,4)+R(1,4))}$: no cuadra, es un compás completo de $4/4$. b) $\\frac{{1}}{{2}}+\\frac{{1}}{{8}}={L(R(5,8))}$; faltan $\\frac{{3}}{{4}}-\\frac{{5}}{{8}}={L(R(3,4)-R(5,8))}$, es decir, una corchea. c) Por ejemplo, blanca ($\\frac{{1}}{{2}}$) + corchea ($\\frac{{1}}{{8}}$) + corchea ($\\frac{{1}}{{8}}$) $=\\frac{{3}}{{4}}$ (respuesta abierta).",
     [f"={L(R(1,2)+R(1,4)+R(1,4))}$", f"={L(R(5,8))}$", f"={L(R(3,4)-R(5,8))}$"])
 
+# comprobaciones independientes de los datos escritos a mano
+from sympy import symbols, solve, Eq, factorint as _f
+_x = symbols('x')
+T.chk(solve(Eq(R(3, 5)*_x + 14, _x - _x/10), _x) == [R(140, 3)], "ex 20")
+T.chk(R(1, 4) + R(2, 5) == R(13, 20) and 1 - R(13, 20) == R(7, 20) and R(7, 20)*2000 == 700, "ex 11")
+T.chk(R(15, 2)/R(3, 4) == 10 and R(3, 4)/6*10 == R(5, 4) and R(3, 4)/6*4 == R(1, 2), "ex 13, 16")
+T.chk(R(2, 5) + R(1, 3)*R(3, 5) == R(3, 5) and 15/(1 - R(1, 3) - R(1, 4)) == 36, "ex 17, 18")
+T.chk(sorted([R(7, 12), R(9, 16), R(5, 8)]) == [R(9, 16), R(7, 12), R(5, 8)] and R(7, 12)*48 == 28 and R(9, 16)*48 == 27 and R(5, 8)*48 == 30, "ex 3")
+T.chk(R('0.125') == R(1, 8) and R(7, 8) == R('0.875') and R(5, 6) == R(5, 6) and R(4, 11) * 99 == 36, "ex 6-8")
+T.chk(R(1, 2) - (R(-2, 5) + R(3, 10))*R(5, 3) == R(2, 3), "ex 5")
+T.chk(R(216 - 21, 90) == R(13, 6) and R(2*99 + 36 - 2, 99) == R(2*99 + 34, 99), "ex 7")
+T.chk(R(5, 3) > 1 and R(5, 3) < 2 and R(-3, 4) > -1 and R(4, 3) == R('1.3333333333').limit_denominator(3), "ex 10")
 T.cerrar()

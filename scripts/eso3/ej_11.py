@@ -1,0 +1,134 @@
+#!/usr/bin/env python3
+"""Relación de ejercicios del tema 11 (Funciones)."""
+from sympy import symbols, solve, Rational as R, sqrt, Interval, oo, S, FiniteSet, Reals, simplify, diff
+from sympy.calculus.util import continuous_domain
+from _ej import Tema, L, D
+
+T = Tema(11, "11-funciones", "Funciones")
+x = symbols('x', real=True)
+
+# ---- básicos ----
+T.b("Para $f(x)=2x^2-3x+1$ calcula $f(0)$, $f(2)$, $f(-1)$ y $f\\left(\\frac{1}{2}\\right)$.",
+    f"$f(0)=1$. $f(2)=8-6+1=3$. $f(-1)=2+3+1=6$. $f\\left(\\frac{{1}}{{2}}\\right)=\\frac{{1}}{{2}}-\\frac{{3}}{{2}}+1=0$.",
+    ["f(0)=1", "f(2)=8-6+1=3", "f(-1)=2+3+1=6", "\\right)=\\frac{1}{2}-\\frac{3}{2}+1=0"])
+
+T.b("Indica si cada correspondencia es una función: a) a cada persona, su DNI b) a cada número, sus divisores positivos c) a cada día del año, la temperatura máxima en Sevilla d) a cada DNI, la persona que lo tiene.",
+    "a) Sí: cada persona tiene un único DNI. b) No: un número tiene varios divisores (el $6$ tiene $1,2,3,6$). c) Sí: a cada día le corresponde una única temperatura máxima. d) Sí: un DNI identifica a una única persona.",
+    ["a) Sí", "b) No", "c) Sí", "d) Sí"])
+
+T.b("Halla el dominio de: a) $f(x)=\\dfrac{3}{x-5}$ b) $g(x)=\\sqrt{x+4}$ c) $h(x)=x^2-9$ d) $k(x)=\\dfrac{1}{x^2-4}$.",
+    "a) $x\\neq5$: $\\mathbb{R}\\setminus\\{5\\}$. b) $x+4\\geq0$: $[-4,+\\infty)$. c) $\\mathbb{R}$. d) $x^2\\neq4$: $\\mathbb{R}\\setminus\\{-2,2\\}$.",
+    ["\\mathbb{R}\\setminus\\{5\\}", "[-4,+\\infty)", "\\mathbb{R}\\setminus\\{-2,2\\}"])
+
+T.b("Completa la tabla de valores de $f(x)=x^2-2x$ para $x=-2,-1,0,1,2,3$ e indica el mínimo.",
+    "$f(-2)=8$, $f(-1)=3$, $f(0)=0$, $f(1)=-1$, $f(2)=0$, $f(3)=3$. El valor más pequeño es $f(1)=-1$: mínimo en $(1,-1)$.",
+    ["f(-2)=8$, $f(-1)=3$, $f(0)=0$, $f(1)=-1$, $f(2)=0$, $f(3)=3", "mínimo en $(1,-1)$"])
+
+T.b("Halla los puntos de corte con los ejes de $f(x)=x^2-x-6$.",
+    "Con $OY$: $f(0)=-6$, punto $(0,-6)$. Con $OX$: $x^2-x-6=0\\Rightarrow x=\\frac{1\\pm5}{2}=3$ o $-2$. Puntos $(3,0)$ y $(-2,0)$.",
+    ["(0,-6)", "(3,0)", "(-2,0)"])
+
+T.b("Calcula la tasa de variación media de $f(x)=x^2+1$ en $[1,3]$ y en $[-2,0]$ e interpreta el signo.",
+    "$[1,3]$: $\\frac{f(3)-f(1)}{3-1}=\\frac{10-2}{2}=4$ (crece). $[-2,0]$: $\\frac{f(0)-f(-2)}{0-(-2)}=\\frac{1-5}{2}=-2$ (decrece).",
+    ["\\frac{10-2}{2}=4", "\\frac{1-5}{2}=-2"])
+
+T.b("Una función cumple $f(-x)=f(x)$ para todo $x$. ¿Qué simetría tiene su gráfica? Comprueba si $f(x)=x^2-3$ y $g(x)=x^3-x$ son pares, impares o ninguna.",
+    "Simetría respecto del eje $OY$ (función par). $f(-x)=x^2-3=f(x)$: par. $g(-x)=-x^3+x=-g(x)$: impar.",
+    ["f(-x)=x^2-3=f(x)$: par", "-g(x)$: impar"])
+
+T.b("Esta tabla muestra los kilómetros recorridos por un ciclista: $t$ (h): $0,\\ 1,\\ 2,\\ 3,\\ 4$; $e$ (km): $0,\\ 18,\\ 36,\\ 54,\\ 72$. ¿Es proporcional? ¿Cuál es la fórmula y la velocidad?",
+    "El cociente $e/t$ es siempre $18$: es una proporcionalidad directa, $e=18t$ y la velocidad es $18$ km/h.",
+    ["e=18t$", "18$ km/h"])
+
+T.b("Interpreta: $f(x)$ es la cantidad de agua (en litros) de un depósito en el instante $x$ (en horas), con $f(0)=500$, $f(2)=300$ y $f(5)=0$. ¿Qué significa cada dato? ¿Cuál es la T.V.M. en $[0,5]$?",
+    "Al principio hay $500$ L; a las $2$ h quedan $300$ L; a las $5$ h está vacío. T.V.M. $=\\frac{0-500}{5}=-100$: pierde $100$ L por hora de media.",
+    ["\\frac{0-500}{5}=-100$"])
+
+T.b("Esboza (con una tabla) la gráfica de $f(x)=\\dfrac{4}{x}$ para $x=-4,-2,-1,1,2,4$. ¿Está definida en $x=0$?",
+    "$f(-4)=-1$, $f(-2)=-2$, $f(-1)=-4$, $f(1)=4$, $f(2)=2$, $f(4)=1$. No está definida en $x=0$: la gráfica tiene dos ramas.",
+    ["f(-4)=-1$, $f(-2)=-2$, $f(-1)=-4$, $f(1)=4$, $f(2)=2$, $f(4)=1"])
+
+# ---- problemas ----
+T.p("Un taxi cobra $2{,}5$ € de bajada de bandera y $1{,}1$ € por km. Escribe la fórmula $C(x)$ del coste, calcula $C(10)$ e indica el dominio razonable.",
+    f"$C(x)=2{{,}}5+1{{,}}1x$. $C(10)=2{{,}}5+11={D(2.5+11,1,False)}$ €. Dominio: $x\\geq0$ (los km no pueden ser negativos).",
+    ["C(x)=2{,}5+1{,}1x", f"C(10)=2{{,}}5+11={D(2.5+11,1,False)}$ €"])
+
+T.p("Una piscina se vacía a razón de $40$ L por minuto. Tiene $2\\,000$ L. Escribe $V(t)$, calcula cuándo queda vacía y di el dominio y recorrido.",
+    "$V(t)=2000-40t$. Vacía: $2000-40t=0\\Rightarrow t=50$ min. Dominio $[0,50]$; recorrido $[0,2000]$.",
+    ["V(t)=2000-40t", "t=50$ min", "[0,50]", "[0,2000]"])
+
+T.p("La temperatura (°C) a las $0,\\ 4,\\ 8,\\ 12,\\ 16,\\ 20,\\ 24$ horas fue $11,\\ 8,\\ 12,\\ 19,\\ 23,\\ 17,\\ 12$. Indica el máximo, el mínimo, los intervalos de crecimiento y la T.V.M. entre las $8$ y las $16$ h.",
+    "Máximo: $23$ °C a las $16$ h. Mínimo: $8$ °C a las $4$ h. Crece de $4$ a $16$ h; decrece de $0$ a $4$ h y de $16$ a $24$ h. T.V.M. $=\\frac{23-12}{16-8}=1{,}375$ °C/h.",
+    ["\\frac{23-12}{16-8}=1{,}375"])
+
+T.p("Para $f(x)=x^2-4x+3$ calcula: $f(2)$, los puntos de corte con los ejes y el intervalo donde la función es negativa (observa dónde queda por debajo del eje $OX$).",
+    "$f(2)=4-8+3=-1$. Cortes: $(0,3)$ y $x^2-4x+3=0\\Rightarrow x=1,\\ 3$. Es negativa entre las raíces: $(1,3)$.",
+    ["f(2)=4-8+3=-1", "(1,3)"])
+
+T.p("El perímetro de un rectángulo es $20$ m. Expresa su área $A(x)$ en función de uno de sus lados $x$ y calcula $A(2)$, $A(5)$ y $A(8)$. ¿Para qué lado parece máxima?",
+    "Otro lado $10-x$. $A(x)=x(10-x)$. $A(2)=16$, $A(5)=25$, $A(8)=16$. El máximo parece en $x=5$ (cuadrado de lado $5$).",
+    ["A(x)=x(10-x)", "A(5)=25"])
+
+T.p("Una empresa de alquiler de bicis cobra $4$ € por la primera hora y $2$ € por cada hora adicional (o fracción). Escribe en una tabla el coste para $1,\\ 2,\\ 3,\\ 4$ horas, la fórmula y calcula el coste de un día de $8$ horas.",
+    "Costes: $4,\\ 6,\\ 8,\\ 10$ €. Fórmula: $C(h)=4+2(h-1)=2h+2$. Para $8$ horas: $C(8)=18$ €.",
+    ["C(h)=4+2(h-1)=2h+2", "C(8)=18$ €"])
+
+T.p("La función $f$ cumple $f(1)=3$, $f(2)=5$, $f(3)=7$ y $f(4)=9$. Halla una fórmula, calcula $f(10)$ y estudia si la T.V.M. es constante.",
+    "Las diferencias son $2$: $f(x)=2x+1$. $f(10)=21$. La T.V.M. en cualquier intervalo es $2$: es una recta.",
+    ["f(x)=2x+1", "f(10)=21"])
+
+T.p("¿Cuál es el dominio de $f(x)=\\sqrt{3x-6}$? Calcula $f(2)$, $f(5)$ y $f(14)$.",
+    "$3x-6\\geq0\\Rightarrow x\\geq2$: $[2,+\\infty)$. $f(2)=0$, $f(5)=3$, $f(14)=6$.",
+    ["[2,+\\infty)", "f(5)=3$, $f(14)=6"])
+
+T.p("Una población de bacterias se cuadruplica cada hora. Parte de $10$. Haz una tabla para $t=0,1,2,3,4$ y calcula la T.V.M. en $[0,2]$ y en $[2,4]$. ¿Crece de forma constante?",
+    "$N(t)=10\\cdot4^t$: $10,\\ 40,\\ 160,\\ 640,\\ 2560$. T.V.M.$[0,2]=\\frac{160-10}{2}=75$; T.V.M.$[2,4]=\\frac{2560-160}{2}=1200$. No crece de forma constante: cada vez más rápido.",
+    ["75", "1200"])
+
+T.p("Un empleado cobra $10$ €/h las primeras $40$ horas semanales y $15$ €/h a partir de ahí. Escribe $S(h)$ como función a trozos y calcula lo que cobra con $30$ y con $46$ horas.",
+    "$S(h)=10h$ si $h\\leq40$; $S(h)=400+15(h-40)$ si $h>40$. $S(30)=300$ €. $S(46)=400+90=490$ €.",
+    ["S(30)=300$ €", "S(46)=400+90=490$ €"])
+
+# ---- competenciales ----
+T.c("**El consumo del coche.** Un coche gasta $5{,}5$ L cada $100$ km y tiene un depósito de $50$ L, lleno al empezar. a) Escribe la fórmula del combustible que queda tras $x$ km. b) ¿Cuántos km recorre hasta que queda vacío? c) Dibuja la gráfica (en una tabla) y di dominio y recorrido.",
+    f"a) $f(x)=50-0{{,}}055x$. b) $50-0{{,}}055x=0\\Rightarrow x={D(50/0.055,1,False)}$ km, unos $909$ km. c) $f(0)=50$, $f(400)=28$, $f(909)\\approx0$. Dominio $[0,909]$ y recorrido $[0,50]$.",
+    ["f(x)=50-0{,}055x", "unos $909$ km", "f(400)=28"])
+
+T.c("**La subida a un puerto.** La altitud (m) de un ciclista en una etapa, cada $10$ km, es $200,\\ 350,\\ 700,\\ 1400,\\ 1200,\\ 400$ (en $0,10,20,30,40,50$ km). a) ¿Cuál es el punto más alto y a qué km? b) Calcula la T.V.M. en cada tramo de $10$ km. c) ¿En qué tramo es más dura la subida?",
+    "a) $1400$ m en el km $30$. b) Tramos: $15,\\ 35,\\ 70,\\ -20,\\ -80$ m por km. c) El más duro es el km $20$–$30$ (sube $70$ m por km de media, un $7\\,\\%$ de pendiente).",
+    ["1400$ m en el km $30", "sube $70$ m por km"])
+
+T.c("**El agua del grifo.** Un depósito se llena así: durante las primeras $2$ horas entra agua a $30$ L/h; después se cierra el grifo $1$ hora; luego se abre otro a $60$ L/h durante $2$ horas. a) Calcula el volumen en $t=0,2,3,5$. b) Describe la gráfica por tramos. c) ¿Cuántos litros hay al final?",
+    "a) $V(0)=0$, $V(2)=60$, $V(3)=60$, $V(5)=60+120=180$ L. b) Tramo recta creciente ($30$ L/h), tramo constante, tramo recta creciente más inclinada ($60$ L/h). c) $180$ L.",
+    ["V(0)=0$, $V(2)=60$, $V(3)=60$, $V(5)=60+120=180$ L", "c) $180$ L"])
+
+T.c("**Dos funciones, una decisión.** El gimnasio A cobra $f(x)=20+2x$ al mes ($x$ = número de visitas) y el gimnasio B cobra $g(x)=6x$ al mes. a) Haz una tabla para $x=0,2,5,8,10$. b) ¿Para qué $x$ cuestan lo mismo? c) ¿Cuál conviene si vas 3 veces por semana (unas $12$ visitas al mes)?",
+    "a) A: $20,\\ 24,\\ 30,\\ 36,\\ 40$; B: $0,\\ 12,\\ 30,\\ 48,\\ 60$. b) $20+2x=6x\\Rightarrow x=5$ visitas. c) Con $12$: A cuesta $44$ € y B $72$ €: conviene A.",
+    ["x=5$ visitas", "44$ € y B $72$ €"])
+
+# comprobaciones independientes
+f = 2*x**2 - 3*x + 1
+T.chk([f.subs(x, v) for v in (0, 2, -1, R(1, 2))] == [1, 3, 6, 0], "ex 1")
+T.chk(continuous_domain(3/(x - 5), x, Reals) == S.Reals - FiniteSet(5) and continuous_domain(sqrt(x + 4), x, Reals) == Interval(-4, oo) and continuous_domain(1/(x**2 - 4), x, Reals) == S.Reals - FiniteSet(-2, 2), "ex 3")
+g = x**2 - 2*x
+T.chk([g.subs(x, v) for v in (-2, -1, 0, 1, 2, 3)] == [8, 3, 0, -1, 0, 3], "ex 4")
+T.chk(sorted(solve(x**2 - x - 6, x)) == [-2, 3], "ex 5")
+T.chk(R(10 - 2, 2) == 4 and R(1 - 5, 2) == -2, "ex 6")
+T.chk(simplify((x**2 - 3).subs(x, -x) - (x**2 - 3)) == 0 and simplify((x**3 - x).subs(x, -x) + (x**3 - x)) == 0, "ex 7")
+T.chk([R(4, v) for v in (-4, -2, -1, 1, 2, 4)] == [-1, -2, -4, 4, 2, 1], "ex 10")
+T.chk(2.5 + 11 == 13.5 and R(2000, 40) == 50, "ex 11-12")
+T.chk(R(23 - 12, 16 - 8) == R(11, 8) and abs(11 / 8 - 1.375) < 1e-12, "ex 13")
+q = x**2 - 4*x + 3
+T.chk(q.subs(x, 2) == -1 and sorted(solve(q, x)) == [1, 3], "ex 14")
+T.chk([(x*(10 - x)).subs(x, v) for v in (2, 5, 8)] == [16, 25, 16], "ex 15")
+T.chk([4 + 2*(h - 1) for h in (1, 2, 3, 4, 8)] == [4, 6, 8, 10, 18], "ex 16")
+T.chk([2*v + 1 for v in (1, 2, 3, 4, 10)] == [3, 5, 7, 9, 21], "ex 17")
+T.chk(solve(3*x - 6, x) == [2] and [sqrt(3*v - 6) for v in (2, 5, 14)] == [0, 3, 6], "ex 18")
+T.chk([10 * 4**t for t in range(5)] == [10, 40, 160, 640, 2560] and R(160 - 10, 2) == 75 and R(2560 - 160, 2) == 1200, "ex 19")
+T.chk(10 * 30 == 300 and 400 + 15 * 6 == 490, "ex 20")
+T.chk(abs(50 / 0.055 - 909.09) < 0.01 and 50 - 0.055 * 400 == 28, "ex 21")
+alt = [200, 350, 700, 1400, 1200, 400]
+T.chk([alt[i + 1] - alt[i] for i in range(5)] == [150, 350, 700, -200, -800] and max(alt) == 1400 and alt.index(1400) * 10 == 30, "ex 22 (los metros por tramo de 10 km son 150, 350, 700...)")
+T.chk(30 * 2 == 60 and 60 + 60 * 2 == 180, "ex 23")
+T.chk([20 + 2*v for v in (0, 2, 5, 8, 10)] == [20, 24, 30, 36, 40] and [6*v for v in (0, 2, 5, 8, 10)] == [0, 12, 30, 48, 60] and 20 + 24 == 44 and 72 == 6 * 12, "ex 24")
+T.cerrar()

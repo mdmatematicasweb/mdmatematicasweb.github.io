@@ -100,6 +100,9 @@ class Tema:
                 txt = it[campo]
                 if "nan" in txt.split() or "None" in txt or "zoo" in txt or "oo" in re.findall(r"\\infty|\boo\b", txt):
                     self._falla(f"ejercicio {k}: texto sospechoso en {campo}")
+                fuera = re.sub(r"\$[^$]*\$", "", txt)
+                if "{,}" in fuera or "\\frac" in fuera or "\\cdot" in fuera or "\\approx" in fuera or "\\Rightarrow" in fuera:
+                    self._falla(f"ejercicio {k}: LaTeX fuera de $…$ en {campo}")
                 if txt.count("$") % 2:
                     self._falla(f"ejercicio {k}: número impar de $ en {campo}")
                 if re.search(r"\\frac\{[^{}]*\}\{1\}(?![0-9])", txt):

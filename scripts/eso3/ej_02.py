@@ -107,4 +107,23 @@ T.c("**El Sol y la Tierra a escala.** El diámetro del Sol es $1{,}39\\cdot10^{9
     f"a) $\\frac{{1{{,}}39\\cdot10^9}}{{1{{,}}27\\cdot10^7}}\\approx{D(1.39e9/1.27e7,0)}$ veces. b) $\\frac{{1{{,}}27\\cdot10^7}}{{1{{,}}39\\cdot10^9}}\\cdot1000\\approx{D(1.27e7/1.39e9*1000,1)}$ mm. c) La escala es $1:1{{,}}39\\cdot10^9$, así que $\\frac{{1{{,}}5\\cdot10^{{11}}}}{{1{{,}}39\\cdot10^9}}\\approx{D(1.5e11/1.39e9,0)}$ m.",
     [f"\\approx{D(1.39e9/1.27e7,0)}$ veces", f"\\approx{D(1.27e7/1.39e9*1000,1)}$ mm", f"\\approx{D(1.5e11/1.39e9,0)}$ m"])
 
+# comprobaciones independientes de los datos escritos a mano
+from sympy import real_root
+T.chk(R(4)**-1 == R(1, 4) and R(2, 3)**-3 == R(27, 8) and R(5)**-2 == R(1, 25), "ex 1")
+T.chk(R(2)**3 == 8 and R(2)**6 * R(2)**-2 / R(2)**5 == R(1, 2), "ex 2, 17")
+T.chk(R(3)**4 * 9 / R(3)**2 * R(3)**-1 == 27, "ex 3")
+T.chk(R('3.2e5') * R('2.5e-2') == R('8e3') and R('6e8') / R('4e3') == R('1.5e5') and R('5.1e6') + R('8e5') == R('5.9e6'), "ex 5")
+T.chk(sqrt(169) == 13 and real_root(-64, 3) == -4 and root(81, 4) == 3 and sqrt(R(49, 25)) == R(7, 5), "ex 6")
+T.chk(simplify(sqrt(75) - 5*sqrt(3)) == 0 and simplify(sqrt(180) - 6*sqrt(5)) == 0 and simplify(cbrt(250) - 5*cbrt(2)) == 0, "ex 7")
+T.chk(simplify(sqrt(48) + sqrt(12) - sqrt(75) - sqrt(3)) == 0, "ex 8")
+T.chk(simplify(10/sqrt(5) - 2*sqrt(5)) == 0 and simplify(3/(sqrt(7) - 2) - (sqrt(7) + 2)) == 0, "ex 9")
+T.chk(3e5 * 5e2 == 1.5e8 and 2**12 == 4096 and 2**24 == 16777216, "ex 11, 12")
+T.chk(abs(3e-6/1.2e-7 - 25) < 1e-9, "ex 13")
+T.chk(simplify(4*sqrt(50) - 20*sqrt(2)) == 0 and real_root(216, 3) == 6 and 49**2 == 2401 and sqrt(2401) == 49, "ex 14-16")
+T.chk(abs(5.97e24/7.35e22 - 81.22) < 0.01 and abs(5.97e24 + 7.35e22 - 6.0435e24) < 1e18, "ex 18")
+T.chk(simplify(sqrt(18) + sqrt(8) - 5*sqrt(2)) == 0 and simplify(sqrt(18)*sqrt(8) - 12) == 0, "ex 19")
+T.chk(((sqrt(5) + sqrt(3))*(sqrt(5) - sqrt(3))).expand() == 2 and ((sqrt(5) + sqrt(3))**2).expand() == 8 + 2*sqrt(15), "ex 20")
+T.chk(abs(1e-4 * 2**10 - 0.1024) < 1e-12 and abs(1e-4 * 2**42 - 4.398e8) < 1e6, "ex 21")
+T.chk(64 * 2**30 / 2**23 == 2**13 and 2**13 // 50 == 163, "ex 22")
+T.chk(abs(1.39e9/1.27e7 - 109) < 1 and abs(1.5e11/1.39e9 - 107.9) < 0.1, "ex 24")
 T.cerrar()

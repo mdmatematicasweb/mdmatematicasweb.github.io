@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Relación de ejercicios del tema 5 (Lenguaje algebraico y polinomios)."""
-from sympy import symbols, expand, factor, div, latex, Poly, cancel, simplify, Rational as R, solve
+from sympy import symbols, expand, factor, div, latex, Poly, cancel, simplify, Rational as R, solve, Eq
 from _ej import Tema, L, D
 
 T = Tema(5, "05-polinomios", "Lenguaje algebraico y polinomios")
@@ -110,4 +110,19 @@ T.c("**El mosaico.** Un patio cuadrado de lado $a+b$ se pavimenta con un cuadrad
     f"a) $(a+b)^2=a^2+2ab+b^2$. b) $(6+2)^2={(6+2)**2}$ m². c) $2ab=2\\cdot6\\cdot2={2*6*2}$ m².",
     ["(a+b)^2=a^2+2ab+b^2", f"={(6+2)**2}$ m²", f"={2*6*2}$ m²"])
 
+# comprobaciones independientes de los datos escritos a mano
+T.chk(sorted(solve(x**2 + x - 56, x)) == [-8, 7], "ex 19")
+T.chk(factor(x**2 + x - 56) == (x + 8)*(x - 7), "ex 19 factor")
+T.chk(P.subs(x, 0) == -4 and Poly(P, x).degree() == 3, "ex 2")
+T.chk(solve((x**3 + symbols('k')*x**2 - 4*x + 4).subs(x, 2), symbols('k')) == [-1], "ex 14")
+T.chk(factor(x**3 - 6*x**2 + 11*x - 6) == (x - 1)*(x - 2)*(x - 3), "ex 15")
+T.chk(expand((x + 1)**2 - x**2) == 2*x + 1, "ex 16")
+T.chk((-x**2 + 8*x - 12).subs(x, 4) == 4 and expand(-(x - 2)*(x - 6)) == -x**2 + 8*x - 12, "ex 18")
+a2, b2, c2 = symbols('a2 b2 c2')
+T.chk(solve([c2 - 3, a2 + b2 + c2 - 6, a2 - b2 + c2 - 4], [a2, b2, c2]) == {a2: 2, b2: 1, c2: 3}, "ex 20")
+T.chk(expand((x + 5)*(x + 3) - x**2) == 8*x + 15 and 8*40 + 15 == 335, "ex 21")
+T.chk(solve(Eq(3 + R(12, 10)*x, 2 + R(14, 10)*x), x) == [5], "ex 22")
+T.chk(R(2*5 + 6, 2) - 5 == 3 and R(2*12 + 6, 2) - 12 == 3 and R(-6 + 6, 2) + 3 == 3, "ex 23")
+T.chk((6 + 2)**2 == 64 and 2*6*2 == 24, "ex 24")
+T.chk((3*a**2 - 2*a*b + b**2).subs({a: 2, b: -3}) == 33, "ex 10")
 T.cerrar()

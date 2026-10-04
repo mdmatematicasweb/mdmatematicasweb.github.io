@@ -49,8 +49,8 @@ T.b("Interpola tres términos entre $2$ y $34$ para que formen una progresión a
     f"Hay $5$ términos: $34=2+4d\\Rightarrow d=8$. La progresión es $2,\\ 10,\\ 18,\\ 26,\\ 34$.",
     ["d=8$", "$2,\\ 10,\\ 18,\\ 26,\\ 34$"])
 
-T.b("¿Cuántos términos de la progresión $5,\\ 8,\\ 11,\\dots$ hay que sumar para obtener $392$?",
-    f"$S_n=\\frac{{(10+3(n-1))n}}{{2}}=392\\Rightarrow3n^2+7n-784=0\\Rightarrow n=\\frac{{-7\\pm97}}{{6}}$. Solo vale la positiva: $n=15$.",
+T.b("¿Cuántos términos de la progresión $5,\\ 8,\\ 11,\\dots$ hay que sumar para obtener $390$?",
+    f"$S_n=\\frac{{(10+3(n-1))n}}{{2}}=390\\Rightarrow3n^2+7n-780=0\\Rightarrow n=\\frac{{-7\\pm97}}{{6}}$. Solo vale la positiva: $n=15$.",
     ["$n=15$"])
 
 T.b("Calcula la suma $1+2+3+\\dots+60$ y la suma de los múltiplos de $5$ menores o iguales que $200$.",
@@ -115,4 +115,24 @@ T.c("**Una cuenta atrás.** Para una fiesta se apilan vasos en pirámide: $1$ en
     f"a) $1+2+\\dots+8=\\frac{{9\\cdot8}}{{2}}={sum_ar(1,1,8)}$ vasos. b) $\\frac{{n(n+1)}}{{2}}=120\\Rightarrow n=15$ filas, y la de abajo tiene $15$ vasos. c) $\\frac{{16\\cdot15}}{{2}}={sum_ar(1,1,15)}$ vasos.",
     [f"={sum_ar(1,1,8)}$ vasos", "n=15$ filas", f"={sum_ar(1,1,15)}$ vasos"])
 
+# comprobaciones independientes de los datos escritos a mano
+n = symbols('n')
+T.chk([3*k**2 - 2 for k in range(1, 6)] == [1, 10, 25, 46, 73], "ex 1")
+T.chk(solve(Eq((10 + 3*(n - 1))*n/2, 390), n) == [-R(52, 3), 15] and sum(5 + 3*k for k in range(15)) == 390 and 49 + 4*3*780 == 97**2, "ex 9: n=15")
+T.chk(2 + 4*8 == 34 and [2 + 8*k for k in range(5)] == [2, 10, 18, 26, 34], "ex 8")
+T.chk(R(27, 81) == R(1, 3) and R(81) / (1 - R(1, 3)) == R(243, 2), "ex 6")
+T.chk(sum(range(1, 61)) == 1830 and sum(range(5, 201, 5)) == 4100, "ex 10")
+T.chk(abs(2 * 0.6**5 - 0.15552) < 1e-12 and abs(2 + 2 * 1.2 / (1 - 0.6) - 8) < 1e-9, "ex 13")
+T.chk(abs(3000 * 1.04**10 - 4440.73) < 0.01, "ex 14")
+T.chk(100 * 3**6 == 72900 and sum(100 * 3**k for k in range(7)) == 109300, "ex 15")
+T.chk(20 + 11 * 18 == 218 and sum(20 + 18*k for k in range(12)) == 1428, "ex 16")
+x = symbols('x')
+T.chk(solve(Eq((x + 3) - (x - 1), (2*x + 2) - (x + 3)), x) == [5], "ex 17")
+T.chk(abs(18000 * 1.03**9 - 23485.92) < 0.01 and abs(18000 * (1.03**10 - 1)/0.03 - 206349.83) < 0.01, "ex 18")
+T.chk(150 * 2**9 == 76800 < 100000 < 150 * 2**10, "ex 19")
+T.chk(sum(k*k for k in range(1, 11)) == 385, "ex 20")
+T.chk(20 + 11*10 == 130 and sum(20 + 10*k for k in range(12)) == 900 and sum(20 + 10*k for k in range(14)) == 1190 and sum(20 + 10*k for k in range(15)) == 1350, "ex 21")
+T.chk(2**6 == 64 and 2**10 * 0.1 == 102.4 and 2**14 * 0.1 == 1638.4 < 2000 < 2**15 * 0.1, "ex 22")
+T.chk(24000 + 9*1200 == 34800 and sum(24000 + 1200*k for k in range(10)) == 294000 and sum(22000 * 1.05**k for k in range(10)) < 294000, "ex 23")
+T.chk(sum(range(1, 9)) == 36 and sum(range(1, 16)) == 120 and sum(range(1, 16)) == 120, "ex 24")
 T.cerrar()

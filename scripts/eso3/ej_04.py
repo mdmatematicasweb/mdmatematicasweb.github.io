@@ -74,7 +74,7 @@ T.p("El precio de un móvil subió un $15\\,\\%$ y ahora cuesta $391$ €. ¿Cu�
     [f"={int(391/1.15)}$ €", f"={E2(391*0.85)}$ €"])
 
 T.p("Un banco ofrece un $2{,}5\\,\\%$ anual con interés compuesto. ¿En cuántos años se duplica aproximadamente un capital? Prueba con $25,\\ 28$ y $30$ años.",
-    f"$1{{,}}025^{{25}}\\approx{D(1.025**25,3,False)}$; $1{{,}}025^{{28}}\\approx{D(1.025**28,3,False)}$; $1{{,}}025^{{30}}\\approx{D(1.025**30,3,False)}$. Se duplica entre los años $28$ y $29$, hacia los $28$ años.",
+    f"$1{{,}}025^{{25}}\\approx{D(1.025**25,3,False)}$; $1{{,}}025^{{28}}\\approx{D(1.025**28,3,False)}$; $1{{,}}025^{{30}}\\approx{D(1.025**30,3,False)}$. Con $28$ años aún no se ha duplicado ($<2$) y con $30$ sí: se duplica a los $\\frac{{\\ln2}}{{\\ln1{{,}}025}}\\approx28{{,}}1$ años, es decir, durante el año $29$.",
     [f"\\approx{D(1.025**25,3,False)}$", f"\\approx{D(1.025**28,3,False)}$", f"\\approx{D(1.025**30,3,False)}$"])
 
 T.p("Un artículo tiene un precio con IVA del $21\\,\\%$ de $72{,}60$ €. Calcula el precio sin IVA y la cantidad de IVA. Si el IVA bajara al $10\\,\\%$, ¿cuánto costaría?",
@@ -106,4 +106,30 @@ T.c("**Una hipoteca de juguete.** Pides prestados $12\\,000$ € para una reform
     f"a) $12000\\cdot1{{,}}06^3={E2(12000*1.06**3)}$ €. b) Intereses: ${E2(12000*1.06**3-12000)}$ €. c) Simple: $12000\\cdot0{{,}}06\\cdot3={int(12000*0.06*3)}$ €, menos que con interés compuesto. Para quien pide el préstamo conviene el interés simple.",
     [f"={E2(12000*1.06**3)}$ €", f"{E2(12000*1.06**3-12000)}$ €", f"={int(12000*0.06*3)}$ €"])
 
+# comprobaciones independientes de los datos escritos a mano
+T.chk(R(5*84, 12) == 35 and R(9*35, 15) == 21, "ex 1")
+T.chk(abs(5.40/3 - 1.8) < 1e-12 and abs(8*1.8 - 14.4) < 1e-12 and 27/1.8 == 15, "ex 2")
+T.chk(6*15 == 90 and 90//9 == 10 and 90//5 == 18, "ex 3")
+T.chk(abs(0.18*450 - 81) < 1e-12 and 63/420*100 == 15 and abs(72/0.24 - 300) < 1e-9, "ex 4")
+T.chk(abs(120*0.65 - 78) < 1e-12 and 120 - 78 == 42, "ex 5")
+T.chk(abs(480*1.21 - 580.8) < 1e-9 and abs(605/1.21 - 500) < 1e-9, "ex 6")
+T.chk(abs(1.2*0.8 - 0.96) < 1e-12, "ex 7")
+T.chk(abs(4000*0.035*4 - 560) < 1e-9 and abs(4000*1.035**4 - 4590.09) < 0.01, "ex 8")
+T.chk(abs(7.5*50000/100000 - 3.75) < 1e-12 and 12*100000/50000 == 24, "ex 9")
+T.chk(1800/9 == 200, "ex 10")
+T.chk(abs(6.4*3.5 - 22.4) < 1e-9 and abs(22.4*1.65 - 36.96) < 1e-9, "ex 11")
+T.chk(150/6 == 25 and 25*15 == 375 and 1000/50 == 20, "ex 12")
+T.chk(30/4 == 7.5 and 52.5/7.5 == 7, "ex 13")
+T.chk(72/6 == 12 and 72/4.5 == 16 and 8*9 == 72, "ex 14")
+T.chk(abs(85*0.7*0.9 - 53.55) < 1e-9 and abs(85*0.6 - 51) < 1e-9 and abs(1 - 0.7*0.9 - 0.37) < 1e-12, "ex 15")
+T.chk(abs(391/1.15 - 340) < 1e-9 and abs(391*0.85 - 332.35) < 1e-9, "ex 16")
+from math import log
+T.chk(1.025**28 < 2 < 1.025**29 and abs(log(2)/log(1.025) - 28.07) < 0.01 and 1.025**30 > 2, "ex 17")
+T.chk(abs(72.6/1.21 - 60) < 1e-9 and abs(72.6 - 60 - 12.6) < 1e-9 and abs(60*1.1 - 66) < 1e-9, "ex 18")
+T.chk(0.4*30 == 12 and abs(17/35*100 - 48.571) < 0.001, "ex 19")
+T.chk(abs(4500*0.45 - 4500*0.45) < 1e-9 and 2000*0.45 == 900 and abs(4500*(1/2)/(31/30) - 2177.42) < 0.01 and abs(4500*(1/5)/(31/30) - 870.97) < 0.01, "ex 20")
+T.chk(abs(1.35/0.6 - 2.25) < 1e-12 and abs(1.65/1.5 - 1.1) < 1e-12 and abs(6*2.25 - 13.5) < 1e-12 and abs(13.5 - 6.6 - 6.9) < 1e-9, "ex 21")
+T.chk(abs(392*0.86 - 337.12) < 1e-9 and abs((337.12 - 250)/0.86 - 101.30) < 0.01 and abs(400 - 101.30 - 298.70) < 0.01, "ex 22")
+T.chk(abs(280*0.15 + 12 - 54) < 1e-9 and abs(54*1.051*1.21 - 68.67) < 0.01 and abs((238*0.15 + 12)*1.051*1.21 - 60.66) < 0.01, "ex 23")
+T.chk(abs(12000*1.06**3 - 14292.19) < 0.01 and abs(12000*0.06*3 - 2160) < 1e-9, "ex 24")
 T.cerrar()
