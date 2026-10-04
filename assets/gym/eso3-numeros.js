@@ -327,7 +327,7 @@
       'En una progresión geométrica cada término es el anterior por la razón $r$. Término general: $a_n=a_1\\cdot r^{n-1}$. Suma: $S_n=\\frac{a_1(r^n-1)}{r-1}$. Si $|r|<1$, la suma de todos los términos es $S=\\frac{a_1}{1-r}$.',
       'Ejemplo: $3,6,12,\\dots$ tiene $r=2$; $a_6=3\\cdot2^5=96$ y $S_6=\\frac{3\\,(2^6-1)}{2-1}=189$. Y $8+4+2+1+\\dots=\\frac{8}{1-\\frac12}=16$.',
     ],
-    params: [{ key: 'tipo', label: 'Qué calcular', options: [['termino', 'Un término'], ['suma', 'La suma de n términos'], ['infinita', 'Suma de infinitos términos']] }],
+    params: [{ key: 'tipo', label: 'Qué calcular', options: [['termino', 'Un término'], ['suma', 'La suma de n términos'], ['infinita', 'Suma de infinitos términos (ampliación)']] }],
     generate(p) {
       if (p.tipo === 'infinita') {
         const r = rnd.pick([F(1, 2), F(1, 3), F(2, 3), F(1, 4), F(3, 4), F(-1, 2), F(-1, 3)]);
