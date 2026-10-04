@@ -209,4 +209,94 @@ v.ok(sum(d) == 270 and R(sum(d), 10) == 27 and cerca(E8, 3.684, 5e-4) and cerca(
 v.solucion(s, "8", "\\bar x=\\frac{270}{10}=27", "E=3{,}684", "(23{,}316,30{,}684)", "P(X>20)=0{,}9251")
 
 
+# ======================= 2024-ord-sup-a =======================
+s = "2024-ord-sup-a"
+P = Matrix([[1, 0, 1], [0, 1, 0], [1, -1, -1]])
+J = Matrix([[2, 1, 0], [0, 2, 0], [0, 0, -1]])
+A = P * J * P.inv()
+v.ok(P.det() == -2 and P.inv() * A * P == J and A == Matrix([[R(1, 2), R(5, 2), R(3, 2)], [0, 2, 0], [R(3, 2), R(-1, 2), R(1, 2)]]) and A ** 3 == P * J ** 3 * P.inv() and J ** 3 == Matrix([[8, 12, 0], [0, 8, 0], [0, 0, -1]]), "2024-ord-sup-a ej.1")
+v.solucion(s, "1", "|P|=-2", mat(P.inv()), mat(P * J), mat(A), mat(J ** 3), mat(P * J ** 3), mat(A ** 3))
+
+V = vertices([(1, 1, 12, ">="), (1, 1, 40, "<="), (1, -3, 0, ">="), (0, 1, 0, ">="), (1, 0, 0, ">=")])
+Iv = {q: 32 * q[0] + 35 * q[1] for q in V}
+v.ok(V == [(9, 3), (12, 0), (30, 10), (40, 0)] and max(Iv.values()) == Iv[(30, 10)] == 1310 and Iv[(12, 0)] == 384 and Iv[(40, 0)] == 1280 and Iv[(9, 3)] == 393, "2024-ord-sup-a ej.2")
+v.solucion(s, "2", "(12,0)", "(40,0)", "(30,10)", "(9,3)", "1\\,310")
+
+fx, gx = -x ** 2 + 6 * x, x ** 2 / 5
+Area = integrate(fx - gx, (x, 0, 5))
+v.ok(sorted(solve(fx - gx, x)) == [0, 5] and fx.subs(x, 5) == gx.subs(x, 5) == 5 and Area == 25 and 25 * 100 == 2500 and 2500 * 75 == 187500, "2024-ord-sup-a ej.3")
+v.solucion(s, "3", "(5,5)", "-50+75=25", "2\\,500\\cdot75=187\\,500")
+
+f1, f2 = 2 - x ** 2, (x - 2) ** 2
+v.ok(f1.subs(x, 1) == f2.subs(x, 1) == 1 and diff(f1, x).subs(x, 1) == diff(f2, x).subs(x, 1) == -2 and sorted(solve(f1 - 1, x)) == [-1, 1] and sorted(solve(f2 - 1, x)) == [1, 3]
+     and integrate(f1 - 1, (x, -1, 1)) == R(4, 3) and integrate(1 - f2, (x, 1, 3)) == R(4, 3), "2024-ord-sup-a ej.4")
+v.solucion(s, "4", "f'(1^-)=-2", "A=\\frac{8}{3}", "\\frac{4}{3}+\\frac{4}{3}")
+
+pF = 1 - R(4, 10)
+pHF = pF * R(3, 10)
+pU = R(45, 100) + pF - pHF
+v.ok(pHF == R(18, 100) and 1 - pU == R(13, 100) and (pF - pHF) / (1 - R(45, 100)) == R(42, 55) and cerca(R(42, 55), 0.7636), "2024-ord-sup-a ej.5")
+v.solucion(s, "5", "P(H\\cap F)=0{,}18", "P(H^C\\cap F^C)=0{,}13", "\\frac{42}{55}", "\\approx0{,}7636")
+
+pB = R(35, 100) * R(99, 100) / (1 - R(205, 10000))
+p = (R(205, 10000) - R(35, 100) * R(1, 100)) / R(65, 100)
+pAD = R(25, 100) * p / R(205, 10000)
+v.ok(pB == R(231, 653) and p == R(17, 650) and pAD == R(170, 533) and cerca(pB, 0.3538) and cerca(pAD, 0.3189), "2024-ord-sup-a ej.6")
+v.solucion(s, "6", "P(B\\mid D^C)=\\frac{231}{653}", "\\approx0{,}3538", "p=\\frac{17}{650}", "P(A\\mid D)=\\frac{170}{533}", "\\approx0{,}3189")
+
+E7, lo7, hi7 = ic_prop(R(3, 4), 220, R(224, 100))
+n7 = R(224, 100) ** 2 * R(3, 4) * R(1, 4) / R(25, 1000) ** 2
+v.ok(R(165, 220) == R(3, 4) and cerca(E7, 0.0654) and cerca(lo7, 0.6846) and cerca(hi7, 0.8154) and lo7 < R(7, 10) < hi7 and cerca(n7, 1505.28, 5e-3) and int(n7) + 1 == 1506, "2024-ord-sup-a ej.7")
+v.solucion(s, "7", "E=0{,}0654", "(0{,}6846,0{,}8154)", "1\\,505{,}28", "n=1\\,506")
+
+d = [R(q) for q in "2.71 3.84 3.26 2.28 2.86 3.08 3.07 2.46 2.54 2.58".split()]
+m8 = sum(d) / 10
+E8 = R(185, 100) * R(36, 100) / sqrt(10)
+n8 = (R(185, 100) * R(36, 100) / R(5, 100)) ** 2
+v.ok(sum(d) == R(2868, 100) and m8 == R(2868, 1000) and cerca(E8, 0.2106) and cerca(m8 - E8, 2.6574) and cerca(m8 + E8, 3.0786) and cerca(n8, 177.42, 5e-3) and int(n8) + 1 == 178, "2024-ord-sup-a ej.8")
+v.solucion(s, "8", "\\bar x=2{,}868", "E=0{,}2106", "(2{,}6574,3{,}0786)", "177{,}42", "n=178")
+
+
+# ======================= 2024-ord-sup-b =======================
+s = "2024-ord-sup-b"
+M = Matrix([[1, 0, 1], [2, 1, 0], [1, 1, 1]])
+N = Matrix([[3, 2, 2], [5, 2, 1], [7, 4, 0]])
+Va = Matrix([5 - a ** 2, a - 1, a ** 2])
+X = (N + eye(3)) * M.inv()
+v.ok(solve(list(M.T * Va - Matrix([5, 1, 5])), a, dict=True) == [{a: 1}] and M.det() == 2 and X * M - eye(3) == N and X == Matrix([[1, 1, 1], [0, 2, 1], [0, 3, 1]]) and Va.shape == (3, 1) and (N + M.T).shape == (3, 3), "2024-ord-sup-b ej.1")
+v.solucion(s, "1", "a=1", "|M|=2", mat(M.inv()), mat(N + eye(3)), mat(X), "3\\times1")
+
+V = vertices([(2, 6, 150, "<="), (3, 4, 120, "<="), (0, 1, 6, ">="), (1, 0, 0, ">=")])
+Fv = {q: q[0] + q[1] for q in V}
+v.ok(V == [(0, 6), (0, 25), (12, 21), (32, 6)] and max(Fv.values()) == Fv[(32, 6)] == 38 and Fv[(12, 21)] == 33 and 2 * 32 + 6 * 6 == 100 and 3 * 32 + 4 * 6 == 120, "2024-ord-sup-b ej.2")
+v.solucion(s, "2", "(0,6)", "(0,25)", "(12,21)", "(32,6)", "2\\cdot32+6\\cdot6=100", "3\\cdot32+4\\cdot6=120")
+
+fx = 1 - 4 / (3 + x)
+v.ok(solve(fx, x) == [1] and fx.subs(x, 0) == R(-1, 3) and limit(fx, x, oo) == 1 and limit(fx, x, -3, "+") == -oo and limit(fx, x, -3, "-") == oo and sorted(solve(diff(fx, x) - 1, x)) == [-5, -1] and fx.subs(x, -1) == -1 and fx.subs(x, -5) == 3
+     and simplify(diff(fx, x, 2) + 8 / (3 + x) ** 3) == 0, "2024-ord-sup-b ej.3")
+v.solucion(s, "3", "(1,0)", "\\left(0,-\\frac{1}{3}\\right)", "x=-3", "y=1", "(-1,-1)", "(-5,3)", "f''(x)=-\\frac{8}{(3+x)^3}")
+
+f1, f2 = -x ** 2 + 2 * x, x ** 2 - 2 * x
+v.ok(f1.subs(x, 2) == f2.subs(x, 2) == 0 and diff(f1, x).subs(x, 2) == -2 and diff(f2, x).subs(x, 2) == 2 and expand(2 * x - f1 - x ** 2) == 0 and integrate(x ** 2, (x, -1, 1)) == R(2, 3), "2024-ord-sup-b ej.4")
+v.solucion(s, "4", "f'(2^-)=-2", "A=\\frac{2}{3}")
+
+v.ok(R(3, 15) * R(2, 14) == R(1, 35) and R(5, 15) * R(4, 14) == R(2, 21) and R(2, 15) * R(1, 14) == R(1, 105) and (R(1, 105)) / R(2, 15) == R(1, 14), "2024-ord-sup-b ej.5")
+v.solucion(s, "5", "\\frac{6}{210}=\\frac{1}{35}", "\\frac{20}{210}=\\frac{2}{21}", "P(L_1\\mid L_2)=\\frac{1}{14}")
+
+pBI = R(6, 10) * R(3, 10)
+pBn = R(6, 10) - pBI
+pSn = R(8, 10) - pBn
+pSI = R(4, 10) - pSn
+v.ok(pBI == R(18, 100) and pBn == R(42, 100) and pSn == R(38, 100) and pSI == R(2, 100) and pSn / R(4, 10) == R(95, 100) and pBI / (1 - R(8, 10)) == R(9, 10) and pBI + pSn == R(56, 100), "2024-ord-sup-b ej.6")
+v.solucion(s, "6", "P(B\\cap I)=0{,}18", "P(B\\cap I^C)=0{,}42", "P(S\\cap I^C)=0{,}38", "P(S\\cap I)=0{,}02", "P(I^C\\mid S)=0{,}95", "P(B\\mid I)=0{,}9", "0{,}18+0{,}38=0{,}56")
+
+E7, lo7, hi7 = ic_prop(R(925, 1000), 400, R(181, 100))
+n7 = R(196, 100) ** 2 * R(925, 1000) * R(75, 1000) / R(15, 1000) ** 2
+v.ok(cerca(E7, 0.0238) and cerca(lo7, 0.9012) and cerca(hi7, 0.9488) and lo7 > R(88, 100) and cerca(n7, 1184.49, 5e-3) and int(n7) + 1 == 1185, "2024-ord-sup-b ej.7")
+v.solucion(s, "7", "E=0{,}0238", "(0{,}9012,0{,}9488)", "1\\,184{,}49", "n=1\\,185")
+
+v.ok(R(30, 10) == 3 and (54 - 60) / R(3) == -2 and R(9772, 10000) == R(9772, 10000) and R(217, 100) * 20 / 5 == R(868, 100) and 40 - R(868, 100) == R(3132, 100) and 40 + R(868, 100) == R(4868, 100), "2024-ord-sup-b ej.8")
+v.solucion(s, "8", "N(60,3)", "P(\\bar X>54)=0{,}9772", "E=8{,}68", "(31{,}32,48{,}68)")
+
+
 v.fin()
