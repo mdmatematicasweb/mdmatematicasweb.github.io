@@ -18,6 +18,8 @@ Vértices: $(0,0)$, $(0,50)$, $(100,200)$ (corte de $2y-3x=100$ con $x+2y=500$),
 |---|---|---|---|---|---|
 | $B$ | $0$ | $500$ | $3\,500$ | $4\,500$ | $3\,000$ |
 
+![Región factible del ejercicio 2 (2025-ord-sup2-b), con sus vértices: (0, 50), (0, 0), (200, 0), (200, 150), (100, 200)](fig/2025-ord-sup2-b-e2.svg){fig-alt="Región factible del ejercicio 2 (2025-ord-sup2-b), con sus vértices: (0, 50), (0, 0), (200, 0), (200, 150), (100, 200)" width="75%" fig-align="center"}
+
 **Debe producir $200$ kg de abono $A$ y $150$ kg de abono $B$, con un beneficio máximo de $4\,500$ €.**
 
 @@ 3

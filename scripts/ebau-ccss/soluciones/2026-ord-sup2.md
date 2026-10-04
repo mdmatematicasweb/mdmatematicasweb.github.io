@@ -13,6 +13,8 @@ $$X=\begin{pmatrix}1&0&2\\0&1&3\end{pmatrix}\begin{pmatrix}\frac{3}{4}&0&-\frac{
 $$\left(\tfrac{7}{16},\tfrac{13}{8}\right),\quad\left(\tfrac{5}{4},0\right),\quad(3,0),\quad(2,1),$$
 con $\left(\tfrac{7}{16},\tfrac{13}{8}\right)$ el corte de $4x+2y=5$ con $2x+5y=9$, $\left(\tfrac{5}{4},0\right)$ el de $4x+2y=5$ con $y=0$, $(3,0)$ el de $x+y=3$ con $y=0$ y $(2,1)$ el de $x+y=3$ con $2x+5y=9$.
 
+![Región factible del ejercicio 1B (2026-ord-sup2), con sus vértices: (1,25, 0), (3, 0), (2, 1), (0,44, 1,62)](fig/2026-ord-sup2-e1b.svg){fig-alt="Región factible del ejercicio 1B (2026-ord-sup2), con sus vértices: (1,25, 0), (3, 0), (2, 1), (0,44, 1,62)" width="75%" fig-align="center"}
+
 **b)** Con $x=1$: $4+2y\ge5\Rightarrow y\ge\dfrac{1}{2}$; $2+5y\le9\Rightarrow y\le\dfrac{7}{5}$; $1+y\le3\Rightarrow y\le2$. Por ejemplo, **$(1,1)$** pertenece a la región ($6\ge5$, $7\le9$, $2\le3$).
 
 **c)** $f\left(\tfrac{7}{16},\tfrac{13}{8}\right)=\tfrac{5}{2}$, $f\left(\tfrac{5}{4},0\right)=\tfrac{5}{2}$, $f(3,0)=6$ y $f(2,1)=5$.

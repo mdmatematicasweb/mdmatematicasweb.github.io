@@ -17,6 +17,8 @@ Vértices: $(12,0)$, $(40,0)$, $(30,10)$ (corte de $x+y=40$ con $x=3y$) y $(9,3)
 |---|---|---|---|---|
 | $I$ | $384$ | $1\,280$ | $1\,310$ | $393$ |
 
+![Región factible del ejercicio 2 (2024-ord-sup-a), con sus vértices: (9, 3), (12, 0), (40, 0), (30, 10)](fig/2024-ord-sup-a-e2.svg){fig-alt="Región factible del ejercicio 2 (2024-ord-sup-a), con sus vértices: (9, 3), (12, 0), (40, 0), (30, 10)" width="75%" fig-align="center"}
+
 **Debe seleccionar 30 centros florales y 10 candelabros, con unos ingresos de $1\,310$ €.**
 
 @@ 3

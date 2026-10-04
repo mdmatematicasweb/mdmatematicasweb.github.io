@@ -22,6 +22,8 @@ Vértices: $(0,0)$, $(0,25)$, $(10,20)$ (corte de $x+2y=50$ con $2x+y=40$) y $(2
 |---|---|---|---|---|
 | $I$ | $0$ | $5\,000$ | $5\,500$ | $3\,000$ |
 
+![Región factible del ejercicio 2 (2024-ord-res-b), con sus vértices: (0, 0), (20, 0), (10, 20), (0, 25)](fig/2024-ord-res-b-e2.svg){fig-alt="Región factible del ejercicio 2 (2024-ord-res-b), con sus vértices: (0, 0), (20, 0), (10, 20), (0, 25)" width="75%" fig-align="center"}
+
 **Debe fabricar 10 pulseras del tipo $A$ y 20 del tipo $B$, con unos ingresos máximos de $5\,500$ €.**
 
 Metales usados con $(10,20)$: oro $10+40=50$ g, platino $20+20=40$ g y plata $20$ g. **Sobran $0$ g de oro, $0$ g de platino y $5$ g de plata.**

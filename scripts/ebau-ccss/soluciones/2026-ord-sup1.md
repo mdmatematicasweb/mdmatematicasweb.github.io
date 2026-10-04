@@ -7,6 +7,8 @@ Vértices: $(0,210)$ (corte de $x=0$ con $x+2y=420$), $(0,700)$ (corte de $x=0$ 
 |---|---|---|---|---|
 | $I$ | $84\,000$ | $280\,000$ | $280\,000$ | $240\,000$ |
 
+![Región factible del ejercicio 1 (2026-ord-sup1), con sus vértices: (0, 210), (260, 80), (260, 180), (0, 700)](fig/2026-ord-sup1-e1.svg){fig-alt="Región factible del ejercicio 1 (2026-ord-sup1), con sus vértices: (0, 210), (260, 80), (260, 180), (0, 700)" width="75%" fig-align="center"}
+
 El máximo se alcanza en dos vértices, $(0,700)$ y $(260,180)$, porque $I=400(2x+y)$ y la recta de la energía $2x+y=700$ es paralela a las rectas de nivel: **el ingreso óptimo es de $280\,000$ € y se alcanza en todos los puntos del segmento que une $(0,700)$ y $(260,180)$** (por ejemplo, $260$ unidades de $P_1$ y $180$ de $P_2$, o $0$ de $P_1$ y $700$ de $P_2$).
 
 **b)** **Sí:** fabricando solo $P_2$, $700$ unidades, se agota la energía ($5\cdot700=3\,500$), se cumplen las horas ($20\cdot700=14\,000\ge4\,200$) y el ingreso es $400\cdot700=280\,000$ €. (Fabricando solo $P_1$ no es posible: como mucho $260$ unidades y $208\,000$ €.)

@@ -7,6 +7,8 @@ Vértices: $(5,30)$ (corte de $x+y=35$ con $2x+5y=160$), $(35,0)$ (corte de $x+y
 |---|---|---|---|---|
 | $B$ | $2\,115$ | $1\,575$ | $2\,700$ | $3\,105$ |
 
+![Región factible del ejercicio 1 (2026-ext-sup1), con sus vértices: (35, 0), (60, 0), (55, 10), (5, 30)](fig/2026-ext-sup1-e1.svg){fig-alt="Región factible del ejercicio 1 (2026-ext-sup1), con sus vértices: (35, 0), (60, 0), (55, 10), (5, 30)" width="75%" fig-align="center"}
+
 **Deben producirse 55 kg de orégano y 10 kg de pimienta a la semana, con un beneficio máximo de $3\,105$ €.**
 
 @@ 2A

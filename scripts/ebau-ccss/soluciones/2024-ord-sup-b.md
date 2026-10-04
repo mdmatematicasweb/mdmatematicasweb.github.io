@@ -19,6 +19,8 @@ Vértices: $(0,6)$, $(0,25)$, $(12,21)$ (corte de $2x+6y=150$ con $3x+4y=120$) y
 |---|---|---|---|---|
 | $x+y$ | $6$ | $25$ | $33$ | $38$ |
 
+![Región factible del ejercicio 2 (2024-ord-sup-b), con sus vértices: (0, 6), (32, 6), (12, 21), (0, 25)](fig/2024-ord-sup-b-e2.svg){fig-alt="Región factible del ejercicio 2 (2024-ord-sup-b), con sus vértices: (0, 6), (32, 6), (12, 21), (0, 25)" width="75%" fig-align="center"}
+
 **Se pueden formar 32 equipos del primer tipo y 6 del segundo (38 equipos).** Desarrolladores utilizados: Javascript $2\cdot32+6\cdot6=100$ y Python $3\cdot32+4\cdot6=120$.
 
 @@ 3

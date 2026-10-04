@@ -12,6 +12,8 @@
 |---|---|---|---|---|
 | $F=2x+y$ | $7$ | $2$ | $\frac{13}{2}$ | $10$ |
 
+![Región factible del ejercicio 1 (2021-ord-res), con sus vértices: (0, 2), (3, 0,5), (5, 0), (0, 7)](fig/2021-ord-res-e1.svg){fig-alt="Región factible del ejercicio 1 (2021-ord-res), con sus vértices: (0, 2), (3, 0,5), (5, 0), (0, 7)" width="75%" fig-align="center"}
+
 **El mínimo se alcanza en el punto $(0,2)$ y vale $2$.**
 
 @@ 2

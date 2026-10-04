@@ -3,6 +3,8 @@
 $$(1,3),\quad(2,7),\quad(3,2),\quad(4,4),$$
 donde $(1,3)$ es el corte de $x+2y=7$ con $4x-y=1$, $(2,7)$ el de $4x-y=1$ con $3x+2y=20$, $(4,4)$ el de $3x+2y=20$ con $2x-y=4$ y $(3,2)$ el de $2x-y=4$ con $x+2y=7$.
 
+![Región factible del ejercicio 1 (2022-ext-sup), con sus vértices: (1, 3), (3, 2), (4, 4), (2, 7)](fig/2022-ext-sup-e1.svg){fig-alt="Región factible del ejercicio 1 (2022-ext-sup), con sus vértices: (1, 3), (3, 2), (4, 4), (2, 7)" width="75%" fig-align="center"}
+
 **b)** $F(1,3)=10$, $F(2,7)=23$, $F(3,2)=9$ y $F(4,4)=16$.
 
 **El máximo vale $23$ y se alcanza en el punto $(2,7)$.**

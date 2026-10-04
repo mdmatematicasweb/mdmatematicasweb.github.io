@@ -19,6 +19,8 @@ Vértices: $(0,0)$, $(0,100)$, $(50,100)$, $(125,50)$ (corte de $2x+3y=400$ con 
 |---|---|---|---|---|---|
 | $V$ | $0$ | $4\,500$ | $6\,250$ | $6\,625$ | $5\,250$ |
 
+![Región factible del ejercicio 2 (2022-ord-res), con sus vértices: (0, 0), (150, 0), (125, 50), (50, 100), (0, 100)](fig/2022-ord-res-e2.svg){fig-alt="Región factible del ejercicio 2 (2022-ord-res), con sus vértices: (0, 0), (150, 0), (125, 50), (50, 100), (0, 100)" width="75%" fig-align="center"}
+
 **Debe vender 125 lotes de tipo A y 50 de tipo B, con un valor máximo de ventas de $6\,625$ €.**
 
 @@ 3

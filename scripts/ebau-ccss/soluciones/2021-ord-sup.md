@@ -13,6 +13,8 @@ $$X=\begin{pmatrix}\frac{1}{2}&\frac{1}{4}\\0&\frac{1}{2}\end{pmatrix}\begin{pma
 $$(0,3),\quad(3,8),\quad(5,6),\quad(6,0),$$
 que se obtienen cortando $x+2y=6$ con $x=0$, $5x-3y=-9$ con $x+y=11$, $x+y=11$ con $6x+y=36$ y $6x+y=36$ con $y=0$, respectivamente. (La región es el cuadrilátero de esos cuatro vértices.)
 
+![Región factible del ejercicio 2 (2021-ord-sup), con sus vértices: (0, 3), (6, 0), (5, 6), (3, 8)](fig/2021-ord-sup-e2.svg){fig-alt="Región factible del ejercicio 2 (2021-ord-sup), con sus vértices: (0, 3), (6, 0), (5, 6), (3, 8)" width="75%" fig-align="center"}
+
 **b)** Para $(5,7)$: $5+7=12>11$, no cumple $x+y\le11$. **No pertenece a la región.**
 
 **c)** Valores de $F=10x-6y$ en los vértices: $F(0,3)=-18$, $F(3,8)=-18$, $F(5,6)=14$, $F(6,0)=60$.

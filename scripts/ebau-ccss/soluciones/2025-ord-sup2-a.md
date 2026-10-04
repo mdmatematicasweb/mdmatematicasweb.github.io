@@ -18,6 +18,8 @@ Vértices: $(0,0)$, $(12,0)$, $(12,8)$, $(8,16)$ y $(0,16)$.
 |---|---|---|---|---|---|
 | $I$ | $0$ | $1\,000$ | $1\,333{,}33$ | $1\,333{,}33$ | $666{,}67$ |
 
+![Región factible del ejercicio 2 (2025-ord-sup2-a), con sus vértices: (0, 0), (12, 0), (12, 8), (8, 16), (0, 16)](fig/2025-ord-sup2-a-e2.svg){fig-alt="Región factible del ejercicio 2 (2025-ord-sup2-a), con sus vértices: (0, 0), (12, 0), (12, 8), (8, 16), (0, 16)" width="75%" fig-align="center"}
+
 El máximo se alcanza en los dos vértices $(12,8)$ y $(8,16)$ y, por tanto, en todos los puntos del segmento $2x+y=32$ que los une (aquellos en que se agotan los $1\,600$ minutos).
 
 **Ingreso máximo: $1\,333{,}33$ € (es decir, $\dfrac{4\,000}{3}$ €), por ejemplo revisando 12 lavadoras y 8 frigoríficos, u 8 lavadoras y 16 frigoríficos** (o cualquier combinación entera con $2x+y=32$, $8\le x\le12$: $(11,10)$, $(10,12)$, $(9,14)$).

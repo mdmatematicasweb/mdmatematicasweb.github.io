@@ -15,6 +15,8 @@ Vértices: $(0,0)$, $(0,15)$, $\left(\dfrac{52}{5},\dfrac{62}{5}\right)$ (corte 
 |---|---|---|---|---|---|
 | $B$ | $0$ | $82{,}5$ | $177{,}4$ | $263{,}5$ | $262{,}5$ |
 
+![Región factible del ejercicio 2 (2025-ord-sup1-a), con sus vértices: (0, 0), (25, 0), (23, 4), (10,4, 12,4), (0, 15)](fig/2025-ord-sup1-a-e2.svg){fig-alt="Región factible del ejercicio 2 (2025-ord-sup1-a), con sus vértices: (0, 0), (25, 0), (23, 4), (10,4, 12,4), (0, 15)" width="75%" fig-align="center"}
+
 **Deben elaborarse 23 menús *premium* y 4 *estándar*, con un beneficio máximo de $263{,}50$ €.** (Almacenamiento usado: $23+16=39\le60$.)
 
 @@ 3

@@ -7,6 +7,8 @@ Vértices: $(0,0)$, $(0,160)$, $(40,120)$ (corte de $10x+5y=1\,000$ con $5x+5y=8
 |---|---|---|---|---|---|
 | $B$ | $0$ | $3\,200$ | $3\,600$ | $3\,400$ | $1\,800$ |
 
+![Región factible del ejercicio 1 (2023-ord-sup-b), con sus vértices: (0, 0), (60, 0), (60, 80), (40, 120), (0, 160)](fig/2023-ord-sup-b-e1.svg){fig-alt="Región factible del ejercicio 1 (2023-ord-sup-b), con sus vértices: (0, 0), (60, 0), (60, 80), (40, 120), (0, 160)" width="75%" fig-align="center"}
+
 **Debe fabricar 40 botes Júpiter y 120 Minerva, con un beneficio máximo de $3\,600$ €.**
 
 @@ 2

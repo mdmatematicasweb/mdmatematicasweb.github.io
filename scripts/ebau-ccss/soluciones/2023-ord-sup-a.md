@@ -7,6 +7,8 @@ Vértices: $(0,0)$, $(6\,000,3\,000)$ (corte de $x=2y$ con $y=3\,000$), $(7\,000
 |---|---|---|---|---|
 | $I$ | $0$ | $390\,000$ | $430\,000$ | $420\,000$ |
 
+![Región factible del ejercicio 1 (2023-ord-sup-a), con sus vértices: (0, 0), (8000, 2000), (7000, 3000), (6000, 3000)](fig/2023-ord-sup-a-e1.svg){fig-alt="Región factible del ejercicio 1 (2023-ord-sup-a), con sus vértices: (0, 0), (8000, 2000), (7000, 3000), (6000, 3000)" width="75%" fig-align="center"}
+
 **Deben asistir $7\,000$ aficionados locales y $3\,000$ visitantes, con un importe de $430\,000$ €.**
 
 @@ 2

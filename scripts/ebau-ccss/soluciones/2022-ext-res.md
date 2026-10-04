@@ -19,6 +19,8 @@ Vértices: $(0,0)$, $(0,35)$, $(40,15)$ (corte de $x+2y=70$ con $3x+2y=150$) y $
 |---|---|---|---|---|
 | $B$ | $0$ | $2\,450$ | $3\,450$ | $3\,000$ |
 
+![Región factible del ejercicio 2 (2022-ext-res), con sus vértices: (0, 0), (50, 0), (40, 15), (0, 35)](fig/2022-ext-res-e2.svg){fig-alt="Región factible del ejercicio 2 (2022-ext-res), con sus vértices: (0, 0), (50, 0), (40, 15), (0, 35)" width="75%" fig-align="center"}
+
 **Hay que confeccionar 40 trajes y 15 vestidos, con un beneficio máximo de $3\,450$ €.**
 
 @@ 3

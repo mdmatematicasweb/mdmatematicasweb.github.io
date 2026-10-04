@@ -7,6 +7,8 @@ Vértices: $(0,4)$, $(0,10)$, $(6,4)$ (corte de $x+y=10$ con $x-y=2$) y $(3,1)$ 
 |---|---|---|---|---|
 | $B$ | $100$ | $250$ | $460$ | $205$ |
 
+![Región factible del ejercicio 1 (2021-ext-sup), con sus vértices: (0, 4), (3, 1), (6, 4), (0, 10)](fig/2021-ext-sup-e1.svg){fig-alt="Región factible del ejercicio 1 (2021-ext-sup), con sus vértices: (0, 4), (3, 1), (6, 4), (0, 10)" width="75%" fig-align="center"}
+
 **Debe fabricar 6 unidades de $A$ y 4 de $B$ por hora, con un beneficio máximo de $460$ €.**
 
 @@ 2

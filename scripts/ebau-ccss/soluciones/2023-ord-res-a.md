@@ -19,6 +19,8 @@ Vértices de la región factible: $(6,18)$ (corte de $y=3x$ con $6x+10y=216$), $
 |---|---|---|---|
 | $C$ | $12\,600$ | $16\,800$ | $12\,000$ |
 
+![Región factible del ejercicio 2 (2023-ord-res-a), con sus vértices: (16, 12), (8, 24), (6, 18)](fig/2023-ord-res-a-e2.svg){fig-alt="Región factible del ejercicio 2 (2023-ord-res-a), con sus vértices: (16, 12), (8, 24), (6, 18)" width="75%" fig-align="center"}
+
 **El coste mínimo es de $12\,000$ €, con 16 horas extraordinarias en $A$ y 12 en $B$.**
 
 @@ 3

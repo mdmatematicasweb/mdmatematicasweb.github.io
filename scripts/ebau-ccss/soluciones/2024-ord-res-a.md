@@ -15,6 +15,8 @@ Vértices: $(20,40)$ (corte de $x=20$ con $x+y=60$), $(20,140)$ (corte de $x=20$
 |---|---|---|---|---|
 | $G$ | $66$ | $156$ | $192$ | $72$ |
 
+![Región factible del ejercicio 2 (2024-ord-res-a), con sus vértices: (20, 40), (30, 30), (80, 80), (20, 140)](fig/2024-ord-res-a-e2.svg){fig-alt="Región factible del ejercicio 2 (2024-ord-res-a), con sus vértices: (20, 40), (30, 30), (80, 80), (20, 140)" width="75%" fig-align="center"}
+
 **Deben almacenarse 20 bidones de pintura interior y 40 de exterior, con un gasto diario mínimo de $66$ €.**
 
 @@ 3

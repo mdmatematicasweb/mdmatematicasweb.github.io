@@ -12,6 +12,8 @@ Vértices: $(4,12)$, $(4,16)$, $(5,10)$ y $(6,12)$.
 |---|---|---|---|---|
 | $F=0{,}6x+0{,}4y$ | $7{,}2$ | $8{,}8$ | $7$ | $8{,}4$ |
 
+![Región factible del ejercicio 1 (2021-ext-res), con sus vértices: (4, 12), (5, 10), (6, 12), (4, 16)](fig/2021-ext-res-e1.svg){fig-alt="Región factible del ejercicio 1 (2021-ext-res), con sus vértices: (4, 12), (5, 10), (6, 12), (4, 16)" width="75%" fig-align="center"}
+
 **Hay que llevar a cabo 4 misiones y 16 programas, y el máximo de $F$ es $8{,}8$.**
 
 @@ 2

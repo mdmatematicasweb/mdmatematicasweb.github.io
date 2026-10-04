@@ -21,6 +21,8 @@ Vértices: $(5,5)$, $(10,0)$, $(14,0)$, $(14,10)$ y $(12,12)$.
 |---|---|---|---|---|---|
 | $B$ | $160\,000$ | $150\,000$ | $210\,000$ | $380\,000$ | $384\,000$ |
 
+![Región factible del ejercicio 2 (2023-ord-res-b), con sus vértices: (5, 5), (10, 0), (14, 0), (14, 10), (12, 12)](fig/2023-ord-res-b-e2.svg){fig-alt="Región factible del ejercicio 2 (2023-ord-res-b), con sus vértices: (5, 5), (10, 0), (14, 0), (14, 10), (12, 12)" width="75%" fig-align="center"}
+
 **Cada barco debe realizar 12 viajes, con un beneficio máximo de $384\,000$ €.**
 
 @@ 3

@@ -7,6 +7,8 @@ Vértices: $(0,3)$, $(0,7)$, $(1,5)$ (corte de $2x+y=7$ con $4x+y=9$) y $(2,1)$ 
 |---|---|---|---|---|
 | $G$ | $45$ | $105$ | $115$ | $95$ |
 
+![Región factible del ejercicio 1 (2022-ord-sup), con sus vértices: (0, 3), (2, 1), (1, 5), (0, 7)](fig/2022-ord-sup-e1.svg){fig-alt="Región factible del ejercicio 1 (2022-ord-sup), con sus vértices: (0, 3), (2, 1), (1, 5), (0, 7)" width="75%" fig-align="center"}
+
 **Deben fabricarse 1 ajedrez y 5 dominós al día, con una ganancia máxima de $115$ €.**
 
 @@ 2
