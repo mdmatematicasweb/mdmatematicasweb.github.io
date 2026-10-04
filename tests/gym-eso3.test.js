@@ -29,7 +29,7 @@ for (const id of Object.keys(G.modules)) {
       [ch.prompt].concat(ch.steps).forEach((s) => {
         assert(!/NaN|undefined|null|Infinity/.test(s), ctx + ': texto con basura: ' + s);
         assert((s.match(/\$/g) || []).length % 2 === 0, ctx + ': $ desparejados en: ' + s);
-        assert(!/\.\d/.test(s.replace(/\$[^$]*\$/g, '')), ctx + ': decimal con punto fuera de fórmula: ' + s);
+        assert(!/\.\d/.test(s.replace(/\$\$[\s\S]*?\$\$|\$[^$]*\$/g, '')), ctx + ': decimal con punto fuera de fórmula: ' + s);
       });
       const r = checkAnswer(ch.answer, answerStrings(ch.answer));
       assert.strictEqual(r.status, 'ok', ctx + ': la respuesta correcta no pasa el corrector: ' + ch.prompt);

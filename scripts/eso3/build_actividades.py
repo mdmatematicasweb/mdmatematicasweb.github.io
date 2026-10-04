@@ -65,5 +65,6 @@ for carpeta, titulo, fichero, mods in TEMAS:
 idx = ['---\ntitle: "Actividades — 3º ESO"\n---\n\nEjercicios interactivos que generan retos al azar y los corrigen en el navegador (14 temas, 50 módulos).\n']
 for i, (carpeta, titulo, _, mods) in enumerate(TEMAS, 1):
     idx.append(f"{i}. [{titulo}]({carpeta}/index.qmd): " + ", ".join(h[0].lower() + h[1:] for h, _ in mods) + ".")
+idx.append("15. [Prueba competencial](prueba-competencial/index.qmd): cinco situaciones de la vida cotidiana (una por bloque de contenidos) con cuatro apartados cada una, cronómetro y corrección automática.")
 (DIR / "index.qmd").write_text("\n".join(idx) + "\n")
 print("escrito", (DIR / "index.qmd").relative_to(ROOT))

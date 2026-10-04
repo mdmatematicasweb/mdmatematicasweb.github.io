@@ -1,0 +1,21 @@
+---
+title: "Prueba competencial"
+toc: false
+format:
+  html:
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+          <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    css: ../../../assets/gym/gym.css
+---
+
+Prueba de **Matemáticas de 3.º de ESO** formada por cinco situaciones de la vida cotidiana, una por bloque de contenidos (sentido numérico y financiero, algebraico, de la medida y espacial, funciones y estocástico). Cada situación vale 2 puntos y tiene cuatro apartados. Eliges los *tipos de situación* que ya has estudiado, se genera una prueba nueva cada vez, tienes cronómetro y se corrige sola. Es un ejercicio de práctica para trabajar las competencias, no una prueba oficial.
+
+<div id="mdx-app"></div>
+
+<script src="../../../assets/gym/gym.js"></script>
+<script src="../../../assets/gym/eso3-base.js"></script>
+<script src="../../../assets/gym/prueba-eso3.js"></script>
+<script src="../../../assets/gym/tipos-eso3.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () { MDPrueba3.montar(document.getElementById("mdx-app")); });</script>

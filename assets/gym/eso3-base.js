@@ -3,7 +3,7 @@
   'use strict';
   const G = root.MDGym;
   const MARK = '\uE000';                                          // marca interna de la coma decimal
-  const dc = (x) => String(x).replace('.', MARK);                // decimal con coma (se resuelve al publicar el texto)
+  const dc = (x) => String(Math.round(Number(x) * 1e8) / 1e8).replace('.', MARK);                // decimal con coma (se resuelve al publicar el texto)
   /** Dentro de una fórmula la coma decimal se escribe {,} (así KaTeX no deja espacio detrás); fuera, una coma normal. */
   const mathComma = (s) => s.replace(/\$\$([\s\S]+?)\$\$|\$([^$]+?)\$|([^$]+)/g, (m, a, b, c) => (a !== undefined ? '$$' + a.split(MARK).join('{,}') + '$$' : b !== undefined ? '$' + b.split(MARK).join('{,}') + '$' : c.split(MARK).join(',')));
   const define = (mod) => {
