@@ -1,0 +1,26 @@
+---
+title: "Simulacro de examen PAU"
+toc: false
+format:
+  html:
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+          <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    css: ../../../assets/gym/gym.css
+---
+
+Simulacro de **Matemáticas Aplicadas a las Ciencias Sociales II** con el formato de la PAU de Andalucía: cuatro ejercicios en 1 h 30 min (álgebra y análisis, de 3 puntos, con dos opciones A/B a elegir; y dos de estadística, de 2 puntos, obligatorios). Eliges los *tipos de ejercicio* que ya has visto, se genera un examen nuevo cada vez, tienes cronómetro, tabla de la normal y se corrige solo. Es un ejercicio de práctica basado en el formato de la prueba, no un examen oficial.
+
+<div id="mdx-app"></div>
+
+<script src="../../../assets/gym/gym.js"></script>
+<script src="../../../assets/gym/distribuciones.js"></script>
+<script src="../../../assets/gym/ccss.js"></script>
+<script src="../../../assets/gym/examen.js"></script>
+<script src="../../../assets/gym/examen-ccss.js"></script>
+<script src="../../../assets/gym/tipos-ccss-util.js"></script>
+<script src="../../../assets/gym/tipos-ccss-algebra.js"></script>
+<script src="../../../assets/gym/tipos-ccss-analisis.js"></script>
+<script src="../../../assets/gym/tipos-ccss-estadistica.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () { MDExamCCSS.montar(document.getElementById("mdx-app")); });</script>
