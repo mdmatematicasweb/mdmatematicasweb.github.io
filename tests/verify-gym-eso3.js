@@ -173,4 +173,73 @@ V['eso3-sis-problema'] = (ch, { assert }) => {
   else { assert(has(u + w) && has(u - w) && u > w); }
 };
 
+// ---------- Tema 8 ----------
+V['eso3-pitagoras'] = (ch, { assert }) => {
+  const d = ch.data, v = fv(ch.answer.value);
+  if (d.tipo === 'hip') { assert(Math.abs(v - Math.hypot(d.a, d.b)) < 1e-9); }
+  else if (d.tipo === 'cat') { assert(Math.abs(v * v + d.a * d.a - d.c * d.c) < 1e-9 && v === d.b); }
+  else if (d.tipo === 'esc') { assert(Math.abs(v * v + d.x * d.x - d.z * d.z) < 1e-9 && v > 0); }
+  else assert(Math.abs(v - Math.hypot(d.x, d.y)) < 1e-9);
+  assert(Number.isInteger(v));
+};
+V['eso3-distancia'] = (ch, { assert }) => {
+  const d = ch.data;
+  if (d.tipo === 'dist') assert(Math.abs(fv(ch.answer.value) - Math.hypot(d.x2 - d.x1, d.y2 - d.y1)) < 1e-9);
+  else if (d.tipo === 'medio') { const [x, y] = parts(ch); assert.strictEqual(x * 2, d.x1 + d.x2); assert.strictEqual(y * 2, d.y1 + d.y2); }
+  else assert(Math.abs(fv(ch.answer.value) - (Math.abs(d.x2 - d.x1) + Math.abs(d.y2 - d.y1) + Math.hypot(d.x2 - d.x1, d.y2 - d.y1))) < 1e-9);
+};
+V['eso3-areas'] = (ch, { assert }) => {
+  const d = ch.data, v = fv(ch.answer.value);
+  const exp = { tri: () => d.b * d.h / 2, trap: () => (d.B + d.b) * d.h / 2, rombo: () => d.D * d.d / 2, circ: () => d.r * d.r, sect: () => d.r * d.r * (d.n / 360), corona: () => d.R * d.R - d.r * d.r }[d.f]();
+  assert(Math.abs(v - exp) < 1e-9);
+  // área del círculo por el límite de polígonos regulares inscritos (comprobación independiente de π r²)
+  if (d.f === 'circ') { const n = 20000; const A = 0.5 * n * d.r * d.r * Math.sin(2 * Math.PI / n); assert(Math.abs(A - v * Math.PI) < 1e-3); }
+};
+// ---------- Tema 9 ----------
+V['eso3-movimientos'] = (ch, { assert }) => {
+  const d = ch.data, [x, y] = parts(ch);
+  const rot = (deg) => { const a = deg * Math.PI / 180; return [Math.round(d.x * Math.cos(a) - d.y * Math.sin(a)), Math.round(d.x * Math.sin(a) + d.y * Math.cos(a))]; };
+  const exp = { tras: [d.x + d.a, d.y + d.b], g90: rot(90), g180: rot(180), sx: [d.x, -d.y], sy: [-d.x, d.y] }[d.mov];
+  assert.deepStrictEqual([x + 0, y + 0], exp.map((n) => n + 0));
+  if (d.mov !== 'tras') assert(Math.abs(Math.hypot(x, y) - Math.hypot(d.x, d.y)) < 1e-9, 'conserva la distancia al origen');
+};
+V['eso3-tales'] = (ch, { assert }) => {
+  const d = ch.data, v = fv(ch.answer.value);
+  if (d.h1) assert(Math.abs(v / fv(d.s2) - fv(d.h1) / fv(d.s1)) < 1e-9);
+  else assert(Math.abs(v / d.b - fv(d.a2) / d.a) < 1e-9);
+};
+V['eso3-semejanza'] = (ch, { assert }) => {
+  const d = ch.data, v = fv(ch.answer.value);
+  if (d.tipo === 'area') assert.strictEqual(v, d.A * d.k * d.k);
+  else if (d.tipo === 'vol') assert.strictEqual(v, d.V0 * Math.pow(d.k, 3));
+  else if (d.tipo === 'razon') assert(Math.abs(v - d.A * (d.L / d.l) ** 2) < 1e-9);
+  else { const real_cm = d.cm * d.E; assert(Math.abs(v * (d.val >= 1 && real_cm >= 100000 ? 100000 : 100) - real_cm) < 1e-6 * Math.max(1, real_cm)); }
+};
+// ---------- Tema 10 ----------
+V['eso3-euler'] = (ch, { assert }) => {
+  const d = ch.data, v = fv(ch.answer.value);
+  assert.strictEqual(d.C + d.V, d.A + 2);
+  assert.strictEqual(v, { C: d.C, V: d.V, A: d.A }[d.falta]);
+  if (d.cuerpo === 'prisma') { assert.strictEqual(d.A, 3 * d.n); assert.strictEqual(d.A, (d.n * 2 + d.n * 4) / 2); }   // aristas = (suma de lados de las caras)/2
+  else { assert.strictEqual(d.A, 2 * d.n); }
+};
+V['eso3-volumen'] = (ch, { assert }) => {
+  const d = ch.data, v = fv(ch.answer.value);
+  // integración numérica (suma de discos/secciones) del volumen
+  const N = 20000, integ = (f, a, b) => { let s = 0; const h = (b - a) / N; for (let i = 0; i < N; i++) s += f(a + (i + 0.5) * h) * h; return s; };
+  if (d.c === 'orto') assert.strictEqual(v, d.a * d.b * d.h);
+  else if (d.c === 'pira') assert(Math.abs(v - integ((t) => Math.pow(d.l * t / d.h, 2), 0, d.h)) < 1e-3);
+  else if (d.c === 'cil') assert(Math.abs(v * Math.PI - integ(() => Math.PI * d.r * d.r, 0, d.h)) < 1e-3);
+  else if (d.c === 'cono') assert(Math.abs(v * Math.PI - integ((t) => Math.PI * Math.pow(d.r * t / d.h, 2), 0, d.h)) < 1e-3);
+  else assert(Math.abs(v * Math.PI - integ((t) => Math.PI * (d.r * d.r - t * t), -d.r, d.r)) < 1e-3);
+};
+V['eso3-area-cuerpos'] = (ch, { assert }) => {
+  const d = ch.data, v = fv(ch.answer.value);
+  if (d.c === 'orto') assert.strictEqual(v, 2 * d.a * d.b + 2 * d.a * d.h + 2 * d.b * d.h);
+  else if (d.c === 'cil') assert(Math.abs(v * Math.PI - (2 * Math.PI * d.r * d.h + 2 * Math.PI * d.r * d.r)) < 1e-9);
+  else if (d.c === 'cono') { assert.strictEqual(d.g * d.g, d.r * d.r + d.h * d.h); assert(Math.abs(v * Math.PI - (Math.PI * d.r * d.g + Math.PI * d.r * d.r)) < 1e-9); }
+  else if (d.c === 'pira') { assert.strictEqual(d.ap * d.ap, d.h * d.h + d.half * d.half); assert.strictEqual(v, 4 * (d.l * d.ap / 2) + d.l * d.l); }
+  else assert(Math.abs(v - 4 * d.r * d.r) < 1e-9);
+};
+
 module.exports = V;
