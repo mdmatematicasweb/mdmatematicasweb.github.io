@@ -61,3 +61,9 @@ antes de empezar la siguiente fase**. Se trabaja fase a fase, con revisión del 
 - Notas de lectura de enunciados: 2022 ext. titular ej. 2 no dice `x≥0, y≥0` y se supone (si no, `F` no tendría mínimo); `log` es decimal (2025 sup1-A ej. 3 y 2026 sup1);
   para 99 % se usa `z=2,575` (interpolación) y para 92 % `z=1,75`; 2025 sup2-B ej. 7b: «10 %» se lee como el 10 % de la media muestral (se da también la lectura 0,1 kg).
 - Figuras en `ejercicios/2-bachillerato-ccss/ebau/fig/`: `python3 scripts/ebau-ccss/figuras_pl.py` (región factible de los 34 de programación lineal, con el vértice óptimo marcado; lee las restricciones y el objetivo de los verificadores) y `python3 scripts/ebau-ccss/figuras_fn.py` (42 gráficas de «represente/esboce/dibuje», una función `e_…` a mano por figura). Ambos enlazan la imagen en `soluciones/` (idempotentes); después, `build.py`.
+
+## Fase 5: simulacro PAU CCSS
+
+- Motor `assets/gym/examen-ccss.js` (`MDExamCCSS`, adaptado de `examen.js`): un solo formato, 4 ejercicios en 90 min. Bloques: álgebra y análisis (3 pts, opción A/B), probabilidad y distribuciones, inferencia (2 pts, sin opciones). Un bloque sin tipos marcados no aparece y la nota se calcula sobre el resto. Código reproducible `ccss-semilla-mask-duración`; el orden de `CATALOGO` fija la máscara, no reordenar.
+- Generadores en `tipos-ccss-{algebra,analisis,estadistica}.js` (`X.implementar`); contrato `{enunciado, partes:[{texto, pts, answer, steps}], data}` con los apartados sumando los puntos del bloque. Convención de la tabla: z a centésimas, Φ a 4 decimales, |z| ≤ 2,6; valores críticos 1,645/1,96/2,575 con `alt`.
+- Tests: `node tests/examen-ccss.test.js` (todos los tipos, ensamblado, corrección), `node tests/mutacion-ccss.test.js` (cada apartado de cada tipo debe estar cubierto por su verificador) y `node tests/ccss-paginas.test.js`. Un tipo nuevo necesita su verificador en `tests/verify-ccss-examen.js`; no relajar tolerancias.

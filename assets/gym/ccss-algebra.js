@@ -292,5 +292,5 @@
     },
   });
 
-  G.ccss = Object.assign(G.ccss || {}, { vertices, genRegion });
+  G.ccss = Object.assign(G.ccss || {}, { vertices, genRegion, pickObj, objTex, restrTxt, ineqTex, ptTex, vertexSteps, evalSteps, planPL, MAXCTX, MINCTX, SIS_CTX });
 })(typeof globalThis !== 'undefined' ? globalThis : this);

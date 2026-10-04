@@ -6,6 +6,17 @@ fs.readdirSync(base, { withFileTypes: true }).filter((d) => d.isDirectory()).for
   const qmd = fs.readFileSync(path.join(base, d.name, 'index.qmd'), 'utf8');
   const scripts = [...qmd.matchAll(/<script src="\.\.\/\.\.\/\.\.\/assets\/gym\/([^"]+)"/g)].map((m) => m[1]).filter((f) => f !== 'graficas.js');
   const ids = [...qmd.matchAll(/data-gym="([^"]+)"/g)].map((m) => m[1]);
+  if (qmd.includes('id="mdx-app"')) {      // simulacro: debe cargar el motor y todos los generadores del catálogo
+    const ctx = { console, Math, Number, Object, Array, JSON, String, Error, Promise, Map, Set, RegExp, parseInt, parseFloat, isFinite };
+    ctx.globalThis = ctx; vm.createContext(ctx);
+    scripts.forEach((f) => vm.runInContext(fs.readFileSync(path.join(__dirname, '../assets/gym', f), 'utf8'), ctx, { filename: f }));
+    assert(ctx.MDExamCCSS && typeof ctx.MDExamCCSS.montar === 'function', d.name + ': falta MDExamCCSS');
+    const sin = ctx.MDExamCCSS.CATALOGO.filter((t) => !t.listo).map((t) => t.id);
+    assert.strictEqual(sin.length, 0, d.name + ': tipos sin generador cargado: ' + sin.join(', '));
+    assert(typeof ctx.MDGym.normalTableCCSS === 'function', d.name + ': falta la tabla N(0,1)');
+    n++;
+    return;
+  }
   if (!ids.length) { console.log('pendiente (sin módulos): ' + d.name); return; }
   const ctx = { console, Math, Number, Object, Array, JSON, String, Error, Promise, Map, Set, RegExp, parseInt, parseFloat, isFinite };
   ctx.globalThis = ctx; vm.createContext(ctx);
