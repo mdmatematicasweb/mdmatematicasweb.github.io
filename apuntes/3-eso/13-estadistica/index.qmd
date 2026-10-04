@@ -1,0 +1,93 @@
+---
+title: "Estadística"
+---
+
+## 1. Población, muestra y variables
+
+La **estadística** recoge, organiza e interpreta datos. La **población** es el conjunto de todos los individuos que se quiere estudiar y la **muestra** es un subconjunto de ella. Para que la muestra sea **representativa** debe elegirse al azar y ser suficientemente grande.
+
+Una **variable** es la característica que se estudia:
+
+| Tipo | Valores | Ejemplos |
+|---|---|---|
+| **Cualitativa** | cualidades | color de ojos, deporte favorito |
+| **Cuantitativa discreta** | números aislados | número de hermanos, nota |
+| **Cuantitativa continua** | cualquier valor de un intervalo | estatura, peso, tiempo |
+
+::: {.callout-note}
+## Sesgo
+Si preguntamos por el deporte favorito solo en un club de fútbol, la muestra está **sesgada** y no representa a toda la población.
+:::
+
+## 2. Tablas de frecuencias
+
+- **Frecuencia absoluta** $f_i$: veces que aparece el valor $x_i$. Su suma es $N$ (tamaño de la muestra).
+- **Frecuencia relativa** $h_i=\dfrac{f_i}{N}$. Su suma es $1$.
+- **Porcentaje** $=100\cdot h_i$.
+- **Frecuencias acumuladas** $F_i$ y $H_i$: suman las anteriores hasta la actual.
+
+Ejemplo: número de hermanos de $20$ alumnos: $0,1,1,2,1,0,3,2,1,4,2,0,1,2,2,1,3,1,0,2$.
+
+| $x_i$ | $f_i$ | $h_i$ | $F_i$ | % |
+|---|---|---|---|---|
+| 0 | 4 | 0,20 | 4 | 20 |
+| 1 | 7 | 0,35 | 11 | 35 |
+| 2 | 6 | 0,30 | 17 | 30 |
+| 3 | 2 | 0,10 | 19 | 10 |
+| 4 | 1 | 0,05 | 20 | 5 |
+| | **20** | **1** | | **100** |
+
+Cuando hay muchos valores distintos o la variable es continua, se agrupan en **intervalos** (clases), cada uno representado por su **marca de clase** (el punto medio).
+
+## 3. Gráficos estadísticos
+
+- **Diagrama de barras**: variables cualitativas o discretas; la altura es la frecuencia.
+- **Polígono de frecuencias**: une los extremos de las barras.
+- **Histograma**: variable continua agrupada; barras pegadas, con altura proporcional a la frecuencia.
+- **Diagrama de sectores**: reparte un círculo; el ángulo de cada sector es $360^\circ\cdot h_i$.
+- **Diagrama de cajas y bigotes**: resume mínimo, cuartiles y máximo.
+
+Ejemplo: el $35\,\%$ de los alumnos con un hermano se representa con un sector de $360^\circ\cdot0{,}35=126^\circ$.
+
+::: {.callout-warning}
+## Gráficos que engañan
+Una escala que no empieza en cero, ejes sin rotular o dibujos en 3D pueden exagerar las diferencias. Mira siempre los ejes.
+:::
+
+## 4. Medidas de centralización
+
+Resumen en un solo número lo "típico" de los datos.
+
+- **Moda** ($Mo$): valor con mayor frecuencia (puede haber varias o ninguna).
+- **Mediana** ($Me$): valor central cuando se ordenan los datos. Con $N$ par, es la media de los dos centrales.
+- **Media** $\bar{x}$: $\ \bar{x}=\dfrac{\sum x_i\,f_i}{N}$.
+
+Con los datos de los $20$ alumnos del apartado anterior: $\bar{x}=\dfrac{0\cdot4+1\cdot7+2\cdot6+3\cdot2+4\cdot1}{20}=\dfrac{29}{20}=1{,}45$ hermanos, $Me=1$ y $Mo=1$.
+
+La media es sensible a los **valores atípicos**; la mediana, no. En los salarios de una empresa donde casi todos cobran $1\,500$ € y el director $30\,000$ €, la mediana describe mejor lo típico.
+
+### Cuartiles
+
+Los **cuartiles** $Q_1,\ Q_2=Me,\ Q_3$ dividen los datos ordenados en cuatro partes con el mismo número de datos. El $25\,\%$ queda por debajo de $Q_1$ y el $75\,\%$ por debajo de $Q_3$.
+
+## 5. Medidas de dispersión
+
+Indican cuánto se alejan los datos del centro.
+
+- **Rango**: $\ R=\text{máx}-\text{mín}$.
+- **Recorrido intercuartílico**: $\ Q_3-Q_1$.
+- **Varianza**: $\ \sigma^2=\dfrac{\sum f_i\,(x_i-\bar{x})^2}{N}=\dfrac{\sum f_i\,x_i^2}{N}-\bar{x}^2$.
+- **Desviación típica**: $\ \sigma=\sqrt{\sigma^2}$, con las mismas unidades que los datos.
+- **Coeficiente de variación**: $\ CV=\dfrac{\sigma}{\bar{x}}$ (en %), para comparar conjuntos con unidades o medias distintas.
+
+Con los mismos datos: $\sum f_ix_i^2=0+7+24+18+16=65$, luego $\sigma^2=\dfrac{65}{20}-1{,}45^2=3{,}25-2{,}1025=1{,}1475$ y $\sigma\approx1{,}07$ hermanos.
+
+**Comparar dos conjuntos.** Dos clases tienen la misma nota media, $6$, pero la clase A tiene $\sigma=0{,}5$ y la B tiene $\sigma=2$. En A las notas son muy parecidas; en B hay mucha diferencia entre alumnos. Una dispersión pequeña indica que la media es **representativa** y que los datos son más **fiables** como conjunto.
+
+::: {.callout-tip}
+## Resumen rápido
+- Tabla: $f_i$, $h_i=f_i/N$, $F_i$.
+- Media $\frac{\sum x_if_i}{N}$, mediana (centro), moda (más repetido).
+- Dispersión: rango, $Q_3-Q_1$, varianza $\sigma^2$ y desviación típica $\sigma$.
+- Comparar conjuntos: mira a la vez el centro **y** la dispersión.
+:::
