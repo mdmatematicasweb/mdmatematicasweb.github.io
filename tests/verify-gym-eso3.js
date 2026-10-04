@@ -242,4 +242,63 @@ V['eso3-area-cuerpos'] = (ch, { assert }) => {
   else assert(Math.abs(v - 4 * d.r * d.r) < 1e-9);
 };
 
+// ---------- Tema 11 ----------
+V['eso3-fun-valor'] = (ch, { assert }) => {
+  const d = ch.data, v = fv(ch.answer.value);
+  if (d.tipo === 'lin') assert.strictEqual(v, d.m * d.a + d.n);
+  else if (d.tipo === 'cuad') assert.strictEqual(v, d.A * Math.pow(d.a, 2) + d.B * d.a + d.C);
+  else { assert(d.a + d.c !== 0); assert(Math.abs(v - d.k / (d.a + d.c)) < 1e-12); }
+};
+V['eso3-fun-dominio'] = (ch, { assert }) => {
+  const d = ch.data, opts = ch.answer.options, i = Number(ch.answer.value);
+  assert(opts.length === 4 && new Set(opts).size === 4);
+  assert(opts[i].includes(d.correct));
+  // comprobación numérica del dominio correcto
+  const f = { rac: (x) => 1 / (x - d.a), raiz: (x) => Math.sqrt(x - d.a), rac2: null, pol: (x) => x }[d.t];
+  if (d.t === 'rac') { assert(!Number.isFinite(f(d.a))); assert(Number.isFinite(f(d.a + 0.5))); }
+  if (d.t === 'raiz') { assert(Number.isNaN(f(d.a - 0.5)) && !Number.isNaN(f(d.a))); }
+  if (d.t === 'pol') assert(d.correct === '\\mathbb{R}');
+};
+V['eso3-fun-tvm'] = (ch, { assert }) => {
+  const d = ch.data, v = fv(ch.answer.value);
+  if (d.tipo === 'tabla') assert(Math.abs(v - (d.ys[d.j] - d.ys[d.i]) / (d.xs[d.j] - d.xs[d.i])) < 1e-12);
+  else if (d.tipo === 'lin') { assert.strictEqual(v, d.m); assert(Math.abs(((d.m * d.b + d.n) - (d.m * d.a + d.n)) / (d.b - d.a) - v) < 1e-12); }
+  else { const f = (x) => d.A * x * x + d.B * x + d.C; assert(Math.abs((f(d.b) - f(d.a)) / (d.b - d.a) - v) < 1e-12); }
+};
+V['eso3-fun-tabla'] = (ch, { assert }) => {
+  const ys = ch.data.ys, d1 = ys.slice(1).map((v, i) => v - ys[i]), d2 = d1.slice(1).map((v, i) => v - d1[i]);
+  const lineal = d1.every((v) => v === d1[0]);
+  assert.strictEqual(Number(ch.answer.value), lineal ? 0 : 1);
+  if (!lineal) assert(d2.every((v) => v === d2[0]) && d2[0] !== 0);
+};
+// ---------- Tema 12 ----------
+V['eso3-recta'] = (ch, { assert }) => {
+  const d = ch.data, [m, n] = parts(ch);
+  if (d.tipo === 'dos') { assert.strictEqual(m * d.x1 + n, d.y1); assert.strictEqual(m * d.x2 + n, d.y2); assert.strictEqual(m, (d.y2 - d.y1) / (d.x2 - d.x1)); }
+  else { assert.strictEqual(m * d.x1 + n, d.y1); assert.strictEqual(m, d.m); }
+};
+V['eso3-recta-cortes'] = (ch, { assert }) => {
+  const { m, n } = ch.data, [yo, xo] = parts(ch);
+  assert.strictEqual(yo, n);
+  assert(Math.abs(m * xo + n) < 1e-9);
+};
+V['eso3-parabola'] = (ch, { assert }) => {
+  const { a, b, c } = ch.data, [xv, yv] = parts(ch), f = (x) => a * x * x + b * x + c;
+  assert.strictEqual(f(xv), yv);
+  // es el extremo: los puntos vecinos están más abajo (a>0) o más arriba (a<0)
+  [-2, -1, 1, 2].forEach((h) => assert(a > 0 ? f(xv + h) > yv : f(xv + h) < yv));
+  assert.strictEqual(f(xv + 3), f(xv - 3));
+};
+V['eso3-parabola-cortes'] = (ch, { assert }) => {
+  const { a, b, c } = ch.data, r = ch.answer.value.map(fv);
+  r.forEach((x) => assert(Math.abs(a * x * x + b * x + c) < 1e-9));
+  assert(r[0] !== r[1]);
+};
+V['eso3-recta-problema'] = (ch, { assert }) => {
+  const d = ch.data, v = fv(ch.answer.value), pr = fv(d.pr);
+  if (d.tipo === 'coste') assert(Math.abs(v - (d.fijo + pr * d.x)) < 1e-9);
+  else if (d.tipo === 'inversa') { assert(Math.abs(d.fijo + pr * v - fv(d.C)) < 1e-9); assert.strictEqual(v, d.x); }
+  else assert(Math.abs(d.fijo + pr * v - fv(d.pr2) * v) < 1e-9 && v > 0);
+};
+
 module.exports = V;
