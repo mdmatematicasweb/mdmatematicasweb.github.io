@@ -42,9 +42,9 @@ T.b("Calcula: $\\sqrt{48}+\\sqrt{12}-\\sqrt{75}$.",
     f"$\\sqrt{{48}}=4\\sqrt3$, $\\sqrt{{12}}=2\\sqrt3$ y $\\sqrt{{75}}=5\\sqrt3$. Resultado: $(4+2-5)\\sqrt3={latex(e1)}$.",
     [f"={latex(e1)}$"])
 
-r1, r2 = radsimp(10 / sqrt(5)), radsimp(3 / (sqrt(7) - 2))
-T.b("Racionaliza: a) $\\dfrac{10}{\\sqrt5}$ b) $\\dfrac{3}{\\sqrt7-2}$.",
-    f"a) $\\frac{{10\\sqrt5}}{{5}}={latex(r1)}$. b) Multiplicando por el conjugado: $\\frac{{3(\\sqrt7+2)}}{{7-4}}={latex(r2)}$.",
+r1, r2 = radsimp(10 / sqrt(5)), radsimp(21 / sqrt(7))
+T.b("Racionaliza: a) $\\dfrac{10}{\\sqrt5}$ b) $\\dfrac{21}{\\sqrt7}$.",
+    f"a) $\\frac{{10\\sqrt5}}{{5}}={latex(r1)}$. b) $\\frac{{21\\sqrt7}}{{7}}={latex(r2)}$.",
     [f"={latex(r1)}$", f"={latex(r2)}$"])
 
 T.b("Redondea $\\sqrt{7}$ a las centésimas y calcula el error absoluto y el error relativo (en %) de la aproximación.",
@@ -116,7 +116,7 @@ T.chk(R('3.2e5') * R('2.5e-2') == R('8e3') and R('6e8') / R('4e3') == R('1.5e5')
 T.chk(sqrt(169) == 13 and real_root(-64, 3) == -4 and root(81, 4) == 3 and sqrt(R(49, 25)) == R(7, 5), "ex 6")
 T.chk(simplify(sqrt(75) - 5*sqrt(3)) == 0 and simplify(sqrt(180) - 6*sqrt(5)) == 0 and simplify(cbrt(250) - 5*cbrt(2)) == 0, "ex 7")
 T.chk(simplify(sqrt(48) + sqrt(12) - sqrt(75) - sqrt(3)) == 0, "ex 8")
-T.chk(simplify(10/sqrt(5) - 2*sqrt(5)) == 0 and simplify(3/(sqrt(7) - 2) - (sqrt(7) + 2)) == 0, "ex 9")
+T.chk(simplify(10/sqrt(5) - 2*sqrt(5)) == 0 and simplify(21/sqrt(7) - 3*sqrt(7)) == 0, "ex 9")
 T.chk(3e5 * 5e2 == 1.5e8 and 2**12 == 4096 and 2**24 == 16777216, "ex 11, 12")
 T.chk(abs(3e-6/1.2e-7 - 25) < 1e-9, "ex 13")
 T.chk(simplify(4*sqrt(50) - 20*sqrt(2)) == 0 and real_root(216, 3) == 6 and 49**2 == 2401 and sqrt(2401) == 49, "ex 14-16")

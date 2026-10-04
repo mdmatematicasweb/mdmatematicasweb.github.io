@@ -21,7 +21,7 @@ ok(simplify(cbrt(54) - 3 * cbrt(2)) == 0 and factorint(54) == {2: 1, 3: 3}, "cbr
 ok(simplify(3 * sqrt(2) + 5 * sqrt(2) - 8 * sqrt(2)) == 0, "semejantes")
 ok(simplify(sqrt(50) - sqrt(18) - 2 * sqrt(2)) == 0 and 5 * sqrt(2) - 3 * sqrt(2) == 2 * sqrt(2), "50-18")
 ok(simplify(6 / sqrt(3) - 2 * sqrt(3)) == 0, "racionalizar 6/sqrt3")
-ok(simplify(1 / (2 + sqrt(3)) - (2 - sqrt(3))) == 0 and ((2 + sqrt(3)) * (2 - sqrt(3))).expand() == 1, "conjugado")
+ok(simplify(10 / sqrt(5) - 2 * sqrt(5)) == 0, "racionalizar 10/sqrt5")
 ok(simplify(sqrt(3) * sqrt(12) - 6) == 0, "producto de raíces")
 ok(simplify(sqrt(2 * 3) - sqrt(2) * sqrt(3)) == 0 and simplify(root(root(64, 2), 3) - root(64, 6)) == 0, "propiedades radicales")
 # errores

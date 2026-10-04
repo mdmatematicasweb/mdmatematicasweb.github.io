@@ -33,7 +33,7 @@ Actualizado el 2026-10-04.
 
 ## Curso 3º ESO (hecho el 2026-10-04, pendiente de revisión; sigue oculto)
 
-Fases 0 a 5 en la rama `claude/admiring-clarke-tgsd2o`, a partir del BOJA (Orden de 30/05/2023) y del libro de Santillana (14 unidades): 14 temas de apuntes con 16 figuras, 14 relaciones de 24 ejercicios (336 en total), 14 páginas de actividades con 50 módulos y una prueba competencial (20 situaciones). Detalle, comandos y pruebas en `docs/superpowers/specs/2026-10-04-curso-3eso.md` y en `CLAUDE.md`. Falta: revisión del usuario, renderizar con Quarto (no estaba instalado en el entorno), fase 6 (publicar: quitar la exclusión de `render`, portada, navbar, sidebar, índices) y borrar la carpeta antigua `14-parametros-estadisticos`.
+Fases 0 a 5 en la rama `claude/admiring-clarke-tgsd2o`, a partir del BOJA (Orden de 30/05/2023) y del libro de Santillana (14 unidades): 14 temas de apuntes con 16 figuras, 14 relaciones de 24 ejercicios (336 en total), 14 páginas de actividades con 50 módulos y una prueba competencial (20 situaciones). Detalle, comandos y pruebas en `docs/superpowers/specs/2026-10-04-curso-3eso.md` y en `CLAUDE.md`. Se renderizaron con Quarto 1.10.18 (HTML y Typst) sin avisos y todas las fórmulas pasan por KaTeX. Falta: revisión del usuario, fase 6 (publicar: quitar la exclusión de `render`, portada, navbar, sidebar, índices) y borrar la carpeta antigua `14-parametros-estadisticos`.
 
 ## Siguiente
 
