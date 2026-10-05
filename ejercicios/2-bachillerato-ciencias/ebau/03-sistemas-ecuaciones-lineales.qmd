@@ -43,14 +43,21 @@ Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (n�
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Matriz de coeficientes: $|M|=\begin{vmatrix}3&-1&0\\0&1-a&2\\0&4&3-a\end{vmatrix}=3(a^2-4a-5)=3(a-5)(a+1)$.
+**Determinante de la matriz de coeficientes** (de $M$).
+1. Es triangular por bloques:
+$$|M|=\begin{vmatrix}3&-1&0\\0&1-a&2\\0&4&3-a\end{vmatrix}=3(a^2-4a-5)=3(a-5)(a+1).$$
+2. Se anula en $a=5$ y $a=-1$.
 
-**a)**
-- Si $a\neq5$ y $a\neq-1$: rangos $3=3$, **sistema compatible determinado (SCD)**.
-- Si $a=5$: $\operatorname{rg}(M)=2$; las ecuaciones 2.ª y 3.ª son $-4y+2z=0$ y $4y-2z=0$ (proporcionales) y el término independiente de la 3.ª es $a-5=0$, así que $\operatorname{rg}(A^*)=2$: **sistema compatible indeterminado (SCI)**.
-- Si $a=-1$: $\operatorname{rg}(M)=2$ y $\operatorname{rg}(A^*)=3$ (la 2.ª pide $y+z=0$ y la 3.ª $y+z=-\tfrac32$): **sistema incompatible (SI)**.
+**a) Discusión (Rouché–Frobenius).**
+1. Si $a\neq5$ y $a\neq-1$: $\operatorname{rg}(M)=\operatorname{rg}(A^*)=3$, igual al número de incógnitas. **Sistema compatible determinado (SCD).**
+2. Si $a=5$: $\operatorname{rg}(M)=2$. Las ecuaciones 2.ª y 3.ª son $-4y+2z=0$ y $4y-2z=0$, proporcionales, y el término independiente de la 3.ª es $a-5=0$. Entonces $\operatorname{rg}(A^*)=2$: **sistema compatible indeterminado (SCI)**, con un grado de libertad.
+3. Si $a=-1$: $\operatorname{rg}(M)=2$, pero la 2.ª ecuación pide $y+z=0$ y la 3.ª $y+z=-\tfrac32$. Entonces $\operatorname{rg}(A^*)=3$: **sistema incompatible (SI)**.
 
-**b)** Para $a=0$ (SCD): $3x-y=0$, $y+2z=0$, $4y+3z=-5$. De la 2.ª, $y=-2z$; en la 3.ª, $-5z=-5$.
+**b) Resolución para $a=0$.**
+1. Con $a=0$ el sistema es SCD: $3x-y=0$, $y+2z=0$ y $4y+3z=-5$.
+2. De la 2.ª ecuación, $y=-2z$.
+3. Se sustituye en la 3.ª: $4(-2z)+3z=-5z=-5$, luego $z=1$ y $y=-2$.
+4. De la 1.ª, $3x=y$, luego $x=-\dfrac23$.
 
 **$x=-\dfrac23$, $y=-2$, $z=1$.**
 ::::
@@ -87,13 +94,22 @@ Un sistema lineal se plantea a partir del enunciado: una incógnita por cada can
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Precios $a,b,c$ de $A$, $B$, $C$. Datos: $0{,}9a+0{,}8b+0{,}8c=66$ (es decir, $9a+8b+8c=660$) y $3a+4b=140$ (es decir, $6a+8b=280$).
+**Planteamiento.**
+1. Sean $a$, $b$, $c$ los precios de $A$, $B$ y $C$.
+2. Con los descuentos, los precios son $0{,}9a$, $0{,}8b$ y $0{,}8c$, y suman $66$: $0{,}9a+0{,}8b+0{,}8c=66$, es decir, $9a+8b+8c=660$.
+3. Sin descuento, 3 de $A$ y 4 de $B$ cuestan $140$: $3a+4b=140$, es decir, $6a+8b=280$.
 
-**a)** Restando: $3a+8c=660-280$.
+**a) Precio de 3 de $A$ más 8 de $C$.**
+1. Se resta la segunda ecuación (multiplicada por 2) de la primera: $(9a+8b+8c)-(6a+8b)=660-280$.
+2. Se queda $3a+8c=660-280$.
 
 **3 de $A$ más 8 de $C$ valen 380 €.**
 
-**b)** Con $c=2a$: $9a+8b+16a=660\Rightarrow25a+8b=660$. Junto con $6a+8b=280$: $19a=380\Rightarrow a=20$; $b=\dfrac{140-60}{4}=20$; $c=40$.
+**b) Precio de cada producto.**
+1. Con $c=2a$ en la primera: $9a+8b+16a=660\Rightarrow25a+8b=660$.
+2. Se resta la segunda: $(25a+8b)-(6a+8b)=660-280\Rightarrow19a=380\Rightarrow a=20$.
+3. De $3a+4b=140$: $b=\dfrac{140-60}{4}=20$.
+4. $c=2a=40$.
 
 **$A=20$ €, $B=20$ €, $C=40$ €.**
 ::::
@@ -126,11 +142,16 @@ Un sistema lineal se plantea a partir del enunciado: una incógnita por cada can
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Año pasado: $v+c+p=115$ y $p=2v$. En 2026: $1{,}12v+1{,}15c+1{,}2p=115+19=134$.
+**Planteamiento.**
+1. Sean $v$, $c$ y $p$ los euros semanales del año pasado en verdura, carne y pescado.
+2. Año pasado: $v+c+p=115$ y $p=2v$.
+3. En 2026 los precios suben un $12\,\%$, $15\,\%$ y $20\,\%$ y el gasto es $115+19=134$: $1{,}12v+1{,}15c+1{,}2p=134$.
 
-De $3v+c=115$: $c=115-3v$. Sustituyendo: $1{,}12v+1{,}15(115-3v)+2{,}4v=134\Rightarrow0{,}07v=1{,}75\Rightarrow v=25$. Luego $c=40$, $p=50$.
-
-En 2026: verdura $25\cdot1{,}12$, carne $40\cdot1{,}15$, pescado $50\cdot1{,}2$.
+**Resolución.**
+1. Con $p=2v$, la primera ecuación da $3v+c=115$, luego $c=115-3v$.
+2. En la tercera: $1{,}12v+1{,}15(115-3v)+2{,}4v=134\Rightarrow0{,}07v=1{,}75\Rightarrow v=25$.
+3. Entonces $c=115-75=40$ y $p=50$.
+4. En 2026: verdura $25\cdot1{,}12$, carne $40\cdot1{,}15$, pescado $50\cdot1{,}2$.
 
 **Verdura 28 €, carne 46 €, pescado 60 € (total 134 €).**
 ::::
@@ -169,11 +190,18 @@ Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (n�
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Sumando la 1.ª y la 3.ª ecuación: $2x=6\Rightarrow x=3$, y queda $y+z=-2$. La 2.ª ecuación da $21+3(y+z)=15$, que se cumple. Así $\operatorname{rg}(A)=\operatorname{rg}(A^*)=2<3$: sistema compatible indeterminado (SCI).
+**a) Clasificación y resolución.**
+1. Se suman la 1.ª y la 3.ª ecuación: $2x=6\Rightarrow x=3$. Entonces la 1.ª queda $y+z=-2$.
+2. La 2.ª ecuación, con $x=3$: $21+3(y+z)=15\Rightarrow y+z=-2$. Es la misma condición.
+3. Así $\operatorname{rg}(A)=\operatorname{rg}(A^*)=2<3$: sistema compatible indeterminado (SCI), con un parámetro.
+4. Se toma $y=\lambda$ y entonces $z=-2-\lambda$.
 
 **Soluciones: $(x,y,z)=(3,\lambda,-2-\lambda)$, $\lambda\in\mathbb R$.**
 
-**b)** Todas las soluciones cumplen $y+z=-2$, es decir $y+z+2=0$. **Sí: todas las soluciones del sistema la verifican.**
+**b) ¿Alguna solución con $y+z+2=0$?**
+1. Todas las soluciones cumplen $y+z=-2$, es decir $y+z+2=0$.
+
+**Sí: todas las soluciones del sistema la verifican.**
 ::::
 :::::
 
@@ -230,10 +258,15 @@ $|A^t|=|A|$; $|A\cdot B|=|A|\cdot|B|$; si se intercambian dos filas, el determin
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$(A-mI)X=B$. $|A-mI|=-(m-2)(m-1)^2$.
-- Si $m\neq1$ y $m\neq2$: $|A-mI|\neq0$, rangos $3=3$: **sistema compatible determinado (SCD)**.
-- Si $m=2$: $\operatorname{rg}(A-2I)=2$ y $\operatorname{rg}(A^*)=3$: **sistema incompatible (SI)**.
-- Si $m=1$: $\operatorname{rg}(A-I)=2=\operatorname{rg}(A^*)<3$: **sistema compatible indeterminado (SCI)**.
+**Sistema equivalente.**
+1. Se agrupa: $AX-mX=B\Rightarrow(A-mI)X=B$. La matriz de coeficientes es $A-mI$ y la ampliada $A^*=(A-mI\,|\,B)$.
+2. Determinante: $|A-mI|=-(m-2)(m-1)^2$.
+3. Se anula en $m=2$ y $m=1$ (doble).
+
+**Discusión (Rouché–Frobenius).**
+1. Si $m\neq1$ y $m\neq2$: $|A-mI|\neq0$, rangos $3=3$: **sistema compatible determinado (SCD)**.
+2. Si $m=2$: $\operatorname{rg}(A-2I)=2$ y $\operatorname{rg}(A^*)=3$: **sistema incompatible (SI)**.
+3. Si $m=1$: $\operatorname{rg}(A-I)=2=\operatorname{rg}(A^*)<3$: **sistema compatible indeterminado (SCI)**.
 ::::
 :::::
 
@@ -271,13 +304,24 @@ Un sistema lineal se plantea a partir del enunciado: una incógnita por cada can
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $j,c,p$ los precios del jersey, la camisa y el pantalón.
+1. **Incógnitas.** $j$, $c$ y $p$ son los precios del jersey, la camisa y el pantalón.
 
-**a)** $j+c+p=80$ y $j=\dfrac{c+p}{3}$, es decir $c+p=3j$. Entonces $4j=80$ y $j=20$, pero sólo queda $c+p=60$ (dos incógnitas, una ecuación): sistema compatible indeterminado (SCI). **El jersey sí está determinado ($20$ €); la camisa no** (puede valer cualquier cantidad con $p=60-c$).
+**a) ¿Se pueden determinar de forma única?**
+1. Gasto total: $j+c+p=80$.
+2. El jersey cuesta un tercio de lo que cuestan la camisa y el pantalón juntos: $j=\dfrac{c+p}{3}$, es decir, $c+p=3j$.
+3. Se sustituye en la primera ecuación: $j+3j=80$, luego $4j=80$ y $j=20$.
+4. Queda $c+p=60$: dos incógnitas y una sola ecuación. Es un sistema compatible indeterminado (SCI), con $p=60-c$ y $c$ libre.
 
-**b)** Con descuentos: $0{,}7j+0{,}6c+0{,}8p=57$. Con $j=20$: $0{,}6c+0{,}8p=43$, o $3c+4p=215$. Con $c+p=60$: $3c+4(60-c)=215\Rightarrow c=25$ y $p=35$.
+**El jersey sí está determinado ($20$ €); la camisa no** (puede valer cualquier cantidad entre $0$ y $60$ con $p=60-c$).
 
-**Jersey $20$ €, camisa $25$ €, pantalón $35$ €.** (Comprobación: $14+15+28=57$.)
+**b) Precios con las rebajas.**
+1. Con los descuentos pagaría el $70\,\%$ del jersey, el $60\,\%$ de la camisa y el $80\,\%$ del pantalón: $0{,}7j+0{,}6c+0{,}8p=57$.
+2. Con $j=20$: $0{,}6c+0{,}8p=57-14=43$, o, multiplicando por $5$, $3c+4p=215$.
+3. Se sustituye $p=60-c$: $3c+4(60-c)=215\Rightarrow3c+240-4c=215\Rightarrow c=25$ y $p=35$.
+
+**Jersey $20$ €, camisa $25$ € y pantalón $35$ €.** (Comprobación: $14+15+28=57$ y $20+25+35=80$.)
+
+*Interpretación:* con el dato de las rebajas el sistema pasa a tener tres ecuaciones independientes y los tres precios quedan determinados.
 ::::
 :::::
 
@@ -308,15 +352,21 @@ Un sistema lineal se plantea a partir del enunciado: una incógnita por cada can
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x,y,z$ los tres números. $x+y+z=22$ y $4x+3y+2z=61$. Restando $2\cdot$(primera) a la segunda: $2x+y=17$. Entonces
-$$y=17-2x,\qquad z=22-x-y=x+5,$$
-un sistema compatible indeterminado (SCI) con un parámetro $x$.
+**Planteamiento.**
+1. Sean $x$, $y$ y $z$ los tres números naturales (el primero, el segundo y el tercero).
+2. Suma: $x+y+z=22$. Segunda condición: $4x+3y+2z=61$.
 
+**Resolución del sistema.**
+1. Se resta $2\cdot$(primera) a la segunda: $4x+3y+2z-2x-2y-2z=61-44$, es decir, $2x+y=17$.
+2. Se despeja con $x$ como parámetro: $y=17-2x$ y $z=22-x-y=x+5$.
+3. Es un sistema compatible indeterminado (SCI) con un parámetro, $x$. Como los números son naturales, hay que exigir $x\ge0$ e $y\ge0$.
+
+**¿Puede ser 15 uno de los tres números?** Se prueba en cada posición:
 - Si $x=15$: $y=-13<0$, imposible.
 - Si $y=15$: $x=1$ y $z=6$; comprobación: $1+15+6=22$ y $4+45+12=61$. **Válido.**
 - Si $z=15$: $x=10$ e $y=-3<0$, imposible.
 
-**Sí, 15 puede ser uno de los números, y sólo como el segundo: los otros son $1$ y $6$ (terna $(1,15,6)$). No hay otras opciones.**
+**Sí, 15 puede ser uno de los números, y solo como el segundo: los otros son $1$ y $6$ (terna $(1,15,6)$). No hay otras opciones.**
 ::::
 :::::
 
@@ -356,17 +406,22 @@ Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (n�
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Determinante de los coeficientes: $|M|=(k-1)(k-2)$.
+**a) Discusión.**
+1. Matriz de coeficientes $M=\begin{pmatrix}0&1&1\\k-1&1&1\\1&k-1&1\end{pmatrix}$. Determinante: $|M|=(k-1)(k-2)$.
+2. Se anula en $k=1$ y $k=2$: son los valores críticos.
+3. Si $k\neq1,2$: $|M|\neq0$, luego $\operatorname{rg}(M)=\operatorname{rg}(M|N)=3$ (el número de incógnitas): compatible determinado (SCD).
+4. Si $k=1$: $\operatorname{rg}(M)=\operatorname{rg}(M|N)=2<3$: compatible indeterminado (SCI).
+5. Si $k=2$: $\operatorname{rg}(M)=2$ y $\operatorname{rg}(M|N)=3$: incompatible (SI).
 
-- $k\neq1,2$: $\operatorname{rg}(M)=\operatorname{rg}(M|N)=3$, compatible determinado (SCD).
-- $k=1$: $\operatorname{rg}(M)=\operatorname{rg}(M|N)=2$, compatible indeterminado (SCI).
-- $k=2$: $\operatorname{rg}(M)=2$ y $\operatorname{rg}(M|N)=3$, incompatible (SI).
-
-**b)** $k=1$: $\begin{cases}y+z=1\\y+z=1\\x+z=0\end{cases}$, es decir $y+z=1$, $x=-z$:
+**b) Resolución para $k=1$.**
+1. El sistema queda $\begin{cases}y+z=1\\y+z=1\\x+z=0\end{cases}$. La primera y la segunda ecuación son iguales; sobra una.
+2. Con dos ecuaciones y tres incógnitas hay un parámetro: $z=\lambda$. De la primera, $y=1-\lambda$; de la tercera, $x=-\lambda$.
 
 $$\mathbf{(x,y,z)=(-\lambda,\ 1-\lambda,\ \lambda),\ \lambda\in\mathbb{R}}.$$
 
-Sí hay solución con $y=0$: $\lambda=1$, **$(x,y,z)=(-1,0,1)$**.
+3. Solución con $y=0$: $1-\lambda=0\Rightarrow\lambda=1$.
+
+Sí hay solución con $y=0$: **$(x,y,z)=(-1,0,1)$**.
 ::::
 :::::
 
@@ -397,9 +452,15 @@ Un sistema lineal se plantea a partir del enunciado: una incógnita por cada can
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Número $\overline{cdu}=100c+10d+u$. Condiciones: $c+d+u=9$; $(100c+10d+u)-(100u+10d+c)=99(c-u)=198\Rightarrow c-u=2$; suma: $101(c+u)+20d=828$.
+**Planteamiento.** El número es $\overline{cdu}=100c+10d+u$, con $c$ centenas, $d$ decenas y $u$ unidades.
+1. Suma de dígitos: $c+d+u=9$.
+2. Diferencia con el número invertido ($\overline{udc}=100u+10d+c$): $(100c+10d+u)-(100u+10d+c)=99(c-u)=198\Rightarrow c-u=2$.
+3. Suma de ambos: $(100c+10d+u)+(100u+10d+c)=101(c+u)+20d=828$.
 
-Con $d=9-(c+u)$: $81(c+u)+180=828\Rightarrow c+u=8$. Entonces $c=5$, $u=3$, $d=1$.
+**Resolución.**
+1. De la primera, $d=9-(c+u)$. Se sustituye en la tercera: $101(c+u)+20\,(9-(c+u))=81(c+u)+180=828$.
+2. $81(c+u)=648\Rightarrow c+u=8$. Con $c-u=2$: $c=5$ y $u=3$.
+3. Entonces $d=9-8=1$.
 
 **El número es $513$** (comprobación: $513-315=198$ y $513+315=828$).
 ::::
@@ -436,17 +497,25 @@ Un sistema lineal se plantea a partir del enunciado: una incógnita por cada can
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $a$, $b$, $c$ los precios de A, B, C. Los datos: $20a+30b+15c=2200$ y $15a+10b+10c=1250$.
+**Planteamiento.** Sean $a$, $b$ y $c$ los precios (en euros) de un perfume de tipo A, B y C.
+1. Primer pedido: $20a+30b+15c=2200$.
+2. Segundo pedido: $15a+10b+10c=1250$.
 
-**a)** Se busca $25a+10b+16c$. Combinando $\alpha E_1+\beta E_2$ con $20\alpha+15\beta=25$, $30\alpha+10\beta=10$, $15\alpha+10\beta=16$, resulta $\alpha=-\frac25$, $\beta=\frac{11}5$ (cumple las tres), así que el coste es
+**a) Coste del tercer pedido.** Se pide $25a+10b+16c$, que no se puede despejar (dos ecuaciones, tres incógnitas), pero sí escribir como combinación de los dos pedidos.
+1. Se busca $\alpha E_1+\beta E_2$ con $20\alpha+15\beta=25$, $30\alpha+10\beta=10$ y $15\alpha+10\beta=16$.
+2. Resolviendo las dos primeras: $\alpha=-\frac25$, $\beta=\frac{11}5$; esos valores cumplen también la tercera.
+3. Entonces el coste es la misma combinación de los importes:
 
 $$-\tfrac25\cdot2200+\tfrac{11}5\cdot1250=\mathbf{1870\ \text{euros}}.$$
 
-**b)** Con $c=\frac25a$: $26a+30b=2200$ y $19a+10b=1250$. Restando a la primera el triple de la segunda: $-31a=-1550$.
+**b) Con el dato $c=\frac25a$.**
+1. Se sustituye en las ecuaciones: $20a+30b+15\cdot\tfrac25a=26a+30b=2200$ y $15a+10b+10\cdot\tfrac25a=19a+10b=1250$.
+2. Se resta a la primera el triple de la segunda: $26a-57a=-31a=2200-3750=-1550$.
+3. $a=50$; de $19a+10b=1250$: $950+10b=1250\Rightarrow b=30$; y $c=\tfrac25\cdot50=20$.
 
 $$\mathbf{a=50\ \text{€},\quad b=30\ \text{€},\quad c=20\ \text{€}}$$
 
-(comprobación del apartado a: $1250+300+320=1870$).
+*Comprobación del apartado a:* $25\cdot50+10\cdot30+16\cdot20=1250+300+320=1870$.
 ::::
 :::::
 
@@ -499,13 +568,21 @@ Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: sol
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-El sistema es $(A-mI)\vec x=\vec 0$, homogéneo (siempre compatible). Será compatible indeterminado (SCI) si $|A-mI|=0$:
+**Planteamiento.** Pasando $mI$ al otro miembro, el sistema es $(A-mI)\vec x=\vec 0$, **homogéneo**: siempre tiene la solución trivial (compatible).
+1. Será compatible indeterminado (SCI) si hay más soluciones, es decir, si $|A-mI|=0$.
+2. Determinante: $|A-mI|=-m(m-2)^2$.
+3. Se anula en $m=0$ y $m=2$.
 
-$$|A-mI|=-m(m-2)^2=0\ \Rightarrow\ m=0,\ m=2.$$
+**a) Valores de $m$ con SCI.**
+1. Para $m=0$ y para $m=2$ el rango de la matriz de coeficientes es $2<3$.
+2. Para cualquier otro $m$, el rango es $3$ y solo hay la solución trivial.
 
-**a)** Para $m=0$ y para $m=2$ el rango de la matriz de coeficientes es $2<3$, así que **es SCI para $m=0$ y $m=2$**; para cualquier otro $m$ es compatible determinado (SCD), sólo con la solución trivial.
+**Es SCI para $m=0$ y $m=2$**; para cualquier otro $m$ es compatible determinado (SCD), sólo con la solución trivial.
 
-**b)** $m=2$: $\begin{cases}3x-2y-3z=0\\2x-2y-2z=0\end{cases}$. De la segunda, $x=y+z$; en la primera $3y+3z-2y-3z=y=0$. Así $x=z$.
+**b) Resolución para $m=2$.**
+1. El sistema queda $\begin{cases}3x-2y-3z=0\\2x-2y-2z=0\\3x-2y-3z=0\end{cases}$; la tercera repite la primera, así que se queda con dos ecuaciones: $\begin{cases}3x-2y-3z=0\\2x-2y-2z=0\end{cases}$.
+2. De la segunda, $x=y+z$.
+3. En la primera: $3y+3z-2y-3z=y=0$. Así $x=z$.
 
 $$\mathbf{(x,y,z)=(\lambda,0,\lambda),\ \lambda\in\mathbb{R}}$$
 ::::
@@ -544,16 +621,21 @@ Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (n�
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Determinante de los coeficientes: $|M|=-(a-1)(a-2)$.
+**Discusión.**
+1. Determinante de la matriz de coeficientes: $|M|=-(a-1)(a-2)$.
+2. Se anula en $a=1$ y $a=2$: son los valores críticos. Para cualquier otro $a$, $\operatorname{rg}(M)=3$ y el sistema es compatible determinado.
 
-**a)** Se anula en $a=1$ y $a=2$.
-
-- $a=1$: $\operatorname{rg}(M)=\operatorname{rg}(M|N)=2<3$, **compatible indeterminado (SCI)**.
-- $a=2$: $\operatorname{rg}(M)=2$ y $\operatorname{rg}(M|N)=3$, incompatible (SI).
+**a) Valor de $a$ para que sea compatible indeterminado.**
+1. $a=1$: $\operatorname{rg}(M)=\operatorname{rg}(M|N)=2<3$, **compatible indeterminado (SCI)**.
+2. $a=2$: $\operatorname{rg}(M)=2$ y $\operatorname{rg}(M|N)=3$, incompatible (SI).
 
 **Resultado: SCI sólo para $a=1$.** (Para $a\ne1,2$ es compatible determinado.)
 
-**b)** $a=0$ ($|M|=-2\neq0$, SCD): $\begin{cases}y+z=1\\x+2y-z=1\\x+y=0\end{cases}$. De la tercera $x=-y$; en la segunda $y-z=1$; con la primera, $y=1$, $z=0$.
+**b) Resolución para $a=0$.**
+1. $|M|=-2\neq0$: compatible determinado, con solución única.
+2. El sistema queda $\begin{cases}y+z=1\\x+2y-z=1\\x+y=0\end{cases}$.
+3. De la tercera, $x=-y$. En la segunda: $-y+2y-z=y-z=1$.
+4. Junto con la primera ($y+z=1$): sumando, $2y=2$, luego $y=1$ y $z=0$.
 
 $$\mathbf{(x,y,z)=(-1,1,0)}$$
 ::::
@@ -589,13 +671,14 @@ Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (n�
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $b$, $n$ y $r$ los coches blancos, negros y rojos, y $T=b+n+r$.
-
+1. **Incógnitas.** $b$, $n$ y $r$ son los coches blancos, negros y rojos, y $T=b+n+r$ el total.
+2. **Sistema.** Cada frase del enunciado es una ecuación:
 $$\begin{cases}0{,}6b+0{,}5n=0{,}3T\\0{,}2b+0{,}6n+0{,}6r=0{,}5T\\n=b+100\end{cases}$$
+3. **Simplificación.** Sustituyendo $T$ y multiplicando por $10$: $3b+2n-3r=0$ y $-3b+n+r=0$.
+4. **Resolución.** Con $n=b+100$, la primera da $r=\dfrac{5b+200}3$ y la segunda $r=2b-100$. Igualando: $5b+200=6b-300\Rightarrow b=500$.
+5. **Comprobación.** $n=600$, $r=900$ y $T=2000$: $0{,}6\cdot500+0{,}5\cdot600=600=0{,}3\cdot2000$ y $100+360+540=1000=0{,}5\cdot2000$.
 
-Simplificando: $3b+2n-3r=0$ y $-3b+n+r=0$. Con $n=b+100$: $r=\dfrac{5b+200}3$ y $r=2b-100$, de donde $5b+200=6b-300\Rightarrow b=500$.
-
-**Blancos: 500; negros: 600; rojos: 900** (total 2000). Comprobación: $0{,}6\cdot500+0{,}5\cdot600=600=0{,}3\cdot2000$ y $100+360+540=1000=0{,}5\cdot2000$.
+**Blancos: 500; negros: 600; rojos: 900** (total 2000).
 ::::
 :::::
 
@@ -626,11 +709,12 @@ Un sistema lineal se plantea a partir del enunciado: una incógnita por cada can
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$, $y$, $z$ los litros de $L_1$, $L_2$ y $L_3$ (un litro en total):
-
+1. **Incógnitas.** $x$, $y$, $z$ son los litros de $L_1$, $L_2$ y $L_3$ que se mezclan para obtener un litro.
+2. **Sistema.** Un litro en total, $100$ mg de sodio y $100$ mg de magnesio:
 $$\begin{cases}x+y+z=1\\120x+100y+60z=100\\90x+90y+180z=100\end{cases}$$
-
-El determinante vale $-1800\ne0$: sistema compatible determinado (SCD). Sí es posible.
+3. **Discusión.** El determinante de la matriz de coeficientes vale $-1800\ne0$: sistema compatible determinado (SCD). Sí es posible.
+4. **Resolución.** Por Cramer o Gauss.
+5. **Comprobación.** Las tres cantidades son positivas y suman $1$: $\dfrac29+\dfrac69+\dfrac19=1$.
 
 **$x=\dfrac29$ L de $L_1$, $y=\dfrac23$ L de $L_2$ y $z=\dfrac19$ L de $L_3$.**
 ::::
@@ -683,15 +767,19 @@ Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: sol
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $BA=(\alpha x+y+z,\ x+\alpha y+z,\ x+y+\alpha z)=(1,1,1)$. La matriz de coeficientes tiene $|\cdot|=(\alpha-1)^{2}(\alpha+2)$.
+**a) Discusión según $\alpha$.**
+1. Se calcula $BA=(\alpha x+y+z,\ x+\alpha y+z,\ x+y+\alpha z)$ y se iguala a $(1,1,1)$: tres ecuaciones lineales en $x,y,z$.
+2. La matriz de coeficientes es $\begin{pmatrix}\alpha&1&1\\1&\alpha&1\\1&1&\alpha\end{pmatrix}$ y su determinante vale $(\alpha-1)^{2}(\alpha+2)$.
+3. Se estudia cada caso:
+   - $\alpha\ne1,-2$: $\operatorname{rg}=3$, sistema compatible determinado (SCD).
+   - $\alpha=1$: las tres ecuaciones son $x+y+z=1$, rango 1: sistema compatible indeterminado (SCI).
+   - $\alpha=-2$: $\operatorname{rg}=2$ y $\operatorname{rg}$ ampliada $=3$ (sumando las ecuaciones sale $0=3$): sistema incompatible (SI).
 
-- $\alpha\ne1,-2$: $\operatorname{rg}=3$, sistema compatible determinado (SCD).
-- $\alpha=1$: las tres ecuaciones son $x+y+z=1$, rango 1: sistema compatible indeterminado (SCI).
-- $\alpha=-2$: $\operatorname{rg}=2$ y $\operatorname{rg}$ ampliada $=3$ (sumando las ecuaciones sale $0=3$): sistema incompatible (SI).
+**b) Resolución.**
+1. Para $\alpha=0$ (SCD): $y+z=1$, $x+z=1$, $x+y=1$. Sumando, $2(x+y+z)=3$, y restando cada ecuación se obtiene $x=y=z=\dfrac12$.
+2. Para $\alpha=1$ (SCI): una sola ecuación independiente, $x+y+z=1$; se toman $x$ e $y$ como parámetros.
 
-**b)** 
-- $\alpha=0$ (SCD): $y+z=1$, $x+z=1$, $x+y=1$, **$x=y=z=\dfrac12$**.
-- $\alpha=1$ (SCI): **$(x,y,z)=(\lambda,\mu,1-\lambda-\mu)$**, con $\lambda,\mu\in\mathbb{R}$.
+**$\alpha=0$: $x=y=z=\dfrac12$. $\alpha=1$: $(x,y,z)=(\lambda,\mu,1-\lambda-\mu)$**, con $\lambda,\mu\in\mathbb{R}$.
 ::::
 :::::
 
@@ -722,13 +810,12 @@ Un sistema lineal se plantea a partir del enunciado: una incógnita por cada can
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $r$, $c$ y $v$ los importes sin impuestos de refrescos, cerveza y vino.
-
+1. **Incógnitas.** $r$, $c$ y $v$ son los importes sin impuestos de refrescos, cerveza y vino.
+2. **Sistema.** Importe total, relación del vino y factura con impuestos ($6\,\%$, $12\,\%$ y $30\,\%$):
 $$\begin{cases}r+c+v=500\\v=r+c-60\\1{,}06r+1{,}12c+1{,}3v=592{,}4\end{cases}$$
-
-Primera y segunda: $v=220$, $r+c=280$. Tercera: $1{,}06r+1{,}12(280-r)=592{,}4-286=306{,}4\Rightarrow-0{,}06r=-7{,}2\Rightarrow r=120$, $c=160$.
-
-Con impuestos: refrescos $127{,}20$, cerveza $179{,}20$, vino $286$.
+3. **Vino y suma de los otros dos.** De las dos primeras: $v=220$ y $r+c=280$.
+4. **Tercera ecuación.** $1{,}06r+1{,}12(280-r)=592{,}4-286=306{,}4\Rightarrow-0{,}06r=-7{,}2\Rightarrow r=120$, y $c=160$.
+5. **Importes con impuestos.** Refrescos $127{,}20$, cerveza $179{,}20$ y vino $286$.
 
 **Refrescos: $127{,}20$ €; cerveza: $179{,}20$ €; vino: $286$ €.**
 ::::
@@ -761,13 +848,15 @@ Un sistema lineal se plantea a partir del enunciado: una incógnita por cada can
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $a$, $c$ y $m$ las series de animación, ciencia ficción y comedia, y $T=a+c+m$ el total.
-
+1. **Incógnitas.** $a$, $c$ y $m$ son las series de animación, ciencia ficción y comedia, y $T=a+c+m$ el total.
+2. **Sistema.** Cada frase del enunciado es una ecuación:
 $$\begin{cases}0{,}3a+0{,}5c=0{,}2(a+c+m)\\0{,}25a+0{,}5c+0{,}6m=0{,}5(a+c+m)\\c=a+100\end{cases}\iff\begin{cases}a+3c-2m=0\\-0{,}25a+0{,}1m=0\\c-a=100\end{cases}$$
+3. **Segunda ecuación.** $-0{,}25a+0{,}1m=0\Rightarrow m=2{,}5a$.
+4. **Primera ecuación.** Con $c=a+100$ y $m=2{,}5a$: $a+3(a+100)-5a=0\Rightarrow a=300$.
+5. **Resto.** $c=400$ y $m=750$.
+6. **Comprobación.** Total $1450$ y $0{,}3\cdot300+0{,}5\cdot400=290=0{,}2\cdot1450$.
 
-Simplificando la segunda: $-0{,}25a+0{,}1m=0\Rightarrow m=2{,}5a$. En la primera: $a+3(a+100)-5a=0\Rightarrow a=300$.
-
-**Animación: 300; ciencia ficción: 400; comedia: 750** (total 1450). Comprobación: $0{,}3\cdot300+0{,}5\cdot400=290=0{,}2\cdot1450$.
+**Animación: 300; ciencia ficción: 400; comedia: 750** (total 1450).
 ::::
 :::::
 
@@ -807,12 +896,20 @@ Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (n�
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=3(m-1)(m+1)$.
-- $m\neq\pm1$: $\operatorname{rg}A=\operatorname{rg}A^*=3$: compatible determinado (SCD).
-- $m=-1$: $\operatorname{rg}A=\operatorname{rg}A^*=2$: compatible indeterminado (SCI).
-- $m=1$: $\operatorname{rg}A=2$ y $\operatorname{rg}A^*=3$: incompatible (SI).
+**a) Discusión según $m$.**
+1. Determinante de la matriz de coeficientes $A$: $|A|=\begin{vmatrix}1&-1&m\\-m&3&-1\\1&-4&m\end{vmatrix}=3(m-1)(m+1)$.
+2. Se anula en $m=1$ y $m=-1$. Se estudian tres casos con el teorema de Rouché-Frobenius ($A^*$ es la matriz ampliada).
+3. Si $m\neq\pm1$: $|A|\neq0$, luego $\operatorname{rg}A=\operatorname{rg}A^*=3$ (igual al número de incógnitas): compatible determinado (SCD).
+4. Si $m=-1$: $\operatorname{rg}A=\operatorname{rg}A^*=2<3$: compatible indeterminado (SCI), con un parámetro libre.
+5. Si $m=1$: $\operatorname{rg}A=2$ pero $\operatorname{rg}A^*=3$: incompatible (SI).
 
-**b)** Para $m=2$ (SCD), por Gauss o Cramer:
+**SCD si $m\neq\pm1$; SCI si $m=-1$; SI si $m=1$.**
+
+**b) Resolución para $m=2$.**
+1. Para $m=2$ el sistema es SCD (el caso general). Las ecuaciones son $x-y+2z=-3$, $-2x+3y-z=1$, $x-4y+2z=-6$.
+2. Restando la primera de la tercera: $-3y=-3\Rightarrow y=1$.
+3. Con $y=1$: $x+2z=-2$ y $-2x-z=-2$. De la segunda, $z=2-2x$; en la primera, $x+4-4x=-2\Rightarrow x=2$, luego $z=-2$.
+4. Comprobación en la segunda ecuación: $-2\cdot2+3\cdot1-(-2)=1$ ✓.
 
 **$(x,y,z)=(2,1,-2)$.**
 ::::
@@ -845,9 +942,15 @@ Un sistema lineal se plantea a partir del enunciado: una incógnita por cada can
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$, $y$, $z$ los minutos de las Fases I, II y III. Total $8\text{ h}=480$ min; NO-REM $=0{,}75\cdot480=360$ min.
+**Planteamiento.**
+1. Sean $x$, $y$, $z$ los minutos dedicados a las fases I, II y III. Total: $8\text{ h}=480$ min; fase NO-REM (las tres fases): $0{,}75\cdot480=360$ min.
+2. Condiciones: la suma es $360$; la fase II es el doble que las fases I y III juntas; la fase III es el cuádruple que la I:
 $$\begin{cases}x+y+z=360\\ y=2(x+z)\\ z=4x\end{cases}$$
-De las dos primeras, $3(x+z)=360\Rightarrow x+z=120$ y $y=240$. Con $z=4x$: $5x=120$.
+
+**Resolución.**
+3. Se sustituye la segunda en la primera: $(x+z)+2(x+z)=360\Rightarrow3(x+z)=360\Rightarrow x+z=120$, y así $y=240$.
+4. Con $z=4x$: $x+4x=120\Rightarrow5x=120\Rightarrow x=24$ y $z=96$.
+5. Comprobación: $24+240+96=360$ ✓.
 
 **Fase I: 24 min; Fase II: 240 min; Fase III: 96 min.**
 ::::
@@ -886,12 +989,19 @@ Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (n�
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=-(m+2)(3m-1)$, que se anula en $m=-2$ y $m=\tfrac13$.
-- $m\neq-2,\tfrac13$: $\operatorname{rg}A=\operatorname{rg}A^*=3$: compatible determinado (SCD).
-- $m=-2$: $\operatorname{rg}A=\operatorname{rg}A^*=2$: compatible indeterminado (SCI).
-- $m=\tfrac13$: $\operatorname{rg}A=2$ y $\operatorname{rg}A^*=3$: incompatible (SI).
+**a) Discusión según $m$.**
+1. Determinante de la matriz de coeficientes: $|A|=\begin{vmatrix}2&3&m\\1&m&-1\\3&1&-3\end{vmatrix}=-(m+2)(3m-1)$.
+2. Se anula en $m=-2$ y $m=\tfrac13$. Se aplica el teorema de Rouché-Frobenius ($A^*$ es la ampliada).
+3. Si $m\neq-2,\tfrac13$: $\operatorname{rg}A=\operatorname{rg}A^*=3$: compatible determinado (SCD).
+4. Si $m=-2$: $\operatorname{rg}A=\operatorname{rg}A^*=2<3$: compatible indeterminado (SCI).
+5. Si $m=\tfrac13$: $\operatorname{rg}A=2$ y $\operatorname{rg}A^*=3$: incompatible (SI).
 
-**b)** Para $m=-2$ (SCI) las soluciones son $x=z+\tfrac37$, $y=\tfrac57$. Tomando $z=\lambda-\tfrac37$ resulta $x=\lambda$.
+**SCD si $m\neq-2,\tfrac13$; SCI si $m=-2$; SI si $m=\tfrac13$.**
+
+**b) Valor de $y_0$ para $m=-2$.**
+1. El sistema es $2x+3y-2z=3$, $x-2y-z=-1$, $3x+y-3z=2$ y es SCI: tiene infinitas soluciones con un parámetro.
+2. Resolviéndolo, las soluciones son $x=z+\tfrac37$, $y=\tfrac57$ (la tercera ecuación es combinación de las otras dos).
+3. Con $z=\lambda-\tfrac37$ se tiene $x=\lambda$, que es justo la forma pedida. Entonces $y$ es constante.
 
 **$y_0=\dfrac57$.**
 ::::
@@ -924,9 +1034,18 @@ Un sistema lineal se plantea a partir del enunciado: una incógnita por cada can
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$A$, $B$, $C$ = seguidores de Alberto, Begoña, Carlos.
+**Planteamiento.**
+1. Sean $A$, $B$, $C$ los seguidores de Alberto, Begoña y Carlos.
+2. «La suma es 13000»: $A+B+C=13000$.
+3. «Carlos pierde un tercio y aún tiene el doble que Alberto»: le quedan $\tfrac23C$, luego $\tfrac23C=2A$.
+4. «Alberto más la quinta parte de Begoña son la mitad de Carlos»: $A+\tfrac B5=\tfrac C2$.
 $$\begin{cases}A+B+C=13000\\ \tfrac23C=2A\\ A+\tfrac{B}{5}=\tfrac{C}{2}\end{cases}$$
-De la segunda, $C=3A$. En la tercera: $A+\tfrac B5=\tfrac{3A}{2}\Rightarrow B=\tfrac{5A}{2}$. Primera: $A+\tfrac52A+3A=13000\Rightarrow \tfrac{13}{2}A=13000$.
+
+**Resolución.**
+5. De la segunda, $C=3A$.
+6. En la tercera: $A+\tfrac B5=\tfrac{3A}{2}\Rightarrow\tfrac B5=\tfrac A2\Rightarrow B=\tfrac{5A}{2}$.
+7. En la primera: $A+\tfrac52A+3A=13000\Rightarrow \tfrac{13}{2}A=13000\Rightarrow A=2000$.
+8. Entonces $B=5000$ y $C=6000$. Comprobación: $2000+5000+6000=13000$ ✓.
 
 **Alberto 2000, Begoña 5000 y Carlos 6000 seguidores.**
 ::::
@@ -965,15 +1084,20 @@ Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (n�
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-La matriz de coeficientes es cuadrada; $|M|=-2\alpha(\alpha-1)$.
+**Matriz de coeficientes.** Es cuadrada, con $|M|=\begin{vmatrix}\alpha&1&1\\\alpha&-1&1\\\alpha&0&\alpha\end{vmatrix}=-2\alpha(\alpha-1)$, que se anula en $\alpha=0$ y $\alpha=1$.
 
-**a)** Sistema homogéneo (siempre compatible):
-- $\alpha\neq0,1$: $|M|\ne0$, $\operatorname{rg}=3$: compatible determinado (SCD), sólo la solución trivial.
-- $\alpha=0$ o $\alpha=1$: $\operatorname{rg}=2<3$: compatible indeterminado (SCI), con un parámetro.
+**a) Discusión según $\alpha$.** Es un sistema homogéneo, así que siempre es compatible (tiene al menos la solución trivial).
+1. Si $\alpha\neq0,1$: $|M|\ne0$ y $\operatorname{rg}M=3$: compatible determinado (SCD), solo la solución trivial.
+2. Si $\alpha=0$ o $\alpha=1$: $|M|=0$ y existe un menor no nulo de orden 2, luego $\operatorname{rg}M=2<3$: compatible indeterminado (SCI), con un parámetro libre.
 
-**b)** Para $\alpha=1$: $x+y+z=0$, $x-y+z=0$, $x+z=0$. Restando las dos primeras, $y=0$, y entonces $x=-z$:
+**SCD si $\alpha\neq0,1$; SCI si $\alpha=0$ o $\alpha=1$.**
 
-**$(x,y,z)=(-\lambda,0,\lambda)$; una solución no trivial: $(-1,0,1)$.**
+**b) Resolución para $\alpha=1$.**
+1. El sistema es $x+y+z=0$, $x-y+z=0$, $x+z=0$.
+2. Restando las dos primeras: $2y=0\Rightarrow y=0$.
+3. Entonces $x+z=0$ (la tercera ecuación coincide): $x=-z$. Con $z=\lambda$:
+
+**$(x,y,z)=(-\lambda,0,\lambda)$; una solución no trivial: $(-1,0,1)$** (con $\lambda=1$).
 ::::
 :::::
 
@@ -1007,12 +1131,20 @@ Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (n�
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=m^2-4=(m-2)(m+2)$ (matriz de coeficientes).
-- $m\neq\pm2$: $\operatorname{rg}A=\operatorname{rg}A^*=3$: compatible determinado (SCD).
-- $m=2$: $\operatorname{rg}A=2$ y $\operatorname{rg}A^*=3$: incompatible (SI).
-- $m=-2$: $\operatorname{rg}A=2$ y $\operatorname{rg}A^*=3$: incompatible (SI).
+**a) Discusión según $m$.**
+1. Determinante de la matriz de coeficientes: $|A|=\begin{vmatrix}1&-m&-2\\1&1&1\\1&2&m\end{vmatrix}=m^2-4=(m-2)(m+2)$.
+2. Se anula en $m=2$ y $m=-2$. Se aplica el teorema de Rouché-Frobenius ($A^*$ es la ampliada).
+3. Si $m\neq\pm2$: $\operatorname{rg}A=\operatorname{rg}A^*=3$: compatible determinado (SCD).
+4. Si $m=2$: $\operatorname{rg}A=2$ y $\operatorname{rg}A^*=3$: incompatible (SI).
+5. Si $m=-2$: $\operatorname{rg}A=2$ y $\operatorname{rg}A^*=3$: incompatible (SI).
 
-**b)** Con $m=1$ (SCD): $x-y-2z=1$, $x+y+z=2$, $x+2y+z=3$. Restando las dos últimas, $y=1$; entonces $x+z=1$ y $x-2z=2$, de donde $z=-\tfrac13$.
+**SCD si $m\neq\pm2$; SI si $m=2$ o $m=-2$.**
+
+**b) Resolución para $m=1$ (SCD).**
+1. El sistema es $x-y-2z=1$, $x+y+z=2$, $x+2y+z=3$.
+2. Restando las dos últimas: $y=1$.
+3. Entonces $x+z=1$ (de la segunda) y $x-2z=2$ (de la primera, con $y=1$). Restando: $3z=-1\Rightarrow z=-\tfrac13$, y $x=1-z=\tfrac43$.
+4. Comprobación en la primera: $\tfrac43-1+\tfrac23=1$ ✓.
 
 **$(x,y,z)=\left(\tfrac43,\,1,\,-\tfrac13\right)$.**
 ::::
@@ -1054,13 +1186,18 @@ Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (n�
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=\begin{vmatrix}m&2&-1\\5&-4&2\\1&3m&0\end{vmatrix}=-3m(2m+5)$.
+**a) Discusión según $m$.**
+1. Matriz de coeficientes $A$ y ampliada $A^*$ (la columna de términos independientes es $(1,0,m+\frac25)$).
+2. Determinante: $|A|=\begin{vmatrix}m&2&-1\\5&-4&2\\1&3m&0\end{vmatrix}=-3m(2m+5)$, que se anula en $m=0$ y $m=-\frac52$.
+3. Casos:
+   - $m\neq0$ y $m\neq-\frac52$: $\operatorname{rg}A=\operatorname{rg}A^*=3$, sistema compatible determinado (SCD).
+   - $m=0$: $\operatorname{rg}A=\operatorname{rg}A^*=2<3$, sistema compatible indeterminado (SCI).
+   - $m=-\frac52$: $\operatorname{rg}A=2$ y $\operatorname{rg}A^*=3$, sistema incompatible (SI).
 
-- $m\neq0$ y $m\neq-\frac52$: $\operatorname{rg}A=\operatorname{rg}A^*=3$, sistema compatible determinado (SCD).
-- $m=0$: $\operatorname{rg}A=\operatorname{rg}A^*=2<3$, sistema compatible indeterminado (SCI).
-- $m=-\frac52$: $\operatorname{rg}A=2$ y $\operatorname{rg}A^*=3$, sistema incompatible (SI).
-
-**b)** Con $m=0$: $2y-z=1$, $5x-4y+2z=0$, $x=\frac25$. Sustituyendo $x=\frac25$: $z=2y-1$ (ambas ecuaciones coinciden).
+**b) Resolución para $m=0$.**
+1. El sistema queda $2y-z=1$, $5x-4y+2z=0$ y $x=\frac25$.
+2. Se sustituye $x=\frac25$ en la segunda: $2-4y+2z=0$, es decir $z=2y-1$, que es la misma relación que da la primera ecuación (por eso hay infinitas soluciones).
+3. Con $y=\lambda$ como parámetro: $z=2\lambda-1$.
 
 **Soluciones: $\left(\tfrac25,\ \lambda,\ 2\lambda-1\right)$.** Como $x=\frac25$ siempre, **no hay ninguna solución con $x=0$**.
 ::::
@@ -1094,11 +1231,12 @@ Un sistema lineal se plantea a partir del enunciado: una incógnita por cada can
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $b$, $g$, $d$ el número de botellas, garrafas y bidones por hora. Con la materia prima en gramos:
-
+1. **Incógnitas.** $b$, $g$, $d$ = número de botellas, garrafas y bidones por hora.
+2. **Ecuaciones** (materia prima en gramos: $10$ kg $=10\,000$ g; botella $50$ g, garrafa $100$ g, bidón $1\,000$ g):
 $$\begin{cases}50b+100g+1000d=10000\\ b=2g\\ b+g+d=52\end{cases}$$
-
-Sustituyendo $b=2g$: $200g+1000d=10000\Rightarrow g+5d=50$ y $3g+d=52$. De ahí $g=15$, $d=7$, $b=30$ (comprobación: $1500+1500+7000=10000$ g).
+3. Se sustituye $b=2g$ en la primera: $200g+1000d=10000\Rightarrow g+5d=50$; en la tercera: $3g+d=52$.
+4. Se resuelve el sistema de dos ecuaciones: $g=15$, $d=7$ y, entonces, $b=30$.
+5. Comprobación: $1500+1500+7000=10000$ g ✓.
 
 **30 botellas, 15 garrafas y 7 bidones cada hora.**
 ::::
@@ -1137,13 +1275,17 @@ Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (n�
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $\begin{vmatrix}1&1&2\\3&-1&-2\\-1&2&m\end{vmatrix}=-4(m-4)$. Infinitas soluciones (SCI) cuando el determinante es nulo: **$m=4$** (el rango es $2$ y el sistema es homogéneo, luego compatible).
-
-Con $m=4$: de las dos primeras, $x+y+2z=0$ y $3x-y-2z=0$; sumando, $4x=0\Rightarrow x=0$ y $y=-2z$.
+**a) Infinitas soluciones.**
+1. El sistema es homogéneo: siempre es compatible. Tendrá infinitas soluciones si $|A|=0$.
+2. Determinante: $\begin{vmatrix}1&1&2\\3&-1&-2\\-1&2&m\end{vmatrix}=-4(m-4)$.
+3. Es nulo cuando **$m=4$** (el rango es $2$, menor que el número de incógnitas).
+4. Resolución con $m=4$: sumando las dos primeras, $x+y+2z=0$ y $3x-y-2z=0$ dan $4x=0\Rightarrow x=0$ y $y=-2z$. La tercera ecuación se cumple: $2y+4z=0$.
 
 **$(x,y,z)=(0,-2\lambda,\lambda),\ \lambda\in\mathbb{R}$**
 
-**b)** Para $m=2$, $|A|=-4(2-4)=8\neq0$: el sistema homogéneo sólo tiene la solución trivial $(0,0,0)$.
+**b) Solución con $z=1$ para $m=2$.**
+1. Para $m=2$: $|A|=-4(2-4)=8\neq0$.
+2. Un sistema homogéneo con determinante no nulo solo tiene la solución trivial $(0,0,0)$.
 
 **No existe ninguna solución con $z=1$.**
 ::::
@@ -1180,13 +1322,18 @@ Un sistema lineal se plantea a partir del enunciado: una incógnita por cada can
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $a$, $b$, $c$ los viajes por A, B y C: $a+b+c=70$ y $b=a+c$.
+**Incógnitas.** $a$, $b$, $c$ = viajes por las rutas A, B y C: $a+b+c=70$ y $b=a+c$.
 
-**a)** Con $2(a+c)=70$: $a+c=35$ y $b=35$, lo que ya se deducía de las dos ecuaciones primeras. La tercera ecuación no aporta información nueva: rango $2<3$ (sistema compatible indeterminado, SCI).
+**a) ¿Se puede deducir cada ruta?**
+1. Con $2(a+c)=70$: $a+c=35$.
+2. De $b=a+c$ sale $b=35$, que ya se deducía de las dos primeras ecuaciones ($a+b+c=70$ y $b=a+c$ dan $2b=70$).
+3. La tercera ecuación no aporta información nueva: rango $2<3$ (sistema compatible indeterminado, SCI).
 
 **No se puede deducir:** $b=35$ pero $a+c=35$ admite muchas soluciones.
 
-**b)** $2c=b-5$ junto con $a+b+c=70$ y $b=a+c$ da $b=35$, $c=15$, $a=20$.
+**b) Con $2c=b-5$.**
+1. Ahora $2c=b-5$, junto con $a+b+c=70$ y $b=a+c$, da $b=35$.
+2. Entonces $2c=30\Rightarrow c=15$ y $a=35-15=20$.
 
 **A: 20 viajes, B: 35 viajes, C: 15 viajes.**
 ::::
@@ -1225,14 +1372,18 @@ Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (n�
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$|A|=\begin{vmatrix}1&m&m\\1&2m&m+1\\2&m&m\end{vmatrix}=-m(m-1)$.
+**Previo.** $|A|=\begin{vmatrix}1&m&m\\1&2m&m+1\\2&m&m\end{vmatrix}=-m(m-1)$, que se anula en $m=0$ y $m=1$.
 
-**a)**
-- $m\neq0,\ m\neq1$: $\operatorname{rg}A=\operatorname{rg}A^*=3$, sistema compatible determinado (SCD).
-- $m=0$: $\operatorname{rg}A=\operatorname{rg}A^*=2<3$, sistema compatible indeterminado (SCI).
-- $m=1$: $\operatorname{rg}A=\operatorname{rg}A^*=2<3$, SCI.
+**a) Discusión según $m$.**
+1. $m\neq0,\ m\neq1$: $\operatorname{rg}A=\operatorname{rg}A^*=3$, sistema compatible determinado (SCD).
+2. $m=0$: $\operatorname{rg}A=\operatorname{rg}A^*=2<3$, sistema compatible indeterminado (SCI).
+3. $m=1$: $\operatorname{rg}A=\operatorname{rg}A^*=2<3$, SCI.
 
-**b)** Para $m=1$: $x+y+z=1$, $x+2y+2z=1$, $2x+y+z=2$. Restando las dos primeras: $y+z=0$, y entonces $x=1$.
+**b) Resolución para $m=1$.**
+1. El sistema es $x+y+z=1$, $x+2y+2z=1$, $2x+y+z=2$.
+2. Restando las dos primeras: $y+z=0$.
+3. Sustituyendo en la primera: $x=1$.
+4. Con $z=\lambda$ como parámetro: $y=-\lambda$.
 
 **$(x,y,z)=(1,-\lambda,\lambda),\ \lambda\in\mathbb{R}$**
 ::::
@@ -1269,11 +1420,15 @@ Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (n�
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$, $y$, $z$ los precios (€) de un café, una tostada y un zumo: $3x+y+2z=7{,}5$ y $4x+y+z=7{,}2$.
+**Incógnitas.** $x$, $y$, $z$ = precios (€) de un café, una tostada y un zumo: $3x+y+2z=7{,}5$ y $4x+y+z=7{,}2$.
 
-**a)** Buscamos $2x+y+3z$. Se cumple $(2,1,3)=2(3,1,2)-(4,1,1)$, luego el precio es $2\cdot7{,}5-7{,}2=$ **$7{,}80$ €**.
+**a) Precio de $2x+y+3z$.**
+1. Se busca una combinación de las dos ecuaciones que dé $(2,1,3)$: $(2,1,3)=2(3,1,2)-(4,1,1)$.
+2. El precio es $2\cdot7{,}5-7{,}2=$ **$7{,}80$ €**.
 
-**b)** Restando: $x-z=-0{,}3$ y $y=8{,}4-5z$. Con $z=2$: $x=1{,}7$ pero $y=-1{,}6<0$, imposible.
+**b) ¿Puede un zumo costar $2$ €?**
+1. Restando las dos ecuaciones: $x-z=-0{,}3$, y de la segunda, $y=8{,}4-5z$.
+2. Con $z=2$: $x=1{,}7$ pero $y=-1{,}6<0$, imposible.
 
 **No, un zumo no puede costar 2 €** (la tostada saldría con precio negativo).
 ::::

@@ -55,11 +55,13 @@ $f$ derivable en $a$ si es continua en $a$ y las derivadas laterales coinciden: 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Para $x\le\tfrac12$: $x^2-1<0$, luego $f(x)=2(1-x^2)$.
-- Continuidad en $\tfrac12$: $2\left(1-\tfrac14\right)=\tfrac32=\tfrac a4+\tfrac b2\Rightarrow a+2b=6$.
-- Derivabilidad: $f'(x)=-4x\to-2$ por la izquierda; $f'(x)=2ax+b\to a+b$ por la derecha. $a+b=-2$.
+**Función sin valor absoluto cerca de $x=\tfrac12$.**
+1. Para $x\le\tfrac12$: $x^2-1<0$, luego $|x^2-1|=1-x^2$ y $f(x)=2(1-x^2)$.
 
-Resolviendo el sistema: $b=8$.
+**Condiciones.**
+1. Continuidad en $\tfrac12$: los dos trozos coinciden, $2\left(1-\tfrac14\right)=\tfrac32=\tfrac a4+\tfrac b2$, es decir $a+2b=6$.
+2. Derivabilidad: las derivadas laterales coinciden. Por la izquierda, $f'(x)=-4x\to-2$; por la derecha, $f'(x)=2ax+b\to a+b$. Así $a+b=-2$.
+3. Se resuelve el sistema $a+2b=6$, $a+b=-2$: restando, $b=8$ y entonces $a=-10$.
 
 **$a=-10$, $b=8$.**
 ::::
@@ -109,12 +111,12 @@ El óptimo de una función derivable en un intervalo se busca entre los puntos c
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$f'(x)=3x^2+2ax+b$.
-- $f(1)=0$: $1+a+b+c=0$.
-- $x=0$ punto crítico: $f'(0)=b=0$.
-- Tangente en $x=-1$ paralela a $y=-3x$: $f'(-1)=3-2a+b=-3\Rightarrow a=3$.
-
-Entonces $c=-1-a-b=-4$.
+**Una ecuación por cada dato.**
+1. Derivada: $f'(x)=3x^2+2ax+b$.
+2. $f(1)=0$: $1+a+b+c=0$.
+3. $x=0$ punto crítico: $f'(0)=b=0$.
+4. La recta $y+3x=0$ tiene pendiente $-3$. La tangente en $x=-1$ es paralela, luego $f'(-1)=3-2a+b=-3$. Con $b=0$: $a=3$.
+5. De la primera ecuación: $c=-1-a-b=-4$.
 
 **$a=3$, $b=0$, $c=-4$** (es decir, $f(x)=x^3+3x^2-4$).
 ::::
@@ -171,11 +173,19 @@ El óptimo de una función derivable en un intervalo se busca entre los puntos c
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f(x)=2\ln|x|-1$, luego $f'(x)=\dfrac2x$. Pendiente de la normal: $-\dfrac{x}{2}$. Pendiente de la tangente a $g$: $g'(x)=3x^2$.
-
+**a) Valor de $a$.**
+1. Por las propiedades del logaritmo, $f(x)=2\ln|x|-1$, luego $f'(x)=\dfrac2x$.
+2. Pendiente de la normal a $f$ en $x=a$: $-\dfrac{1}{f'(a)}=-\dfrac{a}{2}$.
+3. Pendiente de la tangente a $g$ en $x=a$: $g'(a)=3a^2$.
+4. Rectas paralelas tienen la misma pendiente:
 $$-\frac a2=3a^2\;\Rightarrow\;a(6a+1)=0\;\Rightarrow\;\textbf{a}=-\dfrac16\ (a\neq0).$$
 
-**b)** $f'(x)=\dfrac2x$: negativa en $(-1,0)$ y positiva en $(0,1)$. **$f$ decrece en $(-1,0)$ y crece en $(0,1)$.**
+**$a=-\dfrac16$**, que está en el dominio $(-1,0)\cup(0,1)$.
+
+**b) Monotonía de $f$.**
+1. $f'(x)=\dfrac2x$ es negativa en $(-1,0)$ y positiva en $(0,1)$.
+
+**$f$ decrece en $(-1,0)$ y crece en $(0,1)$.**
 ::::
 :::::
 
@@ -237,11 +247,17 @@ El óptimo de una función derivable en un intervalo se busca entre los puntos c
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Para $x\ge0$, $f(x)=\dfrac{1+x}{1-x}$ y $f'(x)=\dfrac{2}{(1-x)^2}$. Para $x<0$, $f(x)=\dfrac{1-x}{1+x}$ y $f'(x)=\dfrac{-2}{(1+x)^2}$.
+**a) Derivabilidad.**
+1. Se quita el valor absoluto. Para $x\ge0$: $f(x)=\dfrac{1+x}{1-x}$ y $f'(x)=\dfrac{2}{(1-x)^2}$.
+2. Para $x<0$: $f(x)=\dfrac{1-x}{1+x}$ y $f'(x)=\dfrac{-2}{(1+x)^2}$.
+3. $f$ es continua en $0$ (ambos límites laterales valen $1$), pero $f'(0^+)=2\neq-2=f'(0^-)$.
 
-$f$ es continua en $0$, pero $f'(0^+)=2\neq-2=f'(0^-)$. **$f$ es derivable en $(-1,1)\setminus\{0\}$ y no es derivable en $x=0$.**
+**$f$ es derivable en $(-1,1)\setminus\{0\}$ y no es derivable en $x=0$.**
 
-**b)** $f'<0$ en $(-1,0)$ y $f'>0$ en $(0,1)$. **Decrece en $(-1,0)$ y crece en $(0,1)$** (mínimo en $x=0$).
+**b) Monotonía.**
+1. $f'<0$ en $(-1,0)$ y $f'>0$ en $(0,1)$.
+
+**Decrece en $(-1,0)$ y crece en $(0,1)$** (mínimo en $x=0$).
 ::::
 :::::
 
@@ -296,11 +312,20 @@ El óptimo de una función derivable en un intervalo se busca entre los puntos c
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Pendiente de $AB$: $\dfrac{1-0}{e-1}=\dfrac1{e-1}$. Como $f'(x)=\dfrac1x$: $\dfrac1x=\dfrac1{e-1}\Rightarrow x=e-1$.
+**a) Puntos con tangente paralela a $AB$.**
+1. Pendiente de la recta $AB$: $\dfrac{1-0}{e-1}=\dfrac1{e-1}$.
+2. Rectas paralelas tienen la misma pendiente, así que se busca $f'(x)=\dfrac1{e-1}$. Derivada: $f'(x)=\dfrac1x$ (definida para $x>0$).
+3. Se iguala: $\dfrac1x=\dfrac1{e-1}\Rightarrow x=e-1$, que está en el dominio $(0,+\infty)$ porque $e-1\approx1{,}72>0$.
+4. Ordenada del punto: $f(e-1)=\ln(e-1)$.
 
 **Único punto: $\left(e-1,\ \ln(e-1)\right)$.**
 
-**b)** $f'(1)=1$, pendiente de la normal $-1$: **$y=-(x-1)$, es decir $y=-x+1$.**
+**b) Recta normal en $A(1,0)$.**
+1. Pendiente de la tangente: $f'(1)=1$.
+2. La normal es perpendicular a la tangente, así que su pendiente es $-\dfrac1{f'(1)}=-1$.
+3. Ecuación punto-pendiente por $A(1,0)$: $y-0=-1\,(x-1)$.
+
+**$y=-(x-1)$, es decir $y=-x+1$.**
 ::::
 :::::
 
@@ -377,13 +402,18 @@ Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Continuidad en $x=0$: $\lim_{x\to0^-}f=a$ y $f(0)=0$, así que $a=0$.
-
-Derivabilidad: $f'(0^-)=-a-b$ y $f'(0^+)=1+\dfrac1{1+0}=2$. Entonces $-a-b=2$.
+**a) Parámetros $a$ y $b$.** $f$ es derivable, luego es continua y sus derivadas laterales coinciden en $x=0$.
+1. Continuidad en $x=0$: $\lim_{x\to0^-}f=a\,e^0+b\ln1=a$ y $f(0)=0+\ln1=0$, así que $a=0$.
+2. Derivada por la izquierda: $f'(x)=-a\,e^{-x}-\dfrac{b}{1-x}$, luego $f'(0^-)=-a-b$.
+3. Derivada por la derecha: $f'(x)=1+\dfrac1{1+x}$, luego $f'(0^+)=1+\dfrac1{1+0}=2$.
+4. Derivabilidad: $-a-b=2$. Con $a=0$, $b=-2$.
 
 $$\mathbf{a=0,\quad b=-2}$$
 
-**b)** $f(0)=0$ y $f'(0)=2$.
+**b) Tangente y normal en $x=0$.**
+1. Punto: $f(0)=0$. Pendiente: $f'(0)=2$.
+2. Tangente: $y-0=2(x-0)$.
+3. Normal: pendiente $-\dfrac12$ (opuesta de la inversa), $y=-\dfrac12x$.
 
 **Tangente: $y=2x$.  Normal: $y=-\dfrac x2$.**
 ::::
@@ -420,14 +450,15 @@ Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$f'(x)=-b\operatorname{sen}x+c\cos x$.
-
-- Tangente $y=1$ en $x=\pi/2$: $f'(\pi/2)=-b=0\Rightarrow b=0$, y $f(\pi/2)=a+c=1$.
-- La recta $y=x-1$ pasa por la gráfica en $x=0$: $f(0)=a+b=-1\Rightarrow a=-1$.
-
-Entonces $c=1-a=2$.
+**Parámetros $a$, $b$ y $c$.**
+1. Derivada: $f'(x)=-b\operatorname{sen}x+c\cos x$.
+2. La tangente en $x=\pi/2$ es $y=1$: horizontal, luego $f'(\pi/2)=-b=0\Rightarrow b=0$; y pasa por la gráfica, luego $f(\pi/2)=a+c=1$.
+3. La recta $y=x-1$ corta a la gráfica en $x=0$: $f(0)=0-1=-1$, es decir, $a+b=-1$. Con $b=0$, $a=-1$.
+4. De $a+c=1$: $c=1-a=2$.
 
 $$\mathbf{a=-1,\quad b=0,\quad c=2}\qquad(f(x)=-1+2\operatorname{sen}x).$$
+
+*Comprobación:* $f(\pi/2)=-1+2=1$ y $f'(x)=2\cos x$ se anula en $\pi/2$.
 ::::
 :::::
 
@@ -505,11 +536,18 @@ Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Continuidad en $x=0$: $\sqrt{b}=2\Rightarrow b=4$. En $x=2$: $\sqrt{2a+4}=-\dfrac{2}{2\sqrt2}+\dfrac{3}{\sqrt2}=\sqrt2\Rightarrow 2a+4=2$.
+**a) Valores de $a$ y $b$.**
+1. $f$ es continua (dato), así que los trozos empalman en $x=0$ y en $x=2$.
+2. En $x=0$: por la izquierda $f(0)=0^2+2=2$ y por la derecha $\sqrt{b}$. Luego $\sqrt{b}=2\Rightarrow b=4$.
+3. En $x=2$: por la derecha $-\dfrac{2}{2\sqrt2}+\dfrac{3}{\sqrt2}=\dfrac{-1+3}{\sqrt2}=\sqrt2$ y por la izquierda $\sqrt{2a+b}=\sqrt{2a+4}$. Igualando, $\sqrt{2a+4}=\sqrt2\Rightarrow2a+4=2$, de donde $a=-1$.
 
 **$a=-1$, $b=4$.**
 
-**b)** Con esos valores $f(x)=\sqrt{4-x}$ en $(0,2]$: $f'(2^-)=\dfrac{-1}{2\sqrt{4-2}}=-\dfrac{1}{2\sqrt2}$, y $f'(2^+)=-\dfrac{1}{2\sqrt2}$. Coinciden, luego existe $f'(2)=-\dfrac{1}{2\sqrt2}$, con $f(2)=\sqrt2$.
+**b) Derivada en $x=2$ y tangente.**
+1. Con esos valores, $f(x)=\sqrt{4-x}$ en $(0,2]$. Por la izquierda: $f'(x)=\dfrac{-1}{2\sqrt{4-x}}$, luego $f'(2^-)=\dfrac{-1}{2\sqrt{4-2}}=-\dfrac{1}{2\sqrt2}$.
+2. Por la derecha: la rama es una recta de pendiente $-\dfrac{1}{2\sqrt2}$, luego $f'(2^+)=-\dfrac{1}{2\sqrt2}$.
+3. Las derivadas laterales coinciden, así que existe $f'(2)=-\dfrac{1}{2\sqrt2}$. Además $f(2)=\sqrt2$.
+4. Recta tangente: $y-f(2)=f'(2)(x-2)$.
 
 **Sí existe; tangente: $y=\sqrt2-\dfrac{1}{2\sqrt2}(x-2)$.**
 ::::
@@ -591,13 +629,18 @@ Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Continuidad en $0$: $\displaystyle\lim_{x\to0^-}\frac{ax+b}{x-1}=-b$ y $\ln1=0$, luego $b=0$.
-
-Derivabilidad en $0$: para $x<0$, $f'(x)=\dfrac{-a-b}{(x-1)^2}$, con $f'(0^-)=-a$; para $x>0$, $f'(x)=\dfrac1{1+x}$, con $f'(0^+)=1$. Así $-a=1$.
+**a) Valores de $a$ y $b$.**
+1. $f$ es derivable, luego es continua; empezamos por $x=0$, donde cambia la expresión.
+2. Continuidad en $0$: $\displaystyle\lim_{x\to0^-}\frac{ax+b}{x-1}=-b$ y $\ln1=0$, luego $b=0$.
+3. Derivabilidad en $0$: para $x<0$, $f'(x)=\dfrac{-a-b}{(x-1)^2}$, con $f'(0^-)=-a$; para $x>0$, $f'(x)=\dfrac1{1+x}$, con $f'(0^+)=1$.
+4. Las derivadas laterales deben coincidir: $-a=1$.
 
 **$a=-1,\ b=0$**
 
-**b)** En $x=2$: $f(2)=\ln3$, $f'(2)=\frac13$.
+**b) Tangente y normal en $x=2$.**
+1. En $x=2>0$ la función es $\ln(1+x)$: $f(2)=\ln3$ y $f'(2)=\frac13$.
+2. Tangente: $y-f(2)=f'(2)(x-2)$.
+3. Normal: es perpendicular a la tangente, con pendiente $-\dfrac{1}{f'(2)}=-3$.
 
 Tangente: **$y=\ln3+\dfrac13(x-2)$**. Normal: **$y=\ln3-3(x-2)$**.
 ::::
@@ -644,12 +687,11 @@ El óptimo de una función derivable en un intervalo se busca entre los puntos c
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$f'(x)=b\cos x+2c\cos2x$.
-
-- Punto crítico en $x=\pi$: $f'(\pi)=-b+2c=0$.
-- La normal $y=-\frac12x+3$ tiene pendiente $-\frac12$, luego la tangente tiene pendiente $2$: $f'(0)=b+2c=2$. Además la normal pasa por $(0,3)$, luego $f(0)=a=3$.
-
-De las dos primeras: $b=1$, $c=\frac12$.
+1. **Derivada.** $f'(x)=b\cos x+2c\cos2x$.
+2. **Punto crítico en $x=\pi$.** $f'(\pi)=-b+2c=0$.
+3. **Normal en $x=0$.** La normal $y=-\frac12x+3$ tiene pendiente $-\frac12$, luego la tangente tiene pendiente $2$ (producto de pendientes $=-1$): $f'(0)=b+2c=2$.
+4. **Valor en $x=0$.** La normal pasa por $(0,3)$, que está en la gráfica: $f(0)=a=3$.
+5. **Sistema.** De las dos ecuaciones en $b$ y $c$: $b=1$, $c=\frac12$.
 
 **$a=3,\ b=1,\ c=\dfrac12$**
 ::::
@@ -703,9 +745,17 @@ $\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Tangente en $a$: $y-e^a=e^a(x-a)$. Pasa por el origen: $-e^a=-ae^a\Rightarrow a=1$. **$a=1$** (la tangente es $y=ex$).
+**a) Tangente por el origen.**
+1. Tangente en $x=a$: $y-e^a=e^a(x-a)$ (porque $f'(x)=e^x$).
+2. Pasa por el origen $(0,0)$: $-e^a=-ae^a$.
+3. Se divide entre $e^a\neq0$: $a=1$.
 
-**b)** Tangente en $x=1$: $y=ex$. En $[0,1]$ se cumple $e^x\ge ex$, y el recinto está entre $x=0$ y $x=1$:
+**$a=1$** (la tangente es $y=ex$).
+
+**b) Área.**
+1. Tangente en $x=1$: $y=ex$ (la misma del apartado anterior).
+2. En $[0,1]$ se cumple $e^x\ge ex$ (la curva queda por encima de su tangente, porque $e^x$ es convexa), y el recinto está entre el eje de ordenadas $x=0$ y $x=1$.
+3. Barrow:
 
 $$A=\int_0^1(e^x-ex)\,dx=\left[e^x-\tfrac{e}{2}x^2\right]_0^1=e-\tfrac e2-1=\tfrac e2-1.$$
 
