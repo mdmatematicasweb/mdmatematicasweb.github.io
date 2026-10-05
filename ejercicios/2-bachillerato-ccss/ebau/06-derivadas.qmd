@@ -28,32 +28,48 @@ b) Halle los valores de $a$ y $b$ para que sea horizontal la recta tangente a la
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Reglas de derivación.** $(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+**Reglas de derivación.**
 
-**Recta tangente.** Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
 
-**Hallar parámetros de una función.** Cada dato del enunciado da una ecuación: pasa por $(a,b)\Rightarrow f(a)=b$; extremo en $x=a\Rightarrow f'(a)=0$; pendiente $m$ en $x=a\Rightarrow f'(a)=m$; inflexión en $x=a\Rightarrow f''(a)=0$; área o integral dada $\Rightarrow$ igualar la integral.
+**Recta tangente.**
 
-**Representar una función.** Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+
+**Hallar parámetros de una función.**
+
+Cada dato del enunciado da una ecuación: pasa por $(a,b)\Rightarrow f(a)=b$; extremo en $x=a\Rightarrow f'(a)=0$; pendiente $m$ en $x=a\Rightarrow f'(a)=m$; inflexión en $x=a\Rightarrow f''(a)=0$; área o integral dada $\Rightarrow$ igualar la integral.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Reglas de derivación.** 1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
 2. Aplica la regla y simplifica (saca factor común).
 3. Comprueba un valor numérico si tienes dudas.
 
-**Recta tangente.** 1. Calcula $f(a)$ (el punto) y $f'(x)$.
+**Recta tangente.**
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
 2. Evalúa $f'(a)$ (la pendiente).
 3. Sustituye en la ecuación punto-pendiente.
 4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
 
-**Hallar parámetros de una función.** 1. Lista los datos y escribe una ecuación por cada uno.
+**Hallar parámetros de una función.**
+
+1. Lista los datos y escribe una ecuación por cada uno.
 2. Resuelve el sistema (suele ser lineal en los parámetros).
 3. Comprueba que la función resultante cumple todo, y que el extremo es del tipo pedido.
 
-**Representar una función.** 1. Dominio y cortes.
+**Representar una función.**
+
+1. Dominio y cortes.
 2. Asíntotas verticales, horizontales y oblicuas con límites.
 3. Signo de $f'$: intervalos de crecimiento y extremos.
 4. Signo de $f''$ si hace falta, y unos cuantos puntos.
@@ -96,26 +112,38 @@ $$\int_{-2}^{-1}\frac{5}{3x^{4}}\,dx\qquad\qquad\int_{-3}^{0}\frac{e^{x/3}}{5}\,
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Recta tangente.** Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+**Recta tangente.**
 
-**Integral definida (regla de Barrow).** Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
 
-**Representar una función.** Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Recta tangente.** 1. Calcula $f(a)$ (el punto) y $f'(x)$.
+**Recta tangente.**
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
 2. Evalúa $f'(a)$ (la pendiente).
 3. Sustituye en la ecuación punto-pendiente.
 4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
 
-**Integral definida (regla de Barrow).** 1. Halla una primitiva $F$.
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
 2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
 3. Interpreta el signo del resultado.
 
-**Representar una función.** 1. Dominio y cortes.
+**Representar una función.**
+
+1. Dominio y cortes.
 2. Asíntotas verticales, horizontales y oblicuas con límites.
 3. Signo de $f'$: intervalos de crecimiento y extremos.
 4. Signo de $f''$ si hace falta, y unos cuantos puntos.
@@ -157,26 +185,38 @@ b) Represente gráficamente la región acotada comprendida entre la recta $y=-2x
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Reglas de derivación.** $(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+**Reglas de derivación.**
 
-**Área de un recinto.** Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
 
-**Representar una función.** Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Reglas de derivación.** 1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
 2. Aplica la regla y simplifica (saca factor común).
 3. Comprueba un valor numérico si tienes dudas.
 
-**Área de un recinto.** 1. Haz un esbozo del recinto.
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
 2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
 3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
 4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
 
-**Representar una función.** 1. Dominio y cortes.
+**Representar una función.**
+
+1. Dominio y cortes.
 2. Asíntotas verticales, horizontales y oblicuas con límites.
 3. Signo de $f'$: intervalos de crecimiento y extremos.
 4. Signo de $f''$ si hace falta, y unos cuantos puntos.
@@ -219,20 +259,28 @@ b) Calcule la función $F$ que verifique que $F'(x)=f(x)$ y $F(2)=4$. *(1 punto)
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Recta tangente.** Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+**Recta tangente.**
 
-**Primitivas.** $\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+
+**Primitivas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Recta tangente.** 1. Calcula $f(a)$ (el punto) y $f'(x)$.
+**Recta tangente.**
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
 2. Evalúa $f'(a)$ (la pendiente).
 3. Sustituye en la ecuación punto-pendiente.
 4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
 
-**Primitivas.** 1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+**Primitivas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
 2. Integra término a término.
 3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
 4. Deriva el resultado para comprobarlo.
@@ -275,32 +323,48 @@ c) Calcule el área del recinto limitado por la gráfica de $h(x)=x^{2}+x+1$, el
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Reglas de derivación.** $(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+**Reglas de derivación.**
 
-**Dominio, cortes y simetrías.** Dominio: excluye los puntos donde se anula un denominador, el radicando de una raíz de índice par es negativo o el argumento de un logaritmo no es positivo. Cortes: con el eje $X$ se resuelve $f(x)=0$; con el eje $Y$ se calcula $f(0)$.
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
 
-**Área de un recinto.** Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+**Dominio, cortes y simetrías.**
 
-**Representar una función.** Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+Dominio: excluye los puntos donde se anula un denominador, el radicando de una raíz de índice par es negativo o el argumento de un logaritmo no es positivo. Cortes: con el eje $X$ se resuelve $f(x)=0$; con el eje $Y$ se calcula $f(0)$.
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Reglas de derivación.** 1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
 2. Aplica la regla y simplifica (saca factor común).
 3. Comprueba un valor numérico si tienes dudas.
 
-**Dominio, cortes y simetrías.** 1. Halla el dominio y escríbelo como unión de intervalos.
+**Dominio, cortes y simetrías.**
+
+1. Halla el dominio y escríbelo como unión de intervalos.
 2. Calcula los cortes con los ejes.
 3. Estudia el signo de $f$ entre los puntos que anulan $f$ o su denominador.
 
-**Área de un recinto.** 1. Haz un esbozo del recinto.
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
 2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
 3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
 4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
 
-**Representar una función.** 1. Dominio y cortes.
+**Representar una función.**
+
+1. Dominio y cortes.
 2. Asíntotas verticales, horizontales y oblicuas con límites.
 3. Signo de $f'$: intervalos de crecimiento y extremos.
 4. Signo de $f''$ si hace falta, y unos cuantos puntos.
@@ -350,19 +414,27 @@ b) Halle la función $h(x)$, sabiendo que su derivada es $h'(x)=4x^{3}+x^{2}-4x-
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Reglas de derivación.** $(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+**Reglas de derivación.**
 
-**Primitivas.** $\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+
+**Primitivas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Reglas de derivación.** 1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
 2. Aplica la regla y simplifica (saca factor común).
 3. Comprueba un valor numérico si tienes dudas.
 
-**Primitivas.** 1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+**Primitivas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
 2. Integra término a término.
 3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
 4. Deriva el resultado para comprobarlo.

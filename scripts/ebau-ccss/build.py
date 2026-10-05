@@ -244,7 +244,7 @@ def tema_page(t, exams):
             ids = ASIGN[(e["slug"], x["n"])]
             ayuda = "".join(
                 f"\n\n:::: {{.callout-note collapse=\"true\" appearance=\"simple\"}}\n## {titulo}\n\n"
-                + "\n\n".join(f"**{CONCEPTOS[i]['titulo']}.** {CONCEPTOS[i][k]}" if len(ids) > 1 else CONCEPTOS[i][k] for i in ids)
+                + "\n\n".join(f"**{CONCEPTOS[i]['titulo']}.**\n\n{CONCEPTOS[i][k]}" if len(ids) > 1 else CONCEPTOS[i][k] for i in ids)
                 + "\n::::"
                 for k, titulo in (("R", "Ayuda 1 · Recordatorio"), ("M", "Ayuda 2 · Método")))
             sol = (f"\n\n:::: {{.callout-tip collapse=\"true\" appearance=\"simple\"}}\n## Solución\n\n{x['sol']}\n::::"

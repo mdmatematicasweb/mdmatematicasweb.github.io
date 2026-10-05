@@ -30,32 +30,48 @@ $$P(A\cap B),\qquad P(B-A),\qquad P(A\cup B),\qquad P\left(A^{C}-B\right)$$
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+**Distribución de la media y de la proporción muestral.**
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+
+**Intervalo de confianza para la media.**
+
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** 1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
+
+1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
 2. Si piden muestras posibles, decide primero si hay reemplazamiento y si importa el orden; después enumera o cuenta.
 3. Para la media y la varianza de las medias muestrales, escribe todas las medias, calcula su media y la media de sus cuadrados menos el cuadrado de la media.
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -91,20 +107,28 @@ c) ¿Cuántos viajes, como mínimo, tendría que seleccionar aleatoriamente la c
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -144,20 +168,28 @@ c) Razone qué efecto produciría sobre la amplitud del intervalo una disminuci�
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -198,26 +230,38 @@ ii) Con el mismo nivel de confianza y la misma proporción muestral, ¿cuántos 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+**Intervalo de confianza para una proporción.**
+
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** 1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
+
+1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
 2. Si piden muestras posibles, decide primero si hay reemplazamiento y si importa el orden; después enumera o cuenta.
 3. Para la media y la varianza de las medias muestrales, escribe todas las medias, calcula su media y la media de sus cuadrados menos el cuadrado de la media.
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -255,20 +299,28 @@ b) Suponiendo que el precio medio del litro de gasoil en esa provincia es de $1{
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -306,20 +358,28 @@ c) Si mantenemos la misma proporción muestral, ¿cuántas personas, como mínim
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -359,20 +419,28 @@ c) ¿Cuántas analíticas, como mínimo, tendrían que formar parte de la muestr
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -415,26 +483,38 @@ d) Si la media de la población es de $10{,}2$ horas y sabiendo que la media mue
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+**Distribución de la media y de la proporción muestral.**
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+**Intervalo de confianza para la media.**
+
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -475,20 +555,28 @@ d) Razone qué efecto producirá sobre la amplitud del intervalo un aumento del 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -527,20 +615,28 @@ b) ¿Cuántos usuarios como mínimo se deberían seleccionar en una nueva muestr
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -574,20 +670,28 @@ c) Manteniendo el tamaño de la muestra y la proporción muestral, si se aumenta
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -627,20 +731,28 @@ c) Explique, razonadamente, el efecto que tendría sobre el error máximo de est
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -671,32 +783,48 @@ b) Una empresa multinacional con 10000 empleados desea realizar un estudio sobre
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+**Distribución de la media y de la proporción muestral.**
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+
+**Intervalo de confianza para una proporción.**
+
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** 1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
+
+1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
 2. Si piden muestras posibles, decide primero si hay reemplazamiento y si importa el orden; después enumera o cuenta.
 3. Para la media y la varianza de las medias muestrales, escribe todas las medias, calcula su media y la media de sus cuadrados menos el cuadrado de la media.
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -737,20 +865,28 @@ b) Con las proporciones muestrales iniciales y con un nivel de confianza del $95
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -790,20 +926,28 @@ c) Explique razonadamente el efecto que tendría sobre la amplitud del intervalo
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -845,20 +989,28 @@ c) El peso medio de las mochilas de los estudiantes de ESO de esa localidad es d
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -894,32 +1046,48 @@ b) Dada la población $\{-3,-1,2,5,7\}$, se consideran todas las muestras posibl
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+**Distribución de la media y de la proporción muestral.**
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+
+**Intervalo de confianza para una proporción.**
+
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** 1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
+
+1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
 2. Si piden muestras posibles, decide primero si hay reemplazamiento y si importa el orden; después enumera o cuenta.
 3. Para la media y la varianza de las medias muestrales, escribe todas las medias, calcula su media y la media de sus cuadrados menos el cuadrado de la media.
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -956,20 +1124,28 @@ c) Razone qué efecto producirá sobre la amplitud del intervalo una disminució
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1005,20 +1181,28 @@ b) Manteniendo la misma proporción muestral y con un nivel de confianza del $95
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1050,20 +1234,28 @@ b) En otra comunidad autónoma, al seleccionar una muestra de universitarias, se
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1098,26 +1290,38 @@ c) Si en otra ciudad la cuota mensual de las hipotecas sigue una distribución N
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+**Distribución de la media y de la proporción muestral.**
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+**Intervalo de confianza para la media.**
+
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1160,25 +1364,37 @@ b.2) Calcule la probabilidad de que el peso medio de la muestra esté comprendid
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+**Distribución de la media y de la proporción muestral.**
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
+
+Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+
+**Intervalo de confianza para una proporción.**
+
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** 1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
+
+1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
 2. Si piden muestras posibles, decide primero si hay reemplazamiento y si importa el orden; después enumera o cuenta.
 3. Para la media y la varianza de las medias muestrales, escribe todas las medias, calcula su media y la media de sus cuadrados menos el cuadrado de la media.
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
@@ -1214,20 +1430,28 @@ b) Un estudio posterior ha revelado que el tiempo de respuesta a este medicament
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1260,20 +1484,28 @@ b) Con el mismo nivel de confianza y la misma proporción muestral, ¿cuál debe
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1309,20 +1541,28 @@ b) ¿Cuántas repeticiones como mínimo se tendrán que cronometrar si se quiere
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1356,20 +1596,28 @@ b) Si se mantiene la misma proporción muestral y se aumenta el nivel de confian
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1413,32 +1661,48 @@ b2) Calcule la probabilidad de que la media de las calificaciones de los estudia
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+**Distribución de la media y de la proporción muestral.**
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+
+**Intervalo de confianza para una proporción.**
+
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** 1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
+
+1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
 2. Si piden muestras posibles, decide primero si hay reemplazamiento y si importa el orden; después enumera o cuenta.
 3. Para la media y la varianza de las medias muestrales, escribe todas las medias, calcula su media y la media de sus cuadrados menos el cuadrado de la media.
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1471,20 +1735,28 @@ b) Si el nivel de confianza es del $95\,\%$, calcule el error máximo cometido. 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1518,32 +1790,48 @@ b) Dada la población $\{9,\,11,\,13,\,18,\,20\}$, calcule la varianza de la dis
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+**Distribución de la media y de la proporción muestral.**
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+
+**Intervalo de confianza para una proporción.**
+
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** 1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
+
+1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
 2. Si piden muestras posibles, decide primero si hay reemplazamiento y si importa el orden; después enumera o cuenta.
 3. Para la media y la varianza de las medias muestrales, escribe todas las medias, calcula su media y la media de sus cuadrados menos el cuadrado de la media.
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1573,20 +1861,28 @@ b) Para un nivel de confianza del $92\,\%$ y manteniendo la proporción muestral
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1619,26 +1915,38 @@ b) Se ha diseñado una encuesta para estimar qué proporción de adolescentes de
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+**Intervalo de confianza para una proporción.**
+
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** 1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
+
+1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
 2. Si piden muestras posibles, decide primero si hay reemplazamiento y si importa el orden; después enumera o cuenta.
 3. Para la media y la varianza de las medias muestrales, escribe todas las medias, calcula su media y la media de sus cuadrados menos el cuadrado de la media.
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1670,20 +1978,28 @@ b) ¿Cuál es el tamaño mínimo que debe tener una muestra para que el error co
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1719,20 +2035,28 @@ b) Manteniendo el mismo nivel de confianza, determine el tamaño muestral mínim
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1768,20 +2092,28 @@ b) Sabiendo que la media poblacional es 53 gramos y escogiendo una muestra aleat
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1811,20 +2143,28 @@ b) Con la proporción muestral facilitada y con un nivel de confianza del $95\,\
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1862,20 +2202,28 @@ c) Suponiendo que la media poblacional es de $80{,}4$ mm y tomando muestras alea
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1911,20 +2259,28 @@ b) ¿Cuál sería el número de habitantes mínimo necesario en este estudio de 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -1963,20 +2319,28 @@ b) Manteniendo el mismo nivel de confianza, ¿cuál debe ser el tamaño mínimo 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2007,20 +2371,28 @@ b) En una nueva muestra, manteniendo el mismo nivel de confianza y la misma prop
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2054,20 +2426,28 @@ b) Mediante una muestra queremos estimar la proporción de clientes de ese talle
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2102,20 +2482,28 @@ c) Tras una campaña para incentivar el ahorro energético se toma una nueva mue
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2153,20 +2541,28 @@ b) Suponiendo que se mantiene la proporción muestral y el mismo nivel de confia
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2199,20 +2595,28 @@ b) ¿Cuál debe ser el tamaño mínimo de la muestra para asegurar con un nivel 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2248,20 +2652,28 @@ b) Manteniendo la proporción muestral y el nivel de confianza del apartado ante
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2296,26 +2708,38 @@ c) Suponiendo $\mu=7{,}61$ días y tomando muestras aleatorias de 36 titulados, 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+**Distribución de la media y de la proporción muestral.**
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+**Intervalo de confianza para la media.**
+
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2348,32 +2772,48 @@ b) Dada la población $\{1,4,7\}$, establezca todas las muestras posibles de tam
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+**Distribución de la media y de la proporción muestral.**
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+
+**Intervalo de confianza para una proporción.**
+
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** 1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
+
+1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
 2. Si piden muestras posibles, decide primero si hay reemplazamiento y si importa el orden; después enumera o cuenta.
 3. Para la media y la varianza de las medias muestrales, escribe todas las medias, calcula su media y la media de sus cuadrados menos el cuadrado de la media.
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2407,20 +2847,28 @@ b) En una nueva muestra que mantiene la misma proporción muestral, y con el mis
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2454,20 +2902,28 @@ b) Suponiendo que se mantiene la misma proporción muestral y el mismo nivel de 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2500,20 +2956,28 @@ b) Determine el tamaño mínimo muestral para que, con el mismo nivel de confian
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2551,26 +3015,38 @@ b) Dada la población $\{a,\,10,\,12,\,11,\,18\}$, ¿cuánto debe valer $a$, sab
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+**Distribución de la media y de la proporción muestral.**
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+**Intervalo de confianza para una proporción.**
+
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2607,20 +3083,28 @@ b) Suponiendo que se mantiene la misma proporción muestral y el mismo nivel de 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2662,32 +3146,48 @@ b) Dada la población $\{1,\,3,\,5\}$, establezca todas las muestras posibles de
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+**Distribución de la media y de la proporción muestral.**
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+
+**Intervalo de confianza para una proporción.**
+
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** 1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
+
+1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
 2. Si piden muestras posibles, decide primero si hay reemplazamiento y si importa el orden; después enumera o cuenta.
 3. Para la media y la varianza de las medias muestrales, escribe todas las medias, calcula su media y la media de sus cuadrados menos el cuadrado de la media.
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2725,20 +3225,28 @@ b) Determine el tamaño mínimo de la muestra de imprentas de esa región que se
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2782,20 +3290,28 @@ b) Determine el tamaño muestral mínimo para que, con el mismo nivel de confian
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2838,20 +3354,28 @@ b) Manteniendo la misma proporción muestral y el mismo nivel de confianza del a
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2897,32 +3421,48 @@ c) Calcule el tamaño mínimo que debe tener una muestra, para que, con el mismo
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+**Distribución de la media y de la proporción muestral.**
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+
+**Intervalo de confianza para la media.**
+
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** 1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
+
+1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
 2. Si piden muestras posibles, decide primero si hay reemplazamiento y si importa el orden; después enumera o cuenta.
 3. Para la media y la varianza de las medias muestrales, escribe todas las medias, calcula su media y la media de sus cuadrados menos el cuadrado de la media.
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -2966,20 +3506,28 @@ b) Manteniendo la proporción muestral, ¿cuántos individuos se deberían selec
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+**Intervalo de confianza para una proporción.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -3021,20 +3569,28 @@ b) Calcule el tamaño mínimo que debe tener una muestra de esta población para
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -3079,26 +3635,38 @@ b) Para estimar la proporción de andaluces contagiados por una enfermedad infec
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
 
-**Intervalo de confianza para una proporción.** Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+Muestreo aleatorio estratificado con afijación proporcional: el tamaño de la muestra en cada estrato es $n_i=n\cdot\dfrac{N_i}{N}$. Con una población pequeña, las muestras de tamaño $n$ se forman eligiendo $n$ elementos: con reemplazamiento (orden importa) hay $N^n$; sin reemplazamiento y sin orden, $\binom{N}{n}$. La media de las medias muestrales es la media de la población.
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+**Intervalo de confianza para una proporción.**
+
+Con $\hat p$ la proporción muestral: $\left(\hat p-z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}},\ \hat p+z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\right)$. Se usa si $n\hat p\ge5$ y $n(1-\hat p)\ge5$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Muestras posibles, estratos y distribución de las medias muestrales.** 1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
+**Muestras posibles, estratos y distribución de las medias muestrales.**
+
+1. Si hay estratos, calcula la fracción $\dfrac{n}{N}$ y multiplícala por el tamaño de cada estrato; redondea sin que la suma cambie.
 2. Si piden muestras posibles, decide primero si hay reemplazamiento y si importa el orden; después enumera o cuenta.
 3. Para la media y la varianza de las medias muestrales, escribe todas las medias, calcula su media y la media de sus cuadrados menos el cuadrado de la media.
 
-**Intervalo de confianza para una proporción.** 1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
+**Intervalo de confianza para una proporción.**
+
+1. Calcula $\hat p=\dfrac{\text{éxitos}}{n}$ y comprueba las condiciones.
 2. Halla $z_{\alpha/2}$ para el nivel de confianza.
 3. Calcula el error máximo y el intervalo.
 4. Interpreta en el contexto (porcentaje de la población).
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.
@@ -3138,20 +3706,28 @@ b) Calcule el mínimo tamaño de la muestra que se ha de tomar, para estimar el 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Intervalo de confianza para la media.** Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+**Intervalo de confianza para la media.**
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
+Con $\sigma$ conocida: $\left(\overline{x}-z_{\alpha/2}\dfrac{\sigma}{\sqrt n},\ \overline{x}+z_{\alpha/2}\dfrac{\sigma}{\sqrt n}\right)$. Valores críticos: $1{,}645$ (90 %), $1{,}96$ (95 %), $2{,}575$ (99 %). El centro es $\overline{x}$ y la mitad de la amplitud es el error máximo $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$.
+
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+$E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ (proporción). Despejando, $n\ge\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2$ o $n\ge\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}$. A mayor confianza, más amplitud; a mayor $n$, menos amplitud.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Intervalo de confianza para la media.** 1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
+**Intervalo de confianza para la media.**
+
+1. Anota $\overline{x}$, $\sigma$, $n$ y el nivel de confianza; halla $z_{\alpha/2}$: la tabla da $\Phi(z_{\alpha/2})=1-\dfrac{\alpha}{2}$.
 2. Calcula el error máximo $E$.
 3. Escribe el intervalo $(\overline{x}-E,\ \overline{x}+E)$.
 4. Interpreta: «con una confianza del …, la media poblacional está entre … y …».
 
-**Error máximo, nivel de confianza y tamaño de la muestra.** 1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
+**Error máximo, nivel de confianza y tamaño de la muestra.**
+
+1. Si dan la amplitud del intervalo, el error es la mitad: $E=\dfrac{b-a}{2}$.
 2. Despeja la incógnita ($n$, $z_{\alpha/2}$ o $E$) de la fórmula.
 3. Tamaño muestral: **redondea siempre hacia arriba** al entero siguiente.
 4. Si falta $z_{\alpha/2}$, léelo en la tabla y de él saca el nivel de confianza $1-\alpha$.

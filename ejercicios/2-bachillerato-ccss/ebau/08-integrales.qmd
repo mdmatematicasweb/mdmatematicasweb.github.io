@@ -32,20 +32,28 @@ c) Si se entrega una ayuda de 150 € por cada nuevo habitante durante los tres 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Primitivas.** $\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+**Primitivas.**
 
-**Integral definida (regla de Barrow).** Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Primitivas.** 1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+**Primitivas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
 2. Integra término a término.
 3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
 4. Deriva el resultado para comprobarlo.
 
-**Integral definida (regla de Barrow).** 1. Halla una primitiva $F$.
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
 2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
 3. Interpreta el signo del resultado.
 ::::
@@ -87,20 +95,28 @@ b) Si el coste para acondicionar el nuevo suelo es de $75\ €/\text{m}^{2}$, ca
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Área de un recinto.** Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+**Área de un recinto.**
 
-**Representar una función.** Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Área de un recinto.** 1. Haz un esbozo del recinto.
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
 2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
 3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
 4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
 
-**Representar una función.** 1. Dominio y cortes.
+**Representar una función.**
+
+1. Dominio y cortes.
 2. Asíntotas verticales, horizontales y oblicuas con límites.
 3. Signo de $f'$: intervalos de crecimiento y extremos.
 4. Signo de $f''$ si hace falta, y unos cuantos puntos.
@@ -141,20 +157,28 @@ b) Para reparar la región quemada, se ha de utilizar plástico cuyo coste es de
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Área de un recinto.** Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+**Área de un recinto.**
 
-**Representar una función.** Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Área de un recinto.** 1. Haz un esbozo del recinto.
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
 2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
 3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
 4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
 
-**Representar una función.** 1. Dominio y cortes.
+**Representar una función.**
+
+1. Dominio y cortes.
 2. Asíntotas verticales, horizontales y oblicuas con límites.
 3. Signo de $f'$: intervalos de crecimiento y extremos.
 4. Signo de $f''$ si hace falta, y unos cuantos puntos.

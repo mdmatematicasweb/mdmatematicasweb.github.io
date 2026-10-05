@@ -72,20 +72,28 @@ c) Se consideran muestras de tamaño 64, ¿qué distribución sigue la variable 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución normal: cálculo de probabilidades.** $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+**Distribución normal: cálculo de probabilidades.**
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+$X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+
+**Distribución de la media y de la proporción muestral.**
+
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución normal: cálculo de probabilidades.** 1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+**Distribución normal: cálculo de probabilidades.**
+
+1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
 2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
 3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
 4. Interpreta el resultado como proporción o probabilidad.
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 ::::
@@ -266,20 +274,28 @@ b2) Con un nivel de confianza del $98\,\%$, ¿cuántos trenes de alta velocidad 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución normal: cálculo de probabilidades.** $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+**Distribución normal: cálculo de probabilidades.**
 
-**Normal: hallar un valor o un parámetro.** Si se conoce la probabilidad y falta el valor $x$ (percentil) o un parámetro, se busca en la tabla el $z$ cuya $\Phi(z)$ es la probabilidad dada (el más cercano) y se deshace la tipificación: $x=\mu+z\,\sigma$.
+$X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+
+**Normal: hallar un valor o un parámetro.**
+
+Si se conoce la probabilidad y falta el valor $x$ (percentil) o un parámetro, se busca en la tabla el $z$ cuya $\Phi(z)$ es la probabilidad dada (el más cercano) y se deshace la tipificación: $x=\mu+z\,\sigma$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución normal: cálculo de probabilidades.** 1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+**Distribución normal: cálculo de probabilidades.**
+
+1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
 2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
 3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
 4. Interpreta el resultado como proporción o probabilidad.
 
-**Normal: hallar un valor o un parámetro.** 1. Plantea $P(X\le x)=p$ y pasa a $P\left(Z\le\dfrac{x-\mu}{\sigma}\right)=p$.
+**Normal: hallar un valor o un parámetro.**
+
+1. Plantea $P(X\le x)=p$ y pasa a $P\left(Z\le\dfrac{x-\mu}{\sigma}\right)=p$.
 2. Si $p<0{,}5$, usa la simetría para trabajar con $1-p$ y cambia el signo de $z$.
 3. Busca $p$ en el interior de la tabla y lee el $z$.
 4. Despeja $x$ (o el parámetro desconocido).
@@ -318,20 +334,28 @@ b) ¿Qué porcentaje de muestras de tamaño 25 nos proporcionará un tiempo medi
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución normal: cálculo de probabilidades.** $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+**Distribución normal: cálculo de probabilidades.**
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+$X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+
+**Distribución de la media y de la proporción muestral.**
+
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución normal: cálculo de probabilidades.** 1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+**Distribución normal: cálculo de probabilidades.**
+
+1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
 2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
 3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
 4. Interpreta el resultado como proporción o probabilidad.
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 ::::
@@ -504,20 +528,28 @@ b) Si la muestra elegida es de tamaño 25, ¿cuál es la probabilidad de que el 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución normal: cálculo de probabilidades.** $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+**Distribución normal: cálculo de probabilidades.**
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+$X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+
+**Distribución de la media y de la proporción muestral.**
+
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución normal: cálculo de probabilidades.** 1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+**Distribución normal: cálculo de probabilidades.**
+
+1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
 2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
 3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
 4. Interpreta el resultado como proporción o probabilidad.
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 ::::
@@ -558,20 +590,28 @@ c) A la vista del intervalo obtenido y teniendo en cuenta que el peso que marca 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Distribución normal: cálculo de probabilidades.** $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+**Distribución normal: cálculo de probabilidades.**
 
-**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+$X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+
+**Distribución de la media y de la proporción muestral.**
+
+Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Distribución normal: cálculo de probabilidades.** 1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+**Distribución normal: cálculo de probabilidades.**
+
+1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
 2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
 3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
 4. Interpreta el resultado como proporción o probabilidad.
 
-**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+**Distribución de la media y de la proporción muestral.**
+
+1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
 2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
 3. Tipifica con esa desviación típica y usa la tabla.
 ::::

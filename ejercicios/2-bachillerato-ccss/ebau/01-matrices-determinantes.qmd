@@ -32,26 +32,38 @@ d) Para $m=1$, clasifique el sistema $A\cdot Y=B$ atendiendo al número de soluc
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Determinantes y parámetros.** Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+**Determinantes y parámetros.**
 
-**Matriz inversa.** $A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Matriz inversa.**
+
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Determinantes y parámetros.** 1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
 2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
 3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
 
-**Matriz inversa.** 1. Calcula $|A|$. Si es $0$, no hay inversa.
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
 2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
 3. Traspón la adjunta y divide entre $|A|$.
 4. Comprueba que $A\cdot A^{-1}=I$.
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
@@ -89,19 +101,27 @@ c) ¿Es posible encontrar una matriz $D$ que satisfaga $C^{t}\cdot A=B\cdot D$? 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Determinantes y parámetros.** Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+**Determinantes y parámetros.**
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Determinantes y parámetros.** 1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
 2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
 3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
@@ -231,33 +251,49 @@ c) Determine razonadamente la dimensión de la matriz $D$ que permita realizar l
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Determinantes y parámetros.** Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+**Determinantes y parámetros.**
 
-**Matriz inversa.** $A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Matriz inversa.**
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Determinantes y parámetros.** 1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
 2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
 3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
 
-**Matriz inversa.** 1. Calcula $|A|$. Si es $0$, no hay inversa.
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
 2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
 3. Traspón la adjunta y divide entre $|A|$.
 4. Comprueba que $A\cdot A^{-1}=I$.
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
@@ -288,20 +324,28 @@ Dada la matriz $A=\begin{pmatrix}1&2&0\\0&-1&2\\-2&0&1\end{pmatrix}$, resuelva l
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Ecuaciones matriciales.**
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
@@ -334,20 +378,28 @@ b) Halle las dimensiones de las matrices $D$ y $E$ para que tenga sentido la igu
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Ecuaciones matriciales.**
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
@@ -386,20 +438,28 @@ $$A^{t}\cdot B+D\cdot D^{t}\qquad\qquad D\cdot B^{t}+A\qquad\qquad D^{t}\cdot A^
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Ecuaciones matriciales.**
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
@@ -441,20 +501,28 @@ b) Compruebe que $A^{3}=P\cdot J^{3}\cdot P^{-1}$. *(1 punto)*
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Ecuaciones matriciales.**
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
@@ -493,20 +561,28 @@ c) Razone si las operaciones $2\cdot V\cdot N^{t}$ y $\left(N+M^{t}\right)\cdot 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Ecuaciones matriciales.**
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
@@ -548,26 +624,38 @@ b) Para $a=1$, halle una matriz $X$ que satisfaga $A\cdot X\cdot B=C$. *(1,5 pun
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Determinantes y parámetros.** Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+**Determinantes y parámetros.**
 
-**Matriz inversa.** $A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Matriz inversa.**
+
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Determinantes y parámetros.** 1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
 2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
 3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
 
-**Matriz inversa.** 1. Calcula $|A|$. Si es $0$, no hay inversa.
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
 2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
 3. Traspón la adjunta y divide entre $|A|$.
 4. Comprueba que $A\cdot A^{-1}=I$.
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
@@ -602,27 +690,39 @@ b) Dada la ecuación matricial $X^{t}A=\begin{pmatrix}1&2&0\\3&-1&1\end{pmatrix}
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Matriz inversa.** $A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+**Matriz inversa.**
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Matriz inversa.** 1. Calcula $|A|$. Si es $0$, no hay inversa.
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
 2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
 3. Traspón la adjunta y divide entre $|A|$.
 4. Comprueba que $A\cdot A^{-1}=I$.
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
@@ -748,26 +848,38 @@ b) Despeje y simplifique $X$ en la ecuación $X\cdot B-B^{2}+B=0$, sabiendo que 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Determinantes y parámetros.** Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+**Determinantes y parámetros.**
 
-**Matriz inversa.** $A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Matriz inversa.**
+
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Determinantes y parámetros.** 1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
 2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
 3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
 
-**Matriz inversa.** 1. Calcula $|A|$. Si es $0$, no hay inversa.
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
 2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
 3. Traspón la adjunta y divide entre $|A|$.
 4. Comprueba que $A\cdot A^{-1}=I$.
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
@@ -809,27 +921,39 @@ $$\begin{cases}2X+3Y=A\\-3X+4Y=B\end{cases}$$
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Matriz inversa.** $A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+**Matriz inversa.**
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Matriz inversa.** 1. Calcula $|A|$. Si es $0$, no hay inversa.
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
 2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
 3. Traspón la adjunta y divide entre $|A|$.
 4. Comprueba que $A\cdot A^{-1}=I$.
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
@@ -871,26 +995,38 @@ c) Para $a=2$, resuelva la ecuación matricial $X\cdot A+I_3=B^{t}\cdot C$. *(1 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Determinantes y parámetros.** Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+**Determinantes y parámetros.**
 
-**Matriz inversa.** $A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Matriz inversa.**
+
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Determinantes y parámetros.** 1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
 2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
 3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
 
-**Matriz inversa.** 1. Calcula $|A|$. Si es $0$, no hay inversa.
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
 2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
 3. Traspón la adjunta y divide entre $|A|$.
 4. Comprueba que $A\cdot A^{-1}=I$.
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
@@ -930,20 +1066,28 @@ b) Resuelva la ecuación matricial $A\cdot X=B\cdot X+C$. *(1,5 puntos)*
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Ecuaciones matriciales.**
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
@@ -983,26 +1127,38 @@ b) ¿Existe algún valor del parámetro $a$ para el que se verifique $C^{t}\cdot
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Determinantes y parámetros.** Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+**Determinantes y parámetros.**
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Determinantes y parámetros.** 1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
 2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
 3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
@@ -1041,20 +1197,28 @@ $$A\cdot P^{t}+C=C\cdot(Q\cdot B)$$
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Ecuaciones matriciales.**
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
@@ -1091,33 +1255,49 @@ c) La matriz $X$ que verifica que $X\cdot A=I_3$ para $a=3$. *(1 punto)*
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Determinantes y parámetros.** Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+**Determinantes y parámetros.**
 
-**Matriz inversa.** $A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Matriz inversa.**
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Determinantes y parámetros.** 1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
 2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
 3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
 
-**Matriz inversa.** 1. Calcula $|A|$. Si es $0$, no hay inversa.
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
 2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
 3. Traspón la adjunta y divide entre $|A|$.
 4. Comprueba que $A\cdot A^{-1}=I$.
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
@@ -1158,26 +1338,38 @@ c) Para $a=5$, resuelva la ecuación matricial $A\cdot X=B$. *(0,75 puntos)*
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Determinantes y parámetros.** Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+**Determinantes y parámetros.**
 
-**Matriz inversa.** $A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Matriz inversa.**
+
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Determinantes y parámetros.** 1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
 2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
 3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
 
-**Matriz inversa.** 1. Calcula $|A|$. Si es $0$, no hay inversa.
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
 2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
 3. Traspón la adjunta y divide entre $|A|$.
 4. Comprueba que $A\cdot A^{-1}=I$.
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
@@ -1217,33 +1409,49 @@ b) Para $m=2$, resuelva la ecuación matricial $X\cdot A-A^{2}=I_3$. *(1,8 punto
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Determinantes y parámetros.** Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+**Determinantes y parámetros.**
 
-**Matriz inversa.** $A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Matriz inversa.**
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Determinantes y parámetros.** 1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
 2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
 3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
 
-**Matriz inversa.** 1. Calcula $|A|$. Si es $0$, no hay inversa.
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
 2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
 3. Traspón la adjunta y divide entre $|A|$.
 4. Comprueba que $A\cdot A^{-1}=I$.
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
@@ -1288,20 +1496,28 @@ c) Resuelva dicha ecuación matricial si $B=\begin{pmatrix}5&20&-3\end{pmatrix}^
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Ecuaciones matriciales.**
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
@@ -1346,27 +1562,39 @@ c) Resuelva la ecuación matricial $\left(A^{t}+I_2\right)\cdot X=A^{t}-I_2$. *(
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Matriz inversa.** $A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+**Matriz inversa.**
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Matriz inversa.** 1. Calcula $|A|$. Si es $0$, no hay inversa.
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
 2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
 3. Traspón la adjunta y divide entre $|A|$.
 4. Comprueba que $A\cdot A^{-1}=I$.
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
@@ -1414,26 +1642,38 @@ c) Para $a=1$, resuelva la ecuación matricial $A\cdot X=B^{t}$, siendo $B=\begi
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Determinantes y parámetros.** Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+**Determinantes y parámetros.**
 
-**Matriz inversa.** $A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Matriz inversa.**
+
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Determinantes y parámetros.** 1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
 2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
 3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
 
-**Matriz inversa.** 1. Calcula $|A|$. Si es $0$, no hay inversa.
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
 2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
 3. Traspón la adjunta y divide entre $|A|$.
 4. Comprueba que $A\cdot A^{-1}=I$.
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
@@ -1483,27 +1723,39 @@ c) Razone si la ecuación matricial $B\cdot X=C$ tiene solución y resuélvala e
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Matriz inversa.** $A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+**Matriz inversa.**
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Matriz inversa.** 1. Calcula $|A|$. Si es $0$, no hay inversa.
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
 2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
 3. Traspón la adjunta y divide entre $|A|$.
 4. Comprueba que $A\cdot A^{-1}=I$.
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
@@ -1554,33 +1806,49 @@ c) Para $a=3$, compruebe que $A^{2}=11\cdot A$ y exprese $A^{8}$ en función de 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 1 · Recordatorio
 
-**Determinantes y parámetros.** Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+**Determinantes y parámetros.**
 
-**Matriz inversa.** $A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
 
-**Ecuaciones matriciales.** Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+**Matriz inversa.**
 
-**Operaciones con matrices.** Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
 ::::
 
 :::: {.callout-note collapse="true" appearance="simple"}
 ## Ayuda 2 · Método
 
-**Determinantes y parámetros.** 1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
 2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
 3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
 
-**Matriz inversa.** 1. Calcula $|A|$. Si es $0$, no hay inversa.
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
 2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
 3. Traspón la adjunta y divide entre $|A|$.
 4. Comprueba que $A\cdot A^{-1}=I$.
 
-**Ecuaciones matriciales.** 1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
 2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
 3. Despeja multiplicando por la inversa del lado correcto.
 4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
 
-**Operaciones con matrices.** 1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
 2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
 3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
 ::::
