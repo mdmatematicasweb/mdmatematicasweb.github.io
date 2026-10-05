@@ -455,7 +455,7 @@ window.Quarto = {
 
 
 <p>Ejercicios de <strong>Matemáticas II</strong> de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de <strong>2021 a 2026</strong> cuyo tema principal es <em>determinantes</em>: <strong>10 ejercicios</strong> de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. Repasa antes la <a href="../../../apuntes/2-bachillerato-ciencias/02-determinantes/index.html">teoría</a>, los <a href="../../../ejercicios/2-bachillerato-ciencias/02-determinantes/index.html">ejercicios del tema</a> y las <a href="../../../actividades/2-bachillerato-ciencias/02-determinantes/index.html">actividades interactivas</a>.</p>
-<p>Debajo de cada ejercicio hay una <strong>resolución breve</strong> plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.</p>
+<p>Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: <strong>Ayuda 1 · Recordatorio</strong> (la teoría que necesitas, sin tocar los datos), <strong>Ayuda 2 · Método</strong> (los pasos a seguir) y la <strong>solución</strong> paso a paso con el resultado. Inténtalo con la menor ayuda posible.</p>
 <section id="section" class="level2">
 <h2 class="anchored" data-anchor-id="section">2026</h2>
 <section id="ordinaria-2026" class="level3">
@@ -467,8 +467,44 @@ window.Quarto = {
 <li><p>Calcula <span class="math inline">\(\begin{vmatrix}-3&amp;-4&amp;-\alpha\\\alpha-2&amp;\beta-\alpha&amp;1-\beta\\8&amp;4\alpha&amp;4\beta\end{vmatrix}\)</span>. <em>(1,5 puntos)</em></p></li>
 <li><p>Calcula <span class="math inline">\(\left|A^{-1}(A^{t})^{2}A\right|\)</span>. <em>(1 punto)</em></p></li>
 </ol>
-<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(|A^t|=|A|\)</span>; <span class="math inline">\(|A\cdot B|=|A|\cdot|B|\)</span>; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por <span class="math inline">\(k\)</span>, el determinante se multiplica por <span class="math inline">\(k\)</span> (y <span class="math inline">\(|k\cdot A|=k^n|A|\)</span> en orden <span class="math inline">\(n\)</span>); si hay dos filas proporcionales, <span class="math inline">\(|A|=0\)</span>; sumar a una fila un múltiplo de otra no cambia el determinante. <span class="math inline">\(|A^{-1}|=\dfrac{1}{|A|}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.</li>
+<li>Aplica cada propiedad en orden, anotando cómo cambia el valor.</li>
+<li>Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -477,13 +513,12 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sean <span class="math inline">\(F_1,F_2,F_3\)</span> las filas de <span class="math inline">\(A\)</span>, con <span class="math inline">\(|A|=-2\)</span>.</p>
-<p><strong>a)</strong> Las filas del determinante pedido son <span class="math inline">\(-F_3\)</span>, <span class="math inline">\(F_1-F_2\)</span> y <span class="math inline">\(4F_2\)</span>. Entonces <span class="math inline">\(\begin{vmatrix}-F_3\\F_1-F_2\\4F_2\end{vmatrix}=-4\begin{vmatrix}F_3\\F_1-F_2\\F_2\end{vmatrix}=-4\begin{vmatrix}F_3\\F_1\\F_2\end{vmatrix}=-4|A|\)</span></p>
-<p>(se suma la 3.ª fila a la 2.ª, y <span class="math inline">\((F_3,F_1,F_2)\)</span> es una permutación circular de las filas, que no cambia el signo).</p>
+<p><strong>Datos.</strong> Sean <span class="math inline">\(F_1,F_2,F_3\)</span> las filas de <span class="math inline">\(A\)</span>, con <span class="math inline">\(|A|=-2\)</span>.</p>
+<p><strong>a) Determinante pedido.</strong> 1. Las filas del determinante pedido son <span class="math inline">\(-F_3\)</span>, <span class="math inline">\(F_1-F_2\)</span> y <span class="math inline">\(4F_2\)</span>. 2. Se saca factor común de cada fila: <span class="math inline">\(-1\)</span> de la primera y <span class="math inline">\(4\)</span> de la tercera: <span class="math display">\[\begin{vmatrix}-F_3\\F_1-F_2\\4F_2\end{vmatrix}=-4\begin{vmatrix}F_3\\F_1-F_2\\F_2\end{vmatrix}.\]</span> 3. Se suma la 3.ª fila a la 2.ª (no cambia el determinante): <span class="math inline">\(F_1-F_2+F_2=F_1\)</span>: <span class="math display">\[-4\begin{vmatrix}F_3\\F_1\\F_2\end{vmatrix}=-4|A|.\]</span> 4. <span class="math inline">\((F_3,F_1,F_2)\)</span> es una permutación circular de las filas de <span class="math inline">\(A\)</span> (dos intercambios), así que no cambia el signo. Entonces el determinante es <span class="math inline">\(-4|A|=-4\cdot(-2)\)</span>.</p>
 <p><strong>El determinante vale <span class="math inline">\(8\)</span>.</strong></p>
-<p><strong>b)</strong> <span class="math inline">\(|A^{-1}(A^t)^2A|=|A|^{-1}|A|^2|A|=|A|^2\)</span>.</p>
+<p><strong>b) Determinante de un producto.</strong> 1. El determinante del producto es el producto de determinantes: <span class="math inline">\(|A^{-1}(A^t)^2A|=|A^{-1}|\,|A^t|^2\,|A|\)</span>. 2. Se usa <span class="math inline">\(|A^{-1}|=|A|^{-1}\)</span> y <span class="math inline">\(|A^t|=|A|\)</span>: <span class="math display">\[|A^{-1}(A^t)^2A|=|A|^{-1}|A|^2|A|=|A|^2.\]</span> 3. Con <span class="math inline">\(|A|=-2\)</span>, <span class="math inline">\(|A|^2=4\)</span>.</p>
 <p><strong>Vale <span class="math inline">\(4\)</span>.</strong></p>
 </div>
 </div>
@@ -503,8 +538,63 @@ window.Quarto = {
 <li><p>Para <span class="math inline">\(\alpha=1\)</span> determina, si es posible, la matriz inversa de <span class="math inline">\(A\)</span>. <em>(1,5 puntos)</em></p></li>
 </ol>
 <p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/01-matrices.html">Matrices</a>.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Determinantes y parámetros.</strong></p>
+<p>Determinante <span class="math inline">\(3\times3\)</span> (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: <span class="math inline">\(|A|=0\)</span> si dos filas son proporcionales; <span class="math inline">\(|k\cdot A|=k^n|A|\)</span> para <span class="math inline">\(A\)</span> de orden <span class="math inline">\(n\)</span>; <span class="math inline">\(|A\cdot B|=|A|\cdot|B|\)</span>.</p>
+<p><strong>Matriz inversa.</strong></p>
+<p><span class="math inline">\(A\)</span> tiene inversa si y solo si <span class="math inline">\(|A|\neq0\)</span>. Entonces <span class="math inline">\(A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t\)</span>, y se cumple <span class="math inline">\(A\cdot A^{-1}=A^{-1}\cdot A=I\)</span>.</p>
+<p><strong>Operaciones con matrices.</strong></p>
+<p>Suma y resta: elemento a elemento (mismas dimensiones). Producto <span class="math inline">\(A\cdot B\)</span>: solo si columnas de <span class="math inline">\(A\)</span> = filas de <span class="math inline">\(B\)</span>; el elemento <span class="math inline">\((i,j)\)</span> es la fila <span class="math inline">\(i\)</span> de <span class="math inline">\(A\)</span> por la columna <span class="math inline">\(j\)</span> de <span class="math inline">\(B\)</span>. En general <span class="math inline">\(A\cdot B\neq B\cdot A\)</span>. La traspuesta <span class="math inline">\(A^t\)</span> cambia filas por columnas y <span class="math inline">\((A\cdot B)^t=B^t\cdot A^t\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Determinantes y parámetros.</strong></p>
+<ol type="1">
+<li>Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).</li>
+<li>Iguala a <span class="math inline">\(0\)</span> y resuelve la ecuación: esos son los valores prohibidos.</li>
+<li>Expresa la conclusión: «tiene inversa para todo <span class="math inline">\(a\)</span> distinto de …».</li>
+</ol>
+<p><strong>Matriz inversa.</strong></p>
+<ol type="1">
+<li>Calcula <span class="math inline">\(|A|\)</span>. Si es <span class="math inline">\(0\)</span>, no hay inversa.</li>
+<li>Halla la matriz de adjuntos: cada elemento es el menor con su signo <span class="math inline">\((-1)^{i+j}\)</span>.</li>
+<li>Traspón la adjunta y divide entre <span class="math inline">\(|A|\)</span>.</li>
+<li>Comprueba que <span class="math inline">\(A\cdot A^{-1}=I\)</span>.</li>
+</ol>
+<p><strong>Operaciones con matrices.</strong></p>
+<ol type="1">
+<li>Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.</li>
+<li>Para potencias <span class="math inline">\(A^2,A^3,\dots\)</span> calcula una a una y busca el patrón; después exprésalo en función de <span class="math inline">\(n\)</span>.</li>
+<li>Revisa cada elemento: un solo error de signo arrastra todo lo demás.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -513,10 +603,13 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> <span class="math inline">\(|A|=\alpha(\alpha-4)(\alpha+2)\)</span> (desarrollando por la primera columna). <strong><span class="math inline">\(A\)</span> admite inversa si <span class="math inline">\(\alpha\neq0,\ \alpha\neq4,\ \alpha\neq-2\)</span>.</strong></p>
-<p><strong>b)</strong> Con <span class="math inline">\(\alpha=1\)</span>: <span class="math inline">\(A=\begin{pmatrix}1&amp;5&amp;0\\1&amp;1&amp;1\\0&amp;5&amp;1\end{pmatrix}\)</span>, <span class="math inline">\(|A|=-9\)</span>. Con la matriz adjunta: <span class="math display">\[\mathbf{A^{-1}}=\frac{1}{9}\begin{pmatrix}4&amp;5&amp;-5\\1&amp;-1&amp;1\\-5&amp;5&amp;4\end{pmatrix}.\]</span></p>
+<p><strong>a) Cuándo hay inversa.</strong> 1. <span class="math inline">\(A\)</span> tiene inversa si y solo si <span class="math inline">\(|A|\neq0\)</span>. 2. Desarrollando por la primera columna: <span class="math inline">\(|A|=\alpha(\alpha-4)(\alpha+2)\)</span>. 3. Se anula en <span class="math inline">\(\alpha=0\)</span>, <span class="math inline">\(\alpha=4\)</span> y <span class="math inline">\(\alpha=-2\)</span>.</p>
+<p><strong><span class="math inline">\(A\)</span> admite inversa si <span class="math inline">\(\alpha\neq0,\ \alpha\neq4,\ \alpha\neq-2\)</span>.</strong></p>
+<p><strong>b) Inversa para <span class="math inline">\(\alpha=1\)</span>.</strong> 1. La matriz es <span class="math inline">\(A=\begin{pmatrix}1&amp;5&amp;0\\1&amp;1&amp;1\\0&amp;5&amp;1\end{pmatrix}\)</span> y <span class="math inline">\(|A|=-9\neq0\)</span>, luego existe <span class="math inline">\(A^{-1}\)</span>. 2. Se calcula la matriz adjunta, se traspone y se divide entre <span class="math inline">\(|A|=-9\)</span>.</p>
+<p><strong>Con la matriz adjunta:</strong> <span class="math display">\[\mathbf{A^{-1}}=\frac{1}{9}\begin{pmatrix}4&amp;5&amp;-5\\1&amp;-1&amp;1\\-5&amp;5&amp;4\end{pmatrix}.\]</span></p>
+<p>(Comprobación: <span class="math inline">\(A\cdot A^{-1}=I\)</span>.)</p>
 </div>
 </div>
 </div>
@@ -531,8 +624,44 @@ window.Quarto = {
 <li><p><span class="math inline">\(\begin{vmatrix}a+x&amp;b+y&amp;c+z\\a&amp;b&amp;c\\2a+u&amp;2b+v&amp;2c+w\end{vmatrix}\)</span>. <em>(1,5 puntos)</em></p></li>
 <li><p><span class="math inline">\(\begin{vmatrix}z&amp;c&amp;w\\x&amp;a&amp;u\\y&amp;b&amp;v\end{vmatrix}\)</span>. <em>(1 punto)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(|A^t|=|A|\)</span>; <span class="math inline">\(|A\cdot B|=|A|\cdot|B|\)</span>; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por <span class="math inline">\(k\)</span>, el determinante se multiplica por <span class="math inline">\(k\)</span> (y <span class="math inline">\(|k\cdot A|=k^n|A|\)</span> en orden <span class="math inline">\(n\)</span>); si hay dos filas proporcionales, <span class="math inline">\(|A|=0\)</span>; sumar a una fila un múltiplo de otra no cambia el determinante. <span class="math inline">\(|A^{-1}|=\dfrac{1}{|A|}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.</li>
+<li>Aplica cada propiedad en orden, anotando cómo cambia el valor.</li>
+<li>Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -541,10 +670,12 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> A la fila 1 le restamos la fila 2 y a la fila 3 le restamos <span class="math inline">\(2\cdot\)</span> fila 2 (no cambia el determinante): queda <span class="math inline">\(\left|\begin{matrix}x&amp;y&amp;z\\a&amp;b&amp;c\\u&amp;v&amp;w\end{matrix}\right|\)</span>, que es el original con las filas 1 y 2 intercambiadas: <strong><span class="math inline">\(-1\)</span>.</strong></p>
-<p><strong>b)</strong> Es la traspuesta de la matriz con filas <span class="math inline">\((z,x,y)\)</span>, <span class="math inline">\((c,a,b)\)</span>, <span class="math inline">\((w,u,v)\)</span>. Cada fila es una permutación cíclica de las columnas de una fila del original (no cambia el signo), y las filas 1 y 2 están intercambiadas: <strong><span class="math inline">\(-1\)</span>.</strong></p>
+<p><strong>a) Primer determinante.</strong> 1. A la fila 1 le restamos la fila 2 y a la fila 3 le restamos <span class="math inline">\(2\cdot\)</span> fila 2. Esto no cambia el determinante. 2. Queda <span class="math inline">\(\left|\begin{matrix}x&amp;y&amp;z\\a&amp;b&amp;c\\u&amp;v&amp;w\end{matrix}\right|\)</span>. 3. Es el determinante original con las filas 1 y 2 intercambiadas, y al intercambiar dos filas el determinante cambia de signo.</p>
+<p><strong>El valor es <span class="math inline">\(-1\)</span>.</strong></p>
+<p><strong>b) Segundo determinante.</strong> 1. Se traspone (el determinante no cambia). Las filas son <span class="math inline">\((z,x,y)\)</span>, <span class="math inline">\((c,a,b)\)</span> y <span class="math inline">\((w,u,v)\)</span>. 2. En cada fila, las columnas del original <span class="math inline">\((x,y,z)\)</span>, <span class="math inline">\((a,b,c)\)</span>, <span class="math inline">\((u,v,w)\)</span> se han permutado cíclicamente de la misma manera. Una permutación cíclica de tres columnas es par: no cambia el signo. 3. Tras deshacerla, queda el original con las filas 1 y 2 intercambiadas: cambia de signo.</p>
+<p><strong>El valor es <span class="math inline">\(-1\)</span>.</strong></p>
 </div>
 </div>
 </div>
@@ -559,8 +690,44 @@ window.Quarto = {
 <li><p>Calcula <span class="math inline">\(\begin{vmatrix}a_{11}&amp;a_{31}&amp;2a_{21}\\3a_{12}&amp;3a_{32}&amp;6a_{22}\\2a_{13}&amp;2a_{33}&amp;4a_{23}\end{vmatrix}\)</span>. <em>(1,25 puntos)</em></p></li>
 <li><p>Calcula <span class="math inline">\(\begin{vmatrix}2a_{11}-3a_{31}&amp;2a_{12}-3a_{32}&amp;4a_{13}-6a_{33}\\a_{21}&amp;a_{22}&amp;2a_{23}\\a_{31}&amp;a_{32}&amp;2a_{33}\end{vmatrix}\)</span>. <em>(1,25 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(|A^t|=|A|\)</span>; <span class="math inline">\(|A\cdot B|=|A|\cdot|B|\)</span>; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por <span class="math inline">\(k\)</span>, el determinante se multiplica por <span class="math inline">\(k\)</span> (y <span class="math inline">\(|k\cdot A|=k^n|A|\)</span> en orden <span class="math inline">\(n\)</span>); si hay dos filas proporcionales, <span class="math inline">\(|A|=0\)</span>; sumar a una fila un múltiplo de otra no cambia el determinante. <span class="math inline">\(|A^{-1}|=\dfrac{1}{|A|}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.</li>
+<li>Aplica cada propiedad en orden, anotando cómo cambia el valor.</li>
+<li>Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -569,10 +736,10 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> Sacando factores: la fila 2 tiene factor <span class="math inline">\(3\)</span>, la fila 3 tiene factor <span class="math inline">\(2\)</span> y la columna 3 tiene factor <span class="math inline">\(2\)</span>; queda un factor <span class="math inline">\(12\)</span>. La matriz resultante tiene por columnas las filas <span class="math inline">\(1\)</span>, <span class="math inline">\(3\)</span> y <span class="math inline">\(2\)</span> de <span class="math inline">\(M\)</span>, es decir, es la traspuesta de <span class="math inline">\(M\)</span> con dos filas intercambiadas, así que su determinante es <span class="math inline">\(-|M|\)</span>. <span class="math display">\[12\cdot(-|M|)=12\cdot5=\mathbf{60}.\]</span></p>
-<p><strong>b)</strong> A la fila 1 le sumamos <span class="math inline">\(3\cdot\)</span> fila 3: queda <span class="math inline">\((2a_{11},\,2a_{12},\,4a_{13})\)</span>. Sacamos <span class="math inline">\(2\)</span> de la fila 1 y <span class="math inline">\(2\)</span> de la columna 3: <span class="math display">\[|\cdot|=2\cdot2\cdot|M|=4\cdot(-5)=\mathbf{-20}.\]</span></p>
+<p><strong>a) Primer determinante.</strong> 1. De la fila 2 se saca el factor <span class="math inline">\(3\)</span> y de la fila 3 el factor <span class="math inline">\(2\)</span>; de la columna 3 se saca el factor <span class="math inline">\(2\)</span>. En total, un factor <span class="math inline">\(3\cdot2\cdot2=12\)</span>. 2. Queda el determinante de la matriz cuyas filas son <span class="math inline">\((a_{11},a_{31},a_{21})\)</span>, <span class="math inline">\((a_{12},a_{32},a_{22})\)</span> y <span class="math inline">\((a_{13},a_{33},a_{23})\)</span>. 3. Es <span class="math inline">\(M^t\)</span> con las columnas 2 y 3 intercambiadas, así que su determinante es <span class="math inline">\(-|M^t|=-|M|\)</span>. 4. Por tanto: <span class="math display">\[12\cdot(-|M|)=12\cdot5=\mathbf{60}.\]</span></p>
+<p><strong>b) Segundo determinante.</strong> 1. A la fila 1 le sumamos <span class="math inline">\(3\cdot\)</span> fila 3 (no cambia el determinante): queda <span class="math inline">\((2a_{11},\,2a_{12},\,4a_{13})\)</span>. 2. Se saca el factor <span class="math inline">\(2\)</span> de la fila 1 y el factor <span class="math inline">\(2\)</span> de la columna 3: aparece un factor <span class="math inline">\(2\cdot2=4\)</span> y queda <span class="math inline">\(|M|\)</span>. 3. Entonces: <span class="math display">\[|\cdot|=4\cdot|M|=4\cdot(-5)=\mathbf{-20}.\]</span></p>
 </div>
 </div>
 </div>
@@ -591,8 +758,44 @@ window.Quarto = {
 <li><p>Halla la matriz <span class="math inline">\(X\)</span>, si es posible, que verifica que <span class="math inline">\(AXB=9I\)</span>, donde <span class="math inline">\(I\)</span> es la matriz identidad de orden 3. <em>(1,25 puntos)</em></p></li>
 </ol>
 <p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/01-matrices.html">Matrices</a>.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Suma y resta: elemento a elemento (mismas dimensiones). Producto <span class="math inline">\(A\cdot B\)</span>: solo si columnas de <span class="math inline">\(A\)</span> = filas de <span class="math inline">\(B\)</span>; el elemento <span class="math inline">\((i,j)\)</span> es la fila <span class="math inline">\(i\)</span> de <span class="math inline">\(A\)</span> por la columna <span class="math inline">\(j\)</span> de <span class="math inline">\(B\)</span>. En general <span class="math inline">\(A\cdot B\neq B\cdot A\)</span>. La traspuesta <span class="math inline">\(A^t\)</span> cambia filas por columnas y <span class="math inline">\((A\cdot B)^t=B^t\cdot A^t\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.</li>
+<li>Para potencias <span class="math inline">\(A^2,A^3,\dots\)</span> calcula una a una y busca el patrón; después exprésalo en función de <span class="math inline">\(n\)</span>.</li>
+<li>Revisa cada elemento: un solo error de signo arrastra todo lo demás.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -601,11 +804,11 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(|A|=9\)</span> y <span class="math inline">\(|B|=-\dfrac19\)</span>, luego <span class="math inline">\(|AB|=-1\)</span>.</p>
-<p><strong>a)</strong> <span class="math inline">\(\left|\big((AB)^5\big)^{-1}\right|=\dfrac1{|AB|^5}=\mathbf{-1}\)</span>. Para matrices <span class="math inline">\(3\times3\)</span>, <span class="math inline">\(|27AB^6|=27^3\,|A|\,|B|^6=3^9\cdot3^2\cdot3^{-12}=\mathbf{\dfrac13}\)</span>.</p>
-<p><strong>b)</strong> <span class="math inline">\(|A|\neq0\)</span> y <span class="math inline">\(|B|\neq0\)</span>, así que ambas son invertibles y <span class="math inline">\(X=9A^{-1}B^{-1}\)</span> (existe y es única):</p>
+<p><strong>Datos.</strong> <span class="math inline">\(|A|=9\)</span> y <span class="math inline">\(|B|=-\dfrac19\)</span>, luego <span class="math inline">\(|AB|=|A|\,|B|=-1\)</span>.</p>
+<p><strong>a) Determinantes.</strong> 1. Determinante de una inversa: <span class="math inline">\(|M^{-1}|=\dfrac1{|M|}\)</span>, y de una potencia, <span class="math inline">\(|M^n|=|M|^n\)</span>. Entonces <span class="math inline">\(\left|\big((AB)^5\big)^{-1}\right|=\dfrac1{|AB|^5}=\dfrac1{(-1)^5}=\mathbf{-1}\)</span>. 2. Para una matriz de orden <span class="math inline">\(3\)</span>, <span class="math inline">\(|kM|=k^3|M|\)</span>, así que <span class="math inline">\(|27AB^6|=27^3\,|A|\,|B|^6\)</span>. 3. Con <span class="math inline">\(27=3^3\)</span>: <span class="math inline">\(27^3=3^9\)</span>, <span class="math inline">\(|A|=9=3^2\)</span> y <span class="math inline">\(|B|^6=3^{-12}\)</span>: <span class="math display">\[|27AB^6|=3^9\cdot3^2\cdot3^{-12}=\mathbf{\dfrac13}.\]</span></p>
+<p><strong>b) Ecuación <span class="math inline">\(AXB=9I\)</span>.</strong> 1. <span class="math inline">\(|A|\neq0\)</span> y <span class="math inline">\(|B|\neq0\)</span>, así que ambas son invertibles. 2. Se multiplica por <span class="math inline">\(A^{-1}\)</span> por la izquierda y por <span class="math inline">\(B^{-1}\)</span> por la derecha: <span class="math inline">\(X=9A^{-1}B^{-1}\)</span> (existe y es única). 3. Se calcula el producto:</p>
 <p><span class="math display">\[\mathbf{X=\begin{pmatrix}0&amp;1&amp;18\\0&amp;1&amp;-63\\9&amp;0&amp;-162\end{pmatrix}}\]</span></p>
 <p>(comprobado: <span class="math inline">\(AXB=9I\)</span>).</p>
 </div>
@@ -623,8 +826,62 @@ window.Quarto = {
 <li><p>Calcula los valores <span class="math inline">\((x,y,z)\)</span> tales que <span class="math inline">\(B\cdot A=C\)</span>. <em>(1,5 puntos)</em></p></li>
 </ol>
 <p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/01-matrices.html">Matrices</a>.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Propiedades de los determinantes.</strong></p>
+<p><span class="math inline">\(|A^t|=|A|\)</span>; <span class="math inline">\(|A\cdot B|=|A|\cdot|B|\)</span>; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por <span class="math inline">\(k\)</span>, el determinante se multiplica por <span class="math inline">\(k\)</span> (y <span class="math inline">\(|k\cdot A|=k^n|A|\)</span> en orden <span class="math inline">\(n\)</span>); si hay dos filas proporcionales, <span class="math inline">\(|A|=0\)</span>; sumar a una fila un múltiplo de otra no cambia el determinante. <span class="math inline">\(|A^{-1}|=\dfrac{1}{|A|}\)</span>.</p>
+<p><strong>Determinantes y parámetros.</strong></p>
+<p>Determinante <span class="math inline">\(3\times3\)</span> (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: <span class="math inline">\(|A|=0\)</span> si dos filas son proporcionales; <span class="math inline">\(|k\cdot A|=k^n|A|\)</span> para <span class="math inline">\(A\)</span> de orden <span class="math inline">\(n\)</span>; <span class="math inline">\(|A\cdot B|=|A|\cdot|B|\)</span>.</p>
+<p><strong>Operaciones con matrices.</strong></p>
+<p>Suma y resta: elemento a elemento (mismas dimensiones). Producto <span class="math inline">\(A\cdot B\)</span>: solo si columnas de <span class="math inline">\(A\)</span> = filas de <span class="math inline">\(B\)</span>; el elemento <span class="math inline">\((i,j)\)</span> es la fila <span class="math inline">\(i\)</span> de <span class="math inline">\(A\)</span> por la columna <span class="math inline">\(j\)</span> de <span class="math inline">\(B\)</span>. En general <span class="math inline">\(A\cdot B\neq B\cdot A\)</span>. La traspuesta <span class="math inline">\(A^t\)</span> cambia filas por columnas y <span class="math inline">\((A\cdot B)^t=B^t\cdot A^t\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Propiedades de los determinantes.</strong></p>
+<ol type="1">
+<li>Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.</li>
+<li>Aplica cada propiedad en orden, anotando cómo cambia el valor.</li>
+<li>Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.</li>
+</ol>
+<p><strong>Determinantes y parámetros.</strong></p>
+<ol type="1">
+<li>Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).</li>
+<li>Iguala a <span class="math inline">\(0\)</span> y resuelve la ecuación: esos son los valores prohibidos.</li>
+<li>Expresa la conclusión: «tiene inversa para todo <span class="math inline">\(a\)</span> distinto de …».</li>
+</ol>
+<p><strong>Operaciones con matrices.</strong></p>
+<ol type="1">
+<li>Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.</li>
+<li>Para potencias <span class="math inline">\(A^2,A^3,\dots\)</span> calcula una a una y busca el patrón; después exprésalo en función de <span class="math inline">\(n\)</span>.</li>
+<li>Revisa cada elemento: un solo error de signo arrastra todo lo demás.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -633,12 +890,11 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> Sea <span class="math inline">\(D\)</span> el determinante pedido. Su fila 1 es <span class="math inline">\((x,y,z)-(1,1,1)\)</span> y su fila 3 es <span class="math inline">\((3,0,2)+(1,1,1)\)</span>. Por linealidad en filas, y como un determinante con dos filas iguales vale <span class="math inline">\(0\)</span> (en particular los términos con <span class="math inline">\((1,1,1)\)</span> repetido), queda</p>
-<p><span class="math display">\[D=\begin{vmatrix}x&amp;y&amp;z\\1&amp;1&amp;1\\3&amp;0&amp;2\end{vmatrix}=-\begin{vmatrix}x&amp;y&amp;z\\3&amp;0&amp;2\\1&amp;1&amp;1\end{vmatrix}=-|A|\]</span></p>
-<p>(al intercambiar dos filas el determinante cambia de signo). Luego <span class="math inline">\(\mathbf{D=-5}\)</span>.</p>
-<p><strong>b)</strong> <span class="math inline">\(B\cdot A=(x+3y+z,\ y+z,\ 2y+2z)=(3,0,0)\)</span>, de donde <span class="math inline">\(y+z=0\)</span> y <span class="math inline">\(x+3y+z=3\)</span>. Con <span class="math inline">\(z=\lambda\)</span>: <span class="math inline">\(y=-\lambda\)</span>, <span class="math inline">\(x=3+2\lambda\)</span>.</p>
+<p><strong>a) Determinante con propiedades.</strong> Sea <span class="math inline">\(D\)</span> el determinante pedido. 1. La fila 1 es <span class="math inline">\((x,y,z)-(1,1,1)\)</span> y la fila 3 es <span class="math inline">\((3,0,2)+(1,1,1)\)</span>; la fila 2 es <span class="math inline">\((1,1,1)\)</span>. 2. <strong>Linealidad en filas:</strong> el determinante se descompone en suma de determinantes. Los que contienen la fila <span class="math inline">\((1,1,1)\)</span> dos veces valen <span class="math inline">\(0\)</span> (<strong>dos filas iguales</strong>), así que solo queda el término con <span class="math inline">\((x,y,z)\)</span> y <span class="math inline">\((3,0,2)\)</span>: <span class="math display">\[D=\begin{vmatrix}x&amp;y&amp;z\\1&amp;1&amp;1\\3&amp;0&amp;2\end{vmatrix}.\]</span> 3. <strong>Intercambio de dos filas:</strong> pasar la fila <span class="math inline">\((3,0,2)\)</span> al lugar 2 y la <span class="math inline">\((1,1,1)\)</span> al 3 cambia el signo: <span class="math display">\[D=-\begin{vmatrix}x&amp;y&amp;z\\3&amp;0&amp;2\\1&amp;1&amp;1\end{vmatrix}=-|A|\]</span> 4. Con <span class="math inline">\(|A|=5\)</span>:</p>
+<p><span class="math display">\[\mathbf{D=-5}\]</span></p>
+<p><strong>b) Ecuación <span class="math inline">\(B\cdot A=C\)</span>.</strong> 1. Producto fila por matriz: <span class="math inline">\(B\cdot A=(x+3y+z,\ y+z,\ 2y+2z)\)</span>. 2. Se iguala a <span class="math inline">\(C=(3,0,0)\)</span>: <span class="math inline">\(x+3y+z=3\)</span>, <span class="math inline">\(y+z=0\)</span> y <span class="math inline">\(2y+2z=0\)</span> (la tercera repite la segunda). 3. Con <span class="math inline">\(z=\lambda\)</span>: <span class="math inline">\(y=-\lambda\)</span> y <span class="math inline">\(x=3-3y-z=3+3\lambda-\lambda=3+2\lambda\)</span>.</p>
 <p><span class="math display">\[\mathbf{(x,y,z)=(3+2\lambda,\,-\lambda,\,\lambda),\ \lambda\in\mathbb{R}}\]</span></p>
 <p>(infinitas soluciones).</p>
 </div>
@@ -658,8 +914,44 @@ window.Quarto = {
 <li><p>Calcula: <span class="math inline">\(\begin{vmatrix}a&amp;c&amp;b\\2x&amp;2z&amp;2y\\-3p&amp;-3r&amp;-3q\end{vmatrix}\)</span> <em>(1 punto)</em></p></li>
 <li><p>Calcula: <span class="math inline">\(\begin{vmatrix}x&amp;a-3p&amp;-2a\\y&amp;b-3q&amp;-2b\\z&amp;c-3r&amp;-2c\end{vmatrix}\)</span> <em>(1,5 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(|A^t|=|A|\)</span>; <span class="math inline">\(|A\cdot B|=|A|\cdot|B|\)</span>; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por <span class="math inline">\(k\)</span>, el determinante se multiplica por <span class="math inline">\(k\)</span> (y <span class="math inline">\(|k\cdot A|=k^n|A|\)</span> en orden <span class="math inline">\(n\)</span>); si hay dos filas proporcionales, <span class="math inline">\(|A|=0\)</span>; sumar a una fila un múltiplo de otra no cambia el determinante. <span class="math inline">\(|A^{-1}|=\dfrac{1}{|A|}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.</li>
+<li>Aplica cada propiedad en orden, anotando cómo cambia el valor.</li>
+<li>Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -668,12 +960,12 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Se usa que <span class="math inline">\(|M|=-2\)</span> para la matriz original, y las propiedades de los determinantes.</p>
-<p><strong>a)</strong> Se saca factor <span class="math inline">\(2\)</span> de la fila 2 y <span class="math inline">\(-3\)</span> de la fila 3 (factor <span class="math inline">\(-6\)</span>); intercambiar las columnas 2 y 3 cambia el signo; luego intercambiar las filas 2 y 3 cambia otra vez el signo: <span class="math display">\[-6\cdot(-1)\cdot(-1)\cdot(-2)=12.\]</span></p>
+<p><strong>Datos.</strong> Sea <span class="math inline">\(M\)</span> la matriz del enunciado, con <span class="math inline">\(|M|=-2\)</span>. Se usan estas propiedades: sacar un factor <span class="math inline">\(k\)</span> de una fila (o columna) multiplica el determinante por <span class="math inline">\(k\)</span>; intercambiar dos filas (o columnas) cambia su signo; sumar a una fila (o columna) un múltiplo de otra no cambia el determinante.</p>
+<p><strong>a) Primer determinante.</strong> 1. Se saca factor <span class="math inline">\(2\)</span> de la fila 2 y factor <span class="math inline">\(-3\)</span> de la fila 3: el determinante se multiplica por <span class="math inline">\(2\cdot(-3)=-6\)</span>. 2. Intercambiar las columnas 2 y 3 cambia el signo: factor <span class="math inline">\(-1\)</span>. 3. Intercambiar las filas 2 y 3 (para recuperar el orden <span class="math inline">\(a,p,x\)</span> de las filas) cambia otra vez el signo: factor <span class="math inline">\(-1\)</span>. 4. Queda el determinante de <span class="math inline">\(M\)</span>: <span class="math display">\[-6\cdot(-1)\cdot(-1)\cdot(-2)=12.\]</span></p>
 <p><strong>Valor: <span class="math inline">\(12\)</span>.</strong></p>
-<p><strong>b)</strong> Por columnas, con <span class="math inline">\(X,P,A\)</span> las columnas <span class="math inline">\((x,y,z)\)</span>, <span class="math inline">\((p,q,r)\)</span>, <span class="math inline">\((a,b,c)\)</span>: el determinante es <span class="math inline">\(|X\;\;A-3P\;\;-2A|\)</span>. Se saca <span class="math inline">\(-2\)</span> de la columna 3; a la columna 2 se le resta un múltiplo de la 3 (queda <span class="math inline">\(-3P\)</span> tras eliminar <span class="math inline">\(A\)</span> con la columna 3) y se saca <span class="math inline">\(-3\)</span>: <span class="math display">\[|X\;\;A-3P\;\;-2A|=(-2)(-3)\,|X\;\;P\;\;A|=6\,|X\;\;P\;\;A|.\]</span> Intercambiar las columnas 1 y 3 da <span class="math inline">\(|X\;P\;A|=-|A\;P\;X|=2\)</span>.</p>
+<p><strong>b) Segundo determinante.</strong> Se trabaja con las columnas. Sean <span class="math inline">\(\mathbf{x}=(x,y,z)^t\)</span>, <span class="math inline">\(\mathbf{p}=(p,q,r)^t\)</span> y <span class="math inline">\(\mathbf{a}=(a,b,c)^t\)</span>. El determinante es <span class="math inline">\(|\mathbf{x}\;\;\mathbf{a}-3\mathbf{p}\;\;-2\mathbf{a}|\)</span>. 1. Se saca <span class="math inline">\(-2\)</span> de la columna 3: factor <span class="math inline">\(-2\)</span> y queda <span class="math inline">\(|\mathbf{x}\;\;\mathbf{a}-3\mathbf{p}\;\;\mathbf{a}|\)</span>. 2. A la columna 2 se le resta la columna 3: <span class="math inline">\(\mathbf{a}-3\mathbf{p}-\mathbf{a}=-3\mathbf{p}\)</span> (no cambia el valor). 3. Se saca <span class="math inline">\(-3\)</span> de la columna 2: factor <span class="math inline">\(-3\)</span>. En total: <span class="math display">\[|\mathbf{x}\;\;\mathbf{a}-3\mathbf{p}\;\;-2\mathbf{a}|=(-2)(-3)\,|\mathbf{x}\;\;\mathbf{p}\;\;\mathbf{a}|=6\,|\mathbf{x}\;\;\mathbf{p}\;\;\mathbf{a}|.\]</span> 4. El determinante dado, por filas (<span class="math inline">\(a,b,c\)</span> / <span class="math inline">\(p,q,r\)</span> / <span class="math inline">\(x,y,z\)</span>), es el de <span class="math inline">\(|\mathbf{a}\;\;\mathbf{p}\;\;\mathbf{x}|=-2\)</span> (un determinante no cambia al trasponer). 5. Intercambiar las columnas 1 y 3 cambia el signo: <span class="math inline">\(|\mathbf{x}\;\;\mathbf{p}\;\;\mathbf{a}|=-|\mathbf{a}\;\;\mathbf{p}\;\;\mathbf{x}|=2\)</span>. 6. Valor: <span class="math inline">\(6\cdot2=12\)</span>.</p>
 <p><strong>Valor: <span class="math inline">\(12\)</span>.</strong></p>
 </div>
 </div>
@@ -694,8 +986,44 @@ window.Quarto = {
 </ol>
 <p><span class="math display">\[\begin{vmatrix}6c&amp;2b&amp;2a\\3f&amp;e&amp;d\\9&amp;2&amp;1\end{vmatrix}\qquad\text{y}\qquad\begin{vmatrix}2a-2b&amp;c&amp;b\\2d-2e&amp;f&amp;e\\-2&amp;3&amp;2\end{vmatrix}.\quad\textit{(2 puntos)}\]</span></p>
 <p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/01-matrices.html">Matrices</a>.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Suma y resta: elemento a elemento (mismas dimensiones). Producto <span class="math inline">\(A\cdot B\)</span>: solo si columnas de <span class="math inline">\(A\)</span> = filas de <span class="math inline">\(B\)</span>; el elemento <span class="math inline">\((i,j)\)</span> es la fila <span class="math inline">\(i\)</span> de <span class="math inline">\(A\)</span> por la columna <span class="math inline">\(j\)</span> de <span class="math inline">\(B\)</span>. En general <span class="math inline">\(A\cdot B\neq B\cdot A\)</span>. La traspuesta <span class="math inline">\(A^t\)</span> cambia filas por columnas y <span class="math inline">\((A\cdot B)^t=B^t\cdot A^t\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.</li>
+<li>Para potencias <span class="math inline">\(A^2,A^3,\dots\)</span> calcula una a una y busca el patrón; después exprésalo en función de <span class="math inline">\(n\)</span>.</li>
+<li>Revisa cada elemento: un solo error de signo arrastra todo lo demás.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -704,12 +1032,13 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(|A|=2\)</span>.</p>
-<p><strong>a)</strong> <span class="math inline">\(\left|\tfrac13A^{-1}A^t\right|=\left(\tfrac13\right)^3\cdot\dfrac1{|A|}\cdot|A^t|=\dfrac1{27}\cdot\dfrac12\cdot2=\)</span> <strong><span class="math inline">\(\dfrac1{27}\)</span></strong>.</p>
-<p><strong>b)</strong> Primer determinante: se intercambian las columnas 1 y 3 (cambia el signo), se saca factor <span class="math inline">\(2\)</span> de la fila 1 y <span class="math inline">\(3\)</span> de la columna 3: vale <span class="math inline">\(-(2\cdot3)\,|A|=\)</span> <strong><span class="math inline">\(-12\)</span></strong>.</p>
-<p>Segundo: la columna 1 es <span class="math inline">\(2\bigl[(a,d,1)-(b,e,2)\bigr]\)</span>; sumándole la columna 3 <span class="math inline">\((b,e,2)\)</span> resulta <span class="math inline">\(2\,\bigl|(a,d,1),(c,f,3),(b,e,2)\bigr|\)</span>, que equivale a <span class="math inline">\(A^t\)</span> con dos columnas intercambiadas. Vale <span class="math inline">\(2\cdot(-|A|)=\)</span> <strong><span class="math inline">\(-4\)</span></strong>.</p>
+<p><strong>Dato.</strong> <span class="math inline">\(|A|=2\)</span>.</p>
+<p><strong>a) <span class="math inline">\(\left|\tfrac13A^{-1}A^t\right|\)</span>.</strong> 1. Para una matriz de orden <span class="math inline">\(3\)</span>: <span class="math inline">\(|kM|=k^3|M|\)</span>, así que sale <span class="math inline">\(\left(\tfrac13\right)^3\)</span>. 2. <span class="math inline">\(|A^{-1}|=\dfrac1{|A|}\)</span> y <span class="math inline">\(|A^t|=|A|\)</span>. 3. <span class="math inline">\(\left|\tfrac13A^{-1}A^t\right|=\left(\tfrac13\right)^3\cdot\dfrac1{|A|}\cdot|A^t|=\dfrac1{27}\cdot\dfrac12\cdot2=\)</span> <strong><span class="math inline">\(\dfrac1{27}\)</span></strong>.</p>
+<p><strong>b) Los dos determinantes.</strong></p>
+<p><em>Primero:</em> 1. Se intercambian las columnas 1 y 3: el determinante cambia de signo, y queda con filas <span class="math inline">\((2a,2b,6c)\)</span>, <span class="math inline">\((d,e,3f)\)</span>, <span class="math inline">\((1,2,9)\)</span>. 2. Se saca factor <span class="math inline">\(2\)</span> de la fila 1 y factor <span class="math inline">\(3\)</span> de la columna 3: queda <span class="math inline">\(|A|\)</span> multiplicado por <span class="math inline">\(2\cdot3\)</span>. 3. Vale <span class="math inline">\(-(2\cdot3)\,|A|=\)</span> <strong><span class="math inline">\(-12\)</span></strong>.</p>
+<p><em>Segundo:</em> 1. La columna 1 es <span class="math inline">\(2\bigl[(a,d,1)-(b,e,2)\bigr]\)</span>. Sumando a la columna 1 el doble de la columna 3, <span class="math inline">\((b,e,2)\)</span>, queda <span class="math inline">\(2\,(a,d,1)\)</span> (el determinante no cambia). 2. Se saca el factor <span class="math inline">\(2\)</span> de la columna 1: queda <span class="math inline">\(2\,\bigl|(a,d,1),(c,f,3),(b,e,2)\bigr|\)</span>. 3. Las columnas son las de <span class="math inline">\(A\)</span> con las columnas 2 y 3 intercambiadas, así que ese determinante es <span class="math inline">\(-|A|\)</span>. 4. Vale <span class="math inline">\(2\cdot(-|A|)=\)</span> <strong><span class="math inline">\(-4\)</span></strong>.</p>
 </div>
 </div>
 </div>
@@ -725,8 +1054,44 @@ window.Quarto = {
 <li><p>Calcula razonadamente los determinantes</p></li>
 </ol>
 <p><span class="math display">\[\begin{vmatrix}2a&amp;-1&amp;3\\2b&amp;1/2&amp;3\\2c&amp;-1/2&amp;3\end{vmatrix}\qquad\text{y}\qquad\begin{vmatrix}a&amp;b&amp;c\\a+4&amp;b-2&amp;c+2\\a+1&amp;b+1&amp;c+1\end{vmatrix}.\quad\textit{(2 puntos)}\]</span></p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(|A^t|=|A|\)</span>; <span class="math inline">\(|A\cdot B|=|A|\cdot|B|\)</span>; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por <span class="math inline">\(k\)</span>, el determinante se multiplica por <span class="math inline">\(k\)</span> (y <span class="math inline">\(|k\cdot A|=k^n|A|\)</span> en orden <span class="math inline">\(n\)</span>); si hay dos filas proporcionales, <span class="math inline">\(|A|=0\)</span>; sumar a una fila un múltiplo de otra no cambia el determinante. <span class="math inline">\(|A^{-1}|=\dfrac{1}{|A|}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.</li>
+<li>Aplica cada propiedad en orden, anotando cómo cambia el valor.</li>
+<li>Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -735,12 +1100,13 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sabemos <span class="math inline">\(|A|=5\)</span>.</p>
-<p><strong>a)</strong> <span class="math inline">\(|2A^3|=2^3\,|A|^3=8\cdot125=\)</span> <strong><span class="math inline">\(1000\)</span></strong>.</p>
-<p><strong>b)</strong> Primer determinante: sacamos <span class="math inline">\(2\)</span> de la columna 1, <span class="math inline">\(-\frac12\)</span> de la columna 2 (queda <span class="math inline">\((2,-1,1)\)</span>) y <span class="math inline">\(3\)</span> de la columna 3 (queda <span class="math inline">\((1,1,1)\)</span>): vale <span class="math inline">\(2\cdot\left(-\tfrac12\right)\cdot3\,|A|=-3\cdot5=\)</span> <strong><span class="math inline">\(-15\)</span></strong>.</p>
-<p>Segundo: se traspone (el determinante no cambia) y las columnas son <span class="math inline">\((a,b,c)\)</span>, <span class="math inline">\((a+4,b-2,c+2)\)</span>, <span class="math inline">\((a+1,b+1,c+1)\)</span>. Restando la columna 1 a las otras dos: <span class="math inline">\((a,b,c)\)</span>, <span class="math inline">\((4,-2,2)\)</span>, <span class="math inline">\((1,1,1)\)</span>. La segunda es <span class="math inline">\(2\cdot(2,-1,1)\)</span>, luego vale <span class="math inline">\(2\,|A|=\)</span> <strong><span class="math inline">\(10\)</span></strong>.</p>
+<p><strong>Dato.</strong> <span class="math inline">\(|A|=5\)</span>.</p>
+<p><strong>a) <span class="math inline">\(|2A^3|\)</span>.</strong> 1. Para una matriz de orden <span class="math inline">\(3\)</span>: <span class="math inline">\(|kM|=k^3|M|\)</span> y <span class="math inline">\(|M^n|=|M|^n\)</span>. 2. <span class="math inline">\(|2A^3|=2^3\,|A|^3=8\cdot125=\)</span> <strong><span class="math inline">\(1000\)</span></strong>.</p>
+<p><strong>b) Los dos determinantes.</strong></p>
+<p><em>Primero:</em> 1. Las columnas son <span class="math inline">\((2a,2b,2c)\)</span>, <span class="math inline">\(\left(-1,\tfrac12,-\tfrac12\right)\)</span> y <span class="math inline">\((3,3,3)\)</span>. 2. Se saca factor <span class="math inline">\(2\)</span> de la columna 1, <span class="math inline">\(-\frac12\)</span> de la columna 2 (queda <span class="math inline">\((2,-1,1)\)</span>) y <span class="math inline">\(3\)</span> de la columna 3 (queda <span class="math inline">\((1,1,1)\)</span>). 3. Quedan las columnas de <span class="math inline">\(A\)</span>: vale <span class="math inline">\(2\cdot\left(-\tfrac12\right)\cdot3\,|A|=-3\cdot5=\)</span> <strong><span class="math inline">\(-15\)</span></strong>.</p>
+<p><em>Segundo:</em> 1. Las filas son <span class="math inline">\((a,b,c)\)</span>, <span class="math inline">\((a+4,b-2,c+2)\)</span> y <span class="math inline">\((a+1,b+1,c+1)\)</span>. 2. Se resta la fila 1 a las otras dos (el determinante no cambia): <span class="math inline">\((a,b,c)\)</span>, <span class="math inline">\((4,-2,2)\)</span>, <span class="math inline">\((1,1,1)\)</span>. 3. La segunda fila es <span class="math inline">\(2\cdot(2,-1,1)\)</span>: se saca el factor <span class="math inline">\(2\)</span> y quedan las filas de <span class="math inline">\(A^t\)</span>, con <span class="math inline">\(|A^t|=|A|\)</span>. 4. Vale <span class="math inline">\(2\,|A|=\)</span> <strong><span class="math inline">\(10\)</span></strong>.</p>
 </div>
 </div>
 </div>
@@ -755,8 +1121,55 @@ window.Quarto = {
 <li><p>¿Para qué valores de <span class="math inline">\(m\)</span> existe la inversa de la matriz <span class="math inline">\(A\)</span>? Razona la respuesta. <em>(1,5 puntos)</em></p></li>
 <li><p>Para <span class="math inline">\(m=1\)</span>, halla <span class="math inline">\(\left(\dfrac12A\right)^{-1}\)</span>. <em>(1 punto)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Determinantes y parámetros.</strong></p>
+<p>Determinante <span class="math inline">\(3\times3\)</span> (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: <span class="math inline">\(|A|=0\)</span> si dos filas son proporcionales; <span class="math inline">\(|k\cdot A|=k^n|A|\)</span> para <span class="math inline">\(A\)</span> de orden <span class="math inline">\(n\)</span>; <span class="math inline">\(|A\cdot B|=|A|\cdot|B|\)</span>.</p>
+<p><strong>Matriz inversa.</strong></p>
+<p><span class="math inline">\(A\)</span> tiene inversa si y solo si <span class="math inline">\(|A|\neq0\)</span>. Entonces <span class="math inline">\(A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t\)</span>, y se cumple <span class="math inline">\(A\cdot A^{-1}=A^{-1}\cdot A=I\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Determinantes y parámetros.</strong></p>
+<ol type="1">
+<li>Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).</li>
+<li>Iguala a <span class="math inline">\(0\)</span> y resuelve la ecuación: esos son los valores prohibidos.</li>
+<li>Expresa la conclusión: «tiene inversa para todo <span class="math inline">\(a\)</span> distinto de …».</li>
+</ol>
+<p><strong>Matriz inversa.</strong></p>
+<ol type="1">
+<li>Calcula <span class="math inline">\(|A|\)</span>. Si es <span class="math inline">\(0\)</span>, no hay inversa.</li>
+<li>Halla la matriz de adjuntos: cada elemento es el menor con su signo <span class="math inline">\((-1)^{i+j}\)</span>.</li>
+<li>Traspón la adjunta y divide entre <span class="math inline">\(|A|\)</span>.</li>
+<li>Comprueba que <span class="math inline">\(A\cdot A^{-1}=I\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -765,11 +1178,11 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> <span class="math inline">\(|A|=2m\)</span> (restando la primera fila a las otras: <span class="math inline">\(\begin{vmatrix}m&amp;m&amp;m\\0&amp;1&amp;0\\0&amp;0&amp;2\end{vmatrix}=2m\)</span>).</p>
-<p><strong>Existe <span class="math inline">\(A^{-1}\)</span> si y sólo si <span class="math inline">\(m\neq0\)</span>.</strong></p>
-<p><strong>b)</strong> Para <span class="math inline">\(m=1\)</span>: <span class="math inline">\(\left(\tfrac12A\right)^{-1}=2A^{-1}\)</span>, con <span class="math inline">\(A=\begin{pmatrix}1&amp;1&amp;1\\1&amp;2&amp;1\\1&amp;1&amp;3\end{pmatrix}\)</span>, <span class="math inline">\(|A|=2\)</span>.</p>
+<p><strong>a) Valores de <span class="math inline">\(m\)</span> con inversa.</strong> 1. <span class="math inline">\(A\)</span> tiene inversa si y solo si <span class="math inline">\(|A|\neq0\)</span>. 2. Restando la primera fila a las otras dos: <span class="math inline">\(|A|=\begin{vmatrix}m&amp;m&amp;m\\0&amp;1&amp;0\\0&amp;0&amp;2\end{vmatrix}=2m\)</span>.</p>
+<p><strong>Existe <span class="math inline">\(A^{-1}\)</span> si y solo si <span class="math inline">\(m\neq0\)</span>.</strong></p>
+<p><strong>b) <span class="math inline">\(\left(\frac12A\right)^{-1}\)</span> para <span class="math inline">\(m=1\)</span>.</strong> 1. Se usa <span class="math inline">\(\left(kM\right)^{-1}=\frac1kM^{-1}\)</span>: <span class="math inline">\(\left(\tfrac12A\right)^{-1}=2A^{-1}\)</span>. 2. <span class="math inline">\(A=\begin{pmatrix}1&amp;1&amp;1\\1&amp;2&amp;1\\1&amp;1&amp;3\end{pmatrix}\)</span> y <span class="math inline">\(|A|=2\)</span>. 3. Se calcula <span class="math inline">\(A^{-1}\)</span> (adjunta traspuesta entre <span class="math inline">\(2\)</span>) y se multiplica por <span class="math inline">\(2\)</span>:</p>
 <p><span class="math display">\[\left(\tfrac12A\right)^{-1}=\begin{pmatrix}5&amp;-2&amp;-1\\-2&amp;2&amp;0\\-1&amp;0&amp;1\end{pmatrix}\]</span></p>
 </div>
 </div>

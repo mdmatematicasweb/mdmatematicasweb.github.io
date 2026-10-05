@@ -442,7 +442,7 @@ window.Quarto = {
 
 
 <p>Ejercicios de <strong>Matemáticas II</strong> de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de <strong>2021 a 2026</strong> cuyo tema principal es <em>probabilidad</em>: <strong>7 ejercicios</strong> de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. Repasa antes la <a href="../../../apuntes/2-bachillerato-ciencias/10-probabilidad/index.html">teoría</a>, los <a href="../../../ejercicios/2-bachillerato-ciencias/10-probabilidad/index.html">ejercicios del tema</a> y las <a href="../../../actividades/2-bachillerato-ciencias/10-probabilidad/index.html">actividades interactivas</a>.</p>
-<p>Debajo de cada ejercicio hay una <strong>resolución breve</strong> plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.</p>
+<p>Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: <strong>Ayuda 1 · Recordatorio</strong> (la teoría que necesitas, sin tocar los datos), <strong>Ayuda 2 · Método</strong> (los pasos a seguir) y la <strong>solución</strong> paso a paso con el resultado. Inténtalo con la menor ayuda posible.</p>
 <blockquote class="blockquote">
 <p>Probabilidad y distribución normal <strong>no entraron en Matemáticas II hasta la convocatoria de 2025</strong>: los anteriores exámenes (2021–2024) no tienen ejercicios de este tema.</p>
 </blockquote>
@@ -457,8 +457,55 @@ window.Quarto = {
 <li><p>Calcula la probabilidad de que la segunda moneda sea de oro, sabiendo que la moneda que se extrajo de la primera bolsa era de plata. <em>(0,75 puntos)</em></p></li>
 <li><p>Calcula la probabilidad de que la moneda que se extrajo de la primera bolsa fuera de plata, sabiendo que la segunda moneda es de oro. <em>(1,75 puntos)</em></p></li>
 </ol>
-<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Probabilidad condicionada.</strong></p>
+<p><span class="math inline">\(P(A|B)=\dfrac{P(A\cap B)}{P(B)}\)</span> (probabilidad de <span class="math inline">\(A\)</span> sabiendo que ocurrió <span class="math inline">\(B\)</span>). Regla del producto: <span class="math inline">\(P(A\cap B)=P(B)\cdot P(A|B)\)</span>. <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes si <span class="math inline">\(P(A|B)=P(A)\)</span>.</p>
+<p><strong>Probabilidad total y teorema de Bayes.</strong></p>
+<p>Si <span class="math inline">\(A_1,\dots,A_n\)</span> forman un sistema completo de sucesos: <span class="math inline">\(P(B)=\sum P(A_i)\,P(B|A_i)\)</span> (probabilidad total) y <span class="math inline">\(P(A_j|B)=\dfrac{P(A_j)\,P(B|A_j)}{P(B)}\)</span> (Bayes).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Probabilidad condicionada.</strong></p>
+<ol type="1">
+<li>Identifica qué suceso es la condición («sabiendo que», «si ha ocurrido»): va en el denominador.</li>
+<li>Calcula la intersección y la probabilidad de la condición.</li>
+<li>Divide e interpreta el resultado en palabras.</li>
+</ol>
+<p><strong>Probabilidad total y teorema de Bayes.</strong></p>
+<ol type="1">
+<li>Dibuja un diagrama de árbol: primera etapa con el sistema completo, segunda con <span class="math inline">\(B\)</span> y <span class="math inline">\(B^C\)</span>.</li>
+<li>Multiplica a lo largo de cada rama.</li>
+<li>Probabilidad total: suma las ramas que terminan en <span class="math inline">\(B\)</span>.</li>
+<li>Bayes: divide la rama pedida entre la probabilidad total.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -467,14 +514,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sean <span class="math inline">\(O_1\)</span> y <span class="math inline">\(P_1\)</span> (oro, plata) en la 1.ª extracción, <span class="math inline">\(O_2\)</span> en la 2.ª. Bolsa 1: 2 oro y 3 plata; bolsa 2: 6 oro y 3 plata.</p>
-<p><strong>a)</strong> Si pasó una plata, la bolsa 2 tiene 6 oro y 4 plata (10 monedas): <span class="math inline">\(P(O_2\mid P_1)=\dfrac{6}{10}\)</span>.</p>
+<p><strong>Sucesos.</strong> Sean <span class="math inline">\(O_1\)</span> y <span class="math inline">\(P_1\)</span> «sale oro» y «sale plata» en la 1.ª extracción, y <span class="math inline">\(O_2\)</span> «la 2.ª moneda es de oro». Bolsa 1: 2 oro y 3 plata; bolsa 2: 6 oro y 3 plata.</p>
+<p><strong>a) Probabilidad condicionada.</strong> 1. Si pasó una plata, la bolsa 2 tiene 6 oro y 4 plata (10 monedas). 2. <span class="math inline">\(P(O_2\mid P_1)=\dfrac{6}{10}\)</span>.</p>
 <p><strong><span class="math inline">\(P(O_2\mid P_1)=\dfrac35\)</span>.</strong></p>
-<p><strong>b)</strong> <span class="math inline">\(P(P_1)=\tfrac35\)</span> y, si pasó oro, la bolsa 2 tiene 7 oro y 3 plata: <span class="math inline">\(P(O_2\mid O_1)=\tfrac7{10}\)</span>. Probabilidad total: <span class="math inline">\(P(O_2)=\tfrac35\cdot\tfrac6{10}+\tfrac25\cdot\tfrac7{10}=\tfrac9{25}+\tfrac7{25}=\tfrac{16}{25}\)</span>.</p>
-<p>Bayes: <span class="math inline">\(P(P_1\mid O_2)=\dfrac{9/25}{16/25}\)</span>.</p>
+<p><strong>b) Teorema de Bayes.</strong> 1. Probabilidades de la 1.ª extracción: <span class="math inline">\(P(P_1)=\tfrac35\)</span> y <span class="math inline">\(P(O_1)=\tfrac25\)</span>. 2. Si pasó oro, la bolsa 2 tiene 7 oro y 3 plata: <span class="math inline">\(P(O_2\mid O_1)=\tfrac7{10}\)</span>. 3. Probabilidad total de que la 2.ª sea de oro: <span class="math display">\[P(O_2)=\tfrac35\cdot\tfrac6{10}+\tfrac25\cdot\tfrac7{10}=\tfrac9{25}+\tfrac7{25}=\tfrac{16}{25}.\]</span> 4. Bayes: <span class="math inline">\(P(P_1\mid O_2)=\dfrac{P(P_1)\,P(O_2\mid P_1)}{P(O_2)}=\dfrac{9/25}{16/25}\)</span>.</p>
 <p><strong><span class="math inline">\(P(P_1\mid O_2)=\dfrac{9}{16}\)</span>.</strong></p>
+<p><em>Interpretación:</em> haber sacado oro en la segunda bolsa hace algo más probable que la moneda que pasó fuese de plata (<span class="math inline">\(0{,}5625\)</span> frente a <span class="math inline">\(0{,}6\)</span> de partida): casi no cambia la creencia previa.</p>
 </div>
 </div>
 </div>
@@ -526,8 +573,44 @@ window.Quarto = {
 <li><p>¿Cuál es la probabilidad de que el estudiante elegido esté en la clase A o haya cursado francés? <em>(1,25 puntos)</em></p></li>
 <li><p>Si el estudiante elegido cursaba inglés, ¿cuál es la probabilidad de que esté en la clase C? <em>(1,25 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(P(A|B)=\dfrac{P(A\cap B)}{P(B)}\)</span> (probabilidad de <span class="math inline">\(A\)</span> sabiendo que ocurrió <span class="math inline">\(B\)</span>). Regla del producto: <span class="math inline">\(P(A\cap B)=P(B)\cdot P(A|B)\)</span>. <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes si <span class="math inline">\(P(A|B)=P(A)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Identifica qué suceso es la condición («sabiendo que», «si ha ocurrido»): va en el denominador.</li>
+<li>Calcula la intersección y la probabilidad de la condición.</li>
+<li>Divide e interpreta el resultado en palabras.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -536,13 +619,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Total: 120. Cada estudiante cursa un solo idioma.</p>
-<p><strong>a)</strong> Clase A: 40 estudiantes (todos). Francés fuera de la clase A: <span class="math inline">\(20+5+0=25\)</span>. Entonces <span class="math inline">\(P(A\cup F)=\dfrac{40+25}{120}\)</span>.</p>
+<p><strong>Datos.</strong> Total: 120 estudiantes. Cada estudiante cursa un solo idioma (inglés o francés).</p>
+<p><strong>a) Clase A o francés.</strong> 1. Clase A: 40 estudiantes (todos cuentan). 2. Francés fuera de la clase A: <span class="math inline">\(20+5+0=25\)</span>. 3. Casos favorables: <span class="math inline">\(40+25=65\)</span> (no se cuenta dos veces a los de la clase A que cursan francés). 4. <span class="math inline">\(P(A\cup F)=\dfrac{40+25}{120}\)</span>.</p>
 <p><strong><span class="math inline">\(P=\dfrac{65}{120}=\dfrac{13}{24}\approx0{,}542\)</span>.</strong></p>
-<p><strong>b)</strong> Estudiantes de inglés: <span class="math inline">\(30+15+20+20=85\)</span>; de ellos, en la clase C: 20.</p>
+<p><strong>b) Probabilidad condicionada.</strong> 1. Estudiantes de inglés: <span class="math inline">\(30+15+20+20=85\)</span>. 2. De ellos, en la clase C: <span class="math inline">\(20\)</span>. 3. <span class="math inline">\(P(C\mid I)=\dfrac{20}{85}\)</span>.</p>
 <p><strong><span class="math inline">\(P(C\mid I)=\dfrac{20}{85}=\dfrac{4}{17}\approx0{,}235\)</span>.</strong></p>
+<p><em>Interpretación:</em> menos de uno de cada cuatro estudiantes de inglés es de la clase C.</p>
 </div>
 </div>
 </div>
@@ -557,8 +641,45 @@ window.Quarto = {
 <li><p>Seleccionamos un coche al azar. Calcula la probabilidad de que sea defectuoso. <em>(1,25 puntos)</em></p></li>
 <li><p>Tomamos, al azar, un coche y resulta ser defectuoso. ¿Qué máquina tiene la mayor probabilidad de haber producido dicho coche? <em>(1,25 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Si <span class="math inline">\(A_1,\dots,A_n\)</span> forman un sistema completo de sucesos: <span class="math inline">\(P(B)=\sum P(A_i)\,P(B|A_i)\)</span> (probabilidad total) y <span class="math inline">\(P(A_j|B)=\dfrac{P(A_j)\,P(B|A_j)}{P(B)}\)</span> (Bayes).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Dibuja un diagrama de árbol: primera etapa con el sistema completo, segunda con <span class="math inline">\(B\)</span> y <span class="math inline">\(B^C\)</span>.</li>
+<li>Multiplica a lo largo de cada rama.</li>
+<li>Probabilidad total: suma las ramas que terminan en <span class="math inline">\(B\)</span>.</li>
+<li>Bayes: divide la rama pedida entre la probabilidad total.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -567,12 +688,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> Probabilidad total: <span class="math inline">\(P(D)=0{,}45\cdot0{,}03+0{,}30\cdot0{,}04+0{,}25\cdot0{,}05=0{,}0135+0{,}012+0{,}0125\)</span>.</p>
+<p><strong>Datos.</strong> <span class="math inline">\(P(A)=0{,}45\)</span>, <span class="math inline">\(P(B)=0{,}30\)</span>, <span class="math inline">\(P(C)=0{,}25\)</span> y <span class="math inline">\(P(D\mid A)=0{,}03\)</span>, <span class="math inline">\(P(D\mid B)=0{,}04\)</span>, <span class="math inline">\(P(D\mid C)=0{,}05\)</span>, con <span class="math inline">\(D\)</span> «defectuoso».</p>
+<p><strong>a) Probabilidad total.</strong> 1. Se suman las ramas del árbol que terminan en defectuoso: <span class="math display">\[P(D)=0{,}45\cdot0{,}03+0{,}30\cdot0{,}04+0{,}25\cdot0{,}05=0{,}0135+0{,}012+0{,}0125.\]</span></p>
 <p><strong><span class="math inline">\(P(D)=0{,}038\)</span>.</strong></p>
-<p><strong>b)</strong> Teorema de Bayes, <span class="math inline">\(P(M\mid D)=\dfrac{P(M)P(D\mid M)}{0{,}038}\)</span>: - <span class="math inline">\(P(A\mid D)=\dfrac{0{,}0135}{0{,}038}\approx0{,}355\)</span> - <span class="math inline">\(P(B\mid D)=\dfrac{0{,}012}{0{,}038}\approx0{,}316\)</span> - <span class="math inline">\(P(C\mid D)=\dfrac{0{,}0125}{0{,}038}\approx0{,}329\)</span></p>
+<p><strong>b) Teorema de Bayes.</strong> 1. <span class="math inline">\(P(M\mid D)=\dfrac{P(M)P(D\mid M)}{0{,}038}\)</span> para cada máquina <span class="math inline">\(M\)</span>: - <span class="math inline">\(P(A\mid D)=\dfrac{0{,}0135}{0{,}038}\approx0{,}355\)</span> - <span class="math inline">\(P(B\mid D)=\dfrac{0{,}012}{0{,}038}\approx0{,}316\)</span> - <span class="math inline">\(P(C\mid D)=\dfrac{0{,}0125}{0{,}038}\approx0{,}329\)</span> 2. Se elige la mayor.</p>
 <p><strong>La máquina A es la más probable (≈ 35,5 %).</strong></p>
+<p><em>Interpretación:</em> aunque A tiene el menor porcentaje de defectuosos, produce tantos coches que es la causa más probable de un defectuoso.</p>
 </div>
 </div>
 </div>
@@ -587,8 +710,55 @@ window.Quarto = {
 <li><p>Halla la probabilidad de que la segunda dosis sea del laboratorio Virex. <em>(1,25 puntos)</em></p></li>
 <li><p>Si la segunda dosis es del laboratorio Virex, halla la probabilidad de que la primera hubiese sido de Borez. <em>(1,25 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Probabilidad condicionada.</strong></p>
+<p><span class="math inline">\(P(A|B)=\dfrac{P(A\cap B)}{P(B)}\)</span> (probabilidad de <span class="math inline">\(A\)</span> sabiendo que ocurrió <span class="math inline">\(B\)</span>). Regla del producto: <span class="math inline">\(P(A\cap B)=P(B)\cdot P(A|B)\)</span>. <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes si <span class="math inline">\(P(A|B)=P(A)\)</span>.</p>
+<p><strong>Probabilidad total y teorema de Bayes.</strong></p>
+<p>Si <span class="math inline">\(A_1,\dots,A_n\)</span> forman un sistema completo de sucesos: <span class="math inline">\(P(B)=\sum P(A_i)\,P(B|A_i)\)</span> (probabilidad total) y <span class="math inline">\(P(A_j|B)=\dfrac{P(A_j)\,P(B|A_j)}{P(B)}\)</span> (Bayes).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Probabilidad condicionada.</strong></p>
+<ol type="1">
+<li>Identifica qué suceso es la condición («sabiendo que», «si ha ocurrido»): va en el denominador.</li>
+<li>Calcula la intersección y la probabilidad de la condición.</li>
+<li>Divide e interpreta el resultado en palabras.</li>
+</ol>
+<p><strong>Probabilidad total y teorema de Bayes.</strong></p>
+<ol type="1">
+<li>Dibuja un diagrama de árbol: primera etapa con el sistema completo, segunda con <span class="math inline">\(B\)</span> y <span class="math inline">\(B^C\)</span>.</li>
+<li>Multiplica a lo largo de cada rama.</li>
+<li>Probabilidad total: suma las ramas que terminan en <span class="math inline">\(B\)</span>.</li>
+<li>Bayes: divide la rama pedida entre la probabilidad total.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -597,12 +767,12 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Hay 8 dosis: 6 de Virex (V) y 2 de Borez (B).</p>
-<p><strong>a)</strong> Por simetría (o por la probabilidad total): <span class="math inline">\(P(V_2)=\tfrac68\cdot\tfrac57+\tfrac28\cdot\tfrac67=\tfrac{30+12}{56}\)</span>.</p>
+<p><strong>Datos.</strong> Hay 8 dosis: 6 de Virex (V) y 2 de Borez (B). Se sirven al azar y sin reposición.</p>
+<p><strong>a) La segunda dosis es de Virex.</strong> 1. Probabilidad total según la primera dosis. Si la primera es V (probabilidad <span class="math inline">\(\tfrac68\)</span>), quedan 5 V entre 7. Si es B (probabilidad <span class="math inline">\(\tfrac28\)</span>), quedan 6 V entre 7. 2. Se suman las dos ramas (o se usa la simetría: la segunda dosis tiene la misma probabilidad que la primera): <span class="math display">\[P(V_2)=\tfrac68\cdot\tfrac57+\tfrac28\cdot\tfrac67=\tfrac{30+12}{56}.\]</span></p>
 <p><strong><span class="math inline">\(P(V_2)=\dfrac34\)</span>.</strong></p>
-<p><strong>b)</strong> <span class="math inline">\(P(B_1\mid V_2)=\dfrac{P(B_1\cap V_2)}{P(V_2)}=\dfrac{\tfrac28\cdot\tfrac67}{3/4}=\dfrac{3/14}{3/4}\)</span>.</p>
+<p><strong>b) Teorema de Bayes.</strong> 1. <span class="math inline">\(P(B_1\cap V_2)=\tfrac28\cdot\tfrac67=\tfrac{3}{14}\)</span>. 2. <span class="math inline">\(P(B_1\mid V_2)=\dfrac{P(B_1\cap V_2)}{P(V_2)}=\dfrac{\tfrac28\cdot\tfrac67}{3/4}=\dfrac{3/14}{3/4}\)</span>.</p>
 <p><strong><span class="math inline">\(P(B_1\mid V_2)=\dfrac27\)</span>.</strong></p>
 </div>
 </div>
@@ -643,8 +813,55 @@ window.Quarto = {
 <li><p>¿Cuál es la probabilidad de que el vehículo elegido sea una moto o haya resultado apto? <em>(1,25 puntos)</em></p></li>
 <li><p>Si el vehículo elegido es un coche, ¿cuál es la probabilidad de que haya resultado no apto? <em>(1,25 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Probabilidad condicionada.</strong></p>
+<p><span class="math inline">\(P(A|B)=\dfrac{P(A\cap B)}{P(B)}\)</span> (probabilidad de <span class="math inline">\(A\)</span> sabiendo que ocurrió <span class="math inline">\(B\)</span>). Regla del producto: <span class="math inline">\(P(A\cap B)=P(B)\cdot P(A|B)\)</span>. <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes si <span class="math inline">\(P(A|B)=P(A)\)</span>.</p>
+<p><strong>Probabilidad total y teorema de Bayes.</strong></p>
+<p>Si <span class="math inline">\(A_1,\dots,A_n\)</span> forman un sistema completo de sucesos: <span class="math inline">\(P(B)=\sum P(A_i)\,P(B|A_i)\)</span> (probabilidad total) y <span class="math inline">\(P(A_j|B)=\dfrac{P(A_j)\,P(B|A_j)}{P(B)}\)</span> (Bayes).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Probabilidad condicionada.</strong></p>
+<ol type="1">
+<li>Identifica qué suceso es la condición («sabiendo que», «si ha ocurrido»): va en el denominador.</li>
+<li>Calcula la intersección y la probabilidad de la condición.</li>
+<li>Divide e interpreta el resultado en palabras.</li>
+</ol>
+<p><strong>Probabilidad total y teorema de Bayes.</strong></p>
+<ol type="1">
+<li>Dibuja un diagrama de árbol: primera etapa con el sistema completo, segunda con <span class="math inline">\(B\)</span> y <span class="math inline">\(B^C\)</span>.</li>
+<li>Multiplica a lo largo de cada rama.</li>
+<li>Probabilidad total: suma las ramas que terminan en <span class="math inline">\(B\)</span>.</li>
+<li>Bayes: divide la rama pedida entre la probabilidad total.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -653,11 +870,12 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Total: <span class="math inline">\(116\,383+160\,667+2\,679+3\,447=283\,176\)</span> vehículos.</p>
-<p><strong>a)</strong> El suceso contrario es «coche no apto»: <span class="math inline">\(P(\text{moto}\cup\text{apto})=1-\dfrac{2\,679}{283\,176}=\dfrac{280\,497}{283\,176}\approx\mathbf{0{,}9905}\)</span>.</p>
-<p><strong>b)</strong> <span class="math inline">\(P(\text{no apto}\,|\,\text{coche})=\dfrac{2\,679}{116\,383+2\,679}=\dfrac{2\,679}{119\,062}\approx\mathbf{0{,}0225}\)</span>.</p>
+<p><strong>Datos.</strong> Total de vehículos: <span class="math inline">\(116\,383+160\,667+2\,679+3\,447=283\,176\)</span>.</p>
+<p><strong>a) Moto o apto.</strong> 1. El suceso contrario de «moto o apto» es «coche no apto»: ni es moto ni es apto. 2. <span class="math inline">\(P(\text{coche no apto})=\dfrac{2\,679}{283\,176}\)</span>. 3. <span class="math inline">\(P(\text{moto}\cup\text{apto})=1-\dfrac{2\,679}{283\,176}=\dfrac{280\,497}{283\,176}\approx\mathbf{0{,}9905}\)</span>.</p>
+<p><strong>b) Probabilidad condicionada.</strong> 1. Hay <span class="math inline">\(116\,383+2\,679=119\,062\)</span> coches. 2. <span class="math inline">\(P(\text{no apto}\,|\,\text{coche})=\dfrac{2\,679}{116\,383+2\,679}=\dfrac{2\,679}{119\,062}\approx\mathbf{0{,}0225}\)</span>.</p>
+<p><em>Interpretación:</em> algo más del <span class="math inline">\(2\,\%\)</span> de los coches no pasa la inspección.</p>
 </div>
 </div>
 </div>
@@ -672,8 +890,44 @@ window.Quarto = {
 <li><p>¿Cuál es la probabilidad de que una persona adquiera un café expreso descafeinado? <em>(0,75 puntos)</em></p></li>
 <li><p>Si sabemos que el café es descafeinado, ¿cuál es la probabilidad de que sea un expreso? <em>(1,75 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(P(A|B)=\dfrac{P(A\cap B)}{P(B)}\)</span> (probabilidad de <span class="math inline">\(A\)</span> sabiendo que ocurrió <span class="math inline">\(B\)</span>). Regla del producto: <span class="math inline">\(P(A\cap B)=P(B)\cdot P(A|B)\)</span>. <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes si <span class="math inline">\(P(A|B)=P(A)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Identifica qué suceso es la condición («sabiendo que», «si ha ocurrido»): va en el denominador.</li>
+<li>Calcula la intersección y la probabilidad de la condición.</li>
+<li>Divide e interpreta el resultado en palabras.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -682,11 +936,12 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sean <span class="math inline">\(E\)</span> expreso, <span class="math inline">\(M\)</span> medio, <span class="math inline">\(A\)</span> americano y <span class="math inline">\(D\)</span> descafeinado. <span class="math inline">\(P(D|E)=0{,}82\)</span>, <span class="math inline">\(P(D|M)=0{,}69\)</span>, <span class="math inline">\(P(D|A)=0{,}89\)</span>.</p>
-<p><strong>a)</strong> <span class="math inline">\(P(E\cap D)=0{,}29\cdot0{,}82=\mathbf{0{,}2378}\)</span>.</p>
-<p><strong>b)</strong> <span class="math inline">\(P(D)=0{,}2378+0{,}51\cdot0{,}69+0{,}2\cdot0{,}89=0{,}2378+0{,}3519+0{,}178=0{,}7677\)</span>. <span class="math display">\[P(E|D)=\frac{0{,}2378}{0{,}7677}=\mathbf{0{,}3098}.\]</span></p>
+<p><strong>Sucesos y datos.</strong> <span class="math inline">\(E\)</span> = expreso, <span class="math inline">\(M\)</span> = medio, <span class="math inline">\(A\)</span> = americano y <span class="math inline">\(D\)</span> = descafeinado: <span class="math inline">\(P(E)=0{,}29\)</span>, <span class="math inline">\(P(M)=0{,}51\)</span> y <span class="math inline">\(P(A)=0{,}20\)</span>. Si el café lleva cafeína con probabilidad <span class="math inline">\(18\,\%\)</span>, <span class="math inline">\(31\,\%\)</span> y <span class="math inline">\(11\,\%\)</span>, entonces <span class="math inline">\(P(D|E)=0{,}82\)</span>, <span class="math inline">\(P(D|M)=0{,}69\)</span> y <span class="math inline">\(P(D|A)=0{,}89\)</span>.</p>
+<p><strong>a) Expreso descafeinado.</strong> 1. Regla del producto: <span class="math inline">\(P(E\cap D)=P(E)\cdot P(D|E)=0{,}29\cdot0{,}82=\mathbf{0{,}2378}\)</span>.</p>
+<p><strong>b) Probabilidad a posteriori (Bayes).</strong> 1. Probabilidad total de descafeinado: <span class="math display">\[P(D)=0{,}2378+0{,}51\cdot0{,}69+0{,}2\cdot0{,}89=0{,}2378+0{,}3519+0{,}178=0{,}7677.\]</span> 2. Teorema de Bayes: <span class="math display">\[P(E|D)=\frac{0{,}2378}{0{,}7677}=\mathbf{0{,}3098}.\]</span></p>
+<p><em>Interpretación:</em> entre los cafés descafeinados, algo menos de un tercio son expresos.</p>
 </div>
 </div>
 </div>
@@ -701,8 +956,55 @@ window.Quarto = {
 <li><p>¿Cuál es la probabilidad de que un bolígrafo, tomado al azar, sea defectuoso? <em>(1 punto)</em></p></li>
 <li><p>Si se ha escogido un bolígrafo no defectuoso, ¿cuál es la probabilidad de que provenga de Almería? <em>(1,5 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Probabilidad condicionada.</strong></p>
+<p><span class="math inline">\(P(A|B)=\dfrac{P(A\cap B)}{P(B)}\)</span> (probabilidad de <span class="math inline">\(A\)</span> sabiendo que ocurrió <span class="math inline">\(B\)</span>). Regla del producto: <span class="math inline">\(P(A\cap B)=P(B)\cdot P(A|B)\)</span>. <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes si <span class="math inline">\(P(A|B)=P(A)\)</span>.</p>
+<p><strong>Probabilidad total y teorema de Bayes.</strong></p>
+<p>Si <span class="math inline">\(A_1,\dots,A_n\)</span> forman un sistema completo de sucesos: <span class="math inline">\(P(B)=\sum P(A_i)\,P(B|A_i)\)</span> (probabilidad total) y <span class="math inline">\(P(A_j|B)=\dfrac{P(A_j)\,P(B|A_j)}{P(B)}\)</span> (Bayes).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Probabilidad condicionada.</strong></p>
+<ol type="1">
+<li>Identifica qué suceso es la condición («sabiendo que», «si ha ocurrido»): va en el denominador.</li>
+<li>Calcula la intersección y la probabilidad de la condición.</li>
+<li>Divide e interpreta el resultado en palabras.</li>
+</ol>
+<p><strong>Probabilidad total y teorema de Bayes.</strong></p>
+<ol type="1">
+<li>Dibuja un diagrama de árbol: primera etapa con el sistema completo, segunda con <span class="math inline">\(B\)</span> y <span class="math inline">\(B^C\)</span>.</li>
+<li>Multiplica a lo largo de cada rama.</li>
+<li>Probabilidad total: suma las ramas que terminan en <span class="math inline">\(B\)</span>.</li>
+<li>Bayes: divide la rama pedida entre la probabilidad total.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -711,11 +1013,12 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sean <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span> las provincias y <span class="math inline">\(D\)</span> defectuoso.</p>
-<p><strong>a)</strong> <span class="math inline">\(P(D)=0{,}2\cdot0{,}07+0{,}5\cdot0{,}06+0{,}3\cdot0{,}02=0{,}014+0{,}03+0{,}006=\mathbf{0{,}05}\)</span>.</p>
-<p><strong>b)</strong> <span class="math inline">\(P(A|\overline D)=\dfrac{0{,}2\cdot0{,}93}{1-0{,}05}=\dfrac{0{,}186}{0{,}95}=\mathbf{0{,}1958}\)</span> (aprox. <span class="math inline">\(19{,}6\,\%\)</span>).</p>
+<p><strong>Sucesos y datos.</strong> <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span> son las provincias y <span class="math inline">\(D\)</span> es «defectuoso»: <span class="math inline">\(P(A)=0{,}2\)</span>, <span class="math inline">\(P(B)=0{,}5\)</span>, <span class="math inline">\(P(C)=0{,}3\)</span> y <span class="math inline">\(P(D|A)=0{,}07\)</span>, <span class="math inline">\(P(D|B)=0{,}06\)</span>, <span class="math inline">\(P(D|C)=0{,}02\)</span>.</p>
+<p><strong>a) Probabilidad total de defectuoso.</strong> 1. <span class="math inline">\(P(D)=0{,}2\cdot0{,}07+0{,}5\cdot0{,}06+0{,}3\cdot0{,}02=0{,}014+0{,}03+0{,}006=\mathbf{0{,}05}\)</span>.</p>
+<p><strong>b) Teorema de Bayes.</strong> 1. <span class="math inline">\(P(\overline D)=1-0{,}05=0{,}95\)</span> y <span class="math inline">\(P(\overline D|A)=1-0{,}07=0{,}93\)</span>. 2. <span class="math inline">\(P(A|\overline D)=\dfrac{0{,}2\cdot0{,}93}{1-0{,}05}=\dfrac{0{,}186}{0{,}95}=\mathbf{0{,}1958}\)</span> (aprox. <span class="math inline">\(19{,}6\,\%\)</span>).</p>
+<p><em>Interpretación:</em> de los bolígrafos buenos, el <span class="math inline">\(19{,}6\,\%\)</span> viene de Almería: algo menos que su <span class="math inline">\(20\,\%\)</span> de la producción, porque Almería es la provincia con mayor tasa de defectos.</p>
 </div>
 </div>
 </div>

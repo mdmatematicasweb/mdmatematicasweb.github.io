@@ -475,7 +475,7 @@ window.Quarto = {
 
 
 <p>Ejercicios de <strong>Matemáticas II</strong> de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de <strong>2021 a 2026</strong> cuyo tema principal es <em>sistemas de ecuaciones lineales</em>: <strong>29 ejercicios</strong> de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. Repasa antes la <a href="../../../apuntes/2-bachillerato-ciencias/03-sistemas-ecuaciones-lineales/index.html">teoría</a>, los <a href="../../../ejercicios/2-bachillerato-ciencias/03-sistemas-ecuaciones-lineales/index.html">ejercicios del tema</a> y las <a href="../../../actividades/2-bachillerato-ciencias/03-sistemas-ecuaciones-lineales/index.html">actividades interactivas</a>.</p>
-<p>Debajo de cada ejercicio hay una <strong>resolución breve</strong> plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.</p>
+<p>Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: <strong>Ayuda 1 · Recordatorio</strong> (la teoría que necesitas, sin tocar los datos), <strong>Ayuda 2 · Método</strong> (los pasos a seguir) y la <strong>solución</strong> paso a paso con el resultado. Inténtalo con la menor ayuda posible.</p>
 <section id="section" class="level2">
 <h2 class="anchored" data-anchor-id="section">2026</h2>
 <section id="ordinaria-2026" class="level3">
@@ -488,8 +488,45 @@ window.Quarto = {
 <li><p>Discútelo según los valores de <span class="math inline">\(a\)</span>. <em>(1,75 puntos)</em></p></li>
 <li><p>Para <span class="math inline">\(a=0\)</span> resuelve el sistema, si es posible. <em>(0,75 puntos)</em></p></li>
 </ol>
-<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Teorema de Rouché-Frobenius: si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=n\)</span> (nº de incógnitas), compatible determinado; si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*&lt;n\)</span>, compatible indeterminado; si <span class="math inline">\(\operatorname{rg}A&lt;\operatorname{rg}A^*\)</span>, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la matriz ampliada <span class="math inline">\(A^*\)</span>.</li>
+<li>Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer <span class="math inline">\(0\)</span> (en un parámetro, trátalo aparte).</li>
+<li>Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.</li>
+<li>Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -498,11 +535,11 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Matriz de coeficientes: <span class="math inline">\(|M|=\begin{vmatrix}3&amp;-1&amp;0\\0&amp;1-a&amp;2\\0&amp;4&amp;3-a\end{vmatrix}=3(a^2-4a-5)=3(a-5)(a+1)\)</span>.</p>
-<p><strong>a)</strong> - Si <span class="math inline">\(a\neq5\)</span> y <span class="math inline">\(a\neq-1\)</span>: rangos <span class="math inline">\(3=3\)</span>, <strong>sistema compatible determinado (SCD)</strong>. - Si <span class="math inline">\(a=5\)</span>: <span class="math inline">\(\operatorname{rg}(M)=2\)</span>; las ecuaciones 2.ª y 3.ª son <span class="math inline">\(-4y+2z=0\)</span> y <span class="math inline">\(4y-2z=0\)</span> (proporcionales) y el término independiente de la 3.ª es <span class="math inline">\(a-5=0\)</span>, así que <span class="math inline">\(\operatorname{rg}(A^*)=2\)</span>: <strong>sistema compatible indeterminado (SCI)</strong>. - Si <span class="math inline">\(a=-1\)</span>: <span class="math inline">\(\operatorname{rg}(M)=2\)</span> y <span class="math inline">\(\operatorname{rg}(A^*)=3\)</span> (la 2.ª pide <span class="math inline">\(y+z=0\)</span> y la 3.ª <span class="math inline">\(y+z=-\tfrac32\)</span>): <strong>sistema incompatible (SI)</strong>.</p>
-<p><strong>b)</strong> Para <span class="math inline">\(a=0\)</span> (SCD): <span class="math inline">\(3x-y=0\)</span>, <span class="math inline">\(y+2z=0\)</span>, <span class="math inline">\(4y+3z=-5\)</span>. De la 2.ª, <span class="math inline">\(y=-2z\)</span>; en la 3.ª, <span class="math inline">\(-5z=-5\)</span>.</p>
+<p><strong>Determinante de la matriz de coeficientes</strong> (de <span class="math inline">\(M\)</span>). 1. Es triangular por bloques: <span class="math display">\[|M|=\begin{vmatrix}3&amp;-1&amp;0\\0&amp;1-a&amp;2\\0&amp;4&amp;3-a\end{vmatrix}=3(a^2-4a-5)=3(a-5)(a+1).\]</span> 2. Se anula en <span class="math inline">\(a=5\)</span> y <span class="math inline">\(a=-1\)</span>.</p>
+<p><strong>a) Discusión (Rouché–Frobenius).</strong> 1. Si <span class="math inline">\(a\neq5\)</span> y <span class="math inline">\(a\neq-1\)</span>: <span class="math inline">\(\operatorname{rg}(M)=\operatorname{rg}(A^*)=3\)</span>, igual al número de incógnitas. <strong>Sistema compatible determinado (SCD).</strong> 2. Si <span class="math inline">\(a=5\)</span>: <span class="math inline">\(\operatorname{rg}(M)=2\)</span>. Las ecuaciones 2.ª y 3.ª son <span class="math inline">\(-4y+2z=0\)</span> y <span class="math inline">\(4y-2z=0\)</span>, proporcionales, y el término independiente de la 3.ª es <span class="math inline">\(a-5=0\)</span>. Entonces <span class="math inline">\(\operatorname{rg}(A^*)=2\)</span>: <strong>sistema compatible indeterminado (SCI)</strong>, con un grado de libertad. 3. Si <span class="math inline">\(a=-1\)</span>: <span class="math inline">\(\operatorname{rg}(M)=2\)</span>, pero la 2.ª ecuación pide <span class="math inline">\(y+z=0\)</span> y la 3.ª <span class="math inline">\(y+z=-\tfrac32\)</span>. Entonces <span class="math inline">\(\operatorname{rg}(A^*)=3\)</span>: <strong>sistema incompatible (SI)</strong>.</p>
+<p><strong>b) Resolución para <span class="math inline">\(a=0\)</span>.</strong> 1. Con <span class="math inline">\(a=0\)</span> el sistema es SCD: <span class="math inline">\(3x-y=0\)</span>, <span class="math inline">\(y+2z=0\)</span> y <span class="math inline">\(4y+3z=-5\)</span>. 2. De la 2.ª ecuación, <span class="math inline">\(y=-2z\)</span>. 3. Se sustituye en la 3.ª: <span class="math inline">\(4(-2z)+3z=-5z=-5\)</span>, luego <span class="math inline">\(z=1\)</span> y <span class="math inline">\(y=-2\)</span>. 4. De la 1.ª, <span class="math inline">\(3x=y\)</span>, luego <span class="math inline">\(x=-\dfrac23\)</span>.</p>
 <p><strong><span class="math inline">\(x=-\dfrac23\)</span>, <span class="math inline">\(y=-2\)</span>, <span class="math inline">\(z=1\)</span>.</strong></p>
 </div>
 </div>
@@ -518,8 +555,45 @@ window.Quarto = {
 <li><p>¿Cuánto valdrán 3 productos de tipo <span class="math inline">\(A\)</span> más 8 productos de tipo <span class="math inline">\(C\)</span>? <em>(1,25 puntos)</em></p></li>
 <li><p>Determina el precio, sin descuento, de cada tipo de producto, sabiendo además que el precio del producto de tipo <span class="math inline">\(C\)</span> es el doble que el de tipo <span class="math inline">\(A\)</span>. <em>(1,25 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Define con claridad las incógnitas <span class="math inline">\(x,y,z\)</span> y sus unidades.</li>
+<li>Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.</li>
+<li>Resuelve por Gauss o por sustitución.</li>
+<li>Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -528,12 +602,12 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Precios <span class="math inline">\(a,b,c\)</span> de <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>. Datos: <span class="math inline">\(0{,}9a+0{,}8b+0{,}8c=66\)</span> (es decir, <span class="math inline">\(9a+8b+8c=660\)</span>) y <span class="math inline">\(3a+4b=140\)</span> (es decir, <span class="math inline">\(6a+8b=280\)</span>).</p>
-<p><strong>a)</strong> Restando: <span class="math inline">\(3a+8c=660-280\)</span>.</p>
+<p><strong>Planteamiento.</strong> 1. Sean <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> los precios de <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span>. 2. Con los descuentos, los precios son <span class="math inline">\(0{,}9a\)</span>, <span class="math inline">\(0{,}8b\)</span> y <span class="math inline">\(0{,}8c\)</span>, y suman <span class="math inline">\(66\)</span>: <span class="math inline">\(0{,}9a+0{,}8b+0{,}8c=66\)</span>, es decir, <span class="math inline">\(9a+8b+8c=660\)</span>. 3. Sin descuento, 3 de <span class="math inline">\(A\)</span> y 4 de <span class="math inline">\(B\)</span> cuestan <span class="math inline">\(140\)</span>: <span class="math inline">\(3a+4b=140\)</span>, es decir, <span class="math inline">\(6a+8b=280\)</span>.</p>
+<p><strong>a) Precio de 3 de <span class="math inline">\(A\)</span> más 8 de <span class="math inline">\(C\)</span>.</strong> 1. Se resta la segunda ecuación (multiplicada por 2) de la primera: <span class="math inline">\((9a+8b+8c)-(6a+8b)=660-280\)</span>. 2. Se queda <span class="math inline">\(3a+8c=660-280\)</span>.</p>
 <p><strong>3 de <span class="math inline">\(A\)</span> más 8 de <span class="math inline">\(C\)</span> valen 380 €.</strong></p>
-<p><strong>b)</strong> Con <span class="math inline">\(c=2a\)</span>: <span class="math inline">\(9a+8b+16a=660\Rightarrow25a+8b=660\)</span>. Junto con <span class="math inline">\(6a+8b=280\)</span>: <span class="math inline">\(19a=380\Rightarrow a=20\)</span>; <span class="math inline">\(b=\dfrac{140-60}{4}=20\)</span>; <span class="math inline">\(c=40\)</span>.</p>
+<p><strong>b) Precio de cada producto.</strong> 1. Con <span class="math inline">\(c=2a\)</span> en la primera: <span class="math inline">\(9a+8b+16a=660\Rightarrow25a+8b=660\)</span>. 2. Se resta la segunda: <span class="math inline">\((25a+8b)-(6a+8b)=660-280\Rightarrow19a=380\Rightarrow a=20\)</span>. 3. De <span class="math inline">\(3a+4b=140\)</span>: <span class="math inline">\(b=\dfrac{140-60}{4}=20\)</span>. 4. <span class="math inline">\(c=2a=40\)</span>.</p>
 <p><strong><span class="math inline">\(A=20\)</span> €, <span class="math inline">\(B=20\)</span> €, <span class="math inline">\(C=40\)</span> €.</strong></p>
 </div>
 </div>
@@ -545,8 +619,45 @@ window.Quarto = {
 <div id="ebau-2026-ext-3-1" class="ebau-ej">
 <p><strong>Ejercicio 3.1</strong> · Extraordinaria 2026 · Bloque optativo 1 · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2026-ext/examen.pdf" target="_blank">Examen</a></p>
 <p>Una familia va al mercado semanalmente y compra tres tipos de alimentos: verdura, carne y pescado. El año pasado, en el que gastó 115 € semanales, observó que pagaba el doble en el puesto del pescado que en el de la verdura. En 2026 se ha notado un incremento de precios pues ahora gasta 19 € más que el año pasado por la misma compra, comprobando que la verdura ha subido un 12 %, la carne un 15 % y el pescado un 20 %. Calcula el precio que la familia paga semanalmente en 2026, por cada tipo de alimento.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Define con claridad las incógnitas <span class="math inline">\(x,y,z\)</span> y sus unidades.</li>
+<li>Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.</li>
+<li>Resuelve por Gauss o por sustitución.</li>
+<li>Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -555,11 +666,10 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Año pasado: <span class="math inline">\(v+c+p=115\)</span> y <span class="math inline">\(p=2v\)</span>. En 2026: <span class="math inline">\(1{,}12v+1{,}15c+1{,}2p=115+19=134\)</span>.</p>
-<p>De <span class="math inline">\(3v+c=115\)</span>: <span class="math inline">\(c=115-3v\)</span>. Sustituyendo: <span class="math inline">\(1{,}12v+1{,}15(115-3v)+2{,}4v=134\Rightarrow0{,}07v=1{,}75\Rightarrow v=25\)</span>. Luego <span class="math inline">\(c=40\)</span>, <span class="math inline">\(p=50\)</span>.</p>
-<p>En 2026: verdura <span class="math inline">\(25\cdot1{,}12\)</span>, carne <span class="math inline">\(40\cdot1{,}15\)</span>, pescado <span class="math inline">\(50\cdot1{,}2\)</span>.</p>
+<p><strong>Planteamiento.</strong> 1. Sean <span class="math inline">\(v\)</span>, <span class="math inline">\(c\)</span> y <span class="math inline">\(p\)</span> los euros semanales del año pasado en verdura, carne y pescado. 2. Año pasado: <span class="math inline">\(v+c+p=115\)</span> y <span class="math inline">\(p=2v\)</span>. 3. En 2026 los precios suben un <span class="math inline">\(12\,\%\)</span>, <span class="math inline">\(15\,\%\)</span> y <span class="math inline">\(20\,\%\)</span> y el gasto es <span class="math inline">\(115+19=134\)</span>: <span class="math inline">\(1{,}12v+1{,}15c+1{,}2p=134\)</span>.</p>
+<p><strong>Resolución.</strong> 1. Con <span class="math inline">\(p=2v\)</span>, la primera ecuación da <span class="math inline">\(3v+c=115\)</span>, luego <span class="math inline">\(c=115-3v\)</span>. 2. En la tercera: <span class="math inline">\(1{,}12v+1{,}15(115-3v)+2{,}4v=134\Rightarrow0{,}07v=1{,}75\Rightarrow v=25\)</span>. 3. Entonces <span class="math inline">\(c=115-75=40\)</span> y <span class="math inline">\(p=50\)</span>. 4. En 2026: verdura <span class="math inline">\(25\cdot1{,}12\)</span>, carne <span class="math inline">\(40\cdot1{,}15\)</span>, pescado <span class="math inline">\(50\cdot1{,}2\)</span>.</p>
 <p><strong>Verdura 28 €, carne 46 €, pescado 60 € (total 134 €).</strong></p>
 </div>
 </div>
@@ -576,8 +686,45 @@ window.Quarto = {
 <li><p>Clasifícalo y resuélvelo, si es posible. <em>(1,5 puntos)</em></p></li>
 <li><p>¿Existe alguna solución del sistema que verifique <span class="math inline">\(y+z+2=0\)</span>? Razona la respuesta. <em>(1 punto)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Teorema de Rouché-Frobenius: si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=n\)</span> (nº de incógnitas), compatible determinado; si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*&lt;n\)</span>, compatible indeterminado; si <span class="math inline">\(\operatorname{rg}A&lt;\operatorname{rg}A^*\)</span>, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la matriz ampliada <span class="math inline">\(A^*\)</span>.</li>
+<li>Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer <span class="math inline">\(0\)</span> (en un parámetro, trátalo aparte).</li>
+<li>Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.</li>
+<li>Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -586,11 +733,12 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> Sumando la 1.ª y la 3.ª ecuación: <span class="math inline">\(2x=6\Rightarrow x=3\)</span>, y queda <span class="math inline">\(y+z=-2\)</span>. La 2.ª ecuación da <span class="math inline">\(21+3(y+z)=15\)</span>, que se cumple. Así <span class="math inline">\(\operatorname{rg}(A)=\operatorname{rg}(A^*)=2&lt;3\)</span>: sistema compatible indeterminado (SCI).</p>
+<p><strong>a) Clasificación y resolución.</strong> 1. Se suman la 1.ª y la 3.ª ecuación: <span class="math inline">\(2x=6\Rightarrow x=3\)</span>. Entonces la 1.ª queda <span class="math inline">\(y+z=-2\)</span>. 2. La 2.ª ecuación, con <span class="math inline">\(x=3\)</span>: <span class="math inline">\(21+3(y+z)=15\Rightarrow y+z=-2\)</span>. Es la misma condición. 3. Así <span class="math inline">\(\operatorname{rg}(A)=\operatorname{rg}(A^*)=2&lt;3\)</span>: sistema compatible indeterminado (SCI), con un parámetro. 4. Se toma <span class="math inline">\(y=\lambda\)</span> y entonces <span class="math inline">\(z=-2-\lambda\)</span>.</p>
 <p><strong>Soluciones: <span class="math inline">\((x,y,z)=(3,\lambda,-2-\lambda)\)</span>, <span class="math inline">\(\lambda\in\mathbb R\)</span>.</strong></p>
-<p><strong>b)</strong> Todas las soluciones cumplen <span class="math inline">\(y+z=-2\)</span>, es decir <span class="math inline">\(y+z+2=0\)</span>. <strong>Sí: todas las soluciones del sistema la verifican.</strong></p>
+<p><strong>b) ¿Alguna solución con <span class="math inline">\(y+z+2=0\)</span>?</strong> 1. Todas las soluciones cumplen <span class="math inline">\(y+z=-2\)</span>, es decir <span class="math inline">\(y+z+2=0\)</span>.</p>
+<p><strong>Sí: todas las soluciones del sistema la verifican.</strong></p>
 </div>
 </div>
 </div>
@@ -602,8 +750,63 @@ window.Quarto = {
 <p><strong>Ejercicio 2</strong> · Extraordinaria · Suplente 2 2026 · Parte obligatoria · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2026-ext-sup2/examen.pdf" target="_blank">Examen</a></p>
 <p>Considera las matrices <span class="math inline">\(A=\begin{pmatrix}1&amp;2&amp;1\\0&amp;3&amp;1\\-2&amp;0&amp;0\end{pmatrix}\)</span>, <span class="math inline">\(X=\begin{pmatrix}x\\y\\z\end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix}3\\3\\1\end{pmatrix}\)</span>. Discute el sistema <span class="math inline">\(AX-mX=B\)</span>, según los valores del parámetro <span class="math inline">\(m\)</span>.</p>
 <p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/01-matrices.html">Matrices</a>, <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/02-determinantes.html">Determinantes</a>.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Discusión y resolución de sistemas.</strong></p>
+<p>Teorema de Rouché-Frobenius: si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=n\)</span> (nº de incógnitas), compatible determinado; si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*&lt;n\)</span>, compatible indeterminado; si <span class="math inline">\(\operatorname{rg}A&lt;\operatorname{rg}A^*\)</span>, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.</p>
+<p><strong>Operaciones con matrices.</strong></p>
+<p>Suma y resta: elemento a elemento (mismas dimensiones). Producto <span class="math inline">\(A\cdot B\)</span>: solo si columnas de <span class="math inline">\(A\)</span> = filas de <span class="math inline">\(B\)</span>; el elemento <span class="math inline">\((i,j)\)</span> es la fila <span class="math inline">\(i\)</span> de <span class="math inline">\(A\)</span> por la columna <span class="math inline">\(j\)</span> de <span class="math inline">\(B\)</span>. En general <span class="math inline">\(A\cdot B\neq B\cdot A\)</span>. La traspuesta <span class="math inline">\(A^t\)</span> cambia filas por columnas y <span class="math inline">\((A\cdot B)^t=B^t\cdot A^t\)</span>.</p>
+<p><strong>Propiedades de los determinantes.</strong></p>
+<p><span class="math inline">\(|A^t|=|A|\)</span>; <span class="math inline">\(|A\cdot B|=|A|\cdot|B|\)</span>; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por <span class="math inline">\(k\)</span>, el determinante se multiplica por <span class="math inline">\(k\)</span> (y <span class="math inline">\(|k\cdot A|=k^n|A|\)</span> en orden <span class="math inline">\(n\)</span>); si hay dos filas proporcionales, <span class="math inline">\(|A|=0\)</span>; sumar a una fila un múltiplo de otra no cambia el determinante. <span class="math inline">\(|A^{-1}|=\dfrac{1}{|A|}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Discusión y resolución de sistemas.</strong></p>
+<ol type="1">
+<li>Escribe la matriz ampliada <span class="math inline">\(A^*\)</span>.</li>
+<li>Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer <span class="math inline">\(0\)</span> (en un parámetro, trátalo aparte).</li>
+<li>Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.</li>
+<li>Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).</li>
+</ol>
+<p><strong>Operaciones con matrices.</strong></p>
+<ol type="1">
+<li>Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.</li>
+<li>Para potencias <span class="math inline">\(A^2,A^3,\dots\)</span> calcula una a una y busca el patrón; después exprésalo en función de <span class="math inline">\(n\)</span>.</li>
+<li>Revisa cada elemento: un solo error de signo arrastra todo lo demás.</li>
+</ol>
+<p><strong>Propiedades de los determinantes.</strong></p>
+<ol type="1">
+<li>Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.</li>
+<li>Aplica cada propiedad en orden, anotando cómo cambia el valor.</li>
+<li>Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -612,9 +815,10 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\((A-mI)X=B\)</span>. <span class="math inline">\(|A-mI|=-(m-2)(m-1)^2\)</span>. - Si <span class="math inline">\(m\neq1\)</span> y <span class="math inline">\(m\neq2\)</span>: <span class="math inline">\(|A-mI|\neq0\)</span>, rangos <span class="math inline">\(3=3\)</span>: <strong>sistema compatible determinado (SCD)</strong>. - Si <span class="math inline">\(m=2\)</span>: <span class="math inline">\(\operatorname{rg}(A-2I)=2\)</span> y <span class="math inline">\(\operatorname{rg}(A^*)=3\)</span>: <strong>sistema incompatible (SI)</strong>. - Si <span class="math inline">\(m=1\)</span>: <span class="math inline">\(\operatorname{rg}(A-I)=2=\operatorname{rg}(A^*)&lt;3\)</span>: <strong>sistema compatible indeterminado (SCI)</strong>.</p>
+<p><strong>Sistema equivalente.</strong> 1. Se agrupa: <span class="math inline">\(AX-mX=B\Rightarrow(A-mI)X=B\)</span>. La matriz de coeficientes es <span class="math inline">\(A-mI\)</span> y la ampliada <span class="math inline">\(A^*=(A-mI\,|\,B)\)</span>. 2. Determinante: <span class="math inline">\(|A-mI|=-(m-2)(m-1)^2\)</span>. 3. Se anula en <span class="math inline">\(m=2\)</span> y <span class="math inline">\(m=1\)</span> (doble).</p>
+<p><strong>Discusión (Rouché–Frobenius).</strong> 1. Si <span class="math inline">\(m\neq1\)</span> y <span class="math inline">\(m\neq2\)</span>: <span class="math inline">\(|A-mI|\neq0\)</span>, rangos <span class="math inline">\(3=3\)</span>: <strong>sistema compatible determinado (SCD)</strong>. 2. Si <span class="math inline">\(m=2\)</span>: <span class="math inline">\(\operatorname{rg}(A-2I)=2\)</span> y <span class="math inline">\(\operatorname{rg}(A^*)=3\)</span>: <strong>sistema incompatible (SI)</strong>. 3. Si <span class="math inline">\(m=1\)</span>: <span class="math inline">\(\operatorname{rg}(A-I)=2=\operatorname{rg}(A^*)&lt;3\)</span>: <strong>sistema compatible indeterminado (SCI)</strong>.</p>
 </div>
 </div>
 </div>
@@ -632,8 +836,45 @@ window.Quarto = {
 <li><p>¿Es posible determinar de forma única el precio del jersey? ¿Y el de la camisa? Razona la respuesta. <em>(1,25 puntos)</em></p></li>
 <li><p>Si Juan hubiera esperado a las rebajas se habría gastado 57 €, pues el jersey, la camisa y el pantalón tenían un descuento del 30 %, del 40 % y del 20 %, respectivamente. Calcula el precio de cada prenda antes de las rebajas. <em>(1,25 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Define con claridad las incógnitas <span class="math inline">\(x,y,z\)</span> y sus unidades.</li>
+<li>Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.</li>
+<li>Resuelve por Gauss o por sustitución.</li>
+<li>Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -642,12 +883,16 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sean <span class="math inline">\(j,c,p\)</span> los precios del jersey, la camisa y el pantalón.</p>
-<p><strong>a)</strong> <span class="math inline">\(j+c+p=80\)</span> y <span class="math inline">\(j=\dfrac{c+p}{3}\)</span>, es decir <span class="math inline">\(c+p=3j\)</span>. Entonces <span class="math inline">\(4j=80\)</span> y <span class="math inline">\(j=20\)</span>, pero sólo queda <span class="math inline">\(c+p=60\)</span> (dos incógnitas, una ecuación): sistema compatible indeterminado (SCI). <strong>El jersey sí está determinado (<span class="math inline">\(20\)</span> €); la camisa no</strong> (puede valer cualquier cantidad con <span class="math inline">\(p=60-c\)</span>).</p>
-<p><strong>b)</strong> Con descuentos: <span class="math inline">\(0{,}7j+0{,}6c+0{,}8p=57\)</span>. Con <span class="math inline">\(j=20\)</span>: <span class="math inline">\(0{,}6c+0{,}8p=43\)</span>, o <span class="math inline">\(3c+4p=215\)</span>. Con <span class="math inline">\(c+p=60\)</span>: <span class="math inline">\(3c+4(60-c)=215\Rightarrow c=25\)</span> y <span class="math inline">\(p=35\)</span>.</p>
-<p><strong>Jersey <span class="math inline">\(20\)</span> €, camisa <span class="math inline">\(25\)</span> €, pantalón <span class="math inline">\(35\)</span> €.</strong> (Comprobación: <span class="math inline">\(14+15+28=57\)</span>.)</p>
+<ol type="1">
+<li><strong>Incógnitas.</strong> <span class="math inline">\(j\)</span>, <span class="math inline">\(c\)</span> y <span class="math inline">\(p\)</span> son los precios del jersey, la camisa y el pantalón.</li>
+</ol>
+<p><strong>a) ¿Se pueden determinar de forma única?</strong> 1. Gasto total: <span class="math inline">\(j+c+p=80\)</span>. 2. El jersey cuesta un tercio de lo que cuestan la camisa y el pantalón juntos: <span class="math inline">\(j=\dfrac{c+p}{3}\)</span>, es decir, <span class="math inline">\(c+p=3j\)</span>. 3. Se sustituye en la primera ecuación: <span class="math inline">\(j+3j=80\)</span>, luego <span class="math inline">\(4j=80\)</span> y <span class="math inline">\(j=20\)</span>. 4. Queda <span class="math inline">\(c+p=60\)</span>: dos incógnitas y una sola ecuación. Es un sistema compatible indeterminado (SCI), con <span class="math inline">\(p=60-c\)</span> y <span class="math inline">\(c\)</span> libre.</p>
+<p><strong>El jersey sí está determinado (<span class="math inline">\(20\)</span> €); la camisa no</strong> (puede valer cualquier cantidad entre <span class="math inline">\(0\)</span> y <span class="math inline">\(60\)</span> con <span class="math inline">\(p=60-c\)</span>).</p>
+<p><strong>b) Precios con las rebajas.</strong> 1. Con los descuentos pagaría el <span class="math inline">\(70\,\%\)</span> del jersey, el <span class="math inline">\(60\,\%\)</span> de la camisa y el <span class="math inline">\(80\,\%\)</span> del pantalón: <span class="math inline">\(0{,}7j+0{,}6c+0{,}8p=57\)</span>. 2. Con <span class="math inline">\(j=20\)</span>: <span class="math inline">\(0{,}6c+0{,}8p=57-14=43\)</span>, o, multiplicando por <span class="math inline">\(5\)</span>, <span class="math inline">\(3c+4p=215\)</span>. 3. Se sustituye <span class="math inline">\(p=60-c\)</span>: <span class="math inline">\(3c+4(60-c)=215\Rightarrow3c+240-4c=215\Rightarrow c=25\)</span> y <span class="math inline">\(p=35\)</span>.</p>
+<p><strong>Jersey <span class="math inline">\(20\)</span> €, camisa <span class="math inline">\(25\)</span> € y pantalón <span class="math inline">\(35\)</span> €.</strong> (Comprobación: <span class="math inline">\(14+15+28=57\)</span> y <span class="math inline">\(20+25+35=80\)</span>.)</p>
+<p><em>Interpretación:</em> con el dato de las rebajas el sistema pasa a tener tres ecuaciones independientes y los tres precios quedan determinados.</p>
 </div>
 </div>
 </div>
@@ -658,8 +903,45 @@ window.Quarto = {
 <div id="ebau-2025-ext-1" class="ebau-ej">
 <p><strong>Ejercicio 1</strong> · Extraordinaria 2025 · Parte obligatoria · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
 <p>Se sabe que la suma de tres números naturales es 22 y que la suma de cuatro veces el primero más el triple del segundo más el doble del tercero es 61. ¿Puede ser 15 uno de los tres números? En caso afirmativo, calcula los restantes. ¿Existen otras opciones?</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Define con claridad las incógnitas <span class="math inline">\(x,y,z\)</span> y sus unidades.</li>
+<li>Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.</li>
+<li>Resuelve por Gauss o por sustitución.</li>
+<li>Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -668,15 +950,12 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sean <span class="math inline">\(x,y,z\)</span> los tres números. <span class="math inline">\(x+y+z=22\)</span> y <span class="math inline">\(4x+3y+2z=61\)</span>. Restando <span class="math inline">\(2\cdot\)</span>(primera) a la segunda: <span class="math inline">\(2x+y=17\)</span>. Entonces <span class="math display">\[y=17-2x,\qquad z=22-x-y=x+5,\]</span> un sistema compatible indeterminado (SCI) con un parámetro <span class="math inline">\(x\)</span>.</p>
-<ul>
-<li>Si <span class="math inline">\(x=15\)</span>: <span class="math inline">\(y=-13&lt;0\)</span>, imposible.</li>
-<li>Si <span class="math inline">\(y=15\)</span>: <span class="math inline">\(x=1\)</span> y <span class="math inline">\(z=6\)</span>; comprobación: <span class="math inline">\(1+15+6=22\)</span> y <span class="math inline">\(4+45+12=61\)</span>. <strong>Válido.</strong></li>
-<li>Si <span class="math inline">\(z=15\)</span>: <span class="math inline">\(x=10\)</span> e <span class="math inline">\(y=-3&lt;0\)</span>, imposible.</li>
-</ul>
-<p><strong>Sí, 15 puede ser uno de los números, y sólo como el segundo: los otros son <span class="math inline">\(1\)</span> y <span class="math inline">\(6\)</span> (terna <span class="math inline">\((1,15,6)\)</span>). No hay otras opciones.</strong></p>
+<p><strong>Planteamiento.</strong> 1. Sean <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> y <span class="math inline">\(z\)</span> los tres números naturales (el primero, el segundo y el tercero). 2. Suma: <span class="math inline">\(x+y+z=22\)</span>. Segunda condición: <span class="math inline">\(4x+3y+2z=61\)</span>.</p>
+<p><strong>Resolución del sistema.</strong> 1. Se resta <span class="math inline">\(2\cdot\)</span>(primera) a la segunda: <span class="math inline">\(4x+3y+2z-2x-2y-2z=61-44\)</span>, es decir, <span class="math inline">\(2x+y=17\)</span>. 2. Se despeja con <span class="math inline">\(x\)</span> como parámetro: <span class="math inline">\(y=17-2x\)</span> y <span class="math inline">\(z=22-x-y=x+5\)</span>. 3. Es un sistema compatible indeterminado (SCI) con un parámetro, <span class="math inline">\(x\)</span>. Como los números son naturales, hay que exigir <span class="math inline">\(x\ge0\)</span> e <span class="math inline">\(y\ge0\)</span>.</p>
+<p><strong>¿Puede ser 15 uno de los tres números?</strong> Se prueba en cada posición: - Si <span class="math inline">\(x=15\)</span>: <span class="math inline">\(y=-13&lt;0\)</span>, imposible. - Si <span class="math inline">\(y=15\)</span>: <span class="math inline">\(x=1\)</span> y <span class="math inline">\(z=6\)</span>; comprobación: <span class="math inline">\(1+15+6=22\)</span> y <span class="math inline">\(4+45+12=61\)</span>. <strong>Válido.</strong> - Si <span class="math inline">\(z=15\)</span>: <span class="math inline">\(x=10\)</span> e <span class="math inline">\(y=-3&lt;0\)</span>, imposible.</p>
+<p><strong>Sí, 15 puede ser uno de los números, y solo como el segundo: los otros son <span class="math inline">\(1\)</span> y <span class="math inline">\(6\)</span> (terna <span class="math inline">\((1,15,6)\)</span>). No hay otras opciones.</strong></p>
 </div>
 </div>
 </div>
@@ -695,8 +974,45 @@ window.Quarto = {
 <li><p>Discute el sistema según los valores de <span class="math inline">\(k\)</span>. <em>(1,75 puntos)</em></p></li>
 <li><p>Para <span class="math inline">\(k=1\)</span> resuelve el sistema, si es posible. ¿Hay alguna solución en la que <span class="math inline">\(y=0\)</span>? En caso afirmativo, calcúlala. En caso negativo, justifica la respuesta. <em>(0,75 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Teorema de Rouché-Frobenius: si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=n\)</span> (nº de incógnitas), compatible determinado; si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*&lt;n\)</span>, compatible indeterminado; si <span class="math inline">\(\operatorname{rg}A&lt;\operatorname{rg}A^*\)</span>, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la matriz ampliada <span class="math inline">\(A^*\)</span>.</li>
+<li>Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer <span class="math inline">\(0\)</span> (en un parámetro, trátalo aparte).</li>
+<li>Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.</li>
+<li>Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -705,17 +1021,15 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> Determinante de los coeficientes: <span class="math inline">\(|M|=(k-1)(k-2)\)</span>.</p>
-<ul>
-<li><span class="math inline">\(k\neq1,2\)</span>: <span class="math inline">\(\operatorname{rg}(M)=\operatorname{rg}(M|N)=3\)</span>, compatible determinado (SCD).</li>
-<li><span class="math inline">\(k=1\)</span>: <span class="math inline">\(\operatorname{rg}(M)=\operatorname{rg}(M|N)=2\)</span>, compatible indeterminado (SCI).</li>
-<li><span class="math inline">\(k=2\)</span>: <span class="math inline">\(\operatorname{rg}(M)=2\)</span> y <span class="math inline">\(\operatorname{rg}(M|N)=3\)</span>, incompatible (SI).</li>
-</ul>
-<p><strong>b)</strong> <span class="math inline">\(k=1\)</span>: <span class="math inline">\(\begin{cases}y+z=1\\y+z=1\\x+z=0\end{cases}\)</span>, es decir <span class="math inline">\(y+z=1\)</span>, <span class="math inline">\(x=-z\)</span>:</p>
+<p><strong>a) Discusión.</strong> 1. Matriz de coeficientes <span class="math inline">\(M=\begin{pmatrix}0&amp;1&amp;1\\k-1&amp;1&amp;1\\1&amp;k-1&amp;1\end{pmatrix}\)</span>. Determinante: <span class="math inline">\(|M|=(k-1)(k-2)\)</span>. 2. Se anula en <span class="math inline">\(k=1\)</span> y <span class="math inline">\(k=2\)</span>: son los valores críticos. 3. Si <span class="math inline">\(k\neq1,2\)</span>: <span class="math inline">\(|M|\neq0\)</span>, luego <span class="math inline">\(\operatorname{rg}(M)=\operatorname{rg}(M|N)=3\)</span> (el número de incógnitas): compatible determinado (SCD). 4. Si <span class="math inline">\(k=1\)</span>: <span class="math inline">\(\operatorname{rg}(M)=\operatorname{rg}(M|N)=2&lt;3\)</span>: compatible indeterminado (SCI). 5. Si <span class="math inline">\(k=2\)</span>: <span class="math inline">\(\operatorname{rg}(M)=2\)</span> y <span class="math inline">\(\operatorname{rg}(M|N)=3\)</span>: incompatible (SI).</p>
+<p><strong>b) Resolución para <span class="math inline">\(k=1\)</span>.</strong> 1. El sistema queda <span class="math inline">\(\begin{cases}y+z=1\\y+z=1\\x+z=0\end{cases}\)</span>. La primera y la segunda ecuación son iguales; sobra una. 2. Con dos ecuaciones y tres incógnitas hay un parámetro: <span class="math inline">\(z=\lambda\)</span>. De la primera, <span class="math inline">\(y=1-\lambda\)</span>; de la tercera, <span class="math inline">\(x=-\lambda\)</span>.</p>
 <p><span class="math display">\[\mathbf{(x,y,z)=(-\lambda,\ 1-\lambda,\ \lambda),\ \lambda\in\mathbb{R}}.\]</span></p>
-<p>Sí hay solución con <span class="math inline">\(y=0\)</span>: <span class="math inline">\(\lambda=1\)</span>, <strong><span class="math inline">\((x,y,z)=(-1,0,1)\)</span></strong>.</p>
+<ol start="3" type="1">
+<li>Solución con <span class="math inline">\(y=0\)</span>: <span class="math inline">\(1-\lambda=0\Rightarrow\lambda=1\)</span>.</li>
+</ol>
+<p>Sí hay solución con <span class="math inline">\(y=0\)</span>: <strong><span class="math inline">\((x,y,z)=(-1,0,1)\)</span></strong>.</p>
 </div>
 </div>
 </div>
@@ -726,8 +1040,45 @@ window.Quarto = {
 <div id="ebau-2024-ord-sup-6" class="ebau-ej">
 <p><strong>Ejercicio 6</strong> · Ordinaria · Suplente 2024 · Bloque C · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2024-ord-sup/examen-a.pdf" target="_blank">Examen A</a> · <a href="../../../assets/pau/2024-ord-sup/examen-b.pdf" target="_blank">Examen B</a></p>
 <p>Determina un número natural de tres cifras sabiendo que la suma de sus dígitos es 9, que la diferencia de dicho número con el que se obtiene al intercambiar la cifra de las centenas por la de las unidades es 198, y que si consideramos la suma entre ambos números, es decir, entre el número a determinar y el que se obtiene al intercambiar sus cifras, el resultado es 828.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Define con claridad las incógnitas <span class="math inline">\(x,y,z\)</span> y sus unidades.</li>
+<li>Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.</li>
+<li>Resuelve por Gauss o por sustitución.</li>
+<li>Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -736,10 +1087,10 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Número <span class="math inline">\(\overline{cdu}=100c+10d+u\)</span>. Condiciones: <span class="math inline">\(c+d+u=9\)</span>; <span class="math inline">\((100c+10d+u)-(100u+10d+c)=99(c-u)=198\Rightarrow c-u=2\)</span>; suma: <span class="math inline">\(101(c+u)+20d=828\)</span>.</p>
-<p>Con <span class="math inline">\(d=9-(c+u)\)</span>: <span class="math inline">\(81(c+u)+180=828\Rightarrow c+u=8\)</span>. Entonces <span class="math inline">\(c=5\)</span>, <span class="math inline">\(u=3\)</span>, <span class="math inline">\(d=1\)</span>.</p>
+<p><strong>Planteamiento.</strong> El número es <span class="math inline">\(\overline{cdu}=100c+10d+u\)</span>, con <span class="math inline">\(c\)</span> centenas, <span class="math inline">\(d\)</span> decenas y <span class="math inline">\(u\)</span> unidades. 1. Suma de dígitos: <span class="math inline">\(c+d+u=9\)</span>. 2. Diferencia con el número invertido (<span class="math inline">\(\overline{udc}=100u+10d+c\)</span>): <span class="math inline">\((100c+10d+u)-(100u+10d+c)=99(c-u)=198\Rightarrow c-u=2\)</span>. 3. Suma de ambos: <span class="math inline">\((100c+10d+u)+(100u+10d+c)=101(c+u)+20d=828\)</span>.</p>
+<p><strong>Resolución.</strong> 1. De la primera, <span class="math inline">\(d=9-(c+u)\)</span>. Se sustituye en la tercera: <span class="math inline">\(101(c+u)+20\,(9-(c+u))=81(c+u)+180=828\)</span>. 2. <span class="math inline">\(81(c+u)=648\Rightarrow c+u=8\)</span>. Con <span class="math inline">\(c-u=2\)</span>: <span class="math inline">\(c=5\)</span> y <span class="math inline">\(u=3\)</span>. 3. Entonces <span class="math inline">\(d=9-8=1\)</span>.</p>
 <p><strong>El número es <span class="math inline">\(513\)</span></strong> (comprobación: <span class="math inline">\(513-315=198\)</span> y <span class="math inline">\(513+315=828\)</span>).</p>
 </div>
 </div>
@@ -755,8 +1106,45 @@ window.Quarto = {
 <li><p>¿Cuánto tendremos que pagar por un pedido de 25 perfumes de tipo A, 10 perfumes de tipo B y 16 de tipo C? <em>(1,25 puntos)</em></p></li>
 <li><p>Si añadimos que el precio de un perfume de tipo C es <span class="math inline">\(\dfrac25\)</span> del precio de una unidad de tipo A, ¿cuál es el precio de cada tipo de perfume? <em>(1,25 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Define con claridad las incógnitas <span class="math inline">\(x,y,z\)</span> y sus unidades.</li>
+<li>Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.</li>
+<li>Resuelve por Gauss o por sustitución.</li>
+<li>Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -765,14 +1153,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sean <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> los precios de A, B, C. Los datos: <span class="math inline">\(20a+30b+15c=2200\)</span> y <span class="math inline">\(15a+10b+10c=1250\)</span>.</p>
-<p><strong>a)</strong> Se busca <span class="math inline">\(25a+10b+16c\)</span>. Combinando <span class="math inline">\(\alpha E_1+\beta E_2\)</span> con <span class="math inline">\(20\alpha+15\beta=25\)</span>, <span class="math inline">\(30\alpha+10\beta=10\)</span>, <span class="math inline">\(15\alpha+10\beta=16\)</span>, resulta <span class="math inline">\(\alpha=-\frac25\)</span>, <span class="math inline">\(\beta=\frac{11}5\)</span> (cumple las tres), así que el coste es</p>
+<p><strong>Planteamiento.</strong> Sean <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> y <span class="math inline">\(c\)</span> los precios (en euros) de un perfume de tipo A, B y C. 1. Primer pedido: <span class="math inline">\(20a+30b+15c=2200\)</span>. 2. Segundo pedido: <span class="math inline">\(15a+10b+10c=1250\)</span>.</p>
+<p><strong>a) Coste del tercer pedido.</strong> Se pide <span class="math inline">\(25a+10b+16c\)</span>, que no se puede despejar (dos ecuaciones, tres incógnitas), pero sí escribir como combinación de los dos pedidos. 1. Se busca <span class="math inline">\(\alpha E_1+\beta E_2\)</span> con <span class="math inline">\(20\alpha+15\beta=25\)</span>, <span class="math inline">\(30\alpha+10\beta=10\)</span> y <span class="math inline">\(15\alpha+10\beta=16\)</span>. 2. Resolviendo las dos primeras: <span class="math inline">\(\alpha=-\frac25\)</span>, <span class="math inline">\(\beta=\frac{11}5\)</span>; esos valores cumplen también la tercera. 3. Entonces el coste es la misma combinación de los importes:</p>
 <p><span class="math display">\[-\tfrac25\cdot2200+\tfrac{11}5\cdot1250=\mathbf{1870\ \text{euros}}.\]</span></p>
-<p><strong>b)</strong> Con <span class="math inline">\(c=\frac25a\)</span>: <span class="math inline">\(26a+30b=2200\)</span> y <span class="math inline">\(19a+10b=1250\)</span>. Restando a la primera el triple de la segunda: <span class="math inline">\(-31a=-1550\)</span>.</p>
+<p><strong>b) Con el dato <span class="math inline">\(c=\frac25a\)</span>.</strong> 1. Se sustituye en las ecuaciones: <span class="math inline">\(20a+30b+15\cdot\tfrac25a=26a+30b=2200\)</span> y <span class="math inline">\(15a+10b+10\cdot\tfrac25a=19a+10b=1250\)</span>. 2. Se resta a la primera el triple de la segunda: <span class="math inline">\(26a-57a=-31a=2200-3750=-1550\)</span>. 3. <span class="math inline">\(a=50\)</span>; de <span class="math inline">\(19a+10b=1250\)</span>: <span class="math inline">\(950+10b=1250\Rightarrow b=30\)</span>; y <span class="math inline">\(c=\tfrac25\cdot50=20\)</span>.</p>
 <p><span class="math display">\[\mathbf{a=50\ \text{€},\quad b=30\ \text{€},\quad c=20\ \text{€}}\]</span></p>
-<p>(comprobación del apartado a: <span class="math inline">\(1250+300+320=1870\)</span>).</p>
+<p><em>Comprobación del apartado a:</em> <span class="math inline">\(25\cdot50+10\cdot30+16\cdot20=1250+300+320=1870\)</span>.</p>
 </div>
 </div>
 </div>
@@ -789,8 +1177,55 @@ window.Quarto = {
 <li><p>Para <span class="math inline">\(m=2\)</span> resuelve el sistema, si es posible. <em>(0,75 puntos)</em></p></li>
 </ol>
 <p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/01-matrices.html">Matrices</a>.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Discusión y resolución de sistemas.</strong></p>
+<p>Teorema de Rouché-Frobenius: si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=n\)</span> (nº de incógnitas), compatible determinado; si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*&lt;n\)</span>, compatible indeterminado; si <span class="math inline">\(\operatorname{rg}A&lt;\operatorname{rg}A^*\)</span>, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.</p>
+<p><strong>Operaciones con matrices.</strong></p>
+<p>Suma y resta: elemento a elemento (mismas dimensiones). Producto <span class="math inline">\(A\cdot B\)</span>: solo si columnas de <span class="math inline">\(A\)</span> = filas de <span class="math inline">\(B\)</span>; el elemento <span class="math inline">\((i,j)\)</span> es la fila <span class="math inline">\(i\)</span> de <span class="math inline">\(A\)</span> por la columna <span class="math inline">\(j\)</span> de <span class="math inline">\(B\)</span>. En general <span class="math inline">\(A\cdot B\neq B\cdot A\)</span>. La traspuesta <span class="math inline">\(A^t\)</span> cambia filas por columnas y <span class="math inline">\((A\cdot B)^t=B^t\cdot A^t\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Discusión y resolución de sistemas.</strong></p>
+<ol type="1">
+<li>Escribe la matriz ampliada <span class="math inline">\(A^*\)</span>.</li>
+<li>Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer <span class="math inline">\(0\)</span> (en un parámetro, trátalo aparte).</li>
+<li>Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.</li>
+<li>Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).</li>
+</ol>
+<p><strong>Operaciones con matrices.</strong></p>
+<ol type="1">
+<li>Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.</li>
+<li>Para potencias <span class="math inline">\(A^2,A^3,\dots\)</span> calcula una a una y busca el patrón; después exprésalo en función de <span class="math inline">\(n\)</span>.</li>
+<li>Revisa cada elemento: un solo error de signo arrastra todo lo demás.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -799,12 +1234,12 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>El sistema es <span class="math inline">\((A-mI)\vec x=\vec 0\)</span>, homogéneo (siempre compatible). Será compatible indeterminado (SCI) si <span class="math inline">\(|A-mI|=0\)</span>:</p>
-<p><span class="math display">\[|A-mI|=-m(m-2)^2=0\ \Rightarrow\ m=0,\ m=2.\]</span></p>
-<p><strong>a)</strong> Para <span class="math inline">\(m=0\)</span> y para <span class="math inline">\(m=2\)</span> el rango de la matriz de coeficientes es <span class="math inline">\(2&lt;3\)</span>, así que <strong>es SCI para <span class="math inline">\(m=0\)</span> y <span class="math inline">\(m=2\)</span></strong>; para cualquier otro <span class="math inline">\(m\)</span> es compatible determinado (SCD), sólo con la solución trivial.</p>
-<p><strong>b)</strong> <span class="math inline">\(m=2\)</span>: <span class="math inline">\(\begin{cases}3x-2y-3z=0\\2x-2y-2z=0\end{cases}\)</span>. De la segunda, <span class="math inline">\(x=y+z\)</span>; en la primera <span class="math inline">\(3y+3z-2y-3z=y=0\)</span>. Así <span class="math inline">\(x=z\)</span>.</p>
+<p><strong>Planteamiento.</strong> Pasando <span class="math inline">\(mI\)</span> al otro miembro, el sistema es <span class="math inline">\((A-mI)\vec x=\vec 0\)</span>, <strong>homogéneo</strong>: siempre tiene la solución trivial (compatible). 1. Será compatible indeterminado (SCI) si hay más soluciones, es decir, si <span class="math inline">\(|A-mI|=0\)</span>. 2. Determinante: <span class="math inline">\(|A-mI|=-m(m-2)^2\)</span>. 3. Se anula en <span class="math inline">\(m=0\)</span> y <span class="math inline">\(m=2\)</span>.</p>
+<p><strong>a) Valores de <span class="math inline">\(m\)</span> con SCI.</strong> 1. Para <span class="math inline">\(m=0\)</span> y para <span class="math inline">\(m=2\)</span> el rango de la matriz de coeficientes es <span class="math inline">\(2&lt;3\)</span>. 2. Para cualquier otro <span class="math inline">\(m\)</span>, el rango es <span class="math inline">\(3\)</span> y solo hay la solución trivial.</p>
+<p><strong>Es SCI para <span class="math inline">\(m=0\)</span> y <span class="math inline">\(m=2\)</span></strong>; para cualquier otro <span class="math inline">\(m\)</span> es compatible determinado (SCD), sólo con la solución trivial.</p>
+<p><strong>b) Resolución para <span class="math inline">\(m=2\)</span>.</strong> 1. El sistema queda <span class="math inline">\(\begin{cases}3x-2y-3z=0\\2x-2y-2z=0\\3x-2y-3z=0\end{cases}\)</span>; la tercera repite la primera, así que se queda con dos ecuaciones: <span class="math inline">\(\begin{cases}3x-2y-3z=0\\2x-2y-2z=0\end{cases}\)</span>. 2. De la segunda, <span class="math inline">\(x=y+z\)</span>. 3. En la primera: <span class="math inline">\(3y+3z-2y-3z=y=0\)</span>. Así <span class="math inline">\(x=z\)</span>.</p>
 <p><span class="math display">\[\mathbf{(x,y,z)=(\lambda,0,\lambda),\ \lambda\in\mathbb{R}}\]</span></p>
 </div>
 </div>
@@ -821,8 +1256,45 @@ window.Quarto = {
 <li><p>Calcula <span class="math inline">\(a\)</span> para que el sistema sea compatible indeterminado. <em>(1,5 puntos)</em></p></li>
 <li><p>Resuelve el sistema, si es posible, para <span class="math inline">\(a=0\)</span>. <em>(1 punto)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Teorema de Rouché-Frobenius: si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=n\)</span> (nº de incógnitas), compatible determinado; si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*&lt;n\)</span>, compatible indeterminado; si <span class="math inline">\(\operatorname{rg}A&lt;\operatorname{rg}A^*\)</span>, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la matriz ampliada <span class="math inline">\(A^*\)</span>.</li>
+<li>Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer <span class="math inline">\(0\)</span> (en un parámetro, trátalo aparte).</li>
+<li>Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.</li>
+<li>Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -831,16 +1303,12 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Determinante de los coeficientes: <span class="math inline">\(|M|=-(a-1)(a-2)\)</span>.</p>
-<p><strong>a)</strong> Se anula en <span class="math inline">\(a=1\)</span> y <span class="math inline">\(a=2\)</span>.</p>
-<ul>
-<li><span class="math inline">\(a=1\)</span>: <span class="math inline">\(\operatorname{rg}(M)=\operatorname{rg}(M|N)=2&lt;3\)</span>, <strong>compatible indeterminado (SCI)</strong>.</li>
-<li><span class="math inline">\(a=2\)</span>: <span class="math inline">\(\operatorname{rg}(M)=2\)</span> y <span class="math inline">\(\operatorname{rg}(M|N)=3\)</span>, incompatible (SI).</li>
-</ul>
+<p><strong>Discusión.</strong> 1. Determinante de la matriz de coeficientes: <span class="math inline">\(|M|=-(a-1)(a-2)\)</span>. 2. Se anula en <span class="math inline">\(a=1\)</span> y <span class="math inline">\(a=2\)</span>: son los valores críticos. Para cualquier otro <span class="math inline">\(a\)</span>, <span class="math inline">\(\operatorname{rg}(M)=3\)</span> y el sistema es compatible determinado.</p>
+<p><strong>a) Valor de <span class="math inline">\(a\)</span> para que sea compatible indeterminado.</strong> 1. <span class="math inline">\(a=1\)</span>: <span class="math inline">\(\operatorname{rg}(M)=\operatorname{rg}(M|N)=2&lt;3\)</span>, <strong>compatible indeterminado (SCI)</strong>. 2. <span class="math inline">\(a=2\)</span>: <span class="math inline">\(\operatorname{rg}(M)=2\)</span> y <span class="math inline">\(\operatorname{rg}(M|N)=3\)</span>, incompatible (SI).</p>
 <p><strong>Resultado: SCI sólo para <span class="math inline">\(a=1\)</span>.</strong> (Para <span class="math inline">\(a\ne1,2\)</span> es compatible determinado.)</p>
-<p><strong>b)</strong> <span class="math inline">\(a=0\)</span> (<span class="math inline">\(|M|=-2\neq0\)</span>, SCD): <span class="math inline">\(\begin{cases}y+z=1\\x+2y-z=1\\x+y=0\end{cases}\)</span>. De la tercera <span class="math inline">\(x=-y\)</span>; en la segunda <span class="math inline">\(y-z=1\)</span>; con la primera, <span class="math inline">\(y=1\)</span>, <span class="math inline">\(z=0\)</span>.</p>
+<p><strong>b) Resolución para <span class="math inline">\(a=0\)</span>.</strong> 1. <span class="math inline">\(|M|=-2\neq0\)</span>: compatible determinado, con solución única. 2. El sistema queda <span class="math inline">\(\begin{cases}y+z=1\\x+2y-z=1\\x+y=0\end{cases}\)</span>. 3. De la tercera, <span class="math inline">\(x=-y\)</span>. En la segunda: <span class="math inline">\(-y+2y-z=y-z=1\)</span>. 4. Junto con la primera (<span class="math inline">\(y+z=1\)</span>): sumando, <span class="math inline">\(2y=2\)</span>, luego <span class="math inline">\(y=1\)</span> y <span class="math inline">\(z=0\)</span>.</p>
 <p><span class="math display">\[\mathbf{(x,y,z)=(-1,1,0)}\]</span></p>
 </div>
 </div>
@@ -855,8 +1323,45 @@ window.Quarto = {
 <div id="ebau-2023-ord-5" class="ebau-ej">
 <p><strong>Ejercicio 5</strong> · Ordinaria 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2023-ord/examen-a.pdf" target="_blank">Examen A</a> · <a href="../../../assets/pau/2023-ord/examen-b.pdf" target="_blank">Examen B</a></p>
 <p>Una marca de vehículos ha vendido este mes coches de tres colores: blancos, negros y rojos. El 60 % de los coches blancos más el 50 % de los coches negros representan el 30 % de los coches vendidos. El 20 % de los coches blancos junto con el 60 % de los coches negros y el 60 % de los coches rojos representan la mitad de los coches vendidos. Se han vendido 100 coches negros más que blancos. Determina el número de coches vendidos de cada color.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Teorema de Rouché-Frobenius: si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=n\)</span> (nº de incógnitas), compatible determinado; si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*&lt;n\)</span>, compatible indeterminado; si <span class="math inline">\(\operatorname{rg}A&lt;\operatorname{rg}A^*\)</span>, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la matriz ampliada <span class="math inline">\(A^*\)</span>.</li>
+<li>Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer <span class="math inline">\(0\)</span> (en un parámetro, trátalo aparte).</li>
+<li>Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.</li>
+<li>Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -865,12 +1370,16 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sean <span class="math inline">\(b\)</span>, <span class="math inline">\(n\)</span> y <span class="math inline">\(r\)</span> los coches blancos, negros y rojos, y <span class="math inline">\(T=b+n+r\)</span>.</p>
-<p><span class="math display">\[\begin{cases}0{,}6b+0{,}5n=0{,}3T\\0{,}2b+0{,}6n+0{,}6r=0{,}5T\\n=b+100\end{cases}\]</span></p>
-<p>Simplificando: <span class="math inline">\(3b+2n-3r=0\)</span> y <span class="math inline">\(-3b+n+r=0\)</span>. Con <span class="math inline">\(n=b+100\)</span>: <span class="math inline">\(r=\dfrac{5b+200}3\)</span> y <span class="math inline">\(r=2b-100\)</span>, de donde <span class="math inline">\(5b+200=6b-300\Rightarrow b=500\)</span>.</p>
-<p><strong>Blancos: 500; negros: 600; rojos: 900</strong> (total 2000). Comprobación: <span class="math inline">\(0{,}6\cdot500+0{,}5\cdot600=600=0{,}3\cdot2000\)</span> y <span class="math inline">\(100+360+540=1000=0{,}5\cdot2000\)</span>.</p>
+<ol type="1">
+<li><strong>Incógnitas.</strong> <span class="math inline">\(b\)</span>, <span class="math inline">\(n\)</span> y <span class="math inline">\(r\)</span> son los coches blancos, negros y rojos, y <span class="math inline">\(T=b+n+r\)</span> el total.</li>
+<li><strong>Sistema.</strong> Cada frase del enunciado es una ecuación: <span class="math display">\[\begin{cases}0{,}6b+0{,}5n=0{,}3T\\0{,}2b+0{,}6n+0{,}6r=0{,}5T\\n=b+100\end{cases}\]</span></li>
+<li><strong>Simplificación.</strong> Sustituyendo <span class="math inline">\(T\)</span> y multiplicando por <span class="math inline">\(10\)</span>: <span class="math inline">\(3b+2n-3r=0\)</span> y <span class="math inline">\(-3b+n+r=0\)</span>.</li>
+<li><strong>Resolución.</strong> Con <span class="math inline">\(n=b+100\)</span>, la primera da <span class="math inline">\(r=\dfrac{5b+200}3\)</span> y la segunda <span class="math inline">\(r=2b-100\)</span>. Igualando: <span class="math inline">\(5b+200=6b-300\Rightarrow b=500\)</span>.</li>
+<li><strong>Comprobación.</strong> <span class="math inline">\(n=600\)</span>, <span class="math inline">\(r=900\)</span> y <span class="math inline">\(T=2000\)</span>: <span class="math inline">\(0{,}6\cdot500+0{,}5\cdot600=600=0{,}3\cdot2000\)</span> y <span class="math inline">\(100+360+540=1000=0{,}5\cdot2000\)</span>.</li>
+</ol>
+<p><strong>Blancos: 500; negros: 600; rojos: 900</strong> (total 2000).</p>
 </div>
 </div>
 </div>
@@ -881,8 +1390,45 @@ window.Quarto = {
 <div id="ebau-2023-ord-res-5" class="ebau-ej">
 <p><strong>Ejercicio 5</strong> · Ordinaria · Reserva 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2023-ord-res/examen-a.pdf" target="_blank">Examen A</a> · <a href="../../../assets/pau/2023-ord-res/examen-b.pdf" target="_blank">Examen B</a></p>
 <p>Una fábrica dispone de tres líquidos <span class="math inline">\(L_1\)</span>, <span class="math inline">\(L_2\)</span> y <span class="math inline">\(L_3\)</span>, en los que se encuentran disueltas dos sustancias: sodio y magnesio. Cada litro del líquido <span class="math inline">\(L_1\)</span> contiene 120 mg de sodio y 90 mg de magnesio, cada litro del líquido <span class="math inline">\(L_2\)</span> contiene 100 mg de sodio y 90 mg de magnesio y cada litro del líquido <span class="math inline">\(L_3\)</span> contiene 60 mg de sodio y 180 mg de magnesio. ¿Es posible obtener un litro de un líquido mezclando distintas cantidades de <span class="math inline">\(L_1\)</span>, <span class="math inline">\(L_2\)</span> y <span class="math inline">\(L_3\)</span> en el que la cantidad de sodio y de magnesio sea de 100 mg cada una? En caso afirmativo, calcula dichas cantidades.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Define con claridad las incógnitas <span class="math inline">\(x,y,z\)</span> y sus unidades.</li>
+<li>Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.</li>
+<li>Resuelve por Gauss o por sustitución.</li>
+<li>Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -891,11 +1437,15 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sean <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span> los litros de <span class="math inline">\(L_1\)</span>, <span class="math inline">\(L_2\)</span> y <span class="math inline">\(L_3\)</span> (un litro en total):</p>
-<p><span class="math display">\[\begin{cases}x+y+z=1\\120x+100y+60z=100\\90x+90y+180z=100\end{cases}\]</span></p>
-<p>El determinante vale <span class="math inline">\(-1800\ne0\)</span>: sistema compatible determinado (SCD). Sí es posible.</p>
+<ol type="1">
+<li><strong>Incógnitas.</strong> <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span> son los litros de <span class="math inline">\(L_1\)</span>, <span class="math inline">\(L_2\)</span> y <span class="math inline">\(L_3\)</span> que se mezclan para obtener un litro.</li>
+<li><strong>Sistema.</strong> Un litro en total, <span class="math inline">\(100\)</span> mg de sodio y <span class="math inline">\(100\)</span> mg de magnesio: <span class="math display">\[\begin{cases}x+y+z=1\\120x+100y+60z=100\\90x+90y+180z=100\end{cases}\]</span></li>
+<li><strong>Discusión.</strong> El determinante de la matriz de coeficientes vale <span class="math inline">\(-1800\ne0\)</span>: sistema compatible determinado (SCD). Sí es posible.</li>
+<li><strong>Resolución.</strong> Por Cramer o Gauss.</li>
+<li><strong>Comprobación.</strong> Las tres cantidades son positivas y suman <span class="math inline">\(1\)</span>: <span class="math inline">\(\dfrac29+\dfrac69+\dfrac19=1\)</span>.</li>
+</ol>
 <p><strong><span class="math inline">\(x=\dfrac29\)</span> L de <span class="math inline">\(L_1\)</span>, <span class="math inline">\(y=\dfrac23\)</span> L de <span class="math inline">\(L_2\)</span> y <span class="math inline">\(z=\dfrac19\)</span> L de <span class="math inline">\(L_3\)</span>.</strong></p>
 </div>
 </div>
@@ -912,8 +1462,55 @@ window.Quarto = {
 <li><p>Resuelve el sistema, si es posible, para <span class="math inline">\(\alpha=0\)</span> y para <span class="math inline">\(\alpha=1\)</span>. <em>(1 punto)</em></p></li>
 </ol>
 <p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ciencias/ebau/01-matrices.html">Matrices</a>.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Discusión y resolución de sistemas.</strong></p>
+<p>Teorema de Rouché-Frobenius: si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=n\)</span> (nº de incógnitas), compatible determinado; si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*&lt;n\)</span>, compatible indeterminado; si <span class="math inline">\(\operatorname{rg}A&lt;\operatorname{rg}A^*\)</span>, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.</p>
+<p><strong>Operaciones con matrices.</strong></p>
+<p>Suma y resta: elemento a elemento (mismas dimensiones). Producto <span class="math inline">\(A\cdot B\)</span>: solo si columnas de <span class="math inline">\(A\)</span> = filas de <span class="math inline">\(B\)</span>; el elemento <span class="math inline">\((i,j)\)</span> es la fila <span class="math inline">\(i\)</span> de <span class="math inline">\(A\)</span> por la columna <span class="math inline">\(j\)</span> de <span class="math inline">\(B\)</span>. En general <span class="math inline">\(A\cdot B\neq B\cdot A\)</span>. La traspuesta <span class="math inline">\(A^t\)</span> cambia filas por columnas y <span class="math inline">\((A\cdot B)^t=B^t\cdot A^t\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Discusión y resolución de sistemas.</strong></p>
+<ol type="1">
+<li>Escribe la matriz ampliada <span class="math inline">\(A^*\)</span>.</li>
+<li>Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer <span class="math inline">\(0\)</span> (en un parámetro, trátalo aparte).</li>
+<li>Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.</li>
+<li>Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).</li>
+</ol>
+<p><strong>Operaciones con matrices.</strong></p>
+<ol type="1">
+<li>Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.</li>
+<li>Para potencias <span class="math inline">\(A^2,A^3,\dots\)</span> calcula una a una y busca el patrón; después exprésalo en función de <span class="math inline">\(n\)</span>.</li>
+<li>Revisa cada elemento: un solo error de signo arrastra todo lo demás.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -922,15 +1519,11 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> <span class="math inline">\(BA=(\alpha x+y+z,\ x+\alpha y+z,\ x+y+\alpha z)=(1,1,1)\)</span>. La matriz de coeficientes tiene <span class="math inline">\(|\cdot|=(\alpha-1)^{2}(\alpha+2)\)</span>.</p>
-<ul>
-<li><span class="math inline">\(\alpha\ne1,-2\)</span>: <span class="math inline">\(\operatorname{rg}=3\)</span>, sistema compatible determinado (SCD).</li>
-<li><span class="math inline">\(\alpha=1\)</span>: las tres ecuaciones son <span class="math inline">\(x+y+z=1\)</span>, rango 1: sistema compatible indeterminado (SCI).</li>
-<li><span class="math inline">\(\alpha=-2\)</span>: <span class="math inline">\(\operatorname{rg}=2\)</span> y <span class="math inline">\(\operatorname{rg}\)</span> ampliada <span class="math inline">\(=3\)</span> (sumando las ecuaciones sale <span class="math inline">\(0=3\)</span>): sistema incompatible (SI).</li>
-</ul>
-<p><strong>b)</strong> - <span class="math inline">\(\alpha=0\)</span> (SCD): <span class="math inline">\(y+z=1\)</span>, <span class="math inline">\(x+z=1\)</span>, <span class="math inline">\(x+y=1\)</span>, <strong><span class="math inline">\(x=y=z=\dfrac12\)</span></strong>. - <span class="math inline">\(\alpha=1\)</span> (SCI): <strong><span class="math inline">\((x,y,z)=(\lambda,\mu,1-\lambda-\mu)\)</span></strong>, con <span class="math inline">\(\lambda,\mu\in\mathbb{R}\)</span>.</p>
+<p><strong>a) Discusión según <span class="math inline">\(\alpha\)</span>.</strong> 1. Se calcula <span class="math inline">\(BA=(\alpha x+y+z,\ x+\alpha y+z,\ x+y+\alpha z)\)</span> y se iguala a <span class="math inline">\((1,1,1)\)</span>: tres ecuaciones lineales en <span class="math inline">\(x,y,z\)</span>. 2. La matriz de coeficientes es <span class="math inline">\(\begin{pmatrix}\alpha&amp;1&amp;1\\1&amp;\alpha&amp;1\\1&amp;1&amp;\alpha\end{pmatrix}\)</span> y su determinante vale <span class="math inline">\((\alpha-1)^{2}(\alpha+2)\)</span>. 3. Se estudia cada caso: - <span class="math inline">\(\alpha\ne1,-2\)</span>: <span class="math inline">\(\operatorname{rg}=3\)</span>, sistema compatible determinado (SCD). - <span class="math inline">\(\alpha=1\)</span>: las tres ecuaciones son <span class="math inline">\(x+y+z=1\)</span>, rango 1: sistema compatible indeterminado (SCI). - <span class="math inline">\(\alpha=-2\)</span>: <span class="math inline">\(\operatorname{rg}=2\)</span> y <span class="math inline">\(\operatorname{rg}\)</span> ampliada <span class="math inline">\(=3\)</span> (sumando las ecuaciones sale <span class="math inline">\(0=3\)</span>): sistema incompatible (SI).</p>
+<p><strong>b) Resolución.</strong> 1. Para <span class="math inline">\(\alpha=0\)</span> (SCD): <span class="math inline">\(y+z=1\)</span>, <span class="math inline">\(x+z=1\)</span>, <span class="math inline">\(x+y=1\)</span>. Sumando, <span class="math inline">\(2(x+y+z)=3\)</span>, y restando cada ecuación se obtiene <span class="math inline">\(x=y=z=\dfrac12\)</span>. 2. Para <span class="math inline">\(\alpha=1\)</span> (SCI): una sola ecuación independiente, <span class="math inline">\(x+y+z=1\)</span>; se toman <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> como parámetros.</p>
+<p><strong><span class="math inline">\(\alpha=0\)</span>: <span class="math inline">\(x=y=z=\dfrac12\)</span>. <span class="math inline">\(\alpha=1\)</span>: <span class="math inline">\((x,y,z)=(\lambda,\mu,1-\lambda-\mu)\)</span></strong>, con <span class="math inline">\(\lambda,\mu\in\mathbb{R}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -941,8 +1534,45 @@ window.Quarto = {
 <div id="ebau-2023-ext-6" class="ebau-ej">
 <p><strong>Ejercicio 6</strong> · Extraordinaria 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria.pdf" target="_blank">PDF del examen</a></p>
 <p>El dueño de un bar ha comprado refrescos, cerveza y vino por un importe de 500 euros sin incluir impuestos. El gasto en vino es 60 euros menos que los gastos en refrescos y cerveza conjuntamente, sin incluir impuestos. Teniendo en cuenta que los impuestos de los refrescos, la cerveza y el vino son el 6 %, el 12 % y el 30 %, respectivamente, entonces el importe total de la factura incluyendo impuestos ha ascendido a 592,4 euros. Calcula el importe, incluyendo impuestos, invertido en cada una de las bebidas.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-46" class="callout-46-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Define con claridad las incógnitas <span class="math inline">\(x,y,z\)</span> y sus unidades.</li>
+<li>Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.</li>
+<li>Resuelve por Gauss o por sustitución.</li>
+<li>Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -951,12 +1581,15 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-48" class="callout-48-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sean <span class="math inline">\(r\)</span>, <span class="math inline">\(c\)</span> y <span class="math inline">\(v\)</span> los importes sin impuestos de refrescos, cerveza y vino.</p>
-<p><span class="math display">\[\begin{cases}r+c+v=500\\v=r+c-60\\1{,}06r+1{,}12c+1{,}3v=592{,}4\end{cases}\]</span></p>
-<p>Primera y segunda: <span class="math inline">\(v=220\)</span>, <span class="math inline">\(r+c=280\)</span>. Tercera: <span class="math inline">\(1{,}06r+1{,}12(280-r)=592{,}4-286=306{,}4\Rightarrow-0{,}06r=-7{,}2\Rightarrow r=120\)</span>, <span class="math inline">\(c=160\)</span>.</p>
-<p>Con impuestos: refrescos <span class="math inline">\(127{,}20\)</span>, cerveza <span class="math inline">\(179{,}20\)</span>, vino <span class="math inline">\(286\)</span>.</p>
+<ol type="1">
+<li><strong>Incógnitas.</strong> <span class="math inline">\(r\)</span>, <span class="math inline">\(c\)</span> y <span class="math inline">\(v\)</span> son los importes sin impuestos de refrescos, cerveza y vino.</li>
+<li><strong>Sistema.</strong> Importe total, relación del vino y factura con impuestos (<span class="math inline">\(6\,\%\)</span>, <span class="math inline">\(12\,\%\)</span> y <span class="math inline">\(30\,\%\)</span>): <span class="math display">\[\begin{cases}r+c+v=500\\v=r+c-60\\1{,}06r+1{,}12c+1{,}3v=592{,}4\end{cases}\]</span></li>
+<li><strong>Vino y suma de los otros dos.</strong> De las dos primeras: <span class="math inline">\(v=220\)</span> y <span class="math inline">\(r+c=280\)</span>.</li>
+<li><strong>Tercera ecuación.</strong> <span class="math inline">\(1{,}06r+1{,}12(280-r)=592{,}4-286=306{,}4\Rightarrow-0{,}06r=-7{,}2\Rightarrow r=120\)</span>, y <span class="math inline">\(c=160\)</span>.</li>
+<li><strong>Importes con impuestos.</strong> Refrescos <span class="math inline">\(127{,}20\)</span>, cerveza <span class="math inline">\(179{,}20\)</span> y vino <span class="math inline">\(286\)</span>.</li>
+</ol>
 <p><strong>Refrescos: <span class="math inline">\(127{,}20\)</span> €; cerveza: <span class="math inline">\(179{,}20\)</span> €; vino: <span class="math inline">\(286\)</span> €.</strong></p>
 </div>
 </div>
@@ -968,8 +1601,45 @@ window.Quarto = {
 <div id="ebau-2023-ext-sup-6" class="ebau-ej">
 <p><strong>Ejercicio 6</strong> · Extraordinaria · Suplente 2023 · Bloque B · <em>(2,5 puntos)</em> · <a href="https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Suplente.pdf" target="_blank">PDF del examen</a></p>
 <p>Una plataforma de streaming se especializa en series de tres géneros: animación, ciencia ficción y comedia. Se sabe que el 30 % de las series de animación más el 50 % de las de ciencia ficción coincide con el 20 % de total de series. El 25 % de las series de animación más el 50 % de las de ciencia ficción más el 60 % de las de comedia representan la mitad del total de series. Hay 100 series menos de animación que de ciencia ficción. Halla el número de series de cada género.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-49" class="callout-49-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-50" class="callout-50-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Define con claridad las incógnitas <span class="math inline">\(x,y,z\)</span> y sus unidades.</li>
+<li>Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.</li>
+<li>Resuelve por Gauss o por sustitución.</li>
+<li>Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -978,12 +1648,17 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-51" class="callout-51-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sean <span class="math inline">\(a\)</span>, <span class="math inline">\(c\)</span> y <span class="math inline">\(m\)</span> las series de animación, ciencia ficción y comedia, y <span class="math inline">\(T=a+c+m\)</span> el total.</p>
-<p><span class="math display">\[\begin{cases}0{,}3a+0{,}5c=0{,}2(a+c+m)\\0{,}25a+0{,}5c+0{,}6m=0{,}5(a+c+m)\\c=a+100\end{cases}\iff\begin{cases}a+3c-2m=0\\-0{,}25a+0{,}1m=0\\c-a=100\end{cases}\]</span></p>
-<p>Simplificando la segunda: <span class="math inline">\(-0{,}25a+0{,}1m=0\Rightarrow m=2{,}5a\)</span>. En la primera: <span class="math inline">\(a+3(a+100)-5a=0\Rightarrow a=300\)</span>.</p>
-<p><strong>Animación: 300; ciencia ficción: 400; comedia: 750</strong> (total 1450). Comprobación: <span class="math inline">\(0{,}3\cdot300+0{,}5\cdot400=290=0{,}2\cdot1450\)</span>.</p>
+<ol type="1">
+<li><strong>Incógnitas.</strong> <span class="math inline">\(a\)</span>, <span class="math inline">\(c\)</span> y <span class="math inline">\(m\)</span> son las series de animación, ciencia ficción y comedia, y <span class="math inline">\(T=a+c+m\)</span> el total.</li>
+<li><strong>Sistema.</strong> Cada frase del enunciado es una ecuación: <span class="math display">\[\begin{cases}0{,}3a+0{,}5c=0{,}2(a+c+m)\\0{,}25a+0{,}5c+0{,}6m=0{,}5(a+c+m)\\c=a+100\end{cases}\iff\begin{cases}a+3c-2m=0\\-0{,}25a+0{,}1m=0\\c-a=100\end{cases}\]</span></li>
+<li><strong>Segunda ecuación.</strong> <span class="math inline">\(-0{,}25a+0{,}1m=0\Rightarrow m=2{,}5a\)</span>.</li>
+<li><strong>Primera ecuación.</strong> Con <span class="math inline">\(c=a+100\)</span> y <span class="math inline">\(m=2{,}5a\)</span>: <span class="math inline">\(a+3(a+100)-5a=0\Rightarrow a=300\)</span>.</li>
+<li><strong>Resto.</strong> <span class="math inline">\(c=400\)</span> y <span class="math inline">\(m=750\)</span>.</li>
+<li><strong>Comprobación.</strong> Total <span class="math inline">\(1450\)</span> y <span class="math inline">\(0{,}3\cdot300+0{,}5\cdot400=290=0{,}2\cdot1450\)</span>.</li>
+</ol>
+<p><strong>Animación: 300; ciencia ficción: 400; comedia: 750</strong> (total 1450).</p>
 </div>
 </div>
 </div>
@@ -1002,8 +1677,45 @@ window.Quarto = {
 <li><p>Discute el sistema según los valores de <span class="math inline">\(m\)</span>. <em>(1,75 puntos)</em></p></li>
 <li><p>Para <span class="math inline">\(m=2\)</span> resuelve el sistema, si es posible. <em>(0,75 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-52" class="callout-52-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Teorema de Rouché-Frobenius: si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=n\)</span> (nº de incógnitas), compatible determinado; si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*&lt;n\)</span>, compatible indeterminado; si <span class="math inline">\(\operatorname{rg}A&lt;\operatorname{rg}A^*\)</span>, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-53" class="callout-53-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la matriz ampliada <span class="math inline">\(A^*\)</span>.</li>
+<li>Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer <span class="math inline">\(0\)</span> (en un parámetro, trátalo aparte).</li>
+<li>Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.</li>
+<li>Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-54-contents" aria-controls="callout-54" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1012,10 +1724,11 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div id="callout-54" class="callout-54-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> <span class="math inline">\(|A|=3(m-1)(m+1)\)</span>. - <span class="math inline">\(m\neq\pm1\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=3\)</span>: compatible determinado (SCD). - <span class="math inline">\(m=-1\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=2\)</span>: compatible indeterminado (SCI). - <span class="math inline">\(m=1\)</span>: <span class="math inline">\(\operatorname{rg}A=2\)</span> y <span class="math inline">\(\operatorname{rg}A^*=3\)</span>: incompatible (SI).</p>
-<p><strong>b)</strong> Para <span class="math inline">\(m=2\)</span> (SCD), por Gauss o Cramer:</p>
+<p><strong>a) Discusión según <span class="math inline">\(m\)</span>.</strong> 1. Determinante de la matriz de coeficientes <span class="math inline">\(A\)</span>: <span class="math inline">\(|A|=\begin{vmatrix}1&amp;-1&amp;m\\-m&amp;3&amp;-1\\1&amp;-4&amp;m\end{vmatrix}=3(m-1)(m+1)\)</span>. 2. Se anula en <span class="math inline">\(m=1\)</span> y <span class="math inline">\(m=-1\)</span>. Se estudian tres casos con el teorema de Rouché-Frobenius (<span class="math inline">\(A^*\)</span> es la matriz ampliada). 3. Si <span class="math inline">\(m\neq\pm1\)</span>: <span class="math inline">\(|A|\neq0\)</span>, luego <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=3\)</span> (igual al número de incógnitas): compatible determinado (SCD). 4. Si <span class="math inline">\(m=-1\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=2&lt;3\)</span>: compatible indeterminado (SCI), con un parámetro libre. 5. Si <span class="math inline">\(m=1\)</span>: <span class="math inline">\(\operatorname{rg}A=2\)</span> pero <span class="math inline">\(\operatorname{rg}A^*=3\)</span>: incompatible (SI).</p>
+<p><strong>SCD si <span class="math inline">\(m\neq\pm1\)</span>; SCI si <span class="math inline">\(m=-1\)</span>; SI si <span class="math inline">\(m=1\)</span>.</strong></p>
+<p><strong>b) Resolución para <span class="math inline">\(m=2\)</span>.</strong> 1. Para <span class="math inline">\(m=2\)</span> el sistema es SCD (el caso general). Las ecuaciones son <span class="math inline">\(x-y+2z=-3\)</span>, <span class="math inline">\(-2x+3y-z=1\)</span>, <span class="math inline">\(x-4y+2z=-6\)</span>. 2. Restando la primera de la tercera: <span class="math inline">\(-3y=-3\Rightarrow y=1\)</span>. 3. Con <span class="math inline">\(y=1\)</span>: <span class="math inline">\(x+2z=-2\)</span> y <span class="math inline">\(-2x-z=-2\)</span>. De la segunda, <span class="math inline">\(z=2-2x\)</span>; en la primera, <span class="math inline">\(x+4-4x=-2\Rightarrow x=2\)</span>, luego <span class="math inline">\(z=-2\)</span>. 4. Comprobación en la segunda ecuación: <span class="math inline">\(-2\cdot2+3\cdot1-(-2)=1\)</span> ✓.</p>
 <p><strong><span class="math inline">\((x,y,z)=(2,1,-2)\)</span>.</strong></p>
 </div>
 </div>
@@ -1027,8 +1740,45 @@ window.Quarto = {
 <div id="ebau-2022-ord-res-6" class="ebau-ej">
 <p><strong>Ejercicio 6</strong> · Ordinaria · Reserva 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2022-ord-res/examen.pdf" target="_blank">Examen</a></p>
 <p>En un estudio del ciclo del sueño se monitoriza la fase NO-REM (es el momento del sueño que el cuerpo utiliza para descansar físicamente). Esta fase se divide a su vez en tres momentos: Fase I (adormecimiento), Fase II (sueño ligero) y Fase III (sueño profundo). Una persona dedica el 75 % de su sueño a la fase NO-REM. Además, el tiempo que dedica a la Fase II es el doble que el de la Fase I y III juntas. Por otro lado, a la Fase III se dedica el cuádruple que a la Fase I. Si una persona ha dormido 8 horas, ¿cuántos minutos dedica a las Fases I, II y III del ciclo del sueño?</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-55-contents" aria-controls="callout-55" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-55" class="callout-55-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-56-contents" aria-controls="callout-56" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-56" class="callout-56-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Define con claridad las incógnitas <span class="math inline">\(x,y,z\)</span> y sus unidades.</li>
+<li>Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.</li>
+<li>Resuelve por Gauss o por sustitución.</li>
+<li>Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-57-contents" aria-controls="callout-57" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1037,9 +1787,10 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div id="callout-57" class="callout-57-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sean <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span> los minutos de las Fases I, II y III. Total <span class="math inline">\(8\text{ h}=480\)</span> min; NO-REM <span class="math inline">\(=0{,}75\cdot480=360\)</span> min. <span class="math display">\[\begin{cases}x+y+z=360\\ y=2(x+z)\\ z=4x\end{cases}\]</span> De las dos primeras, <span class="math inline">\(3(x+z)=360\Rightarrow x+z=120\)</span> y <span class="math inline">\(y=240\)</span>. Con <span class="math inline">\(z=4x\)</span>: <span class="math inline">\(5x=120\)</span>.</p>
+<p><strong>Planteamiento.</strong> 1. Sean <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span> los minutos dedicados a las fases I, II y III. Total: <span class="math inline">\(8\text{ h}=480\)</span> min; fase NO-REM (las tres fases): <span class="math inline">\(0{,}75\cdot480=360\)</span> min. 2. Condiciones: la suma es <span class="math inline">\(360\)</span>; la fase II es el doble que las fases I y III juntas; la fase III es el cuádruple que la I: <span class="math display">\[\begin{cases}x+y+z=360\\ y=2(x+z)\\ z=4x\end{cases}\]</span></p>
+<p><strong>Resolución.</strong> 3. Se sustituye la segunda en la primera: <span class="math inline">\((x+z)+2(x+z)=360\Rightarrow3(x+z)=360\Rightarrow x+z=120\)</span>, y así <span class="math inline">\(y=240\)</span>. 4. Con <span class="math inline">\(z=4x\)</span>: <span class="math inline">\(x+4x=120\Rightarrow5x=120\Rightarrow x=24\)</span> y <span class="math inline">\(z=96\)</span>. 5. Comprobación: <span class="math inline">\(24+240+96=360\)</span> ✓.</p>
 <p><strong>Fase I: 24 min; Fase II: 240 min; Fase III: 96 min.</strong></p>
 </div>
 </div>
@@ -1056,8 +1807,45 @@ window.Quarto = {
 <li><p>Discute el sistema según los valores de <span class="math inline">\(m\)</span>. <em>(1,75 puntos)</em></p></li>
 <li><p>Para <span class="math inline">\(m=-2\)</span> encuentra, si es posible, <span class="math inline">\(y_0\)</span> para que la solución del sistema sea <span class="math inline">\(x=\lambda\)</span>, <span class="math inline">\(y=y_0\)</span>, <span class="math inline">\(z=\lambda-\tfrac{3}{7}\)</span>. <em>(0,75 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-58-contents" aria-controls="callout-58" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-58" class="callout-58-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Teorema de Rouché-Frobenius: si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=n\)</span> (nº de incógnitas), compatible determinado; si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*&lt;n\)</span>, compatible indeterminado; si <span class="math inline">\(\operatorname{rg}A&lt;\operatorname{rg}A^*\)</span>, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-59-contents" aria-controls="callout-59" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-59" class="callout-59-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la matriz ampliada <span class="math inline">\(A^*\)</span>.</li>
+<li>Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer <span class="math inline">\(0\)</span> (en un parámetro, trátalo aparte).</li>
+<li>Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.</li>
+<li>Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-60-contents" aria-controls="callout-60" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1066,10 +1854,11 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-60" class="callout-60-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> <span class="math inline">\(|A|=-(m+2)(3m-1)\)</span>, que se anula en <span class="math inline">\(m=-2\)</span> y <span class="math inline">\(m=\tfrac13\)</span>. - <span class="math inline">\(m\neq-2,\tfrac13\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=3\)</span>: compatible determinado (SCD). - <span class="math inline">\(m=-2\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=2\)</span>: compatible indeterminado (SCI). - <span class="math inline">\(m=\tfrac13\)</span>: <span class="math inline">\(\operatorname{rg}A=2\)</span> y <span class="math inline">\(\operatorname{rg}A^*=3\)</span>: incompatible (SI).</p>
-<p><strong>b)</strong> Para <span class="math inline">\(m=-2\)</span> (SCI) las soluciones son <span class="math inline">\(x=z+\tfrac37\)</span>, <span class="math inline">\(y=\tfrac57\)</span>. Tomando <span class="math inline">\(z=\lambda-\tfrac37\)</span> resulta <span class="math inline">\(x=\lambda\)</span>.</p>
+<p><strong>a) Discusión según <span class="math inline">\(m\)</span>.</strong> 1. Determinante de la matriz de coeficientes: <span class="math inline">\(|A|=\begin{vmatrix}2&amp;3&amp;m\\1&amp;m&amp;-1\\3&amp;1&amp;-3\end{vmatrix}=-(m+2)(3m-1)\)</span>. 2. Se anula en <span class="math inline">\(m=-2\)</span> y <span class="math inline">\(m=\tfrac13\)</span>. Se aplica el teorema de Rouché-Frobenius (<span class="math inline">\(A^*\)</span> es la ampliada). 3. Si <span class="math inline">\(m\neq-2,\tfrac13\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=3\)</span>: compatible determinado (SCD). 4. Si <span class="math inline">\(m=-2\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=2&lt;3\)</span>: compatible indeterminado (SCI). 5. Si <span class="math inline">\(m=\tfrac13\)</span>: <span class="math inline">\(\operatorname{rg}A=2\)</span> y <span class="math inline">\(\operatorname{rg}A^*=3\)</span>: incompatible (SI).</p>
+<p><strong>SCD si <span class="math inline">\(m\neq-2,\tfrac13\)</span>; SCI si <span class="math inline">\(m=-2\)</span>; SI si <span class="math inline">\(m=\tfrac13\)</span>.</strong></p>
+<p><strong>b) Valor de <span class="math inline">\(y_0\)</span> para <span class="math inline">\(m=-2\)</span>.</strong> 1. El sistema es <span class="math inline">\(2x+3y-2z=3\)</span>, <span class="math inline">\(x-2y-z=-1\)</span>, <span class="math inline">\(3x+y-3z=2\)</span> y es SCI: tiene infinitas soluciones con un parámetro. 2. Resolviéndolo, las soluciones son <span class="math inline">\(x=z+\tfrac37\)</span>, <span class="math inline">\(y=\tfrac57\)</span> (la tercera ecuación es combinación de las otras dos). 3. Con <span class="math inline">\(z=\lambda-\tfrac37\)</span> se tiene <span class="math inline">\(x=\lambda\)</span>, que es justo la forma pedida. Entonces <span class="math inline">\(y\)</span> es constante.</p>
 <p><strong><span class="math inline">\(y_0=\dfrac57\)</span>.</strong></p>
 </div>
 </div>
@@ -1081,8 +1870,45 @@ window.Quarto = {
 <div id="ebau-2022-ext-res-5" class="ebau-ej">
 <p><strong>Ejercicio 5</strong> · Extraordinaria · Reserva 2022 · Bloque B · <em>(2,5 puntos)</em> · <a href="../../../assets/pau/2022-ext-res/examen.pdf" target="_blank">Examen</a></p>
 <p>La suma de los seguidores en una determinada red social de Alberto, Begoña y Carlos es de 13000 personas. Aunque Carlos perdiera una tercera parte de sus seguidores, todavía seguiría teniendo el doble de seguidores que tiene Alberto. Por otro lado, los seguidores de Alberto más la quinta parte de los seguidores de Begoña, son tantos como la mitad de los de Carlos. Calcula cuántos seguidores tiene cada uno.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-61-contents" aria-controls="callout-61" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-61" class="callout-61-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-62-contents" aria-controls="callout-62" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-62" class="callout-62-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Define con claridad las incógnitas <span class="math inline">\(x,y,z\)</span> y sus unidades.</li>
+<li>Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.</li>
+<li>Resuelve por Gauss o por sustitución.</li>
+<li>Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-63-contents" aria-controls="callout-63" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1091,9 +1917,10 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div id="callout-63" class="callout-63-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span> = seguidores de Alberto, Begoña, Carlos. <span class="math display">\[\begin{cases}A+B+C=13000\\ \tfrac23C=2A\\ A+\tfrac{B}{5}=\tfrac{C}{2}\end{cases}\]</span> De la segunda, <span class="math inline">\(C=3A\)</span>. En la tercera: <span class="math inline">\(A+\tfrac B5=\tfrac{3A}{2}\Rightarrow B=\tfrac{5A}{2}\)</span>. Primera: <span class="math inline">\(A+\tfrac52A+3A=13000\Rightarrow \tfrac{13}{2}A=13000\)</span>.</p>
+<p><strong>Planteamiento.</strong> 1. Sean <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span> los seguidores de Alberto, Begoña y Carlos. 2. «La suma es 13000»: <span class="math inline">\(A+B+C=13000\)</span>. 3. «Carlos pierde un tercio y aún tiene el doble que Alberto»: le quedan <span class="math inline">\(\tfrac23C\)</span>, luego <span class="math inline">\(\tfrac23C=2A\)</span>. 4. «Alberto más la quinta parte de Begoña son la mitad de Carlos»: <span class="math inline">\(A+\tfrac B5=\tfrac C2\)</span>. <span class="math display">\[\begin{cases}A+B+C=13000\\ \tfrac23C=2A\\ A+\tfrac{B}{5}=\tfrac{C}{2}\end{cases}\]</span></p>
+<p><strong>Resolución.</strong> 5. De la segunda, <span class="math inline">\(C=3A\)</span>. 6. En la tercera: <span class="math inline">\(A+\tfrac B5=\tfrac{3A}{2}\Rightarrow\tfrac B5=\tfrac A2\Rightarrow B=\tfrac{5A}{2}\)</span>. 7. En la primera: <span class="math inline">\(A+\tfrac52A+3A=13000\Rightarrow \tfrac{13}{2}A=13000\Rightarrow A=2000\)</span>. 8. Entonces <span class="math inline">\(B=5000\)</span> y <span class="math inline">\(C=6000\)</span>. Comprobación: <span class="math inline">\(2000+5000+6000=13000\)</span> ✓.</p>
 <p><strong>Alberto 2000, Begoña 5000 y Carlos 6000 seguidores.</strong></p>
 </div>
 </div>
@@ -1110,8 +1937,45 @@ window.Quarto = {
 <li><p>Discute el sistema según los valores de <span class="math inline">\(\alpha\)</span>. <em>(1,25 puntos)</em></p></li>
 <li><p>Para <span class="math inline">\(\alpha=1\)</span> resuelve el sistema y da una solución del mismo diferente de la solución trivial, si es posible. <em>(1,25 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-64-contents" aria-controls="callout-64" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-64" class="callout-64-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Teorema de Rouché-Frobenius: si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=n\)</span> (nº de incógnitas), compatible determinado; si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*&lt;n\)</span>, compatible indeterminado; si <span class="math inline">\(\operatorname{rg}A&lt;\operatorname{rg}A^*\)</span>, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-65-contents" aria-controls="callout-65" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-65" class="callout-65-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la matriz ampliada <span class="math inline">\(A^*\)</span>.</li>
+<li>Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer <span class="math inline">\(0\)</span> (en un parámetro, trátalo aparte).</li>
+<li>Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.</li>
+<li>Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-66-contents" aria-controls="callout-66" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1120,12 +1984,13 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-66" class="callout-66-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>La matriz de coeficientes es cuadrada; <span class="math inline">\(|M|=-2\alpha(\alpha-1)\)</span>.</p>
-<p><strong>a)</strong> Sistema homogéneo (siempre compatible): - <span class="math inline">\(\alpha\neq0,1\)</span>: <span class="math inline">\(|M|\ne0\)</span>, <span class="math inline">\(\operatorname{rg}=3\)</span>: compatible determinado (SCD), sólo la solución trivial. - <span class="math inline">\(\alpha=0\)</span> o <span class="math inline">\(\alpha=1\)</span>: <span class="math inline">\(\operatorname{rg}=2&lt;3\)</span>: compatible indeterminado (SCI), con un parámetro.</p>
-<p><strong>b)</strong> Para <span class="math inline">\(\alpha=1\)</span>: <span class="math inline">\(x+y+z=0\)</span>, <span class="math inline">\(x-y+z=0\)</span>, <span class="math inline">\(x+z=0\)</span>. Restando las dos primeras, <span class="math inline">\(y=0\)</span>, y entonces <span class="math inline">\(x=-z\)</span>:</p>
-<p><strong><span class="math inline">\((x,y,z)=(-\lambda,0,\lambda)\)</span>; una solución no trivial: <span class="math inline">\((-1,0,1)\)</span>.</strong></p>
+<p><strong>Matriz de coeficientes.</strong> Es cuadrada, con <span class="math inline">\(|M|=\begin{vmatrix}\alpha&amp;1&amp;1\\\alpha&amp;-1&amp;1\\\alpha&amp;0&amp;\alpha\end{vmatrix}=-2\alpha(\alpha-1)\)</span>, que se anula en <span class="math inline">\(\alpha=0\)</span> y <span class="math inline">\(\alpha=1\)</span>.</p>
+<p><strong>a) Discusión según <span class="math inline">\(\alpha\)</span>.</strong> Es un sistema homogéneo, así que siempre es compatible (tiene al menos la solución trivial). 1. Si <span class="math inline">\(\alpha\neq0,1\)</span>: <span class="math inline">\(|M|\ne0\)</span> y <span class="math inline">\(\operatorname{rg}M=3\)</span>: compatible determinado (SCD), solo la solución trivial. 2. Si <span class="math inline">\(\alpha=0\)</span> o <span class="math inline">\(\alpha=1\)</span>: <span class="math inline">\(|M|=0\)</span> y existe un menor no nulo de orden 2, luego <span class="math inline">\(\operatorname{rg}M=2&lt;3\)</span>: compatible indeterminado (SCI), con un parámetro libre.</p>
+<p><strong>SCD si <span class="math inline">\(\alpha\neq0,1\)</span>; SCI si <span class="math inline">\(\alpha=0\)</span> o <span class="math inline">\(\alpha=1\)</span>.</strong></p>
+<p><strong>b) Resolución para <span class="math inline">\(\alpha=1\)</span>.</strong> 1. El sistema es <span class="math inline">\(x+y+z=0\)</span>, <span class="math inline">\(x-y+z=0\)</span>, <span class="math inline">\(x+z=0\)</span>. 2. Restando las dos primeras: <span class="math inline">\(2y=0\Rightarrow y=0\)</span>. 3. Entonces <span class="math inline">\(x+z=0\)</span> (la tercera ecuación coincide): <span class="math inline">\(x=-z\)</span>. Con <span class="math inline">\(z=\lambda\)</span>:</p>
+<p><strong><span class="math inline">\((x,y,z)=(-\lambda,0,\lambda)\)</span>; una solución no trivial: <span class="math inline">\((-1,0,1)\)</span></strong> (con <span class="math inline">\(\lambda=1\)</span>).</p>
 </div>
 </div>
 </div>
@@ -1138,8 +2003,45 @@ window.Quarto = {
 <li><p>Discute el sistema según los valores de <span class="math inline">\(m\)</span>. <em>(1,75 puntos)</em></p></li>
 <li><p>Para <span class="math inline">\(m=1\)</span> resuelve el sistema, si es posible. <em>(0,75 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-67-contents" aria-controls="callout-67" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-67" class="callout-67-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Teorema de Rouché-Frobenius: si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=n\)</span> (nº de incógnitas), compatible determinado; si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*&lt;n\)</span>, compatible indeterminado; si <span class="math inline">\(\operatorname{rg}A&lt;\operatorname{rg}A^*\)</span>, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-68-contents" aria-controls="callout-68" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-68" class="callout-68-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la matriz ampliada <span class="math inline">\(A^*\)</span>.</li>
+<li>Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer <span class="math inline">\(0\)</span> (en un parámetro, trátalo aparte).</li>
+<li>Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.</li>
+<li>Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-69-contents" aria-controls="callout-69" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1148,10 +2050,11 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div id="callout-69" class="callout-69-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> <span class="math inline">\(|A|=m^2-4=(m-2)(m+2)\)</span> (matriz de coeficientes). - <span class="math inline">\(m\neq\pm2\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=3\)</span>: compatible determinado (SCD). - <span class="math inline">\(m=2\)</span>: <span class="math inline">\(\operatorname{rg}A=2\)</span> y <span class="math inline">\(\operatorname{rg}A^*=3\)</span>: incompatible (SI). - <span class="math inline">\(m=-2\)</span>: <span class="math inline">\(\operatorname{rg}A=2\)</span> y <span class="math inline">\(\operatorname{rg}A^*=3\)</span>: incompatible (SI).</p>
-<p><strong>b)</strong> Con <span class="math inline">\(m=1\)</span> (SCD): <span class="math inline">\(x-y-2z=1\)</span>, <span class="math inline">\(x+y+z=2\)</span>, <span class="math inline">\(x+2y+z=3\)</span>. Restando las dos últimas, <span class="math inline">\(y=1\)</span>; entonces <span class="math inline">\(x+z=1\)</span> y <span class="math inline">\(x-2z=2\)</span>, de donde <span class="math inline">\(z=-\tfrac13\)</span>.</p>
+<p><strong>a) Discusión según <span class="math inline">\(m\)</span>.</strong> 1. Determinante de la matriz de coeficientes: <span class="math inline">\(|A|=\begin{vmatrix}1&amp;-m&amp;-2\\1&amp;1&amp;1\\1&amp;2&amp;m\end{vmatrix}=m^2-4=(m-2)(m+2)\)</span>. 2. Se anula en <span class="math inline">\(m=2\)</span> y <span class="math inline">\(m=-2\)</span>. Se aplica el teorema de Rouché-Frobenius (<span class="math inline">\(A^*\)</span> es la ampliada). 3. Si <span class="math inline">\(m\neq\pm2\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=3\)</span>: compatible determinado (SCD). 4. Si <span class="math inline">\(m=2\)</span>: <span class="math inline">\(\operatorname{rg}A=2\)</span> y <span class="math inline">\(\operatorname{rg}A^*=3\)</span>: incompatible (SI). 5. Si <span class="math inline">\(m=-2\)</span>: <span class="math inline">\(\operatorname{rg}A=2\)</span> y <span class="math inline">\(\operatorname{rg}A^*=3\)</span>: incompatible (SI).</p>
+<p><strong>SCD si <span class="math inline">\(m\neq\pm2\)</span>; SI si <span class="math inline">\(m=2\)</span> o <span class="math inline">\(m=-2\)</span>.</strong></p>
+<p><strong>b) Resolución para <span class="math inline">\(m=1\)</span> (SCD).</strong> 1. El sistema es <span class="math inline">\(x-y-2z=1\)</span>, <span class="math inline">\(x+y+z=2\)</span>, <span class="math inline">\(x+2y+z=3\)</span>. 2. Restando las dos últimas: <span class="math inline">\(y=1\)</span>. 3. Entonces <span class="math inline">\(x+z=1\)</span> (de la segunda) y <span class="math inline">\(x-2z=2\)</span> (de la primera, con <span class="math inline">\(y=1\)</span>). Restando: <span class="math inline">\(3z=-1\Rightarrow z=-\tfrac13\)</span>, y <span class="math inline">\(x=1-z=\tfrac43\)</span>. 4. Comprobación en la primera: <span class="math inline">\(\tfrac43-1+\tfrac23=1\)</span> ✓.</p>
 <p><strong><span class="math inline">\((x,y,z)=\left(\tfrac43,\,1,\,-\tfrac13\right)\)</span>.</strong></p>
 </div>
 </div>
@@ -1171,8 +2074,45 @@ window.Quarto = {
 <li><p>Discute el sistema según los valores de <span class="math inline">\(m\)</span>. <em>(1,5 puntos)</em></p></li>
 <li><p>Resuelve el sistema para <span class="math inline">\(m=0\)</span>. ¿Hay alguna solución en la que <span class="math inline">\(x=0\)</span>? En caso afirmativo, calcúlala. En caso negativo, justifica la respuesta. <em>(1 punto)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-70-contents" aria-controls="callout-70" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-70" class="callout-70-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Teorema de Rouché-Frobenius: si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=n\)</span> (nº de incógnitas), compatible determinado; si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*&lt;n\)</span>, compatible indeterminado; si <span class="math inline">\(\operatorname{rg}A&lt;\operatorname{rg}A^*\)</span>, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-71-contents" aria-controls="callout-71" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-71" class="callout-71-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la matriz ampliada <span class="math inline">\(A^*\)</span>.</li>
+<li>Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer <span class="math inline">\(0\)</span> (en un parámetro, trátalo aparte).</li>
+<li>Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.</li>
+<li>Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-72-contents" aria-controls="callout-72" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1181,15 +2121,10 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div id="callout-72" class="callout-72-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> <span class="math inline">\(|A|=\begin{vmatrix}m&amp;2&amp;-1\\5&amp;-4&amp;2\\1&amp;3m&amp;0\end{vmatrix}=-3m(2m+5)\)</span>.</p>
-<ul>
-<li><span class="math inline">\(m\neq0\)</span> y <span class="math inline">\(m\neq-\frac52\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=3\)</span>, sistema compatible determinado (SCD).</li>
-<li><span class="math inline">\(m=0\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=2&lt;3\)</span>, sistema compatible indeterminado (SCI).</li>
-<li><span class="math inline">\(m=-\frac52\)</span>: <span class="math inline">\(\operatorname{rg}A=2\)</span> y <span class="math inline">\(\operatorname{rg}A^*=3\)</span>, sistema incompatible (SI).</li>
-</ul>
-<p><strong>b)</strong> Con <span class="math inline">\(m=0\)</span>: <span class="math inline">\(2y-z=1\)</span>, <span class="math inline">\(5x-4y+2z=0\)</span>, <span class="math inline">\(x=\frac25\)</span>. Sustituyendo <span class="math inline">\(x=\frac25\)</span>: <span class="math inline">\(z=2y-1\)</span> (ambas ecuaciones coinciden).</p>
+<p><strong>a) Discusión según <span class="math inline">\(m\)</span>.</strong> 1. Matriz de coeficientes <span class="math inline">\(A\)</span> y ampliada <span class="math inline">\(A^*\)</span> (la columna de términos independientes es <span class="math inline">\((1,0,m+\frac25)\)</span>). 2. Determinante: <span class="math inline">\(|A|=\begin{vmatrix}m&amp;2&amp;-1\\5&amp;-4&amp;2\\1&amp;3m&amp;0\end{vmatrix}=-3m(2m+5)\)</span>, que se anula en <span class="math inline">\(m=0\)</span> y <span class="math inline">\(m=-\frac52\)</span>. 3. Casos: - <span class="math inline">\(m\neq0\)</span> y <span class="math inline">\(m\neq-\frac52\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=3\)</span>, sistema compatible determinado (SCD). - <span class="math inline">\(m=0\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=2&lt;3\)</span>, sistema compatible indeterminado (SCI). - <span class="math inline">\(m=-\frac52\)</span>: <span class="math inline">\(\operatorname{rg}A=2\)</span> y <span class="math inline">\(\operatorname{rg}A^*=3\)</span>, sistema incompatible (SI).</p>
+<p><strong>b) Resolución para <span class="math inline">\(m=0\)</span>.</strong> 1. El sistema queda <span class="math inline">\(2y-z=1\)</span>, <span class="math inline">\(5x-4y+2z=0\)</span> y <span class="math inline">\(x=\frac25\)</span>. 2. Se sustituye <span class="math inline">\(x=\frac25\)</span> en la segunda: <span class="math inline">\(2-4y+2z=0\)</span>, es decir <span class="math inline">\(z=2y-1\)</span>, que es la misma relación que da la primera ecuación (por eso hay infinitas soluciones). 3. Con <span class="math inline">\(y=\lambda\)</span> como parámetro: <span class="math inline">\(z=2\lambda-1\)</span>.</p>
 <p><strong>Soluciones: <span class="math inline">\(\left(\tfrac25,\ \lambda,\ 2\lambda-1\right)\)</span>.</strong> Como <span class="math inline">\(x=\frac25\)</span> siempre, <strong>no hay ninguna solución con <span class="math inline">\(x=0\)</span></strong>.</p>
 </div>
 </div>
@@ -1200,8 +2135,45 @@ window.Quarto = {
 <p>En una empresa se fabrican tres tipos de productos plásticos: botellas, garrafas y bidones. Se utiliza como materia prima 10 kg de polietileno cada hora. Se sabe que para fabricar cada botella se necesitan 50 gramos, para cada garrafa 100 gramos y 1 kg para cada bidón.</p>
 <p>El gerente también nos dice que se debe producir el doble de botellas que de garrafas. Por último, se sabe que por motivos de capacidad de trabajo, en las máquinas se producen en total 52 productos cada hora.</p>
 <p>¿Cuántas botellas, garrafas y bidones se producen cada hora?</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-73-contents" aria-controls="callout-73" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-73" class="callout-73-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-74-contents" aria-controls="callout-74" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-74" class="callout-74-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Define con claridad las incógnitas <span class="math inline">\(x,y,z\)</span> y sus unidades.</li>
+<li>Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.</li>
+<li>Resuelve por Gauss o por sustitución.</li>
+<li>Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-75-contents" aria-controls="callout-75" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1210,11 +2182,15 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div id="callout-75" class="callout-75-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sean <span class="math inline">\(b\)</span>, <span class="math inline">\(g\)</span>, <span class="math inline">\(d\)</span> el número de botellas, garrafas y bidones por hora. Con la materia prima en gramos:</p>
-<p><span class="math display">\[\begin{cases}50b+100g+1000d=10000\\ b=2g\\ b+g+d=52\end{cases}\]</span></p>
-<p>Sustituyendo <span class="math inline">\(b=2g\)</span>: <span class="math inline">\(200g+1000d=10000\Rightarrow g+5d=50\)</span> y <span class="math inline">\(3g+d=52\)</span>. De ahí <span class="math inline">\(g=15\)</span>, <span class="math inline">\(d=7\)</span>, <span class="math inline">\(b=30\)</span> (comprobación: <span class="math inline">\(1500+1500+7000=10000\)</span> g).</p>
+<ol type="1">
+<li><strong>Incógnitas.</strong> <span class="math inline">\(b\)</span>, <span class="math inline">\(g\)</span>, <span class="math inline">\(d\)</span> = número de botellas, garrafas y bidones por hora.</li>
+<li><strong>Ecuaciones</strong> (materia prima en gramos: <span class="math inline">\(10\)</span> kg <span class="math inline">\(=10\,000\)</span> g; botella <span class="math inline">\(50\)</span> g, garrafa <span class="math inline">\(100\)</span> g, bidón <span class="math inline">\(1\,000\)</span> g): <span class="math display">\[\begin{cases}50b+100g+1000d=10000\\ b=2g\\ b+g+d=52\end{cases}\]</span></li>
+<li>Se sustituye <span class="math inline">\(b=2g\)</span> en la primera: <span class="math inline">\(200g+1000d=10000\Rightarrow g+5d=50\)</span>; en la tercera: <span class="math inline">\(3g+d=52\)</span>.</li>
+<li>Se resuelve el sistema de dos ecuaciones: <span class="math inline">\(g=15\)</span>, <span class="math inline">\(d=7\)</span> y, entonces, <span class="math inline">\(b=30\)</span>.</li>
+<li>Comprobación: <span class="math inline">\(1500+1500+7000=10000\)</span> g ✓.</li>
+</ol>
 <p><strong>30 botellas, 15 garrafas y 7 bidones cada hora.</strong></p>
 </div>
 </div>
@@ -1231,8 +2207,45 @@ window.Quarto = {
 <li><p>Calcula <span class="math inline">\(m\)</span> para que el sistema tenga infinitas soluciones y hállalas. <em>(1,5 puntos)</em></p></li>
 <li><p>Para <span class="math inline">\(m=2\)</span>, ¿existe alguna solución tal que <span class="math inline">\(z=1\)</span>? En caso afirmativo, calcúlala. En caso negativo, justifica la respuesta. <em>(1 punto)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-76-contents" aria-controls="callout-76" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-76" class="callout-76-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Teorema de Rouché-Frobenius: si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=n\)</span> (nº de incógnitas), compatible determinado; si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*&lt;n\)</span>, compatible indeterminado; si <span class="math inline">\(\operatorname{rg}A&lt;\operatorname{rg}A^*\)</span>, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-77-contents" aria-controls="callout-77" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-77" class="callout-77-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la matriz ampliada <span class="math inline">\(A^*\)</span>.</li>
+<li>Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer <span class="math inline">\(0\)</span> (en un parámetro, trátalo aparte).</li>
+<li>Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.</li>
+<li>Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-78-contents" aria-controls="callout-78" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1241,12 +2254,11 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div id="callout-78" class="callout-78-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> <span class="math inline">\(\begin{vmatrix}1&amp;1&amp;2\\3&amp;-1&amp;-2\\-1&amp;2&amp;m\end{vmatrix}=-4(m-4)\)</span>. Infinitas soluciones (SCI) cuando el determinante es nulo: <strong><span class="math inline">\(m=4\)</span></strong> (el rango es <span class="math inline">\(2\)</span> y el sistema es homogéneo, luego compatible).</p>
-<p>Con <span class="math inline">\(m=4\)</span>: de las dos primeras, <span class="math inline">\(x+y+2z=0\)</span> y <span class="math inline">\(3x-y-2z=0\)</span>; sumando, <span class="math inline">\(4x=0\Rightarrow x=0\)</span> y <span class="math inline">\(y=-2z\)</span>.</p>
+<p><strong>a) Infinitas soluciones.</strong> 1. El sistema es homogéneo: siempre es compatible. Tendrá infinitas soluciones si <span class="math inline">\(|A|=0\)</span>. 2. Determinante: <span class="math inline">\(\begin{vmatrix}1&amp;1&amp;2\\3&amp;-1&amp;-2\\-1&amp;2&amp;m\end{vmatrix}=-4(m-4)\)</span>. 3. Es nulo cuando <strong><span class="math inline">\(m=4\)</span></strong> (el rango es <span class="math inline">\(2\)</span>, menor que el número de incógnitas). 4. Resolución con <span class="math inline">\(m=4\)</span>: sumando las dos primeras, <span class="math inline">\(x+y+2z=0\)</span> y <span class="math inline">\(3x-y-2z=0\)</span> dan <span class="math inline">\(4x=0\Rightarrow x=0\)</span> y <span class="math inline">\(y=-2z\)</span>. La tercera ecuación se cumple: <span class="math inline">\(2y+4z=0\)</span>.</p>
 <p><strong><span class="math inline">\((x,y,z)=(0,-2\lambda,\lambda),\ \lambda\in\mathbb{R}\)</span></strong></p>
-<p><strong>b)</strong> Para <span class="math inline">\(m=2\)</span>, <span class="math inline">\(|A|=-4(2-4)=8\neq0\)</span>: el sistema homogéneo sólo tiene la solución trivial <span class="math inline">\((0,0,0)\)</span>.</p>
+<p><strong>b) Solución con <span class="math inline">\(z=1\)</span> para <span class="math inline">\(m=2\)</span>.</strong> 1. Para <span class="math inline">\(m=2\)</span>: <span class="math inline">\(|A|=-4(2-4)=8\neq0\)</span>. 2. Un sistema homogéneo con determinante no nulo solo tiene la solución trivial <span class="math inline">\((0,0,0)\)</span>.</p>
 <p><strong>No existe ninguna solución con <span class="math inline">\(z=1\)</span>.</strong></p>
 </div>
 </div>
@@ -1262,8 +2274,45 @@ window.Quarto = {
 <li><p>Si sabemos que el doble de la suma de los viajes por las rutas A y C es 70, ¿podemos deducir el número de viajes por cada ruta? Razona la respuesta. <em>(1,25 puntos)</em></p></li>
 <li><p>Si el doble de viajes por la ruta C es igual al número de viajes por la ruta B menos 5, ¿cuántos viajes hace por cada ruta? <em>(1,25 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-79-contents" aria-controls="callout-79" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-79" class="callout-79-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-80-contents" aria-controls="callout-80" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-80" class="callout-80-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Define con claridad las incógnitas <span class="math inline">\(x,y,z\)</span> y sus unidades.</li>
+<li>Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.</li>
+<li>Resuelve por Gauss o por sustitución.</li>
+<li>Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-81-contents" aria-controls="callout-81" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1272,12 +2321,12 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div id="callout-81" class="callout-81-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sean <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> los viajes por A, B y C: <span class="math inline">\(a+b+c=70\)</span> y <span class="math inline">\(b=a+c\)</span>.</p>
-<p><strong>a)</strong> Con <span class="math inline">\(2(a+c)=70\)</span>: <span class="math inline">\(a+c=35\)</span> y <span class="math inline">\(b=35\)</span>, lo que ya se deducía de las dos ecuaciones primeras. La tercera ecuación no aporta información nueva: rango <span class="math inline">\(2&lt;3\)</span> (sistema compatible indeterminado, SCI).</p>
+<p><strong>Incógnitas.</strong> <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> = viajes por las rutas A, B y C: <span class="math inline">\(a+b+c=70\)</span> y <span class="math inline">\(b=a+c\)</span>.</p>
+<p><strong>a) ¿Se puede deducir cada ruta?</strong> 1. Con <span class="math inline">\(2(a+c)=70\)</span>: <span class="math inline">\(a+c=35\)</span>. 2. De <span class="math inline">\(b=a+c\)</span> sale <span class="math inline">\(b=35\)</span>, que ya se deducía de las dos primeras ecuaciones (<span class="math inline">\(a+b+c=70\)</span> y <span class="math inline">\(b=a+c\)</span> dan <span class="math inline">\(2b=70\)</span>). 3. La tercera ecuación no aporta información nueva: rango <span class="math inline">\(2&lt;3\)</span> (sistema compatible indeterminado, SCI).</p>
 <p><strong>No se puede deducir:</strong> <span class="math inline">\(b=35\)</span> pero <span class="math inline">\(a+c=35\)</span> admite muchas soluciones.</p>
-<p><strong>b)</strong> <span class="math inline">\(2c=b-5\)</span> junto con <span class="math inline">\(a+b+c=70\)</span> y <span class="math inline">\(b=a+c\)</span> da <span class="math inline">\(b=35\)</span>, <span class="math inline">\(c=15\)</span>, <span class="math inline">\(a=20\)</span>.</p>
+<p><strong>b) Con <span class="math inline">\(2c=b-5\)</span>.</strong> 1. Ahora <span class="math inline">\(2c=b-5\)</span>, junto con <span class="math inline">\(a+b+c=70\)</span> y <span class="math inline">\(b=a+c\)</span>, da <span class="math inline">\(b=35\)</span>. 2. Entonces <span class="math inline">\(2c=30\Rightarrow c=15\)</span> y <span class="math inline">\(a=35-15=20\)</span>.</p>
 <p><strong>A: 20 viajes, B: 35 viajes, C: 15 viajes.</strong></p>
 </div>
 </div>
@@ -1294,8 +2343,45 @@ window.Quarto = {
 <li><p>Discute el sistema según los valores de <span class="math inline">\(m\)</span>. <em>(1,75 puntos)</em></p></li>
 <li><p>Resuelve el sistema, si es posible, para <span class="math inline">\(m=1\)</span>. <em>(0,75 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-82-contents" aria-controls="callout-82" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-82" class="callout-82-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Teorema de Rouché-Frobenius: si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=n\)</span> (nº de incógnitas), compatible determinado; si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*&lt;n\)</span>, compatible indeterminado; si <span class="math inline">\(\operatorname{rg}A&lt;\operatorname{rg}A^*\)</span>, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-83-contents" aria-controls="callout-83" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-83" class="callout-83-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la matriz ampliada <span class="math inline">\(A^*\)</span>.</li>
+<li>Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer <span class="math inline">\(0\)</span> (en un parámetro, trátalo aparte).</li>
+<li>Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.</li>
+<li>Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-84-contents" aria-controls="callout-84" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1304,11 +2390,11 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div id="callout-84" class="callout-84-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(|A|=\begin{vmatrix}1&amp;m&amp;m\\1&amp;2m&amp;m+1\\2&amp;m&amp;m\end{vmatrix}=-m(m-1)\)</span>.</p>
-<p><strong>a)</strong> - <span class="math inline">\(m\neq0,\ m\neq1\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=3\)</span>, sistema compatible determinado (SCD). - <span class="math inline">\(m=0\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=2&lt;3\)</span>, sistema compatible indeterminado (SCI). - <span class="math inline">\(m=1\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=2&lt;3\)</span>, SCI.</p>
-<p><strong>b)</strong> Para <span class="math inline">\(m=1\)</span>: <span class="math inline">\(x+y+z=1\)</span>, <span class="math inline">\(x+2y+2z=1\)</span>, <span class="math inline">\(2x+y+z=2\)</span>. Restando las dos primeras: <span class="math inline">\(y+z=0\)</span>, y entonces <span class="math inline">\(x=1\)</span>.</p>
+<p><strong>Previo.</strong> <span class="math inline">\(|A|=\begin{vmatrix}1&amp;m&amp;m\\1&amp;2m&amp;m+1\\2&amp;m&amp;m\end{vmatrix}=-m(m-1)\)</span>, que se anula en <span class="math inline">\(m=0\)</span> y <span class="math inline">\(m=1\)</span>.</p>
+<p><strong>a) Discusión según <span class="math inline">\(m\)</span>.</strong> 1. <span class="math inline">\(m\neq0,\ m\neq1\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=3\)</span>, sistema compatible determinado (SCD). 2. <span class="math inline">\(m=0\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=2&lt;3\)</span>, sistema compatible indeterminado (SCI). 3. <span class="math inline">\(m=1\)</span>: <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=2&lt;3\)</span>, SCI.</p>
+<p><strong>b) Resolución para <span class="math inline">\(m=1\)</span>.</strong> 1. El sistema es <span class="math inline">\(x+y+z=1\)</span>, <span class="math inline">\(x+2y+2z=1\)</span>, <span class="math inline">\(2x+y+z=2\)</span>. 2. Restando las dos primeras: <span class="math inline">\(y+z=0\)</span>. 3. Sustituyendo en la primera: <span class="math inline">\(x=1\)</span>. 4. Con <span class="math inline">\(z=\lambda\)</span> como parámetro: <span class="math inline">\(y=-\lambda\)</span>.</p>
 <p><strong><span class="math inline">\((x,y,z)=(1,-\lambda,\lambda),\ \lambda\in\mathbb{R}\)</span></strong></p>
 </div>
 </div>
@@ -1324,8 +2410,45 @@ window.Quarto = {
 <li><p>Calcula, de forma razonada, el precio total de dos cafés, una tostada y tres zumos de naranja. <em>(1,5 puntos)</em></p></li>
 <li><p>¿El precio de un zumo de naranja podría ser de 2 €? Razona la respuesta. <em>(1 punto)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-85-contents" aria-controls="callout-85" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-85" class="callout-85-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Teorema de Rouché-Frobenius: si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*=n\)</span> (nº de incógnitas), compatible determinado; si <span class="math inline">\(\operatorname{rg}A=\operatorname{rg}A^*&lt;n\)</span>, compatible indeterminado; si <span class="math inline">\(\operatorname{rg}A&lt;\operatorname{rg}A^*\)</span>, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-86-contents" aria-controls="callout-86" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-86" class="callout-86-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la matriz ampliada <span class="math inline">\(A^*\)</span>.</li>
+<li>Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer <span class="math inline">\(0\)</span> (en un parámetro, trátalo aparte).</li>
+<li>Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.</li>
+<li>Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-87-contents" aria-controls="callout-87" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1334,11 +2457,11 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div id="callout-87" class="callout-87-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sean <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span> los precios (€) de un café, una tostada y un zumo: <span class="math inline">\(3x+y+2z=7{,}5\)</span> y <span class="math inline">\(4x+y+z=7{,}2\)</span>.</p>
-<p><strong>a)</strong> Buscamos <span class="math inline">\(2x+y+3z\)</span>. Se cumple <span class="math inline">\((2,1,3)=2(3,1,2)-(4,1,1)\)</span>, luego el precio es <span class="math inline">\(2\cdot7{,}5-7{,}2=\)</span> <strong><span class="math inline">\(7{,}80\)</span> €</strong>.</p>
-<p><strong>b)</strong> Restando: <span class="math inline">\(x-z=-0{,}3\)</span> y <span class="math inline">\(y=8{,}4-5z\)</span>. Con <span class="math inline">\(z=2\)</span>: <span class="math inline">\(x=1{,}7\)</span> pero <span class="math inline">\(y=-1{,}6&lt;0\)</span>, imposible.</p>
+<p><strong>Incógnitas.</strong> <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span> = precios (€) de un café, una tostada y un zumo: <span class="math inline">\(3x+y+2z=7{,}5\)</span> y <span class="math inline">\(4x+y+z=7{,}2\)</span>.</p>
+<p><strong>a) Precio de <span class="math inline">\(2x+y+3z\)</span>.</strong> 1. Se busca una combinación de las dos ecuaciones que dé <span class="math inline">\((2,1,3)\)</span>: <span class="math inline">\((2,1,3)=2(3,1,2)-(4,1,1)\)</span>. 2. El precio es <span class="math inline">\(2\cdot7{,}5-7{,}2=\)</span> <strong><span class="math inline">\(7{,}80\)</span> €</strong>.</p>
+<p><strong>b) ¿Puede un zumo costar <span class="math inline">\(2\)</span> €?</strong> 1. Restando las dos ecuaciones: <span class="math inline">\(x-z=-0{,}3\)</span>, y de la segunda, <span class="math inline">\(y=8{,}4-5z\)</span>. 2. Con <span class="math inline">\(z=2\)</span>: <span class="math inline">\(x=1{,}7\)</span> pero <span class="math inline">\(y=-1{,}6&lt;0\)</span>, imposible.</p>
 <p><strong>No, un zumo no puede costar 2 €</strong> (la tostada saldría con precio negativo).</p>
 </div>
 </div>
