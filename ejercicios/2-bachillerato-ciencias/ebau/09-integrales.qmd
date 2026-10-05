@@ -5,7 +5,7 @@ lang: es
 
 Ejercicios de **Matemáticas II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *integrales*: **55 ejercicios** de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ciencias/09-integrales/index.qmd), los [ejercicios del tema](../09-integrales/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ciencias/09-integrales/index.qmd).
 
-Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **solución** paso a paso con el resultado. Inténtalo con la menor ayuda posible.
 
 
 ## 2026
@@ -20,6 +20,57 @@ Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos cl
 Dada la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=\dfrac{8e^{x}-4e^{2x}}{1+e^{x}}$, halla la primitiva de $f$ cuya gráfica tiene por tangente a la recta $y=2x+12\ln(2)$ en el punto de abscisa $x=0$. (Sugerencia: puedes hacer el cambio $e^{x}=t$).
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -46,6 +97,47 @@ a) Calcula $\displaystyle\int_{0}^{2}f(x)\,dx$. *(1,5 puntos)*
 
 b) Estudia la simetría de la función $f$ y deduce de ella el valor de $\displaystyle\int_{-2}^{2}f(x)\,dx$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -66,6 +158,21 @@ $\displaystyle\int_0^2f=\big[x-\ln(x+1)\big]_0^2$.
 **Ejercicio 1** · Extraordinaria 2026 · Parte obligatoria · *(2,5 puntos)* · [Examen](../../../assets/pau/2026-ext/examen.pdf){target="_blank"}
 
 La velocidad de crecimiento de la población de peces en un lago al cabo del tiempo, $t$ en años, viene dada por $P'(t)=20\,t\,e^{-t/10}$, siendo $P(t)$ la población de peces. Sabiendo que la población inicial es de 1000 peces, calcula cuántos tendrá el lago transcurridos 10 años.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -93,6 +200,47 @@ a) Calcula $\displaystyle\int_{0}^{\pi}f(x)\,dx$. *(2 puntos)*
 
 b) Estudia la simetría de la función $f$ y deduce de ella la relación que existe entre $\displaystyle\int_{0}^{\pi}f(x)\,dx$ y $\displaystyle\int_{-\pi}^{\pi}f(x)\,dx$. *(0,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -118,6 +266,22 @@ $$\int_{-\pi}^{\pi}f=2\int_0^\pi f=-4\pi.$$
 **Ejercicio 6** · Ordinaria 2025 · Bloque optativo 3 · *(2,5 puntos)* · [Examen A](../../../assets/pau/2025-ord/examen-a.pdf){target="_blank"} · [Examen B](../../../assets/pau/2025-ord/examen-b.pdf){target="_blank"}
 
 Halla la función $f:(0,+\infty)\to\mathbb{R}$ que pasa por los puntos $(2,e-2-2\ln(2))$ y $(1,0)$, y verifica que $f''(x)=e^{x-1}-\dfrac{1}{x}$.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -147,6 +311,58 @@ a) Esboza el recinto acotado y limitado por la gráfica de $f$ y la recta $y=a$ 
 
 b) Calcula $a>0$ para que el área del recinto acotado y limitado por la gráfica de $f$ y la recta $y=a$ sea $\dfrac43$ unidades cuadradas. *(1,75 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Representar una función.**
+
+1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -170,6 +386,47 @@ $$f(x)=\begin{cases}x\operatorname{sen}(2x) & \text{si } x\le 0\\\cos(\pi x)-1 &
 
 Calcula $\displaystyle\int_{-\pi/4}^{1}f(x)\,dx$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -190,6 +447,36 @@ $$\int_{-\pi/4}^1f=\frac14-1=\mathbf{-\frac34}.$$
 
 Calcula $\displaystyle\int_{\sqrt{3}}^{2}\dfrac{4x}{x^{4}-6x^{2}+10}\,dx$. (Sugerencia: efectúa el cambio de variable $t=x^{2}-3$).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -207,6 +494,58 @@ Sean las funciones $f,g:\mathbb{R}\to\mathbb{R}$ definidas por $f(x)=x^{3}-x$ y 
 a) Halla los puntos de corte (abscisas donde se obtienen y valores que se alcanzan) de las gráficas de $f$ y $g$. Realiza un esbozo del recinto acotado y limitado por dichas gráficas. *(1 punto)*
 
 b) Calcula el área del recinto acotado y limitado por las gráficas de $f$ y $g$. *(1,5 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Representar una función.**
+
+1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -231,6 +570,35 @@ $$A=\int_{-1}^{1}(-x^3-x^2+x+1)\,dx=2\int_0^1(-x^2+1)\,dx=2\cdot\frac23=\mathbf{
 
 Considera la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=\dfrac{1}{x^{2}+2x+2}$. Calcula una primitiva de $f$ cuya gráfica pase por el punto $\left(0,\dfrac{\pi}{4}\right)$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -247,6 +615,46 @@ $F(0)=\operatorname{arctg}1+C=\dfrac\pi4+C=\dfrac\pi4\Rightarrow C=0$.
 **Ejercicio 3** · Extraordinaria 2025 · Bloque optativo 1 · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria.pdf){target="_blank"}
 
 Calcula el valor de $k$ para que $\displaystyle\int_{1}^{3}e^{x-k}(x-2)\,dx=2$.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Hallar parámetros de una función.**
+
+Cada dato del enunciado da una ecuación: pasa por $(a,b)\Rightarrow f(a)=b$; extremo en $x=a\Rightarrow f'(a)=0$; pendiente $m$ en $x=a\Rightarrow f'(a)=m$; inflexión en $x=a\Rightarrow f''(a)=0$; área o integral dada $\Rightarrow$ igualar la integral.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Hallar parámetros de una función.**
+
+1. Lista los datos y escribe una ecuación por cada uno.
+2. Resuelve el sistema (suele ser lineal en los parámetros).
+3. Comprueba que la función resultante cumple todo, y que el extremo es del tipo pedido.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -265,6 +673,35 @@ $$\int_1^3=e^{-k}\big[0-(-2e)\big]=2e^{1-k}=2\;\Rightarrow\;e^{1-k}=1\;\Rightarr
 **Ejercicio 1** · Extraordinaria · Suplente 1 2025 · Parte obligatoria · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria_Suplente.pdf){target="_blank"}
 
 Sea $f:\mathbb{R}\to\mathbb{R}$ la función definida por $f(x)=\dfrac{x^{3}+1}{x^{2}+1}$. Calcula una primitiva de $f$ cuya gráfica pase por el punto $(0,5)$.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -290,6 +727,58 @@ a) Esboza las gráficas de dichas funciones. *(1 punto)*
 
 b) Calcula la suma de las áreas de los recintos acotados y limitados por las gráficas de dichas funciones y las rectas $x=-1$ y $x=1$. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -314,6 +803,35 @@ $$A=2\int_0^1\big(-e^{-x}+e^{x}\big)dx=2\big[e^{x}+e^{-x}\big]_0^1=\mathbf{2\lef
 
 Considera la función $f$ definida por $f(x)=\dfrac{x^{3}+2}{x^{2}-1}$, para $x\neq -1$, $x\neq 1$. Calcula una primitiva de $f$ cuya gráfica pase por el punto $(0,1)$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -330,6 +848,22 @@ $$\mathbf{F(x)=\frac{x^2}2+\frac32\ln|x-1|-\frac12\ln|x+1|+1}$$
 **Ejercicio 4** · Ordinaria 2024 · Bloque B · *(2,5 puntos)* · [Examen A](../../../assets/pau/2024-ord/examen-a.pdf){target="_blank"} · [Examen B](../../../assets/pau/2024-ord/examen-b.pdf){target="_blank"}
 
 Halla la función $f:\mathbb{R}\to\mathbb{R}$ tal que $f''(x)=x\cos(x)$ y cuya gráfica pasa por los puntos $\left(0,\dfrac{\pi}{2}\right)$ y $(\pi,2\pi)$.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -357,6 +891,58 @@ a) Calcula los puntos de corte de la gráfica de $f$ con los ejes de coordenadas
 
 b) Calcula la suma de las áreas de los recintos acotados y limitados por la gráfica de $f$ y el eje de abscisas. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Representar una función.**
+
+1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -375,6 +961,37 @@ $$A=|4|+|-4|=\mathbf{8\ u^2}.$$
 **Ejercicio 4** · Ordinaria · Reserva 2024 · Bloque B · *(2,5 puntos)* · [Examen A](../../../assets/pau/2024-ord-res/examen-a.pdf){target="_blank"} · [Examen B](../../../assets/pau/2024-ord-res/examen-b.pdf){target="_blank"}
 
 Calcula $\displaystyle\int\dfrac{e^{3x}-1}{e^{x}-3}\,dx$. (Sugerencia: efectúa el cambio de variable $t=e^{x}$.)
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -396,6 +1013,22 @@ $$\mathbf{\int\frac{e^{3x}-1}{e^x-3}\,dx=\frac{e^{2x}}2+3e^x+\frac x3+\frac{26}3
 
 Halla la función $f:(2,+\infty)\to\mathbb{R}$ que pasa por el punto $(3,-4\ln 5)$ y verifica $f'(x)=\dfrac{3x^{2}+4x+12}{x^{2}-4}$, donde $\ln$ denota la función logaritmo neperiano.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -412,6 +1045,47 @@ $$\mathbf{f(x)=3x-9+8\ln(x-2)-4\ln(x+2)}$$
 **Ejercicio 4** · Ordinaria · Suplente 2024 · Bloque B · *(2,5 puntos)* · [Examen A](../../../assets/pau/2024-ord-sup/examen-a.pdf){target="_blank"} · [Examen B](../../../assets/pau/2024-ord-sup/examen-b.pdf){target="_blank"}
 
 Sea $f:\mathbb{R}\to\mathbb{R}$ la función definida por $f(x)=(x^{2}-3x+5)e^{x}$. Halla una primitiva de $f$ cuya gráfica pase por el punto $(0,5)$.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -437,6 +1111,58 @@ a) Halla los puntos de intersección de las gráficas de $f$ y $g$. Realiza un e
 
 b) Calcula el área de dicho recinto. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Representar una función.**
+
+1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -457,6 +1183,36 @@ $$A=2\left[\int_0^2(7-x^2)\,dx-\int_0^1(1-x^2)\,dx-\int_1^2(x^2-1)\,dx\right]=2\
 **Ejercicio 4** · Extraordinaria 2024 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2024/10/2oBachCC_EBAU_Andalucia_2024-Extraordinaria.pdf){target="_blank"}
 
 Halla $\displaystyle\int_{0}^{\pi/2}e^{x}\cos(x)\,dx$.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -480,6 +1236,47 @@ $$f(x)=\begin{cases}1-e^{x} & \text{si } x\le 0\\ x\cos(x) & \text{si } x>0\end{
 
 Calcula $\displaystyle\int_{-\pi}^{\pi}f(x)\,dx$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -498,6 +1295,47 @@ $$\int_{-\pi}^{\pi}f(x)\,dx=\mathbf{\pi-3+e^{-\pi}}\approx 0{,}185.$$
 **Ejercicio 4** · Extraordinaria · Reserva 2024 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Extraordinaria_Reserva.pdf){target="_blank"}
 
 Calcula una primitiva de la función $f:(1,+\infty)\to\mathbb{R}$ definida por $f(x)=(x-1)^{2}\ln\dfrac{\sqrt{x-1}}{2}$ cuya gráfica pase por el punto $\left(5,-\dfrac72\right)$, donde $\ln$ denota la función logaritmo neperiano. (Sugerencia: efectúa el cambio de variable $x-1=t^{2}$).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -529,6 +1367,57 @@ Determina las ecuaciones de la recta tangente y de la recta normal a la gráfica
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -547,6 +1436,37 @@ En $x=\pi/4$: $f\!\left(\frac\pi4\right)=\dfrac{(\sqrt2/2)^3}{3}=\dfrac{\sqrt2}{
 **Ejercicio 4** · Extraordinaria · Suplente 2024 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/02/2oBachCC_EBAU_Andalucia_2024-Extraordinaria_Suplente.pdf){target="_blank"}
 
 Calcula $\displaystyle\int\dfrac{dx}{\sqrt{4+4e^{x}}}$. (Sugerencia: efectúa el cambio de variable $t=\sqrt{1+e^{x}}$).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -573,6 +1493,56 @@ Considera la función $f:\mathbb{R}\to\mathbb{R}$, definida por $f(x)=x\,|x-1|$.
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -594,6 +1564,20 @@ $$A=\int_0^1x^{2}dx+\int_1^2(2x-x^{2})dx=\dfrac13+\dfrac23.$$
 **Ejercicio 3** · Ordinaria · Reserva 2023 · Bloque A · *(2,5 puntos)* · [Examen A](../../../assets/pau/2023-ord-res/examen-a.pdf){target="_blank"} · [Examen B](../../../assets/pau/2023-ord-res/examen-b.pdf){target="_blank"}
 
 Calcula $\displaystyle\int_{6}^{12}\dfrac{1}{9-x^{2}}\,dx$.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -617,6 +1601,58 @@ a) Determina el punto de la gráfica de $f$ en el que la recta tangente es $y=4x
 b) Haz un esbozo del recinto limitado por la gráfica de $f$, la recta $y=4x-3$ y el eje de ordenadas. Calcula el área del recinto indicado. *(1,75 puntos)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Representar una función.**
+
+1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -644,6 +1680,22 @@ $$A=\int_0^2\left[(x^{2}+1)-(4x-3)\right]dx=\int_0^2(x-2)^{2}dx=\left[\dfrac{(x-
 
 Determina la función $f:(0,+\infty)\to\mathbb{R}$, sabiendo que es dos veces derivable, su gráfica pasa por el punto $(1,0)$, $f'(e)=e$ y $f''(x)=2\ln(x)+1$, para todo $x>0$ ($\ln$ denota la función logaritmo neperiano).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -666,6 +1718,58 @@ Considera las funciones $f,g:\mathbb{R}\to\mathbb{R}$ definidas por $f(x)=|x^{2}
 a) Calcula los puntos de corte de las gráficas de ambas funciones y esboza el recinto que determinan. *(1,25 puntos)*
 
 b) Determina el área del recinto anterior. *(1,25 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Representar una función.**
+
+1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -692,6 +1796,36 @@ $$A=\int_{-2}^{-1}(x+5-x^{2}+1)dx+\int_{-1}^{1}(x+5-1+x^{2})dx+\int_{1}^{3}(x+5-
 
 Calcula $a$ con $0<a<1$, tal que $\displaystyle\int_{a}^{1}\dfrac{\ln(x)}{x}\,dx+2=0$ ($\ln$ denota la función logaritmo neperiano).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -712,6 +1846,58 @@ Considera las funciones $f:\mathbb{R}\to\mathbb{R}$ y $g:\mathbb{R}-\{0\}\to\mat
 a) Esboza las gráficas de las dos funciones y calcula los puntos de corte entre ellas. *(1,25 puntos)*
 
 b) Calcula la suma de las áreas de los recintos limitados por las gráficas de $f$ y $g$. *(1,25 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Representar una función.**
+
+1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -747,6 +1933,58 @@ b) Calcula el área del recinto limitado por la gráfica de la función $f$, el 
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -767,6 +2005,47 @@ $$\int_0^1 2x\,e^{x^{2}}dx=\left[e^{x^{2}}\right]_0^1=e-1.$$
 **Ejercicio 4** · Extraordinaria · Reserva 2023 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Reserva.pdf){target="_blank"}
 
 Considera la función $f:[0,+\infty)\to\mathbb{R}$ definida por $f(x)=\cos(\sqrt{x})$. Calcula, si es posible, una primitiva de $f$ cuya gráfica pase por el punto $(0,5)$. Sugerencia: haz el cambio $t=\sqrt{x}$.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -790,6 +2069,47 @@ Condición $F(0)=5$: $2+C=5\Rightarrow C=3$.
 
 Calcula una primitiva de la función $f:[0,+\infty)\to\mathbb{R}$ definida por $f(x)=\operatorname{arctg}(\sqrt{x})$ cuya gráfica pase por el punto $(0,1)$ ($\operatorname{arctg}$ denota la función arco tangente). Sugerencia: efectúa el cambio $x=t^{2}$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -808,6 +2128,58 @@ Deshaciendo: $F(x)=(x+1)\operatorname{arctg}\sqrt{x}-\sqrt{x}+C$. Como $F(0)=C=1
 **Ejercicio 4** · Extraordinaria · Suplente 2023 · Bloque A · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Suplente.pdf){target="_blank"}
 
 Considera la función $f:(-1,+\infty)\to\mathbb{R}$, definida por $f(x)=\ln(x+1)$, donde $\ln$ denota el logaritmo neperiano. Calcula el área del recinto limitado por la gráfica de $f$, el eje de abscisas y la recta $x=e-1$.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -836,6 +2208,58 @@ a) Calcula los puntos de corte de la gráfica de $f$ con el eje de abscisas y es
 
 b) Halla el área del recinto limitado por la gráfica de $f$ y por el eje de abscisas. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Representar una función.**
+
+1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -857,6 +2281,35 @@ b) Halla el área del recinto limitado por la gráfica de $f$ y por el eje de ab
 
 Considera la función $f$ definida por $f(x)=\dfrac{x^{3}}{x^{2}-2x+1}$ para $x\neq 1$. Halla una primitiva de $f$ que pase por el punto $(2,6)$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -877,6 +2330,47 @@ $F(2)=2+4+0-1+C=6\Rightarrow C=1$.
 
 Considera la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=e^{x}\operatorname{sen}(2x)$. Halla la primitiva de $f$ cuya gráfica pase por el punto $(0,0)$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -896,6 +2390,58 @@ Considera las funciones $f,g:\mathbb{R}\to\mathbb{R}$ definidas por $f(x)=1-x^{2
 a) Calcula los puntos de corte de las gráficas de $f$ y $g$. Esboza el recinto que delimitan. *(1,25 puntos)*
 
 b) Determina el área del recinto anterior. *(1,25 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Representar una función.**
+
+1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -927,6 +2473,57 @@ b) Halla la ecuación de la recta tangente a la gráfica de $F$ en el punto de a
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd), [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -948,6 +2545,36 @@ Por el teorema fundamental del cálculo, $F'(x)=2x\cos x$ en $[0,2\pi]$.
 
 Calcula $\displaystyle\int_{0}^{1}x\operatorname{arctg}(x)\,dx$ (donde $\operatorname{arctg}$ denota la función arcotangente).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -966,6 +2593,36 @@ $$\int_0^1x\operatorname{arctg}x\,dx=\left[\tfrac{x^2}{2}\operatorname{arctg}x\r
 **Ejercicio 3** · Extraordinaria 2022 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau/2022-ext/examen.pdf){target="_blank"}
 
 Calcula $\displaystyle\int_{3}^{8}\dfrac{1}{\sqrt{1+x}-1}\,dx$. (Sugerencia: efectúa el cambio de variable $t=\sqrt{1+x}-1$.)
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -986,6 +2643,58 @@ Considera las funciones $f,g:\mathbb{R}\to\mathbb{R}$ definidas por $f(x)=x^{3}+
 a) Calcula los puntos de corte de las gráficas de $f$ y $g$. Esboza sus gráficas. *(1,25 puntos)*
 
 b) Determina el área del recinto limitado por las gráficas de $f$ y $g$ en el primer cuadrante. *(1,25 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Representar una función.**
+
+1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -1014,6 +2723,56 @@ Considera la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=x^{3}-x$. C
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -1031,6 +2790,36 @@ $$A=2\int_0^{\sqrt2}(2x-x^3)\,dx=2\left[x^2-\tfrac{x^4}{4}\right]_0^{\sqrt2}=2(2
 **Ejercicio 4** · Extraordinaria · Reserva 2022 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau/2022-ext-res/examen.pdf){target="_blank"}
 
 Calcula $\displaystyle\int_{0}^{3}\dfrac{x}{\sqrt{1+x}}\,dx$. (Sugerencia: efectúa el cambio de variable $t=\sqrt{1+x}$.)
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -1051,6 +2840,21 @@ $$\int_1^2\frac{t^2-1}{t}\,2t\,dt=2\int_1^2(t^2-1)\,dt=2\left[\tfrac{t^3}{3}-t\r
 
 Calcula $\displaystyle\int\dfrac{2x^{3}+2x^{2}-2x+7}{x^{2}+x-2}\,dx$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -1067,6 +2871,56 @@ Integrando:
 **Ejercicio 4** · Extraordinaria · Suplente 2022 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau/2022-ext-sup/examen.pdf){target="_blank"}
 
 Considera las funciones $f,g:\mathbb{R}\to\mathbb{R}$ definidas por $f(x)=x^{2}$ y $g(x)=a|x|$, con $a>0$. Determina el valor de $a$ para que el área total de los recintos limitados por las gráficas de ambas funciones sea de 9 unidades cuadradas.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Hallar parámetros de una función.**
+
+Cada dato del enunciado da una ecuación: pasa por $(a,b)\Rightarrow f(a)=b$; extremo en $x=a\Rightarrow f'(a)=0$; pendiente $m$ en $x=a\Rightarrow f'(a)=m$; inflexión en $x=a\Rightarrow f''(a)=0$; área o integral dada $\Rightarrow$ igualar la integral.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Hallar parámetros de una función.**
+
+1. Lista los datos y escribe una ecuación por cada uno.
+2. Resuelve el sistema (suele ser lineal en los parámetros).
+3. Comprueba que la función resultante cumple todo, y que el extremo es del tipo pedido.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -1096,6 +2950,57 @@ Halla la ecuación de la recta tangente a la gráfica de $F$ en el punto de absc
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -1115,6 +3020,36 @@ $F(1)=\displaystyle\int_0^1(2t+\sqrt t)\,dt=\left[t^2+\tfrac23t^{3/2}\right]_0^1
 **Ejercicio 4** · Ordinaria · Reserva 2021 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau/2021-ord-res/examen.pdf){target="_blank"}
 
 Calcula $\displaystyle\int_{0}^{2}\dfrac{1}{1+\sqrt{e^{x}}}\,dx$. (Sugerencia: efectúa el cambio de variable $t=\sqrt{e^{x}}$.)
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -1136,6 +3071,36 @@ $$I=\int_1^e\frac{2}{t(1+t)}\,dt=2\int_1^e\left(\frac1t-\frac1{1+t}\right)dt=2\l
 
 Calcula $\displaystyle\int_{0}^{\pi/2}\left(2\operatorname{sen}^{2}(x)-\cos^{2}(x)\right)dx$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -1156,6 +3121,58 @@ Considera las funciones $f,g:\mathbb{R}\to\mathbb{R}$ definidas por $f(x)=|x|-2$
 a) Halla los puntos de corte de las gráficas de ambas funciones y esboza el recinto que delimitan. *(1 punto)*
 
 b) Determina el área del recinto anterior. *(1,5 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Representar una función.**
+
+1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -1183,6 +3200,35 @@ $$A=2\int_0^2\bigl[(4-x^2)-(x-2)\bigr]dx=2\int_0^2(6-x-x^2)\,dx=2\left[6x-\tfrac
 
 Considera la función $f$ definida por $f(x)=\dfrac{x^{2}+1}{x^{2}-1}$ (para $x\neq -1$, $x\neq 1$). Halla una primitiva de $f$ cuya gráfica pase por el punto $(2,4)$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -1204,6 +3250,20 @@ $F(2)=2+\ln\frac13+C=4\Rightarrow C=2+\ln3$.
 **Ejercicio 4** · Extraordinaria · Reserva 2021 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau/2021-ext-res/examen.pdf){target="_blank"}
 
 Calcula $\displaystyle\int_{1}^{3}\left|x^{2}-3x+2\right|dx$.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -1228,6 +3288,58 @@ Considera la función $f:[0,+\infty)\to\mathbb{R}$ definida por $f(x)=xe^{x}$.
 a) Esboza el recinto limitado por la gráfica de $f$ y las rectas $x=2$, $y=x$. *(1 punto)*
 
 b) Determina el área del recinto anterior. *(1,5 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.**
+
+Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+**Cambio de variable:** $t=g(x)$, $dt=g'(x)\,dx$. **Por partes:** $\int u\,dv=u\,v-\int v\,du$ (regla ALPES: arcos, logaritmos, polinomios, exponenciales, senos). **Racionales:** si el grado del numerador es mayor o igual que el del denominador, se divide; después se descompone en fracciones simples $\dfrac{A}{x-a}+\dfrac{B}{x-b}$.
+
+**Integral definida (regla de Barrow).**
+
+Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.**
+
+1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Integrales: cambio de variable, partes y fracciones simples.**
+
+1. Decide el método: ¿hay una función y su derivada (cambio de variable)?, ¿un producto de tipos distintos (partes)?, ¿un cociente de polinomios (fracciones simples)?
+2. Aplica el método y simplifica; si es por partes, elige $u$ y $dv$ y repite si es necesario.
+3. Deshaz el cambio y añade $+C$.
+4. Si es definida, cambia los límites con la variable o deshaz el cambio antes de aplicar Barrow.
+5. Comprueba derivando.
+
+**Integral definida (regla de Barrow).**
+
+1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución

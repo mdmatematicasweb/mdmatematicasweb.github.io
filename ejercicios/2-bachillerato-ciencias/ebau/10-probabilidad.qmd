@@ -5,7 +5,7 @@ lang: es
 
 Ejercicios de **Matemáticas II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *probabilidad*: **7 ejercicios** de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ciencias/10-probabilidad/index.qmd), los [ejercicios del tema](../10-probabilidad/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ciencias/10-probabilidad/index.qmd).
 
-Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **solución** paso a paso con el resultado. Inténtalo con la menor ayuda posible.
 
 > Probabilidad y distribución normal **no entraron en Matemáticas II hasta la convocatoria de 2025**: los anteriores exámenes (2021–2024) no tienen ejercicios de este tema.
 
@@ -24,6 +24,35 @@ Disponemos de dos bolsas con monedas de oro y monedas de plata. En la primera ha
 a) Calcula la probabilidad de que la segunda moneda sea de oro, sabiendo que la moneda que se extrajo de la primera bolsa era de plata. *(0,75 puntos)*
 
 b) Calcula la probabilidad de que la moneda que se extrajo de la primera bolsa fuera de plata, sabiendo que la segunda moneda es de oro. *(1,75 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Probabilidad condicionada.**
+
+$P(A|B)=\dfrac{P(A\cap B)}{P(B)}$ (probabilidad de $A$ sabiendo que ocurrió $B$). Regla del producto: $P(A\cap B)=P(B)\cdot P(A|B)$. $A$ y $B$ son independientes si $P(A|B)=P(A)$.
+
+**Probabilidad total y teorema de Bayes.**
+
+Si $A_1,\dots,A_n$ forman un sistema completo de sucesos: $P(B)=\sum P(A_i)\,P(B|A_i)$ (probabilidad total) y $P(A_j|B)=\dfrac{P(A_j)\,P(B|A_j)}{P(B)}$ (Bayes).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Probabilidad condicionada.**
+
+1. Identifica qué suceso es la condición («sabiendo que», «si ha ocurrido»): va en el denominador.
+2. Calcula la intersección y la probabilidad de la condición.
+3. Divide e interpreta el resultado en palabras.
+
+**Probabilidad total y teorema de Bayes.**
+
+1. Dibuja un diagrama de árbol: primera etapa con el sistema completo, segunda con $B$ y $B^C$.
+2. Multiplica a lo largo de cada rama.
+3. Probabilidad total: suma las ramas que terminan en $B$.
+4. Bayes: divide la rama pedida entre la probabilidad total.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -64,6 +93,20 @@ a) ¿Cuál es la probabilidad de que el estudiante elegido esté en la clase A o
 
 b) Si el estudiante elegido cursaba inglés, ¿cuál es la probabilidad de que esté en la clase C? *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$P(A|B)=\dfrac{P(A\cap B)}{P(B)}$ (probabilidad de $A$ sabiendo que ocurrió $B$). Regla del producto: $P(A\cap B)=P(B)\cdot P(A|B)$. $A$ y $B$ son independientes si $P(A|B)=P(A)$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Identifica qué suceso es la condición («sabiendo que», «si ha ocurrido»): va en el denominador.
+2. Calcula la intersección y la probabilidad de la condición.
+3. Divide e interpreta el resultado en palabras.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -91,6 +134,21 @@ Tres máquinas A, B y C producen el 45 %, 30 % y 25 %, respectivamente, del tota
 a) Seleccionamos un coche al azar. Calcula la probabilidad de que sea defectuoso. *(1,25 puntos)*
 
 b) Tomamos, al azar, un coche y resulta ser defectuoso. ¿Qué máquina tiene la mayor probabilidad de haber producido dicho coche? *(1,25 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Si $A_1,\dots,A_n$ forman un sistema completo de sucesos: $P(B)=\sum P(A_i)\,P(B|A_i)$ (probabilidad total) y $P(A_j|B)=\dfrac{P(A_j)\,P(B|A_j)}{P(B)}$ (Bayes).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Dibuja un diagrama de árbol: primera etapa con el sistema completo, segunda con $B$ y $B^C$.
+2. Multiplica a lo largo de cada rama.
+3. Probabilidad total: suma las ramas que terminan en $B$.
+4. Bayes: divide la rama pedida entre la probabilidad total.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -121,6 +179,35 @@ Dos laboratorios, Virex y Borez, elaboran las dosis de la vacuna contra la gripe
 a) Halla la probabilidad de que la segunda dosis sea del laboratorio Virex. *(1,25 puntos)*
 
 b) Si la segunda dosis es del laboratorio Virex, halla la probabilidad de que la primera hubiese sido de Borez. *(1,25 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Probabilidad condicionada.**
+
+$P(A|B)=\dfrac{P(A\cap B)}{P(B)}$ (probabilidad de $A$ sabiendo que ocurrió $B$). Regla del producto: $P(A\cap B)=P(B)\cdot P(A|B)$. $A$ y $B$ son independientes si $P(A|B)=P(A)$.
+
+**Probabilidad total y teorema de Bayes.**
+
+Si $A_1,\dots,A_n$ forman un sistema completo de sucesos: $P(B)=\sum P(A_i)\,P(B|A_i)$ (probabilidad total) y $P(A_j|B)=\dfrac{P(A_j)\,P(B|A_j)}{P(B)}$ (Bayes).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Probabilidad condicionada.**
+
+1. Identifica qué suceso es la condición («sabiendo que», «si ha ocurrido»): va en el denominador.
+2. Calcula la intersección y la probabilidad de la condición.
+3. Divide e interpreta el resultado en palabras.
+
+**Probabilidad total y teorema de Bayes.**
+
+1. Dibuja un diagrama de árbol: primera etapa con el sistema completo, segunda con $B$ y $B^C$.
+2. Multiplica a lo largo de cada rama.
+3. Probabilidad total: suma las ramas que terminan en $B$.
+4. Bayes: divide la rama pedida entre la probabilidad total.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -161,6 +248,35 @@ a) ¿Cuál es la probabilidad de que el vehículo elegido sea una moto o haya re
 
 b) Si el vehículo elegido es un coche, ¿cuál es la probabilidad de que haya resultado no apto? *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Probabilidad condicionada.**
+
+$P(A|B)=\dfrac{P(A\cap B)}{P(B)}$ (probabilidad de $A$ sabiendo que ocurrió $B$). Regla del producto: $P(A\cap B)=P(B)\cdot P(A|B)$. $A$ y $B$ son independientes si $P(A|B)=P(A)$.
+
+**Probabilidad total y teorema de Bayes.**
+
+Si $A_1,\dots,A_n$ forman un sistema completo de sucesos: $P(B)=\sum P(A_i)\,P(B|A_i)$ (probabilidad total) y $P(A_j|B)=\dfrac{P(A_j)\,P(B|A_j)}{P(B)}$ (Bayes).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Probabilidad condicionada.**
+
+1. Identifica qué suceso es la condición («sabiendo que», «si ha ocurrido»): va en el denominador.
+2. Calcula la intersección y la probabilidad de la condición.
+3. Divide e interpreta el resultado en palabras.
+
+**Probabilidad total y teorema de Bayes.**
+
+1. Dibuja un diagrama de árbol: primera etapa con el sistema completo, segunda con $B$ y $B^C$.
+2. Multiplica a lo largo de cada rama.
+3. Probabilidad total: suma las ramas que terminan en $B$.
+4. Bayes: divide la rama pedida entre la probabilidad total.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -184,6 +300,20 @@ Se hace un estudio sobre el café que se consume en la cafetería de una estaci�
 a) ¿Cuál es la probabilidad de que una persona adquiera un café expreso descafeinado? *(0,75 puntos)*
 
 b) Si sabemos que el café es descafeinado, ¿cuál es la probabilidad de que sea un expreso? *(1,75 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$P(A|B)=\dfrac{P(A\cap B)}{P(B)}$ (probabilidad de $A$ sabiendo que ocurrió $B$). Regla del producto: $P(A\cap B)=P(B)\cdot P(A|B)$. $A$ y $B$ son independientes si $P(A|B)=P(A)$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Identifica qué suceso es la condición («sabiendo que», «si ha ocurrido»): va en el denominador.
+2. Calcula la intersección y la probabilidad de la condición.
+3. Divide e interpreta el resultado en palabras.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -209,6 +339,35 @@ Una empresa fabrica bolígrafos en tres provincias: Almería, Barcelona y Cácer
 a) ¿Cuál es la probabilidad de que un bolígrafo, tomado al azar, sea defectuoso? *(1 punto)*
 
 b) Si se ha escogido un bolígrafo no defectuoso, ¿cuál es la probabilidad de que provenga de Almería? *(1,5 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Probabilidad condicionada.**
+
+$P(A|B)=\dfrac{P(A\cap B)}{P(B)}$ (probabilidad de $A$ sabiendo que ocurrió $B$). Regla del producto: $P(A\cap B)=P(B)\cdot P(A|B)$. $A$ y $B$ son independientes si $P(A|B)=P(A)$.
+
+**Probabilidad total y teorema de Bayes.**
+
+Si $A_1,\dots,A_n$ forman un sistema completo de sucesos: $P(B)=\sum P(A_i)\,P(B|A_i)$ (probabilidad total) y $P(A_j|B)=\dfrac{P(A_j)\,P(B|A_j)}{P(B)}$ (Bayes).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Probabilidad condicionada.**
+
+1. Identifica qué suceso es la condición («sabiendo que», «si ha ocurrido»): va en el denominador.
+2. Calcula la intersección y la probabilidad de la condición.
+3. Divide e interpreta el resultado en palabras.
+
+**Probabilidad total y teorema de Bayes.**
+
+1. Dibuja un diagrama de árbol: primera etapa con el sistema completo, segunda con $B$ y $B^C$.
+2. Multiplica a lo largo de cada rama.
+3. Probabilidad total: suma las ramas que terminan en $B$.
+4. Bayes: divide la rama pedida entre la probabilidad total.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución

@@ -5,7 +5,7 @@ lang: es
 
 Ejercicios de **Matemáticas II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *sistemas de ecuaciones lineales*: **29 ejercicios** de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ciencias/03-sistemas-ecuaciones-lineales/index.qmd), los [ejercicios del tema](../03-sistemas-ecuaciones-lineales/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ciencias/03-sistemas-ecuaciones-lineales/index.qmd).
 
-Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **solución** paso a paso con el resultado. Inténtalo con la menor ayuda posible.
 
 
 ## 2026
@@ -24,6 +24,21 @@ $$\begin{cases}3x-y=a^{2}\\(1-a)y+2z=0\\4y+(3-a)z=a-5\end{cases}$$
 a) Discútelo según los valores de $a$. *(1,75 puntos)*
 
 b) Para $a=0$ resuelve el sistema, si es posible. *(0,75 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -54,6 +69,21 @@ a) ¿Cuánto valdrán 3 productos de tipo $A$ más 8 productos de tipo $C$? *(1,
 
 b) Determina el precio, sin descuento, de cada tipo de producto, sabiendo además que el precio del producto de tipo $C$ es el doble que el de tipo $A$. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -77,6 +107,21 @@ Precios $a,b,c$ de $A$, $B$, $C$. Datos: $0{,}9a+0{,}8b+0{,}8c=66$ (es decir, $9
 **Ejercicio 3.1** · Extraordinaria 2026 · Bloque optativo 1 · *(2,5 puntos)* · [Examen](../../../assets/pau/2026-ext/examen.pdf){target="_blank"}
 
 Una familia va al mercado semanalmente y compra tres tipos de alimentos: verdura, carne y pescado. El año pasado, en el que gastó 115 € semanales, observó que pagaba el doble en el puesto del pescado que en el de la verdura. En 2026 se ha notado un incremento de precios pues ahora gasta 19 € más que el año pasado por la misma compra, comprobando que la verdura ha subido un 12 %, la carne un 15 % y el pescado un 20 %. Calcula el precio que la familia paga semanalmente en 2026, por cada tipo de alimento.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -106,6 +151,21 @@ a) Clasifícalo y resuélvelo, si es posible. *(1,5 puntos)*
 
 b) ¿Existe alguna solución del sistema que verifique $y+z+2=0$? Razona la respuesta. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -127,6 +187,45 @@ b) ¿Existe alguna solución del sistema que verifique $y+z+2=0$? Razona la resp
 Considera las matrices $A=\begin{pmatrix}1&2&1\\0&3&1\\-2&0&0\end{pmatrix}$, $X=\begin{pmatrix}x\\y\\z\end{pmatrix}$ y $B=\begin{pmatrix}3\\3\\1\end{pmatrix}$. Discute el sistema $AX-mX=B$, según los valores del parámetro $m$.
 
 *Relacionado también con:* [Matrices](01-matrices.qmd), [Determinantes](02-determinantes.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Discusión y resolución de sistemas.**
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+
+**Propiedades de los determinantes.**
+
+$|A^t|=|A|$; $|A\cdot B|=|A|\cdot|B|$; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por $k$, el determinante se multiplica por $k$ (y $|k\cdot A|=k^n|A|$ en orden $n$); si hay dos filas proporcionales, $|A|=0$; sumar a una fila un múltiplo de otra no cambia el determinante. $|A^{-1}|=\dfrac{1}{|A|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Discusión y resolución de sistemas.**
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+
+**Propiedades de los determinantes.**
+
+1. Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.
+2. Aplica cada propiedad en orden, anotando cómo cambia el valor.
+3. Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -154,6 +253,21 @@ a) ¿Es posible determinar de forma única el precio del jersey? ¿Y el de la ca
 
 b) Si Juan hubiera esperado a las rebajas se habría gastado 57 €, pues el jersey, la camisa y el pantalón tenían un descuento del 30 %, del 40 % y del 20 %, respectivamente. Calcula el precio de cada prenda antes de las rebajas. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -175,6 +289,21 @@ Sean $j,c,p$ los precios del jersey, la camisa y el pantalón.
 **Ejercicio 1** · Extraordinaria 2025 · Parte obligatoria · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2025/07/2oBachCC_EBAU_Andalucia_2025-Extraordinaria.pdf){target="_blank"}
 
 Se sabe que la suma de tres números naturales es 22 y que la suma de cuatro veces el primero más el triple del segundo más el doble del tercero es 61. ¿Puede ser 15 uno de los tres números? En caso afirmativo, calcula los restantes. ¿Existen otras opciones?
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -209,6 +338,21 @@ a) Discute el sistema según los valores de $k$. *(1,75 puntos)*
 
 b) Para $k=1$ resuelve el sistema, si es posible. ¿Hay alguna solución en la que $y=0$? En caso afirmativo, calcúlala. En caso negativo, justifica la respuesta. *(0,75 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -235,6 +379,21 @@ Sí hay solución con $y=0$: $\lambda=1$, **$(x,y,z)=(-1,0,1)$**.
 
 Determina un número natural de tres cifras sabiendo que la suma de sus dígitos es 9, que la diferencia de dicho número con el que se obtiene al intercambiar la cifra de las centenas por la de las unidades es 198, y que si consideramos la suma entre ambos números, es decir, entre el número a determinar y el que se obtiene al intercambiar sus cifras, el resultado es 828.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -258,6 +417,21 @@ Un proveedor de perfumerías vende a sus comerciantes tres tipos de perfumes A, 
 a) ¿Cuánto tendremos que pagar por un pedido de 25 perfumes de tipo A, 10 perfumes de tipo B y 16 de tipo C? *(1,25 puntos)*
 
 b) Si añadimos que el precio de un perfume de tipo C es $\dfrac25$ del precio de una unidad de tipo A, ¿cuál es el precio de cada tipo de perfume? *(1,25 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -293,6 +467,35 @@ b) Para $m=2$ resuelve el sistema, si es posible. *(0,75 puntos)*
 
 *Relacionado también con:* [Matrices](01-matrices.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Discusión y resolución de sistemas.**
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Discusión y resolución de sistemas.**
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -322,6 +525,21 @@ $$\begin{cases}ax+y+z=1+a\\x+2y-z=1-a\\x+(1+a)y-az=0\end{cases}$$
 a) Calcula $a$ para que el sistema sea compatible indeterminado. *(1,5 puntos)*
 
 b) Resuelve el sistema, si es posible, para $a=0$. *(1 punto)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -353,6 +571,21 @@ $$\mathbf{(x,y,z)=(-1,1,0)}$$
 
 Una marca de vehículos ha vendido este mes coches de tres colores: blancos, negros y rojos. El 60 % de los coches blancos más el 50 % de los coches negros representan el 30 % de los coches vendidos. El 20 % de los coches blancos junto con el 60 % de los coches negros y el 60 % de los coches rojos representan la mitad de los coches vendidos. Se han vendido 100 coches negros más que blancos. Determina el número de coches vendidos de cada color.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -374,6 +607,21 @@ Simplificando: $3b+2n-3r=0$ y $-3b+n+r=0$. Con $n=b+100$: $r=\dfrac{5b+200}3$ y 
 **Ejercicio 5** · Ordinaria · Reserva 2023 · Bloque B · *(2,5 puntos)* · [Examen A](../../../assets/pau/2023-ord-res/examen-a.pdf){target="_blank"} · [Examen B](../../../assets/pau/2023-ord-res/examen-b.pdf){target="_blank"}
 
 Una fábrica dispone de tres líquidos $L_1$, $L_2$ y $L_3$, en los que se encuentran disueltas dos sustancias: sodio y magnesio. Cada litro del líquido $L_1$ contiene 120 mg de sodio y 90 mg de magnesio, cada litro del líquido $L_2$ contiene 100 mg de sodio y 90 mg de magnesio y cada litro del líquido $L_3$ contiene 60 mg de sodio y 180 mg de magnesio. ¿Es posible obtener un litro de un líquido mezclando distintas cantidades de $L_1$, $L_2$ y $L_3$ en el que la cantidad de sodio y de magnesio sea de 100 mg cada una? En caso afirmativo, calcula dichas cantidades.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -403,6 +651,35 @@ b) Resuelve el sistema, si es posible, para $\alpha=0$ y para $\alpha=1$. *(1 pu
 
 *Relacionado también con:* [Matrices](01-matrices.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Discusión y resolución de sistemas.**
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Discusión y resolución de sistemas.**
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -427,6 +704,21 @@ b) Resuelve el sistema, si es posible, para $\alpha=0$ y para $\alpha=1$. *(1 pu
 
 El dueño de un bar ha comprado refrescos, cerveza y vino por un importe de 500 euros sin incluir impuestos. El gasto en vino es 60 euros menos que los gastos en refrescos y cerveza conjuntamente, sin incluir impuestos. Teniendo en cuenta que los impuestos de los refrescos, la cerveza y el vino son el 6 %, el 12 % y el 30 %, respectivamente, entonces el importe total de la factura incluyendo impuestos ha ascendido a 592,4 euros. Calcula el importe, incluyendo impuestos, invertido en cada una de las bebidas.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -450,6 +742,21 @@ Con impuestos: refrescos $127{,}20$, cerveza $179{,}20$, vino $286$.
 **Ejercicio 6** · Extraordinaria · Suplente 2023 · Bloque B · *(2,5 puntos)* · [PDF del examen](https://www.ebaumatematicas.com/wp-content/uploads/2023/10/2oBachCC_EBAU_Andalucia_2023-Extraordinaria-Suplente.pdf){target="_blank"}
 
 Una plataforma de streaming se especializa en series de tres géneros: animación, ciencia ficción y comedia. Se sabe que el 30 % de las series de animación más el 50 % de las de ciencia ficción coincide con el 20 % de total de series. El 25 % de las series de animación más el 50 % de las de ciencia ficción más el 60 % de las de comedia representan la mitad del total de series. Hay 100 series menos de animación que de ciencia ficción. Halla el número de series de cada género.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -482,6 +789,21 @@ a) Discute el sistema según los valores de $m$. *(1,75 puntos)*
 
 b) Para $m=2$ resuelve el sistema, si es posible. *(0,75 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -504,6 +826,21 @@ b) Para $m=2$ resuelve el sistema, si es posible. *(0,75 puntos)*
 **Ejercicio 6** · Ordinaria · Reserva 2022 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau/2022-ord-res/examen.pdf){target="_blank"}
 
 En un estudio del ciclo del sueño se monitoriza la fase NO-REM (es el momento del sueño que el cuerpo utiliza para descansar físicamente). Esta fase se divide a su vez en tres momentos: Fase I (adormecimiento), Fase II (sueño ligero) y Fase III (sueño profundo). Una persona dedica el 75 % de su sueño a la fase NO-REM. Además, el tiempo que dedica a la Fase II es el doble que el de la Fase I y III juntas. Por otro lado, a la Fase III se dedica el cuádruple que a la Fase I. Si una persona ha dormido 8 horas, ¿cuántos minutos dedica a las Fases I, II y III del ciclo del sueño?
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -531,6 +868,21 @@ a) Discute el sistema según los valores de $m$. *(1,75 puntos)*
 
 b) Para $m=-2$ encuentra, si es posible, $y_0$ para que la solución del sistema sea $x=\lambda$, $y=y_0$, $z=\lambda-\tfrac{3}{7}$. *(0,75 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -553,6 +905,21 @@ b) Para $m=-2$ encuentra, si es posible, $y_0$ para que la solución del sistema
 **Ejercicio 5** · Extraordinaria · Reserva 2022 · Bloque B · *(2,5 puntos)* · [Examen](../../../assets/pau/2022-ext-res/examen.pdf){target="_blank"}
 
 La suma de los seguidores en una determinada red social de Alberto, Begoña y Carlos es de 13000 personas. Aunque Carlos perdiera una tercera parte de sus seguidores, todavía seguiría teniendo el doble de seguidores que tiene Alberto. Por otro lado, los seguidores de Alberto más la quinta parte de los seguidores de Begoña, son tantos como la mitad de los de Carlos. Calcula cuántos seguidores tiene cada uno.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -580,6 +947,21 @@ a) Discute el sistema según los valores de $\alpha$. *(1,25 puntos)*
 
 b) Para $\alpha=1$ resuelve el sistema y da una solución del mismo diferente de la solución trivial, si es posible. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -606,6 +988,21 @@ $$\begin{cases}x-my-2z=m\\x+y+z=2m\\x+2y+mz=3m\end{cases}$$
 a) Discute el sistema según los valores de $m$. *(1,75 puntos)*
 
 b) Para $m=1$ resuelve el sistema, si es posible. *(0,75 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -639,6 +1036,21 @@ a) Discute el sistema según los valores de $m$. *(1,5 puntos)*
 
 b) Resuelve el sistema para $m=0$. ¿Hay alguna solución en la que $x=0$? En caso afirmativo, calcúlala. En caso negativo, justifica la respuesta. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -663,6 +1075,21 @@ En una empresa se fabrican tres tipos de productos plásticos: botellas, garrafa
 El gerente también nos dice que se debe producir el doble de botellas que de garrafas. Por último, se sabe que por motivos de capacidad de trabajo, en las máquinas se producen en total 52 productos cada hora.
 
 ¿Cuántas botellas, garrafas y bidones se producen cada hora?
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -692,6 +1119,21 @@ a) Calcula $m$ para que el sistema tenga infinitas soluciones y hállalas. *(1,5
 
 b) Para $m=2$, ¿existe alguna solución tal que $z=1$? En caso afirmativo, calcúlala. En caso negativo, justifica la respuesta. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -719,6 +1161,21 @@ Una empresa de mensajería opera en tres rutas distintas A, B y C. Semanalmente 
 a) Si sabemos que el doble de la suma de los viajes por las rutas A y C es 70, ¿podemos deducir el número de viajes por cada ruta? Razona la respuesta. *(1,25 puntos)*
 
 b) Si el doble de viajes por la ruta C es igual al número de viajes por la ruta B menos 5, ¿cuántos viajes hace por cada ruta? *(1,25 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -750,6 +1207,21 @@ a) Discute el sistema según los valores de $m$. *(1,75 puntos)*
 
 b) Resuelve el sistema, si es posible, para $m=1$. *(0,75 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -778,6 +1250,21 @@ En una cafetería, tres cafés, una tostada y dos zumos de naranja cuestan 7,50 
 a) Calcula, de forma razonada, el precio total de dos cafés, una tostada y tres zumos de naranja. *(1,5 puntos)*
 
 b) ¿El precio de un zumo de naranja podría ser de 2 €? Razona la respuesta. *(1 punto)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución

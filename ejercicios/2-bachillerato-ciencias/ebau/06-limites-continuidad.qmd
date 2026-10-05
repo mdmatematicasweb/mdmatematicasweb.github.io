@@ -5,7 +5,7 @@ lang: es
 
 Ejercicios de **Matemáticas II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *límites y continuidad*: **25 ejercicios** de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ciencias/06-limites-continuidad/index.qmd), los [ejercicios del tema](../06-limites-continuidad/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ciencias/06-limites-continuidad/index.qmd).
 
-Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **solución** paso a paso con el resultado. Inténtalo con la menor ayuda posible.
 
 
 ## 2026
@@ -22,6 +22,35 @@ Determina para qué valores de $a$ el límite
 $$\lim_{x\to 0}\dfrac{e^{-ax}-(1-ax)\cos(2x)}{x^{2}}$$
 
 vale 6.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+
+**Hallar parámetros de una función.**
+
+Cada dato del enunciado da una ecuación: pasa por $(a,b)\Rightarrow f(a)=b$; extremo en $x=a\Rightarrow f'(a)=0$; pendiente $m$ en $x=a\Rightarrow f'(a)=m$; inflexión en $x=a\Rightarrow f''(a)=0$; área o integral dada $\Rightarrow$ igualar la integral.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+
+**Hallar parámetros de una función.**
+
+1. Lista los datos y escribe una ecuación por cada uno.
+2. Resuelve el sistema (suele ser lineal en los parámetros).
+3. Comprueba que la función resultante cumple todo, y que el extremo es del tipo pedido.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -47,6 +76,21 @@ Calcula el siguiente límite
 
 $$\lim_{x\to 0}\dfrac{x^{2}-\operatorname{sen}(x^{2})}{1-\cos(x)}$$
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -70,6 +114,21 @@ El cociente se comporta como $\dfrac{x^6/6}{x^2/2}=\dfrac{x^4}{3}$.
 
 Sabiendo que $\displaystyle\lim_{x\to 0}\dfrac{\operatorname{sen}(x)-ax+2-2\cos(x)}{e^{x}-x\cos(x)-1}$ es finito, calcula $a$ y el valor del límite.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -91,6 +150,21 @@ $$\lim_{x\to0}\frac{x^2+\cdots}{x^2/2+\cdots}=2.$$
 Calcula $a$ y $b$ sabiendo que
 
 $$\lim_{x\to 0}\dfrac{x\operatorname{sen}(x)+a(e^{x}-1)+\operatorname{sen}(x)}{bx^{2}+x-\operatorname{sen}(x)}=1.$$
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -121,6 +195,21 @@ $$f(x)=\begin{cases}\dfrac{x\cos(x)-a\operatorname{sen}(x)}{x^{3}} & \text{si } 
 
 Calcula $a$ y $b$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$f$ es continua en $a$ si $\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=f(a)$. Las funciones elementales son continuas en su dominio; en una función a trozos solo hay que vigilar los puntos de cambio.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Localiza los puntos problemáticos (cambios de trozo, ceros de denominadores).
+2. Calcula los dos límites laterales y $f(a)$.
+3. Iguálalos: si hay parámetros, obtienes una ecuación para cada punto.
+4. Concluye indicando el tipo de discontinuidad si no es continua (evitable o de salto).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -142,6 +231,35 @@ $$\mathbf{a=1,\quad b=\tfrac23}$$
 **Ejercicio 1** · Ordinaria · Suplente 2024 · Bloque A · *(2,5 puntos)* · [Examen A](../../../assets/pau/2024-ord-sup/examen-a.pdf){target="_blank"} · [Examen B](../../../assets/pau/2024-ord-sup/examen-b.pdf){target="_blank"}
 
 Sea $f$ la función definida por $f(x)=\dfrac{ax^{3}+bx^{2}+x-1}{x^{2}-1}$, para $x\neq\pm1$. Sabiendo que su gráfica tiene una asíntota oblicua que pasa por el punto $(0,1)$ y es paralela a la recta $y=2x$, calcula la asíntota oblicua y los valores de $a$ y $b$.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Hallar parámetros de una función.**
+
+Cada dato del enunciado da una ecuación: pasa por $(a,b)\Rightarrow f(a)=b$; extremo en $x=a\Rightarrow f'(a)=0$; pendiente $m$ en $x=a\Rightarrow f'(a)=m$; inflexión en $x=a\Rightarrow f''(a)=0$; área o integral dada $\Rightarrow$ igualar la integral.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Hallar parámetros de una función.**
+
+1. Lista los datos y escribe una ecuación por cada uno.
+2. Resuelve el sistema (suele ser lineal en los parámetros).
+3. Comprueba que la función resultante cumple todo, y que el extremo es del tipo pedido.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -166,6 +284,21 @@ Considera la función definida por $f(x)=\dfrac{ax^{3}+x-1}{x^{2}+bx-3}$, para $
 a) Calcula $a$ y $b$ para que $y=x-2$ sea una asíntota oblicua de la gráfica de $f$. *(1,5 puntos)*
 
 b) Estudia y halla las asíntotas verticales de la gráfica de $f$ cuando $a=0$ y $b=2$. *(1 punto)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -196,6 +329,21 @@ $$\lim_{x\to 0}\dfrac{a\left(\ln(1+x)-x\right)+b\left(e^{x}-1\right)+1-\cos(x)}{
 
 donde $\ln$ denota el logaritmo neperiano.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -223,6 +371,36 @@ Considera la función $F:\mathbb{R}\to\mathbb{R}$ definida por $F(x)=\displaysty
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -242,6 +420,21 @@ Con L'Hôpital: $\displaystyle\lim\dfrac{F(x)+x\operatorname{sen}(x^{2})}{2x\cos
 **Ejercicio 2** · Ordinaria · Reserva 2023 · Bloque A · *(2,5 puntos)* · [Examen A](../../../assets/pau/2023-ord-res/examen-a.pdf){target="_blank"} · [Examen B](../../../assets/pau/2023-ord-res/examen-b.pdf){target="_blank"}
 
 Sabiendo que $\displaystyle\lim_{x\to 0}\dfrac{\operatorname{sen}(x)-\ln(1+x)}{ax^{2}-x+e^{x}-\cos(2x)}=-\dfrac{1}{7}$, calcula $a$ ($\ln$ denota la función logaritmo neperiano).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -268,6 +461,35 @@ a) Calcula $a$ y $b$ para que la gráfica de $f$ pase por el punto $(1,-2)$ y te
 b) En el caso $a=5$ y $b=4$, calcula la ecuación de la recta normal a la gráfica de $f$ que pasa por el punto de abscisa $x=0$. *(1 punto)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -298,6 +520,35 @@ a) Determina $a$ sabiendo que la pendiente de la recta tangente a la gráfica de
 b) Para $a=0$, estudia y calcula las asíntotas de $f$. *(1,5 puntos)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -330,6 +581,36 @@ a) Calcula $a$ y $b$. *(1 punto)*
 
 b) Estudia y halla las asíntotas de la gráfica de $f$. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Continuidad.**
+
+$f$ es continua en $a$ si $\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=f(a)$. Las funciones elementales son continuas en su dominio; en una función a trozos solo hay que vigilar los puntos de cambio.
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Continuidad.**
+
+1. Localiza los puntos problemáticos (cambios de trozo, ceros de denominadores).
+2. Calcula los dos límites laterales y $f(a)$.
+3. Iguálalos: si hay parámetros, obtienes una ecuación para cada punto.
+4. Concluye indicando el tipo de discontinuidad si no es continua (evitable o de salto).
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -353,6 +634,21 @@ b) Estudia y halla las asíntotas de la gráfica de $f$. *(1,5 puntos)*
 
 Calcula $a$ sabiendo que $\displaystyle\lim_{x\to+\infty}\dfrac{ax}{(\ln x)^{3}+2x}=1$ (donde $\ln$ denota la función logaritmo neperiano).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -370,6 +666,21 @@ Dividiendo por $x$: $\dfrac{a}{\dfrac{(\ln x)^3}{x}+2}\to\dfrac a2$, pues $\dfra
 **Ejercicio 1** · Extraordinaria · Reserva 2022 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau/2022-ext-res/examen.pdf){target="_blank"}
 
 Calcula $a$ y $b$ sabiendo que $\displaystyle\lim_{x\to 0}\dfrac{a\operatorname{sen}(x)+x\ln(x+1)+bx^{2}}{x^{3}+x^{2}}=2$ (donde $\ln$ denota la función logaritmo neperiano).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -399,6 +710,35 @@ b) Para $\lambda=2$, calcula la ecuación de la recta tangente a la gráfica de 
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Continuidad.**
+
+$f$ es continua en $a$ si $\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=f(a)$. Las funciones elementales son continuas en su dominio; en una función a trozos solo hay que vigilar los puntos de cambio.
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Continuidad.**
+
+1. Localiza los puntos problemáticos (cambios de trozo, ceros de denominadores).
+2. Calcula los dos límites laterales y $f(a)$.
+3. Iguálalos: si hay parámetros, obtienes una ecuación para cada punto.
+4. Concluye indicando el tipo de discontinuidad si no es continua (evitable o de salto).
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -426,6 +766,35 @@ b) Calcula la ecuación de la recta normal a la gráfica de $f$ en el punto de a
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -452,6 +821,21 @@ $$n=\lim_{x\to\pm\infty}\big(f(x)-x\big)=\lim\frac{x^4-3x^2+2-x(x+2)^3}{(x+2)^3}
 
 Se sabe que la gráfica de la función $f$ definida por $f(x)=\dfrac{ax^2+bx+2}{x-1}$ (para $x\neq 1$) tiene una asíntota oblicua que pasa por el punto $(1,1)$ y tiene pendiente $2$. Calcula $a$ y $b$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -476,6 +860,35 @@ a) Calcula $a$. *(1,5 puntos)*
 b) Halla la ecuación de la recta tangente a la gráfica de $f$ en el punto de abscisa $x=-1$. *(1 punto)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Continuidad.**
+
+$f$ es continua en $a$ si $\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=f(a)$. Las funciones elementales son continuas en su dominio; en una función a trozos solo hay que vigilar los puntos de cambio.
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Continuidad.**
+
+1. Localiza los puntos problemáticos (cambios de trozo, ceros de denominadores).
+2. Calcula los dos límites laterales y $f(a)$.
+3. Iguálalos: si hay parámetros, obtienes una ecuación para cada punto.
+4. Concluye indicando el tipo de discontinuidad si no es continua (evitable o de salto).
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -503,6 +916,21 @@ $$f(x)=\begin{cases}\dfrac{\ln(e^{x}+x^{3})}{x} & \text{si } x<0\\[2mm]4x^{2}+a 
 
 ($\ln$ denota la función logaritmo neperiano). Determina $a$ y $b$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$f$ es continua en $a$ si $\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=f(a)$. Las funciones elementales son continuas en su dominio; en una función a trozos solo hay que vigilar los puntos de cambio.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Localiza los puntos problemáticos (cambios de trozo, ceros de denominadores).
+2. Calcula los dos límites laterales y $f(a)$.
+3. Iguálalos: si hay parámetros, obtienes una ecuación para cada punto.
+4. Concluye indicando el tipo de discontinuidad si no es continua (evitable o de salto).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -526,6 +954,36 @@ b) Determina los intervalos de crecimiento y de decrecimiento de $f$. *(1,25 pun
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Optimización (máximo y mínimo en un contexto).**
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Optimización (máximo y mínimo en un contexto).**
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -547,6 +1005,21 @@ $f(x)=\dfrac{e^{2x}-1}{e^{2x}+1}$.
 **Ejercicio 1** · Extraordinaria 2021 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau/2021-ext/examen.pdf){target="_blank"}
 
 Calcula $a$ y $b$ sabiendo que $\displaystyle\lim_{x\to 0}\dfrac{a\,(1-\cos(x))+b\,\operatorname{sen}(x)-2\,(e^{x}-1)}{x^{2}}=7$.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -574,6 +1047,36 @@ b) Determina los intervalos de crecimiento y de decrecimiento de $f$. *(1,25 pun
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Optimización (máximo y mínimo en un contexto).**
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Optimización (máximo y mínimo en un contexto).**
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -595,6 +1098,21 @@ $f(x)=\dfrac{x^2-10}{(x+3)(x-1)}$.
 **Ejercicio 1** · Extraordinaria · Suplente 2021 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau/2021-ext-sup/examen.pdf){target="_blank"}
 
 Sabiendo que $\displaystyle\lim_{x\to 0}\left(\dfrac{x+1}{\ln(x+1)}-\dfrac{a}{x}\right)$ es finito, calcula $a$ y el valor del límite ($\ln$ denota la función logaritmo neperiano).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -618,6 +1136,35 @@ a) Halla $a$ y $b$ sabiendo que la gráfica de $f$ pasa por el punto $(2,3)$ y t
 b) Para $a=2$ y $b=3$, calcula las ecuaciones de las rectas tangente y normal a la gráfica de $f$ en el punto de abscisa $x=1$. *(1,25 puntos)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución

@@ -5,7 +5,7 @@ lang: es
 
 Ejercicios de **Matemáticas II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *derivadas*: **11 ejercicios** de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ciencias/07-derivadas/index.qmd), los [ejercicios del tema](../07-derivadas/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ciencias/07-derivadas/index.qmd).
 
-Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **solución** paso a paso con el resultado. Inténtalo con la menor ayuda posible.
 
 
 ## 2026
@@ -22,6 +22,35 @@ Se sabe que la función $f:\mathbb{R}\to\mathbb{R}$ dada por
 $$f(x)=\begin{cases}2\,|x^{2}-1| & \text{si } x\le \tfrac12\\ax^{2}+bx & \text{si } x>\tfrac12\end{cases}$$
 
 es derivable en $x=\tfrac12$. Determina $a$ y $b$.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+
+**Derivabilidad.**
+
+$f$ derivable en $a$ si es continua en $a$ y las derivadas laterales coinciden: $f'(a^-)=f'(a^+)$. Derivable implica continua, pero no al revés.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+
+**Derivabilidad.**
+
+1. Impón primero la continuidad en el punto de cambio.
+2. Deriva cada trozo y evalúa en el punto, por la izquierda y por la derecha.
+3. Iguala las derivadas: segunda ecuación para los parámetros.
+4. Resuelve el sistema y comprueba.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -46,6 +75,36 @@ Resolviendo el sistema: $b=8$.
 Se sabe que la función $f:\mathbb{R}\longrightarrow\mathbb{R}$ definida por $f(x)=x^{3}+ax^{2}+bx+c$, verifica que: $f(1)=0$, $x=0$ es un punto crítico de la función y la recta tangente a su gráfica en $x=-1$, es paralela a la recta de ecuación $y+3x=0$. Determina $a$, $b$ y $c$.
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Recta tangente.**
+
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+
+**Optimización (máximo y mínimo en un contexto).**
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Recta tangente.**
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
+2. Evalúa $f'(a)$ (la pendiente).
+3. Sustituye en la ecuación punto-pendiente.
+4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
+
+**Optimización (máximo y mínimo en un contexto).**
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -79,6 +138,36 @@ b) Determina los intervalos de crecimiento y de decrecimiento de la función $f$
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Recta tangente.**
+
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+
+**Optimización (máximo y mínimo en un contexto).**
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Recta tangente.**
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
+2. Evalúa $f'(a)$ (la pendiente).
+3. Sustituye en la ecuación punto-pendiente.
+4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
+
+**Optimización (máximo y mínimo en un contexto).**
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -104,6 +193,46 @@ a) Estudia la derivabilidad de $f$. *(1,5 puntos)*
 b) Halla los intervalos de crecimiento y de decrecimiento de $f$. *(1 punto)*
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+
+**Derivabilidad.**
+
+$f$ derivable en $a$ si es continua en $a$ y las derivadas laterales coinciden: $f'(a^-)=f'(a^+)$. Derivable implica continua, pero no al revés.
+
+**Optimización (máximo y mínimo en un contexto).**
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+
+**Derivabilidad.**
+
+1. Impón primero la continuidad en el punto de cambio.
+2. Deriva cada trozo y evalúa en el punto, por la izquierda y por la derecha.
+3. Iguala las derivadas: segunda ecuación para los parámetros.
+4. Resuelve el sistema y comprueba.
+
+**Optimización (máximo y mínimo en un contexto).**
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -133,6 +262,36 @@ a) Determina, si existen, los puntos de la gráfica de $f$ en los que la recta t
 b) Determina la ecuación de la recta normal a la gráfica de $f$ en el punto $A$. *(1 punto)*
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Recta tangente.**
+
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+
+**Optimización (máximo y mínimo en un contexto).**
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Recta tangente.**
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
+2. Evalúa $f'(a)$ (la pendiente).
+3. Sustituye en la ecuación punto-pendiente.
+4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
+
+**Optimización (máximo y mínimo en un contexto).**
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -164,6 +323,57 @@ b) Halla la ecuación de la recta tangente y de la recta normal a la gráfica de
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+
+**Recta tangente.**
+
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+
+**Derivabilidad.**
+
+$f$ derivable en $a$ si es continua en $a$ y las derivadas laterales coinciden: $f'(a^-)=f'(a^+)$. Derivable implica continua, pero no al revés.
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+
+**Recta tangente.**
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
+2. Evalúa $f'(a)$ (la pendiente).
+3. Sustituye en la ecuación punto-pendiente.
+4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
+
+**Derivabilidad.**
+
+1. Impón primero la continuidad en el punto de cambio.
+2. Deriva cada trozo y evalúa en el punto, por la izquierda y por la derecha.
+3. Iguala las derivadas: segunda ecuación para los parámetros.
+4. Resuelve el sistema y comprueba.
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -191,6 +401,21 @@ Sea $f:\mathbb{R}\to\mathbb{R}$ la función definida por
 $$f(x)=a+b\cos(x)+c\operatorname{sen}(x).$$
 
 Halla $a$, $b$ y $c$ sabiendo que su gráfica tiene en el punto de abscisa $x=\dfrac{\pi}{2}$ a la recta $y=1$ como recta tangente, y que la recta $y=x-1$ corta a la gráfica de $f$ en el punto de abscisa $x=0$.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
+2. Evalúa $f'(a)$ (la pendiente).
+3. Sustituye en la ecuación punto-pendiente.
+4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -225,6 +450,57 @@ a) Calcula $a$ y $b$. *(1,25 puntos)*
 b) Para $a=-1$ y $b=4$, estudia si existe la derivada de $f$ en $x=2$. En caso afirmativo, calcula la ecuación de la recta tangente a la gráfica de $f$ en dicho punto. *(1,25 puntos)*
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+
+**Recta tangente.**
+
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+
+**Continuidad.**
+
+$f$ es continua en $a$ si $\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=f(a)$. Las funciones elementales son continuas en su dominio; en una función a trozos solo hay que vigilar los puntos de cambio.
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+
+**Recta tangente.**
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
+2. Evalúa $f'(a)$ (la pendiente).
+3. Sustituye en la ecuación punto-pendiente.
+4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
+
+**Continuidad.**
+
+1. Localiza los puntos problemáticos (cambios de trozo, ceros de denominadores).
+2. Calcula los dos límites laterales y $f(a)$.
+3. Iguálalos: si hay parámetros, obtienes una ecuación para cada punto.
+4. Concluye indicando el tipo de discontinuidad si no es continua (evitable o de salto).
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -261,6 +537,57 @@ b) Halla las ecuaciones de las rectas tangente y normal a la gráfica de $f$ en 
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+
+**Recta tangente.**
+
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+
+**Derivabilidad.**
+
+$f$ derivable en $a$ si es continua en $a$ y las derivadas laterales coinciden: $f'(a^-)=f'(a^+)$. Derivable implica continua, pero no al revés.
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+
+**Recta tangente.**
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
+2. Evalúa $f'(a)$ (la pendiente).
+3. Sustituye en la ecuación punto-pendiente.
+4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
+
+**Derivabilidad.**
+
+1. Impón primero la continuidad en el punto de cambio.
+2. Deriva cada trozo y evalúa en el punto, por la izquierda y por la derecha.
+3. Iguala las derivadas: segunda ecuación para los parámetros.
+4. Resuelve el sistema y comprueba.
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -283,6 +610,36 @@ Tangente: **$y=\ln3+\dfrac13(x-2)$**. Normal: **$y=\ln3-3(x-2)$**.
 Halla $a$, $b$ y $c$ sabiendo que la función $f:\mathbb{R}\to\mathbb{R}$ dada por $f(x)=a+b\operatorname{sen}(x)+c\operatorname{sen}(2x)$ tiene un punto crítico en el punto de abscisa $x=\pi$ y la recta $y=-\dfrac12x+3$ es normal a la gráfica de $f$ en el punto de abscisa $x=0$.
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Recta tangente.**
+
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+
+**Optimización (máximo y mínimo en un contexto).**
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Recta tangente.**
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
+2. Evalúa $f'(a)$ (la pendiente).
+3. Sustituye en la ecuación punto-pendiente.
+4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
+
+**Optimización (máximo y mínimo en un contexto).**
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -312,6 +669,36 @@ a) Calcula $a$ para que la recta tangente a la gráfica de $f$ en el punto $(a,f
 b) Calcula el área del recinto limitado por la gráfica de $f$, la recta tangente a la misma en el punto $(1,f(1))$ y el eje de ordenadas. *(1,25 puntos)*
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Recta tangente.**
+
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Recta tangente.**
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
+2. Evalúa $f'(a)$ (la pendiente).
+3. Sustituye en la ecuación punto-pendiente.
+4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
