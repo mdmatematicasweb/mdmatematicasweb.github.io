@@ -61,17 +61,23 @@ Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f(t)=\displaystyle\int\left(400+30\sqrt t\right)dt=400t+20t^{3/2}+K$ y $f(0)=90\,000$, luego $K=90\,000$: $f(t)=90\,000+400t+20t\sqrt t$.
-
-$f(9)=90\,000+3\,600+20\cdot27=94\,140$.
+**a) Población dentro de 9 meses.**
+1. Se obtiene $f$ integrando su derivada: $f(t)=\displaystyle\int\left(400+30\sqrt t\right)dt=400t+20t^{3/2}+K$.
+2. Condición inicial $f(0)=90\,000$: $K=90\,000$, es decir, $f(t)=90\,000+400t+20t\sqrt t$.
+3. $f(9)=90\,000+3\,600+20\cdot27=94\,140$.
 
 **Dentro de 9 meses habrá $94\,140$ habitantes.**
 
-**b)** $\displaystyle\int_9^{16}f'(t)\,dt=f(16)-f(9)=(90\,000+6\,400+1\,280)-94\,140=97\,680-94\,140=3\,540$.
+**b) Integral de la derivada.**
+1. Regla de Barrow: $\displaystyle\int_9^{16}f'(t)\,dt=f(16)-f(9)$.
+2. $f(16)=90\,000+6\,400+1\,280=97\,680$, luego
+$$\int_9^{16}f'(t)\,dt=f(16)-f(9)=(90\,000+6\,400+1\,280)-94\,140=97\,680-94\,140=3\,540.$$
 
 **Es el aumento de población entre el mes $9$ y el mes $16$: la localidad gana $3\,540$ habitantes.**
 
-**c)** Tres años son $36$ meses. $f(36)-f(0)=400\cdot36+20\cdot216=14\,400+4\,320=18\,720$ nuevos habitantes.
+**c) Ayuda total.**
+1. Tres años son $36$ meses. Nuevos habitantes: $f(36)-f(0)=400\cdot36+20\cdot216=14\,400+4\,320=18\,720$.
+2. Ayuda: $18\,720\cdot150$.
 
 **Ayuda: $18\,720\cdot150=2\,808\,000$ €.**
 ::::
@@ -126,13 +132,23 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f(x)=-x(x-6)$ es una parábola abierta hacia abajo con vértice $(3,9)$ que corta al eje $OX$ en $x=0$ y $x=6$; $g(x)=\dfrac{x^2}{5}$ es una parábola abierta hacia arriba con vértice en el origen. Se cortan donde $-x^2+6x=\dfrac{x^2}{5}\iff6x=\dfrac{6}{5}x^2\iff x=0$ o $x=5$, en los puntos $(0,0)$ y $(5,5)$. La superficie es la región entre ambas, con $f$ por encima de $g$.
+**a) Gráfica de la superficie.**
+1. $f(x)=-x(x-6)$ es una parábola abierta hacia abajo con vértice $(3,9)$ que corta al eje $OX$ en $x=0$ y $x=6$.
+2. $g(x)=\dfrac{x^2}{5}$ es una parábola abierta hacia arriba con vértice en el origen.
+3. Puntos de corte: $-x^2+6x=\dfrac{x^2}{5}\iff6x=\dfrac{6}{5}x^2\iff x=0$ o $x=5$, es decir, $(0,0)$ y $(5,5)$.
+4. La superficie es la región entre ambas, con $f$ por encima de $g$.
 
 ![Superficie de ampliación: región entre las parábolas f(x)=−x²+6x y g(x)=x²/5, que se cortan en (0,0) y (5,5)](fig/2024-ord-sup-a-e3.svg){fig-alt="Superficie de ampliación: región entre las parábolas f(x)=−x²+6x y g(x)=x²/5, que se cortan en (0,0) y (5,5)" width="75%" fig-align="center"}
 
-**b)** $A=\displaystyle\int_0^5\left(-x^2+6x-\frac{x^2}{5}\right)dx=\int_0^5\left(-\frac{6}{5}x^2+6x\right)dx=\left[-\frac{2x^3}{5}+3x^2\right]_0^5=-50+75=25$.
+**b) Área y coste.**
+1. Área entre las curvas: integral de la función de arriba menos la de abajo.
+2. Barrow:
+$$A=\displaystyle\int_0^5\left(-x^2+6x-\frac{x^2}{5}\right)dx=\int_0^5\left(-\frac{6}{5}x^2+6x\right)dx=\left[-\frac{2x^3}{5}+3x^2\right]_0^5=-50+75=25.$$
+3. Unidades: $1$ dam$^2=100$ m$^2$.
 
-**El área es de $25$ dam$^2$, es decir, $2\,500$ m$^2$ ($1$ dam$^2=100$ m$^2$).** Coste: $2\,500\cdot75=187\,500$ €.
+**El área es de $25$ dam$^2$, es decir, $2\,500$ m$^2$.**
+
+4. Coste: $2\,500\cdot75=187\,500$ €.
 ::::
 :::::
 
@@ -188,13 +204,18 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Las gráficas se cortan donde $(x-1)^2=5-2x\iff x^2=4\iff x=\pm2$, en los puntos $(-2,9)$ y $(2,1)$. La zona deteriorada es el recinto entre la parábola $y=(x-1)^2$ (vértice $(1,0)$) y la recta $y=5-2x$ (que pasa por $\left(0,5\right)$ y $\left(\tfrac{5}{2},0\right)$), con la recta por encima de la parábola, para $-2\le x\le2$.
+**a) Zona deteriorada.**
+1. Puntos de corte: $(x-1)^2=5-2x\iff x^2=4\iff x=\pm2$, es decir, $(-2,9)$ y $(2,1)$.
+2. La parábola $y=(x-1)^2$ tiene vértice en $(1,0)$ y la recta $y=5-2x$ pasa por $(0,5)$ y $\left(\tfrac{5}{2},0\right)$.
+3. La zona deteriorada es el recinto entre ambas, con la recta por encima de la parábola, para $-2\le x\le2$.
 
 ![Zona deteriorada: región entre la parábola f(x)=(x−1)² y la recta g(x)=5−2x, que se cortan en (−2,9) y (2,1)](fig/2023-ord-b-e3.svg){fig-alt="Zona deteriorada: región entre la parábola f(x)=(x−1)² y la recta g(x)=5−2x, que se cortan en (−2,9) y (2,1)" width="75%" fig-align="center"}
 
-**b)** Área quemada:
+**b) Coste del plástico.**
+1. Área quemada (recta menos parábola):
 $$A=\int_{-2}^{2}\left[(5-2x)-(x-1)^2\right]dx=\int_{-2}^{2}\left(4-x^2\right)dx=\left[4x-\frac{x^3}{3}\right]_{-2}^{2}=\frac{32}{3}\ \text{m}^2.$$
-Si se desperdicia la tercera parte del plástico comprado, lo aprovechado es $\dfrac{2}{3}$ de lo comprado: $\dfrac{2}{3}C=\dfrac{32}{3}\Rightarrow C=16\ \text{m}^2$.
+2. Si se desperdicia la tercera parte del plástico comprado, lo aprovechado es $\dfrac{2}{3}$ de lo comprado: $\dfrac{2}{3}C=\dfrac{32}{3}\Rightarrow C=16\ \text{m}^2$.
+3. A $15$ €/m²: $16\cdot15=240$.
 
 **Coste: $16\cdot15=240$ €.**
 ::::

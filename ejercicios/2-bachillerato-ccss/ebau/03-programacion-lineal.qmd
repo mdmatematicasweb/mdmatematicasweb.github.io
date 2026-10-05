@@ -51,15 +51,23 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ los m$^2$ de tablero DM e $y$ los de aglomerado. Restricciones: $x\le12$; $y\le18$; $x+y\le26$; madera $10x+30y\le600\iff x+3y\le60$; $x\ge0$, $y\ge0$. Beneficio: $B(x,y)=10x+20y$.
-
-Vértices: $(0,0)$, $(0,18)$, $(6,18)$ (corte de $y=18$ con $x+3y=60$), $(9,17)$ (corte de $x+y=26$ con $x+3y=60$), $(12,14)$ (corte de $x=12$ con $x+y=26$) y $(12,0)$.
+1. **Incógnitas.** $x$ = m$^2$ de tablero DM e $y$ = m$^2$ de aglomerado al día.
+2. **Restricciones.**
+   - Máximo de cada tablero: $x\le12$ e $y\le18$.
+   - Capacidad conjunta: $x+y\le26$.
+   - Madera: $10x+30y\le600\iff x+3y\le60$.
+   - No negatividad: $x\ge0$, $y\ge0$.
+3. **Función objetivo.** Beneficio: $B(x,y)=10x+20y$.
+4. **Vértices:** $(0,0)$, $(0,18)$, $(6,18)$ (corte de $y=18$ con $x+3y=60$), $(9,17)$ (corte de $x+y=26$ con $x+3y=60$), $(12,14)$ (corte de $x=12$ con $x+y=26$) y $(12,0)$.
+5. **Valor de $B$ en cada vértice:**
 
 | Vértice | $(0,0)$ | $(0,18)$ | $(6,18)$ | $(9,17)$ | $(12,14)$ | $(12,0)$ |
 |---|---|---|---|---|---|---|
 | $B$ | $0$ | $360$ | $420$ | $430$ | $400$ | $120$ |
 
 ![Región factible del ejercicio 1B (2026-ord), con sus vértices: (0, 0), (12, 0), (12, 14), (9, 17), (6, 18), (0, 18)](fig/2026-ord-e1b.svg){fig-alt="Región factible del ejercicio 1B (2026-ord), con sus vértices: (0, 0), (12, 0), (12, 14), (9, 17), (6, 18), (0, 18)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El máximo es $430$, en $(9,17)$: se agotan la capacidad conjunta ($9+17=26$) y la madera ($90+510=600$).
 
 **Deben producirse $9$ m$^2$ de tablero DM y $17$ m$^2$ de aglomerado, con un beneficio máximo de $430$ €.**
 ::::
@@ -112,9 +120,16 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Sean $x$ las unidades de $P_1$ e $y$ las de $P_2$. Restricciones: energía $10x+5y\le3\,500\iff2x+y\le700$; capital $5x\le1\,300\iff x\le260$; mano de obra (ayuda) $10x+20y\ge4\,200\iff x+2y\ge420$; $x\ge0$, $y\ge0$. Ingresos: $I(x,y)=800x+400y$.
-
-Vértices: $(0,210)$ (corte de $x=0$ con $x+2y=420$), $(0,700)$ (corte de $x=0$ con $2x+y=700$), $(260,180)$ (corte de $x=260$ con $2x+y=700$) y $(260,80)$ (corte de $x=260$ con $x+2y=420$).
+**a) Ingreso máximo.**
+1. **Incógnitas.** $x$ = unidades de $P_1$ e $y$ = unidades de $P_2$ al año.
+2. **Restricciones.**
+   - Energía: $10x+5y\le3\,500\iff2x+y\le700$.
+   - Capital (solo lo usa $P_1$): $5x\le1\,300\iff x\le260$.
+   - Mano de obra, al menos $4\,200$ horas para la ayuda: $10x+20y\ge4\,200\iff x+2y\ge420$.
+   - No negatividad: $x\ge0$, $y\ge0$.
+3. **Función objetivo.** Ingresos: $I(x,y)=800x+400y$.
+4. **Vértices:** $(0,210)$ (corte de $x=0$ con $x+2y=420$), $(0,700)$ (corte de $x=0$ con $2x+y=700$), $(260,180)$ (corte de $x=260$ con $2x+y=700$) y $(260,80)$ (corte de $x=260$ con $x+2y=420$).
+5. **Valor de $I$ en cada vértice:**
 
 | Vértice | $(0,210)$ | $(0,700)$ | $(260,180)$ | $(260,80)$ |
 |---|---|---|---|---|
@@ -122,9 +137,15 @@ Vértices: $(0,210)$ (corte de $x=0$ con $x+2y=420$), $(0,700)$ (corte de $x=0$ 
 
 ![Región factible del ejercicio 1 (2026-ord-sup1), con sus vértices: (0, 210), (260, 80), (260, 180), (0, 700)](fig/2026-ord-sup1-e1.svg){fig-alt="Región factible del ejercicio 1 (2026-ord-sup1), con sus vértices: (0, 210), (260, 80), (260, 180), (0, 700)" width="75%" fig-align="center"}
 
-El máximo se alcanza en dos vértices, $(0,700)$ y $(260,180)$, porque $I=400(2x+y)$ y la recta de la energía $2x+y=700$ es paralela a las rectas de nivel: **el ingreso óptimo es de $280\,000$ € y se alcanza en todos los puntos del segmento que une $(0,700)$ y $(260,180)$** (por ejemplo, $260$ unidades de $P_1$ y $180$ de $P_2$, o $0$ de $P_1$ y $700$ de $P_2$).
+6. **Conclusión.** El máximo se alcanza en dos vértices, $(0,700)$ y $(260,180)$, porque $I=400(2x+y)$ y la recta de la energía $2x+y=700$ es paralela a las rectas de nivel.
 
-**b)** **Sí:** fabricando solo $P_2$, $700$ unidades, se agota la energía ($5\cdot700=3\,500$), se cumplen las horas ($20\cdot700=14\,000\ge4\,200$) y el ingreso es $400\cdot700=280\,000$ €. (Fabricando solo $P_1$ no es posible: como mucho $260$ unidades y $208\,000$ €.)
+**El ingreso óptimo es de $280\,000$ € y se alcanza en todos los puntos del segmento que une $(0,700)$ y $(260,180)$** (por ejemplo, $260$ unidades de $P_1$ y $180$ de $P_2$, o $0$ de $P_1$ y $700$ de $P_2$).
+
+**b) ¿Un único producto?**
+1. Solo $P_2$ ($x=0$, $y=700$): se agota la energía ($5\cdot700=3\,500$), se cumplen las horas ($20\cdot700=14\,000\ge4\,200$) y el ingreso es $400\cdot700=280\,000$ €.
+2. Solo $P_1$ ($y=0$): como mucho $x=260$ unidades, con $800\cdot260=208\,000$ € $<280\,000$ €.
+
+**Sí:** fabricando solo $P_2$, $700$ unidades, se alcanza el máximo. Con solo $P_1$ no es posible.
 ::::
 :::::
 
@@ -162,17 +183,24 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Rectas frontera: $4x+2y=5$, $2x+5y=9$, $x+y=3$ e $y=0$. Los vértices de la región factible son
+**a) Región factible y vértices.**
+1. Rectas frontera: $4x+2y=5$, $2x+5y=9$, $x+y=3$ e $y=0$.
+2. En cada una se sombrea el semiplano que cumple la desigualdad y se toma la zona común.
+3. Los vértices de la región factible son
 $$\left(\tfrac{7}{16},\tfrac{13}{8}\right),\quad\left(\tfrac{5}{4},0\right),\quad(3,0),\quad(2,1),$$
 con $\left(\tfrac{7}{16},\tfrac{13}{8}\right)$ el corte de $4x+2y=5$ con $2x+5y=9$, $\left(\tfrac{5}{4},0\right)$ el de $4x+2y=5$ con $y=0$, $(3,0)$ el de $x+y=3$ con $y=0$ y $(2,1)$ el de $x+y=3$ con $2x+5y=9$.
 
 ![Región factible del ejercicio 1B (2026-ord-sup2), con sus vértices: (1,25, 0), (3, 0), (2, 1), (0,44, 1,62)](fig/2026-ord-sup2-e1b.svg){fig-alt="Región factible del ejercicio 1B (2026-ord-sup2), con sus vértices: (1,25, 0), (3, 0), (2, 1), (0,44, 1,62)" width="75%" fig-align="center"}
 
-**b)** Con $x=1$: $4+2y\ge5\Rightarrow y\ge\dfrac{1}{2}$; $2+5y\le9\Rightarrow y\le\dfrac{7}{5}$; $1+y\le3\Rightarrow y\le2$. Por ejemplo, **$(1,1)$** pertenece a la región ($6\ge5$, $7\le9$, $2\le3$).
+**b) Un punto con abscisa $x=1$.**
+1. Con $x=1$: $4+2y\ge5\Rightarrow y\ge\dfrac{1}{2}$; $2+5y\le9\Rightarrow y\le\dfrac{7}{5}$; $1+y\le3\Rightarrow y\le2$.
+2. Vale cualquier $y$ entre $\dfrac{1}{2}$ y $\dfrac{7}{5}$. Por ejemplo, **$(1,1)$** pertenece a la región ($6\ge5$, $7\le9$, $2\le3$).
 
-**c)** $f\left(\tfrac{7}{16},\tfrac{13}{8}\right)=\tfrac{5}{2}$, $f\left(\tfrac{5}{4},0\right)=\tfrac{5}{2}$, $f(3,0)=6$ y $f(2,1)=5$.
+**c) Máximo y mínimo de $f=2x+y$.**
+1. Se evalúa $f$ en los vértices: $f\left(\tfrac{7}{16},\tfrac{13}{8}\right)=\tfrac{5}{2}$, $f\left(\tfrac{5}{4},0\right)=\tfrac{5}{2}$, $f(3,0)=6$ y $f(2,1)=5$.
+2. Dos vértices dan el mismo valor mínimo: $f=2x+y$ tiene las rectas de nivel paralelas a $4x+2y=5$.
 
-**Máximo $6$, en el punto $(3,0)$. Mínimo $\dfrac{5}{2}$, que se alcanza en $\left(\tfrac{7}{16},\tfrac{13}{8}\right)$ y en $\left(\tfrac{5}{4},0\right)$ y, por tanto, en todo el segmento que los une** ($f=2x+y$ es paralela a la recta $4x+2y=5$).
+**Máximo $6$, en el punto $(3,0)$. Mínimo $\dfrac{5}{2}$, que se alcanza en $\left(\tfrac{7}{16},\tfrac{13}{8}\right)$ y en $\left(\tfrac{5}{4},0\right)$ y, por tanto, en todo el segmento que los une.**
 ::::
 :::::
 
@@ -217,15 +245,24 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ los kg de orégano e $y$ los de pimienta por semana. Horno: $24\cdot5=120$ h. Envasado: $4\cdot40=160$ h. Restricciones: secado $2x+y\le120$; envasado $2x+5y\le160$; producción mínima $x+y\ge35$; $x\ge0$, $y\ge0$. Beneficio por kg: orégano $50-5=45$ €, pimienta $70-7=63$ €: $B(x,y)=45x+63y$.
-
-Vértices: $(5,30)$ (corte de $x+y=35$ con $2x+5y=160$), $(35,0)$ (corte de $x+y=35$ con $y=0$), $(60,0)$ (corte de $2x+y=120$ con $y=0$) y $(55,10)$ (corte de $2x+y=120$ con $2x+5y=160$).
+1. **Incógnitas.** $x$ = kg de orégano e $y$ = kg de pimienta por semana.
+2. **Horas disponibles.** Horno: $24\cdot5=120$ h. Envasado: $4\cdot40=160$ h.
+3. **Restricciones.**
+   - Secado: $2x+y\le120$.
+   - Envasado: $2x+5y\le160$.
+   - Producción mínima: $x+y\ge35$.
+   - No negatividad: $x\ge0$, $y\ge0$.
+4. **Función objetivo.** Beneficio por kg (precio − coste): orégano $50-5=45$ €, pimienta $70-7=63$ €. Así $B(x,y)=45x+63y$.
+5. **Vértices:** $(5,30)$ (corte de $x+y=35$ con $2x+5y=160$), $(35,0)$ (corte de $x+y=35$ con $y=0$), $(60,0)$ (corte de $2x+y=120$ con $y=0$) y $(55,10)$ (corte de $2x+y=120$ con $2x+5y=160$).
+6. **Valor de $B$ en cada vértice:**
 
 | Vértice | $(5,30)$ | $(35,0)$ | $(60,0)$ | $(55,10)$ |
 |---|---|---|---|---|
 | $B$ | $2\,115$ | $1\,575$ | $2\,700$ | $3\,105$ |
 
 ![Región factible del ejercicio 1 (2026-ext-sup1), con sus vértices: (35, 0), (60, 0), (55, 10), (5, 30)](fig/2026-ext-sup1-e1.svg){fig-alt="Región factible del ejercicio 1 (2026-ext-sup1), con sus vértices: (35, 0), (60, 0), (55, 10), (5, 30)" width="75%" fig-align="center"}
+
+7. **Conclusión.** El máximo es $3\,105$, en $(55,10)$: se agotan las horas de secado ($110+10=120$) y las de envasado ($110+50=160$).
 
 **Deben producirse 55 kg de orégano y 10 kg de pimienta a la semana, con un beneficio máximo de $3\,105$ €.**
 ::::
@@ -265,17 +302,21 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Rectas frontera: $3x-4y=6$, $x+y=9$, $x+4y=24$, $3x+2y=6$ y $x=0$. Los vértices del recinto son
+**a) Recinto y vértices.**
+1. Rectas frontera: $3x-4y=6$, $x+y=9$, $x+4y=24$, $3x+2y=6$ y $x=0$.
+2. En cada una se sombrea el semiplano que cumple la desigualdad y se toma la zona común.
+3. Los vértices del recinto son
 $$(0,3),\quad(0,6),\quad(2,0),\quad(4,5),\quad(6,3),$$
 donde $(0,3)$ es el corte de $x=0$ con $3x+2y=6$, $(0,6)$ el de $x=0$ con $x+4y=24$, $(4,5)$ el de $x+4y=24$ con $x+y=9$, $(6,3)$ el de $x+y=9$ con $3x-4y=6$ y $(2,0)$ el de $3x-4y=6$ con $3x+2y=6$.
 
 ![Región factible del ejercicio 1B (2026-ext-sup2), con sus vértices: (0, 3), (2, 0), (6, 3), (4, 5), (0, 6)](fig/2026-ext-sup2-e1b.svg){fig-alt="Región factible del ejercicio 1B (2026-ext-sup2), con sus vértices: (0, 3), (2, 0), (6, 3), (4, 5), (0, 6)" width="75%" fig-align="center"}
 
-**b)** $P(3;0{,}9)$: $3\cdot3-4\cdot0{,}9=5{,}4\le6$; $3+0{,}9=3{,}9\le9$; $3+4\cdot0{,}9=6{,}6\le24$; $3\cdot3+2\cdot0{,}9=10{,}8\ge6$; $3\ge0$. **$P$ pertenece al recinto.**
+**b) Pertenencia de $P$ y $Q$.** Un punto pertenece al recinto si cumple las cinco desigualdades.
+1. $P(3;0{,}9)$: $3\cdot3-4\cdot0{,}9=5{,}4\le6$; $3+0{,}9=3{,}9\le9$; $3+4\cdot0{,}9=6{,}6\le24$; $3\cdot3+2\cdot0{,}9=10{,}8\ge6$; $3\ge0$. **$P$ pertenece al recinto.**
+2. $Q(1;5{,}9)$: $1+4\cdot5{,}9=24{,}6>24$, no cumple $x+4y\le24$. **$Q$ no pertenece al recinto.**
 
-$Q(1;5{,}9)$: $1+4\cdot5{,}9=24{,}6>24$, no cumple $x+4y\le24$. **$Q$ no pertenece al recinto.**
-
-**c)** $F(0,3)=7$, $F(0,6)=16$, $F(2,0)=2$, $F(4,5)=21$, $F(6,3)=19$.
+**c) Máximo y mínimo de $F(x,y)=2x+3y-2$.**
+1. Se evalúa $F$ en los vértices: $F(0,3)=7$, $F(0,6)=16$, $F(2,0)=2$, $F(4,5)=21$, $F(6,3)=19$.
 
 **Máximo $21$ en el punto $(4,5)$ y mínimo $2$ en el punto $(2,0)$.**
 ::::
@@ -325,15 +366,23 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ las unidades de iceberg e $y$ las de romana. Restricciones: $x\ge\dfrac y2$ (iceberg al menos la mitad que romana); $x\le1\,500$; $900\le x+y\le2\,400$; $y\ge0$. Consumo de agua (litros): $W(x,y)=15x+18y$.
-
-Vértices: $(300,600)$ (corte de $y=2x$ con $x+y=900$), $(800,1600)$ (corte de $y=2x$ con $x+y=2\,400$), $(1\,500,900)$ (corte de $x=1\,500$ con $x+y=2\,400$), $(1\,500,0)$ y $(900,0)$.
+1. **Incógnitas.** $x$ = unidades de iceberg e $y$ = unidades de romana.
+2. **Restricciones.**
+   - Iceberg al menos la mitad que romana: $x\ge\dfrac y2$.
+   - Iceberg como máximo $1\,500$: $x\le1\,500$.
+   - Total entre $900$ y $2\,400$: $900\le x+y\le2\,400$.
+   - No negatividad: $y\ge0$.
+3. **Función objetivo.** Consumo de agua en litros, a minimizar: $W(x,y)=15x+18y$.
+4. **Vértices:** $(300,600)$ (corte de $y=2x$ con $x+y=900$), $(800,1600)$ (corte de $y=2x$ con $x+y=2\,400$), $(1\,500,900)$ (corte de $x=1\,500$ con $x+y=2\,400$), $(1\,500,0)$ y $(900,0)$.
+5. **Valor de $W$ en cada vértice:**
 
 | Vértice | $(300,600)$ | $(800,1\,600)$ | $(1\,500,900)$ | $(1\,500,0)$ | $(900,0)$ |
 |---|---|---|---|---|---|
 | $W$ | $15\,300$ | $40\,800$ | $38\,700$ | $22\,500$ | $13\,500$ |
 
 ![Región factible del ejercicio 2 (2025-ord-b), con sus vértices: (300, 600), (900, 0), (1500, 0), (1500, 900), (800, 1600)](fig/2025-ord-b-e2.svg){fig-alt="Región factible del ejercicio 2 (2025-ord-b), con sus vértices: (300, 600), (900, 0), (1500, 0), (1500, 900), (800, 1600)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El mínimo es $13\,500$, en $(900,0)$.
 
 **El consumo mínimo, $13\,500$ litros, se obtiene cultivando $900$ lechugas iceberg y ninguna romana.**
 ::::
@@ -380,9 +429,15 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ los menús *premium* e $y$ los *estándar*. Restricciones: cocina $2x+3y\le58$; empaquetado $2x+y\le50$; almacenamiento $x+4y\le60$; $x\ge0$, $y\ge0$. Beneficio: $B(x,y)=10{,}5x+5{,}5y$.
-
-Vértices: $(0,0)$, $(0,15)$, $\left(\dfrac{52}{5},\dfrac{62}{5}\right)$ (corte de $x+4y=60$ con $2x+3y=58$), $(23,4)$ (corte de $2x+3y=58$ con $2x+y=50$) y $(25,0)$.
+1. **Incógnitas.** $x$ = menús *premium* e $y$ = menús *estándar* a la semana.
+2. **Restricciones.**
+   - Cocina: $2x+3y\le58$.
+   - Empaquetado: $2x+y\le50$.
+   - Almacenamiento: $x+4y\le60$.
+   - No negatividad: $x\ge0$, $y\ge0$.
+3. **Función objetivo.** Beneficio: $B(x,y)=10{,}5x+5{,}5y$.
+4. **Vértices:** $(0,0)$, $(0,15)$, $\left(\dfrac{52}{5},\dfrac{62}{5}\right)$ (corte de $x+4y=60$ con $2x+3y=58$), $(23,4)$ (corte de $2x+3y=58$ con $2x+y=50$) y $(25,0)$.
+5. **Valor de $B$ en cada vértice:**
 
 | Vértice | $(0,0)$ | $(0,15)$ | $\left(\frac{52}{5},\frac{62}{5}\right)$ | $(23,4)$ | $(25,0)$ |
 |---|---|---|---|---|---|
@@ -390,7 +445,9 @@ Vértices: $(0,0)$, $(0,15)$, $\left(\dfrac{52}{5},\dfrac{62}{5}\right)$ (corte 
 
 ![Región factible del ejercicio 2 (2025-ord-sup1-a), con sus vértices: (0, 0), (25, 0), (23, 4), (10,4, 12,4), (0, 15)](fig/2025-ord-sup1-a-e2.svg){fig-alt="Región factible del ejercicio 2 (2025-ord-sup1-a), con sus vértices: (0, 0), (25, 0), (23, 4), (10,4, 12,4), (0, 15)" width="75%" fig-align="center"}
 
-**Deben elaborarse 23 menús *premium* y 4 *estándar*, con un beneficio máximo de $263{,}50$ €.** (Almacenamiento usado: $23+16=39\le60$.)
+6. **Conclusión.** El máximo es $263{,}5$, en $(23,4)$. Almacenamiento usado: $23+16=39\le60$ (sobra espacio).
+
+**Deben elaborarse 23 menús *premium* y 4 *estándar*, con un beneficio máximo de $263{,}50$ €.**
 ::::
 :::::
 
@@ -435,15 +492,22 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ las cajas «El regalo de la tierra» e $y$ las de «El tesoro de la huerta». Restricciones: frutas $3x+2y\le150$; hortalizas $3{,}5x+4y\le210$; $x\ge12$; $y\ge15$. Ingreso: $I(x,y)=19{,}75x+18{,}5y$.
-
-Vértices: $(12,15)$, $(12,42)$ (corte de $x=12$ con $3{,}5x+4y=210$), $(36,21)$ (corte de $3x+2y=150$ con $3{,}5x+4y=210$) y $(40,15)$ (corte de $3x+2y=150$ con $y=15$).
+1. **Incógnitas.** $x$ = cajas «El regalo de la tierra» e $y$ = cajas «El tesoro de la huerta» a la semana.
+2. **Restricciones.**
+   - Frutas: $3x+2y\le150$.
+   - Hortalizas: $3{,}5x+4y\le210$.
+   - Mínimos de venta: $x\ge12$ e $y\ge15$.
+3. **Función objetivo.** Ingreso: $I(x,y)=19{,}75x+18{,}5y$.
+4. **Vértices:** $(12,15)$, $(12,42)$ (corte de $x=12$ con $3{,}5x+4y=210$), $(36,21)$ (corte de $3x+2y=150$ con $3{,}5x+4y=210$) y $(40,15)$ (corte de $3x+2y=150$ con $y=15$).
+5. **Valor de $I$ en cada vértice:**
 
 | Vértice | $(12,15)$ | $(12,42)$ | $(36,21)$ | $(40,15)$ |
 |---|---|---|---|---|
 | $I$ | $514{,}5$ | $1\,014$ | $1\,099{,}5$ | $1\,067{,}5$ |
 
 ![Región factible del ejercicio 2 (2025-ord-sup1-b), con sus vértices: (12, 15), (40, 15), (36, 21), (12, 42)](fig/2025-ord-sup1-b-e2.svg){fig-alt="Región factible del ejercicio 2 (2025-ord-sup1-b), con sus vértices: (12, 15), (40, 15), (36, 21), (12, 42)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El máximo es $1\,099{,}5$, en $(36,21)$ (se agotan frutas y hortalizas).
 
 **Debe vender 36 cajas de «El regalo de la tierra» y 21 de «El tesoro de la huerta», con un ingreso máximo de $1\,099{,}50$ €.**
 ::::
@@ -490,9 +554,15 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ las lavadoras e $y$ los frigoríficos. El tiempo disponible es $26\ \text{h}\ 40\ \text{min}=1\,600$ min. Restricciones: $100x+50y\le1\,600\iff2x+y\le32$; $x\le12$; $y\le16$; $x\ge0$, $y\ge0$. Como se paga a $50$ €/h $=\dfrac{5}{6}$ €/min, el ingreso es $I(x,y)=\dfrac{5}{6}\left(100x+50y\right)=\dfrac{250}{3}x+\dfrac{125}{3}y$.
-
-Vértices: $(0,0)$, $(12,0)$, $(12,8)$, $(8,16)$ y $(0,16)$.
+1. **Incógnitas.** $x$ = lavadoras e $y$ = frigoríficos revisados.
+2. **Restricciones.**
+   - Tiempo disponible: $26\ \text{h}\ 40\ \text{min}=1\,600$ min, luego $100x+50y\le1\,600\iff2x+y\le32$.
+   - No más de 12 lavadoras: $x\le12$.
+   - No más de 16 frigoríficos: $y\le16$.
+   - No negatividad: $x\ge0$, $y\ge0$.
+3. **Función objetivo.** Se paga a $50$ €/h $=\dfrac{5}{6}$ €/min, así que el ingreso es $I(x,y)=\dfrac{5}{6}\left(100x+50y\right)=\dfrac{250}{3}x+\dfrac{125}{3}y$.
+4. **Vértices:** $(0,0)$, $(12,0)$, $(12,8)$, $(8,16)$ y $(0,16)$.
+5. **Valor de $I$ en cada vértice:**
 
 | Vértice | $(0,0)$ | $(12,0)$ | $(12,8)$ | $(8,16)$ | $(0,16)$ |
 |---|---|---|---|---|---|
@@ -500,7 +570,7 @@ Vértices: $(0,0)$, $(12,0)$, $(12,8)$, $(8,16)$ y $(0,16)$.
 
 ![Región factible del ejercicio 2 (2025-ord-sup2-a), con sus vértices: (0, 0), (12, 0), (12, 8), (8, 16), (0, 16)](fig/2025-ord-sup2-a-e2.svg){fig-alt="Región factible del ejercicio 2 (2025-ord-sup2-a), con sus vértices: (0, 0), (12, 0), (12, 8), (8, 16), (0, 16)" width="75%" fig-align="center"}
 
-El máximo se alcanza en los dos vértices $(12,8)$ y $(8,16)$ y, por tanto, en todos los puntos del segmento $2x+y=32$ que los une (aquellos en que se agotan los $1\,600$ minutos).
+6. **Conclusión.** El máximo se alcanza en los dos vértices $(12,8)$ y $(8,16)$ y, por tanto, en todos los puntos del segmento $2x+y=32$ que los une (aquellos en que se agotan los $1\,600$ minutos).
 
 **Ingreso máximo: $1\,333{,}33$ € (es decir, $\dfrac{4\,000}{3}$ €), por ejemplo revisando 12 lavadoras y 8 frigoríficos, u 8 lavadoras y 16 frigoríficos** (o cualquier combinación entera con $2x+y=32$, $8\le x\le12$: $(11,10)$, $(10,12)$, $(9,14)$).
 ::::
@@ -547,15 +617,23 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ los kg de abono $A$ e $y$ los de $B$. Restricciones: $x\le200$; $2y-3x\le100$; $x+2y\le500$; $x\ge0$, $y\ge0$. Beneficio: $B(x,y)=15x+10y$.
-
-Vértices: $(0,0)$, $(0,50)$, $(100,200)$ (corte de $2y-3x=100$ con $x+2y=500$), $(200,150)$ (corte de $x=200$ con $x+2y=500$) y $(200,0)$.
+1. **Incógnitas.** $x$ = kg de abono $A$ e $y$ = kg de abono $B$ al mes.
+2. **Restricciones.**
+   - $A$ no supera $200$ kg: $x\le200$.
+   - El doble de $B$ menos el triple de $A$ es a lo sumo $100$: $2y-3x\le100$.
+   - $A$ más el doble de $B$, como mucho $500$: $x+2y\le500$.
+   - No negatividad: $x\ge0$, $y\ge0$.
+3. **Función objetivo.** Beneficio: $B(x,y)=15x+10y$.
+4. **Vértices:** $(0,0)$, $(0,50)$, $(100,200)$ (corte de $2y-3x=100$ con $x+2y=500$), $(200,150)$ (corte de $x=200$ con $x+2y=500$) y $(200,0)$.
+5. **Valor de $B$ en cada vértice:**
 
 | Vértice | $(0,0)$ | $(0,50)$ | $(100,200)$ | $(200,150)$ | $(200,0)$ |
 |---|---|---|---|---|---|
 | $B$ | $0$ | $500$ | $3\,500$ | $4\,500$ | $3\,000$ |
 
 ![Región factible del ejercicio 2 (2025-ord-sup2-b), con sus vértices: (0, 50), (0, 0), (200, 0), (200, 150), (100, 200)](fig/2025-ord-sup2-b-e2.svg){fig-alt="Región factible del ejercicio 2 (2025-ord-sup2-b), con sus vértices: (0, 50), (0, 0), (200, 0), (200, 150), (100, 200)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El máximo es $4\,500$, en $(200,150)$.
 
 **Debe producir $200$ kg de abono $A$ y $150$ kg de abono $B$, con un beneficio máximo de $4\,500$ €.**
 ::::
@@ -605,15 +683,24 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ las hectáreas de secano e $y$ las de regadío. Restricciones: agua $1\,500y\le30\,000\iff y\le20$; abono $100x+110y\le5\,500$; fitosanitarios $50x+80y\le3\,000$; $x\ge20$; $y\ge0$. Producción (kg): $P(x,y)=5\,000x+10\,000y$.
-
-Vértices: $(20,0)$, $(20,20)$, $(28,20)$ (corte de $y=20$ con $50x+80y=3\,000$), $(44,10)$ (corte de $50x+80y=3\,000$ con $100x+110y=5\,500$) y $(55,0)$.
+1. **Incógnitas.** $x$ = hectáreas de secano e $y$ = hectáreas de regadío.
+2. **Restricciones.**
+   - Agua (solo riega el regadío): $1\,500y\le30\,000\iff y\le20$.
+   - Abono: $100x+110y\le5\,500$.
+   - Fitosanitarios: $50x+80y\le3\,000$.
+   - Mínimo de secano: $x\ge20$.
+   - No negatividad: $y\ge0$.
+3. **Función objetivo.** Producción (kg): $P(x,y)=5\,000x+10\,000y$.
+4. **Vértices:** $(20,0)$, $(20,20)$, $(28,20)$ (corte de $y=20$ con $50x+80y=3\,000$), $(44,10)$ (corte de $50x+80y=3\,000$ con $100x+110y=5\,500$) y $(55,0)$.
+5. **Valor de $P$ en cada vértice:**
 
 | Vértice | $(20,0)$ | $(20,20)$ | $(28,20)$ | $(44,10)$ | $(55,0)$ |
 |---|---|---|---|---|---|
 | $P$ | $100\,000$ | $300\,000$ | $340\,000$ | $320\,000$ | $275\,000$ |
 
 ![Región factible del ejercicio 2 (2024-ord-a), con sus vértices: (20, 0), (55, 0), (44, 10), (28, 20), (20, 20)](fig/2024-ord-a-e2.svg){fig-alt="Región factible del ejercicio 2 (2024-ord-a), con sus vértices: (20, 0), (55, 0), (44, 10), (28, 20), (20, 20)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El máximo es $340\,000$, en $(28,20)$: se agota el agua ($1\,500\cdot20=30\,000$ m³) y los fitosanitarios ($50\cdot28+80\cdot20=3\,000$ kg).
 
 **Debe cultivar 28 hectáreas de secano y 20 de regadío, con una producción máxima de $340\,000$ kg.**
 ::::
@@ -660,15 +747,23 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ los anuncios de radio e $y$ los de televisión. Restricciones: presupuesto $2\,400x+3\,600y\le78\,000\iff2x+3y\le65$; diferencia $|x-y|\le10$ (es decir, $x-y\le10$ e $y-x\le10$); total $x+y\ge10$; $x\ge0$, $y\ge0$. Audiencia: $A(x,y)=34\,000x+72\,000y$.
-
-Vértices: $(0,10)$, $(10,0)$, $(19,9)$ (corte de $x-y=10$ con $2x+3y=65$) y $(7,17)$ (corte de $y-x=10$ con $2x+3y=65$).
+1. **Incógnitas.** $x$ = anuncios de radio e $y$ = anuncios de televisión.
+2. **Restricciones.**
+   - Presupuesto: $2\,400x+3\,600y\le78\,000\iff2x+3y\le65$.
+   - La diferencia no es mayor que 10: $|x-y|\le10$, es decir, $x-y\le10$ e $y-x\le10$.
+   - Mínimo de 10 anuncios en total: $x+y\ge10$.
+   - No negatividad: $x\ge0$, $y\ge0$.
+3. **Función objetivo.** Audiencia: $A(x,y)=34\,000x+72\,000y$.
+4. **Vértices:** $(0,10)$, $(10,0)$, $(19,9)$ (corte de $x-y=10$ con $2x+3y=65$) y $(7,17)$ (corte de $y-x=10$ con $2x+3y=65$).
+5. **Valor de $A$ en cada vértice:**
 
 | Vértice | $(0,10)$ | $(10,0)$ | $(19,9)$ | $(7,17)$ |
 |---|---|---|---|---|
 | $A$ | $720\,000$ | $340\,000$ | $1\,294\,000$ | $1\,462\,000$ |
 
 ![Región factible del ejercicio 2 (2024-ord-b), con sus vértices: (10, 0), (19, 9), (7, 17), (0, 10)](fig/2024-ord-b-e2.svg){fig-alt="Región factible del ejercicio 2 (2024-ord-b), con sus vértices: (10, 0), (19, 9), (7, 17), (0, 10)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El máximo es $1\,462\,000$, en $(7,17)$: el gasto es $2\,400\cdot7+3\,600\cdot17=78\,000$ € (se agota el presupuesto).
 
 **Debe contratar 7 anuncios de radio y 17 de televisión, con una audiencia máxima de $1\,462\,000$ personas.**
 ::::
@@ -715,15 +810,23 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ los bidones de pintura interior e $y$ los de exterior. Restricciones: $x+y\le160$; $x+y\ge60$; $x\ge20$; $y\ge x$. Gasto: $G(x,y)=1{,}5x+0{,}9y$.
-
-Vértices: $(20,40)$ (corte de $x=20$ con $x+y=60$), $(20,140)$ (corte de $x=20$ con $x+y=160$), $(80,80)$ (corte de $y=x$ con $x+y=160$) y $(30,30)$ (corte de $y=x$ con $x+y=60$).
+1. **Incógnitas.** $x$ = bidones de pintura interior e $y$ = bidones de pintura exterior.
+2. **Restricciones.**
+   - Capacidad máxima: $x+y\le160$.
+   - Mínimo en el almacén: $x+y\ge60$.
+   - Mínimo de interior: $x\ge20$.
+   - Exterior no inferior a interior: $y\ge x$.
+3. **Función objetivo.** Gasto diario (hay que minimizarlo): $G(x,y)=1{,}5x+0{,}9y$.
+4. **Vértices:** $(20,40)$ (corte de $x=20$ con $x+y=60$), $(20,140)$ (corte de $x=20$ con $x+y=160$), $(80,80)$ (corte de $y=x$ con $x+y=160$) y $(30,30)$ (corte de $y=x$ con $x+y=60$).
+5. **Valor de $G$ en cada vértice:**
 
 | Vértice | $(20,40)$ | $(20,140)$ | $(80,80)$ | $(30,30)$ |
 |---|---|---|---|---|
 | $G$ | $66$ | $156$ | $192$ | $72$ |
 
 ![Región factible del ejercicio 2 (2024-ord-res-a), con sus vértices: (20, 40), (30, 30), (80, 80), (20, 140)](fig/2024-ord-res-a-e2.svg){fig-alt="Región factible del ejercicio 2 (2024-ord-res-a), con sus vértices: (20, 40), (30, 30), (80, 80), (20, 140)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El mínimo es $66$, en $(20,40)$: $1{,}5\cdot20+0{,}9\cdot40=66$.
 
 **Deben almacenarse 20 bidones de pintura interior y 40 de exterior, con un gasto diario mínimo de $66$ €.**
 ::::
@@ -770,9 +873,15 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ las pulseras de tipo $A$ e $y$ las de tipo $B$. Restricciones: oro $x+2y\le50$; platino $2x+y\le40$; plata $y\le25$; $x\ge0$, $y\ge0$. Ingresos: $I(x,y)=150x+200y$.
-
-Vértices: $(0,0)$, $(0,25)$, $(10,20)$ (corte de $x+2y=50$ con $2x+y=40$) y $(20,0)$.
+1. **Incógnitas.** $x$ = pulseras de tipo $A$ e $y$ = pulseras de tipo $B$.
+2. **Restricciones.**
+   - Oro: $x+2y\le50$.
+   - Platino: $2x+y\le40$.
+   - Plata (solo las de tipo $B$): $y\le25$.
+   - No negatividad: $x\ge0$, $y\ge0$.
+3. **Función objetivo.** Ingresos: $I(x,y)=150x+200y$.
+4. **Vértices:** $(0,0)$, $(0,25)$, $(10,20)$ (corte de $x+2y=50$ con $2x+y=40$) y $(20,0)$.
+5. **Valor de $I$ en cada vértice:**
 
 | Vértice | $(0,0)$ | $(0,25)$ | $(10,20)$ | $(20,0)$ |
 |---|---|---|---|---|
@@ -780,9 +889,10 @@ Vértices: $(0,0)$, $(0,25)$, $(10,20)$ (corte de $x+2y=50$ con $2x+y=40$) y $(2
 
 ![Región factible del ejercicio 2 (2024-ord-res-b), con sus vértices: (0, 0), (20, 0), (10, 20), (0, 25)](fig/2024-ord-res-b-e2.svg){fig-alt="Región factible del ejercicio 2 (2024-ord-res-b), con sus vértices: (0, 0), (20, 0), (10, 20), (0, 25)" width="75%" fig-align="center"}
 
-**Debe fabricar 10 pulseras del tipo $A$ y 20 del tipo $B$, con unos ingresos máximos de $5\,500$ €.**
+6. **Conclusión.** El máximo es $5\,500$, en $(10,20)$.
+7. **Metales sobrantes.** Con $(10,20)$: oro $10+40=50$ g, platino $20+20=40$ g y plata $20$ g.
 
-Metales usados con $(10,20)$: oro $10+40=50$ g, platino $20+20=40$ g y plata $20$ g. **Sobran $0$ g de oro, $0$ g de platino y $5$ g de plata.**
+**Debe fabricar 10 pulseras del tipo $A$ y 20 del tipo $B$, con unos ingresos máximos de $5\,500$ €. Sobran $0$ g de oro, $0$ g de platino y $5$ g de plata.**
 ::::
 :::::
 
@@ -827,15 +937,22 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ los centros florales e $y$ los candelabros. Restricciones: $12\le x+y\le40$; $y\le\dfrac x3$; $x\ge0$, $y\ge0$. Ingresos: $I(x,y)=32x+35y$.
-
-Vértices: $(12,0)$, $(40,0)$, $(30,10)$ (corte de $x+y=40$ con $x=3y$) y $(9,3)$ (corte de $x+y=12$ con $x=3y$).
+1. **Incógnitas.** $x$ = centros florales e $y$ = candelabros.
+2. **Restricciones.**
+   - Entre 12 y 40 mesas, un artículo por mesa: $12\le x+y\le40$.
+   - Candelabros no superiores a la tercera parte de los centros: $y\le\dfrac x3$.
+   - No negatividad: $x\ge0$, $y\ge0$.
+3. **Función objetivo.** Ingresos: $I(x,y)=32x+35y$.
+4. **Vértices:** $(12,0)$, $(40,0)$, $(30,10)$ (corte de $x+y=40$ con $x=3y$) y $(9,3)$ (corte de $x+y=12$ con $x=3y$).
+5. **Valor de $I$ en cada vértice:**
 
 | Vértice | $(12,0)$ | $(40,0)$ | $(30,10)$ | $(9,3)$ |
 |---|---|---|---|---|
 | $I$ | $384$ | $1\,280$ | $1\,310$ | $393$ |
 
 ![Región factible del ejercicio 2 (2024-ord-sup-a), con sus vértices: (9, 3), (12, 0), (40, 0), (30, 10)](fig/2024-ord-sup-a-e2.svg){fig-alt="Región factible del ejercicio 2 (2024-ord-sup-a), con sus vértices: (9, 3), (12, 0), (40, 0), (30, 10)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El máximo es $1\,310$, en $(30,10)$: $32\cdot30+35\cdot10=1\,310$.
 
 **Debe seleccionar 30 centros florales y 10 candelabros, con unos ingresos de $1\,310$ €.**
 ::::
@@ -882,9 +999,15 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ los equipos del primer tipo e $y$ los del segundo. Restricciones: Javascript $2x+6y\le150$; Python $3x+4y\le120$; $y\ge6$; $x\ge0$. Hay que maximizar el número de equipos: $F(x,y)=x+y$.
-
-Vértices: $(0,6)$, $(0,25)$, $(12,21)$ (corte de $2x+6y=150$ con $3x+4y=120$) y $(32,6)$ (corte de $3x+4y=120$ con $y=6$).
+1. **Incógnitas.** $x$ = equipos del primer tipo e $y$ = equipos del segundo.
+2. **Restricciones.**
+   - Javascript: $2x+6y\le150$.
+   - Python: $3x+4y\le120$.
+   - Al menos 6 equipos del segundo tipo: $y\ge6$.
+   - No negatividad: $x\ge0$.
+3. **Función objetivo.** Hay que maximizar el número de equipos: $F(x,y)=x+y$.
+4. **Vértices:** $(0,6)$, $(0,25)$, $(12,21)$ (corte de $2x+6y=150$ con $3x+4y=120$) y $(32,6)$ (corte de $3x+4y=120$ con $y=6$).
+5. **Valor de $F$ en cada vértice:**
 
 | Vértice | $(0,6)$ | $(0,25)$ | $(12,21)$ | $(32,6)$ |
 |---|---|---|---|---|
@@ -892,7 +1015,9 @@ Vértices: $(0,6)$, $(0,25)$, $(12,21)$ (corte de $2x+6y=150$ con $3x+4y=120$) y
 
 ![Región factible del ejercicio 2 (2024-ord-sup-b), con sus vértices: (0, 6), (32, 6), (12, 21), (0, 25)](fig/2024-ord-sup-b-e2.svg){fig-alt="Región factible del ejercicio 2 (2024-ord-sup-b), con sus vértices: (0, 6), (32, 6), (12, 21), (0, 25)" width="75%" fig-align="center"}
 
-**Se pueden formar 32 equipos del primer tipo y 6 del segundo (38 equipos).** Desarrolladores utilizados: Javascript $2\cdot32+6\cdot6=100$ y Python $3\cdot32+4\cdot6=120$.
+6. **Conclusión.** El máximo es $38$, en $(32,6)$. Desarrolladores utilizados: Javascript $2\cdot32+6\cdot6=100$ y Python $3\cdot32+4\cdot6=120$ (se agotan los de Python).
+
+**Se pueden formar 32 equipos del primer tipo y 6 del segundo (38 equipos), con 100 desarrolladores de Javascript y 120 de Python.**
 ::::
 :::::
 
@@ -933,17 +1058,21 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Rectas frontera: $2x-3y=1$, $4x+y=9$, $x+y=5$, $9x-y=0$ e $y=0$. Los vértices de la región $R$ son
+**a) Región y vértices.**
+1. Rectas frontera: $2x-3y=1$, $4x+y=9$, $x+y=5$, $9x-y=0$ e $y=0$.
+2. En cada una se sombrea el semiplano que cumple la desigualdad (se prueba un punto, por ejemplo $(1,1)$) y se toma la zona común.
+3. Los vértices de la región $R$ son
 $$(0,0),\quad\left(\tfrac{1}{2},0\right),\quad(2,1),\quad\left(\tfrac{4}{3},\tfrac{11}{3}\right),\quad\left(\tfrac{1}{2},\tfrac{9}{2}\right),$$
 con $\left(\tfrac{1}{2},0\right)$ el corte de $2x-3y=1$ con $y=0$, $(2,1)$ el de $2x-3y=1$ con $4x+y=9$, $\left(\tfrac{4}{3},\tfrac{11}{3}\right)$ el de $4x+y=9$ con $x+y=5$ y $\left(\tfrac{1}{2},\tfrac{9}{2}\right)$ el de $x+y=5$ con $9x-y=0$.
 
 ![Región factible del ejercicio 1 (2023-ord-a), con sus vértices: (0, 0), (0,5, 0), (2, 1), (1,33, 3,67), (0,5, 4,5)](fig/2023-ord-a-e1.svg){fig-alt="Región factible del ejercicio 1 (2023-ord-a), con sus vértices: (0, 0), (0,5, 0), (2, 1), (1,33, 3,67), (0,5, 4,5)" width="75%" fig-align="center"}
 
-**b)** $A(2,2)$: $4x+y=4\cdot2+2=10>9$, no cumple $4x+y\le9$: **$A$ no pertenece a $R$.**
+**b) Pertenencia de puntos.** Un punto pertenece a $R$ si cumple todas las inecuaciones.
+1. $A(2,2)$: $4x+y=4\cdot2+2=10>9$, no cumple $4x+y\le9$: **$A$ no pertenece a $R$.**
+2. $B(1;3{,}5)$: $2-10{,}5=-8{,}5\le1$; $4+3{,}5=7{,}5\le9$; $1+3{,}5=4{,}5\le5$; $9-3{,}5=5{,}5\ge0$; $3{,}5\ge0$. Cumple todas: **$B$ pertenece a $R$.**
 
-$B(1;3{,}5)$: $2-10{,}5=-8{,}5\le1$; $4+3{,}5=7{,}5\le9$; $1+3{,}5=4{,}5\le5$; $9-3{,}5=5{,}5\ge0$; $3{,}5\ge0$. Cumple todas: **$B$ pertenece a $R$.**
-
-**c)** $F(0,0)=0$, $F\left(\tfrac{1}{2},0\right)=\tfrac{5}{2}$, $F(2,1)=7$, $F\left(\tfrac{4}{3},\tfrac{11}{3}\right)=-\tfrac{13}{3}$, $F\left(\tfrac{1}{2},\tfrac{9}{2}\right)=-11$.
+**c) Máximo y mínimo de $F(x,y)=5x-3y$.**
+1. Se evalúa $F$ en los vértices: $F(0,0)=0$, $F\left(\tfrac{1}{2},0\right)=\tfrac{5}{2}$, $F(2,1)=7$, $F\left(\tfrac{4}{3},\tfrac{11}{3}\right)=-\tfrac{13}{3}$, $F\left(\tfrac{1}{2},\tfrac{9}{2}\right)=-11$.
 
 **Máximo $7$ en $(2,1)$ y mínimo $-11$ en $\left(\tfrac{1}{2},\tfrac{9}{2}\right)$.**
 ::::
@@ -994,15 +1123,24 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ los anillos del primer tipo e $y$ los del segundo. Restricciones: piedras de mayor calidad $x+3y\le200$; de menor calidad $2x+y\le150$; tiempo $20x+50y\ge1900\iff2x+5y\ge190$; $x\ge20$; $y\ge0$. Valor de la venta: $V(x,y)=21x+50y$.
-
-Vértices: $(20,30)$, $(20,60)$, $(50,50)$ (corte de $x+3y=200$ con $2x+y=150$) y $(70,10)$.
+1. **Incógnitas.** $x$ = anillos del primer tipo e $y$ = anillos del segundo.
+2. **Restricciones.**
+   - Piedras de mayor calidad: $x+3y\le200$.
+   - Piedras de menor calidad: $2x+y\le150$.
+   - Al menos $1900$ minutos: $20x+50y\ge1900\iff2x+5y\ge190$.
+   - Al menos 20 anillos del primer tipo: $x\ge20$.
+   - No negatividad: $y\ge0$.
+3. **Función objetivo.** Valor de la venta: $V(x,y)=21x+50y$.
+4. **Vértices:** $(20,30)$, $(20,60)$, $(50,50)$ (corte de $x+3y=200$ con $2x+y=150$) y $(70,10)$.
+5. **Valor de $V$ en cada vértice:**
 
 | Vértice | $(20,30)$ | $(20,60)$ | $(50,50)$ | $(70,10)$ |
 |---|---|---|---|---|
 | $V$ | $1\,920$ | $3\,420$ | $3\,550$ | $1\,970$ |
 
 ![Región factible del ejercicio 2 (2023-ord-b), con sus vértices: (20, 30), (70, 10), (50, 50), (20, 60)](fig/2023-ord-b-e2.svg){fig-alt="Región factible del ejercicio 2 (2023-ord-b), con sus vértices: (20, 30), (70, 10), (50, 50), (20, 60)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El máximo es $3\,550$, en $(50,50)$: se agotan las dos clases de piedras ($50+150=200$ y $100+50=150$).
 
 **Deben montarse 50 anillos de cada tipo, con un valor de venta de $3\,550$ €.**
 ::::
@@ -1051,15 +1189,23 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ las horas extraordinarias de la cadena $A$ e $y$ las de la cadena $B$. Hay que **minimizar $C(x,y)=300x+600y$** sujeto a: portátiles $15x+10y\le360$; tablets $6x+10y\ge216$; $y\le3x$; $x\ge0$, $y\ge0$.
-
-Vértices de la región factible: $(6,18)$ (corte de $y=3x$ con $6x+10y=216$), $(8,24)$ (corte de $y=3x$ con $15x+10y=360$) y $(16,12)$ (corte de $15x+10y=360$ con $6x+10y=216$).
+1. **Incógnitas.** $x$ = horas extraordinarias de la cadena $A$ e $y$ = horas extraordinarias de la cadena $B$.
+2. **Restricciones.**
+   - Portátiles, como máximo $360$: $15x+10y\le360$.
+   - Tablets, al menos $216$: $6x+10y\ge216$.
+   - $B$ hace como máximo el triple de horas que $A$: $y\le3x$.
+   - No negatividad: $x\ge0$, $y\ge0$.
+3. **Función objetivo.** Hay que **minimizar $C(x,y)=300x+600y$**.
+4. **Vértices** de la región factible: $(6,18)$ (corte de $y=3x$ con $6x+10y=216$), $(8,24)$ (corte de $y=3x$ con $15x+10y=360$) y $(16,12)$ (corte de $15x+10y=360$ con $6x+10y=216$).
+5. **Valor de $C$ en cada vértice:**
 
 | Vértice | $(6,18)$ | $(8,24)$ | $(16,12)$ |
 |---|---|---|---|
 | $C$ | $12\,600$ | $16\,800$ | $12\,000$ |
 
 ![Región factible del ejercicio 2 (2023-ord-res-a), con sus vértices: (16, 12), (8, 24), (6, 18)](fig/2023-ord-res-a-e2.svg){fig-alt="Región factible del ejercicio 2 (2023-ord-res-a), con sus vértices: (16, 12), (8, 24), (6, 18)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El mínimo es $12\,000$, en $(16,12)$.
 
 **El coste mínimo es de $12\,000$ €, con 16 horas extraordinarias en $A$ y 12 en $B$.**
 ::::
@@ -1108,15 +1254,23 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ los viajes de $B_1$ e $y$ los de $B_2$. Restricciones: $x\le14$; $x\ge y$; $10\le x+y\le24$; $y\ge0$. Beneficio: $B(x,y)=15\,000x+17\,000y$.
-
-Vértices: $(5,5)$, $(10,0)$, $(14,0)$, $(14,10)$ y $(12,12)$.
+1. **Incógnitas.** $x$ = viajes de $B_1$ e $y$ = viajes de $B_2$.
+2. **Restricciones.**
+   - $B_1$ no hace más de 14 viajes: $x\le14$.
+   - $B_1$ hace tantos viajes o más que $B_2$: $x\ge y$.
+   - Entre los dos, al menos 10 y como mucho 24: $10\le x+y\le24$.
+   - No negatividad: $y\ge0$.
+3. **Función objetivo.** Beneficio: $B(x,y)=15\,000x+17\,000y$.
+4. **Vértices:** $(5,5)$, $(10,0)$, $(14,0)$, $(14,10)$ y $(12,12)$.
+5. **Valor de $B$ en cada vértice:**
 
 | Vértice | $(5,5)$ | $(10,0)$ | $(14,0)$ | $(14,10)$ | $(12,12)$ |
 |---|---|---|---|---|---|
 | $B$ | $160\,000$ | $150\,000$ | $210\,000$ | $380\,000$ | $384\,000$ |
 
 ![Región factible del ejercicio 2 (2023-ord-res-b), con sus vértices: (5, 5), (10, 0), (14, 0), (14, 10), (12, 12)](fig/2023-ord-res-b-e2.svg){fig-alt="Región factible del ejercicio 2 (2023-ord-res-b), con sus vértices: (5, 5), (10, 0), (14, 0), (14, 10), (12, 12)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El máximo es $384\,000$, en $(12,12)$.
 
 **Cada barco debe realizar 12 viajes, con un beneficio máximo de $384\,000$ €.**
 ::::
@@ -1165,15 +1319,24 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ los aficionados locales e $y$ los visitantes. Restricciones: aforo $x+y\le10\,000$; visitantes $y\le3\,000$; al menos dos locales por visitante $x\ge2y$; como máximo cuatro $x\le4y$; $y\ge0$. Con el descuento, la entrada local cuesta $0{,}8\cdot50=40$ €. Importe: $I(x,y)=40x+50y$.
-
-Vértices: $(0,0)$, $(6\,000,3\,000)$ (corte de $x=2y$ con $y=3\,000$), $(7\,000,3\,000)$ (corte de $x+y=10\,000$ con $y=3\,000$) y $(8\,000,2\,000)$ (corte de $x+y=10\,000$ con $x=4y$).
+1. **Incógnitas.** $x$ = aficionados locales e $y$ = aficionados visitantes.
+2. **Restricciones.**
+   - Aforo: $x+y\le10\,000$.
+   - Entradas para visitantes: $y\le3\,000$.
+   - Por cada visitante, al menos dos locales: $x\ge2y$.
+   - Por cada visitante, como máximo cuatro locales: $x\le4y$.
+   - No negatividad: $y\ge0$.
+3. **Función objetivo.** Con el descuento del $20\,\%$ la entrada local cuesta $0{,}8\cdot50=40$ €. Importe: $I(x,y)=40x+50y$.
+4. **Vértices:** $(0,0)$, $(6\,000,3\,000)$ (corte de $x=2y$ con $y=3\,000$), $(7\,000,3\,000)$ (corte de $x+y=10\,000$ con $y=3\,000$) y $(8\,000,2\,000)$ (corte de $x+y=10\,000$ con $x=4y$).
+5. **Valor de $I$ en cada vértice:**
 
 | Vértice | $(0,0)$ | $(6\,000,3\,000)$ | $(7\,000,3\,000)$ | $(8\,000,2\,000)$ |
 |---|---|---|---|---|
 | $I$ | $0$ | $390\,000$ | $430\,000$ | $420\,000$ |
 
 ![Región factible del ejercicio 1 (2023-ord-sup-a), con sus vértices: (0, 0), (8000, 2000), (7000, 3000), (6000, 3000)](fig/2023-ord-sup-a-e1.svg){fig-alt="Región factible del ejercicio 1 (2023-ord-sup-a), con sus vértices: (0, 0), (8000, 2000), (7000, 3000), (6000, 3000)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El máximo es $430\,000$, en $(7\,000,3\,000)$: el campo se llena y se agotan las entradas de visitantes.
 
 **Deben asistir $7\,000$ aficionados locales y $3\,000$ visitantes, con un importe de $430\,000$ €.**
 ::::
@@ -1220,15 +1383,23 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ los botes Júpiter e $y$ los Minerva. Restricciones: verde $10x+5y\le1\,000$; morado $5x+5y\le800$; naranja $5x\le300$ (solo lo usa Júpiter); $x\ge0$, $y\ge0$. Beneficio: $B(x,y)=30x+20y$.
-
-Vértices: $(0,0)$, $(0,160)$, $(40,120)$ (corte de $10x+5y=1\,000$ con $5x+5y=800$), $(60,80)$ (corte de $x=60$ con $5x+5y=800$) y $(60,0)$.
+1. **Incógnitas.** $x$ = botes Júpiter e $y$ = botes Minerva.
+2. **Restricciones.**
+   - Pintura verde: $10x+5y\le1\,000$.
+   - Pintura morada: $5x+5y\le800$.
+   - Pintura naranja (solo la usa Júpiter): $5x\le300$, es decir, $x\le60$.
+   - No negatividad: $x\ge0$, $y\ge0$.
+3. **Función objetivo.** Beneficio: $B(x,y)=30x+20y$.
+4. **Vértices:** $(0,0)$, $(0,160)$, $(40,120)$ (corte de $10x+5y=1\,000$ con $5x+5y=800$), $(60,80)$ (corte de $x=60$ con $5x+5y=800$) y $(60,0)$.
+5. **Valor de $B$ en cada vértice:**
 
 | Vértice | $(0,0)$ | $(0,160)$ | $(40,120)$ | $(60,80)$ | $(60,0)$ |
 |---|---|---|---|---|---|
 | $B$ | $0$ | $3\,200$ | $3\,600$ | $3\,400$ | $1\,800$ |
 
 ![Región factible del ejercicio 1 (2023-ord-sup-b), con sus vértices: (0, 0), (60, 0), (60, 80), (40, 120), (0, 160)](fig/2023-ord-sup-b-e1.svg){fig-alt="Región factible del ejercicio 1 (2023-ord-sup-b), con sus vértices: (0, 0), (60, 0), (60, 80), (40, 120), (0, 160)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El máximo es $3\,600$, en $(40,120)$: se agotan la pintura verde ($400+600=1\,000$) y la morada ($200+600=800$); de naranja se usan $200$ de $300$ kg.
 
 **Debe fabricar 40 botes Júpiter y 120 Minerva, con un beneficio máximo de $3\,600$ €.**
 ::::

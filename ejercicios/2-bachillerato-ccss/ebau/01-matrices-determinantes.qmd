@@ -72,14 +72,30 @@ Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=\left|\begin{matrix}m&0&1\\0&1&0\\2&0&m+1\end{matrix}\right|=m(m+1)-2=m^2+m-2=(m-1)(m+2)$. El rango es $3$ si $|A|\neq0$: **$m\neq1$ y $m\neq-2$.**
+**a) Valores de $m$ con rango $3$.**
+1. El rango de la matriz $3\times3$ es $3$ si y solo si $|A|\neq0$.
+2. Determinante: $|A|=\left|\begin{matrix}m&0&1\\0&1&0\\2&0&m+1\end{matrix}\right|=m(m+1)-2=m^2+m-2=(m-1)(m+2)$.
 
-**b)** $A$ no tiene inversa si $|A|=0$: **$m=1$ o $m=-2$.**
+**El rango es $3$ si $m\neq1$ y $m\neq-2$.**
 
-**c)** Para $m=2$: $A=\begin{pmatrix}2&0&1\\0&1&0\\2&0&3\end{pmatrix}$, $|A|=4$ y $A^{-1}=\begin{pmatrix}\frac{3}{4}&0&-\frac{1}{4}\\0&1&0\\-\frac{1}{2}&0&\frac{1}{2}\end{pmatrix}$. De $XA=C$: $X=CA^{-1}$:
+**b) $A$ sin inversa.**
+1. $A$ no tiene inversa si $|A|=0$, es decir, cuando el rango es menor que $3$.
+
+**$A$ no tiene inversa si $m=1$ o $m=-2$.**
+
+**c) Inversa y ecuación $XA=C$ para $m=2$.**
+1. $A=\begin{pmatrix}2&0&1\\0&1&0\\2&0&3\end{pmatrix}$, $|A|=4\neq0$.
+2. Inversa: $A^{-1}=\begin{pmatrix}\frac{3}{4}&0&-\frac{1}{4}\\0&1&0\\-\frac{1}{2}&0&\frac{1}{2}\end{pmatrix}$.
+3. Se multiplica $XA=C$ por la derecha por $A^{-1}$ (la incógnita está a la izquierda de $A$): $X=CA^{-1}$.
+4. Se calcula:
 $$X=\begin{pmatrix}1&0&2\\0&1&3\end{pmatrix}\begin{pmatrix}\frac{3}{4}&0&-\frac{1}{4}\\0&1&0\\-\frac{1}{2}&0&\frac{1}{2}\end{pmatrix}=\begin{pmatrix}-\frac{1}{4}&0&\frac{3}{4}\\-\frac{3}{2}&1&\frac{3}{2}\end{pmatrix}.$$
 
-**d)** Para $m=1$: $A=\begin{pmatrix}1&0&1\\0&1&0\\2&0&2\end{pmatrix}$, con $|A|=0$ y rango $2$. La matriz ampliada $\left(A\mid B\right)$ también tiene rango $2$ (la tercera ecuación, $2y_1+2y_3=6$, es el doble de la primera, $y_1+y_3=3$). Como $\operatorname{rango}A=\operatorname{rango}(A\mid B)=2<3$ incógnitas: **sistema compatible indeterminado** (infinitas soluciones, $y_2=2$ e $y_1+y_3=3$).
+**d) Clasificación de $AY=B$ para $m=1$.**
+1. $A=\begin{pmatrix}1&0&1\\0&1&0\\2&0&2\end{pmatrix}$, con $|A|=0$ y rango $2$.
+2. La matriz ampliada $\left(A\mid B\right)$ también tiene rango $2$: la tercera ecuación, $2y_1+2y_3=6$, es el doble de la primera, $y_1+y_3=3$.
+3. Rouché–Frobenius: $\operatorname{rango}A=\operatorname{rango}(A\mid B)=2<3$ incógnitas.
+
+**Sistema compatible indeterminado** (infinitas soluciones, $y_2=2$ e $y_1+y_3=3$).
 ::::
 :::::
 
@@ -130,13 +146,25 @@ Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=\left|\begin{matrix}2&m&0\\-1&m&2\\0&m&1\end{matrix}\right|=2(m-2m)-m(-1-0)=-2m+m=-m$. El rango es $3$ si $|A|\neq0$: **$m\neq0$.**
+**a) Valores de $m$ con rango $3$.**
+1. El rango de la matriz $3\times3$ es $3$ si y solo si $|A|\neq0$.
+2. Determinante: $|A|=\left|\begin{matrix}2&m&0\\-1&m&2\\0&m&1\end{matrix}\right|=2(m-2m)-m(-1-0)=-2m+m=-m$.
 
-**b)** Con $m=1$: $A^tX-B^2=2X\Rightarrow\left(A^t-2I_3\right)X=B^2$. Se tiene $A^t-2I_3=\begin{pmatrix}0&-1&0\\1&-1&1\\0&2&-1\end{pmatrix}$, con $\left|A^t-2I_3\right|=-1\neq0$, y $B^2=\begin{pmatrix}3&0&4\\1&1&2\\2&0&3\end{pmatrix}$. Entonces
+**El rango es $3$ si $m\neq0$.**
+
+**b) Ecuación matricial** (con $m=1$).
+1. Se agrupan los términos con $X$: $A^tX-B^2=2X\Rightarrow A^tX-2X=B^2\Rightarrow\left(A^t-2I_3\right)X=B^2$.
+2. Matrices: $A^t-2I_3=\begin{pmatrix}0&-1&0\\1&-1&1\\0&2&-1\end{pmatrix}$, con $\left|A^t-2I_3\right|=-1\neq0$ (es invertible), y $B^2=\begin{pmatrix}3&0&4\\1&1&2\\2&0&3\end{pmatrix}$.
+3. Se multiplica por la izquierda por $\left(A^t-2I_3\right)^{-1}$ (la incógnita está a la derecha):
 $$X=\left(A^t-2I_3\right)^{-1}B^2=\begin{pmatrix}6&1&9\\-3&0&-4\\-8&0&-11\end{pmatrix}.$$
-(Comprobación: la primera fila de $\left(A^t-2I_3\right)X$ es $-1\cdot(-3,0,-4)=(3,0,4)$, la primera de $B^2$.)
+4. Comprobación: la primera fila de $\left(A^t-2I_3\right)X$ es $-1\cdot(-3,0,-4)=(3,0,4)$, la primera de $B^2$.
 
-**c)** $C^t$ es $1\times3$ y $A$ es $3\times3$, luego $C^t\cdot A$ es $1\times3$. En $B\cdot D$, $B$ es $3\times3$, luego $B\cdot D$ tiene $3$ filas. Una matriz de $1$ fila no puede ser igual a una de $3$ filas: **no es posible encontrar tal matriz $D$.**
+**c) ¿Existe $D$ con $C^tA=BD$?**
+1. $C^t$ es $1\times3$ y $A$ es $3\times3$, luego $C^t\cdot A$ es $1\times3$.
+2. $B$ es $3\times3$, luego $B\cdot D$ tiene $3$ filas, sea cual sea $D$.
+3. Una matriz de $1$ fila no puede ser igual a una de $3$ filas.
+
+**No es posible encontrar tal matriz $D$.**
 ::::
 :::::
 
@@ -173,15 +201,23 @@ Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hac
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Matriz de trabajo (filas: vendedores $A$, $B$, $C$; columnas: horas, demostraciones, viajes) y vector de precios (€ por hora, demostración y viaje):
+**a) Planteamiento matricial.**
+1. Matriz de trabajo $T$ (filas: vendedores $A$, $B$, $C$; columnas: horas, demostraciones, viajes) y vector de precios $P$ (€ por hora, demostración y viaje). El vendedor $B$ trabaja el doble que $A$: $2\cdot40=80$ horas.
 $$T=\begin{pmatrix}40&10&5\\80&15&8\\100&25&10\end{pmatrix},\qquad P=\begin{pmatrix}75\\300\\250\end{pmatrix}.$$
-Cantidad bruta a abonar a cada vendedor:
+2. Cantidad bruta a abonar a cada vendedor:
 $$T\cdot P=\begin{pmatrix}40\cdot75+10\cdot300+5\cdot250\\80\cdot75+15\cdot300+8\cdot250\\100\cdot75+25\cdot300+10\cdot250\end{pmatrix}=\begin{pmatrix}7\,250\\12\,500\\17\,500\end{pmatrix}.$$
-Retención: $15\,\%$ al vendedor $A$ ($7\,250<10\,000$) y $18\,\%$ a $B$ y $C$. Con la matriz diagonal $D=\begin{pmatrix}0{,}85&0&0\\0&0{,}82&0\\0&0&0{,}82\end{pmatrix}$:
+3. Retención: $15\,\%$ al vendedor $A$ ($7\,250<10\,000$) y $18\,\%$ a $B$ y $C$. Se cobra el $85\,\%$ o el $82\,\%$, que se recoge en la matriz diagonal $D=\begin{pmatrix}0{,}85&0&0\\0&0{,}82&0\\0&0&0{,}82\end{pmatrix}$.
+4. Cantidad final:
 $$D\cdot T\cdot P=\begin{pmatrix}0{,}85\cdot7\,250\\0{,}82\cdot12\,500\\0{,}82\cdot17\,500\end{pmatrix}=\begin{pmatrix}6\,162{,}5\\10\,250\\14\,350\end{pmatrix}.$$
+
 **Cobrarán: zona $A$ $6\,162{,}50$ €, zona $B$ $10\,250$ € y zona $C$ $14\,350$ €.**
 
-**b)** $|A|=-2\left[3(a-1)-0\right]-2\,(9-8)+1\cdot\left[0-4(a-1)\right]=-10a+8=-2(5a-4)$. $A$ es invertible si $|A|\neq0$: **$a\neq\dfrac{4}{5}$.**
+**b) Valores de $a$ con $A$ invertible.**
+1. $A$ es invertible si y solo si $|A|\neq0$.
+2. Se desarrolla por la primera fila: $|A|=-2\left[3(a-1)-0\right]-2\,(9-8)+1\cdot\left[0-4(a-1)\right]=-10a+8=-2(5a-4)$.
+3. Se anula en $a=\dfrac{4}{5}$.
+
+**$A$ es invertible si $a\neq\dfrac{4}{5}$.**
 ::::
 :::::
 
@@ -219,12 +255,20 @@ Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Sumando las dos ecuaciones: $(A+I_3)X+Y+X-Y=(A-I_3)+I_3\Rightarrow(A+2I_3)X=A$. Con $A+2I_3=\begin{pmatrix}4&1&0\\0&3&2\\2&2&4\end{pmatrix}$, $|A+2I_3|=36\neq0$ y $(A+2I_3)^{-1}=\begin{pmatrix}\frac{2}{9}&-\frac{1}{9}&\frac{1}{18}\\\frac{1}{9}&\frac{4}{9}&-\frac{2}{9}\\-\frac{1}{6}&-\frac{1}{6}&\frac{1}{3}\end{pmatrix}$:
+**a) Sistema de ecuaciones matriciales.**
+1. Se suman las dos ecuaciones para eliminar $Y$: $(A+I_3)X+Y+X-Y=(A-I_3)+I_3\Rightarrow(A+2I_3)X=A$.
+2. $A+2I_3=\begin{pmatrix}4&1&0\\0&3&2\\2&2&4\end{pmatrix}$ tiene $|A+2I_3|=36\neq0$, luego es invertible, con
+$$(A+2I_3)^{-1}=\begin{pmatrix}\frac{2}{9}&-\frac{1}{9}&\frac{1}{18}\\\frac{1}{9}&\frac{4}{9}&-\frac{2}{9}\\-\frac{1}{6}&-\frac{1}{6}&\frac{1}{3}\end{pmatrix}.$$
+3. Se despeja $X$ multiplicando por la izquierda por $(A+2I_3)^{-1}$: $X=(A+2I_3)^{-1}A$.
+4. De la segunda ecuación, $Y=X-I_3$:
 $$X=(A+2I_3)^{-1}A=\begin{pmatrix}\frac{5}{9}&\frac{2}{9}&-\frac{1}{9}\\-\frac{2}{9}&\frac{1}{9}&\frac{4}{9}\\\frac{1}{3}&\frac{1}{3}&\frac{1}{3}\end{pmatrix},\qquad Y=X-I_3=\begin{pmatrix}-\frac{4}{9}&\frac{2}{9}&-\frac{1}{9}\\-\frac{2}{9}&-\frac{8}{9}&\frac{4}{9}\\\frac{1}{3}&\frac{1}{3}&-\frac{2}{3}\end{pmatrix}.$$
 
-**b)** $A+I_3=\begin{pmatrix}3&1&0\\0&2&2\\2&2&3\end{pmatrix}$, con $|A+I_3|=10\neq0$: **rango $3$, es invertible.**
+**b) Rangos e invertibilidad.**
+1. $A+I_3=\begin{pmatrix}3&1&0\\0&2&2\\2&2&3\end{pmatrix}$ tiene $|A+I_3|=10\neq0$: **rango $3$, es invertible.**
+2. $A-I_3=\begin{pmatrix}1&1&0\\0&0&2\\2&2&1\end{pmatrix}$ tiene $|A-I_3|=0$ (las columnas primera y segunda son iguales).
+3. Hay un menor de orden 2 no nulo: $\left|\begin{matrix}1&0\\0&2\end{matrix}\right|=2\neq0$.
 
-$A-I_3=\begin{pmatrix}1&1&0\\0&0&2\\2&2&1\end{pmatrix}$, con $|A-I_3|=0$ (las columnas primera y segunda son iguales) y un menor $\left|\begin{matrix}1&0\\0&2\end{matrix}\right|=2\neq0$: **rango $2$, no es invertible.**
+**$A-I_3$: rango $2$, no es invertible.**
 ::::
 :::::
 
@@ -301,12 +345,24 @@ Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: sol
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=\left|\begin{matrix}1&1&-2\\a-3&a-1&1\\0&2&a\end{matrix}\right|=-2(a-5)=10-2a$. Tiene inversa si $|A|\neq0$: **$a\neq5$.**
+**a) Valores de $a$ con inversa.**
+1. $A$ tiene inversa si y solo si $|A|\neq0$.
+2. Determinante: $|A|=\left|\begin{matrix}1&1&-2\\a-3&a-1&1\\0&2&a\end{matrix}\right|=-2(a-5)=10-2a$.
+3. Se anula en $a=5$.
 
-**b)** Para $a=1$, $|A|=8\neq0$ y $A=\begin{pmatrix}1&1&-2\\-2&0&1\\0&2&1\end{pmatrix}$. De $XA-B=CA$ se obtiene $XA=B+CA$ y $X=\left(B+CA\right)A^{-1}=BA^{-1}+C$. Con $A^{-1}=\begin{pmatrix}-\frac{1}{4}&-\frac{5}{8}&\frac{1}{8}\\\frac{1}{4}&\frac{1}{8}&\frac{3}{8}\\-\frac{1}{2}&-\frac{1}{4}&\frac{1}{4}\end{pmatrix}$:
+**Tiene inversa si $a\neq5$.**
+
+**b) Ecuación matricial** (con $a=1$).
+1. $|A|=8\neq0$ y $A=\begin{pmatrix}1&1&-2\\-2&0&1\\0&2&1\end{pmatrix}$, luego $A$ es invertible.
+2. Se despeja $X$: de $XA-B=CA$ se obtiene $XA=B+CA$ y, multiplicando por la derecha por $A^{-1}$ (la incógnita está a la izquierda de $A$): $X=\left(B+CA\right)A^{-1}=BA^{-1}+C$.
+3. Se calcula la inversa: $A^{-1}=\begin{pmatrix}-\frac{1}{4}&-\frac{5}{8}&\frac{1}{8}\\\frac{1}{4}&\frac{1}{8}&\frac{3}{8}\\-\frac{1}{2}&-\frac{1}{4}&\frac{1}{4}\end{pmatrix}$.
+4. Se multiplica y se suma $C$:
 $$BA^{-1}=\begin{pmatrix}-1&3&2\end{pmatrix}A^{-1}=\begin{pmatrix}0&\frac{1}{2}&\frac{3}{2}\end{pmatrix},\qquad X=BA^{-1}+C=\begin{pmatrix}-2&\frac{3}{2}&\frac{11}{2}\end{pmatrix}.$$
 
-**c)** $B\cdot A$ es de dimensión $1\times3$ ($B$ es $1\times3$ y $A$ es $3\times3$). En $D\cdot C^t\cdot B$, $C^t$ es $3\times1$ y $B$ es $1\times3$, luego $C^tB$ es $3\times3$; para que la suma exista, $D\cdot C^tB$ debe ser $1\times3$, es decir, $D$ es $1\times3$.
+**c) Dimensión de $D$.**
+1. $B\cdot A$ es de dimensión $1\times3$ ($B$ es $1\times3$ y $A$ es $3\times3$).
+2. En $D\cdot C^t\cdot B$, $C^t$ es $3\times1$ y $B$ es $1\times3$, luego $C^tB$ es $3\times3$.
+3. Para que la suma exista, $D\cdot C^tB$ debe ser $1\times3$; como $C^tB$ es $3\times3$, $D$ tiene 1 fila y 3 columnas.
 
 **$D$ es de dimensión $1\times3$.**
 ::::
@@ -353,9 +409,12 @@ Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: sol
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$|A|=-9\neq0$, luego $A$ es invertible. De $A^2X+A^4=A$ se obtiene $A^2X=A-A^4$ y, multiplicando por $A^{-2}$ por la izquierda,
+1. $|A|=-9\neq0$, luego $A$ es invertible.
+2. Se despeja el término con $X$: $A^2X+A^4=A\Rightarrow A^2X=A-A^4$.
+3. Se multiplica por la izquierda por $A^{-2}$ (la incógnita está a la derecha de $A^2$):
 $$X=A^{-2}\left(A-A^4\right)=A^{-1}-A^2.$$
-Con $A^{-1}=\begin{pmatrix}\frac{1}{9}&\frac{2}{9}&-\frac{4}{9}\\\frac{4}{9}&-\frac{1}{9}&\frac{2}{9}\\\frac{2}{9}&\frac{4}{9}&\frac{1}{9}\end{pmatrix}$ y $A^2=\begin{pmatrix}1&0&4\\-4&1&0\\-4&-4&1\end{pmatrix}$:
+4. Se calculan $A^{-1}=\begin{pmatrix}\frac{1}{9}&\frac{2}{9}&-\frac{4}{9}\\\frac{4}{9}&-\frac{1}{9}&\frac{2}{9}\\\frac{2}{9}&\frac{4}{9}&\frac{1}{9}\end{pmatrix}$ y $A^2=\begin{pmatrix}1&0&4\\-4&1&0\\-4&-4&1\end{pmatrix}$.
+5. Se restan:
 $$X=\begin{pmatrix}-\frac{8}{9}&\frac{2}{9}&-\frac{40}{9}\\\frac{40}{9}&-\frac{10}{9}&\frac{2}{9}\\\frac{38}{9}&\frac{40}{9}&-\frac{8}{9}\end{pmatrix}.$$
 ::::
 :::::
@@ -407,10 +466,17 @@ Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: sol
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $A\cdot B=\begin{pmatrix}1&-1&1\\-2&1&0\end{pmatrix}\begin{pmatrix}0&-1\\1&0\\-1&2\end{pmatrix}=\begin{pmatrix}-2&1\\1&2\end{pmatrix}$, con $|AB|=-5\neq0$ y $(AB)^{-1}=\begin{pmatrix}-\frac{2}{5}&\frac{1}{5}\\\frac{1}{5}&\frac{2}{5}\end{pmatrix}$. También $|C|=1\neq0$ y $C^{-1}=\begin{pmatrix}-2&3&1\\-1&1&1\\3&-3&-2\end{pmatrix}$. Entonces, con $I'=\begin{pmatrix}1&0&0\\0&1&0\end{pmatrix}$,
+**a) Ecuación matricial.**
+1. $A\cdot B=\begin{pmatrix}1&-1&1\\-2&1&0\end{pmatrix}\begin{pmatrix}0&-1\\1&0\\-1&2\end{pmatrix}=\begin{pmatrix}-2&1\\1&2\end{pmatrix}$, con $|AB|=-5\neq0$, luego $(AB)^{-1}=\begin{pmatrix}-\frac{2}{5}&\frac{1}{5}\\\frac{1}{5}&\frac{2}{5}\end{pmatrix}$.
+2. También $|C|=1\neq0$ y $C^{-1}=\begin{pmatrix}-2&3&1\\-1&1&1\\3&-3&-2\end{pmatrix}$.
+3. La ecuación es $(AB)\,X\,C=I'$ con $I'=\begin{pmatrix}1&0&0\\0&1&0\end{pmatrix}$. Se multiplica por $(AB)^{-1}$ por la izquierda y por $C^{-1}$ por la derecha: $X=(AB)^{-1}\,I'\,C^{-1}$.
+4. $I'\,C^{-1}$ son las dos primeras filas de $C^{-1}$, y se multiplica:
 $$X=(AB)^{-1}\,I'\,C^{-1}=\begin{pmatrix}-\frac{2}{5}&\frac{1}{5}\\\frac{1}{5}&\frac{2}{5}\end{pmatrix}\begin{pmatrix}-2&3&1\\-1&1&1\end{pmatrix}=\begin{pmatrix}\frac{3}{5}&-1&-\frac{1}{5}\\-\frac{4}{5}&1&\frac{3}{5}\end{pmatrix}.$$
 
-**b)** $A$ es $2\times3$, luego $A\cdot D$ requiere que $D$ tenga $3$ filas; $E\cdot B$ requiere que $E$ tenga $3$ columnas (pues $B$ es $3\times2$) y $E\cdot B$ tendrá tantas filas como $E$. Para que ambos productos tengan la misma dimensión, $A\cdot D$ ($2\times$ columnas de $D$) $=E\cdot B$ ($($filas de $E)\times2$): $E$ tiene $2$ filas y $D$ tiene $2$ columnas.
+**b) Dimensiones de $D$ y $E$.**
+1. $A$ es $2\times3$: para $A\cdot D$, $D$ debe tener $3$ filas. Si $D$ tiene $k$ columnas, $A\cdot D$ es $2\times k$.
+2. $B$ es $3\times2$: para $E\cdot B$, $E$ debe tener $3$ columnas. Si $E$ tiene $m$ filas, $E\cdot B$ es $m\times2$.
+3. Para que $A\cdot D=E\cdot B$, ambas deben tener la misma dimensión: $m=2$ y $k=2$.
 
 **$D$ es $3\times2$ y $E$ es $2\times3$.**
 ::::
@@ -467,19 +533,23 @@ Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: sol
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Sumando las dos ecuaciones: $3X=4A+B$, luego $X=\dfrac{4A+B}{3}$ e $Y=B-X$.
+**a) Sistema de ecuaciones matriciales.**
+1. Se suman las dos ecuaciones para eliminar $Y$: $(2X-Y)+(X+Y)=4A+B\Rightarrow3X=4A+B$, luego $X=\dfrac{4A+B}{3}$.
+2. De la segunda ecuación, $Y=B-X$.
+3. Se calcula:
 $$4A+B=\begin{pmatrix}0&4\\4&0\end{pmatrix}+\begin{pmatrix}3&2\\2&0\end{pmatrix}=\begin{pmatrix}3&6\\6&0\end{pmatrix},\qquad X=\begin{pmatrix}1&2\\2&0\end{pmatrix},\qquad Y=B-X=\begin{pmatrix}2&0\\0&0\end{pmatrix}.$$
-(Comprobación: $2X-Y=\begin{pmatrix}0&4\\4&0\end{pmatrix}=4A$ y $X+Y=B$.)
+4. Comprobación: $2X-Y=\begin{pmatrix}0&4\\4&0\end{pmatrix}=4A$ y $X+Y=B$.
 
-**b)** $C^2=\begin{pmatrix}1&0\\2&1\end{pmatrix}$, $C^3=\begin{pmatrix}1&0\\3&1\end{pmatrix}$ y, por inducción, $C^n=\begin{pmatrix}1&0\\n&1\end{pmatrix}$.
+**b) Potencia $C^{2024}$.**
+1. Se calculan las primeras potencias: $C^2=\begin{pmatrix}1&0\\2&1\end{pmatrix}$ y $C^3=\begin{pmatrix}1&0\\3&1\end{pmatrix}$.
+2. Patrón, que se demuestra por inducción: $C^n=\begin{pmatrix}1&0\\n&1\end{pmatrix}$.
 
 **$C^{2024}=\begin{pmatrix}1&0\\2024&1\end{pmatrix}$.**
 
-**c)** $D$ es $2\times3$, $D^t$ es $3\times2$; $A$ y $B$ son $2\times2$.
-
-- $A^tB+DD^t$: $A^tB$ es $2\times2$ y $DD^t$ es $(2\times3)(3\times2)=2\times2$. **Se puede y el resultado es $2\times2$.**
-- $DB^t+A$: $DB^t$ es $(2\times3)(2\times2)$: el número de columnas de $D$ ($3$) no coincide con el de filas de $B^t$ ($2$). **No se puede.**
-- $D^tA^t+D$: $D^tA^t$ es $(3\times2)(2\times2)=3\times2$ y $D$ es $2\times3$; no se pueden sumar matrices de distinta dimensión. **No se puede.**
+**c) Operaciones posibles.** $D$ es $2\times3$, luego $D^t$ es $3\times2$; $A$ y $B$ son $2\times2$.
+1. $A^tB+DD^t$: $A^tB$ es $2\times2$ y $DD^t$ es $(2\times3)(3\times2)=2\times2$. **Se puede y el resultado es $2\times2$.**
+2. $DB^t+A$: $DB^t$ es $(2\times3)(2\times2)$, y el número de columnas de $D$ ($3$) no coincide con el de filas de $B^t$ ($2$). **No se puede.**
+3. $D^tA^t+D$: $D^tA^t$ es $(3\times2)(2\times2)=3\times2$ y $D$ es $2\times3$; no se pueden sumar matrices de distinta dimensión. **No se puede.**
 ::::
 :::::
 
@@ -530,13 +600,18 @@ Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: sol
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** De $P^{-1}AP=J$ se obtiene $A=PJP^{-1}$. $|P|=-2\neq0$ y $P^{-1}=\begin{pmatrix}\frac{1}{2}&\frac{1}{2}&\frac{1}{2}\\0&1&0\\\frac{1}{2}&-\frac{1}{2}&-\frac{1}{2}\end{pmatrix}$.
-$$PJ=\begin{pmatrix}1&0&1\\0&1&0\\1&-1&-1\end{pmatrix}\begin{pmatrix}2&1&0\\0&2&0\\0&0&-1\end{pmatrix}=\begin{pmatrix}2&1&-1\\0&2&0\\2&-1&1\end{pmatrix},$$
+**a) Matriz $A$.**
+1. De $P^{-1}AP=J$ se multiplica por $P$ a la izquierda y por $P^{-1}$ a la derecha: $A=PJP^{-1}$.
+2. $|P|=-2\neq0$ y $P^{-1}=\begin{pmatrix}\frac{1}{2}&\frac{1}{2}&\frac{1}{2}\\0&1&0\\\frac{1}{2}&-\frac{1}{2}&-\frac{1}{2}\end{pmatrix}$.
+3. Primer producto:
+$$PJ=\begin{pmatrix}1&0&1\\0&1&0\\1&-1&-1\end{pmatrix}\begin{pmatrix}2&1&0\\0&2&0\\0&0&-1\end{pmatrix}=\begin{pmatrix}2&1&-1\\0&2&0\\2&-1&1\end{pmatrix}.$$
+4. Segundo producto:
 $$A=PJP^{-1}=\begin{pmatrix}2&1&-1\\0&2&0\\2&-1&1\end{pmatrix}\begin{pmatrix}\frac{1}{2}&\frac{1}{2}&\frac{1}{2}\\0&1&0\\\frac{1}{2}&-\frac{1}{2}&-\frac{1}{2}\end{pmatrix}=\begin{pmatrix}\frac{1}{2}&\frac{5}{2}&\frac{3}{2}\\0&2&0\\\frac{3}{2}&-\frac{1}{2}&\frac{1}{2}\end{pmatrix}.$$
 
-**b)** $A^3=\left(PJP^{-1}\right)\left(PJP^{-1}\right)\left(PJP^{-1}\right)=PJ\left(P^{-1}P\right)J\left(P^{-1}P\right)JP^{-1}=PJ^3P^{-1}$, ya que $P^{-1}P=I$.
-
-Comprobación con números: $J^3=\begin{pmatrix}8&12&0\\0&8&0\\0&0&-1\end{pmatrix}$ y
+**b) Comprobación de $A^3=PJ^3P^{-1}$.**
+1. Se sustituye $A=PJP^{-1}$ y se agrupan los factores contiguos $P^{-1}P=I$:
+$$A^3=\left(PJP^{-1}\right)\left(PJP^{-1}\right)\left(PJP^{-1}\right)=PJ\left(P^{-1}P\right)J\left(P^{-1}P\right)JP^{-1}=PJ^3P^{-1}.$$
+2. Comprobación con números: $J^3=\begin{pmatrix}8&12&0\\0&8&0\\0&0&-1\end{pmatrix}$ y
 $$PJ^3P^{-1}=\begin{pmatrix}8&12&-1\\0&8&0\\8&4&1\end{pmatrix}\begin{pmatrix}\frac{1}{2}&\frac{1}{2}&\frac{1}{2}\\0&1&0\\\frac{1}{2}&-\frac{1}{2}&-\frac{1}{2}\end{pmatrix}=\begin{pmatrix}\frac{7}{2}&\frac{33}{2}&\frac{9}{2}\\0&8&0\\\frac{9}{2}&\frac{15}{2}&\frac{7}{2}\end{pmatrix}=A^3.$$
 ::::
 :::::
@@ -590,16 +665,23 @@ Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: sol
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $M^t=\begin{pmatrix}1&2&1\\0&1&1\\1&0&1\end{pmatrix}$ y
+**a) Valor de $a$.**
+1. $M^t=\begin{pmatrix}1&2&1\\0&1&1\\1&0&1\end{pmatrix}$.
+2. Se multiplica por $V$:
 $$M^tV=\begin{pmatrix}(5-a^2)+2(a-1)+a^2\\(a-1)+a^2\\(5-a^2)+a^2\end{pmatrix}=\begin{pmatrix}2a+3\\a^2+a-1\\5\end{pmatrix}=\begin{pmatrix}5\\1\\5\end{pmatrix}.$$
-De $2a+3=5$ resulta $a=1$, y se cumple $a^2+a-1=1$. **$a=1$.**
+3. De $2a+3=5$ resulta $a=1$, y se cumple también $a^2+a-1=1$.
 
-**b)** $|M|=2\neq0$ y $M^{-1}=\begin{pmatrix}\frac{1}{2}&\frac{1}{2}&-\frac{1}{2}\\-1&0&1\\\frac{1}{2}&-\frac{1}{2}&\frac{1}{2}\end{pmatrix}$. De $XM-I_3=N$: $XM=N+I_3$ y $X=(N+I_3)M^{-1}$:
+**$a=1$.**
+
+**b) Inversa y ecuación matricial.**
+1. $|M|=2\neq0$ y $M^{-1}=\begin{pmatrix}\frac{1}{2}&\frac{1}{2}&-\frac{1}{2}\\-1&0&1\\\frac{1}{2}&-\frac{1}{2}&\frac{1}{2}\end{pmatrix}$.
+2. Se despeja $X$: de $XM-I_3=N$ se obtiene $XM=N+I_3$ y, multiplicando por la derecha por $M^{-1}$ (la incógnita está a la izquierda de $M$), $X=(N+I_3)M^{-1}$.
+3. Con $N+I_3=\begin{pmatrix}4&2&2\\5&3&1\\7&4&1\end{pmatrix}$:
 $$X=\begin{pmatrix}4&2&2\\5&3&1\\7&4&1\end{pmatrix}\begin{pmatrix}\frac{1}{2}&\frac{1}{2}&-\frac{1}{2}\\-1&0&1\\\frac{1}{2}&-\frac{1}{2}&\frac{1}{2}\end{pmatrix}=\begin{pmatrix}1&1&1\\0&2&1\\0&3&1\end{pmatrix}.$$
 
-**c)** $V$ es $3\times1$ y $N^t$ es $3\times3$: en $2\cdot V\cdot N^t$ el número de columnas de $V$ ($1$) no coincide con el de filas de $N^t$ ($3$). **No se puede realizar.**
-
-$N+M^t$ es $3\times3$ y $V$ es $3\times1$: **$(N+M^t)\cdot V$ se puede realizar y es de dimensión $3\times1$.**
+**c) Operaciones posibles.**
+1. $2\cdot V\cdot N^t$: $V$ es $3\times1$ y $N^t$ es $3\times3$; el número de columnas de $V$ ($1$) no coincide con el de filas de $N^t$ ($3$). **No se puede realizar.**
+2. $(N+M^t)\cdot V$: $N+M^t$ es $3\times3$ (suma de dos matrices $3\times3$) y $V$ es $3\times1$. **Se puede realizar y es de dimensión $3\times1$.**
 ::::
 :::::
 
@@ -664,10 +746,19 @@ Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=a\cdot(a-2)$ (desarrollando por la primera columna) y $|B|=-2+a=a-2$. Ambas tienen inversa si $a(a-2)\neq0$ y $a-2\neq0$: **$a\neq0$ y $a\neq2$.**
+**a) Valores de $a$ con inversa.**
+1. $A$ y $B$ tienen inversa si y solo si $|A|\neq0$ y $|B|\neq0$.
+2. Se desarrolla $|A|$ por la primera columna: $|A|=a\cdot(a-2)$. Además $|B|=-2+a=a-2$.
+3. Ambas tienen inversa si $a(a-2)\neq0$ y $a-2\neq0$.
 
-**b)** Para $a=1$: $|A|=-1$ y $|B|=-1$, y $A\cdot X\cdot B=C\Rightarrow X=A^{-1}\,C\,B^{-1}$, con
+**$a\neq0$ y $a\neq2$.**
+
+**b) Ecuación $AXB=C$ para $a=1$.**
+1. $|A|=-1$ y $|B|=-1$: las dos son invertibles.
+2. Se despeja $X$ multiplicando por $A^{-1}$ a la izquierda y por $B^{-1}$ a la derecha: $A\cdot X\cdot B=C\Rightarrow X=A^{-1}\,C\,B^{-1}$.
+3. Inversas:
 $$A^{-1}=\begin{pmatrix}1&1&-2\\0&-1&2\\0&1&-1\end{pmatrix},\qquad B^{-1}=\begin{pmatrix}1&-1\\1&-2\end{pmatrix}.$$
+4. Se multiplica primero $A^{-1}C$ y luego por $B^{-1}$:
 $$A^{-1}C=\begin{pmatrix}-1&-2\\3&1\\-1&-1\end{pmatrix}\ \Rightarrow\ X=\begin{pmatrix}-1&-2\\3&1\\-1&-1\end{pmatrix}\begin{pmatrix}1&-1\\1&-2\end{pmatrix}=\begin{pmatrix}-3&5\\4&-5\\-2&3\end{pmatrix}.$$
 ::::
 :::::
@@ -730,11 +821,19 @@ Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: sol
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $A^2=\begin{pmatrix}1&0&0\\0&4&0\\0&-3&1\end{pmatrix}$, luego
+**a) Comprobación de $A^{-1}=\frac{1}{2}\left(A^2-4A+5I_3\right)$.**
+1. Se calcula $A^2=\begin{pmatrix}1&0&0\\0&4&0\\0&-3&1\end{pmatrix}$.
+2. Se opera la combinación:
 $$A^2-4A+5I_3=\begin{pmatrix}1&0&0\\0&4&0\\0&-3&1\end{pmatrix}-\begin{pmatrix}4&0&0\\0&8&0\\0&-4&4\end{pmatrix}+\begin{pmatrix}5&0&0\\0&5&0\\0&0&5\end{pmatrix}=\begin{pmatrix}2&0&0\\0&1&0\\0&1&2\end{pmatrix}.$$
-Por tanto $\dfrac{1}{2}\left(A^2-4A+5I_3\right)=\begin{pmatrix}1&0&0\\0&\frac{1}{2}&0\\0&\frac{1}{2}&1\end{pmatrix}$. Por otra parte, $|A|=2\neq0$ y $A^{-1}=\begin{pmatrix}1&0&0\\0&\frac{1}{2}&0\\0&\frac{1}{2}&1\end{pmatrix}$ (comprobable con $A\cdot A^{-1}=I_3$). **Coinciden: queda probado.**
+3. Se divide entre $2$: $\dfrac{1}{2}\left(A^2-4A+5I_3\right)=\begin{pmatrix}1&0&0\\0&\frac{1}{2}&0\\0&\frac{1}{2}&1\end{pmatrix}$.
+4. Por otra parte, $|A|=2\neq0$ y la inversa de $A$ es $A^{-1}=\begin{pmatrix}1&0&0\\0&\frac{1}{2}&0\\0&\frac{1}{2}&1\end{pmatrix}$ (comprobable con $A\cdot A^{-1}=I_3$).
 
-**b)** $A$ es $3\times3$ y el segundo miembro es $2\times3$; para que $X^tA$ sea $2\times3$, $X^t$ debe ser $2\times3$, luego **$X$ es de dimensión $3\times2$.** Entonces $X^t=\begin{pmatrix}1&2&0\\3&-1&1\end{pmatrix}A^{-1}$:
+**Coinciden: queda probado.**
+
+**b) Dimensión de $X$ y ecuación $X^tA=\begin{pmatrix}1&2&0\\3&-1&1\end{pmatrix}$.**
+1. Dimensión: $A$ es $3\times3$ y el segundo miembro es $2\times3$. Para que $X^tA$ sea $2\times3$, $X^t$ debe ser $2\times3$, luego **$X$ es de dimensión $3\times2$.**
+2. Se multiplica por la derecha por $A^{-1}$ (la incógnita está a la izquierda de $A$): $X^t=\begin{pmatrix}1&2&0\\3&-1&1\end{pmatrix}A^{-1}$.
+3. Se calcula y se traspone:
 $$X^t=\begin{pmatrix}1&2&0\\3&-1&1\end{pmatrix}\begin{pmatrix}1&0&0\\0&\frac{1}{2}&0\\0&\frac{1}{2}&1\end{pmatrix}=\begin{pmatrix}1&1&0\\3&0&1\end{pmatrix},\qquad X=\begin{pmatrix}1&3\\1&0\\0&1\end{pmatrix}.$$
 ::::
 :::::
@@ -776,15 +875,22 @@ Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $Q$ es $2\times3$ y $P^t$ es $3\times2$:
+**a) Producto $Q\cdot P^t$.**
+1. Dimensiones: $Q$ es $2\times3$ y $P^t$ es $3\times2$, así que el producto es $2\times2$.
+2. Producto:
 $$Q\cdot P^t=\begin{pmatrix}50&40&35\\0&60&55\end{pmatrix}\begin{pmatrix}40&34\\38&37\\42&40\end{pmatrix}=\begin{pmatrix}4\,990&4\,580\\4\,590&4\,420\end{pmatrix}.$$
-El elemento $(i,j)$ es la producción de la finca $i$ valorada con los precios de la finca $j$. **Los elementos de la diagonal principal son lo que obtiene el agricultor por la venta de la cosecha de cada finca con sus propios precios:** $4\,990$ por la finca 1 y $4\,420$ por la finca 2 (en miles de kg por céntimos de euro por kg, es decir, en decenas de euros: $49\,900$ € y $44\,200$ €).
+3. Significado: el elemento $(i,j)$ es la producción de la finca $i$ valorada con los precios de la finca $j$. **Los elementos de la diagonal principal son lo que obtiene el agricultor por la venta de la cosecha de cada finca con sus propios precios:** $4\,990$ por la finca 1 y $4\,420$ por la finca 2 (en miles de kg por céntimos de euro por kg, es decir, en decenas de euros: $49\,900$ € y $44\,200$ €).
+4. Total de las dos fincas: la suma de la diagonal, $4\,990+4\,420=9\,410$ decenas de euros.
 
-Total: $4\,990+4\,420=9\,410$ decenas de euros, es decir, **$94\,100$ €.**
+**Ha obtenido $94\,100$ €.**
 
-**b1)** $MX+N=V\Rightarrow MX=V-N\Rightarrow X=M^{-1}(V-N)$.
+**b1) Despeje de $X$.**
+1. Se pasa $N$ al otro miembro: $MX+N=V\Rightarrow MX=V-N$.
+2. Se multiplica por $M^{-1}$ por la izquierda (la incógnita está a la derecha de $M$): $X=M^{-1}(V-N)$.
 
-**b2)** $V-N=\begin{pmatrix}3&3\\3&3\end{pmatrix}$ y $M^{-1}=\begin{pmatrix}1&0\\-1&1\end{pmatrix}$:
+**b2) Cálculo de $X$.**
+1. $V-N=\begin{pmatrix}3&3\\3&3\end{pmatrix}$ y $M^{-1}=\begin{pmatrix}1&0\\-1&1\end{pmatrix}$.
+2. Producto:
 $$X=\begin{pmatrix}1&0\\-1&1\end{pmatrix}\begin{pmatrix}3&3\\3&3\end{pmatrix}=\begin{pmatrix}3&3\\0&0\end{pmatrix}.$$
 ::::
 :::::
@@ -815,17 +921,21 @@ Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: sol
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Gramos por lata y precio por kilo: el coste de las materias primas de una lata de la receta $i$ con el proveedor $j$ es $\dfrac{1}{1000}\,R\cdot P^t$, con $R=\begin{pmatrix}500&300&200\\600&100&300\end{pmatrix}$ (recetas en filas) y $P=\begin{pmatrix}0{,}5&0{,}4&0{,}6\\0{,}4&0{,}5&0{,}7\end{pmatrix}$ (proveedores en filas):
+**Planteamiento.** Hay que calcular el precio por lata de cada receta y proveedor y multiplicarlo por las latas del pedido.
+
+1. **Materias primas.** Con $R=\begin{pmatrix}500&300&200\\600&100&300\end{pmatrix}$ (gramos; recetas en filas) y $P=\begin{pmatrix}0{,}5&0{,}4&0{,}6\\0{,}4&0{,}5&0{,}7\end{pmatrix}$ (euros por kilo; proveedores en filas), el coste de una lata de la receta $i$ con el proveedor $j$ es $\dfrac{1}{1000}\,R\cdot P^t$ (se divide entre $1000$ para pasar de gramos a kilos):
 $$\frac{1}{1000}R\,P^t=\begin{pmatrix}0{,}49&0{,}49\\0{,}52&0{,}50\end{pmatrix}\quad\text{(euros por lata; filas: recetas; columnas: proveedores)}.$$
-Precio de venta por lata $=$ materias primas $+$ producción $+$ transporte $+$ beneficio ($0{,}05$ €):
+2. **Precio de venta por lata** $=$ materias primas $+$ producción $+$ transporte $+$ beneficio ($0{,}05$ €):
 
 | | Proveedor 1 | Proveedor 2 |
 |---|---|---|
 | Receta 1 | $0{,}49+0{,}11+0{,}02+0{,}05=0{,}67$ | $0{,}49+0{,}11+0{,}03+0{,}05=0{,}68$ |
 | Receta 2 | $0{,}52+0{,}09+0{,}02+0{,}05=0{,}68$ | $0{,}50+0{,}09+0{,}03+0{,}05=0{,}67$ |
 
-Pedido: receta 1, $5\,000$ latas del proveedor 1 y $6\,000$ del proveedor 2; receta 2, $6\,000$ del proveedor 1 y $5\,000$ del proveedor 2.
+3. **Pedido.** Receta 1: $5\,000$ latas del proveedor 1 y $6\,000$ del proveedor 2. Receta 2: $6\,000$ del proveedor 1 y $5\,000$ del proveedor 2.
+4. **Importe total:**
 $$5\,000\cdot0{,}67+6\,000\cdot0{,}68+6\,000\cdot0{,}68+5\,000\cdot0{,}67=3\,350+4\,080+4\,080+3\,350=14\,860.$$
+
 **La conservera debe cobrar $14\,860$ €.**
 ::::
 :::::
@@ -888,12 +998,22 @@ Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a1)** $|A|=\left|\begin{matrix}1&-1&0\\0&m&-2\\1&m&4\end{matrix}\right|=(4m+2m)+(0+2)=6m+2$. Tiene inversa si $|A|\neq0$: **$m\neq-\dfrac{1}{3}$.**
+**a1) Valores de $m$ con inversa.**
+1. $A$ tiene inversa si y solo si $|A|\neq0$.
+2. Determinante: $|A|=\left|\begin{matrix}1&-1&0\\0&m&-2\\1&m&4\end{matrix}\right|=(4m+2m)+(0+2)=6m+2$.
+3. Se anula en $m=-\dfrac{1}{3}$.
 
-**a2)** Para $m=1$, $|A|=8$ y
+**$A$ tiene inversa si $m\neq-\dfrac{1}{3}$.**
+
+**a2) Inversa para $m=1$.**
+1. $|A|=8\neq0$.
+2. Se calcula la adjunta, se traspone y se divide entre $8$:
 $$A^{-1}=\frac{1}{8}\begin{pmatrix}6&4&2\\-2&4&2\\-1&-2&1\end{pmatrix}=\begin{pmatrix}\frac{3}{4}&\frac{1}{2}&\frac{1}{4}\\-\frac{1}{4}&\frac{1}{2}&\frac{1}{4}\\-\frac{1}{8}&-\frac{1}{4}&\frac{1}{8}\end{pmatrix}.$$
 
-**b)** $XB-B^2+B=0\Rightarrow XB=B^2-B$. Multiplicando por $B^{-1}$ por la derecha: $X=\left(B^2-B\right)B^{-1}=B-I$.
+**b) Despeje de $X$.**
+1. Se pasan los términos sin $X$ al otro miembro: $XB-B^2+B=0\Rightarrow XB=B^2-B$.
+2. Se multiplica por $B^{-1}$ por la derecha (la incógnita está a la izquierda de $B$): $X=\left(B^2-B\right)B^{-1}$.
+3. Se simplifica: $B^2B^{-1}=B$ y $BB^{-1}=I$.
 
 **$X=B-I$.**
 ::::
@@ -961,13 +1081,19 @@ Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: sol
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $C^t$ es $1\times3$, $A$ es $3\times3$ y $C$ es $3\times1$: **$C^tAC$ es $1\times1$.** $C$ es $3\times1$, $C^t$ es $1\times3$ (luego $CC^t$ es $3\times3$) y $B$ es $3\times3$: **$CC^tB$ es $3\times3$.**
+**a) Dimensiones.**
+1. $C^tAC$: $C^t$ es $1\times3$, $A$ es $3\times3$ y $C$ es $3\times1$, luego **$C^tAC$ es $1\times1$.**
+2. $CC^tB$: $C$ es $3\times1$ y $C^t$ es $1\times3$, luego $CC^t$ es $3\times3$; con $B$ de $3\times3$, **$CC^tB$ es $3\times3$.**
 
-**b)** $|A|=17\neq0$: **$A$ tiene inversa**
+**b) Inversas.**
+1. $|A|=17\neq0$: **$A$ tiene inversa**
 $$A^{-1}=\frac{1}{17}\begin{pmatrix}-12&11&-28\\7&-5&22\\21&-15&49\end{pmatrix}.$$
-$|B|=0$ (la tercera fila es combinación lineal de las otras dos): **$B$ no tiene inversa.**
+2. $|B|=0$ (la tercera fila es combinación lineal de las otras dos): **$B$ no tiene inversa.**
 
-**c)** Eliminando: $4\cdot(2X+3Y=A)-3\cdot(-3X+4Y=B)$ da $17X=4A-3B$, y $3\cdot(2X+3Y=A)+2\cdot(-3X+4Y=B)$ da $17Y=3A+2B$:
+**c) Sistema matricial.** Se resuelve por reducción, como un sistema ordinario con matrices.
+1. Para eliminar $Y$: $4\cdot(2X+3Y=A)-3\cdot(-3X+4Y=B)$ da $17X=4A-3B$.
+2. Para eliminar $X$: $3\cdot(2X+3Y=A)+2\cdot(-3X+4Y=B)$ da $17Y=3A+2B$.
+3. Se calculan las combinaciones y se divide entre $17$:
 $$X=\frac{4A-3B}{17}=\begin{pmatrix}1&-2&3\\2&0&-1\\0&0&1\end{pmatrix},\qquad Y=\frac{3A+2B}{17}=\begin{pmatrix}1&-1&0\\1&0&2\\0&1&-1\end{pmatrix}.$$
 ::::
 :::::

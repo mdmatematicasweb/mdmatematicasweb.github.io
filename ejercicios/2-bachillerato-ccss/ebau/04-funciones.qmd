@@ -94,18 +94,29 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f(x)=1-\dfrac{x-6}{x+2}=\dfrac{(x+2)-(x-6)}{x+2}=\dfrac{8}{x+2}$. **Dominio: $\mathbb R\setminus\{-2\}$.** Asíntotas: vertical $x=-2$ y horizontal $y=\displaystyle\lim_{x\to\pm\infty}\dfrac{8}{x+2}=0$.
+**a) Dominio y asíntotas.**
+1. Se simplifica: $f(x)=1-\dfrac{x-6}{x+2}=\dfrac{(x+2)-(x-6)}{x+2}=\dfrac{8}{x+2}$.
+2. El denominador se anula en $x=-2$: **dominio $\mathbb R\setminus\{-2\}$.**
+3. Vertical: $x=-2$. Horizontal: $y=\displaystyle\lim_{x\to\pm\infty}\dfrac{8}{x+2}=0$.
 
 **Asíntotas: $x=-2$ e $y=0$.**
 
-**b)** $f'(x)=-\dfrac{8}{(x+2)^2}<0$: **$f$ es decreciente en $(-\infty,-2)$ y en $(-2,+\infty)$; no tiene extremos relativos.** $f''(x)=\dfrac{16}{(x+2)^3}$: **convexa en $(-2,+\infty)$ ($f''>0$) y cóncava en $(-\infty,-2)$ ($f''<0$); no tiene puntos de inflexión** (en $x=-2$ no está definida).
+**b) Monotonía y curvatura.**
+1. Primera derivada: $f'(x)=-\dfrac{8}{(x+2)^2}<0$ en todo el dominio.
+2. Segunda derivada: $f''(x)=\dfrac{16}{(x+2)^3}$, positiva si $x>-2$ y negativa si $x<-2$.
 
-**c)** Hipérbola $y=\dfrac{8}{x+2}$ con asíntotas $x=-2$ e $y=0$: la rama derecha ($x>-2$) está por encima del eje, pasa por $(0,4)$ y $(2,2)$ y baja hacia $0$; la rama izquierda ($x<-2$) está por debajo del eje, pasa por $(-4,-4)$ y $(-6,-2)$.
+**$f$ es decreciente en $(-\infty,-2)$ y en $(-2,+\infty)$; no tiene extremos relativos.** **Es convexa en $(-2,+\infty)$ ($f''>0$) y cóncava en $(-\infty,-2)$ ($f''<0$); no tiene puntos de inflexión** (en $x=-2$ no está definida).
 
-**d)** $f'(x)=-8\iff\dfrac{8}{(x+2)^2}=8\iff(x+2)^2=1\iff x=-1$ o $x=-3$.
+**c) Gráfica.**
+1. Es la hipérbola $y=\dfrac{8}{x+2}$ con asíntotas $x=-2$ e $y=0$.
+2. Rama derecha ($x>-2$): por encima del eje, pasa por $(0,4)$ y $(2,2)$ y baja hacia $0$.
+3. Rama izquierda ($x<-2$): por debajo del eje, pasa por $(-4,-4)$ y $(-6,-2)$.
 
-- $x=-1$: $f(-1)=8$; tangente $y-8=-8(x+1)$, es decir, **$y=-8x$.**
-- $x=-3$: $f(-3)=-8$; tangente $y+8=-8(x+3)$, es decir, **$y=-8x-32$.**
+**d) Tangentes de pendiente $-8$.**
+1. $f'(x)=-8\iff\dfrac{8}{(x+2)^2}=8\iff(x+2)^2=1\iff x=-1$ o $x=-3$.
+2. Para cada punto se usa $y-f(x_0)=f'(x_0)(x-x_0)$:
+   - $x=-1$: $f(-1)=8$; tangente $y-8=-8(x+1)$, es decir, **$y=-8x$.**
+   - $x=-3$: $f(-3)=-8$; tangente $y+8=-8(x+3)$, es decir, **$y=-8x-32$.**
 
 ![Hipérbola f(x)=8/(x+2) con asíntotas x=−2 e y=0 y las dos rectas tangentes de pendiente −8: y=−8x en (−1,8) e y=−8x−32 en (−3,−8)](fig/2026-ord-sup1-e2b.svg){fig-alt="Hipérbola f(x)=8/(x+2) con asíntotas x=−2 e y=0 y las dos rectas tangentes de pendiente −8: y=−8x en (−1,8) e y=−8x−32 en (−3,−8)" width="75%" fig-align="center"}
 ::::
@@ -150,17 +161,26 @@ $f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $I'(t)=\dfrac{\ln2}{100}\cdot2^t>0$ para todo $t$: **el índice aumenta en todo el intervalo $[0,13]$.**
+**a) Intervalo de crecimiento.**
+1. Derivada: $I'(t)=\dfrac{\ln2}{100}\cdot2^t$.
+2. $I'(t)>0$ para todo $t$.
 
-**b)** $I(t)=10{,}24\iff\dfrac{2^t}{100}=10{,}24\iff2^t=1\,024=2^{10}\iff t=10$.
+**El índice aumenta en todo el intervalo $[0,13]$.**
+
+**b) Semanas para llegar a $10{,}24$.**
+1. $I(t)=10{,}24\iff\dfrac{2^t}{100}=10{,}24\iff2^t=1\,024=2^{10}$.
+2. Los exponentes deben coincidir: $t=10$.
 
 **Se obtendrá a las $10$ semanas.**
 
-**c)** La tasa de crecimiento instantánea es $I'(5)=\dfrac{\ln2}{100}\cdot2^5=0{,}32\ln2\approx0{,}2218$.
+**c) Tasa de crecimiento instantánea a las $5$ semanas.**
+1. La tasa instantánea es la derivada: $I'(5)=\dfrac{\ln2}{100}\cdot2^5=0{,}32\ln2\approx0{,}2218$.
 
 **$I'(5)\approx0{,}22$ puntos de índice por semana.**
 
-**d)** $I$ es creciente, luego su máximo en el trimestre está en $t=13$: $I(13)=\dfrac{2^{13}}{100}=\dfrac{8\,192}{100}=81{,}92<90$.
+**d) ¿Se alcanza el índice $90$?**
+1. $I$ es creciente, así que su máximo en el trimestre está en $t=13$.
+2. $I(13)=\dfrac{2^{13}}{100}=\dfrac{8\,192}{100}=81{,}92<90$.
 
 **No es posible alcanzar un índice de $90$ durante el trimestre** (el máximo es $81{,}92$).
 ::::
@@ -223,19 +243,28 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** En $0\le t\le1$ el capital es como máximo $5\,000\cdot1{,}05=5\,250<5\,931{,}10$, así que $t>1$: $5\,000\cdot1{,}05^t=5\,931{,}10\iff1{,}05^t=1{,}18622\iff t=\dfrac{\ln1{,}18622}{\ln1{,}05}\approx3{,}5$.
+**a) Tiempo para $5\,931{,}10$ €.**
+1. En $0\le t\le1$ el capital es como máximo $5\,000\cdot1{,}05=5\,250<5\,931{,}10$, así que $t>1$.
+2. Se plantea y se toman logaritmos: $5\,000\cdot1{,}05^t=5\,931{,}10\iff1{,}05^t=1{,}18622\iff t=\dfrac{\ln1{,}18622}{\ln1{,}05}\approx3{,}5$.
 
 **Debe mantenerlo invertido unos $3{,}5$ años.**
 
-**b)** $I=f(4)-f(2)=5\,000\cdot1{,}05^4-5\,000\cdot1{,}05^2=6\,077{,}53-5\,512{,}50=565{,}03$.
+**b) Intereses entre el año 2 y el año 4.**
+1. Los dos años están en el tramo $t>1$.
+2. $I=f(4)-f(2)=5\,000\cdot1{,}05^4-5\,000\cdot1{,}05^2=6\,077{,}53-5\,512{,}50=565{,}03$.
 
 **Intereses: $565{,}03$ €.**
 
-**c)** En $t=1$: $\displaystyle\lim_{t\to1^-}f=5\,000\cdot1{,}05=5\,250$ y $\displaystyle\lim_{t\to1^+}f=5\,000\cdot1{,}05=5\,250=f(1)$: **continua.** Derivadas: $f'(t)=250$ si $0<t<1$ y $f'(t)=5\,000\cdot1{,}05^t\ln1{,}05$ si $t>1$. En $t=1$: $f'(1^-)=250$ y $f'(1^+)=5\,250\ln1{,}05\approx256{,}15$. **No derivable en $t=1$.**
+**c) Continuidad y derivabilidad.** Cada trozo es continuo y derivable en su intervalo abierto; solo hay que estudiar $t=1$.
+1. Continuidad: $\displaystyle\lim_{t\to1^-}f=5\,000\cdot1{,}05=5\,250$ y $\displaystyle\lim_{t\to1^+}f=5\,000\cdot1{,}05=5\,250=f(1)$: **continua.**
+2. Derivadas: $f'(t)=250$ si $0<t<1$ y $f'(t)=5\,000\cdot1{,}05^t\ln1{,}05$ si $t>1$.
+3. En $t=1$: $f'(1^-)=250$ y $f'(1^+)=5\,250\ln1{,}05\approx256{,}15$. No coinciden: **no derivable en $t=1$.**
 
 **$f$ es continua en $[0,+\infty)$ y derivable en $[0,+\infty)\setminus\{1\}$.**
 
-**d)** $f'(t)>0$ en ambos tramos: **$f$ es creciente en $[0,+\infty)$.** Gráfica: segmento de recta de $(0,5\,000)$ a $(1,5\,250)$ y, a partir de ahí, curva exponencial creciente y convexa que pasa por $(2,5\,512{,}5)$ y $(4,6\,077{,}5)$.
+**d) Monotonía y gráfica.**
+1. $f'(t)>0$ en ambos tramos: **$f$ es creciente en $[0,+\infty)$.**
+2. Gráfica: segmento de recta de $(0,5\,000)$ a $(1,5\,250)$ y, a partir de ahí, curva exponencial creciente y convexa que pasa por $(2,5\,512{,}5)$ y $(4,6\,077{,}5)$.
 
 ![Capital f(t): segmento de recta de 5000 a 5250 en el primer año y, después, curva exponencial 5000·1,05^t creciente](fig/2025-ord-b-e3.svg){fig-alt="Capital f(t): segmento de recta de 5000 a 5250 en el primer año y, después, curva exponencial 5000·1,05^t creciente" width="75%" fig-align="center"}
 ::::
@@ -296,19 +325,26 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $B(t)=\dfrac{3t-(t+2)}{t+2}=\dfrac{2t-2}{t+2}$, que es negativa para $t<1$, nula en $t=1$ y positiva para $t>1$.
+**a) Intervalo sin beneficios.**
+1. Se simplifica: $B(t)=\dfrac{3t-(t+2)}{t+2}=\dfrac{2t-2}{t+2}$.
+2. El denominador es positivo, así que el signo lo da $2t-2$: negativa para $t<1$, nula en $t=1$ y positiva para $t>1$.
 
 **No tiene beneficios en el intervalo $[0,1]$** (pérdidas hasta el año $1$ y beneficio nulo en $t=1$).
 
-**b)** $B'(t)=\dfrac{3(t+2)-3t}{(t+2)^2}=\dfrac{6}{(t+2)^2}>0$: $B$ es creciente, luego el máximo está en el extremo $t=10$: $B(10)=\dfrac{30}{12}-1=\dfrac{3}{2}$.
+**b) Máximo beneficio.**
+1. Derivada: $B'(t)=\dfrac{3(t+2)-3t}{(t+2)^2}=\dfrac{6}{(t+2)^2}>0$.
+2. $B$ es creciente, luego el máximo está en el extremo $t=10$: $B(10)=\dfrac{30}{12}-1=\dfrac{3}{2}$.
 
 **El máximo beneficio se alcanza a los $10$ años y asciende a $1{,}5$ millones de euros.**
 
-**c)** $B(t)=0{,}8\iff\dfrac{3t}{t+2}=1{,}8\iff3t=1{,}8t+3{,}6\iff1{,}2t=3{,}6\iff t=3$.
+**c) Beneficio de $800\,000$ €.**
+1. En millones, $B(t)=0{,}8\iff\dfrac{3t}{t+2}=1{,}8$.
+2. Se despeja: $3t=1{,}8t+3{,}6\iff1{,}2t=3{,}6\iff t=3$.
 
 **Han de pasar $3$ años.**
 
-**d)** $\displaystyle\lim_{t\to+\infty}B(t)=\lim_{t\to+\infty}\left(\frac{3t}{t+2}-1\right)=3-1=2$.
+**d) Beneficio a largo plazo.**
+1. $\displaystyle\lim_{t\to+\infty}B(t)=\lim_{t\to+\infty}\left(\frac{3t}{t+2}-1\right)=3-1=2$.
 
 **El beneficio tendería a $2$ millones de euros** (asíntota horizontal $y=2$).
 ::::
@@ -366,17 +402,25 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f(t)=5\iff10\left(\dfrac{1}{2}\right)^{t/30}=5\iff\left(\dfrac{1}{2}\right)^{t/30}=\dfrac{1}{2}\iff\dfrac{t}{30}=1$.
+**a) Vida media.**
+1. Cantidad inicial: $f(0)=10$ mg; la mitad es $5$ mg.
+2. $f(t)=5\iff10\left(\dfrac{1}{2}\right)^{t/30}=5\iff\left(\dfrac{1}{2}\right)^{t/30}=\dfrac{1}{2}\iff\dfrac{t}{30}=1$.
 
 **Deben pasar $30$ años.**
 
-**b)** $f(10)=10\cdot2^{-1/3}\approx7{,}937$. $f'(t)=10\left(\dfrac{1}{2}\right)^{t/30}\cdot\dfrac{\ln(1/2)}{30}=-\dfrac{\ln2}{3}\cdot2^{-t/30}$, luego $f'(10)=-\dfrac{\ln2}{3}\cdot2^{-1/3}\approx-0{,}1834$.
-
-Tangente: $y-7{,}937=-0{,}1834\,(t-10)$.
+**b) Recta tangente en $t=10$.**
+1. Valor: $f(10)=10\cdot2^{-1/3}\approx7{,}937$.
+2. Derivada: $f'(t)=10\left(\dfrac{1}{2}\right)^{t/30}\cdot\dfrac{\ln(1/2)}{30}=-\dfrac{\ln2}{3}\cdot2^{-t/30}$.
+3. Pendiente: $f'(10)=-\dfrac{\ln2}{3}\cdot2^{-1/3}\approx-0{,}1834$.
+4. Tangente: $y-f(10)=f'(10)(t-10)$, es decir, $y-7{,}937=-0{,}1834\,(t-10)$.
 
 **$y=-0{,}1834\,t+9{,}771$** (es decir, $y=10\cdot2^{-1/3}-\dfrac{\ln2}{3}\,2^{-1/3}(t-10)$).
 
-**c)** $\displaystyle\lim_{t\to+\infty}10\left(\frac{1}{2}\right)^{t/30}=0$: **asíntota horizontal $y=0$.** La función está definida y es continua para todo $t\ge0$: **no tiene asíntotas verticales.**
+**c) Asíntotas.**
+1. Horizontal: $\displaystyle\lim_{t\to+\infty}10\left(\frac{1}{2}\right)^{t/30}=0$, luego **asíntota horizontal $y=0$.**
+2. Vertical: la función está definida y es continua para todo $t\ge0$, así que **no tiene asíntotas verticales.**
+
+*Interpretación:* el Cesio 137 se desintegra sin llegar a agotarse nunca del todo.
 ::::
 :::::
 
@@ -456,17 +500,29 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Dominio: $\mathbb R\setminus\{-3\}$. Con $OX$: $f(x)=0\iff\dfrac{4}{3+x}=1\iff x=1$, punto $(1,0)$. Con $OY$: $f(0)=1-\dfrac{4}{3}=-\dfrac{1}{3}$, punto $\left(0,-\dfrac{1}{3}\right)$.
+**a) Dominio y cortes.**
+1. Dominio: el denominador no puede anularse, $\mathbb R\setminus\{-3\}$.
+2. Con $OX$: $f(x)=0\iff\dfrac{4}{3+x}=1\iff x=1$, punto $(1,0)$.
+3. Con $OY$: $f(0)=1-\dfrac{4}{3}=-\dfrac{1}{3}$, punto $\left(0,-\dfrac{1}{3}\right)$.
 
-**b)** Vertical: $x=-3$ (el denominador se anula: $\displaystyle\lim_{x\to-3^-}f=+\infty$ y $\displaystyle\lim_{x\to-3^+}f=-\infty$). Horizontal: $\displaystyle\lim_{x\to\pm\infty}f(x)=1$.
+**b) Asíntotas.**
+1. Vertical: el denominador se anula en $x=-3$ y el numerador no; $\displaystyle\lim_{x\to-3^-}f=+\infty$ y $\displaystyle\lim_{x\to-3^+}f=-\infty$.
+2. Horizontal: $\displaystyle\lim_{x\to\pm\infty}f(x)=1$.
 
 **Asíntotas: $x=-3$ e $y=1$.**
 
-**c)** $f'(x)=\dfrac{4}{(3+x)^2}=1\iff(3+x)^2=4\iff3+x=\pm2\iff x=-1$ o $x=-5$.
+**c) Puntos con tangente de pendiente $1$.**
+1. Derivada: $f'(x)=\dfrac{4}{(3+x)^2}$.
+2. Se iguala a $1$: $\dfrac{4}{(3+x)^2}=1\iff(3+x)^2=4\iff3+x=\pm2\iff x=-1$ o $x=-5$.
+3. Se calculan las ordenadas: $f(-1)=1-\dfrac{4}{2}=-1$ y $f(-5)=1-\dfrac{4}{-2}=3$.
 
-**Puntos: $f(-1)=1-\dfrac{4}{2}=-1$, es decir $(-1,-1)$, y $f(-5)=1-\dfrac{4}{-2}=3$, es decir $(-5,3)$.**
+**Puntos $(-1,-1)$ y $(-5,3)$.**
 
-**d)** $f''(x)=-\dfrac{8}{(3+x)^3}$. Si $x>-3$, $f''<0$: **cóncava en $(-3,+\infty)$.** Si $x<-3$, $f''>0$: **convexa en $(-\infty,-3)$.** No hay puntos de inflexión ($x=-3$ no está en el dominio).
+**d) Curvatura.**
+1. Segunda derivada: $f''(x)=-\dfrac{8}{(3+x)^3}$.
+2. Si $x>-3$, $(3+x)^3>0$ y $f''<0$: **cóncava en $(-3,+\infty)$.**
+3. Si $x<-3$, $(3+x)^3<0$ y $f''>0$: **convexa en $(-\infty,-3)$.**
+4. No hay puntos de inflexión, porque $x=-3$ no está en el dominio.
 ::::
 :::::
 
@@ -557,17 +613,25 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Cortes: con el eje $OX$, $12t-24=0\Rightarrow t=2$, punto $(2,0)$; con el eje $OY$, $f(0)=-8$, punto $(0,-8)$. Asíntotas: vertical $t=-3$ (fuera del dominio $t\ge0$) y horizontal $y=\displaystyle\lim_{t\to+\infty}f(t)=12$.
-
-$f'(t)=\dfrac{12(t+3)-(12t-24)}{(t+3)^2}=\dfrac{60}{(t+3)^2}>0$: **$f$ es creciente.** $f''(t)=-\dfrac{120}{(t+3)^3}<0$: **$f$ es cóncava.**
-
-Gráfica: arco creciente y cóncavo que parte de $(0,-8)$, corta el eje en $(2,0)$ y se acerca por debajo a la recta $y=12$.
+**a) Estudio y gráfica de $f(t)=\dfrac{12t-24}{t+3}$, $t\ge0$.**
+1. **Cortes.** Con el eje $OX$, $12t-24=0\Rightarrow t=2$, punto $(2,0)$. Con el eje $OY$, $f(0)=-8$, punto $(0,-8)$.
+2. **Asíntotas.** Vertical $t=-3$ (fuera del dominio $t\ge0$) y horizontal $y=\displaystyle\lim_{t\to+\infty}f(t)=12$.
+3. **Monotonía.** $f'(t)=\dfrac{12(t+3)-(12t-24)}{(t+3)^2}=\dfrac{60}{(t+3)^2}>0$: **$f$ es creciente.**
+4. **Curvatura.** $f''(t)=-\dfrac{120}{(t+3)^3}<0$: **$f$ es cóncava.**
+5. **Gráfica.** Arco creciente y cóncavo que parte de $(0,-8)$, corta el eje en $(2,0)$ y se acerca por debajo a la recta $y=12$.
 
 ![Curva creciente y cóncava f(t)=(12t−24)/(t+3) para t≥0: parte de (0,−8), corta al eje en (2,0) y tiende a la asíntota y=12](fig/2023-ord-b-e4.svg){fig-alt="Curva creciente y cóncava f(t)=(12t−24)/(t+3) para t≥0: parte de (0,−8), corta al eje en (2,0) y tiende a la asíntota y=12" width="75%" fig-align="center"}
 
-**b-1)** $f(t)>0\iff t>2$: **la empresa deja de tener pérdidas a partir del año 2** (en $t=2$ el beneficio es nulo).
+**b-1) ¿Cuándo deja de haber pérdidas?**
+1. Hay pérdidas si $f(t)<0$, es decir, si $t<2$.
+2. $f(t)>0\iff t>2$.
 
-**b-2)** **Sí están limitados:** $f$ es creciente y $\displaystyle\lim_{t\to+\infty}f(t)=12$, luego los beneficios se acercan a $12$ millones de euros sin llegar a alcanzarlos (la recta $y=12$ es asíntota horizontal).
+**La empresa deja de tener pérdidas a partir del año 2** (en $t=2$ el beneficio es nulo).
+
+**b-2) ¿Están limitados los beneficios?**
+1. $f$ es creciente y $\displaystyle\lim_{t\to+\infty}f(t)=12$.
+
+**Sí están limitados:** los beneficios se acercan a $12$ millones de euros sin llegar a alcanzarlos, porque la recta $y=12$ es asíntota horizontal.
 ::::
 :::::
 

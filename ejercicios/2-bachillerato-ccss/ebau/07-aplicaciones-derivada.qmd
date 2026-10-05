@@ -62,16 +62,25 @@ El óptimo de una función derivable en un intervalo se busca entre los puntos c
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $P'(t)=-\dfrac{15(t+120)-15t}{(t+120)^2}=-\dfrac{1\,800}{(t+120)^2}<0$ para todo $t\ge0$: **el peso es decreciente, la persona va perdiendo peso.** Además, $\displaystyle\lim_{t\to+\infty}P(t)=75-15=60$.
+**a) Decrecimiento y peso mínimo.**
+1. Derivada: $P'(t)=-\dfrac{15(t+120)-15t}{(t+120)^2}=-\dfrac{1\,800}{(t+120)^2}$.
+2. $P'(t)<0$ para todo $t\ge0$: **el peso es decreciente, la persona va perdiendo peso.**
+3. Peso límite: $\displaystyle\lim_{t\to+\infty}P(t)=75-15=60$.
 
 **El peso mínimo al que podría llegar es de $60$ kg** (se acerca a él sin alcanzarlo).
 
-**b)** $P(t)=64\iff\dfrac{15t}{t+120}=11\iff15t=11t+1\,320\iff t=330$.
+**b) Días para llegar a $64$ kg.**
+1. Se resuelve $P(t)=64$: $75-\dfrac{15t}{t+120}=64\iff\dfrac{15t}{t+120}=11$.
+2. $P(t)=64\iff\dfrac{15t}{t+120}=11\iff15t=11t+1\,320\iff t=330$.
 
 **Debe hacer régimen $330$ días.**
 
-**c)** $h^2=1{,}68^2=2{,}8224$ y $i(t)>25\iff P(t)>25\cdot2{,}8224=70{,}56$. Al inicio, $P(0)=75$ e $i(0)=\dfrac{75}{2{,}8224}=26{,}57>25$: **sí tenía sobrepeso.** Deja de tenerlo cuando $P(t)=70{,}56$:
+**c) Sobrepeso.**
+1. Altura: $h^2=1{,}68^2=2{,}8224$. Hay sobrepeso si $i(t)>25\iff P(t)>25\cdot2{,}8224=70{,}56$.
+2. Al inicio, $P(0)=75$ e $i(0)=\dfrac{75}{2{,}8224}=26{,}57>25$: **sí tenía sobrepeso.**
+3. Como $P$ es decreciente, deja de tenerlo cuando $P(t)=70{,}56$:
 $$75-\frac{15t}{t+120}=70{,}56\iff\frac{15t}{t+120}=4{,}44\iff10{,}56t=532{,}8\iff t=\frac{532{,}8}{10{,}56}=50{,}45.$$
+
 **Han de transcurrir unos $50{,}45$ días** (es decir, a partir del día $51$ deja de tener sobrepeso).
 ::::
 :::::
@@ -137,21 +146,27 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f'(t)=-3t^2+21t-30=-3(t-2)(t-5)$, que se anula en $t=2$ y $t=5$.
+**a) Intervalos de crecimiento.**
+1. Derivada: $f'(t)=-3t^2+21t-30=-3(t-2)(t-5)$, que se anula en $t=2$ y $t=5$.
+2. Signo de $f'$ en $[1,6]$:
+   - $f'<0$ en $(1,2)$: **los ingresos disminuyeron.**
+   - $f'>0$ en $(2,5)$: **los ingresos aumentaron.**
+   - $f'<0$ en $(5,6)$: **los ingresos disminuyeron.**
 
-- $f'<0$ en $(1,2)$: **los ingresos disminuyeron.**
-- $f'>0$ en $(2,5)$: **los ingresos aumentaron.**
-- $f'<0$ en $(5,6)$: **los ingresos disminuyeron.**
-
-**b)** Valores: $f(1)=59{,}5$, $f(2)=54$, $f(5)=67{,}5$ y $f(6)=62$.
+**b) Mayor y menor ingreso.**
+1. Se comparan los puntos críticos y los extremos del intervalo: $f(1)=59{,}5$, $f(2)=54$, $f(5)=67{,}5$ y $f(6)=62$.
 
 **El mayor ingreso, $67{,}5$ mil euros, se obtuvo a los $5$ años; el menor, $54$ mil euros, a los $2$ años.**
 
-**c)** $f''(t)=-6t+21=0\Rightarrow t=\dfrac{7}{2}=3{,}5$, con $f''>0$ en $(1;3{,}5)$ (convexa) y $f''<0$ en $(3{,}5;6)$ (cóncava): **punto de inflexión en $\left(\dfrac{7}{2},\dfrac{243}{4}\right)=(3{,}5;\ 60{,}75)$.**
+**c) Inflexión, gráfica e interpretación.**
+1. Segunda derivada: $f''(t)=-6t+21=0\Rightarrow t=\dfrac{7}{2}=3{,}5$.
+2. $f''>0$ en $(1;3{,}5)$ (convexa) y $f''<0$ en $(3{,}5;6)$ (cóncava), luego hay inflexión.
 
-Gráfica: parte de $(1;59{,}5)$, desciende hasta el mínimo $(2,54)$, asciende pasando por el punto de inflexión $(3{,}5;60{,}75)$ hasta el máximo $(5;67{,}5)$ y vuelve a descender hasta $(6,62)$.
+**Punto de inflexión en $\left(\dfrac{7}{2},\dfrac{243}{4}\right)=(3{,}5;\ 60{,}75)$.**
 
-**Interpretación:** tras un descenso inicial hasta el segundo año, los ingresos crecen entre los años $2$ y $5$; el crecimiento es más rápido en el punto de inflexión ($t=3{,}5$, donde $f'(3{,}5)=6{,}75$ mil euros por año es la máxima velocidad de aumento) y se frena después hasta el máximo del año $5$; desde ahí los ingresos vuelven a caer.
+3. Gráfica: parte de $(1;59{,}5)$, desciende hasta el mínimo $(2,54)$, asciende pasando por el punto de inflexión $(3{,}5;60{,}75)$ hasta el máximo $(5;67{,}5)$ y vuelve a descender hasta $(6,62)$.
+
+*Interpretación:* tras un descenso inicial hasta el segundo año, los ingresos crecen entre los años $2$ y $5$. El crecimiento es más rápido en el punto de inflexión ($t=3{,}5$, donde $f'(3{,}5)=6{,}75$ mil euros por año es la máxima velocidad de aumento) y se frena después hasta el máximo del año $5$. Desde ahí los ingresos vuelven a caer.
 ::::
 :::::
 
@@ -191,17 +206,28 @@ El óptimo de una función derivable en un intervalo se busca entre los puntos c
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $B(x)=150x-\left(0{,}2x^2+40x+5\,000\right)=-0{,}2x^2+110x-5\,000$.
+**a) Función beneficio.**
+1. Beneficio = ingreso − coste, con ingreso $150x$:
+$$B(x)=150x-\left(0{,}2x^2+40x+5\,000\right)=-0{,}2x^2+110x-5\,000.$$
 
-**b)** $B'(x)=-0{,}4x+110=0\Rightarrow x=275$ y $B''=-0{,}4<0$: máximo. $B(275)=-0{,}2\cdot75\,625+30\,250-5\,000=10\,125$.
+**b) Beneficio máximo.**
+1. Derivada: $B'(x)=-0{,}4x+110=0\Rightarrow x=275$.
+2. $B''=-0{,}4<0$: máximo.
+3. Beneficio: $B(275)=-0{,}2\cdot75\,625+30\,250-5\,000=10\,125$.
 
 **Deben venderse $275$ toneladas, con un beneficio máximo de $10\,125$ €.**
 
-**c)** Sin producción: $B(0)=-5\,000$ (**pérdidas de $5\,000$ €**, los costes fijos). $B(x)>0\iff-0{,}2x^2+110x-5\,000>0\iff x^2-550x+25\,000<0\iff50<x<500$: **el beneficio es positivo si se producen entre $50$ y $500$ toneladas.**
+**c) Sin producción, beneficio positivo y beneficio de $4\,000$ €.**
+1. Sin producción: $B(0)=-5\,000$, es decir, **pérdidas de $5\,000$ €** (los costes fijos).
+2. Beneficio positivo: $B(x)>0\iff-0{,}2x^2+110x-5\,000>0\iff x^2-550x+25\,000<0\iff50<x<500$.
+3. Beneficio de $4\,000$ €: $B(x)=4\,000\iff-0{,}2x^2+110x-9\,000=0\iff x^2-550x+45\,000=0\iff x=\dfrac{550\pm350}{2}$.
 
-$B(x)=4\,000\iff-0{,}2x^2+110x-9\,000=0\iff x^2-550x+45\,000=0\iff x=\dfrac{550\pm350}{2}$: **con $100$ o con $450$ toneladas.**
+**El beneficio es positivo si se producen entre $50$ y $500$ toneladas; se obtienen $4\,000$ € con $100$ o con $450$ toneladas.**
 
-**d)** $B'(x)=-0{,}4x+110>0\iff x<275$: **los beneficios aumentan para $x<275$ toneladas y disminuyen para $x>275$.**
+**d) Crecimiento del beneficio.**
+1. $B'(x)=-0{,}4x+110>0\iff x<275$.
+
+**Los beneficios aumentan para $x<275$ toneladas y disminuyen para $x>275$.**
 ::::
 :::::
 
@@ -272,19 +298,29 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $N'(t)=500\,000\cdot0{,}2\,e^{-0{,}2t}=100\,000\,e^{-0{,}2t}>0$: **$N$ es creciente.** $N''(t)=-20\,000\,e^{-0{,}2t}<0$: **$N$ es cóncava.**
+**a) Monotonía y curvatura.**
+1. Primera derivada: $N'(t)=500\,000\cdot0{,}2\,e^{-0{,}2t}=100\,000\,e^{-0{,}2t}>0$ para todo $t$.
+2. Segunda derivada: $N''(t)=-20\,000\,e^{-0{,}2t}<0$ para todo $t$.
 
-**b)** $N(0)=0$ (no incluido, pues $t>0$) y $N$ crece cada vez más despacio. Como $\displaystyle\lim_{t\to+\infty}N(t)=500\,000$, la gráfica tiene la asíntota horizontal $y=500\,000$ y se acerca a ella por debajo.
+**$N$ es creciente y cóncava.**
+
+**b) Gráfica y tendencia.**
+1. $N(0)=0$ (no incluido, pues $t>0$) y $N$ crece cada vez más despacio (creciente y cóncava).
+2. $\displaystyle\lim_{t\to+\infty}N(t)=500\,000$: la gráfica tiene la asíntota horizontal $y=500\,000$ y se acerca a ella por debajo.
 
 ![Curva creciente y cóncava N(t)=500000(1−e^(−0,2t)) que parte de 0 y tiende a la asíntota horizontal y=500000](fig/2025-ord-a-e2.svg){fig-alt="Curva creciente y cóncava N(t)=500000(1−e^(−0,2t)) que parte de 0 y tiende a la asíntota horizontal y=500000" width="75%" fig-align="center"}
 
 **La noticia es vista cada vez por más personas, pero con un ritmo que decrece; el número de personas tiende a $500\,000$ sin llegar a alcanzarlo.**
 
-**c)** $N(t)=450\,000\iff1-e^{-0{,}2t}=0{,}9\iff e^{-0{,}2t}=0{,}1\iff-0{,}2t=\ln0{,}1\iff t=\dfrac{\ln10}{0{,}2}=5\ln10\approx11{,}51$.
+**c) Tiempo para $450\,000$ personas.**
+1. Se iguala y se despeja la exponencial: $N(t)=450\,000\iff1-e^{-0{,}2t}=0{,}9\iff e^{-0{,}2t}=0{,}1$.
+2. Se toman logaritmos neperianos: $-0{,}2t=\ln0{,}1\iff t=\dfrac{\ln10}{0{,}2}=5\ln10\approx11{,}51$.
 
 **Han debido pasar unas $11{,}51$ horas** (11 horas y 31 minutos).
 
-**d)** $N'(1)=100\,000\,e^{-0{,}2}\approx81\,873$ y $N'(10)=100\,000\,e^{-2}\approx13\,534$ personas por hora.
+**d) Velocidad de difusión.**
+1. $N'(1)=100\,000\,e^{-0{,}2}\approx81\,873$ personas por hora.
+2. $N'(10)=100\,000\,e^{-2}\approx13\,534$ personas por hora.
 
 **La velocidad de difusión disminuye con el tiempo:** a la hora la noticia la ven $\approx81\,873$ personas por hora y a las $10$ horas solo $\approx13\,534$, unas $6$ veces menos.
 ::::
@@ -338,15 +374,21 @@ El óptimo de una función derivable en un intervalo se busca entre los puntos c
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** En $0\le t\le12$: $f'(t)=\dfrac{5}{6}\left(t^2-24t+108\right)=\dfrac{5}{6}(t-6)(t-18)$, con $f'>0$ en $(0,6)$ y $f'<0$ en $(6,12)$. En $12<t\le24$: $f'(t)=2t-40$, con $f'<0$ en $(12,20)$ y $f'>0$ en $(20,24)$.
+**a) Periodos en que aumenta.**
+1. En $0\le t\le12$: $f'(t)=\dfrac{5}{6}\left(t^2-24t+108\right)=\dfrac{5}{6}(t-6)(t-18)$. Es positiva en $(0,6)$ y negativa en $(6,12)$.
+2. En $12<t\le24$: $f'(t)=2t-40$. Es negativa en $(12,20)$ y positiva en $(20,24)$.
+3. Continuidad en $t=12$: $f(12)=210$ por los dos trozos, así que no hay salto.
 
-**El nivel de glucosa aumenta de las $0$ a las $6$ h y de las $20$ a las $24$ h.** (Es continua en $t=12$: $f(12)=210$.)
+**El nivel de glucosa aumenta de las $0$ a las $6$ h y de las $20$ a las $24$ h.**
 
-**b)** Valores en los puntos críticos y extremos: $f(0)=90$, $f(6)=330$, $f(12)=210$, $f(20)=146$, $f(24)=162$.
+**b) Máximo y mínimo del día.**
+1. Se comparan los valores en los puntos críticos y en los extremos: $f(0)=90$, $f(6)=330$, $f(12)=210$, $f(20)=146$, $f(24)=162$.
 
-**El nivel más alto, $330$ mg/dl, se da a las $6$ h; el más bajo, $90$ mg/dl, a las $0$ h (al empezar el día).** (El mínimo relativo de la tarde es $146$ mg/dl a las $20$ h.)
+**El nivel más alto, $330$ mg/dl, se da a las $6$ h; el más bajo, $90$ mg/dl, a las $0$ h (al empezar el día).** El mínimo relativo de la tarde es $146$ mg/dl a las $20$ h.
 
-**c)** Después del mediodía: $t^2-40t+546=155\iff t^2-40t+391=0\iff t=\dfrac{40\pm6}{2}$.
+**c) Momentos con $155$ mg/dl después del mediodía.**
+1. Se usa el segundo trozo: $t^2-40t+546=155\iff t^2-40t+391=0$.
+2. Fórmula de segundo grado: $t=\dfrac{40\pm6}{2}$, es decir, $t=17$ y $t=23$ (ambos en $(12,24]$).
 
 **A las $17$ h y a las $23$ h.**
 ::::
@@ -435,15 +477,22 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** El nivel inicial es $f(0)=10$.
-
-Continuidad en $t=2{,}5$: $-2{,}5^2+2\cdot2{,}5+10=8{,}75$ y $2{,}5^2+2{,}5a+b=6{,}25+2{,}5a+b$; luego $6{,}25+2{,}5a+b=8{,}75$. Derivabilidad: $f'(t)=-2t+2$ si $t<2{,}5$ y $f'(t)=2t+a$ si $t>2{,}5$; en $t=2{,}5$: $-3=5+a\Rightarrow a=-8$. Entonces $6{,}25-20+b=8{,}75\Rightarrow b=22{,}5$.
+**a) Nivel inicial y parámetros.**
+1. El nivel inicial es $f(0)=10$.
+2. Continuidad en $t=2{,}5$: $-2{,}5^2+2\cdot2{,}5+10=8{,}75$ y $2{,}5^2+2{,}5a+b=6{,}25+2{,}5a+b$; luego $6{,}25+2{,}5a+b=8{,}75$.
+3. Derivabilidad: $f'(t)=-2t+2$ si $t<2{,}5$ y $f'(t)=2t+a$ si $t>2{,}5$. En $t=2{,}5$: $-3=5+a\Rightarrow a=-8$.
+4. Se sustituye en la continuidad: $6{,}25-20+b=8{,}75\Rightarrow b=22{,}5$.
 
 **Comienza con nivel $10$; $a=-8$ y $b=22{,}5$.**
 
-**b)** Tramo 1: $f'(t)=-2t+2=0\Rightarrow t=1$; crece en $(0,1)$ y decrece en $(1,2{,}5)$, con $f(1)=11$. Tramo 2: $f(t)=t^2-8t+22{,}5$, $f'(t)=2t-8=0\Rightarrow t=4$; decrece en $(2{,}5;4)$ y crece en $(4,5)$, con $f(4)=6{,}5$. Valores: $f(0)=10$, $f(2{,}5)=8{,}75$, $f(5)=7{,}5$.
+**b) Monotonía, extremos y gráfica.**
+1. Tramo 1: $f'(t)=-2t+2=0\Rightarrow t=1$. Crece en $(0,1)$ y decrece en $(1,2{,}5)$, con $f(1)=11$.
+2. Tramo 2: $f(t)=t^2-8t+22{,}5$ y $f'(t)=2t-8=0\Rightarrow t=4$. Decrece en $(2{,}5;4)$ y crece en $(4,5)$, con $f(4)=6{,}5$.
+3. Valores en los extremos: $f(0)=10$, $f(2{,}5)=8{,}75$, $f(5)=7{,}5$.
 
-**Concentración máxima $11$ a la hora $t=1$ y mínima $6{,}5$ a las $4$ horas.** Gráfica: sube desde $(0,10)$ hasta el máximo $(1,11)$, baja hasta el mínimo $(4;6{,}5)$ (pasando por $(2{,}5;8{,}75)$ sin pico) y sube hasta $(5;7{,}5)$.
+**Concentración máxima $11$ a la hora $t=1$ y mínima $6{,}5$ a las $4$ horas.**
+
+4. Gráfica: sube desde $(0,10)$ hasta el máximo $(1,11)$, baja hasta el mínimo $(4;6{,}5)$ (pasando por $(2{,}5;8{,}75)$ sin pico) y sube hasta $(5;7{,}5)$.
 
 ![Concentración f(t): sube de 10 a 11 en t=1, baja hasta el mínimo 6,5 en t=4 y sube a 7,5 en t=5; la gráfica es continua y suave en t=2,5](fig/2025-ord-sup1-a-e4.svg){fig-alt="Concentración f(t): sube de 10 a 11 en t=1, baja hasta el mínimo 6,5 en t=4 y sube a 7,5 en t=5; la gráfica es continua y suave en t=2,5" width="75%" fig-align="center"}
 ::::
@@ -513,17 +562,23 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $V'(t)=12t^2-48t+36=12(t-1)(t-3)$.
+**a) Crecimiento y extremos.**
+1. Derivada: $V'(t)=12t^2-48t+36=12(t-1)(t-3)$, con raíces $t=1$ y $t=3$.
+2. Signo de $V'$:
+   - $V'>0$ en $(0,1)$ y en $(3,6)$: **las ventas crecen.**
+   - $V'<0$ en $(1,3)$: **las ventas decrecen.**
+3. Valores: $V(0)=100$, $V(1)=116$, $V(3)=100$, $V(6)=316$.
 
-- $V'>0$ en $(0,1)$ y en $(3,6)$: **las ventas crecen.**
-- $V'<0$ en $(1,3)$: **las ventas decrecen.**
+**Máximo relativo en $(1,116)$ y mínimo relativo en $(3,100)$.** En el intervalo $[0,6]$: **máximo absoluto $316$ en $t=6$ y mínimo absoluto $100$ (en $t=0$ y en $t=3$).**
 
-Valores: $V(0)=100$, $V(1)=116$, $V(3)=100$, $V(6)=316$. **Máximo relativo en $(1,116)$ y mínimo relativo en $(3,100)$.** En el intervalo $[0,6]$: **máximo absoluto $316$ en $t=6$ y mínimo absoluto $100$ (en $t=0$ y en $t=3$).**
+**b) Gráfica.**
+1. Cúbica que parte de $(0,100)$, sube hasta el máximo $(1,116)$, baja hasta el mínimo $(3,100)$ y vuelve a subir hasta $(6,316)$.
 
-**b)** Cúbica que parte de $(0,100)$, sube hasta el máximo $(1,116)$, baja hasta el mínimo $(3,100)$ y vuelve a subir hasta $(6,316)$.
-
-**c)** $V>0$ en $[0,6]$:
+**c) Área.**
+1. $V>0$ en $[0,6]$ (su mínimo es $100$), así que el área es la integral.
+2. Barrow:
 $$A=\int_0^6\left(4t^3-24t^2+36t+100\right)dt=\left[t^4-8t^3+18t^2+100t\right]_0^6=1\,296-1\,728+648+600=816.$$
+
 **$A=816$ u$^2$** (miles de euros por año).
 
 ![Ventas V(t) en [0,6]: parte de 100, máximo relativo 116 en t=1, mínimo relativo 100 en t=3 y llega a 316 en t=6; sombreada el área bajo la curva](fig/2025-ord-sup1-b-e4.svg){fig-alt="Ventas V(t) en [0,6]: parte de 100, máximo relativo 116 en t=1, mínimo relativo 100 en t=3 y llega a 316 en t=6; sombreada el área bajo la curva" width="75%" fig-align="center"}
@@ -581,17 +636,22 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f(0)=c=20$. El máximo en $t=40$ exige $f'(40)=2a\cdot40+b=0\Rightarrow b=-80a$, y $f(40)=1\,600a+40b+c=36$: $1\,600a-3\,200a+20=36\Rightarrow-1\,600a=16\Rightarrow a=-0{,}01$ y $b=0{,}8$.
+**a) Parámetros y gráfica.**
+1. Al comenzar, $f(0)=c=20$.
+2. Máximo en $t=40$: $f'(40)=2a\cdot40+b=0\Rightarrow b=-80a$.
+3. Su valor es $36$: $f(40)=1\,600a+40b+c=36$. Se sustituye $b$ y $c$: $1\,600a-3\,200a+20=36\Rightarrow-1\,600a=16\Rightarrow a=-0{,}01$ y $b=0{,}8$.
 
 **$a=-0{,}01$, $b=0{,}8$, $c=20$:** $f(t)=-0{,}01t^2+0{,}8t+20$.
 
-Gráfica: arco de parábola abierta hacia abajo que parte de $(0,20)$, crece hasta el máximo $(40,36)$ y decrece hasta $(60,32)$ (pasa por $(20,32)$, simétrico de $(60,32)$ respecto de $t=40$).
+4. Gráfica: arco de parábola abierta hacia abajo que parte de $(0,20)$, crece hasta el máximo $(40,36)$ y decrece hasta $(60,32)$ (pasa por $(20,32)$, simétrico de $(60,32)$ respecto de $t=40$).
 
 ![Índice de audiencia f(t)=−0,01t²+0,8t+20: parte de 20, alcanza el máximo 36 a los 40 minutos y baja a 32 en t=60](fig/2025-ord-sup2-a-e3.svg){fig-alt="Índice de audiencia f(t)=−0,01t²+0,8t+20: parte de 20, alcanza el máximo 36 a los 40 minutos y baja a 32 en t=60" width="75%" fig-align="center"}
 
-**b)** $g'(x)=\dfrac{2x}{x^2-1}-\dfrac{2x}{x^2+1}=\dfrac{2x\left(x^2+1\right)-2x\left(x^2-1\right)}{x^4-1}=\dfrac{4x}{x^4-1}$.
-
-$h'(x)=2e^{x^2-x}+(2x-1)(2x-1)e^{x^2-x}=e^{x^2-x}\left[(2x-1)^2+2\right]=e^{x^2-x}\left(4x^2-4x+3\right)$.
+**b) Derivadas.**
+1. $g$ es el logaritmo de un cociente. Se deriva con la regla de la cadena, $\left(\ln u\right)'=\dfrac{u'}{u}$, o separando antes los logaritmos:
+$$g'(x)=\dfrac{2x}{x^2-1}-\dfrac{2x}{x^2+1}=\dfrac{2x\left(x^2+1\right)-2x\left(x^2-1\right)}{x^4-1}=\dfrac{4x}{x^4-1}.$$
+2. $h$ es un producto, $(uv)'=u'v+uv'$, con $u=2x-1$ y $v=e^{x^2-x}$ (derivada $(2x-1)e^{x^2-x}$, por la regla de la cadena):
+$$h'(x)=2e^{x^2-x}+(2x-1)(2x-1)e^{x^2-x}=e^{x^2-x}\left[(2x-1)^2+2\right]=e^{x^2-x}\left(4x^2-4x+3\right).$$
 ::::
 :::::
 
@@ -680,23 +740,32 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$f(x)=x(x-1)(x-2)$.
+**Factorización.** $f(x)=x(x-1)(x-2)$.
 
-**a)** Cortes: con $OY$ en $(0,0)$; con $OX$ en $(0,0)$, $(1,0)$ y $(2,0)$. $f'(x)=3x^2-6x+2=0\Rightarrow x=1\pm\dfrac{\sqrt3}{3}$.
+**a) Estudio de $f$.**
+1. **Cortes.** Con $OY$ en $(0,0)$; con $OX$ en $(0,0)$, $(1,0)$ y $(2,0)$.
+2. **Puntos críticos.** $f'(x)=3x^2-6x+2=0\Rightarrow x=1\pm\dfrac{\sqrt3}{3}$.
+3. **Monotonía.**
+   - $f'>0$ en $\left(-\infty,1-\frac{\sqrt3}{3}\right)$ y en $\left(1+\frac{\sqrt3}{3},+\infty\right)$: **crece**.
+   - $f'<0$ en $\left(1-\frac{\sqrt3}{3},1+\frac{\sqrt3}{3}\right)$: **decrece**.
+4. **Extremos.** **Máximo relativo en $\left(1-\dfrac{\sqrt3}{3},\dfrac{2\sqrt3}{9}\right)$ y mínimo relativo en $\left(1+\dfrac{\sqrt3}{3},-\dfrac{2\sqrt3}{9}\right)$.**
+5. **Curvatura.** $f''(x)=6x-6$: **cóncava en $(-\infty,1)$ ($f''<0$) y convexa en $(1,+\infty)$ ($f''>0$)**, con punto de inflexión en $(1,0)$.
 
-- $f'>0$ en $\left(-\infty,1-\frac{\sqrt3}{3}\right)$ y en $\left(1+\frac{\sqrt3}{3},+\infty\right)$: **crece**.
-- $f'<0$ en $\left(1-\frac{\sqrt3}{3},1+\frac{\sqrt3}{3}\right)$: **decrece**.
-
-**Máximo relativo en $\left(1-\dfrac{\sqrt3}{3},\dfrac{2\sqrt3}{9}\right)$ y mínimo relativo en $\left(1+\dfrac{\sqrt3}{3},-\dfrac{2\sqrt3}{9}\right)$.** Curvatura: $f''(x)=6x-6$; **cóncava en $(-\infty,1)$ ($f''<0$) y convexa en $(1,+\infty)$ ($f''>0$)**, con punto de inflexión en $(1,0)$.
-
-**b)** Cúbica que viene de $-\infty$, corta al eje en $(0,0)$, sube hasta el máximo ($\approx(0{,}42;\,0{,}38)$), baja pasando por $(1,0)$ (punto de inflexión) hasta el mínimo ($\approx(1{,}58;\,-0{,}38)$), y vuelve a subir cortando el eje en $(2,0)$ hacia $+\infty$.
-
-**c)** Entre $0$ y $1$, $f\ge0$; entre $1$ y $2$, $f\le0$:
-$$\int_0^1f=\left[\frac{x^4}{4}-x^3+x^2\right]_0^1=\frac{1}{4},\qquad\int_1^2f=-\frac{1}{4}.$$
-$$A=\frac{1}{4}+\left|-\frac{1}{4}\right|=\frac{1}{2}.$$
-**$A=\dfrac{1}{2}\ \text{u}^2$**
+**b) Gráfica.**
+1. Es una cúbica que viene de $-\infty$ y corta al eje en $(0,0)$.
+2. Sube hasta el máximo ($\approx(0{,}42;\,0{,}38)$) y baja pasando por $(1,0)$ (punto de inflexión) hasta el mínimo ($\approx(1{,}58;\,-0{,}38)$).
+3. Vuelve a subir, cortando el eje en $(2,0)$, hacia $+\infty$.
 
 ![Gráfica de f(x)=x³−3x²+2x: cortes en x=0, 1, 2, máximo en x=1−√3/3 y mínimo en x=1+√3/3; recinto sombreado entre la curva y el eje X de 0 a 2](fig/2023-ord-a-e3.svg){fig-alt="Gráfica de f(x)=x³−3x²+2x: cortes en x=0, 1, 2, máximo en x=1−√3/3 y mínimo en x=1+√3/3; recinto sombreado entre la curva y el eje X de 0 a 2" width="75%" fig-align="center"}
+
+**c) Área.**
+1. El recinto acotado va de $x=0$ a $x=2$. Entre $0$ y $1$, $f\ge0$; entre $1$ y $2$, $f\le0$, así que se integra por separado y se toma el valor absoluto del segundo trozo.
+2. Con Barrow:
+$$\int_0^1f=\left[\frac{x^4}{4}-x^3+x^2\right]_0^1=\frac{1}{4},\qquad\int_1^2f=-\frac{1}{4}.$$
+3. Suma de áreas:
+$$A=\frac{1}{4}+\left|-\frac{1}{4}\right|=\frac{1}{2}.$$
+
+**$A=\dfrac{1}{2}\ \text{u}^2$**
 ::::
 :::::
 
@@ -749,17 +818,29 @@ Cada dato del enunciado da una ecuación: pasa por $(a,b)\Rightarrow f(a)=b$; ex
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $v'(t)=t^2-5t+6=(t-2)(t-3)$. **$v$ crece en $(0,2)\cup(3,6)$ y decrece en $(2,3)$.**
+**a) Crecimiento y decrecimiento.**
+1. $v'(t)=t^2-5t+6=(t-2)(t-3)$, con raíces $t=2$ y $t=3$.
+2. Signo de $v'$ en $[0,6]$: positivo en $(0,2)$, negativo en $(2,3)$ y positivo en $(3,6)$.
 
-**b)** $v(t)=\displaystyle\int\left(t^2-5t+6\right)dt=\frac{t^3}{3}-\frac{5t^2}{2}+6t+K$ y $v(0)=10$, así que $K=10$.
+**$v$ crece en $(0,2)\cup(3,6)$ y decrece en $(2,3)$.**
+
+**b) Función $v$.**
+1. Se integra la variación instantánea: $v(t)=\displaystyle\int\left(t^2-5t+6\right)dt=\frac{t^3}{3}-\frac{5t^2}{2}+6t+K$.
+2. Con $v(0)=10$ se obtiene $K=10$.
 
 **$v(t)=\dfrac{t^3}{3}-\dfrac{5t^2}{2}+6t+10$.**
 
-**c)** $v(2)=\dfrac{8}{3}-10+12+10=\dfrac{44}{3}$ y $v(4)=\dfrac{64}{3}-40+24+10=\dfrac{46}{3}$. Ganancia por acción: $\dfrac{46}{3}-\dfrac{44}{3}=\dfrac{2}{3}$ €. Con $3000$ acciones: $3000\cdot\dfrac{2}{3}=2000$.
+**c) Ganancia del inversor.**
+1. Precio de compra y de venta: $v(2)=\dfrac{8}{3}-10+12+10=\dfrac{44}{3}$ y $v(4)=\dfrac{64}{3}-40+24+10=\dfrac{46}{3}$.
+2. Ganancia por acción: $\dfrac{46}{3}-\dfrac{44}{3}=\dfrac{2}{3}$ €.
+3. Con $3000$ acciones: $3000\cdot\dfrac{2}{3}=2000$.
 
 **Ganó $2\,000$ €.**
 
-**d)** Valores en los puntos críticos y extremos: $v(0)=10$, $v(2)=\dfrac{44}{3}\approx14{,}67$, $v(3)=\dfrac{29}{2}=14{,}5$, $v(6)=28$. La ganancia por acción es $v(t_2)-v(t_1)$ con $t_1<t_2$, y se hace máxima comprando en el mínimo y vendiendo en el máximo posteriores: $v(6)-v(0)=18$ €, mayor que cualquier otra combinación (por ejemplo, $v(6)-v(3)=13{,}5$).
+**d) Mejor momento de compra y de venta.**
+1. Valores en los puntos críticos y en los extremos del intervalo: $v(0)=10$, $v(2)=\dfrac{44}{3}\approx14{,}67$, $v(3)=\dfrac{29}{2}=14{,}5$, $v(6)=28$.
+2. La ganancia por acción es $v(t_2)-v(t_1)$ con $t_1<t_2$: se hace máxima comprando en el mínimo y vendiendo en el máximo posteriores.
+3. $v(6)-v(0)=18$ €, mayor que cualquier otra combinación (por ejemplo, $v(6)-v(3)=13{,}5$).
 
 **Debería haber comprado en la apertura ($t=0$) y vendido al final ($t=6$), con una ganancia de $18$ € por acción.**
 ::::
@@ -818,17 +899,29 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Beneficio $=$ ingresos $-$ gastos, luego $G(t)=I(t)-B(t)=-t^2+48t-\left(-t^2+21t-20\right)=27t+20$.
+**a) Función de gastos.**
+1. Beneficio = ingresos − gastos, luego $G(t)=I(t)-B(t)$.
+2. $G(t)=-t^2+48t-\left(-t^2+21t-20\right)=27t+20$.
+3. Gastos iniciales: $G(0)=20$.
 
-**La función de gastos es $G(t)=27t+20$ y los gastos iniciales son $G(0)=20$ mil euros ($20\,000$ €).**
+**La función de gastos es $G(t)=27t+20$ y los gastos iniciales son $20$ mil euros ($20\,000$ €).**
 
-**b)** $B(t)=-(t-1)(t-20)>0\iff1<t<20$. En el intervalo $[0,15]$: **el beneficio es positivo a partir del año $1$** ($t>1$).
+**b) Beneficio positivo.**
+1. Se factoriza: $B(t)=-(t-1)(t-20)>0\iff1<t<20$.
+2. En el intervalo $[0,15]$ queda $t>1$.
 
-**c)** $B'(t)=-2t+21=0\Rightarrow t=10{,}5$ y $B''<0$: máximo. $B(10{,}5)=-110{,}25+220{,}5-20=90{,}25$.
+**El beneficio es positivo a partir del año $1$** ($t>1$).
+
+**c) Beneficio máximo.**
+1. Derivada: $B'(t)=-2t+21=0\Rightarrow t=10{,}5$, dentro de $[0,15]$.
+2. $B''<0$: es un máximo.
+3. Valor: $B(10{,}5)=-110{,}25+220{,}5-20=90{,}25$.
 
 **El beneficio máximo se alcanza a los $10{,}5$ años y vale $90{,}25$ mil euros ($90\,250$ €).**
 
-**d)** Parábola abierta hacia abajo con vértice $(10{,}5;\ 90{,}25)$, que arranca en $(0,-20)$, corta al eje $OX$ en $t=1$ y llega a $t=15$ con $B(15)=70$.
+**d) Gráfica.**
+1. Parábola abierta hacia abajo con vértice $(10{,}5;\ 90{,}25)$.
+2. Arranca en $(0,-20)$, corta al eje $OX$ en $t=1$ y llega a $t=15$ con $B(15)=70$.
 
 ![Parábola de beneficio B(t)=−t²+21t−20 en [0,15]: parte de −20, corta al eje en t=1, alcanza el máximo 90,25 en t=10,5 y llega a 70 en t=15](fig/2023-ord-sup-b-e4.svg){fig-alt="Parábola de beneficio B(t)=−t²+21t−20 en [0,15]: parte de −20, corta al eje en t=1, alcanza el máximo 90,25 en t=10,5 y llega a 70 en t=15" width="75%" fig-align="center"}
 ::::

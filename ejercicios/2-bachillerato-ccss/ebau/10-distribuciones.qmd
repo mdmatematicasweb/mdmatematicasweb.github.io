@@ -45,9 +45,17 @@ $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La t
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $X\sim N(18,\ 4)$: $P(X<15)=P\!\left(Z<\dfrac{15-18}{4}\right)=P(Z<-0{,}75)=1-P(Z<0{,}75)=1-0{,}7734=\mathbf{0{,}2266}$.
+**a) Probabilidad de tardar menos de 15 minutos.**
+1. $X\sim N(18,\ 4)$: se tipifica $Z=\dfrac{X-18}{4}$.
+2. Se usa que $P(Z<-0{,}75)=1-P(Z<0{,}75)$ y se lee en la tabla $\Phi(0{,}75)=0{,}7734$:
+$$P(X<15)=P\!\left(Z<\dfrac{15-18}{4}\right)=P(Z<-0{,}75)=1-P(Z<0{,}75)=1-0{,}7734=\mathbf{0{,}2266}.$$
 
-**b)** Sea $Y$ el número de usuarios, de $120$, que completan el trayecto sin incidencias: $Y\sim B(120;\ 0{,}9)$. Como $np=108\ge5$ y $nq=12\ge5$, se aproxima por $Y'\sim N\!\left(108,\ \sqrt{120\cdot0{,}9\cdot0{,}1}\right)=N(108,\ 3{,}2863)$. Con corrección por continuidad:
+*Interpretación:* algo más de $2$ de cada $10$ usuarios tardan menos de $15$ minutos.
+
+**b) Al menos 110 sin incidencias.**
+1. Sea $Y$ el número de usuarios, de $120$, que completan el trayecto sin incidencias: $Y\sim B(120;\ 0{,}9)$.
+2. Comprobación: $np=108\ge5$ y $nq=12\ge5$, se aproxima por $Y'\sim N\!\left(108,\ \sqrt{120\cdot0{,}9\cdot0{,}1}\right)=N(108,\ 3{,}2863)$.
+3. Corrección por continuidad y tabla ($\Phi(0{,}46)=0{,}6772$):
 $$P(Y\ge110)=P(Y'>109{,}5)=P\!\left(Z>\frac{109{,}5-108}{3{,}2863}\right)=P(Z>0{,}46)=1-0{,}6772=\mathbf{0{,}3228}.$$
 ::::
 :::::
@@ -101,13 +109,21 @@ Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$X\sim N(16,\ 2)$ (la desviación típica es $\sqrt4=2$).
+**Datos.** $X\sim N(16,\ 2)$ (la desviación típica es $\sqrt4=2$).
 
-**a)** $P(14{,}5<X<16{,}2)=P\!\left(\dfrac{14{,}5-16}{2}<Z<\dfrac{16{,}2-16}{2}\right)=P(-0{,}75<Z<0{,}1)=0{,}5398-(1-0{,}7734)=\mathbf{0{,}3132}$.
+**a) Entre $14{,}5$ y $16{,}2$.**
+1. Se tipifica: $Z=\dfrac{X-16}{2}$.
+2. Con $P(Z<-0{,}75)=1-0{,}7734$ y la tabla:
+$$P(14{,}5<X<16{,}2)=P\!\left(\dfrac{14{,}5-16}{2}<Z<\dfrac{16{,}2-16}{2}\right)=P(-0{,}75<Z<0{,}1)=0{,}5398-(1-0{,}7734)=\mathbf{0{,}3132}.$$
 
-**b)** $P(X\ge a)=0{,}25\iff P(X<a)=0{,}75$. En la tabla $\Phi(0{,}67)=0{,}7486$ y $\Phi(0{,}68)=0{,}7517$, luego $z\approx0{,}675$ y $a=16+2\cdot0{,}675=\mathbf{17{,}35}$.
+**b) Valor $a$ con $P[X\ge a]=0{,}25$.**
+1. $P(X\ge a)=0{,}25\iff P(X<a)=0{,}75$.
+2. En la tabla $\Phi(0{,}67)=0{,}7486$ y $\Phi(0{,}68)=0{,}7517$; $0{,}75$ está entre ambos, y se interpola: $z\approx0{,}675$.
+3. Se deshace la tipificación: $a=16+2\cdot0{,}675=\mathbf{17{,}35}$.
 
-**c)** $\bar X\sim N\!\left(16,\ \dfrac{2}{\sqrt{64}}\right)=N(16,\ 0{,}25)$.
+**c) Media muestral con $n=64$.**
+1. $\bar X\sim N\!\left(16,\ \dfrac{2}{\sqrt{64}}\right)=N(16,\ 0{,}25)$.
+2. Se tipifica y se lee en la tabla ($\Phi(1{,}2)=0{,}8849$):
 $$P(\bar X>16{,}3)=P\!\left(Z>\frac{16{,}3-16}{0{,}25}\right)=P(Z>1{,}2)=1-0{,}8849=\mathbf{0{,}1151}.$$
 ::::
 :::::
@@ -147,13 +163,19 @@ $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La t
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** En el torneo, Paco juega $9$ partidos (uno contra cada uno de los otros $9$ jugadores). $X$ = «partidos ganados»: $X\sim B(9;\ 0{,}8)$.
+**a) Torneo.** Paco juega $9$ partidos (uno contra cada uno de los otros $9$ jugadores). $X$ = «partidos ganados»: $X\sim B(9;\ 0{,}8)$.
 
-**i)** $P(X=8)=\dbinom98\,0{,}8^8\cdot0{,}2=9\cdot0{,}8^8\cdot0{,}2\approx\mathbf{0{,}3020}$.
+**i) Exactamente $8$.**
+1. $P(X=8)=\dbinom98\,0{,}8^8\cdot0{,}2=9\cdot0{,}8^8\cdot0{,}2\approx\mathbf{0{,}3020}$.
 
-**ii)** $P(X\le8)=1-P(X=9)=1-0{,}8^9\approx\mathbf{0{,}8658}$.
+**ii) Como mucho $8$.**
+1. Se pasa al suceso contrario: $P(X\le8)=1-P(X=9)=1-0{,}8^9\approx\mathbf{0{,}8658}$.
 
-**b)** $Y$ = «partidos perdidos» de $80$: $Y\sim B(80;\ 0{,}2)$. Como $np=16\ge5$ y $nq=64\ge5$, se aproxima por $Y'\sim N\!\left(16,\ \sqrt{80\cdot0{,}2\cdot0{,}8}\right)=N(16,\ 3{,}5777)$. «Más de $10$ pero menos de $20$» son $11,\dots,19$, es decir, con corrección por continuidad $10{,}5<Y'<19{,}5$:
+**b) Partidos perdidos en un año.**
+1. $Y$ = «partidos perdidos» de $80$: $Y\sim B(80;\ 0{,}2)$.
+2. Comprobación: $np=16\ge5$ y $nq=64\ge5$, se aproxima por $Y'\sim N\!\left(16,\ \sqrt{80\cdot0{,}2\cdot0{,}8}\right)=N(16,\ 3{,}5777)$.
+3. «Más de $10$ pero menos de $20$» son $11,\dots,19$: con corrección por continuidad, $10{,}5<Y'<19{,}5$.
+4. Se tipifica y se lee en la tabla ($\Phi(0{,}98)=0{,}8365$ y $\Phi(1{,}54)=0{,}9382$):
 $$P=P\!\left(\frac{10{,}5-16}{3{,}5777}<Z<\frac{19{,}5-16}{3{,}5777}\right)=P(-1{,}54<Z<0{,}98)=0{,}8365-(1-0{,}9382)=\mathbf{0{,}7747}.$$
 ::::
 :::::
@@ -191,15 +213,24 @@ $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La t
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$T\sim N(40,\ 5)$.
+**Datos.** $T\sim N(40,\ 5)$.
 
-**a)** $P(T<33{,}6)=P\!\left(Z<\dfrac{33{,}6-40}{5}\right)=P(Z<-1{,}28)=1-P(Z<1{,}28)=1-0{,}8997=\mathbf{0{,}1003}$.
+**a) Viaje «rápido».**
+1. Se tipifica y se lee en la tabla ($\Phi(1{,}28)=0{,}8997$):
+$$P(T<33{,}6)=P\!\left(Z<\dfrac{33{,}6-40}{5}\right)=P(Z<-1{,}28)=1-P(Z<1{,}28)=1-0{,}8997=\mathbf{0{,}1003}.$$
 
-**b)** $X$ = «viajes rápidos de $5$»: $X\sim B(5;\ 0{,}1003)$.
-$$P(X\ge3)=\binom53p^3q^2+\binom54p^4q+p^5\quad(p=0{,}1003,\ q=0{,}8997)=0{,}00817+0{,}00046+0{,}00001\approx\mathbf{0{,}0086}.$$
+**b) Al menos $3$ de $5$.**
+1. $X$ = «viajes rápidos de $5$»: $X\sim B(5;\ 0{,}1003)$, con $p=0{,}1003$ y $q=0{,}8997$.
+2. Se suman los casos $3$, $4$ y $5$:
+$$P(X\ge3)=\binom53p^3q^2+\binom54p^4q+p^5=0{,}00817+0{,}00046+0{,}00001\approx\mathbf{0{,}0086}.$$
 
-**c)** $Y$ = «viajes rápidos de $80$»: $Y\sim B(80;\ 0{,}1003)$. Como $np=8{,}02\ge5$ y $nq=71{,}98\ge5$, $Y\approx N\!\left(8{,}02,\ \sqrt{80\cdot0{,}1003\cdot0{,}8997}\right)=N(8{,}02;\ 2{,}687)$. Con corrección por continuidad:
+**c) A lo sumo $15$ de $80$.**
+1. $Y$ = «viajes rápidos de $80$»: $Y\sim B(80;\ 0{,}1003)$.
+2. Comprobación: $np=8{,}02\ge5$ y $nq=71{,}98\ge5$, se aproxima por $Y'\sim N\!\left(8{,}02,\ \sqrt{80\cdot0{,}1003\cdot0{,}8997}\right)=N(8{,}02;\ 2{,}687)$.
+3. Corrección por continuidad y tabla ($\Phi(2{,}78)=0{,}9973$):
 $$P(Y\le15)=P(Y'<15{,}5)=P\!\left(Z<\frac{15{,}5-8{,}02}{2{,}687}\right)=P(Z<2{,}78)=\mathbf{0{,}9973}.$$
+
+*Interpretación:* es casi seguro que no más de $15$ de los $80$ trayectos sean rápidos.
 ::::
 :::::
 
@@ -241,15 +272,24 @@ $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La t
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sea $X$ el número de personas, de $20$, que contratan el servicio: $X\sim B(20;\ 0{,}2)$.
+**Modelo.** Sea $X$ el número de personas, de $20$, que contratan el servicio: $X\sim B(20;\ 0{,}2)$.
 
-**a)** $P(X=10)=\dbinom{20}{10}\,0{,}2^{10}\cdot0{,}8^{10}=184\,756\cdot0{,}2^{10}\cdot0{,}8^{10}\approx\mathbf{0{,}0020}$.
+**a) Exactamente 10.**
+1. $P(X=10)=\dbinom{20}{10}\,0{,}2^{10}\cdot0{,}8^{10}=184\,756\cdot0{,}2^{10}\cdot0{,}8^{10}\approx\mathbf{0{,}0020}$.
 
-**b)** $P(X\ge2)=1-P(X=0)-P(X=1)=1-0{,}8^{20}-20\cdot0{,}2\cdot0{,}8^{19}=1-0{,}0115-0{,}0576\approx\mathbf{0{,}9308}$.
+*Interpretación:* es un suceso muy raro, porque lo esperable es que contraten unas $4$ personas.
 
-**c)** $E(X)=np=20\cdot0{,}2=\mathbf{4}$ personas.
+**b) Al menos 2.**
+1. Suceso contrario: $P(X\ge2)=1-P(X=0)-P(X=1)$.
+2. $P(X\ge2)=1-0{,}8^{20}-20\cdot0{,}2\cdot0{,}8^{19}=1-0{,}0115-0{,}0576\approx\mathbf{0{,}9308}$.
 
-**d)** Con $n$ personas, $E(X)=0{,}2n\ge13\iff n\ge65$. **Hay que seleccionar al menos $65$ personas.**
+**c) Valor esperado.**
+1. $E(X)=np=20\cdot0{,}2=\mathbf{4}$ personas.
+
+**d) Tamaño para esperar al menos 13.**
+1. Con $n$ personas, $E(X)=0{,}2n\ge13\iff n\ge65$.
+
+**Hay que seleccionar al menos $65$ personas.**
 ::::
 :::::
 
@@ -304,15 +344,28 @@ Si se conoce la probabilidad y falta el valor $x$ (percentil) o un parámetro, s
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $X\sim N(0,\ 2{,}2)$. $P(|X|\le1)=P(-1\le X\le1)=P\!\left(-\dfrac{1}{2{,}2}\le Z\le\dfrac{1}{2{,}2}\right)=P(-0{,}45\le Z\le0{,}45)=2\cdot0{,}6736-1=0{,}3472$.
+**a) Desajuste máximo de un minuto.**
+1. $X\sim N(0,\ 2{,}2)$ y se pide $P(|X|\le1)=P(-1\le X\le1)$.
+2. Se tipifica y se lee en la tabla:
+$$P\!\left(-\dfrac{1}{2{,}2}\le Z\le\dfrac{1}{2{,}2}\right)=P(-0{,}45\le Z\le0{,}45)=2\cdot0{,}6736-1=0{,}3472.$$
 
 **El $34{,}72\,\%$ de los trenes.**
 
-**b1)** Suma de los desajustes: $9$, luego $\bar x=\dfrac{9}{15}=0{,}6$ minutos. Nivel $96\,\%$: $\Phi(z_{\alpha/2})=0{,}98$ y en la tabla $\Phi(2{,}05)=0{,}9798$ (el más cercano a $0{,}98$), luego $z_{\alpha/2}=2{,}05$. $E=2{,}05\cdot\dfrac{2{,}2}{\sqrt{15}}=1{,}1645$.
+**b1) Intervalo al $96\,\%$, error y afirmación.**
+1. Media muestral: la suma de los desajustes es $9$, luego $\bar x=\dfrac{9}{15}=0{,}6$ minutos.
+2. Valor crítico: $\Phi(z_{\alpha/2})=0{,}98$ y en la tabla $\Phi(2{,}05)=0{,}9798$ (el más cercano a $0{,}98$), luego $z_{\alpha/2}=2{,}05$.
+3. Error máximo: $E=2{,}05\cdot\dfrac{2{,}2}{\sqrt{15}}=1{,}1645$.
+4. Intervalo:
 $$IC=(0{,}6-1{,}1645,\ 0{,}6+1{,}1645)=(-0{,}5645,\ 1{,}7645).$$
+
 **Error máximo $1{,}1645$ minutos.** El valor $2$ **no pertenece al intervalo**, luego con este nivel de confianza **no puede afirmarse** que el retraso medio de un tren sea de $2$ minutos.
 
-**b2)** Nivel $98\,\%$: $z_{\alpha/2}=2{,}33$. $E\le1{,}1\iff n\ge\left(\dfrac{2{,}33\cdot2{,}2}{1{,}1}\right)^2=21{,}72$. **Hay que elegir al menos $n=22$ trenes.**
+**b2) Tamaño mínimo al $98\,\%$.**
+1. Valor crítico: $z_{\alpha/2}=2{,}33$ (tabla: $\Phi(2{,}33)=0{,}9901$).
+2. Se impone $E\le1{,}1$ y se despeja $n$: $E\le1{,}1\iff n\ge\left(\dfrac{2{,}33\cdot2{,}2}{1{,}1}\right)^2=21{,}72$.
+3. Se redondea hacia arriba.
+
+**Hay que elegir al menos $n=22$ trenes.**
 ::::
 :::::
 
@@ -363,10 +416,17 @@ Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $\bar X\sim N\!\left(10{,}5,\ \dfrac{1{,}5}{\sqrt{25}}\right)=N(10{,}5,\ 0{,}3)$.
+**a) Distribución de la media muestral.**
+1. Si la población es normal, $\bar X\sim N\!\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$: $\bar X\sim N\!\left(10{,}5,\ \dfrac{1{,}5}{\sqrt{25}}\right)=N(10{,}5,\ 0{,}3)$.
+2. Se tipifica y se lee en la tabla:
 $$P(\bar X>10)=P\!\left(Z>\frac{10-10{,}5}{0{,}3}\right)=P(Z>-1{,}67)=P(Z<1{,}67)=\mathbf{0{,}9525}.$$
 
-**b)** $P(8<\bar X<11)=P\!\left(\dfrac{8-10{,}5}{0{,}3}<Z<\dfrac{11-10{,}5}{0{,}3}\right)=P(-8{,}33<Z<1{,}67)\approx P(Z<1{,}67)-0=0{,}9525$.
+*Interpretación:* en el $95{,}25\,\%$ de las muestras de 25 menores, el tiempo medio supera los $10$ días.
+
+**b) Media entre 8 y 11 días.**
+1. Se tipifican los dos extremos: $\dfrac{8-10{,}5}{0{,}3}=-8{,}33$ y $\dfrac{11-10{,}5}{0{,}3}=1{,}67$.
+2. $P(-8{,}33<Z<1{,}67)$: el límite inferior queda fuera de la tabla, con probabilidad prácticamente nula a su izquierda, así que
+$$P(8<\bar X<11)=P(-8{,}33<Z<1{,}67)\approx P(Z<1{,}67)-0=0{,}9525.$$
 
 **El $95{,}25\,\%$ de las muestras.**
 ::::
@@ -407,14 +467,21 @@ $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La t
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $X$ = «número de pacientes, de $5$, que mejoran»: $X\sim B(5;\ 0{,}6)$.
-$$P(X=4)=\binom54\,0{,}6^4\cdot0{,}4=5\cdot0{,}1296\cdot0{,}4=\mathbf{0{,}2592}.$$
+**a) Distribución y $P(X=4)$.**
+1. $X$ = «número de pacientes, de $5$, que mejoran» tiene $n=5$ pruebas independientes con probabilidad de éxito $0{,}6$: $X\sim B(5;\ 0{,}6)$.
+2. $P(X=4)=\binom54\,0{,}6^4\cdot0{,}4=5\cdot0{,}1296\cdot0{,}4=\mathbf{0{,}2592}.$
 
-**b)** $P(X\ge2)=1-P(X=0)-P(X=1)=1-0{,}4^5-5\cdot0{,}6\cdot0{,}4^4=1-0{,}01024-0{,}0768=\mathbf{0{,}91296}$.
+**b) Al menos dos.**
+1. Suceso contrario: $P(X\ge2)=1-P(X=0)-P(X=1)$.
+2. $P(X\ge2)=1-0{,}4^5-5\cdot0{,}6\cdot0{,}4^4=1-0{,}01024-0{,}0768=\mathbf{0{,}91296}$.
 
-**c)** $E(X)=np=5\cdot0{,}6=\mathbf{3}$ pacientes.
+**c) Número esperado.**
+1. $E(X)=np=5\cdot0{,}6=\mathbf{3}$ pacientes.
 
-**d)** $E(X)=0{,}6n\ge12\iff n\ge20$. **Deberían someterse al menos $20$ pacientes.**
+**d) Pacientes para esperar al menos 12.**
+1. $E(X)=0{,}6n\ge12\iff n\ge20$.
+
+**Deberían someterse al menos $20$ pacientes.**
 ::::
 :::::
 
@@ -456,14 +523,25 @@ $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La t
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $X\sim N(145,\ 22)$. $P(135<X<155)=P\!\left(\dfrac{135-145}{22}<Z<\dfrac{155-145}{22}\right)=P(-0{,}45<Z<0{,}45)=2\,P(Z<0{,}45)-1=2\cdot0{,}6736-1=0{,}3472$.
+**a) Porcentaje entre 135 y 155 cm.**
+1. $X\sim N(145,\ 22)$. Se tipifica con $Z=\dfrac{X-145}{22}$.
+2. $P(135<X<155)=P\!\left(\dfrac{135-145}{22}<Z<\dfrac{155-145}{22}\right)=P(-0{,}45<Z<0{,}45)$.
+3. Por simetría de la normal: $P(-0{,}45<Z<0{,}45)=2\,P(Z<0{,}45)-1=2\cdot0{,}6736-1=0{,}3472$.
 
 **El $34{,}72\,\%$ de las plantas.**
 
-**b)** Estar entre el $50\,\%$ de las más altas equivale a superar la mediana, que en una normal coincide con la media: **$145$ cm.**
+**b) Entre el $50\,\%$ de las más altas.**
+1. Estar entre el $50\,\%$ de las más altas equivale a superar la mediana.
+2. En una normal, la mediana coincide con la media.
 
-**c)** $\bar X\sim N\!\left(145,\ \dfrac{22}{\sqrt{16}}\right)=N(145,\ 5{,}5)$.
+**$145$ cm como mínimo.**
+
+**c) Altura media de 16 plantas.**
+1. Distribución de la media muestral: $\bar X\sim N\!\left(145,\ \dfrac{22}{\sqrt{16}}\right)=N(145,\ 5{,}5)$.
+2. Se tipifica y se lee en la tabla:
 $$P(140<\bar X<151)=P\!\left(\frac{140-145}{5{,}5}<Z<\frac{151-145}{5{,}5}\right)=P(-0{,}91<Z<1{,}09)=0{,}8621-(1-0{,}8186)=\mathbf{0{,}6807}.$$
+
+*Interpretación:* en torno al $68\,\%$ de las muestras de 16 plantas tienen una altura media entre $140$ y $151$ cm.
 ::::
 :::::
 
@@ -498,12 +576,22 @@ $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La t
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $\bar X\sim N\!\left(60,\ \dfrac{30}{\sqrt{100}}\right)=N(60,\ 3)$.
+**a) Tiempo medio de 100 mesas.**
+1. Distribución de la media muestral: $\bar X\sim N\!\left(60,\ \dfrac{30}{\sqrt{100}}\right)=N(60,\ 3)$.
+2. Se tipifica y se usa la simetría de la normal:
 $$P(\bar X>54)=P\!\left(Z>\frac{54-60}{3}\right)=P(Z>-2)=P(Z<2)=\mathbf{0{,}9772}.$$
 
-**b)** $\bar x=40$, $\sigma=20$, $n=25$. Nivel $97\,\%$: $z_{\alpha/2}=2{,}17$. $E=2{,}17\cdot\dfrac{20}{\sqrt{25}}=2{,}17\cdot4=8{,}68$.
+*Interpretación:* es muy probable (casi el $98\,\%$) que el tiempo medio de las 100 mesas supere los $54$ minutos.
+
+**b) Intervalo al $97\,\%$ y error máximo.**
+1. Datos: $\bar x=40$, $\sigma=20$, $n=25$. Valor crítico: $z_{\alpha/2}=2{,}17$ (tabla: $\Phi(2{,}17)=0{,}9850$).
+2. Error máximo: $E=2{,}17\cdot\dfrac{20}{\sqrt{25}}=2{,}17\cdot4=8{,}68$.
+3. Intervalo: $\bar x\pm E$:
 $$IC=(40-8{,}68,\ 40+8{,}68)=(31{,}32,\ 48{,}68).$$
+
 **Error máximo $8{,}68$ minutos.**
+
+*Interpretación:* con confianza del $97\,\%$, el tiempo medio de fabricación de una puerta está entre $31{,}32$ y $48{,}68$ minutos.
 ::::
 :::::
 
@@ -557,12 +645,20 @@ Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $\bar X\sim N\!\left(12{,}5,\ \dfrac{2{,}5}{\sqrt{16}}\right)=N(12{,}5,\ 0{,}625)$.
+**a) Media muestral con $n=16$.**
+1. Distribución: $\bar X\sim N\!\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$:
+$$\bar X\sim N\!\left(12{,}5,\ \dfrac{2{,}5}{\sqrt{16}}\right)=N(12{,}5,\ 0{,}625).$$
+2. Se tipifica y se usa la simetría de la normal, $P(Z>-a)=P(Z<a)$:
 $$P(\bar X>12)=P\!\left(Z>\frac{12-12{,}5}{0{,}625}\right)=P(Z>-0{,}8)=P(Z<0{,}8)=\mathbf{0{,}7881}.$$
 
-**b)** Con $n=25$: $\bar X\sim N\!\left(12{,}5,\ \dfrac{2{,}5}{5}\right)=N(12{,}5,\ 0{,}5)$. «Dista de $12$ a lo sumo $1$» significa $11\le\bar X\le13$:
+*Interpretación:* algo menos del $79\,\%$ de las muestras de 16 personas tienen una media superior a 12 días.
+
+**b) Media muestral con $n=25$.**
+1. Distribución: $\bar X\sim N\!\left(12{,}5,\ \dfrac{2{,}5}{5}\right)=N(12{,}5,\ 0{,}5)$.
+2. «Dista de $12$ a lo sumo $1$» significa $11\le\bar X\le13$.
+3. Se tipifica:
 $$P(11\le\bar X\le13)=P\!\left(\frac{11-12{,}5}{0{,}5}\le Z\le\frac{13-12{,}5}{0{,}5}\right)=P(-3\le Z\le1)=P(Z\le1)-P(Z\le-3).$$
-Con la tabla, $P(Z\le1)=0{,}8413$ y $P(Z\le-3)=1-0{,}99865=0{,}00135$:
+4. Con la tabla, $P(Z\le1)=0{,}8413$ y $P(Z\le-3)=1-0{,}99865=0{,}00135$:
 $$P=0{,}8413-0{,}00135\approx\mathbf{0{,}8400}.$$
 ::::
 :::::
