@@ -256,6 +256,9 @@ body.quarto-dark .gym input:focus { background: #2c3a50; }
 body.quarto-dark div.callout .callout-body-container { color: var(--md-ink); }
 body.quarto-dark div.callout.callout-style-default > .callout-header,
 body.quarto-dark div.callout .callout-title-container { color: #000; }
+/* Callouts simples (sin cabecera de color): el título va en claro sobre el fondo oscuro */
+body.quarto-dark div.callout.callout-style-simple .callout-title-container,
+body.quarto-dark div.callout.callout-style-simple > .callout-header { color: var(--md-ink); }
 body.quarto-dark div.callout { border-color: #2a3648 !important; box-shadow: 4px 4px 0 #05080d; }
 body.quarto-dark .katex { color: inherit; }
 body.quarto-dark .mdx-tabla th { background: #2a3648; }
@@ -383,3 +386,16 @@ mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; max-width:
 @media (max-width: 767.98px) {
   main table { display: block; max-width: 100%; overflow-x: auto; }
 }
+
+/* Pasos numerados de las soluciones: el número empieza al principio de la fila */
+div.callout .callout-body-container > ol,
+div.callout .callout-body-container > details ol {
+  list-style-position: inside;
+  padding-left: 0;
+  margin-left: 0;
+}
+div.callout .callout-body-container ol > li > ul,
+div.callout .callout-body-container ol > li > ol {
+  padding-left: 1.4rem;
+}
+div.callout .callout-body-container ol > li > p:first-child { display: inline; }

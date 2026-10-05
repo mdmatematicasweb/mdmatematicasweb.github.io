@@ -456,7 +456,7 @@ window.Quarto = {
 
 
 <p>Ejercicios de <strong>Matemáticas Aplicadas a las Ciencias Sociales II</strong> de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de <strong>2021 a 2026</strong> cuyo tema principal es <em>distribuciones binomial y normal</em>: <strong>12 ejercicios</strong> de convocatorias ordinarias y extraordinarias y de sus reservas o suplentes. Repasa antes la <a href="../../../apuntes/2-bachillerato-ccss/10-distribuciones/index.html">teoría</a>, los <a href="../../../ejercicios/2-bachillerato-ccss/10-distribuciones/index.html">ejercicios del tema</a> y las <a href="../../../actividades/2-bachillerato-ccss/10-distribuciones/index.html">actividades interactivas</a>.</p>
-<p>Debajo de cada ejercicio hay una <strong>resolución breve</strong> plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.</p>
+<p>Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: <strong>Ayuda 1 · Recordatorio</strong> (la teoría que necesitas, sin tocar los datos), <strong>Ayuda 2 · Método</strong> (los pasos a seguir) y la <strong>resolución breve</strong> con el resultado. Inténtalo con la menor ayuda posible.</p>
 <blockquote class="blockquote">
 <p>Se usa la tabla de la normal N(0,1) que acompaña a cada examen: los resultados se dan con los valores de la tabla (z a dos decimales), no con la calculadora.</p>
 </blockquote>
@@ -472,8 +472,45 @@ window.Quarto = {
 <li><p>Se sabe que cada usuario que desbloquea un patinete tiene una probabilidad de <span class="math inline">\(0{,}9\)</span> de completar su trayecto sin incidencias. Si 120 usuarios desbloquean un patinete para moverse por la ciudad, ¿cuál es la probabilidad de que al menos 110 completen el trayecto sin incidencias? <em>(1,25 puntos)</em></p></li>
 </ol>
 <p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/11-muestreo-inferencia.html">Muestreo e inferencia</a>.</p>
-<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(X\sim N(\mu,\sigma)\)</span> se tipifica con <span class="math inline">\(Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)\)</span>. La tabla da <span class="math inline">\(P(Z\le z)\)</span>. Simetría: <span class="math inline">\(P(Z\le-z)=1-P(Z\le z)\)</span>; <span class="math inline">\(P(a\le Z\le b)=\Phi(b)-\Phi(a)\)</span>. Cualquier valor <span class="math inline">\(z\)</span> se redondea a dos decimales.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la probabilidad pedida con <span class="math inline">\(X\)</span> y tipifica cada extremo.</li>
+<li>Redondea <span class="math inline">\(z\)</span> a dos decimales y busca <span class="math inline">\(\Phi(z)\)</span> en la tabla (para <span class="math inline">\(z&lt;0\)</span> usa la simetría).</li>
+<li>Combina: restas para intervalos, <span class="math inline">\(1-\Phi\)</span> para «mayor que».</li>
+<li>Interpreta el resultado como proporción o probabilidad.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -482,10 +519,11 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> <span class="math inline">\(X\sim N(18,\ 4)\)</span>: <span class="math inline">\(P(X&lt;15)=P\!\left(Z&lt;\dfrac{15-18}{4}\right)=P(Z&lt;-0{,}75)=1-P(Z&lt;0{,}75)=1-0{,}7734=\mathbf{0{,}2266}\)</span>.</p>
-<p><strong>b)</strong> Sea <span class="math inline">\(Y\)</span> el número de usuarios, de <span class="math inline">\(120\)</span>, que completan el trayecto sin incidencias: <span class="math inline">\(Y\sim B(120;\ 0{,}9)\)</span>. Como <span class="math inline">\(np=108\ge5\)</span> y <span class="math inline">\(nq=12\ge5\)</span>, se aproxima por <span class="math inline">\(Y'\sim N\!\left(108,\ \sqrt{120\cdot0{,}9\cdot0{,}1}\right)=N(108,\ 3{,}2863)\)</span>. Con corrección por continuidad: <span class="math display">\[P(Y\ge110)=P(Y'&gt;109{,}5)=P\!\left(Z&gt;\frac{109{,}5-108}{3{,}2863}\right)=P(Z&gt;0{,}46)=1-0{,}6772=\mathbf{0{,}3228}.\]</span></p>
+<p><strong>a) Probabilidad de tardar menos de 15 minutos.</strong> 1. <span class="math inline">\(X\sim N(18,\ 4)\)</span>: se tipifica <span class="math inline">\(Z=\dfrac{X-18}{4}\)</span>. 2. Se usa que <span class="math inline">\(P(Z&lt;-0{,}75)=1-P(Z&lt;0{,}75)\)</span> y se lee en la tabla <span class="math inline">\(\Phi(0{,}75)=0{,}7734\)</span>: <span class="math display">\[P(X&lt;15)=P\!\left(Z&lt;\dfrac{15-18}{4}\right)=P(Z&lt;-0{,}75)=1-P(Z&lt;0{,}75)=1-0{,}7734=\mathbf{0{,}2266}.\]</span></p>
+<p><em>Interpretación:</em> algo más de <span class="math inline">\(2\)</span> de cada <span class="math inline">\(10\)</span> usuarios tardan menos de <span class="math inline">\(15\)</span> minutos.</p>
+<p><strong>b) Al menos 110 sin incidencias.</strong> 1. Sea <span class="math inline">\(Y\)</span> el número de usuarios, de <span class="math inline">\(120\)</span>, que completan el trayecto sin incidencias: <span class="math inline">\(Y\sim B(120;\ 0{,}9)\)</span>. 2. Comprobación: <span class="math inline">\(np=108\ge5\)</span> y <span class="math inline">\(nq=12\ge5\)</span>, se aproxima por <span class="math inline">\(Y'\sim N\!\left(108,\ \sqrt{120\cdot0{,}9\cdot0{,}1}\right)=N(108,\ 3{,}2863)\)</span>. 3. Corrección por continuidad y tabla (<span class="math inline">\(\Phi(0{,}46)=0{,}6772\)</span>): <span class="math display">\[P(Y\ge110)=P(Y'&gt;109{,}5)=P\!\left(Z&gt;\frac{109{,}5-108}{3{,}2863}\right)=P(Z&gt;0{,}46)=1-0{,}6772=\mathbf{0{,}3228}.\]</span></p>
 </div>
 </div>
 </div>
@@ -502,8 +540,55 @@ window.Quarto = {
 <li><p>Se consideran muestras de tamaño 64, ¿qué distribución sigue la variable media muestral? ¿Qué probabilidad hay de que, elegida una muestra al azar, la media sea superior a <span class="math inline">\(16{,}3\)</span>? <em>(0,75 puntos)</em></p></li>
 </ol>
 <p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/11-muestreo-inferencia.html">Muestreo e inferencia</a>.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Distribución normal: cálculo de probabilidades.</strong></p>
+<p><span class="math inline">\(X\sim N(\mu,\sigma)\)</span> se tipifica con <span class="math inline">\(Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)\)</span>. La tabla da <span class="math inline">\(P(Z\le z)\)</span>. Simetría: <span class="math inline">\(P(Z\le-z)=1-P(Z\le z)\)</span>; <span class="math inline">\(P(a\le Z\le b)=\Phi(b)-\Phi(a)\)</span>. Cualquier valor <span class="math inline">\(z\)</span> se redondea a dos decimales.</p>
+<p><strong>Distribución de la media y de la proporción muestral.</strong></p>
+<p>Si <span class="math inline">\(X\sim N(\mu,\sigma)\)</span>, la media de muestras de tamaño <span class="math inline">\(n\)</span> cumple <span class="math inline">\(\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)\)</span>. Para <span class="math inline">\(n\ge30\)</span> vale aunque <span class="math inline">\(X\)</span> no sea normal. La proporción muestral <span class="math inline">\(\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)\)</span> si <span class="math inline">\(np\ge5\)</span> y <span class="math inline">\(n(1-p)\ge5\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Distribución normal: cálculo de probabilidades.</strong></p>
+<ol type="1">
+<li>Escribe la probabilidad pedida con <span class="math inline">\(X\)</span> y tipifica cada extremo.</li>
+<li>Redondea <span class="math inline">\(z\)</span> a dos decimales y busca <span class="math inline">\(\Phi(z)\)</span> en la tabla (para <span class="math inline">\(z&lt;0\)</span> usa la simetría).</li>
+<li>Combina: restas para intervalos, <span class="math inline">\(1-\Phi\)</span> para «mayor que».</li>
+<li>Interpreta el resultado como proporción o probabilidad.</li>
+</ol>
+<p><strong>Distribución de la media y de la proporción muestral.</strong></p>
+<ol type="1">
+<li>Identifica <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span> y <span class="math inline">\(n\)</span> (o <span class="math inline">\(p\)</span> y <span class="math inline">\(n\)</span>).</li>
+<li>Escribe la distribución de <span class="math inline">\(\overline{X}\)</span> (o de <span class="math inline">\(\hat p\)</span>) con su desviación típica <span class="math inline">\(\sigma/\sqrt{n}\)</span>.</li>
+<li>Tipifica con esa desviación típica y usa la tabla.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -512,12 +597,12 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(X\sim N(16,\ 2)\)</span> (la desviación típica es <span class="math inline">\(\sqrt4=2\)</span>).</p>
-<p><strong>a)</strong> <span class="math inline">\(P(14{,}5&lt;X&lt;16{,}2)=P\!\left(\dfrac{14{,}5-16}{2}&lt;Z&lt;\dfrac{16{,}2-16}{2}\right)=P(-0{,}75&lt;Z&lt;0{,}1)=0{,}5398-(1-0{,}7734)=\mathbf{0{,}3132}\)</span>.</p>
-<p><strong>b)</strong> <span class="math inline">\(P(X\ge a)=0{,}25\iff P(X&lt;a)=0{,}75\)</span>. En la tabla <span class="math inline">\(\Phi(0{,}67)=0{,}7486\)</span> y <span class="math inline">\(\Phi(0{,}68)=0{,}7517\)</span>, luego <span class="math inline">\(z\approx0{,}675\)</span> y <span class="math inline">\(a=16+2\cdot0{,}675=\mathbf{17{,}35}\)</span>.</p>
-<p><strong>c)</strong> <span class="math inline">\(\bar X\sim N\!\left(16,\ \dfrac{2}{\sqrt{64}}\right)=N(16,\ 0{,}25)\)</span>. <span class="math display">\[P(\bar X&gt;16{,}3)=P\!\left(Z&gt;\frac{16{,}3-16}{0{,}25}\right)=P(Z&gt;1{,}2)=1-0{,}8849=\mathbf{0{,}1151}.\]</span></p>
+<p><strong>Datos.</strong> <span class="math inline">\(X\sim N(16,\ 2)\)</span> (la desviación típica es <span class="math inline">\(\sqrt4=2\)</span>).</p>
+<p><strong>a) Entre <span class="math inline">\(14{,}5\)</span> y <span class="math inline">\(16{,}2\)</span>.</strong> 1. Se tipifica: <span class="math inline">\(Z=\dfrac{X-16}{2}\)</span>. 2. Con <span class="math inline">\(P(Z&lt;-0{,}75)=1-0{,}7734\)</span> y la tabla: <span class="math display">\[P(14{,}5&lt;X&lt;16{,}2)=P\!\left(\dfrac{14{,}5-16}{2}&lt;Z&lt;\dfrac{16{,}2-16}{2}\right)=P(-0{,}75&lt;Z&lt;0{,}1)=0{,}5398-(1-0{,}7734)=\mathbf{0{,}3132}.\]</span></p>
+<p><strong>b) Valor <span class="math inline">\(a\)</span> con <span class="math inline">\(P[X\ge a]=0{,}25\)</span>.</strong> 1. <span class="math inline">\(P(X\ge a)=0{,}25\iff P(X&lt;a)=0{,}75\)</span>. 2. En la tabla <span class="math inline">\(\Phi(0{,}67)=0{,}7486\)</span> y <span class="math inline">\(\Phi(0{,}68)=0{,}7517\)</span>; <span class="math inline">\(0{,}75\)</span> está entre ambos, y se interpola: <span class="math inline">\(z\approx0{,}675\)</span>. 3. Se deshace la tipificación: <span class="math inline">\(a=16+2\cdot0{,}675=\mathbf{17{,}35}\)</span>.</p>
+<p><strong>c) Media muestral con <span class="math inline">\(n=64\)</span>.</strong> 1. <span class="math inline">\(\bar X\sim N\!\left(16,\ \dfrac{2}{\sqrt{64}}\right)=N(16,\ 0{,}25)\)</span>. 2. Se tipifica y se lee en la tabla (<span class="math inline">\(\Phi(1{,}2)=0{,}8849\)</span>): <span class="math display">\[P(\bar X&gt;16{,}3)=P\!\left(Z&gt;\frac{16{,}3-16}{0{,}25}\right)=P(Z&gt;1{,}2)=1-0{,}8849=\mathbf{0{,}1151}.\]</span></p>
 </div>
 </div>
 </div>
@@ -538,8 +623,45 @@ window.Quarto = {
 <ol start="2" type="a">
 <li>Si a lo largo de un año Paco juega 80 partidos, ¿cuál es la probabilidad de que pierda más de 10 pero menos de 20 partidos ese año? <em>(1 punto)</em></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(X\sim N(\mu,\sigma)\)</span> se tipifica con <span class="math inline">\(Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)\)</span>. La tabla da <span class="math inline">\(P(Z\le z)\)</span>. Simetría: <span class="math inline">\(P(Z\le-z)=1-P(Z\le z)\)</span>; <span class="math inline">\(P(a\le Z\le b)=\Phi(b)-\Phi(a)\)</span>. Cualquier valor <span class="math inline">\(z\)</span> se redondea a dos decimales.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la probabilidad pedida con <span class="math inline">\(X\)</span> y tipifica cada extremo.</li>
+<li>Redondea <span class="math inline">\(z\)</span> a dos decimales y busca <span class="math inline">\(\Phi(z)\)</span> en la tabla (para <span class="math inline">\(z&lt;0\)</span> usa la simetría).</li>
+<li>Combina: restas para intervalos, <span class="math inline">\(1-\Phi\)</span> para «mayor que».</li>
+<li>Interpreta el resultado como proporción o probabilidad.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -548,12 +670,12 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> En el torneo, Paco juega <span class="math inline">\(9\)</span> partidos (uno contra cada uno de los otros <span class="math inline">\(9\)</span> jugadores). <span class="math inline">\(X\)</span> = «partidos ganados»: <span class="math inline">\(X\sim B(9;\ 0{,}8)\)</span>.</p>
-<p><strong>i)</strong> <span class="math inline">\(P(X=8)=\dbinom98\,0{,}8^8\cdot0{,}2=9\cdot0{,}8^8\cdot0{,}2\approx\mathbf{0{,}3020}\)</span>.</p>
-<p><strong>ii)</strong> <span class="math inline">\(P(X\le8)=1-P(X=9)=1-0{,}8^9\approx\mathbf{0{,}8658}\)</span>.</p>
-<p><strong>b)</strong> <span class="math inline">\(Y\)</span> = «partidos perdidos» de <span class="math inline">\(80\)</span>: <span class="math inline">\(Y\sim B(80;\ 0{,}2)\)</span>. Como <span class="math inline">\(np=16\ge5\)</span> y <span class="math inline">\(nq=64\ge5\)</span>, se aproxima por <span class="math inline">\(Y'\sim N\!\left(16,\ \sqrt{80\cdot0{,}2\cdot0{,}8}\right)=N(16,\ 3{,}5777)\)</span>. «Más de <span class="math inline">\(10\)</span> pero menos de <span class="math inline">\(20\)</span>» son <span class="math inline">\(11,\dots,19\)</span>, es decir, con corrección por continuidad <span class="math inline">\(10{,}5&lt;Y'&lt;19{,}5\)</span>: <span class="math display">\[P=P\!\left(\frac{10{,}5-16}{3{,}5777}&lt;Z&lt;\frac{19{,}5-16}{3{,}5777}\right)=P(-1{,}54&lt;Z&lt;0{,}98)=0{,}8365-(1-0{,}9382)=\mathbf{0{,}7747}.\]</span></p>
+<p><strong>a) Torneo.</strong> Paco juega <span class="math inline">\(9\)</span> partidos (uno contra cada uno de los otros <span class="math inline">\(9\)</span> jugadores). <span class="math inline">\(X\)</span> = «partidos ganados»: <span class="math inline">\(X\sim B(9;\ 0{,}8)\)</span>.</p>
+<p><strong>i) Exactamente <span class="math inline">\(8\)</span>.</strong> 1. <span class="math inline">\(P(X=8)=\dbinom98\,0{,}8^8\cdot0{,}2=9\cdot0{,}8^8\cdot0{,}2\approx\mathbf{0{,}3020}\)</span>.</p>
+<p><strong>ii) Como mucho <span class="math inline">\(8\)</span>.</strong> 1. Se pasa al suceso contrario: <span class="math inline">\(P(X\le8)=1-P(X=9)=1-0{,}8^9\approx\mathbf{0{,}8658}\)</span>.</p>
+<p><strong>b) Partidos perdidos en un año.</strong> 1. <span class="math inline">\(Y\)</span> = «partidos perdidos» de <span class="math inline">\(80\)</span>: <span class="math inline">\(Y\sim B(80;\ 0{,}2)\)</span>. 2. Comprobación: <span class="math inline">\(np=16\ge5\)</span> y <span class="math inline">\(nq=64\ge5\)</span>, se aproxima por <span class="math inline">\(Y'\sim N\!\left(16,\ \sqrt{80\cdot0{,}2\cdot0{,}8}\right)=N(16,\ 3{,}5777)\)</span>. 3. «Más de <span class="math inline">\(10\)</span> pero menos de <span class="math inline">\(20\)</span>» son <span class="math inline">\(11,\dots,19\)</span>: con corrección por continuidad, <span class="math inline">\(10{,}5&lt;Y'&lt;19{,}5\)</span>. 4. Se tipifica y se lee en la tabla (<span class="math inline">\(\Phi(0{,}98)=0{,}8365\)</span> y <span class="math inline">\(\Phi(1{,}54)=0{,}9382\)</span>): <span class="math display">\[P=P\!\left(\frac{10{,}5-16}{3{,}5777}&lt;Z&lt;\frac{19{,}5-16}{3{,}5777}\right)=P(-1{,}54&lt;Z&lt;0{,}98)=0{,}8365-(1-0{,}9382)=\mathbf{0{,}7747}.\]</span></p>
 </div>
 </div>
 </div>
@@ -569,8 +691,45 @@ window.Quarto = {
 <li><p>Calcule la probabilidad de que al menos 3 de 5 trayectos seleccionados de esta ruta hayan sido «rápidos». <em>(0,75 puntos)</em></p></li>
 <li><p>Seleccionados 80 trayectos de esta ruta, calcule la probabilidad de que a lo sumo 15 sean «rápidos». <em>(0,75 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(X\sim N(\mu,\sigma)\)</span> se tipifica con <span class="math inline">\(Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)\)</span>. La tabla da <span class="math inline">\(P(Z\le z)\)</span>. Simetría: <span class="math inline">\(P(Z\le-z)=1-P(Z\le z)\)</span>; <span class="math inline">\(P(a\le Z\le b)=\Phi(b)-\Phi(a)\)</span>. Cualquier valor <span class="math inline">\(z\)</span> se redondea a dos decimales.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la probabilidad pedida con <span class="math inline">\(X\)</span> y tipifica cada extremo.</li>
+<li>Redondea <span class="math inline">\(z\)</span> a dos decimales y busca <span class="math inline">\(\Phi(z)\)</span> en la tabla (para <span class="math inline">\(z&lt;0\)</span> usa la simetría).</li>
+<li>Combina: restas para intervalos, <span class="math inline">\(1-\Phi\)</span> para «mayor que».</li>
+<li>Interpreta el resultado como proporción o probabilidad.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -579,12 +738,13 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(T\sim N(40,\ 5)\)</span>.</p>
-<p><strong>a)</strong> <span class="math inline">\(P(T&lt;33{,}6)=P\!\left(Z&lt;\dfrac{33{,}6-40}{5}\right)=P(Z&lt;-1{,}28)=1-P(Z&lt;1{,}28)=1-0{,}8997=\mathbf{0{,}1003}\)</span>.</p>
-<p><strong>b)</strong> <span class="math inline">\(X\)</span> = «viajes rápidos de <span class="math inline">\(5\)</span>»: <span class="math inline">\(X\sim B(5;\ 0{,}1003)\)</span>. <span class="math display">\[P(X\ge3)=\binom53p^3q^2+\binom54p^4q+p^5\quad(p=0{,}1003,\ q=0{,}8997)=0{,}00817+0{,}00046+0{,}00001\approx\mathbf{0{,}0086}.\]</span></p>
-<p><strong>c)</strong> <span class="math inline">\(Y\)</span> = «viajes rápidos de <span class="math inline">\(80\)</span>»: <span class="math inline">\(Y\sim B(80;\ 0{,}1003)\)</span>. Como <span class="math inline">\(np=8{,}02\ge5\)</span> y <span class="math inline">\(nq=71{,}98\ge5\)</span>, <span class="math inline">\(Y\approx N\!\left(8{,}02,\ \sqrt{80\cdot0{,}1003\cdot0{,}8997}\right)=N(8{,}02;\ 2{,}687)\)</span>. Con corrección por continuidad: <span class="math display">\[P(Y\le15)=P(Y'&lt;15{,}5)=P\!\left(Z&lt;\frac{15{,}5-8{,}02}{2{,}687}\right)=P(Z&lt;2{,}78)=\mathbf{0{,}9973}.\]</span></p>
+<p><strong>Datos.</strong> <span class="math inline">\(T\sim N(40,\ 5)\)</span>.</p>
+<p><strong>a) Viaje «rápido».</strong> 1. Se tipifica y se lee en la tabla (<span class="math inline">\(\Phi(1{,}28)=0{,}8997\)</span>): <span class="math display">\[P(T&lt;33{,}6)=P\!\left(Z&lt;\dfrac{33{,}6-40}{5}\right)=P(Z&lt;-1{,}28)=1-P(Z&lt;1{,}28)=1-0{,}8997=\mathbf{0{,}1003}.\]</span></p>
+<p><strong>b) Al menos <span class="math inline">\(3\)</span> de <span class="math inline">\(5\)</span>.</strong> 1. <span class="math inline">\(X\)</span> = «viajes rápidos de <span class="math inline">\(5\)</span>»: <span class="math inline">\(X\sim B(5;\ 0{,}1003)\)</span>, con <span class="math inline">\(p=0{,}1003\)</span> y <span class="math inline">\(q=0{,}8997\)</span>. 2. Se suman los casos <span class="math inline">\(3\)</span>, <span class="math inline">\(4\)</span> y <span class="math inline">\(5\)</span>: <span class="math display">\[P(X\ge3)=\binom53p^3q^2+\binom54p^4q+p^5=0{,}00817+0{,}00046+0{,}00001\approx\mathbf{0{,}0086}.\]</span></p>
+<p><strong>c) A lo sumo <span class="math inline">\(15\)</span> de <span class="math inline">\(80\)</span>.</strong> 1. <span class="math inline">\(Y\)</span> = «viajes rápidos de <span class="math inline">\(80\)</span>»: <span class="math inline">\(Y\sim B(80;\ 0{,}1003)\)</span>. 2. Comprobación: <span class="math inline">\(np=8{,}02\ge5\)</span> y <span class="math inline">\(nq=71{,}98\ge5\)</span>, se aproxima por <span class="math inline">\(Y'\sim N\!\left(8{,}02,\ \sqrt{80\cdot0{,}1003\cdot0{,}8997}\right)=N(8{,}02;\ 2{,}687)\)</span>. 3. Corrección por continuidad y tabla (<span class="math inline">\(\Phi(2{,}78)=0{,}9973\)</span>): <span class="math display">\[P(Y\le15)=P(Y'&lt;15{,}5)=P\!\left(Z&lt;\frac{15{,}5-8{,}02}{2{,}687}\right)=P(Z&lt;2{,}78)=\mathbf{0{,}9973}.\]</span></p>
+<p><em>Interpretación:</em> es casi seguro que no más de <span class="math inline">\(15\)</span> de los <span class="math inline">\(80\)</span> trayectos sean rápidos.</p>
 </div>
 </div>
 </div>
@@ -604,8 +764,45 @@ window.Quarto = {
 <li><p>Determine el valor esperado del número de personas que contratarán el servicio de entre las seleccionadas. <em>(0,5 puntos)</em></p></li>
 <li><p>¿Cuántas personas, de entre las que han visto el anuncio, se deberían seleccionar para que el número esperado de personas que contraten el servicio sea mayor o igual a 13? <em>(0,5 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(X\sim N(\mu,\sigma)\)</span> se tipifica con <span class="math inline">\(Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)\)</span>. La tabla da <span class="math inline">\(P(Z\le z)\)</span>. Simetría: <span class="math inline">\(P(Z\le-z)=1-P(Z\le z)\)</span>; <span class="math inline">\(P(a\le Z\le b)=\Phi(b)-\Phi(a)\)</span>. Cualquier valor <span class="math inline">\(z\)</span> se redondea a dos decimales.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la probabilidad pedida con <span class="math inline">\(X\)</span> y tipifica cada extremo.</li>
+<li>Redondea <span class="math inline">\(z\)</span> a dos decimales y busca <span class="math inline">\(\Phi(z)\)</span> en la tabla (para <span class="math inline">\(z&lt;0\)</span> usa la simetría).</li>
+<li>Combina: restas para intervalos, <span class="math inline">\(1-\Phi\)</span> para «mayor que».</li>
+<li>Interpreta el resultado como proporción o probabilidad.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -614,13 +811,15 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sea <span class="math inline">\(X\)</span> el número de personas, de <span class="math inline">\(20\)</span>, que contratan el servicio: <span class="math inline">\(X\sim B(20;\ 0{,}2)\)</span>.</p>
-<p><strong>a)</strong> <span class="math inline">\(P(X=10)=\dbinom{20}{10}\,0{,}2^{10}\cdot0{,}8^{10}=184\,756\cdot0{,}2^{10}\cdot0{,}8^{10}\approx\mathbf{0{,}0020}\)</span>.</p>
-<p><strong>b)</strong> <span class="math inline">\(P(X\ge2)=1-P(X=0)-P(X=1)=1-0{,}8^{20}-20\cdot0{,}2\cdot0{,}8^{19}=1-0{,}0115-0{,}0576\approx\mathbf{0{,}9308}\)</span>.</p>
-<p><strong>c)</strong> <span class="math inline">\(E(X)=np=20\cdot0{,}2=\mathbf{4}\)</span> personas.</p>
-<p><strong>d)</strong> Con <span class="math inline">\(n\)</span> personas, <span class="math inline">\(E(X)=0{,}2n\ge13\iff n\ge65\)</span>. <strong>Hay que seleccionar al menos <span class="math inline">\(65\)</span> personas.</strong></p>
+<p><strong>Modelo.</strong> Sea <span class="math inline">\(X\)</span> el número de personas, de <span class="math inline">\(20\)</span>, que contratan el servicio: <span class="math inline">\(X\sim B(20;\ 0{,}2)\)</span>.</p>
+<p><strong>a) Exactamente 10.</strong> 1. <span class="math inline">\(P(X=10)=\dbinom{20}{10}\,0{,}2^{10}\cdot0{,}8^{10}=184\,756\cdot0{,}2^{10}\cdot0{,}8^{10}\approx\mathbf{0{,}0020}\)</span>.</p>
+<p><em>Interpretación:</em> es un suceso muy raro, porque lo esperable es que contraten unas <span class="math inline">\(4\)</span> personas.</p>
+<p><strong>b) Al menos 2.</strong> 1. Suceso contrario: <span class="math inline">\(P(X\ge2)=1-P(X=0)-P(X=1)\)</span>. 2. <span class="math inline">\(P(X\ge2)=1-0{,}8^{20}-20\cdot0{,}2\cdot0{,}8^{19}=1-0{,}0115-0{,}0576\approx\mathbf{0{,}9308}\)</span>.</p>
+<p><strong>c) Valor esperado.</strong> 1. <span class="math inline">\(E(X)=np=20\cdot0{,}2=\mathbf{4}\)</span> personas.</p>
+<p><strong>d) Tamaño para esperar al menos 13.</strong> 1. Con <span class="math inline">\(n\)</span> personas, <span class="math inline">\(E(X)=0{,}2n\ge13\iff n\ge65\)</span>.</p>
+<p><strong>Hay que seleccionar al menos <span class="math inline">\(65\)</span> personas.</strong></p>
 </div>
 </div>
 </div>
@@ -636,8 +835,56 @@ window.Quarto = {
 <p>b1) Calcule un intervalo de confianza, con un nivel de confianza del <span class="math inline">\(96\,\%\)</span>, para la media poblacional. ¿Cuál es el error máximo que se comete en la estimación de esta media? Con este nivel de confianza y a partir de los datos obtenidos, ¿puede afirmarse que un tren tenga un retraso de 2 minutos? <em>(1,25 puntos)</em></p>
 <p>b2) Con un nivel de confianza del <span class="math inline">\(98\,\%\)</span>, ¿cuántos trenes de alta velocidad deberían elegirse, como mínimo, para que la diferencia entre la media poblacional y su estimación muestral sea como máximo de <span class="math inline">\(1{,}1\)</span> minutos? <em>(0,75 puntos)</em></p>
 <p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/11-muestreo-inferencia.html">Muestreo e inferencia</a>.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Distribución normal: cálculo de probabilidades.</strong></p>
+<p><span class="math inline">\(X\sim N(\mu,\sigma)\)</span> se tipifica con <span class="math inline">\(Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)\)</span>. La tabla da <span class="math inline">\(P(Z\le z)\)</span>. Simetría: <span class="math inline">\(P(Z\le-z)=1-P(Z\le z)\)</span>; <span class="math inline">\(P(a\le Z\le b)=\Phi(b)-\Phi(a)\)</span>. Cualquier valor <span class="math inline">\(z\)</span> se redondea a dos decimales.</p>
+<p><strong>Normal: hallar un valor o un parámetro.</strong></p>
+<p>Si se conoce la probabilidad y falta el valor <span class="math inline">\(x\)</span> (percentil) o un parámetro, se busca en la tabla el <span class="math inline">\(z\)</span> cuya <span class="math inline">\(\Phi(z)\)</span> es la probabilidad dada (el más cercano) y se deshace la tipificación: <span class="math inline">\(x=\mu+z\,\sigma\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Distribución normal: cálculo de probabilidades.</strong></p>
+<ol type="1">
+<li>Escribe la probabilidad pedida con <span class="math inline">\(X\)</span> y tipifica cada extremo.</li>
+<li>Redondea <span class="math inline">\(z\)</span> a dos decimales y busca <span class="math inline">\(\Phi(z)\)</span> en la tabla (para <span class="math inline">\(z&lt;0\)</span> usa la simetría).</li>
+<li>Combina: restas para intervalos, <span class="math inline">\(1-\Phi\)</span> para «mayor que».</li>
+<li>Interpreta el resultado como proporción o probabilidad.</li>
+</ol>
+<p><strong>Normal: hallar un valor o un parámetro.</strong></p>
+<ol type="1">
+<li>Plantea <span class="math inline">\(P(X\le x)=p\)</span> y pasa a <span class="math inline">\(P\left(Z\le\dfrac{x-\mu}{\sigma}\right)=p\)</span>.</li>
+<li>Si <span class="math inline">\(p&lt;0{,}5\)</span>, usa la simetría para trabajar con <span class="math inline">\(1-p\)</span> y cambia el signo de <span class="math inline">\(z\)</span>.</li>
+<li>Busca <span class="math inline">\(p\)</span> en el interior de la tabla y lee el <span class="math inline">\(z\)</span>.</li>
+<li>Despeja <span class="math inline">\(x\)</span> (o el parámetro desconocido).</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -646,12 +893,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> <span class="math inline">\(X\sim N(0,\ 2{,}2)\)</span>. <span class="math inline">\(P(|X|\le1)=P(-1\le X\le1)=P\!\left(-\dfrac{1}{2{,}2}\le Z\le\dfrac{1}{2{,}2}\right)=P(-0{,}45\le Z\le0{,}45)=2\cdot0{,}6736-1=0{,}3472\)</span>.</p>
+<p><strong>a) Desajuste máximo de un minuto.</strong> 1. <span class="math inline">\(X\sim N(0,\ 2{,}2)\)</span> y se pide <span class="math inline">\(P(|X|\le1)=P(-1\le X\le1)\)</span>. 2. Se tipifica y se lee en la tabla: <span class="math display">\[P\!\left(-\dfrac{1}{2{,}2}\le Z\le\dfrac{1}{2{,}2}\right)=P(-0{,}45\le Z\le0{,}45)=2\cdot0{,}6736-1=0{,}3472.\]</span></p>
 <p><strong>El <span class="math inline">\(34{,}72\,\%\)</span> de los trenes.</strong></p>
-<p><strong>b1)</strong> Suma de los desajustes: <span class="math inline">\(9\)</span>, luego <span class="math inline">\(\bar x=\dfrac{9}{15}=0{,}6\)</span> minutos. Nivel <span class="math inline">\(96\,\%\)</span>: <span class="math inline">\(\Phi(z_{\alpha/2})=0{,}98\)</span> y en la tabla <span class="math inline">\(\Phi(2{,}05)=0{,}9798\)</span> (el más cercano a <span class="math inline">\(0{,}98\)</span>), luego <span class="math inline">\(z_{\alpha/2}=2{,}05\)</span>. <span class="math inline">\(E=2{,}05\cdot\dfrac{2{,}2}{\sqrt{15}}=1{,}1645\)</span>. <span class="math display">\[IC=(0{,}6-1{,}1645,\ 0{,}6+1{,}1645)=(-0{,}5645,\ 1{,}7645).\]</span> <strong>Error máximo <span class="math inline">\(1{,}1645\)</span> minutos.</strong> El valor <span class="math inline">\(2\)</span> <strong>no pertenece al intervalo</strong>, luego con este nivel de confianza <strong>no puede afirmarse</strong> que el retraso medio de un tren sea de <span class="math inline">\(2\)</span> minutos.</p>
-<p><strong>b2)</strong> Nivel <span class="math inline">\(98\,\%\)</span>: <span class="math inline">\(z_{\alpha/2}=2{,}33\)</span>. <span class="math inline">\(E\le1{,}1\iff n\ge\left(\dfrac{2{,}33\cdot2{,}2}{1{,}1}\right)^2=21{,}72\)</span>. <strong>Hay que elegir al menos <span class="math inline">\(n=22\)</span> trenes.</strong></p>
+<p><strong>b1) Intervalo al <span class="math inline">\(96\,\%\)</span>, error y afirmación.</strong> 1. Media muestral: la suma de los desajustes es <span class="math inline">\(9\)</span>, luego <span class="math inline">\(\bar x=\dfrac{9}{15}=0{,}6\)</span> minutos. 2. Valor crítico: <span class="math inline">\(\Phi(z_{\alpha/2})=0{,}98\)</span> y en la tabla <span class="math inline">\(\Phi(2{,}05)=0{,}9798\)</span> (el más cercano a <span class="math inline">\(0{,}98\)</span>), luego <span class="math inline">\(z_{\alpha/2}=2{,}05\)</span>. 3. Error máximo: <span class="math inline">\(E=2{,}05\cdot\dfrac{2{,}2}{\sqrt{15}}=1{,}1645\)</span>. 4. Intervalo: <span class="math display">\[IC=(0{,}6-1{,}1645,\ 0{,}6+1{,}1645)=(-0{,}5645,\ 1{,}7645).\]</span></p>
+<p><strong>Error máximo <span class="math inline">\(1{,}1645\)</span> minutos.</strong> El valor <span class="math inline">\(2\)</span> <strong>no pertenece al intervalo</strong>, luego con este nivel de confianza <strong>no puede afirmarse</strong> que el retraso medio de un tren sea de <span class="math inline">\(2\)</span> minutos.</p>
+<p><strong>b2) Tamaño mínimo al <span class="math inline">\(98\,\%\)</span>.</strong> 1. Valor crítico: <span class="math inline">\(z_{\alpha/2}=2{,}33\)</span> (tabla: <span class="math inline">\(\Phi(2{,}33)=0{,}9901\)</span>). 2. Se impone <span class="math inline">\(E\le1{,}1\)</span> y se despeja <span class="math inline">\(n\)</span>: <span class="math inline">\(E\le1{,}1\iff n\ge\left(\dfrac{2{,}33\cdot2{,}2}{1{,}1}\right)^2=21{,}72\)</span>. 3. Se redondea hacia arriba.</p>
+<p><strong>Hay que elegir al menos <span class="math inline">\(n=22\)</span> trenes.</strong></p>
 </div>
 </div>
 </div>
@@ -667,8 +916,55 @@ window.Quarto = {
 <li><p>¿Qué porcentaje de muestras de tamaño 25 nos proporcionará un tiempo medio de adaptación entre 8 y 11 días? <em>(1,25 puntos)</em></p></li>
 </ol>
 <p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/11-muestreo-inferencia.html">Muestreo e inferencia</a>.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Distribución normal: cálculo de probabilidades.</strong></p>
+<p><span class="math inline">\(X\sim N(\mu,\sigma)\)</span> se tipifica con <span class="math inline">\(Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)\)</span>. La tabla da <span class="math inline">\(P(Z\le z)\)</span>. Simetría: <span class="math inline">\(P(Z\le-z)=1-P(Z\le z)\)</span>; <span class="math inline">\(P(a\le Z\le b)=\Phi(b)-\Phi(a)\)</span>. Cualquier valor <span class="math inline">\(z\)</span> se redondea a dos decimales.</p>
+<p><strong>Distribución de la media y de la proporción muestral.</strong></p>
+<p>Si <span class="math inline">\(X\sim N(\mu,\sigma)\)</span>, la media de muestras de tamaño <span class="math inline">\(n\)</span> cumple <span class="math inline">\(\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)\)</span>. Para <span class="math inline">\(n\ge30\)</span> vale aunque <span class="math inline">\(X\)</span> no sea normal. La proporción muestral <span class="math inline">\(\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)\)</span> si <span class="math inline">\(np\ge5\)</span> y <span class="math inline">\(n(1-p)\ge5\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Distribución normal: cálculo de probabilidades.</strong></p>
+<ol type="1">
+<li>Escribe la probabilidad pedida con <span class="math inline">\(X\)</span> y tipifica cada extremo.</li>
+<li>Redondea <span class="math inline">\(z\)</span> a dos decimales y busca <span class="math inline">\(\Phi(z)\)</span> en la tabla (para <span class="math inline">\(z&lt;0\)</span> usa la simetría).</li>
+<li>Combina: restas para intervalos, <span class="math inline">\(1-\Phi\)</span> para «mayor que».</li>
+<li>Interpreta el resultado como proporción o probabilidad.</li>
+</ol>
+<p><strong>Distribución de la media y de la proporción muestral.</strong></p>
+<ol type="1">
+<li>Identifica <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span> y <span class="math inline">\(n\)</span> (o <span class="math inline">\(p\)</span> y <span class="math inline">\(n\)</span>).</li>
+<li>Escribe la distribución de <span class="math inline">\(\overline{X}\)</span> (o de <span class="math inline">\(\hat p\)</span>) con su desviación típica <span class="math inline">\(\sigma/\sqrt{n}\)</span>.</li>
+<li>Tipifica con esa desviación típica y usa la tabla.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -677,10 +973,11 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> <span class="math inline">\(\bar X\sim N\!\left(10{,}5,\ \dfrac{1{,}5}{\sqrt{25}}\right)=N(10{,}5,\ 0{,}3)\)</span>. <span class="math display">\[P(\bar X&gt;10)=P\!\left(Z&gt;\frac{10-10{,}5}{0{,}3}\right)=P(Z&gt;-1{,}67)=P(Z&lt;1{,}67)=\mathbf{0{,}9525}.\]</span></p>
-<p><strong>b)</strong> <span class="math inline">\(P(8&lt;\bar X&lt;11)=P\!\left(\dfrac{8-10{,}5}{0{,}3}&lt;Z&lt;\dfrac{11-10{,}5}{0{,}3}\right)=P(-8{,}33&lt;Z&lt;1{,}67)\approx P(Z&lt;1{,}67)-0=0{,}9525\)</span>.</p>
+<p><strong>a) Distribución de la media muestral.</strong> 1. Si la población es normal, <span class="math inline">\(\bar X\sim N\!\left(\mu,\dfrac{\sigma}{\sqrt n}\right)\)</span>: <span class="math inline">\(\bar X\sim N\!\left(10{,}5,\ \dfrac{1{,}5}{\sqrt{25}}\right)=N(10{,}5,\ 0{,}3)\)</span>. 2. Se tipifica y se lee en la tabla: <span class="math display">\[P(\bar X&gt;10)=P\!\left(Z&gt;\frac{10-10{,}5}{0{,}3}\right)=P(Z&gt;-1{,}67)=P(Z&lt;1{,}67)=\mathbf{0{,}9525}.\]</span></p>
+<p><em>Interpretación:</em> en el <span class="math inline">\(95{,}25\,\%\)</span> de las muestras de 25 menores, el tiempo medio supera los <span class="math inline">\(10\)</span> días.</p>
+<p><strong>b) Media entre 8 y 11 días.</strong> 1. Se tipifican los dos extremos: <span class="math inline">\(\dfrac{8-10{,}5}{0{,}3}=-8{,}33\)</span> y <span class="math inline">\(\dfrac{11-10{,}5}{0{,}3}=1{,}67\)</span>. 2. <span class="math inline">\(P(-8{,}33&lt;Z&lt;1{,}67)\)</span>: el límite inferior queda fuera de la tabla, con probabilidad prácticamente nula a su izquierda, así que <span class="math display">\[P(8&lt;\bar X&lt;11)=P(-8{,}33&lt;Z&lt;1{,}67)\approx P(Z&lt;1{,}67)-0=0{,}9525.\]</span></p>
 <p><strong>El <span class="math inline">\(95{,}25\,\%\)</span> de las muestras.</strong></p>
 </div>
 </div>
@@ -698,8 +995,45 @@ window.Quarto = {
 <li><p>¿Cuántos pacientes se espera que mejoren al someterse a ese tratamiento? <em>(0,5 puntos)</em></p></li>
 <li><p>¿Cuántos pacientes deberían someterse al tratamiento para que el número esperado de pacientes que mejoren sea mayor o igual a 12? <em>(0,5 puntos)</em></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(X\sim N(\mu,\sigma)\)</span> se tipifica con <span class="math inline">\(Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)\)</span>. La tabla da <span class="math inline">\(P(Z\le z)\)</span>. Simetría: <span class="math inline">\(P(Z\le-z)=1-P(Z\le z)\)</span>; <span class="math inline">\(P(a\le Z\le b)=\Phi(b)-\Phi(a)\)</span>. Cualquier valor <span class="math inline">\(z\)</span> se redondea a dos decimales.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la probabilidad pedida con <span class="math inline">\(X\)</span> y tipifica cada extremo.</li>
+<li>Redondea <span class="math inline">\(z\)</span> a dos decimales y busca <span class="math inline">\(\Phi(z)\)</span> en la tabla (para <span class="math inline">\(z&lt;0\)</span> usa la simetría).</li>
+<li>Combina: restas para intervalos, <span class="math inline">\(1-\Phi\)</span> para «mayor que».</li>
+<li>Interpreta el resultado como proporción o probabilidad.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -708,12 +1042,13 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> <span class="math inline">\(X\)</span> = «número de pacientes, de <span class="math inline">\(5\)</span>, que mejoran»: <span class="math inline">\(X\sim B(5;\ 0{,}6)\)</span>. <span class="math display">\[P(X=4)=\binom54\,0{,}6^4\cdot0{,}4=5\cdot0{,}1296\cdot0{,}4=\mathbf{0{,}2592}.\]</span></p>
-<p><strong>b)</strong> <span class="math inline">\(P(X\ge2)=1-P(X=0)-P(X=1)=1-0{,}4^5-5\cdot0{,}6\cdot0{,}4^4=1-0{,}01024-0{,}0768=\mathbf{0{,}91296}\)</span>.</p>
-<p><strong>c)</strong> <span class="math inline">\(E(X)=np=5\cdot0{,}6=\mathbf{3}\)</span> pacientes.</p>
-<p><strong>d)</strong> <span class="math inline">\(E(X)=0{,}6n\ge12\iff n\ge20\)</span>. <strong>Deberían someterse al menos <span class="math inline">\(20\)</span> pacientes.</strong></p>
+<p><strong>a) Distribución y <span class="math inline">\(P(X=4)\)</span>.</strong> 1. <span class="math inline">\(X\)</span> = «número de pacientes, de <span class="math inline">\(5\)</span>, que mejoran» tiene <span class="math inline">\(n=5\)</span> pruebas independientes con probabilidad de éxito <span class="math inline">\(0{,}6\)</span>: <span class="math inline">\(X\sim B(5;\ 0{,}6)\)</span>. 2. <span class="math inline">\(P(X=4)=\binom54\,0{,}6^4\cdot0{,}4=5\cdot0{,}1296\cdot0{,}4=\mathbf{0{,}2592}.\)</span></p>
+<p><strong>b) Al menos dos.</strong> 1. Suceso contrario: <span class="math inline">\(P(X\ge2)=1-P(X=0)-P(X=1)\)</span>. 2. <span class="math inline">\(P(X\ge2)=1-0{,}4^5-5\cdot0{,}6\cdot0{,}4^4=1-0{,}01024-0{,}0768=\mathbf{0{,}91296}\)</span>.</p>
+<p><strong>c) Número esperado.</strong> 1. <span class="math inline">\(E(X)=np=5\cdot0{,}6=\mathbf{3}\)</span> pacientes.</p>
+<p><strong>d) Pacientes para esperar al menos 12.</strong> 1. <span class="math inline">\(E(X)=0{,}6n\ge12\iff n\ge20\)</span>.</p>
+<p><strong>Deberían someterse al menos <span class="math inline">\(20\)</span> pacientes.</strong></p>
 </div>
 </div>
 </div>
@@ -733,8 +1068,45 @@ window.Quarto = {
 <li><p>Se selecciona una muestra aleatoria de 16 plantas. Halle la probabilidad de que la altura media de las plantas de esta muestra esté comprendida entre 140 cm y 151 cm. <em>(1 punto)</em></p></li>
 </ol>
 <p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/11-muestreo-inferencia.html">Muestreo e inferencia</a>.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(X\sim N(\mu,\sigma)\)</span> se tipifica con <span class="math inline">\(Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)\)</span>. La tabla da <span class="math inline">\(P(Z\le z)\)</span>. Simetría: <span class="math inline">\(P(Z\le-z)=1-P(Z\le z)\)</span>; <span class="math inline">\(P(a\le Z\le b)=\Phi(b)-\Phi(a)\)</span>. Cualquier valor <span class="math inline">\(z\)</span> se redondea a dos decimales.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la probabilidad pedida con <span class="math inline">\(X\)</span> y tipifica cada extremo.</li>
+<li>Redondea <span class="math inline">\(z\)</span> a dos decimales y busca <span class="math inline">\(\Phi(z)\)</span> en la tabla (para <span class="math inline">\(z&lt;0\)</span> usa la simetría).</li>
+<li>Combina: restas para intervalos, <span class="math inline">\(1-\Phi\)</span> para «mayor que».</li>
+<li>Interpreta el resultado como proporción o probabilidad.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -743,12 +1115,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> <span class="math inline">\(X\sim N(145,\ 22)\)</span>. <span class="math inline">\(P(135&lt;X&lt;155)=P\!\left(\dfrac{135-145}{22}&lt;Z&lt;\dfrac{155-145}{22}\right)=P(-0{,}45&lt;Z&lt;0{,}45)=2\,P(Z&lt;0{,}45)-1=2\cdot0{,}6736-1=0{,}3472\)</span>.</p>
+<p><strong>a) Porcentaje entre 135 y 155 cm.</strong> 1. <span class="math inline">\(X\sim N(145,\ 22)\)</span>. Se tipifica con <span class="math inline">\(Z=\dfrac{X-145}{22}\)</span>. 2. <span class="math inline">\(P(135&lt;X&lt;155)=P\!\left(\dfrac{135-145}{22}&lt;Z&lt;\dfrac{155-145}{22}\right)=P(-0{,}45&lt;Z&lt;0{,}45)\)</span>. 3. Por simetría de la normal: <span class="math inline">\(P(-0{,}45&lt;Z&lt;0{,}45)=2\,P(Z&lt;0{,}45)-1=2\cdot0{,}6736-1=0{,}3472\)</span>.</p>
 <p><strong>El <span class="math inline">\(34{,}72\,\%\)</span> de las plantas.</strong></p>
-<p><strong>b)</strong> Estar entre el <span class="math inline">\(50\,\%\)</span> de las más altas equivale a superar la mediana, que en una normal coincide con la media: <strong><span class="math inline">\(145\)</span> cm.</strong></p>
-<p><strong>c)</strong> <span class="math inline">\(\bar X\sim N\!\left(145,\ \dfrac{22}{\sqrt{16}}\right)=N(145,\ 5{,}5)\)</span>. <span class="math display">\[P(140&lt;\bar X&lt;151)=P\!\left(\frac{140-145}{5{,}5}&lt;Z&lt;\frac{151-145}{5{,}5}\right)=P(-0{,}91&lt;Z&lt;1{,}09)=0{,}8621-(1-0{,}8186)=\mathbf{0{,}6807}.\]</span></p>
+<p><strong>b) Entre el <span class="math inline">\(50\,\%\)</span> de las más altas.</strong> 1. Estar entre el <span class="math inline">\(50\,\%\)</span> de las más altas equivale a superar la mediana. 2. En una normal, la mediana coincide con la media.</p>
+<p><strong><span class="math inline">\(145\)</span> cm como mínimo.</strong></p>
+<p><strong>c) Altura media de 16 plantas.</strong> 1. Distribución de la media muestral: <span class="math inline">\(\bar X\sim N\!\left(145,\ \dfrac{22}{\sqrt{16}}\right)=N(145,\ 5{,}5)\)</span>. 2. Se tipifica y se lee en la tabla: <span class="math display">\[P(140&lt;\bar X&lt;151)=P\!\left(\frac{140-145}{5{,}5}&lt;Z&lt;\frac{151-145}{5{,}5}\right)=P(-0{,}91&lt;Z&lt;1{,}09)=0{,}8621-(1-0{,}8186)=\mathbf{0{,}6807}.\]</span></p>
+<p><em>Interpretación:</em> en torno al <span class="math inline">\(68\,\%\)</span> de las muestras de 16 plantas tienen una altura media entre <span class="math inline">\(140\)</span> y <span class="math inline">\(151\)</span> cm.</p>
 </div>
 </div>
 </div>
@@ -763,8 +1137,45 @@ window.Quarto = {
 <li><p>El tiempo que un carpintero necesita para fabricar una puerta sigue una distribución Normal de media desconocida y desviación típica de 20 minutos. En un mes ese carpintero ha fabricado 25 puertas, obteniendo un tiempo medio de fabricación de 40 minutos. Halle un intervalo de confianza para el tiempo medio de fabricación de una puerta con un nivel de confianza del <span class="math inline">\(97\,\%\)</span>. Determine el error máximo cometido al realizar la estimación. <em>(1,25 puntos)</em></p></li>
 </ol>
 <p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/11-muestreo-inferencia.html">Muestreo e inferencia</a>.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(X\sim N(\mu,\sigma)\)</span> se tipifica con <span class="math inline">\(Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)\)</span>. La tabla da <span class="math inline">\(P(Z\le z)\)</span>. Simetría: <span class="math inline">\(P(Z\le-z)=1-P(Z\le z)\)</span>; <span class="math inline">\(P(a\le Z\le b)=\Phi(b)-\Phi(a)\)</span>. Cualquier valor <span class="math inline">\(z\)</span> se redondea a dos decimales.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Escribe la probabilidad pedida con <span class="math inline">\(X\)</span> y tipifica cada extremo.</li>
+<li>Redondea <span class="math inline">\(z\)</span> a dos decimales y busca <span class="math inline">\(\Phi(z)\)</span> en la tabla (para <span class="math inline">\(z&lt;0\)</span> usa la simetría).</li>
+<li>Combina: restas para intervalos, <span class="math inline">\(1-\Phi\)</span> para «mayor que».</li>
+<li>Interpreta el resultado como proporción o probabilidad.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -773,10 +1184,13 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> <span class="math inline">\(\bar X\sim N\!\left(60,\ \dfrac{30}{\sqrt{100}}\right)=N(60,\ 3)\)</span>. <span class="math display">\[P(\bar X&gt;54)=P\!\left(Z&gt;\frac{54-60}{3}\right)=P(Z&gt;-2)=P(Z&lt;2)=\mathbf{0{,}9772}.\]</span></p>
-<p><strong>b)</strong> <span class="math inline">\(\bar x=40\)</span>, <span class="math inline">\(\sigma=20\)</span>, <span class="math inline">\(n=25\)</span>. Nivel <span class="math inline">\(97\,\%\)</span>: <span class="math inline">\(z_{\alpha/2}=2{,}17\)</span>. <span class="math inline">\(E=2{,}17\cdot\dfrac{20}{\sqrt{25}}=2{,}17\cdot4=8{,}68\)</span>. <span class="math display">\[IC=(40-8{,}68,\ 40+8{,}68)=(31{,}32,\ 48{,}68).\]</span> <strong>Error máximo <span class="math inline">\(8{,}68\)</span> minutos.</strong></p>
+<p><strong>a) Tiempo medio de 100 mesas.</strong> 1. Distribución de la media muestral: <span class="math inline">\(\bar X\sim N\!\left(60,\ \dfrac{30}{\sqrt{100}}\right)=N(60,\ 3)\)</span>. 2. Se tipifica y se usa la simetría de la normal: <span class="math display">\[P(\bar X&gt;54)=P\!\left(Z&gt;\frac{54-60}{3}\right)=P(Z&gt;-2)=P(Z&lt;2)=\mathbf{0{,}9772}.\]</span></p>
+<p><em>Interpretación:</em> es muy probable (casi el <span class="math inline">\(98\,\%\)</span>) que el tiempo medio de las 100 mesas supere los <span class="math inline">\(54\)</span> minutos.</p>
+<p><strong>b) Intervalo al <span class="math inline">\(97\,\%\)</span> y error máximo.</strong> 1. Datos: <span class="math inline">\(\bar x=40\)</span>, <span class="math inline">\(\sigma=20\)</span>, <span class="math inline">\(n=25\)</span>. Valor crítico: <span class="math inline">\(z_{\alpha/2}=2{,}17\)</span> (tabla: <span class="math inline">\(\Phi(2{,}17)=0{,}9850\)</span>). 2. Error máximo: <span class="math inline">\(E=2{,}17\cdot\dfrac{20}{\sqrt{25}}=2{,}17\cdot4=8{,}68\)</span>. 3. Intervalo: <span class="math inline">\(\bar x\pm E\)</span>: <span class="math display">\[IC=(40-8{,}68,\ 40+8{,}68)=(31{,}32,\ 48{,}68).\]</span></p>
+<p><strong>Error máximo <span class="math inline">\(8{,}68\)</span> minutos.</strong></p>
+<p><em>Interpretación:</em> con confianza del <span class="math inline">\(97\,\%\)</span>, el tiempo medio de fabricación de una puerta está entre <span class="math inline">\(31{,}32\)</span> y <span class="math inline">\(48{,}68\)</span> minutos.</p>
 </div>
 </div>
 </div>
@@ -795,8 +1209,55 @@ window.Quarto = {
 <li><p>Si la muestra elegida es de tamaño 25, ¿cuál es la probabilidad de que el tiempo medio muestral de adaptación a las gafas progresivas diste de 12 días a lo sumo 1 día? <em>(1,25 puntos)</em></p></li>
 </ol>
 <p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/11-muestreo-inferencia.html">Muestreo e inferencia</a>.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Distribución normal: cálculo de probabilidades.</strong></p>
+<p><span class="math inline">\(X\sim N(\mu,\sigma)\)</span> se tipifica con <span class="math inline">\(Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)\)</span>. La tabla da <span class="math inline">\(P(Z\le z)\)</span>. Simetría: <span class="math inline">\(P(Z\le-z)=1-P(Z\le z)\)</span>; <span class="math inline">\(P(a\le Z\le b)=\Phi(b)-\Phi(a)\)</span>. Cualquier valor <span class="math inline">\(z\)</span> se redondea a dos decimales.</p>
+<p><strong>Distribución de la media y de la proporción muestral.</strong></p>
+<p>Si <span class="math inline">\(X\sim N(\mu,\sigma)\)</span>, la media de muestras de tamaño <span class="math inline">\(n\)</span> cumple <span class="math inline">\(\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)\)</span>. Para <span class="math inline">\(n\ge30\)</span> vale aunque <span class="math inline">\(X\)</span> no sea normal. La proporción muestral <span class="math inline">\(\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)\)</span> si <span class="math inline">\(np\ge5\)</span> y <span class="math inline">\(n(1-p)\ge5\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Distribución normal: cálculo de probabilidades.</strong></p>
+<ol type="1">
+<li>Escribe la probabilidad pedida con <span class="math inline">\(X\)</span> y tipifica cada extremo.</li>
+<li>Redondea <span class="math inline">\(z\)</span> a dos decimales y busca <span class="math inline">\(\Phi(z)\)</span> en la tabla (para <span class="math inline">\(z&lt;0\)</span> usa la simetría).</li>
+<li>Combina: restas para intervalos, <span class="math inline">\(1-\Phi\)</span> para «mayor que».</li>
+<li>Interpreta el resultado como proporción o probabilidad.</li>
+</ol>
+<p><strong>Distribución de la media y de la proporción muestral.</strong></p>
+<ol type="1">
+<li>Identifica <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span> y <span class="math inline">\(n\)</span> (o <span class="math inline">\(p\)</span> y <span class="math inline">\(n\)</span>).</li>
+<li>Escribe la distribución de <span class="math inline">\(\overline{X}\)</span> (o de <span class="math inline">\(\hat p\)</span>) con su desviación típica <span class="math inline">\(\sigma/\sqrt{n}\)</span>.</li>
+<li>Tipifica con esa desviación típica y usa la tabla.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -805,10 +1266,11 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> <span class="math inline">\(\bar X\sim N\!\left(12{,}5,\ \dfrac{2{,}5}{\sqrt{16}}\right)=N(12{,}5,\ 0{,}625)\)</span>. <span class="math display">\[P(\bar X&gt;12)=P\!\left(Z&gt;\frac{12-12{,}5}{0{,}625}\right)=P(Z&gt;-0{,}8)=P(Z&lt;0{,}8)=\mathbf{0{,}7881}.\]</span></p>
-<p><strong>b)</strong> Con <span class="math inline">\(n=25\)</span>: <span class="math inline">\(\bar X\sim N\!\left(12{,}5,\ \dfrac{2{,}5}{5}\right)=N(12{,}5,\ 0{,}5)\)</span>. «Dista de <span class="math inline">\(12\)</span> a lo sumo <span class="math inline">\(1\)</span>» significa <span class="math inline">\(11\le\bar X\le13\)</span>: <span class="math display">\[P(11\le\bar X\le13)=P\!\left(\frac{11-12{,}5}{0{,}5}\le Z\le\frac{13-12{,}5}{0{,}5}\right)=P(-3\le Z\le1)=P(Z\le1)-P(Z\le-3).\]</span> Con la tabla, <span class="math inline">\(P(Z\le1)=0{,}8413\)</span> y <span class="math inline">\(P(Z\le-3)=1-0{,}99865=0{,}00135\)</span>: <span class="math display">\[P=0{,}8413-0{,}00135\approx\mathbf{0{,}8400}.\]</span></p>
+<p><strong>a) Media muestral con <span class="math inline">\(n=16\)</span>.</strong> 1. Distribución: <span class="math inline">\(\bar X\sim N\!\left(\mu,\dfrac{\sigma}{\sqrt n}\right)\)</span>: <span class="math display">\[\bar X\sim N\!\left(12{,}5,\ \dfrac{2{,}5}{\sqrt{16}}\right)=N(12{,}5,\ 0{,}625).\]</span> 2. Se tipifica y se usa la simetría de la normal, <span class="math inline">\(P(Z&gt;-a)=P(Z&lt;a)\)</span>: <span class="math display">\[P(\bar X&gt;12)=P\!\left(Z&gt;\frac{12-12{,}5}{0{,}625}\right)=P(Z&gt;-0{,}8)=P(Z&lt;0{,}8)=\mathbf{0{,}7881}.\]</span></p>
+<p><em>Interpretación:</em> algo menos del <span class="math inline">\(79\,\%\)</span> de las muestras de 16 personas tienen una media superior a 12 días.</p>
+<p><strong>b) Media muestral con <span class="math inline">\(n=25\)</span>.</strong> 1. Distribución: <span class="math inline">\(\bar X\sim N\!\left(12{,}5,\ \dfrac{2{,}5}{5}\right)=N(12{,}5,\ 0{,}5)\)</span>. 2. «Dista de <span class="math inline">\(12\)</span> a lo sumo <span class="math inline">\(1\)</span>» significa <span class="math inline">\(11\le\bar X\le13\)</span>. 3. Se tipifica: <span class="math display">\[P(11\le\bar X\le13)=P\!\left(\frac{11-12{,}5}{0{,}5}\le Z\le\frac{13-12{,}5}{0{,}5}\right)=P(-3\le Z\le1)=P(Z\le1)-P(Z\le-3).\]</span> 4. Con la tabla, <span class="math inline">\(P(Z\le1)=0{,}8413\)</span> y <span class="math inline">\(P(Z\le-3)=1-0{,}99865=0{,}00135\)</span>: <span class="math display">\[P=0{,}8413-0{,}00135\approx\mathbf{0{,}8400}.\]</span></p>
 </div>
 </div>
 </div>
@@ -828,8 +1290,55 @@ window.Quarto = {
 <li><p>A la vista del intervalo obtenido y teniendo en cuenta que el peso que marca el paquete es de 1000 g, ¿cree que la denuncia tiene base? <em>(0,25 puntos)</em></p></li>
 </ol>
 <p><em>Relacionado también con:</em> <a href="../../../ejercicios/2-bachillerato-ccss/ebau/11-muestreo-inferencia.html">Muestreo e inferencia</a>.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 1 · Recordatorio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Distribución normal: cálculo de probabilidades.</strong></p>
+<p><span class="math inline">\(X\sim N(\mu,\sigma)\)</span> se tipifica con <span class="math inline">\(Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)\)</span>. La tabla da <span class="math inline">\(P(Z\le z)\)</span>. Simetría: <span class="math inline">\(P(Z\le-z)=1-P(Z\le z)\)</span>; <span class="math inline">\(P(a\le Z\le b)=\Phi(b)-\Phi(a)\)</span>. Cualquier valor <span class="math inline">\(z\)</span> se redondea a dos decimales.</p>
+<p><strong>Distribución de la media y de la proporción muestral.</strong></p>
+<p>Si <span class="math inline">\(X\sim N(\mu,\sigma)\)</span>, la media de muestras de tamaño <span class="math inline">\(n\)</span> cumple <span class="math inline">\(\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)\)</span>. Para <span class="math inline">\(n\ge30\)</span> vale aunque <span class="math inline">\(X\)</span> no sea normal. La proporción muestral <span class="math inline">\(\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)\)</span> si <span class="math inline">\(np\ge5\)</span> y <span class="math inline">\(n(1-p)\ge5\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ayuda 2 · Método
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Distribución normal: cálculo de probabilidades.</strong></p>
+<ol type="1">
+<li>Escribe la probabilidad pedida con <span class="math inline">\(X\)</span> y tipifica cada extremo.</li>
+<li>Redondea <span class="math inline">\(z\)</span> a dos decimales y busca <span class="math inline">\(\Phi(z)\)</span> en la tabla (para <span class="math inline">\(z&lt;0\)</span> usa la simetría).</li>
+<li>Combina: restas para intervalos, <span class="math inline">\(1-\Phi\)</span> para «mayor que».</li>
+<li>Interpreta el resultado como proporción o probabilidad.</li>
+</ol>
+<p><strong>Distribución de la media y de la proporción muestral.</strong></p>
+<ol type="1">
+<li>Identifica <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span> y <span class="math inline">\(n\)</span> (o <span class="math inline">\(p\)</span> y <span class="math inline">\(n\)</span>).</li>
+<li>Escribe la distribución de <span class="math inline">\(\overline{X}\)</span> (o de <span class="math inline">\(\hat p\)</span>) con su desviación típica <span class="math inline">\(\sigma/\sqrt{n}\)</span>.</li>
+<li>Tipifica con esa desviación típica y usa la tabla.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -838,11 +1347,11 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong> <span class="math inline">\(\bar X\sim N\!\left(1000,\dfrac{16}{\sqrt{64}}\right)=N(1000,\,2)\)</span> (la desviación típica de <span class="math inline">\(X\)</span> es <span class="math inline">\(\sqrt{256}=16\)</span> g). <span class="math display">\[P(\bar X&lt;996)=P\!\left(Z&lt;\frac{996-1000}{2}\right)=P(Z&lt;-2)=1-P(Z&lt;2)=1-0{,}9772=\mathbf{0{,}0228}.\]</span></p>
-<p><strong>b)</strong> Media muestral: <span class="math inline">\(\bar x=\dfrac{63\,744}{64}=996\)</span> g. Nivel <span class="math inline">\(90\,\%\)</span>: <span class="math inline">\(\Phi(z_{\alpha/2})=0{,}95\)</span>, que está entre <span class="math inline">\(\Phi(1{,}64)=0{,}9495\)</span> y <span class="math inline">\(\Phi(1{,}65)=0{,}9505\)</span>; se toma <span class="math inline">\(z_{\alpha/2}=1{,}645\)</span>. Error: <span class="math inline">\(E=1{,}645\cdot\dfrac{16}{\sqrt{64}}=3{,}29\)</span>. <span class="math display">\[IC=(996-3{,}29,\ 996+3{,}29)=(992{,}71,\ 999{,}29).\]</span></p>
-<p><strong>c)</strong> El valor <span class="math inline">\(1000\)</span> g <strong>no pertenece al intervalo</strong>: al <span class="math inline">\(90\,\%\)</span> de confianza el peso medio real es menor que el que indica el paquete. <strong>La denuncia parece tener base.</strong></p>
+<p><strong>a) Distribución de la media muestral.</strong> 1. <span class="math inline">\(X\sim N(1000,\,16)\)</span> (la desviación típica es <span class="math inline">\(\sqrt{256}=16\)</span> g). 2. Para muestras de tamaño <span class="math inline">\(64\)</span>: <span class="math inline">\(\bar X\sim N\!\left(1000,\dfrac{16}{\sqrt{64}}\right)=N(1000,\,2)\)</span>. 3. Se tipifica y se usa la simetría de la tabla: <span class="math display">\[P(\bar X&lt;996)=P\!\left(Z&lt;\frac{996-1000}{2}\right)=P(Z&lt;-2)=1-P(Z&lt;2)=1-0{,}9772=\mathbf{0{,}0228}.\]</span></p>
+<p><strong>b) Intervalo al <span class="math inline">\(90\,\%\)</span>.</strong> 1. Media muestral: <span class="math inline">\(\bar x=\dfrac{63\,744}{64}=996\)</span> g. 2. Nivel <span class="math inline">\(90\,\%\)</span>: <span class="math inline">\(\Phi(z_{\alpha/2})=0{,}95\)</span>, que está entre <span class="math inline">\(\Phi(1{,}64)=0{,}9495\)</span> y <span class="math inline">\(\Phi(1{,}65)=0{,}9505\)</span>; se toma <span class="math inline">\(z_{\alpha/2}=1{,}645\)</span>. 3. Error máximo: <span class="math inline">\(E=1{,}645\cdot\dfrac{16}{\sqrt{64}}=3{,}29\)</span>. 4. Intervalo: <span class="math display">\[IC=(996-3{,}29,\ 996+3{,}29)=(992{,}71,\ 999{,}29).\]</span></p>
+<p><strong>c) Interpretación.</strong> El valor <span class="math inline">\(1000\)</span> g <strong>no pertenece al intervalo</strong>: al <span class="math inline">\(90\,\%\)</span> de confianza el peso medio real es menor que el que indica el paquete. <strong>La denuncia parece tener base.</strong></p>
 </div>
 </div>
 </div>
