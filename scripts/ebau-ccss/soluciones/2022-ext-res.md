@@ -30,7 +30,7 @@ Vértices: $(0,0)$, $(0,35)$, $(40,15)$ (corte de $x+2y=70$ con $3x+2y=150$) y $
 
 **b)** Con $a=1$ y $b=2$: $f(x)=(x+1)^2$ en $[-3,1]$ (arco de parábola de vértice $(-1,0)$, que pasa por $(-3,4)$, $(0,1)$ y $(1,4)$) y $f(x)=x^2+2$ en $(1,2]$ (arco de parábola que empieza, «abierto», en $(1,3)$ y llega a $(2,6)$). Hay un salto en $x=1$ (de $4$ a $3$).
 
-![Gráfica de f para a=1 y b=2: parábola (x+1)² hasta x=1 y x²+2 desde x=1, con salto de 4 a 3; recinto sombreado entre x=−2 y x=1](fig/2022-ext-res-e3.svg){fig-alt="Gráfica de f para a=1 y b=2: parábola (x+1)² hasta x=1 y x²+2 desde x=1, con salto de 4 a 3; recinto sombreado entre x=−2 y x=1" width="75%" fig-align="center"}
+![Gráfica de f con (a, b) = (1, 2): parábola (x+1)² hasta x=1 y x²+2 desde x=1, con salto de 4 a 3; recinto sombreado entre x=−2 y x=1](fig/2022-ext-res-e3.svg){fig-alt="Gráfica de f con (a, b) = (1, 2): parábola (x+1)² hasta x=1 y x²+2 desde x=1, con salto de 4 a 3; recinto sombreado entre x=−2 y x=1" width="75%" fig-align="center"}
 
 Área entre $x=-2$ y $x=1$, con $f\ge0$:
 $$A=\int_{-2}^{1}(x+1)^2dx=\left[\frac{(x+1)^3}{3}\right]_{-2}^{1}=\frac{8}{3}-\left(-\frac{1}{3}\right)=3.$$

@@ -38,7 +38,7 @@ $$X=\begin{pmatrix}\frac{5}{9}&-\frac{2}{9}&0\\-\frac{8}{9}&\frac{5}{9}&0\\0&0&\
 
 **b)** Para $x\le1$: $f(x)=-x^2+x+2=-(x-2)(x+1)$, parábola abierta hacia abajo con vértice $\left(\dfrac{1}{2},\dfrac{9}{4}\right)$ que corta al eje $OX$ en $x=-1$ y $x=2$ (aunque solo hasta $x=1$), al eje $OY$ en $(0,2)$ y llega a $(1,2)$. Para $x>1$: $f(x)=\dfrac{4}{x+1}$, hipérbola decreciente desde $(1,2)$, con asíntota horizontal $y=0$. La función es continua y suave en $x=1$.
 
-![Gráfica de f para a=−1 y b=1: parábola −x²+x+2 hasta x=1 e hipérbola 4/(x+1) desde x=1; recinto sombreado entre x=−1 y x=1](fig/2022-ext-sup-e4.svg){fig-alt="Gráfica de f para a=−1 y b=1: parábola −x²+x+2 hasta x=1 e hipérbola 4/(x+1) desde x=1; recinto sombreado entre x=−1 y x=1" width="75%" fig-align="center"}
+![Gráfica de f con (a, b) = (−1, 1): parábola −x²+x+2 hasta x=1 e hipérbola 4/(x+1) desde x=1; recinto sombreado entre x=−1 y x=1](fig/2022-ext-sup-e4.svg){fig-alt="Gráfica de f con (a, b) = (−1, 1): parábola −x²+x+2 hasta x=1 e hipérbola 4/(x+1) desde x=1; recinto sombreado entre x=−1 y x=1" width="75%" fig-align="center"}
 
 **c)** El recinto acotado va de $x=-1$ (donde $f$ corta al eje $OX$) a $x=1$, con $f\ge0$:
 $$A=\int_{-1}^{1}\left(-x^2+x+2\right)dx=\left[-\frac{x^3}{3}+\frac{x^2}{2}+2x\right]_{-1}^{1}=\frac{13}{6}-\left(-\frac{7}{6}\right)=\frac{10}{3}.$$

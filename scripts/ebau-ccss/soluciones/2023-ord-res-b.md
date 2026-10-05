@@ -41,7 +41,7 @@ $$A=\int_1^3\left[\left(-x^2+2x+3\right)-\left(-2x+6\right)\right]dx=\int_1^3\le
 
 **b)** Es la recta constante $y=-9$ en $[0,1]$ y en $[11,24]$, y entre $t=1$ y $t=11$ un arco de parábola abierta hacia abajo con máximo en $t=6$: $f(6)=-36+72-20=16$. Corta al eje $OX$ en $t=2$ y $t=10$.
 
-![Temperatura f(t): constante −9 °C hasta t=1, arco de parábola con máximo 16 °C en t=6 entre t=1 y t=11, y de nuevo −9 °C hasta t=24](fig/2023-ord-res-b-e4.svg){fig-alt="Temperatura f(t): constante −9 °C hasta t=1, arco de parábola con máximo 16 °C en t=6 entre t=1 y t=11, y de nuevo −9 °C hasta t=24" width="75%" fig-align="center"}
+![Temperatura f(t): constante −9 °C hasta la hora 1, arco de parábola con máximo 16 °C en t=6 entre las horas 1 y 11, y de nuevo −9 °C hasta t=24](fig/2023-ord-res-b-e4.svg){fig-alt="Temperatura f(t): constante −9 °C hasta la hora 1, arco de parábola con máximo 16 °C en t=6 entre las horas 1 y 11, y de nuevo −9 °C hasta t=24" width="75%" fig-align="center"}
 
 **c)** Con el equipo funcionando, la temperatura es constante ($-9\,^\circ$C). Cuando se produce el corte la temperatura empieza a subir, y el equipo vuelve a $-9\,^\circ$C cuando se restablece la energía: **el corte empezó a la $1$ ($t=1$) y terminó a las $11$ ($t=11$); duró $10$ horas.**
 

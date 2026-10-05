@@ -24,7 +24,7 @@ Monotonía: $g'(x)=\dfrac{(x-1)-(x-3)}{(x-1)^2}=\dfrac{2}{(x-1)^2}>0$: **$g$ es 
 
 Gráfica: hipérbola con asíntotas $x=1$ e $y=1$. La rama izquierda ($x<1$) pasa por $(0,3)$, sube a $+\infty$ junto a $x=1$ y baja hacia $1$ por encima cuando $x\to-\infty$; la rama derecha ($x>1$) viene de $-\infty$ junto a $x=1$, pasa por $(3,0)$ y se acerca a $1$ por debajo cuando $x\to+\infty$.
 
-![Hipérbola creciente g(x)=(x−3)/(x−1) con asíntotas x=1 e y=1; corta a los ejes en (3,0) y (0,3)](fig/2026-ext-sup1-e2a.svg){fig-alt="Hipérbola creciente g(x)=(x−3)/(x−1) con asíntotas x=1 e y=1; corta a los ejes en (3,0) y (0,3)" width="75%" fig-align="center"}
+![Hipérbola creciente g(x)=(x−3)/(x−1) con asíntota vertical en la abscisa 1 y horizontal en la ordenada 1; corta a los ejes en (3,0) y (0,3)](fig/2026-ext-sup1-e2a.svg){fig-alt="Hipérbola creciente g(x)=(x−3)/(x−1) con asíntota vertical en la abscisa 1 y horizontal en la ordenada 1; corta a los ejes en (3,0) y (0,3)" width="75%" fig-align="center"}
 
 **c)** $h(x)=(x-3)(x+2)$ corta al eje $OX$ en $x=-2$ y $x=3$, y $h\le0$ entre ambos:
 $$A=\left|\int_{-2}^{3}\left(x^2-x-6\right)dx\right|=\left|\left[\frac{x^3}{3}-\frac{x^2}{2}-6x\right]_{-2}^{3}\right|=\left|-\frac{27}{2}-\frac{22}{3}\right|=\frac{125}{6}.$$
