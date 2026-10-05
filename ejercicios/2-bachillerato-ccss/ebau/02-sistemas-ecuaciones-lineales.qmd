@@ -5,7 +5,7 @@ lang: es
 
 Ejercicios de **Matemáticas Aplicadas a las Ciencias Sociales II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *sistemas de ecuaciones lineales*: **6 ejercicios** de convocatorias ordinarias y extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ccss/02-sistemas-ecuaciones-lineales/index.qmd), los [ejercicios del tema](../02-sistemas-ecuaciones-lineales/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ccss/02-sistemas-ecuaciones-lineales/index.qmd).
 
-Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **resolución breve** con el resultado. Inténtalo con la menor ayuda posible.
 
 
 ## 2026
@@ -23,16 +23,53 @@ a) Calcule el precio de cada tipo de entrada y la recaudación total obtenida. *
 
 b) Determine el tipo de entrada con la que se obtuvo una mayor recaudación y el valor de dicha recaudación. *(0,75 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Plantear un sistema de ecuaciones.**
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+
+**Discusión y resolución de sistemas.**
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Plantear un sistema de ecuaciones.**
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+
+**Discusión y resolución de sistemas.**
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Sean $e$, $p$ y $v$ los precios de las entradas Estándar, Premium y VIP. En la clausura, las Premium fueron $4$ más que el resto ($12+4=16$): $16+4=20$. El sistema es
+**a) Precios y recaudación total.**
+1. **Incógnitas.** $e$, $p$ y $v$ = precios de las entradas Estándar, Premium y VIP.
+2. **Clausura.** Las Premium fueron $4$ más que el resto ($12+4=16$): $16+4=20$.
+3. **Sistema** (una ecuación por sesión):
 $$\begin{cases}20e+5p+20v=1\,800\\10e+5p+10v=1\,000\\4e+20p+12v=1\,560\end{cases}\qquad\text{es decir}\qquad\begin{pmatrix}20&5&20\\10&5&10\\4&20&12\end{pmatrix}\begin{pmatrix}e\\p\\v\end{pmatrix}=\begin{pmatrix}1\,800\\1\,000\\1\,560\end{pmatrix}.$$
-Restando la segunda ecuación de la primera: $10e+10v=800\Rightarrow e+v=80$. De la segunda, $10(e+v)+5p=1\,000\Rightarrow800+5p=1\,000\Rightarrow p=40$. En la tercera: $4e+12v=1\,560-800=760\Rightarrow e+3v=190$, y con $e+v=80$ resulta $2v=110$, $v=55$ y $e=25$.
+4. Se resta la segunda ecuación de la primera: $10e+10v=800\Rightarrow e+v=80$.
+5. De la segunda, $10(e+v)+5p=1\,000\Rightarrow800+5p=1\,000\Rightarrow p=40$.
+6. En la tercera, $4e+12v=1\,560-800=760\Rightarrow e+3v=190$. Con $e+v=80$ resulta $2v=110$, $v=55$ y $e=25$.
 
 **Estándar $25$ €, Premium $40$ € y VIP $55$ €.** Recaudación total: $1\,800+1\,000+1\,560=4\,360$ €.
 
-**b)** Entradas vendidas: Estándar $20+10+4=34$, Premium $5+5+20=30$ y VIP $20+10+12=42$. Recaudación por tipo: Estándar $34\cdot25=850$ €, Premium $30\cdot40=1\,200$ € y VIP $42\cdot55=2\,310$ € (suman $4\,360$ €).
+**b) Tipo con mayor recaudación.**
+1. Entradas vendidas: Estándar $20+10+4=34$, Premium $5+5+20=30$ y VIP $20+10+12=42$.
+2. Recaudación por tipo: Estándar $34\cdot25=850$ €, Premium $30\cdot40=1\,200$ € y VIP $42\cdot55=2\,310$ € (suman $4\,360$ €, como en el apartado anterior).
 
 **La mayor recaudación se obtuvo con las entradas VIP: $2\,310$ €.**
 ::::
@@ -54,20 +91,59 @@ b) ¿Existe alguna solución donde la incógnita $y$ es el doble de $z$? En caso
 
 c) Indique si existe alguna solución del sistema en la que $y=-4$. En caso afirmativo, obténgala. *(0,75 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Plantear un sistema de ecuaciones.**
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+
+**Discusión y resolución de sistemas.**
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Plantear un sistema de ecuaciones.**
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+
+**Discusión y resolución de sistemas.**
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Matriz de coeficientes $M=\begin{pmatrix}4&-7&5\\-2&3&-1\\6&-11&9\end{pmatrix}$, con $|M|=0$ y un menor $\left|\begin{matrix}4&-7\\-2&3\end{matrix}\right|=-2\neq0$: $\operatorname{rango}M=2$.
-
-La tercera ecuación es combinación de las otras dos: $E_3=2E_1+E_2$ ($4\cdot2-2=6$, $-7\cdot2+3=-11$, $5\cdot2-1=9$ y, en los términos independientes, $9\cdot2-4=14$). Por tanto la matriz ampliada también tiene rango $2$. Como $\operatorname{rango}M=\operatorname{rango}\left(M\mid b\right)=2<3$ incógnitas: **sistema compatible indeterminado, con un parámetro.**
-
-Se resuelven $E_1$ y $E_2$ tomando $z=\lambda$ como parámetro: $4x-7y=9-5\lambda$ y $-2x+3y=-4+\lambda$. Multiplicando la segunda por $2$ y sumando: $-y=1-3\lambda$, es decir, $y=3\lambda-1$; y de la segunda, $-2x=-4+\lambda-3(3\lambda-1)=-1-8\lambda$, es decir, $x=4\lambda+\dfrac{1}{2}$.
+**a) Clasificación y resolución.**
+1. Matriz de coeficientes: $M=\begin{pmatrix}4&-7&5\\-2&3&-1\\6&-11&9\end{pmatrix}$, con $|M|=0$.
+2. Un menor de orden $2$ no nulo: $\left|\begin{matrix}4&-7\\-2&3\end{matrix}\right|=-2\neq0$, luego $\operatorname{rango}M=2$.
+3. La tercera ecuación es combinación de las otras dos: $E_3=2E_1+E_2$ ($4\cdot2-2=6$, $-7\cdot2+3=-11$, $5\cdot2-1=9$ y, en los términos independientes, $9\cdot2-4=14$). Por tanto la matriz ampliada también tiene rango $2$.
+4. Rouché–Frobenius: $\operatorname{rango}M=\operatorname{rango}\left(M\mid b\right)=2<3$ incógnitas: **sistema compatible indeterminado, con un parámetro.**
+5. Se resuelven $E_1$ y $E_2$ tomando $z=\lambda$: $4x-7y=9-5\lambda$ y $-2x+3y=-4+\lambda$.
+6. Se multiplica la segunda por $2$ y se suma a la primera: $-y=1-3\lambda$, es decir, $y=3\lambda-1$.
+7. De la segunda, $-2x=-4+\lambda-3(3\lambda-1)=-1-8\lambda$, es decir, $x=4\lambda+\dfrac{1}{2}$.
 
 **Soluciones: $(x,y,z)=\left(4\lambda+\dfrac{1}{2},\ 3\lambda-1,\ \lambda\right)$, $\lambda\in\mathbb R$.**
 
-**b)** $y=2z\Rightarrow3\lambda-1=2\lambda\Rightarrow\lambda=1$. **Sí existe: $(x,y,z)=\left(\dfrac{9}{2},\ 2,\ 1\right)$.**
+**b) Solución con $y=2z$.**
+1. Se impone en la solución general: $y=2z\Rightarrow3\lambda-1=2\lambda\Rightarrow\lambda=1$.
 
-**c)** $y=-4\Rightarrow3\lambda-1=-4\Rightarrow\lambda=-1$. **Sí existe: $(x,y,z)=\left(-\dfrac{7}{2},\ -4,\ -1\right)$.**
+**Sí existe: $(x,y,z)=\left(\dfrac{9}{2},\ 2,\ 1\right)$.**
+
+**c) Solución con $y=-4$.**
+1. $y=-4\Rightarrow3\lambda-1=-4\Rightarrow\lambda=-1$.
+
+**Sí existe: $(x,y,z)=\left(-\dfrac{7}{2},\ -4,\ -1\right)$.**
 ::::
 :::::
 
@@ -87,19 +163,56 @@ b) Resuelva la ecuación matricial $2X=\begin{pmatrix}1&1\\0&-1\end{pmatrix}^{2}
 
 *Relacionado también con:* [Matrices y determinantes](01-matrices-determinantes.qmd), [Programación lineal](03-programacion-lineal.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Plantear un sistema de ecuaciones.**
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+
+**Discusión y resolución de sistemas.**
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Plantear un sistema de ecuaciones.**
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+
+**Discusión y resolución de sistemas.**
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Sean $a$, $b$ y $c$ las potencias efectivas (en W) de una placa de los modelos A, B y C. El sistema es
+**a) Planteamiento matricial y discusión.**
+1. Sean $a$, $b$ y $c$ las potencias efectivas (en W) de una placa de los modelos A, B y C. El sistema es
 $$\begin{cases}2a+b+3c=2\,960\\a+3b+2c=2\,990\\3a+2b+c=2\,870\end{cases}\qquad\text{es decir}\qquad\begin{pmatrix}2&1&3\\1&3&2\\3&2&1\end{pmatrix}\begin{pmatrix}a\\b\\c\end{pmatrix}=\begin{pmatrix}2\,960\\2\,990\\2\,870\end{pmatrix}.$$
-**Discusión:** $|M|=\left|\begin{matrix}2&1&3\\1&3&2\\3&2&1\end{matrix}\right|=-18\neq0$, luego el rango de $M$ es $3$, igual al de la ampliada y al número de incógnitas: **sistema compatible determinado; sí se puede obtener la potencia de cada modelo.**
+2. Discusión: $|M|=\left|\begin{matrix}2&1&3\\1&3&2\\3&2&1\end{matrix}\right|=-18\neq0$, luego el rango de $M$ es $3$, igual al de la ampliada y al número de incógnitas.
 
-Resolviendo ($X=M^{-1}B$, o por Gauss):
+**Sistema compatible determinado: sí se puede obtener la potencia de cada modelo.**
+
+3. Se resuelve con $X=M^{-1}B$ (o por Gauss):
 $$\begin{pmatrix}a\\b\\c\end{pmatrix}=M^{-1}\begin{pmatrix}2\,960\\2\,990\\2\,870\end{pmatrix}=\begin{pmatrix}450\\500\\520\end{pmatrix}.$$
-**Cada placa del modelo A genera $450$ W, la del B $500$ W y la del C $520$ W.** (Comprobación: $900+500+1\,560=2\,960$.)
 
-**b)** $\begin{pmatrix}1&1\\0&-1\end{pmatrix}^2=\begin{pmatrix}1&1\\0&-1\end{pmatrix}\begin{pmatrix}1&1\\0&-1\end{pmatrix}=\begin{pmatrix}1&0\\0&1\end{pmatrix}=I$. Entonces
-$$2X=I\begin{pmatrix}4\\1\end{pmatrix}=\begin{pmatrix}4\\1\end{pmatrix}\ \Rightarrow\ X=\begin{pmatrix}2\\\frac{1}{2}\end{pmatrix}.$$
+**Cada placa del modelo A genera $450$ W, la del B $500$ W y la del C $520$ W.** Comprobación en la primera prueba: $900+500+1\,560=2\,960$.
+
+**b) Ecuación matricial.**
+1. Se calcula la potencia:
+$$\begin{pmatrix}1&1\\0&-1\end{pmatrix}^2=\begin{pmatrix}1&1\\0&-1\end{pmatrix}\begin{pmatrix}1&1\\0&-1\end{pmatrix}=\begin{pmatrix}1&0\\0&1\end{pmatrix}=I.$$
+2. Entonces $2X=I\begin{pmatrix}4\\1\end{pmatrix}=\begin{pmatrix}4\\1\end{pmatrix}$ y se divide entre $2$:
+$$X=\begin{pmatrix}2\\\frac{1}{2}\end{pmatrix}.$$
 ::::
 :::::
 
@@ -116,16 +229,50 @@ a) Se sabe que Ana ha dedicado un tercio del total de horas que ha necesitado el
 
 b) Si la empresa paga 25 € por cada hora de trabajo en el proyecto y de seguros sociales el $23{,}60\,\%$ del salario, ¿cuánto tiene que abonar la empresa para pagar los costes de este proyecto? *(0,75 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Plantear un sistema de ecuaciones.**
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+
+**Discusión y resolución de sistemas.**
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Plantear un sistema de ecuaciones.**
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+
+**Discusión y resolución de sistemas.**
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Sean $a$, $b$ y $c$ las horas de Ana, Bruno y Carla, y $T=a+b+c$ el total. Datos: $a=\dfrac T3$; $a+b=c+6$; $c=b+4$.
+**a) Horas de cada persona.**
+1. Sean $a$, $b$ y $c$ las horas de Ana, Bruno y Carla, y $T=a+b+c$ el total. Los datos dan: $a=\dfrac T3$; $a+b=c+6$; $c=b+4$.
+2. Se sustituye $c=b+4$ en la segunda: $a+b=b+4+6\Rightarrow a=10$.
+3. Entonces $T=3a=30$ y $b+c=20$. Con $c=b+4$: $2b+4=20\Rightarrow b=8$ y $c=12$.
 
-Sustituyendo $c=b+4$ en la segunda: $a+b=b+4+6\Rightarrow a=10$. Entonces $T=3a=30$ y $b+c=20$, con $c=b+4$: $2b+4=20\Rightarrow b=8$ y $c=12$.
+**Ana $10$ horas, Bruno $8$ horas y Carla $12$ horas.** Comprobación: $10+8=18=12+6$.
 
-**Ana $10$ horas, Bruno $8$ horas y Carla $12$ horas.** (Comprobación: $10+8=18=12+6$.)
-
-**b)** Total de horas: $30$. Salarios: $30\cdot25=750$ €. Seguros sociales: $23{,}6\,\%$ de $750$ €, $177$ €. Coste total: $750\cdot1{,}236=927$.
+**b) Coste para la empresa.**
+1. Total de horas: $30$. Salarios: $30\cdot25=750$ €.
+2. Seguros sociales: $23{,}6\,\%$ de $750$ €, es decir, $177$ €.
+3. Coste total: $750\cdot1{,}236=927$.
 
 **La empresa tiene que abonar $927$ €.**
 ::::
@@ -144,18 +291,60 @@ b) Dada la matriz $A=\begin{pmatrix}1&0&-1\\-1&2&3\\1&2&1\end{pmatrix}$, calcule
 
 *Relacionado también con:* [Matrices y determinantes](01-matrices-determinantes.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Plantear un sistema de ecuaciones.**
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+
+**Discusión y resolución de sistemas.**
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Plantear un sistema de ecuaciones.**
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+
+**Discusión y resolución de sistemas.**
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Sean $r$, $g$ y $v$ los precios de la entrada del taller de repostería, la demostración de cocina gourmet y la cata de vinos. Las condiciones dan
+**a) Precios de las entradas.**
+1. Sean $r$, $g$ y $v$ los precios de la entrada del taller de repostería, la demostración de cocina gourmet y la cata de vinos. Las condiciones dan
 $$\begin{cases}120r+50g+150v=6\,460\\10r=2v+g\\2r+v=2g+6\end{cases}\qquad\text{es decir}\qquad\begin{cases}120r+50g+150v=6\,460\\10r-g-2v=0\\2r-2g+v=6\end{cases}$$
-De la segunda, $g=10r-2v$. En la tercera: $2r-20r+4v+v=6\Rightarrow-18r+5v=6$. En la primera: $120r+500r-100v+150v=6\,460\Rightarrow620r+50v=6\,460\Rightarrow62r+5v=646$. Restando: $80r=640\Rightarrow r=8$; entonces $5v=6+144=150\Rightarrow v=30$ y $g=80-60=20$.
+2. De la segunda, $g=10r-2v$.
+3. En la tercera: $2r-20r+4v+v=6\Rightarrow-18r+5v=6$.
+4. En la primera: $120r+500r-100v+150v=6\,460\Rightarrow620r+50v=6\,460\Rightarrow62r+5v=646$.
+5. Se restan las dos ecuaciones con $r$ y $v$: $80r=640\Rightarrow r=8$.
+6. Entonces $5v=6+144=150\Rightarrow v=30$ y $g=80-60=20$.
 
-**Taller de repostería $8$ €, demostración de cocina gourmet $20$ € y cata de vinos $30$ €.** (Comprobación: $960+1\,000+4\,500=6\,460$.)
+**Taller de repostería $8$ €, demostración de cocina gourmet $20$ € y cata de vinos $30$ €.** Comprobación: $960+1\,000+4\,500=6\,460$.
 
-**b)** $|A|=0$ (la tercera fila es $2F_1+F_2$) y el menor $\left|\begin{matrix}1&0\\-1&2\end{matrix}\right|=2\neq0$: **rango de $A$ igual a $2$.**
+**b) Rango de $A$ y de $A^2$.**
+1. $|A|=0$, porque la tercera fila es $2F_1+F_2$.
+2. Hay un menor de orden 2 no nulo: $\left|\begin{matrix}1&0\\-1&2\end{matrix}\right|=2\neq0$.
 
-$A^2=\begin{pmatrix}0&-2&-2\\0&10&10\\0&6&6\end{pmatrix}$: todas sus filas son proporcionales a $(0,1,1)$ y no es nula: **rango de $A^2$ igual a $1$.**
+**El rango de $A$ es $2$.**
+
+3. Se calcula $A^2=\begin{pmatrix}0&-2&-2\\0&10&10\\0&6&6\end{pmatrix}$.
+4. Todas sus filas son proporcionales a $(0,1,1)$ y la matriz no es nula.
+
+**El rango de $A^2$ es $1$.**
 ::::
 :::::
 
@@ -172,17 +361,53 @@ b) Dadas las matrices $A=\begin{pmatrix}1&-1\\2&3\end{pmatrix}$ y $B=\begin{pmat
 
 *Relacionado también con:* [Matrices y determinantes](01-matrices-determinantes.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Plantear un sistema de ecuaciones.**
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+
+**Discusión y resolución de sistemas.**
+
+Teorema de Rouché-Frobenius: si $\operatorname{rg}A=\operatorname{rg}A^*=n$ (nº de incógnitas), compatible determinado; si $\operatorname{rg}A=\operatorname{rg}A^*<n$, compatible indeterminado; si $\operatorname{rg}A<\operatorname{rg}A^*$, incompatible. Gauss: operar con filas hasta obtener una matriz triangular.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Plantear un sistema de ecuaciones.**
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+
+**Discusión y resolución de sistemas.**
+
+1. Escribe la matriz ampliada $A^*$.
+2. Triangula con operaciones entre filas, sin dividir por expresiones que puedan valer $0$ (en un parámetro, trátalo aparte).
+3. Halla los valores del parámetro que anulan algún pivote y estudia cada caso por separado.
+4. Clasifica cada caso y resuelve los compatibles (en el indeterminado, deja una incógnita como parámetro).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Sean $M>I>m$ los números. Condiciones: $M+I+m=113$; $M=6m+4$ (cociente $6$ y resto $4$); $M=2I+6$ (cociente $2$ y resto $6$). Entonces $m=\dfrac{M-4}{6}$ e $I=\dfrac{M-6}{2}$, y
+**a) Los tres números.**
+1. Sean $M>I>m$ los números. Condiciones: $M+I+m=113$; $M=6m+4$ (cociente $6$ y resto $4$); $M=2I+6$ (cociente $2$ y resto $6$).
+2. Se despejan los menores en función del mayor: $m=\dfrac{M-4}{6}$ e $I=\dfrac{M-6}{2}$.
+3. Se sustituyen en la suma:
 $$M+\frac{M-6}{2}+\frac{M-4}{6}=113\Rightarrow6M+3M-18+M-4=678\Rightarrow10M=700.$$
-**$M=70$, $I=32$ y $m=11$.** (Comprobación: $70+32+11=113$, $70=6\cdot11+4$ y $70=2\cdot32+6$.)
 
-**b)** $A+B=\begin{pmatrix}1&0\\4&4\end{pmatrix}$ con $|A+B|=4$ y $(A+B)^{-1}=\begin{pmatrix}1&0\\-1&\frac{1}{4}\end{pmatrix}$.
+**$M=70$, $I=32$ y $m=11$.** Comprobación: $70+32+11=113$, $70=6\cdot11+4$ y $70=2\cdot32+6$.
 
-Por otro lado, $|A|=5$, $A^{-1}=\dfrac{1}{5}\begin{pmatrix}3&1\\-2&1\end{pmatrix}$ y $|B|=-2$, $B^{-1}=\begin{pmatrix}-\frac{1}{2}&\frac{1}{2}\\1&0\end{pmatrix}$, de modo que
+**b) ¿Coincide $(A+B)^{-1}$ con $A^{-1}+B^{-1}$?**
+1. Inversa de la suma: $A+B=\begin{pmatrix}1&0\\4&4\end{pmatrix}$ con $|A+B|=4$ y $(A+B)^{-1}=\begin{pmatrix}1&0\\-1&\frac{1}{4}\end{pmatrix}$.
+2. Inversas por separado: $|A|=5$, $A^{-1}=\dfrac{1}{5}\begin{pmatrix}3&1\\-2&1\end{pmatrix}$ y $|B|=-2$, $B^{-1}=\begin{pmatrix}-\frac{1}{2}&\frac{1}{2}\\1&0\end{pmatrix}$.
+3. Suma de las inversas:
 $$A^{-1}+B^{-1}=\begin{pmatrix}\frac{1}{10}&\frac{7}{10}\\\frac{3}{5}&\frac{1}{5}\end{pmatrix}.$$
+
 **No coinciden:** $(A+B)^{-1}\neq A^{-1}+B^{-1}$ (en general, la inversa de una suma no es la suma de las inversas).
 ::::
 :::::

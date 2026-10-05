@@ -35,6 +35,14 @@ Actualizado el 2026-10-04.
 
 Fases 0 a 5 en la rama `claude/admiring-clarke-tgsd2o`, a partir del BOJA (Orden de 30/05/2023) y del libro de Santillana (14 unidades): 14 temas de apuntes con 16 figuras, 14 relaciones de 24 ejercicios (336 en total), 14 páginas de actividades con 50 módulos y una prueba competencial (20 situaciones). Detalle, comandos y pruebas en `docs/superpowers/specs/2026-10-04-curso-3eso.md` y en `CLAUDE.md`. Se renderizaron con Quarto 1.10.18 (HTML y Typst) sin avisos y todas las fórmulas pasan por KaTeX. Falta: revisión del usuario, borrar la carpeta antigua `14-parametros-estadisticos`, merge a `main` y push (solo si lo pide). Fase 6 hecha el 2026-10-04 en la rama: exclusión de `render` quitada, tercera cabecera de la portada (laboratorio de Pitágoras con deslizadores), selector de tres cursos, menú «★ Simulacros», barras laterales e índices.
 
+## Ayudas y pasos en los PAU CCSS (2026-10-05/06, mezclado en `main`)
+
+- **Fase A hecha** (commit `c6edcf5`, arreglo `2c8d603`): dos desplegables genéricos antes de la solución en los 270 ejercicios (`Ayuda 1 · Recordatorio`, `Ayuda 2 · Método`). Biblioteca de 35 conceptos en `scripts/ebau-ccss/ayudas/conceptos.md`, asignación por ejercicio en `ayudas/asignacion.tsv` (hecha con reglas de texto y revisada a ojo en temas 1, 2, 3, 9, 10, 11; análisis 4–8 sin revisar uno a uno). `build.py` valida que cada ejercicio tenga ayudas. Pendiente de revisión del usuario.
+- **Fase B hecha** (2026-10-06): soluciones de los 36 exámenes (2021-2026, 270 ejercicios) reescritas como pasos numerados con interpretación, sin cambiar resultados; los seis `verificar_AAAA.py` pasan. 2021 revisado; 2022-2026 pendientes de revisión del usuario.
+- Estilo de la fase B: ver `scripts/ebau-ccss/soluciones/2021-*.md` (listas «1. 2. 3.» por apartado, negrita en el resultado final, una frase de interpretación en contexto, z de la tabla con su elección razonada, tamaños muestrales «redondeado hacia arriba»). Mantener las cadenas de igualdades de los verificadores.
+- Cuidado con el texto alternativo de las figuras (`fig-alt`): si repite `a=1`, `t=1`… el verificador no detecta la mutación. Usar «(a, b) = (1, 2)» o palabras, en `figuras_fn.py` y en `soluciones/`.
+- `sympy` no está en el Python del sistema: crear un venv (`python3 -m venv <ruta> && <ruta>/bin/pip install sympy`) y lanzar `<ruta>/bin/python scripts/ebau-ccss/verificar_AAAA.py`.
+
 ## Siguiente
 
 Nada pendiente de la lista anterior. Hecho el 2026-10-02: repaso de los textos de los temas 1–5 (`tidyTex` quita `1A`, `1n`, `\frac{…}{1}` tras «=», `\sqrt{1}` y `+(2)`). Idea suelta: revisar a ojo en el navegador las gráficas nuevas y los callouts.

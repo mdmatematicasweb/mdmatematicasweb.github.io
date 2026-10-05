@@ -65,7 +65,7 @@ def e_2021_ext_res_3():
     g.line((2, 0), (2, 3), color=INK, width=1.2)
     pts(g, (1, 0.5), (2, 3))
     tag(g, 0.4, 0.95, "f(x) = 1/2", anchor="middle"); tag(g, 1.5, 3.1, "f(x) = x² − x/2", anchor="end")
-    hecho(g, "2021-ext-res", "3", "Gráfica de f para a=0 y b=1/2: tramo horizontal y=1/2 hasta x=1 y parábola x²−x/2 desde x=1; recinto sombreado entre x=0 y x=2")
+    hecho(g, "2021-ext-res", "3", "Gráfica de f con (a, b) = (0, 1/2): tramo horizontal y=1/2 hasta x=1 y parábola x²−x/2 desde x=1; recinto sombreado entre x=0 y x=2")
 
 
 def e_2021_ext_sup_3():
@@ -143,7 +143,7 @@ def e_2022_ext_res_3():
     g.axes(xt=(-3, -2, -1, 1, 2), yt=(1, 4, 6))
     g.curve(f1, -3, 1); g.curve(f2, 1, 2)
     pts(g, (-3, 4), (-1, 0), (1, 4), (2, 6)); abierto(g, 1, 3)
-    hecho(g, "2022-ext-res", "3", "Gráfica de f para a=1 y b=2: parábola (x+1)² hasta x=1 y x²+2 desde x=1, con salto de 4 a 3; recinto sombreado entre x=−2 y x=1")
+    hecho(g, "2022-ext-res", "3", "Gráfica de f con (a, b) = (1, 2): parábola (x+1)² hasta x=1 y x²+2 desde x=1, con salto de 4 a 3; recinto sombreado entre x=−2 y x=1")
 
 
 def e_2022_ext_res_4():
@@ -164,7 +164,7 @@ def e_2022_ext_sup_4():
     g.axes(xt=(-1, 2, 3, 4), yt=(1, 2))
     g.curve(f1, -2.5, 1); g.curve(f2, 1, 5.1)
     pts(g, (-1, 0), (0, 2), (1, 2), (0.5, 2.25))
-    hecho(g, "2022-ext-sup", "4", "Gráfica de f para a=−1 y b=1: parábola −x²+x+2 hasta x=1 e hipérbola 4/(x+1) desde x=1; recinto sombreado entre x=−1 y x=1")
+    hecho(g, "2022-ext-sup", "4", "Gráfica de f con (a, b) = (−1, 1): parábola −x²+x+2 hasta x=1 e hipérbola 4/(x+1) desde x=1; recinto sombreado entre x=−1 y x=1")
 
 
 def e_2022_ext_3():
@@ -250,7 +250,7 @@ def e_2023_ord_res_b_4():
     g.curve(f, 0, 1); g.curve(lambda t: -t * t + 12 * t - 20, 1, 11); g.curve(f, 11, 24)
     pts(g, (1, -9), (11, -9), (6, 16), (2, 0), (10, 0))
     tag(g, 6, 16, "máximo (6, 16)", dy=-12)
-    hecho(g, "2023-ord-res-b", "4", "Temperatura f(t): constante −9 °C hasta t=1, arco de parábola con máximo 16 °C en t=6 entre t=1 y t=11, y de nuevo −9 °C hasta t=24")
+    hecho(g, "2023-ord-res-b", "4", "Temperatura f(t): constante −9 °C hasta la hora 1, arco de parábola con máximo 16 °C en t=6 entre las horas 1 y 11, y de nuevo −9 °C hasta t=24")
 
 
 def e_2023_ord_sup_a_3():
@@ -313,7 +313,7 @@ def e_2024_ord_b_3():
     g.curve(f, -6, 1.93); g.curve(f, 2.07, 9)
     pts(g, (3, 0), (0, -3))
     tag(g, 8.5, -3.2, "f(x) = (2x − 6)/(2 − x)", anchor="end")
-    hecho(g, "2024-ord-b", "3", "Hipérbola decreciente f(x)=(2x−6)/(2−x) con asíntotas x=2 e y=−2; corta a los ejes en (3,0) y (0,−3)")
+    hecho(g, "2024-ord-b", "3", "Hipérbola decreciente f(x)=(2x−6)/(2−x) con asíntota vertical en la abscisa 2 y horizontal en la ordenada −2; corta a los ejes en (3,0) y (0,−3)")
 
 
 def e_2024_ord_b_4():
@@ -476,7 +476,7 @@ def e_2026_ext_sup1_2a():
     g.curve(f, -5, 0.92); g.curve(f, 1.08, 7)
     pts(g, (3, 0), (0, 3))
     tag(g, 6.8, 2, "g(x) = (x − 3)/(x − 1)", anchor="end")
-    hecho(g, "2026-ext-sup1", "2A", "Hipérbola creciente g(x)=(x−3)/(x−1) con asíntotas x=1 e y=1; corta a los ejes en (3,0) y (0,3)")
+    hecho(g, "2026-ext-sup1", "2A", "Hipérbola creciente g(x)=(x−3)/(x−1) con asíntota vertical en la abscisa 1 y horizontal en la ordenada 1; corta a los ejes en (3,0) y (0,3)")
 
 
 def e_2026_ord_sup1_2a():
