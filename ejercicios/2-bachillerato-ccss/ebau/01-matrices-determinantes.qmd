@@ -1035,12 +1035,25 @@ Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=\left|\begin{matrix}a&1&0\\0&a&1\\3&4&1\end{matrix}\right|=a(a-4)-1\cdot(0-3)=a^2-4a+3=(a-1)(a-3)$. Tiene inversa si $|A|\neq0$: **$a\neq1$ y $a\neq3$.**
+**a) Valores de $a$ con inversa.**
+1. $A$ tiene inversa si y solo si $|A|\neq0$.
+2. Determinante: $|A|=\left|\begin{matrix}a&1&0\\0&a&1\\3&4&1\end{matrix}\right|=a(a-4)-1\cdot(0-3)=a^2-4a+3=(a-1)(a-3)$.
+3. Se anula en $a=1$ y $a=3$.
 
-**b)** Para $a=2$, $|A|=-1$. Calculando la adjunta traspuesta:
+**Tiene inversa si $a\neq1$ y $a\neq3$.**
+
+**b) Inversa para $a=2$.**
+1. $|A|=-1\neq0$, luego existe $A^{-1}$.
+2. Se calcula la matriz de adjuntos, se traspone y se divide entre $|A|=-1$.
+
+**Calculando la adjunta traspuesta:**
 $$A^{-1}=\begin{pmatrix}2&1&-1\\-3&-2&2\\6&5&-4\end{pmatrix}.$$
 
-**c)** $XA+I_3=B^tC\Rightarrow X=\left(B^tC-I_3\right)A^{-1}$. Con $B^t=\begin{pmatrix}2\\-1\\0\end{pmatrix}$, $B^tC=\begin{pmatrix}2&6&-2\\-1&-3&1\\0&0&0\end{pmatrix}$ y $B^tC-I_3=\begin{pmatrix}1&6&-2\\-1&-4&1\\0&0&-1\end{pmatrix}$:
+**c) Ecuación matricial** (con $a=2$).
+1. Se despeja $X$: de $XA+I_3=B^tC$ se obtiene $XA=B^tC-I_3$ y, multiplicando por la derecha por $A^{-1}$ (la incógnita está a la izquierda de $A$), $X=\left(B^tC-I_3\right)A^{-1}$.
+2. Producto $B^tC$ (columna por fila, da una matriz $3\times3$): con $B^t=\begin{pmatrix}2\\-1\\0\end{pmatrix}$, $B^tC=\begin{pmatrix}2&6&-2\\-1&-3&1\\0&0&0\end{pmatrix}$.
+3. Se resta la identidad: $B^tC-I_3=\begin{pmatrix}1&6&-2\\-1&-4&1\\0&0&-1\end{pmatrix}$.
+4. Se multiplica por $A^{-1}$:
 $$X=\begin{pmatrix}1&6&-2\\-1&-4&1\\0&0&-1\end{pmatrix}\begin{pmatrix}2&1&-1\\-3&-2&2\\6&5&-4\end{pmatrix}=\begin{pmatrix}-28&-21&19\\16&12&-11\\-6&-5&4\end{pmatrix}.$$
 ::::
 :::::
@@ -1095,15 +1108,18 @@ Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: sol
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $C\cdot A$: $C$ es $3\times1$ y $A$ es $3\times3$; el número de columnas de $C$ (1) no coincide con el de filas de $A$ (3): **no se puede efectuar.**
-
-$A+B$: ambas son $3\times3$, **sí se puede:**
+**a) Operaciones posibles.** Un producto $M\cdot N$ solo se puede hacer si las columnas de $M$ coinciden con las filas de $N$; una suma, si tienen la misma dimensión.
+1. $C\cdot A$: $C$ es $3\times1$ y $A$ es $3\times3$. El número de columnas de $C$ (1) no coincide con el de filas de $A$ (3): **no se puede efectuar.**
+2. $A+B$: ambas son $3\times3$, **sí se puede:**
 $$A+B=\begin{pmatrix}2&-1&2\\-2&-2&0\\3&-2&1\end{pmatrix}.$$
-
-$C^t\cdot B^t$: $C^t$ es $1\times3$ y $B^t$ es $3\times3$, **sí se puede** y el resultado es $1\times3$:
+3. $C^t\cdot B^t$: $C^t$ es $1\times3$ y $B^t$ es $3\times3$, **sí se puede** y el resultado es $1\times3$:
 $$C^tB^t=\begin{pmatrix}3&-7&-2\end{pmatrix}\begin{pmatrix}1&-1&1\\-1&-1&-1\\1&-1&1\end{pmatrix}=\begin{pmatrix}8&6&8\end{pmatrix}.$$
 
-**b)** $AX=BX+C\Rightarrow(A-B)X=C$, con $A-B=\begin{pmatrix}0&1&0\\0&0&2\\1&0&-1\end{pmatrix}$ y $|A-B|=2\neq0$. Entonces $X=(A-B)^{-1}C$:
+**b) Ecuación matricial.**
+1. Se agrupan los términos con $X$: $AX=BX+C\Rightarrow AX-BX=C\Rightarrow(A-B)X=C$.
+2. $A-B=\begin{pmatrix}0&1&0\\0&0&2\\1&0&-1\end{pmatrix}$ y $|A-B|=2\neq0$, luego es invertible.
+3. Se despeja $X$ multiplicando por la izquierda por $(A-B)^{-1}$ (la incógnita está a la derecha): $X=(A-B)^{-1}C$.
+4. Se calcula:
 $$X=\begin{pmatrix}0&\frac{1}{2}&1\\1&0&0\\0&\frac{1}{2}&0\end{pmatrix}\begin{pmatrix}3\\-7\\-2\end{pmatrix}=\begin{pmatrix}-\frac{11}{2}\\3\\-\frac{7}{2}\end{pmatrix}.$$
 ::::
 :::::
@@ -1166,12 +1182,19 @@ Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: sol
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $XA=A^t-3I_3$, y $|A|=10\neq0$, así que $X=\left(A^t-3I_3\right)A^{-1}$. Con $A^t-3I_3=\begin{pmatrix}4&3&-5\\-6&-2&0\\-2&4&-7\end{pmatrix}$ y $A^{-1}=\begin{pmatrix}-\frac{2}{5}&-\frac{12}{5}&-\frac{11}{5}\\-\frac{4}{5}&-\frac{19}{5}&-\frac{17}{5}\\\frac{1}{2}&3&\frac{5}{2}\end{pmatrix}$:
+**a) Ecuación matricial.**
+1. Se despeja el término con $X$: $A^t-XA=3I_3\Rightarrow XA=A^t-3I_3$.
+2. $|A|=10\neq0$, luego existe $A^{-1}$. Se multiplica por la derecha por $A^{-1}$ (la incógnita está a la izquierda de $A$): $X=\left(A^t-3I_3\right)A^{-1}$.
+3. Matrices: $A^t-3I_3=\begin{pmatrix}4&3&-5\\-6&-2&0\\-2&4&-7\end{pmatrix}$ y $A^{-1}=\begin{pmatrix}-\frac{2}{5}&-\frac{12}{5}&-\frac{11}{5}\\-\frac{4}{5}&-\frac{19}{5}&-\frac{17}{5}\\\frac{1}{2}&3&\frac{5}{2}\end{pmatrix}$.
+4. Producto:
 $$X=\begin{pmatrix}-\frac{13}{2}&-36&-\frac{63}{2}\\4&22&20\\-\frac{59}{10}&-\frac{157}{5}&-\frac{267}{10}\end{pmatrix}.$$
 
-**b)** $C^t$ es $3\times2$ y $D$ es $2\times3$, luego $C^tD$ es $3\times3$:
+**b) ¿Existe $a$ con $C^tD=B$?**
+1. Dimensiones: $C^t$ es $3\times2$ y $D$ es $2\times3$, luego $C^tD$ es $3\times3$, como $B$.
+2. Producto:
 $$C^tD=\begin{pmatrix}1&-2\\2&-3\\-1&0\end{pmatrix}\begin{pmatrix}a^2&0&-1\\1&-1&a\end{pmatrix}=\begin{pmatrix}a^2-2&2&-1-2a\\2a^2-3&3&-2-3a\\-a^2&0&1\end{pmatrix}.$$
-Igualando con $B$: $a^2-2=2$, $-1-2a=3$, $2a^2-3=5$, $-2-3a=4$ y $-a^2=-4$. Todas se cumplen solo para $a=-2$.
+3. Se iguala elemento a elemento con $B$: $a^2-2=2$, $-1-2a=3$, $2a^2-3=5$, $-2-3a=4$ y $-a^2=-4$.
+4. Las cinco ecuaciones se cumplen a la vez solo para $a=-2$ (de $-1-2a=3$ sale $a=-2$, y ese valor cumple también las demás).
 
 **Sí existe: $a=-2$.**
 ::::
@@ -1226,12 +1249,18 @@ Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: sol
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=3\neq0$, luego $A$ es invertible y $X=A^{-1}\left(A^2C-B\right)$. Con $A^2=\begin{pmatrix}-1&-1&1\\-2&-3&-5\\2&1&0\end{pmatrix}$:
+**a) Ecuación matricial.**
+1. Se despeja el término con $X$: $AX+B=A^2C\Rightarrow AX=A^2C-B$.
+2. $|A|=3\neq0$, luego $A$ es invertible. Se multiplica por la izquierda por $A^{-1}$ (la incógnita está a la derecha de $A$): $X=A^{-1}\left(A^2C-B\right)$.
+3. Se calculan $A^2$ y los productos: $A^2=\begin{pmatrix}-1&-1&1\\-2&-3&-5\\2&1&0\end{pmatrix}$ y
 $$A^2C=\begin{pmatrix}-2&2\\11&-16\\1&3\end{pmatrix},\qquad A^2C-B=\begin{pmatrix}0&1\\8&-17\\1&1\end{pmatrix}.$$
-Con $A^{-1}=\begin{pmatrix}\frac{1}{3}&-\frac{1}{3}&\frac{1}{3}\\-\frac{2}{3}&-\frac{1}{3}&-\frac{5}{3}\\\frac{2}{3}&\frac{1}{3}&\frac{2}{3}\end{pmatrix}$:
+4. Con $A^{-1}=\begin{pmatrix}\frac{1}{3}&-\frac{1}{3}&\frac{1}{3}\\-\frac{2}{3}&-\frac{1}{3}&-\frac{5}{3}\\\frac{2}{3}&\frac{1}{3}&\frac{2}{3}\end{pmatrix}$:
 $$X=A^{-1}\begin{pmatrix}0&1\\8&-17\\1&1\end{pmatrix}=\begin{pmatrix}-\frac{7}{3}&\frac{19}{3}\\-\frac{13}{3}&\frac{10}{3}\\\frac{10}{3}&-\frac{13}{3}\end{pmatrix}.$$
 
-**b)** $A$ es $3\times3$ y $C$ es $3\times2$. Para que $A\cdot P^t+C$ exista, $A\cdot P^t$ debe ser $3\times2$, luego $P^t$ es $3\times2$ y **$P$ es $2\times3$.** Para que $C\cdot(Q\cdot B)$ sea $3\times2$, $Q\cdot B$ debe ser $2\times2$ y, como $B$ es $3\times2$, **$Q$ es $2\times3$.**
+**b) Dimensiones de $P$ y $Q$.**
+1. $A$ es $3\times3$ y $C$ es $3\times2$.
+2. Para que $A\cdot P^t+C$ exista, $A\cdot P^t$ debe ser $3\times2$ (como $C$). Como $A$ es $3\times3$, $P^t$ es $3\times2$ y **$P$ es $2\times3$.**
+3. Para que $C\cdot(Q\cdot B)$ sea $3\times2$, $Q\cdot B$ debe ser $2\times2$ (columnas de $C$ = filas de $Q\cdot B$ = 2 y columnas 2). Como $B$ es $3\times2$, **$Q$ es $2\times3$.**
 ::::
 :::::
 
@@ -1305,15 +1334,25 @@ Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: sol
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=\left|\begin{matrix}2&-3&-a-1\\-1&a&a+1\\1&-3&-a\end{matrix}\right|=-a(a-4)=-a^2+4a$. La matriz tiene inversa si $|A|\neq0$: **$a\neq0$ y $a\neq4$.**
+**a) Valores de $a$ con inversa.**
+1. $A$ tiene inversa si y solo si $|A|\neq0$.
+2. Determinante: $|A|=\left|\begin{matrix}2&-3&-a-1\\-1&a&a+1\\1&-3&-a\end{matrix}\right|=-a(a-4)=-a^2+4a$.
+3. Se anula en $a=0$ y $a=4$.
 
-**b)** Para $a=4$, $A=\begin{pmatrix}2&-3&-5\\-1&4&5\\1&-3&-4\end{pmatrix}$ y, multiplicando,
+**La matriz tiene inversa si $a\neq0$ y $a\neq4$.**
+
+**b) Potencias para $a=4$.**
+1. La matriz es $A=\begin{pmatrix}2&-3&-5\\-1&4&5\\1&-3&-4\end{pmatrix}$.
+2. Multiplicando $A\cdot A$ se obtiene
 $$A^2=\begin{pmatrix}2&-3&-5\\-1&4&5\\1&-3&-4\end{pmatrix}=A.$$
-Como $A^2=A$, entonces $A^3=A^2\cdot A=A\cdot A=A$ y, por inducción, $A^n=A$ para todo $n\ge1$:
+3. Como $A^2=A$, entonces $A^3=A^2\cdot A=A\cdot A=A$ y, por inducción, $A^n=A$ para todo $n\ge1$. En particular, $A^{2022}=A$.
 
 **$A^2=A^3=A^{2022}=A=\begin{pmatrix}2&-3&-5\\-1&4&5\\1&-3&-4\end{pmatrix}$.**
 
-**c)** Para $a=3$, $|A|=3\neq0$ y $XA=I_3$ significa $X=A^{-1}$:
+**c) Matriz $X$ con $XA=I_3$ para $a=3$.**
+1. $|A|=-3\cdot(3-4)=3\neq0$: $A$ es invertible.
+2. $XA=I_3$ significa que $X$ es la inversa de $A$: $X=A^{-1}$.
+3. Se calcula la inversa (adjunta traspuesta dividida entre $|A|=3$):
 $$X=\begin{pmatrix}1&1&0\\\frac{1}{3}&-\frac{2}{3}&-\frac{4}{3}\\0&1&1\end{pmatrix}.$$
 ::::
 :::::
@@ -1378,12 +1417,23 @@ Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=a\left(a^2-16\right)=a(a-4)(a+4)$ (desarrollando por la tercera fila). $A$ no es invertible si $|A|=0$: **$a=0$, $a=4$ o $a=-4$.**
+**a) Valores de $a$ con $A$ no invertible.**
+1. $A$ no es invertible si y solo si $|A|=0$.
+2. Se desarrolla por la tercera fila: $|A|=a\left(a^2-16\right)=a(a-4)(a+4)$.
+3. Se anula en $a=0$, $a=4$ y $a=-4$.
 
-**b)** Para $a=5$, $|A|=5\cdot9=45\neq0$. Calculando la adjunta traspuesta:
+**$A$ no es invertible si $a=0$, $a=4$ o $a=-4$.**
+
+**b) Inversa para $a=5$.**
+1. $|A|=5\cdot9=45\neq0$, luego existe $A^{-1}$.
+2. Se calcula la adjunta, se traspone y se divide entre $45$.
+
+**Calculando la adjunta traspuesta:**
 $$A^{-1}=\begin{pmatrix}\frac{5}{9}&-\frac{2}{9}&0\\-\frac{8}{9}&\frac{5}{9}&0\\0&0&\frac{1}{5}\end{pmatrix}.$$
 
-**c)** $X=A^{-1}B$:
+**c) Ecuación $AX=B$.**
+1. Se multiplica por la izquierda por $A^{-1}$ (la incógnita está a la derecha de $A$): $X=A^{-1}B$.
+2. Se calcula:
 $$X=\begin{pmatrix}\frac{5}{9}&-\frac{2}{9}&0\\-\frac{8}{9}&\frac{5}{9}&0\\0&0&\frac{1}{5}\end{pmatrix}\begin{pmatrix}1\\-2\\10\end{pmatrix}=\begin{pmatrix}1\\-2\\2\end{pmatrix}.$$
 ::::
 :::::

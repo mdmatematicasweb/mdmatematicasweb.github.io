@@ -2349,12 +2349,23 @@ $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\h
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Nivel $92\,\%$: $\Phi(z_{\alpha/2})=0{,}96$ y en la tabla $\Phi(1{,}75)=0{,}9599$, luego $z_{\alpha/2}=1{,}75$.
+**Valor crítico.**
+1. Nivel $92\,\%$: $1-\alpha=0{,}92$, así que $\Phi(z_{\alpha/2})=0{,}96$.
+2. En la tabla, $\Phi(1{,}75)=0{,}9599$ es el valor más próximo a $0{,}96$, luego $z_{\alpha/2}=1{,}75$.
 
-**a)** $E=1{,}75\cdot\dfrac{15}{\sqrt{100}}=2{,}625$.
+**a) Intervalo de confianza.**
+1. Error máximo: $E=1{,}75\cdot\dfrac{15}{\sqrt{100}}=2{,}625$.
+2. Intervalo: $\bar x\pm E$:
 $$IC=(800-2{,}625,\ 800+2{,}625)=(797{,}375,\ 802{,}625).$$
 
-**b)** $E<2\iff n>\left(\dfrac{1{,}75\cdot15}{2}\right)^2=172{,}27$. **Hace falta una muestra de al menos $n=173$ herramientas.**
+*Interpretación:* con confianza del $92\,\%$, la resistencia media está entre $797{,}375$ y $802{,}625$ MPa.
+
+**b) Tamaño mínimo de muestra.**
+1. Se impone $E<2$: $1{,}75\cdot\dfrac{15}{\sqrt n}<2$.
+2. Se despeja: $E<2\iff n>\left(\dfrac{1{,}75\cdot15}{2}\right)^2=172{,}27$.
+3. Como $n$ es entero, se redondea hacia arriba.
+
+**Hace falta una muestra de al menos $n=173$ herramientas.**
 ::::
 :::::
 
@@ -2401,12 +2412,21 @@ $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\h
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\hat p=\dfrac{320}{400}=0{,}8$, $n=400$, $z_{\alpha/2}=1{,}75$ (nivel $92\,\%$).
+**Datos.** $\hat p=\dfrac{320}{400}=0{,}8$, $n=400$. Nivel $92\,\%$: $z_{\alpha/2}=1{,}75$ (el valor de la tabla más próximo a $\Phi=0{,}96$).
 
-**a)** Error máximo: $E=1{,}75\sqrt{\dfrac{0{,}8\cdot0{,}2}{400}}=1{,}75\cdot0{,}02=0{,}035$.
+**a) Intervalo y error máximo.**
+1. Error máximo: $E=1{,}75\sqrt{\dfrac{0{,}8\cdot0{,}2}{400}}=1{,}75\cdot0{,}02=0{,}035$.
+2. Intervalo: $\hat p\pm E$:
 $$IC=(0{,}8-0{,}035,\ 0{,}8+0{,}035)=(0{,}765,\ 0{,}835).$$
 
-**b)** $E<0{,}02\iff n>\dfrac{1{,}75^2\cdot0{,}8\cdot0{,}2}{0{,}02^2}=1\,225$. **Hay que elegir al menos $n=1\,226$ perros.**
+*Interpretación:* con confianza del $92\,\%$, entre el $76{,}5\,\%$ y el $83{,}5\,\%$ de los perros están vacunados.
+
+**b) Tamaño mínimo de muestra.**
+1. Se impone $E<0{,}02$: $1{,}75\sqrt{\dfrac{0{,}8\cdot0{,}2}{n}}<0{,}02$.
+2. Se despeja: $E<0{,}02\iff n>\dfrac{1{,}75^2\cdot0{,}8\cdot0{,}2}{0{,}02^2}=1\,225$.
+3. Como la desigualdad es estricta ($E<0{,}02$), hace falta un entero mayor que $1\,225$.
+
+**Hay que elegir al menos $n=1\,226$ perros.**
 ::::
 :::::
 
@@ -2456,13 +2476,22 @@ $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\h
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\hat p=\dfrac{96}{120}=0{,}8$, $n=120$.
+**Datos.** $\hat p=\dfrac{96}{120}=0{,}8$, $n=120$.
 
-**a)** Nivel $95\,\%$: $z_{\alpha/2}=1{,}96$. $E=1{,}96\sqrt{\dfrac{0{,}8\cdot0{,}2}{120}}=1{,}96\cdot0{,}03651=0{,}0716$.
+**a) Intervalo al $95\,\%$.**
+1. Valor crítico: $z_{\alpha/2}=1{,}96$.
+2. Error máximo: $E=1{,}96\sqrt{\dfrac{0{,}8\cdot0{,}2}{120}}=1{,}96\cdot0{,}03651=0{,}0716$.
+3. Intervalo: $\hat p\pm E$:
 $$IC=(0{,}8-0{,}0716,\ 0{,}8+0{,}0716)=(0{,}7284,\ 0{,}8716).$$
 
-**b)** Nivel $97\,\%$: $z_{\alpha/2}=2{,}17$ (pues $\Phi(2{,}17)=0{,}9850$). Con $E\le0{,}05$:
+*Interpretación:* con confianza del $95\,\%$, entre el $72{,}84\,\%$ y el $87{,}16\,\%$ de los clientes volverían al taller.
+
+**b) Tamaño mínimo con $E\le0{,}05$ al $97\,\%$.**
+1. Valor crítico: $\Phi(z_{\alpha/2})=0{,}985$; la tabla da exactamente $\Phi(2{,}17)=0{,}9850$, luego $z_{\alpha/2}=2{,}17$.
+2. Se despeja $n$ de $E\le0{,}05$:
 $$n\ge\frac{2{,}17^2\cdot0{,}8\cdot0{,}2}{0{,}05^2}=301{,}37.$$
+3. Se redondea hacia arriba.
+
 **Hacen falta al menos $n=302$ clientes.**
 ::::
 :::::
@@ -2512,16 +2541,27 @@ $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\h
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\sigma=\sqrt{4225}=65$ kWh.
+**Datos.** $\sigma=\sqrt{4225}=65$ kWh.
 
-**a)** $\bar x=\dfrac{26\,830}{100}=268{,}3$. Nivel $92\,\%$: $z_{\alpha/2}=1{,}75$ y $E=1{,}75\cdot\dfrac{65}{\sqrt{100}}=11{,}375$.
+**a) Intervalo al $92\,\%$.**
+1. Media muestral: $\bar x=\dfrac{26\,830}{100}=268{,}3$.
+2. Valor crítico: $z_{\alpha/2}=1{,}75$ y error máximo $E=1{,}75\cdot\dfrac{65}{\sqrt{100}}=11{,}375$.
+3. Intervalo:
 $$IC=(268{,}3-11{,}375,\ 268{,}3+11{,}375)=(256{,}925,\ 279{,}675).$$
 
-**b)** Nivel $98\,\%$: $\Phi(z_{\alpha/2})=0{,}99$ y en la tabla $\Phi(2{,}33)=0{,}9901$ (el más cercano a $0{,}99$), luego $z_{\alpha/2}=2{,}33$. Con $E\le5$:
+*Interpretación:* con confianza del $92\,\%$, el consumo medio mensual por vivienda está entre $256{,}925$ y $279{,}675$ kWh.
+
+**b) Tamaño mínimo con $E\le5$ al $98\,\%$.**
+1. Valor crítico: $\Phi(z_{\alpha/2})=0{,}99$ y en la tabla $\Phi(2{,}33)=0{,}9901$ (el más cercano a $0{,}99$), luego $z_{\alpha/2}=2{,}33$.
+2. Se despeja $n$ de $E\le5$:
 $$n\ge\left(\frac{2{,}33\cdot65}{5}\right)^2=917{,}48.$$
+3. Se redondea hacia arriba.
+
 **Hacen falta al menos $n=918$ viviendas.**
 
-**c)** La media muestral es el punto medio del intervalo: $\bar x=\dfrac{224{,}08+255{,}92}{2}=\mathbf{240}$ kWh.
+**c) Media muestral del nuevo intervalo.**
+1. El intervalo es simétrico alrededor de la media muestral, que es su punto medio:
+$$\bar x=\dfrac{224{,}08+255{,}92}{2}=\mathbf{240}\text{ kWh}.$$
 ::::
 :::::
 
@@ -2571,12 +2611,23 @@ $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\h
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\hat p=\dfrac{378}{540}=0{,}7$, $n=540$, $z_{\alpha/2}=2{,}17$ (nivel $97\,\%$, pues $\Phi(2{,}17)=0{,}9850$).
+**Datos.** $\hat p=\dfrac{378}{540}=0{,}7$, $n=540$.
 
-**a)** $E=2{,}17\sqrt{\dfrac{0{,}7\cdot0{,}3}{540}}=2{,}17\cdot0{,}01972=0{,}0428$.
+**Valor crítico.** Nivel $97\,\%$: $\Phi(z_{\alpha/2})=0{,}985$ y la tabla da $\Phi(2{,}17)=0{,}9850$, luego $z_{\alpha/2}=2{,}17$.
+
+**a) Intervalo.**
+1. Error máximo: $E=2{,}17\sqrt{\dfrac{0{,}7\cdot0{,}3}{540}}=2{,}17\cdot0{,}01972=0{,}0428$.
+2. Intervalo: $\hat p\pm E$:
 $$IC=(0{,}7-0{,}0428,\ 0{,}7+0{,}0428)=(0{,}6572,\ 0{,}7428).$$
 
-**b)** $E\le0{,}03\iff n\ge\dfrac{2{,}17^2\cdot0{,}7\cdot0{,}3}{0{,}03^2}=1\,098{,}74$. **Hay que seleccionar al menos $n=1\,099$ personas.**
+*Interpretación:* con confianza del $97\,\%$, entre el $65{,}72\,\%$ y el $74{,}28\,\%$ de los mayores de 45 años tienen presbicia.
+
+**b) Tamaño mínimo.**
+1. Se impone $E\le0{,}03$ y se despeja $n$:
+$$E\le0{,}03\iff n\ge\dfrac{2{,}17^2\cdot0{,}7\cdot0{,}3}{0{,}03^2}=1\,098{,}74.$$
+2. Se redondea hacia arriba.
+
+**Hay que seleccionar al menos $n=1\,099$ personas.**
 ::::
 :::::
 
@@ -2625,13 +2676,22 @@ $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\h
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\sigma=\sqrt{121}=11$ g y $n=10$. Suma de los datos: $9\,915$, luego $\bar x=\dfrac{9\,915}{10}=991{,}5$.
+**Datos.** $\sigma=\sqrt{121}=11$ g y $n=10$. Suma de los datos: $9\,915$, luego $\bar x=\dfrac{9\,915}{10}=991{,}5$.
 
-**a)** Nivel $97\,\%$: $z_{\alpha/2}=2{,}17$. $E=2{,}17\cdot\dfrac{11}{\sqrt{10}}=7{,}548$.
+**a) Intervalo al $97\,\%$.**
+1. Valor crítico: $z_{\alpha/2}=2{,}17$.
+2. Error máximo: $E=2{,}17\cdot\dfrac{11}{\sqrt{10}}=7{,}548$.
+3. Intervalo:
 $$IC=(991{,}5-7{,}548,\ 991{,}5+7{,}548)=(983{,}95,\ 999{,}05).$$
 
-**b)** Nivel $94\,\%$: $\Phi(z_{\alpha/2})=0{,}97$, $z_{\alpha/2}=1{,}88$ (pues $\Phi(1{,}88)=0{,}9699$). Con $E\le5$:
+*Interpretación:* con confianza del $97\,\%$, el peso medio de las tortugas está entre $983{,}95$ y $999{,}05$ g.
+
+**b) Tamaño mínimo al $94\,\%$.**
+1. Valor crítico: $\Phi(z_{\alpha/2})=0{,}97$ y la tabla da $\Phi(1{,}88)=0{,}9699$, el valor más cercano, así que $z_{\alpha/2}=1{,}88$.
+2. Se impone $E\le5$ y se despeja $n$:
 $$n\ge\left(\frac{1{,}88\cdot11}{5}\right)^2=17{,}11.$$
+3. Se redondea hacia arriba.
+
 **Hace falta una muestra de al menos $n=18$ tortugas.**
 ::::
 :::::
@@ -2682,12 +2742,21 @@ $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\h
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\hat p=\dfrac{1425}{1500}=0{,}95$, $n=1500$, $z_{\alpha/2}=2{,}17$ (nivel $97\,\%$, pues $\Phi(2{,}17)=0{,}9850$).
+**Datos.** $\hat p=\dfrac{1425}{1500}=0{,}95$, $n=1500$. Nivel $97\,\%$: $\Phi(z_{\alpha/2})=0{,}985$ y la tabla da $\Phi(2{,}17)=0{,}9850$, luego $z_{\alpha/2}=2{,}17$.
 
-**a)** $E=2{,}17\sqrt{\dfrac{0{,}95\cdot0{,}05}{1500}}=2{,}17\cdot0{,}005627=0{,}0122$.
+**a) Intervalo.**
+1. Error máximo: $E=2{,}17\sqrt{\dfrac{0{,}95\cdot0{,}05}{1500}}=2{,}17\cdot0{,}005627=0{,}0122$.
+2. Intervalo: $\hat p\pm E$:
 $$IC=(0{,}95-0{,}0122,\ 0{,}95+0{,}0122)=(0{,}9378,\ 0{,}9622).$$
 
-**b)** $E<0{,}01\iff n>\dfrac{2{,}17^2\cdot0{,}95\cdot0{,}05}{0{,}01^2}=2\,236{,}73$. **Hacen falta al menos $n=2\,237$ tornillos.**
+*Interpretación:* con confianza del $97\,\%$, entre el $93{,}78\,\%$ y el $96{,}22\,\%$ de los tornillos cumplen las especificaciones.
+
+**b) Tamaño mínimo.**
+1. Se impone $E<0{,}01$ y se despeja $n$:
+$$E<0{,}01\iff n>\dfrac{2{,}17^2\cdot0{,}95\cdot0{,}05}{0{,}01^2}=2\,236{,}73.$$
+2. Se redondea hacia arriba.
+
+**Hacen falta al menos $n=2\,237$ tornillos.**
 ::::
 :::::
 
@@ -2748,13 +2817,28 @@ $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\h
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $E=2{,}17\cdot\dfrac{3}{\sqrt{100}}=0{,}651$.
+**a) Intervalo al $97\,\%$.**
+1. Valor crítico: $z_{\alpha/2}=2{,}17$ (tabla: $\Phi(2{,}17)=0{,}9850$).
+2. Error máximo: $E=2{,}17\cdot\dfrac{3}{\sqrt{100}}=0{,}651$.
+3. Intervalo: $\bar x\pm E$:
 $$IC=(8{,}1-0{,}651,\ 8{,}1+0{,}651)=(7{,}449,\ 8{,}751).$$
 
-**b)** Nivel $92\,\%$: $z_{\alpha/2}=1{,}75$. $E<1\iff n>(1{,}75\cdot3)^2=27{,}5625$. **Hace falta una muestra de al menos $n=28$ titulados.**
+*Interpretación:* con confianza del $97\,\%$, los titulados tardan de media entre $7{,}449$ y $8{,}751$ días en encontrar su primer trabajo.
 
-**c)** $\bar X\sim N\!\left(7{,}61,\ \dfrac{3}{\sqrt{36}}\right)=N(7{,}61,\ 0{,}5)$.
+**b) Tamaño mínimo al $92\,\%$.**
+1. Valor crítico: $z_{\alpha/2}=1{,}75$.
+2. Se impone $E<1$ y se despeja $n$: $E<1\iff n>(1{,}75\cdot3)^2=27{,}5625$.
+3. Se redondea hacia arriba.
+
+**Hace falta una muestra de al menos $n=28$ titulados.**
+
+**c) Distribución de la media muestral.**
+1. Si la población es normal, $\bar X\sim N\!\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$: $\bar X\sim N\!\left(7{,}61,\ \dfrac{3}{\sqrt{36}}\right)=N(7{,}61,\ 0{,}5)$.
+2. Se tipifica: $P(\bar X>8)=P\!\left(Z>\dfrac{8-7{,}61}{0{,}5}\right)=P(Z>0{,}78)$.
+3. Con la tabla: $1-\Phi(0{,}78)=1-0{,}7823$:
 $$P(\bar X>8)=P\!\left(Z>\frac{8-7{,}61}{0{,}5}\right)=P(Z>0{,}78)=1-0{,}7823=\mathbf{0{,}2177}.$$
+
+*Interpretación:* en torno al $22\,\%$ de las muestras de 36 titulados darían una media superior a 8 días.
 ::::
 :::::
 
@@ -2822,13 +2906,19 @@ $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\h
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Tamaño de la población: $60\,000+20\,000+24\,000+16\,000=120\,000$. La fracción muestreada es $\dfrac{144}{24\,000}=0{,}006$, luego la muestra tiene $0{,}006\cdot120\,000=720$ personas: $0{,}006\cdot60\,000=360$, $0{,}006\cdot20\,000=120$, $144$ y $0{,}006\cdot16\,000=96$.
+**a) Muestreo estratificado con afijación proporcional.**
+1. Población total: $60\,000+20\,000+24\,000+16\,000=120\,000$.
+2. En afijación proporcional se muestrea la misma fracción de cada estrato. Con el tercero: $\dfrac{144}{24\,000}=0{,}006$.
+3. Tamaño total: $0{,}006\cdot120\,000=720$.
+4. Composición: $0{,}006\cdot60\,000=360$, $0{,}006\cdot20\,000=120$, $144$ y $0{,}006\cdot16\,000=96$ (suman $720$).
 
 **Muestra total de 720 personas: 360, 120, 144 y 96.**
 
-**b)** Muestras con reemplazamiento (9): $(1,1),(1,4),(1,7),(4,1),(4,4),(4,7),(7,1),(7,4),(7,7)$, con medias $1,\ 2{,}5,\ 4,\ 2{,}5,\ 4,\ 5{,}5,\ 4,\ 5{,}5,\ 7$.
-
-Media: $\mu_{\bar x}=\dfrac{36}{9}=4$. Varianza: $\sigma_{\bar x}^2=\dfrac{9+2{,}25+0+2{,}25+0+2{,}25+0+2{,}25+9}{9}=\dfrac{27}{9}=3$.
+**b) Muestras de tamaño 2 de $\{1,4,7\}$.**
+1. Con reemplazamiento hay $3^2=9$ muestras: $(1,1),(1,4),(1,7),(4,1),(4,4),(4,7),(7,1),(7,4),(7,7)$.
+2. Sus medias son $1,\ 2{,}5,\ 4,\ 2{,}5,\ 4,\ 5{,}5,\ 4,\ 5{,}5,\ 7$.
+3. Media de las medias: $\mu_{\bar x}=\dfrac{36}{9}=4$ (coincide con la media de la población).
+4. Varianza: $\sigma_{\bar x}^2=\dfrac{9+2{,}25+0+2{,}25+0+2{,}25+0+2{,}25+9}{9}=\dfrac{27}{9}=3$.
 
 **Media $4$ y desviación típica $\sqrt3\approx1{,}7321$.**
 ::::
@@ -2877,12 +2967,23 @@ $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\h
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\hat p=\dfrac{630}{2100}=0{,}3$, $n=2100$. Nivel $97{,}5\,\%$: $\Phi(z_{\alpha/2})=0{,}9875$ y en la tabla $\Phi(2{,}24)=0{,}9875$, luego $z_{\alpha/2}=2{,}24$.
+**Datos.** $\hat p=\dfrac{630}{2100}=0{,}3$, $n=2100$.
 
-**a)** $E=2{,}24\sqrt{\dfrac{0{,}3\cdot0{,}7}{2100}}=2{,}24\cdot0{,}01=0{,}0224$.
+**Valor crítico.** Nivel $97{,}5\,\%$: $\Phi(z_{\alpha/2})=0{,}9875$ y en la tabla $\Phi(2{,}24)=0{,}9875$, luego $z_{\alpha/2}=2{,}24$.
+
+**a) Intervalo.**
+1. Error máximo: $E=2{,}24\sqrt{\dfrac{0{,}3\cdot0{,}7}{2100}}=2{,}24\cdot0{,}01=0{,}0224$.
+2. Intervalo: $\hat p\pm E$:
 $$IC=(0{,}3-0{,}0224,\ 0{,}3+0{,}0224)=(0{,}2776,\ 0{,}3224).$$
 
-**b)** $E=0{,}01\Rightarrow n\ge\dfrac{2{,}24^2\cdot0{,}3\cdot0{,}7}{0{,}01^2}=10\,536{,}96$. **El tamaño mínimo es $n=10\,537$.**
+*Interpretación:* con confianza del $97{,}5\,\%$, entre el $27{,}76\,\%$ y el $32{,}24\,\%$ de los estudiantes proceden de otras provincias.
+
+**b) Tamaño mínimo.**
+1. Se impone $E=0{,}01$ (como máximo) y se despeja $n$:
+$$E=0{,}01\Rightarrow n\ge\dfrac{2{,}24^2\cdot0{,}3\cdot0{,}7}{0{,}01^2}=10\,536{,}96.$$
+2. Se redondea hacia arriba.
+
+**El tamaño mínimo es $n=10\,537$.**
 ::::
 :::::
 
@@ -2932,12 +3033,21 @@ $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\h
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\hat p=\dfrac{36}{100}=0{,}36$, $n=100$, $z_{\alpha/2}=1{,}75$ (nivel $92\,\%$).
+**Datos.** $\hat p=\dfrac{36}{100}=0{,}36$, $n=100$, $z_{\alpha/2}=1{,}75$ (nivel $92\,\%$: el valor de la tabla más próximo a $\Phi=0{,}96$).
 
-**a)** $E=1{,}75\sqrt{\dfrac{0{,}36\cdot0{,}64}{100}}=1{,}75\cdot0{,}048=0{,}084$.
+**a) Intervalo.**
+1. Error máximo: $E=1{,}75\sqrt{\dfrac{0{,}36\cdot0{,}64}{100}}=1{,}75\cdot0{,}048=0{,}084$.
+2. Intervalo: $\hat p\pm E$:
 $$IC=(0{,}36-0{,}084,\ 0{,}36+0{,}084)=(0{,}276,\ 0{,}444).$$
 
-**b)** $E\le0{,}025\iff n\ge\dfrac{1{,}75^2\cdot0{,}36\cdot0{,}64}{0{,}025^2}=1\,128{,}96$. **El tamaño mínimo es $n=1\,129$.**
+*Interpretación:* con confianza del $92\,\%$, entre el $27{,}6\,\%$ y el $44{,}4\,\%$ de los jóvenes están suscritos.
+
+**b) Tamaño mínimo.**
+1. Se impone $E\le0{,}025$ y se despeja $n$:
+$$E\le0{,}025\iff n\ge\dfrac{1{,}75^2\cdot0{,}36\cdot0{,}64}{0{,}025^2}=1\,128{,}96.$$
+2. Se redondea hacia arriba.
+
+**El tamaño mínimo es $n=1\,129$.**
 ::::
 :::::
 
@@ -2986,12 +3096,22 @@ $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$ (media) o $E=z_{\alpha/2}\sqrt{\dfrac{\h
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\sigma=\sqrt{9{,}61}=3{,}1$ meses y $n=10$. Suma de los datos: $311{,}9$, luego $\bar x=31{,}19$.
+**Datos.** $\sigma=\sqrt{9{,}61}=3{,}1$ meses y $n=10$. Suma de los datos: $311{,}9$, luego $\bar x=\dfrac{311{,}9}{10}=31{,}19$.
 
-**a)** Nivel $97\,\%$: $z_{\alpha/2}=2{,}17$. $E=2{,}17\cdot\dfrac{3{,}1}{\sqrt{10}}=2{,}1273$.
+**a) Intervalo al $97\,\%$.**
+1. Valor crítico: $z_{\alpha/2}=2{,}17$ (tabla: $\Phi(2{,}17)=0{,}9850$).
+2. Error máximo: $E=2{,}17\cdot\dfrac{3{,}1}{\sqrt{10}}=2{,}1273$.
+3. Intervalo:
 $$IC=(31{,}19-2{,}1273,\ 31{,}19+2{,}1273)=(29{,}0627,\ 33{,}3173).$$
 
-**b)** $E<0{,}15\iff n>\left(\dfrac{2{,}17\cdot3{,}1}{0{,}15}\right)^2=2\,011{,}22$. **Hace falta una muestra de al menos $n=2\,012$ teléfonos.**
+*Interpretación:* con confianza del $97\,\%$, la vida útil media está entre $29{,}06$ y $33{,}32$ meses.
+
+**b) Tamaño mínimo.**
+1. Se impone $E<0{,}15$ y se despeja $n$:
+$$E<0{,}15\iff n>\left(\dfrac{2{,}17\cdot3{,}1}{0{,}15}\right)^2=2\,011{,}22.$$
+2. Se redondea hacia arriba.
+
+**Hace falta una muestra de al menos $n=2\,012$ teléfonos.**
 ::::
 :::::
 

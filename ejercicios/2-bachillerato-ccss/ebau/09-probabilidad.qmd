@@ -2636,13 +2636,23 @@ Si $A_1,\dots,A_n$ forman un sistema completo de sucesos: $P(B)=\sum P(A_i)\,P(B
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sea $H$ «hipotecario» y $G$ «supera los $200\,000$ €»: $P(H)=0{,}7$, $P(G)=0{,}25$, $P(H\cap G)=0{,}2$.
+1. **Sucesos y datos.** Sea $H$ «el crédito es hipotecario» y $G$ «supera los $200\,000$ €»: $P(H)=0{,}7$, $P(G)=0{,}25$, $P(H\cap G)=0{,}2$.
 
-**a)** $P(H^C\cap G^C)=1-P(H\cup G)=1-(0{,}7+0{,}25-0{,}2)=1-0{,}75=\mathbf{0{,}25}$.
+**a)** No hipotecario y no superior a $200\,000$ € es el complementario de la unión.
+1. Se aplica $P(H^C\cap G^C)=1-P(H\cup G)$, con $P(H\cup G)=0{,}7+0{,}25-0{,}2=0{,}75$:
+$$P(H^C\cap G^C)=1-(0{,}7+0{,}25-0{,}2)=1-0{,}75=\mathbf{0{,}25}.$$
 
-**b)** $P(G^C\mid H^C)=\dfrac{P(H^C\cap G^C)}{P(H^C)}=\dfrac{0{,}25}{0{,}3}=\dfrac{5}{6}\approx\mathbf{0{,}8333}$.
+**b)** Probabilidad condicionada.
+1. $P(H^C)=1-0{,}7=0{,}3$ y $P(H^C\cap G^C)=0{,}25$ (apartado anterior).
+2. $P(G^C\mid H^C)=\dfrac{P(H^C\cap G^C)}{P(H^C)}=\dfrac{0{,}25}{0{,}3}=\dfrac{5}{6}\approx\mathbf{0{,}8333}$.
 
-**c)** $P(H^C\mid G)=\dfrac{P(G\cap H^C)}{P(G)}=\dfrac{0{,}25-0{,}2}{0{,}25}=\dfrac{0{,}05}{0{,}25}=\mathbf{0{,}2}$.
+*Interpretación:* entre los créditos no hipotecarios, más de 8 de cada 10 no superan los $200\,000$ €.
+
+**c)** Probabilidad condicionada.
+1. $P(G\cap H^C)=P(G)-P(G\cap H)=0{,}25-0{,}2=0{,}05$.
+2. $P(H^C\mid G)=\dfrac{P(G\cap H^C)}{P(G)}=\dfrac{0{,}25-0{,}2}{0{,}25}=\dfrac{0{,}05}{0{,}25}=\mathbf{0{,}2}$.
+
+*Interpretación:* de los créditos de más de $200\,000$ €, solo el $20\,\%$ no es hipotecario.
 ::::
 :::::
 
@@ -2701,13 +2711,20 @@ Si $A_1,\dots,A_n$ forman un sistema completo de sucesos: $P(B)=\sum P(A_i)\,P(B
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sea $V$ «juega con videojuegos» y $L$ «lee libros»: $P(V)=0{,}65$, $P(L)=0{,}45$, $P(V^C\cap L^C)=0{,}15$.
+1. **Sucesos y datos.** Sea $V$ «juega con videojuegos» y $L$ «lee libros»: $P(V)=0{,}65$, $P(L)=0{,}45$, $P(V^C\cap L^C)=0{,}15$.
 
-**a)** $P(V\cup L)=1-0{,}15=\mathbf{0{,}85}$.
+**a)** «No hace ninguna de las dos cosas» es el complementario de la unión.
+1. $P(V\cup L)=1-P(V^C\cap L^C)=1-0{,}15=\mathbf{0{,}85}$.
 
-**b)** $P(V\cap L)=0{,}65+0{,}45-0{,}85=0{,}25$, luego $P(V\cap L^C)=P(V)-P(V\cap L)=0{,}65-0{,}25=\mathbf{0{,}4}$.
+**b)** Videojuegos y no libros.
+1. Intersección: $P(V\cap L)=0{,}65+0{,}45-0{,}85=0{,}25$.
+2. $P(V\cap L^C)=P(V)-P(V\cap L)=0{,}65-0{,}25=\mathbf{0{,}4}$.
 
-**c)** $P(L\mid V^C)=\dfrac{P(L\cap V^C)}{P(V^C)}=\dfrac{0{,}45-0{,}25}{0{,}35}=\dfrac{0{,}2}{0{,}35}=\dfrac{4}{7}\approx\mathbf{0{,}5714}$.
+**c)** Probabilidad condicionada.
+1. $P(V^C)=1-0{,}65=0{,}35$ y $P(L\cap V^C)=P(L)-P(V\cap L)=0{,}45-0{,}25=0{,}2$.
+2. $P(L\mid V^C)=\dfrac{P(L\cap V^C)}{P(V^C)}=\dfrac{0{,}45-0{,}25}{0{,}35}=\dfrac{0{,}2}{0{,}35}=\dfrac{4}{7}\approx\mathbf{0{,}5714}$.
+
+*Interpretación:* entre quienes no juegan con videojuegos, algo más de la mitad lee libros.
 ::::
 :::::
 
@@ -2764,13 +2781,20 @@ $P(A|B)=\dfrac{P(A\cap B)}{P(B)}$ (probabilidad de $A$ sabiendo que ocurrió $B$
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $P(A\cap B)=P(A)+P(B)-P(A\cup B)=0{,}7+0{,}6-0{,}8=\mathbf{0{,}5}$.
+**a)** Intersección, despejada de la unión.
+1. $P(A\cap B)=P(A)+P(B)-P(A\cup B)=0{,}7+0{,}6-0{,}8=\mathbf{0{,}5}$.
 
-**b)** $P(A^C\cap B^C)=1-P(A\cup B)=1-0{,}8=\mathbf{0{,}2}$.
+**b)** Ni $A$ ni $B$ es el complementario de la unión (ley de De Morgan).
+1. $P(A^C\cap B^C)=1-P(A\cup B)=1-0{,}8=\mathbf{0{,}2}$.
 
-**c)** $P(A\cap B^C)=P(A)-P(A\cap B)=0{,}7-0{,}5=\mathbf{0{,}2}$.
+**c)** $A$ pero no $B$.
+1. $P(A\cap B^C)=P(A)-P(A\cap B)=0{,}7-0{,}5=\mathbf{0{,}2}$.
 
-**d)** $P(A\mid B^C)=\dfrac{P(A\cap B^C)}{P(B^C)}=\dfrac{0{,}2}{0{,}4}=\mathbf{0{,}5}$.
+**d)** Probabilidad condicionada.
+1. $P(B^C)=1-0{,}6=0{,}4$.
+2. $P(A\mid B^C)=\dfrac{P(A\cap B^C)}{P(B^C)}=\dfrac{0{,}2}{0{,}4}=\mathbf{0{,}5}$.
+
+*Interpretación:* si no ocurre $B$, la mitad de las veces ocurre $A$.
 ::::
 :::::
 
@@ -2831,14 +2855,23 @@ Si $A_1,\dots,A_n$ forman un sistema completo de sucesos: $P(B)=\sum P(A_i)\,P(B
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sea $A$ «ha bebido alcohol» y $+$ «test positivo»: $P(A)=0{,}05$, $P(+\mid A)=0{,}96$, $P(+\mid A^C)=0{,}1$.
+1. **Sucesos y datos.** Sea $A$ «ha bebido alcohol» y $+$ «test positivo»: $P(A)=0{,}05$, $P(+\mid A)=0{,}96$, $P(+\mid A^C)=0{,}1$.
 
-**a)** $P(+)=0{,}05\cdot0{,}96+0{,}95\cdot0{,}1=0{,}048+0{,}095=0{,}143$.
+**a)** Es una probabilidad a posteriori (Bayes).
+1. Total de positivos (probabilidad total): $P(+)=0{,}05\cdot0{,}96+0{,}95\cdot0{,}1=0{,}048+0{,}095=0{,}143$.
+2. Bayes:
 $$P(A\mid+)=\frac{0{,}048}{0{,}143}=\frac{48}{143}\approx\mathbf{0{,}3357}.$$
 
-**b)** $P(-\cap A^C)=0{,}95\cdot0{,}9=\mathbf{0{,}855}$.
+*Interpretación:* solo uno de cada tres positivos ha bebido de verdad, porque casi todos los conductores no beben y el test falla un $10\,\%$ con ellos.
 
-**c)** $P(-)=1-0{,}143=0{,}857$ y $P(A^C\mid-)=\dfrac{0{,}855}{0{,}857}=\dfrac{855}{857}\approx\mathbf{0{,}9977}$.
+**b)** Negativo y no ha bebido.
+1. $P(-\cap A^C)=P(A^C)\cdot P(-\mid A^C)=0{,}95\cdot0{,}9=\mathbf{0{,}855}$.
+
+**c)** Probabilidad condicionada.
+1. $P(-)=1-0{,}143=0{,}857$.
+2. $P(A^C\mid-)=\dfrac{0{,}855}{0{,}857}=\dfrac{855}{857}\approx\mathbf{0{,}9977}$.
+
+*Interpretación:* un resultado negativo es casi seguro que corresponde a un conductor que no ha bebido.
 ::::
 :::::
 
@@ -2889,14 +2922,21 @@ $P(A|B)=\dfrac{P(A\cap B)}{P(B)}$ (probabilidad de $A$ sabiendo que ocurrió $B$
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Hay $36$ resultados posibles. Suma $2$: $1$ caso; suma mayor que $7$ ($8,9,10,11,12$): $5+4+3+2+1=15$ casos.
+**Casos favorables.** Hay $36$ resultados posibles al lanzar dos dados. Suma $2$: $1$ caso. Suma mayor que $7$ ($8,9,10,11,12$): $5+4+3+2+1=15$ casos.
 
-**a)** $P(\text{gana a la primera})=\dfrac{1+15}{36}=\dfrac{16}{36}=\mathbf{\dfrac{4}{9}}$.
+**a) Gana a la primera.**
+1. Casos favorables: $1+15=16$.
+2. $P(\text{gana a la primera})=\dfrac{1+15}{36}=\dfrac{16}{36}=\mathbf{\dfrac{4}{9}}$.
 
-**b)** Suma mayor que $9$ ($10,11,12$): $3+2+1=6$ casos, probabilidad $\dfrac{6}{36}=\dfrac{1}{6}$. Gana en la segunda oportunidad si no ganó antes y gana ahora:
+**b) Gana en la segunda oportunidad.**
+1. Suma mayor que $9$ ($10,11,12$): $3+2+1=6$ casos, probabilidad $\dfrac{6}{36}=\dfrac{1}{6}$.
+2. Solo hay segunda tirada si no ganó antes (probabilidad $\dfrac{5}{9}$); los lanzamientos son independientes:
 $$P=\frac{5}{9}\cdot\frac{1}{6}=\frac{5}{54}\approx\mathbf{0{,}0926}.$$
 
-**c)** $P(\text{gana})=\dfrac{4}{9}+\dfrac{5}{54}=\dfrac{24}{54}+\dfrac{5}{54}=\dfrac{29}{54}\approx\mathbf{0{,}5370}$.
+**c) Gana el juego.** Son dos casos incompatibles: gana a la primera o gana en la segunda.
+1. $P(\text{gana})=\dfrac{4}{9}+\dfrac{5}{54}=\dfrac{24}{54}+\dfrac{5}{54}=\dfrac{29}{54}\approx\mathbf{0{,}5370}$.
+
+*Interpretación:* Juan gana algo más de la mitad de las veces.
 ::::
 :::::
 
@@ -2948,15 +2988,21 @@ $P(A|B)=\dfrac{P(A\cap B)}{P(B)}$ (probabilidad de $A$ sabiendo que ocurrió $B$
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $O$ «tener ordenador» y $T$ «tener tablet»: $P(O)=0{,}6$, $P(T)=0{,}5$, $P(O\cap T)=0{,}2$.
+1. **Sucesos y datos.** Sea $O$ «tener ordenador» y $T$ «tener tablet»: $P(O)=0{,}6$, $P(T)=0{,}5$, $P(O\cap T)=0{,}2$.
 
-**a)** i) $P(O\cup T)=0{,}6+0{,}5-0{,}2=\mathbf{0{,}9}$.
+**a)** i) Unión.
+1. $P(O\cup T)=0{,}6+0{,}5-0{,}2=\mathbf{0{,}9}$.
 
-ii) $P(T^C\mid O^C)=\dfrac{P(O^C\cap T^C)}{P(O^C)}=\dfrac{1-0{,}9}{0{,}4}=\dfrac{0{,}1}{0{,}4}=\mathbf{0{,}25}$.
+ii) Probabilidad condicionada.
+1. $P(O^C)=1-0{,}6=0{,}4$ y $P(O^C\cap T^C)=1-P(O\cup T)=1-0{,}9=0{,}1$.
+2. $P(T^C\mid O^C)=\dfrac{P(O^C\cap T^C)}{P(O^C)}=\dfrac{1-0{,}9}{0{,}4}=\dfrac{0{,}1}{0{,}4}=\mathbf{0{,}25}$.
 
-iii) $P(O\cap T^C)=P(O)-P(O\cap T)=0{,}6-0{,}2=\mathbf{0{,}4}$.
+iii) Ordenador y no tablet.
+1. $P(O\cap T^C)=P(O)-P(O\cap T)=0{,}6-0{,}2=\mathbf{0{,}4}$.
 
-**b)** $P(O\cap T)=0{,}2\neq0$: **no son incompatibles.** $P(O)P(T)=0{,}3\neq0{,}2=P(O\cap T)$: **no son independientes.**
+**b) Incompatibilidad e independencia.**
+1. Incompatibles si $P(O\cap T)=0$. Aquí $P(O\cap T)=0{,}2\neq0$: **no son incompatibles.**
+2. Independientes si $P(O\cap T)=P(O)P(T)$. Aquí $P(O)P(T)=0{,}3\neq0{,}2=P(O\cap T)$: **no son independientes.**
 ::::
 :::::
 
@@ -3016,11 +3062,20 @@ Si $A_1,\dots,A_n$ forman un sistema completo de sucesos: $P(B)=\sum P(A_i)\,P(B
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sea $N$ «no encuentra trabajo en su región»: $P(A)=0{,}6$, $P(B)=0{,}3$, $P(C)=0{,}1$, $P(N\mid A)=0{,}4$, $P(N\mid B)=0{,}5$.
+1. **Sucesos y datos.** Sea $N$ «no encuentra trabajo en su región»: $P(A)=0{,}6$, $P(B)=0{,}3$, $P(C)=0{,}1$ (el resto), $P(N\mid A)=0{,}4$, $P(N\mid B)=0{,}5$.
 
-**a)** $P(N)=0{,}6\cdot0{,}4+0{,}3\cdot0{,}5+0{,}1\cdot P(N\mid C)=0{,}24+0{,}15+0{,}1\,P(N\mid C)=0{,}395$, de donde $P(N\mid C)=0{,}05$. **$P(\text{trabajo}\mid C)=1-0{,}05=\mathbf{0{,}95}$.**
+**a) Probabilidad de encontrar trabajo en $C$.**
+1. Probabilidad total: $P(N)=0{,}6\cdot0{,}4+0{,}3\cdot0{,}5+0{,}1\cdot P(N\mid C)=0{,}24+0{,}15+0{,}1\,P(N\mid C)$.
+2. Se iguala a $0{,}395$: $0{,}24+0{,}15+0{,}1\,P(N\mid C)=0{,}395$, de donde $P(N\mid C)=0{,}05$.
+3. Se pide el suceso contrario: $P(\text{trabajo}\mid C)=1-0{,}05$.
 
-**b)** $P(A\cup B\mid N)=\dfrac{P(A)P(N\mid A)+P(B)P(N\mid B)}{P(N)}=\dfrac{0{,}24+0{,}15}{0{,}395}=\dfrac{78}{79}\approx\mathbf{0{,}9873}$.
+**$P(\text{trabajo}\mid C)=\mathbf{0{,}95}$.**
+
+**b) Procede de $A$ o de $B$ si no encontró trabajo.**
+1. Son sucesos incompatibles, así que se suman sus numeradores de Bayes:
+$$P(A\cup B\mid N)=\frac{P(A)P(N\mid A)+P(B)P(N\mid B)}{P(N)}=\frac{0{,}24+0{,}15}{0{,}395}=\frac{78}{79}\approx\mathbf{0{,}9873}.$$
+
+*Interpretación:* casi todos los que no encuentran trabajo vienen de $A$ o $B$: son el $90\,\%$ de los estudiantes y la universidad $C$ tiene muy poco paro ($0{,}05$).
 ::::
 :::::
 
@@ -3069,13 +3124,20 @@ $P(A|B)=\dfrac{P(A\cap B)}{P(B)}$ (probabilidad de $A$ sabiendo que ocurrió $B$
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$P(A)=1-\dfrac{5}{7}=\dfrac{2}{7}$ y $P(B)=1-\dfrac{2}{3}=\dfrac{1}{3}$. Entonces $P(A\cap B)=P(A)+P(B)-P(A\cup B)=\dfrac{2}{7}+\dfrac{1}{3}-\dfrac{3}{7}=\dfrac{4}{21}$.
+**Datos previos.**
+1. $P(A)=1-\dfrac{5}{7}=\dfrac{2}{7}$ y $P(B)=1-\dfrac{2}{3}=\dfrac{1}{3}$.
+2. $P(A\cap B)=P(A)+P(B)-P(A\cup B)=\dfrac{2}{7}+\dfrac{1}{3}-\dfrac{3}{7}=\dfrac{4}{21}$.
 
-**a)** $P(A)P(B)=\dfrac{2}{7}\cdot\dfrac{1}{3}=\dfrac{2}{21}\neq\dfrac{4}{21}=P(A\cap B)$: **no son independientes.** $P(A\cap B)\neq0$: **no son incompatibles.**
+**a) Independencia e incompatibilidad.**
+1. Independientes si $P(A\cap B)=P(A)P(B)$. Aquí $P(A)P(B)=\dfrac{2}{7}\cdot\dfrac{1}{3}=\dfrac{2}{21}\neq\dfrac{4}{21}=P(A\cap B)$: **no son independientes.**
+2. Incompatibles si $P(A\cap B)=0$. Aquí $P(A\cap B)\neq0$: **no son incompatibles.**
 
-**b)** $P(A^C\cap B^C)=1-P(A\cup B)=1-\dfrac{3}{7}=\dfrac{4}{7}$.
+**b)** Ni $A$ ni $B$ es el complementario de la unión.
+1. $P(A^C\cap B^C)=1-P(A\cup B)=1-\dfrac{3}{7}=\dfrac{4}{7}$.
 
-**c)** $P(B\mid A^C)=\dfrac{P(B\cap A^C)}{P(A^C)}=\dfrac{P(B)-P(A\cap B)}{5/7}=\dfrac{\frac{1}{3}-\frac{4}{21}}{\frac{5}{7}}=\dfrac{\frac{1}{7}}{\frac{5}{7}}=\dfrac{1}{5}=\mathbf{0{,}2}$.
+**c)** Probabilidad condicionada.
+1. $P(B\cap A^C)=P(B)-P(A\cap B)=\dfrac{1}{3}-\dfrac{4}{21}=\dfrac{1}{7}$.
+2. $P(B\mid A^C)=\dfrac{P(B\cap A^C)}{P(A^C)}=\dfrac{P(B)-P(A\cap B)}{5/7}=\dfrac{\frac{1}{3}-\frac{4}{21}}{\frac{5}{7}}=\dfrac{\frac{1}{7}}{\frac{5}{7}}=\dfrac{1}{5}=\mathbf{0{,}2}$.
 ::::
 :::::
 
@@ -3139,13 +3201,20 @@ Si $A_1,\dots,A_n$ forman un sistema completo de sucesos: $P(B)=\sum P(A_i)\,P(B
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $T$ «admite tarjeta» y $M$ «admite móvil»: $P(T)=0{,}8$, $P(M)=0{,}5$, $P(T^C\cap M^C)=0{,}1$.
+1. **Sucesos y datos.** Sea $T$ «admite tarjeta» y $M$ «admite móvil»: $P(T)=0{,}8$, $P(M)=0{,}5$, $P(T^C\cap M^C)=0{,}1$.
 
-**a)** i) $P(T\cup M)=1-0{,}1=\mathbf{0{,}9}$.
+**a)** i) Alguno de los dos medios es la unión, complementario de «ninguno».
+1. $P(T\cup M)=1-0{,}1=\mathbf{0{,}9}$.
 
-ii) $P(T\cap M)=0{,}8+0{,}5-0{,}9=0{,}4$, luego $P(M\mid T)=\dfrac{P(M\cap T)}{P(T)}=\dfrac{0{,}4}{0{,}8}=\mathbf{0{,}5}$.
+ii) Probabilidad condicionada.
+1. Intersección: $P(T\cap M)=0{,}8+0{,}5-0{,}9=0{,}4$.
+2. $P(M\mid T)=\dfrac{P(M\cap T)}{P(T)}=\dfrac{0{,}4}{0{,}8}=\mathbf{0{,}5}$.
 
-**b)** $P(T)\cdot P(M)=0{,}8\cdot0{,}5=0{,}4=P(T\cap M)$: **sí son independientes** (equivalentemente, $P(M\mid T)=P(M)$).
+**b) Independencia.**
+1. Son independientes si $P(T\cap M)=P(T)P(M)$.
+2. $P(T)\cdot P(M)=0{,}8\cdot0{,}5=0{,}4=P(T\cap M)$: **sí son independientes** (equivalentemente, $P(M\mid T)=P(M)$).
+
+*Interpretación:* admitir tarjeta no cambia la probabilidad de admitir pago con móvil.
 ::::
 :::::
 
@@ -3192,14 +3261,26 @@ Si $A_1,\dots,A_n$ forman un sistema completo de sucesos: $P(B)=\sum P(A_i)\,P(B
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Boletos: $A$: $1054$, $B$: $99$, $C$: $1335-1054-99=182$. Sea $NP$ «no premiado»: $P(NP)=0{,}95$. Boletos premiados: $5$ de $B$ y $13$ de $C$, luego
-$$P(NP\cap B)=\frac{99-5}{1335}=\frac{94}{1335},\qquad P(NP\cap C)=\frac{182-13}{1335}=\frac{169}{1335},$$
+**Datos.**
+1. Boletos vendidos: $A$: $1054$, $B$: $99$, $C$: $1335-1054-99=182$.
+2. Sea $NP$ «no premiado»: $P(NP)=0{,}95$ (el dato del $95\,\%$ se usa como probabilidad exacta).
+3. Premiados: $5$ de $B$ y $13$ de $C$. Como no hay datos de premiados de $A$, se obtiene por diferencia.
+4. No premiados de $B$ y $C$:
+$$P(NP\cap B)=\frac{99-5}{1335}=\frac{94}{1335},\qquad P(NP\cap C)=\frac{182-13}{1335}=\frac{169}{1335}.$$
+5. No premiados de $A$ (el total es $0{,}95$):
 $$P(NP\cap A)=0{,}95-\frac{94}{1335}-\frac{169}{1335}=\frac{4021}{5340}\approx0{,}753.$$
-(El dato del $95\,\%$ se usa como probabilidad exacta.)
 
-**b)** $P(A\mid NP)=\dfrac{P(NP\cap A)}{P(NP)}=\dfrac{4021/5340}{0{,}95}=\dfrac{4021}{5073}\approx\mathbf{0{,}7926}$.
+**a) Establecimiento más probable dado «no premiado».**
+1. Se compara $P(\cdot\mid NP)$: $P(B\mid NP)=\dfrac{94/1335}{0{,}95}\approx0{,}0741$ y $P(C\mid NP)=\dfrac{169/1335}{0{,}95}\approx0{,}1333$.
+2. Para $A$ sale $0{,}7926$ (apartado b).
 
-**a)** $P(B\mid NP)=\dfrac{94/1335}{0{,}95}\approx0{,}0741$ y $P(C\mid NP)=\dfrac{169/1335}{0{,}95}\approx0{,}1333$. La mayor probabilidad es la de $A$: **el establecimiento $A$** ($0{,}7926$ frente a $0{,}1333$ y $0{,}0741$).
+La mayor probabilidad es la de $A$: **el establecimiento $A$** ($0{,}7926$ frente a $0{,}1333$ y $0{,}0741$).
+
+**b) Boleto no premiado vendido en $A$.**
+1. Probabilidad condicionada:
+$$P(A\mid NP)=\dfrac{P(NP\cap A)}{P(NP)}=\dfrac{4021/5340}{0{,}95}=\dfrac{4021}{5073}\approx\mathbf{0{,}7926}.$$
+
+*Interpretación:* casi 8 de cada 10 boletos sin premio salieron de $A$, que es el que más vendió.
 ::::
 :::::
 
@@ -3257,17 +3338,25 @@ Si $A_1,\dots,A_n$ forman un sistema completo de sucesos: $P(B)=\sum P(A_i)\,P(B
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $D$ «practica deporte» e $I$ «estudia idiomas»: $P(D\cup I)=0{,}8$, $P(D\cap I)=0{,}35$, $P(I^C)=0{,}6$, luego $P(I)=0{,}4$ y $P(D)=P(D\cup I)-P(I)+P(D\cap I)=0{,}8-0{,}4+0{,}35=0{,}75$.
+**Datos previos.** Sea $D$ «practica deporte» e $I$ «estudia idiomas»: $P(D\cup I)=0{,}8$, $P(D\cap I)=0{,}35$, $P(I^C)=0{,}6$.
+1. $P(I)=1-0{,}6=0{,}4$.
+2. De la unión: $P(D)=P(D\cup I)-P(I)+P(D\cap I)=0{,}8-0{,}4+0{,}35=0{,}75$.
 
-**a)** i) $P(D\cap I^C)=P(D)-P(D\cap I)=0{,}75-0{,}35=\mathbf{0{,}4}$.
+**a)** i) Deporte y no idiomas.
+1. $P(D\cap I^C)=P(D)-P(D\cap I)=0{,}75-0{,}35=\mathbf{0{,}4}$.
 
-ii) $P(I\cap D^C)=P(I)-P(D\cap I)=0{,}4-0{,}35=\mathbf{0{,}05}$.
+ii) Idiomas y no deporte.
+1. $P(I\cap D^C)=P(I)-P(D\cap I)=0{,}4-0{,}35=\mathbf{0{,}05}$.
 
-iii) $P(\text{solo una})=0{,}4+0{,}05=\mathbf{0{,}45}$.
+iii) Solo una de las dos (sucesos incompatibles, se suman).
+1. $P(\text{solo una})=0{,}4+0{,}05=\mathbf{0{,}45}$.
 
-iv) $P(D^C\cap I^C)=1-P(D\cup I)=1-0{,}8=\mathbf{0{,}2}$.
+iv) Ninguna de las dos.
+1. $P(D^C\cap I^C)=1-P(D\cup I)=1-0{,}8=\mathbf{0{,}2}$.
 
-**b)** $P(D)P(I)=0{,}75\cdot0{,}4=0{,}3\neq0{,}35=P(D\cap I)$: **no son independientes.**
+**b) Independencia.**
+1. Serían independientes si $P(D\cap I)=P(D)P(I)$.
+2. $P(D)P(I)=0{,}75\cdot0{,}4=0{,}3\neq0{,}35=P(D\cap I)$: **no son independientes.**
 ::::
 :::::
 
@@ -3317,13 +3406,21 @@ $P(A|B)=\dfrac{P(A\cap B)}{P(B)}$ (probabilidad de $A$ sabiendo que ocurrió $B$
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$P(A)=0{,}48$, $P(B)=0{,}35$, $P(C)=0{,}17$. Sea $E$ «la vacuna le es efectiva»: $P(E\mid A)=0{,}7$, $P(E\mid B)=0{,}95$, $P(E\mid C)=0{,}94$.
+1. **Sucesos y datos.** $P(A)=0{,}48$, $P(B)=0{,}35$, $P(C)=0{,}17$ (el resto). Sea $E$ «la vacuna le es efectiva»: $P(E\mid A)=0{,}7$, $P(E\mid B)=0{,}95$, $P(E\mid C)=0{,}94$.
 
-**a)** $P(A\cap E^C)=P(A)\,P(E^C\mid A)=0{,}48\cdot0{,}3=\mathbf{0{,}144}$.
+**a)** Vacunada con $A$ y no efectiva.
+1. $P(E^C\mid A)=1-0{,}7=0{,}3$.
+2. $P(A\cap E^C)=P(A)\,P(E^C\mid A)=0{,}48\cdot0{,}3=\mathbf{0{,}144}$.
 
-**b)** $P(E)=0{,}48\cdot0{,}7+0{,}35\cdot0{,}95+0{,}17\cdot0{,}94=0{,}336+0{,}3325+0{,}1598=\mathbf{0{,}8283}$.
+**b)** Probabilidad total.
+1. $P(E)=0{,}48\cdot0{,}7+0{,}35\cdot0{,}95+0{,}17\cdot0{,}94=0{,}336+0{,}3325+0{,}1598=\mathbf{0{,}8283}$.
 
-**c)** $P(C\mid E^C)=\dfrac{P(C)\,P(E^C\mid C)}{P(E^C)}=\dfrac{0{,}17\cdot0{,}06}{1-0{,}8283}=\dfrac{0{,}0102}{0{,}1717}=\dfrac{6}{101}\approx\mathbf{0{,}0594}$.
+**c)** Es una probabilidad a posteriori (Bayes).
+1. $P(E^C)=1-0{,}8283=0{,}1717$ y $P(C)\,P(E^C\mid C)=0{,}17\cdot0{,}06=0{,}0102$.
+2. Bayes:
+$$P(C\mid E^C)=\dfrac{P(C)\,P(E^C\mid C)}{P(E^C)}=\dfrac{0{,}17\cdot0{,}06}{1-0{,}8283}=\dfrac{0{,}0102}{0{,}1717}=\dfrac{6}{101}\approx\mathbf{0{,}0594}.$$
+
+*Interpretación:* entre las personas a las que la vacuna no funciona, menos del $6\,\%$ recibió la $C$.
 ::::
 :::::
 

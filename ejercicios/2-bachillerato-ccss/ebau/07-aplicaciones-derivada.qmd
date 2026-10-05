@@ -916,12 +916,20 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f'(x)=3x^2+2ax+b$. $f(0)=c=18$; la pendiente en $P$ es $f'(0)=b=-3$; el extremo en $x=3$: $f'(3)=27+6a+b=0\Rightarrow27+6a-3=0\Rightarrow a=-4$.
+**a) Parámetros.**
+1. Derivada: $f'(x)=3x^2+2ax+b$.
+2. $P(0,18)$ está en la gráfica: $f(0)=c=18$.
+3. Pendiente $-3$ en $P$: $f'(0)=b=-3$.
+4. Extremo en $x=3$: $f'(3)=27+6a+b=0\Rightarrow27+6a-3=0\Rightarrow a=-4$.
 
 **$a=-4$, $b=-3$, $c=18$**, es decir, $f(x)=x^3-4x^2-3x+18$ (que es la función $g$ del apartado siguiente).
 
-**b)** $g(x)=(x-3)^2(x+2)$ se anula en $x=-2$ y $x=3$ (doble), y $g\ge0$ en $[-2,3]$:
+**b) Área.**
+1. Se factoriza: $g(x)=(x-3)^2(x+2)$ se anula en $x=-2$ y en $x=3$ (raíz doble, la gráfica es tangente al eje).
+2. En $[-2,3]$ se cumple $g\ge0$, así que el área es la integral sin cambiar el signo.
+3. Barrow:
 $$A=\int_{-2}^{3}\left(x^3-4x^2-3x+18\right)dx=\left[\frac{x^4}{4}-\frac{4x^3}{3}-\frac{3x^2}{2}+18x\right]_{-2}^{3}=\frac{99}{4}-\left(-\frac{82}{3}\right)=\frac{625}{12}.$$
+
 **$A=\dfrac{625}{12}\ \text{u}^2\approx52{,}08\ \text{u}^2$**
 ::::
 :::::
@@ -978,11 +986,25 @@ El óptimo de una función derivable en un intervalo se busca entre los puntos c
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $B(x)=-(x-4)(x-12)>0\iff4<x<12$. Con $x\le10$: **hay beneficios si fumiga más de 4 y hasta 10 hectáreas** ($4<x\le10$).
+**a) Beneficios positivos.**
+1. Se factoriza: $B(x)=-(x-4)(x-12)$, que es positivo entre las raíces: $B(x)>0\iff4<x<12$.
+2. Se añade la limitación $x\le10$.
 
-**b)** $B'(x)=-2x+16=0\Rightarrow x=8$ y $B''<0$: máximo. $B(8)=-64+128-48=16$. **Debe fumigar 8 hectáreas y el beneficio máximo es de 16 mil euros ($16\,000$ €).**
+**Hay beneficios si fumiga más de 4 y hasta 10 hectáreas** ($4<x\le10$).
 
-**c)** $B(x)=7\iff-x^2+16x-48=7\iff x^2-16x+55=0\iff x=5$ o $x=11$. Como $x\le10$, **ha fumigado 5 hectáreas.**
+**b) Máximo beneficio.**
+1. Derivada: $B'(x)=-2x+16=0\Rightarrow x=8$, que está dentro de $[0,10]$.
+2. $B''<0$, luego es un máximo.
+3. Beneficio: $B(8)=-64+128-48=16$.
+
+**Debe fumigar 8 hectáreas y el beneficio máximo es de 16 mil euros ($16\,000$ €).**
+
+**c) Beneficio de $7\,000$ €.**
+1. En miles de euros, $B(x)=7$: $-x^2+16x-48=7\iff x^2-16x+55=0$.
+2. Soluciones: $x=5$ o $x=11$.
+3. Como $x\le10$, se descarta $x=11$.
+
+**Ha fumigado 5 hectáreas.**
 ::::
 :::::
 
@@ -1064,22 +1086,28 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f'(x)=3x^2+2bx+c$. Extremo en $x=\dfrac{1}{3}$: $f'\left(\dfrac{1}{3}\right)=\dfrac{1}{3}+\dfrac{2b}{3}+c=0$. Pasa por $(-2,-3)$: $-8+4b-2c-1=-3\Rightarrow2b-c=3$. Sumando $c=-\dfrac{1}{3}-\dfrac{2b}{3}$ en la segunda: $2b+\dfrac{1}{3}+\dfrac{2b}{3}=3$, es decir, $\dfrac{8b}{3}=\dfrac{8}{3}$.
+**a) Parámetros $b$ y $c$.**
+1. Derivada: $f'(x)=3x^2+2bx+c$.
+2. Extremo en $x=\dfrac{1}{3}$: $f'\left(\dfrac{1}{3}\right)=\dfrac{1}{3}+\dfrac{2b}{3}+c=0$, de donde $c=-\dfrac{1}{3}-\dfrac{2b}{3}$.
+3. La gráfica pasa por $(-2,-3)$: $-8+4b-2c-1=-3\Rightarrow2b-c=3$.
+4. Se sustituye $c$ en la segunda: $2b+\dfrac{1}{3}+\dfrac{2b}{3}=3$, es decir, $\dfrac{8b}{3}=\dfrac{8}{3}$, luego $b=1$ y $c=-1$.
 
 **$b=1$ y $c=-1$.**
 
-**b)** $g(x)=-(x-1)(x+1)^2$. Cortes: con $OX$ en $x=-1$ (doble, tangente al eje) y $x=1$; con $OY$ en $(0,1)$. $g'(x)=-3x^2-2x+1=-(3x-1)(x+1)$:
-
-- $g'<0$ en $(-\infty,-1)$: decrece.
-- $g'>0$ en $\left(-1,\dfrac{1}{3}\right)$: crece.
-- $g'<0$ en $\left(\dfrac{1}{3},+\infty\right)$: decrece.
-
-Mínimo relativo en $(-1,0)$ y máximo relativo en $\left(\dfrac{1}{3},\dfrac{32}{27}\right)$. La gráfica viene de $+\infty$, toca el eje en $(-1,0)$, sube hasta el máximo, pasa por $(0,1)$ y cruza el eje en $(1,0)$ hacia $-\infty$.
+**b) Esbozo y área.**
+1. **Cortes.** Se factoriza: $g(x)=-(x-1)(x+1)^2$. Con $OX$: $x=-1$ (doble, tangente al eje) y $x=1$. Con $OY$: $(0,1)$.
+2. **Monotonía.** $g'(x)=-3x^2-2x+1=-(3x-1)(x+1)$, con raíces $x=-1$ y $x=\dfrac{1}{3}$:
+   - $g'<0$ en $(-\infty,-1)$: decrece.
+   - $g'>0$ en $\left(-1,\dfrac{1}{3}\right)$: crece.
+   - $g'<0$ en $\left(\dfrac{1}{3},+\infty\right)$: decrece.
+3. **Extremos.** Mínimo relativo en $(-1,0)$ y máximo relativo en $\left(\dfrac{1}{3},\dfrac{32}{27}\right)$.
+4. **Forma.** La gráfica viene de $+\infty$, toca el eje en $(-1,0)$, sube hasta el máximo, pasa por $(0,1)$ y cruza el eje en $(1,0)$ hacia $-\infty$.
 
 ![Gráfica de g(x)=−x³−x²+x+1: tangente al eje X en (−1,0), máximo en (1/3, 32/27) y corte con el eje X en (1,0); recinto sombreado entre x=−1 y x=1](fig/2022-ext-e3.svg){fig-alt="Gráfica de g(x)=−x³−x²+x+1: tangente al eje X en (−1,0), máximo en (1/3, 32/27) y corte con el eje X en (1,0); recinto sombreado entre x=−1 y x=1" width="75%" fig-align="center"}
 
-El recinto acotado va de $x=-1$ a $x=1$, con $g\ge0$:
+5. **Área.** El recinto acotado va de $x=-1$ a $x=1$, con $g\ge0$. Barrow:
 $$A=\int_{-1}^{1}\left(-x^3-x^2+x+1\right)dx=\left[-\frac{x^4}{4}-\frac{x^3}{3}+\frac{x^2}{2}+x\right]_{-1}^{1}=\frac{11}{12}-\left(-\frac{5}{12}\right)=\frac{4}{3}.$$
+
 **$A=\dfrac{4}{3}\ \text{u}^2$**
 ::::
 :::::
@@ -1123,15 +1151,27 @@ El óptimo de una función derivable en un intervalo se busca entre los puntos c
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Beneficio $=$ ingresos $-$ costes: $B(x)=I(x)-C(x)=x^3-x-x^3+x^2-6=x^2-x-6$, con $0\le x\le8$.
+**a) Función beneficio.**
+1. Beneficio = ingresos − costes:
+$$B(x)=I(x)-C(x)=x^3-x-\left(x^3-x^2+6\right)=x^2-x-6,\qquad0\le x\le8.$$
+2. Es decir, $B(x)=x^2-x-6$ en miles de euros.
 
-**b)** $B(x)=(x-3)(x+2)>0\iff x>3$ (pues $x\ge0$). **Obtiene beneficios si está abierta más de 3 horas y hasta 8 horas** ($3<x\le8$).
+**b) Horas con beneficios.**
+1. Se factoriza: $B(x)=(x-3)(x+2)$.
+2. Hay beneficio si $B(x)>0$. Como $x\ge0$, $x+2>0$ y basta $x>3$.
 
-**c)** $B'(x)=2x-1=0\Rightarrow x=\dfrac{1}{2}$, con $B''=2>0$: mínimo. $B\left(\dfrac{1}{2}\right)=\dfrac{1}{4}-\dfrac{1}{2}-6=-\dfrac{25}{4}$. En el extremo $B(0)=-6$.
+**Obtiene beneficios si está abierta más de 3 horas y hasta 8 horas** ($3<x\le8$).
+
+**c) Mayores pérdidas.**
+1. Derivada: $B'(x)=2x-1=0\Rightarrow x=\dfrac{1}{2}$.
+2. $B''=2>0$: es un mínimo.
+3. Valor: $B\left(\dfrac{1}{2}\right)=\dfrac{1}{4}-\dfrac{1}{2}-6=-\dfrac{25}{4}$. En el extremo del intervalo, $B(0)=-6$, que es mayor.
 
 **Las mayores pérdidas se tienen a las $0{,}5$ horas (media hora) y ascienden a $6{,}25$ mil euros ($6\,250$ €).**
 
-**d)** $B$ es creciente para $x>\dfrac{1}{2}$, luego el máximo está en el extremo $x=8$: $B(8)=64-8-6=50$.
+**d) Máximo beneficio.**
+1. $B$ es creciente para $x>\dfrac{1}{2}$, luego el máximo está en el extremo $x=8$.
+2. $B(8)=64-8-6=50$.
 
 **Debe permanecer abierta 8 horas, con un beneficio máximo de $50$ mil euros ($50\,000$ €).**
 ::::

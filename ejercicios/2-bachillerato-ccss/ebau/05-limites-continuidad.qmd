@@ -1771,12 +1771,19 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Continuidad en $x=1$: $6\cdot1-3=3$ y $a+b+2$; así $a+b+2=3\Rightarrow a+b=1$. Derivabilidad: $f'(x)=6$ si $x<1$ y $f'(x)=2ax+b$ si $x>1$, luego $2a+b=6$. Restando, $a=5$ y $b=-4$.
+**a) Parámetros.**
+1. Continuidad en $x=1$: los dos trozos deben coincidir. Por la izquierda, $6\cdot1-3=3$; por la derecha, $a+b+2$. Así $a+b+2=3\Rightarrow a+b=1$.
+2. Derivabilidad: $f'(x)=6$ si $x<1$ y $f'(x)=2ax+b$ si $x>1$. Deben coincidir en $x=1$: $2a+b=6$.
+3. Se resta la primera ecuación de la segunda: $a=5$ y, entonces, $b=-4$.
 
 **$a=5$ y $b=-4$.**
 
-**b)** $g(x)=-2(x-1)(x-3)$ corta al eje $OX$ en $x=1$ y $x=3$, y $g\ge0$ entre ellos:
+**b) Área.**
+1. Se factoriza: $g(x)=-2(x-1)(x-3)$ corta al eje $OX$ en $x=1$ y $x=3$.
+2. Es una parábola abierta hacia abajo, luego $g\ge0$ entre las raíces.
+3. Barrow:
 $$A=\int_1^3\left(-2x^2+8x-6\right)dx=\left[-\frac{2x^3}{3}+4x^2-6x\right]_1^3=0-\left(-\frac{8}{3}\right)=\frac{8}{3}.$$
+
 **$A=\dfrac{8}{3}\ \text{u}^2$**
 ::::
 :::::
@@ -1844,18 +1851,25 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** En $x=-1$: $\displaystyle\lim_{x\to-1^-}f=4-16+17=5$ y $f(-1)=\dfrac{1}{3}(10+5)=5$: **continua.** Derivadas laterales: $f'(-1^-)=8x+16=8$ y $f'(-1^+)=-\dfrac{5}{3}$: **no derivable en $x=-1$.**
-
-En $x=2$: $f(2)=\dfrac{1}{3}(10-10)=0$ y $\displaystyle\lim_{x\to2^+}f=\dfrac{3}{2}$: **discontinuidad de salto finito**, luego no derivable.
+**a) Continuidad y derivabilidad.** Cada trozo es continuo y derivable en su intervalo abierto; solo hay que estudiar $x=-1$ y $x=2$.
+1. En $x=-1$: $\displaystyle\lim_{x\to-1^-}f=4-16+17=5$ y $f(-1)=\dfrac{1}{3}(10+5)=5$: **continua.**
+2. Derivadas laterales en $x=-1$: $f'(-1^-)=8x+16=8$ y $f'(-1^+)=-\dfrac{5}{3}$. No coinciden: **no derivable en $x=-1$** (punto anguloso).
+3. En $x=2$: $f(2)=\dfrac{1}{3}(10-10)=0$ y $\displaystyle\lim_{x\to2^+}f=\dfrac{3}{2}$: **discontinuidad de salto finito**, luego tampoco es derivable.
 
 **$f$ es continua en $\mathbb R\setminus\{2\}$ y derivable en $\mathbb R\setminus\{-1,2\}$.**
 
-**b)** Para $x<-1$: parábola $y=4x^2+16x+17$ (vértice $(-2,1)$, pasa por $(-1,5)$). Para $-1\le x\le2$: segmento de recta de $(-1,5)$ a $(2,0)$. Para $x>2$: recta horizontal $y=\dfrac{3}{2}$ (con el punto «abierto» en $\left(2,\dfrac{3}{2}\right)$).
+**b) Gráfica.**
+1. Para $x<-1$: parábola $y=4x^2+16x+17$ (vértice $(-2,1)$, pasa por $(-1,5)$).
+2. Para $-1\le x\le2$: segmento de recta de $(-1,5)$ a $(2,0)$.
+3. Para $x>2$: recta horizontal $y=\dfrac{3}{2}$, con el punto «abierto» en $\left(2,\dfrac{3}{2}\right)$.
 
 ![Gráfica de f: parábola 4x²+16x+17 hasta x=−1, segmento de (−1,5) a (2,0) y recta horizontal y=3/2 desde x=2 (salto en x=2); recinto sombreado entre x=−2 y x=2](fig/2022-ord-res-e3.svg){fig-alt="Gráfica de f: parábola 4x²+16x+17 hasta x=−1, segmento de (−1,5) a (2,0) y recta horizontal y=3/2 desde x=2 (salto en x=2); recinto sombreado entre x=−2 y x=2" width="75%" fig-align="center"}
 
-**c)** En $[-2,2]$, $f\ge0$ ($4x^2+16x+17$ no se anula, $\Delta<0$):
+**c) Área entre $x=-2$ y $x=2$.**
+1. En $[-2,2]$, $f\ge0$: la parábola no corta al eje ($4x^2+16x+17$ no se anula, $\Delta<0$) y el segmento llega a $0$ en $x=2$.
+2. Se parte la integral en los dos trozos de ese intervalo:
 $$A=\int_{-2}^{-1}\left(4x^2+16x+17\right)dx+\int_{-1}^{2}\frac{10-5x}{3}\,dx=\frac{7}{3}+\frac{15}{2}=\frac{59}{6}.$$
+
 **$A=\dfrac{59}{6}\ \text{u}^2$**
 ::::
 :::::
@@ -1941,16 +1955,26 @@ Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Continuidad en $x=1$: $a+b+1=2$, es decir $a+b=1$. Derivabilidad: $f'(x)=2ax+b$ si $x<1$ y $f'(x)=-\dfrac{2}{x^2}$ si $x>1$, luego $2a+b=-2$. Restando, $a=-3$ y $b=4$.
+**a) Continuidad y derivabilidad en $x=1$.**
+1. Continuidad: $f(1)=a+b+1$ debe coincidir con el límite por la derecha, $\dfrac{2}{1}=2$. Así $a+b=1$.
+2. Derivabilidad: $f'(x)=2ax+b$ si $x<1$ y $f'(x)=-\dfrac{2}{x^2}$ si $x>1$. En $x=1$ deben coincidir: $2a+b=-2$.
+3. Se restan las dos ecuaciones: $a=-3$ y, entonces, $b=4$.
 
 **$a=-3$ y $b=4$.**
 
-**b)** Con $a=-3$, $b=4$: si $x\le1$, $f(x)=-3x^2+4x+1$, $f'(x)=-6x+4=0\Rightarrow x=\dfrac{2}{3}$, con $f''=-6<0$: máximo, $f\left(\dfrac{2}{3}\right)=\dfrac{7}{3}$. Si $x>1$, $f'(x)=-\dfrac{2}{x^2}<0$ (no hay extremos), y en $x=1$ es derivable con $f'(1)=-2<0$.
+**b) Extremos relativos** (con $a=-3$, $b=4$).
+1. Si $x\le1$: $f(x)=-3x^2+4x+1$ y $f'(x)=-6x+4=0\Rightarrow x=\dfrac{2}{3}$.
+2. $f''=-6<0$: es un máximo, con $f\left(\dfrac{2}{3}\right)=\dfrac{7}{3}$.
+3. Si $x>1$: $f'(x)=-\dfrac{2}{x^2}<0$, siempre decreciente, sin extremos.
+4. En $x=1$ la función es derivable con $f'(1)=-2<0$, así que tampoco hay extremo allí.
 
 **Máximo relativo en $\left(\dfrac{2}{3},\dfrac{7}{3}\right)$; no hay mínimos relativos.**
 
-**c)** Con $a=-2$, $b=3$:
+**c) Integral** (con $a=-2$, $b=3$).
+1. Se parte en el punto donde cambia la expresión, $x=1$.
+2. Se integra cada trozo con Barrow:
 $$\int_{-1}^{3}f=\int_{-1}^{1}\left(-2x^2+3x+1\right)dx+\int_1^3\frac2x\,dx=\left[-\frac{2x^3}{3}+\frac{3x^2}{2}+x\right]_{-1}^{1}+\left[2\ln x\right]_1^3=\frac{2}{3}+2\ln3.$$
+
 **$\displaystyle\int_{-1}^{3}f(x)\,dx=\dfrac{2}{3}+2\ln3\approx2{,}864$**
 ::::
 :::::
@@ -2038,16 +2062,23 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Continuidad en $x=1$: $a(1+1)^2=4a$ y $\dfrac b2+2$; así $4a=\dfrac b2+2$. Derivabilidad: $f'(x)=2a(x+1)$ si $x<1$ y $f'(x)=bx$ si $x>1$, luego $4a=b$. Sustituyendo, $4a=2a+2\Rightarrow a=1$ y $b=4$.
+**a) Parámetros $a$ y $b$.**
+1. Continuidad en $x=1$: por la izquierda, $a(1+1)^2=4a$; por la derecha, $\dfrac b2+2$. Así $4a=\dfrac b2+2$.
+2. Derivabilidad: $f'(x)=2a(x+1)$ si $x<1$ y $f'(x)=bx$ si $x>1$. En $x=1$ deben coincidir: $4a=b$.
+3. Se sustituye $b=4a$ en la primera: $4a=2a+2\Rightarrow a=1$ y $b=4$.
 
 **$a=1$ y $b=4$.**
 
-**b)** Con $a=1$ y $b=2$: $f(x)=(x+1)^2$ en $[-3,1]$ (arco de parábola de vértice $(-1,0)$, que pasa por $(-3,4)$, $(0,1)$ y $(1,4)$) y $f(x)=x^2+2$ en $(1,2]$ (arco de parábola que empieza, «abierto», en $(1,3)$ y llega a $(2,6)$). Hay un salto en $x=1$ (de $4$ a $3$).
+**b) Gráfica y área** (con $a=1$ y $b=2$).
+1. En $[-3,1]$: $f(x)=(x+1)^2$, arco de parábola de vértice $(-1,0)$ que pasa por $(-3,4)$, $(0,1)$ y $(1,4)$.
+2. En $(1,2]$: $f(x)=x^2+2$, arco de parábola que empieza, «abierto», en $(1,3)$ y llega a $(2,6)$.
+3. Hay un salto en $x=1$ (de $4$ a $3$), porque con estos valores $f$ no es continua.
 
 ![Gráfica de f con (a, b) = (1, 2): parábola (x+1)² hasta x=1 y x²+2 desde x=1, con salto de 4 a 3; recinto sombreado entre x=−2 y x=1](fig/2022-ext-res-e3.svg){fig-alt="Gráfica de f con (a, b) = (1, 2): parábola (x+1)² hasta x=1 y x²+2 desde x=1, con salto de 4 a 3; recinto sombreado entre x=−2 y x=1" width="75%" fig-align="center"}
 
-Área entre $x=-2$ y $x=1$, con $f\ge0$:
+4. Entre $x=-2$ y $x=1$ solo interviene el primer trozo y $f\ge0$ (es un cuadrado). Barrow:
 $$A=\int_{-2}^{1}(x+1)^2dx=\left[\frac{(x+1)^3}{3}\right]_{-2}^{1}=\frac{8}{3}-\left(-\frac{1}{3}\right)=3.$$
+
 **$A=3\ \text{u}^2$**
 ::::
 :::::
@@ -2135,16 +2166,25 @@ Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monoton
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Continuidad en $x=1$: $a+b+2=\dfrac{4}{2}=2\Rightarrow a+b=0$. Derivabilidad: $f'(x)=2ax+b$ si $x<1$ y $f'(x)=-\dfrac{4}{(x+1)^2}$ si $x>1$; en $x=1$: $2a+b=-1$. Restando, $a=-1$ y $b=1$.
+**a) Parámetros $a$ y $b$.**
+1. Continuidad en $x=1$: $a+b+2=\dfrac{4}{2}=2\Rightarrow a+b=0$.
+2. Derivabilidad: $f'(x)=2ax+b$ si $x<1$ y $f'(x)=-\dfrac{4}{(x+1)^2}$ si $x>1$. En $x=1$: $2a+b=-1$.
+3. Se restan las dos ecuaciones: $a=-1$ y, entonces, $b=1$.
 
 **$a=-1$ y $b=1$.**
 
-**b)** Para $x\le1$: $f(x)=-x^2+x+2=-(x-2)(x+1)$, parábola abierta hacia abajo con vértice $\left(\dfrac{1}{2},\dfrac{9}{4}\right)$ que corta al eje $OX$ en $x=-1$ y $x=2$ (aunque solo hasta $x=1$), al eje $OY$ en $(0,2)$ y llega a $(1,2)$. Para $x>1$: $f(x)=\dfrac{4}{x+1}$, hipérbola decreciente desde $(1,2)$, con asíntota horizontal $y=0$. La función es continua y suave en $x=1$.
+**b) Esbozo** (con $a=-1$ y $b=1$).
+1. Para $x\le1$: $f(x)=-x^2+x+2=-(x-2)(x+1)$, parábola abierta hacia abajo con vértice $\left(\dfrac{1}{2},\dfrac{9}{4}\right)$. Corta al eje $OX$ en $x=-1$ y $x=2$ (aunque solo hasta $x=1$), al eje $OY$ en $(0,2)$ y llega a $(1,2)$.
+2. Para $x>1$: $f(x)=\dfrac{4}{x+1}$, hipérbola decreciente desde $(1,2)$, con asíntota horizontal $y=0$.
+3. La función es continua y suave en $x=1$.
 
 ![Gráfica de f con (a, b) = (−1, 1): parábola −x²+x+2 hasta x=1 e hipérbola 4/(x+1) desde x=1; recinto sombreado entre x=−1 y x=1](fig/2022-ext-sup-e4.svg){fig-alt="Gráfica de f con (a, b) = (−1, 1): parábola −x²+x+2 hasta x=1 e hipérbola 4/(x+1) desde x=1; recinto sombreado entre x=−1 y x=1" width="75%" fig-align="center"}
 
-**c)** El recinto acotado va de $x=-1$ (donde $f$ corta al eje $OX$) a $x=1$, con $f\ge0$:
+**c) Área.**
+1. El recinto acotado va de $x=-1$ (donde $f$ corta al eje $OX$) a $x=1$ (la recta dada), con $f\ge0$.
+2. Barrow:
 $$A=\int_{-1}^{1}\left(-x^2+x+2\right)dx=\left[-\frac{x^3}{3}+\frac{x^2}{2}+2x\right]_{-1}^{1}=\frac{13}{6}-\left(-\frac{7}{6}\right)=\frac{10}{3}.$$
+
 **$A=\dfrac{10}{3}\ \text{u}^2$**
 ::::
 :::::

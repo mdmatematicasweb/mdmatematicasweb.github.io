@@ -1280,9 +1280,15 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ las cajas del primer tipo e $y$ las del segundo. Restricciones: piononos $3x+4y\le120$; pestiños $2x+6y\le150\iff x+3y\le75$; $y\ge9$; $x\ge0$. Hay que maximizar el número de cajas, $F(x,y)=x+y$.
-
-Vértices: $(0,9)$, $(0,25)$, $(12,21)$ (corte de $3x+4y=120$ con $x+3y=75$) y $(28,9)$ (corte de $3x+4y=120$ con $y=9$).
+1. **Incógnitas.** $x$ = cajas del primer tipo e $y$ = cajas del segundo.
+2. **Restricciones.**
+   - Piononos: $3x+4y\le120$.
+   - Pestiños: $2x+6y\le150\iff x+3y\le75$.
+   - Al menos 9 cajas del segundo tipo: $y\ge9$.
+   - No negatividad: $x\ge0$.
+3. **Función objetivo.** Un regalo es una caja, así que hay que maximizar el número de cajas, $F(x,y)=x+y$.
+4. **Vértices:** $(0,9)$, $(0,25)$, $(12,21)$ (corte de $3x+4y=120$ con $x+3y=75$) y $(28,9)$ (corte de $3x+4y=120$ con $y=9$).
+5. **Valor de $F$ en cada vértice:**
 
 | Vértice | $(0,9)$ | $(0,25)$ | $(12,21)$ | $(28,9)$ |
 |---|---|---|---|---|
@@ -1290,7 +1296,9 @@ Vértices: $(0,9)$, $(0,25)$, $(12,21)$ (corte de $3x+4y=120$ con $x+3y=75$) y $
 
 ![Región factible del ejercicio 1 (2022-ord), con sus vértices: (0, 9), (28, 9), (12, 21), (0, 25)](fig/2022-ord-e1.svg){fig-alt="Región factible del ejercicio 1 (2022-ord), con sus vértices: (0, 9), (28, 9), (12, 21), (0, 25)" width="75%" fig-align="center"}
 
-**Debe preparar 28 cajas del primer tipo y 9 del segundo (37 regalos).** Piononos utilizados: $3\cdot28+4\cdot9=120$. Pestiños utilizados: $2\cdot28+6\cdot9=110$.
+6. **Conclusión.** El máximo es $37$, en $(28,9)$. Piononos utilizados: $3\cdot28+4\cdot9=120$ (se agotan). Pestiños utilizados: $2\cdot28+6\cdot9=110$ (sobran $40$).
+
+**Debe preparar 28 cajas del primer tipo y 9 del segundo (37 regalos).**
 ::::
 :::::
 
@@ -1335,15 +1343,23 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ los lotes de tipo A e $y$ los de tipo B. Restricciones: cuadernos $2x+3y\le400$; estuches $2x+y\le300$; $y\le100$; $x\ge0$, $y\ge0$. Ventas: $V(x,y)=35x+45y$.
-
-Vértices: $(0,0)$, $(0,100)$, $(50,100)$, $(125,50)$ (corte de $2x+3y=400$ con $2x+y=300$) y $(150,0)$.
+1. **Incógnitas.** $x$ = lotes de tipo A e $y$ = lotes de tipo B.
+2. **Restricciones.**
+   - Cuadernos: $2x+3y\le400$.
+   - Estuches: $2x+y\le300$.
+   - No más de 100 lotes de tipo B: $y\le100$.
+   - No negatividad: $x\ge0$, $y\ge0$.
+3. **Función objetivo.** Valor de las ventas: $V(x,y)=35x+45y$.
+4. **Vértices:** $(0,0)$, $(0,100)$, $(50,100)$, $(125,50)$ (corte de $2x+3y=400$ con $2x+y=300$) y $(150,0)$.
+5. **Valor de $V$ en cada vértice:**
 
 | Vértice | $(0,0)$ | $(0,100)$ | $(50,100)$ | $(125,50)$ | $(150,0)$ |
 |---|---|---|---|---|---|
 | $V$ | $0$ | $4\,500$ | $6\,250$ | $6\,625$ | $5\,250$ |
 
 ![Región factible del ejercicio 2 (2022-ord-res), con sus vértices: (0, 0), (150, 0), (125, 50), (50, 100), (0, 100)](fig/2022-ord-res-e2.svg){fig-alt="Región factible del ejercicio 2 (2022-ord-res), con sus vértices: (0, 0), (150, 0), (125, 50), (50, 100), (0, 100)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El máximo es $6\,625$, en $(125,50)$ (se agotan cuadernos y estuches).
 
 **Debe vender 125 lotes de tipo A y 50 de tipo B, con un valor máximo de ventas de $6\,625$ €.**
 ::::
@@ -1390,15 +1406,23 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ los ajedreces e $y$ los dominós diarios. Restricciones: $x+y\ge3$; madera $2x+y\le7$; horas $4x+y\le9$; $x\ge0$, $y\ge0$. Ganancia: $G(x,y)=40x+15y$.
-
-Vértices: $(0,3)$, $(0,7)$, $(1,5)$ (corte de $2x+y=7$ con $4x+y=9$) y $(2,1)$ (corte de $4x+y=9$ con $x+y=3$).
+1. **Incógnitas.** $x$ = ajedreces e $y$ = dominós fabricados al día.
+2. **Restricciones.**
+   - Al menos 3 juegos: $x+y\ge3$.
+   - Madera, como máximo 7 kg: $2x+y\le7$.
+   - Horas de trabajo, como máximo 9: $4x+y\le9$.
+   - No negatividad: $x\ge0$, $y\ge0$.
+3. **Función objetivo.** Ganancia: $G(x,y)=40x+15y$.
+4. **Vértices:** $(0,3)$, $(0,7)$, $(1,5)$ (corte de $2x+y=7$ con $4x+y=9$) y $(2,1)$ (corte de $4x+y=9$ con $x+y=3$).
+5. **Valor de $G$ en cada vértice:**
 
 | Vértice | $(0,3)$ | $(0,7)$ | $(1,5)$ | $(2,1)$ |
 |---|---|---|---|---|
 | $G$ | $45$ | $105$ | $115$ | $95$ |
 
 ![Región factible del ejercicio 1 (2022-ord-sup), con sus vértices: (0, 3), (2, 1), (1, 5), (0, 7)](fig/2022-ord-sup-e1.svg){fig-alt="Región factible del ejercicio 1 (2022-ord-sup), con sus vértices: (0, 3), (2, 1), (1, 5), (0, 7)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El máximo es $115$, en $(1,5)$: se emplean $2\cdot1+5=7$ kg de madera y $4\cdot1+5=9$ horas (se agotan los dos recursos).
 
 **Deben fabricarse 1 ajedrez y 5 dominós al día, con una ganancia máxima de $115$ €.**
 ::::
@@ -1441,17 +1465,26 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 
 (Se toma $x\ge0$, $y\ge0$, como es habitual en estos problemas: sin esas condiciones el recinto no estaría acotado y la función $F$ no tendría mínimo.)
 
-**a)** Rectas frontera: $y=2x+7$, $-x+3y=21$, $x+2y=19$, $x+y=14$, $x=0$, $y=0$. Vértices del recinto:
+**a) Recinto y vértices.**
+1. Rectas frontera: $y=2x+7$, $-x+3y=21$, $x+2y=19$, $x+y=14$, $x=0$, $y=0$.
+2. Se sombrea en cada una el semiplano que cumple la desigualdad y se toma la zona común.
+3. Vértices del recinto:
 $$(0,0),\quad(0,7),\quad(3,8),\quad(9,5),\quad(14,0),$$
 donde $(0,7)$ es el corte de $x=0$ con $y=2x+7$ (que también está en $-x+3y=21$), $(3,8)$ el de $-x+3y=21$ con $x+2y=19$, $(9,5)$ el de $x+2y=19$ con $x+y=14$ y $(14,0)$ el de $x+y=14$ con $y=0$.
 
 ![Región factible del ejercicio 2 (2022-ext), con sus vértices: (0, 0), (14, 0), (9, 5), (3, 8), (0, 7)](fig/2022-ext-e2.svg){fig-alt="Región factible del ejercicio 2 (2022-ext), con sus vértices: (0, 0), (14, 0), (9, 5), (3, 8), (0, 7)" width="75%" fig-align="center"}
 
-**b)** $F(0,0)=0$, $F(0,7)=28$, $F(3,8)=35$, $F(9,5)=29$, $F(14,0)=14$.
+**b) Máximo y mínimo de $F(x,y)=x+4y$.**
+1. Se evalúa $F$ en los vértices: $F(0,0)=0$, $F(0,7)=28$, $F(3,8)=35$, $F(9,5)=29$, $F(14,0)=14$.
 
 **Máximo $35$ en $(3,8)$ y mínimo $0$ en $(0,0)$.**
 
-**c)** $F$ toma en la región todos los valores entre su mínimo ($0$) y su máximo ($35$). **El valor $40>35$ no puede alcanzarse; el valor $20$ sí** (por ejemplo, en el punto $(4,4)$: $4+16=20$, que está en la región).
+**c) ¿Puede valer $40$? ¿Y $20$?**
+1. $F$ es continua y la región es conexa y acotada, así que toma todos los valores entre su mínimo ($0$) y su máximo ($35$).
+2. $40>35$: no puede alcanzarse.
+3. $0\le20\le35$: sí, por ejemplo en el punto $(4,4)$ ($4+16=20$), que cumple las cuatro desigualdades.
+
+**El valor $40$ no puede alcanzarse; el valor $20$ sí.**
 ::::
 :::::
 
@@ -1496,15 +1529,22 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ los trajes e $y$ los vestidos. Restricciones: lino $x+2y\le70$; algodón $3x+2y\le150$; $x\ge0$, $y\ge0$. Beneficio: $B(x,y)=60x+70y$.
-
-Vértices: $(0,0)$, $(0,35)$, $(40,15)$ (corte de $x+2y=70$ con $3x+2y=150$) y $(50,0)$.
+1. **Incógnitas.** $x$ = trajes e $y$ = vestidos.
+2. **Restricciones.**
+   - Lino: $x+2y\le70$.
+   - Algodón: $3x+2y\le150$.
+   - No negatividad: $x\ge0$, $y\ge0$.
+3. **Función objetivo.** Beneficio: $B(x,y)=60x+70y$.
+4. **Vértices:** $(0,0)$, $(0,35)$, $(40,15)$ (corte de $x+2y=70$ con $3x+2y=150$) y $(50,0)$.
+5. **Valor de $B$ en cada vértice:**
 
 | Vértice | $(0,0)$ | $(0,35)$ | $(40,15)$ | $(50,0)$ |
 |---|---|---|---|---|
 | $B$ | $0$ | $2\,450$ | $3\,450$ | $3\,000$ |
 
 ![Región factible del ejercicio 2 (2022-ext-res), con sus vértices: (0, 0), (50, 0), (40, 15), (0, 35)](fig/2022-ext-res-e2.svg){fig-alt="Región factible del ejercicio 2 (2022-ext-res), con sus vértices: (0, 0), (50, 0), (40, 15), (0, 35)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El máximo es $3\,450$, en $(40,15)$: se gastan $40+30=70$ m² de lino y $120+30=150$ m² de algodón (se agotan las dos telas).
 
 **Hay que confeccionar 40 trajes y 15 vestidos, con un beneficio máximo de $3\,450$ €.**
 ::::
@@ -1543,13 +1583,17 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Rectas frontera: $x+2y=7$, $2x-y=4$, $4x-y=1$, $3x+2y=20$. Los vértices del recinto son
+**a) Recinto y vértices.**
+1. Rectas frontera: $x+2y=7$, $2x-y=4$, $4x-y=1$, $3x+2y=20$.
+2. En cada una se sombrea el semiplano que cumple la desigualdad (se prueba un punto, por ejemplo $(3,3)$) y se toma la zona común.
+3. Los vértices del recinto son
 $$(1,3),\quad(2,7),\quad(3,2),\quad(4,4),$$
 donde $(1,3)$ es el corte de $x+2y=7$ con $4x-y=1$, $(2,7)$ el de $4x-y=1$ con $3x+2y=20$, $(4,4)$ el de $3x+2y=20$ con $2x-y=4$ y $(3,2)$ el de $2x-y=4$ con $x+2y=7$.
 
 ![Región factible del ejercicio 1 (2022-ext-sup), con sus vértices: (1, 3), (3, 2), (4, 4), (2, 7)](fig/2022-ext-sup-e1.svg){fig-alt="Región factible del ejercicio 1 (2022-ext-sup), con sus vértices: (1, 3), (3, 2), (4, 4), (2, 7)" width="75%" fig-align="center"}
 
-**b)** $F(1,3)=10$, $F(2,7)=23$, $F(3,2)=9$ y $F(4,4)=16$.
+**b) Máximo de $F(x,y)=x+3y$.**
+1. Se evalúa $F$ en los vértices: $F(1,3)=10$, $F(2,7)=23$, $F(3,2)=9$ y $F(4,4)=16$.
 
 **El máximo vale $23$ y se alcanza en el punto $(2,7)$.**
 ::::
