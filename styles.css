@@ -256,6 +256,9 @@ body.quarto-dark .gym input:focus { background: #2c3a50; }
 body.quarto-dark div.callout .callout-body-container { color: var(--md-ink); }
 body.quarto-dark div.callout.callout-style-default > .callout-header,
 body.quarto-dark div.callout .callout-title-container { color: #000; }
+/* Callouts simples (sin cabecera de color): el título va en claro sobre el fondo oscuro */
+body.quarto-dark div.callout.callout-style-simple .callout-title-container,
+body.quarto-dark div.callout.callout-style-simple > .callout-header { color: var(--md-ink); }
 body.quarto-dark div.callout { border-color: #2a3648 !important; box-shadow: 4px 4px 0 #05080d; }
 body.quarto-dark .katex { color: inherit; }
 body.quarto-dark .mdx-tabla th { background: #2a3648; }
