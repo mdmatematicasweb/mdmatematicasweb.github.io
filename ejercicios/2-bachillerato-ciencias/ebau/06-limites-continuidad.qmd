@@ -5,7 +5,7 @@ lang: es
 
 Ejercicios de **Matemáticas II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *límites y continuidad*: **25 ejercicios** de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ciencias/06-limites-continuidad/index.qmd), los [ejercicios del tema](../06-limites-continuidad/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ciencias/06-limites-continuidad/index.qmd).
 
-Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **solución** paso a paso con el resultado. Inténtalo con la menor ayuda posible.
 
 
 ## 2026
@@ -23,14 +23,44 @@ $$\lim_{x\to 0}\dfrac{e^{-ax}-(1-ax)\cos(2x)}{x^{2}}$$
 
 vale 6.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+
+**Hallar parámetros de una función.**
+
+Cada dato del enunciado da una ecuación: pasa por $(a,b)\Rightarrow f(a)=b$; extremo en $x=a\Rightarrow f'(a)=0$; pendiente $m$ en $x=a\Rightarrow f'(a)=m$; inflexión en $x=a\Rightarrow f''(a)=0$; área o integral dada $\Rightarrow$ igualar la integral.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+
+**Hallar parámetros de una función.**
+
+1. Lista los datos y escribe una ecuación por cada uno.
+2. Resuelve el sistema (suele ser lineal en los parámetros).
+3. Comprueba que la función resultante cumple todo, y que el extremo es del tipo pedido.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Desarrollando con $x\to0$: $e^{-ax}=1-ax+\dfrac{a^2x^2}{2}+\dots$ y $(1-ax)\cos2x=(1-ax)(1-2x^2+\dots)=1-ax-2x^2+O(x^3)$.
-
-El numerador es $\left(\dfrac{a^2}{2}+2\right)x^2+O(x^3)$, así que el límite vale $\dfrac{a^2}{2}+2$.
-
-$\dfrac{a^2}{2}+2=6\Rightarrow a^2=8$.
+**Límite con desarrollos de Taylor** (también vale L'Hôpital dos veces).
+1. El numerador y el denominador tienden a $0$ (indeterminación $\tfrac00$).
+2. Desarrollando con $x\to0$: $e^{-ax}=1-ax+\dfrac{a^2x^2}{2}+\dots$ y $(1-ax)\cos2x=(1-ax)(1-2x^2+\dots)=1-ax-2x^2+O(x^3)$.
+3. El numerador es la diferencia: $\left(\dfrac{a^2}{2}+2\right)x^2+O(x^3)$.
+4. Se divide entre $x^2$: el límite vale $\dfrac{a^2}{2}+2$.
+5. Se iguala a $6$: $\dfrac{a^2}{2}+2=6\Rightarrow a^2=8$.
 
 **$a=2\sqrt2$ o $a=-2\sqrt2$.**
 ::::
@@ -47,12 +77,29 @@ Calcula el siguiente límite
 
 $$\lim_{x\to 0}\dfrac{x^{2}-\operatorname{sen}(x^{2})}{1-\cos(x)}$$
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Con $x\to0$: $x^2-\operatorname{sen}(x^2)\sim\dfrac{x^6}{6}$ y $1-\cos x\sim\dfrac{x^2}{2}$.
-
-El cociente se comporta como $\dfrac{x^6/6}{x^2/2}=\dfrac{x^4}{3}$.
+**Límite $\tfrac00$.**
+1. Al sustituir $x=0$ salen $0$ en numerador y denominador: indeterminación $\tfrac00$.
+2. Con $x\to0$ se usan los desarrollos $\operatorname{sen}u=u-\dfrac{u^3}{6}+\dots$ y $\cos x=1-\dfrac{x^2}{2}+\dots$.
+3. Con $u=x^2$: $x^2-\operatorname{sen}(x^2)\sim\dfrac{x^6}{6}$. Además, $1-\cos x\sim\dfrac{x^2}{2}$.
+4. El cociente se comporta como $\dfrac{x^6/6}{x^2/2}=\dfrac{x^4}{3}$, que tiende a $0$.
 
 **El límite vale $0$.**
 ::::
@@ -70,14 +117,34 @@ El cociente se comporta como $\dfrac{x^6/6}{x^2/2}=\dfrac{x^4}{3}$.
 
 Sabiendo que $\displaystyle\lim_{x\to 0}\dfrac{\operatorname{sen}(x)-ax+2-2\cos(x)}{e^{x}-x\cos(x)-1}$ es finito, calcula $a$ y el valor del límite.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Por L'Hôpital o por desarrollos: numerador $=\operatorname{sen}x-ax+2-2\cos x=(1-a)x+x^2+\cdots$; denominador $=e^x-x\cos x-1=\dfrac{x^2}{2}+\cdots$ (pues $e^x-1=x+\dfrac{x^2}2+\cdots$ y $x\cos x=x-\dfrac{x^3}{2}+\cdots$).
-
-El denominador es de orden $2$; para que el límite sea finito hace falta $1-a=0$, es decir $a=1$. Entonces
+**Planteamiento.** Al hacer $x=0$ el numerador y el denominador valen $0$ (indeterminación $\dfrac00$). Se desarrollan ambos en potencias de $x$.
+1. Numerador: $\operatorname{sen}x-ax+2-2\cos x=(1-a)x+x^2+\cdots$ (porque $\operatorname{sen}x=x-\dfrac{x^3}{6}+\cdots$ y $2-2\cos x=x^2-\dfrac{x^4}{12}+\cdots$).
+2. Denominador: $e^{x}-x\cos x-1=\dfrac{x^2}{2}+\cdots$, pues $e^x-1=x+\dfrac{x^2}2+\cdots$ y $x\cos x=x-\dfrac{x^3}{2}+\cdots$.
+3. El denominador es de orden $2$. Para que el límite sea finito, el numerador no puede ser de orden $1$: hace falta $1-a=0$, es decir, $a=1$.
+4. Con $a=1$ el numerador es $x^2+\cdots$ y
 $$\lim_{x\to0}\frac{x^2+\cdots}{x^2/2+\cdots}=2.$$
+
 **$a=1$ y el límite vale $2$.**
+
+*Comprobación con L'Hôpital:* con $a=1$, la derivada segunda del numerador es $-\operatorname{sen}x+2\cos x\to2$ y la del denominador es $e^{x}+2\operatorname{sen}x+x\cos x\to1$, luego el límite es $\dfrac{2}{1}=2$.
 ::::
 :::::
 
@@ -92,14 +159,30 @@ Calcula $a$ y $b$ sabiendo que
 
 $$\lim_{x\to 0}\dfrac{x\operatorname{sen}(x)+a(e^{x}-1)+\operatorname{sen}(x)}{bx^{2}+x-\operatorname{sen}(x)}=1.$$
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Desarrollando en $x=0$: $\operatorname{sen}x=x-\dfrac{x^3}{6}+\cdots$, $e^x-1=x+\dfrac{x^2}{2}+\cdots$.
-
-Numerador $=(1+a)\,x+\left(1+\dfrac a2\right)x^2+\cdots$. Denominador $=b\,x^2+\dfrac{x^3}{6}+\cdots$.
-
-Para que el límite sea finito el numerador debe ser de orden al menos igual que el denominador (de orden $\le2$): hace falta $1+a=0$, es decir $a=-1$. Entonces el numerador es $\dfrac{x^2}{2}+\cdots$ y el límite es $\dfrac{1/2}{b}=1$ (si $b=0$ el denominador sería $\sim x^3/6$ y el límite infinito).
+**Planteamiento.** Al hacer $x=0$, numerador y denominador valen $0$ ($\dfrac00$). Se desarrollan en potencias de $x$.
+1. Desarrollos en $x=0$: $\operatorname{sen}x=x-\dfrac{x^3}{6}+\cdots$ y $e^x-1=x+\dfrac{x^2}{2}+\cdots$.
+2. Numerador: $x\operatorname{sen}x+a(e^x-1)+\operatorname{sen}x=(1+a)\,x+\left(1+\dfrac a2\right)x^2+\cdots$.
+3. Denominador: $bx^2+x-\operatorname{sen}x=b\,x^2+\dfrac{x^3}{6}+\cdots$.
+4. Para que el límite sea finito, el numerador debe ser de orden al menos igual que el denominador (de orden $\le2$): hace falta $1+a=0$, es decir, $a=-1$.
+5. Con $a=-1$, el numerador es $\dfrac{x^2}{2}+\cdots$ y el límite es $\dfrac{1/2}{b}=1$, luego $b=\dfrac12$. (Si fuera $b=0$, el denominador sería $\sim x^3/6$ y el límite sería infinito.)
 
 **$a=-1$, $b=\dfrac12$.**
 ::::
@@ -121,14 +204,32 @@ $$f(x)=\begin{cases}\dfrac{x\cos(x)-a\operatorname{sen}(x)}{x^{3}} & \text{si } 
 
 Calcula $a$ y $b$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$f$ es continua en $a$ si $\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=f(a)$. Las funciones elementales son continuas en su dominio; en una función a trozos solo hay que vigilar los puntos de cambio.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Localiza los puntos problemáticos (cambios de trozo, ceros de denominadores).
+2. Calcula los dos límites laterales y $f(a)$.
+3. Iguálalos: si hay parámetros, obtienes una ecuación para cada punto.
+4. Concluye indicando el tipo de discontinuidad si no es continua (evitable o de salto).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Para $x\ge0$: $f(0)=b-1$. Para $x<0$, el numerador $x\cos x-a\operatorname{sen}x\approx(1-a)x+\left(\frac a6-\frac12\right)x^3$. Para que el límite en $0^-$ sea finito hace falta $a=1$, y entonces
+**Planteamiento.** $f$ es continua en todo $\mathbb R$ por el enunciado. Cada trozo es continuo en su intervalo, así que la condición está en $x=0$: $\displaystyle\lim_{x\to0^-}f(x)=f(0)$.
 
+1. Valor en el punto: para $x\ge0$, $f(0)=b\cos0-1=b-1$.
+2. Límite por la izquierda: $\dfrac{x\cos x-a\operatorname{sen}x}{x^3}$ da $\dfrac00$ en $x=0$. Se desarrolla el numerador: $x\cos x-a\operatorname{sen}x\approx(1-a)x+\left(\dfrac a6-\dfrac12\right)x^3$.
+3. Si $a\neq1$, el numerador se comporta como $(1-a)x$ y el cociente como $\dfrac{1-a}{x^2}\to\pm\infty$, que no puede ser $f(0)$. Hace falta $a=1$.
+4. Con $a=1$ el límite es el coeficiente de $x^3$:
 $$\lim_{x\to0^-}\frac{x\cos x-\operatorname{sen}x}{x^3}=\frac16-\frac12=-\frac13.$$
-
-Continuidad: $b-1=-\dfrac13\Rightarrow b=\dfrac23$.
+5. Continuidad: $b-1=-\dfrac13\Rightarrow b=\dfrac23$.
 
 $$\mathbf{a=1,\quad b=\tfrac23}$$
 ::::
@@ -143,12 +244,43 @@ $$\mathbf{a=1,\quad b=\tfrac23}$$
 
 Sea $f$ la función definida por $f(x)=\dfrac{ax^{3}+bx^{2}+x-1}{x^{2}-1}$, para $x\neq\pm1$. Sabiendo que su gráfica tiene una asíntota oblicua que pasa por el punto $(0,1)$ y es paralela a la recta $y=2x$, calcula la asíntota oblicua y los valores de $a$ y $b$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Hallar parámetros de una función.**
+
+Cada dato del enunciado da una ecuación: pasa por $(a,b)\Rightarrow f(a)=b$; extremo en $x=a\Rightarrow f'(a)=0$; pendiente $m$ en $x=a\Rightarrow f'(a)=m$; inflexión en $x=a\Rightarrow f''(a)=0$; área o integral dada $\Rightarrow$ igualar la integral.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Hallar parámetros de una función.**
+
+1. Lista los datos y escribe una ecuación por cada uno.
+2. Resuelve el sistema (suele ser lineal en los parámetros).
+3. Comprueba que la función resultante cumple todo, y que el extremo es del tipo pedido.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Dividiendo, $f(x)=ax+b+\dfrac{(a+1)x+b-1}{x^2-1}$, luego la asíntota oblicua es $y=ax+b$.
-
-Paralela a $y=2x$: $a=2$. Pasa por $(0,1)$: $b=1$.
+**Asíntota oblicua y parámetros.**
+1. Se divide el numerador entre el denominador: $f(x)=ax+b+\dfrac{(a+1)x+b-1}{x^2-1}$. El resto tiende a $0$ cuando $x\to\pm\infty$ (grado $1$ entre grado $2$), así que la asíntota oblicua es $y=ax+b$.
+2. Paralela a $y=2x$: misma pendiente, $a=2$.
+3. Pasa por $(0,1)$: $1=a\cdot0+b\Rightarrow b=1$.
+4. La asíntota es $y=2x+1$.
 
 $$\mathbf{a=2,\quad b=1,\quad\text{asíntota oblicua } y=2x+1}$$
 ::::
@@ -167,17 +299,36 @@ a) Calcula $a$ y $b$ para que $y=x-2$ sea una asíntota oblicua de la gráfica d
 
 b) Estudia y halla las asíntotas verticales de la gráfica de $f$ cuando $a=0$ y $b=2$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Dividiendo: $\dfrac{ax^3+x-1}{x^2+bx-3}=ax-ab+\dfrac{(ab^2+3a+1)x-3ab-1}{x^2+bx-3}$. La asíntota oblicua es $y=ax-ab$, que debe ser $y=x-2$:
+**a) Parámetros para la asíntota oblicua $y=x-2$.**
+1. Se divide el numerador entre el denominador: $\dfrac{ax^3+x-1}{x^2+bx-3}=ax-ab+\dfrac{(ab^2+3a+1)x-3ab-1}{x^2+bx-3}$.
+2. El resto tiende a $0$ en el infinito, así que la asíntota oblicua es $y=ax-ab$.
+3. Se identifica con $y=x-2$: $a=1$ y $-ab=-2$, es decir, $ab=2$.
+4. Con $a=1$, $b=2$.
 
-$$a=1,\quad ab=2\ \Rightarrow\ \mathbf{a=1,\ b=2}.$$
+$$\mathbf{a=1,\ b=2}$$
 
-**b)** Con $a=0$, $b=2$: $f(x)=\dfrac{x-1}{x^2+2x-3}=\dfrac{x-1}{(x-1)(x+3)}$.
-
-- En $x=1$: $\lim_{x\to1}f(x)=\dfrac14$, finito (discontinuidad evitable), no hay asíntota.
-- En $x=-3$: $\lim_{x\to-3^+}f=+\infty$ y $\lim_{x\to-3^-}f=-\infty$.
+**b) Asíntotas verticales con $a=0$ y $b=2$.**
+1. La función es $f(x)=\dfrac{x-1}{x^2+2x-3}=\dfrac{x-1}{(x-1)(x+3)}$. El denominador se anula en $x=1$ y $x=-3$.
+2. En $x=1$ el factor $x-1$ se simplifica: $\lim_{x\to1}f(x)=\dfrac14$, finito (discontinuidad evitable), así que no hay asíntota.
+3. En $x=-3$ no se simplifica: $\lim_{x\to-3^+}f=+\infty$ y $\lim_{x\to-3^-}f=-\infty$.
 
 **Única asíntota vertical: $x=-3$.**
 ::::
@@ -196,14 +347,30 @@ $$\lim_{x\to 0}\dfrac{a\left(\ln(1+x)-x\right)+b\left(e^{x}-1\right)+1-\cos(x)}{
 
 donde $\ln$ denota el logaritmo neperiano.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Desarrollos en $x=0$: $\ln(1+x)-x\approx-\dfrac{x^2}2$, $e^x-1\approx x+\dfrac{x^2}2$, $1-\cos x\approx\dfrac{x^2}2$ y $\operatorname{sen}^2x\approx x^2$. El numerador es
-
+**Parámetros con un límite dado.**
+1. Al sustituir $x=0$ el numerador y el denominador valen $0$: indeterminación $\dfrac00$. Se usan los desarrollos en $x=0$: $\ln(1+x)-x\approx-\dfrac{x^2}2$, $e^x-1\approx x+\dfrac{x^2}2$, $1-\cos x\approx\dfrac{x^2}2$ y $\operatorname{sen}^2x\approx x^2$.
+2. El numerador es
 $$bx+\frac{-a+b+1}{2}\,x^2+\cdots$$
-
-Para que el límite sea finito hace falta que el término en $x$ se anule: $b=0$. Entonces el límite vale $\dfrac{-a+1}{2}=5\Rightarrow a=-9$.
+3. Si $b\neq0$, el cociente se comporta como $\dfrac bx$ y el límite no sería finito. Hace falta que el término en $x$ se anule: $b=0$.
+4. Con $b=0$, el cociente tiende al coeficiente de $x^2$ entre el del denominador ($1$): $\dfrac{-a+1}{2}=5\Rightarrow a=-9$.
 
 $$\mathbf{a=-9,\quad b=0}$$
 ::::
@@ -223,12 +390,45 @@ Considera la función $F:\mathbb{R}\to\mathbb{R}$ definida por $F(x)=\displaysty
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Es una indeterminación $\dfrac00$: $F(0)=0$ y $\operatorname{sen}(0)=0$. Como $F'(x)=\operatorname{sen}(x^{2})$, $F(x)\sim\dfrac{x^{3}}3$, y $\operatorname{sen}(x^{2})\sim x^{2}$.
-
-Con L'Hôpital: $\displaystyle\lim\dfrac{F(x)+x\operatorname{sen}(x^{2})}{2x\cos(x^{2})}=\lim\dfrac{x^{3}/3+x^{3}}{2x}=\lim\dfrac{2x^{2}}{3}=0$.
+**Límite con una integral.**
+1. Es una indeterminación $\dfrac00$: $F(0)=0$ y $\operatorname{sen}(0)=0$.
+2. Por el teorema fundamental del cálculo, $F'(x)=\operatorname{sen}(x^{2})$.
+3. Se aplica L'Hôpital: la derivada del numerador es $F(x)+x\,F'(x)=F(x)+x\operatorname{sen}(x^{2})$ y la del denominador, $2x\cos(x^{2})$.
+4. Para $x$ pequeño, $F(x)\sim\dfrac{x^{3}}3$ y $\operatorname{sen}(x^{2})\sim x^{2}$, así que:
+$$\lim\dfrac{F(x)+x\operatorname{sen}(x^{2})}{2x\cos(x^{2})}=\lim\dfrac{x^{3}/3+x^{3}}{2x}=\lim\dfrac{2x^{2}}{3}=0.$$
 
 **Límite $=0$.**
 ::::
@@ -243,14 +443,30 @@ Con L'Hôpital: $\displaystyle\lim\dfrac{F(x)+x\operatorname{sen}(x^{2})}{2x\cos
 
 Sabiendo que $\displaystyle\lim_{x\to 0}\dfrac{\operatorname{sen}(x)-\ln(1+x)}{ax^{2}-x+e^{x}-\cos(2x)}=-\dfrac{1}{7}$, calcula $a$ ($\ln$ denota la función logaritmo neperiano).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Desarrollos en $x=0$: $\operatorname{sen}x-\ln(1+x)=\dfrac{x^{2}}2+\dots$ y $ax^{2}-x+e^{x}-\cos2x=\left(a+\dfrac52\right)x^{2}+\dots$
-
-(Ambos tienden a 0; se puede aplicar L'Hôpital dos veces.) El límite es $\dfrac{1/2}{a+5/2}=-\dfrac17$:
-
-$a+\dfrac52=-\dfrac72\Rightarrow$ **$a=-6$.**
+**Cálculo de $a$.**
+1. Al sustituir $x=0$ el numerador y el denominador valen $0$: indeterminación $\dfrac00$. Se estudian los desarrollos en $x=0$ (equivale a aplicar L'Hôpital dos veces).
+2. Numerador: $\operatorname{sen}x-\ln(1+x)=\dfrac{x^{2}}2+\dots$
+3. Denominador: $ax^{2}-x+e^{x}-\cos2x=\left(a+\dfrac52\right)x^{2}+\dots$ (los términos en $x$ se cancelan: $-x+x=0$).
+4. El límite es el cociente de los coeficientes de $x^{2}$: $\dfrac{1/2}{a+5/2}=-\dfrac17$.
+5. Se despeja: $a+\dfrac52=-\dfrac72\Rightarrow$ **$a=-6$.**
 ::::
 :::::
 
@@ -269,18 +485,51 @@ b) En el caso $a=5$ y $b=4$, calcula la ecuación de la recta normal a la gráfi
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Asíntota oblicua: $f(x)=x+b+\dfrac{a+b^{2}}{x-b}$, luego la asíntota es $y=x+b$ y $b=4$.
-
-Pasa por $(1,-2)$: $\dfrac{1+a}{1-4}=-2\Rightarrow 1+a=6$.
+**a) Cálculo de $a$ y $b$.**
+1. Se hace la división: $f(x)=x+b+\dfrac{a+b^{2}}{x-b}$, así que la asíntota oblicua es $y=x+b$. Como debe ser $y=x+4$, $b=4$.
+2. Pasa por $(1,-2)$: $f(1)=\dfrac{1+a}{1-4}=-2\Rightarrow 1+a=6$.
 
 **$a=5$, $b=4$.**
 
-**b)** $f(x)=\dfrac{x^{2}+5}{x-4}$, $f'(x)=\dfrac{x^{2}-8x-5}{(x-4)^{2}}$. En $x=0$: $f(0)=-\dfrac54$ y $f'(0)=-\dfrac5{16}$.
+**b) Recta normal en $x=0$.**
+1. Función y derivada: $f(x)=\dfrac{x^{2}+5}{x-4}$ y $f'(x)=\dfrac{x^{2}-8x-5}{(x-4)^{2}}$.
+2. En $x=0$: $f(0)=-\dfrac54$ y $f'(0)=-\dfrac5{16}$.
+3. La pendiente de la normal es la opuesta del inverso de la de la tangente: $\dfrac{16}{5}$.
+4. Ecuación por el punto $\left(0,-\dfrac54\right)$.
 
-La pendiente de la normal es $\dfrac{16}{5}$: **$y=-\dfrac54+\dfrac{16}{5}x$**.
+**$y=-\dfrac54+\dfrac{16}{5}x$**.
 ::::
 :::::
 
@@ -299,16 +548,50 @@ b) Para $a=0$, estudia y calcula las asíntotas de $f$. *(1,5 puntos)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f'(x)=\dfrac{\frac{3x+4}{x+1}-3\left(\ln(x+1)+a\right)}{(3x+4)^{2}}$, luego $f'(0)=\dfrac{4-3a}{16}=1\Rightarrow$ **$a=-4$**.
+**a) Valor de $a$.**
+1. Derivada del cociente: $f'(x)=\dfrac{\frac{3x+4}{x+1}-3\left(\ln(x+1)+a\right)}{(3x+4)^{2}}$.
+2. En $x=0$: $f'(0)=\dfrac{4-3a}{16}$.
+3. Se impone pendiente $1$: $\dfrac{4-3a}{16}=1\Rightarrow4-3a=16$.
 
-**b)** $f(x)=\dfrac{\ln(x+1)}{3x+4}$ con dominio $(-1,+\infty)$.
+**$a=-4$**.
 
-- Vertical: $\displaystyle\lim_{x\to-1^+}f(x)=\dfrac{-\infty}{1}=-\infty$, luego **$x=-1$ es asíntota vertical**.
-- Horizontal: $\displaystyle\lim_{x\to+\infty}\dfrac{\ln(x+1)}{3x+4}=0$ (el logaritmo crece más despacio), luego **$y=0$ es asíntota horizontal** en $+\infty$.
-- Oblicua: no hay (existe la horizontal).
+**b) Asíntotas para $a=0$.**
+1. Función: $f(x)=\dfrac{\ln(x+1)}{3x+4}$, con dominio $(-1,+\infty)$ (el denominador $3x+4$ solo se anula en $x=-\tfrac43$, fuera del dominio).
+2. Vertical: $\displaystyle\lim_{x\to-1^+}f(x)=\dfrac{-\infty}{1}=-\infty$, luego **$x=-1$ es asíntota vertical**.
+3. Horizontal: $\displaystyle\lim_{x\to+\infty}\dfrac{\ln(x+1)}{3x+4}=0$ (el logaritmo crece más despacio que cualquier recta), luego **$y=0$ es asíntota horizontal** en $+\infty$.
+4. Oblicua: no hay, porque existe la horizontal.
 ::::
 :::::
 
@@ -330,17 +613,54 @@ a) Calcula $a$ y $b$. *(1 punto)*
 
 b) Estudia y halla las asíntotas de la gráfica de $f$. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Continuidad.**
+
+$f$ es continua en $a$ si $\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=f(a)$. Las funciones elementales son continuas en su dominio; en una función a trozos solo hay que vigilar los puntos de cambio.
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Continuidad.**
+
+1. Localiza los puntos problemáticos (cambios de trozo, ceros de denominadores).
+2. Calcula los dos límites laterales y $f(a)$.
+3. Iguálalos: si hay parámetros, obtienes una ecuación para cada punto.
+4. Concluye indicando el tipo de discontinuidad si no es continua (evitable o de salto).
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** En $x=-1$: $\dfrac1{-1}=-a+b\Rightarrow -a+b=-1$. En $x=1$: $a+b=\dfrac{1}{2}$.
+**a) Valores de $a$ y $b$.**
+1. $f$ es continua en todo $\mathbb{R}$ (dato del enunciado), así que los trozos deben empalmar en $x=-1$ y en $x=1$.
+2. En $x=-1$: por la izquierda $f(-1)=\dfrac1{-1}=-1$ y por la derecha $-a+b$. Igualando, $-a+b=-1$.
+3. En $x=1$: por la izquierda $a+b$ y por la derecha $\dfrac{1^2}{1+1}=\dfrac12$. Igualando, $a+b=\dfrac12$.
+4. Se suman las dos ecuaciones: $2b=-\dfrac12$, luego $b=-\dfrac14$. De $a+b=\dfrac12$ sale $a=\dfrac34$.
 
 **$a=\tfrac34$, $b=-\tfrac14$.**
 
-**b)** Con esos valores, $f$ es una función continua definida a trozos.
-- Verticales: ninguna. $x=0$ no es problema (la rama $1/x$ sólo vale para $x<-1$) y $x=-1$ no pertenece a la rama $\tfrac{x^2}{x+1}$ ($x\ge1$).
-- En $-\infty$: $\lim\dfrac1x=0$, **asíntota horizontal $y=0$**.
-- En $+\infty$: $\dfrac{x^2}{x+1}$ tiene pendiente $m=1$ y $n=\lim\left(\dfrac{x^2}{x+1}-x\right)=-1$: **asíntota oblicua $y=x-1$**.
+**b) Asíntotas.** Con esos valores, $f$ es una función continua definida a trozos.
+1. *Verticales.* Solo podrían estar donde se anula un denominador. En $x=0$ no hay problema: la rama $\dfrac1x$ solo vale para $x<-1$. En $x=-1$ no hay problema: no pertenece a la rama $\dfrac{x^2}{x+1}$, que solo vale para $x\ge1$. **No hay asíntotas verticales.**
+2. *Cuando $x\to-\infty$* se usa la rama $\dfrac1x$: $\displaystyle\lim_{x\to-\infty}\dfrac1x=0$, luego **asíntota horizontal $y=0$** (por la izquierda).
+3. *Cuando $x\to+\infty$* se usa la rama $\dfrac{x^2}{x+1}$, cuyo límite es $+\infty$, así que no hay horizontal. Se busca oblicua $y=mx+n$:
+$$m=\lim_{x\to+\infty}\frac{x^2}{x(x+1)}=1,\qquad n=\lim_{x\to+\infty}\left(\frac{x^2}{x+1}-x\right)=\lim_{x\to+\infty}\frac{-x}{x+1}=-1.$$
+
+**Asíntota oblicua $y=x-1$** (por la derecha).
 ::::
 :::::
 
@@ -353,10 +673,28 @@ b) Estudia y halla las asíntotas de la gráfica de $f$. *(1,5 puntos)*
 
 Calcula $a$ sabiendo que $\displaystyle\lim_{x\to+\infty}\dfrac{ax}{(\ln x)^{3}+2x}=1$ (donde $\ln$ denota la función logaritmo neperiano).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Dividiendo por $x$: $\dfrac{a}{\dfrac{(\ln x)^3}{x}+2}\to\dfrac a2$, pues $\dfrac{(\ln x)^3}{x}\to0$. Entonces $\dfrac a2=1$.
+1. El límite es de tipo $\dfrac{\infty}{\infty}$ (numerador y denominador tienden a $+\infty$). Se divide numerador y denominador entre $x$:
+$$\lim_{x\to+\infty}\frac{ax}{(\ln x)^3+2x}=\lim_{x\to+\infty}\frac{a}{\dfrac{(\ln x)^3}{x}+2}.$$
+2. Como $x$ crece más deprisa que cualquier potencia de $\ln x$, se cumple $\dfrac{(\ln x)^3}{x}\to0$ (también se comprueba aplicando L'Hôpital tres veces).
+3. Entonces el límite vale $\dfrac a2$. Se iguala al valor dado: $\dfrac a2=1$.
 
 **$a=2$.**
 ::::
@@ -371,12 +709,34 @@ Dividiendo por $x$: $\dfrac{a}{\dfrac{(\ln x)^3}{x}+2}\to\dfrac a2$, pues $\dfra
 
 Calcula $a$ y $b$ sabiendo que $\displaystyle\lim_{x\to 0}\dfrac{a\operatorname{sen}(x)+x\ln(x+1)+bx^{2}}{x^{3}+x^{2}}=2$ (donde $\ln$ denota la función logaritmo neperiano).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Para que el límite sea finito en $x=0$ (el denominador es $x^2(1+x)$) el numerador debe ser $O(x^2)$. Con $\operatorname{sen}x=x-\tfrac{x^3}{6}+\dots$ y $x\ln(x+1)=x^2-\tfrac{x^3}{2}+\dots$ el numerador es
+**Condición para que el límite sea finito.**
+1. El denominador es $x^3+x^2=x^2(x+1)$, de orden $x^2$ cerca de $0$. Para que el límite sea finito (y no $\pm\infty$), el numerador debe ser $O(x^2)$ (indeterminación $\tfrac00$ resuelta con desarrollos de Taylor o con L'Hôpital).
+2. Se desarrolla el numerador cerca de $0$: $\operatorname{sen}x=x-\tfrac{x^3}{6}+\dots$ y $x\ln(x+1)=x\left(x-\tfrac{x^2}{2}+\dots\right)=x^2-\tfrac{x^3}{2}+\dots$.
+3. Entonces el numerador es
 $$a x+(b+1)x^2+O(x^3).$$
-El término en $x$ debe anularse: $a=0$. Entonces el límite es $\dfrac{(b+1)x^2}{x^2}\to b+1=2$.
+4. El término en $x$ debe anularse: $a=0$.
+
+**Cálculo del límite.**
+5. Con $a=0$: $\displaystyle\lim_{x\to0}\frac{(b+1)x^2+O(x^3)}{x^2(x+1)}=b+1$.
+6. Se iguala al valor dado: $b+1=2$.
 
 **$a=0$, $b=1$.**
 ::::
@@ -399,16 +759,53 @@ b) Para $\lambda=2$, calcula la ecuación de la recta tangente a la gráfica de 
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Continuidad.**
+
+$f$ es continua en $a$ si $\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=f(a)$. Las funciones elementales son continuas en su dominio; en una función a trozos solo hay que vigilar los puntos de cambio.
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Continuidad.**
+
+1. Localiza los puntos problemáticos (cambios de trozo, ceros de denominadores).
+2. Calcula los dos límites laterales y $f(a)$.
+3. Iguálalos: si hay parámetros, obtienes una ecuación para cada punto.
+4. Concluye indicando el tipo de discontinuidad si no es continua (evitable o de salto).
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Para que sea continua en $0$ el límite debe existir y ser finito. Con $e^{\lambda x}=1+\lambda x+\tfrac{\lambda^2x^2}{2}+\dots$ el numerador es $(\lambda-2)x+\tfrac{\lambda^2-1}{2}x^2+\dots$, y debe ser $O(x^2)$: $\lambda=2$. Entonces
-$$\mu=\lim_{x\to0}\frac{e^{2x}-e^x-x}{x^2}=\frac{4-1}{2}.$$
+**a) Valores de $\lambda$ y $\mu$.**
+1. $f$ es continua en $x=0$ si existe $\displaystyle\lim_{x\to0}f(x)$ y vale $f(0)=\mu$. En $x=0$ el cociente es de tipo $\tfrac00$ (el denominador $x^2$ es de orden $2$).
+2. Se desarrolla $e^{\lambda x}=1+\lambda x+\tfrac{\lambda^2x^2}{2}+\dots$ y $e^x=1+x+\tfrac{x^2}{2}+\dots$. El numerador es
+$$e^{\lambda x}-e^x-x=(\lambda-2)x+\tfrac{\lambda^2-1}{2}x^2+\dots$$
+3. Para que el límite sea finito, el numerador debe ser $O(x^2)$: el término en $x$ se anula, $\lambda-2=0\Rightarrow\lambda=2$.
+4. Con $\lambda=2$ el límite es el coeficiente de $x^2$: $\mu=\dfrac{\lambda^2-1}{2}=\dfrac{4-1}{2}$.
 
 **$\lambda=2$, $\mu=\tfrac32$.**
 
-**b)** $f(x)=\dfrac{e^{2x}-e^x-x}{x^2}$ para $x\ne0$. $f(1)=e^2-e-1$.
-$$f'(x)=\frac{(2e^{2x}-e^x-1)x^2-2x(e^{2x}-e^x-x)}{x^4}\ \Rightarrow\ f'(1)=(2e^2-e-1)-2(e^2-e-1)=e+1.$$
+**b) Recta tangente en $x=1$ (con $\lambda=2$).**
+1. Cerca de $x=1$, $f(x)=\dfrac{e^{2x}-e^x-x}{x^2}$. Punto: $f(1)=e^2-e-1$.
+2. Derivada (cociente): $f'(x)=\dfrac{(2e^{2x}-e^x-1)x^2-2x(e^{2x}-e^x-x)}{x^4}$.
+3. Se evalúa en $x=1$:
+$$f'(1)=(2e^2-e-1)-2(e^2-e-1)=e+1.$$
+4. Recta tangente: $y-f(1)=f'(1)(x-1)$.
 
 **Tangente: $y=(e^2-e-1)+(e+1)(x-1)$, es decir, $y=(e+1)x+e^2-2e-2$.**
 ::::
@@ -426,15 +823,50 @@ b) Calcula la ecuación de la recta normal a la gráfica de $f$ en el punto de a
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** El numerador en $x=-2$ vale $6\neq0$ y $\lim_{x\to-2^{\pm}}f=\pm\infty$: **asíntota vertical $x=-2$**.
-Como el grado del numerador (4) supera en 1 al del denominador (3), hay oblicua: $m=\lim\dfrac{f(x)}{x}=1$ y
+**a) Asíntotas.**
+1. *Vertical.* El denominador se anula en $x=-2$ y el numerador allí vale $(-2)^4-3\cdot4+2=6\neq0$. Los límites laterales son infinitos: $\lim_{x\to-2^{\pm}}f=\pm\infty$ (el signo de $(x+2)^3$). **Asíntota vertical $x=-2$.**
+2. *Horizontal.* El grado del numerador (4) supera al del denominador (3), luego $f\to\pm\infty$: no hay horizontales.
+3. *Oblicua.* Como el grado del numerador supera en 1 al del denominador, puede haberla: $m=\lim\dfrac{f(x)}{x}=1$ y
 $$n=\lim_{x\to\pm\infty}\big(f(x)-x\big)=\lim\frac{x^4-3x^2+2-x(x+2)^3}{(x+2)^3}=\lim\frac{-6x^3+\dots}{x^3}=-6.$$
+
 **Asíntota oblicua $y=x-6$** (en $+\infty$ y en $-\infty$). No hay horizontales.
 
-**b)** $f(0)=\tfrac{2}{8}=\tfrac14$. $f'(x)=\dfrac{(4x^3-6x)(x+2)-3(x^4-3x^2+2)}{(x+2)^4}$, y $f'(0)=\dfrac{-6}{16}=-\tfrac38$. La normal tiene pendiente $\tfrac83$.
+**b) Recta normal en $x=0$.**
+1. Punto: $f(0)=\tfrac{2}{8}=\tfrac14$.
+2. Derivada: $f'(x)=\dfrac{(4x^3-6x)(x+2)-3(x^4-3x^2+2)}{(x+2)^4}$, y $f'(0)=\dfrac{-6}{16}=-\tfrac38$ (pendiente de la tangente).
+3. La normal es perpendicular: pendiente $-\dfrac{1}{f'(0)}=\tfrac83$.
 
 **Normal: $y=\tfrac14+\tfrac83x$.**
 ::::
@@ -452,12 +884,29 @@ $$n=\lim_{x\to\pm\infty}\big(f(x)-x\big)=\lim\frac{x^4-3x^2+2-x(x+2)^3}{(x+2)^3}
 
 Se sabe que la gráfica de la función $f$ definida por $f(x)=\dfrac{ax^2+bx+2}{x-1}$ (para $x\neq 1$) tiene una asíntota oblicua que pasa por el punto $(1,1)$ y tiene pendiente $2$. Calcula $a$ y $b$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Asíntota oblicua $y=mx+n$ con $m=\displaystyle\lim\frac{f(x)}{x}=a$ y $n=\displaystyle\lim\bigl(f(x)-ax\bigr)=a+b$.
-
-Pendiente $2\Rightarrow a=2$. Pasa por $(1,1)$: $1=2\cdot1+(2+b)\Rightarrow b=-3$.
+1. **Asíntota oblicua.** Es una recta $y=mx+n$ con $m=\displaystyle\lim_{x\to\infty}\frac{f(x)}{x}$ y $n=\displaystyle\lim_{x\to\infty}\bigl(f(x)-mx\bigr)$.
+2. **Pendiente.** El grado del numerador supera en uno al del denominador, así que existe. $m=\displaystyle\lim\frac{f(x)}{x}=a$.
+3. **Ordenada.** Dividiendo, $ax^2+bx+2=(x-1)(ax+a+b)+(a+b+2)$, luego $f(x)=ax+(a+b)+\dfrac{a+b+2}{x-1}$ y $n=\displaystyle\lim\bigl(f(x)-ax\bigr)=a+b$.
+4. **Condición de la pendiente.** Pendiente $2\Rightarrow a=2$.
+5. **Condición del punto.** La asíntota $y=2x+(2+b)$ pasa por $(1,1)$: $1=2\cdot1+(2+b)\Rightarrow b=-3$.
 
 **$a=2,\ b=-3$** (asíntota $y=2x-1$).
 ::::
@@ -477,14 +926,51 @@ b) Halla la ecuación de la recta tangente a la gráfica de $f$ en el punto de a
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Continuidad.**
+
+$f$ es continua en $a$ si $\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=f(a)$. Las funciones elementales son continuas en su dominio; en una función a trozos solo hay que vigilar los puntos de cambio.
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Continuidad.**
+
+1. Localiza los puntos problemáticos (cambios de trozo, ceros de denominadores).
+2. Calcula los dos límites laterales y $f(a)$.
+3. Iguálalos: si hay parámetros, obtienes una ecuación para cada punto.
+4. Concluye indicando el tipo de discontinuidad si no es continua (evitable o de salto).
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Continuidad en $x=0$: $f(0)=-6$. Por la derecha, hace falta que $\operatorname{sen}x-ax$ se anule en $0$ al ritmo de $x^3$, es decir $a=1$ (si $a\neq1$ el límite sería infinito). Con $a=1$: $\operatorname{sen}x-x=-\frac{x^3}{6}+\cdots$, y $36\cdot\left(-\frac16\right)=-6$ ✓.
+**a) Valor de $a$.**
+1. $f$ es continua, así que en $x=0$ coinciden el valor y los dos límites laterales. Por la izquierda: $f(0)=(0-6)e^0=-6$.
+2. Por la derecha, $\displaystyle\lim_{x\to0^+}\dfrac{36(\operatorname{sen}x-ax)}{x^3}$ tiene que valer $-6$. El denominador es $x^3$ y se anula en $0$, así que el numerador debe anularse «al ritmo de $x^3$».
+3. Como $\operatorname{sen}x-ax=(1-a)x-\frac{x^3}{6}+\cdots$, solo se consigue si el término en $x$ desaparece, es decir $a=1$ (si $a\neq1$ el límite sería infinito).
+4. Comprobación con $a=1$: $\operatorname{sen}x-x=-\frac{x^3}{6}+\cdots$, y $36\cdot\left(-\frac16\right)=-6$ ✓.
 
 **$a=1$**
 
-**b)** Para $x<0$: $f(x)=(3x-6)e^x$, $f'(x)=(3x-3)e^x$. En $x=-1$: $f(-1)=-9e^{-1}$, $f'(-1)=-6e^{-1}$.
+**b) Recta tangente en $x=-1$.**
+1. Para $x<0$: $f(x)=(3x-6)e^x$. Derivada del producto: $f'(x)=3e^x+(3x-6)e^x=(3x-3)e^x$.
+2. Punto: $f(-1)=(-3-6)e^{-1}=-9e^{-1}$.
+3. Pendiente: $f'(-1)=-6e^{-1}$.
+4. Ecuación punto-pendiente $y-f(-1)=f'(-1)(x+1)$.
 
 **$y=-\dfrac{9}{e}-\dfrac{6}{e}(x+1)$**, es decir, $y=-\dfrac{6x+15}{e}$.
 ::::
@@ -503,12 +989,28 @@ $$f(x)=\begin{cases}\dfrac{\ln(e^{x}+x^{3})}{x} & \text{si } x<0\\[2mm]4x^{2}+a 
 
 ($\ln$ denota la función logaritmo neperiano). Determina $a$ y $b$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$f$ es continua en $a$ si $\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=f(a)$. Las funciones elementales son continuas en su dominio; en una función a trozos solo hay que vigilar los puntos de cambio.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Localiza los puntos problemáticos (cambios de trozo, ceros de denominadores).
+2. Calcula los dos límites laterales y $f(a)$.
+3. Iguálalos: si hay parámetros, obtienes una ecuación para cada punto.
+4. Concluye indicando el tipo de discontinuidad si no es continua (evitable o de salto).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Continuidad en $x=0$: $\displaystyle\lim_{x\to0^-}\frac{\ln(e^x+x^3)}{x}$. Como $\ln(e^x+x^3)=x+O(x^3)$, este límite vale $1$ (o por L'Hôpital: $\dfrac{e^x+3x^2}{e^x+x^3}\to1$). Por la derecha, $f(0)=a$. Así **$a=1$**.
-
-Continuidad en $x=1$: $4\cdot1^2+a=5$ y $b+\operatorname{sen}\pi=b$, luego **$b=5$**.
+1. **Puntos de cambio.** $f$ es continua; solo hay que vigilar $x=0$ y $x=1$.
+2. **Continuidad en $x=0$.** Por la izquierda, $\displaystyle\lim_{x\to0^-}\frac{\ln(e^x+x^3)}{x}$ es del tipo $\frac00$. Como $\ln(e^x+x^3)=x+O(x^3)$, este límite vale $1$ (o por L'Hôpital: $\dfrac{e^x+3x^2}{e^x+x^3}\to1$).
+3. Por la derecha, $f(0)=a$. Igualando, **$a=1$**.
+4. **Continuidad en $x=1$.** Por la izquierda, $4\cdot1^2+a=5$; por la derecha, $b+\operatorname{sen}\pi=b$. Igualando, **$b=5$**.
 
 **$a=1,\ b=5$**
 ::::
@@ -526,14 +1028,49 @@ b) Determina los intervalos de crecimiento y de decrecimiento de $f$. *(1,25 pun
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Optimización (máximo y mínimo en un contexto).**
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Optimización (máximo y mínimo en un contexto).**
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$f(x)=\dfrac{e^{2x}-1}{e^{2x}+1}$.
+**a) Asíntotas.**
+1. Verticales: el denominador $e^{2x}+1$ nunca se anula, luego no hay.
+2. Horizontales: $\displaystyle\lim_{x\to+\infty}f=1$ (el término $e^{2x}$ domina) y $\displaystyle\lim_{x\to-\infty}f=\frac{-1}{1}=-1$ (porque $e^{2x}\to0$).
+3. Oblicuas: no hay, porque existe horizontal en los dos lados.
 
-**a)** $\displaystyle\lim_{x\to+\infty}f=1$ y $\displaystyle\lim_{x\to-\infty}f=\frac{-1}{1}=-1$. **Asíntotas horizontales: $y=1$ (en $+\infty$) e $y=-1$ (en $-\infty$)**; no hay verticales (el denominador no se anula) ni oblicuas.
+**Asíntotas horizontales: $y=1$ (en $+\infty$) e $y=-1$ (en $-\infty$)**; no hay verticales ni oblicuas.
 
-**b)** $f'(x)=\dfrac{2e^{2x}(e^{2x}+1)-2e^{2x}(e^{2x}-1)}{(e^{2x}+1)^2}=\dfrac{4e^{2x}}{(e^{2x}+1)^2}>0$.
+**b) Crecimiento y decrecimiento.**
+1. Derivada del cociente: $f'(x)=\dfrac{2e^{2x}(e^{2x}+1)-2e^{2x}(e^{2x}-1)}{(e^{2x}+1)^2}=\dfrac{4e^{2x}}{(e^{2x}+1)^2}$.
+2. Numerador y denominador son positivos para todo $x$, luego $f'>0$.
 
 **$f$ es estrictamente creciente en todo $\mathbb{R}$.**
 ::::
@@ -548,12 +1085,28 @@ $f(x)=\dfrac{e^{2x}-1}{e^{2x}+1}$.
 
 Calcula $a$ y $b$ sabiendo que $\displaystyle\lim_{x\to 0}\dfrac{a\,(1-\cos(x))+b\,\operatorname{sen}(x)-2\,(e^{x}-1)}{x^{2}}=7$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Desarrollos: $1-\cos x=\frac{x^2}{2}+\cdots$, $\operatorname{sen}x=x-\cdots$, $e^x-1=x+\frac{x^2}{2}+\cdots$. El numerador es $(b-2)x+\left(\frac a2-1\right)x^2+\cdots$.
-
-Para que el límite sea finito (en $\frac00$) hace falta $b=2$; entonces el límite es $\frac a2-1=7\Rightarrow a=16$.
+1. **Desarrollos** alrededor de $0$: $1-\cos x=\frac{x^2}{2}+\cdots$, $\operatorname{sen}x=x-\cdots$, $e^x-1=x+\frac{x^2}{2}+\cdots$.
+2. **Numerador.** $a\,(1-\cos x)+b\operatorname{sen}x-2(e^x-1)=(b-2)x+\left(\frac a2-1\right)x^2+\cdots$.
+3. **Límite finito.** El denominador es $x^2$ y el límite es del tipo $\frac00$. Para que sea finito, el término en $x$ debe desaparecer: $b=2$.
+4. **Valor del límite.** Con $b=2$, el límite es el coeficiente de $x^2$: $\frac a2-1=7\Rightarrow a=16$.
 
 **$a=16,\ b=2$**
 ::::
@@ -574,14 +1127,52 @@ b) Determina los intervalos de crecimiento y de decrecimiento de $f$. *(1,25 pun
 
 *Relacionado también con:* [Aplicaciones de la derivada](08-aplicaciones-derivada.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Optimización (máximo y mínimo en un contexto).**
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Optimización (máximo y mínimo en un contexto).**
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$f(x)=\dfrac{x^2-10}{(x+3)(x-1)}$.
+**Previo.** El denominador se factoriza: $f(x)=\dfrac{x^2-10}{(x+3)(x-1)}$.
 
-**a)** Verticales: $\displaystyle\lim_{x\to-3}f=\pm\infty$ y $\displaystyle\lim_{x\to1}f=\pm\infty$, luego **$x=-3$ y $x=1$** son asíntotas verticales. Horizontal: $\displaystyle\lim_{x\to\pm\infty}f(x)=1$, luego **$y=1$** es asíntota horizontal (en ambos lados) y no hay oblicuas.
+**a) Asíntotas.**
+1. Verticales: el denominador se anula en $x=-3$ y $x=1$, y el numerador no ($9-10=-1$ y $1-10=-9$). Luego $\displaystyle\lim_{x\to-3}f=\pm\infty$ y $\displaystyle\lim_{x\to1}f=\pm\infty$.
+2. Horizontal: numerador y denominador tienen el mismo grado y los coeficientes principales son $1$, luego $\displaystyle\lim_{x\to\pm\infty}f(x)=1$.
+3. Como hay horizontal en los dos lados, no hay oblicuas.
 
-**b)** $f'(x)=\dfrac{2(x+2)(x+5)}{(x-1)^2(x+3)^2}$, con signo el de $(x+2)(x+5)$.
+**Asíntotas verticales $x=-3$ y $x=1$; asíntota horizontal $y=1$** (en ambos lados).
+
+**b) Crecimiento y decrecimiento.**
+1. Derivada: $f'(x)=\dfrac{2(x+2)(x+5)}{(x-1)^2(x+3)^2}$. El denominador es positivo, así que el signo es el de $(x+2)(x+5)$.
+2. Se anula en $x=-5$ y $x=-2$ (los puntos $x=-3$ y $x=1$ no están en el dominio).
+3. Signo: $f'>0$ si $x<-5$, $f'<0$ en $(-5,-2)$ y $f'>0$ si $x>-2$.
 
 **Crece en $(-\infty,-5)$, en $(-2,1)$ y en $(1,+\infty)$; decrece en $(-5,-3)$ y en $(-3,-2)$.** Máximo relativo en $x=-5$ y mínimo relativo en $x=-2$.
 ::::
@@ -596,12 +1187,28 @@ $f(x)=\dfrac{x^2-10}{(x+3)(x-1)}$.
 
 Sabiendo que $\displaystyle\lim_{x\to 0}\left(\dfrac{x+1}{\ln(x+1)}-\dfrac{a}{x}\right)$ es finito, calcula $a$ y el valor del límite ($\ln$ denota la función logaritmo neperiano).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Con $\ln(1+x)=x-\frac{x^2}{2}+\cdots$ se tiene $\dfrac{x+1}{\ln(x+1)}=\dfrac{x+1}{x\left(1-\frac x2+\cdots\right)}=\dfrac1x+\dfrac32+O(x)$.
-
-Entonces $\dfrac{x+1}{\ln(x+1)}-\dfrac ax=\dfrac{1-a}{x}+\dfrac32+O(x)$, que es finito sólo si $a=1$. (Equivalente: con L'Hôpital, el límite $\frac{0}{0}$ exige $a=1$.)
+1. **Desarrollo.** Con $\ln(1+x)=x-\frac{x^2}{2}+\cdots$: $\dfrac{x+1}{\ln(x+1)}=\dfrac{x+1}{x\left(1-\frac x2+\cdots\right)}=\dfrac1x+\dfrac32+O(x)$.
+2. **Diferencia.** $\dfrac{x+1}{\ln(x+1)}-\dfrac ax=\dfrac{1-a}{x}+\dfrac32+O(x)$.
+3. **Límite finito.** El término $\dfrac{1-a}{x}$ se hace infinito salvo que $1-a=0$: $a=1$. (Equivalente: con L'Hôpital, el límite $\frac{0}{0}$ exige $a=1$.)
+4. **Valor.** Con $a=1$ solo queda el término constante, $\dfrac32$.
 
 **$a=1$ y el límite vale $\dfrac32$.**
 ::::
@@ -619,18 +1226,50 @@ b) Para $a=2$ y $b=3$, calcula las ecuaciones de las rectas tangente y normal a 
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f(2)=\dfrac{4a+b}{a-2}=3\Rightarrow b=-a-6$. La pendiente de la asíntota oblicua es $\displaystyle\lim_{x\to\infty}\frac{f(x)}{x}=-a=-4\Rightarrow a=4$. Entonces $b=-10$.
+**a) Valores de $a$ y $b$.**
+1. Pasa por $(2,3)$: $f(2)=\dfrac{4a+b}{a-2}=3\Rightarrow4a+b=3a-6\Rightarrow b=-a-6$.
+2. Pendiente de la asíntota oblicua: $\displaystyle\lim_{x\to\infty}\frac{f(x)}{x}=\lim\frac{ax^2+b}{x(a-x)}=-a$. Debe valer $-4$, luego $a=4$.
+3. Entonces $b=-a-6=-10$.
 
 **$a=4,\ b=-10$**
 
-**b)** $f(x)=\dfrac{2x^2+3}{2-x}$, $f'(x)=\dfrac{-2x^2+8x+3}{(2-x)^2}$. En $x=1$: $f(1)=5$, $f'(1)=9$.
-
-Tangente: $y-5=9(x-1)$, es decir **$y=9x-4$**.
-
-Normal: $y-5=-\frac19(x-1)$, es decir **$y=-\dfrac{x}{9}+\dfrac{46}{9}$**.
+**b) Tangente y normal en $x=1$** (con $a=2$, $b=3$).
+1. La función es $f(x)=\dfrac{2x^2+3}{2-x}$. Derivada del cociente: $f'(x)=\dfrac{-2x^2+8x+3}{(2-x)^2}$.
+2. En $x=1$: $f(1)=5$ y $f'(1)=9$.
+3. Tangente: $y-5=9(x-1)$, es decir **$y=9x-4$**.
+4. Normal: pendiente $-\frac19$, $y-5=-\frac19(x-1)$, es decir **$y=-\dfrac{x}{9}+\dfrac{46}{9}$**.
 ::::
 :::::
 

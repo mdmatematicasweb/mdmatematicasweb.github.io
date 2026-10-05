@@ -5,7 +5,7 @@ lang: es
 
 Ejercicios de **Matemáticas II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *aplicaciones de la derivada*: **37 ejercicios** de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ciencias/08-aplicaciones-derivada/index.qmd), los [ejercicios del tema](../08-aplicaciones-derivada/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ciencias/08-aplicaciones-derivada/index.qmd).
 
-Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **solución** paso a paso con el resultado. Inténtalo con la menor ayuda posible.
 
 
 ## 2026
@@ -19,16 +19,39 @@ Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos cl
 
 Una ventana tiene forma de rectángulo y está coronada por un semicírculo. Sabiendo que el perímetro de la ventana mide 8 metros, halla las dimensiones de la ventana que permitan la mayor entrada de luz.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sea $r$ el radio del semicírculo (anchura $2r$) y $h$ la altura del rectángulo. Perímetro: $2r+2h+\pi r=8\Rightarrow h=\dfrac{8-(2+\pi)r}{2}$.
+**Planteamiento.**
+1. Sea $r$ el radio del semicírculo (la ventana mide $2r$ de ancho) y $h$ la altura del rectángulo.
+2. Perímetro: la ventana tiene la base $2r$, los dos lados $h$ y el arco del semicírculo $\pi r$. Así $2r+2h+\pi r=8$, de donde $h=\dfrac{8-(2+\pi)r}{2}$.
+3. La entrada de luz es el área: rectángulo más semicírculo, $A(r)=2rh+\dfrac{\pi r^2}{2}$. Sustituyendo $h$:
+$$A(r)=2rh+\dfrac{\pi r^2}{2}=8r-2r^2-\dfrac{\pi r^2}{2}.$$
+4. Dominio con sentido: $h>0$ obliga a $0<r<\dfrac{8}{2+\pi}$.
 
-Luz (área): $A(r)=2rh+\dfrac{\pi r^2}{2}=8r-2r^2-\dfrac{\pi r^2}{2}$.
-
-$A'(r)=8-(4+\pi)r=0\Rightarrow r=\dfrac{8}{4+\pi}$, y $A''=-(4+\pi)<0$ (máximo). Entonces $h=\dfrac{8}{4+\pi}$ (también $h=r$).
+**Optimización.**
+1. Derivada: $A'(r)=8-(4+\pi)r$. Se anula en $r=\dfrac{8}{4+\pi}$, que está en el dominio.
+2. Segunda derivada: $A''(r)=-(4+\pi)<0$, luego es un máximo.
+3. Altura: $h=\dfrac{8-(2+\pi)\cdot\frac{8}{4+\pi}}{2}=\dfrac{8}{4+\pi}$ (también $h=r$).
 
 **Anchura $\dfrac{16}{4+\pi}\approx2{,}24$ m y altura del rectángulo $\dfrac{8}{4+\pi}\approx1{,}12$ m.**
+
+*Interpretación:* la altura del rectángulo coincide con el radio del semicírculo: la ventana de mayor luz es la que mide de alto lo mismo que de ancho la mitad.
 ::::
 :::::
 
@@ -47,12 +70,55 @@ b) Justifica que la producción de gas se estabiliza con el paso del tiempo. *(0
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Representar una función.**
+
+1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Como $-(t-4)^2\le0$, se tiene $0<e^{-(t-4)^2}\le1$, luego $7<f(t)\le8$: la producción está siempre entre 7 y 8 m$^3$. El máximo, 8 m$^3$, se alcanza en $t=4$ s. **Nunca llega a ser exactamente 7**, porque $e^{-(t-4)^2}>0$ siempre (no se anula para ningún $t$).
+**a) La producción está entre 7 y 8 m$^3$.**
+1. El exponente cumple $-(t-4)^2\le0$ para todo $t$, con igualdad solo en $t=4$.
+2. La exponencial de un número no positivo está entre $0$ (sin llegar a él) y $1$: $0<e^{-(t-4)^2}\le1$.
+3. Sumando $7$: $7<f(t)\le8$. El máximo, 8 m$^3$, se alcanza en $t=4$ s.
+4. Para que valiera $7$ habría que tener $e^{-(t-4)^2}=0$, y una exponencial nunca se anula.
 
-**b)** $\displaystyle\lim_{t\to\infty}f(t)=7+\lim_{t\to\infty}e^{-(t-4)^2}=7+0$. **Se estabiliza en 7 m$^3$.**
+**La producción varía siempre entre 7 y 8 m$^3$ y nunca llega a ser exactamente 7**, porque $e^{-(t-4)^2}>0$ siempre (no se anula para ningún $t$).
+
+**b) Estabilización.**
+1. Se calcula el límite cuando el tiempo crece: $-(t-4)^2\to-\infty$, luego $e^{-(t-4)^2}\to0$.
+2. $\displaystyle\lim_{t\to\infty}f(t)=7+\lim_{t\to\infty}e^{-(t-4)^2}=7+0$.
+
+**Se estabiliza en 7 m$^3$.**
+
+*Interpretación:* tras el pico de 8 m$^3$ a los 4 s, la producción baja y se acerca a 7 m$^3$ sin llegar nunca a ese valor (la recta $y=7$ es una asíntota horizontal).
 ::::
 :::::
 
@@ -71,14 +137,52 @@ b) La energía total perdida en los $t$ primeros años viene dada por la expresi
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Monotonía y extremos relativos.**
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Monotonía y extremos relativos.**
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $P'(t)=\dfrac{4(1+t^2)-4t\cdot2t}{(1+t^2)^2}=\dfrac{4(1-t^2)}{(1+t^2)^2}$. Se anula en $t=1$ ($t\ge0$); $P'>0$ si $t<1$ y $P'<0$ si $t>1$, luego es un máximo.
+**a) Potencia de pérdida máxima.**
+1. Derivada (cociente): $P'(t)=\dfrac{4(1+t^2)-4t\cdot2t}{(1+t^2)^2}=\dfrac{4(1-t^2)}{(1+t^2)^2}$.
+2. Se anula si $1-t^2=0$, es decir $t=1$ (con $t\ge0$, se descarta $t=-1$).
+3. Signo: $P'>0$ si $t<1$ y $P'<0$ si $t>1$, luego en $t=1$ hay un máximo.
+4. Valor: $P(1)=\dfrac{4}{2}=2$.
 
 **Máxima potencia de pérdida al cabo de 1 año ($P(1)=2$ W).**
 
-**b)** $E(3)=\displaystyle\int_0^3\dfrac{4x}{1+x^2}dx=\big[2\ln(1+x^2)\big]_0^3=2\ln10$.
+**b) Energía perdida en los tres primeros años.**
+1. Se pide $E(3)=\displaystyle\int_0^3P(x)\,dx=\int_0^3\dfrac{4x}{1+x^2}dx$.
+2. El numerador es, salvo constante, la derivada del denominador: $\int\dfrac{u'}{u}\,dx=\ln|u|$ con $u=1+x^2$, $u'=2x$.
+3. Barrow:
+$$E(3)=\displaystyle\int_0^3\dfrac{4x}{1+x^2}dx=\big[2\ln(1+x^2)\big]_0^3=2\ln10-2\ln1=2\ln10.$$
 
 **$E(3)=2\ln10\approx4{,}61$.**
 ::::
@@ -93,14 +197,34 @@ b) La energía total perdida en los $t$ primeros años viene dada por la expresi
 
 Un jardinero quiere vallar un campo rectangular que tiene un lado junto a un camino. La valla del lado del camino cuesta 80 euros por metro y el precio de la valla de los tres lados restantes es de 10 euros por metro. Halla las dimensiones del campo de mayor área que puede cercarse con 28800 euros. ¿Qué área tiene el campo?
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ el lado junto al camino (y su opuesto) e $y$ los otros dos lados. Coste: $80x+10x+20y=28800$, luego $y=1440-4{,}5x$.
+**Planteamiento.**
+1. Sea $x$ el lado junto al camino (y su lado opuesto) e $y$ cada uno de los otros dos lados.
+2. Coste: el lado del camino cuesta $80x$ y los otros tres lados $10x+10y+10y$. Así $80x+10x+20y=28800$, luego $y=1440-4{,}5x$.
+3. Área a maximizar: $A(x)=x\,y=1440x-4{,}5x^2$, con $0<x<320$ (para que $y>0$).
 
-Área: $A(x)=x\,y=1440x-4{,}5x^2$. $A'(x)=1440-9x=0\Rightarrow x=160$, y $A''=-9<0$ (máximo).
-
-Entonces $y=1440-720=720$.
+**Optimización.**
+1. Derivada: $A'(x)=1440-9x=0\Rightarrow x=160$, que está en el dominio.
+2. $A''=-9<0$: es un máximo.
+3. Entonces $y=1440-720=720$.
+4. Área: $160\cdot720=115\,200$.
 
 **Dimensiones: 160 m (lado del camino) por 720 m; área máxima $=115\,200\ \text{m}^2$.**
 ::::
@@ -114,12 +238,35 @@ Considera la función $f:[0,\pi]\to\mathbb{R}$ definida por $f(x)=a\operatorname
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$f'(x)=a\cos x-b\operatorname{sen}(bx)$. Punto crítico en $\pi/2$: $f'(\pi/2)=-b\operatorname{sen}(b\pi/2)=0$. Como $0<b<3$, hace falta $b\pi/2=\pi$, es decir **$b=2$**.
+**Valor de $b$ (punto crítico).**
+1. Derivada: $f'(x)=a\cos x-b\operatorname{sen}(bx)$.
+2. En $\pi/2$ se cumple $a\cos\dfrac{\pi}{2}=0$, así que $f'(\pi/2)=-b\operatorname{sen}(b\pi/2)=0$.
+3. Como $b\neq0$, hace falta $\operatorname{sen}(b\pi/2)=0$, es decir $b\pi/2=k\pi$. Con $0<b<3$ solo vale $b\pi/2=\pi$.
 
-Integral: $\displaystyle\int_0^\pi\big(a\operatorname{sen}x+\cos 2x\big)dx=\Big[-a\cos x+\tfrac{\operatorname{sen}2x}{2}\Big]_0^\pi=2a=4$.
+**$b=2$.**
+
+**Valor de $a$ (integral).**
+1. Se integra con $b=2$ y se aplica Barrow:
+$$\int_0^\pi\big(a\operatorname{sen}x+\cos 2x\big)dx=\Big[-a\cos x+\tfrac{\operatorname{sen}2x}{2}\Big]_0^\pi=2a.$$
+2. Se iguala a $4$: $2a=4$.
 
 **$a=2$, $b=2$.**
 ::::
@@ -134,15 +281,37 @@ Integral: $\displaystyle\int_0^\pi\big(a\operatorname{sen}x+\cos 2x\big)dx=\Big[
 
 En un jardín botánico se desea crear un recinto floral con forma de triángulo rectángulo. Por la disposición del recinto y las características del terreno, la hipotenusa ha de medir 20 metros. ¿Qué longitudes han de tener los catetos del triángulo rectángulo para que su área sea lo mayor posible y cuál es el valor de esta área?
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Cada dato del enunciado da una ecuación: pasa por $(a,b)\Rightarrow f(a)=b$; extremo en $x=a\Rightarrow f'(a)=0$; pendiente $m$ en $x=a\Rightarrow f'(a)=m$; inflexión en $x=a\Rightarrow f''(a)=0$; área o integral dada $\Rightarrow$ igualar la integral.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Lista los datos y escribe una ecuación por cada uno.
+2. Resuelve el sistema (suele ser lineal en los parámetros).
+3. Comprueba que la función resultante cumple todo, y que el extremo es del tipo pedido.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Catetos $x,y$ con $x^2+y^2=400$, así $y=\sqrt{400-x^2}$ y el área es $A(x)=\tfrac12x\sqrt{400-x^2}$. Basta maximizar $A^2=\tfrac14\,(400x^2-x^4)$:
-$(400x^2-x^4)'=800x-4x^3=0\Rightarrow x^2=200$, $x=10\sqrt2$ (máximo; el área vale 0 en los extremos $x=0$ y $x=20$).
+**Planteamiento.**
+1. Sean $x$ e $y$ los catetos. La hipotenusa mide $20$: $x^2+y^2=400$, luego $y=\sqrt{400-x^2}$.
+2. Área a maximizar: $A(x)=\tfrac12\,x\,y=\tfrac12x\sqrt{400-x^2}$, con $0<x<20$.
 
-Entonces $y=\sqrt{200}=10\sqrt2$.
+**Optimización.**
+1. $A$ es positiva y se anula en los extremos $x=0$ y $x=20$, así que su máximo está dentro y coincide con el de $A^2=\tfrac14\,(400x^2-x^4)$ (más fácil de derivar).
+2. Derivada del polinomio: $(400x^2-x^4)'=800x-4x^3=0\Rightarrow x^2=200$, $x=10\sqrt2$.
+3. Es un máximo (el área vale $0$ en los extremos del intervalo).
+4. Entonces $y=\sqrt{200}=10\sqrt2$.
+5. Área: $\tfrac12\cdot10\sqrt2\cdot10\sqrt2=\tfrac12\cdot200$.
 
 **Catetos: $10\sqrt2\approx14{,}14$ m cada uno; área máxima $=\tfrac12\cdot200=100\ \text{m}^2$.**
+
+*Interpretación:* el triángulo rectángulo de mayor área con hipotenusa fija es el isósceles.
 ::::
 :::::
 
@@ -164,15 +333,64 @@ b) Para $a=0$, calcula los intervalos de crecimiento y de decrecimiento de $f$. 
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Monotonía y extremos relativos.**
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Monotonía y extremos relativos.**
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $\displaystyle\lim_{x\to+\infty}\frac{\ln x}{x^2}=0$, luego la asíntota horizontal es $y=a$. **$a=1$.**
+**a) Asíntota horizontal.**
+1. $\displaystyle\lim_{x\to+\infty}\frac{\ln x}{x^2}=0$ (el logaritmo crece mucho más despacio que $x^2$).
+2. Entonces $\displaystyle\lim_{x\to+\infty}f(x)=a$, y la asíntota horizontal es $y=a$.
+3. Para que sea $y=1$, hace falta $a=1$.
 
-**b)** Con $a=0$: $f'(x)=\dfrac{x-2x\ln x}{x^4}=\dfrac{1-2\ln x}{x^3}$, que se anula en $x=\sqrt e$.
+**$a=1$.**
 
-- $f'>0$ en $(0,\sqrt e)$: **crece**.
-- $f'<0$ en $(\sqrt e,+\infty)$: **decrece**.
+**b) Monotonía y extremos** (con $a=0$, $f(x)=\dfrac{\ln x}{x^2}$ en $(0,+\infty)$).
+1. Derivada (cociente): $f'(x)=\dfrac{x-2x\ln x}{x^4}=\dfrac{1-2\ln x}{x^3}$.
+2. Se anula si $1-2\ln x=0$, es decir, $\ln x=\dfrac12$ y $x=\sqrt e$.
+3. Como $x^3>0$, el signo de $f'$ es el de $1-2\ln x$:
+   - $f'>0$ en $(0,\sqrt e)$: **crece**.
+   - $f'<0$ en $(\sqrt e,+\infty)$: **decrece**.
+4. En $x=\sqrt e$ pasa de crecer a decrecer: máximo. Valor: $f(\sqrt e)=\dfrac{\ln\sqrt e}{e}=\dfrac{1/2}{e}=\dfrac{1}{2e}$.
 
 **Máximo relativo en $x=\sqrt e$, de valor $f(\sqrt e)=\dfrac{1}{2e}$.** No hay mínimos relativos.
 ::::
@@ -193,16 +411,72 @@ b) Estudia y calcula las asíntotas de la función. *(1 punto)*
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd), [Límites y continuidad](06-limites-continuidad.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Curvatura y puntos de inflexión.**
+
+$f''>0$: convexa; $f''<0$: cóncava. Punto de inflexión en $x=a$: $f''(a)=0$ y $f''$ cambia de signo.
+
+**Recta tangente.**
+
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Curvatura y puntos de inflexión.**
+
+1. Calcula $f''(x)$ y resuelve $f''(x)=0$.
+2. Estudia el signo de $f''$ en los intervalos que quedan.
+3. Indica los intervalos de convexidad y concavidad, y las coordenadas de los puntos de inflexión.
+
+**Recta tangente.**
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
+2. Evalúa $f'(a)$ (la pendiente).
+3. Sustituye en la ecuación punto-pendiente.
+4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f'(x)=xe^{x}$, $f''(x)=(x+1)e^{x}$. $f''$ cambia de signo en $x=-1$: punto de inflexión $\left(-1,-\dfrac2e\right)$. Pendiente $f'(-1)=-\dfrac1e$.
+**a) Recta tangente y recta normal en el punto de inflexión.**
+1. Derivadas (producto): $f'(x)=e^{x}+(x-1)e^{x}=xe^{x}$ y $f''(x)=(x+1)e^{x}$.
+2. Punto de inflexión: $f''(x)=0\Rightarrow x=-1$, y $f''$ cambia de signo ahí (negativa a la izquierda, positiva a la derecha). El punto es $\left(-1,-\dfrac2e\right)$, porque $f(-1)=(-2)e^{-1}$.
+3. Pendiente de la tangente: $f'(-1)=-\dfrac1e$.
+4. Tangente: $y+\dfrac2e=-\dfrac1e(x+1)$, es decir, **$y=-\dfrac{x}{e}-\dfrac3e$**.
+5. La normal es perpendicular a la tangente: su pendiente es $-\dfrac{1}{-1/e}=e$. Normal: $y+\dfrac2e=e(x+1)$, es decir, **$y=ex+e-\dfrac2e$**.
 
-Tangente: $y+\dfrac2e=-\dfrac1e(x+1)$, es decir **$y=-\dfrac{x}{e}-\dfrac3e$**.
+**b) Asíntotas.**
+1. Verticales: ninguna, porque $f$ es continua en todo $\mathbb R$.
+2. En $-\infty$: $\displaystyle\lim_{x\to-\infty}(x-1)e^{x}=0$ (la exponencial gana al polinomio), así que **$y=0$ es asíntota horizontal en $-\infty$**.
+3. En $+\infty$: el límite es $+\infty$, luego no hay horizontal; y $\dfrac{f(x)}{x}=\dfrac{(x-1)e^{x}}{x}\to+\infty$, luego tampoco hay oblicua.
 
-Normal (pendiente $e$): $y+\dfrac2e=e(x+1)$, es decir **$y=ex+e-\dfrac2e$**.
-
-**b)** No hay asíntotas verticales (es continua en $\mathbb R$). En $-\infty$: $\lim(x-1)e^{x}=0$, así que **$y=0$ es asíntota horizontal en $-\infty$**. En $+\infty$ el límite es $+\infty$ y $f(x)/x\to+\infty$, luego **no hay asíntota horizontal ni oblicua en $+\infty$**.
+**Solo hay la asíntota horizontal $y=0$ en $-\infty$; no hay asíntota horizontal ni oblicua en $+\infty$.**
 ::::
 :::::
 
@@ -223,12 +497,50 @@ b) Halla los extremos absolutos de $f$ (abscisas donde se obtienen y valores que
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Monotonía y extremos relativos.**
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Monotonía y extremos relativos.**
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** En cada tramo $f$ es derivable. En $x=1$: $f(1^-)=1-e$ y $f(1)=2-1-e=1-e$, luego es continua. Derivadas laterales: $f'(1^-)=-e$ (de $f'=-e^{x}$) y $f'(1^+)=2$. Como son distintas, **$f$ es derivable en $[0,2]\setminus\{1\}$ y no es derivable en $x=1$.**
+**a) Derivabilidad.**
+1. En cada tramo $f$ es derivable: $1-e^{x}$ y $2x-1-e$ son funciones elementales.
+2. Continuidad en $x=1$: $f(1^-)=1-e$ y $f(1)=2-1-e=1-e$. Coinciden, luego $f$ es continua.
+3. Derivadas laterales: $f'(x)=-e^{x}$ si $x<1$, luego $f'(1^-)=-e$; $f'(x)=2$ si $x>1$, luego $f'(1^+)=2$.
+4. Como $-e\neq2$, hay un punto anguloso en $x=1$.
 
-**b)** En $[0,1)$, $f'=-e^{x}<0$: decrece de $f(0)=0$ hasta $1-e$. En $[1,2]$, $f'=2>0$: crece de $f(1)=1-e$ hasta $f(2)=3-e\approx0{,}28$.
+**$f$ es derivable en $[0,2]\setminus\{1\}$ y no es derivable en $x=1$.**
+
+**b) Extremos absolutos** (en el intervalo cerrado $[0,2]$).
+1. En $[0,1)$: $f'=-e^{x}<0$, luego decrece desde $f(0)=0$ hasta $1-e$.
+2. En $[1,2]$: $f'=2>0$, luego crece desde $f(1)=1-e$ hasta $f(2)=3-e\approx0{,}28$.
+3. Se comparan los candidatos: $f(0)=0$, $f(1)=1-e\approx-1{,}72$ y $f(2)=3-e\approx0{,}28$.
 
 **Mínimo absoluto en $x=1$, valor $1-e$. Máximo absoluto en $x=2$, valor $3-e$** (mayor que $f(0)=0$).
 ::::
@@ -249,14 +561,77 @@ b) Halla, si existen, sus extremos absolutos (abscisas donde se obtienen y valor
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd), [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Monotonía y extremos relativos.**
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Continuidad.**
+
+$f$ es continua en $a$ si $\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=f(a)$. Las funciones elementales son continuas en su dominio; en una función a trozos solo hay que vigilar los puntos de cambio.
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Monotonía y extremos relativos.**
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Continuidad.**
+
+1. Localiza los puntos problemáticos (cambios de trozo, ceros de denominadores).
+2. Calcula los dos límites laterales y $f(a)$.
+3. Iguálalos: si hay parámetros, obtienes una ecuación para cada punto.
+4. Concluye indicando el tipo de discontinuidad si no es continua (evitable o de salto).
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Para $x\ge0$, $f(x)=\dfrac{1}{(1-x)^2}$ y para $x<0$, $f(x)=\dfrac{1}{(1+x)^2}$. Son continuas en cada rama (el denominador no se anula en $(-1,1)$) y en $x=0$ ambos límites laterales valen $1=f(0)$. **$f$ es continua en $(-1,1)$.**
+**a) Continuidad y derivabilidad.**
+1. Se quita el valor absoluto: para $x\ge0$, $f(x)=\dfrac{1}{(1-x)^2}$ y, para $x<0$, $f(x)=\dfrac{1}{(1+x)^2}$.
+2. Cada rama es continua en su intervalo (el denominador no se anula en $(-1,1)$). En $x=0$, ambos límites laterales valen $1=f(0)$.
 
-Derivadas: $f'(x)=\dfrac{2}{(1-x)^3}$ si $x>0$ y $f'(x)=-\dfrac{2}{(1+x)^3}$ si $x<0$. Como $f'(0^+)=2\neq-2=f'(0^-)$, **$f$ es derivable en $(-1,1)\setminus\{0\}$ y no lo es en $x=0$.**
+**$f$ es continua en $(-1,1)$.**
 
-**b)** $f'<0$ en $(-1,0)$ y $f'>0$ en $(0,1)$. **Mínimo absoluto en $x=0$, de valor $f(0)=1$.** No hay máximo absoluto porque $f(x)\to+\infty$ cuando $x\to\pm1$.
+3. Derivadas: $f'(x)=\dfrac{2}{(1-x)^3}$ si $x>0$ y $f'(x)=-\dfrac{2}{(1+x)^3}$ si $x<0$.
+4. En $x=0$: $f'(0^+)=2\neq-2=f'(0^-)$.
+
+**$f$ es derivable en $(-1,1)\setminus\{0\}$ y no lo es en $x=0$.**
+
+**b) Extremos absolutos.**
+1. Signo de $f'$: negativo en $(-1,0)$ y positivo en $(0,1)$.
+2. Decrece hasta $x=0$ y crece después: mínimo en $x=0$, con $f(0)=1$.
+3. Cuando $x\to\pm1$, el denominador tiende a $0$ y $f(x)\to+\infty$.
+
+**Mínimo absoluto en $x=0$, de valor $f(0)=1$.** No hay máximo absoluto porque $f(x)\to+\infty$ cuando $x\to\pm1$.
 ::::
 :::::
 
@@ -269,14 +644,34 @@ Derivadas: $f'(x)=\dfrac{2}{(1-x)^3}$ si $x>0$ y $f'(x)=-\dfrac{2}{(1+x)^3}$ si 
 
 Un náufrago se encuentra en una isla situada en el punto de coordenadas $(2,0)$ de un plano. Se sabe que un ferry navega en el mismo plano siempre en la trayectoria dada por la gráfica de la función $f(x)=\sqrt{x+1}$. ¿Hacia qué punto de la trayectoria debe nadar el náufrago para recorrer la menor distancia posible? Calcula dicha distancia.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Un punto de la trayectoria es $(x,\sqrt{x+1})$, con $x\ge-1$. El cuadrado de la distancia a $(2,0)$ es
-$$d^2(x)=(x-2)^2+x+1,\qquad (d^2)'=2(x-2)+1=0\Rightarrow x=\tfrac32.$$
-Como $(d^2)''=2>0$, es un mínimo.
+**Planteamiento.** Se minimiza la distancia al punto $(2,0)$ desde los puntos de la trayectoria. Es más cómodo minimizar su cuadrado.
+1. Un punto de la trayectoria es $(x,\sqrt{x+1})$, con $x\ge-1$.
+2. El cuadrado de la distancia a $(2,0)$ es
+$$d^2(x)=(x-2)^2+x+1.$$
+3. Se deriva e iguala a $0$: $(d^2)'=2(x-2)+1=0\Rightarrow x=\tfrac32$.
+4. Como $(d^2)''=2>0$, es un mínimo (en el extremo $x=-1$ la distancia es $3$, mayor que la hallada).
+5. Punto: $y=\sqrt{\tfrac32+1}=\sqrt{\tfrac52}=\dfrac{\sqrt{10}}{2}$.
+6. Distancia: $d=\sqrt{\tfrac14+\tfrac52}=\sqrt{\tfrac{11}{4}}$.
 
-Punto: **$\left(\dfrac32,\dfrac{\sqrt{10}}{2}\right)$**. Distancia: $d=\sqrt{\tfrac14+\tfrac52}=\mathbf{\dfrac{\sqrt{11}}{2}}\approx1{,}66$.
+**Debe nadar hacia el punto $\left(\dfrac32,\dfrac{\sqrt{10}}{2}\right)$, a una distancia $d=\mathbf{\dfrac{\sqrt{11}}{2}}\approx1{,}66$.**
 ::::
 :::::
 
@@ -296,14 +691,54 @@ a) Calcula los intervalos de crecimiento y de decrecimiento de $f$. *(1 punto)*
 
 b) Determina los intervalos de concavidad y de convexidad de $f$ y los puntos de inflexión de su gráfica (abscisas donde se obtienen y valores que alcanzan). *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Monotonía y extremos relativos.**
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Curvatura y puntos de inflexión.**
+
+$f''>0$: convexa; $f''<0$: cóncava. Punto de inflexión en $x=a$: $f''(a)=0$ y $f''$ cambia de signo.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Monotonía y extremos relativos.**
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Curvatura y puntos de inflexión.**
+
+1. Calcula $f''(x)$ y resuelve $f''(x)=0$.
+2. Estudia el signo de $f''$ en los intervalos que quedan.
+3. Indica los intervalos de convexidad y concavidad, y las coordenadas de los puntos de inflexión.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$f'(x)=(2x+x^2+1)e^x=(x+1)^2e^x$ y $f''(x)=(x+1)(x+3)e^x$.
+**Derivadas previas.** $f(x)=(x^2+1)e^x$, definida en todo $\mathbb R$.
+1. Primera derivada (producto): $f'(x)=(2x+x^2+1)e^x=(x+1)^2e^x$.
+2. Segunda derivada: $f''(x)=(x+1)(x+3)e^x$.
 
-**a)** $f'(x)\ge0$ para todo $x$ y sólo se anula en $x=-1$: **$f$ es creciente en todo $\mathbb{R}$** (nunca decrece; en $x=-1$ hay tangente horizontal sin extremo).
+**a) Crecimiento y decrecimiento.**
+1. $e^x>0$ siempre y $(x+1)^2\ge0$, así que $f'(x)\ge0$ para todo $x$.
+2. Solo se anula en $x=-1$.
+3. Como $f'$ no cambia de signo, no hay extremo en $x=-1$.
 
-**b)** $f''=0$ en $x=-3$ y $x=-1$. Signo: $+$ en $(-\infty,-3)$, $-$ en $(-3,-1)$, $+$ en $(-1,+\infty)$.
+**$f$ es creciente en todo $\mathbb{R}$** (nunca decrece; en $x=-1$ hay tangente horizontal sin extremo).
+
+**b) Curvatura e inflexión.**
+1. $f''=0$ en $x=-3$ y $x=-1$.
+2. Signo de $f''$: $+$ en $(-\infty,-3)$, $-$ en $(-3,-1)$, $+$ en $(-1,+\infty)$.
+3. Convexa donde $f''>0$ y cóncava donde $f''<0$. Hay inflexión donde $f''$ cambia de signo, en los dos puntos.
+4. Ordenadas: $f(-3)=10e^{-3}$ y $f(-1)=2e^{-1}$.
 
 **Convexa en $(-\infty,-3)\cup(-1,+\infty)$; cóncava en $(-3,-1)$.** Puntos de inflexión: **$\left(-3,\,10e^{-3}\right)$ y $\left(-1,\,2e^{-1}\right)$.**
 ::::
@@ -324,15 +759,60 @@ b) Calcula $\displaystyle\lim_{x\to-\pi}\dfrac{\operatorname{arctg}(x+\pi)}{\ope
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Curvatura y puntos de inflexión.**
+
+$f''>0$: convexa; $f''<0$: cóncava. Punto de inflexión en $x=a$: $f''(a)=0$ y $f''$ cambia de signo.
+
+**Recta tangente.**
+
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Curvatura y puntos de inflexión.**
+
+1. Calcula $f''(x)$ y resuelve $f''(x)=0$.
+2. Estudia el signo de $f''$ en los intervalos que quedan.
+3. Indica los intervalos de convexidad y concavidad, y las coordenadas de los puntos de inflexión.
+
+**Recta tangente.**
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
+2. Evalúa $f'(a)$ (la pendiente).
+3. Sustituye en la ecuación punto-pendiente.
+4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f'(x)=\dfrac1{1+(x+\pi)^2}$ y $f''(x)=\dfrac{-2(x+\pi)}{\left(1+(x+\pi)^2\right)^2}$, que se anula sólo en $x=-\pi$.
+**a) Curvatura e inflexión.**
+1. Primera derivada: $f'(x)=\dfrac1{1+(x+\pi)^2}$.
+2. Segunda derivada: $f''(x)=\dfrac{-2(x+\pi)}{\left(1+(x+\pi)^2\right)^2}$. El denominador es siempre positivo y el numerador solo se anula en $x=-\pi$.
+3. Signo: $f''>0$ si $x<-\pi$ y $f''<0$ si $x>-\pi$.
+4. $f''$ cambia de signo en $x=-\pi$: es punto de inflexión, con $f(-\pi)=\operatorname{arctg}0=0$.
 
-$f''>0$ si $x<-\pi$ y $f''<0$ si $x>-\pi$: **convexa en $(-\infty,-\pi)$ y cóncava en $(-\pi,+\infty)$; punto de inflexión en $x=-\pi$, con $f(-\pi)=\operatorname{arctg}0=0$**, es decir en $(-\pi,0)$.
+**Convexa en $(-\infty,-\pi)$ y cóncava en $(-\pi,+\infty)$; punto de inflexión en $x=-\pi$, con $f(-\pi)=\operatorname{arctg}0=0$**, es decir en $(-\pi,0)$.
 
-**b)** Es $\dfrac00$. Por L'Hôpital:
-
+**b) Límite.**
+1. Al sustituir $x=-\pi$ se obtiene $\dfrac{\operatorname{arctg}0}{\operatorname{sen}(-\pi)}=\dfrac00$: indeterminación.
+2. Se aplica L'Hôpital (numerador y denominador son derivables):
 $$\lim_{x\to-\pi}\frac{\operatorname{arctg}(x+\pi)}{\operatorname{sen}x}=\lim_{x\to-\pi}\frac{1/(1+(x+\pi)^2)}{\cos x}=\frac{1}{\cos(-\pi)}=\mathbf{-1}.$$
 ::::
 :::::
@@ -350,16 +830,38 @@ a) Determina los intervalos de crecimiento y de decrecimiento de $f$. *(1,5 punt
 
 b) Halla los extremos absolutos de $f$ (abscisas donde se obtienen y valores que se alcanzan). *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$f'(x)=e^{-x^2}\big(1-2x(x-\tfrac12)\big)=e^{-x^2}(-2x^2+x+1)=-(2x+1)(x-1)e^{-x^2}$, que se anula en $x=-\tfrac12$ y $x=1$.
+**Derivada.**
+1. Producto: $f'(x)=e^{-x^2}\big(1-2x(x-\tfrac12)\big)=e^{-x^2}(-2x^2+x+1)=-(2x+1)(x-1)e^{-x^2}$.
+2. Como $e^{-x^2}>0$, el signo lo da el factor $-(2x+1)(x-1)$, que se anula en $x=-\tfrac12$ y $x=1$.
 
-**a)** Signo de $f'$: $<0$ en $(-\infty,-\tfrac12)$, $>0$ en $(-\tfrac12,1)$, $<0$ en $(1,+\infty)$.
+**a) Crecimiento y decrecimiento.**
+1. Signo de $f'$: $<0$ en $(-\infty,-\tfrac12)$, $>0$ en $(-\tfrac12,1)$, $<0$ en $(1,+\infty)$.
 
 **Decrece en $(-\infty,-\frac12)\cup(1,+\infty)$ y crece en $(-\frac12,1)$.**
 
-**b)** Mínimo relativo en $x=-\tfrac12$: $f(-\tfrac12)=-e^{-1/4}$. Máximo relativo en $x=1$: $f(1)=\dfrac1{2e}$. Como $\lim_{x\to\pm\infty}f(x)=0$, y $f(-\tfrac12)<0<f(1)$, son absolutos:
+**b) Extremos absolutos.**
+1. Mínimo relativo en $x=-\tfrac12$ ($f'$ pasa de $-$ a $+$): $f(-\tfrac12)=-e^{-1/4}$.
+2. Máximo relativo en $x=1$ ($f'$ pasa de $+$ a $-$): $f(1)=\dfrac1{2e}$.
+3. Para saber si son absolutos se mira el comportamiento en los extremos del dominio: $\lim_{x\to\pm\infty}f(x)=0$.
+4. Como $f(-\tfrac12)<0<f(1)$ y los únicos puntos con $f'=0$ son esos dos, ningún valor de $f$ queda por debajo de $f(-\tfrac12)$ ni por encima de $f(1)$: los dos extremos son absolutos.
 
 **mínimo absoluto $-e^{-1/4}$ en $x=-\frac12$; máximo absoluto $\dfrac1{2e}$ en $x=1$.**
 ::::
@@ -374,14 +876,34 @@ $f'(x)=e^{-x^2}\big(1-2x(x-\tfrac12)\big)=e^{-x^2}(-2x^2+x+1)=-(2x+1)(x-1)e^{-x^
 
 De entre todos los rectángulos de área 25 cm², determina las dimensiones de aquel en el que el producto de las longitudes de sus dos diagonales sea el menor posible.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Rectángulo de lados $x$ e $y=25/x$. Las dos diagonales miden lo mismo, $d=\sqrt{x^2+y^2}$, así que el producto es $d^2=x^2+\dfrac{625}{x^2}$.
+**Planteamiento.**
+1. Rectángulo de lados $x$ e $y$ con área $xy=25$, luego $y=25/x$ (con $x>0$).
+2. Las dos diagonales de un rectángulo miden lo mismo, $d=\sqrt{x^2+y^2}$, así que el producto de las dos es $d^2=x^2+\dfrac{625}{x^2}$.
+3. Hay que minimizar $g(x)=x^2+\dfrac{625}{x^2}$ en $(0,+\infty)$.
 
-$$g(x)=x^2+\frac{625}{x^2},\qquad g'(x)=2x-\frac{1250}{x^3}=0\ \Rightarrow\ x^4=625\ \Rightarrow\ x=5.$$
-
-$g'<0$ si $x<5$ y $g'>0$ si $x>5$, luego es un mínimo. Entonces $y=5$.
+**Optimización.**
+1. Derivada: $g'(x)=2x-\dfrac{1250}{x^3}$.
+2. Se iguala a cero: $2x^4=1250\Rightarrow x^4=625\Rightarrow x=5$ (solo la raíz positiva tiene sentido).
+3. Tipo de punto: $g'<0$ si $x<5$ y $g'>0$ si $x>5$, luego es un mínimo.
+4. El otro lado: $y=\dfrac{25}{5}=5$.
 
 **El rectángulo es un cuadrado de $5\times5$ cm** (producto de diagonales mínimo: $50$ cm²).
 ::::
@@ -400,16 +922,39 @@ a) Calcula los intervalos de crecimiento y de decrecimiento. *(1 punto)*
 
 b) Estudia y halla los extremos relativos y absolutos de $f$ (abscisas donde se obtienen y valores que alcanzan). *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$f(x)=\ln g(x)$ con $g(x)=\dfrac{x^2+1}{x}=x+\dfrac1x>0$ en $(0,+\infty)$. Como $\ln$ es creciente, $f$ y $g$ tienen el mismo crecimiento.
+**Planteamiento.** $f(x)=\ln g(x)$ con $g(x)=\dfrac{x^2+1}{x}=x+\dfrac1x>0$ en $(0,+\infty)$, así que $f$ está bien definida. Como $\ln$ es creciente, $f$ y $g$ tienen el mismo crecimiento.
+1. Derivada: $f'(x)=\dfrac{g'(x)}{g(x)}=\dfrac{1-\frac1{x^2}}{x+\frac1x}=\dfrac{x^2-1}{x(x^2+1)}$.
+2. El denominador $x(x^2+1)$ es positivo en el dominio, así que el signo lo da $x^2-1$, que se anula en $x=1$.
 
-$$f'(x)=\frac{g'(x)}{g(x)}=\frac{1-\frac1{x^2}}{x+\frac1x}=\frac{x^2-1}{x(x^2+1)}.$$
+**a) Crecimiento y decrecimiento.**
+1. $f'<0$ en $(0,1)$ y $f'>0$ en $(1,+\infty)$.
 
-**a)** $f'<0$ en $(0,1)$ y $f'>0$ en $(1,+\infty)$: **decrece en $(0,1)$ y crece en $(1,+\infty)$.**
+**Decrece en $(0,1)$ y crece en $(1,+\infty)$.**
 
-**b)** Mínimo relativo en $x=1$, con $f(1)=\ln2$. Como $\lim_{x\to0^+}f=+\infty$ y $\lim_{x\to+\infty}f=+\infty$, ese mínimo es absoluto. **Mínimo absoluto en $x=1$, valor $\ln2$; no hay máximo (ni relativo ni absoluto).**
+**b) Extremos relativos y absolutos.**
+1. $f'$ pasa de $-$ a $+$ en $x=1$: mínimo relativo, con $f(1)=\ln2$.
+2. Límites en los extremos del dominio: $\lim_{x\to0^+}f=+\infty$ y $\lim_{x\to+\infty}f=+\infty$.
+3. Como $f$ sube hacia $+\infty$ en ambos extremos, el mínimo relativo es absoluto, y no hay máximo.
+
+**Mínimo absoluto en $x=1$, valor $\ln2$; no hay máximo (ni relativo ni absoluto).**
 ::::
 :::::
 
@@ -431,16 +976,51 @@ b) Calcula $\displaystyle\lim_{x\to+\infty}\left(x^{2}f(x)\right)$. *(1 punto)*
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Monotonía y extremos relativos.**
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Monotonía y extremos relativos.**
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f(x)=\dfrac1{e^{x}+e^{-x}}$ es positiva y par. $f'(x)=-\dfrac{e^{x}-e^{-x}}{(e^{x}+e^{-x})^{2}}=0\iff e^{x}=e^{-x}\iff x=0$.
-
-$f'>0$ para $x<0$ y $f'<0$ para $x>0$: máximo en $x=0$. Como $f(x)\to0$ en $\pm\infty$ y $f>0$, el $0$ no se alcanza.
+**a) Extremos absolutos.**
+1. $f(x)=\dfrac{1}{e^{x}+e^{-x}}$ está definida en todo $\mathbb R$, es positiva (el denominador es suma de exponenciales positivas) y es par: $f(-x)=f(x)$.
+2. Derivada: $f'(x)=-\dfrac{e^{x}-e^{-x}}{(e^{x}+e^{-x})^{2}}$. Se anula si $e^{x}=e^{-x}$, es decir, solo en $x=0$.
+3. Signo de $f'$: el denominador es positivo, así que el signo lo da $-(e^{x}-e^{-x})$. Por tanto $f'>0$ para $x<0$ y $f'<0$ para $x>0$: $f$ crece hasta $x=0$ y decrece después, luego hay un máximo en $x=0$, con $f(0)=\dfrac12$.
+4. Comportamiento en el infinito: $f(x)\to0$ cuando $x\to\pm\infty$ y $f>0$ en todo punto. El valor $0$ es una cota inferior que no se alcanza nunca.
 
 **Máximo absoluto en $x=0$, de valor $\dfrac12$; no hay mínimo absoluto.**
 
-**b)** $\displaystyle\lim_{x\to+\infty}\dfrac{x^{2}}{e^{x}+e^{-x}}=0$, pues la exponencial domina a la potencia (L'Hôpital dos veces).
+**b) Límite.**
+1. $\displaystyle\lim_{x\to+\infty}\left(x^{2}f(x)\right)=\lim_{x\to+\infty}\dfrac{x^{2}}{e^{x}+e^{-x}}$ es una indeterminación $\dfrac{\infty}{\infty}$.
+2. Se aplica L'Hôpital dos veces: $\dfrac{x^{2}}{e^{x}+e^{-x}}\to\dfrac{2x}{e^{x}-e^{-x}}\to\dfrac{2}{e^{x}+e^{-x}}$, que tiende a $0$.
+3. Conclusión: la exponencial domina a cualquier potencia.
 
 **Límite $=0$.**
 ::::
@@ -458,14 +1038,59 @@ b) Determina la ecuación de la recta tangente y la ecuación de la recta normal
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Curvatura y puntos de inflexión.**
+
+$f''>0$: convexa; $f''<0$: cóncava. Punto de inflexión en $x=a$: $f''(a)=0$ y $f''$ cambia de signo.
+
+**Recta tangente.**
+
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Curvatura y puntos de inflexión.**
+
+1. Calcula $f''(x)$ y resuelve $f''(x)=0$.
+2. Estudia el signo de $f''$ en los intervalos que quedan.
+3. Indica los intervalos de convexidad y concavidad, y las coordenadas de los puntos de inflexión.
+
+**Recta tangente.**
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
+2. Evalúa $f'(a)$ (la pendiente).
+3. Sustituye en la ecuación punto-pendiente.
+4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Pendiente de la secante: $\dfrac{f(2)-f(-2)}{4}=\dfrac{9-1}{4}=2$. $f'(x)=3x^{2}-2=2\Rightarrow x^{2}=\dfrac43$.
+**a) Abscisas de la tangente paralela a la secante.**
+1. Pendiente de la recta que une $(-2,f(-2))$ y $(2,f(2))$: $f(-2)=1$ y $f(2)=9$, luego la pendiente es $\dfrac{f(2)-f(-2)}{4}=\dfrac{9-1}{4}=2$.
+2. Se iguala la derivada, $f'(x)=3x^{2}-2$, a esa pendiente: $3x^{2}-2=2\Rightarrow x^{2}=\dfrac43$.
+3. Se comprueba que las soluciones están en el dominio $[-2,2]$: $\dfrac{2\sqrt3}{3}\approx1{,}15$.
 
 **$x=\pm\dfrac{2\sqrt3}3$** (ambos en $[-2,2]$).
 
-**b)** $f''(x)=6x=0\Rightarrow x=0$: punto de inflexión $(0,5)$, con $f'(0)=-2$.
+**b) Tangente y normal en el punto de inflexión.**
+1. Segunda derivada: $f''(x)=6x=0\Rightarrow x=0$, y $f''$ cambia de signo en $0$: punto de inflexión $(0,5)$.
+2. Pendiente de la tangente: $f'(0)=-2$, y la de la normal es la opuesta del inverso: $\dfrac12$.
+3. Ecuaciones por el punto $(0,5)$.
 
 **Tangente: $y=-2x+5$. Normal: $y=\dfrac12x+5$.**
 ::::
@@ -480,12 +1105,30 @@ b) Determina la ecuación de la recta tangente y la ecuación de la recta normal
 
 Determina las longitudes de los lados de un rectángulo de área máxima que está inscrito en una semicircunferencia de 6 cm de radio, teniendo uno de sus lados sobre el diámetro de ella.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sea $x$ la distancia del centro a un extremo de la base: base $2x$, altura $\sqrt{36-x^{2}}$ (vértice superior en la circunferencia).
-
-$A(x)=2x\sqrt{36-x^{2}}$. $A'(x)=\dfrac{2(36-2x^{2})}{\sqrt{36-x^{2}}}=0\Rightarrow x=3\sqrt2$ (es máximo: $A(0)=A(6)=0$).
+**Rectángulo de área máxima inscrito en una semicircunferencia.**
+1. **Incógnita.** Sea $x$ la distancia del centro a un extremo de la base: la base mide $2x$ y el vértice superior está en la circunferencia, así que la altura es $\sqrt{36-x^{2}}$ (con $0<x<6$).
+2. **Función a maximizar.** $A(x)=2x\sqrt{36-x^{2}}$.
+3. **Derivada.** $A'(x)=\dfrac{2(36-2x^{2})}{\sqrt{36-x^{2}}}=0\Rightarrow x^{2}=18\Rightarrow x=3\sqrt2$.
+4. **Es máximo.** $A(0)=A(6)=0$ y $A>0$ en el interior, luego el único punto crítico es el máximo.
+5. **Dimensiones.** Base $2x=6\sqrt2$ y altura $\sqrt{36-18}=3\sqrt2$.
 
 **Base $6\sqrt2\approx8{,}49$ cm y altura $3\sqrt2\approx4{,}24$ cm** (área $36\ \text{cm}^2$).
 ::::
@@ -500,12 +1143,29 @@ $A(x)=2x\sqrt{36-x^{2}}$. $A'(x)=\dfrac{2(36-2x^{2})}{\sqrt{36-x^{2}}}=0\Rightar
 
 De entre todos los rectángulos de diagonal 10 cm (cada una), calcula las dimensiones del que tiene mayor área.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Lados $x$ e $y$ con $x^{2}+y^{2}=100$; $A=xy=x\sqrt{100-x^{2}}$.
-
-$A'(x)=\dfrac{100-2x^{2}}{\sqrt{100-x^{2}}}=0\Rightarrow x=5\sqrt2$, y entonces $y=5\sqrt2$ (máximo, pues $A=0$ en los extremos).
+**Rectángulo de diagonal $10$ y área máxima.**
+1. **Incógnitas.** Lados $x$ e $y$. Por Pitágoras, $x^{2}+y^{2}=100$, luego $y=\sqrt{100-x^{2}}$ (con $0<x<10$).
+2. **Función a maximizar.** $A=xy=x\sqrt{100-x^{2}}$.
+3. **Derivada.** $A'(x)=\dfrac{100-2x^{2}}{\sqrt{100-x^{2}}}=0\Rightarrow x=5\sqrt2$, y entonces $y=5\sqrt2$.
+4. **Es máximo.** $A=0$ en los extremos $x=0$ y $x=10$ y $A>0$ en el interior.
 
 **Es un cuadrado de lado $5\sqrt2\approx7{,}07$ cm** (área $50\ \text{cm}^2$).
 ::::
@@ -523,20 +1183,76 @@ b) Estudia y calcula las asíntotas de la función. Esboza su gráfica. *(1,5 pu
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Curvatura y puntos de inflexión.**
+
+$f''>0$: convexa; $f''<0$: cóncava. Punto de inflexión en $x=a$: $f''(a)=0$ y $f''$ cambia de signo.
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+
+**Límites y asíntotas.**
+
+Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Curvatura y puntos de inflexión.**
+
+1. Calcula $f''(x)$ y resuelve $f''(x)=0$.
+2. Estudia el signo de $f''$ en los intervalos que quedan.
+3. Indica los intervalos de convexidad y concavidad, y las coordenadas de los puntos de inflexión.
+
+**Representar una función.**
+
+1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+
+**Límites y asíntotas.**
+
+1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$f(x)=\dfrac1{x^{2}}$ si $x>0$ y $f(x)=-\dfrac1{x^{2}}$ si $x<0$.
+1. **Expresión sin valor absoluto.** $f(x)=\dfrac1{x^{2}}$ si $x>0$ y $f(x)=-\dfrac1{x^{2}}$ si $x<0$.
 
-**a)** $f''(x)=\dfrac6{x^{4}}$ si $x>0$; $f''(x)=-\dfrac6{x^{4}}$ si $x<0$.
+**a) Concavidad y puntos de inflexión.**
+1. Primera derivada: $f'(x)=-\dfrac2{x^{3}}$ si $x>0$ y $f'(x)=\dfrac2{x^{3}}$ si $x<0$.
+2. Segunda derivada: $f''(x)=\dfrac6{x^{4}}$ si $x>0$ y $f''(x)=-\dfrac6{x^{4}}$ si $x<0$.
+3. Signo: $f''>0$ en $(0,+\infty)$ (convexa) y $f''<0$ en $(-\infty,0)$ (cóncava).
+4. Inflexión: $f''$ no se anula y el único punto donde cambia de signo, $x=0$, no está en el dominio.
 
 **Convexa en $(0,+\infty)$, cóncava en $(-\infty,0)$. No hay puntos de inflexión** ($x=0$ no está en el dominio).
 
-**b)** 
-- Vertical: $\displaystyle\lim_{x\to0^+}f=+\infty$, $\displaystyle\lim_{x\to0^-}f=-\infty$: **$x=0$**.
-- Horizontal: $\displaystyle\lim_{x\to\pm\infty}f=0$: **$y=0$** (en ambos lados).
-
-Gráfica: función impar, decreciente en cada rama. Para $x>0$ es la rama de $1/x^{2}$ (primer cuadrante) y para $x<0$ su simétrica respecto al origen (tercer cuadrante), ambas pegadas a los ejes.
+**b) Asíntotas y gráfica.**
+1. Vertical: $\displaystyle\lim_{x\to0^+}f=+\infty$ y $\displaystyle\lim_{x\to0^-}f=-\infty$: **$x=0$**.
+2. Horizontal: $\displaystyle\lim_{x\to\pm\infty}f=0$: **$y=0$** (en ambos lados).
+3. No hay oblicua, porque existe la horizontal.
+4. Gráfica: función impar, decreciente en cada rama. Para $x>0$ es la rama de $1/x^{2}$ (primer cuadrante) y para $x<0$ su simétrica respecto al origen (tercer cuadrante), ambas pegadas a los ejes.
 
 ![Gráfica de f(x)=1/(x|x|): asíntota vertical x=0 y horizontal y=0, positiva a la derecha y negativa a la izquierda](fig/2023-ord-sup-e2.svg){fig-alt="Gráfica de f(x)=1/(x|x|): asíntota vertical x=0 y horizontal y=0, positiva a la derecha y negativa a la izquierda" width="75%" fig-align="center"}
 ::::
@@ -557,21 +1273,66 @@ b) Determina la ecuación de la recta tangente a la gráfica de $f$ en el punto 
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Monotonía y extremos relativos.**
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Recta tangente.**
+
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Monotonía y extremos relativos.**
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Recta tangente.**
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
+2. Evalúa $f'(a)$ (la pendiente).
+3. Sustituye en la ecuación punto-pendiente.
+4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f$ es continua en $x=0$ ($f(0^-)=1=f(0^+)$).
-
-En $[-2,0]$: $f'=5>0$ (creciente). En $(0,2\pi]$: $f'(x)=e^{x}(\cos x-\operatorname{sen}x)=0\iff x=\dfrac\pi4,\ \dfrac{5\pi}4$.
-
-- $f'>0$ en $(0,\pi/4)$, $f'<0$ en $(\pi/4,5\pi/4)$, $f'>0$ en $(5\pi/4,2\pi)$.
-- Máximo relativo en $x=\dfrac\pi4$: $f=\dfrac{\sqrt2}{2}e^{\pi/4}\approx1{,}55$.
-- Mínimo relativo en $x=\dfrac{5\pi}4$: $f=-\dfrac{\sqrt2}{2}e^{5\pi/4}\approx-35{,}89$.
-- En los extremos: $f(-2)=-9$ y $f(2\pi)=e^{2\pi}\approx535{,}49$.
+**a) Extremos relativos y absolutos.**
+1. **Continuidad.** $f$ es continua en $x=0$: $f(0^-)=5\cdot0+1=1=f(0^+)=e^{0}\cos0$.
+2. **Primer trozo** $[-2,0]$: $f'=5>0$, creciente, sin puntos críticos.
+3. **Segundo trozo** $(0,2\pi]$: $f'(x)=e^{x}(\cos x-\operatorname{sen}x)=0\iff\operatorname{tg}x=1\iff x=\dfrac\pi4,\ \dfrac{5\pi}4$.
+4. **Signo de $f'$:**
+   - $f'>0$ en $(0,\pi/4)$, $f'<0$ en $(\pi/4,5\pi/4)$ y $f'>0$ en $(5\pi/4,2\pi)$.
+   - Máximo relativo en $x=\dfrac\pi4$: $f=\dfrac{\sqrt2}{2}e^{\pi/4}\approx1{,}55$.
+   - Mínimo relativo en $x=\dfrac{5\pi}4$: $f=-\dfrac{\sqrt2}{2}e^{5\pi/4}\approx-35{,}89$.
+5. **Extremos del intervalo.** $f(-2)=-9$ y $f(2\pi)=e^{2\pi}\approx535{,}49$.
+6. **Comparación.** El mayor valor es $f(2\pi)$ y el menor es el mínimo relativo en $\dfrac{5\pi}4$ (es menor que $f(-2)=-9$).
 
 **Máximo absoluto en $x=2\pi$ (valor $e^{2\pi}$); mínimo absoluto en $x=\dfrac{5\pi}4$ (valor $-\dfrac{\sqrt2}{2}e^{5\pi/4}$).**
 
-**b)** $f(\pi/2)=0$ y $f'(\pi/2)=-e^{\pi/2}$.
+**b) Recta tangente en $x=\dfrac\pi2$.**
+1. Punto: $f(\pi/2)=e^{\pi/2}\cos\dfrac\pi2=0$.
+2. Pendiente: $f'(\pi/2)=e^{\pi/2}\left(\cos\dfrac\pi2-\operatorname{sen}\dfrac\pi2\right)=-e^{\pi/2}$.
+3. Ecuación punto-pendiente.
 
 **Recta tangente: $y=-e^{\pi/2}\left(x-\dfrac\pi2\right)$.**
 ::::
@@ -587,14 +1348,39 @@ a) Calcula, si existen, sus extremos relativos (abscisas donde se obtienen y val
 
 b) Calcula, si existen, sus extremos absolutos (abscisas donde se obtienen y valores que se alcanzan). *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$f'(x)=\ln^{2}x+2\ln x=\ln x\,(\ln x+2)=0\Rightarrow x=1,\ x=e^{-2}$. Además $f''(x)=\dfrac{2(\ln x+1)}{x}$.
+**Derivadas previas.**
+1. Primera: $f'(x)=\ln^{2}x+2\ln x=\ln x\,(\ln x+2)=0\Rightarrow x=1,\ x=e^{-2}$.
+2. Segunda: $f''(x)=\dfrac{2(\ln x+1)}{x}$.
 
-**a)** $f''(e^{-2})=-2e^{2}<0$: **máximo relativo en $x=e^{-2}$, valor $4e^{-2}$**. $f''(1)=2>0$: **mínimo relativo en $x=1$, valor $0$**.
+**a) Extremos relativos.**
+1. En $x=e^{-2}$: $f''(e^{-2})=-2e^{2}<0$, máximo, con $f(e^{-2})=4e^{-2}$.
+2. En $x=1$: $f''(1)=2>0$, mínimo, con $f(1)=0$.
 
-**b)** $f(x)\ge0$ y $f(1)=0$: **mínimo absoluto en $x=1$ (valor 0)**. Como $\displaystyle\lim_{x\to+\infty}f(x)=+\infty$, **no hay máximo absoluto**.
+**Máximo relativo en $x=e^{-2}$, valor $4e^{-2}$; mínimo relativo en $x=1$, valor $0$.**
+
+**b) Extremos absolutos.**
+1. $f(x)=x\ln^{2}x\ge0$ y $f(1)=0$: el mínimo relativo es el menor valor posible.
+2. $\displaystyle\lim_{x\to+\infty}f(x)=+\infty$: la función no está acotada superiormente.
+
+**Mínimo absoluto en $x=1$ (valor 0); no hay máximo absoluto.**
 ::::
 :::::
 
@@ -607,14 +1393,29 @@ $f'(x)=\ln^{2}x+2\ln x=\ln x\,(\ln x+2)=0\Rightarrow x=1,\ x=e^{-2}$. Además $f
 
 Halla dos números mayores o iguales que 0, cuya suma sea 1, y el producto de uno de ellos por la raíz cuadrada del otro sea máximo.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean los números $x$ e $y=1-x$ con $x\in[0,1]$. Hay que maximizar $f(x)=x\sqrt{1-x}$.
-
-$f'(x)=\sqrt{1-x}-\dfrac{x}{2\sqrt{1-x}}=\dfrac{2-3x}{2\sqrt{1-x}}=0\Rightarrow x=\dfrac23$.
-
-$f'>0$ a la izquierda y $f'<0$ a la derecha, luego es un máximo (en los extremos $f(0)=f(1)=0$).
+**Dos números no negativos de suma $1$ con $x\sqrt y$ máximo.**
+1. **Incógnitas.** Los números son $x$ e $y=1-x$, con $x\in[0,1]$. Hay que maximizar $f(x)=x\sqrt{1-x}$.
+2. **Derivada.** $f'(x)=\sqrt{1-x}-\dfrac{x}{2\sqrt{1-x}}=\dfrac{2-3x}{2\sqrt{1-x}}=0\Rightarrow x=\dfrac23$.
+3. **Es máximo.** $f'>0$ a la izquierda y $f'<0$ a la derecha; además en los extremos $f(0)=f(1)=0$.
+4. **Valor máximo.** $f(2/3)=\dfrac23\sqrt{\dfrac13}=\dfrac{2\sqrt3}{9}$.
 
 **Los números son $\dfrac23$ y $\dfrac13$** (el máximo es $f(2/3)=\dfrac{2\sqrt3}{9}$).
 ::::
@@ -629,14 +1430,45 @@ $f'>0$ a la izquierda y $f'<0$ a la derecha, luego es un máximo (en los extremo
 
 En una fábrica de pinturas, las latas que se utilizan para envasar la pintura tienen forma cilíndrica y una capacidad de 20 litros. Halla las dimensiones del cilindro, con tapas, para que la chapa empleada en su construcción sea mínima.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Optimización (máximo y mínimo en un contexto).**
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+
+**Monotonía y extremos relativos.**
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Optimización (máximo y mínimo en un contexto).**
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+
+**Monotonía y extremos relativos.**
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Capacidad $20\ \text{L}=20\ \text{dm}^3$: $\pi r^{2}h=20\Rightarrow h=\dfrac{20}{\pi r^{2}}$.
-
-Superficie: $S(r)=2\pi r^{2}+2\pi rh=2\pi r^{2}+\dfrac{40}{r}$.
-
-$S'(r)=4\pi r-\dfrac{40}{r^{2}}=0\Rightarrow r^{3}=\dfrac{10}{\pi}$. Como $S''>0$, es un mínimo.
+**Lata cilíndrica de $20$ L con chapa mínima.**
+1. **Capacidad.** $20\ \text{L}=20\ \text{dm}^3$: $\pi r^{2}h=20\Rightarrow h=\dfrac{20}{\pi r^{2}}$.
+2. **Superficie con tapas.** $S(r)=2\pi r^{2}+2\pi rh=2\pi r^{2}+\dfrac{40}{r}$.
+3. **Derivada.** $S'(r)=4\pi r-\dfrac{40}{r^{2}}=0\Rightarrow r^{3}=\dfrac{10}{\pi}$.
+4. **Es mínimo.** $S''(r)=4\pi+\dfrac{80}{r^{3}}>0$.
+5. **Altura.** $h=\dfrac{20}{\pi r^{2}}=2r$.
 
 **$r=\sqrt[3]{10/\pi}\approx1{,}47\ \text{dm}$ y $h=2r\approx2{,}94\ \text{dm}$** (altura igual al diámetro).
 ::::
@@ -654,12 +1486,49 @@ $S'(r)=4\pi r-\dfrac{40}{r^{2}}=0\Rightarrow r^{3}=\dfrac{10}{\pi}$. Como $S''>0
 
 De entre todos los rectángulos con lados paralelos a los ejes de coordenadas, determina las dimensiones de aquel de área máxima que puede inscribirse en la región limitada por las gráficas de las funciones $f,g:\mathbb{R}\to\mathbb{R}$, definidas por $f(x)=4-\dfrac{x^{2}}{3}$ y $g(x)=\dfrac{x^{2}}{6}-2$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Optimización (máximo y mínimo en un contexto).**
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+
+**Monotonía y extremos relativos.**
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Optimización (máximo y mínimo en un contexto).**
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+
+**Monotonía y extremos relativos.**
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Las gráficas se cortan en $4-\tfrac{x^2}3=\tfrac{x^2}6-2\Rightarrow x^2=12$. El rectángulo, por simetría, con vértices en $x=\pm x$ sobre $g$ (abajo) y sobre $f$ (arriba) tiene base $2x$ y altura $f(x)-g(x)=6-\tfrac{x^2}{2}$:
-$$A(x)=2x\left(6-\tfrac{x^2}2\right)=12x-x^3,\qquad A'=12-3x^2=0\Rightarrow x=2\ (<\sqrt{12}),$$
-$A''(2)<0$ (máximo).
+**Planteamiento.**
+1. Se calculan los cortes de las dos gráficas: $4-\tfrac{x^2}{3}=\tfrac{x^2}{6}-2\Rightarrow6=\tfrac{x^2}{2}\Rightarrow x^2=12$, es decir, $x=\pm\sqrt{12}$. La región queda encerrada entre la parábola $f$ (arriba) y la parábola $g$ (abajo).
+2. Las dos funciones son pares, luego la región es simétrica respecto del eje $Y$. Un rectángulo con lados paralelos a los ejes se coloca de forma simétrica, con vértices en $x=\pm x$, sobre $g$ (abajo) y sobre $f$ (arriba).
+3. Base $=2x$ y altura $=f(x)-g(x)=6-\tfrac{x^2}{2}$. Se necesita $0<x<\sqrt{12}$.
+
+**Función a maximizar.**
+4. Área: $A(x)=2x\left(6-\tfrac{x^2}2\right)=12x-x^3$.
+5. Derivada: $A'(x)=12-3x^2=0\Rightarrow x=2$ (se descarta $x=-2$ por no tener sentido). Cumple $2<\sqrt{12}$.
+6. Segunda derivada: $A''(x)=-6x$, y $A''(2)=-12<0$: es un **máximo**.
+7. Dimensiones: base $2x=4$ y altura $6-\tfrac{2^2}{2}=4$.
 
 **Base $4$ y altura $4$ (cuadrado de lado 4, área 16 u$^2$).**
 ::::
@@ -682,16 +1551,73 @@ b) Para $a=2$ y $b=-1$, estudia la derivabilidad de $f$. *(1 punto)*
 
 *Relacionado también con:* [Límites y continuidad](06-limites-continuidad.qmd), [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Monotonía y extremos relativos.**
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Continuidad.**
+
+$f$ es continua en $a$ si $\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=f(a)$. Las funciones elementales son continuas en su dominio; en una función a trozos solo hay que vigilar los puntos de cambio.
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+Indeterminaciones: $\dfrac00,\ \dfrac\infty\infty,\ \infty-\infty,\ 0\cdot\infty,\ 1^\infty$. Regla de L'Hôpital: si $\dfrac{f}{g}$ da $\dfrac00$ o $\dfrac\infty\infty$ y existe $\lim\dfrac{f'}{g'}$, entonces $\lim\dfrac{f}{g}=\lim\dfrac{f'}{g'}$. $1^\infty$: $\lim f^g=e^{\lim g\,(f-1)}$. Otras se transforman a cocientes.
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Monotonía y extremos relativos.**
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Continuidad.**
+
+1. Localiza los puntos problemáticos (cambios de trozo, ceros de denominadores).
+2. Calcula los dos límites laterales y $f(a)$.
+3. Iguálalos: si hay parámetros, obtienes una ecuación para cada punto.
+4. Concluye indicando el tipo de discontinuidad si no es continua (evitable o de salto).
+
+**Límites e indeterminaciones (L'Hôpital).**
+
+1. Sustituye para ver qué indeterminación aparece.
+2. Si es $\infty-\infty$ o $0\cdot\infty$, pásala a cociente (denominador común, racionaliza o escribe $0\cdot\infty=\dfrac{0}{1/\infty}$).
+3. Aplica L'Hôpital derivando numerador y denominador por separado; repite si hace falta.
+4. Si el límite depende de un parámetro, impón la condición que quita la indeterminación y despeja.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Continuidad en $x=0$: $f(0)=\dfrac{1}{-1}=-1$ y $\lim_{x\to0^+}f=b$, luego $b=-1$ (en $x=0$ la rama derecha da $b$).
-Además $f'(x)=\dfrac{-ax+a-2b}{(x+1)^3}$ para $x>0$, y $f'(2)=0\Rightarrow -2a+a-2b=0\Rightarrow a=-2b=2$.
+**a) Valores de $a$ y $b$.**
+1. Continuidad en $x=0$: por la izquierda $f(0)=\dfrac{0+1}{0-1}=-1$ y por la derecha $\displaystyle\lim_{x\to0^+}f=\dfrac{b}{1}=b$. Igualando, $b=-1$.
+2. Derivada de la rama $x>0$ (cociente): $f'(x)=\dfrac{a(x+1)^2-(ax+b)\cdot2(x+1)}{(x+1)^4}=\dfrac{-ax+a-2b}{(x+1)^3}$.
+3. Extremo relativo en $x=2$ (dentro de la rama derecha, donde $f$ es derivable) exige $f'(2)=0$: $\dfrac{-2a+a-2b}{27}=0\Rightarrow -a-2b=0\Rightarrow a=-2b$.
+4. Con $b=-1$: $a=2$.
 
 **$a=2$, $b=-1$.**
 
-**b)** Para $x<0$: $f'(x)=\dfrac{x^2-2x-1}{(x-1)^2}$, $f'(0^-)=-1$. Para $x>0$: $f'(x)=\dfrac{-2x+4}{(x+1)^3}$, $f'(0^+)=4$.
-Las derivadas laterales en $0$ no coinciden.
+**b) Derivabilidad** (con $a=2$, $b=-1$).
+1. Fuera de $x=0$, cada trozo es una función racional con denominador no nulo, luego es derivable. Solo hay que estudiar $x=0$ (la función es continua ahí).
+2. Para $x<0$: $f'(x)=\dfrac{2x(x-1)-(x^2+1)}{(x-1)^2}=\dfrac{x^2-2x-1}{(x-1)^2}$, y $f'(0^-)=\dfrac{-1}{1}=-1$.
+3. Para $x>0$: $f'(x)=\dfrac{-2x+4}{(x+1)^3}$ y $f'(0^+)=4$.
+4. Las derivadas laterales en $0$ no coinciden ($-1\neq4$): la gráfica tiene un punto anguloso.
 
 **$f$ es derivable en $\mathbb{R}\setminus\{0\}$ y no lo es en $x=0$.**
 ::::
@@ -705,12 +1631,35 @@ Se quiere cercar un trozo de terreno como el de la figura, de modo que el área 
 
 *(La figura muestra un rectángulo de lados $a$ (horizontal) y $b$ (vertical) con un semicírculo de diámetro $b$ añadido en cada uno de los lados verticales.)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+El óptimo de una función derivable en un intervalo se busca entre los puntos con $f'(x)=0$ y los extremos del intervalo. Se confirma el tipo con el signo de $f'$ o con $f''$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la función a optimizar con una sola variable (usa la condición del enunciado para eliminar la otra).
+2. Fija el dominio que tiene sentido en el contexto.
+3. Resuelve $f'(x)=0$ y comprueba que es máximo o mínimo.
+4. Responde con unidades y en palabras: ¿en qué valor se alcanza y cuánto vale?
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Con $ab=\dfrac{200}{\pi}$, $a=\dfrac{200}{\pi b}$. Tramos rectos: dos lados de longitud $a$ (10 €/m); tramos circulares: dos semicírculos de diámetro $b$, longitud total $\pi b$ (20 €/m):
-$$C(b)=20a+20\pi b=\frac{4000}{\pi b}+20\pi b.$$
-$C'(b)=-\dfrac{4000}{\pi b^2}+20\pi=0\Rightarrow b^2=\dfrac{200}{\pi^2}$, y $C''>0$ (mínimo).
+**Planteamiento.**
+1. El área del rectángulo central es $ab=\dfrac{200}{\pi}$, de donde $a=\dfrac{200}{\pi b}$.
+2. Tramos rectos: los dos lados de longitud $a$, a $10$ €/m: coste $2a\cdot10=20a$.
+3. Tramos circulares: dos semicírculos de diámetro $b$, que juntos forman una circunferencia de longitud $\pi b$, a $20$ €/m: coste $20\pi b$.
+4. Coste total, en función de $b$ (se sustituye $a$):
+$$C(b)=20a+20\pi b=\frac{4000}{\pi b}+20\pi b,\qquad b>0.$$
+
+**Mínimo.**
+5. Derivada: $C'(b)=-\dfrac{4000}{\pi b^2}+20\pi=0\Rightarrow b^2=\dfrac{200}{\pi^2}\Rightarrow b=\dfrac{10\sqrt2}{\pi}$.
+6. $C''(b)=\dfrac{8000}{\pi b^3}>0$ para $b>0$: es un **mínimo**.
+7. Se calcula $a$: $a=\dfrac{200}{\pi b}=\dfrac{200}{10\sqrt2}=10\sqrt2$.
 
 **$b=\dfrac{10\sqrt2}{\pi}\approx4{,}5$ m y $a=10\sqrt2\approx14{,}1$ m.**
 ::::
@@ -729,16 +1678,52 @@ a) Determina los intervalos de crecimiento y de decrecimiento de $f$. *(1 punto)
 
 b) Determina los intervalos de convexidad y de concavidad de $f$ y los puntos de inflexión de su gráfica. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Monotonía y extremos relativos.**
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Curvatura y puntos de inflexión.**
+
+$f''>0$: convexa; $f''<0$: cóncava. Punto de inflexión en $x=a$: $f''(a)=0$ y $f''$ cambia de signo.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Monotonía y extremos relativos.**
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Curvatura y puntos de inflexión.**
+
+1. Calcula $f''(x)$ y resuelve $f''(x)=0$.
+2. Estudia el signo de $f''$ en los intervalos que quedan.
+3. Indica los intervalos de convexidad y concavidad, y las coordenadas de los puntos de inflexión.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$f'(x)=\dfrac{2x}{x^2+1}$, $f''(x)=\dfrac{2(1-x^2)}{(x^2+1)^2}$.
+**Derivadas.**
+1. $f'(x)=\dfrac{2x}{x^2+1}$ (la derivada de $\ln u$ es $\dfrac{u'}{u}$).
+2. $f''(x)=\dfrac{2(x^2+1)-2x\cdot2x}{(x^2+1)^2}=\dfrac{2(1-x^2)}{(x^2+1)^2}$.
 
-**a)** $f'<0$ si $x<0$ y $f'>0$ si $x>0$.
+**a) Crecimiento y decrecimiento.**
+1. El denominador $x^2+1$ es siempre positivo, así que el signo de $f'$ es el de $2x$.
+2. $f'<0$ si $x<0$ y $f'>0$ si $x>0$. (Hay un mínimo en $x=0$, con $f(0)=0$.)
 
 **Decreciente en $(-\infty,0)$; creciente en $(0,+\infty)$.**
 
-**b)** $f''>0$ si $|x|<1$ y $f''<0$ si $|x|>1$.
+**b) Curvatura e inflexión.**
+1. El denominador $(x^2+1)^2$ es positivo, así que el signo de $f''$ es el de $1-x^2$.
+2. $f''=0$ en $x=\pm1$. $f''>0$ si $|x|<1$ y $f''<0$ si $|x|>1$.
+3. Como $f''$ cambia de signo en $x=\pm1$, hay puntos de inflexión; $f(\pm1)=\ln2$.
 
 **Convexa en $(-1,1)$; cóncava en $(-\infty,-1)\cup(1,+\infty)$; puntos de inflexión en $(-1,\ln2)$ y $(1,\ln2)$.**
 ::::
@@ -753,12 +1738,34 @@ $f'(x)=\dfrac{2x}{x^2+1}$, $f''(x)=\dfrac{2(1-x^2)}{(x^2+1)^2}$.
 
 Calcula los vértices y el área del rectángulo de área máxima inscrito en el recinto limitado por la gráfica de la función $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=-x^{2}+12$ y el eje de abscisas, y que tiene su base sobre dicho eje.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-El recinto es la región bajo $y=12-x^2$ sobre el eje, con raíces $x=\pm\sqrt{12}$. Un rectángulo con base en el eje, simétrico respecto del eje $Y$, tiene vértices $(\pm x,0)$ y $(\pm x,12-x^2)$:
-$$A(x)=2x(12-x^2)=24x-2x^3,\qquad A'(x)=24-6x^2=0\Rightarrow x=2,$$
-y $A''(2)=-24<0$ (máximo).
+**Planteamiento.**
+1. La gráfica $y=12-x^2$ es una parábola que corta al eje $X$ en $x=\pm\sqrt{12}$. El recinto es la región bajo ella y sobre el eje.
+2. Un rectángulo con base sobre el eje, simétrico respecto del eje $Y$ (por la simetría de la parábola), tiene vértices $(\pm x,0)$ y $(\pm x,12-x^2)$, con $0<x<\sqrt{12}$.
+3. Base $=2x$ y altura $=12-x^2$.
+
+**Función a maximizar.**
+4. Área: $A(x)=2x(12-x^2)=24x-2x^3$.
+5. Derivada: $A'(x)=24-6x^2=0\Rightarrow x=2$ (se descarta $x=-2$).
+6. $A''(x)=-12x$, y $A''(2)=-24<0$: es un **máximo**.
+7. Altura: $12-2^2=8$. Área: $A(2)=4\cdot8=32$.
 
 **Vértices $(-2,0)$, $(2,0)$, $(2,8)$, $(-2,8)$; área máxima $32$ u$^2$.**
 ::::
@@ -779,17 +1786,64 @@ b) Determina la ecuación de la recta tangente y la ecuación de la recta normal
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Monotonía y extremos relativos.**
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Recta tangente.**
+
+Tangente a la gráfica de $f$ en $x=a$: $y-f(a)=f'(a)\,(x-a)$. La pendiente es $f'(a)$. Tangente horizontal: $f'(a)=0$. Rectas paralelas tienen la misma pendiente; perpendiculares, $m\cdot m'=-1$.
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Monotonía y extremos relativos.**
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Recta tangente.**
+
+1. Calcula $f(a)$ (el punto) y $f'(x)$.
+2. Evalúa $f'(a)$ (la pendiente).
+3. Sustituye en la ecuación punto-pendiente.
+4. Si el punto no es dato, obtén $a$ de la condición del enunciado (pendiente dada, tangente horizontal…).
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$f'(x)=e^{x}(\cos x+\operatorname{sen}x)+e^{x}(-\operatorname{sen}x+\cos x)=2e^{x}\cos x$.
+**Derivada.**
+1. Por la regla del producto: $f'(x)=e^{x}(\cos x+\operatorname{sen}x)+e^{x}(-\operatorname{sen}x+\cos x)=2e^{x}\cos x$.
 
-**a)** $f'=0$ en $x=\tfrac{\pi}{2}$ y $x=\tfrac{3\pi}{2}$. Se comparan los valores en los puntos críticos y en los extremos:
-$f(0)=1$, $f(\tfrac{\pi}{2})=e^{\pi/2}\approx 4{,}81$, $f(\tfrac{3\pi}{2})=-e^{3\pi/2}\approx-111{,}3$, $f(2\pi)=e^{2\pi}\approx 535{,}5$.
+**a) Extremos absolutos en $[0,2\pi]$.**
+1. $f'(x)=0\iff\cos x=0$, es decir, $x=\tfrac{\pi}{2}$ y $x=\tfrac{3\pi}{2}$ (puntos críticos dentro del intervalo).
+2. El teorema de Weierstrass asegura que una función continua en un intervalo cerrado alcanza máximo y mínimo absolutos: se comparan los valores en los puntos críticos y en los extremos del intervalo.
+3. $f(0)=1$, $f(\tfrac{\pi}{2})=e^{\pi/2}\approx 4{,}81$, $f(\tfrac{3\pi}{2})=-e^{3\pi/2}\approx-111{,}3$, $f(2\pi)=e^{2\pi}\approx 535{,}5$.
+4. El mayor es $f(2\pi)$ y el menor es $f(\tfrac{3\pi}{2})$.
 
 **Máximo absoluto en $x=2\pi$, de valor $e^{2\pi}$; mínimo absoluto en $x=\tfrac{3\pi}{2}$, de valor $-e^{3\pi/2}$.**
 
-**b)** $f(\tfrac{3\pi}{2})=-e^{3\pi/2}$ y $f'(\tfrac{3\pi}{2})=0$ (tangente horizontal).
+**b) Tangente y normal en $x=\tfrac{3\pi}{2}$.**
+1. Punto: $f(\tfrac{3\pi}{2})=-e^{3\pi/2}$.
+2. Pendiente: $f'(\tfrac{3\pi}{2})=2e^{3\pi/2}\cos\tfrac{3\pi}{2}=0$: la tangente es horizontal.
+3. La normal es perpendicular a la tangente, luego es vertical y pasa por el mismo punto.
 
 **Tangente: $y=-e^{3\pi/2}$. Normal: $x=\tfrac{3\pi}{2}$.**
 ::::
@@ -813,17 +1867,66 @@ b) Esboza la gráfica de $f$ y calcula el área del recinto limitado por dicha g
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Monotonía y extremos relativos.**
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Representar una función.**
+
+Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Monotonía y extremos relativos.**
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Representar una función.**
+
+1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f'(x)=12x^2-4x^3=4x^2(3-x)$: positiva si $x<3$ ($x\neq0$) y negativa si $x>3$.
+**a) Crecimiento y decrecimiento.**
+1. Derivada: $f'(x)=12x^2-4x^3=4x^2(3-x)$.
+2. Se anula en $x=0$ y $x=3$. El factor $4x^2$ es positivo salvo en $x=0$, así que el signo lo da $3-x$.
+3. $f'>0$ si $x<3$ ($x\neq0$) y $f'<0$ si $x>3$.
 
 **Crece en $(-\infty,3)$ y decrece en $(3,+\infty)$**; máximo relativo en $x=3$, con $f(3)=27$ (en $x=0$ hay punto de inflexión de tangente horizontal).
 
-**b)** $f(x)=x^3(4-x)$ corta al eje en $x=0$ (con tangente horizontal) y $x=4$; es $\ge0$ en $[0,4]$. La gráfica sube con un punto de inflexión en $(0,0)$, tiene el máximo en $(3,27)$ y baja pasando por $(4,0)$; otro punto de inflexión en $x=2$.
+**b) Gráfica y área.**
+1. Cortes: $f(x)=x^3(4-x)$ corta al eje en $x=0$ (con tangente horizontal) y en $x=4$; es $\ge0$ en $[0,4]$.
+2. Curvatura: $f''(x)=12x(2-x)$ se anula en $x=0$ y $x=2$ y cambia de signo en ambos: dos puntos de inflexión.
+3. Forma: la gráfica sube con un punto de inflexión en $(0,0)$, tiene el máximo en $(3,27)$ y baja pasando por $(4,0)$; otro punto de inflexión en $x=2$, con $f(2)=16$.
 
 ![Gráfica de f(x)=4x³−x⁴: cortes en x=0 y x=4, máximo en (3,27) y recinto sombreado entre la curva y el eje X](fig/2021-ord-e3.svg){fig-alt="Gráfica de f(x)=4x³−x⁴: cortes en x=0 y x=4, máximo en (3,27) y recinto sombreado entre la curva y el eje X" width="75%" fig-align="center"}
 
+4. Área: el recinto está entre $x=0$ y $x=4$, donde $f\ge0$. Regla de Barrow:
 $$A=\int_0^4(4x^3-x^4)\,dx=\left[x^4-\frac{x^5}{5}\right]_0^4=256-\frac{1024}{5}.$$
 
 **$A=\dfrac{256}{5}\ \text{u}^2$**
@@ -845,14 +1948,50 @@ b) Calcula el área de la región limitada por la gráfica de la función $f$ y 
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Monotonía y extremos relativos.**
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Monotonía y extremos relativos.**
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f'(x)=\dfrac{2\ln x}{x}$: negativa si $0<x<1$, positiva si $x>1$.
+**a) Crecimiento, decrecimiento y extremos.**
+1. Dominio $(0,+\infty)$. Derivada: $f'(x)=\dfrac{2\ln x}{x}$.
+2. Se anula en $x=1$. El denominador $x$ es positivo, así que el signo lo da $\ln x$.
+3. $f'<0$ si $0<x<1$ y $f'>0$ si $x>1$.
 
 **Decrece en $(0,1)$ y crece en $(1,+\infty)$; mínimo relativo en $x=1$ con valor $f(1)=0$.**
 
-**b)** $f\ge0$. Por partes (dos veces), una primitiva es $x\ln^2x-2x\ln x+2x$:
+**b) Área.**
+1. $f(x)=\ln^2x\ge0$, así que el área es la integral entre $x=1$ y $x=e$.
+2. Primitiva, integrando por partes (dos veces): $\displaystyle\int\ln^2x\,dx=x\ln^2x-2x\ln x+2x$.
+3. Regla de Barrow:
 
 $$A=\bigl[x\ln^2x-2x\ln x+2x\bigr]_1^e=(e-2e+2e)-2=e-2.$$
 
@@ -871,12 +2010,28 @@ Halla $a>0$ y $b>0$ sabiendo que la gráfica de la función $f:\mathbb{R}\to\mat
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Condiciones: $f(1)=\dfrac{b}{1+a}=2\Rightarrow b=2+2a$ y $f'(1)=0$.
-
-$f'(x)=\dfrac{2bx(1+ax^4)-4abx^5}{(1+ax^4)^2}=\dfrac{2bx(1-ax^4)}{(1+ax^4)^2}$, y $f'(1)=0\Rightarrow 1-a=0\Rightarrow a=1$ (pues $b>0$). Entonces $b=4$.
+1. **Condición del punto.** La gráfica pasa por $(1,2)$: $f(1)=\dfrac{b}{1+a}=2\Rightarrow b=2+2a$.
+2. **Punto crítico.** $f'(1)=0$.
+3. **Derivada.** $f'(x)=\dfrac{2bx(1+ax^4)-4abx^5}{(1+ax^4)^2}=\dfrac{2bx(1-ax^4)}{(1+ax^4)^2}$.
+4. **Resolver.** $f'(1)=0\Rightarrow 1-a=0\Rightarrow a=1$ (pues $b>0$ y el denominador es positivo, el único factor que se anula es $1-a$).
+5. **Segundo parámetro.** $b=2+2a=2+2=4$.
 
 **$a=1,\ b=4$**
 ::::
@@ -894,16 +2049,45 @@ Determina los intervalos de concavidad y de convexidad de $f$ y sus puntos de in
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Curvatura y puntos de inflexión.**
+
+$f''>0$: convexa; $f''<0$: cóncava. Punto de inflexión en $x=a$: $f''(a)=0$ y $f''$ cambia de signo.
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Curvatura y puntos de inflexión.**
+
+1. Calcula $f''(x)$ y resuelve $f''(x)=0$.
+2. Estudia el signo de $f''$ en los intervalos que quedan.
+3. Indica los intervalos de convexidad y concavidad, y las coordenadas de los puntos de inflexión.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$f'(x)=xe^x$ (teorema fundamental del cálculo), luego $f''(x)=(x+1)e^x$.
-
-$f''<0$ si $x<-1$ y $f''>0$ si $x>-1$.
+1. **Derivadas.** Por el teorema fundamental del cálculo, $f'(x)=xe^x$. Derivando de nuevo (producto): $f''(x)=(x+1)e^x$.
+2. **Signo de $f''$.** $e^x>0$, así que el signo lo da $x+1$: $f''<0$ si $x<-1$ y $f''>0$ si $x>-1$.
+3. **Curvatura.** Cóncava donde $f''<0$ y convexa donde $f''>0$; en $x=-1$ cambia el signo.
 
 **Cóncava en $(-\infty,-1)$, convexa en $(-1,+\infty)$; punto de inflexión en $x=-1$.**
 
-Valor: $f(-1)=1+\bigl[(t-1)e^t\bigr]_0^{-1}=1+(-2e^{-1}+1)=$ **$2-\dfrac2e$**.
+4. **Valor en el punto de inflexión.** Una primitiva de $te^t$ es $(t-1)e^t$ (por partes). Entonces $f(-1)=1+\bigl[(t-1)e^t\bigr]_0^{-1}=1+(-2e^{-1}+1)=$ **$2-\dfrac2e$**.
 ::::
 :::::
 
@@ -918,14 +2102,42 @@ Calcula $a$, $b$, $c$ y $d$ sabiendo que la gráfica de la función $f:\mathbb{R
 
 *Relacionado también con:* [Derivadas](07-derivadas.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Curvatura y puntos de inflexión.**
+
+$f''>0$: convexa; $f''<0$: cóncava. Punto de inflexión en $x=a$: $f''(a)=0$ y $f''$ cambia de signo.
+
+**Reglas de derivación.**
+
+$(u\pm v)'=u'\pm v'$; $(u\cdot v)'=u'v+uv'$; $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$; regla de la cadena $(f\circ g)'=f'(g)\cdot g'$. Básicas: $(x^n)'=nx^{n-1}$, $(e^{u})'=u'e^{u}$, $(\ln u)'=\dfrac{u'}{u}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Curvatura y puntos de inflexión.**
+
+1. Calcula $f''(x)$ y resuelve $f''(x)=0$.
+2. Estudia el signo de $f''$ en los intervalos que quedan.
+3. Indica los intervalos de convexidad y concavidad, y las coordenadas de los puntos de inflexión.
+
+**Reglas de derivación.**
+
+1. Identifica la estructura: ¿suma, producto, cociente o función compuesta? Empieza por la operación «de fuera».
+2. Aplica la regla y simplifica (saca factor común).
+3. Comprueba un valor numérico si tienes dudas.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Punto de inflexión en $(0,4)$: $f(0)=4\Rightarrow d=4$ y $f''(0)=2b=0\Rightarrow b=0$.
-
-Normal vertical (paralela al eje de ordenadas) en $(1,8)$ significa tangente horizontal: $f'(1)=3a+c=0$. Además $f(1)=a+c+4=8\Rightarrow a+c=4$.
-
-Resolviendo: $a=-2$, $c=6$.
+1. **Condiciones.** Hay cuatro parámetros y cuatro datos, uno por ecuación.
+2. **Punto de inflexión en $(0,4)$.** Está en la gráfica: $f(0)=4\Rightarrow d=4$. Y la segunda derivada se anula: $f''(x)=6ax+2b$, luego $f''(0)=2b=0\Rightarrow b=0$.
+3. **Normal en $(1,8)$.** Una normal paralela al eje de ordenadas es vertical, así que la tangente es horizontal: $f'(1)=3a+c=0$.
+4. **Punto $(1,8)$ en la gráfica.** $f(1)=a+c+4=8\Rightarrow a+c=4$.
+5. **Sistema.** De $3a+c=0$ y $a+c=4$ se obtiene $a=-2$ y $c=6$.
 
 **$a=-2,\; b=0,\; c=6,\; d=4$**, es decir, $f(x)=-2x^3+6x+4$.
 ::::
@@ -946,16 +2158,51 @@ b) Calcula $\displaystyle\int_{0}^{2}f(x)\,dx$. *(1,25 puntos)*
 
 *Relacionado también con:* [Integrales](09-integrales.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Monotonía y extremos relativos.**
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Primitivas inmediatas.**
+
+$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$; $\int\sin x\,dx=-\cos x+C$; $\int\cos x\,dx=\sin x+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Monotonía y extremos relativos.**
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Primitivas inmediatas.**
+
+1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$f(x)=\begin{cases}x^2-x+1&x<1\\x^2+x-1&x\ge1\end{cases}$, con $f'(x)=2x-1$ si $x<1$ y $f'(x)=2x+1$ si $x>1$.
+**Previo.** Se quita el valor absoluto: $f(x)=\begin{cases}x^2-x+1&x<1\\x^2+x-1&x\ge1\end{cases}$, con $f'(x)=2x-1$ si $x<1$ y $f'(x)=2x+1$ si $x>1$.
 
-**a)** Para $x<1$, $f'=0$ en $x=\frac12$ (negativa a su izquierda, positiva a su derecha); para $x>1$, $f'>0$.
+**a) Crecimiento y decrecimiento.**
+1. Para $x<1$, $f'=0$ en $x=\frac12$; $f'<0$ a su izquierda y $f'>0$ a su derecha (hasta $x=1$).
+2. Para $x>1$: $f'=2x+1>0$.
 
 **Decrece en $\left(-\infty,\tfrac12\right)$ y crece en $\left(\tfrac12,+\infty\right)$** (mínimo relativo en $x=\frac12$).
 
-**b)** $\displaystyle\int_0^2f=\int_0^1(x^2-x+1)\,dx+\int_1^2(x^2+x-1)\,dx=\frac56+\frac{17}{6}$.
+**b) Integral.**
+1. Se parte en $x=1$, donde cambia la expresión.
+2. Cada trozo con Barrow:
+$$\int_0^2f=\int_0^1(x^2-x+1)\,dx+\int_1^2(x^2+x-1)\,dx=\frac56+\frac{17}{6}.$$
 
 **$\dfrac{11}{3}$**
 ::::

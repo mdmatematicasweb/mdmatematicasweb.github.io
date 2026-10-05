@@ -50,6 +50,32 @@ FORMATO = {
     2026: "6 ejercicios: 2 obligatorios y 2 bloques optativos de 2; se hacen los 2 obligatorios y 1 de cada bloque. Aparece probabilidad y distribución normal.",
 }
 
+AYUDAS = Path(__file__).resolve().parent / "ayudas"
+
+
+def load_ayudas():
+    """Conceptos (ayudas/conceptos.md) y su asignación a ejercicios (ayudas/asignacion.tsv)."""
+    conceptos = {}
+    for blk in re.split(r"^@@ ", (AYUDAS / "conceptos.md").read_text(), flags=re.M)[1:]:
+        head, _, body = blk.partition("\n")
+        cid, titulo = [x.strip() for x in head.split("|")]
+        m = re.fullmatch(r"\s*### R\n(.*?)\n### M\n(.*)", body, re.S)
+        if not m:
+            sys.exit(f"ayudas/conceptos.md: {cid} necesita «### R» y «### M»")
+        conceptos[cid] = {"titulo": titulo, "R": m.group(1).strip(), "M": m.group(2).strip()}
+    asign = {}
+    for l in (AYUDAS / "asignacion.tsv").read_text().splitlines():
+        if not l.strip() or l.startswith("#"):
+            continue
+        slug, n, ids = l.split("\t")
+        ids = [i for i in ids.split(",") if i]
+        for i in ids:
+            if i not in conceptos:
+                sys.exit(f"ayudas/asignacion.tsv: {slug} {n}: concepto desconocido {i!r}")
+        asign[(slug, n)] = ids
+    return conceptos, asign
+
+
 
 def load_exams():
     exams = []
@@ -89,6 +115,15 @@ def load_exams():
 
 def validate(exams):
     errs = []
+    _, asign = load_ayudas()
+    claves = {(e["slug"], x["n"]) for e in exams for x in e["ejercicios"]}
+    for k in sorted(claves - set(asign)):
+        errs.append(f"{k[0]} ej.{k[1]}: sin ayudas en ayudas/asignacion.tsv")
+    for k in sorted(set(asign) - claves):
+        errs.append(f"{k[0]} ej.{k[1]}: asignación de ayudas para un ejercicio que no existe")
+    for k, ids in asign.items():
+        if not ids:
+            errs.append(f"{k[0]} ej.{k[1]}: lista de ayudas vacía")
     for e in exams:
         tag = e["slug"]
         if len(e["ejercicios"]) != EXPECTED[e["year"]]:
@@ -153,6 +188,9 @@ def sort_ej(x):
     return [int(p) for p in x["n"].split(".")]
 
 
+CONCEPTOS, ASIGN = load_ayudas()
+
+
 def tema_page(t, exams):
     slug, nombre = TEMAS[t]
     principales = [(e, x) for e in exams for x in e["ejercicios"] if x["tema"] == t]
@@ -167,7 +205,7 @@ def tema_page(t, exams):
                + (f", los [ejercicios del tema](../{slug}/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ciencias/{slug}/index.qmd).\n"
                   if (ROOT / "actividades" / "2-bachillerato-ciencias" / slug / "index.qmd").exists()
                   else f" y los [ejercicios del tema](../{slug}/index.qmd).\n"))
-    out.append("Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.\n")
+    out.append("Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **solución** paso a paso con el resultado. Inténtalo con la menor ayuda posible.\n")
     if t in (10, 11):
         out.append("> Probabilidad y distribución normal **no entraron en Matemáticas II hasta la convocatoria de 2025**: los anteriores exámenes (2021–2024) no tienen ejercicios de este tema.\n")
     if not principales:
@@ -181,12 +219,18 @@ def tema_page(t, exams):
                 last = e["conv"]
             otros = ", ".join(f"[{TEMAS[o][1]}]({TEMAS[o][0]}.qmd)" for o in x["tambien"])
             extra = f"\n\n*Relacionado también con:* {otros}." if otros else ""
+            ids = ASIGN[(e["slug"], x["n"])]
+            ayuda = "".join(
+                f"\n\n:::: {{.callout-note collapse=\"true\" appearance=\"simple\"}}\n## {titulo}\n\n"
+                + "\n\n".join(f"**{CONCEPTOS[i]['titulo']}.**\n\n{CONCEPTOS[i][k]}" if len(ids) > 1 else CONCEPTOS[i][k] for i in ids)
+                + "\n::::"
+                for k, titulo in (("R", "Ayuda 1 · Recordatorio"), ("M", "Ayuda 2 · Método")))
             sol = (f"\n\n:::: {{.callout-tip collapse=\"true\" appearance=\"simple\"}}\n## Solución\n\n{x['sol']}\n::::"
                    if x.get("sol") else "")
             out.append(
                 f"\n::::: {{.ebau-ej #{anchor(e, x)}}}\n"
                 f"**Ejercicio {x['n']}** · {e['conv']} {y} · {BLOQUE[x['bloque']]} · *({x['pts']} puntos)* · {md_links(e, ' · ', True) if e['slug'] in OFICIAL else md_links(e, ' · ')}\n\n"
-                f"{x['tex']}{extra}{sol}\n"
+                f"{x['tex']}{extra}{ayuda}{sol}\n"
                 f":::::\n"
             )
     if relacionados:
@@ -211,7 +255,7 @@ def index_page(exams):
     out = ['---\ntitle: "PAU Andalucía 2021–2026 por temas"\nlang: es\n---\n']
     out.append(f"Relación de los **{total} ejercicios** de Matemáticas II de la PAU (antes PEvAU) de Andalucía entre 2021 y 2026, agrupados por el tema de 2º de Bachillerato Ciencias al que pertenecen. "
                f"Incluye las convocatorias **ordinaria** y **extraordinaria** y todos sus exámenes de **reserva** y **suplentes** ({len(exams)} exámenes). "
-               "Cada ejercicio indica de qué examen procede, enlaza al PDF completo y tiene debajo una **resolución breve** plegada (pulsa «Solución» después de intentarlo).\n")
+               "Cada ejercicio indica de qué examen procede, enlaza al PDF completo y tiene debajo tres desplegables: **Ayuda 1 · Recordatorio**, **Ayuda 2 · Método** y **Solución** (ábrelos de uno en uno, después de intentarlo).\n")
     out.append("## Ejercicios por tema y año\n")
     out.append("| Tema | " + " | ".join(str(y) for y in years) + " | Total |")
     out.append("|---|" + "---:|" * (len(years) + 1))

@@ -5,7 +5,7 @@ lang: es
 
 Ejercicios de **Matemáticas II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *vectores en el espacio*: **13 ejercicios** de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ciencias/04-vectores-espacio/index.qmd), los [ejercicios del tema](../04-vectores-espacio/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ciencias/04-vectores-espacio/index.qmd).
 
-Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **solución** paso a paso con el resultado. Inténtalo con la menor ayuda posible.
 
 
 ## 2026
@@ -23,16 +23,56 @@ a) Halla los valores de $m$ para los cuales los puntos anteriores son coplanario
 
 b) Para $m=1$, calcula el área del triángulo de vértices $A$, $B$, $C$ y el volumen del tetraedro de vértices $A$, $B$, $C$, $D$. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+$\vec{u}\times\vec{v}$ es perpendicular a ambos, con $|\vec{u}\times\vec{v}|=|\vec{u}||\vec{v}|\sin\alpha$ (área del paralelogramo). Área del triángulo $=\dfrac12|\vec{u}\times\vec{v}|$. Producto mixto $[\vec{u},\vec{v},\vec{w}]=\vec{u}\cdot(\vec{v}\times\vec{w})$ (determinante): volumen del paralelepípedo $=|[\vec{u},\vec{v},\vec{w}]|$ y del tetraedro $\dfrac16|[\vec{u},\vec{v},\vec{w}]|$. Tres vectores son coplanarios si $[\vec{u},\vec{v},\vec{w}]=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+1. Forma los vectores con origen en un mismo vértice.
+2. Calcula el producto vectorial (determinante simbólico) o el mixto (determinante $3\times3$).
+3. Aplica la fórmula de área o volumen con su factor ($\tfrac12$ o $\tfrac16$ si es triángulo o tetraedro).
+4. Da la unidad: $\text{u}^2$ o $\text{u}^3$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\overrightarrow{AB}=(1,m-2,1)$, $\overrightarrow{AC}=(2,2,2)$, $\overrightarrow{AD}=(0,-3,m)$.
+**Vectores con origen en $A$.**
+1. $\overrightarrow{AB}=(1,m-2,1)$, $\overrightarrow{AC}=(2,2,2)$ y $\overrightarrow{AD}=(0,-3,m)$.
 
-**a)** Coplanarios si $\det(\overrightarrow{AB},\overrightarrow{AC},\overrightarrow{AD})=-2m(m-3)=0$.
+**a) Valores de $m$ con puntos coplanarios.**
+1. Cuatro puntos son coplanarios si los tres vectores desde $A$ lo son, es decir, si su producto mixto (determinante) es $0$.
+2. Se desarrolla el determinante:
+$$\det(\overrightarrow{AB},\overrightarrow{AC},\overrightarrow{AD})=-2m(m-3).$$
+3. Se iguala a $0$ y se resuelve.
 
 **$m=0$ o $m=3$.**
 
-**b)** Con $m=1$: $\overrightarrow{AB}=(1,-1,1)$, $\overrightarrow{AB}\times\overrightarrow{AC}=(-4,0,4)$, de módulo $4\sqrt2$. El determinante de los tres vectores vale $-2m(m-3)=4$.
+**b) Área y volumen** (con $m=1$).
+1. Vectores: $\overrightarrow{AB}=(1,-1,1)$ y $\overrightarrow{AC}=(2,2,2)$.
+2. Producto vectorial: $\overrightarrow{AB}\times\overrightarrow{AC}=(-4,0,4)$, de módulo $4\sqrt2$.
+3. El área del triángulo es la mitad del módulo: $\dfrac{4\sqrt2}{2}$.
+4. El producto mixto de los tres vectores (con $\overrightarrow{AD}=(0,-3,1)$) vale $-2m(m-3)=4$.
+5. El volumen del tetraedro es la sexta parte del valor absoluto del producto mixto: $\dfrac{|4|}{6}$.
 
 **Área $=\dfrac{4\sqrt2}{2}=2\sqrt2\ \text{u}^2$; volumen $=\dfrac{|4|}{6}=\dfrac23\ \text{u}^3$.**
 ::::
@@ -51,14 +91,52 @@ a) Calcula $m$ para que el área del triángulo que definen $\vec{u}$ y $\vec{v}
 
 b) Para $m=0$, halla los vectores que sean perpendiculares a $\vec{u}$ y $\vec{v}$, y tengan módulo $\sqrt{20}$. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+$\vec{u}\times\vec{v}$ es perpendicular a ambos, con $|\vec{u}\times\vec{v}|=|\vec{u}||\vec{v}|\sin\alpha$ (área del paralelogramo). Área del triángulo $=\dfrac12|\vec{u}\times\vec{v}|$. Producto mixto $[\vec{u},\vec{v},\vec{w}]=\vec{u}\cdot(\vec{v}\times\vec{w})$ (determinante): volumen del paralelepípedo $=|[\vec{u},\vec{v},\vec{w}]|$ y del tetraedro $\dfrac16|[\vec{u},\vec{v},\vec{w}]|$. Tres vectores son coplanarios si $[\vec{u},\vec{v},\vec{w}]=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+1. Forma los vectores con origen en un mismo vértice.
+2. Calcula el producto vectorial (determinante simbólico) o el mixto (determinante $3\times3$).
+3. Aplica la fórmula de área o volumen con su factor ($\tfrac12$ o $\tfrac16$ si es triángulo o tetraedro).
+4. Da la unidad: $\text{u}^2$ o $\text{u}^3$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\vec u\times\vec v=(-m,-3,2m)$, con $|\vec u\times\vec v|=\sqrt{5m^2+9}$.
+**Producto vectorial.**
+1. $\vec u\times\vec v=(-m,-3,2m)$.
+2. Módulo: $|\vec u\times\vec v|=\sqrt{m^2+9+4m^2}=\sqrt{5m^2+9}$.
 
-**a)** Área $=\tfrac12\sqrt{5m^2+9}=\tfrac{\sqrt{29}}{2}\Rightarrow 5m^2=20$. **$m=2$ o $m=-2$.**
+**a) Valor de $m$ para el área dada.**
+1. El área del triángulo es la mitad del módulo del producto vectorial: $\tfrac12\sqrt{5m^2+9}=\tfrac{\sqrt{29}}{2}$.
+2. Se elevan al cuadrado: $5m^2+9=29\Rightarrow5m^2=20$.
 
-**b)** Para $m=0$: $\vec u\times\vec v=(0,-3,0)$, así que los vectores buscados son de la forma $(0,k,0)$ con $|k|=\sqrt{20}$.
+**$m=2$ o $m=-2$.**
+
+**b) Vectores perpendiculares a $\vec u$ y $\vec v$ de módulo $\sqrt{20}$** (con $m=0$).
+1. Un vector perpendicular a ambos es paralelo al producto vectorial: $\vec u\times\vec v=(0,-3,0)$.
+2. Los vectores buscados son de la forma $(0,k,0)$ con $|k|=\sqrt{20}=2\sqrt5$.
 
 **$(0,2\sqrt5,0)$ y $(0,-2\sqrt5,0)$.**
 ::::
@@ -82,14 +160,63 @@ b) Para $m=0$, calcula la distancia del punto $O$ al plano que pasa por los punt
 
 *Relacionado también con:* [Rectas y planos](05-rectas-planos.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+$\vec{u}\times\vec{v}$ es perpendicular a ambos, con $|\vec{u}\times\vec{v}|=|\vec{u}||\vec{v}|\sin\alpha$ (área del paralelogramo). Área del triángulo $=\dfrac12|\vec{u}\times\vec{v}|$. Producto mixto $[\vec{u},\vec{v},\vec{w}]=\vec{u}\cdot(\vec{v}\times\vec{w})$ (determinante): volumen del paralelepípedo $=|[\vec{u},\vec{v},\vec{w}]|$ y del tetraedro $\dfrac16|[\vec{u},\vec{v},\vec{w}]|$. Tres vectores son coplanarios si $[\vec{u},\vec{v},\vec{w}]=0$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+1. Forma los vectores con origen en un mismo vértice.
+2. Calcula el producto vectorial (determinante simbólico) o el mixto (determinante $3\times3$).
+3. Aplica la fórmula de área o volumen con su factor ($\tfrac12$ o $\tfrac16$ si es triángulo o tetraedro).
+4. Da la unidad: $\text{u}^2$ o $\text{u}^3$.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $\overrightarrow{OA}=(0,2,-2)$, $\overrightarrow{OB}=(1,2,m)$, $\overrightarrow{OC}=(2,3,2)$:
+**a) Volumen del tetraedro.**
+1. Vectores desde $O$: $\overrightarrow{OA}=(0,2,-2)$, $\overrightarrow{OB}=(1,2,m)$ y $\overrightarrow{OC}=(2,3,2)$.
+2. Producto mixto (determinante):
 $$\left|\begin{matrix}0&2&-2\\1&2&m\\2&3&2\end{matrix}\right|=4m-2.$$
-$V=\dfrac{|4m-2|}{6}=3\Rightarrow4m-2=\pm18$. **$m=5$ o $m=-4$.**
+3. El volumen del tetraedro es una sexta parte del valor absoluto del producto mixto: $V=\dfrac{|4m-2|}{6}=3$.
+4. Entonces $4m-2=\pm18$, de donde $m=5$ o $m=-4$.
 
-**b)** Con $m=0$: $B(1,2,0)$, $\overrightarrow{AB}=(1,0,2)$, $\overrightarrow{AC}=(2,1,4)$, normal $\overrightarrow{AB}\times\overrightarrow{AC}=(-2,0,1)$. Plano por $A$: $-2x+z+2=0$, es decir $2x-z-2=0$ (comprobado con $B$ y $C$).
+**$m=5$ o $m=-4$.**
+
+**b) Distancia de $O$ al plano $ABC$** (con $m=0$).
+1. Puntos y vectores: $B(1,2,0)$, $\overrightarrow{AB}=(1,0,2)$ y $\overrightarrow{AC}=(2,1,4)$.
+2. Normal del plano: $\overrightarrow{AB}\times\overrightarrow{AC}=(-2,0,1)$.
+3. Plano por $A(0,2,-2)$: $-2x+z+D=0$ con $-2+D=0$, luego $-2x+z+2=0$, es decir, $2x-z-2=0$ (comprobado con $B$: $2-0-2=0$, y con $C$: $4-2-2=0$).
+4. Distancia del origen al plano:
 $$d(O,\pi)=\frac{|-2|}{\sqrt{4+1}}=\mathbf{\frac{2}{\sqrt5}}=\frac{2\sqrt5}{5}\approx0{,}89.$$
 ::::
 :::::
@@ -107,15 +234,52 @@ a) Calcula el área del triángulo de vértices $A$, $B$ y $C$. *(1 punto)*
 
 b) Halla los puntos $D$ pertenecientes al eje $OZ$ para que el tetraedro de vértices $A$, $B$, $C$ y $D$ tenga un volumen de 20 unidades cúbicas. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+$\vec{u}\times\vec{v}$ es perpendicular a ambos, con $|\vec{u}\times\vec{v}|=|\vec{u}||\vec{v}|\sin\alpha$ (área del paralelogramo). Área del triángulo $=\dfrac12|\vec{u}\times\vec{v}|$. Producto mixto $[\vec{u},\vec{v},\vec{w}]=\vec{u}\cdot(\vec{v}\times\vec{w})$ (determinante): volumen del paralelepípedo $=|[\vec{u},\vec{v},\vec{w}]|$ y del tetraedro $\dfrac16|[\vec{u},\vec{v},\vec{w}]|$. Tres vectores son coplanarios si $[\vec{u},\vec{v},\vec{w}]=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+1. Forma los vectores con origen en un mismo vértice.
+2. Calcula el producto vectorial (determinante simbólico) o el mixto (determinante $3\times3$).
+3. Aplica la fórmula de área o volumen con su factor ($\tfrac12$ o $\tfrac16$ si es triángulo o tetraedro).
+4. Da la unidad: $\text{u}^2$ o $\text{u}^3$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $\overrightarrow{AB}=(-2,4,-4)$, $\overrightarrow{AC}=(-5,-1,0)$, $\overrightarrow{AB}\times\overrightarrow{AC}=(-4,20,22)$.
+**a) Área del triángulo.**
+1. Vectores desde $A$: $\overrightarrow{AB}=(-2,4,-4)$ y $\overrightarrow{AC}=(-5,-1,0)$.
+2. Producto vectorial: $\overrightarrow{AB}\times\overrightarrow{AC}=(-4,20,22)$.
+3. El área del triángulo es la mitad del módulo del producto vectorial:
 $$\text{Área}=\tfrac12\sqrt{16+400+484}=\tfrac12\sqrt{900}=\mathbf{15}\ u^2.$$
 
-**b)** $D(0,0,z)$, $\overrightarrow{AD}=(-3,1,z-1)$. El producto mixto es $(\overrightarrow{AB}\times\overrightarrow{AC})\cdot\overrightarrow{AD}=12+20+22(z-1)=22z+10$.
+**b) Puntos $D$ del eje $OZ$.**
+1. Un punto del eje $OZ$ es $D(0,0,z)$, y $\overrightarrow{AD}=(-3,1,z-1)$.
+2. Producto mixto: $(\overrightarrow{AB}\times\overrightarrow{AC})\cdot\overrightarrow{AD}=12+20+22(z-1)=22z+10$.
+3. El volumen del tetraedro es $V=\dfrac{|22z+10|}{6}=20$, luego $22z+10=\pm120$.
+4. Dos soluciones: $z=5$ y $z=-\dfrac{65}{11}$.
 
-$V=\dfrac{|22z+10|}{6}=20\Rightarrow22z+10=\pm120$. **$D(0,0,5)$ y $D\left(0,0,-\dfrac{65}{11}\right)$.**
+**$D(0,0,5)$ y $D\left(0,0,-\dfrac{65}{11}\right)$.**
 ::::
 :::::
 
@@ -135,14 +299,50 @@ a) Determina el área del triángulo de vértices $A$, $B$ y $C$. *(1,25 puntos)
 
 b) Calcula $D$ para que los puntos $A$, $B$, $C$ y $D$ sean los vértices consecutivos de un paralelogramo. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+$\vec{u}\times\vec{v}$ es perpendicular a ambos, con $|\vec{u}\times\vec{v}|=|\vec{u}||\vec{v}|\sin\alpha$ (área del paralelogramo). Área del triángulo $=\dfrac12|\vec{u}\times\vec{v}|$. Producto mixto $[\vec{u},\vec{v},\vec{w}]=\vec{u}\cdot(\vec{v}\times\vec{w})$ (determinante): volumen del paralelepípedo $=|[\vec{u},\vec{v},\vec{w}]|$ y del tetraedro $\dfrac16|[\vec{u},\vec{v},\vec{w}]|$. Tres vectores son coplanarios si $[\vec{u},\vec{v},\vec{w}]=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+1. Forma los vectores con origen en un mismo vértice.
+2. Calcula el producto vectorial (determinante simbólico) o el mixto (determinante $3\times3$).
+3. Aplica la fórmula de área o volumen con su factor ($\tfrac12$ o $\tfrac16$ si es triángulo o tetraedro).
+4. Da la unidad: $\text{u}^2$ o $\text{u}^3$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\overrightarrow{BA}=(0,1,1)$, $\overrightarrow{BC}=(0,-1,1)$, $\overrightarrow{BA}\times\overrightarrow{BC}=(2,0,0)$.
+**Datos.** Vectores desde $B$: $\overrightarrow{BA}=(0,1,1)$ y $\overrightarrow{BC}=(0,-1,1)$. Su producto vectorial es $\overrightarrow{BA}\times\overrightarrow{BC}=(2,0,0)$.
 
-**a)** Área $=\tfrac12\cdot2=\mathbf{1\ u^2}$.
+**a) Área del triángulo.**
+1. El área del triángulo es la mitad del módulo del producto vectorial: $\tfrac12\,|(2,0,0)|=\tfrac12\cdot2$.
 
-**b)** Para que $ABCD$ sea paralelogramo (vértices consecutivos): $\overrightarrow{BA}=\overrightarrow{CD}$, es decir $D=A+C-B=(1,1,2)+(1,-1,2)-(1,0,1)$:
+**Área $=\tfrac12\cdot2=\mathbf{1\ u^2}$.**
+
+**b) Cuarto vértice del paralelogramo.**
+1. Con los vértices consecutivos $A,B,C,D$, los lados opuestos son iguales: $\overrightarrow{BA}=\overrightarrow{CD}$.
+2. De aquí, $D=C+\overrightarrow{BA}=A+C-B$.
+3. $D=(1,1,2)+(1,-1,2)-(1,0,1)$:
 
 $$\mathbf{D=(1,0,3)}$$
 ::::
@@ -159,13 +359,58 @@ Considera los puntos $A(4,0,0)$ y $B(0,2,0)$. Calcula los puntos del plano $OXZ$
 
 *Relacionado también con:* [Rectas y planos](05-rectas-planos.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+$\vec{u}\times\vec{v}$ es perpendicular a ambos, con $|\vec{u}\times\vec{v}|=|\vec{u}||\vec{v}|\sin\alpha$ (área del paralelogramo). Área del triángulo $=\dfrac12|\vec{u}\times\vec{v}|$. Producto mixto $[\vec{u},\vec{v},\vec{w}]=\vec{u}\cdot(\vec{v}\times\vec{w})$ (determinante): volumen del paralelepípedo $=|[\vec{u},\vec{v},\vec{w}]|$ y del tetraedro $\dfrac16|[\vec{u},\vec{v},\vec{w}]|$. Tres vectores son coplanarios si $[\vec{u},\vec{v},\vec{w}]=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+1. Forma los vectores con origen en un mismo vértice.
+2. Calcula el producto vectorial (determinante simbólico) o el mixto (determinante $3\times3$).
+3. Aplica la fórmula de área o volumen con su factor ($\tfrac12$ o $\tfrac16$ si es triángulo o tetraedro).
+4. Da la unidad: $\text{u}^2$ o $\text{u}^3$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Un punto del plano $OXZ$ ($y=0$) es $P(x,0,z)$. $|AB|^2=16+4=20$.
+**Planteamiento.**
+1. Un punto del plano $OXZ$ ($y=0$) es $P(x,0,z)$.
+2. Lado del triángulo: $|AB|^2=16+4=20$.
+3. Equilátero: $|PA|=|PB|=|AB|$.
 
-- $|PA|=|PB|$: $(x-4)^2+z^2=x^2+4+z^2\Rightarrow-8x+16=4\Rightarrow x=\tfrac32$.
-- $|PA|^2=20$: $\left(\tfrac52\right)^2+z^2=20\Rightarrow z^2=\tfrac{55}{4}$.
+**Resolución.**
+1. $|PA|=|PB|$: $(x-4)^2+z^2=x^2+4+z^2\Rightarrow-8x+16=4\Rightarrow x=\tfrac32$.
+2. $|PA|^2=20$: $\left(\tfrac32-4\right)^2+z^2=\left(\tfrac52\right)^2+z^2=20\Rightarrow z^2=\tfrac{55}{4}$.
+3. Dos soluciones, simétricas respecto del plano $OXY$ ($z=\pm\tfrac{\sqrt{55}}2$).
 
 $$\mathbf{P=\left(\tfrac32,0,\tfrac{\sqrt{55}}2\right)\ \text{ y }\ P'=\left(\tfrac32,0,-\tfrac{\sqrt{55}}2\right)}$$
 ::::
@@ -184,14 +429,35 @@ a) Calcula $a$ para que ambos vectores formen un ángulo de $\pi/3$ radianes. *(
 
 b) Calcula $a$ para que el vector $(\vec{u}\times\vec{v})-\vec{v}$ sea ortogonal a $\vec{u}$. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\vec u\cdot\vec v=-2+a+2a=3a-2$ y $|\vec u|=|\vec v|=\sqrt{5+a^2}$.
+**Datos.** $\vec u\cdot\vec v=-2+a+2a=3a-2$ y $|\vec u|=|\vec v|=\sqrt{5+a^2}$ (para $\vec u$: $1+a^2+4$; para $\vec v$: $4+1+a^2$).
 
-**a)** $\cos\dfrac\pi3=\dfrac{3a-2}{5+a^2}=\dfrac12\Rightarrow a^2-6a+9=0\Rightarrow\mathbf{a=3}$ (comprobación: $7/14=1/2$).
+**a) Ángulo de $\pi/3$.**
+1. $\cos\dfrac\pi3=\dfrac{\vec u\cdot\vec v}{|\vec u||\vec v|}=\dfrac{3a-2}{5+a^2}=\dfrac12$.
+2. $6a-4=5+a^2\Rightarrow a^2-6a+9=0\Rightarrow(a-3)^2=0$.
 
-**b)** $\vec u\times\vec v$ es ortogonal a $\vec u$, luego $\big((\vec u\times\vec v)-\vec v\big)\cdot\vec u=0-\vec v\cdot\vec u=0\Rightarrow 3a-2=0$:
+$\mathbf{a=3}$ (comprobación: $7/14=1/2$).
+
+**b) Ortogonalidad.**
+1. $\vec u\times\vec v$ es perpendicular a $\vec u$, luego $(\vec u\times\vec v)\cdot\vec u=0$.
+2. Entonces $\big((\vec u\times\vec v)-\vec v\big)\cdot\vec u=0-\vec v\cdot\vec u=0\Rightarrow3a-2=0$:
 
 $$\mathbf{a=\tfrac23}.$$
 ::::
@@ -210,16 +476,51 @@ a) Determina $a$ para que el triángulo $OAB$ tenga área 3 unidades cuadradas. 
 
 b) Calcula $a$ para que $O$, $A$ y $B$ sean coplanarios con el punto $C(1,1,0)$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+$\vec{u}\times\vec{v}$ es perpendicular a ambos, con $|\vec{u}\times\vec{v}|=|\vec{u}||\vec{v}|\sin\alpha$ (área del paralelogramo). Área del triángulo $=\dfrac12|\vec{u}\times\vec{v}|$. Producto mixto $[\vec{u},\vec{v},\vec{w}]=\vec{u}\cdot(\vec{v}\times\vec{w})$ (determinante): volumen del paralelepípedo $=|[\vec{u},\vec{v},\vec{w}]|$ y del tetraedro $\dfrac16|[\vec{u},\vec{v},\vec{w}]|$. Tres vectores son coplanarios si $[\vec{u},\vec{v},\vec{w}]=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+1. Forma los vectores con origen en un mismo vértice.
+2. Calcula el producto vectorial (determinante simbólico) o el mixto (determinante $3\times3$).
+3. Aplica la fórmula de área o volumen con su factor ($\tfrac12$ o $\tfrac16$ si es triángulo o tetraedro).
+4. Da la unidad: $\text{u}^2$ o $\text{u}^3$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\overrightarrow{OA}=(a,-1,2)$, $\overrightarrow{OB}=(a,1,0)$, $\overrightarrow{OA}\times\overrightarrow{OB}=(-2,2a,2a)$.
+**Datos.** $\overrightarrow{OA}=(a,-1,2)$ y $\overrightarrow{OB}=(a,1,0)$, con $\overrightarrow{OA}\times\overrightarrow{OB}=(-2,2a,2a)$.
 
-**a)** Área $=\dfrac12\sqrt{4+8a^2}=3\Rightarrow 4+8a^2=36\Rightarrow a^2=4$:
+**a) Área $3$.**
+1. Área del triángulo: $\tfrac12\,|\overrightarrow{OA}\times\overrightarrow{OB}|=\tfrac12\sqrt{4+8a^2}$.
+2. Se iguala a $3$: $\sqrt{4+8a^2}=6\Rightarrow4+8a^2=36\Rightarrow a^2=4$.
 
 $$\mathbf{a=2\ \text{ o }\ a=-2}.$$
 
-**b)** Coplanarios: $\begin{vmatrix}a&-1&2\\a&1&0\\1&1&0\end{vmatrix}=2(a-1)=0$:
+**b) Coplanarios con $C(1,1,0)$.**
+1. Cuatro puntos con $O$ en el origen son coplanarios si $\overrightarrow{OA}$, $\overrightarrow{OB}$ y $\overrightarrow{OC}$ lo son: producto mixto cero.
+2. Determinante: $\begin{vmatrix}a&-1&2\\a&1&0\\1&1&0\end{vmatrix}=2(a-1)$ (se desarrolla por la tercera columna, que solo tiene el elemento $2$).
+3. $2(a-1)=0$:
 
 $$\mathbf{a=1}.$$
 ::::
@@ -243,16 +544,50 @@ b) Determina la ecuación del plano perpendicular al segmento $AB$ que pasa por 
 
 *Relacionado también con:* [Rectas y planos](05-rectas-planos.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\overrightarrow{AB}=(1,2,-4)$.
+**Vector del segmento.** $\overrightarrow{AB}=(1,2,-4)$.
 
-**a)** Puntos $A+\dfrac k4\overrightarrow{AB}$, $k=1,2,3$:
+**a) Puntos que dividen $AB$ en cuatro partes iguales.**
+1. Se avanza desde $A$ un cuarto del vector cada vez: $A+\dfrac k4\overrightarrow{AB}$, con $k=1,2,3$.
+2. Se calculan los tres puntos:
 
 **$\left(\dfrac54,-\dfrac32,2\right)$, $\left(\dfrac32,-1,1\right)$ y $\left(\dfrac74,-\dfrac12,0\right)$** (el segundo es el punto medio).
 
-**b)** Plano $x+2y-4z+D=0$ por $M\left(\dfrac32,-1,1\right)$: $\dfrac32-2-4+D=0\Rightarrow D=\dfrac92$.
+**b) Plano perpendicular por el punto medio.**
+1. La normal es $\overrightarrow{AB}=(1,2,-4)$: el plano es $x+2y-4z+D=0$.
+2. Debe pasar por $M\left(\dfrac32,-1,1\right)$: $\dfrac32-2-4+D=0\Rightarrow D=\dfrac92$.
+3. Se multiplica por $2$ para quitar denominadores.
 
 **$2x+4y-8z+9=0$.**
 ::::
@@ -271,17 +606,37 @@ a) Calcula los posibles valores de $x$ sabiendo que el volumen del paralelepípe
 
 b) Para $x=1$, halla el área de la cara del paralelepípedo que contiene a los vértices $O$, $A$ y $B$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$\vec{u}\times\vec{v}$ es perpendicular a ambos, con $|\vec{u}\times\vec{v}|=|\vec{u}||\vec{v}|\sin\alpha$ (área del paralelogramo). Área del triángulo $=\dfrac12|\vec{u}\times\vec{v}|$. Producto mixto $[\vec{u},\vec{v},\vec{w}]=\vec{u}\cdot(\vec{v}\times\vec{w})$ (determinante): volumen del paralelepípedo $=|[\vec{u},\vec{v},\vec{w}]|$ y del tetraedro $\dfrac16|[\vec{u},\vec{v},\vec{w}]|$. Tres vectores son coplanarios si $[\vec{u},\vec{v},\vec{w}]=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Forma los vectores con origen en un mismo vértice.
+2. Calcula el producto vectorial (determinante simbólico) o el mixto (determinante $3\times3$).
+3. Aplica la fórmula de área o volumen con su factor ($\tfrac12$ o $\tfrac16$ si es triángulo o tetraedro).
+4. Da la unidad: $\text{u}^2$ o $\text{u}^3$.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $\begin{vmatrix}2&-1&0\\3&0&x\\-x&1&-1\end{vmatrix}=x^{2}-2x-3$. Volumen $=|x^{2}-2x-3|=5$:
-
-- $x^{2}-2x-8=0\Rightarrow x=4,\ x=-2$.
-- $x^{2}-2x+2=0$ no tiene solución real.
+**a) Volumen del paralelepípedo.**
+1. El volumen es el valor absoluto del producto mixto, es decir, del determinante de los tres vectores.
+2. $\begin{vmatrix}2&-1&0\\3&0&x\\-x&1&-1\end{vmatrix}=x^{2}-2x-3$.
+3. Se impone $|x^{2}-2x-3|=5$:
+   - $x^{2}-2x-8=0\Rightarrow x=4,\ x=-2$.
+   - $x^{2}-2x+2=0$ no tiene solución real.
 
 **$x=4$ o $x=-2$.**
 
-**b)** Con $x=1$: $\overrightarrow{OA}\times\overrightarrow{OB}=(2,-1,0)\times(3,0,1)=(-1,-2,3)$.
+**b) Área de la cara $OAB$ con $x=1$.**
+1. Los lados de la cara son $\overrightarrow{OA}=(2,-1,0)$ y $\overrightarrow{OB}=(3,0,1)$.
+2. $\overrightarrow{OA}\times\overrightarrow{OB}=(2,-1,0)\times(3,0,1)=(-1,-2,3)$.
+3. El área del paralelogramo es el módulo del producto vectorial.
 
 **Área $=\sqrt{1+4+9}=\sqrt{14}\ \text{u}^2$.**
 ::::
@@ -303,15 +658,51 @@ a) Calcula $a$ y $b$ para que el vector $\vec{w}=(1,a,b)$ sea ortogonal a $\vec{
 
 b) Determina los cuatro vértices de un paralelogramo cuyos lados tienen las direcciones de los vectores $\vec{u}$ y $\vec{v}$, y que tiene al vector $\overrightarrow{OA}$ como una de sus diagonales, siendo $O$ el origen de coordenadas. *(1,75 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+$\vec{u}\times\vec{v}$ es perpendicular a ambos, con $|\vec{u}\times\vec{v}|=|\vec{u}||\vec{v}|\sin\alpha$ (área del paralelogramo). Área del triángulo $=\dfrac12|\vec{u}\times\vec{v}|$. Producto mixto $[\vec{u},\vec{v},\vec{w}]=\vec{u}\cdot(\vec{v}\times\vec{w})$ (determinante): volumen del paralelepípedo $=|[\vec{u},\vec{v},\vec{w}]|$ y del tetraedro $\dfrac16|[\vec{u},\vec{v},\vec{w}]|$. Tres vectores son coplanarios si $[\vec{u},\vec{v},\vec{w}]=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+1. Forma los vectores con origen en un mismo vértice.
+2. Calcula el producto vectorial (determinante simbólico) o el mixto (determinante $3\times3$).
+3. Aplica la fórmula de área o volumen con su factor ($\tfrac12$ o $\tfrac16$ si es triángulo o tetraedro).
+4. Da la unidad: $\text{u}^2$ o $\text{u}^3$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $\vec w\cdot\vec u=-1+2a+3b=0$ y $\vec w\cdot\vec v=2-b=0$.
+**a) Vector ortogonal.**
+1. $\vec w$ es ortogonal a $\vec u$ y a $\vec v$ si sus productos escalares son nulos.
+2. Con $\vec v$: $\vec w\cdot\vec v=2-b=0\Rightarrow b=2$.
+3. Con $\vec u$: $\vec w\cdot\vec u=-1+2a+3b=0$; con $b=2$: $2a+5=0\Rightarrow a=-\tfrac52$.
 
 **$b=2$, $a=-\tfrac52$.**
 
-**b)** Los lados son $\alpha\vec u$ y $\beta\vec v$ desde $O$, y la diagonal $\overrightarrow{OA}=\alpha\vec u+\beta\vec v$: $(-\alpha+2\beta,\,2\alpha,\,3\alpha-\beta)=(-4,4,7)\Rightarrow\alpha=2,\ \beta=-1$.
-Los vértices son $O$, $A$, $O+2\vec u$ y $O-\vec v$:
+**b) Vértices del paralelogramo.**
+1. Un vértice es $O$, y los lados que parten de él tienen las direcciones $\vec u$ y $\vec v$: son $\alpha\vec u$ y $\beta\vec v$. La diagonal $\overrightarrow{OA}$ es la suma de los dos lados.
+2. $\overrightarrow{OA}=\alpha\vec u+\beta\vec v$: $(-\alpha+2\beta,\,2\alpha,\,3\alpha-\beta)=(-4,4,7)$.
+3. De la segunda componente, $\alpha=2$. De la primera, $-2+2\beta=-4\Rightarrow\beta=-1$. Comprobación en la tercera: $6+1=7$ ✓.
+4. Los otros dos vértices son $O+\alpha\vec u=O+2\vec u$ y $O+\beta\vec v=O-\vec v$.
 
 **$O(0,0,0)$, $B(-2,4,6)$, $A(-4,4,7)$ y $C(-2,0,1)$.**
 ::::
@@ -330,16 +721,51 @@ a) Halla los valores de $m$, sabiendo que el área del triángulo es $\dfrac{\sq
 
 b) Para $m=0$, calcula el coseno del ángulo en el vértice $A$ de dicho triángulo. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+$\vec{u}\times\vec{v}$ es perpendicular a ambos, con $|\vec{u}\times\vec{v}|=|\vec{u}||\vec{v}|\sin\alpha$ (área del paralelogramo). Área del triángulo $=\dfrac12|\vec{u}\times\vec{v}|$. Producto mixto $[\vec{u},\vec{v},\vec{w}]=\vec{u}\cdot(\vec{v}\times\vec{w})$ (determinante): volumen del paralelepípedo $=|[\vec{u},\vec{v},\vec{w}]|$ y del tetraedro $\dfrac16|[\vec{u},\vec{v},\vec{w}]|$. Tres vectores son coplanarios si $[\vec{u},\vec{v},\vec{w}]=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+1. Forma los vectores con origen en un mismo vértice.
+2. Calcula el producto vectorial (determinante simbólico) o el mixto (determinante $3\times3$).
+3. Aplica la fórmula de área o volumen con su factor ($\tfrac12$ o $\tfrac16$ si es triángulo o tetraedro).
+4. Da la unidad: $\text{u}^2$ o $\text{u}^3$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $\overrightarrow{AB}=(m,-2,-2)$, $\overrightarrow{AC}=(2,-1,-1)$.
-$\overrightarrow{AB}\times\overrightarrow{AC}=(0,\,m-4,\,4-m)$, de módulo $\sqrt2\,|m-4|$.
-Área $=\tfrac12\sqrt2|m-4|=\tfrac{\sqrt{18}}{2}\Rightarrow|m-4|=3$.
+**a) Valores de $m$.**
+1. Vectores desde $A$: $\overrightarrow{AB}=(m,-2,-2)$ y $\overrightarrow{AC}=(2,-1,-1)$.
+2. Producto vectorial: $\overrightarrow{AB}\times\overrightarrow{AC}=(0,\,m-4,\,4-m)$, de módulo $\sqrt2\,|m-4|$.
+3. El área del triángulo es la mitad del módulo: $\tfrac12\sqrt2|m-4|=\tfrac{\sqrt{18}}{2}$.
+4. Se despeja: $\sqrt2|m-4|=\sqrt{18}=3\sqrt2\Rightarrow|m-4|=3$.
 
 **$m=1$ o $m=7$.**
 
-**b)** Con $m=0$: $\overrightarrow{AB}=(0,-2,-2)$, $\overrightarrow{AC}=(2,-1,-1)$.
+**b) Coseno del ángulo en $A$ para $m=0$.**
+1. Con $m=0$: $\overrightarrow{AB}=(0,-2,-2)$ y $\overrightarrow{AC}=(2,-1,-1)$.
+2. Producto escalar: $\overrightarrow{AB}\cdot\overrightarrow{AC}=0+2+2=4$. Módulos: $|\overrightarrow{AB}|=2\sqrt2$ y $|\overrightarrow{AC}|=\sqrt6$.
+3. Se aplica la fórmula del ángulo entre vectores:
 $$\cos\widehat A=\frac{\overrightarrow{AB}\cdot\overrightarrow{AC}}{|\overrightarrow{AB}||\overrightarrow{AC}|}=\frac{4}{2\sqrt2\cdot\sqrt6}=\frac{1}{\sqrt3}.$$
 
 **$\cos\widehat A=\dfrac{\sqrt3}{3}$.**
@@ -364,16 +790,63 @@ b) Halla el plano que equidista de $A$ y $B$. *(1,25 puntos)*
 
 *Relacionado también con:* [Rectas y planos](05-rectas-planos.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+$\vec{u}\times\vec{v}$ es perpendicular a ambos, con $|\vec{u}\times\vec{v}|=|\vec{u}||\vec{v}|\sin\alpha$ (área del paralelogramo). Área del triángulo $=\dfrac12|\vec{u}\times\vec{v}|$. Producto mixto $[\vec{u},\vec{v},\vec{w}]=\vec{u}\cdot(\vec{v}\times\vec{w})$ (determinante): volumen del paralelepípedo $=|[\vec{u},\vec{v},\vec{w}]|$ y del tetraedro $\dfrac16|[\vec{u},\vec{v},\vec{w}]|$. Tres vectores son coplanarios si $[\vec{u},\vec{v},\vec{w}]=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Producto vectorial, producto mixto, áreas y volúmenes.**
+
+1. Forma los vectores con origen en un mismo vértice.
+2. Calcula el producto vectorial (determinante simbólico) o el mixto (determinante $3\times3$).
+3. Aplica la fórmula de área o volumen con su factor ($\tfrac12$ o $\tfrac16$ si es triángulo o tetraedro).
+4. Da la unidad: $\text{u}^2$ o $\text{u}^3$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\overrightarrow{AB}=(-3,2,-6)$, $\overrightarrow{AC}=(-11,-1,-3)$.
+**Vectores.** $\overrightarrow{AB}=(-3,2,-6)$, $\overrightarrow{AC}=(-11,-1,-3)$.
 
-**a)** $\overrightarrow{AB}\times\overrightarrow{AC}=(-12,57,25)$, de módulo $\sqrt{144+3249+625}=\sqrt{4018}=7\sqrt{82}$.
+**a) Área del triángulo.**
+1. Producto vectorial: $\overrightarrow{AB}\times\overrightarrow{AC}=(-12,57,25)$.
+2. Módulo: $\sqrt{144+3249+625}=\sqrt{4018}=7\sqrt{82}$.
+3. El área del triángulo es la mitad del módulo.
 
 **Área $=\dfrac{7\sqrt{82}}{2}\approx31{,}7\ \text{u}^2$**
 
-**b)** Es el plano mediador: normal $\overrightarrow{AB}\parallel(3,-2,6)$, pasa por el punto medio $M\left(-\tfrac12,3,0\right)$: $3x-2y+6z+k=0$ con $-\tfrac32-6+k=0\Rightarrow k=\tfrac{15}2$.
+**b) Plano que equidista de $A$ y $B$.**
+1. Es el plano mediador del segmento $AB$: perpendicular a $AB$ por su punto medio.
+2. Normal: $\overrightarrow{AB}\parallel(3,-2,6)$.
+3. Punto medio: $M\left(-\tfrac12,3,0\right)$.
+4. Plano $3x-2y+6z+k=0$ por $M$: $-\tfrac32-6+k=0\Rightarrow k=\tfrac{15}2$.
 
 **$6x-4y+12z+15=0$**
 ::::

@@ -5,7 +5,7 @@ lang: es
 
 Ejercicios de **Matemáticas II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *matrices*: **26 ejercicios** de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ciencias/01-matrices/index.qmd), los [ejercicios del tema](../01-matrices/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ciencias/01-matrices/index.qmd).
 
-Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **solución** paso a paso con el resultado. Inténtalo con la menor ayuda posible.
 
 
 ## 2026
@@ -19,12 +19,33 @@ Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos cl
 
 Dadas las matrices $A=\begin{pmatrix}1&0&1\\-1&2&0\\0&1&1\end{pmatrix}$, $B=\begin{pmatrix}-1\\2\\3\end{pmatrix}$ y $C=\begin{pmatrix}1&4&2\end{pmatrix}$, calcula la matriz $X$ que satisface $X-2C=B^{t}+XA$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
+3. Despeja multiplicando por la inversa del lado correcto.
+4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$X-2C=B^t+XA\Rightarrow X(I-A)=B^t+2C\Rightarrow X=(B^t+2C)(I-A)^{-1}$ (con $I-A$ invertible, $|I-A|=1\ne0$).
+**Ecuación matricial.**
+1. Se agrupan los términos con $X$: $X-2C=B^t+XA\Rightarrow X-XA=B^t+2C\Rightarrow X(I-A)=B^t+2C$.
+2. Se multiplica por la derecha por $(I-A)^{-1}$ (la incógnita está a la izquierda): $X=(B^t+2C)(I-A)^{-1}$. Existe porque $|I-A|=1\ne0$.
 
-$B^t+2C=(1,\ 10,\ 7)$ y $I-A=\begin{pmatrix}0&0&-1\\1&-1&0\\0&-1&0\end{pmatrix}$.
+**Matrices.**
+1. $B^t+2C=(1,\ 10,\ 7)$ y $I-A=\begin{pmatrix}0&0&-1\\1&-1&0\\0&-1&0\end{pmatrix}$.
+2. $(I-A)^{-1}=\begin{pmatrix}0&1&-1\\0&0&-1\\-1&0&0\end{pmatrix}$.
+3. Producto:
+$$X=(1,\ 10,\ 7)\begin{pmatrix}0&1&-1\\0&0&-1\\-1&0&0\end{pmatrix}.$$
 
 **$X=\begin{pmatrix}-7&1&-11\end{pmatrix}$.** (Comprobado: $X-2C-B^t-XA=0$.)
 ::::
@@ -45,17 +66,62 @@ b) Determina, si existe, una matriz $Y$ que verifica $A^{3}YB^{-1}=A^{2}$. *(1,5
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Determinantes y parámetros.**
+
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+
+**Propiedades de los determinantes.**
+
+$|A^t|=|A|$; $|A\cdot B|=|A|\cdot|B|$; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por $k$, el determinante se multiplica por $k$ (y $|k\cdot A|=k^n|A|$ en orden $n$); si hay dos filas proporcionales, $|A|=0$; sumar a una fila un múltiplo de otra no cambia el determinante. $|A^{-1}|=\dfrac{1}{|A|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
+3. Despeja multiplicando por la inversa del lado correcto.
+4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
+
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
+3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
+
+**Propiedades de los determinantes.**
+
+1. Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.
+2. Aplica cada propiedad en orden, anotando cómo cambia el valor.
+3. Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$|A|=2$, $|B|=4$.
+**Datos.** $|A|=2$ y $|B|=4$.
 
-**a)** Tomando determinantes en $A^3XB^t=5B^2A^{-1}$ (matrices $2\times2$, luego $|5M|=25|M|$):
-$|A|^3|X||B|=25\,|B|^2\,|A|^{-1}\Rightarrow 8\cdot4\,|X|=25\cdot16\cdot\tfrac12=200$.
+**a) Determinante de $X$.**
+1. Se toman determinantes en $A^3XB^t=5B^2A^{-1}$. Como son matrices $2\times2$, $|5M|=5^2|M|=25|M|$.
+2. Propiedades: $|MN|=|M||N|$, $|B^t|=|B|$ y $|A^{-1}|=|A|^{-1}$:
+$$|A|^3|X||B|=25\,|B|^2\,|A|^{-1}.$$
+3. Con los valores: $8\cdot4\,|X|=25\cdot16\cdot\tfrac12=200$.
 
 **$|X|=\dfrac{25}{4}$.**
 
-**b)** $A^3YB^{-1}=A^2\Rightarrow Y=A^{-3}A^2B=A^{-1}B$ (existe, pues $|A|\neq0$). Con $A^{-1}=\begin{pmatrix}2&-1\\-3/2&1\end{pmatrix}$:
+**b) Matriz $Y$.**
+1. Se despeja: de $A^3YB^{-1}=A^2$ se multiplica por la izquierda por $A^{-3}$ y por la derecha por $B$: $Y=A^{-3}A^2B=A^{-1}B$. Existe porque $|A|\neq0$ y $|B|\neq0$.
+2. Inversa: $A^{-1}=\dfrac{1}{2}\begin{pmatrix}4&-2\\-3&2\end{pmatrix}=\begin{pmatrix}2&-1\\-3/2&1\end{pmatrix}$.
+3. Producto:
 
 **$Y=A^{-1}B=\begin{pmatrix}4&0\\-5/2&1/2\end{pmatrix}$.**
 ::::
@@ -77,15 +143,34 @@ a) Comprueba que $A^{3}+I=O$, siendo $I$ la matriz identidad y $O$ la matriz nul
 
 b) Calcula $A^{2025}$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$A^n=A\cdot A\cdots A$. Para hallar $A^n$ se calculan $A^2,A^3,\dots$ hasta ver un patrón (por ejemplo $A^k=0$, $A^k=I$ o $A^k=A$) y se demuestra o se aplica. Si $A^k=I$, entonces $A^{n}=A^{n\bmod k}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Calcula $A^2$ y $A^3$ con cuidado (orden de los factores).
+2. Busca el patrón: ¿se anula?, ¿se repite?, ¿crece de forma regular en un elemento?
+3. Expresa $A^n$ usando el patrón y comprueba con $n=1,2$.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $A^2=\begin{pmatrix}-1&0&1\\1&4&4\\-1&-3&-3\end{pmatrix}$ y $A^3=A\cdot A^2=\begin{pmatrix}-1&0&0\\0&-1&0\\0&0&-1\end{pmatrix}=-I$, luego **$A^3+I=O$**.
-
-De $A\cdot A^2=-I$ sale $A(-A^2)=I$:
+**a) Comprobación y matriz inversa.**
+1. Se calcula $A^2=\begin{pmatrix}-1&0&1\\1&4&4\\-1&-3&-3\end{pmatrix}$.
+2. Se multiplica otra vez: $A^3=A\cdot A^2=\begin{pmatrix}-1&0&0\\0&-1&0\\0&0&-1\end{pmatrix}=-I$, luego **$A^3+I=O$**.
+3. De $A\cdot A^2=-I$ sale $A\cdot(-A^2)=I$, de modo que $-A^2$ es la inversa de $A$:
 $$\mathbf{A^{-1}}=-A^2=\begin{pmatrix}1&0&-1\\-1&-4&-4\\1&3&3\end{pmatrix}.$$
 
-**b)** $2025=3\cdot675$, así que $A^{2025}=(A^3)^{675}=(-I)^{675}=\mathbf{-I}$.
+**b) Potencia $A^{2025}$.**
+1. $2025=3\cdot675$.
+2. $A^{2025}=(A^3)^{675}=(-I)^{675}=-I$, porque $675$ es impar.
+
+**$A^{2025}=\mathbf{-I}$.**
 ::::
 :::::
 
@@ -104,15 +189,59 @@ b) Halla razonadamente el determinante de la matriz $4A^{25}(A^{t})^{4}$. *(1,25
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Potencias de una matriz.**
+
+$A^n=A\cdot A\cdots A$. Para hallar $A^n$ se calculan $A^2,A^3,\dots$ hasta ver un patrón (por ejemplo $A^k=0$, $A^k=I$ o $A^k=A$) y se demuestra o se aplica. Si $A^k=I$, entonces $A^{n}=A^{n\bmod k}$.
+
+**Determinantes y parámetros.**
+
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+
+**Propiedades de los determinantes.**
+
+$|A^t|=|A|$; $|A\cdot B|=|A|\cdot|B|$; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por $k$, el determinante se multiplica por $k$ (y $|k\cdot A|=k^n|A|$ en orden $n$); si hay dos filas proporcionales, $|A|=0$; sumar a una fila un múltiplo de otra no cambia el determinante. $|A^{-1}|=\dfrac{1}{|A|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Potencias de una matriz.**
+
+1. Calcula $A^2$ y $A^3$ con cuidado (orden de los factores).
+2. Busca el patrón: ¿se anula?, ¿se repite?, ¿crece de forma regular en un elemento?
+3. Expresa $A^n$ usando el patrón y comprueba con $n=1,2$.
+
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
+3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
+
+**Propiedades de los determinantes.**
+
+1. Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.
+2. Aplica cada propiedad en orden, anotando cómo cambia el valor.
+3. Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $A^2=\begin{pmatrix}-1&0\\0&-1\end{pmatrix}=-I$, así que $A^4=I$ y $A^{31}=(A^4)^7A^3=A^3=-A$.
+**a) Potencias de $A$.**
+1. $A^2=\begin{pmatrix}-1&0\\0&-1\end{pmatrix}=-I$.
+2. Entonces $A^4=(A^2)^2=I$.
+3. $31=4\cdot7+3$, así que $A^{31}=(A^4)^7A^3=A^3=A^2\cdot A=-A$.
 
 $$\textbf{A}^{4}=I,\qquad \textbf{A}^{31}=\begin{pmatrix}0&1\\-1&0\end{pmatrix}.$$
 
-**b)** Para matrices $2\times2$, $|4M|=4^2|M|$. Con $|A|=1$ y $|A^t|=|A|$:
-$|4A^{25}(A^t)^4|=16\,|A|^{25}|A|^4=\mathbf{16}$.
+**b) Determinante.**
+1. Para una matriz $2\times2$, $|4M|=4^2|M|$.
+2. $|A|=1$ y $|A^t|=|A|=1$.
+3. Por las propiedades del determinante:
+$$|4A^{25}(A^t)^4|=16\,|A|^{25}|A|^4=16\cdot1\cdot1=\mathbf{16}.$$
 ::::
 :::::
 
@@ -128,14 +257,62 @@ b) Determina, si existe, una matriz $Y$ que verifique $A^{3}YB^{-1}=A^{2}$. *(1,
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Determinantes y parámetros.**
+
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+
+**Propiedades de los determinantes.**
+
+$|A^t|=|A|$; $|A\cdot B|=|A|\cdot|B|$; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por $k$, el determinante se multiplica por $k$ (y $|k\cdot A|=k^n|A|$ en orden $n$); si hay dos filas proporcionales, $|A|=0$; sumar a una fila un múltiplo de otra no cambia el determinante. $|A^{-1}|=\dfrac{1}{|A|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
+3. Despeja multiplicando por la inversa del lado correcto.
+4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
+
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
+3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
+
+**Propiedades de los determinantes.**
+
+1. Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.
+2. Aplica cada propiedad en orden, anotando cómo cambia el valor.
+3. Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Tomando determinantes: $|X|^3\,|A|\,|X|^2=|B|^2$, con $|A|=8-6=2$ y $|B|=6-2=4$. Entonces $2|X|^5=16$, $|X|^5=8$ y **$|X|=\sqrt[5]{8}=2^{3/5}$**.
+**a) Determinante de $X$.**
+1. Se toman determinantes en $X^3AX^2=B^2$: $|X|^3\,|A|\,|X|^2=|B|^2$.
+2. $|A|=8-6=2$ y $|B|=6-2=4$.
+3. Entonces $2|X|^5=16$, luego $|X|^5=8$.
 
-**b)** $|A|=2\neq0$ y $|B|=4\neq0$, así que existe. Multiplicando por $A^{-3}$ por la izquierda y por $B$ por la derecha: $Y=A^{-3}A^{2}B=A^{-1}B$.
+**$|X|=\sqrt[5]{8}=2^{3/5}$.**
 
-$A^{-1}=\begin{pmatrix}2&-1\\-3/2&1\end{pmatrix}$, luego $\mathbf{Y}=\begin{pmatrix}4&0\\-5/2&1/2\end{pmatrix}$.
+**b) Matriz $Y$.**
+1. $|A|=2\neq0$ y $|B|=4\neq0$, así que $A$ y $B$ son invertibles y la matriz $Y$ existe.
+2. Se multiplica por $A^{-3}$ por la izquierda y por $B$ por la derecha: $Y=A^{-3}A^{2}B=A^{-1}B$.
+3. $A^{-1}=\begin{pmatrix}2&-1\\-3/2&1\end{pmatrix}$.
+4. Producto:
+
+$$\mathbf{Y}=\begin{pmatrix}2&-1\\-3/2&1\end{pmatrix}\begin{pmatrix}3&1\\2&2\end{pmatrix}=\begin{pmatrix}4&0\\-5/2&1/2\end{pmatrix}.$$
 ::::
 :::::
 
@@ -152,12 +329,61 @@ a) Determina $a$ y $b$ para que $A^{2}=4I$, donde $I$ es la matriz identidad de 
 
 b) Para $a=-1$ y $b=1$, calcula, si es posible, la matriz $X$ que cumple $A^{2}X=B^{t}$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Potencias de una matriz.**
+
+$A^n=A\cdot A\cdots A$. Para hallar $A^n$ se calculan $A^2,A^3,\dots$ hasta ver un patrón (por ejemplo $A^k=0$, $A^k=I$ o $A^k=A$) y se demuestra o se aplica. Si $A^k=I$, entonces $A^{n}=A^{n\bmod k}$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
+3. Despeja multiplicando por la inversa del lado correcto.
+4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
+
+**Potencias de una matriz.**
+
+1. Calcula $A^2$ y $A^3$ con cuidado (orden de los factores).
+2. Busca el patrón: ¿se anula?, ¿se repite?, ¿crece de forma regular en un elemento?
+3. Expresa $A^n$ usando el patrón y comprueba con $n=1,2$.
+
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $A^2=\begin{pmatrix}a^2+3b&3a+3\\ab+b&3b+1\end{pmatrix}=\begin{pmatrix}4&0\\0&4\end{pmatrix}$. De $3b+1=4$ sale $b=1$; de $3a+3=0$ sale $a=-1$, y se cumple $a^2+3b=4$ y $ab+b=0$. **$a=-1$, $b=1$.**
+**a) Valores de $a$ y $b$.**
+1. Se calcula $A^2$:
+$$A^2=\begin{pmatrix}a^2+3b&3a+3\\ab+b&3b+1\end{pmatrix}=\begin{pmatrix}4&0\\0&4\end{pmatrix}.$$
+2. De $3b+1=4$ sale $b=1$; de $3a+3=0$ sale $a=-1$.
+3. Se comprueba en los otros elementos: $a^2+3b=1+3=4$ y $ab+b=-1+1=0$.
 
-**b)** Con esos valores $A^2=4I$, que es invertible, así que $X=(A^2)^{-1}B^t=\tfrac14B^t$ existe:
+**$a=-1$, $b=1$.**
+
+**b) Matriz $X$.**
+1. Con esos valores, $A^2=4I$, que es invertible, así que existe $(A^2)^{-1}=\tfrac14I$.
+2. Se despeja: $X=(A^2)^{-1}B^t=\tfrac14B^t$.
+3. $B^t=\begin{pmatrix}1&-1&1\\1&2&1\end{pmatrix}$.
+
 $$\mathbf{X}=\frac14\begin{pmatrix}1&-1&1\\1&2&1\end{pmatrix}=\begin{pmatrix}1/4&-1/4&1/4\\1/4&1/2&1/4\end{pmatrix}.$$
 ::::
 :::::
@@ -178,14 +404,61 @@ a) Calcula $A^{2024}$. *(1 punto)*
 
 b) Halla la matriz $X$, si es posible, que verifica $A^{2}XA+I=O$, donde $I$ y $O$ son la matriz identidad y la matriz nula de orden 3, respectivamente. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Potencias de una matriz.**
+
+$A^n=A\cdot A\cdots A$. Para hallar $A^n$ se calculan $A^2,A^3,\dots$ hasta ver un patrón (por ejemplo $A^k=0$, $A^k=I$ o $A^k=A$) y se demuestra o se aplica. Si $A^k=I$, entonces $A^{n}=A^{n\bmod k}$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
+3. Despeja multiplicando por la inversa del lado correcto.
+4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
+
+**Potencias de una matriz.**
+
+1. Calcula $A^2$ y $A^3$ con cuidado (orden de los factores).
+2. Busca el patrón: ¿se anula?, ¿se repite?, ¿crece de forma regular en un elemento?
+3. Expresa $A^n$ usando el patrón y comprueba con $n=1,2$.
+
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $A=I+N$, con $N=\begin{pmatrix}0&1/8&1/8\\0&0&0\\0&0&0\end{pmatrix}$ y $N^2=O$. Por el binomio, $A^n=I+nN$:
+**a) Potencia $A^{2024}$.**
+1. Se escribe $A=I+N$, con $N=\begin{pmatrix}0&1/8&1/8\\0&0&0\\0&0&0\end{pmatrix}$.
+2. $N^2=O$: solo la primera fila de $N$ es no nula y su primer elemento es $0$, así que todos los productos fila por columna de $N\cdot N$ se anulan.
+3. $I$ y $N$ conmutan, así que el binomio de Newton se corta en el segundo término: $A^n=I+nN$.
+4. Para $n=2024$, $2024\cdot\dfrac18=253$:
 
 $$\mathbf{A^{2024}=\begin{pmatrix}1&253&253\\0&1&0\\0&0&1\end{pmatrix}}\qquad(2024/8=253).$$
 
-**b)** $A^2XA=-I\Rightarrow X=-A^{-2}A^{-1}=-A^{-3}$ (existe porque $|A|=1$). Como $A^{-1}=I-N$, $A^{-3}=I-3N$:
+**b) Ecuación matricial.**
+1. De $A^2XA+I=O$ se obtiene $A^2XA=-I$.
+2. $|A|=1\neq0$, luego $A$ es invertible. Se multiplica por $A^{-2}$ por la izquierda y por $A^{-1}$ por la derecha: $X=-A^{-2}\,A^{-1}=-A^{-3}$.
+3. Como $A=I+N$, su inversa es $A^{-1}=I-N$ (porque $(I+N)(I-N)=I-N^2=I$) y, con el mismo argumento, $A^{-3}=I-3N$.
+4. Entonces $X=-(I-3N)=-I+3N$:
 
 $$\mathbf{X=-I+3N=\begin{pmatrix}-1&3/8&3/8\\0&-1&0\\0&0&-1\end{pmatrix}}$$
 ::::
@@ -206,15 +479,70 @@ b) Si $B=\begin{pmatrix}1\\2\\4\end{pmatrix}$, $X=\begin{pmatrix}x\\y\\z\end{pma
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd), [Sistemas de ecuaciones lineales](03-sistemas-ecuaciones-lineales.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Rango de una matriz.**
+
+El rango es el orden del mayor menor no nulo (o el número de filas no nulas tras triangular por Gauss). $\operatorname{rg}A\le\min(\text{filas},\text{columnas})$. Una matriz cuadrada de orden $n$ tiene $\operatorname{rg}A=n$ si y solo si $|A|\neq0$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+
+**Determinantes y parámetros.**
+
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
+3. Despeja multiplicando por la inversa del lado correcto.
+4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
+
+**Rango de una matriz.**
+
+1. Si hay parámetro, calcula primero el determinante (o los menores de orden mayor) y busca los valores que lo anulan.
+2. Para cada valor crítico, sustituye y estudia el rango por menores de orden menor o por Gauss.
+3. Para los demás valores, el rango es el máximo posible.
+4. Escribe el rango según los casos del parámetro.
+
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
+3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=-(3a-1)(a-2)$ (desarrollando por la 2.ª columna).
+**a) Rango de $A$ según $a$.**
+1. Determinante, desarrollando por la 2.ª columna (solo tiene un elemento no nulo, $3a-1$, en la posición $(3,2)$): $|A|=-(3a-1)(a-2)$.
+2. Si $a\ne\frac13$ y $a\neq2$: $|A|\neq0$, luego $\operatorname{rg}(A)=3$.
+3. Si $a=\frac13$ o $a=2$: $|A|=0$ y hay un menor de orden 2 no nulo, así que $\operatorname{rg}(A)=2$. Por ejemplo, $\begin{vmatrix}1&1\\2&a\end{vmatrix}=a-2\neq0$ con $a=\frac13$, y $\begin{vmatrix}1&0\\5&5\end{vmatrix}=5$ con $a=2$.
 
-- Si $a\ne\frac13$ y $a\neq2$: $\operatorname{rg}(A)=3$.
-- Si $a=\frac13$ o $a=2$: $\operatorname{rg}(A)=2$ (hay un menor $2\times2$ no nulo, p. ej. $\begin{vmatrix}1&1\\2&a\end{vmatrix}$ con $a=\frac13$, o $\begin{vmatrix}1&0\\5&5\end{vmatrix}=5$ con $a=2$).
+**$\operatorname{rg}(A)=3$ si $a\neq\frac13$ y $a\neq2$; $\operatorname{rg}(A)=2$ si $a=\frac13$ o $a=2$.**
 
-**b)** Con $a=2$: $\begin{cases}x+z=1\\2x+2z=2\\5x+5y=4\end{cases}$. La segunda es la primera multiplicada por 2 (SCI, un parámetro): $z=1-x$, $y=\frac45-x$.
+**b) Sistema $AX=B$ con $a=2$.**
+1. El sistema es $\begin{cases}x+z=1\\2x+2z=2\\5x+5y=4\end{cases}$.
+2. La segunda ecuación es la primera multiplicada por 2: sobra. Queda compatible indeterminado con un parámetro.
+3. Con $x=\lambda$: $z=1-x=1-\lambda$ y, de la tercera, $y=\dfrac45-x=\dfrac45-\lambda$.
 
 $$\mathbf{(x,y,z)=\left(\lambda,\ \tfrac45-\lambda,\ 1-\lambda\right),\ \lambda\in\mathbb{R}}$$
 ::::
@@ -235,12 +563,70 @@ b) Para $m=0$ calcula, si es posible, la matriz $X$ que verifica $A^{2}X=\dfrac1
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Matriz inversa.**
+
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+
+**Determinantes y parámetros.**
+
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
+3. Despeja multiplicando por la inversa del lado correcto.
+4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
+
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
+2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
+3. Traspón la adjunta y divide entre $|A|$.
+4. Comprueba que $A\cdot A^{-1}=I$.
+
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
+3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=1-m$ y $|A^2|=|A|^2=(1-m)^2$. **$A^2$ tiene inversa si y sólo si $m\neq1$.**
+**a) Inversa de $A^2$.**
+1. $|A|=1-m$ (desarrollando el determinante).
+2. $|A^2|=|A|^2=(1-m)^2$.
+3. $A^2$ tiene inversa si y solo si $|A^2|\neq0$, es decir, $1-m\neq0$.
 
-**b)** Con $m=0$, $|A|=1\ne0$, luego $A^2$ es invertible y $X=\tfrac12(A^2)^{-1}(A+B)$:
+**$A^2$ tiene inversa si y sólo si $m\neq1$.**
+
+**b) Ecuación $A^2X=\tfrac12(A+B)$ con $m=0$.**
+1. Con $m=0$, $|A|=1\ne0$, luego $A$ y $A^2$ son invertibles.
+2. Se multiplica por $(A^2)^{-1}$ por la izquierda: $X=\tfrac12(A^2)^{-1}(A+B)$.
+3. Se calculan $A^2$, su inversa y el producto:
 
 $$\mathbf{X=\begin{pmatrix}-15&-\tfrac{13}2&-\tfrac{77}2\\[1mm]0&\tfrac52&2\\[1mm]\tfrac{19}2&\tfrac{13}2&\tfrac{53}2\end{pmatrix}}$$
 ::::
@@ -259,16 +645,52 @@ a) Halla todas las matrices $X$ que cumplan $XA=-AX^{t}$ y $X^{2}=I$, donde $I$ 
 
 b) Halla todas las matrices $Y$ que cumplan $YA=AY$, la suma de los elementos de su diagonal principal es cero y tienen determinante $-1$. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Determinantes y parámetros.**
+
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
+3. Despeja multiplicando por la inversa del lado correcto.
+4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
+
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
+3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sea $X=\begin{pmatrix}p&q\\r&s\end{pmatrix}$.
+**Planteamiento.** Sea $X=\begin{pmatrix}p&q\\r&s\end{pmatrix}$.
 
-**a)** $XA=\begin{pmatrix}-p&q\\-r&s\end{pmatrix}$ y $-AX^t=\begin{pmatrix}p&r\\-q&-s\end{pmatrix}$. Igualando: $p=0$, $s=0$, $q=r$. Entonces $X=\begin{pmatrix}0&q\\q&0\end{pmatrix}$ y $X^2=q^2I=I\Rightarrow q=\pm1$:
+**a) Matrices $X$.**
+1. $XA=\begin{pmatrix}-p&q\\-r&s\end{pmatrix}$ y $-AX^t=\begin{pmatrix}p&r\\-q&-s\end{pmatrix}$.
+2. Se igualan los elementos de $XA=-AX^t$: $-p=p$, $q=r$, $-r=-q$, $s=-s$. Resulta $p=0$, $s=0$ y $q=r$.
+3. Entonces $X=\begin{pmatrix}0&q\\q&0\end{pmatrix}$ y $X^2=q^2I$.
+4. $X^2=I\Rightarrow q^2=1\Rightarrow q=\pm1$:
 
 $$\mathbf{X=\begin{pmatrix}0&1\\1&0\end{pmatrix}\ \text{ o }\ X=\begin{pmatrix}0&-1\\-1&0\end{pmatrix}}$$
 
-**b)** $YA=\begin{pmatrix}-p&q\\-r&s\end{pmatrix}$ y $AY=\begin{pmatrix}-p&-q\\r&s\end{pmatrix}$: $q=r=0$. Diagonal con $p+s=0$ y $|Y|=ps=-1$, o sea $p^2=1$:
+**b) Matrices $Y$.**
+1. Con $Y=\begin{pmatrix}p&q\\r&s\end{pmatrix}$: $YA=\begin{pmatrix}-p&q\\-r&s\end{pmatrix}$ y $AY=\begin{pmatrix}-p&-q\\r&s\end{pmatrix}$.
+2. $YA=AY$ da $q=-q$ y $-r=r$, es decir, $q=r=0$: $Y$ es diagonal.
+3. Traza cero: $p+s=0$, luego $s=-p$. Determinante: $ps=-1$, o sea $-p^2=-1\Rightarrow p^2=1$.
 
 $$\mathbf{Y=\begin{pmatrix}1&0\\0&-1\end{pmatrix}\ \text{ o }\ Y=\begin{pmatrix}-1&0\\0&1\end{pmatrix}}$$
 ::::
@@ -287,20 +709,39 @@ a) Sabiendo que $A$ verifica la identidad $(A+aI)^{2}=bI$, halla $a$ y $b$. *(1,
 
 b) Resuelve la ecuación $MX+M^{2}=I$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $A^2=\begin{pmatrix}-5&18\\-12&19\end{pmatrix}$ y $(A+aI)^2=A^2+2aA+a^2I$.
-
-Elemento $(1,2)$: $18+6a=0\Rightarrow a=-3$. Con $a=-3$ la diagonal es $-5-6+9=-2$ y $19-30+9=-2$, y los elementos fuera de la diagonal son $0$.
+**a) Identidad $(A+aI)^2=bI$.**
+1. $A^2=\begin{pmatrix}-5&18\\-12&19\end{pmatrix}$.
+2. Desarrollo (como $I$ conmuta con $A$): $(A+aI)^2=A^2+2aA+a^2I$.
+3. Elemento $(1,2)$, que debe ser $0$ porque $bI$ es diagonal: $18+6a=0\Rightarrow a=-3$.
+4. Con $a=-3$ la diagonal es $-5-6+9=-2$ y $19-30+9=-2$, y los elementos fuera de la diagonal son $0$. Es $-2I$, luego $b=-2$.
 
 $$\mathbf{a=-3,\quad b=-2}$$
 
-**b)** $MX=I-M^2\Rightarrow X=M^{-1}(I-M^2)$. Con $M^{-1}=\begin{pmatrix}-1&1\\1&0\end{pmatrix}$ y $I-M^2=\begin{pmatrix}0&-1\\-1&-1\end{pmatrix}$:
+**b) Ecuación $MX+M^2=I$.**
+1. Se despeja: $MX=I-M^2\Rightarrow X=M^{-1}(I-M^2)$ (la inversa se multiplica por la izquierda; $|M|=-1\neq0$).
+2. $M^{-1}=\begin{pmatrix}-1&1\\1&0\end{pmatrix}$ y $I-M^2=\begin{pmatrix}0&-1\\-1&-1\end{pmatrix}$.
+3. Producto:
 
 $$\mathbf{X=\begin{pmatrix}-1&0\\0&-1\end{pmatrix}=-I}$$
 
-(comprobación: $-M+M^2=I$).
+*Comprobación:* $-M+M^2=I$.
 ::::
 :::::
 
@@ -322,12 +763,70 @@ b) Para todo $m\neq -1$, resuelve, si es posible, la ecuación $AX+X=B$. *(2 pun
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Matriz inversa.**
+
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+
+**Determinantes y parámetros.**
+
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
+3. Despeja multiplicando por la inversa del lado correcto.
+4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
+
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
+2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
+3. Traspón la adjunta y divide entre $|A|$.
+4. Comprueba que $A\cdot A^{-1}=I$.
+
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
+3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=m^{3}$. **$A$ tiene inversa si $m\ne0$.**
+**a) Existencia de la inversa.**
+1. $A$ tiene inversa si y solo si $|A|\neq0$.
+2. Determinante: $|A|=m^{3}$.
 
-**b)** $AX+X=B\Rightarrow(A+I)X=B$. $|A+I|=m^{3}+1$, que sólo se anula para $m=-1$. Si $m\ne-1$ existe $(A+I)^{-1}$ y $X=(A+I)^{-1}B$:
+**$A$ tiene inversa si $m\ne0$.**
+
+**b) Ecuación matricial.**
+1. Se agrupan los términos con $X$: $AX+X=B\Rightarrow(A+I)X=B$.
+2. $|A+I|=m^{3}+1$, que solo se anula para $m=-1$. Si $m\ne-1$ existe $(A+I)^{-1}$.
+3. Se despeja multiplicando por la izquierda por $(A+I)^{-1}$ (la incógnita está a la derecha): $X=(A+I)^{-1}B$.
+4. Se calcula la inversa y el producto:
 
 **$X=\dfrac1{m^{3}+1}\begin{pmatrix}1&-m&m^{2}\\-m&m^{2}&1\\m^{2}&1&-m\end{pmatrix}$.**
 ::::
@@ -348,14 +847,71 @@ b) Calcula para $m=1$, si es posible, la matriz $X$ tal que $AX=B^{t}$, donde $B
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Matriz inversa.**
+
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+
+**Determinantes y parámetros.**
+
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
+3. Despeja multiplicando por la inversa del lado correcto.
+4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
+
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
+2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
+3. Traspón la adjunta y divide entre $|A|$.
+4. Comprueba que $A\cdot A^{-1}=I$.
+
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
+3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=12m^{2}-12m-1$, que se anula si $m=\dfrac{3\pm2\sqrt3}6$.
+**a) Valores de $m$ con inversa.**
+1. $A$ tiene inversa si y solo si $|A|\neq0$.
+2. Determinante: $|A|=12m^{2}-12m-1$.
+3. Se anula si $m=\dfrac{3\pm2\sqrt3}6$.
 
 **$A$ tiene inversa si $m\ne\dfrac{3\pm2\sqrt3}{6}$.**
 
-**b)** Con $m=1$: $|A|=-1\ne0$. $AX=B^{t}\Rightarrow X=A^{-1}B^{t}$, con $A^{-1}=\begin{pmatrix}-2&5&4\\0&1&1\\-3&7&6\end{pmatrix}$ y $B^{t}=\begin{pmatrix}1&0&2\\-1&2&5\\3&1&4\end{pmatrix}$.
+**b) Ecuación $AX=B^{t}$ con $m=1$.**
+1. Con $m=1$, $|A|=-1\ne0$, luego existe $A^{-1}$.
+2. Se multiplica por la izquierda por $A^{-1}$ (la incógnita está a la derecha de $A$): $X=A^{-1}B^{t}$.
+3. Matrices: $A^{-1}=\begin{pmatrix}-2&5&4\\0&1&1\\-3&7&6\end{pmatrix}$ y $B^{t}=\begin{pmatrix}1&0&2\\-1&2&5\\3&1&4\end{pmatrix}$.
+4. Producto:
 
 **$X=\begin{pmatrix}5&14&37\\2&3&9\\8&20&53\end{pmatrix}$.**
 ::::
@@ -378,14 +934,71 @@ b) Para $m=0$, resuelve, si es posible, la ecuación matricial $\tfrac12AX+C^{4}
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Matriz inversa.**
+
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+
+**Propiedades de los determinantes.**
+
+$|A^t|=|A|$; $|A\cdot B|=|A|\cdot|B|$; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por $k$, el determinante se multiplica por $k$ (y $|k\cdot A|=k^n|A|$ en orden $n$); si hay dos filas proporcionales, $|A|=0$; sumar a una fila un múltiplo de otra no cambia el determinante. $|A^{-1}|=\dfrac{1}{|A|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
+3. Despeja multiplicando por la inversa del lado correcto.
+4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
+
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
+2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
+3. Traspón la adjunta y divide entre $|A|$.
+4. Comprueba que $A\cdot A^{-1}=I$.
+
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+
+**Propiedades de los determinantes.**
+
+1. Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.
+2. Aplica cada propiedad en orden, anotando cómo cambia el valor.
+3. Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=4(m-1)$. **$A$ tiene inversa si $m\ne1$.**
+**a) Valores de $m$ con inversa.**
+1. $A$ tiene inversa si y solo si $|A|\neq0$.
+2. Determinante: $|A|=4(m-1)$.
 
-**b)** $C^{2}=I$, luego $C^{4}=I$. La ecuación es $\tfrac12AX=B-I\Rightarrow X=2A^{-1}(B-I)$.
+**$A$ tiene inversa si $m\ne1$.**
 
-Para $m=0$, $|A|=-4\ne0$ y $A^{-1}=\begin{pmatrix}0&\frac12&-\frac12\\\frac12&0&\frac12\\-\frac12&\frac12&0\end{pmatrix}$.
+**b) Ecuación matricial con $m=0$.**
+1. Potencia: $C^{2}=I$, luego $C^{4}=I$.
+2. Se despeja el término con $X$: $\tfrac12AX+C^{4}=B\Rightarrow\tfrac12AX=B-I$.
+3. Con $m=0$, $|A|=-4\ne0$, luego existe $A^{-1}$. Se multiplica por $2A^{-1}$ por la izquierda: $X=2A^{-1}(B-I)$.
+4. Inversa: $A^{-1}=\begin{pmatrix}0&\frac12&-\frac12\\\frac12&0&\frac12\\-\frac12&\frac12&0\end{pmatrix}$.
+5. Producto:
 
 **$X=\begin{pmatrix}-2&-3&4\\1&6&2\\1&-5&2\end{pmatrix}$.**
 ::::
@@ -406,16 +1019,59 @@ b) Halla $x$, distinto de cero, para que $A-xI$ sea la inversa de la matriz $\df
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Matriz inversa.**
+
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Determinantes y parámetros.**
+
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+
+**Propiedades de los determinantes.**
+
+$|A^t|=|A|$; $|A\cdot B|=|A|\cdot|B|$; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por $k$, el determinante se multiplica por $k$ (y $|k\cdot A|=k^n|A|$ en orden $n$); si hay dos filas proporcionales, $|A|=0$; sumar a una fila un múltiplo de otra no cambia el determinante. $|A^{-1}|=\dfrac{1}{|A|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
+2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
+3. Traspón la adjunta y divide entre $|A|$.
+4. Comprueba que $A\cdot A^{-1}=I$.
+
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
+3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
+
+**Propiedades de los determinantes.**
+
+1. Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.
+2. Aplica cada propiedad en orden, anotando cómo cambia el valor.
+3. Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A-mI|=-m^{2}(m-3)$ (los valores propios de $A$ son $0,0,3$).
+**a) Valores de $m$ sin inversa.**
+1. $A-mI$ no tiene inversa si y solo si $|A-mI|=0$.
+2. Determinante: $|A-mI|=-m^{2}(m-3)$ (los valores propios de $A$ son $0,0,3$).
 
 **$A-mI$ no tiene inversa si $m=0$ o $m=3$.**
 
-**b)** Como $A^{2}=3A$: $(A-xI)(A-I)=A^{2}-(1+x)A+xI=(2-x)A+xI$.
-
-Queremos $\dfrac1x\left[(2-x)A+xI\right]=I\iff(2-x)A=0\iff x=2$.
+**b) Valor de $x$.**
+1. Propiedad de $A$: $A^{2}=3A$ (cada elemento de $A^{2}$ vale $3$).
+2. Producto: $(A-xI)(A-I)=A^{2}-(1+x)A+xI=(2-x)A+xI$.
+3. Se exige que $A-xI$ sea la inversa de $\dfrac1x(A-I)$, es decir, $\dfrac1x\left[(2-x)A+xI\right]=I$.
+4. Eso equivale a $(2-x)A=0$, y como $A\neq0$, $x=2$.
 
 **$x=2$.**
 ::::
@@ -434,12 +1090,57 @@ a) Calcula $A^{10}$. *(0,75 puntos)*
 
 b) Calcula, si es posible, la matriz inversa de $I+A+A^{2}$, donde $I$ denota la matriz identidad de orden 3. *(1,75 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Matriz inversa.**
+
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Potencias de una matriz.**
+
+$A^n=A\cdot A\cdots A$. Para hallar $A^n$ se calculan $A^2,A^3,\dots$ hasta ver un patrón (por ejemplo $A^k=0$, $A^k=I$ o $A^k=A$) y se demuestra o se aplica. Si $A^k=I$, entonces $A^{n}=A^{n\bmod k}$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
+2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
+3. Traspón la adjunta y divide entre $|A|$.
+4. Comprueba que $A\cdot A^{-1}=I$.
+
+**Potencias de una matriz.**
+
+1. Calcula $A^2$ y $A^3$ con cuidado (orden de los factores).
+2. Busca el patrón: ¿se anula?, ¿se repite?, ¿crece de forma regular en un elemento?
+3. Expresa $A^n$ usando el patrón y comprueba con $n=1,2$.
+
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $A^{2}=\begin{pmatrix}0&0&ab\\0&0&0\\0&0&0\end{pmatrix}$ y $A^{3}=A\cdot A^{2}=0$. Por tanto **$A^{10}=0$** (matriz nula).
+**a) Potencia $A^{10}$.**
+1. Se calculan las primeras potencias: $A^{2}=\begin{pmatrix}0&0&ab\\0&0&0\\0&0&0\end{pmatrix}$ y $A^{3}=A\cdot A^{2}=0$.
+2. A partir de ahí todas las potencias son nulas.
 
-**b)** $(I-A)(I+A+A^{2})=I-A^{3}=I$, luego existe la inversa y es $I-A$:
+**$A^{10}=0$** (matriz nula).
+
+**b) Inversa de $I+A+A^{2}$.**
+1. Se usa $(I-A)(I+A+A^{2})=I-A^{3}=I$ (porque $A^{3}=0$).
+2. Por tanto $I+A+A^{2}$ es invertible y su inversa es $I-A$:
 
 $$(I+A+A^{2})^{-1}=\begin{pmatrix}1&-a&b\\0&1&-b\\0&0&1\end{pmatrix}.$$
 ::::
@@ -457,16 +1158,69 @@ b) Para $\lambda=-1$, resuelve el sistema lineal homogéneo cuya matriz de coefi
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd), [Sistemas de ecuaciones lineales](03-sistemas-ecuaciones-lineales.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Rango de una matriz.**
+
+El rango es el orden del mayor menor no nulo (o el número de filas no nulas tras triangular por Gauss). $\operatorname{rg}A\le\min(\text{filas},\text{columnas})$. Una matriz cuadrada de orden $n$ tiene $\operatorname{rg}A=n$ si y solo si $|A|\neq0$.
+
+**Determinantes y parámetros.**
+
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+
+**Plantear un sistema de ecuaciones.**
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+
+**Propiedades de los determinantes.**
+
+$|A^t|=|A|$; $|A\cdot B|=|A|\cdot|B|$; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por $k$, el determinante se multiplica por $k$ (y $|k\cdot A|=k^n|A|$ en orden $n$); si hay dos filas proporcionales, $|A|=0$; sumar a una fila un múltiplo de otra no cambia el determinante. $|A^{-1}|=\dfrac{1}{|A|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Rango de una matriz.**
+
+1. Si hay parámetro, calcula primero el determinante (o los menores de orden mayor) y busca los valores que lo anulan.
+2. Para cada valor crítico, sustituye y estudia el rango por menores de orden menor o por Gauss.
+3. Para los demás valores, el rango es el máximo posible.
+4. Escribe el rango según los casos del parámetro.
+
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
+3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
+
+**Plantear un sistema de ecuaciones.**
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+
+**Propiedades de los determinantes.**
+
+1. Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.
+2. Aplica cada propiedad en orden, anotando cómo cambia el valor.
+3. Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $M=\begin{pmatrix}\lambda&1&\lambda-1\\1&\lambda-1&1\\\lambda-1&1&\lambda\end{pmatrix}$ y $|M|=-(\lambda-2)^{2}(\lambda+1)$.
+**a) Rango menor que $3$.**
+1. $M=A+(\lambda-1)B=\begin{pmatrix}\lambda&1&\lambda-1\\1&\lambda-1&1\\\lambda-1&1&\lambda\end{pmatrix}$.
+2. Determinante: $|M|=-(\lambda-2)^{2}(\lambda+1)$.
+3. $\operatorname{rg}M<3\iff|M|=0$.
 
-$\operatorname{rg}M<3\iff|M|=0\iff$ **$\lambda=2$ o $\lambda=-1$**.
+**$\lambda=2$ o $\lambda=-1$**.
 
-**b)** Para $\lambda=-1$: $M=\begin{pmatrix}-1&1&-2\\1&-2&1\\-2&1&-1\end{pmatrix}$, de rango 2: sistema compatible indeterminado (SCI) con una incógnita libre.
-
-Las dos primeras ecuaciones dan $x=y=z$, y la tercera también se cumple.
+**b) Sistema homogéneo para $\lambda=-1$.**
+1. Matriz: $M=\begin{pmatrix}-1&1&-2\\1&-2&1\\-2&1&-1\end{pmatrix}$, de rango 2: sistema compatible indeterminado (SCI) con una incógnita libre.
+2. Las dos primeras ecuaciones dan $x=y=z$, y la tercera también se cumple.
 
 **Solución: $(x,y,z)=(t,t,t)$, $t\in\mathbb{R}$.**
 ::::
@@ -481,13 +1235,44 @@ Las dos primeras ecuaciones dan $x=y=z$, y la tercera también se cumple.
 
 Dadas las matrices $A=\begin{pmatrix}2&-1&-2\\-2&3&1\\6&1&3\end{pmatrix}$ y $B=\begin{pmatrix}-1&0&-1\\-3&-1&5\end{pmatrix}$, calcula, si es posible, la matriz $X$ que verifica la ecuación $3X-B^{t}=AX$, siendo $B^{t}$ la matriz traspuesta de $B$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
+3. Despeja multiplicando por la inversa del lado correcto.
+4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
+
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$3X-B^{t}=AX\Rightarrow(3I-A)X=B^{t}$. Aquí $3I-A=\begin{pmatrix}1&1&2\\2&0&-1\\-6&-1&0\end{pmatrix}$ y $|3I-A|=1\neq0$, luego es invertible y
-
+**Ecuación matricial.**
+1. Se agrupan los términos con $X$: $3X-B^{t}=AX\Rightarrow3X-AX=B^{t}\Rightarrow(3I-A)X=B^{t}$.
+2. Matriz: $3I-A=\begin{pmatrix}1&1&2\\2&0&-1\\-6&-1&0\end{pmatrix}$ y $|3I-A|=1\neq0$, luego es invertible.
+3. Se multiplica por la izquierda por $(3I-A)^{-1}$ (la incógnita está a la derecha):
 $$(3I-A)^{-1}=\begin{pmatrix}-1&-2&-1\\6&12&5\\-2&-5&-2\end{pmatrix}.$$
-
+4. Producto con $B^{t}$:
 $$X=(3I-A)^{-1}B^{t}=\begin{pmatrix}-1&-2&-1\\6&12&5\\-2&-5&-2\end{pmatrix}\begin{pmatrix}-1&-3\\0&-1\\-1&5\end{pmatrix}.$$
 
 **$X=\begin{pmatrix}2&0\\-11&-5\\4&1\end{pmatrix}$.**
@@ -512,14 +1297,69 @@ b) Para $m=4$ resuelve, si es posible, la ecuación matricial $A\,X=12\,I$, dond
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Matriz inversa.**
+
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+
+**Determinantes y parámetros.**
+
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
+3. Despeja multiplicando por la inversa del lado correcto.
+4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
+
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
+2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
+3. Traspón la adjunta y divide entre $|A|$.
+4. Comprueba que $A\cdot A^{-1}=I$.
+
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
+3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=m(m-1)^2$ (para $m\ge0$). Se anula en $m=0$ y $m=1$.
+**a) Inversa.**
+1. $A$ tiene inversa si y solo si $|A|\neq0$. Para $m\ge0$ (así existen las raíces): $|A|=m(m-1)^2$.
+2. Se anula en $m=0$ y $m=1$.
 
 **$A$ tiene inversa si $m>0$ y $m\neq1$.**
 
-**b)** Para $m=4$, $|A|=36\neq0$ y $X=12A^{-1}$:
+**b) Ecuación matricial para $m=4$.**
+1. Con $m=4$: $|A|=4\cdot3^2=36\neq0$, luego existe $A^{-1}$.
+2. Se despeja $X$ multiplicando por $A^{-1}$ por la izquierda: $AX=12I\Rightarrow X=12A^{-1}$.
+3. Con $A=\begin{pmatrix}4&2&2\\2&4&1\\2&1&4\end{pmatrix}$, se calcula $A^{-1}$ y se multiplica por $12$:
 
 **$X=\begin{pmatrix}5&-2&-2\\-2&4&0\\-2&0&4\end{pmatrix}$** (se comprueba $AX=12I$).
 ::::
@@ -538,13 +1378,48 @@ a) Calcula $A^{-1}$. *(1 punto)*
 
 b) Calcula la matriz $X$ de orden tres que verifica $A\,X+(A-X)^{2}=X^{2}+I$, siendo $I$ la matriz identidad de orden tres. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Potencias de una matriz.**
+
+$A^n=A\cdot A\cdots A$. Para hallar $A^n$ se calculan $A^2,A^3,\dots$ hasta ver un patrón (por ejemplo $A^k=0$, $A^k=I$ o $A^k=A$) y se demuestra o se aplica. Si $A^k=I$, entonces $A^{n}=A^{n\bmod k}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
+3. Despeja multiplicando por la inversa del lado correcto.
+4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
+
+**Potencias de una matriz.**
+
+1. Calcula $A^2$ y $A^3$ con cuidado (orden de los factores).
+2. Busca el patrón: ¿se anula?, ¿se repite?, ¿crece de forma regular en un elemento?
+3. Expresa $A^n$ usando el patrón y comprueba con $n=1,2$.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A|=2\neq0$.
+**a) Inversa.**
+1. Determinante: $|A|=2\neq0$, luego existe $A^{-1}$.
+2. Se calcula la matriz de adjuntos, se traspone y se divide entre $|A|=2$:
 $$A^{-1}=\begin{pmatrix}0&\tfrac12&\tfrac12\\1&-1&0\\-1&\tfrac32&-\tfrac12\end{pmatrix}.$$
 
-**b)** Se desarrolla $(A-X)^2=A^2-AX-XA+X^2$. La ecuación queda $A^2-XA=I$, es decir $XA=A^2-I$ y
+**b) Ecuación matricial.**
+1. Se desarrolla el cuadrado, cuidando el orden (el producto no es conmutativo): $(A-X)^2=A^2-AX-XA+X^2$.
+2. La ecuación $AX+A^2-AX-XA+X^2=X^2+I$ queda, tras cancelar $AX$ y $X^2$: $A^2-XA=I$.
+3. Se despeja: $XA=A^2-I$. Se multiplica por la derecha por $A^{-1}$ (la incógnita está a la izquierda de $A$): $X=A^2A^{-1}-A^{-1}=A-A^{-1}$.
+4. Se calcula:
 
 **$X=A-A^{-1}=\begin{pmatrix}1&\tfrac32&\tfrac12\\0&2&1\\2&-\tfrac52&-\tfrac12\end{pmatrix}$.**
 ::::
@@ -565,14 +1440,71 @@ b) Para $a=1$ calcula, si es posible, la matriz $X$ tal que $A\,X=B^{t}$, donde 
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+
+**Determinantes y parámetros.**
+
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+
+**Propiedades de los determinantes.**
+
+$|A^t|=|A|$; $|A\cdot B|=|A|\cdot|B|$; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por $k$, el determinante se multiplica por $k$ (y $|k\cdot A|=k^n|A|$ en orden $n$); si hay dos filas proporcionales, $|A|=0$; sumar a una fila un múltiplo de otra no cambia el determinante. $|A^{-1}|=\dfrac{1}{|A|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
+3. Despeja multiplicando por la inversa del lado correcto.
+4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
+
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
+3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
+
+**Propiedades de los determinantes.**
+
+1. Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.
+2. Aplica cada propiedad en orden, anotando cómo cambia el valor.
+3. Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $A^{-1}=\tfrac14A\iff A^2=4I$. Con $A^2=\begin{pmatrix}a^2+3a&3-3a\\a-a^2&3a+1\end{pmatrix}$, la entrada $(1,2)$ exige $a=1$, y entonces $A^2=4I$ se cumple.
+**a) Condición $A^{-1}=\tfrac14A$.**
+1. Multiplicando por $A$: $A^{-1}=\tfrac14A\iff I=\tfrac14A^2\iff A^2=4I$.
+2. Se calcula $A^2=\begin{pmatrix}a^2+3a&3-3a\\a-a^2&3a+1\end{pmatrix}$.
+3. Igualando a $4I$, la entrada $(1,2)$ exige $3-3a=0\Rightarrow a=1$.
+4. Comprobación con $a=1$: $a^2+3a=4$, $a-a^2=0$ y $3a+1=4$ ✓, luego $A^2=4I$ se cumple.
 
 **$a=1$.**
 
-**b)** Para $a=1$, $|A|=-4\neq0$, así que $X=A^{-1}B^t=\tfrac14A\,B^t$:
+**b) Ecuación $AX=B^t$ para $a=1$.**
+1. $A=\begin{pmatrix}-1&3\\1&1\end{pmatrix}$ y $|A|=-4\neq0$, así que existe $A^{-1}$.
+2. Se multiplica por $A^{-1}$ por la izquierda: $X=A^{-1}B^t$.
+3. Por el apartado anterior, $A^{-1}=\tfrac14A$ (para $a=1$): $X=\tfrac14A\,B^t$, con $B^t=\begin{pmatrix}1&3&1\\-1&4&2\end{pmatrix}$.
+4. Se calcula el producto:
 
 **$X=\begin{pmatrix}-1&\tfrac94&\tfrac54\\0&\tfrac74&\tfrac34\end{pmatrix}$.**
 ::::
@@ -593,15 +1525,70 @@ b) Para $a=1$ calcula $X$ tal que $A\,X\,B=C$, si es posible. *(2 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Matriz inversa.**
+
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+
+**Determinantes y parámetros.**
+
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+
+**Propiedades de los determinantes.**
+
+$|A^t|=|A|$; $|A\cdot B|=|A|\cdot|B|$; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por $k$, el determinante se multiplica por $k$ (y $|k\cdot A|=k^n|A|$ en orden $n$); si hay dos filas proporcionales, $|A|=0$; sumar a una fila un múltiplo de otra no cambia el determinante. $|A^{-1}|=\dfrac{1}{|A|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
+2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
+3. Traspón la adjunta y divide entre $|A|$.
+4. Comprueba que $A\cdot A^{-1}=I$.
+
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
+3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
+
+**Propiedades de los determinantes.**
+
+1. Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.
+2. Aplica cada propiedad en orden, anotando cómo cambia el valor.
+3. Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|B|=-2a(a-2)$, que se anula en $a=0$ y $a=2$.
+**a) Cuándo $B$ no tiene inversa.**
+1. $B$ no tiene inversa si y solo si $|B|=0$.
+2. $|B|=\begin{vmatrix}1&1&a\\2&a&1\\2&2&0\end{vmatrix}=-2a(a-2)$.
+3. Se anula en $a=0$ y $a=2$.
 
 **$B$ no tiene inversa si $a=0$ o $a=2$.**
 
-**b)** Para $a=1$, $|B|=2\ne0$ y $A$ es invertible: $X=A^{-1}CB^{-1}$, con
-$A^{-1}=\begin{pmatrix}1&0\\2&1\end{pmatrix}$, $B^{-1}=\begin{pmatrix}-1&1&0\\1&-1&\tfrac12\\1&0&-\tfrac12\end{pmatrix}$.
+**b) Ecuación $AXB=C$ para $a=1$.**
+1. Para $a=1$, $|B|=2\ne0$, y $A$ es invertible ($|A|=1$): se puede despejar $X$.
+2. Se multiplica por $A^{-1}$ por la izquierda y por $B^{-1}$ por la derecha: $X=A^{-1}CB^{-1}$.
+3. Inversas: $A^{-1}=\begin{pmatrix}1&0\\2&1\end{pmatrix}$ y $B^{-1}=\begin{pmatrix}-1&1&0\\1&-1&\tfrac12\\1&0&-\tfrac12\end{pmatrix}$.
+4. Se multiplican: $A^{-1}C$ y el resultado por $B^{-1}$.
 
 **$X=\begin{pmatrix}-3&1&1\\-10&5&2\end{pmatrix}$** (se comprueba que $AXB=C$).
 ::::
@@ -622,16 +1609,72 @@ b) Para $m=0$ resuelve la ecuación $A\,X=B$, si es posible. *(1,5 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd), [Sistemas de ecuaciones lineales](03-sistemas-ecuaciones-lineales.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Rango de una matriz.**
+
+El rango es el orden del mayor menor no nulo (o el número de filas no nulas tras triangular por Gauss). $\operatorname{rg}A\le\min(\text{filas},\text{columnas})$. Una matriz cuadrada de orden $n$ tiene $\operatorname{rg}A=n$ si y solo si $|A|\neq0$.
+
+**Operaciones con matrices.**
+
+Suma y resta: elemento a elemento (mismas dimensiones). Producto $A\cdot B$: solo si columnas de $A$ = filas de $B$; el elemento $(i,j)$ es la fila $i$ de $A$ por la columna $j$ de $B$. En general $A\cdot B\neq B\cdot A$. La traspuesta $A^t$ cambia filas por columnas y $(A\cdot B)^t=B^t\cdot A^t$.
+
+**Determinantes y parámetros.**
+
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+
+**Propiedades de los determinantes.**
+
+$|A^t|=|A|$; $|A\cdot B|=|A|\cdot|B|$; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por $k$, el determinante se multiplica por $k$ (y $|k\cdot A|=k^n|A|$ en orden $n$); si hay dos filas proporcionales, $|A|=0$; sumar a una fila un múltiplo de otra no cambia el determinante. $|A^{-1}|=\dfrac{1}{|A|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Rango de una matriz.**
+
+1. Si hay parámetro, calcula primero el determinante (o los menores de orden mayor) y busca los valores que lo anulan.
+2. Para cada valor crítico, sustituye y estudia el rango por menores de orden menor o por Gauss.
+3. Para los demás valores, el rango es el máximo posible.
+4. Escribe el rango según los casos del parámetro.
+
+**Operaciones con matrices.**
+
+1. Comprueba las dimensiones antes de multiplicar y anota la dimensión del resultado.
+2. Para potencias $A^2,A^3,\dots$ calcula una a una y busca el patrón; después exprésalo en función de $n$.
+3. Revisa cada elemento: un solo error de signo arrastra todo lo demás.
+
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
+3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
+
+**Propiedades de los determinantes.**
+
+1. Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.
+2. Aplica cada propiedad en orden, anotando cómo cambia el valor.
+3. Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Desarrollando, $|A|=m^2-1=(m-1)(m+1)$.
-- Si $m\neq\pm1$: $\operatorname{rg}A=3$.
-- Si $m=1$: filas $(1,1,3),(1,1,2),(1,1,3)$, hay un menor no nulo de orden 2 y $|A|=0$: $\operatorname{rg}A=2$.
-- Si $m=-1$: filas $(-1,1,3),(1,-1,2),(1,-1,3)$; el menor $\begin{vmatrix}-1&3\\1&2\end{vmatrix}=-5\ne0$: $\operatorname{rg}A=2$.
+**a) Rango según $m$.**
+1. Determinante: $|A|=m^2-1=(m-1)(m+1)$, que se anula en $m=\pm1$.
+2. Si $m\neq\pm1$: $|A|\neq0$, luego $\operatorname{rg}A=3$.
+3. Si $m=1$: las filas son $(1,1,3),(1,1,2),(1,1,3)$. Hay un menor no nulo de orden 2 (por ejemplo, $\begin{vmatrix}1&3\\1&2\end{vmatrix}=-1$) y $|A|=0$: $\operatorname{rg}A=2$.
+4. Si $m=-1$: las filas son $(-1,1,3),(1,-1,2),(1,-1,3)$. El menor $\begin{vmatrix}-1&3\\1&2\end{vmatrix}=-5\ne0$ y $|A|=0$: $\operatorname{rg}A=2$.
 
-**b)** Para $m=0$, $|A|=-1\neq0$, luego $X=A^{-1}B$ existe:
-$$X=A^{-1}B=\begin{pmatrix}5&-4\\8&-4\\-2&2\end{pmatrix}.$$
+**$\operatorname{rg}A=3$ si $m\neq\pm1$; $\operatorname{rg}A=2$ si $m=1$ o $m=-1$.**
+
+**b) Ecuación $AX=B$ para $m=0$.**
+1. Para $m=0$, $|A|=-1\neq0$: $A$ es invertible.
+2. Se multiplica por $A^{-1}$ por la izquierda: $X=A^{-1}B$.
+3. Se calcula $A^{-1}$ y se multiplica por $B$:
+
+**$X=A^{-1}B=\begin{pmatrix}5&-4\\8&-4\\-2&2\end{pmatrix}$.**
 ::::
 :::::
 
@@ -653,17 +1696,76 @@ b) Resuelve el sistema $(A-I)\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd), [Sistemas de ecuaciones lineales](03-sistemas-ecuaciones-lineales.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Rango de una matriz.**
+
+El rango es el orden del mayor menor no nulo (o el número de filas no nulas tras triangular por Gauss). $\operatorname{rg}A\le\min(\text{filas},\text{columnas})$. Una matriz cuadrada de orden $n$ tiene $\operatorname{rg}A=n$ si y solo si $|A|\neq0$.
+
+**Determinantes y parámetros.**
+
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+
+**Plantear un sistema de ecuaciones.**
+
+Un sistema lineal se plantea a partir del enunciado: una incógnita por cada cantidad desconocida y una ecuación por cada condición («total», «el doble de», «tanto por ciento de»…).
+
+**Propiedades de los determinantes.**
+
+$|A^t|=|A|$; $|A\cdot B|=|A|\cdot|B|$; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por $k$, el determinante se multiplica por $k$ (y $|k\cdot A|=k^n|A|$ en orden $n$); si hay dos filas proporcionales, $|A|=0$; sumar a una fila un múltiplo de otra no cambia el determinante. $|A^{-1}|=\dfrac{1}{|A|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Rango de una matriz.**
+
+1. Si hay parámetro, calcula primero el determinante (o los menores de orden mayor) y busca los valores que lo anulan.
+2. Para cada valor crítico, sustituye y estudia el rango por menores de orden menor o por Gauss.
+3. Para los demás valores, el rango es el máximo posible.
+4. Escribe el rango según los casos del parámetro.
+
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
+3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
+
+**Plantear un sistema de ecuaciones.**
+
+1. Define con claridad las incógnitas $x,y,z$ y sus unidades.
+2. Traduce cada frase del enunciado a una ecuación; comprueba que no sobra ni falta ninguna.
+3. Resuelve por Gauss o por sustitución.
+4. Interpreta: las soluciones deben tener sentido en el contexto (no negativas, enteras si son personas…).
+
+**Propiedades de los determinantes.**
+
+1. Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.
+2. Aplica cada propiedad en orden, anotando cómo cambia el valor.
+3. Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $|A-\lambda I|=-(\lambda-1)(\lambda-3)(\lambda-4)$.
+**a) Rango de $A-\lambda I$.**
+1. Determinante: $|A-\lambda I|=-(\lambda-1)(\lambda-3)(\lambda-4)$.
+2. Se anula en $\lambda=1,3,4$.
+3. Casos:
+   - $\lambda\neq1,3,4$: $\operatorname{rg}(A-\lambda I)=3$.
+   - $\lambda=1,\ 3$ o $4$: $\operatorname{rg}(A-\lambda I)=2$ (el determinante es nulo y hay un menor de orden 2 no nulo).
 
-- $\lambda\neq1,3,4$: $\operatorname{rg}(A-\lambda I)=3$.
-- $\lambda=1,\ 3$ o $4$: $\operatorname{rg}(A-\lambda I)=2$ (el determinante es nulo y hay un menor de orden 2 no nulo).
+**b) Sistema homogéneo.**
+1. $A-I=\begin{pmatrix}1&0&2\\-1&1&1\\0&1&3\end{pmatrix}$, de rango $2$ (caso $\lambda=1$): el sistema tiene infinitas soluciones.
+2. De $x+2z=0$ y $-x+y+z=0$ (la tercera ecuación es combinación de las dos): $x=-2z$, $y=-3z$.
+3. Con $z=\lambda$ como parámetro: $(x,y,z)=(-2\lambda,-3\lambda,\lambda)$.
 
-**b)** $A-I=\begin{pmatrix}1&0&2\\-1&1&1\\0&1&3\end{pmatrix}$, de rango $2$. De $x+2z=0$ y $-x+y+z=0$ (la tercera es combinación): $x=-2z$, $y=-3z$.
+**Soluciones: $(x,y,z)=(-2\lambda,-3\lambda,\lambda)$.**
 
-**Soluciones: $(x,y,z)=(-2\lambda,-3\lambda,\lambda)$.** Con $x=2$: $\lambda=-1$, **solución $(2,3,-1)$**.
+4. Con $x=2$: $-2\lambda=2\Rightarrow\lambda=-1$.
+
+**Solución con $x=2$: $(2,3,-1)$.**
 ::::
 :::::
 
@@ -679,18 +1781,71 @@ b) Estudia el rango de la matriz $BA$ según los valores de $m$. *(1,5 puntos)*
 
 *Relacionado también con:* [Determinantes](02-determinantes.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Matriz inversa.**
+
+$A$ tiene inversa si y solo si $|A|\neq0$. Entonces $A^{-1}=\dfrac{1}{|A|}\,\left(\operatorname{Adj}A\right)^t$, y se cumple $A\cdot A^{-1}=A^{-1}\cdot A=I$.
+
+**Rango de una matriz.**
+
+El rango es el orden del mayor menor no nulo (o el número de filas no nulas tras triangular por Gauss). $\operatorname{rg}A\le\min(\text{filas},\text{columnas})$. Una matriz cuadrada de orden $n$ tiene $\operatorname{rg}A=n$ si y solo si $|A|\neq0$.
+
+**Determinantes y parámetros.**
+
+Determinante $3\times3$ (Sarrus): suma de los tres productos de diagonales «hacia abajo» menos los tres «hacia arriba». Propiedad clave: $|A|=0$ si dos filas son proporcionales; $|k\cdot A|=k^n|A|$ para $A$ de orden $n$; $|A\cdot B|=|A|\cdot|B|$.
+
+**Propiedades de los determinantes.**
+
+$|A^t|=|A|$; $|A\cdot B|=|A|\cdot|B|$; si se intercambian dos filas, el determinante cambia de signo; si una fila se multiplica por $k$, el determinante se multiplica por $k$ (y $|k\cdot A|=k^n|A|$ en orden $n$); si hay dos filas proporcionales, $|A|=0$; sumar a una fila un múltiplo de otra no cambia el determinante. $|A^{-1}|=\dfrac{1}{|A|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Matriz inversa.**
+
+1. Calcula $|A|$. Si es $0$, no hay inversa.
+2. Halla la matriz de adjuntos: cada elemento es el menor con su signo $(-1)^{i+j}$.
+3. Traspón la adjunta y divide entre $|A|$.
+4. Comprueba que $A\cdot A^{-1}=I$.
+
+**Rango de una matriz.**
+
+1. Si hay parámetro, calcula primero el determinante (o los menores de orden mayor) y busca los valores que lo anulan.
+2. Para cada valor crítico, sustituye y estudia el rango por menores de orden menor o por Gauss.
+3. Para los demás valores, el rango es el máximo posible.
+4. Escribe el rango según los casos del parámetro.
+
+**Determinantes y parámetros.**
+
+1. Calcula el determinante en función del parámetro (desarrolla por la fila o columna con más ceros).
+2. Iguala a $0$ y resuelve la ecuación: esos son los valores prohibidos.
+3. Expresa la conclusión: «tiene inversa para todo $a$ distinto de …».
+
+**Propiedades de los determinantes.**
+
+1. Identifica qué operaciones entre filas o columnas relacionan el determinante pedido con el dado.
+2. Aplica cada propiedad en orden, anotando cómo cambia el valor.
+3. Si no hay relación directa, calcula con Sarrus o por adjuntos desarrollando por la fila o columna con más ceros.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$A$ es $2\times3$ y $B$ es $3\times2$.
+**Dimensiones.** $A$ es $2\times3$ y $B$ es $3\times2$, luego $AB$ es $2\times2$ y $BA$ es $3\times3$.
 
-**a)** $AB=\begin{pmatrix}1&-1\\1+m&2m\end{pmatrix}$ y $|AB|=2m+(1+m)=3m+1$.
+**a) $AB$ sin inversa.**
+1. $AB=\begin{pmatrix}1&-1\\1+m&2m\end{pmatrix}$.
+2. $|AB|=2m+(1+m)=3m+1$. No tiene inversa si el determinante es $0$.
 
 **$AB$ no tiene inversa si $m=-\dfrac13$.**
 
-**b)** $BA=\begin{pmatrix}2&m-1&1\\2&2m&2\\m-1&-2m&-1\end{pmatrix}$. Desarrollando, $|BA|=0$ para todo $m$ (es lógico: $BA$ es $3\times3$ pero $\operatorname{rg}(BA)\le\operatorname{rg}(A)\le2$), luego $\operatorname{rg}(BA)\le2$.
-
-El menor de las filas 1.ª y 2.ª y columnas 1.ª y 3.ª vale $\begin{vmatrix}2&1\\2&2\end{vmatrix}=2\neq0$, sin depender de $m$.
+**b) Rango de $BA$.**
+1. $BA=\begin{pmatrix}2&m-1&1\\2&2m&2\\m-1&-2m&-1\end{pmatrix}$.
+2. Desarrollando, $|BA|=0$ para todo $m$. Es lógico: $BA$ es $3\times3$ pero $\operatorname{rg}(BA)\le\operatorname{rg}(A)\le2$.
+3. Un menor de orden $2$ no nulo: filas 1.ª y 2.ª y columnas 1.ª y 3.ª, $\begin{vmatrix}2&1\\2&2\end{vmatrix}=2\neq0$, sin depender de $m$.
 
 **$\operatorname{rg}(BA)=2$ para todo $m\in\mathbb{R}$.**
 ::::
@@ -713,14 +1868,47 @@ $$B=\begin{pmatrix}1&-1\\3&0\\-4&5\end{pmatrix}\qquad\text{y}\qquad C=\begin{pma
 
 calcula la matriz $X$ que verifica $A^{4}X+B=AC$. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Ecuaciones matriciales.**
+
+Si $|A|\neq0$: de $A\cdot X=B$ sale $X=A^{-1}\cdot B$; de $X\cdot A=B$ sale $X=B\cdot A^{-1}$. El orden importa: la inversa se multiplica por el mismo lado en los dos miembros. La identidad $I$ cumple $A\cdot I=I\cdot A=A$.
+
+**Potencias de una matriz.**
+
+$A^n=A\cdot A\cdots A$. Para hallar $A^n$ se calculan $A^2,A^3,\dots$ hasta ver un patrón (por ejemplo $A^k=0$, $A^k=I$ o $A^k=A$) y se demuestra o se aplica. Si $A^k=I$, entonces $A^{n}=A^{n\bmod k}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Ecuaciones matriciales.**
+
+1. Agrupa los términos con $X$ en un miembro y los demás en el otro (sin olvidar $I$ y los cambios de signo).
+2. Saca $X$ como factor común conservando su lado: $X\cdot(A-I)$ o $(A-I)\cdot X$.
+3. Despeja multiplicando por la inversa del lado correcto.
+4. Calcula la inversa y el producto; comprueba sustituyendo en la ecuación original.
+
+**Potencias de una matriz.**
+
+1. Calcula $A^2$ y $A^3$ con cuidado (orden de los factores).
+2. Busca el patrón: ¿se anula?, ¿se repite?, ¿crece de forma regular en un elemento?
+3. Expresa $A^n$ usando el patrón y comprueba con $n=1,2$.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Se obtiene $A^2=\begin{pmatrix}-1&0&1\\1&4&4\\-1&-3&-3\end{pmatrix}$ y $A^3=A^2A=-I$.
+**a) Comprobación.**
+1. Se calcula $A^2=\begin{pmatrix}-1&0&1\\1&4&4\\-1&-3&-3\end{pmatrix}$ y $A^3=A^2A=-I$.
+2. Como $A\cdot A^2=-I$, resulta $A^{-1}=-A^2$ (multiplicando por $-1$ la igualdad), es decir, **$A^2=-A^{-1}$**.
 
-Como $A\cdot A^2=-I$, resulta $A^{-1}=-A^2$, es decir, **$A^2=-A^{-1}$**.
-
-**b)** De $A^3=-I$: $A^4=-A$. La ecuación es $-AX+B=AC$, luego $X=-A^{-1}(AC-B)=-C+A^{-1}B=-C-A^2B$:
+**b) Ecuación matricial.**
+1. De $A^3=-I$: $A^4=A^3A=-A$.
+2. La ecuación $A^4X+B=AC$ queda $-AX+B=AC$, luego $AX=B-AC$ y $X=-A^{-1}(AC-B)=-C+A^{-1}B$.
+3. Como $A^{-1}=-A^2$: $X=-C-A^2B$.
+4. Se calcula el producto y se resta:
 
 $$X=\begin{pmatrix}3&-6\\6&-21\\-3&15\end{pmatrix}$$
 ::::

@@ -5,7 +5,7 @@ lang: es
 
 Ejercicios de **Matemáticas II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *rectas y planos*: **52 ejercicios** de convocatorias ordinarias, extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ciencias/05-rectas-planos/index.qmd), los [ejercicios del tema](../05-rectas-planos/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ciencias/05-rectas-planos/index.qmd).
 
-Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **solución** paso a paso con el resultado. Inténtalo con la menor ayuda posible.
 
 
 ## 2026
@@ -23,16 +23,62 @@ a) Halla la ecuación del plano respecto del cual los puntos $P$ y $Q$ son simé
 
 b) Determina el ángulo formado por el plano $2x+y+z-5=0$ y la recta que une $P$ y $Q$. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** El plano es el mediador de $PQ$: normal $\overrightarrow{PQ}=(2,4,-2)\parallel(1,2,-1)$ y pasa por el punto medio $M(5,0,2)$:
-$x+2y-z+D=0$, con $5-2+D=0\Rightarrow D=-3$.
+**a) Plano respecto del cual $P$ y $Q$ son simétricos.**
+1. Es el plano mediador del segmento $PQ$: perpendicular a $PQ$ y que pasa por su punto medio.
+2. Normal: $\overrightarrow{PQ}=(2,4,-2)\parallel(1,2,-1)$.
+3. Punto medio: $M=\dfrac{P+Q}{2}=(5,0,2)$.
+4. El plano es $x+2y-z+D=0$. Como contiene a $M$, $5-2+D=0\Rightarrow D=-3$.
 
 **Plano: $x+2y-z-3=0$.**
 
-**b)** Dirección de la recta: $(1,2,-1)$; normal del plano: $(2,1,1)$.
-$\operatorname{sen}\alpha=\dfrac{|2+2-1|}{\sqrt6\sqrt6}=\dfrac12$.
+**b) Ángulo entre la recta $PQ$ y el plano $2x+y+z-5=0$.**
+1. Vector director de la recta: $(1,2,-1)$. Normal del plano: $(2,1,1)$.
+2. El ángulo entre recta y plano se calcula con el seno (es el complementario del ángulo entre la recta y la normal):
+$$\operatorname{sen}\alpha=\dfrac{|2+2-1|}{\sqrt6\sqrt6}=\dfrac12.$$
+3. De $\operatorname{sen}\alpha=\tfrac12$ y $0^\circ\le\alpha\le90^\circ$ sale $\alpha=30^\circ$.
 
 **$\alpha=30^\circ$.**
 ::::
@@ -53,15 +99,71 @@ b) Halla los planos paralelos a $\pi$ que distan 2 unidades del punto $P(2,2,1)$
 
 *Relacionado también con:* [Vectores en el espacio](04-vectores-espacio.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Cortes con los ejes: $x=-5$, $y=-4$, $z=1$, es decir $(-5,0,0)$, $(0,-4,0)$, $(0,0,1)$. Con $a=5$, $b=4$, $c=1$ el área es $\tfrac12\sqrt{(ab)^2+(bc)^2+(ac)^2}=\tfrac12\sqrt{400+16+25}$ (equivale a $\tfrac12|\overrightarrow{AB}\times\overrightarrow{AC}|$).
+**a) Área del triángulo con los ejes.**
+1. Corte con el eje $X$ ($y=z=0$): $4x+20=0\Rightarrow x=-5$. Con el eje $Y$: $5y+20=0\Rightarrow y=-4$. Con el eje $Z$: $-20z+20=0\Rightarrow z=1$.
+2. Vértices: $(-5,0,0)$, $(0,-4,0)$ y $(0,0,1)$.
+3. Con $a=5$, $b=4$, $c=1$ (las distancias al origen), el área es $\tfrac12\sqrt{(ab)^2+(bc)^2+(ac)^2}=\tfrac12\sqrt{400+16+25}$ (equivale a $\tfrac12|\overrightarrow{AB}\times\overrightarrow{AC}|$).
+4. $\sqrt{441}=21$.
 
 **Área $=\dfrac{21}{2}=10{,}5\ \text{u}^2$.**
 
-**b)** Planos $4x+5y-20z+k=0$, con $|\vec n|=\sqrt{441}=21$:
-$\dfrac{|8+10-20+k|}{21}=2\Rightarrow|k-2|=42$.
+**b) Planos paralelos a $\pi$ a distancia 2 de $P$.**
+1. Los planos paralelos a $\pi$ son $4x+5y-20z+k=0$, con normal $\vec n=(4,5,-20)$ y $|\vec n|=\sqrt{441}=21$.
+2. Distancia de $P(2,2,1)$ al plano: $\dfrac{|8+10-20+k|}{21}=2$.
+3. Se despeja: $|k-2|=42\Rightarrow k=44$ o $k=-40$.
 
 **$4x+5y-20z+44=0$ y $4x+5y-20z-40=0$.**
 ::::
@@ -77,16 +179,63 @@ a) Determina la ecuación de la recta que pasa por el punto $P$ y es paralela a 
 
 b) Halla la ecuación del plano que pasa por el punto $P$ y es perpendicular a $\pi_1$ y a $\pi_2$. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Normales: $\vec n_1=(2,-1,-1)$, $\vec n_2=(1,-2,1)$. $\vec n_1\times\vec n_2=(-3,-3,-3)\parallel(1,1,1)$.
+**Normales.**
+1. $\vec n_1=(2,-1,-1)$ y $\vec n_2=(1,-2,1)$.
+2. Su producto vectorial: $\vec n_1\times\vec n_2=(-3,-3,-3)\parallel(1,1,1)$.
 
-**a)** Una recta paralela a ambos planos tiene dirección perpendicular a las dos normales, es decir $(1,1,1)$.
+**a) Recta paralela a ambos planos.**
+1. Una recta es paralela a un plano si su dirección es perpendicular a la normal del plano. Debe serlo a las dos normales.
+2. Esa dirección es la del producto vectorial: $(1,1,1)$.
+3. Pasa por $P(1,1,0)$.
 
 **Recta: $x-1=y-1=z$.**
 
-**b)** Un plano perpendicular a $\pi_1$ y a $\pi_2$ tiene como normal la dirección $(1,1,1)$ (su normal es perpendicular a ambas normales); pasa por $P(1,1,0)$.
+**b) Plano perpendicular a $\pi_1$ y $\pi_2$ por $P$.**
+1. Un plano es perpendicular a $\pi_1$ si su normal es perpendicular a $\vec n_1$ (lo contiene); lo mismo con $\pi_2$.
+2. Su normal es perpendicular a $\vec n_1$ y a $\vec n_2$: $\vec n=(1,1,1)$.
+3. Plano $x+y+z+D=0$ por $P(1,1,0)$: $2+D=0\Rightarrow D=-2$.
 
 **Plano: $x+y+z-2=0$.**
 ::::
@@ -105,16 +254,61 @@ a) Determina la ecuación de la recta que corta perpendicularmente a $r$ y que e
 
 b) Halla el punto simétrico de $P(1,1,1)$ respecto de $\pi$. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: punto $(0,-1,3)$, dirección $\vec d=(-1,1,1)$. Normal de $\pi$: $\vec n=(1,-2,1)$.
+**Datos.** $r$: punto $(0,-1,3)$ y dirección $\vec d=(-1,1,1)$ (se toma $-\tfrac12$ de $(-2,2,2)$). Normal de $\pi$: $\vec n=(1,-2,1)$.
 
-**a)** $r$ corta a $\pi$ ($\vec d\cdot\vec n=-2\ne0$): sustituyendo, $-2\lambda-2(-1+2\lambda)+3+2\lambda-3=0\Rightarrow\lambda=\tfrac12$, punto $M(-1,0,4)$. La recta pedida pasa por $M$, está en $\pi$ y es perpendicular a $r$, luego su dirección es $\vec d\times\vec n=(3,2,1)$.
+**a) Recta contenida en $\pi$ que corta perpendicularmente a $r$.**
+1. $r$ corta a $\pi$ porque $\vec d\cdot\vec n=-1-2+1=-2\ne0$.
+2. Punto de corte: se sustituye $r$ en $\pi$: $-2\lambda-2(-1+2\lambda)+3+2\lambda-3=0\Rightarrow-4\lambda+2=0\Rightarrow\lambda=\tfrac12$. El punto es $M(-1,0,4)$.
+3. La recta pedida pasa por $M$ y debe estar en $\pi$ (dirección perpendicular a $\vec n$) y ser perpendicular a $r$ (dirección perpendicular a $\vec d$). Su dirección es $\vec d\times\vec n=(3,2,1)$.
 
 **Recta: $\dfrac{x+1}{3}=\dfrac{y}{2}=\dfrac{z-4}{1}$.**
 
-**b)** Recta por $P$ perpendicular a $\pi$: $(1+t,\,1-2t,\,1+t)$. En $\pi$: $(1+t)-2(1-2t)+(1+t)-3=6t-3=0\Rightarrow t=\tfrac12$, pie $(\tfrac32,0,\tfrac32)$. El simétrico es $P'=2\cdot\text{pie}-P$.
+**b) Simétrico de $P(1,1,1)$ respecto de $\pi$.**
+1. Recta por $P$ perpendicular a $\pi$ (dirección $\vec n$): $(1+t,\,1-2t,\,1+t)$.
+2. Pie de la perpendicular: se sustituye en $\pi$, $(1+t)-2(1-2t)+(1+t)-3=6t-3=0\Rightarrow t=\tfrac12$, pie $(\tfrac32,0,\tfrac32)$.
+3. El pie es el punto medio entre $P$ y su simétrico: $P'=2\cdot\text{pie}-P$.
 
 **$P'(2,-1,2)$.**
 ::::
@@ -133,17 +327,51 @@ a) Halla la posición relativa de $\pi$ y $r$ según los valores de $m$. *(1,5 p
 
 b) Para $m=1$, determina la ecuación del plano que contiene a $r$ y corta perpendicularmente a $\pi$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Dirección de $r$: $\vec d=(2,1,m-2)$; normal de $\pi$: $\vec n=(2,-1,2)$. Entonces $\vec d\cdot\vec n=4-1+2(m-2)=2m-1$.
+**Posición relativa recta-plano.**
+1. Dirección de $r$: $\vec d=(2,1,m-2)$. Normal de $\pi$: $\vec n=(2,-1,2)$.
+2. Producto escalar: $\vec d\cdot\vec n=4-1+2(m-2)=2m-1$.
 
-**a)**
-- Si $m\neq\tfrac12$: $\vec d\cdot\vec n\neq0$, **la recta corta al plano** en un punto.
-- Si $m=\tfrac12$: $r\parallel\pi$. El punto $(1,0,2)$ de $r$ da $2-0+4-3=3\neq0$, no está en $\pi$: **recta paralela al plano (sin puntos comunes)**.
+**a) Según $m$.**
+1. Si $m\neq\tfrac12$: $\vec d\cdot\vec n\neq0$ y **la recta corta al plano** en un punto.
+2. Si $m=\tfrac12$: $r\parallel\pi$. Se comprueba si está contenida con un punto de $r$, $(1,0,2)$: en $\pi$ da $2-0+4-3=3\neq0$, no está en $\pi$.
 
-**b)** Para $m=1$: $\vec d=(2,1,-1)$. El plano contiene a $r$ y es perpendicular a $\pi$, luego su normal es $\vec d\times\vec n=(1,-6,-4)$ y pasa por $(1,0,2)$:
-$(x-1)-6y-4(z-2)=0$.
+**Si $m\neq\tfrac12$, secantes; si $m=\tfrac12$, recta paralela al plano (sin puntos comunes).**
+
+**b) Plano que contiene a $r$ y es perpendicular a $\pi$** (con $m=1$).
+1. Dirección de $r$: $\vec d=(2,1,-1)$.
+2. Si el plano contiene a $r$ y es perpendicular a $\pi$, su normal es perpendicular a $\vec d$ y a $\vec n$: $\vec d\times\vec n=(1,-6,-4)$.
+3. Pasa por $(1,0,2)$: $(x-1)-6y-4(z-2)=0$.
 
 **Plano: $x-6y-4z+7=0$.**
 ::::
@@ -164,18 +392,63 @@ b) Determina el ángulo que forma la recta que pasa por $A$ y $D$ con el plano q
 
 *Relacionado también con:* [Vectores en el espacio](04-vectores-espacio.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\overrightarrow{AB}=(-2,1,-2)$, $\overrightarrow{AC}=(-1,-1,-1)$, $\overrightarrow{AD}=(0,1,-1)$.
+**Vectores desde $A$.**
+1. $\overrightarrow{AB}=(-2,1,-2)$, $\overrightarrow{AC}=(-1,-1,-1)$, $\overrightarrow{AD}=(0,1,-1)$.
+2. Producto vectorial: $\overrightarrow{AB}\times\overrightarrow{AC}=(-3,0,3)$, de módulo $3\sqrt2$. Es la normal del plano $ABC$.
 
-**a)** $\overrightarrow{AB}\times\overrightarrow{AC}=(-3,0,3)$, de módulo $3\sqrt2$. La altura desde $D$ es la distancia de $D$ al plano $ABC$:
-$h=\dfrac{|\overrightarrow{AD}\cdot(\overrightarrow{AB}\times\overrightarrow{AC})|}{|\overrightarrow{AB}\times\overrightarrow{AC}|}=\dfrac{3}{3\sqrt2}$.
+**a) Altura desde $D$.**
+1. La altura desde $D$ es la distancia de $D$ al plano $ABC$, que es el volumen del paralelepípedo (producto mixto en valor absoluto) dividido entre el área de su base (módulo del producto vectorial):
+$$h=\dfrac{|\overrightarrow{AD}\cdot(\overrightarrow{AB}\times\overrightarrow{AC})|}{|\overrightarrow{AB}\times\overrightarrow{AC}|}=\dfrac{3}{3\sqrt2}.$$
 
 **$h=\dfrac{\sqrt2}{2}$ u.**
 
-**b)** Normal del plano: $(1,0,-1)$; dirección de la recta $AD$: $(0,1,-1)$.
-$\operatorname{sen}\alpha=\dfrac{|(1,0,-1)\cdot(0,1,-1)|}{\sqrt2\cdot\sqrt2}=\dfrac12$.
+**b) Ángulo entre la recta $AD$ y el plano $ABC$.**
+1. Normal del plano: $(1,0,-1)$ (paralela a $(-3,0,3)$). Dirección de la recta $AD$: $(0,1,-1)$.
+2. El ángulo entre recta y plano usa el seno:
+$$\operatorname{sen}\alpha=\dfrac{|(1,0,-1)\cdot(0,1,-1)|}{\sqrt2\cdot\sqrt2}=\dfrac12.$$
 
 **$\alpha=30^\circ$.**
 ::::
@@ -197,16 +470,55 @@ a) Halla el plano que pasa por el punto $P$ y contiene a la recta $r$. *(1 punto
 
 b) Halla la recta que pasa por el punto $P$ y corta perpendicularmente a la recta $r$. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$ pasa por $Q(1,2,3)$ con $\vec d=(1,2,2)$; $\overrightarrow{PQ}=(0,1,2)$.
+**Datos.**
+1. $r$ pasa por $Q(1,2,3)$ con dirección $\vec d=(1,2,2)$.
+2. $\overrightarrow{PQ}=(0,1,2)$.
 
-**a)** Normal: $\overrightarrow{PQ}\times\vec d=(-2,2,-1)$. Plano por $P$: $2x-2y+z+D=0$ con $2-2+1+D=0$. **$2x-2y+z-1=0$.**
+**a) Plano que contiene a $r$ y pasa por $P$.**
+1. El plano contiene a los vectores $\overrightarrow{PQ}$ y $\vec d$; su normal es el producto vectorial: $\overrightarrow{PQ}\times\vec d=(-2,2,-1)$.
+2. Se usa la normal opuesta $(2,-2,1)$: $2x-2y+z+D=0$.
+3. Pasa por $P(1,1,1)$: $2-2+1+D=0$, luego $D=-1$.
 
-**b)** Punto de $r$: $R(1+\lambda,2+2\lambda,3+2\lambda)$. $\overrightarrow{PR}\cdot\vec d=0$: $(\lambda,\,1+2\lambda,\,2+2\lambda)\cdot(1,2,2)=9\lambda+6=0\Rightarrow\lambda=-\dfrac23$, $R\left(\dfrac13,\dfrac23,\dfrac53\right)$.
+**$2x-2y+z-1=0$.**
 
-Dirección $\overrightarrow{PR}=\left(-\dfrac23,-\dfrac13,\dfrac23\right)\parallel(2,1,-2)$.
+**b) Recta por $P$ que corta perpendicularmente a $r$.**
+1. Un punto genérico de $r$: $R(1+\lambda,2+2\lambda,3+2\lambda)$.
+2. Se exige que $\overrightarrow{PR}$ sea perpendicular a $\vec d$: $\overrightarrow{PR}=(\lambda,\,1+2\lambda,\,2+2\lambda)$ y
+$$\overrightarrow{PR}\cdot\vec d=(\lambda,\,1+2\lambda,\,2+2\lambda)\cdot(1,2,2)=9\lambda+6=0\Rightarrow\lambda=-\dfrac23.$$
+3. El punto de corte es $R\left(\dfrac13,\dfrac23,\dfrac53\right)$.
+4. Dirección de la recta: $\overrightarrow{PR}=\left(-\dfrac23,-\dfrac13,\dfrac23\right)\parallel(2,1,-2)$.
+
 **$\dfrac{x-1}{2}=\dfrac{y-1}{1}=\dfrac{z-1}{-2}$.**
 ::::
 :::::
@@ -224,14 +536,62 @@ a) Calcula el punto simétrico de $P(1,0,1)$ respecto de $\pi$. *(1,5 puntos)*
 
 b) Calcula los planos paralelos a $\pi$ y que disten 2 unidades de $\pi$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Recta perpendicular a $\pi$ por $P$: $(1+2t,\,t,\,1+2t)$. Corta a $\pi$: $2(1+2t)+t+2(1+2t)+5=9t+9=0\Rightarrow t=-1$, punto medio $M(-1,-1,-1)$.
+**a) Simétrico de $P$ respecto de $\pi$.**
+1. Recta perpendicular a $\pi$ por $P$ (dirección la normal $(2,1,2)$): $(1+2t,\,t,\,1+2t)$.
+2. Se corta con $\pi$: $2(1+2t)+t+2(1+2t)+5=9t+9=0\Rightarrow t=-1$.
+3. El punto de corte es la proyección de $P$ sobre el plano, el punto medio $M(-1,-1,-1)$.
+4. El simétrico cumple $M=\dfrac{P+P'}{2}$, luego $P'=2M-P$:
 
-$P'=2M-P=$ **$(-3,-2,-3)$.**
+**$P'=(-3,-2,-3)$.**
 
-**b)** Planos $2x+y+2z+D=0$ con $\dfrac{|D-5|}{\sqrt{4+1+4}}=2\Rightarrow|D-5|=6$. **$2x+y+2z+11=0$ y $2x+y+2z-1=0$.**
+**b) Planos paralelos a $\pi$ a distancia $2$.**
+1. Los paralelos tienen la forma $2x+y+2z+D=0$ (misma normal).
+2. La distancia entre dos planos paralelos es $\dfrac{|D-5|}{\sqrt{4+1+4}}=\dfrac{|D-5|}{3}=2$, luego $|D-5|=6$.
+3. $D=11$ o $D=-1$.
+
+**$2x+y+2z+11=0$ y $2x+y+2z-1=0$.**
 ::::
 :::::
 
@@ -248,15 +608,54 @@ a) Calcula el punto simétrico del punto $A$ con respecto al plano $\pi$. *(1,5 
 
 b) Halla el plano que contiene a los puntos $A$ y $B$ y es perpendicular al plano $\pi$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** La recta perpendicular a $\pi$ por $A$ es $(1+t,\,2+t,\,t)$. Corta a $\pi$: $3+3t+1=0\Rightarrow t=-\dfrac43$, punto medio $M\left(-\dfrac13,\dfrac23,-\dfrac43\right)$.
+**a) Simétrico de $A$ respecto de $\pi$.**
+1. Recta perpendicular a $\pi$ por $A$ (dirección la normal $(1,1,1)$): $(1+t,\,2+t,\,t)$.
+2. Se corta con $\pi$: $(1+t)+(2+t)+t+1=3+3t+1=0\Rightarrow t=-\dfrac43$.
+3. El punto de corte es el punto medio $M\left(-\dfrac13,\dfrac23,-\dfrac43\right)$.
+4. El simétrico cumple $A'=2M-A$:
 
-$A'=2M-A=$ **$\left(-\dfrac53,-\dfrac23,-\dfrac83\right)$.**
+**$A'=\left(-\dfrac53,-\dfrac23,-\dfrac83\right)$.**
 
-**b)** El plano contiene a $\overrightarrow{AB}=(2,-1,0)$ y a la normal de $\pi$, $(1,1,1)$. Su normal es $\overrightarrow{AB}\times(1,1,1)=(-1,-2,3)$ y pasa por $A$:
-**$x+2y-3z-5=0$.** (Comprobación: $B$: $3+2-5=0$.)
+**b) Plano por $A$ y $B$ perpendicular a $\pi$.**
+1. El plano contiene a $\overrightarrow{AB}=(2,-1,0)$ y a la normal de $\pi$, $(1,1,1)$ (por ser perpendicular a $\pi$).
+2. Su normal es el producto vectorial: $\overrightarrow{AB}\times(1,1,1)=(-1,-2,3)$.
+3. Plano por $A(1,2,0)$: $-x-2y+3z+D=0$ con $-1-4+D=0$, luego $D=5$. Cambiando de signo toda la ecuación:
+
+**$x+2y-3z-5=0$.**
+
+(Comprobación: $B$: $3+2-5=0$.)
 ::::
 :::::
 
@@ -273,13 +672,59 @@ a) Halla $m$ para que $r$ y $\pi$ sean paralelos. *(1,5 puntos)*
 
 b) Para $m=-8$, calcula la distancia de la recta $r$ al plano $\pi$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Vector director de $r$: $\vec d=(1,-1,1)\times(1,2,-1)=(-1,2,3)$. Es paralela al plano si $\vec d\cdot(m,-1,-2)=0$:
-$-m-2-6=0\Rightarrow m=-8$. Además, un punto de $r$, $(10/3,1/3,0)$, no está en $\pi$ ($-27\neq5$), luego no está contenida. **$m=-8$.**
+**a) Paralelismo entre $r$ y $\pi$.**
+1. Vector director de $r$ (producto vectorial de las normales de los dos planos que la definen): $\vec d=(1,-1,1)\times(1,2,-1)=(-1,2,3)$.
+2. La recta es paralela al plano si $\vec d$ es perpendicular a la normal $(m,-1,-2)$: $\vec d\cdot(m,-1,-2)=-m-2-6=0$, luego $m=-8$.
+3. Falta comprobar que $r$ no está contenida en $\pi$. Un punto de $r$ (con $z=0$) es $(10/3,1/3,0)$ y no está en $\pi$: $-8\cdot\dfrac{10}{3}-\dfrac13=-27\neq5$.
 
-**b)** La distancia de $r$ a $\pi$ es la de cualquier punto de $r$, por ejemplo $P(10/3,1/3,0)$, a $\pi\equiv-8x-y-2z-5=0$:
+**$m=-8$.**
+
+**b) Distancia de la recta al plano.**
+1. Como son paralelos, la distancia es la de cualquier punto de $r$ al plano; se toma $P(10/3,1/3,0)$.
+2. El plano es $\pi\equiv-8x-y-2z-5=0$.
+3. Distancia:
 $$d=\frac{\left|-\frac{80}{3}-\frac13-5\right|}{\sqrt{64+1+4}}=\frac{32}{\sqrt{69}}=\mathbf{\frac{32\sqrt{69}}{69}}\approx3{,}85.$$
 ::::
 :::::
@@ -294,17 +739,65 @@ a) Estudia la posición relativa de las rectas $r$ y $s$. *(1 punto)*
 
 b) Halla la ecuación de un plano que contiene a $r$ y a una recta perpendicular a las rectas $r$ y $s$. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: $A(-1,-2,2)$, $\vec u=(4,3,-1)$. $s$: $B(1,2,-3)$, $\vec v=(-1,1,-2)$. $\overrightarrow{AB}=(2,4,-5)$.
+**Datos.** $r$ pasa por $A(-1,-2,2)$ con $\vec u=(4,3,-1)$; $s$ pasa por $B(1,2,-3)$ con $\vec v=(-1,1,-2)$; $\overrightarrow{AB}=(2,4,-5)$.
 
-**a)** $\vec u$ y $\vec v$ no son proporcionales y
+**a) Posición relativa.**
+1. $\vec u$ y $\vec v$ no son proporcionales: no son paralelas ni coincidentes.
+2. Se estudia si son coplanarias con el producto mixto:
 $$\left|\begin{matrix}4&3&-1\\-1&1&-2\\2&4&-5\end{matrix}\right|=-9\neq0.$$
+3. No hay plano que contenga a ambas.
+
 **Las rectas se cruzan.**
 
-**b)** La dirección perpendicular a ambas es $\vec w=\vec u\times\vec v=(-5,9,7)$. El plano contiene a $r$ y tiene dirección $\vec w$, luego su normal es $\vec u\times\vec w=(30,-23,51)$ y pasa por $A$:
-$30(x+1)-23(y+2)+51(z-2)=0$, es decir **$30x-23y+51z-118=0$.**
+**b) Plano que contiene a $r$ y a una recta perpendicular a $r$ y $s$.**
+1. Dirección perpendicular a ambas: $\vec w=\vec u\times\vec v=(-5,9,7)$.
+2. El plano contiene a $r$ (dirección $\vec u$) y tiene dirección $\vec w$: su normal es $\vec u\times\vec w=(30,-23,51)$.
+3. Pasa por $A(-1,-2,2)$: $30(x+1)-23(y+2)+51(z-2)=0$.
+4. Se desarrolla: $30x+30-23y-46+51z-102=0$.
+
+**$30x-23y+51z-118=0$.**
 ::::
 :::::
 
@@ -321,15 +814,53 @@ a) Halla la distancia del punto $P$ a la recta $r$. *(1,25 puntos)*
 
 b) Calcula la ecuación del plano que contiene a la recta $r$ y al punto $P$. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$ en paramétricas: de $y=z$ y $x=-2y$, pasa por $O(0,0,0)$ con $\vec d=(-2,1,1)$.
+**Datos.** Se pasa $r$ a paramétricas: de $y=z$ y $x=-2y$, la recta pasa por $O(0,0,0)$ con $\vec d=(-2,1,1)$.
 
-**a)** $\overrightarrow{OP}=(2,1,0)$, $\overrightarrow{OP}\times\vec d=(1,-2,4)$.
+**a) Distancia de $P$ a $r$.**
+1. $\overrightarrow{OP}=(2,1,0)$ y $\overrightarrow{OP}\times\vec d=(1,-2,4)$.
+2. Fórmula de la distancia punto-recta:
 $$d(P,r)=\frac{|\overrightarrow{OP}\times\vec d|}{|\vec d|}=\frac{\sqrt{21}}{\sqrt6}=\mathbf{\frac{\sqrt{14}}{2}}\approx1{,}87.$$
 
-**b)** El plano pasa por $O$ y tiene normal $\overrightarrow{OP}\times\vec d=(1,-2,4)$: **$x-2y+4z=0$.**
+**b) Plano que contiene a $r$ y a $P$.**
+1. El plano pasa por $O$ y contiene a $\vec d$ y a $\overrightarrow{OP}$.
+2. Su normal es $\overrightarrow{OP}\times\vec d=(1,-2,4)$.
+3. Como pasa por el origen, no hay término independiente.
+
+**$x-2y+4z=0$.**
+
+(Comprobación: la normal es perpendicular a $\vec d$: $-2-2+4=0$.)
 ::::
 :::::
 
@@ -346,15 +877,53 @@ a) Determina $k$ sabiendo que ambas se cortan en un punto. *(1,5 puntos)*
 
 b) Para $k=0$, halla la ecuación general del plano que contiene a $r$ y es paralelo a $s$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: punto $A(0,2,k)$, $\vec u=(1,-1,2)$. $s$: punto $B(-2,-3,1)$, $\vec v=(-1,2,1)$. Los vectores directores no son proporcionales.
+**Datos.** $r$ pasa por $A(0,2,k)$ con $\vec u=(1,-1,2)$; $s$ pasa por $B(-2,-3,1)$ con $\vec v=(-1,2,1)$. Los vectores directores no son proporcionales.
 
-**a)** Se cortan si son coplanarias: $\overrightarrow{AB}=(-2,-5,1-k)$ y
-$$\left|\begin{matrix}1&-1&2\\-1&2&1\\-2&-5&1-k\end{matrix}\right|=26-k=0\;\Rightarrow\;\mathbf{k=26}.$$
+**a) Valor de $k$ para que se corten.**
+1. Dos rectas no paralelas se cortan si son coplanarias, es decir, si $\overrightarrow{AB}$, $\vec u$ y $\vec v$ tienen producto mixto nulo.
+2. $\overrightarrow{AB}=(-2,-5,1-k)$.
+3. Determinante:
+$$\left|\begin{matrix}1&-1&2\\-1&2&1\\-2&-5&1-k\end{matrix}\right|=26-k.$$
+4. Se anula si $26-k=0$.
 
-**b)** Con $k=0$, la normal es $\vec u\times\vec v=(-5,-3,1)$, es decir $5x+3y-z+D=0$. Pasa por $(0,2,0)$: $6+D=0$.
+**$k=26$.**
+
+**b) Plano que contiene a $r$ y es paralelo a $s$** (con $k=0$).
+1. El plano contiene a $r$ (dirección $\vec u$, punto $(0,2,0)$) y es paralelo a $s$ (dirección $\vec v$).
+2. Su normal es $\vec u\times\vec v=(-5,-3,1)$, es decir, $5x+3y-z+D=0$ (normal opuesta).
+3. Pasa por $(0,2,0)$: $6+D=0$, luego $D=-6$.
+
 **Plano: $5x+3y-z-6=0$.**
 ::::
 :::::
@@ -373,14 +942,51 @@ a) Halla el punto simétrico de $P(2,2,1)$ respecto de la recta $r\equiv\begin{c
 
 b) Halla el punto simétrico de $Q(1,-1,-3)$ respecto del plano $\pi\equiv x-2y+z+6=0$. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Parametrizando $r$ ($z=t$): $r\equiv(4+t,\,1+t,\,t)$, dirección $(1,1,1)$. El pie de la perpendicular desde $P$ cumple $(2+t,-1+t,t-1)\cdot(1,1,1)=3t=0\Rightarrow t=0$, $H(4,1,0)$. El simétrico es $P'=2H-P$:
+**a) Simétrico de $P(2,2,1)$ respecto de la recta $r$.**
+1. Se parametriza $r$. De $y-z=1$, con $z=t$: $y=1+t$; en la primera, $x=2+2y-z=2+2+2t-t=4+t$. Así $r\equiv(4+t,\,1+t,\,t)$, con dirección $(1,1,1)$.
+2. El pie de la perpendicular $H$ es el punto de $r$ tal que $\overrightarrow{PH}$ es perpendicular a la dirección de $r$: $(2+t,\,-1+t,\,t-1)\cdot(1,1,1)=3t=0\Rightarrow t=0$.
+3. Pie: $H(4,1,0)$.
+4. $H$ es el punto medio de $P$ y su simétrico $P'$, así que $P'=2H-P$:
 
 $$\mathbf{P'=(6,0,-1)}$$
 
-**b)** Normal $\vec n=(1,-2,1)$, $|\vec n|^2=6$, y $\pi(Q)=1+2-3+6=6$. Pie de la perpendicular: $H=Q-\dfrac66\vec n=(0,1,-4)$. Simétrico $Q'=2H-Q$:
+**b) Simétrico de $Q(1,-1,-3)$ respecto del plano $\pi$.**
+1. Normal del plano: $\vec n=(1,-2,1)$, con $|\vec n|^2=6$.
+2. Valor del plano en $Q$: $\pi(Q)=1+2-3+6=6$.
+3. Pie de la perpendicular: se retrocede desde $Q$ en la dirección de $\vec n$ hasta llegar al plano, $H=Q-\dfrac{\pi(Q)}{|\vec n|^2}\,\vec n=Q-\dfrac66\vec n=(0,1,-4)$.
+4. Simétrico: $Q'=2H-Q$:
 
 $$\mathbf{Q'=(-1,3,-5)}$$
 ::::
@@ -396,18 +1002,56 @@ a) Estudia la posición relativa de $r$ y $s$. *(1 punto)*
 
 b) Calcula la ecuación del plano paralelo a $r$ y $s$ que equidista de ambas rectas. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: punto $A(0,0,0)$, dirección $\vec d_r=(1,0,2)$. $s$ ($z=0$, $y=-7-x$): punto $B(0,-7,0)$, dirección $\vec d_s=(1,-1,0)$.
+**Datos.**
+1. Recta $r$: punto $A(0,0,0)$ y dirección $\vec d_r=(1,0,2)$ (de $y=0$, $z=2x$).
+2. Recta $s$: de $z=0$ e $y=-7-x$, punto $B(0,-7,0)$ y dirección $\vec d_s=(1,-1,0)$.
 
-**a)** $\vec d_r$ y $\vec d_s$ no son proporcionales, y $\big[\overrightarrow{AB},\vec d_r,\vec d_s\big]=(0,-7,0)\cdot(2,2,-1)=-14\neq0$ (con $\vec d_r\times\vec d_s=(2,2,-1)$). **Las rectas se cruzan.**
+**a) Posición relativa.**
+1. $\vec d_r$ y $\vec d_s$ no son proporcionales: no son paralelas ni coincidentes.
+2. $\vec d_r\times\vec d_s=(2,2,-1)$.
+3. Se estudia si son coplanarias con el producto mixto: $\overrightarrow{AB}=(0,-7,0)$ y $\big[\overrightarrow{AB},\vec d_r,\vec d_s\big]=(0,-7,0)\cdot(2,2,-1)=-14\neq0$.
 
-**b)** El plano tiene normal $(2,2,-1)$: $2x+2y-z+D=0$. $r$ está en el plano $2x+2y-z=0$ y $s$ en $2x+2y-z=-14$. El plano equidistante está en medio:
+**Las rectas se cruzan.**
+
+**b) Plano paralelo a $r$ y $s$ que equidista de ambas.**
+1. Un plano paralelo a las dos tiene como normal $\vec d_r\times\vec d_s=(2,2,-1)$: $2x+2y-z+D=0$.
+2. El plano que contiene a $r$ es $2x+2y-z=0$ (pasa por $A$). El que contiene a $s$ es $2x+2y-z=-14$ (pasa por $B$).
+3. Los valores de $2x+2y-z$ en cada recta son $0$ y $-14$; el plano equidistante toma el valor medio, $-7$: $2x+2y-z=-7$, es decir $D=7$.
 
 $$\mathbf{2x+2y-z+7=0}$$
 
-(distancia $7/3$ a cada una).
+*Comprobación:* la distancia a cada recta es $\dfrac{7}{3}$ ($7/3$ a cada una).
 ::::
 :::::
 
@@ -424,16 +1068,51 @@ a) Calcula el punto de $r$ a menor distancia de $P$. *(1,25 puntos)*
 
 b) Halla los puntos de $r$ cuya distancia a $P$ sea igual a $\sqrt{50}$. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: punto $(-1,2,3)$, dirección $(2,2,-1)$; un punto genérico es $R(-1+2t,\,2+2t,\,3-t)$ y $\overrightarrow{PR}=(2t-1,\,2t,\,7-t)$.
+**Datos.** La recta $r$ pasa por $(-1,2,3)$ con dirección $(2,2,-1)$ (de $\frac{x+1}2=\frac{y-2}2=\frac{z-3}{-1}$).
+1. Punto genérico: $R(-1+2t,\,2+2t,\,3-t)$.
+2. Vector desde $P$: $\overrightarrow{PR}=(2t-1,\,2t,\,7-t)$.
 
-**a)** El punto más cercano cumple $\overrightarrow{PR}\cdot(2,2,-1)=0$: $9t-9=0\Rightarrow t=1$.
+**a) Punto de $r$ más cercano a $P$.**
+1. El punto más cercano es el pie de la perpendicular: $\overrightarrow{PR}$ perpendicular a la dirección de $r$.
+2. $\overrightarrow{PR}\cdot(2,2,-1)=0$: $2(2t-1)+2\cdot2t-(7-t)=9t-9=0\Rightarrow t=1$.
 
 $$\mathbf{R=(1,4,2)}\quad(\text{distancia }\sqrt{41}).$$
 
-**b)** $|\overrightarrow{PR}|^2=9t^2-18t+50=50\Rightarrow 9t(t-2)=0\Rightarrow t=0,\ t=2$.
+**b) Puntos a distancia $\sqrt{50}$.**
+1. Se impone $|\overrightarrow{PR}|^2=50$: $(2t-1)^2+(2t)^2+(7-t)^2=9t^2-18t+50=50$.
+2. $9t^2-18t=0\Rightarrow 9t(t-2)=0\Rightarrow t=0$ o $t=2$.
 
 $$\mathbf{(-1,2,3)\ \text{ y }\ (3,6,1)}$$
 ::::
@@ -445,12 +1124,45 @@ $$\mathbf{(-1,2,3)\ \text{ y }\ (3,6,1)}$$
 
 Sea $\pi_1$ el plano determinado por los puntos $A(1,0,0)$, $B(1,1,-3)$ y $C(0,1,1)$, y sea $\pi_2\equiv x-y+z-1=0$. Determina la ecuación de la recta paralela a ambos planos que pasa por el origen.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\overrightarrow{AB}=(0,1,-3)$, $\overrightarrow{AC}=(-1,1,1)$. Normal de $\pi_1$: $\overrightarrow{AB}\times\overrightarrow{AC}=(4,3,1)$. Normal de $\pi_2$: $(1,-1,1)$.
+**Datos.**
+1. Vectores del plano $\pi_1$: $\overrightarrow{AB}=(0,1,-3)$ y $\overrightarrow{AC}=(-1,1,1)$.
+2. Normal de $\pi_1$: $\overrightarrow{AB}\times\overrightarrow{AC}=(4,3,1)$. Normal de $\pi_2$: $(1,-1,1)$.
 
-Una recta paralela a ambos planos tiene dirección perpendicular a las dos normales: $(4,3,1)\times(1,-1,1)=(4,-3,-7)$.
+**Recta paralela a ambos planos por el origen.**
+1. Una recta es paralela a un plano si su dirección es perpendicular a la normal del plano.
+2. Para que lo sea a los dos, su dirección debe ser perpendicular a las dos normales: $(4,3,1)\times(1,-1,1)=(4,-3,-7)$.
+3. Pasa por el origen:
 
 $$\mathbf{(x,y,z)=\lambda(4,-3,-7)}\ \ \text{es decir}\ \ \frac x4=\frac y{-3}=\frac z{-7}.$$
 ::::
@@ -469,20 +1181,65 @@ a) Calcula el plano perpendicular al segmento $PQ$ que pasa por su punto medio. 
 
 b) Calcula el plano paralelo a la recta $r\equiv 1-x=\dfrac{y-2}{3}=z+1$ que pasa por $P$ y $Q$. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\overrightarrow{PQ}=(2,-2,0)$.
+**Dato común.** $\overrightarrow{PQ}=(2,-2,0)$.
 
-**a)** Punto medio $M(2,-1,1)$; normal $(1,-1,0)$: $x-y+D=0$, con $M$: $D=-3$.
+**a) Plano perpendicular a $PQ$ por su punto medio.**
+1. Punto medio: $M(2,-1,1)$.
+2. El plano es perpendicular al segmento, así que su normal es $\overrightarrow{PQ}=(2,-2,0)$, que se simplifica a $(1,-1,0)$: $x-y+D=0$.
+3. Pasa por $M$: $2-(-1)+D=0\Rightarrow D=-3$.
 
 $$\mathbf{x-y-3=0}$$
 
-**b)** Dirección de $r$: $(-1,3,1)$. Normal del plano: $\overrightarrow{PQ}\times(-1,3,1)\parallel(-1,-1,2)$. Plano por $P$: $-(x-1)-y+2(z-1)=0$.
+**b) Plano por $P$ y $Q$ paralelo a $r$.**
+1. Dirección de $r$ (de $1-x=\frac{y-2}{3}=z+1$, es decir, $\frac{x-1}{-1}=\frac{y-2}{3}=\frac{z+1}{1}$): $(-1,3,1)$.
+2. El plano contiene a $\overrightarrow{PQ}$ y es paralelo a $r$, así que su normal es perpendicular a ambos: $\overrightarrow{PQ}\times(-1,3,1)\parallel(-1,-1,2)$.
+3. Plano por $P(1,0,1)$: $-(x-1)-y+2(z-1)=0$.
 
 $$\mathbf{x+y-2z+1=0}$$
 
-(contiene a $Q$: $3-2-2+1=0$).
+*Comprobación:* contiene a $Q$: $3-2-2+1=0$.
 ::::
 :::::
 
@@ -499,14 +1256,60 @@ a) Estudia la posición relativa de $\pi$ y $r$. *(1 punto)*
 
 b) Calcula la ecuación de la recta contenida en $\pi$ que pasa por el punto $P(2,-1,-2)$ y es perpendicular a $r$. *(1,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\pi$: normal $\vec n=(1,-2,1)$. $r$: punto $A(1,0,1)$, dirección $\vec d=(2,1,0)$.
+**Datos.** Plano $\pi$: normal $\vec n=(1,-2,1)$. Recta $r$: punto $A(1,0,1)$ (con $\lambda=0$) y dirección $\vec d=(2,1,0)$.
 
-**a)** $\vec n\cdot\vec d=2-2=0$ y $A\in\pi$ ($1-0+1-2=0$). **La recta $r$ está contenida en el plano $\pi$.**
+**a) Posición relativa.**
+1. Producto escalar: $\vec n\cdot\vec d=2-2+0=0$, luego $r$ es paralela al plano o está contenida en él.
+2. Se comprueba si un punto de $r$ está en $\pi$: $A\in\pi$, pues $1-0+1-2=0$.
 
-**b)** $P\in\pi$ ($2+2-2-2=0$). La recta debe estar en $\pi$ (dirección perpendicular a $\vec n$) y ser perpendicular a $r$ (perpendicular a $\vec d$): $\vec n\times\vec d=(-1,2,5)$.
+**La recta $r$ está contenida en el plano $\pi$.**
+
+**b) Recta de $\pi$ por $P$ perpendicular a $r$.**
+1. Comprobación previa: $P\in\pi$, pues $2+2-2-2=0$.
+2. Su dirección debe ser paralela al plano (perpendicular a $\vec n$) y perpendicular a $r$ (perpendicular a $\vec d$). Un vector perpendicular a ambos es el producto vectorial $\vec n\times\vec d=(-1,2,5)$.
+3. Recta por $P(2,-1,-2)$ con esa dirección:
 
 $$\mathbf{(x,y,z)=(2,-1,-2)+\mu(-1,2,5)}\ \ \text{es decir}\ \ \frac{x-2}{-1}=\frac{y+1}{2}=\frac{z+2}{5}.$$
 ::::
@@ -525,16 +1328,51 @@ a) Calcula $a$ para que las rectas se corten. *(1,25 puntos)*
 
 b) Para $a=-1$, halla la recta que corta perpendicularmente a $r$ y $s$. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: punto $(0,-a,-1)$, dirección $\vec d_r=(1,1,2)$. $s$: con $y=\mu$, $(x,y,z)=(3a+2\mu,\ \mu,\ 2-3a-2\mu)$: punto $(3a,0,2-3a)$, dirección $\vec d_s=(2,1,-2)$.
+**Datos.**
+1. $r$: punto $(0,-a,-1)$ (con $x=0$) y dirección $\vec d_r=(1,1,2)$.
+2. $s$: con $y=\mu$, de $x-2y=3a$ y $x+z=2$: $(x,y,z)=(3a+2\mu,\ \mu,\ 2-3a-2\mu)$. Punto $(3a,0,2-3a)$ y dirección $\vec d_s=(2,1,-2)$.
 
-**a)** No son paralelas. Se cortan si son coplanarias: $\big[\overrightarrow{P_rP_s},\vec d_r,\vec d_s\big]=0$ con $\overrightarrow{P_rP_s}=(3a,a,3-3a)$ y $\vec d_r\times\vec d_s=(-4,6,-1)$:
-
+**a) Valor de $a$ para que se corten.**
+1. No son paralelas: $\vec d_r$ y $\vec d_s$ no son proporcionales.
+2. Se cortan si son coplanarias: $\big[\overrightarrow{P_rP_s},\vec d_r,\vec d_s\big]=0$, con $\overrightarrow{P_rP_s}=(3a,a,3-3a)$.
+3. $\vec d_r\times\vec d_s=(-4,6,-1)$ y el producto mixto es el producto escalar:
 $$-12a+6a-3+3a=-3a-3=0\ \Rightarrow\ \mathbf{a=-1}.$$
 
-**b)** Con $a=-1$ se cortan en un punto: igualando $r\,(t,\,1+t,\,-1+2t)$ y $s\,(-3+2\mu,\,\mu,\,5-2\mu)$ se obtiene $t=1$, $\mu=2$, punto $(1,2,1)$. La recta que corta perpendicularmente a ambas pasa por ese punto con dirección $\vec d_r\times\vec d_s=(-4,6,-1)$:
+**b) Recta perpendicular común con $a=-1$.**
+1. Con $a=-1$ las rectas se cortan en un punto: $r\,(t,\,1+t,\,-1+2t)$ y $s\,(-3+2\mu,\,\mu,\,5-2\mu)$.
+2. Igualando: $t=1$, $\mu=2$, punto $(1,2,1)$.
+3. La recta perpendicular a ambas tiene la dirección de $\vec d_r\times\vec d_s=(-4,6,-1)$ y pasa por el punto de corte:
 
 $$\mathbf{(x,y,z)=(1,2,1)+\lambda(-4,6,-1)}\ \ \text{es decir}\ \ \frac{x-1}{-4}=\frac{y-2}{6}=\frac{z-1}{-1}.$$
 ::::
@@ -553,16 +1391,61 @@ a) Calcula, si es posible, el plano perpendicular a $\pi$ que contiene a $r$. *(
 
 b) Calcula, si es posible, la recta perpendicular a $r$, contenida en $\pi$ y que pasa por el origen. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\pi$ tiene normal $\vec n_\pi=(1,-1,0)$; $r$ pasa por $(1,0,2)$ con dirección $\vec d=(2,3,1)$.
+**Datos.** El plano $\pi$ tiene normal $\vec n_\pi=(1,-1,0)$; la recta $r$ pasa por $(1,0,2)$ con dirección $\vec d=(2,3,1)$.
 
-**a)** El plano buscado contiene a $\vec d$ y a $\vec n_\pi$ (para ser perpendicular a $\pi$). Es posible porque $\vec d$ y $\vec n_\pi$ no son paralelos. Normal: $\vec d\times\vec n_\pi\parallel(-1,-1,5)$, es decir $(1,1,-5)$:
+**a) Plano perpendicular a $\pi$ que contiene a $r$.**
+1. El plano buscado contiene a $\vec d$ (porque contiene a $r$) y a $\vec n_\pi$ (porque es perpendicular a $\pi$).
+2. Es posible porque $\vec d$ y $\vec n_\pi$ no son paralelos.
+3. Su normal es perpendicular a ambos: $\vec d\times\vec n_\pi=(1,1,-5)$.
+4. Ecuación: $x+y-5z+D=0$. Pasa por $(1,0,2)$: $1+0-10+D=0\Rightarrow D=9$.
 
-$$x+y-5z+D=0,\ \text{por }(1,0,2):\ D=9\ \Rightarrow\ \mathbf{x+y-5z+9=0}.$$
+$$\mathbf{x+y-5z+9=0}$$
 
-**b)** El origen está en $\pi$. La dirección debe ser perpendicular a $\vec d$ (por ser perpendicular a $r$) y a $\vec n_\pi$ (por estar contenida en $\pi$): $\vec n_\pi\times\vec d=(-1,-1,5)$.
+**b) Recta perpendicular a $r$, contenida en $\pi$, por el origen.**
+1. El origen está en $\pi$ ($0-0=0$).
+2. La dirección debe ser perpendicular a $\vec d$ (por ser perpendicular a $r$) y a $\vec n_\pi$ (por estar contenida en $\pi$): $\vec n_\pi\times\vec d=(-1,-1,5)$, que es proporcional a $(1,1,-5)$.
 
 $$\mathbf{(x,y,z)=\lambda(1,1,-5)}\ \ \text{es decir}\ \ x=y=-\frac z5.$$
 ::::
@@ -582,15 +1465,64 @@ El plano perpendicular al segmento de extremos $P(0,3,8)$ y $Q(2,1,6)$ que pasa 
 
 *Relacionado también con:* [Vectores en el espacio](04-vectores-espacio.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Normal: $\overrightarrow{PQ}=(2,-2,-2)\parallel(1,-1,-1)$. Punto medio $M(1,2,7)$.
-
-Plano: $x-y-z=1-2-7=-8$, es decir $x-y-z+8=0$.
-
-Cortes con los ejes: $A(-8,0,0)$, $B(0,8,0)$, $C(0,0,8)$. Los tres lados miden $8\sqrt2$ (triángulo equilátero).
-
+1. **Normal del plano.** El plano es perpendicular a $PQ$, luego su normal es $\overrightarrow{PQ}=(2,-2,-2)\parallel(1,-1,-1)$.
+2. **Punto medio.** $M(1,2,7)$.
+3. **Ecuación.** $x-y-z=1-2-7=-8$, es decir, $x-y-z+8=0$.
+4. **Cortes con los ejes.** Se anulan dos coordenadas cada vez: $A(-8,0,0)$, $B(0,8,0)$, $C(0,0,8)$.
+5. **Área.** Los tres lados miden $8\sqrt2$ (triángulo equilátero) y:
 $$\text{Área}=\dfrac12|\overrightarrow{AB}\times\overrightarrow{AC}|=\dfrac{\sqrt3}4(8\sqrt2)^{2}.$$
 
 **Área $=32\sqrt3\approx55{,}43\ \text{u}^2$.**
@@ -609,16 +1541,59 @@ b) Calcula el área del triángulo cuyos vértices son $A$, $B$ y $C$. *(1 punto
 
 *Relacionado también con:* [Vectores en el espacio](04-vectores-espacio.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\overrightarrow{BC}=(-2,0,-2)$, $\overrightarrow{BA}=(-3,0,2)$, $\overrightarrow{BA}\times\overrightarrow{BC}=(0,-10,0)$.
+**Vectores.** $\overrightarrow{BC}=(-2,0,-2)$, $\overrightarrow{BA}=(-3,0,2)$ y $\overrightarrow{BA}\times\overrightarrow{BC}=(0,-10,0)$.
 
-**a)** $d(A,r)=\dfrac{|\overrightarrow{BA}\times\overrightarrow{BC}|}{|\overrightarrow{BC}|}=\dfrac{10}{2\sqrt2}$.
+**a) Distancia de $A$ a la recta $r$.**
+1. $r$ pasa por $B$ con dirección $\overrightarrow{BC}$.
+2. $d(A,r)=\dfrac{|\overrightarrow{BA}\times\overrightarrow{BC}|}{|\overrightarrow{BC}|}=\dfrac{10}{2\sqrt2}$.
 
 **$d=\dfrac{5\sqrt2}2\approx3{,}54$.**
 
-**b)** $\text{Área}=\dfrac12|\overrightarrow{BA}\times\overrightarrow{BC}|=\dfrac{10}2$.
+**b) Área del triángulo $ABC$.**
+1. El área es la mitad del módulo del producto vectorial: $\text{Área}=\dfrac12|\overrightarrow{BA}\times\overrightarrow{BC}|=\dfrac{10}2$.
 
 **Área $=5\ \text{u}^2$.**
 ::::
@@ -633,12 +1608,52 @@ $\overrightarrow{BC}=(-2,0,-2)$, $\overrightarrow{BA}=(-3,0,2)$, $\overrightarro
 
 Considera el plano $\pi\equiv x+y+z=0$ y la recta $r\equiv x-1=\dfrac{y}{2}=\dfrac{z+1}{2}$. Halla la ecuación de un plano $\pi'$, paralelo a $\pi$, tal que si $Q$ y $Q'$ son respectivamente los puntos de corte de la recta $r$ con los planos $\pi$ y $\pi'$, entonces la distancia entre $Q$ y $Q'$ sea de 2 unidades.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Recta $r$: $(x,y,z)=(1,0,-1)+t(1,2,2)$. Corte con $\pi$: $(1+t)+2t+(-1+2t)=5t=0\Rightarrow t=0$, $Q=(1,0,-1)$.
-
-$Q'=Q+s(1,2,2)$ con $|QQ'|=3|s|=2\Rightarrow s=\pm\dfrac23$. Plano $\pi'\equiv x+y+z=k$ con $k=5s=\pm\dfrac{10}3$.
+1. **Ecuaciones de $r$.** De $x-1=\dfrac y2=\dfrac{z+1}2$: $r$ pasa por $(1,0,-1)$ con dirección $(1,2,2)$, es decir, $(x,y,z)=(1,0,-1)+t(1,2,2)$.
+2. **Punto $Q$.** Se sustituye en $\pi\equiv x+y+z=0$: $(1+t)+2t+(-1+2t)=5t=0\Rightarrow t=0$, y $Q=(1,0,-1)$.
+3. **Punto $Q'$.** $Q'=Q+s(1,2,2)$, con $|QQ'|=3|s|=2$ (el módulo de $(1,2,2)$ es $3$), luego $s=\pm\dfrac23$.
+4. **Plano $\pi'$.** Es paralelo a $\pi$: $x+y+z=k$. Como $Q'$ está en él, $k=5s=\pm\dfrac{10}3$ (el valor de $x+y+z$ en $Q+s(1,2,2)$ es $5s$ porque $Q$ da $0$).
 
 **$\pi'\equiv x+y+z=\dfrac{10}3$ (o también $x+y+z=-\dfrac{10}3$).**
 ::::
@@ -653,14 +1668,45 @@ $Q'=Q+s(1,2,2)$ con $|QQ'|=3|s|=2\Rightarrow s=\pm\dfrac23$. Plano $\pi'\equiv x
 
 Determina el punto simétrico de $A(2,-4,-3)$ con respecto al plano que contiene a los puntos $B(1,1,2)$, $C\left(0,\tfrac13,1\right)$ y $D(-3,0,3)$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Plano por $B$, $C$, $D$: $\overrightarrow{BC}=\left(-1,-\tfrac23,-1\right)$, $\overrightarrow{BD}=(-4,-1,1)$, normal $\propto(1,-3,1)$ y $x-3y+z=0$ (pasa por $B$: $1-3+2=0$).
+**Simétrico de $A$ respecto del plano $BCD$.**
+1. **Plano.** Vectores $\overrightarrow{BC}=\left(-1,-\tfrac23,-1\right)$ y $\overrightarrow{BD}=(-4,-1,1)$. Su producto vectorial es proporcional a $(1,-3,1)$, luego el plano es $x-3y+z=0$. Se comprueba con $B$: $1-3+2=0$.
+2. **Recta perpendicular por $A$.** Dirección la normal: $(2+t,\,-4-3t,\,-3+t)$.
+3. **Pie de la perpendicular.** Se sustituye en el plano: $11+11t=0\Rightarrow t=-1$, $M=(1,-1,-4)$.
+4. **Simétrico.** $M$ es el punto medio de $A$ y $A'$, así que $A'=2M-A$.
 
-Recta por $A$ perpendicular: $(2+t,\,-4-3t,\,-3+t)$. Corte: $11+11t=0\Rightarrow t=-1$, pie $M=(1,-1,-4)$.
-
-Simétrico $A'=2M-A$: **$A'=(0,2,-5)$.**
+**$A'=(0,2,-5)$.**
 ::::
 :::::
 
@@ -677,18 +1723,51 @@ a) Calcula la distancia entre la recta intersección de $\pi_1$ y $\pi_2$ y el p
 
 b) Halla el ángulo que forman $\pi_1$ y $\pi_2$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Dirección de la recta: $(1,-1,1)\times(1,1,0)=(-1,1,2)$; punto $A(0,2,2)$ (cumple $x+y=2$, $x-y+z=0$).
+**Recta intersección.**
+1. Dirección: producto vectorial de las normales, $(1,-1,1)\times(1,1,0)=(-1,1,2)$.
+2. Punto: $A(0,2,2)$, que cumple $x+y=2$ y $x-y+z=0$.
 
-**a)** $\overrightarrow{AP}=(2,4,-4)$, $\overrightarrow{AP}\times\vec d=(12,0,6)$.
-
+**a) Distancia de $P(2,6,-2)$ a la recta.**
+1. $\overrightarrow{AP}=(2,4,-4)$ y $\overrightarrow{AP}\times\vec d=(12,0,6)$.
+2. $d=\dfrac{|\overrightarrow{AP}\times\vec d|}{|\vec d|}$:
 $$d=\dfrac{|(12,0,6)|}{|(-1,1,2)|}=\dfrac{\sqrt{180}}{\sqrt6}=\sqrt{30}.$$
 
 **Distancia $=\sqrt{30}\approx5{,}48$.**
 
-**b)** $\cos\alpha=\dfrac{|(1,-1,1)\cdot(1,1,0)|}{\sqrt3\sqrt2}=0$.
+**b) Ángulo entre los planos.**
+1. El ángulo entre dos planos es el ángulo entre sus normales: $\cos\alpha=\dfrac{|(1,-1,1)\cdot(1,1,0)|}{\sqrt3\sqrt2}=0$.
 
 **Los planos son perpendiculares: $90^\circ$.**
 ::::
@@ -702,15 +1781,54 @@ Calcula el volumen del tetraedro que limita el plano determinado por los puntos 
 
 *Relacionado también con:* [Vectores en el espacio](04-vectores-espacio.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\overrightarrow{AB}=(3,0,3)$, $\overrightarrow{AC}=(2,1,4)$, $\vec n=\overrightarrow{AB}\times\overrightarrow{AC}=(-3,-6,3)\parallel(1,2,-1)$.
-
-Plano: $x+2y-z=d$; con $A$: $d=4+2=6$, es decir $x+2y-z=6$. Cortes con los ejes: $(6,0,0)$, $(0,3,0)$, $(0,0,-6)$.
-
-El tetraedro tiene tres aristas perpendiculares de longitudes $6$, $3$ y $6$:
-
+**Volumen del tetraedro con los planos coordenados.**
+1. **Plano por $A$, $B$ y $C$.** $\overrightarrow{AB}=(3,0,3)$, $\overrightarrow{AC}=(2,1,4)$ y $\vec n=\overrightarrow{AB}\times\overrightarrow{AC}=(-3,-6,3)\parallel(1,2,-1)$.
+2. **Ecuación.** $x+2y-z=d$; con $A$: $d=4+2=6$, es decir, $x+2y-z=6$.
+3. **Cortes con los ejes.** $(6,0,0)$, $(0,3,0)$, $(0,0,-6)$.
+4. **Volumen.** El tetraedro tiene tres aristas perpendiculares (sobre los ejes) de longitudes $6$, $3$ y $6$:
 $$V=\dfrac16\cdot6\cdot3\cdot6=18.$$
 
 **Volumen $=18\ \text{u}^3$.**
@@ -730,18 +1848,57 @@ $$r\equiv\begin{cases}x-2z-3=0\\y-z-2=0\end{cases}$$
 
 Halla los puntos de $r$ cuya distancia a $\pi$ es $\sqrt{14}$ unidades.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Plano: $\overrightarrow{AB}=(1,1,1)$, $\overrightarrow{AC}=(3,1,0)$, $\vec n=\overrightarrow{AB}\times\overrightarrow{AC}=(-1,4,-2)$, luego $\pi\equiv x-4y+2z+1=0$.
+**Plano $\pi$.**
+1. Vectores del plano: $\overrightarrow{AB}=(1,1,1)$ y $\overrightarrow{AC}=(3,1,0)$.
+2. Normal: $\vec n=\overrightarrow{AB}\times\overrightarrow{AC}=(-1,3,-2)$.
+3. Ecuación por $A(-1,0,0)$: $-(x+1)+3y-2z=0$, es decir, $\pi\equiv x-3y+2z+1=0$.
+4. Comprobación: $B(0,1,1)$ cumple $0-3+2+1=0$ y $C(2,1,0)$ cumple $2-3+0+1=0$.
 
-Recta: $x=3+2z$, $y=2+z$; dirección $(2,1,1)$. Como $(2,1,1)\cdot(1,-4,2)=0$, $r$ es paralela a $\pi$.
+**Recta $r$.**
+1. Se despeja en función de $z=t$: $x=3+2t$, $y=2+t$, $z=t$.
+2. Dirección $(2,1,1)$. Como $(2,1,1)\cdot(1,-3,2)=1\neq0$, $r$ no es paralela a $\pi$: la distancia de sus puntos al plano varía con $t$.
 
-Distancia (constante) de cualquier punto de $r$, p. ej. $(3,2,0)$: $\dfrac{|3-8+0+1|}{\sqrt{21}}=\dfrac{4}{\sqrt{21}}\ne\sqrt{14}$.
+**Distancia de un punto de $r$ a $\pi$.**
+1. Para $P(3+2t,\,2+t,\,t)$: $(3+2t)-3(2+t)+2t+1=t-2$.
+2. $d(P,\pi)=\dfrac{|t-2|}{\sqrt{1+9+4}}=\dfrac{|t-2|}{\sqrt{14}}$.
+3. Se impone $d=\sqrt{14}$: $|t-2|=14$, de donde $t=16$ o $t=-12$.
+4. Se sustituye en las paramétricas: $t=16$ da $(35,18,16)$ y $t=-12$ da $(-21,-10,-12)$.
 
-**No existe ningún punto de $r$ a distancia $\sqrt{14}$ de $\pi$.**
+**Los puntos de $r$ a distancia $\sqrt{14}$ del plano son $(35,18,16)$ y $(-21,-10,-12)$.**
 
-*Nota: el enunciado coincide con el examen oficial. Con estos datos la recta es paralela al plano y está a distancia $4/\sqrt{21}$, así que no hay solución; probablemente es una errata del examen.*
+*Interpretación:* hay dos puntos, uno a cada lado del plano, porque $r$ atraviesa $\pi$ (en $t=2$, el punto $(7,4,2)$).
 ::::
 :::::
 
@@ -757,16 +1914,71 @@ b) Calcula la ecuación de la recta que pasa por el origen de coordenadas y es p
 
 *Relacionado también con:* [Vectores en el espacio](04-vectores-espacio.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** En un paralelogramo $PQRS$ se cumple $\overrightarrow{PS}=\overrightarrow{QR}=(2,4,1)$.
+**a) Cuarto vértice.**
+1. En un paralelogramo $PQRS$ se cumple $\overrightarrow{PS}=\overrightarrow{QR}=(2,4,1)$.
+2. $S=P+\overrightarrow{QR}=(-1,2,3)+(2,4,1)$.
 
-$S=P+\overrightarrow{QR}=(-1,2,3)+(2,4,1)$: **$S=(1,6,4)$.**
+**$S=(1,6,4)$.**
 
-**b)** $\overrightarrow{PQ}=(-1,-1,-3)$, $\overrightarrow{PR}=(1,3,-2)$, $\vec n=\overrightarrow{PQ}\times\overrightarrow{PR}=(11,-5,-2)$.
+**b) Recta por el origen perpendicular al plano $PQR$.**
+1. Vectores del plano: $\overrightarrow{PQ}=(-1,-1,-3)$ y $\overrightarrow{PR}=(1,3,-2)$.
+2. Normal: $\vec n=\overrightarrow{PQ}\times\overrightarrow{PR}=(11,-5,-2)$.
+3. La recta tiene esa dirección y pasa por el origen.
 
-La recta por el origen con esa dirección es **$\dfrac{x}{11}=\dfrac{y}{-5}=\dfrac{z}{-2}$**.
+**$\dfrac{x}{11}=\dfrac{y}{-5}=\dfrac{z}{-2}$**.
 ::::
 :::::
 
@@ -779,15 +1991,30 @@ La recta por el origen con esa dirección es **$\dfrac{x}{11}=\dfrac{y}{-5}=\dfr
 
 Determina los puntos de la recta $r\equiv\begin{cases}x-y+z=0\\x+3y-1=0\end{cases}$ que son equidistantes de los planos cartesianos $OYZ$ y $OXZ$.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-De $x-y+z=0$ y $x+3y=1$: $x=1-3y$, $z=y-x=4y-1$. Puntos $(1-3y,\,y,\,4y-1)$.
-
-Distancia a $OYZ$ ($x=0$): $|x|$. Distancia a $OXZ$ ($y=0$): $|y|$. Igualando: $|1-3y|=|y|$.
-
-- $1-3y=y\Rightarrow y=\tfrac14$.
-- $1-3y=-y\Rightarrow y=\tfrac12$.
+**Puntos de $r$ equidistantes de $OYZ$ y $OXZ$.**
+1. **Puntos de la recta.** De $x-y+z=0$ y $x+3y=1$: $x=1-3y$ y $z=y-x=4y-1$. Los puntos son $(1-3y,\,y,\,4y-1)$.
+2. **Distancias.** Al plano $OYZ$ ($x=0$): $|x|$. Al plano $OXZ$ ($y=0$): $|y|$.
+3. **Igualdad.** $|1-3y|=|y|$:
+   - $1-3y=y\Rightarrow y=\tfrac14$.
+   - $1-3y=-y\Rightarrow y=\tfrac12$.
+4. **Puntos.** Se sustituye cada $y$ en $(1-3y,\,y,\,4y-1)$.
 
 **Puntos: $\left(\tfrac14,\tfrac14,0\right)$ y $\left(-\tfrac12,\tfrac12,1\right)$.**
 ::::
@@ -803,16 +2030,59 @@ a) Determina la ecuación del plano paralelo a $r$ que contiene a la recta $-x+1
 
 b) Calcula la distancia entre la recta $r$ y el plano $2x+5y+3z=41$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Dirección de $r$: $(1,-1,1)\times(3,0,-2)=(2,5,3)$. La otra recta tiene dirección $(-1,1,2)$ y pasa por $(1,0,3)$.
-
-Normal del plano: $(2,5,3)\times(-1,1,2)=(7,-7,7)\parallel(1,-1,1)$. Plano: $x-y+z=d$ con $(1,0,3)$: $d=4$.
+**a) Plano paralelo a $r$ que contiene a la otra recta.**
+1. Dirección de $r$ (producto vectorial de las normales): $(1,-1,1)\times(3,0,-2)=(2,5,3)$.
+2. La otra recta, $-x+1=y=\dfrac{z-3}{2}$, tiene dirección $(-1,1,2)$ y pasa por $(1,0,3)$.
+3. Normal del plano (perpendicular a ambas direcciones): $(2,5,3)\times(-1,1,2)=(7,-7,7)\parallel(1,-1,1)$.
+4. Plano $x-y+z=d$ con el punto $(1,0,3)$: $d=4$.
 
 **$x-y+z=4$.**
 
-**b)** El vector normal del plano $2x+5y+3z=41$ es $(2,5,3)$, que coincide con la dirección de $r$: la recta es perpendicular al plano y lo corta, así que **la distancia es $0$**.
+**b) Distancia entre la recta $r$ y el plano $2x+5y+3z=41$.**
+1. El vector normal del plano es $(2,5,3)$, que coincide con la dirección de $r$.
+2. Por tanto la recta es perpendicular al plano y lo corta, así que **la distancia es $0$**.
 
 *Nota: el enunciado coincide con el examen oficial. Con estos datos $r$ es perpendicular al plano (no paralela) y lo corta, así que la distancia es nula; probablemente es una errata del examen.*
 ::::
@@ -834,17 +2104,54 @@ a) Calcula $a$ para que las rectas $r$ y $s$ se corten. *(1,5 puntos)*
 
 b) Calcula $a$ para que las rectas $r$ y $s$ sean perpendiculares. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: $(2+t,\,-t,\,1+2t)$, $\vec d_r=(1,-1,2)$. $s$: $(1+\lambda(1+a),\ 2-\lambda a,\ 3+3a\lambda)$.
+**Datos.**
+1. $r$: punto $(2,0,1)$ y dirección $\vec d_r=(1,-1,2)$; en paramétricas, $(2+t,\,-t,\,1+2t)$.
+2. $s$: punto $P(1,2,3)$ y dirección $\vec d_s=(1+a,-a,3a)$; en paramétricas, $(1+\lambda(1+a),\ 2-\lambda a,\ 3+3a\lambda)$.
 
-**a)** Se cortan si $\vec d_r$, $\vec d_s$ y $\overrightarrow{P_rP}=(-1,2,2)$ son coplanarios y las rectas no son paralelas:
-$$\begin{vmatrix}1&-1&2\\1+a&-a&3a\\-1&2&2\end{vmatrix}=6-a=0.$$
+**a) Rectas secantes.**
+1. Para que se corten, los vectores $\vec d_r$, $\vec d_s$ y el que une un punto de cada recta, $\overrightarrow{P_rP}=(1-2,2-0,3-1)=(-1,2,2)$, deben ser coplanarios y las direcciones no proporcionales.
+2. Se anula el determinante:
+$$\begin{vmatrix}1&-1&2\\1+a&-a&3a\\-1&2&2\end{vmatrix}=6-a=0\Rightarrow a=6.$$
+3. Con $a=6$, $\vec d_s=(7,-6,18)$ no es proporcional a $\vec d_r$: las rectas se cortan.
+4. Punto de corte: igualando $(2+t,-t,1+2t)=(1+7\lambda,2-6\lambda,3+18\lambda)$ resulta $\lambda=-1$ y $t=-8$.
 
 **$a=6$** (punto de corte $(-6,8,-15)$, con $t=-8$).
 
-**b)** $\vec d_r\cdot\vec d_s=1+a+a+6a=1+8a=0$.
+**b) Rectas perpendiculares.**
+1. Son perpendiculares si sus vectores directores lo son: $\vec d_r\cdot\vec d_s=0$.
+2. $\vec d_r\cdot\vec d_s=1\cdot(1+a)+(-1)(-a)+2\cdot3a=1+8a=0$.
 
 **$a=-\tfrac18$.**
 ::::
@@ -863,16 +2170,63 @@ a) Determina la ecuación del plano que contiene a $r$ y es paralelo a $s$. *(1,
 
 b) Determina la ecuación del plano que contiene a $r$ y es perpendicular a $s$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$ es el eje $Y$: punto $O(0,0,0)$, dirección $(0,1,0)$. $s$: $x=1$, $y=0$, es decir, dirección $(0,0,1)$ y punto $(1,0,0)$.
+**Datos.**
+1. $r$ es el eje $Y$: punto $O(0,0,0)$ y dirección $(0,1,0)$.
+2. $s$: de $x+y=1$ y $x-y=1$ resulta $x=1$, $y=0$, con $z$ libre: punto $(1,0,0)$ y dirección $(0,0,1)$.
 
-**a)** El plano contiene la dirección $(0,1,0)$ y es paralelo a $(0,0,1)$: normal $(0,1,0)\times(0,0,1)=(1,0,0)$.
+**a) Plano que contiene a $r$ y es paralelo a $s$.**
+1. El plano contiene la dirección $(0,1,0)$ de $r$ y es paralelo a la dirección $(0,0,1)$ de $s$: esos son sus dos vectores directores.
+2. Normal: $(0,1,0)\times(0,0,1)=(1,0,0)$.
+3. Pasa por $O$ (por contener a $r$): $x=0$.
 
 **Plano $x=0$.**
 
-**b)** El plano es perpendicular a $s$ si su normal es la dirección de $s$, $(0,0,1)$; y contiene a $r$ (pasa por $O$).
+**b) Plano que contiene a $r$ y es perpendicular a $s$.**
+1. El plano es perpendicular a $s$ si su normal es la dirección de $s$: $\vec n=(0,0,1)$.
+2. Contiene a $r$ y por tanto pasa por $O$: $0\cdot x+0\cdot y+1\cdot z=0$.
+3. Comprobación: la dirección de $r$, $(0,1,0)$, cumple $\vec n\cdot(0,1,0)=0$, luego $r$ está contenida en el plano.
 
 **Plano $z=0$.**
 ::::
@@ -888,14 +2242,52 @@ a) Calcula los puntos de la recta $r$ que equidistan de los planos $\pi_1$ y $\p
 
 b) Halla el ángulo que forman los planos $\pi_1$ y $\pi_2$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $r$: $(t,\,1,\,1-2t)$. Distancias: $d(P,\pi_1)=\dfrac{|t+3|}{\sqrt2}$, $d(P,\pi_2)=\dfrac{|3t-2|}{\sqrt2}$ (en $\pi_2$: $t-(1-2t)-1=3t-2$). Igualando, $t+3=\pm(3t-2)$: $t=\tfrac52$ o $t=-\tfrac14$.
+**a) Puntos de $r$ equidistantes.**
+1. Se pasa $r$ a paramétricas. De $y=1$ y $2x+z=1$, con $x=t$: $(t,\,1,\,1-2t)$.
+2. Distancia de un punto de $r$ a $\pi_1$: $d(P,\pi_1)=\dfrac{|t+1+2|}{\sqrt{2}}=\dfrac{|t+3|}{\sqrt2}$.
+3. Distancia a $\pi_2$: $d(P,\pi_2)=\dfrac{|t-(1-2t)-1|}{\sqrt{2}}=\dfrac{|3t-2|}{\sqrt2}$.
+4. Se igualan: $|t+3|=|3t-2|$, es decir, $t+3=\pm(3t-2)$.
+5. Si $t+3=3t-2$: $t=\tfrac52$. Si $t+3=-(3t-2)$: $4t=-1$, $t=-\tfrac14$.
+6. Se sustituye cada $t$ en $(t,1,1-2t)$.
 
 **Puntos: $\left(\tfrac52,1,-4\right)$ y $\left(-\tfrac14,1,\tfrac32\right)$.**
 
-**b)** $\cos\varphi=\dfrac{|\vec n_1\cdot\vec n_2|}{|\vec n_1||\vec n_2|}=\dfrac{|(1,1,0)\cdot(1,0,-1)|}{\sqrt2\sqrt2}=\dfrac12$.
+**b) Ángulo entre los planos.**
+1. Normales: $\vec n_1=(1,1,0)$ y $\vec n_2=(1,0,-1)$.
+2. El ángulo entre planos es el de sus normales:
+$$\cos\varphi=\frac{|\vec n_1\cdot\vec n_2|}{|\vec n_1||\vec n_2|}=\frac{|(1,1,0)\cdot(1,0,-1)|}{\sqrt2\sqrt2}=\frac12.$$
 
 **$\varphi=60^\circ$ ($\pi/3$ rad).**
 ::::
@@ -914,16 +2306,63 @@ a) Determina la ecuación del plano perpendicular a $\pi$ que contiene a $r$. *(
 
 b) Calcula la distancia entre $r$ y $\pi$. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: punto $(0,1,0)$, dirección $\vec d=(1,-1,0)$. Normal de $\pi$: $\vec n=(1,1,1)$.
+**Datos.** $r$ pasa por $(0,1,0)$ con dirección $\vec d=(1,-1,0)$. La normal de $\pi$ es $\vec n=(1,1,1)$.
 
-**a)** Normal del plano buscado: $\vec d\times\vec n=(-1,-1,2)\parallel(1,1,-2)$. Pasa por $(0,1,0)$:
+**a) Plano perpendicular a $\pi$ que contiene a $r$.**
+1. El plano buscado contiene la dirección $\vec d$ de $r$ y es perpendicular a $\pi$, luego contiene también a la normal $\vec n$ de $\pi$.
+2. Su normal es $\vec d\times\vec n=(-1,-1,2)$, proporcional a $(1,1,-2)$.
+3. Pasa por $(0,1,0)$: $x+(y-1)-2z=0$.
 
 **$x+y-2z-1=0$.**
 
-**b)** $\vec d\cdot\vec n=0$ (paralela) y $(0,1,0)\notin\pi$, así que $d(r,\pi)=d\big((0,1,0),\pi\big)=\dfrac{|0+1+0|}{\sqrt3}$.
+**b) Distancia entre $r$ y $\pi$.**
+1. $\vec d\cdot\vec n=1-1+0=0$: la recta es paralela al plano, o está contenida en él.
+2. El punto $(0,1,0)$ no cumple $x+y+z=0$ ($0+1+0=1\neq0$), así que no está contenida: $r$ es paralela a $\pi$.
+3. La distancia es la de cualquier punto de $r$ al plano:
+$$d\big((0,1,0),\pi\big)=\dfrac{|0+1+0|}{\sqrt{1+1+1}}.$$
 
 **$d=\dfrac{\sqrt3}{3}$.**
 ::::
@@ -939,17 +2378,53 @@ a) Halla los puntos de $r$ que equidistan de $\pi_1$ y $\pi_2$. *(2 puntos)*
 
 b) Halla el seno del ángulo que forma el plano $\pi_1$ con la recta $r$. *(0,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: $(1+t,\,2t,\,-1+5t)$, con $\vec d=(1,2,5)$.
-$d_1=\dfrac{|2(1+t)+2t-1+5t-3|}{\sqrt6}=\dfrac{|9t-2|}{\sqrt6}$, $d_2=\dfrac{|(1+t)+4t-(-1+5t)+5|}{\sqrt6}=\dfrac{7}{\sqrt6}$.
+**Datos.** $r$ en paramétricas: $(1+t,\,2t,\,-1+5t)$, con dirección $\vec d=(1,2,5)$.
 
-**a)** $|9t-2|=7\Rightarrow t=1$ o $t=-\tfrac59$.
+**a) Puntos de $r$ equidistantes de los planos.**
+1. Distancia a $\pi_1$ ($2x+y+z-3=0$, con $\sqrt{4+1+1}=\sqrt6$): $d_1=\dfrac{|2(1+t)+2t-1+5t-3|}{\sqrt6}=\dfrac{|9t-2|}{\sqrt6}$.
+2. Distancia a $\pi_2$ ($x+2y-z+5=0$, con $\sqrt{1+4+1}=\sqrt6$): $d_2=\dfrac{|(1+t)+4t-(-1+5t)+5|}{\sqrt6}=\dfrac{7}{\sqrt6}$ (todos los términos con $t$ se cancelan: $r$ es paralela a $\pi_2$).
+3. Se igualan: $|9t-2|=7$.
+4. Si $9t-2=7$: $t=1$. Si $9t-2=-7$: $t=-\tfrac59$.
+5. Se sustituye en $(1+t,2t,-1+5t)$.
 
 **Puntos: $(2,2,4)$ y $\left(\tfrac49,-\tfrac{10}9,-\tfrac{34}9\right)$.**
 
-**b)** $\operatorname{sen}\alpha=\dfrac{|\vec n_1\cdot\vec d|}{|\vec n_1||\vec d|}=\dfrac{|(2,1,1)\cdot(1,2,5)|}{\sqrt6\sqrt{30}}=\dfrac{9}{6\sqrt5}$.
+**b) Seno del ángulo entre $\pi_1$ y $r$.**
+1. El seno del ángulo entre un plano y una recta usa la normal $\vec n_1=(2,1,1)$ y la dirección $\vec d=(1,2,5)$:
+$$\operatorname{sen}\alpha=\dfrac{|\vec n_1\cdot\vec d|}{|\vec n_1||\vec d|}=\dfrac{|(2,1,1)\cdot(1,2,5)|}{\sqrt6\sqrt{30}}=\dfrac{9}{6\sqrt5}.$$
+2. Se racionaliza: $\dfrac{9}{6\sqrt5}=\dfrac{3}{2\sqrt5}=\dfrac{3\sqrt5}{10}$.
 
 **$\operatorname{sen}\alpha=\dfrac{3\sqrt5}{10}$.**
 ::::
@@ -968,16 +2443,38 @@ a) Calcula $a$ para que $r$ y $s$ se corten. Determina dicho punto de corte. *(1
 
 b) Halla la ecuación del plano que pasa por $P(8,-7,2)$ y que contiene a la recta $s$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: punto $(-1,a,0)$, dirección $(1,1,-1)$; $s$: punto $(5,-3,2)$, dirección $(2,0,-1)$.
+**Datos.** $r$ pasa por $(-1,a,0)$ con dirección $(1,1,-1)$; $s$ pasa por $(5,-3,2)$ con dirección $(2,0,-1)$.
 
-**a)** Igualando $(-1+t,\ a+t,\ -t)=(5+2\lambda,\ -3,\ 2-\lambda)$: de la 3ª, $\lambda=t+2$; en la 1ª, $-1+t=5+2(t+2)\Rightarrow t=-10$, $\lambda=-8$; de la 2ª, $a+t=-3\Rightarrow a=7$.
+**a) Valor de $a$ y punto de corte.**
+1. Se escriben en paramétricas: $r:\ (-1+t,\ a+t,\ -t)$ y $s:\ (5+2\lambda,\ -3,\ 2-\lambda)$. Se igualan las coordenadas.
+2. De la tercera, $-t=2-\lambda\Rightarrow\lambda=t+2$.
+3. En la primera: $-1+t=5+2(t+2)\Rightarrow t=-10$, y $\lambda=-8$.
+4. De la segunda: $a+t=-3\Rightarrow a=-3+10=7$.
+5. Punto de corte (en $r$ con $t=-10$): $(-1-10,\ 7-10,\ 10)=(-11,-3,10)$. Comprobación en $s$ con $\lambda=-8$: $(5-16,-3,2+8)=(-11,-3,10)$ ✓.
 
 **$a=7$; punto de corte $(-11,-3,10)$.**
 
-**b)** Vectores del plano: $(2,0,-1)$ y $\overrightarrow{P_sP}=(3,-4,0)$. Normal: $(2,0,-1)\times(3,-4,0)=(-4,-3,-8)$.
+**b) Plano por $P$ que contiene a $s$.**
+1. El plano tiene como vectores directores la dirección de $s$, $(2,0,-1)$, y el vector que une un punto de $s$ con $P$: $\overrightarrow{P_sP}=(8-5,-7+3,2-2)=(3,-4,0)$.
+2. Normal: $(2,0,-1)\times(3,-4,0)=(-4,-3,-8)$, proporcional a $(4,3,8)$.
+3. Ecuación: $4x+3y+8z+D=0$ y, al pasar por $P(8,-7,2)$: $32-21+16+D=0\Rightarrow D=-27$.
 
 **$4x+3y+8z-27=0$.**
 ::::
@@ -993,15 +2490,49 @@ a) Calcula, si existe, el punto de intersección de $\pi$ y $r$. *(0,75 puntos)*
 
 b) Dado el punto $Q(2,6,3)$, halla su simétrico respecto del plano $\pi$. *(1,75 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $r:(t,\,3t,\,1+t)$. Sustituyendo en $\pi$: $t+3t-1-t=2\Rightarrow t=1$.
+**a) Intersección de $\pi$ y $r$.**
+1. Se pasa $r$ a paramétricas: $(t,\,3t,\,1+t)$.
+2. Se sustituye en $\pi$: $t+3t-(1+t)=2\Rightarrow3t=3\Rightarrow t=1$.
 
 **Punto de intersección: $(1,3,2)$.**
 
-**b)** Normal de $\pi$: $\vec n=(1,1,-1)$. Para $Q(2,6,3)$: $2+6-3-2=3$, y $|\vec n|^2=3$. El simétrico es
-$$Q'=Q-2\,\frac{3}{3}\,\vec n=(2,6,3)-2(1,1,-1).$$
+**b) Simétrico de $Q$ respecto de $\pi$.**
+1. Normal de $\pi$: $\vec n=(1,1,-1)$. Recta perpendicular a $\pi$ por $Q$: $Q+s\vec n=(2+s,\,6+s,\,3-s)$.
+2. Se corta con $\pi$: $(2+s)+(6+s)-(3-s)=2\Rightarrow5+3s=2\Rightarrow s=-1$. El pie de la perpendicular es $M=(1,5,4)$.
+3. El simétrico cumple que $M$ es el punto medio de $Q$ y $Q'$: $Q'=2M-Q=(2,10,8)-(2,6,3)$.
+4. (Otra forma: para $Q$ se tiene $2+6-3-2=3$ y $|\vec n|^2=3$, así que $Q'=Q-2\,\dfrac{3}{3}\,\vec n=(2,6,3)-2(1,1,-1)$.)
 
 **$Q'(0,4,5)$.**
 ::::
@@ -1020,17 +2551,65 @@ a) Halla el punto simétrico del punto $P$ respecto del plano $\pi$. *(1,75 punt
 
 b) Calcula la distancia del punto $P$ al plano $\pi$. *(0,75 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Vectores directores del plano: $(9,2,4)$ y $(3,0,1)$; normal $\vec n=(9,2,4)\times(3,0,1)=(2,3,-6)$, $|\vec n|=7$. Pasa por $(0,-1,3)$:
+**Ecuación del plano.**
+1. Del plano en paramétricas: vectores directores $(9,2,4)$ y $(3,0,1)$, y punto $(0,-1,3)$ (para $\alpha=\beta=0$).
+2. Normal: $\vec n=(9,2,4)\times(3,0,1)=(2,3,-6)$, con $|\vec n|=\sqrt{4+9+36}=7$.
+3. Con el punto: $2x+3y-6z+D=0$ y $0-3-18+D=0\Rightarrow D=21$:
 $$\pi:\ 2x+3y-6z+21=0.$$
 
-**a)** Recta por $P$ perpendicular a $\pi$: $(2+2t,\,3t,\,-4-6t)$. Al sustituir en $\pi$: $4+4t+9t+24+36t+21=0\Rightarrow 49t=-49\Rightarrow t=-1$, luego el pie de la perpendicular es $M(0,-3,2)$. El simétrico es $P'=2M-P$:
+**a) Simétrico de $P$ respecto de $\pi$.**
+1. Recta por $P$ perpendicular a $\pi$ (con dirección $\vec n$): $(2+2t,\,3t,\,-4-6t)$.
+2. Se corta con $\pi$: $2(2+2t)+3(3t)-6(-4-6t)+21=0\Rightarrow4+4t+9t+24+36t+21=0\Rightarrow49t=-49\Rightarrow t=-1$.
+3. El pie de la perpendicular es $M(0,-3,2)$ (el punto medio de $P$ y su simétrico).
+4. Simétrico: $P'=2M-P=(0,-6,4)-(2,0,-4)$.
 
 **$P'(-2,-6,8)$.**
 
-**b)** $d(P,\pi)=\dfrac{|4+0+24+21|}{7}=\dfrac{49}{7}$.
+**b) Distancia de $P$ a $\pi$.**
+1. Fórmula: $d(P,\pi)=\dfrac{|2\cdot2+3\cdot0-6\cdot(-4)+21|}{\sqrt{2^2+3^2+(-6)^2}}=\dfrac{|4+0+24+21|}{7}=\dfrac{49}{7}$.
 
 **$d=7$.**
 ::::
@@ -1051,14 +2630,69 @@ b) Calcula el volumen del tetraedro cuyos vértices son el origen de coordenadas
 
 *Relacionado también con:* [Vectores en el espacio](04-vectores-espacio.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Planos paralelos: $2x+y-2z+k=0$. La distancia al plano $\pi$ ($k=-2$) es $\dfrac{|k+2|}{\sqrt{4+1+4}}=\dfrac{|k+2|}{3}=2$, luego $k+2=\pm6$.
+**a) Planos paralelos a $\pi$ a distancia $2$.**
+1. Los planos paralelos a $\pi$ tienen la misma normal: $2x+y-2z+k=0$. El plano $\pi$ corresponde a $k=-2$.
+2. La distancia entre dos planos paralelos es $\dfrac{|k-(-2)|}{\sqrt{2^2+1^2+(-2)^2}}=\dfrac{|k+2|}{3}$.
+3. Se impone que valga $2$: $|k+2|=6\Rightarrow k+2=\pm6$, es decir, $k=4$ o $k=-8$.
 
 **$2x+y-2z+4=0$ y $2x+y-2z-8=0$.**
 
-**b)** Cortes de $\pi$ con los ejes: $A(1,0,0)$, $B(0,2,0)$, $C(0,0,-1)$. Con el origen $O$:
+**b) Volumen del tetraedro.**
+1. Cortes de $\pi$ con los ejes: con $OX$ ($y=z=0$), $2x=2\Rightarrow A(1,0,0)$; con $OY$, $y=2\Rightarrow B(0,2,0)$; con $OZ$, $-2z=2\Rightarrow C(0,0,-1)$.
+2. El volumen del tetraedro es $\tfrac16$ del valor absoluto del producto mixto de los vectores desde el origen:
 $$V=\tfrac16\left|[\overrightarrow{OA},\overrightarrow{OB},\overrightarrow{OC}]\right|=\tfrac16\,|1\cdot2\cdot(-1)|.$$
 
 **$V=\tfrac13$ u$^3$.**
@@ -1075,17 +2709,53 @@ a) Estudia la posición relativa de $r$ y $s$. *(1,5 puntos)*
 
 b) Calcula la ecuación del plano que contiene a $s$ y es paralelo a $r$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: punto $(0,1,0)$, dirección $\vec d_r=(1,-1,1)$. Para $s$, sumando las ecuaciones $4x-2z=2$, luego $z=2x-1$, $y=1+5x$: punto $(0,1,-1)$, dirección $\vec d_s=(1,5,2)$.
+**Datos.**
+1. $r$: punto $(0,1,0)$ y dirección $\vec d_r=(1,-1,1)$ (de $x=1-y=z$).
+2. $s$: sumando las dos ecuaciones, $4x-2z=2\Rightarrow z=2x-1$; sustituyendo, $y=1+5x$. Con $x$ como parámetro: punto $(0,1,-1)$ y dirección $\vec d_s=(1,5,2)$.
 
-**a)** Las direcciones no son proporcionales. Con $\vec w=(0,0,-1)$ (entre los puntos),
+**a) Posición relativa.**
+1. Las direcciones $(1,-1,1)$ y $(1,5,2)$ no son proporcionales: no son paralelas ni coincidentes.
+2. Vector entre los puntos de las rectas: $\vec w=(0,0,-1)$. Se estudia si $\vec d_r$, $\vec d_s$ y $\vec w$ son coplanarios:
 $$\begin{vmatrix}1&-1&1\\1&5&2\\0&0&-1\end{vmatrix}=-6\neq0.$$
+3. No son coplanarios: las rectas no están en un mismo plano.
 
 **Las rectas se cruzan.**
 
-**b)** Normal $=\vec d_s\times\vec d_r=(1,5,2)\times(1,-1,1)=(7,1,-6)$; pasa por $(0,1,-1)$: $7x+(y-1)-6(z+1)=0$.
+**b) Plano que contiene a $s$ y es paralelo a $r$.**
+1. El plano tiene como vectores directores $\vec d_s$ y $\vec d_r$ y pasa por el punto $(0,1,-1)$ de $s$.
+2. Normal: $\vec d_s\times\vec d_r=(1,5,2)\times(1,-1,1)=(7,1,-6)$.
+3. Ecuación: $7x+(y-1)-6(z+1)=0$.
 
 **$7x+y-6z-7=0$.**
 ::::
@@ -1109,16 +2779,65 @@ a) Calcula el plano perpendicular a la recta $s$ que pasa por el punto $P(1,0,-5
 
 b) Calcula el seno del ángulo que forma la recta $r$ con el plano $\pi\equiv -2x+y+2z=0$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** El vector director de $s$, $(-2,1,2)$, es normal al plano: $-2x+y+2z+k=0$ y pasa por $P(1,0,-5)$: $-2-10+k=0\Rightarrow k=12$.
+**a) Plano perpendicular a $s$ por $P$.**
+1. Un plano es perpendicular a la recta $s$ si su vector normal es el director de $s$, $(-2,1,2)$.
+2. El plano es $-2x+y+2z+k=0$.
+3. Pasa por $P(1,0,-5)$: $-2\cdot1+0+2\cdot(-5)+k=0\Rightarrow-2-10+k=0\Rightarrow k=12$.
 
 **$-2x+y+2z+12=0$** (equivalentemente $2x-y-2z-12=0$).
 
-**b)** Dirección de $r$: $(2,-3,1)\times(-3,2,2)=(-8,-7,-5)$, de módulo $\sqrt{138}$. Normal de $\pi$: $(-2,1,2)$, de módulo $3$. Producto escalar: $16-7-10=-1$.
+**b) Seno del ángulo entre $r$ y $\pi$.**
+1. Dirección de $r$: producto vectorial de los normales de sus dos planos, $(2,-3,1)\times(-3,2,2)=(-8,-7,-5)$, de módulo $\sqrt{138}$.
+2. Normal de $\pi$: $(-2,1,2)$, de módulo $3$.
+3. Producto escalar: $(-8,-7,-5)\cdot(-2,1,2)=16-7-10=-1$.
+4. El ángulo entre recta y plano usa el seno, con valor absoluto:
 
 $$\operatorname{sen}\alpha=\frac{|\vec u\cdot\vec n|}{|\vec u||\vec n|}=\mathbf{\frac{1}{3\sqrt{138}}}=\frac{\sqrt{138}}{414}\approx0{,}028$$
+
+*Interpretación:* el ángulo es muy pequeño (unos $1{,}6^\circ$): la recta es casi paralela al plano.
 ::::
 :::::
 
@@ -1128,14 +2847,43 @@ $$\operatorname{sen}\alpha=\frac{|\vec u\cdot\vec n|}{|\vec u||\vec n|}=\mathbf{
 
 La recta $r\equiv\dfrac{x+3}{2}=\dfrac{y+4}{2}=\dfrac{z-3}{3}$ y la recta $s$, que pasa por los puntos $P(1,0,2)$ y $Q(a,1,0)$, se cortan en un punto. Calcula el valor de $a$ y el punto de corte.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: punto $(-3,-4,3)$, dirección $(2,2,3)$. $s$: $\overrightarrow{PQ}=(a-1,1,-2)$, punto $P(1,0,2)$.
-
-Para que se corten (coplanarias), $\begin{vmatrix}2&2&3\\a-1&1&-2\\4&4&-1\end{vmatrix}=0$, con $\overrightarrow{R P}=(4,4,-1)$ (de $R(-3,-4,3)$ a $P$). Resolviendo, **$a=2$**, con dirección $(1,1,-2)$ para $s$.
-
-Punto de corte: $r$: $(-3+2u,\,-4+2u,\,3+3u)$ y $s$: $(1+v,\,v,\,2-2v)$. Igualando: $u=1$, $v=-2$.
+1. **Datos.** $r$: punto $R(-3,-4,3)$ y dirección $(2,2,3)$. $s$: punto $P(1,0,2)$ y dirección $\overrightarrow{PQ}=(a-1,1,-2)$.
+2. **Condición de corte.** Si se cortan, las dos rectas están en un mismo plano: los vectores directores y $\overrightarrow{RP}=(4,4,-1)$ (de $R$ a $P$) son coplanarios, es decir, su determinante es $0$:
+$$\begin{vmatrix}2&2&3\\a-1&1&-2\\4&4&-1\end{vmatrix}=14a-28=0.$$
+3. Resolviendo, **$a=2$**, con dirección $(1,1,-2)$ para $s$.
+4. **Punto de corte.** $r$: $(-3+2u,\,-4+2u,\,3+3u)$ y $s$: $(1+v,\,v,\,2-2v)$. Se igualan componentes y se resuelve: $u=1$, $v=-2$.
+5. Sustituyendo $u=1$ en $r$ (o $v=-2$ en $s$) sale el mismo punto.
 
 **$a=2$ y punto de corte $(-1,-2,6)$.**
 ::::
@@ -1154,16 +2902,44 @@ $$r\equiv\dfrac{x}{1}=\dfrac{y+2}{2}=\dfrac{z-1}{1}\qquad\text{y}\qquad s\equiv\
 
 Sabiendo que dos de los lados de un cuadrado están en las rectas $r$ y $s$, calcula su área.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Dirección de $r$: $\vec u=(1,2,1)$. Dirección de $s$: $(1,-1,1)\times(3,-1,-1)=(2,4,2)\parallel\vec u$: las rectas son paralelas.
-
-Un punto de $r$: $R(0,-2,1)$. Un punto de $s$ (tomando $x=0$): $S(0,1,3)$, que no está en $r$.
-
-El lado del cuadrado es la distancia entre ambas rectas:
-
+1. **Direcciones.** $\vec u=(1,2,1)$ para $r$. Para $s$: $(1,-1,1)\times(3,-1,-1)=(2,4,2)\parallel\vec u$: las rectas son paralelas.
+2. **Puntos.** Un punto de $r$: $R(0,-2,1)$. Un punto de $s$ (tomando $x=0$): $S(0,1,3)$, que no está en $r$ (las rectas no coinciden).
+3. **Lado del cuadrado.** Dos lados paralelos de un cuadrado distan lo que mide el lado, luego es la distancia entre ambas rectas.
+4. **Distancia.**
 $$d=\frac{|\overrightarrow{RS}\times\vec u|}{|\vec u|}=\frac{|(0,3,2)\times(1,2,1)|}{\sqrt6}=\frac{|(-1,2,-3)|}{\sqrt6}=\sqrt{\frac{14}{6}}.$$
+5. Área del cuadrado $=d^2$.
 
 **Área $=d^2=\dfrac73\ \text{u}^2$**
 ::::
@@ -1181,17 +2957,60 @@ a) Estudia la posición relativa de $r$ y $s$ según los valores de $m$. *(1,5 p
 
 b) Para $m=1$, calcula el coseno del ángulo que forman las rectas $r$ y $s$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: punto $R(1,1,2)$, dirección $(1,1,m)$. $s$: de $x+z=2$ y $x-y+2z=3$ resulta $y=z-1$; con $z=\mu$: $(2-\mu,\,\mu-1,\,\mu)$, punto $S(2,-1,0)$, dirección $(-1,1,1)$.
+**Datos.** $r$: punto $R(1,1,2)$, dirección $(1,1,m)$. $s$: de $x+z=2$ y $x-y+2z=3$ resulta $y=z-1$; con $z=\mu$: $(2-\mu,\,\mu-1,\,\mu)$, punto $S(2,-1,0)$, dirección $(-1,1,1)$.
 
-**a)** Las direcciones nunca son proporcionales. $\overrightarrow{RS}=(1,-2,-2)$ y $\begin{vmatrix}1&1&m\\-1&1&1\\1&-2&-2\end{vmatrix}=m-1$.
+**a) Posición relativa.**
+1. Las direcciones $(1,1,m)$ y $(-1,1,1)$ nunca son proporcionales (sus dos primeras componentes lo impiden): no son paralelas ni coincidentes.
+2. $\overrightarrow{RS}=(1,-2,-2)$ y se estudia el determinante con las dos direcciones: $\begin{vmatrix}1&1&m\\-1&1&1\\1&-2&-2\end{vmatrix}=m-1$.
+3. Casos:
+   - $m\neq1$: **se cruzan**.
+   - $m=1$: **se cortan** en un punto.
 
-- $m\neq1$: **se cruzan**.
-- $m=1$: **se cortan** en un punto.
-
-**b)** Con $m=1$: $\vec u=(1,1,1)$ y $\vec v=(-1,1,1)$:
+**b) Coseno del ángulo para $m=1$.**
+1. Direcciones: $\vec u=(1,1,1)$ y $\vec v=(-1,1,1)$.
+2. Producto escalar $\vec u\cdot\vec v=1$ y módulos $\sqrt3$ cada uno.
 
 $$\cos\alpha=\frac{|\vec u\cdot\vec v|}{|\vec u||\vec v|}=\frac{1}{\sqrt3\sqrt3}=\mathbf{\frac13}.$$
 ::::
@@ -1212,16 +3031,61 @@ a) Halla el plano que contiene a $r$ y es paralelo a $s$. *(1,5 puntos)*
 
 b) Deduce razonadamente que ningún plano perpendicular a $s$ contiene a $r$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: punto $R(2,-1,3)$, dirección $\vec u=(3,2,1)$. $s$: de $y=2x-2$ y $z=3-x$, con $x=\mu$: punto $(0,-2,3)$, dirección $\vec v=(1,2,-1)$.
+**Datos.** $r$: punto $R(2,-1,3)$, dirección $\vec u=(3,2,1)$. $s$: de $y=2x-2$ y $z=3-x$, con $x=\mu$: punto $(0,-2,3)$, dirección $\vec v=(1,2,-1)$.
 
-**a)** Normal del plano: $\vec u\times\vec v=(-4,4,4)\parallel(1,-1,-1)$. Plano $x-y-z+k=0$ por $R$: $2+1-3+k=0\Rightarrow k=0$.
+**a) Plano que contiene a $r$ y es paralelo a $s$.**
+1. Contiene a $r$ y es paralelo a $s$: sus vectores directores son $\vec u$ y $\vec v$.
+2. Normal: $\vec u\times\vec v=(-4,4,4)\parallel(1,-1,-1)$.
+3. Plano $x-y-z+k=0$ por $R(2,-1,3)$: $2+1-3+k=0\Rightarrow k=0$.
 
 **$x-y-z=0$**
 
-**b)** Un plano perpendicular a $s$ tiene normal $\vec v$ y contendría a $r$ sólo si $\vec u\cdot\vec v=0$. Pero $\vec u\cdot\vec v=3+4-1=6\neq0$, luego $r$ no es paralela a ningún plano de normal $\vec v$, y por tanto ninguno la contiene.
+**b) Ningún plano perpendicular a $s$ contiene a $r$.**
+1. Un plano perpendicular a $s$ tiene normal $\vec v$.
+2. Contendría a $r$ solo si $\vec u\cdot\vec v=0$ (la dirección de $r$ debe ser perpendicular a la normal).
+3. Pero $\vec u\cdot\vec v=3+4-1=6\neq0$, luego $r$ no es paralela a ningún plano de normal $\vec v$, y por tanto ninguno la contiene.
 ::::
 :::::
 
@@ -1238,14 +3102,69 @@ a) Calcula la ecuación del plano $\pi$. *(1,5 puntos)*
 
 b) Halla la distancia del punto $A$ a su simétrico respecto a $\pi$. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $\overrightarrow{AB}=\left(0,-\tfrac12,\tfrac12\right)$ es normal a $\pi$; tomamos $(0,-1,1)$. El plano es $-y+z+k=0$ y pasa por $B$: $-\tfrac12+\tfrac12+k=0\Rightarrow k=0$.
+**a) Plano $\pi$.**
+1. La recta es perpendicular a $\pi$, así que $\overrightarrow{AB}=\left(0,-\tfrac12,\tfrac12\right)$ es normal a $\pi$; tomamos $(0,-1,1)$.
+2. El plano es $-y+z+k=0$.
+3. Pasa por $B$: $-\tfrac12+\tfrac12+k=0\Rightarrow k=0$.
 
 **$\pi\equiv y-z=0$**
 
-**b)** El simétrico $A'$ cumple $B$ punto medio de $AA'$, luego $d(A,A')=2\,|AB|=2\sqrt{\tfrac14+\tfrac14}=$ **$\sqrt2$ u**
+**b) Distancia de $A$ a su simétrico.**
+1. El simétrico $A'$ de $A$ respecto de $\pi$ cumple que $B$ (la proyección) es el punto medio de $AA'$.
+2. Luego $d(A,A')=2\,|AB|=2\sqrt{\tfrac14+\tfrac14}=$ **$\sqrt2$ u**
 ::::
 :::::
 
@@ -1261,16 +3180,48 @@ a) Estudia la posición relativa de $r$ y $s$. *(1,25 puntos)*
 
 b) Halla la recta que corta perpendicularmente a $r$ y a $s$. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: punto $(3,1,-3)$, dirección $(1,0,-1)$. $s$: $x=\mu,\ y=1-\mu,\ z=0$: punto $(0,1,0)$, dirección $(1,-1,0)$.
+**Datos.** $r$: punto $(3,1,-3)$, dirección $(1,0,-1)$. $s$: $x=\mu,\ y=1-\mu,\ z=0$: punto $(0,1,0)$, dirección $(1,-1,0)$.
 
-**a)** El punto $(0,1,0)$ de $s$ está también en $r$ (con $\lambda=-3$) y las direcciones no son proporcionales.
+**a) Posición relativa.**
+1. Las direcciones no son proporcionales: no son paralelas ni coincidentes.
+2. El punto $(0,1,0)$ de $s$ está también en $r$ (con $\lambda=-3$: $x=0$, $y=1$, $z=0$).
 
 **Las rectas se cortan en el punto $(0,1,0)$.**
 
-**b)** Dirección perpendicular a ambas: $(1,0,-1)\times(1,-1,0)=(-1,-1,-1)\parallel(1,1,1)$. La recta pasa por el punto de corte:
+**b) Recta perpendicular a ambas.**
+1. Como las rectas se cortan, la recta que corta perpendicularmente a ambas pasa por el punto de corte.
+2. Dirección perpendicular a ambas: $(1,0,-1)\times(1,-1,0)=(-1,-1,-1)\parallel(1,1,1)$.
 
 **$\dfrac{x}{1}=\dfrac{y-1}{1}=\dfrac{z}{1}$**
 ::::
@@ -1289,16 +3240,72 @@ a) Halla las ecuaciones de los planos paralelos a $\pi$ cuya distancia a éste s
 
 b) Halla el simétrico del punto $P$ respecto al plano $\pi$. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Vector normal $\vec n=(2,-1,1)$, $|\vec n|=\sqrt6$.
+**Dato.** Normal de $\pi$: $\vec n=(2,-1,1)$, con $|\vec n|=\sqrt6$.
 
-**a)** Planos paralelos: $2x-y+z+k=0$, con $d=\dfrac{|k|}{\sqrt6}=\sqrt6\Rightarrow k=\pm6$.
+**a) Planos paralelos a distancia $\sqrt6$.**
+1. Los planos paralelos a $\pi$ son $2x-y+z+k=0$.
+2. Distancia a $\pi$ (que tiene $k=0$): $d=\dfrac{|k|}{\sqrt6}=\sqrt6\Rightarrow|k|=6\Rightarrow k=\pm6$.
 
 **$2x-y+z+6=0$ y $2x-y+z-6=0$**
 
-**b)** Recta por $P$ perpendicular a $\pi$: $(1+2t,\,2-t,\,6+t)$. Al cortar con $\pi$: $2(1+2t)-(2-t)+(6+t)=6t+6=0\Rightarrow t=-1$, punto $M(-1,3,5)$. El simétrico es $P'=2M-P$:
+**b) Simétrico de $P$ respecto de $\pi$.**
+1. Recta por $P$ perpendicular a $\pi$: $(1+2t,\,2-t,\,6+t)$.
+2. Se corta con $\pi$: $2(1+2t)-(2-t)+(6+t)=6t+6=0\Rightarrow t=-1$.
+3. Proyección de $P$ sobre $\pi$: $M(-1,3,5)$.
+4. $M$ es el punto medio de $P$ y su simétrico, luego $P'=2M-P$:
 
 **$P'=(-3,4,4)$**
 ::::
@@ -1316,16 +3323,62 @@ b) Siendo $D(1,-1,-2)$, calcula el área del triángulo con vértices en los pun
 
 *Relacionado también con:* [Vectores en el espacio](04-vectores-espacio.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+$\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3=|\vec{u}||\vec{v}|\cos\alpha$. Módulo $|\vec{u}|=\sqrt{u_1^2+u_2^2+u_3^2}$. Ortogonales: $\vec{u}\cdot\vec{v}=0$. Proyección de $\vec{u}$ sobre $\vec{v}$: $\dfrac{\vec{u}\cdot\vec{v}}{|\vec{v}|}$. Unitario: $\dfrac{\vec{u}}{|\vec{u}|}$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+
+**Producto escalar, módulo y ángulo de vectores.**
+
+1. Escribe los vectores (resta extremo menos origen).
+2. Calcula el producto escalar y los módulos.
+3. Despeja el coseno del ángulo o el parámetro que haga $\vec{u}\cdot\vec{v}=0$.
+4. Interpreta el resultado (perpendiculares, ángulo en grados).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: punto genérico $R(-\lambda,\,1+2\lambda,\,-1+\lambda)$.
+**Dato.** Un punto genérico de $r$ es $R(-\lambda,\,1+2\lambda,\,-1+\lambda)$.
 
-**a)** $|RB|^2=6\lambda^2+2\lambda+2$ y $|RC|^2=6\lambda^2+4\lambda+4$. Igualando: $2\lambda+2=4\lambda+4\Rightarrow\lambda=-1$.
+**a) Punto de $r$ equidistante de $B$ y $C$.**
+1. Distancias al cuadrado: $|RB|^2=6\lambda^2+2\lambda+2$ y $|RC|^2=6\lambda^2+4\lambda+4$.
+2. Se igualan: $2\lambda+2=4\lambda+4\Rightarrow\lambda=-1$.
+3. Sustituyendo $\lambda=-1$ en $R$.
 
 **Punto $(1,-1,-2)$** (para $\lambda=-1$).
 
-**b)** $\overrightarrow{BC}=(1,1,-2)$, $\overrightarrow{BD}=(2,-1,-1)$, $\overrightarrow{BC}\times\overrightarrow{BD}=(-3,-3,-3)$, de módulo $3\sqrt3$.
+**b) Área del triángulo $BCD$.**
+1. Vectores: $\overrightarrow{BC}=(1,1,-2)$ y $\overrightarrow{BD}=(2,-1,-1)$.
+2. Producto vectorial: $\overrightarrow{BC}\times\overrightarrow{BD}=(-3,-3,-3)$, de módulo $3\sqrt3$.
+3. El área es la mitad del módulo.
 
 **Área $=\dfrac{3\sqrt3}{2}\ \text{u}^2$**
 ::::
@@ -1344,16 +3397,61 @@ a) Halla el simétrico del punto $P$ respecto al plano $\pi$. *(1,25 puntos)*
 
 b) Halla la distancia del punto $P$ al plano $\pi$. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+Proyección de $P$ sobre un plano $\pi$: punto de corte de $\pi$ con la recta perpendicular a $\pi$ por $P$. Simétrico de $P$ respecto de ese plano: $P'=2M-P$, con $M$ la proyección. Con una recta se hace igual con el plano perpendicular a la recta por $P$.
+
+**Distancias y ángulos.**
+
+Distancia de $P$ al plano $\pi:Ax+By+Cz+D=0$: $\dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$. Distancia de $P$ a una recta $r$ (punto $Q$, dirección $\vec{v}$): $\dfrac{|\overrightarrow{QP}\times\vec{v}|}{|\vec{v}|}$. Entre dos rectas que se cruzan: $\dfrac{|[\overrightarrow{PQ},\vec{u},\vec{v}]|}{|\vec{u}\times\vec{v}|}$. Ángulo entre vectores directores o normales: $\cos\alpha=\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{a}||\vec{b}|}$ (el de recta y plano usa el seno).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Proyecciones, simétricos y puntos de una recta o plano.**
+
+1. Construye la recta (o plano) perpendicular que pasa por $P$: dirección $\vec{n}$ (o normal $\vec{v}$).
+2. Corta con el plano (o la recta) sustituyendo las paramétricas en la ecuación y resolviendo para el parámetro.
+3. Esa intersección $M$ es la proyección; el simétrico es $P'=2M-P$ (en cada coordenada).
+4. Comprueba que $M$ es el punto medio de $P$ y $P'$.
+
+**Distancias y ángulos.**
+
+1. Elige la fórmula según los objetos (punto-plano, punto-recta, recta-recta, planos paralelos).
+2. Extrae los datos: puntos, vectores directores y normales.
+3. Sustituye y simplifica los radicales.
+4. Para dos planos o rectas paralelas, reduce a la distancia de un punto de una a la otra.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Vector normal $\vec n=(1,-1,1)$.
+**Dato.** Normal de $\pi$: $\vec n=(1,-1,1)$.
 
-**a)** Recta por $P$ perpendicular a $\pi$: $(1+t,\,-t,\,1+t)$. Al cortar con $\pi$: $(1+t)+t+(1+t)+1=3t+3=0\Rightarrow t=-1$, punto medio $M(0,1,0)$. El simétrico es $2M-P$:
+**a) Simétrico de $P$.**
+1. Recta por $P$ perpendicular a $\pi$: $(1+t,\,-t,\,1+t)$.
+2. Se corta con $\pi$: $(1+t)+t+(1+t)+1=3t+3=0\Rightarrow t=-1$.
+3. Proyección de $P$ sobre $\pi$ (punto medio): $M(0,1,0)$.
+4. El simétrico es $2M-P$:
 
 **$P'=(-1,2,-1)$**
 
-**b)** $d(P,\pi)=\dfrac{|1-0+1+1|}{\sqrt3}=$ **$\sqrt3$ u**
+**b) Distancia de $P$ a $\pi$.**
+1. Fórmula: $d(P,\pi)=\dfrac{|1-0+1+1|}{\sqrt3}=$ **$\sqrt3$ u**
 ::::
 :::::
 
@@ -1369,16 +3467,49 @@ a) Estudia la posición relativa de $r$ y $s$. *(1,25 puntos)*
 
 b) Calcula, si es posible, el plano que contiene a $r$ y a $s$. *(1,25 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Posición relativa de rectas y planos.**
+
+Dos rectas pueden ser coincidentes, paralelas, secantes o cruzarse: se estudia con los vectores directores y el vector que une dos puntos (rangos o producto mixto). Recta y plano: paralelos, secantes o recta contenida ($\vec{v}\cdot\vec{n}=0$ si es paralela o está contenida). Dos planos: coincidentes, paralelos o secantes (rangos del sistema).
+
+**Ecuaciones de rectas y planos.**
+
+Recta por $P$ con dirección $\vec{v}$: $(x,y,z)=P+\lambda\vec{v}$ (paramétricas, continua o implícita). Plano por $P$ con vectores $\vec{u},\vec{v}$: $\begin{vmatrix}x-p_1&y-p_2&z-p_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}=0$; con normal $\vec{n}=(A,B,C)$: $A(x-p_1)+B(y-p_2)+C(z-p_3)=0$, es decir, $Ax+By+Cz+D=0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Posición relativa de rectas y planos.**
+
+1. Plantea el sistema formado por las ecuaciones y discútelo con rangos (Rouché), o compara vectores directores y normales.
+2. Si hay parámetro, obtén los valores críticos con el determinante y estudia cada caso.
+3. Si son secantes, resuelve el sistema para hallar el punto o la recta de corte.
+
+**Ecuaciones de rectas y planos.**
+
+1. Decide qué datos tienes: punto, dirección, normal, dos puntos, tres puntos.
+2. Obtén el punto y los vectores necesarios (resta de puntos, producto vectorial para la normal).
+3. Escribe la ecuación pedida y comprueba que los puntos dados la cumplen.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$r$: punto $(2,1,0)$, dirección $\vec u=(-2,1,-2)$. $s$: de $x+2y=3$, $2y+z=2$ con $y=\mu$: $(3-2\mu,\,\mu,\,2-2\mu)$, punto $(3,0,2)$, dirección $\vec v=(-2,1,-2)$.
+**Datos.** $r$: punto $(2,1,0)$, dirección $\vec u=(-2,1,-2)$. $s$: de $x+2y=3$, $2y+z=2$ con $y=\mu$: $(3-2\mu,\,\mu,\,2-2\mu)$, punto $(3,0,2)$, dirección $\vec v=(-2,1,-2)$.
 
-**a)** $\vec u=\vec v$: son paralelas. El vector $(3,0,2)-(2,1,0)=(1,-1,2)$ no es proporcional a $\vec u$, luego el punto de $s$ no está en $r$.
+**a) Posición relativa.**
+1. $\vec u=\vec v$: las rectas son paralelas o coincidentes.
+2. El vector que une los puntos es $(3,0,2)-(2,1,0)=(1,-1,2)$, que no es proporcional a $\vec u$: el punto de $s$ no está en $r$.
 
 **Las rectas son paralelas y distintas.**
 
-**b)** Sí existe: el plano contiene a $r$ y tiene normal $\vec u\times(1,-1,2)=(0,2,1)$, pasando por $(2,1,0)$:
+**b) Plano que contiene a $r$ y a $s$.**
+1. Sí existe, porque las rectas paralelas siempre están en un plano.
+2. Su normal es perpendicular a $\vec u$ y a $(1,-1,2)$: $\vec u\times(1,-1,2)=(0,2,1)$.
+3. Pasa por $(2,1,0)$: $2\cdot1+0+k=0\Rightarrow k=-2$.
 
 **$2y+z-2=0$**
 ::::

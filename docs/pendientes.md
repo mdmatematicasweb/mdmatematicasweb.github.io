@@ -16,7 +16,7 @@ Actualizado el 2026-10-04.
 
 - **Simulacro PAU completo**: los 29 tipos de ejercicio (fases 3, 4 y 5: geometría, análisis y probabilidad con tabla N(0,1)). Al corregir, los ejercicios de geometría y análisis tienen «Ver gráfica».
 - **Actividades interactivas de los temas 6–11** (43 módulos nuevos; 77 en total).
-- **Soluciones breves de los 270 ejercicios PAU** (`scripts/ebau/soluciones/*.md`), comprobadas con sympy y plegadas bajo cada enunciado. Dos enunciados oficiales tienen datos incoherentes y llevan una nota: 2023 Extraordinaria suplente ej. 8b y 2023 Extraordinaria reserva ej. 7.
+- **Soluciones breves de los 270 ejercicios PAU** (`scripts/ebau/soluciones/*.md`), comprobadas con sympy y plegadas bajo cada enunciado. Un enunciado oficial tiene datos incoherentes y lleva una nota: 2023 Extraordinaria suplente ej. 8b. (2023 Extraordinaria reserva ej. 7 no era errata: la solución tenía mal el producto vectorial; corregido el 2026-10-06, puntos (35,18,16) y (−21,−10,−12).)
 - **Gráficas JSXGraph** (`assets/gym/graficas.js`, carga diferida desde cdnjs): 3D en Rectas y planos, 2D en Aplicaciones de la derivada e Integrales. Ver la gráfica cuenta como ayuda.
 - **Figuras de geometría** en los apuntes del tema 5 (posiciones relativas y simétrico).
 - **Gráficas en más módulos**: 2D en Límites (infinito, en un punto, discontinuidades, asíntotas) y en la tangente de Derivadas; 3D en Vectores (producto, ángulo, áreas, puntos). Falta revisarlas a ojo en el navegador.
@@ -42,6 +42,11 @@ Fases 0 a 5 en la rama `claude/admiring-clarke-tgsd2o`, a partir del BOJA (Orden
 - Estilo de la fase B: ver `scripts/ebau-ccss/soluciones/2021-*.md` (listas «1. 2. 3.» por apartado, negrita en el resultado final, una frase de interpretación en contexto, z de la tabla con su elección razonada, tamaños muestrales «redondeado hacia arriba»). Mantener las cadenas de igualdades de los verificadores.
 - Cuidado con el texto alternativo de las figuras (`fig-alt`): si repite `a=1`, `t=1`… el verificador no detecta la mutación. Usar «(a, b) = (1, 2)» o palabras, en `figuras_fn.py` y en `soluciones/`.
 - `sympy` no está en el Python del sistema: crear un venv (`python3 -m venv <ruta> && <ruta>/bin/pip install sympy`) y lanzar `<ruta>/bin/python scripts/ebau-ccss/verificar_AAAA.py`.
+
+## Ayudas y pasos en los PAU de Ciencias (2026-10-06, rama `claude/ayudas-pau-ciencias`, sin push)
+
+- **Fase A hecha**: `Ayuda 1 · Recordatorio` y `Ayuda 2 · Método` en los 270 ejercicios (40 conceptos en `scripts/ebau/ayudas/conceptos.md`, asignación automática por palabras clave en `ayudas/asignacion.tsv`, **sin revisar uno a uno**). `build.py` valida que cada ejercicio tenga ayudas.
+- **Fase B hecha**: soluciones de los 36 exámenes reescritas como pasos numerados con interpretación. No hay verificadores sympy por año: la red de seguridad es `python3 scripts/ebau/comprobar_numeros.py AAAA` (ningún número de la solución antigua puede faltar; falla a propósito en 2023-ext-res ej. 7, corregido). Pendiente de revisión del usuario.
 
 ## Siguiente
 
