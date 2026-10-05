@@ -2579,11 +2579,18 @@ b) Dada la población $\{a,\,10,\,12,\,11,\,18\}$, ¿cuánto debe valer $a$, sab
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** 1. **Muestreo aleatorio estratificado con afijación proporcional** (cada titulación es un estrato).
+**a) Tipo de muestreo y composición.**
+1. **Muestreo aleatorio estratificado con afijación proporcional** (cada titulación es un estrato y se elige la misma fracción, el $20\,\%$, en cada uno).
+2. Total de matriculados: $N=60+40+30+50+20=200$, así que la muestra tiene $0{,}2\cdot200=40$ alumnos.
+3. Por titulaciones: $0{,}2\cdot60=12$ de Eléctrica, $0{,}2\cdot40=8$ de Informática, $0{,}2\cdot30=6$ de Civil, $0{,}2\cdot50=10$ de Mecánica y $0{,}2\cdot20=4$ de Aeronáutica.
 
-2. $N=60+40+30+50+20=200$ y la muestra tiene $0{,}2\cdot200=40$ alumnos: $0{,}2\cdot60=12$ de Eléctrica, $0{,}2\cdot40=8$ de Informática, $0{,}2\cdot30=6$ de Civil, $0{,}2\cdot50=10$ de Mecánica y $0{,}2\cdot20=4$ de Aeronáutica. **Muestra de 40 alumnos: 12, 8, 6, 10 y 4.**
+**Muestra de 40 alumnos: 12, 8, 6, 10 y 4.**
 
-**b)** La media de las medias muestrales coincide con la media poblacional: $\mu=\dfrac{a+10+12+11+18}{5}=\dfrac{a+51}{5}=13{,}2$, de donde $a+51=66$. **$a=15$.**
+**b) Valor de $a$.**
+1. La media de las medias muestrales (de tamaño 3, con reemplazamiento) coincide con la media poblacional.
+2. $\mu=\dfrac{a+10+12+11+18}{5}=\dfrac{a+51}{5}=13{,}2$, de donde $a+51=66$.
+
+**$a=15$.**
 ::::
 :::::
 
@@ -2622,12 +2629,22 @@ b) Suponiendo que se mantiene la misma proporción muestral y el mismo nivel de 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sea $\hat p=\dfrac{45}{100}=0{,}45$ y $n=100$.
+1. **Datos.** $\hat p=\dfrac{45}{100}=0{,}45$ y $n=100$ ($n\hat p=45\ge5$ y $n(1-\hat p)=55\ge5$).
 
-**a)** Nivel $92\,\%$: $\Phi(z_{\alpha/2})=0{,}96$, y en la tabla $\Phi(1{,}75)=0{,}9599\approx0{,}96$, luego $z_{\alpha/2}=1{,}75$. Error: $E=1{,}75\sqrt{\dfrac{0{,}45\cdot0{,}55}{100}}=1{,}75\cdot0{,}0497=0{,}0871$.
+**a)**
+1. Nivel $92\,\%$: $\Phi(z_{\alpha/2})=0{,}96$, y en la tabla $\Phi(1{,}75)=0{,}9599\approx0{,}96$, luego $z_{\alpha/2}=1{,}75$.
+2. Error máximo: $E=1{,}75\sqrt{\dfrac{0{,}45\cdot0{,}55}{100}}=1{,}75\cdot0{,}0497=0{,}0871$.
+3. Intervalo:
 $$IC=(0{,}45-0{,}0871,\ 0{,}45+0{,}0871)=(0{,}3629,\ 0{,}5371).$$
 
-**b)** $E<0{,}05\iff n>\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}=\dfrac{1{,}75^2\cdot0{,}45\cdot0{,}55}{0{,}05^2}\approx303{,}19$. **Hay que tomar al menos $n=304$ individuos.**
+Interpretación: con una confianza del $92\,\%$, entre el $36{,}3\,\%$ y el $53{,}7\,\%$ de los mayores de edad está en contra de la central.
+
+**b)**
+1. Error inferior al $5\,\%$: $E<0{,}05$.
+2. Se despeja $n$: $E<0{,}05\iff n>\dfrac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}=\dfrac{1{,}75^2\cdot0{,}45\cdot0{,}55}{0{,}05^2}\approx303{,}19$.
+3. Se redondea hacia arriba.
+
+**Hay que tomar al menos $n=304$ individuos.**
 ::::
 :::::
 
@@ -2679,13 +2696,17 @@ b) Dada la población $\{1,\,3,\,5\}$, establezca todas las muestras posibles de
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Población total: $15\,000+16\,800+11\,400+6\,000=49\,200$. La fracción muestreada es $\dfrac{375}{15\,000}=0{,}025$, luego la muestra tiene $0{,}025\cdot49\,200=1\,230$ personas: $375$ del primer tramo, $0{,}025\cdot16\,800=420$ del segundo, $0{,}025\cdot11\,400=285$ del tercero y $0{,}025\cdot6\,000=150$ del cuarto.
+**a) Muestreo estratificado con afijación proporcional.**
+1. En afijación proporcional se muestrea la **misma fracción** de cada estrato. En el primer tramo es $\dfrac{375}{15\,000}=0{,}025$.
+2. Población total: $15\,000+16\,800+11\,400+6\,000=49\,200$. Muestra total: $0{,}025\cdot49\,200=1\,230$ personas.
+3. Composición: $375$ del primer tramo, $0{,}025\cdot16\,800=420$ del segundo, $0{,}025\cdot11\,400=285$ del tercero y $0{,}025\cdot6\,000=150$ del cuarto.
 
 **Muestra total de 1 230 personas: 375, 420, 285 y 150.**
 
-**b)** Muestras con reemplazamiento (9): $(1,1),(1,3),(1,5),(3,1),(3,3),(3,5),(5,1),(5,3),(5,5)$, con medias $1,\,2,\,3,\,2,\,3,\,4,\,3,\,4,\,5$.
-
-Media: $\mu_{\bar x}=\dfrac{27}{9}=3$. Varianza: $\sigma_{\bar x}^2=\dfrac{4+1+0+1+0+1+0+1+4}{9}=\dfrac{12}{9}=\dfrac{4}{3}$.
+**b) Medias muestrales.**
+1. Muestreo aleatorio simple (con reemplazamiento, importa el orden): $3\cdot3=9$ muestras $(1,1),(1,3),(1,5),(3,1),(3,3),(3,5),(5,1),(5,3),(5,5)$, con medias $1,\,2,\,3,\,2,\,3,\,4,\,3,\,4,\,5$.
+2. Media de las medias: $\mu_{\bar x}=\dfrac{27}{9}=3$ (coincide con la media de la población).
+3. Varianza (media de los cuadrados de las desviaciones respecto de $3$): $\sigma_{\bar x}^2=\dfrac{4+1+0+1+0+1+0+1+4}{9}=\dfrac{12}{9}=\dfrac{4}{3}$.
 
 **Media $3$ y desviación típica $\sqrt{\dfrac{4}{3}}=\dfrac{2}{\sqrt3}\approx1{,}1547$.**
 ::::
@@ -2726,13 +2747,21 @@ b) Determine el tamaño mínimo de la muestra de imprentas de esa región que se
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\hat p=\dfrac{12}{50}=0{,}24$, $n=50$. Nivel $95\,\%$: $z_{\alpha/2}=1{,}96$.
+1. **Datos.** $\hat p=\dfrac{12}{50}=0{,}24$, $n=50$ ($n\hat p=12\ge5$ y $n(1-\hat p)=38\ge5$). Nivel $95\,\%$: $z_{\alpha/2}=1{,}96$.
 
-**a)** $E=1{,}96\sqrt{\dfrac{0{,}24\cdot0{,}76}{50}}=1{,}96\cdot0{,}0604=0{,}1184$.
+**a)**
+1. Error máximo: $E=1{,}96\sqrt{\dfrac{0{,}24\cdot0{,}76}{50}}=1{,}96\cdot0{,}0604=0{,}1184$.
+2. Intervalo:
 $$IC=(0{,}24-0{,}1184,\ 0{,}24+0{,}1184)=(0{,}1216,\ 0{,}3584).$$
 
-**b)** Amplitud $2E\le0{,}2\iff E\le0{,}1$:
+Interpretación: con una confianza del $95\,\%$, entre el $12{,}2\,\%$ y el $35{,}8\,\%$ de las imprentas usa celulosa reciclada.
+
+**b)**
+1. La amplitud es $2E$, así que $2E\le0{,}2\iff E\le0{,}1$.
+2. Se despeja $n$:
 $$n\ge\frac{z_{\alpha/2}^2\,\hat p(1-\hat p)}{E^2}=\frac{1{,}96^2\cdot0{,}24\cdot0{,}76}{0{,}1^2}\approx70{,}07.$$
+3. Se redondea hacia arriba.
+
 **Hay que tomar al menos $n=71$ imprentas.**
 ::::
 :::::
@@ -2775,12 +2804,21 @@ b) Determine el tamaño muestral mínimo para que, con el mismo nivel de confian
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\hat p=0{,}15$, $n=1000$, $z_{\alpha/2}=1{,}96$ (nivel $95\,\%$).
+1. **Datos.** $\hat p=0{,}15$, $n=1000$ ($n\hat p=150\ge5$ y $n(1-\hat p)=850\ge5$). Nivel $95\,\%$: $z_{\alpha/2}=1{,}96$.
 
-**a)** $E=1{,}96\sqrt{\dfrac{0{,}15\cdot0{,}85}{1000}}=1{,}96\cdot0{,}01129=0{,}0221$.
+**a)**
+1. Error máximo: $E=1{,}96\sqrt{\dfrac{0{,}15\cdot0{,}85}{1000}}=1{,}96\cdot0{,}01129=0{,}0221$.
+2. Intervalo:
 $$IC=(0{,}15-0{,}0221,\ 0{,}15+0{,}0221)=(0{,}1279,\ 0{,}1721).$$
 
-**b)** $E<0{,}01\iff n>\dfrac{1{,}96^2\cdot0{,}15\cdot0{,}85}{0{,}01^2}=4\,898{,}04$. **Hacen falta al menos $n=4\,899$ ciudadanos.**
+Interpretación: con una confianza del $95\,\%$, entre el $12{,}8\,\%$ y el $17{,}2\,\%$ de la población está enferma.
+
+**b)**
+1. Error inferior al $1\,\%$: $E<0{,}01$.
+2. Se despeja $n$: $E<0{,}01\iff n>\dfrac{1{,}96^2\cdot0{,}15\cdot0{,}85}{0{,}01^2}=4\,898{,}04$.
+3. Se redondea hacia arriba.
+
+**Hacen falta al menos $n=4\,899$ ciudadanos.**
 ::::
 :::::
 
@@ -2822,12 +2860,21 @@ b) Manteniendo la misma proporción muestral y el mismo nivel de confianza del a
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\hat p=\dfrac{115}{250}=0{,}46$ y $n=250$. Nivel $99{,}5\,\%$: $\Phi(z_{\alpha/2})=1-0{,}0025=0{,}9975$. En la tabla, $\Phi(2{,}80)=0{,}99744$ y $\Phi(2{,}81)=0{,}99752$, luego $z_{\alpha/2}=2{,}81$.
+1. **Datos.** $\hat p=\dfrac{115}{250}=0{,}46$ y $n=250$ ($n\hat p=115\ge5$ y $n(1-\hat p)=135\ge5$).
+2. **Valor crítico.** Nivel $99{,}5\,\%$: $\Phi(z_{\alpha/2})=1-0{,}0025=0{,}9975$. En la tabla, $\Phi(2{,}80)=0{,}99744$ y $\Phi(2{,}81)=0{,}99752$, y $0{,}9975$ está más cerca del segundo: $z_{\alpha/2}=2{,}81$.
 
-**a)** $E=2{,}81\sqrt{\dfrac{0{,}46\cdot0{,}54}{250}}=2{,}81\cdot0{,}03152=0{,}0886$.
+**a)**
+1. Error máximo: $E=2{,}81\sqrt{\dfrac{0{,}46\cdot0{,}54}{250}}=2{,}81\cdot0{,}03152=0{,}0886$.
+2. Intervalo:
 $$IC=(0{,}46-0{,}0886,\ 0{,}46+0{,}0886)=(0{,}3714,\ 0{,}5486).$$
 
-**b)** $E<0{,}05\iff n>\dfrac{2{,}81^2\cdot0{,}46\cdot0{,}54}{0{,}05^2}=784{,}56$. **Hace falta una muestra de al menos $n=785$ residentes.**
+Interpretación: con una confianza del $99{,}5\,\%$, entre el $37{,}1\,\%$ y el $54{,}9\,\%$ de los residentes está a favor de la salida.
+
+**b)**
+1. Se despeja $n$ de $E<0{,}05$ con la misma proporción: $E<0{,}05\iff n>\dfrac{2{,}81^2\cdot0{,}46\cdot0{,}54}{0{,}05^2}=784{,}56$.
+2. Se redondea hacia arriba.
+
+**Hace falta una muestra de al menos $n=785$ residentes.**
 ::::
 :::::
 
@@ -2884,12 +2931,22 @@ c) Calcule el tamaño mínimo que debe tener una muestra, para que, con el mismo
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $\sigma_{\bar X}=\dfrac{\sigma}{\sqrt n}=\dfrac{4}{\sqrt{12}}=\dfrac{2}{\sqrt3}\approx\mathbf{1{,}1547}$.
+**a)** La media de una muestra de tamaño $n$ tiene desviación típica $\dfrac{\sigma}{\sqrt n}$:
+$$\sigma_{\bar X}=\dfrac{\sigma}{\sqrt n}=\dfrac{4}{\sqrt{12}}=\dfrac{2}{\sqrt3}\approx\mathbf{1{,}1547}.$$
 
-**b)** Media muestral: $\bar x=\dfrac{127{,}2}{12}=10{,}6$. Nivel $97\,\%$: $\Phi(z_{\alpha/2})=0{,}985$, y en la tabla $\Phi(2{,}17)=0{,}9850$, luego $z_{\alpha/2}=2{,}17$. Error: $E=2{,}17\cdot\dfrac{4}{\sqrt{12}}=2{,}5057$.
+**b)**
+1. Media muestral: $\bar x=\dfrac{127{,}2}{12}=10{,}6$.
+2. Nivel $97\,\%$: $\Phi(z_{\alpha/2})=0{,}985$ y en la tabla $\Phi(2{,}17)=0{,}9850$, luego $z_{\alpha/2}=2{,}17$.
+3. Error máximo: $E=2{,}17\cdot\dfrac{4}{\sqrt{12}}=2{,}5057$.
+4. Intervalo:
 $$IC=(10{,}6-2{,}5057,\ 10{,}6+2{,}5057)=(8{,}0943,\ 13{,}1057).$$
 
-**c)** $E<1{,}2\iff n>\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2=\left(\dfrac{2{,}17\cdot4}{1{,}2}\right)^2=52{,}32$. **Hacen falta al menos $n=53$ individuos.**
+**c)**
+1. Se despeja $n$ de $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}<1{,}2$:
+$$n>\left(\dfrac{z_{\alpha/2}\,\sigma}{E}\right)^2=\left(\dfrac{2{,}17\cdot4}{1{,}2}\right)^2=52{,}32.$$
+2. Se redondea hacia arriba.
+
+**Hacen falta al menos $n=53$ individuos.**
 ::::
 :::::
 
@@ -2931,13 +2988,22 @@ b) Manteniendo la proporción muestral, ¿cuántos individuos se deberían selec
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\hat p=\dfrac{175}{500}=0{,}35$, $n=500$.
+1. **Datos.** $\hat p=\dfrac{175}{500}=0{,}35$, $n=500$ (se cumplen $n\hat p=175\ge5$ y $n(1-\hat p)=325\ge5$).
 
-**a)** Nivel $94\,\%$: $\Phi(z_{\alpha/2})=0{,}97$. En la tabla $\Phi(1{,}88)=0{,}9699$ y $\Phi(1{,}89)=0{,}9706$, luego $z_{\alpha/2}=1{,}88$. Error: $E=1{,}88\sqrt{\dfrac{0{,}35\cdot0{,}65}{500}}=1{,}88\cdot0{,}02133=0{,}0401$.
+**a) Intervalo al $94\,\%$.**
+1. $1-\alpha=0{,}94$, luego $\Phi(z_{\alpha/2})=1-\dfrac{0{,}06}{2}=0{,}97$. En la tabla $\Phi(1{,}88)=0{,}9699$ y $\Phi(1{,}89)=0{,}9706$, y $0{,}97$ está más cerca del primero: $z_{\alpha/2}=1{,}88$.
+2. Error máximo: $E=1{,}88\sqrt{\dfrac{0{,}35\cdot0{,}65}{500}}=1{,}88\cdot0{,}02133=0{,}0401$.
+3. Intervalo:
 $$IC=(0{,}35-0{,}0401,\ 0{,}35+0{,}0401)=(0{,}3099,\ 0{,}3901).$$
 
-**b)** Nivel $97\,\%$: $\Phi(z_{\alpha/2})=0{,}985$ y en la tabla $\Phi(2{,}17)=0{,}9850$, luego $z_{\alpha/2}=2{,}17$. Con $E\le0{,}02$:
+Interpretación: con una confianza del $94\,\%$, entre el $31{,}0\,\%$ y el $39{,}0\,\%$ de los individuos usa el transporte público.
+
+**b) Tamaño muestral con $E\le0{,}02$ y confianza $97\,\%$.**
+1. $\Phi(z_{\alpha/2})=1-\dfrac{0{,}03}{2}=0{,}985$ y en la tabla $\Phi(2{,}17)=0{,}9850$, luego $z_{\alpha/2}=2{,}17$.
+2. Se despeja $n$ de $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}\le0{,}02$:
 $$n\ge\frac{2{,}17^2\cdot0{,}35\cdot0{,}65}{0{,}02^2}=2\,678{,}19.$$
+3. Se redondea **hacia arriba** (si fuera 2 678 no se alcanzaría la precisión).
+
 **Hay que seleccionar al menos $n=2\,679$ individuos.**
 ::::
 :::::
@@ -2977,11 +3043,20 @@ b) Calcule el tamaño mínimo que debe tener una muestra de esta población para
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Nivel $97\,\%$: $z_{\alpha/2}=2{,}17$ (pues $\Phi(2{,}17)=0{,}9850$). Error: $E=2{,}17\cdot\dfrac{7}{\sqrt{300}}=2{,}17\cdot0{,}4041=0{,}877$.
+**a) Intervalo al $97\,\%$ para la media** (se conoce $\sigma=7$ y la media muestral $168$ con $n=300$).
+1. $\Phi(z_{\alpha/2})=0{,}985$ da $z_{\alpha/2}=2{,}17$ (pues $\Phi(2{,}17)=0{,}9850$).
+2. Error máximo: $E=2{,}17\cdot\dfrac{7}{\sqrt{300}}=2{,}17\cdot0{,}4041=0{,}877$.
+3. Intervalo:
 $$IC=(168-0{,}877,\ 168+0{,}877)=(167{,}123,\ 168{,}877).$$
 
-**b)** Nivel $94\,\%$: $z_{\alpha/2}=1{,}88$ (pues $\Phi(1{,}88)=0{,}9699\approx0{,}97$). Con $E<1{,}2$:
+Interpretación: con una confianza del $97\,\%$, la estatura media de las mujeres está entre $167{,}12$ y $168{,}88$ cm.
+
+**b) Tamaño mínimo con $E<1{,}2$ al $94\,\%$.**
+1. Para el $94\,\%$, $z_{\alpha/2}=1{,}88$ (pues $\Phi(1{,}88)=0{,}9699\approx0{,}97$).
+2. Se despeja $n$ de $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}<1{,}2$:
 $$n>\left(\frac{1{,}88\cdot7}{1{,}2}\right)^2=120{,}27.$$
+3. $n$ debe ser entero y mayor que $120{,}27$.
+
 **Hay que tomar al menos $n=121$ mujeres.**
 ::::
 :::::
@@ -3032,16 +3107,19 @@ b) Para estimar la proporción de andaluces contagiados por una enfermedad infec
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Muestreo aleatorio simple (con reemplazamiento y teniendo en cuenta el orden): $9\cdot9=81$ muestras. La media vale $5$ cuando los dos números suman $10$: $(1,9),(2,8),(3,7),(4,6),(5,5),(6,4),(7,3),(8,2),(9,1)$, es decir, $9$ muestras.
+**a)**
+1. Muestreo aleatorio simple: con reemplazamiento y teniendo en cuenta el orden, $9\cdot9=81$ muestras de tamaño 2.
+2. La media vale $5$ cuando los dos números suman $10$: $(1,9),(2,8),(3,7),(4,6),(5,5),(6,4),(7,3),(8,2),(9,1)$, es decir, $9$ muestras.
+3. Casos favorables entre posibles.
 
 **Hay $81$ muestras y $P(\bar x=5)=\dfrac{9}{81}=\dfrac{1}{9}$.**
 
-**b)** $\hat p=\dfrac{500}{10\,000}=0{,}05$, $n=10\,000$.
+**b)** Datos: $\hat p=\dfrac{500}{10\,000}=0{,}05$, $n=10\,000$ ($n\hat p=500\ge5$ y $n(1-\hat p)\ge5$).
 
-1. Nivel $97\,\%$: $z_{\alpha/2}=2{,}17$ (porque $\Phi(2{,}17)=0{,}9850$). $E=2{,}17\sqrt{\dfrac{0{,}05\cdot0{,}95}{10\,000}}=2{,}17\cdot0{,}00218=0{,}0047$.
+1. **Intervalo al $97\,\%$.** $\Phi(z_{\alpha/2})=1-\dfrac{0{,}03}{2}=0{,}985$ y $\Phi(2{,}17)=0{,}9850$, luego $z_{\alpha/2}=2{,}17$. Error máximo: $E=2{,}17\sqrt{\dfrac{0{,}05\cdot0{,}95}{10\,000}}=2{,}17\cdot0{,}00218=0{,}0047$.
 $$IC=(0{,}05-0{,}0047,\ 0{,}05+0{,}0047)=(0{,}0453,\ 0{,}0547).$$
-2. $0{,}06$ **no pertenece** al intervalo ($0{,}06>0{,}0547$): no se puede aceptar, con ese nivel de confianza, que el $6\,\%$ estuviera infectado.
-3. Con la misma proporción y mayor $n$, el error $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ es menor: **el nuevo intervalo está contenido en el anterior** (mismo centro $0{,}05$, menor amplitud).
+2. **¿Se puede aceptar el $6\,\%$?** $0{,}06$ **no pertenece** al intervalo ($0{,}06>0{,}0547$): no se puede aceptar, con ese nivel de confianza, que el $6\,\%$ estuviera infectado.
+3. **Muestra mayor.** Con la misma proporción y mayor $n$, el error $E=z_{\alpha/2}\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$ es menor: **el nuevo intervalo está contenido en el anterior** (mismo centro $0{,}05$, menor amplitud).
 ::::
 :::::
 
@@ -3082,13 +3160,22 @@ b) Calcule el mínimo tamaño de la muestra que se ha de tomar, para estimar el 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$\sigma=\sqrt{81}=9$, $n=16$.
+1. **Datos.** $\sigma=\sqrt{81}=9$, $n=16$.
 
-**a)** Suma de los datos: $640$, luego $\bar x=\dfrac{640}{16}=40$. Para el $95\,\%$, $z_{\alpha/2}=1{,}96$ y $E=1{,}96\cdot\dfrac{9}{\sqrt{16}}=4{,}41$.
+**a)**
+1. Media muestral: la suma de los datos es $640$, luego $\bar x=\dfrac{640}{16}=40$.
+2. Para el $95\,\%$, $z_{\alpha/2}=1{,}96$. Error máximo: $E=1{,}96\cdot\dfrac{9}{\sqrt{16}}=4{,}41$.
+3. Intervalo:
 $$IC=(40-4{,}41,\ 40+4{,}41)=(35{,}59,\ 44{,}41).$$
 
-**b)** Nivel $98\,\%$: $\Phi(z_{\alpha/2})=0{,}99$. En la tabla $\Phi(2{,}32)=0{,}9898$ y $\Phi(2{,}33)=0{,}9901$, luego $z_{\alpha/2}=2{,}33$. Con $E<2$:
+Interpretación: con una confianza del $95\,\%$, el tiempo medio de estudio está entre $35{,}59$ y $44{,}41$ horas.
+
+**b)**
+1. Nivel $98\,\%$: $\Phi(z_{\alpha/2})=1-\dfrac{0{,}02}{2}=0{,}99$. En la tabla $\Phi(2{,}32)=0{,}9898$ y $\Phi(2{,}33)=0{,}9901$, y $0{,}99$ está más cerca del segundo: $z_{\alpha/2}=2{,}33$.
+2. Se despeja $n$ de $E=z_{\alpha/2}\dfrac{\sigma}{\sqrt n}<2$:
 $$n>\left(\frac{2{,}33\cdot9}{2}\right)^2=109{,}93.$$
+3. Se redondea al entero siguiente.
+
 **Hace falta una muestra de al menos $n=110$ alumnos.**
 ::::
 :::::

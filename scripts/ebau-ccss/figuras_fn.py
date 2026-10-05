@@ -65,7 +65,7 @@ def e_2021_ext_res_3():
     g.line((2, 0), (2, 3), color=INK, width=1.2)
     pts(g, (1, 0.5), (2, 3))
     tag(g, 0.4, 0.95, "f(x) = 1/2", anchor="middle"); tag(g, 1.5, 3.1, "f(x) = x² − x/2", anchor="end")
-    hecho(g, "2021-ext-res", "3", "Gráfica de f para a=0 y b=1/2: tramo horizontal y=1/2 hasta x=1 y parábola x²−x/2 desde x=1; recinto sombreado entre x=0 y x=2")
+    hecho(g, "2021-ext-res", "3", "Gráfica de f con (a, b) = (0, 1/2): tramo horizontal y=1/2 hasta x=1 y parábola x²−x/2 desde x=1; recinto sombreado entre x=0 y x=2")
 
 
 def e_2021_ext_sup_3():

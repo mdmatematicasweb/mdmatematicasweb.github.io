@@ -1035,14 +1035,25 @@ d) Calcule el área del recinto acotado limitado por la gráfica de $f$ y el eje
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f'(x)=3x^2-8x+4=(3x-2)(x-2)$, que se anula en $x=\dfrac{2}{3}$ y $x=2$. **Crece en $\left(-\infty,\dfrac{2}{3}\right)$ y en $(2,+\infty)$; decrece en $\left(\dfrac{2}{3},2\right)$.** Como $f''(x)=6x-8$, $f''\!\left(\frac{2}{3}\right)=-4<0$ y $f''(2)=4>0$: **máximo relativo en $\left(\dfrac{2}{3},\dfrac{32}{27}\right)$ y mínimo relativo en $(2,0)$.**
+**a) Monotonía y extremos.**
+1. Derivada: $f'(x)=3x^2-8x+4=(3x-2)(x-2)$, que se anula en $x=\dfrac{2}{3}$ y $x=2$.
+2. Signo de $f'$ en los tres intervalos: **$f$ crece en $\left(-\infty,\dfrac{2}{3}\right)$ y en $(2,+\infty)$; decrece en $\left(\dfrac{2}{3},2\right)$.**
+3. Tipo de extremo con la segunda derivada $f''(x)=6x-8$: $f''\!\left(\frac{2}{3}\right)=-4<0$ y $f''(2)=4>0$.
 
-**b)** $f(x)=x(x-2)^2$: corta a los ejes en $(0,0)$ y es tangente al eje de abscisas en $(2,0)$. Parte de $-\infty$ (cuando $x\to-\infty$), pasa por el origen, sube hasta el máximo $\left(\frac{2}{3},\frac{32}{27}\right)$, baja hasta el mínimo $(2,0)$ y vuelve a crecer hacia $+\infty$.
+**Máximo relativo en $\left(\dfrac{2}{3},\dfrac{32}{27}\right)$ y mínimo relativo en $(2,0)$.**
 
-**c)** $\displaystyle\int f(x)\,dx=\frac{x^4}{4}-\frac{4x^3}{3}+2x^2+C.$
+**b) Gráfica.**
+1. Se factoriza: $f(x)=x(x-2)^2$. Corta a los ejes en $(0,0)$ y es tangente al eje de abscisas en $(2,0)$ (raíz doble).
+2. Parte de $-\infty$ (cuando $x\to-\infty$), pasa por el origen, sube hasta el máximo $\left(\frac{2}{3},\frac{32}{27}\right)$, baja hasta el mínimo $(2,0)$ y vuelve a crecer hacia $+\infty$.
 
-**d)** El recinto está entre $x=0$ y $x=2$, con $f\ge0$:
+**c) Primitiva.** Se integra término a término:
+$$\int f(x)\,dx=\frac{x^4}{4}-\frac{4x^3}{3}+2x^2+C.$$
+
+**d) Área.**
+1. El recinto acotado está entre las raíces $x=0$ y $x=2$, donde $f\ge0$.
+2. Barrow:
 $$A=\int_0^2f(x)\,dx=\left[\frac{x^4}{4}-\frac{4x^3}{3}+2x^2\right]_0^2=4-\frac{32}{3}+8=\frac{4}{3}.$$
+
 **$A=\dfrac{4}{3}\ \text{u}^2$**
 
 ![Gráfica de f(x)=x³−4x²+4x: pasa por el origen, máximo en (2/3, 32/27), tangente al eje X en (2,0); recinto sombreado entre x=0 y x=2](fig/2021-ord-e3.svg){fig-alt="Gráfica de f(x)=x³−4x²+4x: pasa por el origen, máximo en (2/3, 32/27), tangente al eje X en (2,0); recinto sombreado entre x=0 y x=2" width="75%" fig-align="center"}
@@ -1097,15 +1108,21 @@ b) Calcule la recta tangente a la función de costes en el punto de abscisa $x=4
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $f'(x)=2x-6=0\Rightarrow x=3$, y $f''(x)=2>0$: mínimo. $f(3)=9-18+10=1$.
+**a) Coste mínimo.**
+1. Se deriva e iguala a cero: $f'(x)=2x-6=0\Rightarrow x=3$.
+2. Segunda derivada: $f''(x)=2>0$, luego es un **mínimo**.
+3. Coste en ese punto: $f(3)=9-18+10=1$.
 
 **El coste es mínimo con una producción de $3$ mil kg ($3\,000$ kg) y vale $1$ mil euros ($1\,000$ €).**
 
-**b)** $f(4)=16-24+10=2$ y $f'(4)=2\cdot4-6=2$. Tangente: $y-2=2(x-4)$.
+**b) Tangente en $x=4$.**
+1. Punto: $f(4)=16-24+10=2$.
+2. Pendiente: $f'(4)=2\cdot4-6=2$.
+3. Recta punto-pendiente: $y-2=2(x-4)$.
 
 **$y=2x-6$.**
 
-Gráfica: parábola de vértice $(3,1)$, abierta hacia arriba, que corta al eje $OY$ en $(0,10)$ (no corta al eje $OX$ porque $\Delta=36-40<0$) y pasa por $(2,2)$ y $(4,2)$; la recta $y=2x-6$ la toca en $(4,2)$ y corta al eje $OX$ en $(3,0)$.
+4. **Gráfica.** La parábola tiene vértice $(3,1)$ y está abierta hacia arriba; corta al eje $OY$ en $(0,10)$ y no corta al eje $OX$ porque $\Delta=36-40<0$; pasa por $(2,2)$ y $(4,2)$. La recta $y=2x-6$ la toca en $(4,2)$ y corta al eje $OX$ en $(3,0)$.
 
 ![Parábola de costes f(x)=x²−6x+10 con vértice (3,1) y su recta tangente y=2x−6 en el punto (4,2)](fig/2021-ord-sup-e4.svg){fig-alt="Parábola de costes f(x)=x²−6x+10 con vértice (3,1) y su recta tangente y=2x−6 en el punto (4,2)" width="75%" fig-align="center"}
 ::::
@@ -1148,17 +1165,23 @@ $f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $c'(t)=0{,}03t^2-0{,}9t+6=0\iff t^2-30t+200=0\iff t=10$ o $t=20$.
+**a) Crecimiento.** $c$ crece donde $c'>0$.
+1. Se resuelve $c'(t)=0$: $0{,}03t^2-0{,}9t+6=0\iff t^2-30t+200=0\iff t=10$ o $t=20$.
+2. Se estudia el signo de $c'$ en los tres intervalos en que esos puntos dividen $(0,24)$ (con un valor de prueba en cada uno):
+   - $c'>0$ en $(0,10)$.
+   - $c'<0$ en $(10,20)$.
+   - $c'>0$ en $(20,24)$.
 
-- $c'>0$ en $(0,10)$.
-- $c'<0$ en $(10,20)$.
-- $c'>0$ en $(20,24)$.
+**$c$ es creciente en $(0,10)\cup(20,24)$** (y decreciente en $(10,20)$). La cotización sube hasta las 10 h, baja hasta las 20 h y vuelve a subir hasta el cierre.
 
-**$c$ es creciente en $(0,10)\cup(20,24)$** (y decreciente en $(10,20)$).
+**b) Puntos críticos.**
+1. Son los que anulan $c'$: $t=10$ y $t=20$.
+2. En $t=10$, $c'$ pasa de $+$ a $-$: **máximo relativo en $t=10$**.
+3. En $t=20$, $c'$ pasa de $-$ a $+$: **mínimo relativo en $t=20$**.
 
-**b)** Los puntos críticos son $t=10$ y $t=20$. En $t=10$ pasa de crecer a decrecer: **máximo relativo en $t=10$**. En $t=20$ pasa de decrecer a crecer: **mínimo relativo en $t=20$**.
-
-**c)** $c(t)=\displaystyle\int\left(0{,}03t^2-0{,}9t+6\right)dt=0{,}01t^3-0{,}45t^2+6t+K$, con $c(0)=50\Rightarrow K=50$.
+**c) Recuperar $c$.**
+1. $c$ es una primitiva de $c'$: $c(t)=\displaystyle\int\left(0{,}03t^2-0{,}9t+6\right)dt=0{,}01t^3-0{,}45t^2+6t+K$.
+2. La condición inicial $c(0)=50$ da $K=50$.
 
 **$c(t)=0{,}01t^3-0{,}45t^2+6t+50$.**
 ::::
@@ -1221,15 +1244,18 @@ b) Calcule la derivada de la función $g(x)=\left(-3+x^{2}\right)\cdot e^{2x-1}$
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** La parábola con vértice $(0,8)$ y raíces $\pm4$ es $f'(x)=8-\dfrac{x^2}{2}$ (porque $f'(4)=8-8=0$).
+**a)**
+1. **Expresión de $f'$.** Una parábola con vértice $(0,8)$ y raíces $\pm4$ es $f'(x)=k\left(x^2-16\right)$ con $f'(0)=-16k=8$, luego $f'(x)=8-\dfrac{x^2}{2}$ (comprobación: $f'(4)=8-8=0$).
 
 ![Gráfica de f′: parábola abierta hacia abajo con vértice (0,8) que corta al eje X en (−4,0) y (4,0); f′>0 entre −4 y 4](fig/2021-ext-sup-e4.svg){fig-alt="Gráfica de f′: parábola abierta hacia abajo con vértice (0,8) que corta al eje X en (−4,0) y (4,0); f′>0 entre −4 y 4" width="75%" fig-align="center"}
 
-1. Gráfica de $f'$: parábola abierta hacia abajo, con máximo $(0,8)$, que corta al eje $OX$ en $(-4,0)$ y $(4,0)$.
-2. $f'>0$ en $(-4,4)$ y $f'<0$ en $(-\infty,-4)\cup(4,+\infty)$. **$f$ crece en $(-4,4)$ y decrece en $(-\infty,-4)\cup(4,+\infty)$; mínimo relativo en $x=-4$ y máximo relativo en $x=4$.**
-3. $f(0)=0$ y $f'(0)=8$: tangente $y-0=8(x-0)$. **$y=8x$.**
+2. **Gráfica de $f'$:** parábola abierta hacia abajo, con máximo $(0,8)$, que corta al eje $OX$ en $(-4,0)$ y $(4,0)$.
+3. **Monotonía de $f$.** El signo de $f'$ da el crecimiento de $f$: $f'>0$ en $(-4,4)$ y $f'<0$ en $(-\infty,-4)\cup(4,+\infty)$. **$f$ crece en $(-4,4)$ y decrece en $(-\infty,-4)\cup(4,+\infty)$; mínimo relativo en $x=-4$ y máximo relativo en $x=4$.**
+4. **Tangente en $x=0$.** $f(0)=0$ (pasa por el origen) y $f'(0)=8$: $y-0=8(x-0)$. **$y=8x$.**
 
-**b)** $g'(x)=2x\,e^{2x-1}+\left(x^2-3\right)\cdot2e^{2x-1}=e^{2x-1}\left(2x^2+2x-6\right).$
+**b)**
+1. Es un producto: $(uv)'=u'v+uv'$ con $u=x^2-3$ y $v=e^{2x-1}$ (cuya derivada, por la regla de la cadena, es $2e^{2x-1}$).
+2. $g'(x)=2x\,e^{2x-1}+\left(x^2-3\right)\cdot2e^{2x-1}=e^{2x-1}\left(2x^2+2x-6\right).$
 ::::
 :::::
 

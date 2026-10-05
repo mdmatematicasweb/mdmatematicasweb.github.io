@@ -579,13 +579,20 @@ c) A la vista del intervalo obtenido y teniendo en cuenta que el peso que marca 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $\bar X\sim N\!\left(1000,\dfrac{16}{\sqrt{64}}\right)=N(1000,\,2)$ (la desviación típica de $X$ es $\sqrt{256}=16$ g).
+**a) Distribución de la media muestral.**
+1. $X\sim N(1000,\,16)$ (la desviación típica es $\sqrt{256}=16$ g).
+2. Para muestras de tamaño $64$: $\bar X\sim N\!\left(1000,\dfrac{16}{\sqrt{64}}\right)=N(1000,\,2)$.
+3. Se tipifica y se usa la simetría de la tabla:
 $$P(\bar X<996)=P\!\left(Z<\frac{996-1000}{2}\right)=P(Z<-2)=1-P(Z<2)=1-0{,}9772=\mathbf{0{,}0228}.$$
 
-**b)** Media muestral: $\bar x=\dfrac{63\,744}{64}=996$ g. Nivel $90\,\%$: $\Phi(z_{\alpha/2})=0{,}95$, que está entre $\Phi(1{,}64)=0{,}9495$ y $\Phi(1{,}65)=0{,}9505$; se toma $z_{\alpha/2}=1{,}645$. Error: $E=1{,}645\cdot\dfrac{16}{\sqrt{64}}=3{,}29$.
+**b) Intervalo al $90\,\%$.**
+1. Media muestral: $\bar x=\dfrac{63\,744}{64}=996$ g.
+2. Nivel $90\,\%$: $\Phi(z_{\alpha/2})=0{,}95$, que está entre $\Phi(1{,}64)=0{,}9495$ y $\Phi(1{,}65)=0{,}9505$; se toma $z_{\alpha/2}=1{,}645$.
+3. Error máximo: $E=1{,}645\cdot\dfrac{16}{\sqrt{64}}=3{,}29$.
+4. Intervalo:
 $$IC=(996-3{,}29,\ 996+3{,}29)=(992{,}71,\ 999{,}29).$$
 
-**c)** El valor $1000$ g **no pertenece al intervalo**: al $90\,\%$ de confianza el peso medio real es menor que el que indica el paquete. **La denuncia parece tener base.**
+**c) Interpretación.** El valor $1000$ g **no pertenece al intervalo**: al $90\,\%$ de confianza el peso medio real es menor que el que indica el paquete. **La denuncia parece tener base.**
 ::::
 :::::
 

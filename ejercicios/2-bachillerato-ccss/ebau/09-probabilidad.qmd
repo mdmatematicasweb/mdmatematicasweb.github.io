@@ -2844,11 +2844,17 @@ b) Si dicho voluntario no ha generado anticuerpos, ¿qué probabilidad hay de qu
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $A$, $B$, $P$ los sucesos «recibe la vacuna $A$», «la $B$» y «el placebo», y $G$ «genera anticuerpos». $P(A)=\dfrac{3000}{5000}=0{,}6$, $P(B)=0{,}3$, $P(P)=0{,}1$; $P(G\mid A)=0{,}9$, $P(G\mid B)=0{,}95$, $P(G\mid P)=0$.
+1. **Datos.** Sean $A$, $B$, $P$ los sucesos «recibe la vacuna $A$», «la $B$» y «el placebo», y $G$ «genera anticuerpos». $P(A)=\dfrac{3000}{5000}=0{,}6$, $P(B)=\dfrac{1500}{5000}=0{,}3$, $P(P)=0{,}1$; $P(G\mid A)=0{,}9$, $P(G\mid B)=0{,}95$, $P(G\mid P)=0$.
 
-**a)** Probabilidad total: $P(G)=0{,}6\cdot0{,}9+0{,}3\cdot0{,}95+0{,}1\cdot0=0{,}54+0{,}285=0{,}825$. **La probabilidad es $0{,}825$.**
+**a)** Probabilidad total (se suman las tres ramas que acaban en $G$):
+$$P(G)=0{,}6\cdot0{,}9+0{,}3\cdot0{,}95+0{,}1\cdot0=0{,}54+0{,}285=0{,}825.$$
 
-**b)** Bayes: $P(P\mid G^C)=\dfrac{P(P)\cdot P(G^C\mid P)}{P(G^C)}=\dfrac{0{,}1\cdot1}{1-0{,}825}=\dfrac{0{,}1}{0{,}175}=\dfrac{4}{7}\approx0{,}5714$. **La probabilidad es $\dfrac{4}{7}\approx0{,}5714$.**
+**La probabilidad es $0{,}825$.**
+
+**b)** Bayes con $G^C$: $P(P\cap G^C)=0{,}1\cdot1$ y $P(G^C)=1-0{,}825$:
+$$P(P\mid G^C)=\dfrac{P(P)\cdot P(G^C\mid P)}{P(G^C)}=\dfrac{0{,}1\cdot1}{1-0{,}825}=\dfrac{0{,}1}{0{,}175}=\dfrac{4}{7}\approx0{,}5714.$$
+
+**La probabilidad es $\dfrac{4}{7}\approx0{,}5714$.** (Más de la mitad de quienes no generan anticuerpos recibieron placebo.)
 ::::
 :::::
 
@@ -2895,13 +2901,22 @@ c) Calcule la probabilidad de que sabiendo que no se compraron productos electr�
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $E$ «producto electrónico» e $I$ «compra por Internet»: $P(E)=0{,}55$, $P(I)=0{,}72$, $P(E\mid I)=0{,}64$.
+1. **Datos.** Sean $E$ «producto electrónico» e $I$ «compra por Internet»: $P(E)=0{,}55$, $P(I)=0{,}72$, $P(E\mid I)=0{,}64$.
 
-**a)** $P(E\cap I)=P(I)\cdot P(E\mid I)=0{,}72\cdot0{,}64=0{,}4608$. **La probabilidad es $0{,}4608$.**
+**a)** Regla del producto:
+$$P(E\cap I)=P(I)\cdot P(E\mid I)=0{,}72\cdot0{,}64=0{,}4608.$$
 
-**b)** $P(E\cup I)=P(E)+P(I)-P(E\cap I)=0{,}55+0{,}72-0{,}4608=0{,}8092$. **La probabilidad es $0{,}8092$.**
+**La probabilidad es $0{,}4608$.**
 
-**c)** $P(I^C\mid E^C)=\dfrac{P(E^C\cap I^C)}{P(E^C)}=\dfrac{1-P(E\cup I)}{1-P(E)}=\dfrac{1-0{,}8092}{0{,}45}=0{,}424$. **La probabilidad es $0{,}424$.**
+**b)** Unión de sucesos:
+$$P(E\cup I)=P(E)+P(I)-P(E\cap I)=0{,}55+0{,}72-0{,}4608=0{,}8092.$$
+
+**La probabilidad es $0{,}8092$.**
+
+**c)** Condicionada. «Ni electrónico ni Internet» es el complementario de la unión (De Morgan), así que $P(E^C\cap I^C)=1-P(E\cup I)$:
+$$P(I^C\mid E^C)=\dfrac{P(E^C\cap I^C)}{P(E^C)}=\dfrac{1-P(E\cup I)}{1-P(E)}=\dfrac{1-0{,}8092}{0{,}45}=0{,}424.$$
+
+**La probabilidad es $0{,}424$.**
 ::::
 :::::
 
@@ -2948,15 +2963,17 @@ d) Razone si los sucesos $A$ y $B$ son independientes. *(0,5 puntos)*
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$P(A)=1-P(A^C)=1-0{,}35=0{,}65$. Como $P(A-B)=P(A)-P(A\cap B)=0{,}3$, $P(A\cap B)=0{,}65-0{,}3=0{,}35$.
+1. **Datos auxiliares.** $P(A)=1-P(A^C)=1-0{,}35=0{,}65$. Como $P(A-B)=P(A)-P(A\cap B)=0{,}3$, $P(A\cap B)=0{,}65-0{,}3=0{,}35$.
 
-**a)** $P(A\cup B)=0{,}65+0{,}55-0{,}35=\mathbf{0{,}85}$.
+**a)** «Al menos uno» es la unión:
+$$P(A\cup B)=0{,}65+0{,}55-0{,}35=\mathbf{0{,}85}.$$
 
-**b)** $P(B\mid A^C)=\dfrac{P(B\cap A^C)}{P(A^C)}=\dfrac{P(B)-P(A\cap B)}{0{,}35}=\dfrac{0{,}2}{0{,}35}=\dfrac{4}{7}\approx\mathbf{0{,}5714}$.
+**b)** Condicionada. En el numerador, $P(B\cap A^C)=P(B)-P(A\cap B)$:
+$$P(B\mid A^C)=\dfrac{P(B\cap A^C)}{P(A^C)}=\dfrac{P(B)-P(A\cap B)}{0{,}35}=\dfrac{0{,}2}{0{,}35}=\dfrac{4}{7}\approx\mathbf{0{,}5714}.$$
 
-**c)** $P(A^C\cap B^C)=1-P(A\cup B)=1-0{,}85=\mathbf{0{,}15}$.
+**c)** «Ninguno» es el complementario de la unión (De Morgan): $P(A^C\cap B^C)=1-P(A\cup B)=1-0{,}85=\mathbf{0{,}15}$.
 
-**d)** $P(A)\cdot P(B)=0{,}65\cdot0{,}55=0{,}3575\neq0{,}35=P(A\cap B)$: **no son independientes.**
+**d)** Independientes si $P(A\cap B)=P(A)\cdot P(B)$. Aquí $P(A)\cdot P(B)=0{,}65\cdot0{,}55=0{,}3575\neq0{,}35=P(A\cap B)$: **no son independientes.**
 ::::
 :::::
 
@@ -3003,13 +3020,18 @@ c) Calcule la probabilidad de que la bacteria sea del tipo $A$ y no reaccione a 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sea $N$ «reacciona a la prueba del nitrato»: $P(A)=0{,}7$, $P(B)=0{,}3$, $P(N\mid A)=0{,}15$, $P(N\mid B)=0{,}8$.
+1. **Datos.** Sea $N$ «reacciona a la prueba del nitrato»: $P(A)=0{,}7$, $P(B)=0{,}3$, $P(N\mid A)=0{,}15$, $P(N\mid B)=0{,}8$.
 
-**a)** $P(N)=0{,}7\cdot0{,}15+0{,}3\cdot0{,}8=0{,}105+0{,}24=\mathbf{0{,}345}$.
+**a)** Probabilidad total (suma de las dos ramas que acaban en $N$):
+$$P(N)=0{,}7\cdot0{,}15+0{,}3\cdot0{,}8=0{,}105+0{,}24=\mathbf{0{,}345}.$$
 
-**b)** $P(B\mid N)=\dfrac{P(B)\,P(N\mid B)}{P(N)}=\dfrac{0{,}24}{0{,}345}=\dfrac{16}{23}\approx\mathbf{0{,}6957}$.
+**b)** Bayes: rama de $B$ entre el total.
+$$P(B\mid N)=\dfrac{P(B)\,P(N\mid B)}{P(N)}=\dfrac{0{,}24}{0{,}345}=\dfrac{16}{23}\approx\mathbf{0{,}6957}.$$
 
-**c)** $P(A\cap N^C)=P(A)\,P(N^C\mid A)=0{,}7\cdot0{,}85=\mathbf{0{,}595}$.
+Interpretación: si reacciona, casi el $70\,\%$ de las veces es del tipo $B$, aunque $B$ sea solo el $30\,\%$ de las bacterias.
+
+**c)** Con $P(N^C\mid A)=1-0{,}15=0{,}85$:
+$$P(A\cap N^C)=P(A)\,P(N^C\mid A)=0{,}7\cdot0{,}85=\mathbf{0{,}595}.$$
 ::::
 :::::
 
@@ -3050,11 +3072,15 @@ b) Si la persona elegida es hombre, ¿cuál es la probabilidad de que sea bomber
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sea $M$ «ser mujer». Plantilla total: $1000+600+400=2000$. Mujeres: $0{,}42\cdot1000+0{,}2\cdot600+0{,}5\cdot400=420+120+200=740$.
+1. **Datos.** Sea $M$ «ser mujer». Plantilla total: $1000+600+400=2000$. Mujeres: $0{,}42\cdot1000+0{,}2\cdot600+0{,}5\cdot400=420+120+200=740$.
 
-**a)** $P(M)=\dfrac{740}{2000}=\mathbf{0{,}37}$.
+**a)** Casos favorables entre casos posibles (equivale a la probabilidad total):
+$$P(M)=\dfrac{740}{2000}=\mathbf{0{,}37}.$$
 
-**b)** Hombres: $2000-740=1260$, de los cuales bomberos hay $600-120=480$. $P(\text{bombero}\mid\text{hombre})=\dfrac{480}{1260}=\dfrac{8}{21}\approx\mathbf{0{,}3810}$.
+**b)** Se pide una probabilidad condicionada: entre los hombres, ¿qué proporción son bomberos?
+1. Hombres: $2000-740=1260$.
+2. Bomberos hombres: $600-120=480$.
+$$P(\text{bombero}\mid\text{hombre})=\dfrac{480}{1260}=\dfrac{8}{21}\approx\mathbf{0{,}3810}.$$
 ::::
 :::::
 
@@ -3099,11 +3125,14 @@ b) Halle la probabilidad de que la bola extraída sea roja. *(1 punto)*
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sea $S$ «suma de los dados $\ge9$»: casos favorables $(3,6),(4,5),(4,6),(5,4),(5,5),(5,6),(6,3),(6,4),(6,5),(6,6)$, es decir $P(S)=\dfrac{10}{36}=\dfrac{5}{18}$ y $P(S^C)=\dfrac{13}{18}$.
+1. **Suceso $S$:** «suma de los dados $\ge9$». Casos favorables $(3,6),(4,5),(4,6),(5,4),(5,5),(5,6),(6,3),(6,4),(6,5),(6,6)$ (10 de los 36), es decir $P(S)=\dfrac{10}{36}=\dfrac{5}{18}$ y $P(S^C)=\dfrac{13}{18}$.
+2. **Árbol.** Primera etapa: dados ($S$: urna $A$; $S^C$: urna $B$). Segunda etapa: color de la bola.
 
-**a)** $P(\text{verde}\cap B)=P(S^C)\cdot P(\text{verde}\mid B)=\dfrac{13}{18}\cdot\dfrac{3}{9}=\dfrac{13}{54}\approx\mathbf{0{,}2407}$.
+**a)** Regla del producto en la rama «dados $<9$, urna $B$, verde»:
+$$P(\text{verde}\cap B)=P(S^C)\cdot P(\text{verde}\mid B)=\dfrac{13}{18}\cdot\dfrac{3}{9}=\dfrac{13}{54}\approx\mathbf{0{,}2407}.$$
 
-**b)** $P(\text{roja})=P(S)\cdot\dfrac{4}{9}+P(S^C)\cdot\dfrac{6}{9}=\dfrac{5}{18}\cdot\dfrac{4}{9}+\dfrac{13}{18}\cdot\dfrac{6}{9}=\dfrac{20}{162}+\dfrac{78}{162}=\dfrac{49}{81}\approx\mathbf{0{,}6049}$.
+**b)** Probabilidad total: se suman las dos ramas que acaban en roja.
+$$P(\text{roja})=P(S)\cdot\dfrac{4}{9}+P(S^C)\cdot\dfrac{6}{9}=\dfrac{5}{18}\cdot\dfrac{4}{9}+\dfrac{13}{18}\cdot\dfrac{6}{9}=\dfrac{20}{162}+\dfrac{78}{162}=\dfrac{49}{81}\approx\mathbf{0{,}6049}.$$
 ::::
 :::::
 
@@ -3153,14 +3182,21 @@ c) Calcule la probabilidad de que saliendo el test negativo, la persona esté en
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sea $E$ «enfermo» y $+$ «test positivo»: $P(E)=0{,}15$, $P(+\mid E)=0{,}92$, $P(+\mid E^C)=0{,}04$.
+1. **Datos.** Sea $E$ «enfermo» y $+$ «test positivo»: $P(E)=0{,}15$, $P(+\mid E)=0{,}92$, $P(+\mid E^C)=0{,}04$.
 
-**a)** $P(+)=0{,}15\cdot0{,}92+0{,}85\cdot0{,}04=0{,}138+0{,}034=0{,}172$.
+**a)** Probabilidad total de positivo y después Bayes:
+$$P(+)=0{,}15\cdot0{,}92+0{,}85\cdot0{,}04=0{,}138+0{,}034=0{,}172.$$
 $$P(E\mid+)=\frac{0{,}138}{0{,}172}=\frac{69}{86}\approx\mathbf{0{,}8023}.$$
 
-**b)** $P(E\cap-)=0{,}15\cdot0{,}08=\mathbf{0{,}012}$.
+Interpretación: de cada 100 positivos, unos 80 están realmente enfermos.
 
-**c)** $P(-)=1-0{,}172=0{,}828$ y $P(E\mid-)=\dfrac{0{,}012}{0{,}828}=\dfrac{1}{69}\approx\mathbf{0{,}0145}$.
+**b)** Enferma y negativo: $P(-\mid E)=1-0{,}92=0{,}08$, luego
+$$P(E\cap-)=0{,}15\cdot0{,}08=\mathbf{0{,}012}.$$
+
+**c)** $P(-)=1-0{,}172=0{,}828$ y, por Bayes,
+$$P(E\mid-)=\dfrac{0{,}012}{0{,}828}=\dfrac{1}{69}\approx\mathbf{0{,}0145}.$$
+
+Interpretación: con un negativo, solo el $1{,}45\,\%$ está enfermo.
 ::::
 :::::
 
@@ -3200,13 +3236,19 @@ c) Calcule la probabilidad de que use el transporte público, sabiendo que no ti
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $V$ «tiene vehículo propio» y $T$ «usa el transporte público»: $P(V)=0{,}9$, $P(T)=0{,}4$, $P(V^C\cap T^C)=0{,}03$.
+1. **Datos.** Sean $V$ «tiene vehículo propio» y $T$ «usa el transporte público»: $P(V)=0{,}9$, $P(T)=0{,}4$, $P(V^C\cap T^C)=0{,}03$.
 
-**a)** $P(V\cup T)=1-P(V^C\cap T^C)=1-0{,}03=\mathbf{0{,}97}$.
+**a)** «Ni uno ni otro» es el complementario de la unión (De Morgan: $V^C\cap T^C=(V\cup T)^C$):
+$$P(V\cup T)=1-P(V^C\cap T^C)=1-0{,}03=\mathbf{0{,}97}.$$
 
-**b)** $P(V\cap T)=P(V)+P(T)-P(V\cup T)=0{,}9+0{,}4-0{,}97=0{,}33$, luego $P(T\cap V^C)=P(T)-P(T\cap V)=0{,}4-0{,}33=\mathbf{0{,}07}$.
+**b)**
+1. Intersección, de $P(V\cup T)=P(V)+P(T)-P(V\cap T)$: $P(V\cap T)=0{,}9+0{,}4-0{,}97=0{,}33$.
+2. Solo transporte público: $P(T\cap V^C)=P(T)-P(T\cap V)=0{,}4-0{,}33=\mathbf{0{,}07}$.
 
-**c)** $P(T\mid V^C)=\dfrac{P(T\cap V^C)}{P(V^C)}=\dfrac{0{,}07}{0{,}1}=\mathbf{0{,}7}$.
+**c)** Condicionada, con $P(V^C)=1-0{,}9=0{,}1$:
+$$P(T\mid V^C)=\dfrac{P(T\cap V^C)}{P(V^C)}=\dfrac{0{,}07}{0{,}1}=\mathbf{0{,}7}.$$
+
+Interpretación: el $70\,\%$ de quienes no tienen vehículo usan el transporte público.
 ::::
 :::::
 
@@ -3254,12 +3296,18 @@ b) Si el coche elegido no es defectuoso, ¿cuál es la probabilidad de que proce
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-$P(A)=0{,}45$, $P(B)=0{,}21$, $P(C)=0{,}34$. Sea $D$ «defectuoso»: $P(D\mid A)=0{,}01$, $P(D\mid B)=0{,}03$, $P(D\mid C)=0{,}02$.
+1. **Datos.** $P(A)=0{,}45$, $P(B)=0{,}21$, $P(C)=0{,}34$ (suman $1$). Sea $D$ «defectuoso»: $P(D\mid A)=0{,}01$, $P(D\mid B)=0{,}03$, $P(D\mid C)=0{,}02$.
 
-**a)** $P(D^C\cap C)=P(C)\cdot P(D^C\mid C)=0{,}34\cdot0{,}98=\mathbf{0{,}3332}$.
+**a)** Se pide «de la planta $C$ y no defectuoso». Por la regla del producto con $P(D^C\mid C)=1-0{,}02=0{,}98$:
+$$P(D^C\cap C)=P(C)\cdot P(D^C\mid C)=0{,}34\cdot0{,}98=\mathbf{0{,}3332}.$$
 
-**b)** $P(D^C)=0{,}45\cdot0{,}99+0{,}21\cdot0{,}97+0{,}34\cdot0{,}98=0{,}4455+0{,}2037+0{,}3332=0{,}9824$.
+**b)** Se pide la probabilidad de la planta $A$ sabiendo que no es defectuoso.
+1. **Probabilidad total** de no defectuoso (suma de las tres ramas):
+$$P(D^C)=0{,}45\cdot0{,}99+0{,}21\cdot0{,}97+0{,}34\cdot0{,}98=0{,}4455+0{,}2037+0{,}3332=0{,}9824.$$
+2. **Bayes:** la rama de $A$ dividida entre el total:
 $$P(A\mid D^C)=\frac{0{,}4455}{0{,}9824}=\frac{4455}{9824}\approx\mathbf{0{,}4535}.$$
+
+Interpretación: el $45{,}35\,\%$ de los vehículos no defectuosos salen de la planta $A$ (algo por encima de su cuota, $45\,\%$, porque es la que menos defectos tiene).
 ::::
 :::::
 
@@ -3298,10 +3346,19 @@ b) Una prueba para detectar la enfermedad da el resultado correcto en el $90\,\%
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Contagiar a cada una tiene probabilidad $0{,}8$, de forma independiente. $P(\text{las dos})=0{,}8\cdot0{,}8=\mathbf{0{,}64}$; $P(\text{alguna})=1-0{,}2\cdot0{,}2=1-0{,}04=\mathbf{0{,}96}$.
+**a)**
+1. Contagiar a cada persona sana tiene probabilidad $0{,}8$, y los contagios son independientes.
+2. Las dos: $P(\text{las dos})=0{,}8\cdot0{,}8=\mathbf{0{,}64}$.
+3. Alguna (al menos una), por el complementario de «ninguna»: $P(\text{alguna})=1-0{,}2\cdot0{,}2=1-0{,}04=\mathbf{0{,}96}$.
 
-**b)** Sea $C$ «contagiado» y $+$ «resultado positivo»: $P(C)=0{,}8$, $P(+\mid C)=0{,}9$, $P(+\mid C^C)=0{,}05$.
-$$P(+)=0{,}8\cdot0{,}9+0{,}2\cdot0{,}05=0{,}72+0{,}01=0{,}73,\qquad P(C\mid+)=\frac{0{,}72}{0{,}73}=\frac{72}{73}\approx\mathbf{0{,}9863}.$$
+**b)**
+1. Sea $C$ «contagiado» y $+$ «resultado positivo»: $P(C)=0{,}8$, $P(+\mid C)=0{,}9$, $P(+\mid C^C)=0{,}05$.
+2. **Probabilidad total** de positivo:
+$$P(+)=0{,}8\cdot0{,}9+0{,}2\cdot0{,}05=0{,}72+0{,}01=0{,}73.$$
+3. **Bayes** para $P(C\mid+)$:
+$$P(C\mid+)=\frac{0{,}72}{0{,}73}=\frac{72}{73}\approx\mathbf{0{,}9863}.$$
+
+Interpretación: con un positivo, el contagio es casi seguro ($98{,}63\,\%$).
 ::::
 :::::
 
@@ -3351,13 +3408,18 @@ c) Si además se sabe que el $10\,\%$ de las victorias obtenidas en casa y el $2
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sea $V$ «victoria»: $P(\text{casa})=0{,}4$, $P(\text{fuera})=0{,}6$, $P(V\mid\text{casa})=0{,}6$, $P(V\mid\text{fuera})=0{,}3$.
+1. **Datos.** Sea $V$ «victoria»: $P(\text{casa})=0{,}4$, $P(\text{fuera})=0{,}6$, $P(V\mid\text{casa})=0{,}6$, $P(V\mid\text{fuera})=0{,}3$.
 
-**a)** $P(V)=0{,}4\cdot0{,}6+0{,}6\cdot0{,}3=0{,}24+0{,}18=\mathbf{0{,}42}$.
+**a)** Probabilidad total (suma de las dos ramas que acaban en victoria):
+$$P(V)=0{,}4\cdot0{,}6+0{,}6\cdot0{,}3=0{,}24+0{,}18=\mathbf{0{,}42}.$$
 
-**b)** $P(\text{casa}\mid V^C)=\dfrac{0{,}4\cdot0{,}4}{1-0{,}42}=\dfrac{0{,}16}{0{,}58}=\dfrac{8}{29}\approx\mathbf{0{,}2759}$.
+**b)** Bayes con la derrota ($V^C$): en casa $0{,}4\cdot0{,}4$ y en total $1-0{,}42$:
+$$P(\text{casa}\mid V^C)=\dfrac{0{,}4\cdot0{,}4}{1-0{,}42}=\dfrac{0{,}16}{0{,}58}=\dfrac{8}{29}\approx\mathbf{0{,}2759}.$$
 
-**c)** Victoria con prórroga: $0{,}4\cdot0{,}6\cdot0{,}1+0{,}6\cdot0{,}3\cdot0{,}2=0{,}024+0{,}036=\mathbf{0{,}06}$.
+**c)** Se añade una tercera etapa (prórroga) solo a las ramas de victoria:
+$$0{,}4\cdot0{,}6\cdot0{,}1+0{,}6\cdot0{,}3\cdot0{,}2=0{,}024+0{,}036=\mathbf{0{,}06}.$$
+
+Interpretación: el $6\,\%$ de los partidos acaba en victoria tras prórroga.
 ::::
 :::::
 
@@ -3397,15 +3459,17 @@ c) Si $P(B^{C})=0{,}2$, calcule $P(A\cup B)$, $P(A^{C}\cup B^{C})$ y $P(A\mid B^
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** $P(A)=1-0{,}4=\mathbf{0{,}6}$. Como $P(A)=P(A\cap B)+P(A\cap B^C)$, $P(A\cap B)=0{,}6-0{,}12=\mathbf{0{,}48}$.
+**a)**
+1. $P(A)=1-P(A^C)=1-0{,}4=\mathbf{0{,}6}$.
+2. $A$ se parte en dos: $P(A)=P(A\cap B)+P(A\cap B^C)$. Luego $P(A\cap B)=0{,}6-0{,}12=\mathbf{0{,}48}$.
 
-**b)** Independientes: $P(A\cap B)=P(A)P(B)\Rightarrow P(B)=\dfrac{0{,}48}{0{,}6}=\mathbf{0{,}8}$.
+**b)** Independientes significa $P(A\cap B)=P(A)\cdot P(B)$. Se despeja: $P(B)=\dfrac{0{,}48}{0{,}6}=\mathbf{0{,}8}$.
 
-**c)** $P(B)=1-0{,}2=0{,}8$ (coincide con el valor anterior, así que son independientes).
+**c)** $P(B)=1-P(B^C)=1-0{,}2=0{,}8$, que coincide con el valor anterior: con este dato $A$ y $B$ son independientes.
 
-- $P(A\cup B)=0{,}6+0{,}8-0{,}48=\mathbf{0{,}92}$.
-- $P(A^C\cup B^C)=1-P(A\cap B)=1-0{,}48=\mathbf{0{,}52}$.
-- $P(A\mid B^C)=\dfrac{P(A\cap B^C)}{P(B^C)}=\dfrac{0{,}12}{0{,}2}=\mathbf{0{,}6}$.
+- **Unión:** $P(A\cup B)=0{,}6+0{,}8-0{,}48=\mathbf{0{,}92}$.
+- **Leyes de De Morgan:** $A^C\cup B^C=(A\cap B)^C$, luego $P(A^C\cup B^C)=1-P(A\cap B)=1-0{,}48=\mathbf{0{,}52}$.
+- **Condicionada:** $P(A\mid B^C)=\dfrac{P(A\cap B^C)}{P(B^C)}=\dfrac{0{,}12}{0{,}2}=\mathbf{0{,}6}$ (igual que $P(A)$, como corresponde a sucesos independientes).
 ::::
 :::::
 

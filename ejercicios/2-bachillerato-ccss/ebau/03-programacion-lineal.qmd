@@ -1409,15 +1409,23 @@ Si la empresa vende todo lo que produce y cada batería de tipo $A$ genera un be
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ las baterías de tipo $A$ e $y$ las de tipo $B$ producidas a la semana. Restricciones: $x+y\ge10$, $y\le x+10$, $150x+100y\le6000$ (es decir, $3x+2y\le120$), $x\ge0$, $y\ge0$. Beneficio: $B(x,y)=130x+140y$.
-
-Vértices de la región factible: $(10,0)$, $(40,0)$, $(20,30)$ (corte de $y=x+10$ con $3x+2y=120$) y $(0,10)$.
+1. **Incógnitas.** $x$ = baterías de tipo $A$ e $y$ = baterías de tipo $B$ producidas a la semana.
+2. **Restricciones.**
+   - Al menos 10 baterías en total: $x+y\ge10$.
+   - Las de tipo $B$ no superan en más de 10 a las de tipo $A$: $y\le x+10$.
+   - Gastos de producción, como máximo $6000$ €: $150x+100y\le6000$, es decir, $3x+2y\le120$.
+   - No negatividad: $x\ge0$, $y\ge0$.
+3. **Función objetivo.** El beneficio es $B(x,y)=130x+140y$ (se vende todo lo que se produce).
+4. **Vértices** de la región factible (cortes de dos fronteras): $(10,0)$ (de $y=0$ y $x+y=10$), $(40,0)$ (de $y=0$ y $3x+2y=120$), $(20,30)$ (de $y=x+10$ y $3x+2y=120$) y $(0,10)$ (de $x=0$ y $y=x+10$).
+5. **Beneficio en cada vértice:**
 
 | Vértice | $(10,0)$ | $(40,0)$ | $(20,30)$ | $(0,10)$ |
 |---|---|---|---|---|
 | $B$ | $1\,300$ | $5\,200$ | $6\,800$ | $1\,400$ |
 
 ![Región factible del ejercicio 1 (2021-ord), con sus vértices: (10, 0), (40, 0), (20, 30), (0, 10)](fig/2021-ord-e1.svg){fig-alt="Región factible del ejercicio 1 (2021-ord), con sus vértices: (10, 0), (40, 0), (20, 30), (0, 10)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El máximo es $6\,800$, en $(20,30)$. Gasto: $150\cdot20+100\cdot30=6000$ € (se agota el presupuesto).
 
 **Hay que producir 20 baterías de tipo $A$ y 30 de tipo $B$, con un beneficio máximo de $6\,800$ €.**
 ::::
@@ -1464,20 +1472,27 @@ $$x+4y\ge5\qquad x+2y\ge4\qquad 7x+5y\le35\qquad x\ge0$$
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Sean $x$ el número de surtidos de tipo $A$ e $y$ el de tipo $B$. Hay que **maximizar $F(x,y)=2{,}4x+1{,}8y$** sujeto a:
+**a) Formulación.**
+1. **Incógnitas.** $x$ = número de surtidos de tipo $A$, $y$ = número de surtidos de tipo $B$.
+2. **Función objetivo.** Cada $A$ se vende a 2,40 € y cada $B$ a 1,80 €: hay que **maximizar $F(x,y)=2{,}4x+1{,}8y$**.
+3. **Restricciones** (pasando kilos a gramos: 3,75 kg $=3750$ g y 4 kg $=4000$ g):
+   - arándanos: $75x+75y\le3750\iff x+y\le50$,
+   - frambuesas: $100x+50y\le4000\iff2x+y\le80$,
+   - los de tipo $A$ no superan el doble de los de tipo $B$: $x\le2y$,
+   - no negatividad: $x\ge0$, $y\ge0$.
 
-- arándanos: $75x+75y\le3750\iff x+y\le50$,
-- frambuesas: $100x+50y\le4000\iff2x+y\le80$,
-- $x\le2y$,
-- $x\ge0$, $y\ge0$.
-
-**b)** Los vértices de la región son $(0,7)$ (de $x=0$ y $7x+5y=35$), $(0,2)$ (de $x=0$ y $x+2y=4$), $\left(3,\frac{1}{2}\right)$ (de $x+4y=5$ y $x+2y=4$) y $(5,0)$ (de $x+4y=5$ y $7x+5y=35$).
+**b) Región y mínimo de $F(x,y)=2x+y$.**
+1. Fronteras: $x+4y=5$, $x+2y=4$, $7x+5y=35$ y $x=0$. Con un punto de prueba se ve que la región queda por encima de las dos primeras rectas, bajo la tercera y a la derecha de $x=0$.
+2. **Vértices** (cortes de dos fronteras): $(0,7)$ (de $x=0$ y $7x+5y=35$), $(0,2)$ (de $x=0$ y $x+2y=4$), $\left(3,\frac{1}{2}\right)$ (de $x+4y=5$ y $x+2y=4$) y $(5,0)$ (de $x+4y=5$ y $7x+5y=35$).
+3. Se evalúa $F=2x+y$ en cada vértice:
 
 | Vértice | $(0,7)$ | $(0,2)$ | $\left(3,\frac{1}{2}\right)$ | $(5,0)$ |
 |---|---|---|---|---|
 | $F=2x+y$ | $7$ | $2$ | $\frac{13}{2}$ | $10$ |
 
 ![Región factible del ejercicio 1 (2021-ord-res), con sus vértices: (0, 2), (3, 0,5), (5, 0), (0, 7)](fig/2021-ord-res-e1.svg){fig-alt="Región factible del ejercicio 1 (2021-ord-res), con sus vértices: (0, 2), (3, 0,5), (5, 0), (0, 7)" width="75%" fig-align="center"}
+
+4. El menor valor es $2$.
 
 **El mínimo se alcanza en el punto $(0,2)$ y vale $2$.**
 ::::
@@ -1518,17 +1533,21 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Las rectas frontera son $5x-3y=-9$, $x+y=11$, $6x+y=36$ y $x+2y=6$. Los vértices de la región factible son
+**a) Región factible.**
+1. Las rectas frontera son $5x-3y=-9$, $x+y=11$, $6x+y=36$ y $x+2y=6$. Con un punto de prueba (por ejemplo $(2,4)$) se comprueba qué lado cumple cada desigualdad.
+2. Los vértices de la región factible son
 $$(0,3),\quad(3,8),\quad(5,6),\quad(6,0),$$
 que se obtienen cortando $x+2y=6$ con $x=0$, $5x-3y=-9$ con $x+y=11$, $x+y=11$ con $6x+y=36$ y $6x+y=36$ con $y=0$, respectivamente. (La región es el cuadrilátero de esos cuatro vértices.)
 
 ![Región factible del ejercicio 2 (2021-ord-sup), con sus vértices: (0, 3), (6, 0), (5, 6), (3, 8)](fig/2021-ord-sup-e2.svg){fig-alt="Región factible del ejercicio 2 (2021-ord-sup), con sus vértices: (0, 3), (6, 0), (5, 6), (3, 8)" width="75%" fig-align="center"}
 
-**b)** Para $(5,7)$: $5+7=12>11$, no cumple $x+y\le11$. **No pertenece a la región.**
+**b) Pertenencia.** Se sustituye el punto en cada desigualdad. Para $(5,7)$: $5+7=12>11$, no cumple $x+y\le11$. **No pertenece a la región.**
 
-**c)** Valores de $F=10x-6y$ en los vértices: $F(0,3)=-18$, $F(3,8)=-18$, $F(5,6)=14$, $F(6,0)=60$.
+**c) Máximo y mínimo de $F=10x-6y$.**
+1. Se evalúa $F$ en los vértices: $F(0,3)=-18$, $F(3,8)=-18$, $F(5,6)=14$, $F(6,0)=60$.
+2. El mayor valor es $60$ y el menor $-18$, que se repite en dos vértices.
 
-**Máximo $60$ en $(6,0)$. Mínimo $-18$, que se alcanza en $(0,3)$ y en $(3,8)$ y, por tanto, en todos los puntos del segmento que los une** (porque $F=-18$ es la recta $5x-3y=-9$ multiplicada por 2).
+**Máximo $60$ en $(6,0)$. Mínimo $-18$, que se alcanza en $(0,3)$ y en $(3,8)$ y, por tanto, en todos los puntos del segmento que los une** (porque $F=-18$ es la recta $5x-3y=-9$ multiplicada por 2, es decir, la recta de nivel es paralela a ese lado de la región).
 ::::
 :::::
 
@@ -1567,17 +1586,22 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-**a)** Las rectas frontera son $5x-4y=-19$, $3x-4y=-13$, $x=-7$ y $x+y=-2$. La región factible es el triángulo de vértices
+**a) Región factible.**
+1. Las inecuaciones se escriben como semiplanos; la última, $-x-y\ge2$, equivale a $x+y\le-2$. Las rectas frontera son $5x-4y=-19$, $3x-4y=-13$, $x=-7$ y $x+y=-2$.
+2. Se comprueba cada semiplano con un punto de prueba y se halla su intersección: es el triángulo de vértices
 $$(-7,-2),\quad(-7,5),\quad(-3,1).$$
-En efecto: $x=-7$ corta a $x+y=-2$ en $(-7,5)$ y a $3x-4y=-13$ en $(-7,-2)$; $5x-4y=-19$ y $3x-4y=-13$ se cortan en $(-3,1)$, que está también en $x+y=-2$.
+3. Cada vértice es el corte de dos fronteras: $x=-7$ corta a $x+y=-2$ en $(-7,5)$ y a $3x-4y=-13$ en $(-7,-2)$; $5x-4y=-19$ y $3x-4y=-13$ se cortan en $(-3,1)$, que está también en $x+y=-2$.
 
 ![Región factible del ejercicio 2 (2021-ext), con sus vértices: (-7, -2), (-3, 1), (-7, 5)](fig/2021-ext-e2.svg){fig-alt="Región factible del ejercicio 2 (2021-ext), con sus vértices: (-7, -2), (-3, 1), (-7, 5)" width="75%" fig-align="center"}
 
-**b)** $G(-7,-2)=\dfrac{7}{5}-5=-\dfrac{18}{5}$, $G(-7,5)=\dfrac{7}{5}+\dfrac{25}{2}=\dfrac{139}{10}$ y $G(-3,1)=\dfrac{3}{5}+\dfrac{5}{2}=\dfrac{31}{10}$.
+**b) Máximo y mínimo de $G$.** Se evalúa $G(x,y)=-\dfrac15x+\dfrac52y$ en los vértices:
+- $G(-7,-2)=\dfrac{7}{5}-5=-\dfrac{18}{5}$,
+- $G(-7,5)=\dfrac{7}{5}+\dfrac{25}{2}=\dfrac{139}{10}$,
+- $G(-3,1)=\dfrac{3}{5}+\dfrac{5}{2}=\dfrac{31}{10}$.
 
 **Mínimo $-\dfrac{18}{5}$ en $(-7,-2)$ y máximo $\dfrac{139}{10}$ en $(-7,5)$.**
 
-**c)** $\dfrac{47}{3}\approx15{,}67>\dfrac{139}{10}=13{,}9$, que es el máximo de $G$ en la región. **No puede alcanzar ese valor.**
+**c) ¿Puede valer $\dfrac{47}{3}$?** En la región (acotada) todos los valores de $G$ están entre su mínimo y su máximo. Como $\dfrac{47}{3}\approx15{,}67>\dfrac{139}{10}=13{,}9$, que es el máximo de $G$ en la región, **no puede alcanzar ese valor.**
 ::::
 :::::
 
@@ -1614,14 +1638,19 @@ La Agencia Espacial Europea contará con un presupuesto de 2,4 millones de euros
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ las misiones e $y$ los programas. Inversión (en millones de euros): $0{,}2x+0{,}1y$. Restricciones:
-
-- presupuesto: $0{,}2x+0{,}1y\le2{,}4\iff2x+y\le24$,
-- inversión superior a 2 millones: $0{,}2x+0{,}1y\ge2\iff2x+y\ge20$,
-- al menos 4 misiones: $x\ge4$,
-- misiones no más de la mitad de los programas: $x\le\dfrac y2\iff2x\le y$.
-
-Vértices: $(4,12)$, $(4,16)$, $(5,10)$ y $(6,12)$.
+1. **Incógnitas.** $x$ = número de misiones, $y$ = número de programas. La inversión total, en millones de euros, es $0{,}2x+0{,}1y$ (200 000 € = $0{,}2$ millones por misión y 100 000 € = $0{,}1$ por programa).
+2. **Restricciones.**
+   - Presupuesto de $2{,}4$ millones: $0{,}2x+0{,}1y\le2{,}4\iff2x+y\le24$.
+   - Hay que superar los 2 millones: $0{,}2x+0{,}1y\ge2\iff2x+y\ge20$.
+   - Al menos 4 misiones: $x\ge4$.
+   - Misiones no más de la mitad de los programas: $x\le\dfrac y2\iff2x\le y$.
+3. **Región factible.** Es la zona del plano entre las rectas $2x+y=20$ y $2x+y=24$, a la derecha de $x=4$ y por encima de $y=2x$ (se comprueba cada semiplano con un punto de prueba).
+4. **Vértices** (cortes de dos rectas de la frontera):
+   - $x=4$ con $2x+y=20$: $(4,12)$.
+   - $x=4$ con $2x+y=24$: $(4,16)$.
+   - $y=2x$ con $2x+y=20$: $(5,10)$.
+   - $y=2x$ con $2x+y=24$: $(6,12)$.
+5. **Función objetivo** $F(x,y)=0{,}6x+0{,}4y$ en cada vértice:
 
 | Vértice | $(4,12)$ | $(4,16)$ | $(5,10)$ | $(6,12)$ |
 |---|---|---|---|---|
@@ -1629,7 +1658,9 @@ Vértices: $(4,12)$, $(4,16)$, $(5,10)$ y $(6,12)$.
 
 ![Región factible del ejercicio 1 (2021-ext-res), con sus vértices: (4, 12), (5, 10), (6, 12), (4, 16)](fig/2021-ext-res-e1.svg){fig-alt="Región factible del ejercicio 1 (2021-ext-res), con sus vértices: (4, 12), (5, 10), (6, 12), (4, 16)" width="75%" fig-align="center"}
 
-**Hay que llevar a cabo 4 misiones y 16 programas, y el máximo de $F$ es $8{,}8$.**
+6. **Conclusión.** El máximo está en $(4,16)$.
+
+**Hay que llevar a cabo 4 misiones y 16 programas, y el máximo de $F$ es $8{,}8$.** (Inversión: $0{,}2\cdot4+0{,}1\cdot16=2{,}4$ millones, todo el presupuesto.)
 ::::
 :::::
 
@@ -1668,15 +1699,23 @@ Cada unidad de tipo $A$ que vende le produce un beneficio de 60 euros, mientras 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-Sean $x$ las unidades de $A$ e $y$ las de $B$ por hora. Restricciones: $x+y\le10$, $x+y\ge4$, $x\le y+2$ (es decir, $x-y\le2$), $x\ge0$, $y\ge0$. Beneficio: $B(x,y)=60x+25y$.
-
-Vértices: $(0,4)$, $(0,10)$, $(6,4)$ (corte de $x+y=10$ con $x-y=2$) y $(3,1)$ (corte de $x+y=4$ con $x-y=2$).
+1. **Incógnitas.** $x$ = unidades de $A$ por hora, $y$ = unidades de $B$ por hora.
+2. **Restricciones.**
+   - Como máximo 10 unidades entre las dos: $x+y\le10$.
+   - Al menos 4 entre las dos: $x+y\ge4$.
+   - $A$ como mucho 2 unidades más que $B$: $x\le y+2$, es decir, $x-y\le2$.
+   - No negatividad: $x\ge0$, $y\ge0$.
+3. **Función objetivo.** Beneficio $B(x,y)=60x+25y$.
+4. **Vértices** de la región factible (cortes de rectas de la frontera): $(0,4)$ ($x=0$ con $x+y=4$), $(0,10)$ ($x=0$ con $x+y=10$), $(6,4)$ ($x+y=10$ con $x-y=2$) y $(3,1)$ ($x+y=4$ con $x-y=2$).
+5. **Beneficio en cada vértice:**
 
 | Vértice | $(0,4)$ | $(0,10)$ | $(6,4)$ | $(3,1)$ |
 |---|---|---|---|---|
 | $B$ | $100$ | $250$ | $460$ | $205$ |
 
 ![Región factible del ejercicio 1 (2021-ext-sup), con sus vértices: (0, 4), (3, 1), (6, 4), (0, 10)](fig/2021-ext-sup-e1.svg){fig-alt="Región factible del ejercicio 1 (2021-ext-sup), con sus vértices: (0, 4), (3, 1), (6, 4), (0, 10)" width="75%" fig-align="center"}
+
+6. **Conclusión.** El mayor valor es $460$, en $(6,4)$. Se cumple la limitación de $A$: $6\le4+2$.
 
 **Debe fabricar 6 unidades de $A$ y 4 de $B$ por hora, con un beneficio máximo de $460$ €.**
 ::::
