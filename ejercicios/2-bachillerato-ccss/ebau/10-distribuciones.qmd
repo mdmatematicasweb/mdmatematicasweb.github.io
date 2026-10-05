@@ -5,7 +5,7 @@ lang: es
 
 Ejercicios de **Matemáticas Aplicadas a las Ciencias Sociales II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *distribuciones binomial y normal*: **12 ejercicios** de convocatorias ordinarias y extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ccss/10-distribuciones/index.qmd), los [ejercicios del tema](../10-distribuciones/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ccss/10-distribuciones/index.qmd).
 
-Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **resolución breve** con el resultado. Inténtalo con la menor ayuda posible.
 
 > Se usa la tabla de la normal N(0,1) que acompaña a cada examen: los resultados se dan con los valores de la tabla (z a dos decimales), no con la calculadora.
 
@@ -26,6 +26,21 @@ a) ¿Cuál es la probabilidad de que un usuario tarde menos de 15 minutos en hac
 b) Se sabe que cada usuario que desbloquea un patinete tiene una probabilidad de $0{,}9$ de completar su trayecto sin incidencias. Si 120 usuarios desbloquean un patinete para moverse por la ciudad, ¿cuál es la probabilidad de que al menos 110 completen el trayecto sin incidencias? *(1,25 puntos)*
 
 *Relacionado también con:* [Muestreo e inferencia](11-muestreo-inferencia.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
+3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
+4. Interpreta el resultado como proporción o probabilidad.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -53,6 +68,27 @@ b) Halle el valor de $a$ para el que $P[X\ge a]=0{,}25$. *(0,5 puntos)*
 c) Se consideran muestras de tamaño 64, ¿qué distribución sigue la variable media muestral? ¿Qué probabilidad hay de que, elegida una muestra al azar, la media sea superior a $16{,}3$? *(0,75 puntos)*
 
 *Relacionado también con:* [Muestreo e inferencia](11-muestreo-inferencia.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Distribución normal: cálculo de probabilidades.** $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+
+**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Distribución normal: cálculo de probabilidades.** 1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
+3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
+4. Interpreta el resultado como proporción o probabilidad.
+
+**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
+3. Tipifica con esa desviación típica y usa la tabla.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -85,6 +121,21 @@ ii) Gane como mucho 8 partidos. *(0,5 puntos)*
 
 b) Si a lo largo de un año Paco juega 80 partidos, ¿cuál es la probabilidad de que pierda más de 10 pero menos de 20 partidos ese año? *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
+3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
+4. Interpreta el resultado como proporción o probabilidad.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -113,6 +164,21 @@ a) Calcule la probabilidad de que un viaje sea «rápido». *(0,5 puntos)*
 b) Calcule la probabilidad de que al menos 3 de 5 trayectos seleccionados de esta ruta hayan sido «rápidos». *(0,75 puntos)*
 
 c) Seleccionados 80 trayectos de esta ruta, calcule la probabilidad de que a lo sumo 15 sean «rápidos». *(0,75 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
+3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
+4. Interpreta el resultado como proporción o probabilidad.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -149,6 +215,21 @@ c) Determine el valor esperado del número de personas que contratarán el servi
 
 d) ¿Cuántas personas, de entre las que han visto el anuncio, se deberían seleccionar para que el número esperado de personas que contraten el servicio sea mayor o igual a 13? *(0,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
+3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
+4. Interpreta el resultado como proporción o probabilidad.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -182,6 +263,28 @@ b2) Con un nivel de confianza del $98\,\%$, ¿cuántos trenes de alta velocidad 
 
 *Relacionado también con:* [Muestreo e inferencia](11-muestreo-inferencia.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Distribución normal: cálculo de probabilidades.** $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+
+**Normal: hallar un valor o un parámetro.** Si se conoce la probabilidad y falta el valor $x$ (percentil) o un parámetro, se busca en la tabla el $z$ cuya $\Phi(z)$ es la probabilidad dada (el más cercano) y se deshace la tipificación: $x=\mu+z\,\sigma$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Distribución normal: cálculo de probabilidades.** 1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
+3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
+4. Interpreta el resultado como proporción o probabilidad.
+
+**Normal: hallar un valor o un parámetro.** 1. Plantea $P(X\le x)=p$ y pasa a $P\left(Z\le\dfrac{x-\mu}{\sigma}\right)=p$.
+2. Si $p<0{,}5$, usa la simetría para trabajar con $1-p$ y cambia el signo de $z$.
+3. Busca $p$ en el interior de la tabla y lee el $z$.
+4. Despeja $x$ (o el parámetro desconocido).
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -212,6 +315,27 @@ b) ¿Qué porcentaje de muestras de tamaño 25 nos proporcionará un tiempo medi
 
 *Relacionado también con:* [Muestreo e inferencia](11-muestreo-inferencia.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Distribución normal: cálculo de probabilidades.** $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+
+**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Distribución normal: cálculo de probabilidades.** 1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
+3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
+4. Interpreta el resultado como proporción o probabilidad.
+
+**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
+3. Tipifica con esa desviación típica y usa la tabla.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -240,6 +364,21 @@ b) Calcule la probabilidad de que al menos dos pacientes experimenten mejoría t
 c) ¿Cuántos pacientes se espera que mejoren al someterse a ese tratamiento? *(0,5 puntos)*
 
 d) ¿Cuántos pacientes deberían someterse al tratamiento para que el número esperado de pacientes que mejoren sea mayor o igual a 12? *(0,5 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
+3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
+4. Interpreta el resultado como proporción o probabilidad.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -275,6 +414,21 @@ c) Se selecciona una muestra aleatoria de 16 plantas. Halle la probabilidad de q
 
 *Relacionado también con:* [Muestreo e inferencia](11-muestreo-inferencia.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
+3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
+4. Interpreta el resultado como proporción o probabilidad.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -301,6 +455,21 @@ a) El tiempo que un carpintero necesita para fabricar una mesa sigue una distrib
 b) El tiempo que un carpintero necesita para fabricar una puerta sigue una distribución Normal de media desconocida y desviación típica de 20 minutos. En un mes ese carpintero ha fabricado 25 puertas, obteniendo un tiempo medio de fabricación de 40 minutos. Halle un intervalo de confianza para el tiempo medio de fabricación de una puerta con un nivel de confianza del $97\,\%$. Determine el error máximo cometido al realizar la estimación. *(1,25 puntos)*
 
 *Relacionado también con:* [Muestreo e inferencia](11-muestreo-inferencia.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
+3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
+4. Interpreta el resultado como proporción o probabilidad.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -331,6 +500,27 @@ a) Se toma una muestra aleatoria de 16 individuos que han comenzado a utilizar e
 b) Si la muestra elegida es de tamaño 25, ¿cuál es la probabilidad de que el tiempo medio muestral de adaptación a las gafas progresivas diste de 12 días a lo sumo 1 día? *(1,25 puntos)*
 
 *Relacionado también con:* [Muestreo e inferencia](11-muestreo-inferencia.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Distribución normal: cálculo de probabilidades.** $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+
+**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Distribución normal: cálculo de probabilidades.** 1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
+3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
+4. Interpreta el resultado como proporción o probabilidad.
+
+**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
+3. Tipifica con esa desviación típica y usa la tabla.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -364,6 +554,27 @@ b) Tras varias denuncias presentadas por falta de peso en los citados paquetes, 
 c) A la vista del intervalo obtenido y teniendo en cuenta que el peso que marca el paquete es de 1000 g, ¿cree que la denuncia tiene base? *(0,25 puntos)*
 
 *Relacionado también con:* [Muestreo e inferencia](11-muestreo-inferencia.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Distribución normal: cálculo de probabilidades.** $X\sim N(\mu,\sigma)$ se tipifica con $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$. La tabla da $P(Z\le z)$. Simetría: $P(Z\le-z)=1-P(Z\le z)$; $P(a\le Z\le b)=\Phi(b)-\Phi(a)$. Cualquier valor $z$ se redondea a dos decimales.
+
+**Distribución de la media y de la proporción muestral.** Si $X\sim N(\mu,\sigma)$, la media de muestras de tamaño $n$ cumple $\overline{X}\sim N\left(\mu,\dfrac{\sigma}{\sqrt n}\right)$. Para $n\ge30$ vale aunque $X$ no sea normal. La proporción muestral $\hat p\approx N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$ si $np\ge5$ y $n(1-p)\ge5$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Distribución normal: cálculo de probabilidades.** 1. Escribe la probabilidad pedida con $X$ y tipifica cada extremo.
+2. Redondea $z$ a dos decimales y busca $\Phi(z)$ en la tabla (para $z<0$ usa la simetría).
+3. Combina: restas para intervalos, $1-\Phi$ para «mayor que».
+4. Interpreta el resultado como proporción o probabilidad.
+
+**Distribución de la media y de la proporción muestral.** 1. Identifica $\mu$, $\sigma$ y $n$ (o $p$ y $n$).
+2. Escribe la distribución de $\overline{X}$ (o de $\hat p$) con su desviación típica $\sigma/\sqrt{n}$.
+3. Tipifica con esa desviación típica y usa la tabla.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución

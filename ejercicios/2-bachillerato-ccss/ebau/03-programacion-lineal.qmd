@@ -5,7 +5,7 @@ lang: es
 
 Ejercicios de **Matemáticas Aplicadas a las Ciencias Sociales II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *programación lineal*: **34 ejercicios** de convocatorias ordinarias y extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ccss/03-programacion-lineal/index.qmd), los [ejercicios del tema](../03-programacion-lineal/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ccss/03-programacion-lineal/index.qmd).
 
-Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **resolución breve** con el resultado. Inténtalo con la menor ayuda posible.
 
 
 ## 2026
@@ -18,6 +18,27 @@ Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos cl
 **Ejercicio 1B** · Ordinaria 2026 · Bloque A · *(3 puntos)* · [Examen](../../../assets/pau-ccss/2026-ord/examen.pdf){target="_blank"}
 
 Una empresa maderera fabrica tableros de dos tipos, DM y aglomerado, a partir de madera triturada. Para producir $1\ \text{m}^{2}$ de tablero DM se consumen $10\ \text{m}^{3}$ de madera triturada y se obtiene un beneficio de 10 €. Para producir $1\ \text{m}^{2}$ de tablero aglomerado se consumen $30\ \text{m}^{3}$ de madera triturada y se obtiene un beneficio de 20 €. La empresa puede fabricar diariamente como máximo $12\ \text{m}^{2}$ de tableros DM y $18\ \text{m}^{2}$ de tableros de aglomerado. Además, la capacidad total de la empresa limita la producción conjunta a $26\ \text{m}^{2}$ diarios y dispone de $600\ \text{m}^{3}$ de madera triturada al día. Determine cuántos metros cuadrados de cada tipo de tablero deben producirse diariamente para maximizar el beneficio total y calcule cuál es ese beneficio.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -50,6 +71,27 @@ La empresa vende todo lo que produce y quiere maximizar sus ingresos anuales por
 a) ¿Cuántas unidades de cada producto han de fabricarse anualmente para maximizar los ingresos? ¿Cuál es dicho ingreso óptimo? *(2,5 puntos)*
 
 b) ¿Es posible alcanzar el máximo elaborando un único producto? *(0,5 puntos)*
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -86,6 +128,21 @@ b) Obtenga algún punto de la región factible con abscisa $x=1$. *(0,5 puntos)*
 
 c) ¿Para qué valores de $x$ e $y$ se alcanza el máximo de la función $f$? ¿Cuánto vale dicho máximo? Análogamente para el mínimo. *(1 punto)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -111,6 +168,27 @@ con $\left(\tfrac{7}{16},\tfrac{13}{8}\right)$ el corte de $4x+2y=5$ con $2x+5y=
 **Ejercicio 1** · Extraordinaria · Suplente 1 2026 · Bloque A · *(3 puntos)* · [Examen](../../../assets/pau-ccss/2026-ext-sup1/examen.pdf){target="_blank"}
 
 Una empresa comercializa dos especias a granel: orégano y pimienta. Para elaborar un kilo de orégano se requieren 2 horas de secado y 2 horas de envasado, mientras que para elaborar un kilo de pimienta se requieren 1 hora de secado y 5 horas de envasado. La empresa dispone de un horno para secado que funciona 24 horas al día de lunes a viernes. Para el envasado hay 4 empleados que trabajan 40 horas a la semana como máximo cada uno. La empresa tiene el compromiso contractual de producir a la semana al menos 35 kilogramos contabilizando ambas especies. El precio de venta del orégano es de 50 € el kilogramo y el de la pimienta es de 70 € el kilogramo. Sabiendo que el coste de producción de cada kilogramo de orégano y pimienta es de 5 € y 7 € respectivamente, ¿cuántos kilogramos de cada especie deben producirse semanalmente para obtener el máximo beneficio? ¿Cuál sería dicho beneficio?
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -145,6 +223,21 @@ b) Indique razonadamente si los puntos $P(3;\,0{,}9)$ y $Q(1;\,5{,}9)$ pertenece
 
 c) Obtenga el valor máximo y mínimo de la función objetivo $F(x,y)=2x+3y-2$ en el recinto anterior, así como los puntos donde se alcanzan. *(0,75 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -176,6 +269,27 @@ $Q(1;5{,}9)$: $1+4\cdot5{,}9=24{,}6>24$, no cumple $x+4y\le24$. **$Q$ no pertene
 
 Un agricultor cultiva dos tipos de lechuga: iceberg y romana. Por razones de demanda, en cada ciclo de cultivo, la cantidad de iceberg debe ser al menos la mitad de la de romana, pero no puede superar las 1500 unidades. Además, deben cultivarse en total entre 900 y 2400 lechugas. El cultivo de iceberg requiere 15 litros de agua por unidad, mientras que el de romana necesita 18 litros de agua por unidad. ¿Cuántas unidades de cada tipo de lechuga deben cultivarse para minimizar el consumo total de agua?
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -201,6 +315,27 @@ Vértices: $(300,600)$ (corte de $y=2x$ con $x+y=900$), $(800,1600)$ (corte de $
 **Ejercicio 2** · Ordinaria · Suplente 1 · Modelo A 2025 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-sup1-a/examen.pdf){target="_blank"}
 
 Una empresa de catering dispone semanalmente de 58 horas de cocina, 50 horas de empaquetado y $60\ \text{dm}^{3}$ de almacenamiento en cámaras frigoríficas para elaborar dos tipos de menús: *premium* y *estándar*. Ambos menús requieren tiempo, tanto de preparación como de empaquetado, y espacio de almacenamiento en frigoríficos. Concretamente, el menú *premium* requiere de 2 horas de cocina, 2 horas de empaquetado y ocupa $1\ \text{dm}^{3}$ en frigoríficos. Por su parte, el menú *estándar* requiere de 3 horas de cocina, 1 hora de empaquetado y ocupa $4\ \text{dm}^{3}$ en frigoríficos. El beneficio obtenido por cada menú *premium* es de $10{,}50$ € y por cada menú *estándar* es de $5{,}50$ €. La empresa sabe que venderá todos los menús producidos. Determine cuántos menús de cada tipo deben elaborarse semanalmente para maximizar el beneficio total y a cuánto asciende este beneficio.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -228,6 +363,27 @@ Vértices: $(0,0)$, $(0,15)$, $\left(\dfrac{52}{5},\dfrac{62}{5}\right)$ (corte 
 
 Una agricultora vende en su tienda *online* frutas y hortalizas envasándolas en cajas de dos tipos diferentes. La caja «El regalo de la tierra» la vende a $19{,}75$ € y contiene 3 kg de frutas y $3{,}5$ kg de hortalizas. La caja «El tesoro de la huerta» contiene 2 kg de frutas y 4 kg de hortalizas y la vende a $18{,}50$ €. La agricultora dispone semanalmente de 210 kg de hortalizas y 150 kg de frutas. Debe vender al menos 12 cajas de «El regalo de la tierra» y no menos de 15 cajas de «El tesoro de la huerta». ¿Cuántas cajas de cada tipo debe vender a la semana para que el ingreso por la venta sea máximo? ¿A cuánto asciende este ingreso?
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -253,6 +409,27 @@ Vértices: $(12,15)$, $(12,42)$ (corte de $x=12$ con $3{,}5x+4y=210$), $(36,21)$
 **Ejercicio 2** · Ordinaria · Suplente 2 · Modelo A 2025 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-sup2-a/examen.pdf){target="_blank"}
 
 Un servicio técnico recibe un encargo para revisar lavadoras y frigoríficos de una empresa de apartahoteles. La revisión de cada lavadora requiere 100 minutos de trabajo, mientras que cada frigorífico requiere 50 minutos. El servicio técnico dispone de 26 horas y 40 minutos para hacer las revisiones. Por política de empresa, no se aceptan encargos de más de 12 lavadoras ni de más de 16 frigoríficos. Sabiendo que las revisiones se pagan a 50 € la hora, en ambos tipos de electrodomésticos, ¿cuántos electrodomésticos de cada clase debe revisar el servicio técnico para maximizar el ingreso con el encargo? ¿A cuánto asciende este ingreso máximo?
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -281,6 +458,27 @@ El máximo se alcanza en los dos vértices $(12,8)$ y $(8,16)$ y, por tanto, en 
 **Ejercicio 2** · Ordinaria · Suplente 2 · Modelo B 2025 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2025-ord-sup2-b/examen.pdf){target="_blank"}
 
 Un fabricante produce mensualmente dos tipos de abonos ecológicos, $A$ y $B$, que vende en su totalidad, obteniendo unos beneficios de 15 y 10 euros por kilogramo (kg), respectivamente. La producción de abono del tipo $A$ no puede superar los 200 kg; el doble de la producción de $B$ menos el triple de la producción de $A$ es a lo sumo 100 kg. Además, la producción de $A$ más el doble de la producción de $B$ es como mucho de 500 kg. Obtenga las cantidades que este fabricante debe producir de sendos abonos para obtener el máximo beneficio e indique el valor de este beneficio.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -311,6 +509,27 @@ Vértices: $(0,0)$, $(0,50)$, $(100,200)$ (corte de $2y-3x=100$ con $x+2y=500$),
 
 Un agricultor posee una finca con un olivar intensivo de secano y desea transformar una parte de la misma en regadío, pero manteniendo un mínimo de 20 hectáreas de cultivo de secano. Para ello, anualmente dispone de $30\,000\ \text{m}^{3}$ de agua, de $5\,500$ kg de abono y de $3\,000$ kg de productos fitosanitarios. Cada hectárea de olivar de regadío necesita $1\,500\ \text{m}^{3}$ de agua, $110$ kg de abono y $80$ kg de productos fitosanitarios; mientras que cada hectárea de olivar de secano precisa de $100$ kg de abono y $50$ kg de productos fitosanitarios. Se sabe que la producción anual por hectárea es de $5\,000$ kg en secano y de $10\,000$ kg en regadío. Determine el número de hectáreas de olivar de secano y de regadío que el agricultor debe cultivar para maximizar su producción, así como la producción máxima esperada.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -336,6 +555,27 @@ Vértices: $(20,0)$, $(20,20)$, $(28,20)$ (corte de $y=20$ con $50x+80y=3\,000$)
 **Ejercicio 2** · Ordinaria · Modelo B 2024 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-b/examen.pdf){target="_blank"}
 
 Una empresa tiene un presupuesto de $78\,000$ € para promocionar un producto y quiere contratar la emisión de anuncios por radio y televisión. El coste de emisión de un anuncio de radio es de $2\,400$ € y de un anuncio de televisión de $3\,600$ €. La empresa quiere que la diferencia entre el número de anuncios emitidos de cada tipo no sea mayor que 10 y que se emitan un mínimo de 10 anuncios en total. Si la emisión de un anuncio de radio llega a $34\,000$ personas y de un anuncio de televisión a $72\,000$ personas, ¿cuántas emisiones de cada tipo debe contratar para que la audiencia sea la mayor posible? ¿A cuánto ascendería dicha audiencia?
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -363,6 +603,27 @@ Vértices: $(0,10)$, $(10,0)$, $(19,9)$ (corte de $x-y=10$ con $2x+3y=65$) y $(7
 
 Un centro de bricolaje, que almacena bidones de pintura de interior y de exterior, cuenta con una capacidad máxima de almacenaje de 160 bidones. Por una cuestión logística, en el almacén deben mantenerse al menos 60 bidones, siendo como mínimo 20 bidones de pintura interior. Además, el número de bidones de pintura exterior almacenados no podrá ser inferior al de pintura interior. Se sabe que el gasto diario por almacenar cada bidón de pintura interior es de $1{,}50$ € y por cada bidón de pintura exterior es de $0{,}90$ €. Calcule cuántos bidones de cada tipo se deben almacenar para que el gasto diario sea mínimo e indique cuánto supone ese gasto mínimo.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -388,6 +649,27 @@ Vértices: $(20,40)$ (corte de $x=20$ con $x+y=60$), $(20,140)$ (corte de $x=20$
 **Ejercicio 2** · Ordinaria · Reserva · Modelo B 2024 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-res-b/examen.pdf){target="_blank"}
 
 Un joyero desea fabricar dos tipos de pulseras, $A$ y $B$, y para ello dispone de $50$ g de oro, $40$ g de platino y $25$ g de plata. Para fabricar las del tipo $A$ necesita 1 g de oro y 2 g de platino, mientras que para las del tipo $B$ requiere 2 g de oro, 1 g de platino y 1 g de plata. Cada pulsera del tipo $A$ se vende por $150$ € y cada una del tipo $B$ por $200$ €. Si se vende toda la producción, ¿cuántas pulseras de cada tipo debe fabricar para maximizar los ingresos y a cuánto ascienden éstos? ¿Qué cantidad de cada metal sobrará cuando se fabrique el número de joyas que proporciona el máximo beneficio?
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -417,6 +699,27 @@ Metales usados con $(10,20)$: oro $10+40=50$ g, platino $20+20=40$ g y plata $20
 
 A una tienda de decoración le han encargado decorar las mesas de un salón de celebraciones con centros florales y candelabros. En el salón se montan siempre entre 12 y 40 mesas. En cada mesa solo se puede colocar un centro floral o un candelabro y, además, el número de candelabros no puede ser superior a una tercera parte de los centros florales. Si el precio de cada centro floral es de 32 € y el de cada candelabro de 35 €, ¿cuántos artículos de cada tipo debe seleccionar la tienda para maximizar sus ingresos? ¿A cuánto ascenderán dichos ingresos?
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -442,6 +745,27 @@ Vértices: $(12,0)$, $(40,0)$, $(30,10)$ (corte de $x+y=40$ con $x=3y$) y $(9,3)
 **Ejercicio 2** · Ordinaria · Suplente · Modelo B 2024 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2024-ord-sup-b/examen.pdf){target="_blank"}
 
 Para un proyecto de software libre se dispone de 150 desarrolladores de Javascript y 120 de Python. Es necesario formar equipos de trabajo de dos tipos. El primer tipo estará compuesto por 2 desarrolladores de Javascript y 3 de Python, y el segundo tipo por 6 de Javascript y 4 de Python. Se requieren al menos 6 equipos del segundo tipo. Determine cuántos equipos de cada tipo se podrán formar para obtener el mayor número de equipos posible. En tal caso, ¿cuántos desarrolladores de Javascript y Python se utilizarán?
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -479,6 +803,21 @@ b) Indique razonadamente si los puntos $A(2,2)$ y $B(1;3{,}5)$ pertenecen a la r
 
 c) Obtenga los puntos de la región $R$ donde $F$ alcanza el máximo y el mínimo y calcule sus correspondientes valores. *(0,7 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -511,6 +850,27 @@ Semanalmente, el artesano dispone de 200 piedras de mayor calidad y 150 de menor
 
 Sabiendo que el primer tipo de anillo se vende a 21 €, el segundo a 50 € y que deben fabricarse al menos 20 anillos del primer tipo a la semana, determine cuántos anillos de cada tipo deben montarse para maximizar el valor de la venta. ¿A cuánto asciende dicho valor?
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -538,6 +898,27 @@ Vértices: $(20,30)$, $(20,60)$, $(50,50)$ (corte de $x+3y=200$ con $2x+y=150$) 
 Una empresa de material informático dispone de dos cadenas de fabricación, $A$ y $B$, en las que quiere aumentar su producción realizando horas extraordinarias.
 
 En una hora extraordinaria de trabajo, la cadena $A$ prepara 15 portátiles y 6 tablets, y la cadena $B$ prepara 10 portátiles y 10 tablets. Los costes de producción por hora extraordinaria de $A$ y $B$ son de $300$ € y $600$ € respectivamente. La cadena $B$ puede realizar, como máximo, el triple de horas extraordinarias que la cadena $A$. Si para la próxima semana se debe producir adicionalmente un máximo de 360 portátiles y al menos 216 tablets, formule y resuelva el problema que permita la planificación de la empresa que minimice los costes de producción. ¿A cuánto ascienden dichos costes?
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -567,6 +948,27 @@ Una compañía de transporte marítimo de mercancías dispone de dos barcos $B_1
 
 Halle el número de viajes que debe realizar cada barco para que el beneficio obtenido por la empresa sea máximo y obtenga dicho beneficio.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -595,6 +997,27 @@ El aforo de un campo de fútbol es de $10\,000$ personas. Según el reglamento e
 
 Si el precio de la entrada es de 50 € pero el aficionado local tiene un descuento del $20\,\%$, ¿cuántos aficionados locales y visitantes deben asistir para obtener el mayor importe con la venta de las entradas?
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -620,6 +1043,27 @@ Vértices: $(0,0)$, $(6\,000,3\,000)$ (corte de $x=2y$ con $y=3\,000$), $(7\,000
 **Ejercicio 1** · Ordinaria · Suplente · Modelo B 2023 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2023-ord-sup-b/examen.pdf){target="_blank"}
 
 Una empresa de pinturas quiere elaborar botes de pintura de dos colores nuevos: Júpiter y Minerva. Para ello, dispone de $1000$ kg de pintura de color verde, $800$ kg de color morado y $300$ kg de color naranja. Para elaborar un bote de color Júpiter se necesitan $10$ kg de pintura verde, $5$ kg de morada y $5$ kg de naranja. Para elaborar un bote de color Minerva se necesitan $5$ kg de pintura verde y $5$ kg de morada. Sabiendo que se obtiene un beneficio de $30$ € por cada bote de pintura Júpiter y $20$ € por un bote de pintura Minerva, ¿cuántos botes de cada tipo deberá fabricar la empresa para obtener un beneficio máximo? ¿Cuál será el valor de ese beneficio?
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -652,6 +1096,27 @@ Una pastelería decide preparar dos tipos de cajas de pastelitos para regalar a 
 
 Determine cuántas cajas de cada tipo deberá preparar para realizar el máximo número de regalos posible. En este caso, indique cuántos piononos y cuántos pestiños se utilizarán.
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -678,6 +1143,27 @@ Vértices: $(0,9)$, $(0,25)$, $(12,21)$ (corte de $3x+4y=120$ con $x+3y=75$) y $
 
 Una papelería quiere vender 400 cuadernos de vacaciones y 300 estuches de lápices de colores. Para ello ha preparado dos lotes de esos productos a precios especiales. Los lotes de tipo A contienen 2 cuadernos y 2 estuches; los lotes de tipo B contienen 3 cuadernos y 1 estuche. No es posible vender más de 100 lotes de tipo B. Cada lote de tipo A se vende a 35 € y cada lote de tipo B a 45 €. Calcule cuántos lotes de cada tipo debe vender la papelería para conseguir el máximo valor de ventas. ¿A cuánto asciende dicho valor?
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -703,6 +1189,27 @@ Vértices: $(0,0)$, $(0,100)$, $(50,100)$, $(125,50)$ (corte de $2x+3y=400$ con 
 **Ejercicio 1** · Ordinaria · Suplente 2022 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ord-sup/examen.pdf){target="_blank"}
 
 Una fábrica de juguetes educativos produce juegos de ajedrez y dominó. Para fabricar un ajedrez se necesitan 2 kg de madera y 4 horas de trabajo, mientras que para fabricar un dominó se necesita 1 kg de madera y 1 hora de trabajo. Para que la producción sea rentable hay que hacer al día al menos 3 juegos y emplear como máximo 7 kg de madera y 9 horas de trabajo. Cada ajedrez se vende por 40 € y cada dominó por 15 €. ¿Cuántos juegos de ajedrez y dominó deben fabricarse diariamente para que la ganancia obtenida sea máxima? ¿Cuál será esa ganancia?
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -738,6 +1245,21 @@ b) Calcule los valores máximo y mínimo de la función $F(x,y)=x+4y$ en el reci
 
 c) ¿Podría tomar la función objetivo $F$ el valor 40 en algún punto de la región factible? ¿Y el valor 20? Justifique las respuestas. *(0,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -765,6 +1287,27 @@ donde $(0,7)$ es el corte de $x=0$ con $y=2x+7$ (que también está en $-x+3y=21
 **Ejercicio 2** · Extraordinaria · Reserva 2022 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2022-ext-res/examen.pdf){target="_blank"}
 
 Una sastrería dispone de $70\ \text{m}^{2}$ de tela de lino y de $150\ \text{m}^{2}$ de tela de algodón. En la confección de un traje se emplea $1\ \text{m}^{2}$ de tela de lino y $3\ \text{m}^{2}$ de tela de algodón, y en un vestido se necesitan $2\ \text{m}^{2}$ de tela de cada tipo. Se obtienen 60 euros de beneficio por cada traje y 70 euros por cada vestido. Determine el número de trajes y vestidos que se deben confeccionar para obtener el máximo beneficio, así como dicho beneficio máximo.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -798,6 +1341,21 @@ a) Represente dicho recinto y calcule sus vértices. *(2 puntos)*
 
 b) Obtenga el valor máximo de la función $F(x,y)=x+3y$ en el recinto anterior, así como el punto donde se alcanza. *(0,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -826,6 +1384,27 @@ donde $(1,3)$ es el corte de $x+2y=7$ con $4x-y=1$, $(2,7)$ el de $4x-y=1$ con $
 Una empresa de recambios industriales produce dos tipos de baterías, $A$ y $B$. Su producción semanal debe ser de al menos 10 baterías en total y el número de baterías de tipo $B$ no puede superar en más de 10 unidades a las fabricadas de tipo $A$. Cada batería de tipo $A$ tiene unos gastos de producción de 150 euros y cada batería de tipo $B$ de 100 euros, disponiendo de un máximo de 6000 euros a la semana para el coste total de producción.
 
 Si la empresa vende todo lo que produce y cada batería de tipo $A$ genera un beneficio de 130 euros y la de tipo $B$ de 140 euros, ¿cuántas baterías de cada tipo tendrán que producir a la semana para que el beneficio total sea máximo? ¿Cuál es ese beneficio?
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -860,6 +1439,27 @@ b) Represente el recinto limitado por las siguientes restricciones, calculando s
 $$x+4y\ge5\qquad x+2y\ge4\qquad 7x+5y\le35\qquad x\ge0$$
 
 ¿En qué punto de la región anterior la función $F(x,y)=2x+y$ alcanza el mínimo y cuál es dicho valor?
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -900,6 +1500,21 @@ b) ¿Pertenece el punto $(5,7)$ a la región factible anterior? *(0,25 puntos)*
 
 c) Calcule los valores máximo y mínimo de la función $F(x,y)=10x-6y$ en la región anterior y determine los puntos en los que se alcanzan. *(0,75 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -934,6 +1549,21 @@ b) ¿Cuáles son los puntos en los que se alcanzan el mínimo y el máximo de la
 
 c) Responda de forma razonada si la función $G(x,y)=-\dfrac{1}{5}x+\dfrac{5}{2}y$ puede alcanzar el valor $\dfrac{47}{3}$ en la región factible hallada. *(0,5 puntos)*
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -959,6 +1589,27 @@ En efecto: $x=-7$ corta a $x+y=-2$ en $(-7,5)$ y a $3x-4y=-13$ en $(-7,-2)$; $5x
 **Ejercicio 1** · Extraordinaria · Reserva 2021 · Bloque A · *(2,5 puntos)* · [Examen](../../../assets/pau-ccss/2021-ext-res/examen.pdf){target="_blank"}
 
 La Agencia Espacial Europea contará con un presupuesto de 2,4 millones de euros para financiar misiones sobre Observación de la Tierra y para financiar programas de Transporte Espacial. Cada misión supone una inversión de 200 000 euros y cada programa, 100 000 euros. Teniendo en cuenta que en la decisión final deben superarse los 2 millones de euros de inversión y el número de misiones debe ser al menos 4, pero no más de la mitad del número de programas, ¿cuántas misiones y cuántos programas se deben llevar a cabo para obtener el máximo de la función $F(x,y)=0{,}6x+0{,}4y$, con $x$ misiones e $y$ programas?
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -992,6 +1643,27 @@ Vértices: $(4,12)$, $(4,16)$, $(5,10)$ y $(6,12)$.
 Un laboratorio farmacéutico tiene una línea de producción con dos medicamentos $A$ y $B$, con marca comercial y genérico respectivamente, de los cuales, entre los dos como máximo puede fabricar 10 unidades a la hora. Desde el punto de vista del rendimiento, se han de producir al menos 4 unidades por hora entre los dos y por motivos de política sanitaria, la producción de $A$ ha de ser como mucho 2 unidades más que la de $B$.
 
 Cada unidad de tipo $A$ que vende le produce un beneficio de 60 euros, mientras que cada unidad de tipo $B$ le produce un beneficio de 25 euros. Si se vende todo lo que se produce, determine las unidades de cada medicamento que deberá fabricar por hora para maximizar su beneficio y obtenga el valor de dicho beneficio.
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Programación lineal: planteamiento.** Programación lineal: se optimiza una **función objetivo** $F(x,y)$ sujeta a **restricciones** lineales (desigualdades). Las condiciones de no negatividad $x\ge0,\ y\ge0$ suelen estar implícitas en el contexto.
+
+**Programación lineal: región factible y óptimo.** La región factible es la intersección de los semiplanos de las restricciones. Si está acotada, el óptimo de $F$ se alcanza en un **vértice** (o en todo un lado si la recta de nivel es paralela a él).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Programación lineal: planteamiento.** 1. Define $x$ e $y$ (cantidad de cada producto, con unidades).
+2. Escribe una desigualdad por cada limitación («como máximo» $\le$, «al menos» $\ge$) y la función objetivo (beneficio, coste, número de unidades…).
+3. Ordena los datos en una tabla (recursos por unidad de producto) para no confundir coeficientes.
+
+**Programación lineal: región factible y óptimo.** 1. Dibuja cada recta (dos puntos) y sombrea el semiplano que cumple la desigualdad probando el punto $(0,0)$.
+2. Marca la región común y halla los vértices resolviendo los sistemas de dos rectas que se cortan en ellos.
+3. Evalúa $F$ en cada vértice y elige el mayor (máximo) o el menor (mínimo).
+4. Responde con el contexto: valores de $x$ e $y$, valor óptimo y, si lo piden, recursos sobrantes.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución

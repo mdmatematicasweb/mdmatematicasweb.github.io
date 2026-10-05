@@ -48,6 +48,32 @@ FORMATO = {
 }
 
 
+AYUDAS = Path(__file__).resolve().parent / "ayudas"
+
+
+def load_ayudas():
+    """Conceptos (ayudas/conceptos.md) y su asignación a ejercicios (ayudas/asignacion.tsv)."""
+    conceptos = {}
+    for blk in re.split(r"^@@ ", (AYUDAS / "conceptos.md").read_text(), flags=re.M)[1:]:
+        head, _, body = blk.partition("\n")
+        cid, titulo = [x.strip() for x in head.split("|")]
+        m = re.fullmatch(r"\s*### R\n(.*?)\n### M\n(.*)", body, re.S)
+        if not m:
+            sys.exit(f"ayudas/conceptos.md: {cid} necesita «### R» y «### M»")
+        conceptos[cid] = {"titulo": titulo, "R": m.group(1).strip(), "M": m.group(2).strip()}
+    asign = {}
+    for l in (AYUDAS / "asignacion.tsv").read_text().splitlines():
+        if not l.strip() or l.startswith("#"):
+            continue
+        slug, n, ids = l.split("\t")
+        ids = [i for i in ids.split(",") if i]
+        for i in ids:
+            if i not in conceptos:
+                sys.exit(f"ayudas/asignacion.tsv: {slug} {n}: concepto desconocido {i!r}")
+        asign[(slug, n)] = ids
+    return conceptos, asign
+
+
 def load_exams():
     exams = []
     for f in sorted(DATA.glob("*.md")):
@@ -94,6 +120,15 @@ def num_key(n):
 
 def validate(exams):
     errs = []
+    _, asign = load_ayudas()
+    claves = {(e["slug"], x["n"]) for e in exams for x in e["ejercicios"]}
+    for k in sorted(claves - set(asign)):
+        errs.append(f"{k[0]} ej.{k[1]}: sin ayudas en ayudas/asignacion.tsv")
+    for k in sorted(set(asign) - claves):
+        errs.append(f"{k[0]} ej.{k[1]}: asignación de ayudas para un ejercicio que no existe")
+    for k, ids in asign.items():
+        if not ids:
+            errs.append(f"{k[0]} ej.{k[1]}: lista de ayudas vacía")
     for e in exams:
         tag = e["slug"]
         ns = [x["n"] for x in e["ejercicios"]]
@@ -177,6 +212,9 @@ def sort_ej(x):
     return num_key(x["n"])
 
 
+CONCEPTOS, ASIGN = load_ayudas()
+
+
 def tema_page(t, exams):
     slug, nombre_t = TEMAS[t]
     principales = [(e, x) for e in exams for x in e["ejercicios"] if x["tema"] == t]
@@ -189,7 +227,7 @@ def tema_page(t, exams):
                f"**{len(principales)} ejercicios** de convocatorias ordinarias y extraordinarias y de sus reservas o suplentes. "
                f"Repasa antes la [teoría](../../../apuntes/2-bachillerato-ccss/{slug}/index.qmd), "
                f"los [ejercicios del tema](../{slug}/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ccss/{slug}/index.qmd).\n")
-    out.append("Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.\n")
+    out.append("Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **resolución breve** con el resultado. Inténtalo con la menor ayuda posible.\n")
     if t in (10, 11):
         out.append("> Se usa la tabla de la normal N(0,1) que acompaña a cada examen: los resultados se dan con los valores de la tabla (z a dos decimales), no con la calculadora.\n")
     if not principales:
@@ -203,12 +241,18 @@ def tema_page(t, exams):
                 last = nombre(e)
             otros = ", ".join(f"[{TEMAS[o][1]}]({TEMAS[o][0]}.qmd)" for o in x["tambien"])
             extra = f"\n\n*Relacionado también con:* {otros}." if otros else ""
+            ids = ASIGN[(e["slug"], x["n"])]
+            ayuda = "".join(
+                f"\n\n:::: {{.callout-note collapse=\"true\" appearance=\"simple\"}}\n## {titulo}\n\n"
+                + "\n\n".join(f"**{CONCEPTOS[i]['titulo']}.** {CONCEPTOS[i][k]}" if len(ids) > 1 else CONCEPTOS[i][k] for i in ids)
+                + "\n::::"
+                for k, titulo in (("R", "Ayuda 1 · Recordatorio"), ("M", "Ayuda 2 · Método")))
             sol = (f"\n\n:::: {{.callout-tip collapse=\"true\" appearance=\"simple\"}}\n## Solución\n\n{x['sol']}\n::::"
                    if x.get("sol") else "")
             out.append(
                 f"\n::::: {{.ebau-ej #{anchor(e, x)}}}\n"
                 f"**Ejercicio {x['n']}** · {nombre(e)} {y} · {BLOQUE[x['bloque']]} · *({x['pts']} puntos)* · {md_links(e, ' · ', True)}\n\n"
-                f"{x['tex']}{extra}{sol}\n"
+                f"{x['tex']}{extra}{ayuda}{sol}\n"
                 f":::::\n"
             )
     if relacionados:

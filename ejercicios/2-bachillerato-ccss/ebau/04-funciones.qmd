@@ -5,7 +5,7 @@ lang: es
 
 Ejercicios de **Matemáticas Aplicadas a las Ciencias Sociales II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *funciones*: **9 ejercicios** de convocatorias ordinarias y extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ccss/04-funciones/index.qmd), los [ejercicios del tema](../04-funciones/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ccss/04-funciones/index.qmd).
 
-Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **resolución breve** con el resultado. Inténtalo con la menor ayuda posible.
 
 
 ## 2026
@@ -28,6 +28,48 @@ c) Represente gráficamente $f$. *(0,5 puntos)*
 d) Determine la ecuación de la recta tangente a la gráfica de $f$ en todos aquellos puntos donde la pendiente de dicha recta vale $-8$. *(0,75 puntos)*
 
 *Relacionado también con:* [Límites y continuidad](05-limites-continuidad.qmd), [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Dominio, cortes y simetrías.** Dominio: excluye los puntos donde se anula un denominador, el radicando de una raíz de índice par es negativo o el argumento de un logaritmo no es positivo. Cortes: con el eje $X$ se resuelve $f(x)=0$; con el eje $Y$ se calcula $f(0)$.
+
+**Límites y asíntotas.** Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Monotonía y extremos relativos.** $f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Curvatura y puntos de inflexión.** $f''>0$: convexa; $f''<0$: cóncava. Punto de inflexión en $x=a$: $f''(a)=0$ y $f''$ cambia de signo.
+
+**Representar una función.** Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Dominio, cortes y simetrías.** 1. Halla el dominio y escríbelo como unión de intervalos.
+2. Calcula los cortes con los ejes.
+3. Estudia el signo de $f$ entre los puntos que anulan $f$ o su denominador.
+
+**Límites y asíntotas.** 1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Monotonía y extremos relativos.** 1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Curvatura y puntos de inflexión.** 1. Calcula $f''(x)$ y resuelve $f''(x)=0$.
+2. Estudia el signo de $f''$ en los intervalos que quedan.
+3. Indica los intervalos de convexidad y concavidad, y las coordenadas de los puntos de inflexión.
+
+**Representar una función.** 1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -69,6 +111,21 @@ c) Calcule la tasa de crecimiento instantánea transcurridas 5 semanas. *(0,75 p
 d) ¿Es posible alcanzar un índice de aceptación de 90 durante el trimestre? *(0,75 puntos)*
 
 *Relacionado también con:* [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+$f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -112,6 +169,29 @@ d) Estudie la monotonía de la función $f$ y esboce su gráfica. *(0,5 puntos)*
 
 *Relacionado también con:* [Límites y continuidad](05-limites-continuidad.qmd), [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Monotonía y extremos relativos.** $f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Representar una función.** Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Monotonía y extremos relativos.** 1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Representar una función.** 1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -154,6 +234,29 @@ d) Si la función de beneficios se mantuviera y transcurrieran los años de mane
 
 *Relacionado también con:* [Límites y continuidad](05-limites-continuidad.qmd), [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Monotonía y extremos relativos.** $f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Representar una función.** Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Monotonía y extremos relativos.** 1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Representar una función.** 1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -192,6 +295,29 @@ b) Calcule la ecuación de la recta tangente a la gráfica de la función $f$, e
 c) Indique si la función tiene asíntotas horizontales y verticales. En caso afirmativo, calcúlelas. *(0,75 puntos)*
 
 *Relacionado también con:* [Límites y continuidad](05-limites-continuidad.qmd), [Derivadas](06-derivadas.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Límites y asíntotas.** Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Representar una función.** Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Límites y asíntotas.** 1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Representar una función.** 1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -232,6 +358,41 @@ d) Estudie la curvatura de la función $f$. *(0,5 puntos)*
 
 *Relacionado también con:* [Límites y continuidad](05-limites-continuidad.qmd), [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Dominio, cortes y simetrías.** Dominio: excluye los puntos donde se anula un denominador, el radicando de una raíz de índice par es negativo o el argumento de un logaritmo no es positivo. Cortes: con el eje $X$ se resuelve $f(x)=0$; con el eje $Y$ se calcula $f(0)$.
+
+**Límites y asíntotas.** Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Curvatura y puntos de inflexión.** $f''>0$: convexa; $f''<0$: cóncava. Punto de inflexión en $x=a$: $f''(a)=0$ y $f''$ cambia de signo.
+
+**Representar una función.** Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Dominio, cortes y simetrías.** 1. Halla el dominio y escríbelo como unión de intervalos.
+2. Calcula los cortes con los ejes.
+3. Estudia el signo de $f$ entre los puntos que anulan $f$ o su denominador.
+
+**Límites y asíntotas.** 1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Curvatura y puntos de inflexión.** 1. Calcula $f''(x)$ y resuelve $f''(x)=0$.
+2. Estudia el signo de $f''$ en los intervalos que quedan.
+3. Indica los intervalos de convexidad y concavidad, y las coordenadas de los puntos de inflexión.
+
+**Representar una función.** 1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -270,6 +431,48 @@ b-1) ¿A partir de qué año la empresa deja de tener pérdidas? Justifique la r
 b-2) A medida que pasan los años, ¿están limitados los beneficios? En caso afirmativo, ¿cuál es su límite y por qué? *(0,5 puntos)*
 
 *Relacionado también con:* [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Dominio, cortes y simetrías.** Dominio: excluye los puntos donde se anula un denominador, el radicando de una raíz de índice par es negativo o el argumento de un logaritmo no es positivo. Cortes: con el eje $X$ se resuelve $f(x)=0$; con el eje $Y$ se calcula $f(0)$.
+
+**Límites y asíntotas.** Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Monotonía y extremos relativos.** $f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Curvatura y puntos de inflexión.** $f''>0$: convexa; $f''<0$: cóncava. Punto de inflexión en $x=a$: $f''(a)=0$ y $f''$ cambia de signo.
+
+**Representar una función.** Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Dominio, cortes y simetrías.** 1. Halla el dominio y escríbelo como unión de intervalos.
+2. Calcula los cortes con los ejes.
+3. Estudia el signo de $f$ entre los puntos que anulan $f$ o su denominador.
+
+**Límites y asíntotas.** 1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Monotonía y extremos relativos.** 1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Curvatura y puntos de inflexión.** 1. Calcula $f''(x)$ y resuelve $f''(x)=0$.
+2. Estudia el signo de $f''$ en los intervalos que quedan.
+3. Indica los intervalos de convexidad y concavidad, y las coordenadas de los puntos de inflexión.
+
+**Representar una función.** 1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -311,6 +514,35 @@ d) ¿Cuántos kilogramos debe vender para obtener un beneficio de 5000 €? *(0,
 
 *Relacionado también con:* [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Dominio, cortes y simetrías.** Dominio: excluye los puntos donde se anula un denominador, el radicando de una raíz de índice par es negativo o el argumento de un logaritmo no es positivo. Cortes: con el eje $X$ se resuelve $f(x)=0$; con el eje $Y$ se calcula $f(0)$.
+
+**Monotonía y extremos relativos.** $f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Representar una función.** Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Dominio, cortes y simetrías.** 1. Halla el dominio y escríbelo como unión de intervalos.
+2. Calcula los cortes con los ejes.
+3. Estudia el signo de $f$ entre los puntos que anulan $f$ o su denominador.
+
+**Monotonía y extremos relativos.** 1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Representar una función.** 1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -348,6 +580,48 @@ b) Calcule las ecuaciones de las asíntotas de $f$ si existen. Calcule los punto
 c) Represente la gráfica de la función $f$. *(0,5 puntos)*
 
 *Relacionado también con:* [Derivadas](06-derivadas.qmd), [Aplicaciones de la derivada](07-aplicaciones-derivada.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Dominio, cortes y simetrías.** Dominio: excluye los puntos donde se anula un denominador, el radicando de una raíz de índice par es negativo o el argumento de un logaritmo no es positivo. Cortes: con el eje $X$ se resuelve $f(x)=0$; con el eje $Y$ se calcula $f(0)$.
+
+**Límites y asíntotas.** Asíntota vertical $x=a$: $\lim_{x\to a}f(x)=\pm\infty$. Horizontal $y=b$: $\lim_{x\to\pm\infty}f(x)=b$. Oblicua $y=mx+n$: $m=\lim\dfrac{f(x)}{x}$, $n=\lim\,(f(x)-mx)$. Indeterminaciones $\dfrac{0}{0}$ (factoriza o L'Hôpital), $\dfrac{\infty}{\infty}$ (mayor grado), $\infty-\infty$ (opera).
+
+**Monotonía y extremos relativos.** $f'>0$ en un intervalo: creciente; $f'<0$: decreciente. Un extremo relativo en $x=a$ exige $f'(a)=0$; es mínimo si $f'$ pasa de $-$ a $+$ (o $f''(a)>0$) y máximo si pasa de $+$ a $-$ (o $f''(a)<0$).
+
+**Curvatura y puntos de inflexión.** $f''>0$: convexa; $f''<0$: cóncava. Punto de inflexión en $x=a$: $f''(a)=0$ y $f''$ cambia de signo.
+
+**Representar una función.** Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Dominio, cortes y simetrías.** 1. Halla el dominio y escríbelo como unión de intervalos.
+2. Calcula los cortes con los ejes.
+3. Estudia el signo de $f$ entre los puntos que anulan $f$ o su denominador.
+
+**Límites y asíntotas.** 1. Para asíntotas verticales, busca los puntos que anulan el denominador y calcula los límites laterales.
+2. Para las horizontales, calcula el límite en $+\infty$ y en $-\infty$.
+3. Si no hay horizontal en ese lado, prueba la oblicua.
+4. Escribe las ecuaciones de las rectas.
+
+**Monotonía y extremos relativos.** 1. Halla el dominio y calcula $f'(x)$.
+2. Resuelve $f'(x)=0$ y localiza también los puntos donde $f'$ no existe.
+3. Con esos puntos divide el dominio y estudia el signo de $f'$ en cada intervalo.
+4. Escribe intervalos de crecimiento y decrecimiento, y los extremos con sus coordenadas $(a,f(a))$.
+
+**Curvatura y puntos de inflexión.** 1. Calcula $f''(x)$ y resuelve $f''(x)=0$.
+2. Estudia el signo de $f''$ en los intervalos que quedan.
+3. Indica los intervalos de convexidad y concavidad, y las coordenadas de los puntos de inflexión.
+
+**Representar una función.** 1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución

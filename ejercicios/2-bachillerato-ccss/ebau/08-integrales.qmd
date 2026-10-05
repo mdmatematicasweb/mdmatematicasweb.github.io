@@ -5,7 +5,7 @@ lang: es
 
 Ejercicios de **Matemáticas Aplicadas a las Ciencias Sociales II** de la prueba de acceso a la universidad en Andalucía (PAU, antes PEvAU) de **2021 a 2026** cuyo tema principal es *integrales*: **3 ejercicios** de convocatorias ordinarias y extraordinarias y de sus reservas o suplentes. Repasa antes la [teoría](../../../apuntes/2-bachillerato-ccss/08-integrales/index.qmd), los [ejercicios del tema](../08-integrales/index.qmd) y las [actividades interactivas](../../../actividades/2-bachillerato-ccss/08-integrales/index.qmd).
 
-Debajo de cada ejercicio hay una **resolución breve** plegada, con los pasos clave y el resultado: inténtalo antes de abrirla.
+Debajo de cada ejercicio hay tres desplegables, de menos a más ayuda: **Ayuda 1 · Recordatorio** (la teoría que necesitas, sin tocar los datos), **Ayuda 2 · Método** (los pasos a seguir) y la **resolución breve** con el resultado. Inténtalo con la menor ayuda posible.
 
 
 ## 2024
@@ -28,6 +28,27 @@ b) Calcule $\displaystyle\int_9^{16}f'(t)\,dt$ e interprete el resultado. *(0,75
 c) Si se entrega una ayuda de 150 € por cada nuevo habitante durante los tres primeros años, calcule la cuantía total aproximada de la ayuda que recibirá la localidad. *(0,5 puntos)*
 
 *Relacionado también con:* [Derivadas](06-derivadas.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Primitivas.** $\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\ (n\neq-1)$; $\int\dfrac{1}{x}\,dx=\ln|x|+C$; $\int e^{kx}\,dx=\dfrac{e^{kx}}{k}+C$; $\int\dfrac{u'}{u}\,dx=\ln|u|+C$. Linealidad: $\int(af+bg)=a\int f+b\int g$. Para $F(x)$ con $F(a)=b$ se usa la constante $C$.
+
+**Integral definida (regla de Barrow).** Regla de Barrow: $\int_a^b f(x)\,dx=F(b)-F(a)$, con $F$ una primitiva de $f$. Si $f\ge0$ en $[a,b]$, la integral es el área bajo la curva; si $f\le0$, es el área cambiada de signo.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Primitivas.** 1. Reescribe el integrando como suma de potencias (separa fracciones, pasa raíces a exponente fraccionario).
+2. Integra término a término.
+3. Si piden una primitiva concreta, impón la condición $F(a)=b$ para hallar $C$.
+4. Deriva el resultado para comprobarlo.
+
+**Integral definida (regla de Barrow).** 1. Halla una primitiva $F$.
+2. Evalúa $F(b)-F(a)$ cuidando los signos y las fracciones.
+3. Interpreta el signo del resultado.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
@@ -63,6 +84,29 @@ b) Si el coste para acondicionar el nuevo suelo es de $75\ €/\text{m}^{2}$, ca
 
 *Relacionado también con:* [Funciones](04-funciones.qmd).
 
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.** Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Representar una función.** Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.** 1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Representar una función.** 1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
+
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
@@ -93,6 +137,29 @@ a) Represente gráficamente la zona deteriorada. *(1 punto)*
 b) Para reparar la región quemada, se ha de utilizar plástico cuyo coste es de 15 euros por metro cuadrado. Si en el trabajo de reparación se desperdicia la tercera parte del plástico adquirido, ¿cuánto costará el plástico comprado? *(1,5 puntos)*
 
 *Relacionado también con:* [Funciones](04-funciones.qmd).
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 1 · Recordatorio
+
+**Área de un recinto.** Área entre $y=f(x)$ y el eje $X$: $\int_a^b|f(x)|\,dx$, partiendo en los puntos donde $f$ cambia de signo. Área entre dos curvas: $\int_a^b\left(f(x)-g(x)\right)dx$ con $f\ge g$. Los límites de integración son las abscisas de corte.
+
+**Representar una función.** Una gráfica se construye con: dominio, cortes con los ejes, asíntotas, monotonía y extremos (con $f'$), curvatura y puntos de inflexión (con $f''$), y una tabla de valores. Convexa si $f''>0$ y cóncava si $f''<0$.
+::::
+
+:::: {.callout-note collapse="true" appearance="simple"}
+## Ayuda 2 · Método
+
+**Área de un recinto.** 1. Haz un esbozo del recinto.
+2. Calcula los puntos de corte (resolviendo $f=g$ o $f=0$): son los límites.
+3. Decide qué función va por encima en cada tramo; si se cruzan, parte la integral.
+4. Aplica Barrow y da el área en $\text{u}^2$, siempre positiva.
+
+**Representar una función.** 1. Dominio y cortes.
+2. Asíntotas verticales, horizontales y oblicuas con límites.
+3. Signo de $f'$: intervalos de crecimiento y extremos.
+4. Signo de $f''$ si hace falta, y unos cuantos puntos.
+5. Dibuja y comprueba que la gráfica respeta todos los datos anteriores.
+::::
 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
