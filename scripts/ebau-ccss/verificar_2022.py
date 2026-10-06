@@ -176,10 +176,15 @@ v.ok(A.det() == 3 and A * X + B == A ** 2 * C, "2022-ext ej.1a")
 v.ok((A.shape, C.shape, B.shape) == ((3, 3), (3, 2), (3, 2)) and (3, 3)[1] == 3, "2022-ext ej.1b")
 v.solucion(s, "1", "|A|=3", mat(A ** 2), mat(A ** 2 * C), mat(A ** 2 * C - B), mat(A.inv()), mat(X), "P$ es $2\\times3")
 
-V = vertices([(-2, 1, 7, "<="), (-1, 3, 21, "<="), (1, 2, 19, "<="), (1, 1, 14, "<="), (1, 0, 0, ">="), (0, 1, 0, ">=")])
+# El enunciado oficial no impone x>=0, y>=0: la región no está acotada por abajo y F no tiene mínimo.
+V = vertices([(-2, 1, 7, "<="), (-1, 3, 21, "<="), (1, 2, 19, "<="), (1, 1, 14, "<=")])
 Fv = {q: q[0] + 4 * q[1] for q in V}
-v.ok(V == [(0, 0), (0, 7), (3, 8), (9, 5), (14, 0)] and max(Fv.values()) == Fv[(3, 8)] == 35 and min(Fv.values()) == Fv[(0, 0)] == 0 and 4 + 16 == 20, "2022-ext ej.2")
-v.solucion(s, "2", "(0,0)", "(0,7)", "(3,8)", "(9,5)", "(14,0)", "F(3,8)=35", "F(0,0)=0", "F(9,5)=29", "4+16=20")
+d_x, d_y = -1, -2  # dirección de recesión: y-2x, -x+3y, x+2y, x+y no crecen
+t_ = symbols("t")
+rayo = [-2 * d_x + d_y <= 0, -d_x + 3 * d_y <= 0, d_x + 2 * d_y <= 0, d_x + d_y <= 0]
+v.ok(V == [(0, 7), (3, 8), (9, 5)] and max(Fv.values()) == Fv[(3, 8)] == 35 and all(rayo) and d_x + 4 * d_y == -9 and 4 + 16 == 20
+     and (4, 4) not in V and 4 - 2 * 4 <= 7 and -4 + 12 <= 21 and 4 + 8 <= 19 and 4 + 4 <= 14, "2022-ext ej.2")
+v.solucion(s, "2", "(0,7)", "(3,8)", "(9,5)", "F(3,8)=35", "F(9,5)=29", "F(0,7)=28", "4+16=20", "F(-t,-2t)=-9t")
 
 b_, c_ = symbols("b c")
 f = x ** 3 + b_ * x ** 2 + c_ * x - 1

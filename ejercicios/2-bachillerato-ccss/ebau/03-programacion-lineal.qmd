@@ -1634,26 +1634,25 @@ La región factible es la intersección de los semiplanos de las restricciones. 
 :::: {.callout-tip collapse="true" appearance="simple"}
 ## Solución
 
-(Se toma $x\ge0$, $y\ge0$, como es habitual en estos problemas: sin esas condiciones el recinto no estaría acotado y la función $F$ no tendría mínimo.)
+(El enunciado no impone $x\ge0$, $y\ge0$, así que se trabaja solo con las cuatro inecuaciones dadas.)
 
 **a) Recinto y vértices.**
-1. Rectas frontera: $y=2x+7$, $-x+3y=21$, $x+2y=19$, $x+y=14$, $x=0$, $y=0$.
-2. Se sombrea en cada una el semiplano que cumple la desigualdad y se toma la zona común.
-3. Vértices del recinto:
-$$(0,0),\quad(0,7),\quad(3,8),\quad(9,5),\quad(14,0),$$
-donde $(0,7)$ es el corte de $x=0$ con $y=2x+7$ (que también está en $-x+3y=21$), $(3,8)$ el de $-x+3y=21$ con $x+2y=19$, $(9,5)$ el de $x+2y=19$ con $x+y=14$ y $(14,0)$ el de $x+y=14$ con $y=0$.
+1. Rectas frontera: $y=2x+7$, $-x+3y=21$, $x+2y=19$ y $x+y=14$.
+2. Se sombrea en cada una el semiplano que cumple la desigualdad (con un punto de prueba, por ejemplo $(0,0)$, que las cumple todas) y se toma la zona común: es un recinto **no acotado**, que se extiende hacia abajo.
+3. Vértices: $(0,7)$ (corte de $y=2x+7$ con $-x+3y=21$), $(3,8)$ (corte de $-x+3y=21$ con $x+2y=19$) y $(9,5)$ (corte de $x+2y=19$ con $x+y=14$). El resto de la frontera son semirrectas: la de $y=2x+7$ hacia abajo a la izquierda de $(0,7)$ y la de $x+y=14$ hacia abajo a la derecha de $(9,5)$.
 
-![Región factible del ejercicio 2 (2022-ext), con sus vértices: (0, 0), (14, 0), (9, 5), (3, 8), (0, 7)](fig/2022-ext-e2.svg){fig-alt="Región factible del ejercicio 2 (2022-ext), con sus vértices: (0, 0), (14, 0), (9, 5), (3, 8), (0, 7)" width="75%" fig-align="center"}
+![Región factible del ejercicio 2 (2022-ext), con sus vértices: (0, 7), (3, 8), (9, 5). Vértice con el máximo: (3, 8)](fig/2022-ext-e2.svg){fig-alt="Región factible del ejercicio 2 (2022-ext), con sus vértices: (0, 7), (3, 8), (9, 5). Vértice con el máximo: (3, 8)" width="75%" fig-align="center"}
 
 **b) Máximo y mínimo de $F(x,y)=x+4y$.**
-1. Se evalúa $F$ en los vértices: $F(0,0)=0$, $F(0,7)=28$, $F(3,8)=35$, $F(9,5)=29$, $F(14,0)=14$.
+1. En los vértices: $F(0,7)=28$, $F(3,8)=35$, $F(9,5)=29$.
+2. **Máximo.** Como la región es no acotada, hay que ver también cómo se comporta $F$ lejos de los vértices. En la dirección $(-1,-2)$, que sigue la recta $y=2x+7$, se cumplen las cuatro desigualdades (ninguna de las expresiones $y-2x$, $-x+3y$, $x+2y$, $x+y$ crece), y en las otras direcciones de la región $F$ tampoco crece más allá del vértice $(3,8)$. El máximo es $F(3,8)=35$.
+3. **Mínimo.** Los puntos $(-t,-2t)$ con $t\ge0$ están en la región y $F(-t,-2t)=-9t$ se hace tan negativo como se quiera: **$F$ no tiene mínimo.**
 
-**Máximo $35$ en $(3,8)$ y mínimo $0$ en $(0,0)$.**
+**Máximo $35$ en $(3,8)$; no hay mínimo (la región no está acotada inferiormente y $F$ no está acotada por debajo).**
 
 **c) ¿Puede valer $40$? ¿Y $20$?**
-1. $F$ es continua y la región es conexa y acotada, así que toma todos los valores entre su mínimo ($0$) y su máximo ($35$).
-2. $40>35$: no puede alcanzarse.
-3. $0\le20\le35$: sí, por ejemplo en el punto $(4,4)$ ($4+16=20$), que cumple las cuatro desigualdades.
+1. $40>35$, que es el máximo de $F$ en la región: no puede alcanzarse.
+2. $F$ toma todos los valores desde $-\infty$ hasta $35$ (es continua y la región es conexa). Por ejemplo, $(4,4)$ cumple las cuatro desigualdades y $4+16=20$.
 
 **El valor $40$ no puede alcanzarse; el valor $20$ sí.**
 ::::
