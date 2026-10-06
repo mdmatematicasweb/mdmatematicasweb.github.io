@@ -95,7 +95,9 @@ format:
       light: [cosmo, brand]
       dark: [cosmo, brand]
     css: styles.css
-    include-in-header: assets/loader.html
+    include-in-header:
+      - assets/loader.html
+      - assets/analytics.html
     toc: true
     code-copy: true
     smooth-scroll: true
