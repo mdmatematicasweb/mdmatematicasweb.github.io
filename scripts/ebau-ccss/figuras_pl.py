@@ -65,10 +65,15 @@ def fmt(v):
     return f"{float(v):.2f}".rstrip("0").replace(".", ",")
 
 
+# Regiones no acotadas: puntos de la ventana de dibujo que cierran el contorno, (antes, después) de los vértices ordenados por x.
+NO_ACOTADAS = {("2022-ext", "2"): ([(-5.5, -4)], [(17, -3), (17, -4)])}
+
+
 def dibuja(slug, n, cons, opts=()):
     V = [(Rational(p[0]), Rational(p[1])) for p in vertices(cons)]
-    xs = [float(p[0]) for p in V] + [0]
-    ys = [float(p[1]) for p in V] + [0]
+    antes, despues = NO_ACOTADAS.get((slug, n), ([], []))
+    xs = [float(p[0]) for p in V] + [p[0] for p in antes + despues] + [0]
+    ys = [float(p[1]) for p in V] + [p[1] for p in antes + despues] + [0]
     dx, dy = (max(xs) - min(xs)) or 1, (max(ys) - min(ys)) or 1
     x0, x1 = min(xs) - 0.14 * dx, max(xs) + 0.2 * dx
     y0, y1 = min(ys) - 0.14 * dy, max(ys) + 0.2 * dy
@@ -77,9 +82,13 @@ def dibuja(slug, n, cons, opts=()):
     if y0 > -0.08 * dy:
         y0 = -0.08 * dy
     g = Fig(x0, x1, y0, y1)
-    cx, cy = sum(xs[:-1]) / len(V), sum(ys[:-1]) / len(V)
+    cx, cy = sum(float(p[0]) for p in V) / len(V), sum(float(p[1]) for p in V) / len(V)
     orden = sorted(V, key=lambda p: math.atan2(float(p[1]) - cy, float(p[0]) - cx))
-    pts = " L".join(f"{g.X(float(p[0])):.1f},{g.Y(float(p[1])):.1f}" for p in orden)
+    contorno = orden
+    if antes or despues:
+        orden = sorted(V, key=lambda p: p[0])
+        contorno = antes + orden + despues
+    pts = " L".join(f"{g.X(float(p[0])):.1f},{g.Y(float(p[1])):.1f}" for p in contorno)
     g.el.append(f'<path d="M{pts} Z" fill="{YELLOW}" fill-opacity="0.75" stroke="none"/>')
     g.axes()
     for a, b, c, op in cons:
@@ -100,7 +109,7 @@ def dibuja(slug, n, cons, opts=()):
         if len(cand) >= 2:
             p, q = max(((u, w) for u in cand for w in cand), key=lambda t: (t[0][0] - t[1][0]) ** 2 + (t[0][1] - t[1][1]) ** 2)
             g.line(p, q, color=CORAL, width=2, dash="0")
-    g.el.append(f'<path d="M{pts} Z" fill="none" stroke="{NAVY}" stroke-width="3"/>')
+    g.el.append(f'<path d="M{pts}{"" if antes or despues else " Z"}" fill="none" stroke="{NAVY}" stroke-width="3"/>')
     optimos = {}
     for kind, (var, expr) in opts:
         val = {p: eval(expr, {"R": Rational, var: p}) for p in V}
@@ -116,7 +125,7 @@ def dibuja(slug, n, cons, opts=()):
             g.dot(float(p[0]), float(p[1]), MINT)
         sx = -1 if float(p[0]) > (x0 + x1) / 2 + 0.25 * (x1 - x0) else 1
         g.text(float(p[0]), float(p[1]), f"({fmt(p[0])}, {fmt(p[1])})" + (" " + " y ".join(optimos[p]) if p in optimos else ""), dx=12 * sx, dy=-10 if float(p[1]) >= cy else 18, anchor="start" if sx > 0 else "end", size=13, color=NAVY, bold=True)
-    g.text(cx, cy, "región factible", size=14, color=INK, bold=True)
+    g.text(cx, cy - (0.45 * (cy - y0) if antes or despues else 0), "región factible", size=14, color=INK, bold=True)
     name = f"{slug}-e{n.lower()}"
     alt = f"Región factible del ejercicio {n} ({slug}), con sus vértices: " + ", ".join(f"({fmt(p[0])}, {fmt(p[1])})" for p in orden) + "".join(f". Vértice con el {' y '.join(k)}: ({fmt(p[0])}, {fmt(p[1])})" for p, k in optimos.items())
     OUT.mkdir(parents=True, exist_ok=True)

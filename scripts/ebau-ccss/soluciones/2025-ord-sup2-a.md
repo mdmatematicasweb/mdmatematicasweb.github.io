@@ -84,18 +84,19 @@ $$A=\int_{-4}^{-2}\left(10+\frac{5x}{2}\right)dx+\int_{-2}^{2}\left(x^2+1\right)
 ![Gráfica de f: dos rectas y un arco de parábola x²+1 entre ellas, formando una tienda sobre el eje X de x=−4 a x=4; recta tangente y=−x+3/4 en x=−1/2](fig/2025-ord-sup2-a-e4.svg){fig-alt="Gráfica de f: dos rectas y un arco de parábola x²+1 entre ellas, formando una tienda sobre el eje X de x=−4 a x=4; recta tangente y=−x+3/4 en x=−1/2" width="75%" fig-align="center"}
 
 @@ 5
-**Datos previos.** Sea $M$ «mujer» ($0{,}66$) y $N$ «cosmética natural»: $P(N\mid M)=0{,}71$, $P(H\cap N^C)=0{,}1786$.
+**Datos previos.** Sea $M$ «mujer» ($0{,}66$) y $N$ «cosmética natural»: $P(N\mid M)=0{,}71$ y $P(H\cap N^C)=0{,}1786$.
 1. $P(M\cap N)=0{,}66\cdot0{,}71=0{,}4686$.
 2. $P(H)=1-0{,}66=0{,}34$, luego $P(H\cap N)=P(H)-P(H\cap N^C)=0{,}34-0{,}1786=0{,}1614$.
-
-**b) Usa cosmética natural.**
-1. $P(N)=P(M\cap N)+P(H\cap N)=0{,}4686+0{,}1614=\mathbf{0{,}63}$.
+3. $P(N)=P(M\cap N)+P(H\cap N)=0{,}4686+0{,}1614=0{,}63$, y por tanto $P(N^C)=1-0{,}63=0{,}37$.
 
 **a) Mujer o cosmética natural.**
 1. $P(M\cup N)=P(M)+P(N)-P(M\cap N)=0{,}66+0{,}63-0{,}4686=\mathbf{0{,}8214}$.
 
-**c) Hombre si usa cosmética natural.**
-1. $P(H\mid N)=\dfrac{P(H\cap N)}{P(N)}=\dfrac{0{,}1614}{0{,}63}=\dfrac{269}{1050}\approx\mathbf{0{,}2562}$.
+**b) Hombre y cosmética natural.**
+1. Es la intersección que ya se ha calculado: $P(H\cap N)=\mathbf{0{,}1614}$.
+
+**c) Hombre, sabiendo que no usa cosmética natural.**
+1. $P(H\mid N^C)=\dfrac{P(H\cap N^C)}{P(N^C)}=\dfrac{0{,}1786}{0{,}37}=\dfrac{893}{1850}\approx\mathbf{0{,}4827}$.
 
 **d) Incompatibilidad e independencia.**
 1. Incompatibles si $P(M\cap N)=0$. Aquí $P(M\cap N)=0{,}4686\neq0$: **no son incompatibles.**

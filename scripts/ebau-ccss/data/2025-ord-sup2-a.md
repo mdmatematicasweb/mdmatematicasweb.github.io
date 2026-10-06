@@ -38,9 +38,9 @@ Una encuesta realizada a personas que utilizan productos de cosmética arroja lo
 
 a) Calcule la probabilidad de que sea mujer o use cosmética natural. *(0,75 puntos)*
 
-b) Calcule la probabilidad de que utilice cosmética natural. *(0,5 puntos)*
+b) Calcule la probabilidad de que sea hombre y utilice cosmética natural. *(0,5 puntos)*
 
-c) Sabiendo que usa cosmética natural, calcule la probabilidad de que sea hombre. *(0,75 puntos)*
+c) Sabiendo que no usa cosmética natural, calcule la probabilidad de que sea hombre. *(0,75 puntos)*
 
 d) ¿Son sucesos incompatibles «utilizar cosmética natural» y «ser mujer»? ¿Son independientes? *(0,5 puntos)*
 

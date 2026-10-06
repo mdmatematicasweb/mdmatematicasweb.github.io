@@ -71,9 +71,10 @@ $$A=\int_1^3\left[\left(-x^2+2x+3\right)-\left(-2x+6\right)\right]dx=\int_1^3\le
 
 **c) Corte de energía.**
 1. Con el equipo funcionando, la temperatura es constante ($-9\,^\circ$C).
-2. Cuando se produce el corte la temperatura empieza a subir, y el equipo vuelve a $-9\,^\circ$C cuando se restablece la energía.
+2. Al producirse el corte (en $t=1$) el equipo deja de enfriar y la temperatura sube: $f'(t)=-2t+12>0$ si $t<6$.
+3. La temperatura deja de subir en $t=6$ ($f'(6)=0$, máximo $f(6)=16\,^\circ$C): en ese instante vuelve la energía, el equipo enfría de nuevo y la temperatura baja hasta recuperar $-9\,^\circ$C en $t=11$.
 
-**El corte empezó a la $1$ ($t=1$) y terminó a las $11$ ($t=11$); duró $10$ horas.**
+**El corte empezó a la $1$ ($t=1$) y terminó a las $6$ ($t=6$); duró $5$ horas.** (Después, el equipo tarda otras $5$ horas en volver a $-9\,^\circ$C.)
 
 **d) ¿Se estropeó algo?**
 1. Suelos (se estropean al llegar a $20\,^\circ$C): el máximo de $f$ es $f(6)=16<20$. **Los suelos no se estropean.**
