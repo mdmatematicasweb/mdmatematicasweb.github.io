@@ -16,7 +16,7 @@ quarto preview
 
 ## Publicación
 
-Push a `main` dispara `.github/workflows/publish.yml`, que renderiza con Quarto y publica en la rama `gh-pages`. Sitio queda disponible en https://mdmatematicas.es
+Push a `main` dispara `.github/workflows/publish.yml`, que renderiza con Quarto y publica en la rama `gh-pages`. Sitio disponible en https://mdmatematicas.es (dominio propio vía el fichero `CNAME`; también https://mdmatematicasweb.github.io redirige a él)
 
 ## Identidad visual
 
