@@ -188,12 +188,63 @@ V['eso3-distancia'] = (ch, { assert }) => {
   else if (d.tipo === 'medio') { const [x, y] = parts(ch); assert.strictEqual(x * 2, d.x1 + d.x2); assert.strictEqual(y * 2, d.y1 + d.y2); }
   else assert(Math.abs(fv(ch.answer.value) - (Math.abs(d.x2 - d.x1) + Math.abs(d.y2 - d.y1) + Math.hypot(d.x2 - d.x1, d.y2 - d.y1))) < 1e-9);
 };
+// Respuestas con π: [exacta, aproximada]; la aproximada es la exacta redondeada a 2 decimales.
+const piPair = (ch, assert) => {
+  const [e, a] = ch.answer.parts;
+  assert.strictEqual(e.kind, 'pi'); assert(e.keypad, 'la casilla exacta lleva minitelado');
+  assert(Math.abs(a.value - Math.round(e.value * 100) / 100) < 1e-9 && a.tol > 0.005 && a.tol < 0.0051);
+  return e.value;
+};
+V['eso3-perimetros'] = (ch, { assert }) => {
+  const d = ch.data;
+  if (['rect', 'tri', 'trap', 'rombo'].includes(d.f)) {
+    const v = fv(ch.answer.value);
+    const exp = {
+      rect: () => 2 * d.a + 2 * d.b,
+      tri: () => d.x + d.y + Math.hypot(d.x, d.y),
+      trap: () => d.B + d.b + 2 * Math.hypot(d.h, (d.B - d.b) / 2),
+      rombo: () => 4 * Math.hypot(d.x, d.y),
+    }[d.f]();
+    return assert(Math.abs(v - exp) < 1e-9);
+  }
+  const v = piPair(ch, assert);
+  const exp = { circ: () => 2 * Math.PI * d.r, arco: () => 2 * Math.PI * d.r * d.n / 360, sect: () => 2 * d.r + 2 * Math.PI * d.r * d.n / 360, semi: () => Math.PI * d.r + 2 * d.r }[d.f]();
+  assert(Math.abs(v - exp) < 1e-9);
+  assert(Math.abs(v - ((d.k.n !== undefined ? d.k.n / d.k.d : d.k) * Math.PI + d.c)) < 1e-9, 'k y c coherentes con la respuesta');
+};
 V['eso3-areas'] = (ch, { assert }) => {
-  const d = ch.data, v = fv(ch.answer.value);
-  const exp = { tri: () => d.b * d.h / 2, trap: () => (d.B + d.b) * d.h / 2, rombo: () => d.D * d.d / 2, circ: () => d.r * d.r, sect: () => d.r * d.r * (d.n / 360), corona: () => d.R * d.R - d.r * d.r }[d.f]();
+  const d = ch.data;
+  if (['tri', 'trap', 'rombo'].includes(d.f)) {
+    const v = fv(ch.answer.value);
+    return assert(Math.abs(v - { tri: () => d.b * d.h / 2, trap: () => (d.B + d.b) * d.h / 2, rombo: () => d.D * d.d / 2 }[d.f]()) < 1e-9);
+  }
+  const v = piPair(ch, assert);
+  if (d.f === 'segm') {
+    // integración numérica (punto medio) de la altura entre el arco y la cuerda, independiente de «sector − triángulo»
+    const n = 200000; let A = 0;
+    for (let i = 0; i < n; i++) { const x = (i + 0.5) * d.r / n; A += (Math.sqrt(d.r * d.r - x * x) - (d.r - x)) * d.r / n; }
+    return assert(Math.abs(A - v) < 1e-4, 'segmento circular');
+  }
+  const exp = { circ: () => Math.PI * d.r * d.r, sect: () => Math.PI * d.r * d.r * (d.n / 360), corona: () => Math.PI * (d.R * d.R - d.r * d.r) }[d.f]();
   assert(Math.abs(v - exp) < 1e-9);
   // área del círculo por el límite de polígonos regulares inscritos (comprobación independiente de π r²)
-  if (d.f === 'circ') { const n = 20000; const A = 0.5 * n * d.r * d.r * Math.sin(2 * Math.PI / n); assert(Math.abs(A - v * Math.PI) < 1e-3); }
+  if (d.f === 'circ') { const n = 20000; const A = 0.5 * n * d.r * d.r * Math.sin(2 * Math.PI / n); assert(Math.abs(A - v) < 1e-3); }
+};
+V['eso3-problemas-areas'] = (ch, { assert }) => {
+  const d = ch.data, a = ch.answer.value;
+  const v = a.n !== undefined ? fv(a) : a;
+  const exp = {
+    valla: () => 2 * (d.a + d.b) * d.pr,
+    pared: () => (d.w * d.h - d.vw * d.vh - 2) * d.pr,
+    baldosas: () => (d.a * 100 / d.l) * (d.b * 100 / d.l),
+    camino: () => { let c = 0; for (let x = 0; x < d.a + 2 * d.w; x++) for (let y = 0; y < d.b + 2 * d.w; y++) if (!(x >= d.w && x < d.a + d.w && y >= d.w && y < d.b + d.w)) c++; return c; },   // cuenta de cuadraditos de 1 m
+    pista: () => 2 * d.L + Math.PI * (2 * d.r),
+    fuente: () => Math.PI * (d.r + d.w) ** 2 - Math.PI * d.r ** 2,
+    cesped: () => d.a * d.b - Math.PI * d.r ** 2,
+  }[d.t]();
+  if (['pista', 'fuente', 'cesped'].includes(d.t)) assert(Math.abs(v - Math.round(exp * 100) / 100) < 1e-9 && ch.answer.tol > 0, 'redondeo a 2 decimales');
+  else assert(Math.abs(v - exp) < 1e-9 && Number.isInteger(v));
+  if (d.t === 'cesped') assert(d.b >= 2 * d.r + 2, 'el parterre cabe en el jardín');
 };
 // ---------- Tema 9 ----------
 V['eso3-movimientos'] = (ch, { assert }) => {

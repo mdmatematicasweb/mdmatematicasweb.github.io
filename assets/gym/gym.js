@@ -300,7 +300,15 @@
     if (spec.kind === 'expr') {
       const g = parseExpr(raw[0]);
       if (g === null) return { status: 'incomplete', cells: [false] };
-      const ok = [spec.value].concat(spec.alt || []).some((v) => exprClose(g, v));   // alt: otros valores igual de válidos (p. ej. z = 1,64; 1,645 o 1,65)
+      const ok = [spec.value].concat(spec.alt || []).some((v) => (spec.tol ? Math.abs(g - v) <= spec.tol : exprClose(g, v)));   // tol: respuesta redondeada (p. ej. 0,005 para dos decimales); alt: otros valores igual de válidos (p. ej. z = 1,64; 1,645 o 1,65)
+      return { status: ok ? 'ok' : 'wrong', cells: [ok] };
+    }
+    if (spec.kind === 'pi') {
+      // Valor exacto con π: debe escribirse el símbolo («9π», «2pi+8»); un decimal suelto no vale.
+      const t = String(raw[0] === undefined ? '' : raw[0]);
+      const g = parseExpr(t);
+      if (g === null) return { status: 'incomplete', cells: [false] };
+      const ok = /pi|\u03c0/i.test(t) && Math.abs(g - spec.value) <= 1e-9 * Math.max(1, Math.abs(spec.value));
       return { status: ok ? 'ok' : 'wrong', cells: [ok] };
     }
     if (spec.kind === 'choice') {
@@ -316,6 +324,7 @@
     if (spec.kind === 'matrix') return flatten(spec.value).map(fstr);
     if (spec.kind === 'number') return [fstr(spec.value)];
     if (spec.kind === 'choice') return [String(spec.value)];
+    if (spec.kind === 'pi') return [spec.show];
     if (spec.kind === 'expr') return [spec.show || String(Math.round(spec.value * 1e4) / 1e4)];
     return [spec.value.map(fstr).join('; ')];
   }
@@ -363,6 +372,42 @@
   }
   function saveStats(key, s) {
     try { localStorage.setItem(key, JSON.stringify(s)); } catch (e) { /* sin almacenamiento */ }
+  }
+
+  /** Minitelado numérico (con π) bajo una casilla: spec.keypad. Sólo escribe en esa casilla; en móvil evita el teclado del sistema. */
+  function withKeypad(inp) {
+    const w = document.createElement('div');
+    w.className = 'gym-padwrap';
+    inp.setAttribute('inputmode', 'none');
+    const pad = document.createElement('div');
+    pad.className = 'gym-pad';
+    pad.setAttribute('role', 'group');
+    pad.setAttribute('aria-label', 'Teclado numérico');
+    const KEYS = ['7', '8', '9', '\u03c0', '4', '5', '6', '/', '1', '2', '3', '+', '0', ',', '-', '\u232b'];
+    KEYS.forEach((k) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.textContent = k;
+      b.className = 'gym-key' + (k === '\u03c0' ? ' gym-key-pi' : '');
+      b.setAttribute('aria-label', k === '\u232b' ? 'borrar' : k === '\u03c0' ? 'pi' : k);
+      b.addEventListener('mousedown', (e) => e.preventDefault());
+      b.addEventListener('click', () => {
+        if (inp.disabled) return;
+        const a = inp.selectionStart === null ? inp.value.length : inp.selectionStart, z = inp.selectionEnd === null ? a : inp.selectionEnd;
+        if (k === '\u232b') {
+          const from = a === z ? Math.max(0, a - 1) : a;
+          inp.value = inp.value.slice(0, from) + inp.value.slice(z);
+          inp.setSelectionRange(from, from);
+        } else {
+          inp.value = inp.value.slice(0, a) + k + inp.value.slice(z);
+          inp.setSelectionRange(a + 1, a + 1);
+        }
+        inp.focus();
+        inp.dispatchEvent(new Event('input', { bubbles: true }));
+      });
+      pad.appendChild(b);
+    });
+    w.appendChild(inp); w.appendChild(pad);
+    return w;
   }
 
   /** Constructor de casillas de respuesta independiente del «gym» (lo usa el examen). */
@@ -420,6 +465,7 @@
         return g;
       }
       if (sp.kind === 'matrix') return matrixGrid(sp.value, sp.colLabels, tag);
+      if (sp.keypad) return withKeypad(mkInput('respuesta', 'gym-line'));
       const wide = sp.kind === 'list' || sp.kind === 'expr';
       const inp = mkInput(sp.kind === 'list' ? 'valores separados por punto y coma' : 'respuesta', wide ? 'gym-line' : 'gym-cell gym-single');
       if (sp.kind === 'list') inp.placeholder = 'ej.: -1; 2,5';
@@ -585,6 +631,7 @@
           return g;
         }
         if (sp.kind === 'matrix') return matrixGrid(sp.value, sp.colLabels, tag);
+        if (sp.keypad) return withKeypad(mk('respuesta', 'gym-line'));
         const inp = mk(sp.kind === 'list' ? 'valores separados por punto y coma' : 'respuesta', sp.kind === 'list' ? 'gym-line' : 'gym-cell gym-single');
         if (sp.kind === 'list') inp.placeholder = 'ej.: -1; 2,5';
         return inp;

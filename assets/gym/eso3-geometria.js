@@ -1,15 +1,15 @@
 /* Ejercicios interactivos — 3º ESO, geometría (temas 8 a 10).
- * Tema 8: eso3-pitagoras, eso3-distancia, eso3-areas.
+ * Tema 8: eso3-pitagoras, eso3-distancia, eso3-perimetros, eso3-areas, eso3-problemas-areas.
  * Tema 9: eso3-movimientos, eso3-tales, eso3-semejanza.
  * Tema 10: eso3-euler, eso3-volumen, eso3-area-cuerpos.
- * Las respuestas con π se piden como el coeficiente k de «k·π» (así se corrigen de forma exacta).
+ * Las respuestas con π se piden en dos casillas: exacta (kind 'pi', con minitelado y π) y aproximada a dos decimales.
  * Verificadores independientes: tests/verify-gym-eso3.js.
  */
 (function (root) {
   'use strict';
   const G = root.MDGym;
   const { rnd, F, ftex, d$, i$, gcd, fadd, fsub, fmul, fdiv } = G;
-  const { dc, define, sg, again } = G.eso3;
+  const { dc, define, sg, again, approx } = G.eso3;
   const TERNAS = [[3, 4, 5], [6, 8, 10], [5, 12, 13], [8, 15, 17], [7, 24, 25], [9, 12, 15], [12, 16, 20], [20, 21, 29], [9, 40, 41], [10, 24, 26], [15, 20, 25]];
   const nz = (lo, hi) => { let v; do { v = rnd.int(lo, hi); } while (v === 0); return v; };
   const frac = (f) => ftex(f);
@@ -66,28 +66,135 @@
     },
   });
 
+  /* Respuestas con π: casilla «exacta» con minitelado (kind 'pi', se exige escribir π) y casilla «aproximada» a dos decimales. */
+  const PI = Math.PI;
+  const coefTex = (k) => (k.n === k.d ? '' : k.d === 1 ? String(k.n) : ftex(k));       // coeficiente de π en TeX (vacío si 1)
+  const coefShow = (k) => (k.n === k.d ? '' : k.d === 1 ? String(k.n) : k.n + '/' + k.d);
+  const piTex = (k) => coefTex(k) + '\\pi';
+  const dec2 = (x) => (Math.round(x * 100) / 100).toFixed(2).replace('.', ',');
+  /** k: fracción (coeficiente de π); c: número entero que se suma (puede ser negativo o 0). */
+  const piParts = (k, c, lab) => {
+    const val = fv(k) * PI + c;
+    const tex = piTex(k) + (c > 0 ? '+' + c : c < 0 ? String(c) : '');
+    const show = coefShow(k) + 'pi' + (c > 0 ? '+' + c : c < 0 ? String(c) : '');
+    return { tex, val, answer: { kind: 'multi', parts: [
+      { kind: 'pi', label: lab, value: val, show, keypad: true },
+      { kind: 'expr', label: lab + '\\approx', value: Math.round(val * 100) / 100, tol: 0.005 + 1e-9, show: dec2(val) },
+    ] } };
+  };
+  const fv = (f) => f.n / f.d;
+  const PEDIR = ' Escribe el resultado exacto con ' + i$('\\pi') + ' (usa el teclado) y después redondeado a dos decimales.';
+
+  define({
+    id: 'eso3-perimetros',
+    title: 'Perímetros de figuras planas',
+    help: [
+      'Polígono: suma de sus lados (en el rombo los 4 lados son iguales; en el trapecio isósceles, los dos lados oblicuos también). Circunferencia: $L=2\\pi r$. Arco de $n^\\circ$: $\\frac{2\\pi r\\,n}{360}$. Perímetro de un sector: $2r+$ arco.',
+      'Si falta un lado, se halla con Pitágoras: lado del rombo $\\sqrt{(D/2)^2+(d/2)^2}$. Ejemplo: sector de radio $6$ y $60^\\circ$: arco $=\\frac{2\\pi\\cdot6\\cdot60}{360}=2\\pi$, perímetro $=12+2\\pi\\approx18{,}28$. Longitudes en cm, m... (no cuadradas).',
+    ],
+    params: [{ key: 'fig', label: 'Figura', options: [['rect', 'Rectángulo'], ['tri', 'Triángulo rectángulo'], ['trap', 'Trapecio isósceles'], ['rombo', 'Rombo'], ['circ', 'Circunferencia'], ['arco', 'Arco de circunferencia'], ['sect', 'Sector circular'], ['semi', 'Semicírculo']] }],
+    generate(p) {
+      const f = p.fig;
+      if (f === 'rect') { const a = rnd.int(5, 25), b = rnd.int(3, a - 1); return { prompt: 'Calcula el perímetro de un rectángulo de ' + i$(a) + ' cm de largo y ' + i$(b) + ' cm de ancho (en cm).', answer: { kind: 'number', label: 'P=', value: F(2 * (a + b)) }, steps: [d$('P=2(a+b)=2(' + a + '+' + b + ')=' + (2 * (a + b)))], mistakes: [{ value: F(a * b), msg: 'eso es el área; el perímetro es la suma de los lados.' }], data: { f, a, b } }; }
+      if (f === 'tri') { const [x, y, z] = rnd.pick(TERNAS); return { prompt: 'Un triángulo rectángulo tiene catetos de ' + i$(x) + ' cm y ' + i$(y) + ' cm. Calcula su perímetro (en cm).', answer: { kind: 'number', label: 'P=', value: F(x + y + z) },
+        steps: ['Hipotenusa: ' + i$('\\sqrt{' + x + '^2+' + y + '^2}=' + z) + '.', 'Perímetro: ' + d$(x + '+' + y + '+' + z + '=' + (x + y + z))], mistakes: [{ value: F(x + y), msg: 'falta la hipotenusa: calcúlala con Pitágoras y súmala.' }], data: { f, x, y, z } }; }
+      if (f === 'trap') {
+        const [x, y, z] = rnd.pick(TERNAS), [hh, mm] = rnd.pick([[x, y], [y, x]]), b = rnd.int(4, 12), B = b + 2 * mm;   // altura hh, mitad de (B-b) = mm, lado oblicuo z
+        return { prompt: 'Un trapecio isósceles tiene bases de ' + i$(B) + ' cm y ' + i$(b) + ' cm y altura ' + i$(hh) + ' cm. Calcula su perímetro (en cm).', answer: { kind: 'number', label: 'P=', value: F(B + b + 2 * z) },
+          steps: ['A cada lado sobresale ' + i$('\\frac{' + B + '-' + b + '}{2}=' + mm) + ' cm; el lado oblicuo es la hipotenusa: ' + i$('\\sqrt{' + hh + '^2+' + mm + '^2}=' + z) + '.', 'Perímetro: ' + d$(B + '+' + b + '+2\\cdot' + z + '=' + (B + b + 2 * z))], mistakes: [{ value: F(B + b + z), msg: 'hay dos lados oblicuos iguales: súmalos los dos.' }], data: { f, B, b, h: hh, z, m: mm } };
+      }
+      if (f === 'rombo') { const [x, y, z] = rnd.pick(TERNAS); return { prompt: 'Un rombo tiene diagonales de ' + i$(2 * x) + ' cm y ' + i$(2 * y) + ' cm. Calcula su perímetro (en cm).', answer: { kind: 'number', label: 'P=', value: F(4 * z) },
+        steps: ['Las diagonales se cortan en su punto medio formando triángulos rectángulos de catetos ' + i$(x) + ' y ' + i$(y) + ': lado ' + i$('=\\sqrt{' + x + '^2+' + y + '^2}=' + z) + '.', 'Perímetro: ' + d$('4\\cdot' + z + '=' + (4 * z))], mistakes: [{ value: F(2 * (x + y)), msg: 'los catetos no son los lados del rombo: el lado es la hipotenusa.' }], data: { f, x, y, z } }; }
+      if (f === 'circ') {
+        const r = rnd.int(2, 15), pp = piParts(F(2 * r), 0, 'L');
+        return { prompt: 'Calcula la longitud de una circunferencia de radio ' + i$(r) + ' cm.' + PEDIR, answer: pp.answer, steps: [d$('L=2\\pi r=2\\pi\\cdot' + r + '=' + pp.tex), 'Con calculadora: ' + i$(pp.tex + '\\approx' + approx(pp.val, 2)) + ' cm.'], mistakes: [], data: { f, r, k: 2 * r, c: 0 } };
+      }
+      if (f === 'arco') {
+        const r = rnd.int(3, 12), n = rnd.pick([30, 45, 60, 90, 120, 135, 180, 270]), k = F(2 * r * n, 360), pp = piParts(k, 0, 'L');
+        return { prompt: 'Calcula la longitud de un arco de ' + i$(n + '^\\circ') + ' en una circunferencia de radio ' + i$(r) + ' cm.' + PEDIR, answer: pp.answer, steps: [d$('L=\\frac{2\\pi r\\,n}{360}=\\frac{2\\pi\\cdot' + r + '\\cdot' + n + '}{360}=' + pp.tex), 'Con calculadora: ' + i$(pp.tex + '\\approx' + approx(pp.val, 2)) + ' cm.'], mistakes: [], data: { f, r, n, k, c: 0 } };
+      }
+      if (f === 'sect') {
+        const r = rnd.int(3, 12), n = rnd.pick([30, 45, 60, 90, 120, 135, 180, 270]), k = F(2 * r * n, 360), pp = piParts(k, 2 * r, 'P');
+        return { prompt: 'Calcula el perímetro de un sector circular de radio ' + i$(r) + ' cm y ángulo ' + i$(n + '^\\circ') + '.' + PEDIR, answer: pp.answer,
+          steps: ['Arco: ' + i$('\\frac{2\\pi\\cdot' + r + '\\cdot' + n + '}{360}=' + piTex(k)) + '. Los dos radios: ' + i$('2\\cdot' + r + '=' + (2 * r)) + '.', 'Perímetro: ' + d$(pp.tex), 'Con calculadora: ' + i$('\\approx' + approx(pp.val, 2)) + ' cm.'], mistakes: [], data: { f, r, n, k, c: 2 * r } };
+      }
+      const r = rnd.int(2, 15), pp = piParts(F(r), 2 * r, 'P');   // semicírculo: media circunferencia + diámetro
+      return { prompt: 'Calcula el perímetro de un semicírculo de radio ' + i$(r) + ' cm.' + PEDIR, answer: pp.answer,
+        steps: ['Media circunferencia: ' + i$('\\pi r=' + piTex(F(r))) + '. Diámetro: ' + i$('2r=' + (2 * r)) + '.', 'Perímetro: ' + d$(pp.tex + '\\approx' + approx(pp.val, 2))], mistakes: [], data: { f, r, k: r, c: 2 * r } };
+    },
+  });
+
   define({
     id: 'eso3-areas',
     title: 'Áreas de figuras planas',
     help: [
       'Triángulo: $\\frac{b\\cdot h}{2}$. Trapecio: $\\frac{(B+b)\\,h}{2}$. Rombo: $\\frac{D\\cdot d}{2}$. Círculo: $\\pi r^2$. Sector circular de $n^\\circ$: $\\frac{\\pi r^2\\,n}{360}$. Corona circular: $\\pi(R^2-r^2)$.',
-      'Las áreas con $\\pi$ se piden como el número $k$ en «$k\\pi$». Ejemplo: círculo de radio $3$: $A=9\\pi$, luego $k=9$. El área se mide en unidades cuadradas.',
+      'Segmento circular (entre una cuerda y su arco) = sector $-$ triángulo. Ejemplo: $r=6$ y $90^\\circ$: sector $=9\\pi$, triángulo $=\\frac{6\\cdot6}{2}=18$, segmento $=9\\pi-18\\approx10{,}27$. Las áreas con $\\pi$ se dan exactas y redondeadas; se miden en unidades cuadradas.',
     ],
-    params: [{ key: 'fig', label: 'Figura', options: [['tri', 'Triángulo'], ['trap', 'Trapecio'], ['rombo', 'Rombo'], ['circ', 'Círculo'], ['sect', 'Sector circular'], ['corona', 'Corona circular']] }],
+    params: [{ key: 'fig', label: 'Figura', options: [['tri', 'Triángulo'], ['trap', 'Trapecio'], ['rombo', 'Rombo'], ['circ', 'Círculo'], ['sect', 'Sector circular'], ['corona', 'Corona circular'], ['segm', 'Segmento circular']] }],
     generate(p) {
       const f = p.fig;
       if (f === 'tri') { const b = rnd.int(4, 20), h = rnd.int(3, 15); return { prompt: 'Calcula el área de un triángulo de base ' + i$(b) + ' cm y altura ' + i$(h) + ' cm (en cm²).', answer: { kind: 'number', label: 'A=', value: F(b * h, 2) }, steps: [d$('A=\\frac{b\\cdot h}{2}=\\frac{' + b + '\\cdot' + h + '}{2}=' + ftex(F(b * h, 2)))], mistakes: [{ value: F(b * h), msg: 'falta dividir entre 2.' }], data: { f, b, h } }; }
       if (f === 'trap') { const B = rnd.int(8, 20), b = rnd.int(3, B - 2), h = rnd.int(3, 12); return { prompt: 'Calcula el área de un trapecio de bases ' + i$(B) + ' cm y ' + i$(b) + ' cm y altura ' + i$(h) + ' cm (en cm²).', answer: { kind: 'number', label: 'A=', value: F((B + b) * h, 2) }, steps: [d$('A=\\frac{(B+b)\\,h}{2}=\\frac{(' + B + '+' + b + ')\\cdot' + h + '}{2}=' + ftex(F((B + b) * h, 2)))], mistakes: [], data: { f, B, b, h } }; }
       if (f === 'rombo') { const D = rnd.int(6, 24), d = rnd.int(4, 18); return { prompt: 'Calcula el área de un rombo de diagonales ' + i$(D) + ' cm y ' + i$(d) + ' cm (en cm²).', answer: { kind: 'number', label: 'A=', value: F(D * d, 2) }, steps: [d$('A=\\frac{D\\cdot d}{2}=\\frac{' + D + '\\cdot' + d + '}{2}=' + ftex(F(D * d, 2)))], mistakes: [], data: { f, D, d } }; }
-      if (f === 'circ') { const r = rnd.int(2, 12); return { prompt: 'Calcula el área de un círculo de radio ' + i$(r) + ' cm. Escríbela como ' + i$('k\\pi') + ' y da ' + i$('k') + '.', answer: { kind: 'number', label: 'k=', value: F(r * r) }, steps: [d$('A=\\pi r^2=\\pi\\cdot' + r + '^2=' + (r * r) + '\\pi')], mistakes: [{ value: F(2 * r), msg: '$2r$ es la longitud de la circunferencia (sin $\\pi$): el área es $\\pi r^2$.' }], data: { f, r } }; }
+      if (f === 'circ') { const r = rnd.int(2, 12), pp = piParts(F(r * r), 0, 'A'); return { prompt: 'Calcula el área de un círculo de radio ' + i$(r) + ' cm (en cm²).' + PEDIR, answer: pp.answer,
+        steps: [d$('A=\\pi r^2=\\pi\\cdot' + r + '^2=' + pp.tex), 'Con calculadora: ' + i$(pp.tex + '\\approx' + approx(pp.val, 2)) + ' cm².'], mistakes: [], data: { f, r, k: r * r, c: 0 } }; }
       if (f === 'sect') {
-        const r = rnd.int(3, 12), n = rnd.pick([30, 45, 60, 90, 120, 180, 270]), k = F(r * r * n, 360);
-        return { prompt: 'Calcula el área de un sector circular de radio ' + i$(r) + ' cm y ángulo ' + i$(n + '^\\circ') + '. Escríbela como ' + i$('k\\pi') + ' y da ' + i$('k') + '.', answer: { kind: 'number', label: 'k=', value: k },
-          steps: [d$('A=\\frac{\\pi r^2\\,n}{360}=\\frac{\\pi\\cdot' + r + '^2\\cdot' + n + '}{360}=' + ftex(k) + '\\pi')], mistakes: [], data: { f, r, n } };
+        const r = rnd.int(3, 12), n = rnd.pick([30, 45, 60, 90, 120, 180, 270]), k = F(r * r * n, 360), pp = piParts(k, 0, 'A');
+        return { prompt: 'Calcula el área de un sector circular de radio ' + i$(r) + ' cm y ángulo ' + i$(n + '^\\circ') + ' (en cm²).' + PEDIR, answer: pp.answer,
+          steps: [d$('A=\\frac{\\pi r^2\\,n}{360}=\\frac{\\pi\\cdot' + r + '^2\\cdot' + n + '}{360}=' + pp.tex), 'Con calculadora: ' + i$(pp.tex + '\\approx' + approx(pp.val, 2)) + ' cm².'], mistakes: [], data: { f, r, n, k, c: 0 } };
       }
-      const R = rnd.int(4, 14), r = rnd.int(1, R - 2);
-      return { prompt: 'Una corona circular tiene radio exterior ' + i$(R) + ' cm y radio interior ' + i$(r) + ' cm. Calcula su área como ' + i$('k\\pi') + ' y da ' + i$('k') + '.', answer: { kind: 'number', label: 'k=', value: F(R * R - r * r) },
-        steps: [d$('A=\\pi(R^2-r^2)=\\pi(' + R + '^2-' + r + '^2)=' + (R * R - r * r) + '\\pi')], mistakes: [{ value: F((R - r) * (R - r)), msg: '$(R-r)^2$ no es $R^2-r^2$: se restan los cuadrados de los radios.' }], data: { f, R, r } };
+      if (f === 'segm') {
+        const r = rnd.pick([4, 6, 8, 10, 12]), k = F(r * r, 4), c = -(r * r) / 2, pp = piParts(k, c, 'A');
+        return { prompt: 'Una cuerda de una circunferencia de radio ' + i$(r) + ' cm forma un ángulo central de ' + i$('90^\\circ') + '. Calcula el área del segmento circular que determina (la parte entre la cuerda y el arco menor), en cm².' + PEDIR, answer: pp.answer,
+          steps: ['Segmento = sector ' + i$('-') + ' triángulo.', 'Sector de ' + i$('90^\\circ') + ': ' + i$('\\frac{\\pi\\cdot' + r + '^2\\cdot90}{360}=' + piTex(k)) + '. Triángulo (dos radios perpendiculares): ' + i$('\\frac{' + r + '\\cdot' + r + '}{2}=' + (r * r / 2)) + '.', 'Segmento: ' + d$(pp.tex + '\\approx' + approx(pp.val, 2)) + ' cm².'], mistakes: [], data: { f, r, k: r * r / 4, c } };
+      }
+      const R = rnd.int(4, 14), r = rnd.int(1, R - 2), pp = piParts(F(R * R - r * r), 0, 'A');
+      return { prompt: 'Una corona circular tiene radio exterior ' + i$(R) + ' cm y radio interior ' + i$(r) + ' cm. Calcula su área (en cm²).' + PEDIR, answer: pp.answer,
+        steps: [d$('A=\\pi(R^2-r^2)=\\pi(' + R + '^2-' + r + '^2)=' + pp.tex), 'Con calculadora: ' + i$(pp.tex + '\\approx' + approx(pp.val, 2)) + ' cm².'], mistakes: [], data: { f, R, r, k: R * R - r * r, c: 0 } };
+    },
+  });
+
+  define({
+    id: 'eso3-problemas-areas',
+    title: 'Problemas de áreas y perímetros',
+    help: [
+      'Lee qué se pide: si es **rodear** o **bordear** (valla, cenefa, cuerda) es un **perímetro** (m); si es **cubrir** o **rellenar** (pintar, embaldosar, césped) es un **área** (m²). El coste es cantidad $\\times$ precio.',
+      'Figuras compuestas: suma o resta áreas simples. Ejemplo: una pared de $5\\times3$ m con una ventana de $2\\times1$ m tiene $15-2=13$ m² por pintar; a $4$ €/m² son $52$ €. Con $\\pi$ usa la calculadora y redondea al final.',
+    ],
+    params: [{ key: 'tipo', label: 'Situación', options: [['valla', 'Vallar un terreno'], ['pared', 'Pintar una pared'], ['baldosas', 'Embaldosar'], ['camino', 'Camino alrededor de un jardín'], ['pista', 'Pista con semicírculos'], ['fuente', 'Camino alrededor de una fuente'], ['cesped', 'Césped con parterre']] }],
+    generate(p) {
+      const t = p.tipo;
+      if (t === 'valla') { const a = rnd.int(12, 40), b = rnd.int(8, a - 2), pr = rnd.int(6, 25); return { prompt: 'Se quiere vallar un terreno rectangular de ' + i$(a) + ' m por ' + i$(b) + ' m. La valla cuesta ' + i$(pr) + ' € cada metro. ¿Cuánto cuesta (en €)?', answer: { kind: 'number', label: 'Coste=', value: F(2 * (a + b) * pr) },
+        steps: ['Vallar es rodear: perímetro ' + i$('2(' + a + '+' + b + ')=' + (2 * (a + b))) + ' m.', 'Coste: ' + d$((2 * (a + b)) + '\\cdot' + pr + '=' + (2 * (a + b) * pr) + '\\ \\text{€}')], mistakes: [{ value: F(a * b * pr), msg: 'has usado el área; una valla rodea el terreno, así que es el perímetro.' }], data: { t, a, b, pr } }; }
+      if (t === 'pared') {
+        const w = rnd.int(5, 9), h = rnd.int(3, 4), vw = rnd.int(1, 2), vh = rnd.int(1, 2), pr = rnd.int(3, 12);
+        return { prompt: 'Una pared de ' + i$(w) + ' m de largo y ' + i$(h) + ' m de alto tiene una ventana de ' + i$(vw) + ' m por ' + i$(vh) + ' m y una puerta de ' + i$('1') + ' m por ' + i$('2') + ' m. Se pinta con pintura de ' + i$(pr) + ' € el m². ¿Cuánto cuesta pintar la parte sin huecos (en €)?', answer: { kind: 'number', label: 'Coste=', value: F((w * h - vw * vh - 2) * pr) },
+          steps: ['Pintar es cubrir: área. ' + d$('A=' + w + '\\cdot' + h + '-' + vw + '\\cdot' + vh + '-1\\cdot2=' + (w * h - vw * vh - 2) + '\\ \\text{m}^2'), 'Coste: ' + d$((w * h - vw * vh - 2) + '\\cdot' + pr + '=' + ((w * h - vw * vh - 2) * pr) + '\\ \\text{€}')], mistakes: [{ value: F(w * h * pr), msg: 'no restes los huecos: la ventana y la puerta no se pintan.' }], data: { t, w, h, vw, vh, pr } };
+      }
+      if (t === 'baldosas') {
+        const a = rnd.int(3, 9), b = rnd.int(3, 8), l = rnd.pick([20, 25, 50]), n = (100 * a / l) * (100 * b / l);
+        return { prompt: 'Un suelo rectangular de ' + i$(a) + ' m por ' + i$(b) + ' m se cubre con baldosas cuadradas de ' + i$(l) + ' cm de lado. ¿Cuántas baldosas hacen falta?', answer: { kind: 'number', label: 'Baldosas=', value: F(n) },
+          steps: ['A lo largo caben ' + i$('\\frac{' + (100 * a) + '}{' + l + '}=' + (100 * a / l)) + ' y a lo ancho ' + i$('\\frac{' + (100 * b) + '}{' + l + '}=' + (100 * b / l)) + '.', 'Total: ' + d$((100 * a / l) + '\\cdot' + (100 * b / l) + '=' + n)], mistakes: [{ value: F(a * b), msg: 'eso son los m² del suelo; hay que dividir entre el área de una baldosa (en las mismas unidades).' }], data: { t, a, b, l, n } };
+      }
+      if (t === 'camino') {
+        const a = rnd.int(8, 20), b = rnd.int(5, a - 1), w = rnd.int(1, 3), A = (a + 2 * w) * (b + 2 * w) - a * b;
+        return { prompt: 'Un jardín rectangular de ' + i$(a) + ' m por ' + i$(b) + ' m está rodeado por un camino de ' + i$(w) + ' m de ancho. ¿Cuántos m² tiene el camino?', answer: { kind: 'number', label: 'A=', value: F(A) },
+          steps: ['El rectángulo exterior mide ' + i$((a + 2 * w) + '\\times' + (b + 2 * w)) + ' (el camino añade ' + i$(w) + ' m a cada lado).', 'Camino = exterior $-$ jardín: ' + d$((a + 2 * w) + '\\cdot' + (b + 2 * w) + '-' + a + '\\cdot' + b + '=' + A + '\\ \\text{m}^2')], mistakes: [{ value: F(2 * w * (a + b)), msg: 'faltan las cuatro esquinas del camino (cuadrados de lado ' + w + ' m).' }], data: { t, a, b, w, A } };
+      }
+      if (t === 'pista') {
+        const L = rnd.int(40, 100), r = rnd.int(10, 40), P = 2 * L + 2 * PI * r;
+        return { prompt: 'Una pista tiene forma de rectángulo de ' + i$(L) + ' m de largo y ' + i$(2 * r) + ' m de ancho con un semicírculo en cada extremo del ancho. ¿Cuánto mide su contorno? Redondea a dos decimales (en m).', answer: { kind: 'expr', label: 'P=', value: Math.round(P * 100) / 100, tol: 0.005 + 1e-9, show: dec2(P) },
+          steps: ['Los dos semicírculos forman una circunferencia de radio ' + i$(r) + ': ' + i$('2\\pi\\cdot' + r + '=' + piTex(F(2 * r))) + '. Los dos lados rectos suman ' + i$('2\\cdot' + L + '=' + (2 * L)) + '.', 'Contorno: ' + d$((2 * L) + '+' + piTex(F(2 * r)) + '\\approx' + approx(P, 2) + '\\ \\text{m}')], mistakes: [], data: { t, L, r, v: P } };
+      }
+      if (t === 'fuente') {
+        const r = rnd.int(2, 8), w = rnd.int(1, 3), A = PI * ((r + w) * (r + w) - r * r);
+        return { prompt: 'Una fuente circular de ' + i$(r) + ' m de radio está rodeada por un camino de ' + i$(w) + ' m de ancho. ¿Cuántos m² tiene el camino? Redondea a dos decimales.', answer: { kind: 'expr', label: 'A=', value: Math.round(A * 100) / 100, tol: 0.005 + 1e-9, show: dec2(A) },
+          steps: ['El camino es una corona circular de radios ' + i$((r + w)) + ' y ' + i$(r) + '.', d$('A=\\pi(' + (r + w) + '^2-' + r + '^2)=' + piTex(F((r + w) * (r + w) - r * r)) + '\\approx' + approx(A, 2) + '\\ \\text{m}^2')], mistakes: [], data: { t, r, w, v: A } };
+      }
+      const a = rnd.int(10, 24), b = rnd.int(8, a - 1), r = rnd.int(1, Math.floor(b / 2) - 1) || 1, A = a * b - PI * r * r;
+      return { prompt: 'Un jardín rectangular de ' + i$(a) + ' m por ' + i$(b) + ' m tiene en medio un parterre circular de ' + i$(r) + ' m de radio, sin césped. ¿Cuántos m² de césped hay? Redondea a dos decimales.', answer: { kind: 'expr', label: 'A=', value: Math.round(A * 100) / 100, tol: 0.005 + 1e-9, show: dec2(A) },
+        steps: ['Césped = rectángulo $-$ círculo.', d$(a + '\\cdot' + b + '-\\pi\\cdot' + r + '^2=' + (a * b) + '-' + piTex(F(r * r)) + '\\approx' + approx(A, 2) + '\\ \\text{m}^2')], mistakes: [], data: { t, a, b, r, v: A } };
     },
   });
 
