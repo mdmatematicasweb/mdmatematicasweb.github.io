@@ -323,3 +323,10 @@ html.gym-lock { overflow: hidden; }
 }
 .mdx-enun .katex-display, .mdx-parte-t .katex-display, .mdx-sol .katex-display, .gym-step-body .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
 @media (max-width: 600px) { .mdx-parte .gym-answer-row { overflow-x: auto; max-width: 100%; } }
+
+/* Minitelado numérico con π bajo una casilla de respuesta */
+.gym-padwrap { display: inline-flex; flex-direction: column; gap: 0.4rem; }
+.gym-pad { display: grid; grid-template-columns: repeat(4, 2.4rem); gap: 0.25rem; }
+.gym-key { font-family: "JetBrains Mono", monospace; font-size: 1rem; padding: 0.3rem 0; cursor: pointer; color: var(--md-text, #000); background: var(--md-surface, #fff); border: 2px solid var(--md-edge, #000); border-radius: 0; box-shadow: 2px 2px 0 var(--md-edge, #000); }
+.gym-key:active { transform: translate(2px, 2px); box-shadow: none; }
+.gym-key-pi { background: var(--md-lime, #FCE678); font-weight: 700; }
